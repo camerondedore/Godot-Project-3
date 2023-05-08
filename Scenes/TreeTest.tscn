@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://brdqjj6fnstp0"]
+
+[ext_resource type="PackedScene" uid="uid://cin8hwiuynknr" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="2_n8xw3"]
+[ext_resource type="PackedScene" uid="uid://e1hhvqjrtmwl" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
+[ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
+[ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="4_41cga"]
+[ext_resource type="PackedScene" uid="uid://d6qb02458wmp" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="4_pyk17"]
+[ext_resource type="PackedScene" uid="uid://dqyq4mqjh1r11" path="res://Prefabs/Trees/PropTreeApple2.tscn" id="5_obu66"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qkis0"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0004y"]
+radius = 0.2
+
+[node name="TreeTest" type="Node3D"]
+
+[node name="TestSceneCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.86604, 0.10007, 0.489859, 0, 0.979766, -0.20015, -0.499976, 0.173338, 0.848516, 2.926, 1.6, 4.115)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+collision_layer = 255
+
+[node name="Plane" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("PlaneMesh_fw7qn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("ConcavePolygonShape3D_qkis0")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="PropTreeOak1" parent="Trees" instance=ExtResource("2_n8xw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18414, 9.53674e-07, 0.0870099)
+
+[node name="PropTreeOak2" parent="Trees" instance=ExtResource("3_ddp4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48335, 0, -4.67747)
+
+[node name="PropTreeOak3" parent="Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(0.130197, 0, -0.991488, 0, 1, 0, 0.991488, 0, 0.130197, -3.24097, 0, -3.29486)
+
+[node name="PropTreeApple1" parent="Trees" instance=ExtResource("4_6wf3t")]
+transform = Transform3D(0.501088, 0, -0.865396, 0, 1, 0, 0.865396, 0, 0.501088, 3.53832, 4.76837e-07, -2.16842)
+
+[node name="PropTreeApple2" parent="Trees" instance=ExtResource("5_obu66")]
+transform = Transform3D(0.471274, 0, -0.881987, 0, 1, 0, 0.881987, 0, 0.471274, 6.12422, 0, -2.04477)
+
+[node name="ToolPropPainter" type="Node" parent="."]
+script = ExtResource("4_41cga")
+propsToPaint = [ExtResource("2_n8xw3"), ExtResource("3_ddp4i"), ExtResource("4_pyk17")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51411, 1, -0.844595)
+mesh = SubResource("CapsuleMesh_0004y")

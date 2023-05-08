@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b2dmlmks1eqru"]
+
+[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Materials/VegetationBark.tres" id="1_eprql"]
+[ext_resource type="Texture2D" uid="uid://5qdvvjyg3wa6" path="res://Textures/bark-1.png" id="2_esvqj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_eprql")
+shader_parameter/Wind_Amplitude = 0.05
+shader_parameter/Wind_Speed = 0.1
+shader_parameter/Wind_Turbulance = 1.0
+shader_parameter/Wind_Min_Height = 3.0
+shader_parameter/Wind_Slope = 3.0
+shader_parameter/Y_Multiplier = 0.25
+shader_parameter/Metallic = 0.1
+shader_parameter/Roughness = 1.0
+shader_parameter/Albedo = ExtResource("2_esvqj")
