@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn7h1qqxbne50"]
+
+[ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="1_71uf3"]
+[ext_resource type="ArrayMesh" uid="uid://xs0plx32lrdx" path="res://Models/prop-basket-with-apples.res" id="2_gs3ts"]
+[ext_resource type="Material" uid="uid://b7pag2pkkvl0d" path="res://Materials/PropApple.tres" id="3_i54xg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gnpw0"]
+height = 0.55
+radius = 0.375
+
+[node name="PropBasketWithApples" instance=ExtResource("1_71uf3")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_gs3ts")
+surface_material_override/1 = ExtResource("3_i54xg")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
+shape = SubResource("CylinderShape3D_gnpw0")

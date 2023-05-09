@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=14 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="4_pyk17"]
 [ext_resource type="PackedScene" uid="uid://bjp3slss1ghik" path="res://Prefabs/Trees/PropTreeApple2.tscn" id="5_obu66"]
 [ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="7_o7h8y"]
+[ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="9_jepc3"]
+[ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -20,7 +22,7 @@ radius = 0.2
 [node name="TreeTest" type="Node3D"]
 
 [node name="TestSceneCamera" type="Camera3D" parent="."]
-transform = Transform3D(0.997073, 0.00060597, -0.076448, 0, 0.999969, 0.00792631, 0.0764504, -0.00790311, 0.997042, 0.284295, 3.25553, 11.1786)
+transform = Transform3D(0.807872, 0.0636916, -0.585906, 0, 0.994144, 0.10807, 0.589358, -0.0873063, 0.80314, -2.63489, 4.01192, 8.88772)
 current = true
 fov = 90.0
 
@@ -103,3 +105,9 @@ script = ExtResource("4_41cga")
 propsToPaint = [ExtResource("7_o7h8y")]
 positionSpread = 0.1
 maxRotation = 110.0
+
+[node name="PropBasket" parent="." instance=ExtResource("9_jepc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42622, 0, 4.58777)
+
+[node name="PropBasketWithApples" parent="." instance=ExtResource("10_dvkp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74091, -1.19209e-07, 0.628072)

@@ -13,5 +13,5 @@ shader_parameter/Wind_Min_Height = 1.5
 shader_parameter/Wind_Slope = 2.0
 shader_parameter/Y_Multiplier = 0.25
 shader_parameter/Metallic = 0.1
-shader_parameter/Roughness = 0.45
+shader_parameter/Roughness = 0.5
 shader_parameter/Albedo = ExtResource("2_urr1t")
