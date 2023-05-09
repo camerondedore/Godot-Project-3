@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://btdbdi27r78tb"]
+
+[ext_resource type="ArrayMesh" uid="uid://cx76ktyohovms" path="res://Models/prop-wheel-barrow.res" id="1_oxl0t"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_0egwk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1v27k"]
+points = PackedVector3Array(0.0839836, 0.301297, -1.2987, -0.0545416, -0.484822, -1.20628, -0.285782, -0.161075, -1.15993, 0.500356, 0.208844, 1.47582, -0.517022, 0.208844, 1.47582, 0.454048, -0.484822, 0.781975, -0.470714, -0.484822, 0.781975, -0.481594, 0.586396, 0.77036, 0.369743, 0.532202, -0.67618, 0.315224, -0.161075, -1.15993, -0.362885, 0.51334, -0.757433, 0.46498, 0.586453, 0.770445, -0.517022, 0.162564, 0.597142, -0.0545416, 0.0701111, -1.48382, 0.0839836, -0.484822, -1.20628, 0.428977, -0.454734, 0.870604, 0.500356, 0.116283, 1.05951, 0.0839836, -0.207356, -1.48382, -0.33199, -0.114794, -0.975097, -0.0545416, -0.392261, -1.39112, 0.0839836, 0.0701111, -1.48382, -0.346096, 0.534616, -0.679691, -0.478732, 0.283895, 1.36443, 0.315224, -0.0223416, -1.15993, -0.0545416, 0.301297, -1.2987, 0.461974, 0.283854, 1.36417, -0.285782, -0.0223416, -1.15993, -0.0545416, -0.207356, -1.48382, 0.0839836, -0.392261, -1.39112, 0.449991, 0.528403, 0.329327, 0.0839836, 0.162564, -1.43747, -0.0545416, 0.162564, -1.43747)
+
+[node name="PropWheelBarrow" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_oxl0t")
+surface_material_override/0 = ExtResource("2_0egwk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_1v27k")

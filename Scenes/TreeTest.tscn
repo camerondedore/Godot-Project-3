@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=15 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="7_o7h8y"]
 [ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="9_jepc3"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
+[ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -67,37 +68,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7)
 
 [node name="Food" type="Node3D" parent="."]
 
-[node name="PropApple" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="PropApple" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.732789, -0.620318, 0.302693, -0.178706, 0.253916, 0.959775, -0.67045, -0.745676, 0.0750134, 6.17963, 0.0542489, 8.21782)
 
-[node name="@PropApple@26492" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26492" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.119545, -0.15449, -0.889615, -0.482419, 0.87862, -0.0514945, 0.759528, 0.533745, -0.172727, 7.30567, 0.0542486, 7.88967)
 
-[node name="@PropApple@26493" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26493" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.933281, -0.079128, 0.000774217, 0.000686271, 0.0181317, 0.936301, -0.0771929, -0.956515, 0.0176845, 6.78704, 0.0542489, 7.01835)
 
-[node name="@PropApple@26494" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26494" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.908863, 0.0919148, -0.098367, 0.0894345, -0.0883353, -0.910145, -0.101273, -0.90289, 0.0790313, 7.34666, 0.0542486, 3.17937)
 
-[node name="@PropApple@26495" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26495" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.956693, -0.0584463, -0.404556, 0.209473, 0.842177, -0.609698, 0.35071, -0.662452, -0.739418, 5.94758, 0.0542486, 3.74774)
 
-[node name="@PropApple@26496" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26496" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(1.01606, -0.139611, 0.156049, -0.146582, 0.0652547, 1.02669, -0.164302, -0.921583, 0.0490573, 7.10161, 0.0542489, 0.782527)
 
-[node name="@PropApple@26497" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26497" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.258412, 0.855932, -0.518978, -0.329474, 0.457497, 0.830554, 0.898847, 0.41377, 0.155239, 7.71212, 0.0542489, -2.39559)
 
-[node name="@PropApple@26498" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26498" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.322793, 0.715931, -0.568848, 0.592169, 0.288719, 0.760883, 0.756446, -0.531522, -0.352901, 5.40517, 0.0542489, -0.33564)
 
-[node name="@PropApple@26499" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26499" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.00843559, 1.05156, -0.110823, 0.746054, 0.06628, 0.524864, 0.527903, -0.110473, -0.739989, 6.30104, 0.0542489, 0.105533)
 
-[node name="@PropApple@26500" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26500" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.818379, 0.0751997, -0.422311, 0.332811, 0.71698, -0.530441, 0.269545, -0.656948, -0.627254, 5.1208, 0.0542492, 1.21775)
 
-[node name="@PropApple@26501" type="Node3D" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26501" parent="Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.899112, -0.259238, -0.130014, 0.254835, 0.707938, 0.64585, -0.0715332, -0.736397, 0.666659, 7.87231, 0.0542492, 4.24732)
 
 [node name="SmallProps" type="Node3D" parent="."]
@@ -114,3 +115,6 @@ propsToPaint = [ExtResource("7_o7h8y")]
 positionSpread = 0.1
 yOffset = 0.05
 maxRotation = 110.0
+
+[node name="PropWheelBarrow" parent="." instance=ExtResource("11_1esxr")]
+transform = Transform3D(-0.857356, 0, -0.514724, 0, 1, 0, 0.514724, 0, -0.857356, 4.35052, 0.45, -1.49759)
