@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://brdqjj6fnstp0"]
 
-[ext_resource type="PackedScene" uid="uid://cin8hwiuynknr" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="2_n8xw3"]
-[ext_resource type="PackedScene" uid="uid://e1hhvqjrtmwl" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
+[ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
 [ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="4_41cga"]
-[ext_resource type="PackedScene" uid="uid://d6qb02458wmp" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="4_pyk17"]
-[ext_resource type="PackedScene" uid="uid://dqyq4mqjh1r11" path="res://Prefabs/Trees/PropTreeApple2.tscn" id="5_obu66"]
+[ext_resource type="PackedScene" uid="uid://bu8b1efkxsd3e" path="res://Prefabs/Trees/PropTreeApple3.tscn" id="4_65hyp"]
+[ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="4_pyk17"]
+[ext_resource type="PackedScene" uid="uid://bjp3slss1ghik" path="res://Prefabs/Trees/PropTreeApple2.tscn" id="5_obu66"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -18,8 +18,9 @@ radius = 0.2
 [node name="TreeTest" type="Node3D"]
 
 [node name="TestSceneCamera" type="Camera3D" parent="."]
-transform = Transform3D(0.86604, 0.10007, 0.489859, 0, 0.979766, -0.20015, -0.499976, 0.173338, 0.848516, 2.926, 1.6, 4.115)
+transform = Transform3D(0.997073, 0.00060597, -0.076448, 0, 0.999969, 0.00792631, 0.0764504, -0.00790311, 0.997042, 0.284295, 3.25553, 11.1786)
 current = true
+fov = 90.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)
@@ -36,27 +37,61 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("ConcavePolygonShape3D_qkis0")
 
+[node name="HumanScale" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51411, 1, -0.844595)
+mesh = SubResource("CapsuleMesh_0004y")
+
 [node name="Trees" type="Node3D" parent="."]
 
-[node name="PropTreeOak1" parent="Trees" instance=ExtResource("2_n8xw3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18414, 9.53674e-07, 0.0870099)
+[node name="PropTreeOak2" type="StaticBody3D" parent="Trees" instance=ExtResource("3_ddp4i")]
+transform = Transform3D(-0.97562, 0.0159781, 0.485987, 0.0248345, 0.92912, 0.00782809, -0.485713, 0.0154118, -0.975768, -9.428, 0, -7.20921)
 
-[node name="PropTreeOak2" parent="Trees" instance=ExtResource("3_ddp4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48335, 0, -4.67747)
+[node name="PropTreeOak3" type="StaticBody3D" parent="Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(-1.0396, -0.0155822, 0.207645, -0.0117797, 1.01044, 0.0244559, -0.207954, 0.0206609, -1.03944, -7.02234, 0, -8.56089)
 
-[node name="PropTreeOak3" parent="Trees" instance=ExtResource("4_pyk17")]
-transform = Transform3D(0.130197, 0, -0.991488, 0, 1, 0, 0.991488, 0, 0.130197, -3.24097, 0, -3.29486)
+[node name="@PropTreeOak3@57167" type="StaticBody3D" parent="Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(0.837279, -0.017934, 0.477775, 0.0161818, 0.964141, 0.00782229, -0.477837, 0.00122591, 0.837434, 8.7008, 0, -8.37357)
 
-[node name="PropTreeApple1" parent="Trees" instance=ExtResource("4_6wf3t")]
-transform = Transform3D(0.501088, 0, -0.865396, 0, 1, 0, 0.865396, 0, 0.501088, 3.53832, 4.76837e-07, -2.16842)
+[node name="@PropTreeOak2@57168" type="StaticBody3D" parent="Trees" instance=ExtResource("3_ddp4i")]
+transform = Transform3D(1.04212, -0.0305331, 0.0255578, 0.0297914, 1.06845, 0.000292948, -0.0255558, 0.000448291, 1.04254, 6.07309, 0, -9.02383)
 
-[node name="PropTreeApple2" parent="Trees" instance=ExtResource("5_obu66")]
-transform = Transform3D(0.471274, 0, -0.881987, 0, 1, 0, 0.881987, 0, 0.471274, 6.12422, 0, -2.04477)
+[node name="@PropTreeOak3@57169" type="StaticBody3D" parent="Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(1.03374, -0.0253647, -0.156372, 0.0308576, 1.03032, 0.0321139, 0.15544, -0.0358506, 1.03356, 9.28345, 0, -6.33315)
+
+[node name="@PropTreeOak3@57170" type="StaticBody3D" parent="Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(0.94081, -0.0152178, 0.205964, 0.0147601, 1.05811, -0.0026555, -0.205901, 0.00631744, 0.940908, -3.91849, 0, -7.847)
+
+[node name="@PropTreeOak2@57171" type="StaticBody3D" parent="Trees" instance=ExtResource("3_ddp4i")]
+transform = Transform3D(-0.234959, -0.0199217, 0.943374, 0.0333966, 1.089, 0.0266168, -0.94295, 0.0435331, -0.234122, -9.45968, 0, -4.55444)
+
+[node name="PropTreeApple1" type="StaticBody3D" parent="Trees" instance=ExtResource("4_6wf3t")]
+transform = Transform3D(0.931195, -0.00487804, 0.501869, 0.00890177, 1.0126, -0.00577667, -0.501816, 0.00891077, 0.931191, -5.28341, 1.19209e-06, -0.92372)
+
+[node name="PropTreeApple3" type="StaticBody3D" parent="Trees" instance=ExtResource("4_65hyp")]
+transform = Transform3D(-0.848584, -0.012876, 0.390633, -0.00395044, 1.09977, 0.0175682, -0.390767, 0.0168434, -0.848472, -5.03924, 1.19209e-06, 2.9771)
+
+[node name="@PropTreeApple1@57177" type="StaticBody3D" parent="Trees" instance=ExtResource("4_6wf3t")]
+transform = Transform3D(0.583377, -0.0137746, -0.708311, 0.0317779, 0.900259, 0.00800248, 0.707737, -0.0290681, 0.583491, -5.26814, 1.19209e-06, 5.12466)
+
+[node name="@PropTreeApple3@57178" type="StaticBody3D" parent="Trees" instance=ExtResource("4_65hyp")]
+transform = Transform3D(0.894738, 0.025917, -0.606911, -0.017859, 1.09086, 0.0194279, 0.607192, -0.00610554, 0.894896, 5.91477, 0, -1.51848)
+
+[node name="@PropTreeApple1@57179" type="StaticBody3D" parent="Trees" instance=ExtResource("4_6wf3t")]
+transform = Transform3D(-0.314911, 0.0224125, 0.98691, -0.00516528, 0.970115, -0.0267661, -0.987187, -0.0122255, -0.314683, 5.75247, 0, 0.97873)
+
+[node name="@PropTreeApple1@57180" type="StaticBody3D" parent="Trees" instance=ExtResource("4_6wf3t")]
+transform = Transform3D(0.755196, 0.00931579, -0.556143, 0.00516462, 0.976272, 0.022098, 0.556191, -0.0217143, 0.754926, 5.65678, -1.19209e-06, 3.79336)
+
+[node name="PropTreeApple2" type="StaticBody3D" parent="Trees" instance=ExtResource("5_obu66")]
+transform = Transform3D(-0.907365, -0.0138258, -0.344834, -0.0215129, 0.918961, 0.0155194, 0.344472, 0.0209725, -0.90735, 0.382347, 0, -7.32172)
+
+[node name="@PropTreeApple2@57181" type="StaticBody3D" parent="Trees" instance=ExtResource("5_obu66")]
+transform = Transform3D(0.161213, 0.00316815, 0.956216, 0.0238185, 1.01018, -0.00709783, -0.955924, 0.0257046, 0.161085, 3.07846, 1.19209e-06, -6.72204)
+
+[node name="@PropTreeApple1@57182" type="StaticBody3D" parent="Trees" instance=ExtResource("4_6wf3t")]
+transform = Transform3D(0.700166, 0.0126813, -0.584949, 0.000705141, 0.95343, 0.0197658, 0.585074, -0.016325, 0.699992, 6.09522, -1.19209e-06, 7.87164)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
-propsToPaint = [ExtResource("2_n8xw3"), ExtResource("3_ddp4i"), ExtResource("4_pyk17")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51411, 1, -0.844595)
-mesh = SubResource("CapsuleMesh_0004y")
+propsToPaint = [ExtResource("4_6wf3t"), ExtResource("5_obu66"), ExtResource("4_65hyp")]
+positionSpread = 0.1

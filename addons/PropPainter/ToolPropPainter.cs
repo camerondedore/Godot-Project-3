@@ -157,8 +157,8 @@ public partial class ToolPropPainter : Node
 			(GD.Randf() - 0.5f) * 2 * maxRotation);
 
 		// get size spread
-		var xzSpread = 1 + (GD.Randf() - 0.5f) * 2 * sizeVariation;
-		var sizeSpread = new Vector3(xzSpread, 1 + (GD.Randf() - 0.5f) * 2 * sizeVariation, xzSpread);
+		var xzSpread = 1 + (GD.Randf() - 0.5f) * sizeVariation;
+		var sizeSpread = new Vector3(xzSpread, 1 + (GD.Randf() - 0.5f) * sizeVariation, xzSpread);
 
 		// set parent as root scene
 		GetTree().EditedSceneRoot.AddChild(prop);

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu8b1efkxsd3e"]
+
+[ext_resource type="ArrayMesh" uid="uid://begqddsawfiky" path="res://Models/prop-tree-apple-3.res" id="1_3jyfa"]
+[ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="1_045um"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8a5nn"]
+radius = 0.15
+height = 2.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hi8kr"]
+radius = 0.9
+
+[node name="PropTreeApple3" instance=ExtResource("1_045um")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("1_3jyfa")
+
+[node name="TrunkCollision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("CapsuleShape3D_8a5nn")
+
+[node name="LeavesCollision" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.95115, 0)
+shape = SubResource("SphereShape3D_hi8kr")
