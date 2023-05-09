@@ -12,6 +12,7 @@ public partial class ToolPropPainter : Node
 	PackedScene[] propsToPaint;
 	[Export]
 	float positionSpread = 0.2f,
+		yOffset = 0,
 		maxRotation = 2,
 		sizeVariation = 0.2f;
 	[Export]
@@ -165,7 +166,7 @@ public partial class ToolPropPainter : Node
 		prop.Owner = GetTree().EditedSceneRoot;
 
 		// apply prop transform properties
-		prop.GlobalPosition = paintPoint + spread;
+		prop.GlobalPosition = paintPoint + spread + Vector3.Up * yOffset;
 		prop.RotationDegrees = rotationSpread;
 		prop.Scale = sizeSpread;
 	}
