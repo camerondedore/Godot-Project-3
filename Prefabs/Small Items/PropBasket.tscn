@@ -14,5 +14,4 @@ mesh = ExtResource("1_72c5q")
 surface_material_override/0 = ExtResource("2_mvcys")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("CylinderShape3D_hvi3c")

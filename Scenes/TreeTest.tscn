@@ -104,10 +104,10 @@ transform = Transform3D(0.899112, -0.259238, -0.130014, 0.254835, 0.707938, 0.64
 [node name="SmallProps" type="Node3D" parent="."]
 
 [node name="PropBasket" parent="SmallProps" instance=ExtResource("9_jepc3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42622, 0, 4.58777)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42622, 0.25, 4.58777)
 
 [node name="PropBasketWithApples" parent="SmallProps" instance=ExtResource("10_dvkp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74091, -1.19209e-07, 0.628072)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74091, 0.25, 0.628072)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
@@ -117,4 +117,4 @@ yOffset = 0.05
 maxRotation = 110.0
 
 [node name="PropWheelBarrow" parent="." instance=ExtResource("11_1esxr")]
-transform = Transform3D(-0.857356, 0, -0.514724, 0, 1, 0, 0.514724, 0, -0.857356, 4.35052, 0.45, -1.49759)
+transform = Transform3D(-0.88339, 0, 0.468639, 0, 1, 0, -0.468639, 0, -0.88339, 4.35052, 0.45, -1.49759)
