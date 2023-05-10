@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5qdvvjyg3wa6"
-path.s3tc="res://.godot/imported/bark-1.png-b7ed000ebaeb5b234f8a54a1be9b1b91.s3tc.ctex"
+uid="uid://cpmg2kdaw1l46"
+path.s3tc="res://.godot/imported/leaves-oak.png-55bdbd9ecdf4ac6059e5274ecc4bf5b1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/bark-1.png"
-dest_files=["res://.godot/imported/bark-1.png-b7ed000ebaeb5b234f8a54a1be9b1b91.s3tc.ctex"]
+source_file="res://Textures/leaves-oak.png"
+dest_files=["res://.godot/imported/leaves-oak.png-55bdbd9ecdf4ac6059e5274ecc4bf5b1.s3tc.ctex"]
 
 [params]
 
@@ -31,5 +31,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=512
+process/size_limit=2048
 detect_3d/compress_to=0
