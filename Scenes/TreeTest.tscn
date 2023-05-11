@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=18 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -8,7 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="4_pyk17"]
 [ext_resource type="PackedScene" uid="uid://bjp3slss1ghik" path="res://Prefabs/Trees/PropTreeApple2.tscn" id="5_obu66"]
 [ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="7_o7h8y"]
+[ext_resource type="PackedScene" uid="uid://dmhd4t5kv3s22" path="res://Prefabs/Small Items/PropFenceEnd.tscn" id="8_qgel6"]
+[ext_resource type="PackedScene" uid="uid://dvbe1f02syvnr" path="res://Prefabs/Small Items/PropFence1.tscn" id="9_j2ilc"]
 [ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="9_jepc3"]
+[ext_resource type="PackedScene" uid="uid://ck4yohp23qcuw" path="res://Prefabs/Small Items/PropFence2.tscn" id="10_0j7w2"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
 
@@ -102,6 +105,24 @@ transform = Transform3D(-0.818379, 0.0751997, -0.422311, 0.332811, 0.71698, -0.5
 transform = Transform3D(0.899112, -0.259238, -0.130014, 0.254835, 0.707938, 0.64585, -0.0715332, -0.736397, 0.666659, 7.87231, 0.0542492, 4.24732)
 
 [node name="SmallProps" type="Node3D" parent="."]
+
+[node name="PropFenceEnd" parent="SmallProps" instance=ExtResource("8_qgel6")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 9.58823, 0.75, -6.94889)
+
+[node name="PropFence1" parent="SmallProps" instance=ExtResource("9_j2ilc")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 8.81177, 0.75, -4.05111)
+
+[node name="PropFence3" parent="SmallProps" instance=ExtResource("9_j2ilc")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 8.81177, 0.75, 1.87456)
+
+[node name="PropFence5" parent="SmallProps" instance=ExtResource("9_j2ilc")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 8.81177, 0.75, 7.83545)
+
+[node name="PropFence2" parent="SmallProps" instance=ExtResource("10_0j7w2")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 8.82858, 0.75, -4)
+
+[node name="PropFence4" parent="SmallProps" instance=ExtResource("10_0j7w2")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 8.82858, 0.75, 1.92175)
 
 [node name="PropBasket" parent="SmallProps" instance=ExtResource("9_jepc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42622, 0.25, 4.58777)

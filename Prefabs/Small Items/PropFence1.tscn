@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvbe1f02syvnr"]
+
+[ext_resource type="ArrayMesh" uid="uid://0qx1qpixkquq" path="res://Models/prop-fence-1.res" id="1_2u6we"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_g1org"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/BarkEndsOakOld.tres" id="3_ds4cf"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_utxsa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ne3yl"]
+size = Vector3(3.8, 1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_76741"]
+size = Vector3(0.2, 1.5, 0.5)
+
+[node name="PropFence1" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_2u6we")
+surface_material_override/0 = ExtResource("2_g1org")
+surface_material_override/1 = ExtResource("3_ds4cf")
+surface_material_override/2 = ExtResource("4_utxsa")
+
+[node name="FenceCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.2, 0)
+shape = SubResource("BoxShape3D_ne3yl")
+
+[node name="FenceCollision2" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_76741")
