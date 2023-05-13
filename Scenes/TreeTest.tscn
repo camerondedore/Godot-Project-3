@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=19 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ck4yohp23qcuw" path="res://Prefabs/Small Items/PropFence2.tscn" id="10_0j7w2"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
+[ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -64,10 +65,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
 
 [node name="PropTreeOak2" parent="Trees" instance=ExtResource("3_ddp4i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
 
 [node name="PropTreeOak3" parent="Trees" instance=ExtResource("4_pyk17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [node name="Food" type="Node3D" parent="."]
 
@@ -132,6 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42622, 0.25, 4.58777)
 
 [node name="PropBasketWithApples" parent="SmallProps" instance=ExtResource("10_dvkp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74091, 0.25, 0.628072)
+
+[node name="PropWoodAx" parent="SmallProps" instance=ExtResource("14_lprge")]
+transform = Transform3D(-0.509758, 0.294309, -0.808411, -0.5, -0.866025, 0, -0.700105, 0.404206, 0.588618, 2.27154, 0.570325, 4.26708)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")

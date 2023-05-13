@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://vaoqrqeyh0c5"]
+
+[ext_resource type="ArrayMesh" uid="uid://q4ajvd77w62w" path="res://Models/prop-wood-ax.res" id="1_24fso"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_hgxox"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_1ibqi"]
+[ext_resource type="Material" uid="uid://by3bifucmdb84" path="res://Materials/MetalLight.tres" id="4_6ir6c"]
+
+[node name="PropWoodAx" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_24fso")
+surface_material_override/0 = ExtResource("2_hgxox")
+surface_material_override/1 = ExtResource("3_1ibqi")
+surface_material_override/2 = ExtResource("4_6ir6c")
