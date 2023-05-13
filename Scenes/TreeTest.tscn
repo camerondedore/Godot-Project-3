@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=21 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
 [ext_resource type="PackedScene" uid="uid://dn2ow0syahcwf" path="res://Prefabs/Trees/PropLogOak1.tscn" id="16_v380q"]
+[ext_resource type="PackedScene" uid="uid://nqk315m3aos0" path="res://Prefabs/Trees/PropLogOak2.tscn" id="17_eo3gt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -136,7 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42622, 0.25, 4.58777)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.952186, 0.25, 1.44318)
 
 [node name="PropWoodAx" parent="SmallProps" instance=ExtResource("14_lprge")]
-transform = Transform3D(-0.509758, 0.294309, -0.808411, -0.5, -0.866025, 0, -0.700105, 0.404206, 0.588618, 1.27154, 0.547998, 4.26708)
+transform = Transform3D(-0.261435, 0.527373, -0.808411, -0.895952, -0.44415, -1.86265e-09, -0.359057, 0.724298, 0.588618, -4.58877, 0.280562, 4.00253)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
@@ -146,4 +147,7 @@ yOffset = 0.05
 maxRotation = 110.0
 
 [node name="PropLogOak1" parent="." instance=ExtResource("16_v380q")]
-transform = Transform3D(0.933816, -0.0297535, -0.356515, 0.356673, 3.0268e-08, 0.934229, -0.0277966, -0.999557, 0.0106123, 3.20291, 0.21487, 3.30333)
+transform = Transform3D(0.752909, -0.0297535, 0.657452, -0.657743, 3.1665e-08, 0.753242, -0.0224116, -0.999557, -0.0195702, -5.04436, 0.21487, 0.986783)
+
+[node name="PropLogOak2" parent="." instance=ExtResource("17_eo3gt")]
+transform = Transform3D(0.707107, -0.704416, 0.0616284, -2.98023e-08, 0.0871557, 0.996195, -0.707107, -0.704416, 0.0616284, -4.14313, 0.482901, -0.373568)
