@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=26 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://nqk315m3aos0" path="res://Prefabs/Trees/PropLogOak2.tscn" id="17_eo3gt"]
 [ext_resource type="PackedScene" uid="uid://cxjxgtjdigb6y" path="res://Prefabs/Trees/PropLogOak3.tscn" id="18_660r0"]
 [ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Trees/PropTreeStumpOak1.tscn" id="19_nvsbc"]
+[ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -166,6 +167,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.952186, 0.25, 1.44318)
 
 [node name="PropWoodAx" parent="SmallProps" instance=ExtResource("14_lprge")]
 transform = Transform3D(-0.261435, 0.527373, -0.808411, -0.895952, -0.44415, -1.86265e-09, -0.359057, 0.724298, 0.588618, -4.58877, 0.280562, 4.00253)
+
+[node name="PropLogStand" parent="SmallProps" instance=ExtResource("21_0tx2t")]
+transform = Transform3D(-0.141851, 0, 0.989888, 0, 1, 0, -0.989888, 0, -0.141851, -7.58958, 0.625, -4.96482)
+
+[node name="PropLogStand2" parent="SmallProps" instance=ExtResource("21_0tx2t")]
+transform = Transform3D(0.0901978, 0, -0.995924, 0, 1, 0, 0.995924, 0, 0.0901978, -3.70624, 0.625, -5.49372)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")

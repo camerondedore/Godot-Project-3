@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb5wv5gl5ku4k"]
+
+[ext_resource type="ArrayMesh" uid="uid://db6shte2hwijv" path="res://Models/prop-log-stand.res" id="1_q6dlx"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_f58an"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="3_03ytc"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_6tqjq"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bse0k"]
+points = PackedVector3Array(-1.01871, -0.5788, -0.788979, -1.09941, -0.619462, -0.716665, 1.08888, -0.613872, 0.716686, -1.26831, 0.540767, 0.162641, 1.14871, -0.647912, -0.74856, -1.06998, -0.489327, 0.796664, -1.06998, 0.58019, -0.193888, 1.10899, -0.0138301, -0.62977, 1.26761, 0.619996, -0.114536, 0.831719, 0.223727, 0.439976, -1.08711, -0.612463, 0.715022, -1.06998, -0.0138301, -0.62977, 1.06928, -0.489327, 0.796664, -1.10969, 0.659674, 0.123044, 1.06928, -0.529006, -0.827912, 1.06928, 0.58019, 0.202237, 1.26761, 0.461539, 0.123044, -1.06998, 0.58019, 0.202237, -1.26831, 0.461539, -0.154292, -1.06998, -0.529006, -0.827912, 1.06928, 0.58019, -0.193888, -1.26831, 0.342633, 0.0436917, -1.10969, 0.619996, -0.154292, 1.06928, 0.659674, 0.123044, 0.910904, -0.647912, -0.788156, -1.07031, -0.58643, 0.767825, -1.26831, 0.540767, -0.154292, 0.99009, 0.263405, -0.431627, 1.26761, 0.382183, -0.0353426, 1.06687, -0.584914, 0.765819, 1.10899, -0.449777, 0.756909, 1.10899, 0.619996, -0.154292)
+
+[node name="PropLogStand" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_q6dlx")
+surface_material_override/0 = ExtResource("2_f58an")
+surface_material_override/1 = ExtResource("3_03ytc")
+surface_material_override/2 = ExtResource("4_6tqjq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_bse0k")
