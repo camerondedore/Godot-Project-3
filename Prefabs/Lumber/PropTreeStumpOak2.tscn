@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://68ql48lpjkrx"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Trees/PropTreeStumpOak1.tscn" id="1_7bemc"]
+[ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Lumber/PropTreeStumpOak1.tscn" id="1_7bemc"]
 [ext_resource type="ArrayMesh" uid="uid://nsjdq4g3eb3c" path="res://Models/prop-tree-stump-oak-2.res" id="2_5riim"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/BarkOak.tres" id="3_7hycv"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="4_87ch5"]

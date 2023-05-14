@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxjxgtjdigb6y"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://dn2ow0syahcwf" path="res://Prefabs/Trees/PropLogOak1.tscn" id="1_6eoq0"]
+[ext_resource type="PackedScene" uid="uid://dn2ow0syahcwf" path="res://Prefabs/Lumber/PropLogOak1.tscn" id="1_6eoq0"]
 [ext_resource type="ArrayMesh" uid="uid://tfa02rtb6eke" path="res://Models/prop-log-oak-3.res" id="2_xv4o6"]
 
 [node name="PropLogOak3" instance=ExtResource("1_6eoq0")]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://6w4vqdekblvw"]
+
+[ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="1_4dvcn"]
+[ext_resource type="ArrayMesh" uid="uid://beqn4bermouty" path="res://Models/prop-firewood-3.res" id="2_nwv1o"]
+
+[node name="PropFirewood3" instance=ExtResource("1_4dvcn")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_nwv1o")
