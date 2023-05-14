@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://d5rd6vu4m2kr"]
+
+[ext_resource type="PackedScene" uid="uid://dn2ow0syahcwf" path="res://Prefabs/Trees/PropLogOak1.tscn" id="1_tmc5v"]
+[ext_resource type="ArrayMesh" uid="uid://nxi5o187d35q" path="res://Models/prop-log-oak-stripping.res" id="2_fcqkf"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_3gwlj"]
+
+[node name="PropLogOakStripping" instance=ExtResource("1_tmc5v")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_fcqkf")
+surface_material_override/2 = ExtResource("3_3gwlj")

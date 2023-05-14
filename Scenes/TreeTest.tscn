@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=28 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Small Items/PropFence1.tscn" id="9_j2ilc"]
 [ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="9_jepc3"]
 [ext_resource type="PackedScene" uid="uid://ck4yohp23qcuw" path="res://Prefabs/Small Items/PropFence2.tscn" id="10_0j7w2"]
+[ext_resource type="PackedScene" uid="uid://d5rd6vu4m2kr" path="res://Prefabs/Trees/PropLogOakStripping.tscn" id="10_2lcoj"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
 [ext_resource type="PackedScene" uid="uid://68ql48lpjkrx" path="res://Prefabs/Trees/PropTreeStumpOak2.tscn" id="11_1rkbt"]
+[ext_resource type="PackedScene" uid="uid://cbi7spqltgnn5" path="res://Prefabs/Trees/PropLogOakStripped.tscn" id="11_se24g"]
 [ext_resource type="PackedScene" uid="uid://dptp064vyna3l" path="res://Prefabs/Trees/PropTreeStumpOak3.tscn" id="12_7d261"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
 [ext_resource type="PackedScene" uid="uid://dn2ow0syahcwf" path="res://Prefabs/Trees/PropLogOak1.tscn" id="16_v380q"]
@@ -89,6 +91,12 @@ transform = Transform3D(0.707107, -0.704416, 0.0616284, -2.98023e-08, 0.0871557,
 
 [node name="PropLogOak3" parent="Trees/Logs" instance=ExtResource("18_660r0")]
 transform = Transform3D(-0.970876, 0.239584, 1.04726e-08, 1.48968e-15, -4.37114e-08, 1, 0.239584, 0.970876, 4.24383e-08, -6.35424, 0.25, -0.590182)
+
+[node name="PropLogOakStripping" parent="Trees/Logs" instance=ExtResource("10_2lcoj")]
+transform = Transform3D(0.0119865, -0.999927, -0.0017409, -0.143734, -4.60179e-08, -0.989616, 0.989544, 0.0121123, -0.143724, -6, 1.45001, -5)
+
+[node name="PropLogOakStripped" parent="Trees/Logs" instance=ExtResource("11_se24g")]
+transform = Transform3D(0.045166, 0.995757, -0.0801765, -0.871265, -5.34084e-08, -0.490813, -0.48873, 0.092023, 0.867568, -4.73622, 0.25, -7.4849)
 
 [node name="Stumps" type="Node3D" parent="Trees"]
 
