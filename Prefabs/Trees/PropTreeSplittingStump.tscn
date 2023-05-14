@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://q64j4efee5pg"]
+
+[ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Trees/PropTreeStumpOak1.tscn" id="1_xsofd"]
+[ext_resource type="ArrayMesh" uid="uid://diu4mpkvy76mj" path="res://Models/prop-tree-splitting-stump.res" id="2_ye3cv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r6twm"]
+height = 0.5
+radius = 0.55
+
+[node name="PropTreeSplittingStump" instance=ExtResource("1_xsofd")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_ye3cv")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_r6twm")

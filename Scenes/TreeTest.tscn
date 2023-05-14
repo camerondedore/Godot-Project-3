@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://brdqjj6fnstp0"]
+[gd_scene load_steps=29 format=3 uid="uid://brdqjj6fnstp0"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cbi7spqltgnn5" path="res://Prefabs/Trees/PropLogOakStripped.tscn" id="11_se24g"]
 [ext_resource type="PackedScene" uid="uid://dptp064vyna3l" path="res://Prefabs/Trees/PropTreeStumpOak3.tscn" id="12_7d261"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
+[ext_resource type="PackedScene" uid="uid://q64j4efee5pg" path="res://Prefabs/Trees/PropTreeSplittingStump.tscn" id="15_2w2bx"]
 [ext_resource type="PackedScene" uid="uid://dn2ow0syahcwf" path="res://Prefabs/Trees/PropLogOak1.tscn" id="16_v380q"]
 [ext_resource type="PackedScene" uid="uid://nqk315m3aos0" path="res://Prefabs/Trees/PropLogOak2.tscn" id="17_eo3gt"]
 [ext_resource type="PackedScene" uid="uid://cxjxgtjdigb6y" path="res://Prefabs/Trees/PropLogOak3.tscn" id="18_660r0"]
@@ -101,13 +102,16 @@ transform = Transform3D(0.045166, 0.995757, -0.0801765, -0.871265, -5.34084e-08,
 [node name="Stumps" type="Node3D" parent="Trees"]
 
 [node name="PropTreeStumpOak1" parent="Trees/Stumps" instance=ExtResource("19_nvsbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7719, 5.96046e-07, 3.78947)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7719, 0.25, 3.78947)
 
 [node name="PropTreeStumpOak2" parent="Trees/Stumps" instance=ExtResource("11_1rkbt")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3.33689, 0, 2.94361)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3.33689, 0.25, 2.94361)
 
 [node name="PropTreeStumpOak3" parent="Trees/Stumps" instance=ExtResource("12_7d261")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -3.23809, 0, 4.9434)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -3.23809, 0.25, 4.9434)
+
+[node name="PropTreeSplittingStump" parent="Trees/Stumps" instance=ExtResource("15_2w2bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 8)
 
 [node name="Food" type="Node3D" parent="."]
 
@@ -175,6 +179,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.952186, 0.25, 1.44318)
 
 [node name="PropWoodAx" parent="SmallProps" instance=ExtResource("14_lprge")]
 transform = Transform3D(-0.261435, 0.527373, -0.808411, -0.895952, -0.44415, -1.86265e-09, -0.359057, 0.724298, 0.588618, -4.58877, 0.280562, 4.00253)
+
+[node name="PropWoodAx2" parent="SmallProps" instance=ExtResource("14_lprge")]
+transform = Transform3D(0.386003, 0.741786, 0.548412, 2.89681e-09, -0.594486, 0.804106, 0.922498, -0.310387, -0.229473, -1.24625, 1.09374, 8)
 
 [node name="PropLogStand" parent="SmallProps" instance=ExtResource("21_0tx2t")]
 transform = Transform3D(-0.141851, 0, 0.989888, 0, 1, 0, -0.989888, 0, -0.141851, -7.58958, 0.625, -4.96482)
