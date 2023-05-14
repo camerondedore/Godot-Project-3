@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dptp064vyna3l"]
+
+[ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Trees/PropTreeStumpOak1.tscn" id="1_ok4bp"]
+[ext_resource type="ArrayMesh" uid="uid://d0qhn82x57pww" path="res://Models/prop-tree-stump-oak-3.res" id="2_xmobf"]
+
+[node name="PropTreeStumpOak3" instance=ExtResource("1_ok4bp")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_xmobf")
