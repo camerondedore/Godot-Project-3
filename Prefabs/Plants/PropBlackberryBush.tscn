@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://77mhee3d46dt"]
+
+[ext_resource type="ArrayMesh" uid="uid://d276o3o2mdm5s" path="res://Models/prop-blackberry-bush.res" id="1_ca3cf"]
+[ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/LeavesBlackberry.tres" id="2_pdbt1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_khcq5"]
+size = Vector3(4, 2, 2)
+
+[node name="PropBlackberryBush" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ca3cf")
+surface_material_override/0 = ExtResource("2_pdbt1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_khcq5")

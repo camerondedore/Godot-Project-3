@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://pvxngsu2uwwg"]
+[gd_scene load_steps=35 format=3 uid="uid://pvxngsu2uwwg"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Lumber/PropTreeStumpOak1.tscn" id="19_nvsbc"]
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="20_vvb1k"]
 [ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
+[ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -65,151 +66,161 @@ shape = SubResource("ConcavePolygonShape3D_qkis0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48589, 1, 3.15541)
 mesh = SubResource("CapsuleMesh_0004y")
 
-[node name="Trees" type="Node3D" parent="."]
+[node name="Props" type="Node3D" parent="."]
 
-[node name="Trees" type="Node3D" parent="Trees"]
+[node name="Trees" type="Node3D" parent="Props"]
 
-[node name="PropTreeApple1" parent="Trees/Trees" instance=ExtResource("4_6wf3t")]
+[node name="Trees" type="Node3D" parent="Props/Trees"]
+
+[node name="PropTreeApple1" parent="Props/Trees/Trees" instance=ExtResource("4_6wf3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="PropTreeApple2" parent="Trees/Trees" instance=ExtResource("5_obu66")]
+[node name="PropTreeApple2" parent="Props/Trees/Trees" instance=ExtResource("5_obu66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
 
-[node name="PropTreeApple3" parent="Trees/Trees" instance=ExtResource("4_65hyp")]
+[node name="PropTreeApple3" parent="Props/Trees/Trees" instance=ExtResource("4_65hyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
 
-[node name="PropTreeOak1" parent="Trees/Trees" instance=ExtResource("4_atmhp")]
+[node name="PropTreeOak1" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 7)
 
-[node name="PropTreeOak2" parent="Trees/Trees" instance=ExtResource("3_ddp4i")]
+[node name="PropTreeOak2" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -5)
 
-[node name="PropTreeOak3" parent="Trees/Trees" instance=ExtResource("4_pyk17")]
+[node name="PropTreeOak3" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
-[node name="Logs" type="Node3D" parent="Trees"]
+[node name="Logs" type="Node3D" parent="Props/Trees"]
 
-[node name="PropLogOak1" parent="Trees/Logs" instance=ExtResource("16_v380q")]
+[node name="PropLogOak1" parent="Props/Trees/Logs" instance=ExtResource("16_v380q")]
 transform = Transform3D(0.752909, -0.0297535, 0.657452, -0.657743, 3.1665e-08, 0.753242, -0.0224116, -0.999557, -0.0195702, -5.04436, 0.21487, 0.986783)
 
-[node name="PropLogOak2" parent="Trees/Logs" instance=ExtResource("17_eo3gt")]
+[node name="PropLogOak2" parent="Props/Trees/Logs" instance=ExtResource("17_eo3gt")]
 transform = Transform3D(0.707107, -0.704416, 0.0616284, -2.98023e-08, 0.0871557, 0.996195, -0.707107, -0.704416, 0.0616284, -4.14313, 0.482901, -0.373568)
 
-[node name="PropLogOak3" parent="Trees/Logs" instance=ExtResource("18_660r0")]
+[node name="PropLogOak3" parent="Props/Trees/Logs" instance=ExtResource("18_660r0")]
 transform = Transform3D(-0.970876, 0.239584, 1.04726e-08, 1.48968e-15, -4.37114e-08, 1, 0.239584, 0.970876, 4.24383e-08, -6.35424, 0.25, -0.590182)
 
-[node name="PropLogOakStripping" parent="Trees/Logs" instance=ExtResource("10_2lcoj")]
+[node name="PropLogOakStripping" parent="Props/Trees/Logs" instance=ExtResource("10_2lcoj")]
 transform = Transform3D(0.0119865, -0.999927, -0.0017409, -0.143734, -4.60179e-08, -0.989616, 0.989544, 0.0121123, -0.143724, -6, 1.45001, -5)
 
-[node name="PropLogOakStripped" parent="Trees/Logs" instance=ExtResource("11_se24g")]
+[node name="PropLogOakStripped" parent="Props/Trees/Logs" instance=ExtResource("11_se24g")]
 transform = Transform3D(0.045166, 0.995757, -0.0801765, -0.871265, -5.34084e-08, -0.490813, -0.48873, 0.092023, 0.867568, -4.73622, 0.25, -7.4849)
 
-[node name="Stumps" type="Node3D" parent="Trees"]
+[node name="Stumps" type="Node3D" parent="Props/Trees"]
 
-[node name="PropTreeStumpOak1" parent="Trees/Stumps" instance=ExtResource("19_nvsbc")]
+[node name="PropTreeStumpOak1" parent="Props/Trees/Stumps" instance=ExtResource("19_nvsbc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7719, 0.25, 3.78947)
 
-[node name="PropTreeStumpOak2" parent="Trees/Stumps" instance=ExtResource("11_1rkbt")]
+[node name="PropTreeStumpOak2" parent="Props/Trees/Stumps" instance=ExtResource("11_1rkbt")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -3.33689, 0.25, 2.94361)
 
-[node name="PropTreeStumpOak3" parent="Trees/Stumps" instance=ExtResource("12_7d261")]
+[node name="PropTreeStumpOak3" parent="Props/Trees/Stumps" instance=ExtResource("12_7d261")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -3.23809, 0.25, 4.9434)
 
-[node name="PropTreeSplittingStump" parent="Trees/Stumps" instance=ExtResource("15_2w2bx")]
+[node name="PropTreeSplittingStump" parent="Props/Trees/Stumps" instance=ExtResource("15_2w2bx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.25, 8)
 
-[node name="Firewood" type="Node3D" parent="Trees"]
+[node name="Firewood" type="Node3D" parent="Props/Trees"]
 
-[node name="PropFirewood1" parent="Trees/Firewood" instance=ExtResource("16_8wt0o")]
+[node name="PropFirewood1" parent="Props/Trees/Firewood" instance=ExtResource("16_8wt0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.340488, 0.385615, 8.51589)
 
-[node name="PropFirewood2" parent="Trees/Firewood" instance=ExtResource("17_phn5x")]
+[node name="PropFirewood2" parent="Props/Trees/Firewood" instance=ExtResource("17_phn5x")]
 transform = Transform3D(-0.939505, 0.338426, 0.0529048, -0.0562222, -4.47035e-08, -0.998418, -0.337891, -0.940993, 0.0190271, -0.758909, 0.0705296, 6.87546)
 
-[node name="PropFirewood3" parent="Trees/Firewood" instance=ExtResource("18_xfbai")]
+[node name="PropFirewood3" parent="Props/Trees/Firewood" instance=ExtResource("18_xfbai")]
 transform = Transform3D(-0.365089, -0.863481, -0.34801, 0.0419137, 0.358189, -0.932708, 0.930028, -0.355108, -0.0945792, -0.591366, 0.228668, 6.99895)
 
-[node name="PropFirewood4" parent="Trees/Firewood" instance=ExtResource("19_klfg6")]
+[node name="PropFirewood4" parent="Props/Trees/Firewood" instance=ExtResource("19_klfg6")]
 transform = Transform3D(0.820491, 0.375076, -0.431407, -0.465383, -4.47035e-08, -0.885109, -0.331983, 0.926994, 0.174554, -0.761293, 0.095466, 9.12234)
 
-[node name="PropFirewood5" parent="Trees/Firewood" instance=ExtResource("20_vvb1k")]
+[node name="PropFirewood5" parent="Props/Trees/Firewood" instance=ExtResource("20_vvb1k")]
 transform = Transform3D(0.318844, 0, 0.947807, 0, 1, 0, -0.947807, 0, 0.318844, -0.984877, 0.873772, 8.1048)
 
-[node name="Food" type="Node3D" parent="."]
+[node name="Food" type="Node3D" parent="Props"]
 
-[node name="PropApple" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="PropApple" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.732789, -0.620318, 0.302693, -0.178706, 0.253916, 0.959775, -0.67045, -0.745676, 0.0750134, 1.17963, 0.0542489, 8.21782)
 
-[node name="@PropApple@26492" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26492" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.119545, -0.15449, -0.889615, -0.482419, 0.87862, -0.0514945, 0.759528, 0.533745, -0.172727, 2.30567, 0.0542486, 7.88967)
 
-[node name="@PropApple@26493" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26493" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.933281, -0.079128, 0.000774217, 0.000686271, 0.0181317, 0.936301, -0.0771929, -0.956515, 0.0176845, 1.78704, 0.0542489, 7.01835)
 
-[node name="@PropApple@26494" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26494" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.908863, 0.0919148, -0.098367, 0.0894345, -0.0883353, -0.910145, -0.101273, -0.90289, 0.0790313, 1.34666, 0.0542486, 3.17937)
 
-[node name="@PropApple@26495" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26495" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.956693, -0.0584463, -0.404556, 0.209473, 0.842177, -0.609698, 0.35071, -0.662452, -0.739418, -0.05242, 0.0542486, 3.74774)
 
-[node name="@PropApple@26496" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26496" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(1.01606, -0.139611, 0.156049, -0.146582, 0.0652547, 1.02669, -0.164302, -0.921583, 0.0490573, 2.10161, 0.0542489, 0.782527)
 
-[node name="@PropApple@26497" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26497" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.258412, 0.855932, -0.518978, -0.329474, 0.457497, 0.830554, 0.898847, 0.41377, 0.155239, 2.71212, 0.0542489, -2.39559)
 
-[node name="@PropApple@26498" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26498" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.322793, 0.715931, -0.568848, 0.592169, 0.288719, 0.760883, 0.756446, -0.531522, -0.352901, 0.40517, 0.0542489, -0.33564)
 
-[node name="@PropApple@26499" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26499" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.00843559, 1.05156, -0.110823, 0.746054, 0.06628, 0.524864, 0.527903, -0.110473, -0.739989, 1.30104, 0.0542489, 0.105533)
 
-[node name="@PropApple@26500" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26500" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(-0.818379, 0.0751997, -0.422311, 0.332811, 0.71698, -0.530441, 0.269545, -0.656948, -0.627254, 0.1208, 0.0542492, 1.21775)
 
-[node name="@PropApple@26501" parent="Food" instance=ExtResource("7_o7h8y")]
+[node name="@PropApple@26501" parent="Props/Food" instance=ExtResource("7_o7h8y")]
 transform = Transform3D(0.899112, -0.259238, -0.130014, 0.254835, 0.707938, 0.64585, -0.0715332, -0.736397, 0.666659, 1.87231, 0.0542492, 4.24732)
 
-[node name="SmallProps" type="Node3D" parent="."]
+[node name="SmallProps" type="Node3D" parent="Props"]
 
-[node name="PropWheelBarrow" parent="SmallProps" instance=ExtResource("11_1esxr")]
+[node name="PropWheelBarrow" parent="Props/SmallProps" instance=ExtResource("11_1esxr")]
 transform = Transform3D(-0.88339, 0, 0.468639, 0, 1, 0, -0.468639, 0, -0.88339, -0.64948, 0.45, -1.49759)
 
-[node name="PropFenceEnd" parent="SmallProps" instance=ExtResource("8_qgel6")]
+[node name="PropFenceEnd" parent="Props/SmallProps" instance=ExtResource("8_qgel6")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 4.58823, 0.75, -6.94889)
 
-[node name="PropFence1" parent="SmallProps" instance=ExtResource("9_j2ilc")]
+[node name="PropFence1" parent="Props/SmallProps" instance=ExtResource("9_j2ilc")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 3.81177, 0.75, -4.05111)
 
-[node name="PropFence3" parent="SmallProps" instance=ExtResource("9_j2ilc")]
+[node name="PropFence3" parent="Props/SmallProps" instance=ExtResource("9_j2ilc")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 3.81177, 0.75, 1.87456)
 
-[node name="PropFence5" parent="SmallProps" instance=ExtResource("9_j2ilc")]
+[node name="PropFence5" parent="Props/SmallProps" instance=ExtResource("9_j2ilc")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 3.81177, 0.75, 7.83545)
 
-[node name="PropFence2" parent="SmallProps" instance=ExtResource("10_0j7w2")]
+[node name="PropFence2" parent="Props/SmallProps" instance=ExtResource("10_0j7w2")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.82858, 0.75, -4)
 
-[node name="PropFence4" parent="SmallProps" instance=ExtResource("10_0j7w2")]
+[node name="PropFence4" parent="Props/SmallProps" instance=ExtResource("10_0j7w2")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 3.82858, 0.75, 1.92175)
 
-[node name="PropBasket" parent="SmallProps" instance=ExtResource("9_jepc3")]
+[node name="PropBasket" parent="Props/SmallProps" instance=ExtResource("9_jepc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42622, 0.25, 4.58777)
 
-[node name="PropBasketWithApples" parent="SmallProps" instance=ExtResource("10_dvkp3")]
+[node name="PropBasketWithApples" parent="Props/SmallProps" instance=ExtResource("10_dvkp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.952186, 0.25, 1.44318)
 
-[node name="PropWoodAx" parent="SmallProps" instance=ExtResource("14_lprge")]
+[node name="PropWoodAx" parent="Props/SmallProps" instance=ExtResource("14_lprge")]
 transform = Transform3D(-0.261435, 0.527373, -0.808411, -0.895952, -0.44415, -1.86265e-09, -0.359057, 0.724298, 0.588618, -4.58877, 0.280562, 4.00253)
 
-[node name="PropWoodAx2" parent="SmallProps" instance=ExtResource("14_lprge")]
+[node name="PropWoodAx2" parent="Props/SmallProps" instance=ExtResource("14_lprge")]
 transform = Transform3D(0.386003, 0.741786, 0.548412, 2.89681e-09, -0.594486, 0.804106, 0.922498, -0.310387, -0.229473, -1.4607, 1.09374, 7.95226)
 
-[node name="PropLogStand" parent="SmallProps" instance=ExtResource("21_0tx2t")]
+[node name="PropLogStand" parent="Props/SmallProps" instance=ExtResource("21_0tx2t")]
 transform = Transform3D(-0.141851, 0, 0.989888, 0, 1, 0, -0.989888, 0, -0.141851, -7.58958, 0.625, -4.96482)
 
-[node name="PropLogStand2" parent="SmallProps" instance=ExtResource("21_0tx2t")]
+[node name="PropLogStand2" parent="Props/SmallProps" instance=ExtResource("21_0tx2t")]
 transform = Transform3D(0.0901978, 0, -0.995924, 0, 1, 0, 0.995924, 0, 0.0901978, -3.70624, 0.625, -5.49372)
+
+[node name="Plants" type="Node3D" parent="Props"]
+
+[node name="PropBlackberryBush" parent="Props/Plants" instance=ExtResource("30_pesed")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 4.23316, 1, -5.85732)
+
+[node name="PropBlackberryBush4" parent="Props/Plants" instance=ExtResource("30_pesed")]
+transform = Transform3D(-0.365056, 0, 0.930986, 0, 1, 0, -0.930986, 0, -0.365056, 4.22085, 1, -2.73667)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
