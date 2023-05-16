@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://kqtoljwdrcyn"]
+[gd_scene load_steps=4 format=3 uid="uid://kqtoljwdrcyn"]
+
+[ext_resource type="Script" path="res://C#/ComplexCharacter/PlayerCharacter.cs" id="1_64ofv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5lw6n"]
+radius = 0.3
+
 [node name="PlayerCharacter" type="CharacterBody3D"]
+script = ExtResource("1_64ofv")
+maxSlopeAngle = 35.0
+maxSlideAngle = 70.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nx72i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_5lw6n")

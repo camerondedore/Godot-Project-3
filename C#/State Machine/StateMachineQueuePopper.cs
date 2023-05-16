@@ -15,8 +15,8 @@ public partial class StateMachineQueuePopper : Node
 
     public override void _Process(double delta)
 	{
-		// time check
-		if(Engine.TimeScale == 0)
+		// time check and machines check
+		if(Engine.TimeScale == 0 || machines.Count == 0)
 		{
 			return;
 		}
