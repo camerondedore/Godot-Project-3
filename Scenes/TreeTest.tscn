@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://pvxngsu2uwwg"]
+[gd_scene load_steps=39 format=3 uid="uid://pvxngsu2uwwg"]
 
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -31,6 +31,10 @@
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="20_vvb1k"]
 [ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
+[ext_resource type="PackedScene" uid="uid://q5ovbwr3uy8l" path="res://Prefabs/Plants/PropTulip1.tscn" id="32_nchpi"]
+[ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="33_ikeas"]
+[ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="34_ni6mc"]
+[ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="35_3fswv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -222,9 +226,40 @@ transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 
 [node name="PropBlackberryBush4" parent="Props/Plants" instance=ExtResource("30_pesed")]
 transform = Transform3D(-0.365056, 0, 0.930986, 0, 1, 0, -0.930986, 0, -0.365056, 4.22085, 1, -2.73667)
 
+[node name="PropTulip2" type="Node3D" parent="Props/Plants" instance=ExtResource("33_ikeas")]
+transform = Transform3D(0.833863, -0.00428566, -0.725576, -0.00470622, 0.898791, -0.0134366, 0.72558, 0.0107549, 0.833771, 3.39415, 0.25, -0.390091)
+
+[node name="PropTulip3" type="Node3D" parent="Props/Plants" instance=ExtResource("34_ni6mc")]
+transform = Transform3D(0.131823, -0.0199645, 0.9624, -0.0307856, 1.0385, 0.0230429, -0.962088, -0.0359661, 0.131128, 3.5504, 0.25, -1.39998)
+
+[node name="@PropTulip2@29823" type="Node3D" parent="Props/Plants" instance=ExtResource("33_ikeas")]
+transform = Transform3D(-0.145686, -0.000674483, 0.9715, -0.00234865, 0.857458, 0.000429167, -0.971497, -0.00197181, -0.145687, 3.10518, 0.25, -1.03231)
+
+[node name="PropTulip1" type="Node3D" parent="Props/Plants" instance=ExtResource("32_nchpi")]
+transform = Transform3D(-0.677737, 8.09421e-05, -0.540841, 0.00218022, 0.994757, -0.00261896, 0.540837, -0.00390863, -0.677732, 3.60898, 0.25, 0.399)
+
+[node name="PropTulip4" type="Node3D" parent="Props/Plants" instance=ExtResource("35_3fswv")]
+transform = Transform3D(-1.04369, -0.0264001, 0.314818, -0.0427806, 1.047, -0.0469059, -0.313104, -0.0550546, -1.04299, 2.01489, 1.94418, -0.380329)
+
+[node name="@PropTulip4@29824" type="Node3D" parent="Props/Plants" instance=ExtResource("35_3fswv")]
+transform = Transform3D(-1.11717, -0.00231553, -0.0365424, -0.00303778, 0.899221, 0.00483091, 0.0365295, 0.00396422, -1.11716, 3.45527, 0.25, 2.43849)
+
+[node name="@PropTulip2@29825" type="Node3D" parent="Props/Plants" instance=ExtResource("33_ikeas")]
+transform = Transform3D(-0.730442, -0.00530418, -0.553402, 0.0230348, 0.992271, -0.0384967, 0.552944, -0.0483434, -0.729444, 1.67555, 0.25, 7.86917)
+
+[node name="@PropTulip1@29826" type="Node3D" parent="Props/Plants" instance=ExtResource("32_nchpi")]
+transform = Transform3D(0.899046, 0.028107, 0.380821, -0.0112635, 0.98957, -0.0444116, -0.381661, 0.0370053, 0.898376, 2.34793, 0.25, 8.20953)
+
+[node name="@PropTulip2@29827" type="Node3D" parent="Props/Plants" instance=ExtResource("33_ikeas")]
+transform = Transform3D(0.418306, 0.00171492, -1.02232, 0.0404662, 1.09784, 0.0184191, 1.02152, -0.044192, 0.417904, 1.94307, 0.25, 8.30488)
+
+[node name="@PropTulip3@29828" type="Node3D" parent="Props/Plants" instance=ExtResource("34_ni6mc")]
+transform = Transform3D(0.78574, -0.0670686, 0.394948, 0.0413449, 1.13577, 0.0333588, -0.396196, -0.0144889, 0.786747, 1.31919, 0.25, 4.58195)
+
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
-propsToPaint = [ExtResource("7_o7h8y")]
+propsToPaint = [ExtResource("32_nchpi"), ExtResource("33_ikeas"), ExtResource("34_ni6mc"), ExtResource("35_3fswv")]
 positionSpread = 0.1
-yOffset = 0.05
-maxRotation = 110.0
+yOffset = 0.25
+maxRotation = 3.0
+sizeVariation = 0.3

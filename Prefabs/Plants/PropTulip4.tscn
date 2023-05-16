@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7l80l3krwm66"]
+
+[ext_resource type="PackedScene" uid="uid://q5ovbwr3uy8l" path="res://Prefabs/Plants/PropTulip1.tscn" id="1_3qkfo"]
+[ext_resource type="ArrayMesh" uid="uid://c0mdlb7x073e5" path="res://Models/prop-tulip-4.res" id="2_b5wi4"]
+
+[node name="PropTulip4" instance=ExtResource("1_3qkfo")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_b5wi4")

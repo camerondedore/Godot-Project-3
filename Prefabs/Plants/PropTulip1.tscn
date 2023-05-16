@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://q5ovbwr3uy8l"]
+
+[ext_resource type="ArrayMesh" uid="uid://d2vyel6g2ix1f" path="res://Models/prop-tulip-1.res" id="1_xoq8s"]
+[ext_resource type="Material" uid="uid://cfx16fmpivtuy" path="res://Materials/LeavesTulip.tres" id="2_vahwr"]
+
+[node name="PropTulip1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_xoq8s")
+surface_material_override/0 = ExtResource("2_vahwr")
