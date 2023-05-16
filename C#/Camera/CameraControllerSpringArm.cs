@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CameraSpringArm : SpringArm3D
+public partial class CameraControllerSpringArm : SpringArm3D
 {
 
 	[Export]
@@ -72,7 +72,8 @@ public partial class CameraSpringArm : SpringArm3D
 		LookAtFromPosition(smoothTargetPosition, smoothTargetPosition + Basis.Z * -1, Vector3.Up);
 
 		// move camera
-		//GlobalCamera.targetPosition = cameraTarget.GlobalTransform.origin;
-		//GlobalCamera.targetLookPoint = cameraTarget.GlobalTransform.origin + cameraTarget.GlobalTransform.basis.z * -100;
+		// camera target is child of this springarm and its transform is modified
+		// the springarm transform does not use the springarm ray
+		GlobalCamera.camera.LookAtFromPosition(cameraTarget.GlobalPosition, cameraTarget.GlobalPosition + Basis.Z * -100);
 	}
 }

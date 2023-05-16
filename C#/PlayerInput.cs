@@ -63,5 +63,9 @@ public partial class PlayerInput : Node
 
 			isMouseMoving = true;
 		}
+
+		//
+		//	AFTER HARVESTING MOUSE LOOK INPUT, IT NEEDS TO BE SET TO ZERO
+		//
 	}
 }

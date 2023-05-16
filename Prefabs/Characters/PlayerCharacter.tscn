@@ -1,17 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://kqtoljwdrcyn"]
+[gd_scene load_steps=5 format=3 uid="uid://cl8hyehb06olh"]
 
 [ext_resource type="Script" path="res://C#/ComplexCharacter/PlayerCharacter.cs" id="1_64ofv"]
-[ext_resource type="Script" path="res://C#/Camera/CameraSpringArm.cs" id="2_gvqui"]
+[ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5lw6n"]
 radius = 0.3
-
-[sub_resource type="SphereMesh" id="SphereMesh_8njrx"]
-radius = 0.2
-height = 0.4
 
 [node name="PlayerCharacter" type="CharacterBody3D"]
 script = ExtResource("1_64ofv")
@@ -24,10 +20,12 @@ shape = SubResource("CapsuleShape3D_nx72i")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_5lw6n")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("cameraTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 spring_length = 3.0
-script = ExtResource("2_gvqui")
+script = ExtResource("2_4ytg0")
+cameraTarget = NodePath("CameraTarget")
+sensitivity = 5.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpringArm3D"]
-mesh = SubResource("SphereMesh_8njrx")
+[node name="CameraTarget" type="Node3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
