@@ -1,6 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://pvxngsu2uwwg"]
+[gd_scene load_steps=40 format=3 uid="uid://185bsyya1c4u"]
 
-[ext_resource type="PackedScene" uid="uid://begi1q1ook0o2" path="res://Prefabs/MainCamera.tscn" id="1_4qapr"]
+[ext_resource type="PackedScene" uid="uid://begi1q1ook0o2" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
 [ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="4_41cga"]
@@ -47,8 +47,8 @@ radius = 0.2
 
 [node name="TreeTest" type="Node3D"]
 
-[node name="MainCamera" parent="." instance=ExtResource("1_4qapr")]
-transform = Transform3D(-0.893493, -0.105181, -0.436587, 0, 0.972185, -0.234215, 0.449078, -0.209269, -0.86864, 0.69519, 1.05068, -6.90706)
+[node name="GlobalCamera" parent="." instance=ExtResource("1_4qapr")]
+transform = Transform3D(-0.883281, -0.10981, -0.455802, 0, 0.972185, -0.234215, 0.468843, -0.206878, -0.858713, 1.63938, 0.96379, -3.38464)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)

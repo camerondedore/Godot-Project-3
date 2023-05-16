@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://begi1q1ook0o2"]
+[gd_scene load_steps=4 format=3 uid="uid://begi1q1ook0o2"]
 
 [ext_resource type="Script" path="res://C#/PlayerInput.cs" id="1_k2p24"]
 [ext_resource type="Script" path="res://C#/Pause.cs" id="2_wjq3a"]
+[ext_resource type="Script" path="res://C#/Gravity.cs" id="3_ykw7l"]
 
-[node name="MainCamera" type="Camera3D"]
+[node name="GlobalCamera" type="Camera3D"]
 fov = 90.0
 
 [node name="PlayerInput" type="Node" parent="."]
@@ -11,3 +12,6 @@ script = ExtResource("1_k2p24")
 
 [node name="Pause" type="Node" parent="."]
 script = ExtResource("2_wjq3a")
+
+[node name="Gravity" type="Node" parent="."]
+script = ExtResource("3_ykw7l")
