@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://gsb5ckq8e2no"]
 
-[ext_resource type="PackedScene" uid="uid://cin8hwiuynknr" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="1_d5cxo"]
+[ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="1_d5cxo"]
 [ext_resource type="ArrayMesh" uid="uid://577v78doq0s8" path="res://Models/prop-tree-oak-2.res" id="1_xxyqn"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wx7qu"]

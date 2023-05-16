@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck4yohp23qcuw"]
 
-[ext_resource type="PackedScene" uid="uid://dvbe1f02syvnr" path="res://Prefabs/Small Items/PropFence1.tscn" id="1_yw04l"]
+[ext_resource type="PackedScene" path="res://Prefabs/Small Items/PropFence1.tscn" id="1_yw04l"]
 [ext_resource type="ArrayMesh" uid="uid://bfhk7dv78db2s" path="res://Models/prop-fence-2.res" id="2_3xqi0"]
 
 [node name="PropFence2" instance=ExtResource("1_yw04l")]

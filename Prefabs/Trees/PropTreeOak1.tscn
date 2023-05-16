@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://d2ii8qhujvfub"]
 
 [ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_hx8dg"]
 [ext_resource type="Material" uid="uid://d2q2syeel3fuj" path="res://Materials/BarkOakWind.tres" id="2_u364e"]
