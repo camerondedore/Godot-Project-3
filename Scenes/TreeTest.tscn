@@ -46,7 +46,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="TreeTest" type="Node3D"]
 
 [node name="GlobalCamera" parent="." instance=ExtResource("1_4qapr")]
-transform = Transform3D(-0.883281, -0.10981, -0.455802, 0, 0.972185, -0.234215, 0.468843, -0.206878, -0.858713, 1.63938, 0.96379, -3.38464)
+transform = Transform3D(-0.944351, 0.152929, -0.291227, 0, 0.885355, 0.464915, 0.328938, 0.439043, -0.836086, -1.74094, 4.14966, -6.99775)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

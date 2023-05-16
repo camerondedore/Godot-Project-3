@@ -15,7 +15,7 @@ public partial class PlayerCharacter : CharacterBody3D
 	public float maxSlopeAngleRad,
 		maxSlideAngleRad;
 
-    string debugText;
+	string debugText;
 	
 
 
@@ -42,9 +42,9 @@ public partial class PlayerCharacter : CharacterBody3D
 
 
 
-    public override void _PhysicsProcess(double delta)
-    {
-        // run machine
+	public override void _PhysicsProcess(double delta)
+	{
+		// run machine
 		if(machine != null && machine.CurrentState != null)
 		{
 			machine.CurrentState.RunState(delta);
@@ -52,7 +52,7 @@ public partial class PlayerCharacter : CharacterBody3D
 		}
 
 
-        // debug
+		// debug
 		if(debugText != machine.CurrentState.ToString())
 		{
 			GD.Print(machine.CurrentState.ToString());
@@ -60,5 +60,5 @@ public partial class PlayerCharacter : CharacterBody3D
 		}   
 		//GD.Print(velocity.Length());
 		//GD.Print(jumpStartY + " : " + fallStartY); 
-    }
+	}
 }
