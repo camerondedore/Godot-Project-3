@@ -1,27 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://begi1q1ook0o2"]
+[gd_scene load_steps=7 format=3 uid="uid://vddpqai4aqjk"]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
-[ext_resource type="Script" path="res://C#/PlayerInput.cs" id="1_k2p24"]
-[ext_resource type="Script" path="res://C#/EngineTime.cs" id="1_obu15"]
 [ext_resource type="Script" path="res://C#/Camera/GlobalCamera.cs" id="1_w865n"]
-[ext_resource type="Script" path="res://C#/Pause.cs" id="2_wjq3a"]
-[ext_resource type="Script" path="res://C#/Gravity.cs" id="3_ykw7l"]
+[ext_resource type="Script" path="res://C#/Common/EngineTime.cs" id="2_pyw1p"]
+[ext_resource type="Script" path="res://C#/Common/PlayerInput.cs" id="4_qu5pn"]
+[ext_resource type="Script" path="res://C#/Common/Pause.cs" id="5_mk66s"]
+[ext_resource type="Script" path="res://C#/Common/Gravity.cs" id="6_4spwn"]
 
 [node name="GlobalCamera" type="Camera3D"]
 fov = 90.0
 script = ExtResource("1_w865n")
 
 [node name="EngineTime" type="Node" parent="."]
-script = ExtResource("1_obu15")
+script = ExtResource("2_pyw1p")
 
 [node name="StateMachineQueuePopper" type="Node" parent="."]
 script = ExtResource("1_4luc3")
 
 [node name="PlayerInput" type="Node" parent="."]
-script = ExtResource("1_k2p24")
+script = ExtResource("4_qu5pn")
 
 [node name="Pause" type="Node" parent="."]
-script = ExtResource("2_wjq3a")
+script = ExtResource("5_mk66s")
 
 [node name="Gravity" type="Node" parent="."]
-script = ExtResource("3_ykw7l")
+script = ExtResource("6_4spwn")
