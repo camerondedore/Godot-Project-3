@@ -28,11 +28,11 @@ public partial class PlayerCharacterStateIdle : PlayerCharacterState
    
     public override State Transition()
     {
-        // if(!blackboard.IsOnFloor())
-		// {
-		// 	// fall
-		// 	return blackboard.stateFall;
-		// }
+        if(!blackboard.IsOnFloor())
+		{
+			// fall
+			return blackboard.stateFall;
+		}
 
         // if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
         // {

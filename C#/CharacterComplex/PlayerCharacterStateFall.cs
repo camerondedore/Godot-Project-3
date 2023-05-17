@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacterStateMove : PlayerCharacterState
+public partial class PlayerCharacterStateFall : PlayerCharacterState
 {
 
 
@@ -21,14 +21,18 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
         moveDirection = moveDirection.Normalized();
 
 
-
-		// set up velocity using input
+        // set up velocity using input
         var vel = blackboard.Velocity;
 		vel.X = Mathf.Lerp(vel.X, moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration);
 		vel.Z = Mathf.Lerp(vel.Z, moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration);
 
+        // apply gravity
+        //blackboard.ySpeed += Gravity.vector.Y * ((float) delta);
 
-		// apply velocity
+        vel.Y = blackboard.Velocity.Y + Gravity.vector.Y * ((float) delta);
+
+
+        // apply velocity
 		blackboard.Velocity = vel;
 
         blackboard.MoveAndSlide();
@@ -41,8 +45,8 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
 
 
     public override void StartState()
-    {
-        
+    {   
+        blackboard.ySpeed = blackboard.Velocity.Y;
     }
 
 
@@ -56,22 +60,11 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
 
     public override State Transition()
     {
-        if(!blackboard.IsOnFloor())
+        if(blackboard.IsOnFloor())
 		{
-			// fall
-			return blackboard.stateFall;
-		}
-
-		// if(blackboard.IsOnFloor() && blackboard.jumpDisconnector.Trip(PlayerInput.jump))
-		// {
-		// 	// jump start
-		// 	return blackboard.stateJumpStart;
-		// }
-
-		if(!PlayerInput.isMoving)
-		{
-			// move
-			return blackboard.stateIdle;
+			// land
+			//return blackboard.stateLand;
+            return blackboard.stateIdle;
 		}
 
 		return this;

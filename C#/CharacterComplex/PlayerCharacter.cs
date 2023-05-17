@@ -7,16 +7,16 @@ public partial class PlayerCharacter : CharacterBody3D
 	public StateMachine machine = new StateMachine();
 	public State stateStart,
 		stateIdle,
-		stateMove;
+		stateMove,
+		stateFall;
 
 	[Export]
 	public CameraControllerSpringArm cameraSpringArm;
 	[Export]
 	public float speed = 5,
-		acceleration = 5,
-		maxSlopeAngle,
-		maxSlideAngle;
+		acceleration = 5;
 
+	public float ySpeed;
 	string debugText;
 	
 
@@ -34,6 +34,7 @@ public partial class PlayerCharacter : CharacterBody3D
 		stateStart = new PlayerCharacterStateStart(){blackboard = this};
 		stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
 		stateMove = new PlayerCharacterStateMove(){blackboard = this};
+		stateFall = new PlayerCharacterStateFall(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);

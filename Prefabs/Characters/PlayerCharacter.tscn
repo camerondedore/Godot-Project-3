@@ -16,8 +16,6 @@ size = Vector3(0.6, 0.2, 0.3)
 floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
-maxSlopeAngle = 35.0
-maxSlideAngle = 70.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nx72i")
