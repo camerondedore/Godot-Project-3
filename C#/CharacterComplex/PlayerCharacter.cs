@@ -6,14 +6,16 @@ public partial class PlayerCharacter : CharacterBody3D
 
 	public StateMachine machine = new StateMachine();
 	public State stateStart,
-		stateIdle;
+		stateIdle,
+		stateMove;
 
 	[Export]
-	float maxSlopeAngle,
+	public CameraControllerSpringArm cameraSpringArm;
+	[Export]
+	public float speed = 5,
+		acceleration = 5,
+		maxSlopeAngle,
 		maxSlideAngle;
-
-	public float maxSlopeAngleRad,
-		maxSlideAngleRad;
 
 	string debugText;
 	
@@ -28,13 +30,10 @@ public partial class PlayerCharacter : CharacterBody3D
 			return;
 		}
 
-		// get max angles in radians
-		maxSlopeAngleRad = Mathf.DegToRad(maxSlopeAngle);
-		maxSlideAngleRad = Mathf.DegToRad(maxSlideAngle);
-
 		// initialize states
 		stateStart = new PlayerCharacterStateStart(){blackboard = this};
 		stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
+		stateMove = new PlayerCharacterStateMove(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);
