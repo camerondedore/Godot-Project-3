@@ -32,6 +32,7 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
 
         blackboard.MoveAndSlide();
 
+        blackboard.CharacterLook();
 
         // camera follow
 		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);

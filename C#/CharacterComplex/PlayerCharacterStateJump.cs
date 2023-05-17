@@ -36,6 +36,7 @@ public partial class PlayerCharacterStateJump : PlayerCharacterState
 
         blackboard.MoveAndSlide();
 
+        blackboard.CharacterLook();
 
         // camera follow
 		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);

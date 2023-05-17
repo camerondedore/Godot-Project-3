@@ -65,4 +65,19 @@ public partial class PlayerCharacter : CharacterBody3D
 		//GD.Print(velocity.Length());
 		//GD.Print(jumpStartY + " : " + fallStartY); 
 	}
+
+
+
+	public void CharacterLook()
+	{
+		// lock look vector Y
+		var lookVector = Velocity;
+		lookVector.Y = 0;
+
+        if(lookVector.LengthSquared() > 0.1f)// && -Basis.Z != GlobalPosition + lookVector)
+        {
+			// apply look
+			LookAt(GlobalPosition + lookVector);
+        }    
+	}
 }

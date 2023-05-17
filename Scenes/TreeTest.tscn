@@ -46,7 +46,7 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="TreeTest" type="Node3D"]
 
 [node name="GlobalCamera" parent="." instance=ExtResource("1_4qapr")]
-transform = Transform3D(-0.944351, 0.152929, -0.291227, 0, 0.885355, 0.464915, 0.328938, 0.439043, -0.836086, -1.74094, 4.14966, -6.99775)
+transform = Transform3D(-0.553421, 0.363785, -0.749256, 0, 0.899574, 0.436769, 0.832901, 0.241717, -0.497843, -7.67092, 5.93037, -6.77401)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -67,6 +67,11 @@ size = Vector3(1, 1, 4.06684)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 2.2172, 0, -7.41968)
+use_collision = true
+size = Vector3(1, 1, 4.06684)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.782797, 3.24676, -7.41968)
 use_collision = true
 size = Vector3(1, 1, 4.06684)
 
