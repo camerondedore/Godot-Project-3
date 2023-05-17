@@ -34,11 +34,12 @@ public partial class PlayerCharacterStateIdle : PlayerCharacterState
 			return blackboard.stateFall;
 		}
 
-        // if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
-        // {
-        //     // jump start
-        //     return blackboard.stateJumpStart;
-        // }
+        if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
+        {
+            // jump start
+            //return blackboard.stateJumpStart;
+            return blackboard.stateJump;
+        }
         
         if(PlayerInput.isMoving)
         {

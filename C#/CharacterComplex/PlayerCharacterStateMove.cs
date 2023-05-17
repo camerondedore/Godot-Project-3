@@ -21,7 +21,6 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
         moveDirection = moveDirection.Normalized();
 
 
-
 		// set up velocity using input
         var vel = blackboard.Velocity;
 		vel.X = Mathf.Lerp(vel.X, moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration);
@@ -62,11 +61,12 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
 			return blackboard.stateFall;
 		}
 
-		// if(blackboard.IsOnFloor() && blackboard.jumpDisconnector.Trip(PlayerInput.jump))
-		// {
-		// 	// jump start
-		// 	return blackboard.stateJumpStart;
-		// }
+		if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
+        {
+            // jump start
+            //return blackboard.stateJumpStart;
+            return blackboard.stateJump;
+        }
 
 		if(!PlayerInput.isMoving)
 		{
