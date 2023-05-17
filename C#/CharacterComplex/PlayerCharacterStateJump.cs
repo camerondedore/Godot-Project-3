@@ -11,15 +11,7 @@ public partial class PlayerCharacterStateJump : PlayerCharacterState
     public override void RunState(double delta)
     {
         // get input
-		var moveDirection = Vector3.Zero;
-		moveDirection.X = PlayerInput.move.X;
-		moveDirection.Z = PlayerInput.move.Z;
-		
-        // convert move direction to local space
-        moveDirection = GlobalCamera.camera.ToGlobal(moveDirection) - GlobalCamera.camera.Position;
-
-        moveDirection = moveDirection.Normalized();
-
+		var moveDirection = blackboard.GetMoveInput();
 
 		// set up velocity using input
         var vel = blackboard.Velocity;

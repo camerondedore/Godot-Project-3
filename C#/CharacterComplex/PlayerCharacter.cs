@@ -80,4 +80,19 @@ public partial class PlayerCharacter : CharacterBody3D
 			LookAt(GlobalPosition + lookVector);
         }    
 	}
+
+
+
+	public Vector3 GetMoveInput()
+	{
+		// get input
+		var moveDirection = Vector3.Zero;
+		moveDirection.X = PlayerInput.move.X;
+		moveDirection.Z = PlayerInput.move.Z;
+		
+        // convert move direction to local space
+        moveDirection = GlobalCamera.camera.ToGlobal(moveDirection) - GlobalCamera.camera.Position;
+
+        return moveDirection.Normalized();
+	}
 }
