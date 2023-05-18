@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl5kdflw42707"]
+[gd_scene load_steps=8 format=3 uid="uid://cl5kdflw42707"]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
 [ext_resource type="Script" path="res://C#/Camera/GlobalCamera.cs" id="1_w865n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://C#/Common/PlayerInput.cs" id="4_qu5pn"]
 [ext_resource type="Script" path="res://C#/Common/Pause.cs" id="5_mk66s"]
 [ext_resource type="Script" path="res://C#/Common/EngineGravity.cs" id="6_mfr8q"]
+[ext_resource type="Script" path="res://C#/PauseMenu.cs" id="7_ogfvn"]
 
 [node name="GlobalCamera" type="Camera3D"]
 fov = 90.0
@@ -25,3 +26,51 @@ script = ExtResource("4_qu5pn")
 
 [node name="Pause" type="Node" parent="."]
 script = ExtResource("5_mk66s")
+
+[node name="PauseMenuCanvas" type="Control" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "restartButton", "quitButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_ogfvn")
+menuContainer = NodePath("PauseMenu")
+resumeButton = NodePath("PauseMenu/VBoxContainer/ResumeButton")
+restartButton = NodePath("PauseMenu/VBoxContainer/RestartButton")
+quitButton = NodePath("PauseMenu/VBoxContainer/QuitButton")
+
+[node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -150.0
+offset_right = 40.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenuCanvas/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseMenuCanvas/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="PauseMenuCanvas/PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit"

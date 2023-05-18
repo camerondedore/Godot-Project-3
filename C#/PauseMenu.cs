@@ -6,8 +6,9 @@ public partial class PauseMenu : Node
    
     [Export]
     Control menuContainer;
-    TextureButton resumeButton;
-    Button restartButton,
+    [Export]
+    Button resumeButton,
+        restartButton,
         quitButton;
 
 

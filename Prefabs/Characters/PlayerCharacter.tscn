@@ -18,6 +18,7 @@ collision_mask = 3
 floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
+acceleration = 10.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nx72i")

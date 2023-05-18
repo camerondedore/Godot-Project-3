@@ -19,8 +19,8 @@ public partial class PlayerCharacterStateJumpPad : PlayerCharacterState
         if(moveDirection.LengthSquared() > 0)
         {
             // set up velocity by adding input to jump pad velocity
-            vel.X = Mathf.Lerp(vel.X, initialVelocity.X + moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration);
-            vel.Z = Mathf.Lerp(vel.Z, initialVelocity.Z + moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration);
+            vel.X = Mathf.Lerp(vel.X, initialVelocity.X + moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
+            vel.Z = Mathf.Lerp(vel.Z, initialVelocity.Z + moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
         }		
 
         // apply gravity

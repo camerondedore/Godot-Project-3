@@ -15,6 +15,12 @@ run/main_scene="res://Scenes/TreeTest.tscn"
 config/features=PackedStringArray("4.0", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+window/size/borderless=true
+
 [dotnet]
 
 project/assembly_name="Project 3"
