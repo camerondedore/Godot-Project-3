@@ -10,17 +10,26 @@ public partial class PlayerCharacter : CharacterBody3D, iJumpPadUser
 		stateMove,
 		stateFall,
 		stateJump,
-		stateJumpPad;
+		stateJumpPad,
+		stateLedgeGrab,
+		stateLedgeGrabJump;
 
 	[Export]
 	public CameraControllerSpringArm cameraSpringArm;
 	[Export]
+	public RayCast3D ledgeDetectorRayHorizontal,
+		ledgeDetectorRayVertical;
+	[Export]
+	public Node3D ledgeDetectorRaysController;
+	[Export]
+	public Vector3 ledgeGrabOffset;
+	[Export]
 	public float speed = 5,
 		acceleration = 5,
-		jumpHeight = 2.1f;
+		jumpHeight = 2.1f,
+		ledgeGrabJumpHeight = 3;
 
 	public Disconnector jumpDisconnector = new Disconnector();
-	public float ySpeed;
 	string debugText;
 	
 
@@ -41,6 +50,8 @@ public partial class PlayerCharacter : CharacterBody3D, iJumpPadUser
 		stateFall = new PlayerCharacterStateFall(){blackboard = this};
 		stateJump = new PlayerCharacterStateJump(){blackboard = this};
 		stateJumpPad = new PlayerCharacterStateJumpPad(){blackboard = this};
+		stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
+		stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);
@@ -85,6 +96,21 @@ public partial class PlayerCharacter : CharacterBody3D, iJumpPadUser
 
 
 
+	public void CharacterLook(Vector3 direction)
+	{
+		// lock look vector Y
+		var lookVector = direction;
+		lookVector.Y = 0;
+
+        if(lookVector.LengthSquared() > 0.1f)// && -Basis.Z != GlobalPosition + lookVector)
+        {
+			// apply look
+			LookAt(GlobalPosition + lookVector);
+        }    
+	}
+
+
+
 	public Vector3 GetMoveInput()
 	{
 		// get input
@@ -94,6 +120,9 @@ public partial class PlayerCharacter : CharacterBody3D, iJumpPadUser
 		
         // convert move direction to local space
         moveDirection = GlobalCamera.camera.ToGlobal(moveDirection) - GlobalCamera.camera.Position;
+
+		// remove vertical component
+		moveDirection.Y = 0;
 
         return moveDirection.Normalized();
 	}

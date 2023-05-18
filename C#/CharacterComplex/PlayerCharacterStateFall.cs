@@ -31,6 +31,13 @@ public partial class PlayerCharacterStateFall : PlayerCharacterState
 
         // camera follow
 		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+
+
+        if(moveDirection.LengthSquared() > 0)
+        {
+            // keep ledge detector rays relative to move input
+            blackboard.ledgeDetectorRaysController.LookAt(blackboard.GlobalPosition + moveDirection);
+        }
     }
 
 
@@ -57,6 +64,22 @@ public partial class PlayerCharacterStateFall : PlayerCharacterState
 			//return blackboard.stateLand;
             return blackboard.stateMove;
 		}
+
+        // check for ledge
+        var detectingLedge = blackboard.ledgeDetectorRayHorizontal.IsColliding() && blackboard.ledgeDetectorRayVertical.IsColliding();
+        detectingLedge = detectingLedge && blackboard.ledgeDetectorRayVertical.GetCollisionNormal().AngleTo(-EngineGravity.direction) < 0.175f;
+
+        if(detectingLedge)
+        {
+            // check that player input is pointing into ledge
+            var movingIntoLedge = blackboard.ledgeDetectorRayHorizontal.GetCollisionNormal().AngleTo(blackboard.GetMoveInput()) > 1.571f;
+
+            if(movingIntoLedge)
+            {
+                // ledge grab
+                return blackboard.stateLedgeGrab;
+            }
+        }
 
 		return this;
     }
