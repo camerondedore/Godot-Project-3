@@ -1,6 +1,6 @@
-[gd_scene load_steps=40 format=3 uid="uid://185bsyya1c4u"]
+[gd_scene load_steps=42 format=3 uid="uid://185bsyya1c4u"]
 
-[ext_resource type="PackedScene" uid="uid://vddpqai4aqjk" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
+[ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
 [ext_resource type="PackedScene" uid="uid://d1ufc08ty1rix" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -37,11 +37,14 @@
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="33_ikeas"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="34_ni6mc"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="35_3fswv"]
+[ext_resource type="Script" path="res://C#/JumpPad.cs" id="38_05md2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qkis0"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nrvr1"]
 
 [node name="TreeTest" type="Node3D"]
 
@@ -276,3 +279,28 @@ positionSpread = 0.1
 yOffset = 0.25
 maxRotation = 3.0
 sizeVariation = 0.3
+
+[node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14102, 0.6, 7.97087)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("38_05md2")
+landingTarget = NodePath("../TestJumpPadTarget")
+horizontalSpeed = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestJumpPad"]
+shape = SubResource("SphereShape3D_nrvr1")
+
+[node name="TestJumpPadTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96641, 5.50751, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96641, 4, 0)
+use_collision = true
+size = Vector3(2.20454, 1, 2.15285)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2094, 4.83793, 0)
+use_collision = true
+size = Vector3(2.20454, 1, 2.15285)

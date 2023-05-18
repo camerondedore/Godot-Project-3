@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Gravity : Node
+public partial class EngineGravity : Node
 {
 
     public static float magnitude;

@@ -20,7 +20,7 @@ public partial class PlayerCharacterStateJump : PlayerCharacterState
 
 
         // apply gravity
-        vel.Y = blackboard.Velocity.Y + Gravity.vector.Y * ((float) delta);
+        vel += EngineGravity.vector * ((float) delta);
 
 
         // apply velocity
@@ -41,7 +41,7 @@ public partial class PlayerCharacterStateJump : PlayerCharacterState
         var vel = blackboard.Velocity;
 
         // set vertical speed; v = (-2hg)>(1/2)
-		vel.Y = Mathf.Sqrt((-2 * blackboard.jumpHeight * -Gravity.magnitude));
+		vel.Y = Mathf.Sqrt((-2 * blackboard.jumpHeight * -EngineGravity.magnitude));
 
         blackboard.Velocity = vel;
     }

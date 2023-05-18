@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://vddpqai4aqjk"]
+[gd_scene load_steps=7 format=3 uid="uid://cl5kdflw42707"]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
 [ext_resource type="Script" path="res://C#/Camera/GlobalCamera.cs" id="1_w865n"]
 [ext_resource type="Script" path="res://C#/Common/EngineTime.cs" id="2_pyw1p"]
 [ext_resource type="Script" path="res://C#/Common/PlayerInput.cs" id="4_qu5pn"]
 [ext_resource type="Script" path="res://C#/Common/Pause.cs" id="5_mk66s"]
-[ext_resource type="Script" path="res://C#/Common/Gravity.cs" id="6_4spwn"]
+[ext_resource type="Script" path="res://C#/Common/EngineGravity.cs" id="6_mfr8q"]
 
 [node name="GlobalCamera" type="Camera3D"]
 fov = 90.0
@@ -13,6 +13,9 @@ script = ExtResource("1_w865n")
 
 [node name="EngineTime" type="Node" parent="."]
 script = ExtResource("2_pyw1p")
+
+[node name="EngineGravity" type="Node" parent="."]
+script = ExtResource("6_mfr8q")
 
 [node name="StateMachineQueuePopper" type="Node" parent="."]
 script = ExtResource("1_4luc3")
@@ -22,6 +25,3 @@ script = ExtResource("4_qu5pn")
 
 [node name="Pause" type="Node" parent="."]
 script = ExtResource("5_mk66s")
-
-[node name="Gravity" type="Node" parent="."]
-script = ExtResource("6_4spwn")

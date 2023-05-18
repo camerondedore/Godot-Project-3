@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacter : CharacterBody3D
+public partial class PlayerCharacter : CharacterBody3D, iJumpPadUser
 {
 
 	public StateMachine machine = new StateMachine();
@@ -9,7 +9,8 @@ public partial class PlayerCharacter : CharacterBody3D
 		stateIdle,
 		stateMove,
 		stateFall,
-		stateJump;
+		stateJump,
+		stateJumpPad;
 
 	[Export]
 	public CameraControllerSpringArm cameraSpringArm;
@@ -39,6 +40,7 @@ public partial class PlayerCharacter : CharacterBody3D
 		stateMove = new PlayerCharacterStateMove(){blackboard = this};
 		stateFall = new PlayerCharacterStateFall(){blackboard = this};
 		stateJump = new PlayerCharacterStateJump(){blackboard = this};
+		stateJumpPad = new PlayerCharacterStateJumpPad(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);
@@ -94,5 +96,16 @@ public partial class PlayerCharacter : CharacterBody3D
         moveDirection = GlobalCamera.camera.ToGlobal(moveDirection) - GlobalCamera.camera.Position;
 
         return moveDirection.Normalized();
+	}
+
+
+
+	public void JumpPadActivated(Vector3 jumpPadVelocity)
+	{
+		// apply jump pad velocity
+		Velocity = jumpPadVelocity;
+
+		// go to jump pad state
+		machine.SetState(stateJumpPad);
 	}
 }

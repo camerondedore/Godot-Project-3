@@ -10,7 +10,7 @@ public partial class PlayerCharacterStateFall : PlayerCharacterState
 
     public override void RunState(double delta)
     {
-       // get input
+        // get input
 		var moveDirection = blackboard.GetMoveInput();
 
 		// set up velocity using input
@@ -19,9 +19,7 @@ public partial class PlayerCharacterStateFall : PlayerCharacterState
 		vel.Z = Mathf.Lerp(vel.Z, moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration);
 
         // apply gravity
-        //blackboard.ySpeed += Gravity.vector.Y * ((float) delta);
-
-        vel.Y = blackboard.Velocity.Y + Gravity.vector.Y * ((float) delta);
+        vel += EngineGravity.vector * ((float) delta);
 
 
         // apply velocity
@@ -39,7 +37,7 @@ public partial class PlayerCharacterStateFall : PlayerCharacterState
 
     public override void StartState()
     {   
-        //blackboard.ySpeed = blackboard.Velocity.Y;
+        
     }
 
 
@@ -57,7 +55,7 @@ public partial class PlayerCharacterStateFall : PlayerCharacterState
 		{
 			// land
 			//return blackboard.stateLand;
-            return blackboard.stateIdle;
+            return blackboard.stateMove;
 		}
 
 		return this;
