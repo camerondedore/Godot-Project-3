@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1ufc08ty1rix"]
+[gd_scene load_steps=7 format=3 uid="uid://d1ufc08ty1rix"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
+[ext_resource type="Script" path="res://C#/Inventory.cs" id="3_mamwx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -53,3 +54,6 @@ target_position = Vector3(0, 0, -0.45)
 [node name="LedgeDetectorRayVertical" type="RayCast3D" parent="LedgeDetectorRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -0.4)
 target_position = Vector3(0, -0.35, 0)
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_mamwx")
