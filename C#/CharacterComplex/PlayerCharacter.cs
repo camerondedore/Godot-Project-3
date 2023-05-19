@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser
+public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageStationUser
 {
 
 	public StateMachine machine = new StateMachine();
@@ -12,7 +12,8 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser
 		stateJump,
 		stateJumpPad,
 		stateLedgeGrab,
-		stateLedgeGrabJump;
+		stateLedgeGrabJump,
+		stateBandageStation;
 
 	[Export]
 	public CameraControllerSpringArm cameraSpringArm;
@@ -27,7 +28,9 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser
 	public float speed = 5,
 		acceleration = 5,
 		jumpHeight = 2.1f,
-		ledgeGrabJumpHeight = 3;
+		ledgeGrabJumpHeight = 3,
+		bandageTime = 0.5f,
+		startDelay = 1f;
 
 	public Disconnector jumpDisconnector = new Disconnector();
 	string debugText;
@@ -52,6 +55,7 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser
 		stateJumpPad = new PlayerCharacterStateJumpPad(){blackboard = this};
 		stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
 		stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};
+		stateBandageStation = new PlayerCharacterStateBandageStation(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);
@@ -136,5 +140,25 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser
 
 		// go to jump pad state
 		machine.SetState(stateJumpPad);
+	}
+
+
+
+	public void BandageStationActivated(Node3D target)
+	{
+		// check for bandage components
+        var hasComponents = Inventory.inventory.currentInventory.DockLeaves > 0 && Inventory.inventory.currentInventory.Sanicle > 0;
+
+		if(!hasComponents)
+		{
+			return;
+		}
+
+
+		// apply bandage station target position
+		LookAtFromPosition(target.GlobalPosition, target.GlobalPosition - target.Basis.Z);
+
+		// go to bandage station state
+		machine.SetState(stateBandageStation);
 	}
 }

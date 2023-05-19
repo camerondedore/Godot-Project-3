@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://185bsyya1c4u"]
+[gd_scene load_steps=51 format=3 uid="uid://185bsyya1c4u"]
 
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
 [ext_resource type="PackedScene" uid="uid://d1ufc08ty1rix" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
@@ -41,6 +41,7 @@
 [ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="39_y8yyv"]
 [ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="40_bcejb"]
 [ext_resource type="Script" path="res://C#/Pickups/SaniclePickup.cs" id="41_8ymp1"]
+[ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -62,6 +63,8 @@ size = Vector3(0.2, 0.5, 0.1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jivh6"]
 radius = 0.05
 height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mef1p"]
 
 [node name="TreeTest" type="Node3D"]
 
@@ -324,3 +327,17 @@ shape = SubResource("SphereShape3D_3nh8h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestSanicle"]
 mesh = SubResource("CapsuleMesh_jivh6")
+
+[node name="TestBandageStationArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159986, 1, 7.90599)
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+script = ExtResource("42_dfphq")
+userTarget = NodePath("TestBandageStationTarget")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBandageStationArea"]
+shape = SubResource("SphereShape3D_mef1p")
+
+[node name="TestBandageStationTarget" type="Node3D" parent="TestBandageStationArea"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.519973, 0, 0)

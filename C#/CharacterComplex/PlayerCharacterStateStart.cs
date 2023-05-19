@@ -4,8 +4,7 @@ using System;
 public partial class PlayerCharacterStateStart : PlayerCharacterState
 {
 
-    double startDelay = 1,
-        startTime = 0;
+    double startTime;
 
 
 
@@ -31,7 +30,7 @@ public partial class PlayerCharacterStateStart : PlayerCharacterState
     public override State Transition()
     {
         // check timer
-        if(EngineTime.timePassed > startTime + startDelay)
+        if(EngineTime.timePassed > startTime + blackboard.startDelay)
         {
             // idle
             return blackboard.stateIdle;

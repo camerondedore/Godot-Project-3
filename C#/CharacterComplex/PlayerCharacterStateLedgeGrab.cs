@@ -37,6 +37,9 @@ public partial class PlayerCharacterStateLedgeGrab : PlayerCharacterState
         
         // apply ledge grap position to character
         blackboard.GlobalPosition = ledgeGrapPosition;
+
+        // camera follow
+		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
     }
 
    
