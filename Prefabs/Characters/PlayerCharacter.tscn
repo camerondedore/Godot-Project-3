@@ -1,8 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1ufc08ty1rix"]
+[gd_scene load_steps=13 format=3 uid="uid://d1ufc08ty1rix"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
 [ext_resource type="Script" path="res://C#/Inventory.cs" id="3_mamwx"]
+[ext_resource type="Script" path="res://C#/PlayerHud.cs" id="4_eweib"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
+[ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
+[ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
+[ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
+[ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -57,3 +63,125 @@ target_position = Vector3(0, -0.35, 0)
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_mamwx")
+
+[node name="PlayerHudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandageCounter")]
+script = ExtResource("4_eweib")
+candiedNutsCounter = NodePath("PlayerHud/CandiedNuts/CandiedNutsCounter")
+dockLeavesCounter = NodePath("PlayerHud/DockLeaves/DockLeavesCounter")
+sanicleCounter = NodePath("PlayerHud/Sanicle/SanicleCounter")
+rangerBandageCounter = NodePath("PlayerHud/RangerBandage/RangerBandageCounter")
+
+[node name="PlayerHud" type="Control" parent="PlayerHudCanvas"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CandiedNuts" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_bottom = 0.1
+offset_left = 25.0
+offset_top = 100.0
+offset_right = 125.0
+offset_bottom = 200.0
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+texture = ExtResource("6_crt7e")
+expand_mode = 3
+
+[node name="CandiedNutsCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/CandiedNuts"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="DockLeaves" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_bottom = 0.9
+offset_left = 25.0
+offset_top = -125.0
+offset_right = 125.0
+offset_bottom = -25.0
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+texture = ExtResource("7_5q08g")
+expand_mode = 3
+
+[node name="DockLeavesCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/DockLeaves"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Sanicle" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_bottom = 0.9
+offset_left = 135.0
+offset_top = -125.0
+offset_right = 235.0
+offset_bottom = -25.0
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+texture = ExtResource("8_dbq86")
+expand_mode = 3
+
+[node name="SanicleCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/Sanicle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="RangerBandage" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 0.9
+offset_left = -125.0
+offset_top = -125.0
+offset_right = -25.0
+offset_bottom = -25.0
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+texture = ExtResource("9_lhn14")
+expand_mode = 3
+
+[node name="RangerBandageCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/RangerBandage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
