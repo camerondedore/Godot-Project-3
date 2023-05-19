@@ -42,6 +42,12 @@ public partial class PlayerCharacterStateIdle : PlayerCharacterState
             //return blackboard.stateJumpStart;
             return blackboard.stateJump;
         }
+
+        if(PlayerInput.fire1 > 0)
+        {
+            // aim bow
+            return blackboard.stateAimBow;
+        }
         
         if(PlayerInput.isMoving)
         {

@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1ufc08ty1rix"]
+[gd_scene load_steps=16 format=3 uid="uid://d1ufc08ty1rix"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
+[ext_resource type="Script" path="res://C#/BowAimer.cs" id="3_2m5n0"]
 [ext_resource type="Script" path="res://C#/Inventory.cs" id="3_mamwx"]
 [ext_resource type="Script" path="res://C#/PlayerHud.cs" id="4_eweib"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
@@ -24,7 +25,7 @@ size = Vector3(0.6, 0.2, 0.3)
 radius = 0.6
 height = 2.6
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRaysController")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "ledgeDetectorRaysController")]
 collision_layer = 2
 collision_mask = 3
 floor_max_angle = 0.610865
@@ -32,6 +33,7 @@ script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
 ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRays/LedgeDetectorRayHorizontal")
 ledgeDetectorRayVertical = NodePath("LedgeDetectorRays/LedgeDetectorRayVertical")
+bowAimer = NodePath("SpringArm3D/BowAimer")
 ledgeDetectorRaysController = NodePath("LedgeDetectorRays")
 ledgeGrabOffset = Vector3(0, -1.2, 0.3)
 acceleration = 10.0
@@ -55,6 +57,12 @@ sensitivity = 5.0
 
 [node name="CameraTarget" type="Node3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="BowAimer" type="RayCast3D" parent="SpringArm3D" node_paths=PackedStringArray("targetNameLabel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+target_position = Vector3(0, 0, -30)
+script = ExtResource("3_2m5n0")
+targetNameLabel = NodePath("../../PlayerHudCanvas/PlayerHud/TargetName")
 
 [node name="LedgeDetectorRays" type="Node3D" parent="."]
 
@@ -190,6 +198,42 @@ theme = ExtResource("5_o5i36")
 text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="TargetName" type="Label" parent="PlayerHudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+text = "Target Name"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Crosshair" type="Label" parent="PlayerHudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PickupArea" type="Area3D" parent="."]
 collision_mask = 4

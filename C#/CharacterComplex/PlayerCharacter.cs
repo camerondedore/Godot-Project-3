@@ -13,7 +13,9 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 		stateJumpPad,
 		stateLedgeGrab,
 		stateLedgeGrabJump,
-		stateBandageStation;
+		stateBandageStation,
+		stateAimBow,
+		stateFireBow;
 
 	[Export]
 	public CameraControllerSpringArm cameraSpringArm;
@@ -21,16 +23,20 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 	public RayCast3D ledgeDetectorRayHorizontal,
 		ledgeDetectorRayVertical;
 	[Export]
+	public BowAimer bowAimer;
+	[Export]
 	public Node3D ledgeDetectorRaysController;
 	[Export]
 	public Vector3 ledgeGrabOffset;
 	[Export]
 	public float speed = 5,
+		aimSpeed = 2,
 		acceleration = 5,
 		jumpHeight = 2.1f,
 		ledgeGrabJumpHeight = 3,
 		bandageTime = 0.5f,
-		startDelay = 1f;
+		startDelay = 1f,
+		fireTime = 0.5f;
 
 	public Disconnector jumpDisconnector = new Disconnector();
 	string debugText;
@@ -56,6 +62,8 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 		stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
 		stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};
 		stateBandageStation = new PlayerCharacterStateBandageStation(){blackboard = this};
+		stateAimBow = new PlayerCharacterStateAimBow(){blackboard = this};
+		stateFireBow = new PlayerCharacterStateFireBow(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);
