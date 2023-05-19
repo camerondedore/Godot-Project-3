@@ -43,6 +43,7 @@ public partial class Inventory : Node
 		{
 			// no settings exist
 			currentInventory = new PlayerInventory(){};
+            SaveInventory();
 		}
 	}
 

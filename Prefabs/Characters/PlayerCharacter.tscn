@@ -64,12 +64,12 @@ target_position = Vector3(0, -0.35, 0)
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("3_mamwx")
 
-[node name="PlayerHudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandageCounter")]
+[node name="PlayerHudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter")]
 script = ExtResource("4_eweib")
 candiedNutsCounter = NodePath("PlayerHud/CandiedNuts/CandiedNutsCounter")
 dockLeavesCounter = NodePath("PlayerHud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("PlayerHud/Sanicle/SanicleCounter")
-rangerBandageCounter = NodePath("PlayerHud/RangerBandage/RangerBandageCounter")
+rangerBandagesCounter = NodePath("PlayerHud/RangerBandage/RangerBandageCounter")
 
 [node name="PlayerHud" type="Control" parent="PlayerHudCanvas"]
 layout_mode = 3
