@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacter : CharacterBody3D, iJumpPadUser
+public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser
 {
 
 	public StateMachine machine = new StateMachine();

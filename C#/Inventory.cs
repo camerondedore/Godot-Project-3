@@ -49,11 +49,11 @@ public partial class Inventory : Node
 
 
 
-    public void AddToInventory(int dockLeaves, int sanicle, int candiedNuts, int rangerBandages)
+    public void AddToInventory(int candiedNuts, int dockLeaves, int sanicle, int rangerBandages)
     {
+        currentInventory.CandiedNuts += candiedNuts;
         currentInventory.DockLeaves += dockLeaves;
         currentInventory.Sanicle += sanicle;
-        currentInventory.CandiedNuts += candiedNuts;
         currentInventory.RangerBandages += rangerBandages;
 
         SaveInventory();
@@ -65,6 +65,11 @@ public partial class Inventory : Node
     public class PlayerInventory
     {
         // serializer can't serialize fields
+        public int CandiedNuts
+        {
+            get; set;
+        } = 0;
+
         public int DockLeaves
         {
             get; set;
@@ -73,12 +78,7 @@ public partial class Inventory : Node
         public int Sanicle
         {
             get; set;
-        } = 0;
-
-        public int CandiedNuts
-        {
-            get; set;
-        } = 0;
+        } = 0;        
 
         public int RangerBandages
         {

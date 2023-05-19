@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1ufc08ty1rix"]
+[gd_scene load_steps=15 format=3 uid="uid://d1ufc08ty1rix"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
+[ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -18,6 +19,10 @@ radius = 0.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_84o3e"]
 size = Vector3(0.6, 0.2, 0.3)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
+radius = 0.6
+height = 2.6
 
 [node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRaysController")]
 collision_layer = 2
@@ -185,3 +190,11 @@ theme = ExtResource("5_o5i36")
 text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="PickupArea" type="Area3D" parent="."]
+collision_mask = 4
+monitorable = false
+script = ExtResource("10_egvck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
+shape = SubResource("CapsuleShape3D_t3b7p")

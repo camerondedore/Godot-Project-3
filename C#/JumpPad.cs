@@ -21,10 +21,10 @@ public partial class JumpPad : Area3D
 
     public void Triggered(Node3D body)
     {
-        // chech that body id jump pad user
-        if(body is iJumpPadUser)
+        // check that body is jump pad user
+        if(body is IJumpPadUser)
         {
-            var bodyJumpPadUser = body as iJumpPadUser;
+            var bodyJumpPadUser = body as IJumpPadUser;
 
             // get velocity for body
             var jumpPadVelocity = GetJumpPadVelocity(body);
@@ -61,7 +61,7 @@ public partial class JumpPad : Area3D
 
 
 
-public interface iJumpPadUser
+public interface IJumpPadUser
 {
     void JumpPadActivated(Vector3 jumpVelocity);
 }

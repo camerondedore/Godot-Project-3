@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/mode=3
+window/size/mode=4
 window/size/resizable=false
 window/size/borderless=true
 
@@ -76,3 +76,4 @@ player-interact={
 
 3d_physics/layer_1="Default"
 3d_physics/layer_2="Characters"
+3d_physics/layer_3="Pickups"
