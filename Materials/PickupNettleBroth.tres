@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bcwg207ggadmk"]
+
+[ext_resource type="Texture2D" uid="uid://kr24b057in7d" path="res://Textures/pickup-nettle-broth-diffuse.png" id="1_masqw"]
+[ext_resource type="Texture2D" uid="uid://da6o22m6rtv3l" path="res://Textures/pickup-nettle-broth-roughness.png" id="2_v641h"]
+
+[resource]
+albedo_texture = ExtResource("1_masqw")
+metallic = 0.2
+roughness_texture = ExtResource("2_v641h")

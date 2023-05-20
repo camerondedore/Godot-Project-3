@@ -37,12 +37,13 @@
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="33_ikeas"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="34_ni6mc"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="35_3fswv"]
+[ext_resource type="PackedScene" uid="uid://ciiryug1dnh26" path="res://Prefabs/Pickups/PickupNettleBrothRigidBody.tscn" id="37_7udgq"]
+[ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="38_05md2"]
 [ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="39_y8yyv"]
 [ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="40_bcejb"]
 [ext_resource type="Script" path="res://C#/Pickups/SaniclePickup.cs" id="41_8ymp1"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
-[ext_resource type="Script" path="res://C#/Pickups/NettleBrothPickup.cs" id="42_s4eb6"]
 [ext_resource type="Script" path="res://C#/BowTarget.cs" id="43_if6kt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
@@ -65,11 +66,6 @@ size = Vector3(0.2, 0.5, 0.1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jivh6"]
 radius = 0.05
 height = 0.2
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_n3r8w"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mef1p"]
 
@@ -285,6 +281,14 @@ transform = Transform3D(0.418306, 0.00171492, -1.02232, 0.0404662, 1.09784, 0.01
 [node name="@PropTulip3@29828" parent="Props/Plants" instance=ExtResource("34_ni6mc")]
 transform = Transform3D(0.78574, -0.0670686, 0.394948, 0.0413449, 1.13577, 0.0333588, -0.396196, -0.0144889, 0.786747, 1.31919, 0.25, 4.58195)
 
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="PickupNettleBrothRigidBody" parent="Pickups" instance=ExtResource("37_7udgq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15599, 2.38653, -4.92946)
+
+[node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -6)
+
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
 propsToPaint = [ExtResource("32_nchpi"), ExtResource("33_ikeas"), ExtResource("34_ni6mc"), ExtResource("35_3fswv")]
@@ -363,28 +367,6 @@ shape = SubResource("SphereShape3D_3nh8h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestSanicle"]
 mesh = SubResource("CapsuleMesh_jivh6")
-
-[node name="TestNettleBroth" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101439, 1, -4.75673)
-collision_layer = 4
-script = ExtResource("42_s4eb6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestNettleBroth"]
-shape = SubResource("SphereShape3D_3nh8h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestNettleBroth"]
-mesh = SubResource("CylinderMesh_n3r8w")
-
-[node name="TestNettleBroth2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101439, 1, -5.79133)
-collision_layer = 4
-script = ExtResource("42_s4eb6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestNettleBroth2"]
-shape = SubResource("SphereShape3D_3nh8h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestNettleBroth2"]
-mesh = SubResource("CylinderMesh_n3r8w")
 
 [node name="TestBandageStationArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159986, 1, 7.90599)

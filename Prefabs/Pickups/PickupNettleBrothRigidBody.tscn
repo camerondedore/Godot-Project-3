@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciiryug1dnh26"]
+
+[ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="1_7fdcr"]
+
+[node name="PickupNettleBrothRigidBody" instance=ExtResource("1_7fdcr")]
+freeze = false
