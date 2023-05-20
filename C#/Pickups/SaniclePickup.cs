@@ -8,7 +8,7 @@ public partial class SaniclePickup : Node3D, IPickup
 
 
 
-    public void PickupAction()
+    public void PickupAction(PlayerPickup.PlayerPickupData data)
     {
         // add sanicle to player inventory
         PlayerInventory.inventory.AddToInventory(0, 0, 1, 0);

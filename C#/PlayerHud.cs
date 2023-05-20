@@ -37,7 +37,7 @@ public partial class PlayerHud : Node
         // get from statistics
         hitPoints = currentStatistics.HitPoints;
         hitPointUpgrades = currentStatistics.HitPointUpgrades;
-        hitPointsPerBar = currentStatistics.HitPointsPerBar;
+        hitPointsPerBar = currentStatistics.HitPointsPerUpgrade;
 
         // get from inventory
         candiedNuts = currentInventory.CandiedNuts;
@@ -110,7 +110,7 @@ public partial class PlayerHud : Node
     void UpdateHitPointBars()
     {
         // get number of bars needed
-        var hitPointBarsCount = PlayerStatistics.statistics.GetHitPointBarsCount();
+        var hitPointBarsCount = PlayerStatistics.statistics.currentStatistics.HitPointUpgrades + 1;
         
         while(hitPointBarsCount > 0)
         {

@@ -4,7 +4,9 @@ using System;
 public partial class PlayerPickup : Area3D
 {
 
-
+    [Export]
+    PlayerHealth playerHealth;
+    PlayerPickupData pickupData = new PlayerPickupData();
 
 
 
@@ -12,6 +14,9 @@ public partial class PlayerPickup : Area3D
     {
         // set up signal
         BodyEntered += Pickup;
+
+        // set up pickup data
+        pickupData.playerhealth = playerHealth;
     }
     
     
@@ -24,8 +29,15 @@ public partial class PlayerPickup : Area3D
             var pickup = body as IPickup;
             
             // activate pickup behaviour on body
-            pickup.PickupAction();
+            pickup.PickupAction(pickupData);
         }
+    }
+
+
+
+    public class PlayerPickupData
+    {
+        public PlayerHealth playerhealth;
     }
 }
 
@@ -33,5 +45,5 @@ public partial class PlayerPickup : Area3D
 
 public interface IPickup
 {
-    void PickupAction();
+    void PickupAction(PlayerPickup.PlayerPickupData data);
 }

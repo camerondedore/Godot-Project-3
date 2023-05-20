@@ -9,6 +9,11 @@ public partial class PlayerStatistics : Node
     public CharacterStatistics currentStatistics;
 
     string filePath;
+    float minHitPointsPerUpgrade = 25,
+        maxHitPointsPerUpgrade = 100,
+        maxArmor;
+    int maxHitPointUpgrades = 3,
+        maxArmorUpgrades = 4;
 
 
 
@@ -38,6 +43,12 @@ public partial class PlayerStatistics : Node
             System.IO.FileStream file = System.IO.File.Open(filePath, System.IO.FileMode.Open);
             currentStatistics = JsonSerializer.Deserialize<CharacterStatistics>(file);
             file.Close();			
+
+            // clean statistics
+            currentStatistics.HitPoints = Mathf.Clamp(currentStatistics.HitPoints, 0, GetMaxHitPoints());
+            currentStatistics.HitPointUpgrades = Mathf.Clamp(currentStatistics.HitPointUpgrades, 0, maxHitPointUpgrades);
+            currentStatistics.HitPointsPerUpgrade = Mathf.Clamp(currentStatistics.HitPointsPerUpgrade, minHitPointsPerUpgrade, maxHitPointsPerUpgrade);
+            currentStatistics.ArmorUpgrades = Mathf.Clamp(currentStatistics.ArmorUpgrades, 0, maxArmorUpgrades);
 		}
 		else
 		{
@@ -49,34 +60,34 @@ public partial class PlayerStatistics : Node
 
 
 
-    public void UpdateStatistics(float hitpoints, int hitPointUpgrade, float armor)
+    public void UpdateHitPoints(float newHitPoints)
     {
-        currentStatistics.HitPoints = Mathf.Clamp(currentStatistics.HitPoints += hitpoints, 0, GetMaxHitPoints());
-        currentStatistics.HitPointUpgrades += hitPointUpgrade;
-        currentStatistics.Armor += armor;
+        currentStatistics.HitPoints = newHitPoints;
+        SaveStatistics();
+    }
+
+
+
+    public void ApplyUpgrades(int hitPointUpgrade, int armorUpgrade)
+    {
+        currentStatistics.HitPointUpgrades += Mathf.Clamp(currentStatistics.HitPointUpgrades + hitPointUpgrade, 0, maxHitPointUpgrades);
+        currentStatistics.ArmorUpgrades = Mathf.Clamp(currentStatistics.ArmorUpgrades + armorUpgrade, 0, maxArmorUpgrades);
 
         SaveStatistics();
     }
 
 
 
-    public bool CheckHitPointsMaxxed()
-    {
-        return currentStatistics.HitPoints < GetMaxHitPoints();
-    }
-
-
-
     public float GetMaxHitPoints()
     {
-        return GetHitPointBarsCount() * currentStatistics.HitPointsPerBar;
+        return (maxHitPointUpgrades + 1) * currentStatistics.HitPointsPerUpgrade;
     }
 
 
 
-    public int GetHitPointBarsCount()
+    public float GetArmor()
     {
-        return currentStatistics.HitPointUpgrades + 1;
+        return currentStatistics.ArmorUpgrades * currentStatistics.ArmorPerUpgrade;
     }
 
 
@@ -95,14 +106,25 @@ public partial class PlayerStatistics : Node
             get; set;
         } = 0;
 
-        public float HitPointsPerBar
+        public float HitPointsPerUpgrade
         {
             get; set;
         } = 100;  
 
-        public float Armor
+        public float HitPointsPerBandage
+        {
+            get;
+            set;
+        } = 100;
+
+        public int ArmorUpgrades
         {
             get; set;
         } = 0;  
+
+        public float ArmorPerUpgrade
+        {
+            get; set;
+        } = 0.2f;  
     }
 }

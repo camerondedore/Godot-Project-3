@@ -68,6 +68,13 @@ public partial class PlayerInventory : Node
 
 
 
+    public bool CheckInventoryForBandages()
+    {
+        return currentInventory.RangerBandages > 0;
+    }
+
+
+
     [System.Serializable]
     public class CharacterInventory
     {

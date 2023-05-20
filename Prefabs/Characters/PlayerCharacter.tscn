@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c625fyhs42m3i"]
+[gd_scene load_steps=20 format=3 uid="uid://c625fyhs42m3i"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
+[ext_resource type="Script" path="res://C#/PlayerHealth.cs" id="6_4c4br"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
@@ -82,6 +83,9 @@ script = ExtResource("4_x6l2t")
 
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vgi6r")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("6_4c4br")
 
 [node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter")]
 script = ExtResource("4_eweib")
@@ -277,10 +281,11 @@ text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PickupArea" type="Area3D" parent="."]
+[node name="PickupArea" type="Area3D" parent="." node_paths=PackedStringArray("playerHealth")]
 collision_mask = 4
 monitorable = false
 script = ExtResource("10_egvck")
+playerHealth = NodePath("../Health")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CapsuleShape3D_t3b7p")
