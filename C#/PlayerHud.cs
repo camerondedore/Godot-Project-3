@@ -5,13 +5,18 @@ public partial class PlayerHud : Node
 {
 
     [Export]
+    TextureProgressBar hitPointsBar;
+    [Export]
     Label candiedNutsCounter,
         dockLeavesCounter,
         sanicleCounter,
         rangerBandagesCounter;
 
+    PlayerStatistics.CharacterStatistics currentStatistics;
     PlayerInventory.CharacterInventory currentInventory;
-    float candiedNuts,
+    float hitPoints,
+        maxHitPoints,
+        candiedNuts,
         dockLeaves,
         sanicle,
         rangerBandages;
@@ -20,8 +25,15 @@ public partial class PlayerHud : Node
 
     public override void _Ready()
     {
+        // get statistics object
+        currentStatistics = PlayerStatistics.statistics.currentStatistics;
+
         // get inventory object
         currentInventory = PlayerInventory.inventory.currentInventory;
+
+        // get from statistics
+        hitPoints = currentStatistics.HitPoints;
+        maxHitPoints = currentStatistics.MaxHitPoints;
 
         // get from inventory
         candiedNuts = currentInventory.CandiedNuts;
@@ -30,6 +42,8 @@ public partial class PlayerHud : Node
         rangerBandages = currentInventory.RangerBandages;
          
         // initialize UI values
+        hitPointsBar.MaxValue = maxHitPoints;
+        hitPointsBar.Value = hitPoints;
         candiedNutsCounter.Text = candiedNuts.ToString();
         dockLeavesCounter.Text = dockLeaves.ToString();
         sanicleCounter.Text = sanicle.ToString();
@@ -41,6 +55,18 @@ public partial class PlayerHud : Node
     public override void _Process(double delta)
     {
         // check for changes and apply values to UI
+
+        if(hitPoints != currentStatistics.HitPoints)
+        {
+            hitPoints = currentStatistics.HitPoints;
+            hitPointsBar.Value = hitPoints;
+        }
+
+        if(maxHitPoints != currentStatistics.MaxHitPoints)
+        {
+            maxHitPoints = currentStatistics.MaxHitPoints;
+            hitPointsBar.MaxValue = maxHitPoints;
+        }
 
         if(candiedNuts != currentInventory.CandiedNuts)
         {

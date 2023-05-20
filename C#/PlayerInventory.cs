@@ -16,7 +16,7 @@ public partial class PlayerInventory : Node
     {
         inventory = this;
 
-        filePath = OS.GetUserDataDir() + "/inventory.dwg";
+        filePath = OS.GetUserDataDir() + "/player-inventory.dwg";
 
         LoadInventory();
     }

@@ -16,7 +16,7 @@ public partial class PlayerStatistics : Node
     {
         statistics = this;
 
-        filePath = OS.GetUserDataDir() + "/character-statistics.dwg";
+        filePath = OS.GetUserDataDir() + "/player-statistics.dwg";
 
         LoadStatistics();
     }
@@ -46,6 +46,24 @@ public partial class PlayerStatistics : Node
             SaveStatistics();
 		}
 	}
+
+
+
+    public void UpdateStatistics(float hitpoints, float maxHitPoints, float armor)
+    {
+        currentStatistics.HitPoints = Mathf.Clamp(currentStatistics.HitPoints += hitpoints, 0, currentStatistics.MaxHitPoints);
+        currentStatistics.MaxHitPoints += maxHitPoints;
+        currentStatistics.Armor += armor;
+
+        SaveStatistics();
+    }
+
+
+
+    public bool CheckHitPointsMaxxed()
+    {
+        return currentStatistics.HitPoints <= currentStatistics.MaxHitPoints;
+    }
 
 
 

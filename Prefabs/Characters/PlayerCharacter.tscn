@@ -1,14 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://c625fyhs42m3i"]
+[gd_scene load_steps=19 format=3 uid="uid://c625fyhs42m3i"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
 [ext_resource type="Script" path="res://C#/BowAimer.cs" id="3_2m5n0"]
 [ext_resource type="Script" path="res://C#/PlayerHud.cs" id="4_eweib"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
+[ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
+[ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
+[ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 
@@ -62,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 target_position = Vector3(0, 0, -30)
 script = ExtResource("3_2m5n0")
-targetNameLabel = NodePath("../../PlayerHudCanvas/PlayerHud/TargetName")
+targetNameLabel = NodePath("../../HudCanvas/PlayerHud/TargetName")
 
 [node name="LedgeDetectorRays" type="Node3D" parent="."]
 
@@ -74,17 +77,21 @@ target_position = Vector3(0, 0, -0.45)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -0.4)
 target_position = Vector3(0, -0.35, 0)
 
+[node name="Statistics" type="Node" parent="."]
+script = ExtResource("4_x6l2t")
+
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vgi6r")
 
-[node name="PlayerHudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter")]
+[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointsBar", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter")]
 script = ExtResource("4_eweib")
+hitPointsBar = NodePath("PlayerHud/HitPointsBar")
 candiedNutsCounter = NodePath("PlayerHud/CandiedNuts/CandiedNutsCounter")
 dockLeavesCounter = NodePath("PlayerHud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("PlayerHud/Sanicle/SanicleCounter")
 rangerBandagesCounter = NodePath("PlayerHud/RangerBandage/RangerBandageCounter")
 
-[node name="PlayerHud" type="Control" parent="PlayerHudCanvas"]
+[node name="PlayerHud" type="Control" parent="HudCanvas"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,7 +100,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CandiedNuts" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+[node name="HitPointsBar" type="TextureProgressBar" parent="HudCanvas/PlayerHud"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 25.0
+offset_top = 25.2
+offset_right = 89.0
+offset_bottom = 153.2
+value = 60.0
+fill_mode = 3
+texture_over = ExtResource("8_qxqx4")
+texture_progress = ExtResource("9_4i0ne")
+
+[node name="CandiedNuts" type="TextureRect" parent="HudCanvas/PlayerHud"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -107,7 +126,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("6_crt7e")
 expand_mode = 3
 
-[node name="CandiedNutsCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/CandiedNuts"]
+[node name="CandiedNutsCounter" type="Label" parent="HudCanvas/PlayerHud/CandiedNuts"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,7 +138,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="DockLeaves" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+[node name="DockLeaves" type="TextureRect" parent="HudCanvas/PlayerHud"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9
@@ -133,7 +152,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("7_5q08g")
 expand_mode = 3
 
-[node name="DockLeavesCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/DockLeaves"]
+[node name="DockLeavesCounter" type="Label" parent="HudCanvas/PlayerHud/DockLeaves"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,7 +164,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Sanicle" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+[node name="Sanicle" type="TextureRect" parent="HudCanvas/PlayerHud"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9
@@ -159,7 +178,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("8_dbq86")
 expand_mode = 3
 
-[node name="SanicleCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/Sanicle"]
+[node name="SanicleCounter" type="Label" parent="HudCanvas/PlayerHud/Sanicle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,7 +190,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="RangerBandage" type="TextureRect" parent="PlayerHudCanvas/PlayerHud"]
+[node name="RangerBandage" type="TextureRect" parent="HudCanvas/PlayerHud"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -187,7 +206,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("9_lhn14")
 expand_mode = 3
 
-[node name="RangerBandageCounter" type="Label" parent="PlayerHudCanvas/PlayerHud/RangerBandage"]
+[node name="RangerBandageCounter" type="Label" parent="HudCanvas/PlayerHud/RangerBandage"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -199,7 +218,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="TargetName" type="Label" parent="PlayerHudCanvas/PlayerHud"]
+[node name="TargetName" type="Label" parent="HudCanvas/PlayerHud"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -217,7 +236,7 @@ text = "Target Name"
 horizontal_alignment = 1
 vertical_alignment = 3
 
-[node name="Crosshair" type="Label" parent="PlayerHudCanvas/PlayerHud"]
+[node name="Crosshair" type="Label" parent="HudCanvas/PlayerHud"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
