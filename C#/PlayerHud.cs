@@ -10,7 +10,7 @@ public partial class PlayerHud : Node
         sanicleCounter,
         rangerBandagesCounter;
 
-    Inventory.PlayerInventory currentInventory;
+    PlayerInventory.CharacterInventory currentInventory;
     float candiedNuts,
         dockLeaves,
         sanicle,
@@ -21,7 +21,7 @@ public partial class PlayerHud : Node
     public override void _Ready()
     {
         // get inventory object
-        currentInventory = Inventory.inventory.currentInventory;
+        currentInventory = PlayerInventory.inventory.currentInventory;
 
         // get from inventory
         candiedNuts = currentInventory.CandiedNuts;

@@ -2,11 +2,11 @@ using Godot;
 using System;
 using System.Text.Json; 
 
-public partial class Inventory : Node
+public partial class PlayerInventory : Node
 {
 
-    public static Inventory inventory;
-    public PlayerInventory currentInventory;
+    public static PlayerInventory inventory;
+    public CharacterInventory currentInventory;
 
     string filePath;
 
@@ -36,13 +36,13 @@ public partial class Inventory : Node
 		if(System.IO.File.Exists(filePath)) 
 		{
             System.IO.FileStream file = System.IO.File.Open(filePath, System.IO.FileMode.Open);
-            currentInventory = JsonSerializer.Deserialize<PlayerInventory>(file);
+            currentInventory = JsonSerializer.Deserialize<CharacterInventory>(file);
             file.Close();			
 		}
 		else
 		{
 			// no settings exist
-			currentInventory = new PlayerInventory(){};
+			currentInventory = new CharacterInventory(){};
             SaveInventory();
 		}
 	}
@@ -61,8 +61,15 @@ public partial class Inventory : Node
 
 
 
+    public bool CheckInventoryForBandageComponents()
+    {
+        return currentInventory.DockLeaves > 0 && currentInventory.Sanicle > 0;
+    }
+
+
+
     [System.Serializable]
-    public class PlayerInventory
+    public class CharacterInventory
     {
         // serializer can't serialize fields
         public int CandiedNuts
@@ -84,6 +91,5 @@ public partial class Inventory : Node
         {
             get; set;
         } = 0;
-            
     }
 }

@@ -68,6 +68,12 @@ public partial class PlayerCharacterStateFireBow : PlayerCharacterState
 
 		if(EngineTime.timePassed > startTime + blackboard.fireTime)
 		{
+            if(PlayerInput.fire1 > 0)
+            {
+                // aim bow
+                return blackboard.stateAimBow;
+            }
+
 			// move
 			return blackboard.stateMove;
 		}

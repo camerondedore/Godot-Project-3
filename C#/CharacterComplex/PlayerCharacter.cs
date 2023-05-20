@@ -155,7 +155,7 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 	public void BandageStationActivated(Node3D target)
 	{
 		// check for bandage components
-        var hasComponents = Inventory.inventory.currentInventory.DockLeaves > 0 && Inventory.inventory.currentInventory.Sanicle > 0;
+        var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
 		if(!hasComponents)
 		{

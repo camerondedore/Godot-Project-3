@@ -11,12 +11,12 @@ public partial class PlayerCharacterStateBandageStation : PlayerCharacterState
     public override void RunState(double delta)
     {
         // check for bandage components
-        var hasComponents = Inventory.inventory.currentInventory.DockLeaves > 0 && Inventory.inventory.currentInventory.Sanicle > 0;
+        var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
         if(hasComponents && EngineTime.timePassed > startTime + blackboard.bandageTime)
         {
             // create bandage
-            Inventory.inventory.AddToInventory(0, -1, -1, 1);
+            PlayerInventory.inventory.AddToInventory(0, -1, -1, 1);
 
             // reset timer
             startTime = EngineTime.timePassed;  
@@ -41,7 +41,7 @@ public partial class PlayerCharacterStateBandageStation : PlayerCharacterState
     public override State Transition()
     {
         // check for bandage components
-        var depletedComponents = Inventory.inventory.currentInventory.DockLeaves == 0 || Inventory.inventory.currentInventory.Sanicle == 0;
+        var depletedComponents = !PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
         if(depletedComponents)
         {
