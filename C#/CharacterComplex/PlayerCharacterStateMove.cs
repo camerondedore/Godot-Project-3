@@ -64,7 +64,7 @@ public partial class PlayerCharacterStateMove : PlayerCharacterState
         if(PlayerInput.fire1 > 0)
         {
             // aim bow
-            return blackboard.stateAimBow;
+            return blackboard.stateBowAim;
         }
 
 		if(!PlayerInput.isMoving)

@@ -14,8 +14,8 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 		stateLedgeGrab,
 		stateLedgeGrabJump,
 		stateBandageStation,
-		stateAimBow,
-		stateFireBow;
+		stateBowAim,
+		stateBowFire;
 
 	[Export]
 	public CameraControllerSpringArm cameraSpringArm;
@@ -62,8 +62,8 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 		stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
 		stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};
 		stateBandageStation = new PlayerCharacterStateBandageStation(){blackboard = this};
-		stateAimBow = new PlayerCharacterStateAimBow(){blackboard = this};
-		stateFireBow = new PlayerCharacterStateFireBow(){blackboard = this};
+		stateBowAim = new PlayerCharacterStateBowAim(){blackboard = this};
+		stateBowFire = new PlayerCharacterStateBowFire(){blackboard = this};
 
 		// set first state in machine
 		machine.SetState(stateStart);

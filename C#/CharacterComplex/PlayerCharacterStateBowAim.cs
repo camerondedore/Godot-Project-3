@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacterStateAimBow : PlayerCharacterState
+public partial class PlayerCharacterStateBowAim : PlayerCharacterState
 {
 
 
@@ -70,8 +70,14 @@ public partial class PlayerCharacterStateAimBow : PlayerCharacterState
 
 		if(PlayerInput.fire1 == 0)
 		{
-			// fire bow
-			return blackboard.stateFireBow;
+            if(blackboard.bowAimer.HasTarget())
+            {
+                // fire bow
+			    return blackboard.stateBowFire;
+            }
+
+			// move
+            return blackboard.stateMove;
 		}
 
 		return this;

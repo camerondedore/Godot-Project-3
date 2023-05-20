@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacterStateFireBow : PlayerCharacterState
+public partial class PlayerCharacterStateBowFire : PlayerCharacterState
 {
 
     double startTime;
@@ -71,7 +71,7 @@ public partial class PlayerCharacterStateFireBow : PlayerCharacterState
             if(PlayerInput.fire1 > 0)
             {
                 // aim bow
-                return blackboard.stateAimBow;
+                return blackboard.stateBowAim;
             }
 
 			// move

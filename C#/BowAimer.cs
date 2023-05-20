@@ -32,7 +32,7 @@ public partial class BowAimer : RayCast3D
         }
 
         // check for ray hit
-        if(GetCollider() != null && GetCollider() is IBowTarget)
+        if(HasTarget())
         {
             var hitTarget = (IBowTarget) GetCollider();
 
@@ -47,6 +47,13 @@ public partial class BowAimer : RayCast3D
             // clear ui 
             targetNameLabel.Text = "";
         }
+    }
+
+
+
+    public bool HasTarget()
+    {
+        return Enabled && GetCollider() != null && GetCollider() is IBowTarget;
     }
 
 
