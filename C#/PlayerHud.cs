@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class PlayerHud : Node
 {
 
     [Export]
-    TextureProgressBar hitPointsBar;
+    Control hitPointBarsContainer;
+    List<TextureProgressBar> hitPointBars = new List<TextureProgressBar>();
     [Export]
     Label candiedNutsCounter,
         dockLeavesCounter,
@@ -16,6 +18,7 @@ public partial class PlayerHud : Node
     PlayerInventory.CharacterInventory currentInventory;
     float hitPoints,
         maxHitPoints,
+        hitPointsPerBar = 100,
         candiedNuts,
         dockLeaves,
         sanicle,
@@ -40,10 +43,18 @@ public partial class PlayerHud : Node
         dockLeaves = currentInventory.DockLeaves;
         sanicle = currentInventory.Sanicle;
         rangerBandages = currentInventory.RangerBandages;
+
+        // get hit point bars
+        // bug does not allow assigning nodes to array in inspector
+        foreach(var c in hitPointBarsContainer.GetChildren())
+        {
+            var hitPointsBar = (TextureProgressBar) c;
+            hitPointsBar.Visible = false;
+            hitPointBars.Add(hitPointsBar);
+        }
          
         // initialize UI values
-        hitPointsBar.MaxValue = maxHitPoints;
-        hitPointsBar.Value = hitPoints;
+        UpdateHitPointBars();
         candiedNutsCounter.Text = candiedNuts.ToString();
         dockLeavesCounter.Text = dockLeaves.ToString();
         sanicleCounter.Text = sanicle.ToString();
@@ -59,13 +70,13 @@ public partial class PlayerHud : Node
         if(hitPoints != currentStatistics.HitPoints)
         {
             hitPoints = currentStatistics.HitPoints;
-            hitPointsBar.Value = hitPoints;
+            UpdateHitPointBars();
         }
 
         if(maxHitPoints != currentStatistics.MaxHitPoints)
         {
             maxHitPoints = currentStatistics.MaxHitPoints;
-            hitPointsBar.MaxValue = maxHitPoints;
+            UpdateHitPointBars();
         }
 
         if(candiedNuts != currentInventory.CandiedNuts)
@@ -90,6 +101,24 @@ public partial class PlayerHud : Node
         {
             rangerBandages = currentInventory.RangerBandages;
             rangerBandagesCounter.Text = rangerBandages.ToString();
+        }
+    }
+
+
+
+    void UpdateHitPointBars()
+    {
+        // get number of bars needed
+        var hitPointBarsCount = Mathf.CeilToInt(maxHitPoints * 0.01f);
+
+        while(hitPointBarsCount > 0)
+        {
+            // set up individual hit point bars
+            var bar = hitPointBars[hitPointBarsCount - 1];
+            bar.Visible = true;
+            bar.MaxValue = hitPointsPerBar;
+            bar.Value = hitPoints - (hitPointBarsCount - 1) * hitPointsPerBar;
+            hitPointBarsCount--;
         }
     }
 }
