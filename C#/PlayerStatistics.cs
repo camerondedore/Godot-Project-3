@@ -54,8 +54,11 @@ public partial class PlayerStatistics : Node
 		{
 			// no settings exist
 			currentStatistics = new CharacterStatistics(){};
-            SaveStatistics();
 		}
+
+        // save file
+        // either the statistics were created fresh, or the existing statistics were sanitized
+        SaveStatistics();
 	}
 
 
@@ -80,7 +83,7 @@ public partial class PlayerStatistics : Node
 
     public float GetMaxHitPoints()
     {
-        return (maxHitPointUpgrades + 1) * currentStatistics.HitPointsPerUpgrade;
+        return (currentStatistics.HitPointUpgrades + 1) * currentStatistics.HitPointsPerUpgrade;
     }
 
 

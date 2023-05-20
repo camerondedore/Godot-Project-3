@@ -311,12 +311,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96641, 5.50751, 0)
 [node name="TestCandiedNut" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33752, 1, -2.8041)
 collision_layer = 4
+freeze = true
+freeze_mode = 1
 script = ExtResource("39_y8yyv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestCandiedNut"]
 shape = SubResource("SphereShape3D_3nh8h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestCandiedNut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0204709, -0.0167854, 0)
+mesh = SubResource("SphereMesh_0s62u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestCandiedNut"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267885, 0.0306873, 0)
+mesh = SubResource("SphereMesh_0s62u")
+
+[node name="TestCandiedNut2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13908, 1, -2.8041)
+collision_layer = 4
+script = ExtResource("39_y8yyv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestCandiedNut2"]
+shape = SubResource("SphereShape3D_3nh8h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestCandiedNut2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0204709, -0.0167854, 0)
+mesh = SubResource("SphereMesh_0s62u")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestCandiedNut2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267885, 0.0306873, 0)
 mesh = SubResource("SphereMesh_0s62u")
 
 [node name="TestDockLeaf" type="RigidBody3D" parent="."]
