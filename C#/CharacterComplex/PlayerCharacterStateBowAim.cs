@@ -70,7 +70,7 @@ public partial class PlayerCharacterStateBowAim : PlayerCharacterState
 
 		if(PlayerInput.fire1 == 0)
 		{
-            if(blackboard.bowAimer.HasTarget())
+            if(blackboard.bowAimer.HasValidTarget())
             {
                 // fire bow
 			    return blackboard.stateBowFire;

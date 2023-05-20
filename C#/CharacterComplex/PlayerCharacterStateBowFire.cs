@@ -40,6 +40,9 @@ public partial class PlayerCharacterStateBowFire : PlayerCharacterState
     public override void StartState()
     {
         startTime = EngineTime.timePassed;
+
+        // fire bow
+        blackboard.bow.Fire(blackboard.bowAimer.target);
     }
 
 

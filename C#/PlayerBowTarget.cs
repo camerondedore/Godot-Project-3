@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class BowTarget : Node, IBowTarget
+public partial class PlayerBowTarget : Node3D, IBowTarget
 {
 
     [Export]
@@ -27,5 +27,12 @@ public partial class BowTarget : Node, IBowTarget
     public void Hit()
     {
         QueueFree();
+    }
+
+
+
+    public Vector3 GetGlobalPosition()
+    {
+        return GlobalPosition;
     }
 }

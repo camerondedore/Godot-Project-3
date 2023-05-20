@@ -23,7 +23,9 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 	public RayCast3D ledgeDetectorRayHorizontal,
 		ledgeDetectorRayVertical;
 	[Export]
-	public BowAimer bowAimer;
+	public PlayerBowAimer bowAimer;
+	[Export]
+	public PlayerBow bow;
 	[Export]
 	public Node3D ledgeDetectorRaysController;
 	[Export]

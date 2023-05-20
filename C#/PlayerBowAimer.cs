@@ -1,11 +1,13 @@
 using Godot;
 using System;
 
-public partial class BowAimer : RayCast3D
+public partial class PlayerBowAimer : RayCast3D
 {
 
     [Export]
     Label targetNameLabel;
+
+    public IBowTarget target;
 
 
 
@@ -33,20 +35,19 @@ public partial class BowAimer : RayCast3D
         // check for ray hit
         if(HasTarget())
         {
-            var hitTarget = (IBowTarget) GetCollider();
+            target = (IBowTarget) GetCollider();
 
             // check that player has arrow type
-            if(PlayerInventory.inventory.CheckInventoryForArrowType(hitTarget.GetArrowType()))
+            if(HasValidTarget())
             {
-                if(targetNameLabel.Text != hitTarget.GetName())
+                if(targetNameLabel.Text != target.GetName())
                 {
                     // set ui 
-                    targetNameLabel.Text = hitTarget.GetName();
+                    targetNameLabel.Text = target.GetName();
                 }
             }
             else
             {
-                // no matching arrow type in inventory
                 // clear ui 
                 targetNameLabel.Text = "";
             }
@@ -55,6 +56,7 @@ public partial class BowAimer : RayCast3D
         else
         {
             // no usable target
+            target = null;
             // clear ui 
             targetNameLabel.Text = "";
         }
@@ -65,6 +67,13 @@ public partial class BowAimer : RayCast3D
     public bool HasTarget()
     {
         return Enabled && GetCollider() != null && GetCollider() is IBowTarget;
+    }
+
+
+
+    public bool HasValidTarget()
+    {
+        return HasTarget() && PlayerInventory.inventory.CheckInventoryForArrowType(((IBowTarget) GetCollider()).GetArrowType());
     }
 
 
@@ -101,4 +110,5 @@ public interface IBowTarget
     string GetName();
     string GetArrowType();
     void Hit();
+    Vector3 GetGlobalPosition();
 }
