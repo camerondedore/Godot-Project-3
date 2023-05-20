@@ -49,10 +49,10 @@ public partial class PlayerStatistics : Node
 
 
 
-    public void UpdateStatistics(float hitpoints, float maxHitPoints, float armor)
+    public void UpdateStatistics(float hitpoints, int hitPointUpgrade, float armor)
     {
-        currentStatistics.HitPoints = Mathf.Clamp(currentStatistics.HitPoints += hitpoints, 0, currentStatistics.MaxHitPoints);
-        currentStatistics.MaxHitPoints += maxHitPoints;
+        currentStatistics.HitPoints = Mathf.Clamp(currentStatistics.HitPoints += hitpoints, 0, GetMaxHitPoints());
+        currentStatistics.HitPointUpgrades += hitPointUpgrade;
         currentStatistics.Armor += armor;
 
         SaveStatistics();
@@ -62,7 +62,21 @@ public partial class PlayerStatistics : Node
 
     public bool CheckHitPointsMaxxed()
     {
-        return currentStatistics.HitPoints <= currentStatistics.MaxHitPoints;
+        return currentStatistics.HitPoints < GetMaxHitPoints();
+    }
+
+
+
+    public float GetMaxHitPoints()
+    {
+        return GetHitPointBarsCount() * currentStatistics.HitPointsPerBar;
+    }
+
+
+
+    public int GetHitPointBarsCount()
+    {
+        return currentStatistics.HitPointUpgrades + 1;
     }
 
 
@@ -76,10 +90,15 @@ public partial class PlayerStatistics : Node
             get; set;
         } = 100;
 
-        public float MaxHitPoints
+        public int HitPointUpgrades
         {
             get; set;
-        } = 100;
+        } = 0;
+
+        public float HitPointsPerBar
+        {
+            get; set;
+        } = 100;  
 
         public float Armor
         {

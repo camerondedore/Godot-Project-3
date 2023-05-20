@@ -17,12 +17,12 @@ public partial class PlayerHud : Node
     PlayerStatistics.CharacterStatistics currentStatistics;
     PlayerInventory.CharacterInventory currentInventory;
     float hitPoints,
-        maxHitPoints,
-        hitPointsPerBar = 100,
+        hitPointsPerBar,
         candiedNuts,
         dockLeaves,
         sanicle,
         rangerBandages;
+    int hitPointUpgrades;
 
 
 
@@ -36,7 +36,8 @@ public partial class PlayerHud : Node
 
         // get from statistics
         hitPoints = currentStatistics.HitPoints;
-        maxHitPoints = currentStatistics.MaxHitPoints;
+        hitPointUpgrades = currentStatistics.HitPointUpgrades;
+        hitPointsPerBar = currentStatistics.HitPointsPerBar;
 
         // get from inventory
         candiedNuts = currentInventory.CandiedNuts;
@@ -73,9 +74,9 @@ public partial class PlayerHud : Node
             UpdateHitPointBars();
         }
 
-        if(maxHitPoints != currentStatistics.MaxHitPoints)
+        if(hitPointUpgrades != currentStatistics.HitPointUpgrades)
         {
-            maxHitPoints = currentStatistics.MaxHitPoints;
+            hitPointUpgrades = currentStatistics.HitPointUpgrades;
             UpdateHitPointBars();
         }
 
@@ -109,8 +110,8 @@ public partial class PlayerHud : Node
     void UpdateHitPointBars()
     {
         // get number of bars needed
-        var hitPointBarsCount = Mathf.CeilToInt(maxHitPoints * 0.01f);
-
+        var hitPointBarsCount = PlayerStatistics.statistics.GetHitPointBarsCount();
+        
         while(hitPointBarsCount > 0)
         {
             // set up individual hit point bars
