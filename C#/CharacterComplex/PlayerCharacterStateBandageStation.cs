@@ -16,7 +16,7 @@ public partial class PlayerCharacterStateBandageStation : PlayerCharacterState
         if(hasComponents && EngineTime.timePassed > startTime + blackboard.bandageTime)
         {
             // create bandage
-            PlayerInventory.inventory.AddToInventory(0, -1, -1, 1);
+            PlayerInventory.inventory.AddToInventory(0, -1, -1, 1, null);
 
             // reset timer
             startTime = EngineTime.timePassed;  

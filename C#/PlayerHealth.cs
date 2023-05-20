@@ -30,7 +30,7 @@ public partial class PlayerHealth : Health
                 Heal(PlayerStatistics.statistics.currentStatistics.HitPointsPerBandage);
 
                 // remove bandage from inventory
-                PlayerInventory.inventory.AddToInventory(0, 0, 0, -1);
+                PlayerInventory.inventory.AddToInventory(0, 0, 0, -1, null);
             }
         }
     }

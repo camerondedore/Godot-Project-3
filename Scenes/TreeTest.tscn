@@ -397,6 +397,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 3)
 script = ExtResource("43_if6kt")
 targetName = "Test Target 2"
+arrowType = "pick"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget2"]
 mesh = SubResource("CylinderMesh_8ru0d")

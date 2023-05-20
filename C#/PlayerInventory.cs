@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Text.Json; 
+using System.Collections.Generic;
 
 public partial class PlayerInventory : Node
 {
@@ -49,12 +50,18 @@ public partial class PlayerInventory : Node
 
 
 
-    public void AddToInventory(int candiedNuts, int dockLeaves, int sanicle, int rangerBandages)
+    public void AddToInventory(int candiedNuts, int dockLeaves, int sanicle, int rangerBandages, string arrowType)
     {
         currentInventory.CandiedNuts += candiedNuts;
         currentInventory.DockLeaves += dockLeaves;
         currentInventory.Sanicle += sanicle;
         currentInventory.RangerBandages += rangerBandages;
+
+        // check inventory for arrow first
+        if(arrowType != null && !CheckInventoryForArrowType(arrowType))
+        {
+            currentInventory.ArrowTypes.Add(arrowType);
+        }
 
         SaveInventory();
     }
@@ -71,6 +78,13 @@ public partial class PlayerInventory : Node
     public bool CheckInventoryForBandages()
     {
         return currentInventory.RangerBandages > 0;
+    }
+
+
+
+    public bool CheckInventoryForArrowType(string arrowType)
+    {
+        return currentInventory.ArrowTypes.Contains(arrowType);
     }
 
 
@@ -98,5 +112,10 @@ public partial class PlayerInventory : Node
         {
             get; set;
         } = 0;
+
+        public List<string> ArrowTypes
+        {
+            get; set;
+        } = new List<string>(){"weighted"};
     }
 }

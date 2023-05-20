@@ -26,7 +26,7 @@ public partial class SaniclePickup : RigidBody3D, IPickup
     public void PickupAction(PlayerPickup.PlayerPickupData data)
     {
         // add sanicle to player inventory
-        PlayerInventory.inventory.AddToInventory(0, 0, 1, 0);
+        PlayerInventory.inventory.AddToInventory(0, 0, 1, 0, null);
 
         // delete pickup
         QueueFree();

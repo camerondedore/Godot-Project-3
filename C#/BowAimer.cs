@@ -23,7 +23,6 @@ public partial class BowAimer : RayCast3D
         {
             if(targetNameLabel.Text != "")
             {
-                GD.Print("clear label");
                 // clear ui 
                 targetNameLabel.Text = "";
             }
@@ -36,14 +35,26 @@ public partial class BowAimer : RayCast3D
         {
             var hitTarget = (IBowTarget) GetCollider();
 
-            if(targetNameLabel.Text != hitTarget.GetName())
+            // check that player has arrow type
+            if(PlayerInventory.inventory.CheckInventoryForArrowType(hitTarget.GetArrowType()))
             {
-                // set ui 
-                targetNameLabel.Text = hitTarget.GetName();
+                if(targetNameLabel.Text != hitTarget.GetName())
+                {
+                    // set ui 
+                    targetNameLabel.Text = hitTarget.GetName();
+                }
             }
+            else
+            {
+                // no matching arrow type in inventory
+                // clear ui 
+                targetNameLabel.Text = "";
+            }
+
         }   
         else
         {
+            // no usable target
             // clear ui 
             targetNameLabel.Text = "";
         }
@@ -88,5 +99,6 @@ public partial class BowAimer : RayCast3D
 public interface IBowTarget
 {
     string GetName();
+    string GetArrowType();
     void Hit();
 }
