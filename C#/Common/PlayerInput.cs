@@ -31,8 +31,16 @@ public partial class PlayerInput : Node
 		move.X = Input.GetActionStrength("player-right") - Input.GetActionStrength("player-left");
 		move.Z = Input.GetActionStrength("player-backward") - Input.GetActionStrength("player-forward");   
 
+		// get button inputs
+		pause = Input.GetActionStrength("player-pause");
+		jump = Input.GetActionStrength("player-jump");
+		fire1 = Input.GetActionStrength("player-fire-1");
+		interact = Input.GetActionStrength("player-interact");
+		heal = Input.GetActionStrength("player-heal");
+
+
 		// to determine if move input is greater than 0 faster
-		if(move.X != 0 || move.Z != 0)
+		if(move.X != 0 || move.Z != 0 || jump > 0)
 		{
 			isMoving = true;
 		}
@@ -40,14 +48,6 @@ public partial class PlayerInput : Node
 		{
 			isMoving = false;
 		}
-
-
-		// get button inputs
-		pause = Input.GetActionStrength("player-pause");
-		jump = Input.GetActionStrength("player-jump");
-		fire1 = Input.GetActionStrength("player-fire-1");
-		interact = Input.GetActionStrength("player-interact");
-		heal = Input.GetActionStrength("player-heal");
 
 		// set mouse moving to false, this will be reset by the unhandled input method
 		isMouseMoving = false;

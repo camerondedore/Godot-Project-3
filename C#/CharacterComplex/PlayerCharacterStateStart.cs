@@ -29,8 +29,8 @@ public partial class PlayerCharacterStateStart : PlayerCharacterState
 
     public override State Transition()
     {
-        // check timer
-        if(EngineTime.timePassed > startTime + blackboard.startDelay)
+        // check timer and player input
+        if(EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
         {
             // idle
             return blackboard.stateIdle;

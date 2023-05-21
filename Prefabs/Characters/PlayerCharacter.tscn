@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://vttrt386xaqt"]
+[gd_scene load_steps=22 format=3 uid="uid://ds5yirpr53pft"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
-[ext_resource type="Script" path="res://C#/Camera/CameraControllerSpringArm.cs" id="2_4ytg0"]
+[ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
 [ext_resource type="Script" path="res://C#/PlayerBowAimer.cs" id="3_uw5x1"]
 [ext_resource type="Script" path="res://C#/PlayerHud.cs" id="4_eweib"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
@@ -58,7 +58,7 @@ mesh = SubResource("BoxMesh_84o3e")
 [node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("cameraTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 spring_length = 3.0
-script = ExtResource("2_4ytg0")
+script = ExtResource("2_gvbnd")
 cameraTarget = NodePath("CameraTarget")
 sensitivity = 5.0
 

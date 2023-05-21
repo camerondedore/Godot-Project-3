@@ -1,7 +1,7 @@
 [gd_scene load_steps=56 format=3 uid="uid://umk8q3uv6ov8"]
 
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
-[ext_resource type="PackedScene" uid="uid://vttrt386xaqt" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
+[ext_resource type="PackedScene" uid="uid://ds5yirpr53pft" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
 [ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="4_41cga"]
@@ -78,7 +78,7 @@ points = PackedVector3Array(0.0920176, -0.491214, -0.491214, 0.0920176, 0.491214
 [node name="TreeTest" type="Node3D"]
 
 [node name="GlobalCamera" parent="." instance=ExtResource("1_4qapr")]
-transform = Transform3D(-0.553421, 0.363785, -0.749256, 0, 0.899574, 0.436769, 0.832901, 0.241717, -0.497843, -7.67092, 5.93037, -6.77401)
+transform = Transform3D(0.932983, 0.211325, -0.29135, 0, 0.809484, 0.587142, 0.359921, -0.547793, 0.755235, -5.50459, 6.24407, 7.18464)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using CameraControllerSpringArm;
 
 public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageStationUser
 {
@@ -18,7 +19,7 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 		stateBowFire;
 
 	[Export]
-	public CameraControllerSpringArm cameraSpringArm;
+	public CameraController cameraSpringArm;
 	[Export]
 	public RayCast3D ledgeDetectorRayHorizontal,
 		ledgeDetectorRayVertical;
@@ -48,12 +49,6 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 
 	public override void _Ready()
 	{
-		// time check
-		if(Engine.TimeScale == 0)
-		{
-			return;
-		}
-
 		// initialize states
 		stateStart = new PlayerCharacterStateStart(){blackboard = this};
 		stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
@@ -75,6 +70,12 @@ public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageSt
 
 	public override void _PhysicsProcess(double delta)
 	{
+		// time check
+		if(Engine.TimeScale == 0)
+		{
+			return;
+		}
+
 		// run machine
 		if(machine != null && machine.CurrentState != null)
 		{
