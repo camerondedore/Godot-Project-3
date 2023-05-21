@@ -6,8 +6,10 @@ namespace CameraControllerSpringArm
     public partial class CameraControllerStateStart : CameraControllerState
     {
 
+        Vector3 startPosition,
+            startLookDirection;
         float lerpCursor,
-            lerpSpeed = 0.7f;
+            lerpSpeed = 1.75f;
 
 
 
@@ -24,8 +26,8 @@ namespace CameraControllerSpringArm
             // the springarm transform does not use the springarm ray
             var cameraTargetPosition = blackboard.cameraTarget.GlobalPosition;
             var cameraTargetDirection = -blackboard.Basis.Z;
-            var cameraTargetPositionSmooth = GlobalCamera.camera.GlobalPosition.Lerp(cameraTargetPosition, lerpCursor);
-            var cameraTargetLookDirectionSmooth = (-GlobalCamera.camera.Basis.Z).Lerp(cameraTargetDirection, lerpCursor);
+            var cameraTargetPositionSmooth = startPosition.Lerp(cameraTargetPosition, lerpCursor);
+            var cameraTargetLookDirectionSmooth = startLookDirection.Lerp(cameraTargetDirection, lerpCursor);
 
             // apply camera position and look
             GlobalCamera.camera.LookAtFromPosition(cameraTargetPositionSmooth, cameraTargetPositionSmooth + cameraTargetLookDirectionSmooth);
@@ -40,6 +42,10 @@ namespace CameraControllerSpringArm
         {
             // reset cursor
             lerpCursor = 0;
+
+            // get start vectors
+            startPosition = GlobalCamera.camera.GlobalPosition;
+            startLookDirection = (-GlobalCamera.camera.Basis.Z);
         }
 
 
