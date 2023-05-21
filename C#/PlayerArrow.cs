@@ -30,7 +30,7 @@ public partial class PlayerArrow : Node3D
         }
 
         startPosition = GlobalPosition;
-        oldPosition = startPosition;
+        oldPosition = startPosition - -Basis.Z;
         targetPosition = target.GetGlobalPosition();
 
         // get distance squared
@@ -55,6 +55,12 @@ public partial class PlayerArrow : Node3D
        
         // get look direction
         var lookDirection = (GlobalPosition - oldPosition).Normalized();
+
+        // check for bad look direction
+        if(lookDirection == Vector3.Zero)
+        {
+            lookDirection = -Basis.Z;
+        }
 
         // apply look direction
         LookAt(GlobalPosition + lookDirection);
