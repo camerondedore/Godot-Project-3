@@ -61,6 +61,8 @@ spring_length = 3.0
 script = ExtResource("2_gvbnd")
 cameraTarget = NodePath("CameraTarget")
 sensitivity = 5.0
+minAngle = -60.0
+maxAngle = 50.0
 
 [node name="CameraTarget" type="Node3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)

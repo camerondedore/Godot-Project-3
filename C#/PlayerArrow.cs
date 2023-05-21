@@ -30,7 +30,7 @@ public partial class PlayerArrow : Node3D
         }
 
         startPosition = GlobalPosition;
-        oldPosition = startPosition - -Basis.Z;
+        oldPosition = startPosition;// - -Basis.Z;
         targetPosition = target.GetGlobalPosition();
 
         // get distance squared

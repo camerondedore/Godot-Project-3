@@ -9,7 +9,7 @@ namespace CameraControllerSpringArm
         Vector3 startPosition,
             startLookDirection;
         float lerpCursor,
-            lerpSpeed = 1.75f;
+            lerpSpeed = 2.5f;
 
 
 
@@ -33,7 +33,7 @@ namespace CameraControllerSpringArm
             GlobalCamera.camera.LookAtFromPosition(cameraTargetPositionSmooth, cameraTargetPositionSmooth + cameraTargetLookDirectionSmooth);
 
             // update cursor
-            lerpCursor += lerpSpeed * ((float) delta);
+            lerpCursor = Mathf.Lerp(lerpCursor, 1, lerpSpeed * ((float) delta));
         }
 
 
