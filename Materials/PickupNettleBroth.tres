@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://da6o22m6rtv3l" path="res://Textures/pickup-nettle-broth-roughness.png" id="2_v641h"]
 
 [resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("1_masqw")
 metallic = 0.2
 roughness_texture = ExtResource("2_v641h")
