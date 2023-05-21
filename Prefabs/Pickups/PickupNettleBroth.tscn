@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0dc6sq2fwhm4"]
+[gd_scene load_steps=11 format=3 uid="uid://d0dc6sq2fwhm4"]
 
 [ext_resource type="Script" path="res://C#/Pickups/NettleBrothPickup.cs" id="1_dnlt2"]
 [ext_resource type="ArrayMesh" uid="uid://ct6j7liumhcyu" path="res://Models/pickup-nettle-broth.res" id="1_n10h8"]
 [ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="3_7jq3y"]
 [ext_resource type="Material" uid="uid://bvhy42p7ljrtr" path="res://Materials/FxSteam.tres" id="4_1es76"]
+[ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="5_80gi3"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_oiy67"]
 radius = 0.3
@@ -57,5 +58,9 @@ cast_shadow = 0
 amount = 6
 lifetime = 4.0
 preprocess = 4.0
+visibility_aabb = AABB(-0.25, 0, -0.25, 0.5, 1.4, 0.5)
 process_material = SubResource("ParticleProcessMaterial_2kj24")
 draw_pass_1 = SubResource("QuadMesh_4iuuj")
+
+[node name="FxSparkle" parent="." instance=ExtResource("5_80gi3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0767856, 0)
