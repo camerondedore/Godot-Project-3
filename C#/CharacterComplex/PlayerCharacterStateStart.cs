@@ -1,41 +1,44 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacterStateStart : PlayerCharacterState
+namespace PlayerCharacterComplex
 {
-
-    double startTime;
-
-
-
-    public override void StartState()
+    public partial class PlayerCharacterStateStart : PlayerCharacterState
     {
-        // get start time
-        startTime = EngineTime.timePassed;
 
-        // disable camera spring arm
-        blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Disabled;
-    }
+        double startTime;
 
 
 
-    public override void EndState()
-    {
-        // enable camera spring arm
-        blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Always;
-    }
-
-
-
-    public override State Transition()
-    {
-        // check timer and player input
-        if(EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
+        public override void StartState()
         {
-            // idle
-            return blackboard.stateIdle;
+            // get start time
+            startTime = EngineTime.timePassed;
+
+            // disable camera spring arm
+            blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Disabled;
         }
 
-        return this;
+
+
+        public override void EndState()
+        {
+            // enable camera spring arm
+            blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Always;
+        }
+
+
+
+        public override State Transition()
+        {
+            // check timer and player input
+            if(EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
+            {
+                // idle
+                return blackboard.stateIdle;
+            }
+
+            return this;
+        }
     }
 }

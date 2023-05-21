@@ -1,55 +1,58 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacterStateBandageStation : PlayerCharacterState
+namespace PlayerCharacterComplex
 {
-
-    double startTime;
-
-
-
-    public override void RunState(double delta)
+    public partial class PlayerCharacterStateBandageStation : PlayerCharacterState
     {
-        // check for bandage components
-        var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
-        if(hasComponents && EngineTime.timePassed > startTime + blackboard.bandageTime)
+        double startTime;
+
+
+
+        public override void RunState(double delta)
         {
-            // create bandage
-            PlayerInventory.inventory.AddToInventory(0, -1, -1, 1, null);
+            // check for bandage components
+            var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
-            // reset timer
-            startTime = EngineTime.timePassed;  
-        }
-    }
+            if(hasComponents && EngineTime.timePassed > startTime + blackboard.bandageTime)
+            {
+                // create bandage
+                PlayerInventory.inventory.AddToInventory(0, -1, -1, 1, null);
 
-
-
-    public override void StartState()
-    {
-        startTime = EngineTime.timePassed;     
-
-        // clear velocity
-        blackboard.Velocity = Vector3.Zero;
-
-        // camera follow
-		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);   
-    }
-
-   
-   
-    public override State Transition()
-    {
-        // check for bandage components
-        var depletedComponents = !PlayerInventory.inventory.CheckInventoryForBandageComponents();
-
-        if(depletedComponents)
-        {
-            // idle
-            return blackboard.stateIdle;
+                // reset timer
+                startTime = EngineTime.timePassed;  
+            }
         }
 
 
-		return this;
+
+        public override void StartState()
+        {
+            startTime = EngineTime.timePassed;     
+
+            // clear velocity
+            blackboard.Velocity = Vector3.Zero;
+
+            // camera follow
+            blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);   
+        }
+
+    
+    
+        public override State Transition()
+        {
+            // check for bandage components
+            var depletedComponents = !PlayerInventory.inventory.CheckInventoryForBandageComponents();
+
+            if(depletedComponents)
+            {
+                // idle
+                return blackboard.stateIdle;
+            }
+
+
+            return this;
+        }
     }
 }

@@ -1,7 +1,10 @@
 using Godot;
 using System;
 
-public class PlayerCharacterState : State
+namespace PlayerCharacterComplex
 {
-    public PlayerCharacter blackboard;
+    public class PlayerCharacterState : State
+    {
+        public PlayerCharacter blackboard;
+    }
 }

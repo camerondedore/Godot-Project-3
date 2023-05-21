@@ -1,60 +1,63 @@
 using Godot;
 using System;
 
-public partial class PlayerCharacterStateIdle : PlayerCharacterState
+namespace PlayerCharacterComplex
 {
-
-
-
-
-
-    public override void RunState(double delta)
+    public partial class PlayerCharacterStateIdle : PlayerCharacterState
     {
-        // smooth velocity
-        var vel = Vector3.Zero;
-		vel.X = Mathf.Lerp(blackboard.Velocity.X, 0, ((float) delta) * blackboard.acceleration);
-		vel.Z = Mathf.Lerp(blackboard.Velocity.Z, 0, ((float) delta) * blackboard.acceleration);
 
-        // set velocity
-        blackboard.Velocity = vel;
 
-        blackboard.MoveAndSlide();
 
-        blackboard.CharacterLook();    
 
-        // camera follow
-		blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
-    }
 
-   
-   
-    public override State Transition()
-    {
-        if(!blackboard.IsOnFloor())
-		{
-			// fall
-			return blackboard.stateFall;
-		}
-
-        if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
+        public override void RunState(double delta)
         {
-            // jump start
-            //return blackboard.stateJumpStart;
-            return blackboard.stateJump;
+            // smooth velocity
+            var vel = Vector3.Zero;
+            vel.X = Mathf.Lerp(blackboard.Velocity.X, 0, ((float) delta) * blackboard.acceleration);
+            vel.Z = Mathf.Lerp(blackboard.Velocity.Z, 0, ((float) delta) * blackboard.acceleration);
+
+            // set velocity
+            blackboard.Velocity = vel;
+
+            blackboard.MoveAndSlide();
+
+            blackboard.CharacterLook();    
+
+            // camera follow
+            blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
         }
 
-        if(PlayerInput.fire1 > 0)
+    
+    
+        public override State Transition()
         {
-            // aim bow
-            return blackboard.stateBowAim;
-        }
-        
-        if(PlayerInput.isMoving)
-        {
-            // move
-            return blackboard.stateMove;
-        }
+            if(!blackboard.IsOnFloor())
+            {
+                // fall
+                return blackboard.stateFall;
+            }
 
-		return this;
+            if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
+            {
+                // jump start
+                //return blackboard.stateJumpStart;
+                return blackboard.stateJump;
+            }
+
+            if(PlayerInput.fire1 > 0)
+            {
+                // aim bow
+                return blackboard.stateBowAim;
+            }
+            
+            if(PlayerInput.isMoving)
+            {
+                // move
+                return blackboard.stateMove;
+            }
+
+            return this;
+        }
     }
 }
