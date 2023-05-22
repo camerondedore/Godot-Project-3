@@ -27,7 +27,7 @@ namespace PlayerCharacterComplex
             blackboard.MoveAndSlide();
 
             // get camera forward
-            var lookDirection = -GlobalCamera.camera.Basis.Z;
+            var lookDirection = -GlobalCamera.camera.GlobalTransform.Basis.Z;
             // flatten camera forward
             lookDirection.Y = blackboard.GlobalPosition.Y;
 

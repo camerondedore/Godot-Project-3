@@ -11,7 +11,10 @@ height = 0.15
 
 [node name="PlayerArrowWeighted" type="Node3D"]
 script = ExtResource("1_w1ybd")
-speed = 35.0
+speed = 20.0
+speedVariation = 0.0
+rangeSqr = 900.0
+mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_p2e30")

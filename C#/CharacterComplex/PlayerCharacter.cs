@@ -167,7 +167,7 @@ namespace PlayerCharacterComplex
 
 
 			// apply bandage station target position
-			LookAtFromPosition(target.GlobalPosition, target.GlobalPosition - target.Basis.Z);
+			LookAtFromPosition(target.GlobalPosition, target.GlobalPosition + -target.GlobalTransform.Basis.Z);
 
 			// go to bandage station state
 			machine.SetState(stateBandageStation);
