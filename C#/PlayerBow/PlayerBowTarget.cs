@@ -33,6 +33,15 @@ public partial class PlayerBowTarget : Node3D, IBowTarget
 
     public Vector3 GetGlobalPosition()
     {
-        return GlobalPosition;
+        try
+        {
+            return GlobalPosition;
+        }
+        catch
+        {
+            // target was disposed
+            // nothing more to do
+            return Vector3.Zero;
+        }
     }
 }

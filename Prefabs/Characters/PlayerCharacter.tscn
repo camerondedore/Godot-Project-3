@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://ds5yirpr53pft"]
+[gd_scene load_steps=22 format=3 uid="uid://nbamt57iqwku"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
-[ext_resource type="Script" path="res://C#/PlayerBowAimer.cs" id="3_uw5x1"]
+[ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowAimer.cs" id="3_uw5x1"]
 [ext_resource type="Script" path="res://C#/PlayerHud.cs" id="4_eweib"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
@@ -15,8 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
-[ext_resource type="Script" path="res://C#/PlayerBow.cs" id="16_mwwtv"]
-[ext_resource type="PackedScene" uid="uid://mqipyl48xeno" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="17_q6v2h"]
+[ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="17_q6v2h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3

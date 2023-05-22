@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://mqipyl48xeno"]
+[gd_scene load_steps=4 format=3 uid="uid://bvnogtbjot0oy"]
 
-[ext_resource type="Script" path="res://C#/PlayerArrow.cs" id="1_md0su"]
+[ext_resource type="Script" path="res://C#/PlayerBow/PlayerArrow.cs" id="1_w1ybd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p2e30"]
 size = Vector3(0.05, 0.05, 0.5)
@@ -10,7 +10,8 @@ radius = 0.075
 height = 0.15
 
 [node name="PlayerArrowWeighted" type="Node3D"]
-script = ExtResource("1_md0su")
+script = ExtResource("1_w1ybd")
+speed = 35.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_p2e30")

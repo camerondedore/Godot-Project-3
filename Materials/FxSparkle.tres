@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://di2i8lcxxeh40" path="res://Textures/fx-sparkle.png" id="1_6nyg0"]
 
 [resource]
-transparency = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 blend_mode = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true

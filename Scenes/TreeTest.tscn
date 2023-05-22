@@ -1,8 +1,8 @@
-[gd_scene load_steps=58 format=3 uid="uid://umk8q3uv6ov8"]
+[gd_scene load_steps=58 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
-[ext_resource type="PackedScene" uid="uid://ds5yirpr53pft" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
+[ext_resource type="PackedScene" uid="uid://nbamt57iqwku" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="Material" uid="uid://dkncsl54qwwvb" path="res://Materials/Grass.tres" id="3_wt56b"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -46,7 +46,7 @@
 [ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="40_bcejb"]
 [ext_resource type="Script" path="res://C#/Pickups/SaniclePickup.cs" id="41_8ymp1"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
-[ext_resource type="Script" path="res://C#/PlayerBowTarget.cs" id="45_1wkr8"]
+[ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -500,7 +500,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5199
 
 [node name="TestBowTarget" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, 0)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -512,7 +512,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget3" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, 1)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -524,7 +524,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2, 2)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -536,7 +536,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget5" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 2, 3)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -548,7 +548,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget6" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2, 4)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -560,7 +560,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget7" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 2, 5)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -572,7 +572,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget8" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 6)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -584,7 +584,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget9" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, 7)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -596,7 +596,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget10" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 8)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -608,7 +608,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget11" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 2, 9)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -620,7 +620,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget12" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2, 10)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -632,7 +632,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget13" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, -1, 7)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -644,7 +644,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget14" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, -1, 12)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -656,7 +656,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget15" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 6, 3)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -668,7 +668,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget16" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 6, 8)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
@@ -680,7 +680,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, -2)
-script = ExtResource("45_1wkr8")
+script = ExtResource("47_lu2vf")
 targetName = "Locked Cylinder"
 arrowType = "pick"
 metadata/_edit_group_ = true

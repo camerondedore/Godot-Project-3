@@ -34,13 +34,13 @@ public partial class PlayerArrow : Node3D
         targetPosition = target.GetGlobalPosition();
 
         // get distance squared
-        var distanceSqr = (targetPosition - startPosition).LengthSquared();
+        var distance = (targetPosition - startPosition).Length();
 
         // get interpolation speed
-        interpSpeed = speed * speed / distanceSqr;
+        interpSpeed = speed / distance;
 
         // get arc height
-        arcHeight = distanceSqr * arcHeightMultiplier;
+        arcHeight = distance * distance * arcHeightMultiplier;
     }
 
 

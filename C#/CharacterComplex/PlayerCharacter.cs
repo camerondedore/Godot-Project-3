@@ -87,13 +87,11 @@ namespace PlayerCharacterComplex
 
 
 			// debug
-			if(debugText != machine.CurrentState.ToString())
-			{
-				GD.Print(machine.CurrentState.ToString());
-				debugText = machine.CurrentState.ToString();
-			}   
-			//GD.Print(velocity.Length());
-			//GD.Print(jumpStartY + " : " + fallStartY); 
+			// if(debugText != machine.CurrentState.ToString())
+			// {
+			// 	GD.Print(machine.CurrentState.ToString());
+			// 	debugText = machine.CurrentState.ToString();
+			// }   
 		}
 
 
