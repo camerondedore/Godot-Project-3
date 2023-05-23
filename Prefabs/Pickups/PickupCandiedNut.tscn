@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://jg8y61unu8ao"]
+[gd_scene load_steps=5 format=3 uid="uid://jg8y61unu8ao"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_4on0y"]
 [ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="1_anmk5"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_77xoa"]
-size = Vector3(0.3, 0.3, 0.3)
+[ext_resource type="ArrayMesh" uid="uid://x3dcuk4k6e3i" path="res://Models/pickup-candied-nut-1.res" id="3_f3xch"]
+[ext_resource type="Material" uid="uid://b42qnyeqsd0h" path="res://Materials/PickupCandiedNuts.tres" id="4_nvqdf"]
 
 [node name="PickupCandiedNut" instance=ExtResource("1_4on0y")]
 script = ExtResource("1_anmk5")
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = SubResource("BoxMesh_77xoa")
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
+mesh = ExtResource("3_f3xch")
+surface_material_override/0 = ExtResource("4_nvqdf")

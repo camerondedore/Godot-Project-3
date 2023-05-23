@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://C#/PauseMenu.cs" id="7_ogfvn"]
 
 [node name="GlobalCamera" type="Camera3D"]
-fov = 90.0
+fov = 80.0
 script = ExtResource("1_w865n")
 
 [node name="EngineTime" type="Node" parent="."]
