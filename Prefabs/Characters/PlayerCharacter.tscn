@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://nbamt57iqwku"]
+[gd_scene load_steps=22 format=3 uid="uid://nbamt57iqwku"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
@@ -30,9 +30,6 @@ size = Vector3(0.6, 0.2, 0.3)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 radius = 0.6
 height = 2.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_i3jks"]
-size = Vector3(0.1, 0.1, 1)
 
 [node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
 collision_layer = 2
@@ -302,6 +299,3 @@ shape = SubResource("CapsuleShape3D_t3b7p")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
 script = ExtResource("16_mwwtv")
 weightedArrow = ExtResource("17_q6v2h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Bow"]
-mesh = SubResource("BoxMesh_i3jks")

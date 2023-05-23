@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4jis38v0hln5"]
+
+[ext_resource type="Material" uid="uid://bvhy42p7ljrtr" path="res://Materials/FxSteam.tres" id="1_mqpab"]
+
+[sub_resource type="Gradient" id="Gradient_i11vx"]
+offsets = PackedFloat32Array(0, 0.24, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4gk3j"]
+gradient = SubResource("Gradient_i11vx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_44xsc"]
+lifetime_randomness = 0.2
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.12
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0.1, 0)
+initial_velocity_min = 0.05
+initial_velocity_max = 0.1
+scale_min = 0.7
+scale_max = 0.8
+color = Color(1, 1, 1, 0.129412)
+color_ramp = SubResource("GradientTexture1D_4gk3j")
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_vp645"]
+
+[node name="FxSteam" type="GPUParticles3D"]
+material_override = ExtResource("1_mqpab")
+cast_shadow = 0
+amount = 6
+lifetime = 4.0
+preprocess = 4.0
+visibility_aabb = AABB(-0.25, 0, -0.25, 0.5, 1.4, 0.5)
+process_material = SubResource("ParticleProcessMaterial_44xsc")
+draw_pass_1 = SubResource("QuadMesh_vp645")

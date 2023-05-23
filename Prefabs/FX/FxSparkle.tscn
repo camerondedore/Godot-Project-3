@@ -38,6 +38,6 @@ material_override = ExtResource("1_3k7ci")
 amount = 7
 lifetime = 4.0
 preprocess = 5.0
-visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+visibility_aabb = AABB(-0.35, -0.35, -0.35, 0.7, 0.7, 0.7)
 process_material = SubResource("ParticleProcessMaterial_xvvsk")
 draw_pass_1 = SubResource("QuadMesh_8qrut")
