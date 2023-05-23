@@ -1,17 +1,13 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://5wnxuxvbfm5y"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dx4tjrj1tn4vt"]
 
-[ext_resource type="Shader" uid="uid://bxo1ai6ofsyyf" path="res://Materials/RimLight.tres" id="1_2vlhs"]
 [ext_resource type="Texture2D" uid="uid://5qdvvjyg3wa6" path="res://Textures/bark-oak.png" id="2_i07wa"]
 
 [resource]
-render_priority = 0
-shader = ExtResource("1_2vlhs")
-shader_parameter/Metallic_Multiplier = 0.2
-shader_parameter/Rim_Sharpness = 0.15
-shader_parameter/Rim_Distance = 0.75
-shader_parameter/Rim_Color = Color(1, 0.905882, 0.529412, 1)
-shader_parameter/Rim_Power = 0.25
-shader_parameter/Alpha_Scissor = 0.5
-shader_parameter/Albedo = ExtResource("2_i07wa")
-shader_parameter/Metallic = 0.1
-shader_parameter/Roughness = 0.5
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_i07wa")
+metallic = 0.2
+roughness = 0.9
+rim_enabled = true
+rim = 0.25

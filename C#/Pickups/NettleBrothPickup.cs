@@ -11,6 +11,14 @@ public partial class NettleBrothPickup : RigidBody3D, IPickup
 
 
 
+    public override void _Ready()
+    {
+        // random rotation
+        Rotate(Vector3.Up, GD.Randf() * 6.28f);
+    }
+
+
+
     public override void _PhysicsProcess(double delta)
     {
         // check for frozen rigidbody

@@ -143,7 +143,7 @@ public partial class ToolPropPainter : Node
 	void PaintProp(Vector3 paintPoint)
 	{
 		// get prop to paint from array
-		int propIndex = Mathf.RoundToInt(GD.Randi() % propsToPaint.Length);
+		var propIndex = GD.Randi() % propsToPaint.Length;
 
 		// load prop resource
 		var prop = propsToPaint[propIndex].Instantiate() as Node3D;

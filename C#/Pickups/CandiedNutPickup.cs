@@ -4,7 +4,24 @@ using System;
 public partial class CandiedNutPickup : RigidBody3D, IPickup
 {
 
+    [Export]
+    MeshInstance3D meshInstance;
+    [Export]
+    ArrayMesh[] nutMeshes;
+
     float turnSpeed = 1.57f;
+
+
+
+    public override void _Ready()
+    {
+        // random rotation
+        Rotate(Vector3.Up, GD.Randf() * 6.28f);
+
+        // random mesh
+        var meshIndex = GD.Randi() % nutMeshes.Length;
+        meshInstance.Mesh = nutMeshes[meshIndex];
+    }
 
 
 

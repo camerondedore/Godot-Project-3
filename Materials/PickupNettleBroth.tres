@@ -10,3 +10,5 @@ alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("1_masqw")
 metallic = 0.2
 roughness_texture = ExtResource("2_v641h")
+rim_enabled = true
+rim = 0.15
