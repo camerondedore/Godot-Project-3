@@ -1,30 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0dc6sq2fwhm4"]
+[gd_scene load_steps=6 format=3 uid="uid://d0dc6sq2fwhm4"]
 
+[ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_8qsn3"]
 [ext_resource type="Script" path="res://C#/Pickups/NettleBrothPickup.cs" id="1_dnlt2"]
 [ext_resource type="ArrayMesh" uid="uid://ct6j7liumhcyu" path="res://Models/pickup-nettle-broth.res" id="1_n10h8"]
 [ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="3_7jq3y"]
 [ext_resource type="PackedScene" uid="uid://c4jis38v0hln5" path="res://Prefabs/FX/FxSteam.tscn" id="4_t326c"]
-[ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="5_80gi3"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_oiy67"]
-radius = 0.3
-
-[node name="PickupNettleBroth" type="RigidBody3D"]
-collision_layer = 4
-lock_rotation = true
-freeze = true
-freeze_mode = 1
+[node name="PickupNettleBroth" instance=ExtResource("1_8qsn3")]
 script = ExtResource("1_dnlt2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("1_n10h8")
 surface_material_override/0 = ExtResource("3_7jq3y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_oiy67")
-
-[node name="FxSteam" parent="." instance=ExtResource("4_t326c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.158622, 0)
-
-[node name="FxSparkle" parent="." instance=ExtResource("5_80gi3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0767856, 0)
+[node name="FxSteam" parent="." index="3" instance=ExtResource("4_t326c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.159, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=54 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -42,10 +42,10 @@
 [ext_resource type="PackedScene" uid="uid://ciiryug1dnh26" path="res://Prefabs/Pickups/PickupNettleBrothRigidBody.tscn" id="37_7udgq"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="38_05md2"]
-[ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="39_y8yyv"]
-[ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="40_bcejb"]
-[ext_resource type="Script" path="res://C#/Pickups/SaniclePickup.cs" id="41_8ymp1"]
+[ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
+[ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
+[ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
@@ -54,20 +54,6 @@
 points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nrvr1"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_3nh8h"]
-radius = 0.1
-
-[sub_resource type="SphereMesh" id="SphereMesh_0s62u"]
-radius = 0.1
-height = 0.2
-
-[sub_resource type="BoxMesh" id="BoxMesh_cwvbc"]
-size = Vector3(0.2, 0.5, 0.1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jivh6"]
-radius = 0.05
-height = 0.2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mef1p"]
 
@@ -414,9 +400,19 @@ transform = Transform3D(0.78574, -0.0670686, 0.394948, 0.0413449, 1.13577, 0.033
 
 [node name="PickupNettleBrothRigidBody" parent="Pickups" instance=ExtResource("37_7udgq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15599, 2.38653, -4.92946)
+lock_rotation = true
 
 [node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -6)
+
+[node name="PickupCandiedNut" parent="Pickups" instance=ExtResource("41_oibar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
+
+[node name="PickupDockLeaf" parent="Pickups" instance=ExtResource("42_1ywjb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -8)
+
+[node name="PickupSanicle" parent="Pickups" instance=ExtResource("43_r6irn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6.42075)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
@@ -440,49 +436,6 @@ shape = SubResource("SphereShape3D_nrvr1")
 
 [node name="TestJumpPadTarget" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96641, 5.50751, 0)
-
-[node name="TestCandiedNut" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.33752, 1, -2.8041)
-collision_layer = 4
-freeze = true
-freeze_mode = 1
-script = ExtResource("39_y8yyv")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestCandiedNut"]
-shape = SubResource("SphereShape3D_3nh8h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestCandiedNut"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0204709, -0.0167854, 0)
-mesh = SubResource("SphereMesh_0s62u")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestCandiedNut"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267885, 0.0306873, 0)
-mesh = SubResource("SphereMesh_0s62u")
-
-[node name="TestDockLeaf" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7028, 1, -3.79437)
-collision_layer = 4
-script = ExtResource("40_bcejb")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestDockLeaf"]
-shape = SubResource("SphereShape3D_3nh8h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestDockLeaf"]
-mesh = SubResource("BoxMesh_cwvbc")
-
-[node name="TestSanicle" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22708, 1, -2.87878)
-collision_layer = 4
-script = ExtResource("41_8ymp1")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestSanicle"]
-shape = SubResource("SphereShape3D_3nh8h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestSanicle"]
-mesh = SubResource("CapsuleMesh_jivh6")
 
 [node name="TestBandageStationArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159986, 1, 7.90599)
@@ -510,18 +463,6 @@ mesh = SubResource("CylinderMesh_8ru0d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget3" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, 1)
-script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget3"]
-mesh = SubResource("CylinderMesh_8ru0d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget3"]
-shape = SubResource("ConvexPolygonShape3D_j38tx")
-
 [node name="TestBowTarget4" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2, 2)
 script = ExtResource("47_lu2vf")
@@ -532,18 +473,6 @@ metadata/_edit_group_ = true
 mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget4"]
-shape = SubResource("ConvexPolygonShape3D_j38tx")
-
-[node name="TestBowTarget5" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 2, 3)
-script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget5"]
-mesh = SubResource("CylinderMesh_8ru0d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget5"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget6" type="StaticBody3D" parent="."]
@@ -558,18 +487,6 @@ mesh = SubResource("CylinderMesh_8ru0d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget6"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget7" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 2, 5)
-script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget7"]
-mesh = SubResource("CylinderMesh_8ru0d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget7"]
-shape = SubResource("ConvexPolygonShape3D_j38tx")
-
 [node name="TestBowTarget8" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 6)
 script = ExtResource("47_lu2vf")
@@ -582,18 +499,6 @@ mesh = SubResource("CylinderMesh_8ru0d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget8"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget9" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 2, 7)
-script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget9"]
-mesh = SubResource("CylinderMesh_8ru0d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget9"]
-shape = SubResource("ConvexPolygonShape3D_j38tx")
-
 [node name="TestBowTarget10" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 8)
 script = ExtResource("47_lu2vf")
@@ -604,18 +509,6 @@ metadata/_edit_group_ = true
 mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget10"]
-shape = SubResource("ConvexPolygonShape3D_j38tx")
-
-[node name="TestBowTarget11" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 2, 9)
-script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget11"]
-mesh = SubResource("CylinderMesh_8ru0d")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget11"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget12" type="StaticBody3D" parent="."]
