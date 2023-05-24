@@ -6,9 +6,10 @@
 [ext_resource type="ArrayMesh" uid="uid://bwl3ntlog5agd" path="res://Models/pickup-candied-nut-2.res" id="4_cr428"]
 [ext_resource type="Material" uid="uid://dx4tjrj1tn4vt" path="res://Materials/PickupCandiedNuts.tres" id="4_nvqdf"]
 
-[node name="PickupCandiedNut" node_paths=PackedStringArray("meshInstance") instance=ExtResource("1_4on0y")]
+[node name="PickupCandiedNut" node_paths=PackedStringArray("meshInstance", "particlesFx") instance=ExtResource("1_4on0y")]
 script = ExtResource("1_anmk5")
 meshInstance = NodePath("MeshInstance3D")
+particlesFx = NodePath("FxSparkle")
 nutMeshes = Array[ArrayMesh]([ExtResource("3_f3xch"), ExtResource("4_cr428")])
 
 [node name="MeshInstance3D" parent="." index="0"]

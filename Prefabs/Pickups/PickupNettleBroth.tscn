@@ -6,8 +6,9 @@
 [ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="4_m360d"]
 [ext_resource type="PackedScene" uid="uid://c4jis38v0hln5" path="res://Prefabs/FX/FxSteam.tscn" id="4_t326c"]
 
-[node name="PickupNettleBroth" instance=ExtResource("1_8qsn3")]
+[node name="PickupNettleBroth" node_paths=PackedStringArray("particlesFx") instance=ExtResource("1_8qsn3")]
 script = ExtResource("1_dnlt2")
+particlesFx = NodePath("FxSparkle")
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("1_n10h8")

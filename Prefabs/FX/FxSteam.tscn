@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4jis38v0hln5"]
+[gd_scene load_steps=7 format=3 uid="uid://c4jis38v0hln5"]
 
 [ext_resource type="Material" uid="uid://bvhy42p7ljrtr" path="res://Materials/FxSteam.tres" id="1_mqpab"]
+[ext_resource type="Script" path="res://C#/Common/ParticlesRandomizer.cs" id="2_bpc6l"]
 
 [sub_resource type="Gradient" id="Gradient_i11vx"]
 offsets = PackedFloat32Array(0, 0.24, 1)
@@ -39,3 +40,4 @@ preprocess = 4.0
 visibility_aabb = AABB(-0.25, 0, -0.25, 0.5, 1.4, 0.5)
 process_material = SubResource("ParticleProcessMaterial_44xsc")
 draw_pass_1 = SubResource("QuadMesh_vp645")
+script = ExtResource("2_bpc6l")

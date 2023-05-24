@@ -6,8 +6,9 @@
 [sub_resource type="PrismMesh" id="PrismMesh_7mxnv"]
 size = Vector3(0.3, 0.3, 0.3)
 
-[node name="PickupSanicle" instance=ExtResource("1_c0xkr")]
+[node name="PickupSanicle" node_paths=PackedStringArray("particlesFx") instance=ExtResource("1_c0xkr")]
 script = ExtResource("1_hxup0")
+particlesFx = NodePath("FxSparkle")
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = SubResource("PrismMesh_7mxnv")

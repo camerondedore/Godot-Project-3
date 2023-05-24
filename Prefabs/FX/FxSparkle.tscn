@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://mx0pcadbiph1"]
+[gd_scene load_steps=9 format=3 uid="uid://mx0pcadbiph1"]
 
 [ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/FxSparkle.tres" id="1_3k7ci"]
-[ext_resource type="Material" uid="uid://c064f0lqilvj0" path="res://Materials/FxSparkleSoft.tres" id="2_dducj"]
+[ext_resource type="Script" path="res://C#/Common/ParticlesRandomizer.cs" id="2_lum1m"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
-offsets = PackedFloat32Array(0, 0.395, 1)
+offsets = PackedFloat32Array(0, 0.375, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3yg5b"]
@@ -28,50 +28,20 @@ initial_velocity_max = 0.02
 angular_velocity_min = -15.0
 angular_velocity_max = 15.0
 angle_max = 360.0
-scale_min = 0.15
+scale_min = 0.08
 scale_max = 0.2
 scale_curve = SubResource("CurveTexture_b5u7h")
 color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [sub_resource type="QuadMesh" id="QuadMesh_8qrut"]
 
-[sub_resource type="Gradient" id="Gradient_njxmp"]
-offsets = PackedFloat32Array(0, 0.21, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_47hf6"]
-gradient = SubResource("Gradient_njxmp")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0rfmq"]
-lifetime_randomness = 0.2
-emission_shape = 1
-emission_sphere_radius = 0.1
-direction = Vector3(0, 0, 0)
-spread = 0.0
-gravity = Vector3(0, 0, 0)
-angular_velocity_min = -20.0
-angular_velocity_max = 20.0
-scale_min = 1.5
-scale_max = 2.0
-color = Color(1, 1, 1, 0.0392157)
-color_ramp = SubResource("GradientTexture1D_47hf6")
-
-[sub_resource type="QuadMesh" id="QuadMesh_hs60u"]
-
 [node name="FxSparkle" type="GPUParticles3D"]
 material_override = ExtResource("1_3k7ci")
-amount = 5
-lifetime = 3.0
-preprocess = 5.0
+amount = 4
+lifetime = 4.0
+preprocess = 2.0
+randomness = 1.0
 visibility_aabb = AABB(-0.35, -0.35, -0.35, 0.7, 0.7, 0.7)
 process_material = SubResource("ParticleProcessMaterial_xvvsk")
 draw_pass_1 = SubResource("QuadMesh_8qrut")
-
-[node name="FxBigSparkle" type="GPUParticles3D" parent="."]
-visible = false
-material_override = ExtResource("2_dducj")
-amount = 2
-lifetime = 4.0
-visibility_aabb = AABB(-0.7, -0.7, -0.7, 1.4, 1.4, 1.4)
-process_material = SubResource("ParticleProcessMaterial_0rfmq")
-draw_pass_1 = SubResource("QuadMesh_hs60u")
+script = ExtResource("2_lum1m")

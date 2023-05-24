@@ -78,138 +78,140 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground2" type="StaticBody3D" parent="."]
+[node name="Ground2" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -10)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground2"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground2"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground3" type="StaticBody3D" parent="."]
+[node name="Ground3" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10, 0, -10)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground3"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground3"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground4" type="StaticBody3D" parent="."]
+[node name="Ground4" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10, 0, 0)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground4"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground4"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground4"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground5" type="StaticBody3D" parent="."]
+[node name="Ground5" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10, 0, 10)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground5"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground5"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground5"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground6" type="StaticBody3D" parent="."]
+[node name="Ground6" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 10)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground6"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground6"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground6"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground7" type="StaticBody3D" parent="."]
+[node name="Ground7" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 10, 0, 10)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground7"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground7"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground7"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground7"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground8" type="StaticBody3D" parent="."]
+[node name="Ground8" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 10, 0, 0)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground8"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground8"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground8"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
-[node name="Ground9" type="StaticBody3D" parent="."]
+[node name="Ground9" type="StaticBody3D" parent="Map"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 10, 0, -10)
 collision_layer = 255
 metadata/_edit_group_ = true
 
-[node name="Plane" type="MeshInstance3D" parent="Ground9"]
+[node name="Plane" type="MeshInstance3D" parent="Map/Ground9"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = ExtResource("3_wt56b")
 mesh = SubResource("PlaneMesh_fw7qn")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground9"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground9"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
@@ -398,30 +400,35 @@ transform = Transform3D(0.78574, -0.0670686, 0.394948, 0.0413449, 1.13577, 0.033
 
 [node name="Pickups" type="Node3D" parent="."]
 
-[node name="PickupNettleBrothRigidBody" parent="Pickups" instance=ExtResource("37_7udgq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15599, 2.38653, -4.92946)
-lock_rotation = true
-
-[node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -6)
-
 [node name="PickupCandiedNut" parent="Pickups" instance=ExtResource("41_oibar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -9.40822)
 
 [node name="PickupCandiedNut2" parent="Pickups" instance=ExtResource("41_oibar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00807881, 1, -10.8781)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 1.07936, -9.40822)
 
 [node name="PickupCandiedNut3" parent="Pickups" instance=ExtResource("41_oibar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10112, 1, -9.41524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 1.07936, -10.4082)
 
 [node name="PickupCandiedNut4" parent="Pickups" instance=ExtResource("41_oibar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76253, 1, -10.1405)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -10.4082)
 
 [node name="PickupDockLeaf" parent="Pickups" instance=ExtResource("42_1ywjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887575, 1.07937, -6.2297)
+
+[node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -8.2424)
+
+[node name="PickupNettleBroth2" parent="Pickups" instance=ExtResource("37_yfk8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -9.2424)
+
+[node name="PickupNettleBroth3" parent="Pickups" instance=ExtResource("37_yfk8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -10.2424)
+
+[node name="PickupNettleBrothRigidBody" parent="Pickups" instance=ExtResource("37_7udgq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30754, 1.07937, -5.57476)
 
 [node name="PickupSanicle" parent="Pickups" instance=ExtResource("43_r6irn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6.42075)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84808, 1.07936, -8.97972)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
