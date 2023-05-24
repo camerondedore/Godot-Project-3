@@ -403,6 +403,12 @@ transform = Transform3D(0.78574, -0.0670686, 0.394948, 0.0413449, 1.13577, 0.033
 [node name="PickupCandiedNut" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -9.40822)
 
+[node name="PickupCandiedNut5" parent="Pickups" instance=ExtResource("41_oibar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -8.40822)
+
+[node name="PickupCandiedNut6" parent="Pickups" instance=ExtResource("41_oibar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 1.07936, -8.40822)
+
 [node name="PickupCandiedNut2" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 1.07936, -9.40822)
 
@@ -413,7 +419,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51162, 1.07936, -10.4082)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -10.4082)
 
 [node name="PickupDockLeaf" parent="Pickups" instance=ExtResource("42_1ywjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887575, 1.07937, -6.2297)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887575, 1.07937, -5.2297)
 
 [node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -8.2424)
@@ -428,7 +434,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -10.2424)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30754, 1.07937, -5.57476)
 
 [node name="PickupSanicle" parent="Pickups" instance=ExtResource("43_r6irn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.84808, 1.07936, -8.97972)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15192, 1.07936, -3.97972)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
