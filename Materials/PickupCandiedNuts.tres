@@ -1,12 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dx4tjrj1tn4vt"]
 
-[ext_resource type="Texture2D" uid="uid://5qdvvjyg3wa6" path="res://Textures/bark-oak.png" id="2_i07wa"]
+[ext_resource type="Texture2D" uid="uid://dnf745kgvqujm" path="res://Textures/pickup-candied-nuts-diffuse.png" id="1_mccsm"]
 
 [resource]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_i07wa")
+albedo_texture = ExtResource("1_mccsm")
 metallic = 0.2
 roughness = 0.9
 rim_enabled = true
