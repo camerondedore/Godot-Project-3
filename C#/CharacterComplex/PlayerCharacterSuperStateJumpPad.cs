@@ -3,7 +3,7 @@ using System;
 
 namespace PlayerCharacterComplex
 {
-    public partial class PlayerCharacterStateJumpPad : PlayerCharacterState
+    public partial class PlayerCharacterSuperStateJumpPad : PlayerCharacterSuperState
     {
 
         Vector3 initialVelocity;
@@ -36,10 +36,12 @@ namespace PlayerCharacterComplex
 
             blackboard.MoveAndSlide();
 
-            blackboard.CharacterLook();
+            //blackboard.CharacterLook();
 
             // camera follow
             blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+
+            base.RunState(delta);
         }
 
 
@@ -51,6 +53,9 @@ namespace PlayerCharacterComplex
             initialVelocity = blackboard.Velocity;
 
             //blackboard.ySpeed = blackboard.Velocity.Y;
+
+            // restart sub states
+            SetState(blackboard.subStateJumpPadBowAim);
         }
 
 
@@ -74,6 +79,12 @@ namespace PlayerCharacterComplex
 
             if(blackboard.IsOnFloor())
             {
+                if(PlayerInput.fire1 > 0)
+                {
+                    // aim bow
+                    return blackboard.stateBowAim;
+                }
+
                 // land
                 //return blackboard.stateLand;
                 return blackboard.stateMove;

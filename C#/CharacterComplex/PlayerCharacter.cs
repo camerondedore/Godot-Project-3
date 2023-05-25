@@ -8,12 +8,15 @@ namespace PlayerCharacterComplex
 	{
 
 		public StateMachine machine = new StateMachine();
+		public SuperState superStateJumpPad;
 		public State stateStart,
 			stateIdle,
 			stateMove,
 			stateFall,
 			stateJump,
-			stateJumpPad,
+			subStateJumpPadIdle,
+			subStateJumpPadBowAim,
+			subStateJumpPadBowFire,
 			stateLedgeGrab,
 			stateLedgeGrabJump,
 			stateBandageStation,
@@ -51,18 +54,25 @@ namespace PlayerCharacterComplex
 
 		public override void _Ready()
 		{
+			// initialize super states
+			superStateJumpPad = new PlayerCharacterSuperStateJumpPad(){blackboard = this};
+
 			// initialize states
 			stateStart = new PlayerCharacterStateStart(){blackboard = this};
 			stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
 			stateMove = new PlayerCharacterStateMove(){blackboard = this};
 			stateFall = new PlayerCharacterStateFall(){blackboard = this};
 			stateJump = new PlayerCharacterStateJump(){blackboard = this};
-			stateJumpPad = new PlayerCharacterStateJumpPad(){blackboard = this};
 			stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
 			stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};
 			stateBandageStation = new PlayerCharacterStateBandageStation(){blackboard = this};
 			stateBowAim = new PlayerCharacterStateBowAim(){blackboard = this};
 			stateBowFire = new PlayerCharacterStateBowFire(){blackboard = this};
+
+			// initialize sub states
+			subStateJumpPadIdle = new PlayerCharacterSubStateJumpPadIdle(){blackboard = this};
+			subStateJumpPadBowAim = new PlayerCharacterSubStateJumpPadBowAim(){blackboard = this};
+			subStateJumpPadBowFire = new PlayerCharacterSubStateJumpPadBowFire(){blackboard = this};
 
 			// set first state in machine
 			machine.SetState(stateStart);
@@ -150,7 +160,7 @@ namespace PlayerCharacterComplex
 			Velocity = jumpPadVelocity;
 
 			// go to jump pad state
-			machine.SetState(stateJumpPad);
+			machine.SetState(superStateJumpPad);
 		}
 
 

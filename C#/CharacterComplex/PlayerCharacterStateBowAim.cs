@@ -50,7 +50,7 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             // disable bow
-        blackboard.bowAimer.DisableBowAimer();
+            blackboard.bowAimer.DisableBowAimer();
         }
 
 
