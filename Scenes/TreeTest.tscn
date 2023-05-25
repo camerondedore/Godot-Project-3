@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=56 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -43,6 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="38_05md2"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="39_pevmh"]
+[ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="40_mdvq1"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
@@ -404,6 +405,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29967, 0.25, -7.45698)
 
 [node name="PropFern2" parent="Props/Plants" instance=ExtResource("39_pevmh")]
 transform = Transform3D(0.384521, 0, -0.923116, 0, 1, 0, 0.923116, 0, 0.384521, -3.95806, 0.25, -1.64168)
+
+[node name="PropFern3" parent="Props/Plants" instance=ExtResource("39_pevmh")]
+transform = Transform3D(-0.720042, 0, -0.69393, 0, 1, 0, 0.69393, 0, -0.720042, 3.6885, 0.25, 8.88182)
+
+[node name="PropFern4" parent="Props/Plants" instance=ExtResource("40_mdvq1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23915, 0.25, 6.96383)
+
+[node name="PropFern5" parent="Props/Plants" instance=ExtResource("40_mdvq1")]
+transform = Transform3D(0.835894, 0, -0.548892, 0, 1, 0, 0.548892, 0, 0.835894, -5.92996, 0.25, 2.9001)
 
 [node name="Pickups" type="Node3D" parent="."]
 

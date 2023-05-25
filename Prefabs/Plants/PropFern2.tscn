@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ewttxbpcubd5"]
+
+[ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="1_afjir"]
+[ext_resource type="ArrayMesh" uid="uid://jux6sxymdbl4" path="res://Models/prop-fern-2.res" id="2_atvln"]
+
+[node name="PropFern2" instance=ExtResource("1_afjir")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_atvln")
