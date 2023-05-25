@@ -7,4 +7,4 @@ albedo_texture = ExtResource("1_mccsm")
 metallic = 0.2
 roughness = 0.9
 rim_enabled = true
-rim = 0.25
+rim = 0.21

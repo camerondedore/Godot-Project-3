@@ -69,7 +69,7 @@ points = PackedVector3Array(0.0920176, -0.491214, -0.491214, 0.0920176, 0.491214
 environment = ExtResource("1_2ajl2")
 
 [node name="GlobalCamera" parent="." instance=ExtResource("1_4qapr")]
-transform = Transform3D(0.932983, 0.211325, -0.29135, 0, 0.809484, 0.587142, 0.359921, -0.547793, 0.755235, -5.50459, 6.24407, 7.18464)
+transform = Transform3D(0.959617, -0.0320679, -0.279476, 0, 0.993481, -0.113995, 0.28131, 0.109392, 0.953362, -1.70404, 0.66767, 8.61486)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -422,13 +422,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -10.4082)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887575, 1.07937, -5.2297)
 
 [node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -8.2424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518028, 1.07936, -8.2424)
 
 [node name="PickupNettleBroth2" parent="Pickups" instance=ExtResource("37_yfk8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -9.2424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518028, 1.07936, -9.2424)
 
 [node name="PickupNettleBroth3" parent="Pickups" instance=ExtResource("37_yfk8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.281972, 1.07936, -10.2424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518028, 1.07936, -10.2424)
 
 [node name="PickupNettleBrothRigidBody" parent="Pickups" instance=ExtResource("37_7udgq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30754, 1.07937, -5.57476)

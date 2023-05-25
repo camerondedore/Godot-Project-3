@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://C#/Common/ParticlesRandomizer.cs" id="2_lum1m"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
-offsets = PackedFloat32Array(0, 0.375, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.16, 0.715, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.5, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_3yg5b"]
 gradient = SubResource("Gradient_tcd1t")
@@ -23,10 +23,10 @@ emission_shape = 2
 emission_sphere_radius = 0.35
 direction = Vector3(0, 0, 0)
 spread = 0.0
-gravity = Vector3(0, -0.01, 0)
+gravity = Vector3(0, 0, 0)
 initial_velocity_max = 0.02
-angular_velocity_min = -15.0
-angular_velocity_max = 15.0
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
 angle_max = 360.0
 scale_min = 0.05
 scale_max = 0.1
@@ -38,7 +38,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="FxSparkle" type="GPUParticles3D"]
 material_override = ExtResource("1_3k7ci")
 amount = 4
-lifetime = 4.0
+lifetime = 0.7
 preprocess = 2.0
 randomness = 1.0
 visibility_aabb = AABB(-0.35, -0.35, -0.35, 0.7, 0.7, 0.7)
