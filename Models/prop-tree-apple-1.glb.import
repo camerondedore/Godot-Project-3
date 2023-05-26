@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-tree-apple-1_prop-tree-apple-1": {
+"prop-tree-apple-1_prop-tree-apple-1002": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,

@@ -8,7 +8,7 @@ radius = 0.15
 height = 2.5
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hi8kr"]
-radius = 0.9
+radius = 1.2
 
 [node name="PropTreeApple3" instance=ExtResource("1_045um")]
 

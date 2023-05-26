@@ -4,8 +4,8 @@
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_mvcys"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hvi3c"]
-height = 0.5
-radius = 0.375
+height = 0.6
+radius = 0.45
 
 [node name="PropBasket" type="StaticBody3D"]
 
