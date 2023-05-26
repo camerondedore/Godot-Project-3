@@ -11,7 +11,7 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_tcd1t")
 
 [sub_resource type="Curve" id="Curve_qhwyd"]
-_data = [Vector2(0, 0.112069), 0.0, 0.332598, 0, 0, Vector2(0.506329, 1), 0.0510779, 0.0510779, 0, 0, Vector2(1, 0.12069), -0.0454026, 0.0, 0, 0]
+_data = [Vector2(0, 0.474138), 0.0, 0.332598, 0, 0, Vector2(0.506329, 1), 0.0510779, 0.0510779, 0, 0, Vector2(1, 0.482759), -0.0454026, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_b5u7h"]
@@ -20,18 +20,17 @@ curve = SubResource("Curve_qhwyd")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xvvsk"]
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 0.05
+emission_ring_height = 0.2
 emission_ring_radius = 0.3
 emission_ring_inner_radius = 0.3
 direction = Vector3(0, 0, 0)
 spread = 0.0
-gravity = Vector3(0, -0.02, 0)
-initial_velocity_max = 0.02
-angular_velocity_min = -60.0
-angular_velocity_max = 60.0
+gravity = Vector3(0, -0.04, 0)
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
 angle_max = 360.0
-scale_min = 0.08
-scale_max = 0.13
+scale_min = 0.1
+scale_max = 0.17
 scale_curve = SubResource("CurveTexture_b5u7h")
 color_ramp = SubResource("GradientTexture1D_3yg5b")
 
@@ -40,7 +39,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="FxSparkle" type="GPUParticles3D"]
 material_override = ExtResource("1_3k7ci")
 amount = 5
-lifetime = 2.0
+lifetime = 1.25
 preprocess = 2.0
 randomness = 1.0
 visibility_aabb = AABB(-0.35, -0.35, -0.35, 0.7, 0.7, 0.7)
