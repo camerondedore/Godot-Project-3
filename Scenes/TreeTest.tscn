@@ -458,7 +458,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15192, 1.07936, -3.97972)
 transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -7.734, 0.35, 4.228)
 
 [node name="PropLockbox2" parent="." instance=ExtResource("50_hmjpr")]
-transform = Transform3D(-0.994291, -0.0949944, 0.0485942, -0.0948812, 0.995478, 0.00463715, -0.0488149, 0, -0.998808, -4.99956, 0.692216, 1.28239)
+transform = Transform3D(-0.994291, -0.0949944, 0.0485942, -0.0948812, 0.995478, 0.00463715, -0.0488149, 0, -0.998808, -4.99956, 0.766261, 1.28239)
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
