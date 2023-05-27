@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class DockLeafPickup : Pickup
+public partial class DockLeafPickup : PickupRigidbody
 {
 
 

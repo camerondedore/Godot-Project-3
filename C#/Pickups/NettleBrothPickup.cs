@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class NettleBrothPickup : Pickup
+public partial class NettleBrothPickup : PickupRigidbody
 {
 
     [Export]

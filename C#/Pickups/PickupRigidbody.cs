@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Pickup : RigidBody3D, IPickup
+public partial class PickupRigidbody : RigidBody3D, IPickup
 {
 
     float turnSpeed = 1.57f;

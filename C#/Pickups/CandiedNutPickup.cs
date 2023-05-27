@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CandiedNutPickup : Pickup
+public partial class CandiedNutPickup : PickupRigidbody
 {
 
     [Export]
