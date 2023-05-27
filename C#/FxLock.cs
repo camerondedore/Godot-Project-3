@@ -1,13 +1,11 @@
 using Godot;
 using System;
 
-public partial class FxLock : RigidBody3D
+public partial class FxLock : Node3D
 {
 
     [Export]
-    MeshInstance3D meshInstance;
-    [Export]
-    Mesh openMesh;
+    PackedScene fxLockOpened;
     [Export]
     Vector3 ejectDirection;
     [Export]
@@ -15,58 +13,33 @@ public partial class FxLock : RigidBody3D
         ejectSpread = 1,
         ejectRotation = 2;
 
-    double startTime,
-        destroyTime = 10;
-    bool open = false;
-
-
-
-    public override void _Process(double delta)
-    {
-        if(open && EngineTime.timePassed > startTime + destroyTime)
-        {
-            // destroy after delay
-            QueueFree();
-        }
-    }
-
 
 
     public void Open()
     {
-        if(open)
-        {
-            return;
-        }
+        // create open lock
+        var newLock = (RigidBody3D) fxLockOpened.Instantiate();
 
-        open = true;
-        startTime = EngineTime.timePassed;
+        // set open lock transform
+        newLock.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
 
-        // clear parent
-        var oldPosition = GlobalPosition;
-        var oldRotation = GlobalRotation;
-        var newParent = GetTree().CurrentScene;
-        GetParent().RemoveChild(this);
-        newParent.AddChild(this);
-        GlobalPosition = oldPosition;
-        GlobalRotation = oldRotation;
-
-        // set mesh
-        meshInstance.Mesh = openMesh;
-
-        // activate rigidbody
-        Freeze = false;
+        // assign open lock parent and owner
+        GetTree().CurrentScene.AddChild(newLock);
+        newLock.Owner = GetTree().CurrentScene;
 
         // get ejection velocity and angular velocity for open lock
         var direction = ejectDirection + new Vector3((GD.Randf() - 0.5f) * 2, (GD.Randf() - 0.5f) * 2, (GD.Randf() - 0.5f) * 2) * ejectSpread;
         var newAngularVelocity = new Vector3((GD.Randf() - 0.5f) * 2, (GD.Randf() - 0.5f) * 2, (GD.Randf() - 0.5f) * 2) * ejectRotation;
 
-        // conver to global
+        // convert to global
         direction = ToGlobal(direction) - GlobalPosition;
         var newVelocity = direction.Normalized() * ejectSpeed;
 
         // apply ejection physics
-        LinearVelocity = newVelocity;   
-        AngularVelocity = newAngularVelocity;
+        newLock.LinearVelocity = newVelocity;   
+        newLock.AngularVelocity = newAngularVelocity;
+
+        // destroy locked lock
+        QueueFree();
     }
 }

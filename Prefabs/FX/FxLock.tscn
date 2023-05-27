@@ -1,19 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd45cyenbjdh4"]
+[gd_scene load_steps=5 format=3 uid="uid://cd45cyenbjdh4"]
 
 [ext_resource type="ArrayMesh" uid="uid://donqrer6ntmi5" path="res://Models/prop-lock.res" id="1_qpfjf"]
 [ext_resource type="Script" path="res://C#/FxLock.cs" id="1_skjfe"]
+[ext_resource type="PackedScene" uid="uid://peso6lrsi2ip" path="res://Prefabs/FX/FxLockOpened.tscn" id="2_ajn81"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_ryckk"]
-[ext_resource type="ArrayMesh" uid="uid://co3vdg57f7qsw" path="res://Models/prop-lock-open.res" id="2_x6nig"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1i7e6"]
-size = Vector3(0.2, 0.275, 0.07)
-
-[node name="FxLock" type="RigidBody3D" node_paths=PackedStringArray("meshInstance")]
-collision_layer = 8
-freeze = true
+[node name="FxLock" type="Node3D"]
 script = ExtResource("1_skjfe")
-meshInstance = NodePath("MeshInstance3D")
-openMesh = ExtResource("2_x6nig")
+fxLockOpened = ExtResource("2_ajn81")
 ejectDirection = Vector3(0, 5, -10)
 ejectSpeed = 5.0
 ejectSpread = 2.0
@@ -22,7 +16,3 @@ ejectRotation = 10.0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_qpfjf")
 surface_material_override/0 = ExtResource("2_ryckk")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00920866, 0)
-shape = SubResource("BoxShape3D_1i7e6")
