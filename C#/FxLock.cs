@@ -52,11 +52,7 @@ public partial class FxLock : RigidBody3D
         var newVelocity = direction.Normalized() * ejectSpeed;
 
         // apply ejection physics
-        if(newVelocity != Vector3.Zero)
-        {
-            LinearVelocity = newVelocity;   
-        }
-        
+        LinearVelocity = newVelocity;   
         AngularVelocity = newAngularVelocity;
     }
 }

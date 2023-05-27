@@ -37,7 +37,7 @@ public partial class PlayerBow : Node3D
         
         // set new arrow position and look direction
         var direction = GetLaunchVectorToHitTarget(GlobalPosition, target.GetGlobalPosition(), newArrow.speed);
-        newArrow.LookAtFromPosition(GlobalPosition, GlobalPosition + direction);
+        newArrow.LookAtFromPosition(GlobalPosition, GlobalPosition + direction.Normalized());
         
         // assign to scene
         GetTree().CurrentScene.AddChild(newArrow);
@@ -58,7 +58,7 @@ public partial class PlayerBow : Node3D
         var x = flatDirection.Length();
         var y = direction.Y;
 
-        // theta = atan( (s^2 +/- sqrt(s^4 - g(g*x^2 + 2*s^2*y))) / (g*x))
+        // theta = atan( (s^2 +/- sqrt(s^4 - g(g*x^2 - 2*s^2*y))) / (g*x))
         // get launch angle
         var gravity = -EngineGravity.magnitude;
 
@@ -73,7 +73,7 @@ public partial class PlayerBow : Node3D
         var vY = speed * Mathf.Sin(angle);
         
         // create launch vector
-        var launchVelocity = direction.Normalized();
+        var launchVelocity = flatDirection.Normalized();
         launchVelocity.X *= vXZ;
         launchVelocity.Z *= vXZ;
         launchVelocity.Y = vY;

@@ -557,6 +557,18 @@ mesh = SubResource("CylinderMesh_8ru0d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget6"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
+[node name="TestBowTarget9" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4447, 14.5824, 4)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget9"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget9"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
 [node name="TestBowTarget8" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 6)
 script = ExtResource("47_lu2vf")
