@@ -5,7 +5,8 @@ public partial class PlayerBow : Node3D
 {
 
     [Export]
-    PackedScene weightedArrow;
+    PackedScene weightedArrow,
+        pickArrow;
 
 
 
@@ -26,18 +27,21 @@ public partial class PlayerBow : Node3D
                 arrowToFire = weightedArrow;
                 break;
             case "pick":
-                arrowToFire = weightedArrow;
+                arrowToFire = pickArrow;
                 break;
         }
 
 
         // create new arrow
-        var newArrow = (PlayerArrow) weightedArrow.Instantiate();
+        var newArrow = (PlayerArrow) arrowToFire.Instantiate();
+        
         // set new arrow position and look direction
-        newArrow.LookAtFromPosition(GlobalPosition, GlobalPosition + GetLaunchVectorToHitTarget(GlobalPosition, target.GetGlobalPosition(), newArrow.speed));
+        var direction = GetLaunchVectorToHitTarget(GlobalPosition, target.GetGlobalPosition(), newArrow.speed);
+        newArrow.LookAtFromPosition(GlobalPosition, GlobalPosition + direction);
+        
         // assign to scene
-        GetTree().Root.AddChild(newArrow);
-        newArrow.Owner = GetTree().Root;
+        GetTree().CurrentScene.AddChild(newArrow);
+        newArrow.Owner = GetTree().CurrentScene;
     }
 
 

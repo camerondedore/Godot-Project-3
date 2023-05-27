@@ -454,6 +454,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30754, 1.07937, -5.57476)
 [node name="PickupSanicle" parent="Pickups" instance=ExtResource("43_r6irn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15192, 1.07936, -3.97972)
 
+[node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
+transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -7.734, 0.35, 4.228)
+
+[node name="PropLockbox2" parent="." instance=ExtResource("50_hmjpr")]
+transform = Transform3D(-0.994291, -0.0949944, 0.0485942, -0.0948812, 0.995478, 0.00463715, -0.0488149, 0, -0.998808, -4.99956, 0.692216, 1.28239)
+
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
 propsToPaint = [ExtResource("32_nchpi"), ExtResource("33_ikeas"), ExtResource("34_ni6mc"), ExtResource("35_3fswv")]
@@ -513,6 +519,30 @@ metadata/_edit_group_ = true
 mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget4"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget5" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.82, -8.11941, 8.95059)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget5"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget5"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget7" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.82, -8.11941, 2)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget7"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget7"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget6" type="StaticBody3D" parent="."]
@@ -623,6 +653,3 @@ mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget2"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
-
-[node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
-transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -7.7341, 0.25, 4.2282)

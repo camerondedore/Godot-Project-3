@@ -41,6 +41,12 @@ public partial class Projectile : Node3D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		// time check
+		if(Engine.TimeScale == 0)
+		{
+			return;
+		}
+
 		// add gravity to velocity
 		velocity += gravity * ((float) delta) * gravityInfluence;		
 

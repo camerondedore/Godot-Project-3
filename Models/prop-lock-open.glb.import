@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cetmj1fn2bslw"
-path="res://.godot/imported/prop-lockbox-lock-opened.glb-e1022d81f9837b5ea592ffb19eaf6dc0.scn"
+uid="uid://br1hrc4p33rs7"
+path="res://.godot/imported/prop-lock-open.glb-3902f5b0912bf942fc881a77b703b34d.scn"
 
 [deps]
 
-source_file="res://Models/prop-lockbox-lock-opened.glb"
-dest_files=["res://.godot/imported/prop-lockbox-lock-opened.glb-e1022d81f9837b5ea592ffb19eaf6dc0.scn"]
+source_file="res://Models/prop-lock-open.glb"
+dest_files=["res://.godot/imported/prop-lock-open.glb-3902f5b0912bf942fc881a77b703b34d.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-lockbox-lock-opened_prop-lockbox-lock-open": {
+"prop-lock-open_prop-lock-open": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -38,7 +38,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-lockbox-lock-opened.res"
+"save_to_file/path": "res://Models/prop-lock-open.res"
 }
 }
 }
