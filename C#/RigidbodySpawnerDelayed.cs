@@ -29,9 +29,14 @@ public partial class RigidbodySpawnerDelayed : RigidbodySpawner
 
 
 
-    public void StartSpawn()
+    public void StartSpawn(PackedScene overridePrefab = null)
     {
         startSpawn = true;
         startTime = EngineTime.timePassed;
+
+        if(overridePrefab != null)
+        {
+            prefab = overridePrefab;
+        }
     }
 }

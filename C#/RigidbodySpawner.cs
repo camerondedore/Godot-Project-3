@@ -5,7 +5,7 @@ public partial class RigidbodySpawner : Node3D
 {
 
     [Export]
-    PackedScene prefab;
+    public PackedScene prefab;
     [Export]
     Vector3 direction;
     [Export]
@@ -17,10 +17,17 @@ public partial class RigidbodySpawner : Node3D
 
 
 
-    public void Spawn()
+    public void Spawn(PackedScene overridePrefab = null)
     {
+        var prefabToUse = prefab;
+
+        if(overridePrefab != null)
+        {
+            prefabToUse = overridePrefab;
+        }
+        
         // create new prefab
-        var newPrefab = (RigidBody3D) prefab.Instantiate();
+        var newPrefab = (RigidBody3D) prefabToUse.Instantiate();
 
         // set transform
         newPrefab.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);

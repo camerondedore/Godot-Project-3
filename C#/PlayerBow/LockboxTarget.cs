@@ -12,6 +12,8 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     [Export]
     RigidbodySpawnerDelayed pickupSpawner;
     [Export]
+    PackedScene storedItem = null;
+    [Export]
     AnimationPlayer anim;
 
 
@@ -67,7 +69,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
         lockFx.Open();
 
         // eject pickup
-        pickupSpawner.StartSpawn();
+        pickupSpawner.StartSpawn(storedItem);
 
         // disable script
         SetScript(new Variant());
