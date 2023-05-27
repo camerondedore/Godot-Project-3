@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="1_w0j78"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_s4b3k"]
 [ext_resource type="PackedScene" uid="uid://cd45cyenbjdh4" path="res://Prefabs/FX/FxLock.tscn" id="5_cpfrh"]
-[ext_resource type="Script" path="res://C#/RigidbodySpawner.cs" id="6_abe33"]
+[ext_resource type="Script" path="res://C#/RigidbodySpawnerDelayed.cs" id="6_03t3p"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="7_rf4xg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jlwy1"]
@@ -17,7 +17,7 @@ collision_layer = 16
 script = ExtResource("1_vcmy5")
 targetName = "Lockbox"
 lockFx = NodePath("FxLock")
-pickupSpawner = NodePath("PickupSpawner")
+pickupSpawner = NodePath("PickupSpawnerDelayed")
 anim = NodePath("AnimationPlayer")
 
 [node name="prop-lockbox-armature" parent="." index="0"]
@@ -37,10 +37,12 @@ shape = SubResource("BoxShape3D_jlwy1")
 [node name="FxLock" parent="." index="3" instance=ExtResource("5_cpfrh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109548, -0.31598)
 
-[node name="PickupSpawner" type="Node3D" parent="." index="4"]
+[node name="PickupSpawnerDelayed" type="Node3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376427, -0.259344)
-script = ExtResource("6_abe33")
+script = ExtResource("6_03t3p")
+delayTime = 0.1
 prefab = ExtResource("7_rf4xg")
 direction = Vector3(0, 5, -2)
 speed = 5.0
 angularSpeed = 0.0
+useAngularVelocity = false

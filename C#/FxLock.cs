@@ -12,7 +12,7 @@ public partial class FxLock : Node3D
     public void Open()
     {
         // create open lock
-        lockSpawner.Spawn(true);
+        lockSpawner.Spawn();
 
         // destroy locked lock
         QueueFree();

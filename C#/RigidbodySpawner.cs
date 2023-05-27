@@ -12,10 +12,12 @@ public partial class RigidbodySpawner : Node3D
     float speed = 2,
         spread = 1,
         angularSpeed = 2;
+    [Export] 
+    bool useAngularVelocity = true;
 
 
 
-    public void Spawn(bool useAngularVelocity)
+    public void Spawn()
     {
         // create new prefab
         var newPrefab = (RigidBody3D) prefab.Instantiate();
