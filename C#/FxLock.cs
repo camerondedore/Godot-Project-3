@@ -15,7 +15,20 @@ public partial class FxLock : RigidBody3D
         ejectSpread = 1,
         ejectRotation = 2;
 
+    double startTime,
+        destroyTime = 10;
     bool open = false;
+
+
+
+    public override void _Process(double delta)
+    {
+        if(open && EngineTime.timePassed > startTime + destroyTime)
+        {
+            // destroy after delay
+            QueueFree();
+        }
+    }
 
 
 
@@ -27,6 +40,7 @@ public partial class FxLock : RigidBody3D
         }
 
         open = true;
+        startTime = EngineTime.timePassed;
 
         // clear parent
         var oldPosition = GlobalPosition;

@@ -10,6 +10,7 @@ size = Vector3(0.2, 0.275, 0.07)
 
 [node name="FxLock" type="RigidBody3D" node_paths=PackedStringArray("meshInstance")]
 collision_layer = 8
+freeze = true
 script = ExtResource("1_skjfe")
 meshInstance = NodePath("MeshInstance3D")
 openMesh = ExtResource("2_x6nig")
