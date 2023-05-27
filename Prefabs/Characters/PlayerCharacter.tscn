@@ -34,7 +34,7 @@ height = 2.6
 
 [node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 19
 floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
@@ -71,6 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 [node name="BowAimer" type="RayCast3D" parent="SpringArm3D" node_paths=PackedStringArray("targetNameLabel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 target_position = Vector3(0, 0, -30)
+collision_mask = 19
 script = ExtResource("3_uw5x1")
 targetNameLabel = NodePath("../../HudCanvas/Hud/TargetName")
 

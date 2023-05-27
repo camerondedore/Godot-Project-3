@@ -1,37 +1,14 @@
 using Godot;
 using System;
 
-public partial class DockLeafPickup : RigidBody3D, IPickup
+public partial class DockLeafPickup : Pickup
 {
 
-    float turnSpeed = 1.57f;
 
 
 
-    public override void _Ready()
-    {
-        // random rotation
-        Rotate(Vector3.Up, GD.Randf() * 6.28f);
-    }
 
-
-
-    public override void _PhysicsProcess(double delta)
-    {
-        // check for frozen rigidbody
-        if(!Freeze)
-        {
-            // exit here to avoid rotating an active rigidbody
-            return;
-        }
-
-        // rotate-manually placed pickups
-        Rotate(Vector3.Up, turnSpeed * ((float) delta));
-    }
-
-
-
-    public void PickupAction(PlayerPickup.PlayerPickupData data)
+    public override void PickupAction(PlayerPickup.PlayerPickupData data)
     {
         // add dock leaf to player inventory
         PlayerInventory.inventory.AddToInventory(0, 1, 0, 0, null);

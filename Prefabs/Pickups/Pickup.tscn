@@ -11,6 +11,7 @@ radius = 0.3
 
 [node name="Pickup" type="RigidBody3D"]
 collision_layer = 4
+lock_rotation = true
 freeze = true
 freeze_mode = 1
 

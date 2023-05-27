@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=56 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -39,7 +39,6 @@
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="33_ikeas"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="34_ni6mc"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="35_3fswv"]
-[ext_resource type="PackedScene" uid="uid://ciiryug1dnh26" path="res://Prefabs/Pickups/PickupNettleBrothRigidBody.tscn" id="37_7udgq"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="38_05md2"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="39_pevmh"]
@@ -420,39 +419,47 @@ transform = Transform3D(0.835894, 0, -0.548892, 0, 1, 0, 0.548892, 0, 0.835894, 
 
 [node name="PickupCandiedNut" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -9.40822)
+lock_rotation = false
 
 [node name="PickupCandiedNut5" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -8.40822)
+lock_rotation = false
 
 [node name="PickupCandiedNut6" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.51162, 3.07936, -6.40822)
+lock_rotation = false
 
 [node name="PickupCandiedNut2" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.91329, 1.07936, -10.3178)
+lock_rotation = false
 
 [node name="PickupCandiedNut3" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.28351, 1.07936, -8.67167)
+lock_rotation = false
 
 [node name="PickupCandiedNut4" parent="Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51162, 1.07936, -10.4082)
+lock_rotation = false
 
 [node name="PickupDockLeaf" parent="Pickups" instance=ExtResource("42_1ywjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.887575, 1.07937, -5.2297)
+lock_rotation = false
 
 [node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518028, 1.07936, -8.2424)
+lock_rotation = false
 
 [node name="PickupNettleBroth2" parent="Pickups" instance=ExtResource("37_yfk8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518028, 1.07936, -9.2424)
+lock_rotation = false
 
 [node name="PickupNettleBroth3" parent="Pickups" instance=ExtResource("37_yfk8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.518028, 1.07936, -10.2424)
-
-[node name="PickupNettleBrothRigidBody" parent="Pickups" instance=ExtResource("37_7udgq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30754, 1.07937, -5.57476)
+lock_rotation = false
 
 [node name="PickupSanicle" parent="Pickups" instance=ExtResource("43_r6irn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15192, 1.07936, -3.97972)
+lock_rotation = false
 
 [node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
 transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -7.734, 0.35, 4.228)

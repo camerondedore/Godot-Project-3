@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CandiedNutPickup : RigidBody3D, IPickup
+public partial class CandiedNutPickup : Pickup
 {
 
     [Export]
@@ -9,14 +9,11 @@ public partial class CandiedNutPickup : RigidBody3D, IPickup
     [Export]
     ArrayMesh[] nutMeshes;
 
-    float turnSpeed = 1.57f;
-
 
 
     public override void _Ready()
     {
-        // random rotation
-        Rotate(Vector3.Up, GD.Randf() * 6.28f);
+        base._Ready();
 
         // random mesh
         var meshIndex = GD.Randi() % nutMeshes.Length;
@@ -25,22 +22,7 @@ public partial class CandiedNutPickup : RigidBody3D, IPickup
 
 
 
-    public override void _PhysicsProcess(double delta)
-    {
-        // check for frozen rigidbody
-        if(!Freeze)
-        {
-            // exit here to avoid rotating an active rigidbody
-            return;
-        }
-
-        // rotate-manually placed pickups
-        Rotate(Vector3.Up, turnSpeed * ((float) delta));
-    }
-
-
-
-    public void PickupAction(PlayerPickup.PlayerPickupData data)
+    public override void PickupAction(PlayerPickup.PlayerPickupData data)
     {
         // add nut to player inventory
         PlayerInventory.inventory.AddToInventory(1, 0, 0, 0, null);

@@ -7,6 +7,7 @@ size = Vector3(0.2, 0.2, 0.2)
 
 [node name="PlayerArrowPick" instance=ExtResource("1_b7ali")]
 arrowType = "pick"
+mask = 19
 
 [node name="MeshInstance3D2" parent="." index="1"]
 mesh = SubResource("PrismMesh_g3l5h")

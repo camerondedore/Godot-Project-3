@@ -1,14 +1,16 @@
 using Godot;
 using System;
 
-public partial class LockboxTarget : Node3D, IBowTarget
+public partial class LockboxTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
     public string targetName = "target",
         arrowType = "pick";
     [Export]
-    FxLock lockRigidBody;
+    FxLock lockFx;
+    [Export]
+    RigidbodySpawner pickupSpawner;
     [Export]
     AnimationPlayer anim;
 
@@ -62,9 +64,10 @@ public partial class LockboxTarget : Node3D, IBowTarget
         anim.Play("lockbox-open");
 
         // remove lock
-        lockRigidBody.Open();
+        lockFx.Open();
 
-        // eject goods
+        // eject pickup
+        pickupSpawner.Spawn(false);
 
         // disable script
         SetScript(new Variant());

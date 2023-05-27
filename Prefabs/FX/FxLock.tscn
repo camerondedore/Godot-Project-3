@@ -1,18 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd45cyenbjdh4"]
+[gd_scene load_steps=6 format=3 uid="uid://cd45cyenbjdh4"]
 
 [ext_resource type="ArrayMesh" uid="uid://donqrer6ntmi5" path="res://Models/prop-lock.res" id="1_qpfjf"]
 [ext_resource type="Script" path="res://C#/FxLock.cs" id="1_skjfe"]
 [ext_resource type="PackedScene" uid="uid://peso6lrsi2ip" path="res://Prefabs/FX/FxLockOpened.tscn" id="2_ajn81"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_ryckk"]
+[ext_resource type="Script" path="res://C#/RigidbodySpawner.cs" id="4_rvvph"]
 
-[node name="FxLock" type="Node3D"]
+[node name="FxLock" type="Node3D" node_paths=PackedStringArray("lockSpawner")]
 script = ExtResource("1_skjfe")
-fxLockOpened = ExtResource("2_ajn81")
-ejectDirection = Vector3(0, 5, -10)
-ejectSpeed = 5.0
-ejectSpread = 2.0
-ejectRotation = 10.0
+lockSpawner = NodePath("LockSpawner")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_qpfjf")
 surface_material_override/0 = ExtResource("2_ryckk")
+
+[node name="LockSpawner" type="Node3D" parent="."]
+script = ExtResource("4_rvvph")
+prefab = ExtResource("2_ajn81")
+direction = Vector3(0, 5, -5)
+speed = 6.0
+spread = 2.0
+angularSpeed = 5.0
