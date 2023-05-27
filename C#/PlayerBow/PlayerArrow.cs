@@ -6,6 +6,8 @@ public partial class PlayerArrow : Projectile
 
     [Export]
     string arrowType = "weighted";
+    [Export]
+    PackedScene hitFx;
 
 
 
@@ -34,8 +36,20 @@ public partial class PlayerArrow : Projectile
             {
                 // hit the target
                 hitTarget.Hit();
-            }
-            
+
+                // spawn hit fx
+                var newHitFx = (GpuParticles3D) hitFx.Instantiate();
+                
+                // set up hit fx transform
+                newHitFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+
+                // assign parent and owner
+                GetTree().CurrentScene.AddChild(newHitFx);
+                newHitFx.Owner = GetTree().CurrentScene;
+
+                // play particles
+                newHitFx.Emitting = true;
+            }            
         }
 
 

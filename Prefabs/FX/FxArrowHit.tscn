@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://nid7jl2fqayy"]
+
+[ext_resource type="Material" uid="uid://c248kr7mbh8b7" path="res://Materials/FxArrowHit.tres" id="1_s2cpb"]
+[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_8umw6"]
+
+[sub_resource type="Gradient" id="Gradient_h563r"]
+offsets = PackedFloat32Array(0, 0.689024, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.896341, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vy5mi"]
+gradient = SubResource("Gradient_h563r")
+
+[sub_resource type="Curve" id="Curve_x1mlp"]
+_data = [Vector2(0, 0), 0.0, 2.32839, 0, 0, Vector2(1, 1), 0.376687, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_5uwsm"]
+curve = SubResource("Curve_x1mlp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c3qcg"]
+lifetime_randomness = 0.2
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_5uwsm")
+color_ramp = SubResource("GradientTexture1D_vy5mi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bvefm"]
+
+[node name="FxArrowHit" type="GPUParticles3D"]
+material_override = ExtResource("1_s2cpb")
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
+process_material = SubResource("ParticleProcessMaterial_c3qcg")
+draw_pass_1 = SubResource("QuadMesh_bvefm")
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("2_8umw6")
+lifeTime = 1.0
