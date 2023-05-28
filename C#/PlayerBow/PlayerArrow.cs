@@ -25,8 +25,17 @@ public partial class PlayerArrow : Projectile
 
 
 
-    public override void Hit(Node3D hitObject)
+    public override void Hit(Node3D hitObject, Vector3 point, Vector3 normal)
     {
+        // get up vector
+        var upVector = Vector3.Up;
+
+        if(upVector == normal)
+        {
+            upVector = (normal + -Basis.Z).Normalized();
+        }
+
+
         // check that hit object is target 
         if(hitObject is IBowTarget)
         {
@@ -42,14 +51,11 @@ public partial class PlayerArrow : Projectile
                 var newHitFx = (GpuParticles3D) hitFx.Instantiate();
                 
                 // set up hit fx transform
-                newHitFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+                newHitFx.LookAtFromPosition(point, point + normal, upVector);
 
                 // assign parent and owner
                 GetTree().CurrentScene.AddChild(newHitFx);
                 newHitFx.Owner = GetTree().CurrentScene;
-
-                // play particles
-                newHitFx.Emitting = true;
 
                 // destroy arrow
                 QueueFree();
@@ -62,17 +68,13 @@ public partial class PlayerArrow : Projectile
         var newMissFx = (GpuParticles3D) missFx.Instantiate();
         
         // set up hit fx transform
-        newMissFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+        newMissFx.LookAtFromPosition(point, point + normal, upVector);
 
         // assign parent and owner
         GetTree().CurrentScene.AddChild(newMissFx);
         newMissFx.Owner = GetTree().CurrentScene;
-
-        // play particles
-        newMissFx.Emitting = true;
         
         // destroy arrow
         QueueFree();
-        
     }
 }

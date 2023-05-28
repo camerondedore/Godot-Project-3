@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbb5yp644jsdv"]
+[gd_scene load_steps=13 format=3 uid="uid://dbb5yp644jsdv"]
 
 [ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/FxDust.tres" id="1_dbchy"]
+[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_4le6q"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_dgipw"]
+[ext_resource type="Material" uid="uid://b1fb52ywj54rw" path="res://Materials/FxDirt.tres" id="4_njdnm"]
 
 [sub_resource type="Gradient" id="Gradient_ckonk"]
 offsets = PackedFloat32Array(0, 0.0792683, 0.658537, 1)
@@ -20,13 +22,11 @@ curve = SubResource("Curve_gpfsa")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gwd5j"]
 lifetime_randomness = 0.4
 emission_shape = 1
-emission_sphere_radius = 0.4
+emission_sphere_radius = 0.1
 particle_flag_rotate_y = true
-direction = Vector3(0, 1, 0)
+direction = Vector3(0, 0, 0)
 spread = 20.0
 gravity = Vector3(0, 0.07, 0)
-initial_velocity_min = 0.1
-initial_velocity_max = 0.1
 angle_min = -30.0
 angle_max = 30.0
 scale_min = 0.8
@@ -35,17 +35,44 @@ color_ramp = SubResource("GradientTexture1D_wlm7t")
 
 [sub_resource type="QuadMesh" id="QuadMesh_wxsq1"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0bg0a"]
+lifetime_randomness = 0.5
+direction = Vector3(0, 0.5, -1)
+spread = 30.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 0.1
+scale_max = 0.2
+
+[sub_resource type="QuadMesh" id="QuadMesh_px3mg"]
+
 [node name="FxDust" type="GPUParticles3D"]
 material_override = ExtResource("1_dbchy")
 emitting = false
-amount = 3
+amount = 2
 lifetime = 3.0
 one_shot = true
 explosiveness = 1.0
 visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
 process_material = SubResource("ParticleProcessMaterial_gwd5j")
 draw_pass_1 = SubResource("QuadMesh_wxsq1")
+script = ExtResource("2_4le6q")
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("2_dgipw")
 lifeTime = 5.0
+
+[node name="FxChunks" type="GPUParticles3D" parent="."]
+material_override = ExtResource("4_njdnm")
+emitting = false
+amount = 7
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-2, -2, -4, 4, 4, 4)
+process_material = SubResource("ParticleProcessMaterial_0bg0a")
+draw_pass_1 = SubResource("QuadMesh_px3mg")
+script = ExtResource("2_4le6q")

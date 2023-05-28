@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://nid7jl2fqayy"]
+[gd_scene load_steps=10 format=3 uid="uid://nid7jl2fqayy"]
 
 [ext_resource type="Material" uid="uid://c248kr7mbh8b7" path="res://Materials/FxArrowHit.tres" id="1_s2cpb"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_8umw6"]
+[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gwfle"]
 
 [sub_resource type="Gradient" id="Gradient_h563r"]
 offsets = PackedFloat32Array(0, 0.689024, 1)
@@ -41,6 +42,7 @@ explosiveness = 1.0
 visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
 process_material = SubResource("ParticleProcessMaterial_c3qcg")
 draw_pass_1 = SubResource("QuadMesh_bvefm")
+script = ExtResource("2_gwfle")
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("2_8umw6")

@@ -68,9 +68,13 @@ public partial class Projectile : Node3D
 		}
 		else
 		{
-            // get hit node
+            // get hit info
 			var hitObject = (Node3D) rayResult["collider"];
-            Hit(hitObject);
+			var hitPoint = (Vector3) rayResult["position"];
+			var hitNormal = (Vector3) rayResult["normal"];
+
+			// hit
+            Hit(hitObject, hitPoint, hitNormal);
 		}		
 
 
@@ -83,7 +87,7 @@ public partial class Projectile : Node3D
 
 
 
-    public virtual void Hit(Node3D hitObject)
+    public virtual void Hit(Node3D hitObject, Vector3 point, Vector3 normal)
     {
         // destroy on hit
         QueueFree();
