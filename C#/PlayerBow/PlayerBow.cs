@@ -53,7 +53,7 @@ public partial class PlayerBow : Node3D
         newArrow.Owner = GetTree().CurrentScene;
 
         // play audio
-        bowAudio.PlaySound(bowFireSound);
+        bowAudio.PlaySound(bowFireSound, 0.05f);
     }
 
 
@@ -68,7 +68,7 @@ public partial class PlayerBow : Node3D
         isDrawn = true;
 
         // play audio
-        bowAudio.PlaySound(bowDrawSound);
+        bowAudio.PlaySound(bowDrawSound, 0.05f);
     }
 
 

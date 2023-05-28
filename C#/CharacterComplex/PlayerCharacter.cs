@@ -26,6 +26,8 @@ namespace PlayerCharacterComplex
 		[Export]
 		public CameraController cameraSpringArm;
 		[Export]
+		public PlayerCharacterAudio characterAudio;
+		[Export]
 		public RayCast3D ledgeDetectorRayHorizontal,
 			ledgeDetectorRayVertical;
 		[Export]

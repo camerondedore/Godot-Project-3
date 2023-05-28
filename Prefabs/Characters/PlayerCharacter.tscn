@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://nbamt57iqwku"]
+[gd_scene load_steps=28 format=3 uid="uid://ds2kexymukxg1"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
+[ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
+[ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="17_a35oj"]
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="17_q6v2h"]
 [ext_resource type="PackedScene" uid="uid://dtqhas2qrj6hf" path="res://Prefabs/PlayerArrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
@@ -35,12 +37,13 @@ size = Vector3(0.6, 0.2, 0.3)
 radius = 0.6
 height = 2.6
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
 collision_layer = 2
 collision_mask = 19
 floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
+characterAudio = NodePath("CharacterAudio")
 ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRays/LedgeDetectorRayHorizontal")
 ledgeDetectorRayVertical = NodePath("LedgeDetectorRays/LedgeDetectorRayVertical")
 bowAimer = NodePath("SpringArm3D/BowAimer")
@@ -299,6 +302,11 @@ playerHealth = NodePath("../Health")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CapsuleShape3D_t3b7p")
+
+[node name="CharacterAudio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
+script = ExtResource("16_tm1am")
+jumpPadSound = ExtResource("17_a35oj")
 
 [node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
