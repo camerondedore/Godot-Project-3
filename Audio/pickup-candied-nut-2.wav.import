@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cgtsqc8ud2sow"
-path="res://.godot/imported/pickup-candied-nut.wav-47d6f9a16917fec719e79d5774ad6b98.sample"
+path="res://.godot/imported/pickup-candied-nut-2.wav-e9b631d550bef8f97e02f8a83e5af918.sample"
 
 [deps]
 
-source_file="res://Audio/pickup-candied-nut.wav"
-dest_files=["res://.godot/imported/pickup-candied-nut.wav-47d6f9a16917fec719e79d5774ad6b98.sample"]
+source_file="res://Audio/pickup-candied-nut-2.wav"
+dest_files=["res://.godot/imported/pickup-candied-nut-2.wav-e9b631d550bef8f97e02f8a83e5af918.sample"]
 
 [params]
 

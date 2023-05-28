@@ -5,14 +5,14 @@
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gwfle"]
 
 [sub_resource type="Gradient" id="Gradient_h563r"]
-offsets = PackedFloat32Array(0, 0.689024, 1)
+offsets = PackedFloat32Array(0, 0.859756, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.896341, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vy5mi"]
 gradient = SubResource("Gradient_h563r")
 
 [sub_resource type="Curve" id="Curve_x1mlp"]
-_data = [Vector2(0, 0), 0.0, 2.32839, 0, 0, Vector2(1, 1), 0.376687, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 2.48362, 0, 0, Vector2(1, 1), 0.0433189, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_5uwsm"]

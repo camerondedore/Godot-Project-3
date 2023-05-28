@@ -1,12 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://o3mh30x6hatw"]
+[gd_scene load_steps=4 format=3 uid="uid://d5v3qff2dax3"]
 
-[ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut.wav" id="1_0mwi1"]
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_02d6e"]
+[ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut-2.wav" id="1_4tf8k"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="2_1jsny"]
+[ext_resource type="AudioStream" uid="uid://b10wo662h0woi" path="res://Audio/pickup-candied-nut-1.wav" id="3_xvj28"]
 
 [node name="CandiedNutAudio" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_0mwi1")
-autoplay = true
-
-[node name="AutoDestroy" type="Node" parent="."]
-script = ExtResource("2_02d6e")
-lifeTime = 5.0
+stream = ExtResource("1_4tf8k")
+script = ExtResource("2_1jsny")
+sounds = Array[AudioStream]([ExtResource("3_xvj28"), ExtResource("1_4tf8k")])
