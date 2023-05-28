@@ -6,7 +6,8 @@ namespace PlayerCharacterComplex
     public partial class PlayerCharacterStateBowAim : PlayerCharacterState
     {
 
-
+        double startTime;
+        bool holdDraw = true;
 
 
 
@@ -35,14 +36,27 @@ namespace PlayerCharacterComplex
 
             // camera follow
             blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+
+            // check draw
+            if(holdDraw == true && PlayerInput.fire1 == 0 && EngineTime.timePassed < startTime + blackboard.drawTime)
+            {
+                holdDraw = false;
+            }
         }
 
 
 
         public override void StartState()
         {
+            startTime = EngineTime.timePassed;
+
             // enable bow
             blackboard.bowAimer.EnableBowAimer();
+
+            // draw bow
+            blackboard.bow.Draw();
+
+            holdDraw = true;
         }
 
 
@@ -69,8 +83,8 @@ namespace PlayerCharacterComplex
             //     //return blackboard.stateJumpStart;
             //     return blackboard.stateJump;
             // }
-
-            if(PlayerInput.fire1 == 0)
+            
+            if(holdDraw && EngineTime.timePassed > startTime + blackboard.drawTime && PlayerInput.fire1 == 0)
             {
                 if(blackboard.bowAimer.HasValidTarget())
                 {
@@ -78,6 +92,18 @@ namespace PlayerCharacterComplex
                     return blackboard.stateBowFire;
                 }
 
+                // cancel draw
+                blackboard.bow.CancelDraw();
+
+                // move
+                return blackboard.stateMove;
+            }
+
+            if(holdDraw == false && EngineTime.timePassed > startTime + blackboard.drawTime)
+            {
+                // cancel draw
+                blackboard.bow.CancelDraw();
+                
                 // move
                 return blackboard.stateMove;
             }

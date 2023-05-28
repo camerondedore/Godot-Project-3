@@ -7,6 +7,11 @@ public partial class PlayerBow : Node3D
     [Export]
     PackedScene weightedArrow,
         pickArrow;
+    [Export]
+    AudioTools3d bowAudio;
+    [Export]
+    AudioStream bowFireSound,
+        bowDrawSound;
 
 
 
@@ -42,6 +47,25 @@ public partial class PlayerBow : Node3D
         // assign to scene
         GetTree().CurrentScene.AddChild(newArrow);
         newArrow.Owner = GetTree().CurrentScene;
+
+        // play audio
+        bowAudio.PlaySound(bowFireSound);
+    }
+
+
+
+    public void Draw()
+    {
+        // play audio
+        bowAudio.PlaySound(bowDrawSound);
+    }
+
+
+
+    public void CancelDraw()
+    {
+        // play audio
+        bowAudio.Stop();
     }
 
 

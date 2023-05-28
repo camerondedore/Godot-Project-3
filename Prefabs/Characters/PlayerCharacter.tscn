@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://nbamt57iqwku"]
+[gd_scene load_steps=26 format=3 uid="uid://nbamt57iqwku"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
@@ -18,6 +18,9 @@
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="17_q6v2h"]
 [ext_resource type="PackedScene" uid="uid://dtqhas2qrj6hf" path="res://Prefabs/PlayerArrows/PlayerArrowPick.tscn" id="18_erk0y"]
+[ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
+[ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="20_no75w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -297,8 +300,14 @@ playerHealth = NodePath("../Health")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CapsuleShape3D_t3b7p")
 
-[node name="Bow" type="Node3D" parent="."]
+[node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
 script = ExtResource("16_mwwtv")
 weightedArrow = ExtResource("17_q6v2h")
 pickArrow = ExtResource("18_erk0y")
+bowAudio = NodePath("BowAudio")
+bowFireSound = ExtResource("19_rmfin")
+bowDrawSound = ExtResource("20_no75w")
+
+[node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow"]
+script = ExtResource("20_4jbn7")

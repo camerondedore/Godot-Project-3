@@ -44,9 +44,11 @@ namespace PlayerCharacterComplex
 			ledgeGrabJumpHeight = 3,
 			bandageTime = 0.5f,
 			startDelay = 1f,
-			fireTime = 0.5f;
+			fireTime = 0.5f,
+			drawTime = 0.5f;
 
-		public Disconnector jumpDisconnector = new Disconnector();
+		public Disconnector jumpDisconnector = new Disconnector(),
+			bowDisconnector = new Disconnector();
 		string debugText;
 		
 

@@ -6,7 +6,8 @@ namespace PlayerCharacterComplex
     public partial class PlayerCharacterSubStateJumpPadBowAim : PlayerCharacterState
     {
 
-
+        double startTime;
+        bool holdDraw = true;
 
 
 
@@ -18,14 +19,27 @@ namespace PlayerCharacterComplex
             lookDirection.Y = blackboard.GlobalPosition.Y;
 
             blackboard.CharacterLook(lookDirection);
+
+            // check draw
+            if(holdDraw == true && PlayerInput.fire1 == 0 && EngineTime.timePassed < startTime + blackboard.drawTime)
+            {
+                holdDraw = false;
+            }
         }
 
 
 
         public override void StartState()
         {
+            startTime = EngineTime.timePassed;
+
             // enable bow
             blackboard.bowAimer.EnableBowAimer();
+
+            // draw bow
+            blackboard.bow.Draw();
+
+            holdDraw = true;
         }
 
 
@@ -40,7 +54,7 @@ namespace PlayerCharacterComplex
 
         public override State Transition()
         {
-            if(PlayerInput.fire1 == 0)
+            if(holdDraw && EngineTime.timePassed > startTime + blackboard.drawTime && PlayerInput.fire1 == 0)
             {
                 if(blackboard.bowAimer.HasValidTarget())
                 {
@@ -48,6 +62,18 @@ namespace PlayerCharacterComplex
                     return blackboard.subStateJumpPadBowFire;
                 }
 
+                // cancel draw
+                blackboard.bow.CancelDraw();
+
+                // idle
+                return blackboard.subStateJumpPadIdle;
+            }
+
+            if(holdDraw == false && EngineTime.timePassed > startTime + blackboard.drawTime)
+            {
+                // cancel draw
+                blackboard.bow.CancelDraw();
+                
                 // idle
                 return blackboard.subStateJumpPadIdle;
             }

@@ -8,7 +8,9 @@ public partial class PlayerArrow : Projectile
     string arrowType = "weighted";
     [Export]
     PackedScene hitFx,
-        missFx;
+        missFx,
+        missAudio;
+    
 
 
 
@@ -48,14 +50,7 @@ public partial class PlayerArrow : Projectile
                 hitTarget.Hit();
 
                 // spawn hit fx
-                var newHitFx = (GpuParticles3D) hitFx.Instantiate();
-                
-                // set up hit fx transform
-                newHitFx.LookAtFromPosition(point, point + normal, upVector);
-
-                // assign parent and owner
-                GetTree().CurrentScene.AddChild(newHitFx);
-                newHitFx.Owner = GetTree().CurrentScene;
+                SpawnPrefab(hitFx, point, normal, upVector);
 
                 // destroy arrow
                 QueueFree();
@@ -65,16 +60,26 @@ public partial class PlayerArrow : Projectile
         }
 
         // spawn miss fx
-        var newMissFx = (GpuParticles3D) missFx.Instantiate();
-        
-        // set up hit fx transform
-        newMissFx.LookAtFromPosition(point, point + normal, upVector);
+        SpawnPrefab(missFx, point, normal, upVector);
+        // spawn miss audio
+        SpawnPrefab(missAudio, point, normal, upVector);
 
-        // assign parent and owner
-        GetTree().CurrentScene.AddChild(newMissFx);
-        newMissFx.Owner = GetTree().CurrentScene;
-        
         // destroy arrow
         QueueFree();
+    }
+
+
+
+    void SpawnPrefab(PackedScene prefab, Vector3 position, Vector3 direction, Vector3 upVector)
+    {
+        // spawn
+        var newPrefab = (Node3D) prefab.Instantiate();
+        
+        // set up hit fx transform
+        newPrefab.LookAtFromPosition(position, position + direction, upVector);
+
+        // assign parent and owner
+        GetTree().CurrentScene.AddChild(newPrefab);
+        newPrefab.Owner = GetTree().CurrentScene;
     }
 }

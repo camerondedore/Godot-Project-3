@@ -55,7 +55,7 @@ namespace PlayerCharacterComplex
             //blackboard.ySpeed = blackboard.Velocity.Y;
 
             // restart sub states
-            SetState(blackboard.subStateJumpPadBowAim);
+            SetState(blackboard.subStateJumpPadIdle);
         }
 
 
@@ -79,11 +79,11 @@ namespace PlayerCharacterComplex
 
             if(blackboard.IsOnFloor())
             {
-                if(PlayerInput.fire1 > 0)
-                {
-                    // aim bow
-                    return blackboard.stateBowAim;
-                }
+                // if(blackboard.bowDisconnector.Trip(PlayerInput.fire1))
+                // {
+                //     // aim bow
+                //     return blackboard.stateBowAim;
+                // }
 
                 // land
                 //return blackboard.stateLand;

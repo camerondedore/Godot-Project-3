@@ -34,7 +34,7 @@ namespace PlayerCharacterComplex
 
         public override State Transition()
         {
-            if(PlayerInput.fire1 > 0)
+            if(blackboard.bowDisconnector.Trip(PlayerInput.fire1))
             {
                 // aim bow
                 return blackboard.subStateJumpPadBowAim;
