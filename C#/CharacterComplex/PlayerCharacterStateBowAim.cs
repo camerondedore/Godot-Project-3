@@ -7,7 +7,8 @@ namespace PlayerCharacterComplex
     {
 
         double startTime;
-        bool holdDraw = true;
+        bool holdDraw = true,
+            previouslyDrawn = false;
 
 
 
@@ -53,8 +54,14 @@ namespace PlayerCharacterComplex
             // enable bow
             blackboard.bowAimer.EnableBowAimer();
 
+            // check last bow state
+            previouslyDrawn = blackboard.bow.isDrawn;
+
             // draw bow
-            blackboard.bow.Draw();
+            if(!previouslyDrawn)
+            {
+                blackboard.bow.Draw();
+            }
 
             holdDraw = true;
         }
@@ -73,18 +80,17 @@ namespace PlayerCharacterComplex
         {
             if(!blackboard.IsOnFloor())
             {
+                // cancel draw
+                blackboard.bow.CancelDraw();
+
                 // fall
                 return blackboard.stateFall;
             }
 
-            // if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
-            // {
-            //     // jump start
-            //     //return blackboard.stateJumpStart;
-            //     return blackboard.stateJump;
-            // }
-            
-            if(holdDraw && EngineTime.timePassed > startTime + blackboard.drawTime && PlayerInput.fire1 == 0)
+            var pastDrawTime = EngineTime.timePassed > startTime + blackboard.drawTime;
+
+            // check for fire 1 up and either full draw or previously drawn
+            if((holdDraw && pastDrawTime || previouslyDrawn) && PlayerInput.fire1 == 0)
             {
                 if(blackboard.bowAimer.HasValidTarget())
                 {
@@ -99,7 +105,8 @@ namespace PlayerCharacterComplex
                 return blackboard.stateMove;
             }
 
-            if(holdDraw == false && EngineTime.timePassed > startTime + blackboard.drawTime)
+            // check for failed draw or canceled previous draw
+            if((holdDraw == false && pastDrawTime) || (previouslyDrawn && PlayerInput.fire1 == 0))
             {
                 // cancel draw
                 blackboard.bow.CancelDraw();

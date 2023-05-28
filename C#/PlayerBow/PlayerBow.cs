@@ -13,10 +13,14 @@ public partial class PlayerBow : Node3D
     AudioStream bowFireSound,
         bowDrawSound;
 
+    public bool isDrawn = false;
+
 
 
     public void Fire(IBowTarget target)
     {
+        isDrawn = false;
+
         // check for target
         if(target == null)
         {
@@ -56,6 +60,13 @@ public partial class PlayerBow : Node3D
 
     public void Draw()
     {
+        if(isDrawn)
+        {
+            return;            
+        }
+
+        isDrawn = true;
+
         // play audio
         bowAudio.PlaySound(bowDrawSound);
     }
@@ -64,6 +75,8 @@ public partial class PlayerBow : Node3D
 
     public void CancelDraw()
     {
+        isDrawn = false;
+
         // play audio
         bowAudio.Stop();
     }

@@ -505,171 +505,365 @@ shape = SubResource("SphereShape3D_mef1p")
 [node name="TestBandageStationTarget" type="Node3D" parent="TestBandageStationArea"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.519973, 0, 0)
 
-[node name="TestBowTarget" type="StaticBody3D" parent="."]
+[node name="Targets" type="Node3D" parent="."]
+
+[node name="TestBowTarget" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, 0)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget4" type="StaticBody3D" parent="."]
+[node name="TestBowTarget4" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2, 2)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget4"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget4"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget5" type="StaticBody3D" parent="."]
+[node name="TestBowTarget5" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.82, -8.11941, 8.95059)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget5"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget5"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget5"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget7" type="StaticBody3D" parent="."]
+[node name="TestBowTarget7" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.82, -8.11941, 2)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget7"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget7"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget7"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget7"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget6" type="StaticBody3D" parent="."]
+[node name="TestBowTarget6" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 2, 4)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget6"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget6"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget6"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget9" type="StaticBody3D" parent="."]
+[node name="TestBowTarget9" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4447, 14.5824, 4)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget9"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget9"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget9"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget9"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget8" type="StaticBody3D" parent="."]
+[node name="TestBowTarget8" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 6)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget8"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget8"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget8"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget10" type="StaticBody3D" parent="."]
+[node name="TestBowTarget10" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 8)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget10"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget10"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget10"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget10"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget12" type="StaticBody3D" parent="."]
+[node name="TestBowTarget12" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2, 10)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget12"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget12"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget12"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget12"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget13" type="StaticBody3D" parent="."]
+[node name="TestBowTarget13" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, -1, 7)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget13"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget13"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget13"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget13"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget14" type="StaticBody3D" parent="."]
+[node name="TestBowTarget14" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, -1, 12)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget14"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget14"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget14"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget14"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget15" type="StaticBody3D" parent="."]
+[node name="TestBowTarget15" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 6, 3)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget15"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget15"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget15"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget15"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget16" type="StaticBody3D" parent="."]
+[node name="TestBowTarget16" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 6, 8)
 script = ExtResource("47_lu2vf")
 targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget16"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget16"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget16"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget16"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[node name="TestBowTarget2" type="StaticBody3D" parent="."]
+[node name="TestBowTarget11" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 5.9924, -6.13955)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget11"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget11"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget17" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5.9924, -4.13955)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget17"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget17"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget18" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 5.9924, -2.13955)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget18"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget18"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget19" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 5.9924, -0.139555)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget19"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget19"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget20" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 2.9924, -3.13955)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget20"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget20"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget21" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.9924, 1.86045)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget21"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget21"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget22" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 9.9924, -7.13955)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget22"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget22"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget23" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 9.9924, -2.13955)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget23"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget23"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget24" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 5.9924, 10.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget24"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget24"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget25" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5.9924, 12.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget25"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget25"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget26" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 5.9924, 14.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget26"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget26"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget27" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 5.9924, 16.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget27"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget27"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget28" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 2.9924, 13.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget28"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget28"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget29" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 2.9924, 18.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget29"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget29"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget30" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 9.9924, 9.74491)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget30"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget30"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget31" type="StaticBody3D" parent="Targets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 9.9924, 14.7449)
+script = ExtResource("47_lu2vf")
+targetName = "Button Cylinder"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget31"]
+mesh = SubResource("CylinderMesh_8ru0d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget31"]
+shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="TestBowTarget2" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 2, -2)
 script = ExtResource("47_lu2vf")
 targetName = "Locked Cylinder"
 arrowType = "pick"
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBowTarget2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget2"]
 mesh = SubResource("CylinderMesh_8ru0d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBowTarget2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget2"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")

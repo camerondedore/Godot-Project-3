@@ -79,11 +79,11 @@ namespace PlayerCharacterComplex
 
             if(blackboard.IsOnFloor())
             {
-                // if(blackboard.bowDisconnector.Trip(PlayerInput.fire1))
-                // {
-                //     // aim bow
-                //     return blackboard.stateBowAim;
-                // }
+                if(PlayerInput.fire1 > 0 && blackboard.bow.isDrawn)
+                {
+                    // aim bow
+                    return blackboard.stateBowAim;
+                }
 
                 // land
                 //return blackboard.stateLand;

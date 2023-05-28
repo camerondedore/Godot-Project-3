@@ -20,7 +20,10 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
-            
+            if(blackboard.bow.isDrawn && PlayerInput.fire1 == 0)
+            {
+                blackboard.bow.CancelDraw();
+            }
         }
 
 
@@ -34,7 +37,7 @@ namespace PlayerCharacterComplex
 
         public override State Transition()
         {
-            if(blackboard.bowDisconnector.Trip(PlayerInput.fire1))
+            if(blackboard.bowDisconnector.Trip(PlayerInput.fire1) || (PlayerInput.fire1 > 0 && blackboard.bow.isDrawn))
             {
                 // aim bow
                 return blackboard.subStateJumpPadBowAim;
