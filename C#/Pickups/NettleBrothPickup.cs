@@ -16,8 +16,7 @@ public partial class NettleBrothPickup : PickupRigidbody
             // add heal player
             data.playerhealth.Heal(restoredHitPoints);
 
-            // delete pickup
-            QueueFree();
+            base.PickupAction(data);
         }        
     }
 }

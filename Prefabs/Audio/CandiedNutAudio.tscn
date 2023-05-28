@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://o3mh30x6hatw"]
+
+[ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut.wav" id="1_0mwi1"]
+[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_02d6e"]
+
+[node name="CandiedNutAudio" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_0mwi1")
+autoplay = true
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("2_02d6e")
+lifeTime = 5.0

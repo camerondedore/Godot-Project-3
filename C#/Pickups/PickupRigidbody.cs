@@ -4,6 +4,9 @@ using System;
 public partial class PickupRigidbody : RigidBody3D, IPickup
 {
 
+    [Export]
+    PackedScene[] pickupPrefabs;
+
     float turnSpeed = 1.57f;
 
 
@@ -39,6 +42,23 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
 
     public virtual void PickupAction(PlayerPickup.PlayerPickupData data)
     {
+        if(pickupPrefabs != null && pickupPrefabs.Length > 0)
+        {
+            // spawn pickup prefabs
+            foreach(var p in pickupPrefabs)
+            {
+                // create prefab
+                var newPrefab = (Node3D) p.Instantiate();
+
+                // set transform
+                newPrefab.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+
+                // assign parent and owner
+                GetTree().CurrentScene.AddChild(newPrefab);
+                newPrefab.Owner = GetTree().CurrentScene;
+            }
+        }
+
         // delete pickup
         QueueFree();
     }

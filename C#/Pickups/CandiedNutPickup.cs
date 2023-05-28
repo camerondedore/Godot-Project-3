@@ -27,7 +27,6 @@ public partial class CandiedNutPickup : PickupRigidbody
         // add nut to player inventory
         PlayerInventory.inventory.AddToInventory(1, 0, 0, 0, null);
 
-        // delete pickup
-        QueueFree();
+        base.PickupAction(data);
     }
 }

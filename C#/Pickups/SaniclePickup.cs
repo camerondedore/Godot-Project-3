@@ -13,7 +13,6 @@ public partial class SaniclePickup : PickupRigidbody
 		// add sanicle to player inventory
 		PlayerInventory.inventory.AddToInventory(0, 0, 1, 0, null);
 
-		// delete pickup
-		QueueFree();
+		base.PickupAction(data);
 	}
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jg8y61unu8ao"]
+[gd_scene load_steps=8 format=3 uid="uid://jg8y61unu8ao"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_4on0y"]
 [ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="1_anmk5"]
@@ -6,11 +6,13 @@
 [ext_resource type="ArrayMesh" uid="uid://bwl3ntlog5agd" path="res://Models/pickup-candied-nut-2.res" id="4_cr428"]
 [ext_resource type="Material" uid="uid://dx4tjrj1tn4vt" path="res://Materials/PickupCandiedNuts.tres" id="4_nvqdf"]
 [ext_resource type="ArrayMesh" uid="uid://dlmp810rdbjvw" path="res://Models/pickup-candied-nut-3.res" id="5_gn2nl"]
+[ext_resource type="PackedScene" uid="uid://o3mh30x6hatw" path="res://Prefabs/Audio/CandiedNutAudio.tscn" id="6_kcvro"]
 
 [node name="PickupCandiedNut" node_paths=PackedStringArray("meshInstance") instance=ExtResource("1_4on0y")]
 script = ExtResource("1_anmk5")
 meshInstance = NodePath("MeshInstance3D")
 nutMeshes = Array[ArrayMesh]([ExtResource("3_f3xch"), ExtResource("4_cr428"), ExtResource("5_gn2nl")])
+pickupPrefabs = Array[PackedScene]([ExtResource("6_kcvro")])
 
 [node name="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
