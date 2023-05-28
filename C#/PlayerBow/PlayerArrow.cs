@@ -7,7 +7,8 @@ public partial class PlayerArrow : Projectile
     [Export]
     string arrowType = "weighted";
     [Export]
-    PackedScene hitFx;
+    PackedScene hitFx,
+        missFx;
 
 
 
@@ -49,11 +50,29 @@ public partial class PlayerArrow : Projectile
 
                 // play particles
                 newHitFx.Emitting = true;
-            }            
+
+                // destroy arrow
+                QueueFree();
+
+                return;
+            }           
         }
 
+        // spawn miss fx
+        var newMissFx = (GpuParticles3D) missFx.Instantiate();
+        
+        // set up hit fx transform
+        newMissFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
 
-        // destory arrow
+        // assign parent and owner
+        GetTree().CurrentScene.AddChild(newMissFx);
+        newMissFx.Owner = GetTree().CurrentScene;
+
+        // play particles
+        newMissFx.Emitting = true;
+        
+        // destroy arrow
         QueueFree();
+        
     }
 }

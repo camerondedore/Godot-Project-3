@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://dbb5yp644jsdv"]
+
+[ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/FxDust.tres" id="1_dbchy"]
+[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_dgipw"]
+
+[sub_resource type="Gradient" id="Gradient_ckonk"]
+offsets = PackedFloat32Array(0, 0.0792683, 0.658537, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.815287, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wlm7t"]
+gradient = SubResource("Gradient_ckonk")
+
+[sub_resource type="Curve" id="Curve_gpfsa"]
+_data = [Vector2(0, 0.551724), 0.0, 0.633936, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xnm1x"]
+curve = SubResource("Curve_gpfsa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gwd5j"]
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 0.4
+particle_flag_rotate_y = true
+direction = Vector3(0, 1, 0)
+spread = 20.0
+gravity = Vector3(0, 0.07, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.1
+angle_min = -30.0
+angle_max = 30.0
+scale_min = 0.8
+scale_curve = SubResource("CurveTexture_xnm1x")
+color_ramp = SubResource("GradientTexture1D_wlm7t")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wxsq1"]
+
+[node name="FxDust" type="GPUParticles3D"]
+material_override = ExtResource("1_dbchy")
+emitting = false
+amount = 3
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+process_material = SubResource("ParticleProcessMaterial_gwd5j")
+draw_pass_1 = SubResource("QuadMesh_wxsq1")
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("2_dgipw")
+lifeTime = 5.0
