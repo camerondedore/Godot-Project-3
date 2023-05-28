@@ -7,8 +7,8 @@
 render_priority = 0
 shader = ExtResource("1_uc2fa")
 shader_parameter/Wind_Amplitude = 0.05
-shader_parameter/Wind_Speed = 0.1
-shader_parameter/Wind_Turbulance = 1.0
+shader_parameter/Wind_Speed = 0.2
+shader_parameter/Wind_Turbulance = 5.0
 shader_parameter/Wind_Min_Height = 3.0
 shader_parameter/Wind_Slope = 3.0
 shader_parameter/Y_Multiplier = 0.25
