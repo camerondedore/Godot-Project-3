@@ -5,7 +5,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string targetName = "target",
+    public string targetName = "Lockbox",
         arrowType = "pick";
     [Export]
     FxLock lockFx;
@@ -20,11 +20,24 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
 
     public override void _Ready()
     {
-        //
-        // need to check if lockbox was already opened
-        //
+        // get if lockbox was already activated
+        var wasActivated = WorldData.worldData.CheckActivatedObjects(this);
 
-        anim.Play("lockbox-idle");        
+        if(!wasActivated)
+        {
+            anim.Play("lockbox-idle");        
+        }
+        else
+        {
+            // play animation
+            anim.Play("lockbox-opened");
+
+            // remove lock
+            lockFx.QueueFree();
+
+            // disable script
+            SetScript(new Variant());
+        }
     }
 
 
@@ -70,6 +83,9 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
 
         // eject pickup
         pickupSpawner.StartSpawn(storedItem);
+
+        // save to activated objects
+        WorldData.worldData.ActivateObject(this);
 
         // disable script
         SetScript(new Variant());

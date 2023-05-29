@@ -7,7 +7,7 @@ public partial class PlayerInventory : Node
 {
 
     public static PlayerInventory inventory;
-    public CharacterInventory currentInventory;
+    public Inventory currentInventory;
 
     string filePath;
 
@@ -37,13 +37,13 @@ public partial class PlayerInventory : Node
 		if(System.IO.File.Exists(filePath)) 
 		{
             System.IO.FileStream file = System.IO.File.Open(filePath, System.IO.FileMode.Open);
-            currentInventory = JsonSerializer.Deserialize<CharacterInventory>(file);
+            currentInventory = JsonSerializer.Deserialize<Inventory>(file);
             file.Close();			
 		}
 		else
 		{
 			// no settings exist
-			currentInventory = new CharacterInventory(){};
+			currentInventory = new Inventory(){};
             SaveInventory();
 		}
 	}
@@ -90,7 +90,7 @@ public partial class PlayerInventory : Node
 
 
     [System.Serializable]
-    public class CharacterInventory
+    public class Inventory
     {
         // serializer can't serialize fields
         public int CandiedNuts

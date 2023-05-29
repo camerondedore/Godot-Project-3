@@ -16,8 +16,8 @@ public partial class PlayerHud : Node
     [Export]
     PlayerHudPickups hudPickups;
 
-    PlayerStatistics.CharacterStatistics currentStatistics;
-    PlayerInventory.CharacterInventory currentInventory;
+    PlayerStatistics.Statistics currentStatistics;
+    PlayerInventory.Inventory currentInventory;
     float hitPoints,
         hitPointsPerBar,
         candiedNuts,

@@ -6,7 +6,7 @@ public partial class PlayerStatistics : Node
 {
 
     public static PlayerStatistics statistics;
-    public CharacterStatistics currentStatistics;
+    public Statistics currentStatistics;
 
     string filePath;
     float minHitPointsPerUpgrade = 25,
@@ -41,7 +41,7 @@ public partial class PlayerStatistics : Node
 		if(System.IO.File.Exists(filePath)) 
 		{
             System.IO.FileStream file = System.IO.File.Open(filePath, System.IO.FileMode.Open);
-            currentStatistics = JsonSerializer.Deserialize<CharacterStatistics>(file);
+            currentStatistics = JsonSerializer.Deserialize<Statistics>(file);
             file.Close();			
 
             // clean statistics
@@ -53,7 +53,7 @@ public partial class PlayerStatistics : Node
 		else
 		{
 			// no settings exist
-			currentStatistics = new CharacterStatistics(){};
+			currentStatistics = new Statistics(){};
 		}
 
         // save file
@@ -96,7 +96,7 @@ public partial class PlayerStatistics : Node
 
 
     [System.Serializable]
-    public class CharacterStatistics
+    public class Statistics
     {
         // serializer can't serialize fields
         public float HitPoints
