@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk67dl23foyhu"
-path.s3tc="res://.godot/imported/fx-dust.png-10377b32b03220dd0b2277e5e4c3d540.s3tc.ctex"
+uid="uid://itdgfp7s1mmy"
+path.s3tc="res://.godot/imported/fx-nettle-broth-splash.png-9f1beb505be2e266253bfe883998e002.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/fx-dust.png"
-dest_files=["res://.godot/imported/fx-dust.png-10377b32b03220dd0b2277e5e4c3d540.s3tc.ctex"]
+source_file="res://Textures/fx-nettle-broth-splash.png"
+dest_files=["res://.godot/imported/fx-nettle-broth-splash.png-9f1beb505be2e266253bfe883998e002.s3tc.ctex"]
 
 [params]
 
@@ -31,5 +31,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=256
+process/size_limit=0
 detect_3d/compress_to=0

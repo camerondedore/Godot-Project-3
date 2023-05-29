@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_8qsn3"]
 [ext_resource type="Script" path="res://C#/Pickups/NettleBrothPickup.cs" id="1_dnlt2"]
 [ext_resource type="ArrayMesh" uid="uid://ct6j7liumhcyu" path="res://Models/pickup-nettle-broth.res" id="1_n10h8"]
-[ext_resource type="PackedScene" uid="uid://ck8c4u5uu4cgs" path="res://Prefabs/Audio/NettleBrothAudio.tscn" id="3_0hq6f"]
+[ext_resource type="PackedScene" uid="uid://cf0p1fn1xccjf" path="res://Prefabs/FX/FxNettleBrothConsume.tscn" id="3_b7ddk"]
 [ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="4_m360d"]
 [ext_resource type="PackedScene" uid="uid://c4jis38v0hln5" path="res://Prefabs/FX/FxSteam.tscn" id="4_t326c"]
 
 [node name="PickupNettleBroth" instance=ExtResource("1_8qsn3")]
 script = ExtResource("1_dnlt2")
-pickupPrefabs = Array[PackedScene]([ExtResource("3_0hq6f")])
+pickupPrefabs = Array[PackedScene]([ExtResource("3_b7ddk")])
 saveToWorldData = false
 
 [node name="MeshInstance3D" parent="." index="0"]

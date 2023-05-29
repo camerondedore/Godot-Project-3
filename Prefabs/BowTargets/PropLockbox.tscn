@@ -15,7 +15,6 @@ size = Vector3(0.75, 0.7, 0.563)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765711, -1.49012e-08, 0.00473833)
 collision_layer = 16
 script = ExtResource("1_vcmy5")
-targetName = "Lockbox"
 lockFx = NodePath("FxLock")
 pickupSpawner = NodePath("PickupSpawnerDelayed")
 anim = NodePath("AnimationPlayer")
