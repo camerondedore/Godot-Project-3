@@ -75,6 +75,9 @@ namespace PlayerCharacterComplex
             // hit something when using jump pad
             if(blackboard.IsOnWall() && !blackboard.IsOnFloor())
             {
+                // cancel bow draw
+                blackboard.bow.CancelDraw();
+
                 // fall
                 return blackboard.stateFall;
             }

@@ -93,6 +93,17 @@ namespace PlayerCharacterComplex
             }
 
             var pastDrawTime = EngineTime.timePassed > startTime + blackboard.drawTime;
+            
+            // check for jump input and floor and draw time
+            if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor() && pastDrawTime)
+            {
+                // cancel draw
+                blackboard.bow.CancelDraw();
+
+                // jump start
+                //return blackboard.stateJumpStart;
+                return blackboard.stateJump;
+            }
 
             // check for fire 1 up and either full draw or previously drawn
             if((holdDraw && pastDrawTime || previouslyDrawn) && PlayerInput.fire1 == 0)

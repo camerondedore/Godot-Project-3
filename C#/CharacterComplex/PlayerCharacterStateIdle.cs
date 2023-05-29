@@ -45,7 +45,7 @@ namespace PlayerCharacterComplex
                 return blackboard.stateJump;
             }
 
-            if(blackboard.bowDisconnector.Trip(PlayerInput.fire1))
+            if(PlayerInput.fire1 > 0)
             {
                 // aim bow
                 return blackboard.stateBowAim;

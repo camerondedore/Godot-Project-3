@@ -49,8 +49,7 @@ namespace PlayerCharacterComplex
 			fireTime = 0.5f,
 			drawTime = 0.5f;
 
-		public Disconnector jumpDisconnector = new Disconnector(),
-			bowDisconnector = new Disconnector();
+		public Disconnector jumpDisconnector = new Disconnector();
 		string debugText;
 		
 
