@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=61 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://qdor6d8r3wmw" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="11_1rkbt"]
+[ext_resource type="PackedScene" uid="uid://croje6ueu5rqc" path="res://Prefabs/Trees/PropTreeOak4.tscn" id="11_d87cr"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropLogOakStripped.tscn" id="11_se24g"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="12_7d261"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
@@ -244,6 +245,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5)
 
 [node name="PropTreeOak3" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="PropTreeOak4" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37188, 0, 8.17653)
 
 [node name="Logs" type="Node3D" parent="Props/Trees"]
 
