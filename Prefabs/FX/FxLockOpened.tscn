@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://peso6lrsi2ip"]
+[gd_scene load_steps=8 format=3 uid="uid://peso6lrsi2ip"]
 
 [ext_resource type="ArrayMesh" uid="uid://co3vdg57f7qsw" path="res://Models/prop-lock-open.res" id="1_2vm32"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="1_7a6ru"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_61yyt"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="4_ef3cl"]
+[ext_resource type="AudioStream" uid="uid://de2xpyq2nyc5n" path="res://Audio/lock-open-1.wav" id="5_6j8rm"]
+[ext_resource type="AudioStream" uid="uid://6c5pa11iibrw" path="res://Audio/lock-open-2.wav" id="6_s0yc2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhvmv"]
 size = Vector3(0.25, 0.3, 0.08)
@@ -21,3 +24,8 @@ shape = SubResource("BoxShape3D_xhvmv")
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("1_7a6ru")
+
+[node name="LockAudio" type="AudioStreamPlayer3D" parent="."]
+script = ExtResource("4_ef3cl")
+sounds = Array[AudioStream]([ExtResource("5_6j8rm"), ExtResource("6_s0yc2")])
+destroyOnFinished = false
