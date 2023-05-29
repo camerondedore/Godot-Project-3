@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck8c4u5uu4cgs"]
+
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="1_ky7xm"]
+[ext_resource type="AudioStream" uid="uid://b11bpsmuxxc1j" path="res://Audio/pickup-nettle-broth.wav" id="2_nsn7d"]
+
+[node name="NettleBrothAudio" type="AudioStreamPlayer3D"]
+stream = ExtResource("2_nsn7d")
+script = ExtResource("1_ky7xm")
+sounds = Array[AudioStream]([ExtResource("2_nsn7d")])
