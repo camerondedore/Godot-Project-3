@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=60 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -43,14 +43,16 @@
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="38_05md2"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="39_pevmh"]
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="40_mdvq1"]
+[ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="41_ks5rp"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
+[ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="42_rg50u"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="48_0u7kr"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="48_3j4ku"]
-[ext_resource type="PackedScene" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
+[ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -416,6 +418,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.23915, 0.25, 6.96383)
 
 [node name="PropFern5" parent="Props/Plants" instance=ExtResource("40_mdvq1")]
 transform = Transform3D(0.835894, 0, -0.548892, 0, 1, 0, 0.548892, 0, 0.835894, -5.92996, 0.25, 2.9001)
+
+[node name="PropDandelion1" parent="Props/Plants" instance=ExtResource("41_ks5rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99803, 0.1, -6.01489)
+
+[node name="PropDandelion2" parent="Props/Plants" instance=ExtResource("42_rg50u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82205, 0.0999998, 2.68663)
 
 [node name="Pickups" type="Node3D" parent="."]
 

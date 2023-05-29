@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkxfmtnxwys07"]
+
+[ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="1_a4y24"]
+[ext_resource type="ArrayMesh" uid="uid://dplpye65vkf2a" path="res://Models/prop-dandelion-2.res" id="2_xsysl"]
+
+[node name="PropDandelion2" instance=ExtResource("1_a4y24")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_xsysl")

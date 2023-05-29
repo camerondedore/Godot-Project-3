@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqfpswbl7lof"]
+
+[ext_resource type="ArrayMesh" uid="uid://bixiox0f5f70h" path="res://Models/prop-dandelion-1.res" id="1_np62k"]
+[ext_resource type="Material" uid="uid://dh8sadauh7jgo" path="res://Materials/LeavesDandelion.tres" id="2_a3ior"]
+
+[node name="PropDandelion1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_np62k")
+surface_material_override/0 = ExtResource("2_a3ior")

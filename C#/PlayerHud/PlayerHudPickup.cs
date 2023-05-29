@@ -7,7 +7,7 @@ public partial class PlayerHudPickup : Control
     public Vector2 endPosition;
 
     Vector2 startPosition;
-    float speed = 2,
+    float speed = 2.5f,
         lerpIndex = 0;
 
 
