@@ -6,6 +6,8 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
 
     [Export]
     PackedScene[] pickupPrefabs;
+    [Export]
+    bool saveToWorldData = true;
 
     float turnSpeed = 1.57f;
 
@@ -13,14 +15,17 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
 
     public override void _Ready()
     {
-        // get if pickup was already taken
-        var wasTaken = WorldData.worldData.CheckPickups(this);
-
-        if(wasTaken)
+        if(saveToWorldData)
         {
-            QueueFree();  
-            return;
-        }
+            // get if pickup was already taken
+            var wasTaken = WorldData.worldData.CheckPickups(this);
+
+            if(wasTaken)
+            {
+                QueueFree();  
+                return;
+            }
+        }        
 
         // random rotation
         Rotate(Vector3.Up, GD.Randf() * 6.28f);
@@ -68,8 +73,11 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
             }
         }
 
-        // save to pickups taken
-        WorldData.worldData.TakePickup(this);
+        if(saveToWorldData)
+        {
+            // save to pickups taken
+            WorldData.worldData.TakePickup(this);
+        }
 
         // delete pickup
         QueueFree();

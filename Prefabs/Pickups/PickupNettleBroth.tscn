@@ -10,6 +10,7 @@
 [node name="PickupNettleBroth" instance=ExtResource("1_8qsn3")]
 script = ExtResource("1_dnlt2")
 pickupPrefabs = Array[PackedScene]([ExtResource("3_0hq6f")])
+saveToWorldData = false
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("1_n10h8")
