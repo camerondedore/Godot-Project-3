@@ -4,13 +4,13 @@ using System;
 public partial class PlayerCharacterAudio : AudioTools3d
 {
 
-    [Export]
-    AudioStream jumpPadSound;
+    // [Export]
+    // AudioStream jumpPadSound;
 
 
 
-    public void PlayJumpPadSound()
-    {
-        PlaySound(jumpPadSound, 0.1f);
-    }
+    // public void PlayJumpPadSound()
+    // {
+    //     PlaySound(jumpPadSound, 0.1f);
+    // }
 }

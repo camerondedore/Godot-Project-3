@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=58 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://cl5kdflw42707" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -48,6 +48,8 @@
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="48_0u7kr"]
+[ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="48_3j4ku"]
 [ext_resource type="PackedScene" uid="uid://bsspmxib3hagv" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
@@ -476,17 +478,23 @@ yOffset = 0.25
 maxRotation = 3.0
 sizeVariation = 0.3
 
-[node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget")]
+[node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14102, 0.6, 7.97087)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("38_05md2")
 landingTarget = NodePath("../TestJumpPadTarget")
+jumpPadAudio = NodePath("JumpPadAudio")
 horizontalSpeed = 6.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TestJumpPad"]
 shape = SubResource("SphereShape3D_nrvr1")
+
+[node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="TestJumpPad"]
+stream = ExtResource("48_3j4ku")
+max_distance = 10.0
+script = ExtResource("48_0u7kr")
 
 [node name="TestJumpPadTarget" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96641, 5.50751, 0)

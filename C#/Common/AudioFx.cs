@@ -3,6 +3,7 @@ using System;
 
 public partial class AudioFx : AudioStreamPlayer3D
 {
+    /// FOR NODES THAT PLAY AUTOMATICALLY WITH NO OUTSIDE TRIGGERING
 
     [Export]
     AudioStream[] sounds;

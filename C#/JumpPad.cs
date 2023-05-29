@@ -7,6 +7,8 @@ public partial class JumpPad : Area3D
     [Export]
     Node3D landingTarget;
     [Export]
+    AudioTools3d jumpPadAudio;
+    [Export]
     float horizontalSpeed = 10;
 
 
@@ -31,6 +33,9 @@ public partial class JumpPad : Area3D
             
             // activate jump pad behaviour on body
             bodyJumpPadUser.JumpPadActivated(jumpPadVelocity);
+
+            // play audio
+            jumpPadAudio.Play();
         }
     }
 

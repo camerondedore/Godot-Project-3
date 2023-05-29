@@ -58,7 +58,7 @@ namespace PlayerCharacterComplex
             SetState(blackboard.subStateJumpPadIdle);
 
             // play sound
-            blackboard.characterAudio.PlayJumpPadSound();
+           // blackboard.characterAudio.PlayJumpPadSound();
         }
 
 

@@ -16,8 +16,7 @@ mesh = SubResource("BoxMesh_vcwad")
 [node name="FxDust" parent="." instance=ExtResource("1_xorff")]
 
 [node name="ArrowMissAudio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_talep")
-max_distance = 30.0
+max_distance = 50.0
 script = ExtResource("3_h35mi")
 sounds = Array[AudioStream]([ExtResource("2_talep")])
 pitchRadius = 0.05

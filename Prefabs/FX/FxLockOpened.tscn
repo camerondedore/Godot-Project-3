@@ -26,6 +26,7 @@ shape = SubResource("BoxShape3D_xhvmv")
 script = ExtResource("1_7a6ru")
 
 [node name="LockAudio" type="AudioStreamPlayer3D" parent="."]
+max_distance = 50.0
 script = ExtResource("4_ef3cl")
 sounds = Array[AudioStream]([ExtResource("5_6j8rm"), ExtResource("6_s0yc2")])
 destroyOnFinished = false
