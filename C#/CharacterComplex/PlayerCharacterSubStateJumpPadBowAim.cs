@@ -22,9 +22,16 @@ namespace PlayerCharacterComplex
             blackboard.CharacterLook(lookDirection);
 
             // check draw
-            if(holdDraw == true && PlayerInput.fire1 == 0 && EngineTime.timePassed < startTime + blackboard.drawTime)
+            if(EngineTime.timePassed < startTime + blackboard.drawTime)
             {
-                holdDraw = false;
+                if(PlayerInput.fire1 > 0)
+                {
+                    holdDraw = true;
+                }
+                else
+                {
+                    holdDraw = false;
+                }
             }
         }
 
@@ -45,8 +52,6 @@ namespace PlayerCharacterComplex
             {
                 blackboard.bow.Draw();
             }
-
-            holdDraw = true;
         }
 
 
