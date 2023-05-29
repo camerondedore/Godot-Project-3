@@ -1,28 +1,27 @@
-[gd_scene load_steps=33 format=3 uid="uid://ds2kexymukxg1"]
+[gd_scene load_steps=32 format=3 uid="uid://cemt2ewlwl8n8"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowAimer.cs" id="3_uw5x1"]
-[ext_resource type="Script" path="res://C#/PlayerHud.cs" id="4_eweib"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
 [ext_resource type="Script" path="res://C#/PlayerHealth.cs" id="6_4c4br"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
-[ext_resource type="Script" path="res://C#/PlayerHudPickups.cs" id="8_a1f28"]
+[ext_resource type="Script" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
+[ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
-[ext_resource type="PackedScene" uid="uid://bku8lcrxe56v1" path="res://Prefabs/Hud/HudCandiedNutsPickup.tscn" id="8_oogfd"]
 [ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/UiCandiedNutsPickup.tscn" id="9_cffx2"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
-[ext_resource type="PackedScene" uid="uid://cbgrjrxpx1jkp" path="res://Prefabs/Hud/HudDockLeafPickup.tscn" id="9_t7ip8"]
-[ext_resource type="PackedScene" uid="uid://ps4m3n5p1qr5" path="res://Prefabs/Hud/HudSaniclePickup.tscn" id="10_6a7ie"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
-[ext_resource type="PackedScene" uid="uid://b8tow6hrg3pki" path="res://Prefabs/Hud/HudRangerBandagePickup.tscn" id="11_0msa4"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
+[ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
-[ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="17_a35oj"]
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="17_q6v2h"]
 [ext_resource type="PackedScene" uid="uid://dtqhas2qrj6hf" path="res://Prefabs/PlayerArrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
@@ -105,14 +104,9 @@ script = ExtResource("4_vgi6r")
 [node name="Health" type="Node" parent="."]
 script = ExtResource("6_4c4br")
 
-[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
-script = ExtResource("4_eweib")
+[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
+script = ExtResource("7_xdgqf")
 hitPointBarsContainer = NodePath("Hud/HitPointBars")
-pickupStart = NodePath("Hud/PickupPoint")
-candiedNutsPickupEnd = NodePath("Hud/CandiedNuts")
-dockLeafPickupEnd = NodePath("Hud/DockLeaves")
-saniclePickupEnd = NodePath("Hud/Sanicle")
-rangerBandagePickupEnd = NodePath("Hud/RangerBandage")
 candiedNutsCounter = NodePath("Hud/CandiedNuts/CandiedNutsCounter")
 dockLeavesCounter = NodePath("Hud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("Hud/Sanicle/SanicleCounter")
@@ -127,16 +121,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("8_a1f28")
+script = ExtResource("8_0uu1v")
 pickupStart = NodePath("PickupPoint")
 candiedNutsPickupEnd = NodePath("CandiedNuts")
 dockLeafPickupEnd = NodePath("DockLeaves")
 saniclePickupEnd = NodePath("Sanicle")
 rangerBandagePickupEnd = NodePath("RangerBandage")
-candiedNutsPickup = ExtResource("8_oogfd")
-dockLeafPickup = ExtResource("9_t7ip8")
-saniclePickup = ExtResource("10_6a7ie")
-rangerBandagePickup = ExtResource("11_0msa4")
+candiedNutsPickup = ExtResource("9_cffx2")
+dockLeafPickup = ExtResource("10_dsdcr")
+saniclePickup = ExtResource("11_i1qbn")
+rangerBandagePickup = ExtResource("12_xyyhd")
 
 [node name="HitPointBars" type="HBoxContainer" parent="HudCanvas/Hud"]
 layout_mode = 0
@@ -341,7 +335,6 @@ shape = SubResource("CapsuleShape3D_t3b7p")
 [node name="CharacterAudio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
 script = ExtResource("16_tm1am")
-jumpPadSound = ExtResource("17_a35oj")
 
 [node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)

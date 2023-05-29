@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl5kdflw42707"]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
 [ext_resource type="Script" path="res://C#/Camera/GlobalCamera.cs" id="1_w865n"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://C#/Common/PlayerInput.cs" id="4_qu5pn"]
 [ext_resource type="Script" path="res://C#/Common/Pause.cs" id="5_mk66s"]
 [ext_resource type="Script" path="res://C#/Common/EngineGravity.cs" id="6_mfr8q"]
-[ext_resource type="Script" path="res://C#/PauseMenu.cs" id="7_ogfvn"]
+[ext_resource type="Script" path="res://C#/Common/PauseMenu.cs" id="7_ogfvn"]
 
 [node name="GlobalCamera" type="Camera3D"]
 fov = 80.0

@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd45cyenbjdh4"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="ArrayMesh" uid="uid://donqrer6ntmi5" path="res://Models/prop-lock.res" id="1_qpfjf"]
 [ext_resource type="Script" path="res://C#/FxLock.cs" id="1_skjfe"]
 [ext_resource type="PackedScene" uid="uid://peso6lrsi2ip" path="res://Prefabs/FX/FxLockOpened.tscn" id="2_ajn81"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_ryckk"]
-[ext_resource type="Script" path="res://C#/RigidbodySpawner.cs" id="4_rvvph"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="4_rvvph"]
 
 [node name="FxLock" type="Node3D" node_paths=PackedStringArray("lockSpawner")]
 script = ExtResource("1_skjfe")
