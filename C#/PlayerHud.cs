@@ -13,6 +13,8 @@ public partial class PlayerHud : Node
         dockLeavesCounter,
         sanicleCounter,
         rangerBandagesCounter;
+    [Export]
+    PlayerHudPickups hudPickups;
 
     PlayerStatistics.CharacterStatistics currentStatistics;
     PlayerInventory.CharacterInventory currentInventory;
@@ -82,26 +84,60 @@ public partial class PlayerHud : Node
 
         if(candiedNuts != currentInventory.CandiedNuts)
         {
+            // update label
             candiedNuts = currentInventory.CandiedNuts;
             candiedNutsCounter.Text = candiedNuts.ToString();
+
+            // spawn pickup
+            hudPickups.AddCandiedNut();
+            
         }
 
         if(dockLeaves != currentInventory.DockLeaves)
         {
+            // check if dock leaves got added
+            if(dockLeaves < currentInventory.DockLeaves)
+            {
+                // spawn pickup
+                hudPickups.AddDockLeaf();
+            }
+            else
+            {
+                hudPickups.RemoveDockLeaf();
+            }
+
+            // update label
             dockLeaves = currentInventory.DockLeaves;
             dockLeavesCounter.Text = dockLeaves.ToString();
         }
 
         if(sanicle != currentInventory.Sanicle)
         {
+            // check if sanicle leaves got added
+            if(sanicle < currentInventory.Sanicle)
+            {
+                // spawn pickup
+                hudPickups.AddSanicle();
+            }
+            else
+            {
+                hudPickups.RemoveSanicle();
+            }
+
+
+            // update label
             sanicle = currentInventory.Sanicle;
             sanicleCounter.Text = sanicle.ToString();
         }
 
         if(rangerBandages != currentInventory.RangerBandages)
         {
+            // update label
             rangerBandages = currentInventory.RangerBandages;
             rangerBandagesCounter.Text = rangerBandages.ToString();
+
+            // spawn pickup
+            hudPickups.AddRangerBandage();
         }
     }
 

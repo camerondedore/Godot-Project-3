@@ -59,7 +59,7 @@ public partial class PlayerArrow : Projectile
         }
 
         // spawn miss fx
-        SpawnPrefab(missFx, point, normal + Basis.Z, upVector);
+        SpawnPrefab(missFx, point, -Basis.Z, upVector);
 
         // destroy arrow
         QueueFree();

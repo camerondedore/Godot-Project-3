@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8tow6hrg3pki"]
+
+[ext_resource type="PackedScene" uid="uid://b0pnr65civ210" path="res://Prefabs/Hud/HudPickup.tscn" id="1_6qydg"]
+[ext_resource type="Texture2D" uid="uid://cnjn510u3rvcl" path="res://UI/ui-ranger-bandage-pickup.png" id="2_3vkrm"]
+
+[node name="HudRangerBandagePickup" instance=ExtResource("1_6qydg")]
+texture = ExtResource("2_3vkrm")

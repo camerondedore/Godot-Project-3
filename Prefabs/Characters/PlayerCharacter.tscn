@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ds2kexymukxg1"]
+[gd_scene load_steps=33 format=3 uid="uid://ds2kexymukxg1"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
@@ -10,11 +10,16 @@
 [ext_resource type="Script" path="res://C#/PlayerHealth.cs" id="6_4c4br"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
+[ext_resource type="Script" path="res://C#/PlayerHudPickups.cs" id="8_a1f28"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
+[ext_resource type="PackedScene" uid="uid://bku8lcrxe56v1" path="res://Prefabs/Hud/HudCandiedNutsPickup.tscn" id="8_oogfd"]
 [ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
+[ext_resource type="PackedScene" uid="uid://cbgrjrxpx1jkp" path="res://Prefabs/Hud/HudDockLeafPickup.tscn" id="9_t7ip8"]
+[ext_resource type="PackedScene" uid="uid://ps4m3n5p1qr5" path="res://Prefabs/Hud/HudSaniclePickup.tscn" id="10_6a7ie"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
+[ext_resource type="PackedScene" uid="uid://b8tow6hrg3pki" path="res://Prefabs/Hud/HudRangerBandagePickup.tscn" id="11_0msa4"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="17_a35oj"]
@@ -100,15 +105,21 @@ script = ExtResource("4_vgi6r")
 [node name="Health" type="Node" parent="."]
 script = ExtResource("6_4c4br")
 
-[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter")]
+[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("4_eweib")
 hitPointBarsContainer = NodePath("Hud/HitPointBars")
+pickupStart = NodePath("Hud/PickupPoint")
+candiedNutsPickupEnd = NodePath("Hud/CandiedNuts")
+dockLeafPickupEnd = NodePath("Hud/DockLeaves")
+saniclePickupEnd = NodePath("Hud/Sanicle")
+rangerBandagePickupEnd = NodePath("Hud/RangerBandage")
 candiedNutsCounter = NodePath("Hud/CandiedNuts/CandiedNutsCounter")
 dockLeavesCounter = NodePath("Hud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("Hud/Sanicle/SanicleCounter")
 rangerBandagesCounter = NodePath("Hud/RangerBandage/RangerBandageCounter")
+hudPickups = NodePath("Hud")
 
-[node name="Hud" type="Control" parent="HudCanvas"]
+[node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -116,6 +127,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("8_a1f28")
+pickupStart = NodePath("PickupPoint")
+candiedNutsPickupEnd = NodePath("CandiedNuts")
+dockLeafPickupEnd = NodePath("DockLeaves")
+saniclePickupEnd = NodePath("Sanicle")
+rangerBandagePickupEnd = NodePath("RangerBandage")
+candiedNutsPickup = ExtResource("8_oogfd")
+dockLeafPickup = ExtResource("9_t7ip8")
+saniclePickup = ExtResource("10_6a7ie")
+rangerBandagePickup = ExtResource("11_0msa4")
 
 [node name="HitPointBars" type="HBoxContainer" parent="HudCanvas/Hud"]
 layout_mode = 0
@@ -293,6 +314,20 @@ theme = ExtResource("5_o5i36")
 text = "+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PickupPoint" type="Control" parent="HudCanvas/Hud"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_o5i36")
 
 [node name="PickupArea" type="Area3D" parent="." node_paths=PackedStringArray("playerHealth")]
 collision_mask = 4

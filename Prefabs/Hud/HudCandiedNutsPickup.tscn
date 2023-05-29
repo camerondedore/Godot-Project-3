@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bku8lcrxe56v1"]
+
+[ext_resource type="PackedScene" uid="uid://b0pnr65civ210" path="res://Prefabs/Hud/HudPickup.tscn" id="1_1206r"]
+[ext_resource type="Texture2D" uid="uid://brmowqul12aex" path="res://UI/ui-candied-nuts-pickup.png" id="2_8bpit"]
+
+[node name="HudCandiedNutPickup" instance=ExtResource("1_1206r")]
+texture = ExtResource("2_8bpit")

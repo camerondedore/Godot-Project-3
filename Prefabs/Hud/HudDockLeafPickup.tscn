@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbgrjrxpx1jkp"]
+
+[ext_resource type="PackedScene" uid="uid://b0pnr65civ210" path="res://Prefabs/Hud/HudPickup.tscn" id="1_itssw"]
+[ext_resource type="Texture2D" uid="uid://bkjnav58vglpf" path="res://UI/ui-dock-leaves-pickup.png" id="2_x0un8"]
+
+[node name="HudDockLeafPickup" instance=ExtResource("1_itssw")]
+texture = ExtResource("2_x0un8")
