@@ -8,8 +8,7 @@ public partial class PlayerArrow : Projectile
     string arrowType = "weighted";
     [Export]
     PackedScene hitFx,
-        missFx,
-        missAudio;
+        missFx;
     
 
 
@@ -60,9 +59,7 @@ public partial class PlayerArrow : Projectile
         }
 
         // spawn miss fx
-        SpawnPrefab(missFx, point, normal, upVector);
-        // spawn miss audio
-        SpawnPrefab(missAudio, point, normal, upVector);
+        SpawnPrefab(missFx, point, normal + Basis.Z, upVector);
 
         // destroy arrow
         QueueFree();

@@ -8,6 +8,8 @@ public partial class AudioFx : AudioStreamPlayer3D
     AudioStream[] sounds;
     [Export]
     float pitchRadius = 0.1f;
+    [Export]
+    bool destroyOnFinished = true;
 
 
 
@@ -23,8 +25,11 @@ public partial class AudioFx : AudioStreamPlayer3D
         // get random pitch
         PitchScale = 1 + (GD.Randf() - 0.5f) * pitchRadius;
 
-        // destroy this player when finished
-        Finished += QueueFree;
+        if(destroyOnFinished)
+        {
+            // destroy this player when finished
+            Finished += QueueFree;
+        }
 
         // play sound
         Play();

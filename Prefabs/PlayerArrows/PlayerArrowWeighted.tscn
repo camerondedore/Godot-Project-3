@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvnogtbjot0oy"]
+[gd_scene load_steps=6 format=3 uid="uid://bvnogtbjot0oy"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerArrow.cs" id="1_w1ybd"]
 [ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="2_1gik3"]
-[ext_resource type="PackedScene" uid="uid://dbb5yp644jsdv" path="res://Prefabs/FX/FxDust.tscn" id="3_y7hpb"]
-[ext_resource type="PackedScene" uid="uid://6f5ig1bsqh6b" path="res://Prefabs/Audio/ArrowMissAudio.tscn" id="4_ca6fv"]
+[ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_rvj48"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_p2e30"]
 size = Vector3(0.05, 0.05, 0.5)
@@ -15,8 +14,7 @@ height = 0.15
 [node name="PlayerArrowWeighted" type="Node3D"]
 script = ExtResource("1_w1ybd")
 hitFx = ExtResource("2_1gik3")
-missFx = ExtResource("3_y7hpb")
-missAudio = ExtResource("4_ca6fv")
+missFx = ExtResource("3_rvj48")
 speed = 20.0
 speedVariation = 0.0
 rangeSqr = 900.0
