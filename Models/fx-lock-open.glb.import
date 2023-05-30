@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://br1hrc4p33rs7"
-path="res://.godot/imported/prop-lock-open.glb-3902f5b0912bf942fc881a77b703b34d.scn"
+path="res://.godot/imported/fx-lock-open.glb-d5ca4111387e1eee1e5f9ad135dad1cf.scn"
 
 [deps]
 
-source_file="res://Models/prop-lock-open.glb"
-dest_files=["res://.godot/imported/prop-lock-open.glb-3902f5b0912bf942fc881a77b703b34d.scn"]
+source_file="res://Models/fx-lock-open.glb"
+dest_files=["res://.godot/imported/fx-lock-open.glb-d5ca4111387e1eee1e5f9ad135dad1cf.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-lock-open_prop-lock-open": {
+"fx-lock-open_fx-lock-open": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -38,7 +38,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-lock-open.res"
+"save_to_file/path": "res://Models/fx-lock-open.res"
 }
 }
 }

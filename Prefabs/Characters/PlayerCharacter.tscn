@@ -38,8 +38,7 @@ radius = 0.3
 size = Vector3(0.6, 0.2, 0.3)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
-radius = 0.6
-height = 2.6
+height = 2.3
 
 [node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
 collision_layer = 34

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cqdc51q6kar5m"
-path="res://.godot/imported/prop-lock.glb-0a51028daffa817cd7fe90af696f353d.scn"
+uid="uid://bxu23syegihdd"
+path="res://.godot/imported/fx-nettle-broth-bowl.glb-44ecbce86e48f4a68c542500127634be.scn"
 
 [deps]
 
-source_file="res://Models/prop-lock.glb"
-dest_files=["res://.godot/imported/prop-lock.glb-0a51028daffa817cd7fe90af696f353d.scn"]
+source_file="res://Models/fx-nettle-broth-bowl.glb"
+dest_files=["res://.godot/imported/fx-nettle-broth-bowl.glb-44ecbce86e48f4a68c542500127634be.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-lock_prop-lock": {
+"fx-nettle-broth-bowl_fx-nettle-broth-bowl": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -38,7 +38,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-lock.res"
+"save_to_file/path": "res://Models/fx-nettle-broth-bowl.res"
 }
 }
 }

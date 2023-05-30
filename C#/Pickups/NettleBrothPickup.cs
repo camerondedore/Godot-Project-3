@@ -5,6 +5,8 @@ public partial class NettleBrothPickup : PickupRigidbody
 {
 
     [Export]
+    RigidbodySpawner fxSpawner;
+    [Export]
     float restoredHitPoints = 100;
 
 
@@ -15,6 +17,9 @@ public partial class NettleBrothPickup : PickupRigidbody
         {
             // add heal player
             data.playerhealth.Heal(restoredHitPoints);
+
+            // spawn fx
+            fxSpawner.Spawn();
 
             base.PickupAction(data);
         }        

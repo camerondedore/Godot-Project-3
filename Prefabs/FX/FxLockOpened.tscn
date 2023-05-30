@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://peso6lrsi2ip"]
+[gd_scene load_steps=8 format=3 uid="uid://daam6bhcq3c1k"]
 
-[ext_resource type="ArrayMesh" uid="uid://co3vdg57f7qsw" path="res://Models/prop-lock-open.res" id="1_2vm32"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="1_7a6ru"]
+[ext_resource type="ArrayMesh" uid="uid://co3vdg57f7qsw" path="res://Models/fx-lock-open.res" id="1_g4cpb"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_61yyt"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="4_ef3cl"]
 [ext_resource type="AudioStream" uid="uid://de2xpyq2nyc5n" path="res://Audio/lock-open-1.wav" id="5_6j8rm"]
@@ -15,7 +15,7 @@ collision_layer = 8
 collision_mask = 17
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_2vm32")
+mesh = ExtResource("1_g4cpb")
 surface_material_override/0 = ExtResource("2_61yyt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
