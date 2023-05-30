@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmuma8xgq3ktm"]
+
+[ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uaeg1"]
+
+[node name="CheckPoint" type="Area3D" node_paths=PackedStringArray("saveMesh")]
+collision_layer = 32
+collision_mask = 32
+monitorable = false
+script = ExtResource("1_mhk5w")
+saveMesh = NodePath("MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_66tyu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_uaeg1")

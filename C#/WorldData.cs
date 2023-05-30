@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public partial class WorldData : Node
 {
     
-    public static WorldData worldData;
+    public static WorldData data;
     public Data currentData;
     
     string filePath;
@@ -15,7 +15,7 @@ public partial class WorldData : Node
 
     public override void _Ready()
     {
-        worldData = this;
+        data = this;
 
         filePath = OS.GetUserDataDir() + "/world-data.dwg";
 
@@ -83,8 +83,6 @@ public partial class WorldData : Node
 
         // add to list of activated objects
         currentData.ActivatedObjects.Add(dataString);
-
-        SaveData();
     }
 
 
@@ -96,8 +94,6 @@ public partial class WorldData : Node
 
         // add to list of taken pickups
         currentData.Pickups.Add(dataString);
-
-        SaveData();
     }
 
 

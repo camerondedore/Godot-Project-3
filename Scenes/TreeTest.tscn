@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=62 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://qdor6d8r3wmw" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -54,6 +54,7 @@
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="48_0u7kr"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="48_3j4ku"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
+[ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -887,3 +888,6 @@ mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget2"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 0)

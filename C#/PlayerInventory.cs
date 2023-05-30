@@ -62,8 +62,6 @@ public partial class PlayerInventory : Node
         {
             currentInventory.ArrowTypes.Add(arrowType);
         }
-
-        SaveInventory();
     }
 
 

@@ -21,7 +21,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     public override void _Ready()
     {
         // get if lockbox was already activated
-        var wasActivated = WorldData.worldData.CheckActivatedObjects(this);
+        var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
         if(!wasActivated)
         {
@@ -85,7 +85,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
         pickupSpawner.StartSpawn(storedItem);
 
         // save to activated objects
-        WorldData.worldData.ActivateObject(this);
+        WorldData.data.ActivateObject(this);
 
         // disable script
         SetScript(new Variant());

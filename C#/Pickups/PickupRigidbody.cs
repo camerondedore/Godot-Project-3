@@ -18,7 +18,7 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
         if(saveToWorldData)
         {
             // get if pickup was already taken
-            var wasTaken = WorldData.worldData.CheckPickups(this);
+            var wasTaken = WorldData.data.CheckPickups(this);
 
             if(wasTaken)
             {
@@ -76,7 +76,7 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
         if(saveToWorldData)
         {
             // save to pickups taken
-            WorldData.worldData.TakePickup(this);
+            WorldData.data.TakePickup(this);
         }
 
         // delete pickup

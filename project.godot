@@ -85,3 +85,4 @@ player-heal={
 3d_physics/layer_3="Pickups"
 3d_physics/layer_4="FX"
 3d_physics/layer_5="Small Props"
+3d_physics/layer_6="Checkpoint"

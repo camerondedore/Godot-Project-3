@@ -132,16 +132,16 @@ public partial class PlayerHud : Node
 
         if(rangerBandages != currentInventory.RangerBandages)
         {
-            // update label
-            rangerBandages = currentInventory.RangerBandages;
-            rangerBandagesCounter.Text = rangerBandages.ToString();
-
             // check if ranger bandages got added
             if(rangerBandages < currentInventory.RangerBandages)
             {
                 // spawn pickup
                 hudPickups.AddRangerBandage();
             }
+            
+            // update label
+            rangerBandages = currentInventory.RangerBandages;
+            rangerBandagesCounter.Text = rangerBandages.ToString();
         }
     }
 

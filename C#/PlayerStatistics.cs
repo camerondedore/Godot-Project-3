@@ -66,7 +66,6 @@ public partial class PlayerStatistics : Node
     public void UpdateHitPoints(float newHitPoints)
     {
         currentStatistics.HitPoints = newHitPoints;
-        SaveStatistics();
     }
 
 
@@ -75,8 +74,6 @@ public partial class PlayerStatistics : Node
     {
         currentStatistics.HitPointUpgrades += Mathf.Clamp(currentStatistics.HitPointUpgrades + hitPointUpgrade, 0, maxHitPointUpgrades);
         currentStatistics.ArmorUpgrades = Mathf.Clamp(currentStatistics.ArmorUpgrades + armorUpgrade, 0, maxArmorUpgrades);
-
-        SaveStatistics();
     }
 
 
