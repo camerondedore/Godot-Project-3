@@ -1,14 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://baclh2cy2xu1y"]
+[gd_scene load_steps=5 format=3 uid="uid://baclh2cy2xu1y"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_0x5b1"]
 [ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="1_jiwja"]
+[ext_resource type="ArrayMesh" uid="uid://co4eetfrc7nu6" path="res://Models/pickup-dock-leaf.res" id="3_divh6"]
+[ext_resource type="Material" uid="uid://dghimnrpe1mpq" path="res://Materials/PickupDockLeaf.tres" id="4_sf6mk"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_34i4a"]
-size = Vector3(0.3, 0.5, 0.02)
-
-[node name="PickupDockLeaf" node_paths=PackedStringArray("particlesFx") instance=ExtResource("1_0x5b1")]
+[node name="PickupDockLeaf" instance=ExtResource("1_0x5b1")]
 script = ExtResource("1_jiwja")
-particlesFx = NodePath("FxSparkle")
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = SubResource("BoxMesh_34i4a")
+mesh = ExtResource("3_divh6")
+surface_material_override/0 = ExtResource("4_sf6mk")

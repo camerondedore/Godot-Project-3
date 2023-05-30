@@ -86,6 +86,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)
 shadow_enabled = true
 
+[node name="ToolPropPainter" type="Node" parent="."]
+script = ExtResource("4_41cga")
+propsToPaint = [ExtResource("32_nchpi"), ExtResource("33_ikeas"), ExtResource("34_ni6mc"), ExtResource("35_3fswv")]
+positionSpread = 0.1
+yOffset = 0.25
+maxRotation = 3.0
+sizeVariation = 0.3
+
 [node name="Map" type="Node3D" parent="."]
 
 [node name="Ground" type="StaticBody3D" parent="Map"]
@@ -483,14 +491,6 @@ transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002
 transform = Transform3D(-0.994291, -0.0949944, 0.0485942, -0.0948812, 0.995478, 0.00463715, -0.0488149, 0, -0.998808, -4.99956, 0.766261, 1.28239)
 storedItem = ExtResource("37_yfk8b")
 
-[node name="ToolPropPainter" type="Node" parent="."]
-script = ExtResource("4_41cga")
-propsToPaint = [ExtResource("32_nchpi"), ExtResource("33_ikeas"), ExtResource("34_ni6mc"), ExtResource("35_3fswv")]
-positionSpread = 0.1
-yOffset = 0.25
-maxRotation = 3.0
-sizeVariation = 0.3
-
 [node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14102, 0.6, 7.97087)
 collision_layer = 0
@@ -513,7 +513,7 @@ script = ExtResource("48_0u7kr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.96641, 5.50751, 0)
 
 [node name="TestBandageStationArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159986, 1, 7.90599)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, 1.08, 7.906)
 collision_layer = 4
 collision_mask = 2
 monitorable = false
