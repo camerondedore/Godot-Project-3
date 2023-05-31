@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://baclh2cy2xu1y"]
+[gd_scene load_steps=6 format=3 uid="uid://baclh2cy2xu1y"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_0x5b1"]
 [ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="1_jiwja"]
 [ext_resource type="ArrayMesh" uid="uid://co4eetfrc7nu6" path="res://Models/pickup-dock-leaf.res" id="3_divh6"]
+[ext_resource type="PackedScene" uid="uid://cegx2a23qd0nv" path="res://Prefabs/Audio/DockLeafAudio.tscn" id="3_wlj1i"]
 [ext_resource type="Material" uid="uid://dghimnrpe1mpq" path="res://Materials/PickupDockLeaf.tres" id="4_sf6mk"]
 
 [node name="PickupDockLeaf" instance=ExtResource("1_0x5b1")]
 script = ExtResource("1_jiwja")
+pickupPrefabs = Array[PackedScene]([ExtResource("3_wlj1i")])
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("3_divh6")

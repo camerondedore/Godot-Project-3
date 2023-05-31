@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cegx2a23qd0nv"]
+
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="1_u8v4s"]
+[ext_resource type="AudioStream" uid="uid://bbbew6mr246nm" path="res://Audio/pickup-dock-leaf.wav" id="2_vbnuo"]
+
+[node name="DockLeafAudio" type="AudioStreamPlayer3D"]
+script = ExtResource("1_u8v4s")
+sounds = Array[AudioStream]([ExtResource("2_vbnuo")])
