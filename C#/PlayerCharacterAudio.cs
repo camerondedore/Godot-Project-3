@@ -4,13 +4,29 @@ using System;
 public partial class PlayerCharacterAudio : AudioTools3d
 {
 
-    // [Export]
-    // AudioStream jumpPadSound;
+    [Export]
+    AudioStream rangerBandageHealSound,
+        rangerBandageGatherSound,
+        rangerBandageCraftSound;
 
 
 
-    // public void PlayJumpPadSound()
-    // {
-    //     PlaySound(jumpPadSound, 0.1f);
-    // }
+    public void PlayRangerBandageHealSound()
+    {
+        PlaySound(rangerBandageHealSound, 0.1f);
+    }
+
+
+
+    public void PlayRangerBandageGatherSound()
+    {
+        PlaySound(rangerBandageGatherSound, 0.1f);
+    }
+    
+    
+    
+    public void PlayRangerBandageCraftSound()
+    {
+        PlaySound(rangerBandageCraftSound, 0.1f);
+    }
 }

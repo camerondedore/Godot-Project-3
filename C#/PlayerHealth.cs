@@ -4,7 +4,8 @@ using System;
 public partial class PlayerHealth : Health
 {
 
-    // inherited maxHitPoints is unused
+    [Export]
+    PlayerCharacterAudio characterAudio;
     Disconnector healDisconnector = new Disconnector();
 
 
@@ -28,6 +29,9 @@ public partial class PlayerHealth : Health
             {
                 // apply bandage
                 Heal(PlayerStatistics.statistics.currentStatistics.HitPointsPerBandage);
+
+                // play audio
+                characterAudio.PlayRangerBandageHealSound();
 
                 // remove bandage from inventory
                 PlayerInventory.inventory.AddToInventory(0, 0, 0, -1, null);

@@ -3,10 +3,11 @@ using System;
 
 namespace PlayerCharacterComplex
 {
-    public partial class PlayerCharacterStateBandageStation : PlayerCharacterState
+    public partial class PlayerCharacterStateBandageStationGather : PlayerCharacterState
     {
-
-        double startTime;
+        
+        double startTime,
+            gatherTime = 0.2;
 
 
 
@@ -15,10 +16,14 @@ namespace PlayerCharacterComplex
             // check for bandage components
             var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
-            if(hasComponents && EngineTime.timePassed > startTime + blackboard.bandageTime)
+            if(hasComponents && EngineTime.timePassed > startTime + gatherTime)
             {
-                // create bandage
-                PlayerInventory.inventory.AddToInventory(0, -1, -1, 1, null);
+                // take ingredients
+                PlayerInventory.inventory.AddToInventory(0, -1, -1, 0, null);
+                blackboard.rangerBandagesToCraft++;
+
+                // play audio
+                blackboard.characterAudio.PlayRangerBandageGatherSound();
 
                 // reset timer
                 startTime = EngineTime.timePassed;  
@@ -47,8 +52,8 @@ namespace PlayerCharacterComplex
 
             if(depletedComponents)
             {
-                // idle
-                return blackboard.stateIdle;
+                // craft
+                return blackboard.stateBandageStationCraft;
             }
 
 

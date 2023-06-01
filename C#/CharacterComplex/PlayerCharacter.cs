@@ -19,7 +19,8 @@ namespace PlayerCharacterComplex
 			subStateJumpPadBowFire,
 			stateLedgeGrab,
 			stateLedgeGrabJump,
-			stateBandageStation,
+			stateBandageStationGather,
+			stateBandageStationCraft,
 			stateBowAim,
 			stateBowFire;
 
@@ -44,12 +45,12 @@ namespace PlayerCharacterComplex
 			acceleration = 5,
 			jumpHeight = 2.1f,
 			ledgeGrabJumpHeight = 3,
-			bandageTime = 0.5f,
 			startDelay = 1f,
 			fireTime = 0.5f,
 			drawTime = 0.5f;
 
 		public Disconnector jumpDisconnector = new Disconnector();
+		public int rangerBandagesToCraft;
 		string debugText;
 		
 
@@ -68,7 +69,8 @@ namespace PlayerCharacterComplex
 			stateJump = new PlayerCharacterStateJump(){blackboard = this};
 			stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
 			stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};
-			stateBandageStation = new PlayerCharacterStateBandageStation(){blackboard = this};
+			stateBandageStationGather = new PlayerCharacterStateBandageStationGather(){blackboard = this};
+			stateBandageStationCraft = new PlayerCharacterStateBandageStationCraft(){blackboard = this};
 			stateBowAim = new PlayerCharacterStateBowAim(){blackboard = this};
 			stateBowFire = new PlayerCharacterStateBowFire(){blackboard = this};
 
@@ -183,7 +185,7 @@ namespace PlayerCharacterComplex
 			LookAtFromPosition(target.GlobalPosition, target.GlobalPosition + -target.GlobalTransform.Basis.Z);
 
 			// go to bandage station state
-			machine.SetState(stateBandageStation);
+			machine.SetState(stateBandageStationGather);
 		}
 	}
 }
