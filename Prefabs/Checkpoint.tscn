@@ -1,22 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmuma8xgq3ktm"]
+[gd_scene load_steps=6 format=3 uid="uid://cmuma8xgq3ktm"]
 
 [ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
 [ext_resource type="ArrayMesh" uid="uid://diqgy6v65xxd7" path="res://Models/prop-checkpoint.res" id="2_afk7b"]
+[ext_resource type="Material" uid="uid://d15v4ynacq4" path="res://Materials/PropCheckpoint.tres" id="3_pxcm7"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="3_x88vd"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
 
-[node name="CheckPoint" type="Area3D" node_paths=PackedStringArray("saveMesh")]
+[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh")]
 collision_layer = 32
 collision_mask = 32
 monitorable = false
 script = ExtResource("1_mhk5w")
 saveMesh = NodePath("MeshInstance3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_66tyu")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_afk7b")
+surface_material_override/0 = ExtResource("3_pxcm7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_66tyu")
 
 [node name="FxSparkle" parent="." instance=ExtResource("3_x88vd")]
