@@ -342,34 +342,34 @@ transform = Transform3D(0.788848, 0, -0.614588, 0, 1, 0, 0.614588, 0, 0.788848, 
 
 [node name="Food" type="Node3D" parent="Props"]
 
-[node name="PropApple" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="PropApple" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.795768, -0.196198, 0.437482, 0.447746, 0.607284, -0.542088, -0.171487, 0.675161, 0.61472, -1.5704, 0.106047, -10.135)
 
-[node name="@PropApple@70183" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70183" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.922664, -0.251531, 0.500145, 0.343582, 0.506806, 0.888719, -0.442001, 0.919022, -0.353208, -4.30565, 0.106047, -11.9412)
 
-[node name="@PropApple@70184" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70184" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.963802, 0.0817004, 0.131022, 0.154021, 0.567285, 0.779243, -0.0109236, 0.790106, -0.573034, -3.25783, 0.106047, -10.2018)
 
-[node name="@PropApple@70185" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70185" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.498506, 1.02933, 0.031782, -0.00050725, 0.0355553, -1.14358, -1.02982, 0.498251, 0.015948, 2.72958, 0.106047, -10.2264)
 
-[node name="@PropApple@70186" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70186" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(1.03346, 0.38517, -0.163333, -0.372508, 1.04529, 0.108028, 0.190451, -0.0455631, 1.0976, 1.67677, 0.106047, -12.8168)
 
-[node name="@PropApple@70187" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70187" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.733845, -0.448392, -0.0426347, -0.421672, 0.712579, -0.236273, 0.158323, -0.180489, -0.826897, 1.12476, 0.106047, -10.0943)
 
-[node name="@PropApple@70188" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70188" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.802777, 0.384668, 0.471442, -0.336801, 0.369079, -0.874656, -0.506746, -0.854687, -0.165521, -8.67777, 0.106047, -9.82513)
 
-[node name="@PropApple@70189" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70189" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.29939, 0.899216, 0.512983, 0.911179, 0.482369, -0.313764, -0.491419, 0.346564, -0.894302, -9.13991, 0.106047, -11.4851)
 
-[node name="@PropApple@70190" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70190" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.512474, 0.901177, 0.0717905, -0.0693389, 0.121462, -1.02973, -0.901368, 0.503021, 0.12003, -7.29271, 0.106047, -10.07)
 
-[node name="@PropApple@70191" type="Node3D" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+[node name="@PropApple@70191" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.39308, 0.802336, 0.0262971, 0.45851, 0.248426, -0.725948, -0.658942, -0.305758, -0.520822, -8.97702, 0.106047, -13.3511)
 
 [node name="SmallProps" type="Node3D" parent="Props"]

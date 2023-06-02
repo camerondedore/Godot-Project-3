@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://nid7jl2fqayy"]
+[gd_scene load_steps=17 format=3 uid="uid://nid7jl2fqayy"]
 
 [ext_resource type="Material" uid="uid://c248kr7mbh8b7" path="res://Materials/FxArrowHit.tres" id="1_s2cpb"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_8umw6"]
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gwfle"]
+[ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/FxSparkle.tres" id="4_fa6b1"]
 
 [sub_resource type="Gradient" id="Gradient_h563r"]
 offsets = PackedFloat32Array(0, 0.859756, 1)
@@ -32,6 +33,36 @@ color_ramp = SubResource("GradientTexture1D_vy5mi")
 
 [sub_resource type="QuadMesh" id="QuadMesh_bvefm"]
 
+[sub_resource type="Gradient" id="Gradient_q1put"]
+offsets = PackedFloat32Array(0, 0.0731707, 0.772358, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uke2v"]
+gradient = SubResource("Gradient_q1put")
+
+[sub_resource type="Curve" id="Curve_0jtxj"]
+_data = [Vector2(0, 0.301724), 0.0, 2.25705, 0, 0, Vector2(1, 1), 0.0580762, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bhy2k"]
+curve = SubResource("Curve_0jtxj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u5eje"]
+lifetime_randomness = 0.2
+direction = Vector3(0, 0, 1)
+spread = 60.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 8.0
+initial_velocity_max = 10.0
+damping_min = 15.0
+damping_max = 15.0
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_bhy2k")
+color_ramp = SubResource("GradientTexture1D_uke2v")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mcyw3"]
+
 [node name="FxArrowHit" type="GPUParticles3D"]
 material_override = ExtResource("1_s2cpb")
 emitting = false
@@ -47,3 +78,15 @@ script = ExtResource("2_gwfle")
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("2_8umw6")
 lifeTime = 1.0
+
+[node name="FxSparkleBlast" type="GPUParticles3D" parent="."]
+material_override = ExtResource("4_fa6b1")
+emitting = false
+amount = 10
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-2, -2, 0, 4, 4, 2.5)
+process_material = SubResource("ParticleProcessMaterial_u5eje")
+draw_pass_1 = SubResource("QuadMesh_mcyw3")
+script = ExtResource("2_gwfle")
