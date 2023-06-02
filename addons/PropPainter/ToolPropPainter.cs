@@ -16,6 +16,8 @@ public partial class ToolPropPainter : Node
 		maxRotation = 2,
 		sizeVariation = 0.2f;
 	[Export]
+	bool uniformSize = false;
+	[Export]
 	uint mask = 1;
 	Camera3D editorCamera;
 	Vector3 rayHitPoint;
@@ -160,6 +162,11 @@ public partial class ToolPropPainter : Node
 		// get size spread
 		var xzSpread = 1 + (GD.Randf() - 0.5f) * sizeVariation;
 		var sizeSpread = new Vector3(xzSpread, 1 + (GD.Randf() - 0.5f) * sizeVariation, xzSpread);
+
+		if(uniformSize)
+		{
+			sizeSpread.Y = sizeSpread.X;
+		}
 
 		// set parent as root scene
 		GetTree().EditedSceneRoot.AddChild(prop);

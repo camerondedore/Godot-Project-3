@@ -14,6 +14,7 @@ radius = 2.31029
 [node name="PropTreeOak1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 mesh = ExtResource("1_hx8dg")
 surface_material_override/0 = ExtResource("2_u364e")
 surface_material_override/1 = ExtResource("3_fl7r2")
