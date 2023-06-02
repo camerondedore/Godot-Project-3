@@ -6,6 +6,8 @@ public partial class Checkpoint : Area3D
 
     [Export]
     MeshInstance3D saveMesh;
+    [Export]
+    GpuParticles3D fxParticles;
 
     Vector3 startPosition;
     double startTime,
@@ -32,11 +34,10 @@ public partial class Checkpoint : Area3D
             return;
         }
 
-        if(!saved)
-        {
-            // bounce
-            GlobalPosition = startPosition + Vector3.Up * Mathf.Sin(((float) EngineTime.timePassed) * bounceSpeed) * bounceOffset;
-        }
+       
+        // bounce
+        GlobalPosition = startPosition + Vector3.Up * Mathf.Sin(((float) EngineTime.timePassed) * bounceSpeed) * bounceOffset;
+    
 
         if(saved && EngineTime.timePassed > startTime + downTime)
         {
@@ -44,6 +45,7 @@ public partial class Checkpoint : Area3D
             saved = false;
             SetDeferred("Monitering", true);
             saveMesh.Visible = true;
+            fxParticles.Emitting = true;
         }
     }
 
@@ -61,5 +63,6 @@ public partial class Checkpoint : Area3D
         saved = true;
         SetDeferred("Monitering", false);
         saveMesh.Visible = false;
+        fxParticles.Emitting = false;
     }
 }

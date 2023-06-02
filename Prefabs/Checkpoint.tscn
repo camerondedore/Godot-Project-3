@@ -7,12 +7,13 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
 
-[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh")]
+[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles")]
 collision_layer = 32
 collision_mask = 32
 monitorable = false
 script = ExtResource("1_mhk5w")
 saveMesh = NodePath("MeshInstance3D")
+fxParticles = NodePath("FxSparkle")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_afk7b")

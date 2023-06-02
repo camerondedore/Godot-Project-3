@@ -1,11 +1,12 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d15v4ynacq4"]
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://d15v4ynacq4"]
 
 [ext_resource type="Texture2D" uid="uid://d1tga882km0qt" path="res://Textures/prop-checkpoint-diffuse.png" id="1_7lvwj"]
+[ext_resource type="Texture2D" uid="uid://dsa72mclkb3tn" path="res://Textures/prop-checkpoint-roughness.png" id="2_fioi1"]
 
 [resource]
 cull_mode = 2
 albedo_texture = ExtResource("1_7lvwj")
 metallic = 0.2
-roughness = 0.9
+roughness_texture = ExtResource("2_fioi1")
 rim_enabled = true
 rim = 0.21
