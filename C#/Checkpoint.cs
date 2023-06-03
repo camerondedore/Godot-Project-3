@@ -10,10 +10,15 @@ public partial class Checkpoint : Area3D
     GpuParticles3D fxParticles;
     [Export]
     Label savingLabel;
+    [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream saveSound;
 
     Vector3 startPosition;
     double startTime,
-        downTime = 5;
+        downTime = 5,
+        labelTime = 1.5;
     float bounceSpeed = 3f,
         bounceOffset = 0.2f;
     bool saved = false;
@@ -48,7 +53,12 @@ public partial class Checkpoint : Area3D
             saved = false;
             SetDeferred("Monitering", true);
             saveMesh.Visible = true;
-            fxParticles.Emitting = true;
+            
+        }
+
+
+        if(saved && savingLabel.Visible && EngineTime.timePassed > startTime + labelTime)
+        {
             savingLabel.Visible = false;
         }
     }
@@ -69,5 +79,6 @@ public partial class Checkpoint : Area3D
         saveMesh.Visible = false;
         fxParticles.Emitting = false;
         savingLabel.Visible = true;
+        audio.PlaySound(saveSound, 0.05f);
     }
 }

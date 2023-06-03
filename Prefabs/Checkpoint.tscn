@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmuma8xgq3ktm"]
+[gd_scene load_steps=9 format=3 uid="uid://cmuma8xgq3ktm"]
 
 [ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
+[ext_resource type="AudioStream" uid="uid://mqbs8l06sitt" path="res://Audio/checkpoint-save.wav" id="2_28jj8"]
 [ext_resource type="ArrayMesh" uid="uid://diqgy6v65xxd7" path="res://Models/prop-checkpoint.res" id="2_afk7b"]
 [ext_resource type="Material" uid="uid://d15v4ynacq4" path="res://Materials/PropCheckpoint.tres" id="3_pxcm7"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="3_x88vd"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_5ytto"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_dfee6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
 
-[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles", "savingLabel")]
+[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles", "savingLabel", "audio")]
 collision_layer = 32
 collision_mask = 32
 monitorable = false
@@ -16,6 +18,8 @@ script = ExtResource("1_mhk5w")
 saveMesh = NodePath("MeshInstance3D")
 fxParticles = NodePath("FxSparkle")
 savingLabel = NodePath("CheckpointCanvas/Label")
+audio = NodePath("CheckpointAudio")
+saveSound = ExtResource("2_28jj8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_afk7b")
@@ -29,7 +33,7 @@ shape = SubResource("SphereShape3D_66tyu")
 [node name="CheckpointCanvas" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CheckpointCanvas"]
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -44,3 +48,6 @@ theme = ExtResource("5_5ytto")
 text = "Saving..."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CheckpointAudio" type="AudioStreamPlayer3D" parent="."]
+script = ExtResource("6_dfee6")
