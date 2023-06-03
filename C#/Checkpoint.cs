@@ -51,8 +51,9 @@ public partial class Checkpoint : Area3D
         {
             // end down time
             saved = false;
-            SetDeferred("Monitering", true);
+            SetDeferred("monitoring", true);
             saveMesh.Visible = true;
+            fxParticles.Emitting = true;
             
         }
 
@@ -75,7 +76,7 @@ public partial class Checkpoint : Area3D
         // start down time
         startTime = EngineTime.timePassed;
         saved = true;
-        SetDeferred("Monitering", false);
+        SetDeferred("monitoring", false);
         saveMesh.Visible = false;
         fxParticles.Emitting = false;
         savingLabel.Visible = true;
