@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmuma8xgq3ktm"]
+[gd_scene load_steps=7 format=3 uid="uid://cmuma8xgq3ktm"]
 
 [ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
 [ext_resource type="ArrayMesh" uid="uid://diqgy6v65xxd7" path="res://Models/prop-checkpoint.res" id="2_afk7b"]
 [ext_resource type="Material" uid="uid://d15v4ynacq4" path="res://Materials/PropCheckpoint.tres" id="3_pxcm7"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="3_x88vd"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_5ytto"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
 
-[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles")]
+[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles", "savingLabel")]
 collision_layer = 32
 collision_mask = 32
 monitorable = false
 script = ExtResource("1_mhk5w")
 saveMesh = NodePath("MeshInstance3D")
 fxParticles = NodePath("FxSparkle")
+savingLabel = NodePath("CheckpointCanvas/Label")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_afk7b")
@@ -23,3 +25,22 @@ surface_material_override/0 = ExtResource("3_pxcm7")
 shape = SubResource("SphereShape3D_66tyu")
 
 [node name="FxSparkle" parent="." instance=ExtResource("3_x88vd")]
+
+[node name="CheckpointCanvas" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CheckpointCanvas"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -75.0
+offset_right = 60.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_5ytto")
+text = "Saving..."
+horizontal_alignment = 1
+vertical_alignment = 1

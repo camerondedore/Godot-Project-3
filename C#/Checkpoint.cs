@@ -8,6 +8,8 @@ public partial class Checkpoint : Area3D
     MeshInstance3D saveMesh;
     [Export]
     GpuParticles3D fxParticles;
+    [Export]
+    Label savingLabel;
 
     Vector3 startPosition;
     double startTime,
@@ -21,6 +23,7 @@ public partial class Checkpoint : Area3D
     public override void _Ready()
     {
         startPosition = GlobalPosition;
+        savingLabel.Visible = false;
         BodyEntered += TriggerCheckpoint;
     }
 
@@ -46,6 +49,7 @@ public partial class Checkpoint : Area3D
             SetDeferred("Monitering", true);
             saveMesh.Visible = true;
             fxParticles.Emitting = true;
+            savingLabel.Visible = false;
         }
     }
 
@@ -64,5 +68,6 @@ public partial class Checkpoint : Area3D
         SetDeferred("Monitering", false);
         saveMesh.Visible = false;
         fxParticles.Emitting = false;
+        savingLabel.Visible = true;
     }
 }

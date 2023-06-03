@@ -70,6 +70,7 @@ amount = 1
 lifetime = 0.25
 one_shot = true
 explosiveness = 1.0
+fixed_fps = 60
 visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
 process_material = SubResource("ParticleProcessMaterial_c3qcg")
 draw_pass_1 = SubResource("QuadMesh_bvefm")
