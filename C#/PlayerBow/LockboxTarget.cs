@@ -15,6 +15,10 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     PackedScene storedItem = null;
     [Export]
     AnimationPlayer anim;
+    [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream openSound;
 
 
 
@@ -86,6 +90,9 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
 
         // save to activated objects
         WorldData.data.ActivateObject(this);
+
+        // play audio
+        audio.PlaySound(openSound, 0.05f);
 
         // disable script
         SetScript(new Variant());
