@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://qdor6d8r3wmw"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
-[ext_resource type="Script" path="res://C#/Camera/GlobalCamera.cs" id="1_w865n"]
+[ext_resource type="Script" path="res://C#/Common/GlobalCamera.cs" id="1_w865n"]
 [ext_resource type="Script" path="res://C#/Common/EngineTime.cs" id="2_pyw1p"]
 [ext_resource type="Script" path="res://C#/Common/GlobalRandom.cs" id="4_apx2b"]
 [ext_resource type="Script" path="res://C#/Common/PlayerInput.cs" id="4_qu5pn"]

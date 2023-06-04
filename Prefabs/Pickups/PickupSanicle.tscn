@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c70ouva7y3o0b"]
+[gd_scene load_steps=6 format=3 uid="uid://c70ouva7y3o0b"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_c0xkr"]
 [ext_resource type="Script" path="res://C#/Pickups/SaniclePickup.cs" id="1_hxup0"]
 [ext_resource type="PackedScene" uid="uid://bclbkpehdahmf" path="res://Prefabs/Audio/SanicleAudio.tscn" id="3_5keol"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_7mxnv"]
-size = Vector3(0.3, 0.3, 0.3)
+[ext_resource type="ArrayMesh" uid="uid://jxtao67pth47" path="res://Models/pickup-sanicle.res" id="4_bbdti"]
+[ext_resource type="Material" uid="uid://lgqey30v4j3f" path="res://Materials/PickupSanicle.tres" id="5_tmqy3"]
 
 [node name="PickupSanicle" instance=ExtResource("1_c0xkr")]
 script = ExtResource("1_hxup0")
 pickupPrefabs = Array[PackedScene]([ExtResource("3_5keol")])
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = SubResource("PrismMesh_7mxnv")
+mesh = ExtResource("4_bbdti")
+surface_material_override/0 = ExtResource("5_tmqy3")
