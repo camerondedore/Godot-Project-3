@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://4pdqs3fimvwl"]
+
+[ext_resource type="Material" uid="uid://tj8je84ikn7e" path="res://Materials/FxItemHighlight.tres" id="1_c2vcs"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_amh7b"]
+
+[node name="FxItemHighlight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_amh7b")
+surface_material_override/0 = ExtResource("1_c2vcs")

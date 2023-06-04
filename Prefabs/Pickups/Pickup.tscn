@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://kjtjnroe2otb"]
+[gd_scene load_steps=5 format=3 uid="uid://kjtjnroe2otb"]
 
+[ext_resource type="PackedScene" uid="uid://4pdqs3fimvwl" path="res://Prefabs/FX/FxItemHighlight.tscn" id="2_8xkpg"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="2_imooj"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_iax83"]
@@ -22,3 +23,5 @@ mesh = SubResource("SphereMesh_iax83")
 shape = SubResource("SphereShape3D_inywu")
 
 [node name="FxSparkle" parent="." instance=ExtResource("2_imooj")]
+
+[node name="FxItemHighlight" parent="." instance=ExtResource("2_8xkpg")]

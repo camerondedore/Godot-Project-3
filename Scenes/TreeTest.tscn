@@ -80,7 +80,7 @@ environment = ExtResource("1_2ajl2")
 transform = Transform3D(-0.580322, 0.509743, -0.635128, 0, 0.779885, 0.625923, 0.814387, 0.363237, -0.452585, -18.9139, 10.5239, -2.11767)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(0.31328, 0, -0.949661, 0, 1, 0, 0.949661, 0, 0.31328, 0, 1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 0, 0, 0)
@@ -88,10 +88,10 @@ shadow_enabled = true
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
-propsToPaint = [ExtResource("27_j1ljd")]
+propsToPaint = [ExtResource("51_v4cb4"), ExtResource("52_re15r")]
 positionSpread = 0.0
 yOffset = 0.1
-maxRotation = 90.0
+maxRotation = 3.0
 sizeVariation = 0.3
 uniformSize = true
 
@@ -545,6 +545,18 @@ lock_rotation = false
 
 [node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
 transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -9.70234, 0.35, -6.71353)
+
+[node name="PropLockbox2" parent="." instance=ExtResource("50_hmjpr")]
+transform = Transform3D(-0.961545, 0, 0.274647, 0, 1, 0, -0.274647, 0, -0.961545, -7.72984, 0.35, -8.42883)
+storedItem = ExtResource("43_r6irn")
+
+[node name="PropLockbox3" parent="." instance=ExtResource("50_hmjpr")]
+transform = Transform3D(0.608996, 0, 0.793173, 0, 1, 0, -0.793173, 0, 0.608996, 8.50056, 0.35, 6.60801)
+storedItem = ExtResource("37_yfk8b")
+
+[node name="PropLockbox4" parent="." instance=ExtResource("50_hmjpr")]
+transform = Transform3D(0.210933, 0, -0.977501, 0, 1, 0, 0.977501, 0, 0.210933, -11.1694, 0.35, -5.31322)
+storedItem = ExtResource("42_1ywjb")
 
 [node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6113, 0.600002, 0.43706)
