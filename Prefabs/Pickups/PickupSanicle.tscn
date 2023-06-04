@@ -11,5 +11,6 @@ script = ExtResource("1_hxup0")
 pickupPrefabs = Array[PackedScene]([ExtResource("3_5keol")])
 
 [node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("4_bbdti")
 surface_material_override/0 = ExtResource("5_tmqy3")
