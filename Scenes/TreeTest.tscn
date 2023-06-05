@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=63 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -55,6 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="53_qkkld"]
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="54_3mvej"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
+[ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/BowTargets/PropChest.tscn" id="56_1rfgt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -546,18 +547,6 @@ lock_rotation = false
 [node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
 transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -9.70234, 0.35, -6.71353)
 
-[node name="PropLockbox2" parent="." instance=ExtResource("50_hmjpr")]
-transform = Transform3D(-0.961545, 0, 0.274647, 0, 1, 0, -0.274647, 0, -0.961545, -7.72984, 0.35, -8.42883)
-storedItem = ExtResource("43_r6irn")
-
-[node name="PropLockbox3" parent="." instance=ExtResource("50_hmjpr")]
-transform = Transform3D(0.608996, 0, 0.793173, 0, 1, 0, -0.793173, 0, 0.608996, 8.50056, 0.35, 6.60801)
-storedItem = ExtResource("37_yfk8b")
-
-[node name="PropLockbox4" parent="." instance=ExtResource("50_hmjpr")]
-transform = Transform3D(0.210933, 0, -0.977501, 0, 1, 0, 0.977501, 0, 0.210933, -11.1694, 0.35, -5.31322)
-storedItem = ExtResource("42_1ywjb")
-
 [node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6113, 0.600002, 0.43706)
 collision_layer = 0
@@ -802,3 +791,6 @@ mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget2"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
+
+[node name="PropChest" parent="." instance=ExtResource("56_1rfgt")]
+transform = Transform3D(-0.458045, 0, -0.888929, 0, 1, 0, 0.888929, 0, -0.458045, -12.809, 0.6, -6.906)
