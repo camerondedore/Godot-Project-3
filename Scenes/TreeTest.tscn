@@ -547,6 +547,10 @@ lock_rotation = false
 [node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
 transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -9.70234, 0.35, -6.71353)
 
+[node name="PropChest" parent="." instance=ExtResource("56_1rfgt")]
+transform = Transform3D(-0.458045, 0, -0.888929, 0, 1, 0, 0.888929, 0, -0.458045, -12.809, 0.6, -6.906)
+storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb"), ExtResource("43_r6irn")])
+
 [node name="TestJumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6113, 0.600002, 0.43706)
 collision_layer = 0
@@ -791,6 +795,3 @@ mesh = SubResource("CylinderMesh_8ru0d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget2"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
-
-[node name="PropChest" parent="." instance=ExtResource("56_1rfgt")]
-transform = Transform3D(-0.458045, 0, -0.888929, 0, 1, 0, 0.888929, 0, -0.458045, -12.809, 0.6, -6.906)

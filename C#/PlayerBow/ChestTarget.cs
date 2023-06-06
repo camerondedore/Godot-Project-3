@@ -10,9 +10,9 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
     [Export]
     FxLock lockFx;
     [Export]
-    RigidbodySpawnerDelayed pickupSpawner;
+    RigidbodySpawnerMultiple pickupSpawner;
     [Export]
-    PackedScene storedItem = null;
+    PackedScene[] storedItems;
     [Export]
     AnimationPlayer anim;
     [Export]
@@ -86,7 +86,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
         lockFx.Open();
 
         // eject pickup
-        pickupSpawner.StartSpawn(storedItem);
+        pickupSpawner.StartSpawn(storedItems);
 
         // save to activated objects
         WorldData.data.ActivateObject(this);
