@@ -3,8 +3,8 @@
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="1_grvsa"]
 [ext_resource type="Script" path="res://C#/PlayerBow/ChestTarget.cs" id="1_pnrr2"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="2_8vv3q"]
+[ext_resource type="AudioStream" uid="uid://dutt7ugi03ht8" path="res://Audio/chest-open.wav" id="2_fo8lm"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_rme7f"]
-[ext_resource type="AudioStream" uid="uid://cf6rb4jfyo1xv" path="res://Audio/lockbox-open.wav" id="3_2e2ym"]
 [ext_resource type="PackedScene" path="res://Prefabs/FX/FxLock.tscn" id="3_2i7no"]
 [ext_resource type="AudioStream" uid="uid://buaupw1cosg2g" path="res://Audio/pickup-spawn.wav" id="8_f7gyv"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_th5xi"]
@@ -219,7 +219,7 @@ pickupSpawner = NodePath("PickupSpawnerDelayed")
 storedItems = Array[PackedScene]([])
 anim = NodePath("AnimationPlayer")
 audio = NodePath("ChestAudio")
-openSound = ExtResource("3_2e2ym")
+openSound = ExtResource("2_fo8lm")
 
 [node name="prop-chest-armature" type="Node3D" parent="."]
 
@@ -283,7 +283,7 @@ script = ExtResource("9_cku3p")
 prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
 audio = NodePath("../ChestAudio")
 spawnSound = ExtResource("8_f7gyv")
-delayTime = 0.65
+delayTime = 1.2
 timeBetweenSpawns = 0.33
 direction = Vector3(0, 6, -3)
 speed = 6.0
