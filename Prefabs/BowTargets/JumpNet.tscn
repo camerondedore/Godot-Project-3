@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://chfjssg6k30d2"]
+
+[ext_resource type="Script" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
+[ext_resource type="Script" path="res://C#/JumpPad.cs" id="2_fj8wc"]
+[ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="3_4uaiq"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="4_38g1o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4pvxr"]
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a70tb"]
+size = Vector3(1, 0.2, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgwrm"]
+size = Vector3(0.8, 0.1, 0.8)
+
+[node name="JumpNetTarget" type="StaticBody3D" node_paths=PackedStringArray("jumpPad")]
+script = ExtResource("1_dgeyj")
+jumpPad = NodePath("JumpPad")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_4pvxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_a70tb")
+
+[node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_4uaiq")
+max_distance = 10.0
+script = ExtResource("4_38g1o")
+
+[node name="JumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("2_fj8wc")
+landingTarget = NodePath("../JumpPadTarget")
+jumpPadAudio = NodePath("../JumpPadAudio")
+horizontalSpeed = 6.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpPad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107837, 0)
+shape = SubResource("BoxShape3D_vgwrm")
+
+[node name="JumpPadTarget" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

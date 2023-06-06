@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cemt2ewlwl8n8"]
+[gd_scene load_steps=36 format=3 uid="uid://cemt2ewlwl8n8"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://dqx1dj05aoil5" path="res://Audio/ranger-bandage-heal.wav" id="22_cdqx6"]
 [ext_resource type="AudioStream" uid="uid://k8ogntdoh24" path="res://Audio/ranger-bandage-gather.wav" id="23_g4fk7"]
 [ext_resource type="AudioStream" uid="uid://dcv3yunkkpab4" path="res://Audio/ranger-bandage-craft.wav" id="23_gbit2"]
+[ext_resource type="PackedScene" uid="uid://d3hlke4a6d00w" path="res://Prefabs/PlayerArrows/PlayerArrowNet.tscn" id="28_t6rk3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -348,6 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
 script = ExtResource("16_mwwtv")
 weightedArrow = ExtResource("17_q6v2h")
 pickArrow = ExtResource("18_erk0y")
+netArrow = ExtResource("28_t6rk3")
 bowAudio = NodePath("BowAudio")
 bowFireSound = ExtResource("19_rmfin")
 bowDrawSound = ExtResource("20_no75w")
