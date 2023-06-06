@@ -73,7 +73,7 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
             }
         }
 
-        if(saveToWorldData)
+        if(saveToWorldData && Freeze)
         {
             // save to pickups taken
             WorldData.data.TakePickup(this);

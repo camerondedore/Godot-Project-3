@@ -7,6 +7,10 @@ public partial class RigidbodySpawnerMultiple : RigidbodySpawner
     [Export]
     public PackedScene[] prefabs;
     [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream spawnSound;
+    [Export]
     double delayTime = 1,
         timeBetweenSpawns = 0.5;
 
@@ -33,6 +37,7 @@ public partial class RigidbodySpawnerMultiple : RigidbodySpawner
             {
                 lastSpawnTime = EngineTime.timePassed;
                 Spawn(prefabs[spawnedIndex]);
+                audio.PlaySound(spawnSound, 0.1f);
                 spawnedIndex++;
             }
 
