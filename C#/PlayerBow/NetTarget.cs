@@ -9,6 +9,8 @@ public partial class NetTarget : StaticBody3D, IBowTarget
         arrowType = "net";
     [Export]
     JumpPad jumpPad;
+    [Export]
+    CollisionShape3D arrowCollider;
     // [Export]
     // AnimationPlayer anim;
     // [Export]
@@ -68,5 +70,8 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
         // enable jump pad
         jumpPad.SetDeferred("monitoring", true);
+
+        // disable collider
+        arrowCollider.Disabled = true;
     }
 }

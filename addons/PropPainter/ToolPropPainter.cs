@@ -18,10 +18,12 @@ public partial class ToolPropPainter : Node
 	[Export]
 	bool uniformSize = false;
 	[Export]
-	uint mask = 1;
+	string maskAsBinary = "1";
+	
 	Camera3D editorCamera;
 	Vector3 rayHitPoint;
 	double timer = 1;
+	uint maskAsDecimal;
 
 
 
@@ -31,6 +33,9 @@ public partial class ToolPropPainter : Node
 		{
 			// get editor camera
 			editorCamera = GetEditorCamera();
+
+			// convert mask to decimal
+			maskAsDecimal = Convert.ToUInt32(maskAsBinary, 2);
 		}
 	}
 
@@ -50,7 +55,7 @@ public partial class ToolPropPainter : Node
 			var rayEnd = rayStart + editorCamera.ProjectRayNormal(cursor2dPosition) * 100;
 			//var rayEnd = rayStart + editorCamera.Basis.Z * -100;
 
-			var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = mask};
+			var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
 
 			var rayResult = spaceState.IntersectRay(rayParams);
 

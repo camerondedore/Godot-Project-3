@@ -547,14 +547,20 @@ transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002
 transform = Transform3D(-0.458045, 0, -0.888929, 0, 1, 0, 0.888929, 0, -0.458045, -12.809, 0.6, -6.906)
 storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb"), ExtResource("43_r6irn")])
 
-[node name="JumpNetTarget" parent="." instance=ExtResource("51_5gl37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2115, 0.0793648, -2.9726)
+[node name="JumpNet" parent="." instance=ExtResource("51_5gl37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2115, 0.0793648, -10.9726)
 
-[node name="JumpPad" parent="JumpNetTarget" index="3"]
-horizontalSpeed = 4.0
+[node name="JumpPad" parent="JumpNet" index="3"]
+horizontalSpeed = 7.0
 
-[node name="JumpPadTarget" parent="JumpNetTarget" index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 10)
+[node name="JumpPadTarget" parent="JumpNet" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9426, -2.23517e-08, 3.96125)
+
+[node name="JumpNet2" parent="." instance=ExtResource("51_5gl37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7885, 0.0793648, -6.9726)
+
+[node name="JumpPadTarget" parent="JumpNet2" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0741, -2.23517e-08, -4.21963)
 
 [node name="TestBandageStationArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5164, 1.08, 3.78251)
@@ -659,4 +665,5 @@ mesh = SubResource("CylinderMesh_8ru0d")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Targets/TestBowTarget28"]
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
-[editable path="JumpNetTarget"]
+[editable path="JumpNet"]
+[editable path="JumpNet2"]

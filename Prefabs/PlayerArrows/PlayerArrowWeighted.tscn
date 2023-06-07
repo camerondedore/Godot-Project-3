@@ -18,7 +18,7 @@ missFx = ExtResource("3_rvj48")
 speed = 20.0
 speedVariation = 0.0
 rangeSqr = 900.0
-mask = 19
+maskAsBinary = "1010011"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_p2e30")

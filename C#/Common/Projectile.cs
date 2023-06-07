@@ -10,7 +10,9 @@ public partial class Projectile : Node3D
 		rangeSqr = 1000,
 		gravityInfluence = 1;
 	[Export]
-	uint mask = 1;
+	string maskAsBinary = "1";
+
+	uint maskAsDecimal;
 
 	PhysicsDirectSpaceState3D spaceState;
 	Vector3 velocity,
@@ -35,6 +37,9 @@ public partial class Projectile : Node3D
 		// get physics state
 		// only works in _PhysicsProcess
 		spaceState = GetWorld3D().DirectSpaceState;
+
+		// convert mask to decimal
+		maskAsDecimal = Convert.ToUInt32(maskAsBinary, 2);
 	}
 
 
@@ -53,7 +58,7 @@ public partial class Projectile : Node3D
         // get ray parameters
         var rayStart = GlobalPosition;
         var rayEnd = rayStart + velocity * ((float) delta) * 1.1f;
-        var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = mask};
+        var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
 
 		// cast ray
 		var rayResult = spaceState.IntersectRay(rayParams);

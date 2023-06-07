@@ -212,7 +212,7 @@ _data = {
 size = Vector3(2, 1.2, 1)
 
 [node name="PropChest" type="StaticBody3D" node_paths=PackedStringArray("lockFx", "pickupSpawner", "anim", "audio")]
-collision_mask = 16
+collision_layer = 16
 script = ExtResource("1_pnrr2")
 lockFx = NodePath("FxLock")
 pickupSpawner = NodePath("PickupSpawnerDelayed")
@@ -278,7 +278,7 @@ shape = SubResource("BoxShape3D_6qvuq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0879999, -0.5491)
 
 [node name="PickupSpawnerDelayed" type="Node3D" parent="." node_paths=PackedStringArray("audio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.726156, -0.259344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337039, -0.0246166)
 script = ExtResource("9_cku3p")
 prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
 audio = NodePath("../ChestAudio")
