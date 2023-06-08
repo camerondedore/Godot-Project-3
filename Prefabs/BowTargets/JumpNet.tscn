@@ -1,53 +1,68 @@
-[gd_scene load_steps=10 format=3 uid="uid://chfjssg6k30d2"]
+[gd_scene load_steps=11 format=3 uid="uid://chfjssg6k30d2"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="2_fj8wc"]
-[ext_resource type="ArrayMesh" uid="uid://dtac73eid0k1y" path="res://Models/prop-jump-net-stakes.res" id="2_pf56i"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="3_4uaiq"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_xpl44"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="4_38g1o"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="4_yhnq1"]
+[ext_resource type="PackedScene" uid="uid://h2k2t6a3l3nk" path="res://Models/prop-jump-net.glb" id="8_ksi7r"]
+[ext_resource type="Material" uid="uid://uhc8snpiwtjm" path="res://Materials/JumpNet.tres" id="9_bmgvo"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a70tb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_o31fv"]
 size = Vector3(1.5, 0.2, 1.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vgwrm"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyjt6"]
 size = Vector3(1.3, 0.2, 1.3)
 
-[node name="JumpNet" type="StaticBody3D" node_paths=PackedStringArray("jumpPad", "arrowCollider")]
+[node name="JumpNet" type="StaticBody3D" node_paths=PackedStringArray("jumpPad", "arrowCollider", "netMesh", "anim")]
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_dgeyj")
 jumpPad = NodePath("JumpPad")
-arrowCollider = NodePath("CollisionShape3D")
+arrowCollider = NodePath("ArrowCollision")
+netMesh = NodePath("prop-jump-net/armature-jump-net/Skeleton3D/prop-jump-net2")
+anim = NodePath("prop-jump-net/AnimationPlayer")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = ExtResource("2_pf56i")
+[node name="prop-jump-net" parent="." instance=ExtResource("8_ksi7r")]
+
+[node name="prop-jump-net-stakes" parent="prop-jump-net" index="0"]
 surface_material_override/0 = ExtResource("3_xpl44")
 surface_material_override/1 = ExtResource("4_yhnq1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Skeleton3D" parent="prop-jump-net/armature-jump-net" index="0"]
+bones/0/position = Vector3(0, 0, 0)
+bones/0/rotation = Quaternion(0, 0, 0, 1)
+bones/1/position = Vector3(0, -0.4, 0)
+bones/1/scale = Vector3(1, 1, 1)
+
+[node name="prop-jump-net2" parent="prop-jump-net/armature-jump-net/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("9_bmgvo")
+
+[node name="ArrowCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-shape = SubResource("BoxShape3D_a70tb")
+shape = SubResource("BoxShape3D_o31fv")
 
-[node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_4uaiq")
-max_distance = 10.0
-script = ExtResource("4_38g1o")
-
-[node name="JumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio")]
+[node name="JumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio", "anim")]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("2_fj8wc")
 landingTarget = NodePath("../JumpPadTarget")
 jumpPadAudio = NodePath("../JumpPadAudio")
+anim = NodePath("../prop-jump-net/AnimationPlayer")
 horizontalSpeed = 6.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="JumpPad"]
+[node name="JumpCollision" type="CollisionShape3D" parent="JumpPad"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107837, 0)
-shape = SubResource("BoxShape3D_vgwrm")
+shape = SubResource("BoxShape3D_cyjt6")
 
 [node name="JumpPadTarget" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_4uaiq")
+max_distance = 10.0
+script = ExtResource("4_38g1o")
+
+[editable path="prop-jump-net"]

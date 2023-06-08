@@ -11,8 +11,10 @@ public partial class NetTarget : StaticBody3D, IBowTarget
     JumpPad jumpPad;
     [Export]
     CollisionShape3D arrowCollider;
-    // [Export]
-    // AnimationPlayer anim;
+    [Export]
+    MeshInstance3D netMesh;
+    [Export]
+    AnimationPlayer anim;
     // [Export]
     // AudioTools3d audio;
     // [Export]
@@ -23,6 +25,9 @@ public partial class NetTarget : StaticBody3D, IBowTarget
     public override void _Ready()
     {
         jumpPad.SetDeferred("monitoring", false);
+
+        // hide net
+        netMesh.Visible = false;
     }
 
 
@@ -59,8 +64,11 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
     public void Hit()
     {
+        // make net visible
+        netMesh.Visible = true;
+
         // play animation
-        //anim.Play("chest-open");
+        anim.Play("jump-net-attach");
 
         // play audio
         //audio.PlaySound(openSound, 0.05f);
