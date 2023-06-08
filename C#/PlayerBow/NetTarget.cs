@@ -15,10 +15,10 @@ public partial class NetTarget : StaticBody3D, IBowTarget
     MeshInstance3D netMesh;
     [Export]
     AnimationPlayer anim;
-    // [Export]
-    // AudioTools3d audio;
-    // [Export]
-    // AudioStream netSound;
+    [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream attachSound;
 
 
 
@@ -71,7 +71,7 @@ public partial class NetTarget : StaticBody3D, IBowTarget
         anim.Play("jump-net-attach");
 
         // play audio
-        //audio.PlaySound(openSound, 0.05f);
+        audio.PlaySound(attachSound, 0.05f);
 
         // disable script
         SetScript(new Variant());

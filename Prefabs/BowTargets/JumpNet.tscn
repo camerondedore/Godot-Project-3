@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://chfjssg6k30d2"]
+[gd_scene load_steps=12 format=3 uid="uid://q8xtek0bikgv"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="2_fj8wc"]
-[ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad.wav" id="3_4uaiq"]
+[ext_resource type="AudioStream" uid="uid://dlygbf47nnkvn" path="res://Audio/jump-pad-attach.wav" id="2_ju7d0"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_xpl44"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="4_38g1o"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="4_yhnq1"]
+[ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad-bounce.wav" id="7_a72qk"]
 [ext_resource type="PackedScene" uid="uid://h2k2t6a3l3nk" path="res://Models/prop-jump-net.glb" id="8_ksi7r"]
 [ext_resource type="Material" uid="uid://uhc8snpiwtjm" path="res://Materials/JumpNet.tres" id="9_bmgvo"]
 
@@ -15,7 +16,7 @@ size = Vector3(1.5, 0.2, 1.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_cyjt6"]
 size = Vector3(1.3, 0.2, 1.3)
 
-[node name="JumpNet" type="StaticBody3D" node_paths=PackedStringArray("jumpPad", "arrowCollider", "netMesh", "anim")]
+[node name="JumpNet" type="StaticBody3D" node_paths=PackedStringArray("jumpPad", "arrowCollider", "netMesh", "anim", "audio")]
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_dgeyj")
@@ -23,6 +24,8 @@ jumpPad = NodePath("JumpPad")
 arrowCollider = NodePath("ArrowCollision")
 netMesh = NodePath("prop-jump-net/armature-jump-net/Skeleton3D/prop-jump-net2")
 anim = NodePath("prop-jump-net/AnimationPlayer")
+audio = NodePath("JumpPadAudio")
+attachSound = ExtResource("2_ju7d0")
 
 [node name="prop-jump-net" parent="." instance=ExtResource("8_ksi7r")]
 
@@ -50,6 +53,7 @@ monitorable = false
 script = ExtResource("2_fj8wc")
 landingTarget = NodePath("../JumpPadTarget")
 jumpPadAudio = NodePath("../JumpPadAudio")
+bounceSound = ExtResource("7_a72qk")
 anim = NodePath("../prop-jump-net/AnimationPlayer")
 horizontalSpeed = 6.0
 
@@ -61,8 +65,8 @@ shape = SubResource("BoxShape3D_cyjt6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_4uaiq")
-max_distance = 10.0
+stream = ExtResource("7_a72qk")
+max_distance = 40.0
 script = ExtResource("4_38g1o")
 
 [editable path="prop-jump-net"]

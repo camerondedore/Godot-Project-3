@@ -47,7 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
-[ext_resource type="PackedScene" uid="uid://chfjssg6k30d2" path="res://Prefabs/BowTargets/JumpNet.tscn" id="51_5gl37"]
+[ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/BowTargets/JumpNet.tscn" id="51_5gl37"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="51_v4cb4"]
 [ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="52_re15r"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="53_qkkld"]

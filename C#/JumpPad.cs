@@ -9,6 +9,8 @@ public partial class JumpPad : Area3D
     [Export]
     AudioTools3d jumpPadAudio;
     [Export]
+    AudioStream bounceSound;
+    [Export]
     AnimationPlayer anim;
     [Export]
     float horizontalSpeed = 10;
@@ -37,7 +39,7 @@ public partial class JumpPad : Area3D
             bodyJumpPadUser.JumpPadActivated(jumpPadVelocity);
 
             // play audio
-            jumpPadAudio.Play();
+            jumpPadAudio.PlaySound(bounceSound, 0.05f);
 
             // play animation
             anim.Play("jump-net-bounce");
