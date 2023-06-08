@@ -165,7 +165,18 @@ namespace PlayerCharacterComplex
 			Velocity = jumpPadVelocity;
 
 			// go to jump pad state
-			machine.SetState(superStateJumpPad);
+			if(machine.CurrentState != superStateJumpPad)
+			{
+				machine.SetState(superStateJumpPad);
+			}
+			else
+			{
+				// already in jump pad state
+				// force start state
+				superStateJumpPad.StartState();
+			}
+
+			
 		}
 
 

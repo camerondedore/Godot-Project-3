@@ -5,7 +5,7 @@ public partial class JumpPad : Area3D
 {
 
     [Export]
-    Node3D landingTarget;
+    public Node3D landingTarget;
     [Export]
     AudioTools3d jumpPadAudio;
     [Export]
@@ -13,7 +13,7 @@ public partial class JumpPad : Area3D
     [Export]
     AnimationPlayer anim;
     [Export]
-    float horizontalSpeed = 10;
+    public float horizontalSpeed = 10;
 
 
 

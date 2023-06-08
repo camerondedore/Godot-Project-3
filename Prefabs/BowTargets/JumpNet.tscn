@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://q8xtek0bikgv"]
+[gd_scene load_steps=13 format=3 uid="uid://q8xtek0bikgv"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="2_fj8wc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_xpl44"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="4_38g1o"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="4_yhnq1"]
+[ext_resource type="Material" uid="uid://dv1i0ie533ymd" path="res://Materials/String.tres" id="6_etg3h"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad-bounce.wav" id="7_a72qk"]
 [ext_resource type="PackedScene" uid="uid://h2k2t6a3l3nk" path="res://Models/prop-jump-net.glb" id="8_ksi7r"]
 [ext_resource type="Material" uid="uid://uhc8snpiwtjm" path="res://Materials/JumpNet.tres" id="9_bmgvo"]
@@ -32,6 +33,7 @@ attachSound = ExtResource("2_ju7d0")
 [node name="prop-jump-net-stakes" parent="prop-jump-net" index="0"]
 surface_material_override/0 = ExtResource("3_xpl44")
 surface_material_override/1 = ExtResource("4_yhnq1")
+surface_material_override/2 = ExtResource("6_etg3h")
 
 [node name="Skeleton3D" parent="prop-jump-net/armature-jump-net" index="0"]
 bones/0/position = Vector3(0, 0, 0)
@@ -51,7 +53,7 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("2_fj8wc")
-landingTarget = NodePath("../JumpPadTarget")
+landingTarget = NodePath("")
 jumpPadAudio = NodePath("../JumpPadAudio")
 bounceSound = ExtResource("7_a72qk")
 anim = NodePath("../prop-jump-net/AnimationPlayer")
@@ -60,9 +62,6 @@ horizontalSpeed = 6.0
 [node name="JumpCollision" type="CollisionShape3D" parent="JumpPad"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107837, 0)
 shape = SubResource("BoxShape3D_cyjt6")
-
-[node name="JumpPadTarget" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("7_a72qk")

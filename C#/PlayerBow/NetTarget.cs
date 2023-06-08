@@ -19,6 +19,10 @@ public partial class NetTarget : StaticBody3D, IBowTarget
     AudioTools3d audio;
     [Export]
     AudioStream attachSound;
+    [Export]
+    Node3D jumpPadTarget;
+    [Export]
+    float horizontalSpeed = 10;
 
 
 
@@ -75,6 +79,10 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
         // disable script
         SetScript(new Variant());
+
+        // assign jump pad values
+        jumpPad.landingTarget = jumpPadTarget;
+        jumpPad.horizontalSpeed = horizontalSpeed;
 
         // enable jump pad
         jumpPad.SetDeferred("monitoring", true);
