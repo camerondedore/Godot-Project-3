@@ -1,9 +1,13 @@
 using Godot;
 using System;
 
-public partial class PlayerBowAimer : RayCast3D
+public partial class PlayerBowAimer : Node3D
 {
 
+    [Export]
+    RayCast3D rayCast;
+    [Export]
+    ShapeCast3D shapeCast;
     [Export]
     Label targetNameLabel;
 
@@ -13,7 +17,8 @@ public partial class PlayerBowAimer : RayCast3D
 
     public override void _Ready()
     {
-        Enabled = false;
+        rayCast.Enabled = false;
+        shapeCast.Enabled = false;
         targetNameLabel.Text = "";
     }
 
@@ -21,7 +26,7 @@ public partial class PlayerBowAimer : RayCast3D
 
     public override void _PhysicsProcess(double delta)
     {
-        if(!Enabled)
+        if(!rayCast.Enabled)
         {
             if(targetNameLabel.Text != "")
             {
@@ -33,9 +38,14 @@ public partial class PlayerBowAimer : RayCast3D
         }
 
         // check for ray hit
-        if(HasTarget())
+        if(HasRayTarget() || HasShapeTarget())
         {
-            target = (IBowTarget) GetCollider();
+            target = rayCast.GetCollider() as IBowTarget;
+
+            if(target == null)
+            {
+                target = (IBowTarget) shapeCast.GetCollider(0);
+            }
 
             // check that player has arrow type
             if(HasValidTarget())
@@ -64,16 +74,33 @@ public partial class PlayerBowAimer : RayCast3D
 
 
 
-    public bool HasTarget()
+    public bool HasRayTarget()
     {
-        return Enabled && GetCollider() != null && GetCollider() is IBowTarget;
+        return rayCast.Enabled && rayCast.GetCollider() != null && rayCast.GetCollider() is IBowTarget;
+    }
+
+
+
+    public bool HasShapeTarget()
+    {
+        return shapeCast.Enabled && shapeCast.CollisionResult.Count > 0 && shapeCast.GetCollider(0) is IBowTarget;
     }
 
 
 
     public bool HasValidTarget()
     {
-        return HasTarget() && PlayerInventory.inventory.CheckInventoryForArrowType(((IBowTarget) GetCollider()).GetArrowType());
+        if(HasRayTarget())
+        {
+            return PlayerInventory.inventory.CheckInventoryForArrowType(((IBowTarget) rayCast.GetCollider()).GetArrowType());
+        }
+
+        if(HasShapeTarget())
+        {
+            return PlayerInventory.inventory.CheckInventoryForArrowType(((IBowTarget) shapeCast.GetCollider(0)).GetArrowType());;
+        }
+
+        return false;
     }
 
 
@@ -84,7 +111,8 @@ public partial class PlayerBowAimer : RayCast3D
         targetNameLabel.Text = "";
 
         // disable ray
-        Enabled = false;
+        rayCast.Enabled = false;
+        shapeCast.Enabled = false;
 
         ProcessMode = ProcessModeEnum.Disabled;
     }
@@ -94,10 +122,12 @@ public partial class PlayerBowAimer : RayCast3D
     public void EnableBowAimer()
     {
         // disable ray
-        Enabled = true;
+        rayCast.Enabled = true;
+        shapeCast.Enabled = true;
 
         // force ray update
-        ForceRaycastUpdate();
+        rayCast.ForceRaycastUpdate();
+        shapeCast.ForceShapecastUpdate();
 
         ProcessMode = ProcessModeEnum.Always;
     }

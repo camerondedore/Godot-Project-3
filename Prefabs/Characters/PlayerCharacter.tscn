@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cemt2ewlwl8n8"]
+[gd_scene load_steps=37 format=3 uid="uid://cemt2ewlwl8n8"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
@@ -41,6 +41,9 @@ radius = 0.3
 [sub_resource type="BoxMesh" id="BoxMesh_84o3e"]
 size = Vector3(0.6, 0.2, 0.3)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_0m844"]
+radius = 0.33
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
@@ -82,12 +85,24 @@ maxAngle = 50.0
 [node name="CameraTarget" type="Node3D" parent="SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
-[node name="BowAimer" type="RayCast3D" parent="SpringArm3D" node_paths=PackedStringArray("targetNameLabel")]
+[node name="BowAimer" type="Node3D" parent="SpringArm3D" node_paths=PackedStringArray("rayCast", "shapeCast", "targetNameLabel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+script = ExtResource("3_uw5x1")
+rayCast = NodePath("BowAimerRay")
+shapeCast = NodePath("BowAimerShape")
+targetNameLabel = NodePath("../../HudCanvas/Hud/TargetName")
+
+[node name="BowAimerRay" type="RayCast3D" parent="SpringArm3D/BowAimer"]
 target_position = Vector3(0, 0, -30)
 collision_mask = 83
-script = ExtResource("3_uw5x1")
-targetNameLabel = NodePath("../../HudCanvas/Hud/TargetName")
+
+[node name="BowAimerShape" type="ShapeCast3D" parent="SpringArm3D/BowAimer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+shape = SubResource("SphereShape3D_0m844")
+target_position = Vector3(0, 0, -30)
+margin = 0.05
+max_results = 1
+collision_mask = 83
 
 [node name="LedgeDetectorRays" type="Node3D" parent="."]
 
