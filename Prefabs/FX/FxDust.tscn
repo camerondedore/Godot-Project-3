@@ -27,6 +27,8 @@ particle_flag_rotate_y = true
 direction = Vector3(0, 0, 0)
 spread = 20.0
 gravity = Vector3(0, 0.07, 0)
+angular_velocity_min = -45.0
+angular_velocity_max = 45.0
 angle_min = -30.0
 angle_max = 30.0
 scale_min = 0.8
@@ -52,7 +54,6 @@ scale_max = 0.2
 
 [node name="FxDust" type="GPUParticles3D"]
 material_override = ExtResource("1_dbchy")
-emitting = false
 amount = 2
 lifetime = 3.0
 one_shot = true

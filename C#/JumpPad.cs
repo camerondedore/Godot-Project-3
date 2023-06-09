@@ -13,6 +13,8 @@ public partial class JumpPad : Area3D
     [Export]
     AnimationPlayer anim;
     [Export]
+    GpuParticles3D dustFx;
+    [Export]
     public float horizontalSpeed = 10;
 
 
@@ -43,6 +45,9 @@ public partial class JumpPad : Area3D
 
             // play animation
             anim.Play("jump-net-bounce");
+
+            // start FX
+            dustFx.Restart();
         }
     }
 
