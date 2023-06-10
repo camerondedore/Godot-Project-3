@@ -3,8 +3,8 @@
 [ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/FxDust.tres" id="1_6ijwf"]
 
 [sub_resource type="Gradient" id="Gradient_td1n2"]
-offsets = PackedFloat32Array(0, 0.0813008, 0.422764, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.353982, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.0813008, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xjaid"]
 gradient = SubResource("Gradient_td1n2")
@@ -21,7 +21,7 @@ lifetime_randomness = 0.2
 particle_flag_rotate_y = true
 spread = 180.0
 flatness = 1.0
-gravity = Vector3(0, 0.7, 0)
+gravity = Vector3(0, 0.5, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 2.0
 angular_velocity_min = -45.0
@@ -31,6 +31,7 @@ damping_max = 1.0
 angle_max = 360.0
 scale_max = 1.5
 scale_curve = SubResource("CurveTexture_pk57r")
+color = Color(1, 1, 1, 0.501961)
 color_ramp = SubResource("GradientTexture1D_xjaid")
 
 [sub_resource type="QuadMesh" id="QuadMesh_jgcbc"]
@@ -39,7 +40,7 @@ color_ramp = SubResource("GradientTexture1D_xjaid")
 material_override = ExtResource("1_6ijwf")
 emitting = false
 amount = 20
-lifetime = 2.0
+lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 visibility_aabb = AABB(-2, -1, -2, 4, 2, 4)
