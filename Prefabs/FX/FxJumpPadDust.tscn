@@ -43,6 +43,6 @@ amount = 20
 lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
-visibility_aabb = AABB(-2, -1, -2, 4, 2, 4)
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
 process_material = SubResource("ParticleProcessMaterial_mby75")
 draw_pass_1 = SubResource("QuadMesh_jgcbc")
