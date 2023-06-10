@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b2g4qgmkdn744" path="res://Models/prop-lockbox.glb" id="1_dceib"]
 [ext_resource type="Script" path="res://C#/PlayerBow/LockboxTarget.cs" id="1_vcmy5"]
-[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="1_w0j78"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_s4b3k"]
 [ext_resource type="AudioStream" uid="uid://cf6rb4jfyo1xv" path="res://Audio/lockbox-open.wav" id="3_he827"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="4_rsdln"]
 [ext_resource type="PackedScene" path="res://Prefabs/FX/FxLock.tscn" id="5_cpfrh"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawnerDelayed.cs" id="6_03t3p"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="7_rf4xg"]
@@ -31,7 +31,7 @@ bones/1/rotation = Quaternion(-0.707107, -8.42937e-08, -8.42936e-08, 0.707107)
 bones/2/rotation = Quaternion(-5.33851e-08, 0.707107, -0.707106, 5.33851e-08)
 
 [node name="prop-lockbox2" parent="prop-lockbox-armature/Skeleton3D" index="0"]
-surface_material_override/0 = ExtResource("1_w0j78")
+surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]

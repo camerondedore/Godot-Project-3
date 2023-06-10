@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/prop-chest.glb-9ff689b82ef73d1e0582c807cd6e2b
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="StaticBody3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
