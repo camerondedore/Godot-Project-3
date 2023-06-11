@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=61 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -50,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/BowTargets/JumpNet.tscn" id="51_5gl37"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="51_v4cb4"]
 [ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="52_re15r"]
+[ext_resource type="PackedScene" uid="uid://xigtowfv4scj" path="res://Prefabs/SecretArea.tscn" id="53_dmf02"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="53_qkkld"]
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="54_3mvej"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
@@ -563,6 +564,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5199
 
 [node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2166, 1, 13.0794)
+
+[node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
 
 [node name="Targets" type="Node3D" parent="."]
 

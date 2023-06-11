@@ -77,8 +77,6 @@ public partial class NetTarget : StaticBody3D, IBowTarget
         // play audio
         audio.PlaySound(attachSound, 0.05f);
 
-        // disable script
-        SetScript(new Variant());
 
         // assign jump pad values
         jumpPad.landingTarget = jumpPadTarget;
@@ -89,5 +87,8 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
         // disable collider
         arrowCollider.Disabled = true;
+        
+        // disable script
+        SetScript(new Variant());
     }
 }

@@ -87,3 +87,4 @@ player-heal={
 3d_physics/layer_5="Small Props"
 3d_physics/layer_6="Checkpoint"
 3d_physics/layer_7="Arrow Target Only"
+3d_physics/layer_8="Area Trigger"
