@@ -16,6 +16,9 @@ public partial class SecretArea : Area3D
         // check if already discovered
         if(WorldData.data.CheckActivatedObjects(this))
         {
+            // disable area
+            SetDeferred("monitoring", false);
+
             // disable script
             SetScript(new Variant());
 
@@ -29,12 +32,13 @@ public partial class SecretArea : Area3D
 
     public void Discover(Node3D body)
     {
-        GD.Print(body.Name);
-
         WorldData.data.ActivateObject(this);
 
         // play audio
         audio.PlaySound(discoverSound, 0);
+
+        // disable area
+        SetDeferred("monitoring", false);
 
         // disable script
         SetScript(new Variant());
