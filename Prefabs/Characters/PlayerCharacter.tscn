@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://cemt2ewlwl8n8"]
+[gd_scene load_steps=36 format=3 uid="uid://cemt2ewlwl8n8"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
+[ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowAimer.cs" id="3_uw5x1"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
@@ -35,12 +36,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_5lw6n"]
-radius = 0.3
-
-[sub_resource type="BoxMesh" id="BoxMesh_84o3e"]
-size = Vector3(0.6, 0.2, 0.3)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_0m844"]
 radius = 0.33
 
@@ -66,12 +61,7 @@ acceleration = 10.0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nx72i")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_5lw6n")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.2)
-mesh = SubResource("BoxMesh_84o3e")
+[node name="character-player" parent="." instance=ExtResource("2_gi20v")]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("cameraTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
