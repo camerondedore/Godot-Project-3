@@ -41,8 +41,7 @@ namespace PlayerCharacterComplex
             if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
             {
                 // jump start
-                //return blackboard.stateJumpStart;
-                return blackboard.stateJump;
+                return blackboard.stateJumpStart;
             }
 
             if(PlayerInput.fire1 > 0)

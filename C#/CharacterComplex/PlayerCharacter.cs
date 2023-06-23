@@ -13,6 +13,8 @@ namespace PlayerCharacterComplex
 			stateIdle,
 			stateMove,
 			stateFall,
+			stateLand,
+			stateJumpStart,
 			stateJump,
 			subStateJumpPadIdle,
 			subStateJumpPadBowAim,
@@ -66,6 +68,8 @@ namespace PlayerCharacterComplex
 			stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
 			stateMove = new PlayerCharacterStateMove(){blackboard = this};
 			stateFall = new PlayerCharacterStateFall(){blackboard = this};
+			stateLand = new PlayerCharacterStateLand(){blackboard = this};
+			stateJumpStart = new PlayerCharacterStateJumpStart(){blackboard = this};
 			stateJump = new PlayerCharacterStateJump(){blackboard = this};
 			stateLedgeGrab = new PlayerCharacterStateLedgeGrab(){blackboard = this};
 			stateLedgeGrabJump = new PlayerCharacterStateLedgeGrabJump(){blackboard = this};

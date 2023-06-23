@@ -3,10 +3,11 @@ using System;
 
 namespace PlayerCharacterComplex
 {
-    public partial class PlayerCharacterStateMove : PlayerCharacterState
+    public partial class PlayerCharacterStateLand : PlayerCharacterState
     {
 
-
+        double startTime,
+            delay = 0.1;
 
 
 
@@ -56,22 +57,11 @@ namespace PlayerCharacterComplex
                 return blackboard.stateFall;
             }
 
-            if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
-            {
-                // jump start
-                return blackboard.stateJumpStart;
-            }
 
-            if(PlayerInput.fire1 > 0)
+            if(EngineTime.timePassed > startTime + delay)
             {
-                // aim bow
-                return blackboard.stateBowAim;
-            }
-
-            if(!PlayerInput.isMoving)
-            {
-                // idle
-                return blackboard.stateIdle;
+                // move
+                return blackboard.stateMove;
             }
 
             return this;

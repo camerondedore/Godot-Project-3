@@ -6,7 +6,7 @@ namespace PlayerCharacterComplex
     public partial class PlayerCharacterStateFall : PlayerCharacterState
     {
 
-
+        float startHeight;
 
 
 
@@ -46,7 +46,8 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {   
-            
+            // get starting height
+            startHeight = blackboard.GlobalPosition.Y;
         }
 
 
@@ -62,8 +63,13 @@ namespace PlayerCharacterComplex
         {
             if(blackboard.IsOnFloor())
             {
-                // land
-                //return blackboard.stateLand;
+                if(startHeight - blackboard.GlobalPosition.Y > blackboard.jumpHeight)
+                {
+                    // land
+                    return blackboard.stateLand;
+                }
+
+                // move
                 return blackboard.stateMove;
             }
 
