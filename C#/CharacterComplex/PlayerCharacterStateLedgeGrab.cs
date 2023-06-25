@@ -42,6 +42,9 @@ namespace PlayerCharacterComplex
 
             // camera follow
             blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+
+            // animation
+            blackboard.anim.Play("character-ledge");
         }
 
     

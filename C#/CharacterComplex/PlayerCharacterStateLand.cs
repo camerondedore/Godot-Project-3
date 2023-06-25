@@ -7,7 +7,7 @@ namespace PlayerCharacterComplex
     {
 
         double startTime,
-            delay = 0.1;
+            delay = 0.15;
 
 
 
@@ -37,7 +37,8 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
-            
+            // animation
+            blackboard.anim.Play("character-jump-start");
         }
 
 

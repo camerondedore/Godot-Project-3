@@ -24,6 +24,9 @@ namespace PlayerCharacterComplex
             {
                 blackboard.bow.CancelDraw();
             }
+
+            // animation
+            blackboard.anim.Play("character-jump");
         }
 
 

@@ -69,6 +69,9 @@ namespace PlayerCharacterComplex
             {
                 blackboard.bow.Draw();
             }
+
+            // animation
+            blackboard.anim.Play("character-draw");
         }
 
 

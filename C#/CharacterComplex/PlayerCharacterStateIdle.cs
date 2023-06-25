@@ -28,6 +28,17 @@ namespace PlayerCharacterComplex
             blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
         }
 
+
+
+        public override void StartState()
+        {
+            // animation
+            blackboard.anim.Play("character-idle");
+        }
+
+
+
+
     
     
         public override State Transition()

@@ -38,6 +38,9 @@ namespace PlayerCharacterComplex
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
+
+            // animation
+            blackboard.anim.Play("character-jump-start");
         }
 
 

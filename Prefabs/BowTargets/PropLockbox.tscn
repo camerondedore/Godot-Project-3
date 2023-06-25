@@ -26,10 +26,6 @@ openSound = ExtResource("3_he827")
 [node name="prop-lockbox-armature" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="prop-lockbox-armature" index="0"]
-bones/1/rotation = Quaternion(-0.707107, -8.42937e-08, -8.42936e-08, 0.707107)
-bones/2/rotation = Quaternion(-5.33851e-08, 0.707107, -0.707106, 5.33851e-08)
-
 [node name="prop-lockbox2" parent="prop-lockbox-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")

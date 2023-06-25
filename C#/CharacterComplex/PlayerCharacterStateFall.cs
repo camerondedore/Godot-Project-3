@@ -48,6 +48,9 @@ namespace PlayerCharacterComplex
         {   
             // get starting height
             startHeight = blackboard.GlobalPosition.Y;
+
+            // animation
+            blackboard.anim.Play("character-fall");
         }
 
 

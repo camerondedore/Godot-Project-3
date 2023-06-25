@@ -44,6 +44,9 @@ namespace PlayerCharacterComplex
 
             // cancel draw
             blackboard.bow.CancelDraw();   
+
+            // animation
+            blackboard.anim.Play("character-craft");
         }
 
     

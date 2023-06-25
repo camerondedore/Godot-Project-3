@@ -28,6 +28,9 @@ namespace PlayerCharacterComplex
 
             // fire bow
             blackboard.bow.Fire(blackboard.bowAimer.target);
+
+            // animation
+            blackboard.anim.Play("character-fire");
         }
 
 

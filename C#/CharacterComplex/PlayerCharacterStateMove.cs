@@ -36,7 +36,8 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
-            
+            // animation
+            blackboard.anim.Play("character-walk");
         }
 
 

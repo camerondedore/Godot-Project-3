@@ -42,13 +42,14 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
 collision_layer = 162
 collision_mask = 19
 slide_on_ceiling = false
 floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
+anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
 ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRays/LedgeDetectorRayHorizontal")
 ledgeDetectorRayVertical = NodePath("LedgeDetectorRays/LedgeDetectorRayVertical")
@@ -62,6 +63,12 @@ acceleration = 10.0
 shape = SubResource("CapsuleShape3D_nx72i")
 
 [node name="character-player" parent="." instance=ExtResource("2_gi20v")]
+
+[node name="Skeleton3D" parent="character-player/character-armature" index="0"]
+bones/55/rotation = Quaternion(0.852703, 0.0190199, 0.509027, -0.115875)
+bones/60/rotation = Quaternion(0.958043, 0.0328138, -0.225788, -0.173486)
+bones/61/rotation = Quaternion(0.834634, 0.000547001, 0.525637, -0.164595)
+bones/67/rotation = Quaternion(0.834634, 0.000547001, 0.525637, -0.164595)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("cameraTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -362,3 +369,5 @@ bowDrawSound = ExtResource("20_no75w")
 
 [node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow"]
 script = ExtResource("20_4jbn7")
+
+[editable path="character-player"]

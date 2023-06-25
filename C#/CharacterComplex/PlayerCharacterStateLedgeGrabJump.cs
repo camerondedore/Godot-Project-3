@@ -46,6 +46,9 @@ namespace PlayerCharacterComplex
             vel.Y = Mathf.Sqrt((-2 * blackboard.ledgeGrabJumpHeight * -EngineGravity.magnitude));
 
             blackboard.Velocity = vel;
+
+            // animation
+            blackboard.anim.Play("character-jump");
         }
 
 
