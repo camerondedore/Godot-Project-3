@@ -1,15 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvnogtbjot0oy"]
+[gd_scene load_steps=5 format=3 uid="uid://bvnogtbjot0oy"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerArrow.cs" id="1_w1ybd"]
 [ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="2_1gik3"]
 [ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_rvj48"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_p2e30"]
-size = Vector3(0.05, 0.05, 0.5)
-
-[sub_resource type="SphereMesh" id="SphereMesh_jb7kc"]
-radius = 0.075
-height = 0.15
+[ext_resource type="ArrayMesh" uid="uid://dvwckpqutx3g6" path="res://Models/arrow-weighted.res" id="4_qyooq"]
 
 [node name="PlayerArrowWeighted" type="Node3D"]
 script = ExtResource("1_w1ybd")
@@ -21,8 +15,4 @@ rangeSqr = 900.0
 maskAsBinary = "1010011"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_p2e30")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.242072)
-mesh = SubResource("SphereMesh_jb7kc")
+mesh = ExtResource("4_qyooq")
