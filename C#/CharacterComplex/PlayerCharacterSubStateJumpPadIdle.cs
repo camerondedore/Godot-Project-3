@@ -12,8 +12,13 @@ namespace PlayerCharacterComplex
 
         public override void RunState(double delta)
         {
-            // look in direction of movement
-            blackboard.CharacterLook();
+            // check for no new fire 1 and no old fire 1 with bow already drawn
+            if(PlayerInput.fire1 == 0 && !blackboard.bow.isDrawn)
+            {
+                // look in direction of movement
+                blackboard.CharacterLook();
+            }
+            
         }
 
 
