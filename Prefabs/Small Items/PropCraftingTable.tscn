@@ -5,10 +5,10 @@
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="3_erttl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvtkp"]
-size = Vector3(1.4, 0.1, 0.8)
+size = Vector3(1.6, 0.1, 0.9)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fc7e7"]
-size = Vector3(0.11, 0.7, 0.11)
+size = Vector3(0.11, 0.8, 0.11)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_75aye"]
 
@@ -18,24 +18,24 @@ size = Vector3(0.11, 0.7, 0.11)
 mesh = ExtResource("1_y5gvo")
 surface_material_override/0 = ExtResource("2_j5u0j")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+[node name="CollisionShapeTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
 shape = SubResource("BoxShape3D_vvtkp")
 
 [node name="CollisionShapeLeg" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.05, 0.32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0, 0.32)
 shape = SubResource("BoxShape3D_fc7e7")
 
 [node name="CollisionShapeLeg1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.05, 0.32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0, 0.32)
 shape = SubResource("BoxShape3D_fc7e7")
 
 [node name="CollisionShapeLeg2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.05, -0.32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0, -0.32)
 shape = SubResource("BoxShape3D_fc7e7")
 
 [node name="CollisionShapeLeg3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.05, -0.32)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0, -0.32)
 shape = SubResource("BoxShape3D_fc7e7")
 
 [node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
