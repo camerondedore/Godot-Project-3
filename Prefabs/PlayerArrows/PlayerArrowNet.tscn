@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3hlke4a6d00w"]
 
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="1_ce0ie"]
-[ext_resource type="ArrayMesh" uid="uid://y6a2vx1qftq6" path="res://Models/arrow-bodkin.res" id="2_yw7nb"]
+[ext_resource type="ArrayMesh" uid="uid://bndjssmijxivp" path="res://Models/arrow-net.res" id="2_a84qv"]
 
 [node name="PlayerArrowNet" instance=ExtResource("1_ce0ie")]
 arrowType = "net"
-speed = 22.0
+speed = 18.0
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = ExtResource("2_yw7nb")
+mesh = ExtResource("2_a84qv")

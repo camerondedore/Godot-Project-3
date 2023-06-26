@@ -7,7 +7,7 @@ namespace PlayerCharacterComplex
     {
 
         double startTime,
-            delay = 0.15;
+            delay = 0.2;
 
 
 
