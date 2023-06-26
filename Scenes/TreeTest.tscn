@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=60 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -43,10 +43,10 @@
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
-[ext_resource type="Script" path="res://C#/BandageStation.cs" id="42_dfphq"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
+[ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Small Items/PropCraftingTable.tscn" id="51_0e1a5"]
 [ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/BowTargets/JumpNet.tscn" id="51_5gl37"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="51_v4cb4"]
 [ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="52_re15r"]
@@ -60,8 +60,6 @@
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ebp2m"]
 points = PackedVector3Array(1.01587, 0.015873, 1.01587, -1.01587, -0.015873, -1.01587, -1.01587, 0.015873, -1.01587, 1.01587, -0.015873, -1.01587, -1.01587, -0.015873, 1.01587, -1.01587, 0.015873, 1.01587, 1.01587, 0.015873, -1.01587, 1.01587, -0.015873, 1.01587)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_mef1p"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_8ru0d"]
 height = 1.0
@@ -548,19 +546,8 @@ transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002
 transform = Transform3D(-0.458045, 0, -0.888929, 0, 1, 0, 0.888929, 0, -0.458045, -12.809, 0.6, -6.906)
 storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb"), ExtResource("43_r6irn")])
 
-[node name="TestBandageStationArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5164, 1.08, 3.78251)
-collision_layer = 4
-collision_mask = 2
-monitorable = false
-script = ExtResource("42_dfphq")
-userTarget = NodePath("TestBandageStationTarget")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBandageStationArea"]
-shape = SubResource("SphereShape3D_mef1p")
-
-[node name="TestBandageStationTarget" type="Node3D" parent="TestBandageStationArea"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.519973, 0, 0)
+[node name="PropCraftingTable" parent="." instance=ExtResource("51_0e1a5")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 2.2, 0.4, 5)
 
 [node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2166, 1, 13.0794)
