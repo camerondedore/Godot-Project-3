@@ -253,7 +253,7 @@ transform = Transform3D(0.997245, 0.0319571, 0.348423, -0.039036, 1.00284, 0.009
 transform = Transform3D(0.0886433, -0.0389407, -0.909476, 0.0478135, 1.13884, -0.026657, 0.908754, -0.0561211, 0.0901162, 6.4967, 0.079366, 7.59619)
 
 [node name="PropTreeOak1" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
-transform = Transform3D(0.00873603, 0.0299465, 0.925173, -0.025708, 1.12902, -0.0242805, -0.925141, -0.0310906, 0.00941104, 2.09398, 0.079366, 10.8737)
+transform = Transform3D(0.00943885, 0.026505, 0.999604, -0.0277762, 0.99927, -0.0262338, -0.99957, -0.0275176, 0.0101682, 2.09398, 0.079366, 10.8737)
 
 [node name="PropTreeOak2" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
 transform = Transform3D(-0.754378, -0.00995103, 0.615134, -0.0498264, 0.892481, -0.0440095, -0.613208, -0.0602769, -0.753171, -4.06375, 0.0793648, 13.2141)
@@ -547,7 +547,7 @@ transform = Transform3D(-0.458045, 0, -0.888929, 0, 1, 0, 0.888929, 0, -0.458045
 storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb"), ExtResource("43_r6irn")])
 
 [node name="PropCraftingTable" parent="." instance=ExtResource("51_0e1a5")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 2.2, 0.4, 5)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -10.9, 0.4, -9.6)
 
 [node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2166, 1, 13.0794)
