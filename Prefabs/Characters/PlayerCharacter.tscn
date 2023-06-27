@@ -42,7 +42,7 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "bowAimer", "bow", "ledgeDetectorRaysController")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ceilingDetectorRay", "bowAimer", "bow", "ledgeDetectorRaysController")]
 collision_layer = 162
 collision_mask = 19
 slide_on_ceiling = false
@@ -53,6 +53,7 @@ anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
 ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRays/LedgeDetectorRayHorizontal")
 ledgeDetectorRayVertical = NodePath("LedgeDetectorRays/LedgeDetectorRayVertical")
+ceilingDetectorRay = NodePath("LedgeDetectorRays/CeilingDetectorRay")
 bowAimer = NodePath("SpringArm3D/BowAimer")
 bow = NodePath("Bow")
 ledgeDetectorRaysController = NodePath("LedgeDetectorRays")
@@ -110,6 +111,10 @@ target_position = Vector3(0, 0, -0.45)
 [node name="LedgeDetectorRayVertical" type="RayCast3D" parent="LedgeDetectorRays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -0.4)
 target_position = Vector3(0, -0.35, 0)
+
+[node name="CeilingDetectorRay" type="RayCast3D" parent="LedgeDetectorRays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 2, 0)
 
 [node name="Statistics" type="Node" parent="."]
 script = ExtResource("4_x6l2t")

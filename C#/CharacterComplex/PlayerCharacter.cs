@@ -34,7 +34,8 @@ namespace PlayerCharacterComplex
 		public PlayerCharacterAudio characterAudio;
 		[Export]
 		public RayCast3D ledgeDetectorRayHorizontal,
-			ledgeDetectorRayVertical;
+			ledgeDetectorRayVertical,
+			ceilingDetectorRay;
 		[Export]
 		public PlayerBowAimer bowAimer;
 		[Export]

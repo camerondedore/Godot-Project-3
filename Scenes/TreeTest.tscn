@@ -84,9 +84,8 @@ shadow_enabled = true
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
-propsToPaint = [ExtResource("51_v4cb4"), ExtResource("52_re15r")]
+propsToPaint = [ExtResource("4_atmhp"), ExtResource("3_ddp4i"), ExtResource("4_pyk17"), ExtResource("11_d87cr")]
 positionSpread = 0.0
-yOffset = 0.1
 maxRotation = 3.0
 sizeVariation = 0.3
 uniformSize = true
@@ -234,6 +233,42 @@ shape = SubResource("ConvexPolygonShape3D_ebp2m")
 
 [node name="Trees" type="Node3D" parent="Props/Trees"]
 
+[node name="PropTreeOak4" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
+transform = Transform3D(-0.219171, 0.0154657, 1.03367, -0.0283721, 1.05616, -0.0218179, -1.0334, -0.0322771, -0.21863, 13.5937, 0.0793648, -2.78376)
+
+[node name="PropTreeOak2" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
+transform = Transform3D(1.06291, -0.0271952, 0.335143, 0.0172558, 1.11413, 0.0356787, -0.335801, -0.0288297, 1.06266, 11.3264, 0.079366, 0.736721)
+
+[node name="PropTreeOak3" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(-1.13469, -0.0118082, -0.0732269, -0.0136284, 1.13668, 0.0278839, 0.0729101, 0.0287022, -1.1344, 14.0278, 0.0793636, 5.42536)
+
+[node name="@PropTreeOak4@21127" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
+transform = Transform3D(0.281232, 0.0142571, 0.982168, -0.0196401, 1.02151, -0.00920446, -0.982075, -0.016346, 0.281442, 9.07152, 0.0793648, 4.44487)
+
+[node name="@PropTreeOak4@21128" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
+transform = Transform3D(0.62544, -0.0349237, -0.930595, -0.0138513, 1.12052, -0.0513607, 0.931147, 0.0401263, 0.624305, 10.8158, 0.0793648, 9.00559)
+
+[node name="@PropTreeOak2@21129" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
+transform = Transform3D(-0.285141, 0.0149824, -0.841618, -0.00279164, 0.888573, 0.0167641, 0.841747, 0.00802223, -0.285042, 13.3841, 0.079366, 13.4447)
+
+[node name="PropTreeOak1" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
+transform = Transform3D(-0.920642, 0.0204689, 0.231368, 0.0211358, 0.949255, 0.000122374, -0.231308, 0.00526895, -0.920869, 6.66449, 0.079366, 8.67661)
+
+[node name="@PropTreeOak3@21130" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(-0.265212, 0.0109568, -0.953348, 0.0191188, 0.989408, 0.00605255, 0.953219, -0.0167961, -0.265369, 8.21522, 0.079366, 12.5964)
+
+[node name="@PropTreeOak3@21131" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
+transform = Transform3D(-0.132131, 0.0111256, 0.963328, -0.00166617, 0.972342, -0.0114582, -0.96339, -0.00320755, -0.132102, 1.90613, 0.079366, 9.39378)
+
+[node name="@PropTreeOak4@21132" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
+transform = Transform3D(-0.871788, 0.0111637, 0.702546, -0.0112015, 1.11919, -0.0316842, -0.702545, -0.0316975, -0.871283, 1.67955, 0.079366, 14.5742)
+
+[node name="@PropTreeOak1@21133" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
+transform = Transform3D(-0.844245, -0.0026932, 0.690985, 0.0269534, 1.09, 0.0371801, -0.690464, 0.0458431, -0.843431, -8.34801, 0.079366, 14.4741)
+
+[node name="@PropTreeOak1@21134" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
+transform = Transform3D(0.237294, -0.0281127, 0.831843, -0.010263, 0.864825, 0.032155, -0.832255, -0.0186802, 0.23678, 12.5484, 0.079365, -12.3897)
+
 [node name="PropTreeApple1" parent="Props/Trees/Trees" instance=ExtResource("4_6wf3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96458, -0.0174332, -11.008)
 
@@ -242,51 +277,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -11)
 
 [node name="PropTreeApple3" parent="Props/Trees/Trees" instance=ExtResource("4_65hyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -11)
-
-[node name="PropTreeOak4" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
-transform = Transform3D(-1.11723, 0.00697276, -0.21461, 0.0171211, 0.861156, -0.0403684, 0.214124, -0.0324752, -1.11654, 12.2823, 0.079366, -1.56532)
-
-[node name="PropTreeOak3" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
-transform = Transform3D(0.997245, 0.0319571, 0.348423, -0.039036, 1.00284, 0.00971242, -0.347862, -0.0209214, 0.997765, 10.2342, 0.0793648, 3.89904)
-
-[node name="@PropTreeOak4@23412" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
-transform = Transform3D(0.0886433, -0.0389407, -0.909476, 0.0478135, 1.13884, -0.026657, 0.908754, -0.0561211, 0.0901162, 6.4967, 0.079366, 7.59619)
-
-[node name="PropTreeOak1" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
-transform = Transform3D(0.00943885, 0.026505, 0.999604, -0.0277762, 0.99927, -0.0262338, -0.99957, -0.0275176, 0.0101682, 2.09398, 0.079366, 10.8737)
-
-[node name="PropTreeOak2" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
-transform = Transform3D(-0.754378, -0.00995103, 0.615134, -0.0498264, 0.892481, -0.0440095, -0.613208, -0.0602769, -0.753171, -4.06375, 0.0793648, 13.2141)
-
-[node name="@PropTreeOak1@23413" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
-transform = Transform3D(-0.0969946, 0.0468861, -0.945232, 0.0492479, 1.10164, 0.035507, 0.944812, -0.052609, -0.0988885, 1.11814, 0.0793648, 14.0135)
-
-[node name="@PropTreeOak4@23414" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
-transform = Transform3D(0.880829, 0.0379006, 0.642163, -0.053302, 0.927731, -0.0024256, -0.641494, -0.0250446, 0.88195, 5.85178, 0.0793648, 11.0372)
-
-[node name="@PropTreeOak2@23415" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
-transform = Transform3D(0.986636, -0.010456, -0.202171, 0.017973, 0.961644, 0.0332309, 0.201668, -0.0345491, 0.986137, 9.67337, 0.0793648, 7.39543)
-
-[node name="@PropTreeOak1@23416" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
-transform = Transform3D(1.05209, -0.0114507, -0.327467, 0.0178289, 1.05606, 0.017095, 0.327199, -0.020725, 1.05202, 13.709, 0.079366, 1.7083)
-
-[node name="@PropTreeOak1@23417" parent="Props/Trees/Trees" instance=ExtResource("4_atmhp")]
-transform = Transform3D(-0.818131, -0.0363586, -0.704018, -0.0275535, 0.971865, -0.0298856, 0.704637, -0.00421185, -0.818582, 13.6495, 0.0793624, 7.40698)
-
-[node name="@PropTreeOak3@23418" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
-transform = Transform3D(0.728259, -0.0305964, 0.448548, 0.0338229, 0.853713, 0.00351993, -0.44832, 0.0147058, 0.728895, 10.6739, 0.0793636, 10.7499)
-
-[node name="@PropTreeOak2@23419" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
-transform = Transform3D(-0.788628, 0.0326167, -0.541283, 0.00407913, 1.08647, 0.0447343, 0.542028, 0.0392795, -0.787881, 5.9515, 0.0793648, 13.9415)
-
-[node name="@PropTreeOak2@23420" parent="Props/Trees/Trees" instance=ExtResource("3_ddp4i")]
-transform = Transform3D(0.616138, -0.0491777, -0.847103, 0.0511083, 0.947906, -0.0299903, 0.847304, -0.0214157, 0.617801, 10.3314, 0.079366, 13.7592)
-
-[node name="@PropTreeOak4@23421" parent="Props/Trees/Trees" instance=ExtResource("11_d87cr")]
-transform = Transform3D(-0.318728, 0.0131913, 0.89902, -0.0474863, 1.03592, -0.0296798, -0.897847, -0.0594719, -0.317574, 14.1551, 0.0793648, 12.1388)
-
-[node name="@PropTreeOak3@23422" parent="Props/Trees/Trees" instance=ExtResource("4_pyk17")]
-transform = Transform3D(0.202852, -0.0504987, 0.870703, 0.0209059, 0.9219, 0.0454061, -0.871829, 0.0103568, 0.203679, 13.526, 0.0793648, 14.5465)
 
 [node name="Logs" type="Node3D" parent="Props/Trees"]
 
