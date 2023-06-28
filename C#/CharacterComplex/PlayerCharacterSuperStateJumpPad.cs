@@ -61,7 +61,14 @@ namespace PlayerCharacterComplex
             //blackboard.ySpeed = blackboard.Velocity.Y;
 
             // restart sub states
-            SetState(blackboard.subStateJumpPadIdle);
+            if(subState != blackboard.subStateJumpPadIdle)
+            {
+                SetState(blackboard.subStateJumpPadIdle);
+            }
+            else
+            {
+                subState.StartState();
+            }
 
             // play sound
            // blackboard.characterAudio.PlayJumpPadSound();
