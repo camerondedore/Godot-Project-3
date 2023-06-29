@@ -3,4 +3,5 @@
 [ext_resource type="Texture2D" uid="uid://bi12ji453aboy" path="res://Textures/cloth-1.png" id="1_3heus"]
 
 [resource]
+cull_mode = 2
 albedo_texture = ExtResource("1_3heus")

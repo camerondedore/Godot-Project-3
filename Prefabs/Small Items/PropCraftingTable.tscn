@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfyoe1tbi03jj"]
+[gd_scene load_steps=12 format=3 uid="uid://bfyoe1tbi03jj"]
 
 [ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_y5gvo"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_j5u0j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://c563kof5gpc" path="res://Materials/PropMortarPestle.tres" id="3_qjqov"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="4_4kawj"]
 [ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="5_188yf"]
+[ext_resource type="Material" uid="uid://djnoygn8d4pqp" path="res://Materials/Cloth2.tres" id="7_30iio"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvtkp"]
 size = Vector3(1.6, 0.1, 0.9)
@@ -25,6 +26,7 @@ surface_material_override/1 = ExtResource("3_qjqov")
 surface_material_override/2 = ExtResource("3_6ybqd")
 surface_material_override/3 = ExtResource("4_4kawj")
 surface_material_override/4 = ExtResource("5_188yf")
+surface_material_override/5 = ExtResource("7_30iio")
 
 [node name="CollisionShapeTop" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
