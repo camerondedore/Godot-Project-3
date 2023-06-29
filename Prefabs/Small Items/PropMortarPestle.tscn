@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cennawrc312vk"]
+
+[ext_resource type="ArrayMesh" uid="uid://deolfqajpohar" path="res://Models/prop-mortar-pestle.res" id="1_x0tw8"]
+[ext_resource type="Material" uid="uid://c563kof5gpc" path="res://Materials/PropMortarPestle.tres" id="2_dhlrn"]
+
+[node name="PropMortarPestle" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_x0tw8")
+surface_material_override/0 = ExtResource("2_dhlrn")

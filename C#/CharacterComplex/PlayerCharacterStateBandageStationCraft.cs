@@ -38,7 +38,7 @@ namespace PlayerCharacterComplex
     
         public override State Transition()
         {
-            if(blackboard.rangerBandagesToCraft <= 0)
+            if(blackboard.rangerBandagesToCraft <= 0 && EngineTime.timePassed > startTime + craftTime)
             {
                 // idle
                 return blackboard.stateIdle;
