@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c563kof5gpc"]
+
+[ext_resource type="Texture2D" uid="uid://d3xr8o8c0b50e" path="res://Textures/prop-mortar-pestle-diffuse.png" id="1_m08bh"]
+
+[resource]
+albedo_texture = ExtResource("1_m08bh")
+metallic = 0.2
+roughness = 0.7
