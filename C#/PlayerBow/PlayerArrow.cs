@@ -65,7 +65,8 @@ public partial class PlayerArrow : Projectile
         //QueueFree();
 
         // set arrow position
-        LookAtFromPosition(point, point + -normal, upVector);
+        var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
+        LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
         
         // disable script
         SetScript(new Variant());
