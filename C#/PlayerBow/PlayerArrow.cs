@@ -62,7 +62,14 @@ public partial class PlayerArrow : Projectile
         SpawnPrefab(missFx, point, -Basis.Z, upVector);
 
         // destroy arrow
-        QueueFree();
+        //QueueFree();
+
+        // set arrow position
+        LookAtFromPosition(point, point + -normal, upVector);
+        
+        // disable script
+        SetScript(new Variant());
+
     }
 
 
