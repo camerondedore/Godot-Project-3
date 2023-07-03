@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cvllqbh5c6ke3"]
+
+[ext_resource type="Texture2D" uid="uid://bss81jj68s58w" path="res://Textures/arrows-diffuse.png" id="1_txxvw"]
+
+[resource]
+albedo_texture = ExtResource("1_txxvw")
