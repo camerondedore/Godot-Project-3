@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0r1n3vxkd6d2"]
+[gd_scene load_steps=8 format=3 uid="uid://d0r1n3vxkd6d2"]
 
-[ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/FxSparkle.tres" id="1_woiqw"]
+[ext_resource type="Material" uid="uid://7e1snam2ake2" path="res://Materials/FxArrowTrailWeighted.tres" id="1_fblyw"]
 
 [sub_resource type="Gradient" id="Gradient_467d0"]
-offsets = PackedFloat32Array(0, 0.178862, 0.642276, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.881188, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.0258621, 0.293103, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.32549, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_yjwn2"]
 gradient = SubResource("Gradient_467d0")
+
+[sub_resource type="Curve" id="Curve_8xpiv"]
+_data = [Vector2(0, 0.0948277), 0.0, 0.905172, 0, 1, Vector2(1, 1), 0.905172, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1mklh"]
+curve = SubResource("Curve_8xpiv")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7vdhd"]
 lifetime_randomness = 0.2
@@ -19,20 +26,22 @@ emission_ring_inner_radius = 0.1
 direction = Vector3(0, 0, 1)
 spread = 180.0
 gravity = Vector3(0, -0.1, 0)
-initial_velocity_min = 0.1
-initial_velocity_max = 0.2
-angular_velocity_min = -30.0
-angular_velocity_max = 30.0
-angle_max = 360.0
-scale_min = 0.2
-scale_max = 0.3
+initial_velocity_min = 0.15
+initial_velocity_max = 0.25
+angular_velocity_min = 100.0
+angular_velocity_max = 160.0
+angle_max = 359.0
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_1mklh")
 color_ramp = SubResource("GradientTexture1D_yjwn2")
 
 [sub_resource type="QuadMesh" id="QuadMesh_ux5to"]
 
 [node name="FxArrowTrailWeighted" type="GPUParticles3D"]
-material_override = ExtResource("1_woiqw")
+material_override = ExtResource("1_fblyw")
 amount = 20
-visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+lifetime = 1.25
+randomness = 0.5
+visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_7vdhd")
 draw_pass_1 = SubResource("QuadMesh_ux5to")
