@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://c57ei2ee86qpb"]
 
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrow.tscn" id="1_b7ali"]
 [ext_resource type="ArrayMesh" uid="uid://ya07hifuuptd" path="res://Models/arrow-pick.res" id="2_svfth"]
+[ext_resource type="PackedScene" uid="uid://vt0tq2ypniq0" path="res://Prefabs/FX/FxArrowTrailPick.tscn" id="3_38gjk"]
 
-[node name="PlayerArrowPick" instance=ExtResource("1_b7ali")]
+[node name="PlayerArrowPick" node_paths=PackedStringArray("trailFx") instance=ExtResource("1_b7ali")]
 arrowType = "pick"
+trailFx = NodePath("FxArrowTrailPick")
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_svfth")
+
+[node name="FxArrowTrailPick" parent="." index="2" instance=ExtResource("3_38gjk")]
