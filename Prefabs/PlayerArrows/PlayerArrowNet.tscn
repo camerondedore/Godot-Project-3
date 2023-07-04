@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3hlke4a6d00w"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="1_ce0ie"]
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrow.tscn" id="1_ce0ie"]
 [ext_resource type="ArrayMesh" uid="uid://bndjssmijxivp" path="res://Models/arrow-net.res" id="2_a84qv"]
 [ext_resource type="Material" uid="uid://uhc8snpiwtjm" path="res://Materials/JumpNet.tres" id="3_huo0n"]
 

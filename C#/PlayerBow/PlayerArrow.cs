@@ -9,6 +9,8 @@ public partial class PlayerArrow : Projectile
     [Export]
     PackedScene hitFx,
         missFx;
+    [Export]
+    GpuParticles3D trailFx;
     
 
 
@@ -51,6 +53,17 @@ public partial class PlayerArrow : Projectile
                 // spawn hit fx
                 SpawnPrefab(hitFx, point, normal, upVector);
 
+                if(trailFx != null)
+                {
+                    trailFx.Emitting = false;
+
+                    // detach trail fx
+                    var trailFxPosition = trailFx.GlobalPosition;
+                    trailFx.GetParent().RemoveChild(trailFx);
+                    GetTree().CurrentScene.AddChild(trailFx);
+                    trailFx.GlobalPosition = trailFxPosition;
+                }
+
                 // destroy arrow
                 QueueFree();
 
@@ -67,6 +80,12 @@ public partial class PlayerArrow : Projectile
         // set arrow position
         var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
         LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
+
+        // turn off trail fx
+        if(trailFx != null)
+        {
+            trailFx.Emitting = false;
+        }
         
         // disable script
         SetScript(new Variant());

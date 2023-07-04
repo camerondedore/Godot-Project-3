@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvnogtbjot0oy"]
+
+[ext_resource type="Script" path="res://C#/PlayerBow/PlayerArrow.cs" id="1_w1ybd"]
+[ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="2_1gik3"]
+[ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_rvj48"]
+[ext_resource type="ArrayMesh" uid="uid://dvwckpqutx3g6" path="res://Models/arrow-weighted.res" id="4_qyooq"]
+[ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="5_fqjht"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="5_pj2yf"]
+
+[node name="PlayerArrow" type="Node3D"]
+script = ExtResource("1_w1ybd")
+hitFx = ExtResource("2_1gik3")
+missFx = ExtResource("3_rvj48")
+speed = 20.0
+speedVariation = 0.0
+rangeSqr = 900.0
+maskAsBinary = "1010011"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_qyooq")
+surface_material_override/0 = ExtResource("5_pj2yf")
+
+[node name="NodeLimiter" type="Node" parent="."]
+script = ExtResource("5_fqjht")
+queueName = "player arrow"
+queueLimit = 30

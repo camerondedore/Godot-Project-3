@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtqhas2qrj6hf"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="1_b7ali"]
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrow.tscn" id="1_b7ali"]
 [ext_resource type="ArrayMesh" uid="uid://ya07hifuuptd" path="res://Models/arrow-pick.res" id="2_svfth"]
 
 [node name="PlayerArrowPick" instance=ExtResource("1_b7ali")]
