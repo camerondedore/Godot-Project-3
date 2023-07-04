@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0fuhg1ekfi5h"]
+
+[ext_resource type="Material" uid="uid://d27rh7eb06bu1" path="res://Materials/FxArrowTrailNet.tres" id="1_4nsho"]
+[ext_resource type="Material" uid="uid://d1linu5y3ixb7" path="res://Particles/FxArrowTrailNet.tres" id="2_3rc1u"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ux5to"]
+
+[node name="FxArrowTrailNet" type="GPUParticles3D"]
+material_override = ExtResource("1_4nsho")
+amount = 20
+lifetime = 1.5
+randomness = 0.5
+visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
+process_material = ExtResource("2_3rc1u")
+draw_pass_1 = SubResource("QuadMesh_ux5to")
