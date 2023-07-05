@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
-[ext_resource type="PackedScene" path="res://Prefabs/PlayerArrows/PlayerArrowPick.tscn" id="18_erk0y"]
+[ext_resource type="PackedScene" uid="uid://c57ei2ee86qpb" path="res://Prefabs/PlayerArrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
 [ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="20_no75w"]
@@ -31,7 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://k8ogntdoh24" path="res://Audio/ranger-bandage-gather.wav" id="23_g4fk7"]
 [ext_resource type="AudioStream" uid="uid://dcv3yunkkpab4" path="res://Audio/ranger-bandage-craft.wav" id="23_gbit2"]
 [ext_resource type="PackedScene" uid="uid://c2fdqwye5mxid" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="27_121vu"]
-[ext_resource type="PackedScene" path="res://Prefabs/PlayerArrows/PlayerArrowNet.tscn" id="28_t6rk3"]
+[ext_resource type="PackedScene" uid="uid://bbp1on41igffk" path="res://Prefabs/PlayerArrows/PlayerArrowNet.tscn" id="28_t6rk3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -70,6 +70,9 @@ bones/55/rotation = Quaternion(0.852703, 0.0190199, 0.509027, -0.115875)
 bones/60/rotation = Quaternion(0.958043, 0.0328138, -0.225788, -0.173486)
 bones/61/rotation = Quaternion(0.834634, 0.000547001, 0.525637, -0.164595)
 bones/67/rotation = Quaternion(0.834634, 0.000547001, 0.525637, -0.164595)
+
+[node name="character" parent="character-player/character-armature/Skeleton3D" index="0"]
+layers = 2
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("cameraTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

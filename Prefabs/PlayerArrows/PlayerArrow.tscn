@@ -17,6 +17,7 @@ rangeSqr = 900.0
 maskAsBinary = "1010011"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = ExtResource("4_qyooq")
 surface_material_override/0 = ExtResource("5_pj2yf")
 

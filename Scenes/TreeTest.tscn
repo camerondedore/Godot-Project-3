@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=62 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -40,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
 [ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="27_j1ljd"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
+[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Small Items/PropOven.tscn" id="36_tqf4g"]
+[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Small Items/PropOvenDoor.tscn" id="37_kpqqm"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
@@ -398,6 +400,18 @@ transform = Transform3D(0.989888, 0, 0.141851, 0, 1, 0, -0.141851, 0, 0.989888, 
 
 [node name="PropLogStand2" parent="Props/SmallProps" instance=ExtResource("21_0tx2t")]
 transform = Transform3D(-0.995924, 0, -0.0901978, 0, 1, 0, 0.0901978, 0, -0.995924, -12.5402, 0.625, 2.53196)
+
+[node name="PropOven" parent="Props/SmallProps" instance=ExtResource("36_tqf4g")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 3.93972, 0.5, -13.3956)
+
+[node name="PropOvenDoor" parent="Props/SmallProps" instance=ExtResource("37_kpqqm")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 3.93972, 0.367803, -12.522)
+
+[node name="PropOven2" parent="Props/SmallProps" instance=ExtResource("36_tqf4g")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 6.93972, 0.5, -13.3956)
+
+[node name="PropOvenDoor2" parent="Props/SmallProps" instance=ExtResource("37_kpqqm")]
+transform = Transform3D(-0.740394, -0.284774, -0.608868, -1.49012e-08, 0.90582, -0.423662, 0.672173, -0.313677, -0.670664, 7.64818, 0.351484, -12.4116)
 
 [node name="Plants" type="Node3D" parent="Props"]
 

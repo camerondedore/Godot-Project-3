@@ -38,13 +38,8 @@ surface_material_override/0 = ExtResource("3_xpl44")
 surface_material_override/1 = ExtResource("4_yhnq1")
 surface_material_override/2 = ExtResource("6_etg3h")
 
-[node name="Skeleton3D" parent="prop-jump-net/armature-jump-net" index="0"]
-bones/0/position = Vector3(0, 0, 0)
-bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/1/position = Vector3(0, -0.4, 0)
-bones/1/scale = Vector3(1, 1, 1)
-
 [node name="prop-jump-net2" parent="prop-jump-net/armature-jump-net/Skeleton3D" index="0"]
+layers = 2
 surface_material_override/0 = ExtResource("9_bmgvo")
 
 [node name="ArrowCollision" type="CollisionShape3D" parent="."]

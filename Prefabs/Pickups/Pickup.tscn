@@ -17,6 +17,7 @@ freeze = true
 freeze_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = SubResource("SphereMesh_iax83")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

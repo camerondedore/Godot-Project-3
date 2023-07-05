@@ -27,6 +27,7 @@ openSound = ExtResource("3_he827")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="prop-lockbox2" parent="prop-lockbox-armature/Skeleton3D" index="0"]
+layers = 2
 surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")
 

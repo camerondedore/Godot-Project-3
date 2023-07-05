@@ -9,6 +9,7 @@ size = Vector3(4, 2, 2)
 [node name="PropBlackberryBush" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = ExtResource("1_ca3cf")
 surface_material_override/0 = ExtResource("2_pdbt1")
 

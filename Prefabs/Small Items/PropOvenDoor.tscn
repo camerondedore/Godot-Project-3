@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwlxx35uf8j51"]
+
+[ext_resource type="ArrayMesh" uid="uid://dj7e04u3j24fs" path="res://Models/prop-oven-door.res" id="1_h6w06"]
+[ext_resource type="Material" uid="uid://bmy36cqvgonym" path="res://Materials/Clay.tres" id="2_o8lje"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_un3ym"]
+
+[node name="PropOvenDoor" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_h6w06")
+surface_material_override/0 = ExtResource("2_o8lje")
+surface_material_override/1 = ExtResource("3_un3ym")
