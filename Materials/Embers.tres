@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bgv43mrb54kiv"]
+
+[ext_resource type="Texture2D" uid="uid://c6qinonuyuiky" path="res://Textures/embers-diffuse.png" id="1_hsohb"]
+[ext_resource type="Texture2D" uid="uid://wp1kcka45t00" path="res://Textures/embers-emission.png" id="2_gxv11"]
+
+[resource]
+albedo_texture = ExtResource("1_hsohb")
+emission_enabled = true
+emission_energy_multiplier = 3.0
+emission_texture = ExtResource("2_gxv11")

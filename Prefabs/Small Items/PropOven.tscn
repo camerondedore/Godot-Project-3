@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpqngqvasucy4"]
+[gd_scene load_steps=6 format=3 uid="uid://bpqngqvasucy4"]
 
 [ext_resource type="ArrayMesh" uid="uid://4l5oou15its4" path="res://Models/prop-oven.res" id="1_1p6ps"]
 [ext_resource type="Material" uid="uid://bmy36cqvgonym" path="res://Materials/Clay.tres" id="2_w8nkl"]
 [ext_resource type="Texture2D" uid="uid://c5x0otpwkfwvi" path="res://Textures/fx-smoke-damage.png" id="3_6tpln"]
+[ext_resource type="Material" uid="uid://bgv43mrb54kiv" path="res://Materials/Embers.tres" id="3_sm73r"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r174x"]
 points = PackedVector3Array(0.236734, 0.473056, 0.591743, -0.666443, -0.516873, -1.01587, -0.883196, -0.491201, -0.456865, 0.883189, -0.491077, 0.456861, 0.233944, 0.322657, -0.935776, -0.456865, -0.491201, 0.883196, -0.56603, 0.535173, 0.0892357, 0.666642, -0.516873, -1.01587, 0.686381, 0.416388, -0.119289, -0.17786, 0.652024, -0.355907, -0.781394, 0.0280008, 0.480814, -0.474901, 0.118048, -0.949801, 0.305006, -0.492442, 0.946188, -0.21099, 0.208479, 0.813926, -0.873976, 0.0579712, -0.240967, -0.946188, -0.492442, 0.305006, 0.908948, 0.0271623, 0.090743, 0.208022, 0.712597, -0.118817, 0.59551, 0.207365, 0.59551, -0.236139, 0.649338, 0.32453, 0.983569, -0.496563, -0.12285, 0.81331, 0.0276851, -0.42166, 0.151542, -0.00301502, 0.909252, 0.474398, 0.562854, 0.266837, -0.533291, 0.503213, -0.296067, 0.474901, 0.118048, -0.950173, -0.233944, 0.322657, -0.935776, -0.59551, 0.207365, 0.59551, -0.122851, -0.496689, 0.983579, 0.484605, -0.215083, 0.848297, -0.813928, 0.208479, 0.21099, -0.978148, -0.248543, 0.0304475)
@@ -12,13 +13,14 @@ points = PackedVector3Array(0.236734, 0.473056, 0.591743, -0.666443, -0.516873, 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_1p6ps")
 surface_material_override/0 = ExtResource("2_w8nkl")
+surface_material_override/1 = ExtResource("3_sm73r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_r174x")
 
 [node name="Decal" type="Decal" parent="."]
-transform = Transform3D(-1, 2.25515e-08, -8.4464e-08, 7.57103e-08, -0.259679, -0.965695, -4.37114e-08, -0.965695, 0.259679, -1.34174e-07, -0.157629, -0.927506)
-size = Vector3(1.5, 1.01419, 1.5)
+transform = Transform3D(-1, 2.25515e-08, -8.4464e-08, 7.57103e-08, -0.259679, -0.965695, -4.37114e-08, -0.965695, 0.259679, -1.48501e-07, -0.323051, -0.886265)
+size = Vector3(2, 1.014, 2)
 texture_albedo = ExtResource("3_6tpln")
 emission_energy = 0.0
 normal_fade = 0.24
