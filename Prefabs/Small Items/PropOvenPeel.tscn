@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ubnvd3e1ahh"]
+
+[ext_resource type="ArrayMesh" uid="uid://qw84ywtphx3e" path="res://Models/prop-oven-peel.res" id="1_l2y1j"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_a5uop"]
+
+[node name="PropOvenPeel" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_l2y1j")
+surface_material_override/0 = ExtResource("2_a5uop")
