@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dexsff1ceqobd"]
+[gd_scene load_steps=5 format=3 uid="uid://dexsff1ceqobd"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8xntin2l0q5s" path="res://Models/prop-oven-tower.res" id="1_fu8w8"]
 [ext_resource type="Material" uid="uid://bmy36cqvgonym" path="res://Materials/Clay.tres" id="2_2c7o7"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_ffsju"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vot85"]
-points = PackedVector3Array(0.649402, 0.631684, 0.830829, -0.355826, -0.761724, -0.983895, -0.900828, -0.693269, 0.50073, 0.969083, -0.761083, -0.239722, 0.68453, 0.76451, -0.992009, -0.952364, 0.769775, 0.511036, 0.36337, -0.745844, 0.977888, 0.939355, 0.79209, 0.536903, -0.487326, 0.761433, 0.960392, -1.0399, -0.700187, -0.176109, 0.690227, -0.741548, -0.967433, -0.970462, 0.790758, -0.43404, 0.975754, -0.733691, 0.408945, 1.04165, 0.665569, -0.241544, -0.48632, -0.730989, 0.893454, -0.680044, 0.758971, -1.01736, -0.66722, -0.752221, -0.981426, 0.328839, 0.804631, 1.00588, 0.336487, -0.826839, 0.557966, -0.134835, -0.826839, -0.654286, -0.7104, -0.792784, 0.276589, 0.739811, 0.368234, -1.01125, 0.0969701, -0.439855, 1.02492, -1.03604, 0.629388, 0.212607, 1.00961, 0.796437, -0.241688, -0.779639, -0.407663, 0.700359, -0.980173, -0.736813, 0.377954, 0.80614, -0.372631, 0.663501, 1.03915, -0.277642, -0.0138136, -1.03986, 0.761679, -0.273475, 1.03965, 0.566873, 0.116039, 0.32302, 0.790372, -0.886614)
+[sub_resource type="BoxShape3D" id="BoxShape3D_wn025"]
+size = Vector3(2.2, 1.5, 2.2)
 
 [node name="PropOvenTower" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fu8w8")
 surface_material_override/0 = ExtResource("2_2c7o7")
+surface_material_override/1 = ExtResource("3_ffsju")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_vot85")
+shape = SubResource("BoxShape3D_wn025")
