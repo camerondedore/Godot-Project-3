@@ -19,11 +19,13 @@ surface_material_override/1 = ExtResource("3_sm73r")
 shape = SubResource("ConvexPolygonShape3D_r174x")
 
 [node name="Decal" type="Decal" parent="."]
-transform = Transform3D(-1, 2.25515e-08, -8.4464e-08, 7.57103e-08, -0.259679, -0.965695, -4.37114e-08, -0.965695, 0.259679, -1.48501e-07, -0.323051, -0.886265)
+transform = Transform3D(-1, 1.51462e-08, -8.61007e-08, 7.57103e-08, -0.342398, -0.939555, -4.37114e-08, -0.939555, 0.342398, -1.32615e-07, -0.0053876, -0.699494)
 size = Vector3(2, 1.014, 2)
 texture_albedo = ExtResource("3_6tpln")
 emission_energy = 0.0
-normal_fade = 0.24
+normal_fade = 0.5
+upper_fade = 0.15529
+lower_fade = 0.15529
 distance_fade_begin = 0.1
 distance_fade_length = 4.0
 cull_mask = 1
