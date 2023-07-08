@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpqngqvasucy4"]
+[gd_scene load_steps=5 format=3 uid="uid://bpqngqvasucy4"]
 
 [ext_resource type="ArrayMesh" uid="uid://4l5oou15its4" path="res://Models/prop-oven.res" id="1_1p6ps"]
-[ext_resource type="Material" uid="uid://bmy36cqvgonym" path="res://Materials/Clay.tres" id="2_w8nkl"]
-[ext_resource type="Texture2D" uid="uid://c5x0otpwkfwvi" path="res://Textures/fx-smoke-damage.png" id="3_6tpln"]
+[ext_resource type="Material" uid="uid://b4w3o81krjs7c" path="res://Materials/PropOven.tres" id="2_pxr38"]
 [ext_resource type="Material" uid="uid://bgv43mrb54kiv" path="res://Materials/Embers.tres" id="3_sm73r"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r174x"]
@@ -12,20 +11,8 @@ points = PackedVector3Array(0.236734, 0.473056, 0.591743, -0.666443, -0.516873, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_1p6ps")
-surface_material_override/0 = ExtResource("2_w8nkl")
+surface_material_override/0 = ExtResource("2_pxr38")
 surface_material_override/1 = ExtResource("3_sm73r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_r174x")
-
-[node name="Decal" type="Decal" parent="."]
-transform = Transform3D(-1, 1.51462e-08, -8.61007e-08, 7.57103e-08, -0.342398, -0.939555, -4.37114e-08, -0.939555, 0.342398, -1.32615e-07, -0.0053876, -0.699494)
-size = Vector3(2, 1.014, 2)
-texture_albedo = ExtResource("3_6tpln")
-emission_energy = 0.0
-normal_fade = 0.5
-upper_fade = 0.15529
-lower_fade = 0.15529
-distance_fade_begin = 0.1
-distance_fade_length = 4.0
-cull_mask = 1
