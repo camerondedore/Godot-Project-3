@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5og0j0qqfgte"]
+
+[ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="1_nqxt1"]
+[ext_resource type="ArrayMesh" uid="uid://cqxxhpnd84lom" path="res://Models/prop-bread-2.res" id="2_tjdkv"]
+
+[node name="PropBread2" instance=ExtResource("1_nqxt1")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_tjdkv")

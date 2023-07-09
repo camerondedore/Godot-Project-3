@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=66 format=3 uid="uid://cxmxlpq04lfhr"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -39,6 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="20_vvb1k"]
 [ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
 [ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="27_j1ljd"]
+[ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="28_isvn2"]
+[ext_resource type="PackedScene" uid="uid://b5og0j0qqfgte" path="res://Prefabs/Food/PropBread2.tscn" id="29_mhsw4"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
 [ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Small Items/PropOvenTower.tscn" id="36_f7e2g"]
 [ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Small Items/PropOven.tscn" id="36_tqf4g"]
@@ -361,6 +363,12 @@ transform = Transform3D(0.512474, 0.901177, 0.0717905, -0.0693389, 0.121462, -1.
 
 [node name="@PropApple@70191" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.39308, 0.802336, 0.0262971, 0.45851, 0.248426, -0.725948, -0.658942, -0.305758, -0.520822, -8.97702, 0.106047, -13.3511)
+
+[node name="PropBread1" parent="Props/Food" instance=ExtResource("28_isvn2")]
+transform = Transform3D(0.866174, 0, -0.499743, 0, 1, 0, 0.499743, 0, 0.866174, 6.97794, 0.0977713, -11.9944)
+
+[node name="PropBread2" parent="Props/Food" instance=ExtResource("29_mhsw4")]
+transform = Transform3D(0.91919, 0, 0.393814, 0, 1, 0, -0.393814, 0, 0.91919, 6.75821, 0.0977714, -12.6591)
 
 [node name="SmallProps" type="Node3D" parent="Props"]
 
