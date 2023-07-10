@@ -1,36 +1,36 @@
 [gd_scene load_steps=5 format=3 uid="uid://csiucvqejw8cr"]
 
 [ext_resource type="ArrayMesh" uid="uid://dbxwflg6cviym" path="res://Models/prop-dining-table.res" id="1_crokn"]
-[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_h4qjk"]
+[ext_resource type="Material" uid="uid://btmy61b6u872t" path="res://Materials/PropDiningTable.tres" id="2_vpm4o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qulw0"]
 size = Vector3(3, 0.1, 1.333)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a01at"]
-size = Vector3(0.15, 1, 0.15)
+size = Vector3(0.15, 0.95, 0.15)
 
 [node name="PropDiningTable" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_crokn")
-surface_material_override/0 = ExtResource("2_h4qjk")
+surface_material_override/0 = ExtResource("2_vpm4o")
 
 [node name="TopCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462296, 0)
 shape = SubResource("BoxShape3D_qulw0")
 
 [node name="LegCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0, -0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, -0.025, -0.438)
 shape = SubResource("BoxShape3D_a01at")
 
 [node name="LegCollision2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, 0, -0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, -0.025, -0.438)
 shape = SubResource("BoxShape3D_a01at")
 
 [node name="LegCollision3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0, 0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, -0.025, 0.438)
 shape = SubResource("BoxShape3D_a01at")
 
 [node name="LegCollision4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, 0, 0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, -0.025, 0.438)
 shape = SubResource("BoxShape3D_a01at")
