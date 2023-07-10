@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2fdqwye5mxid"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrow.tscn" id="1_0n837"]
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/Player Arrows/PlayerArrow.tscn" id="1_0n837"]
 [ext_resource type="PackedScene" uid="uid://d0r1n3vxkd6d2" path="res://Prefabs/FX/FxArrowTrailWeighted.tscn" id="2_imkn7"]
 
 [node name="PlayerArrowWeighted" node_paths=PackedStringArray("trailFx") instance=ExtResource("1_0n837")]

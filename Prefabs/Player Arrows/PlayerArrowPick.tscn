@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c57ei2ee86qpb"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/PlayerArrows/PlayerArrow.tscn" id="1_b7ali"]
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/Player Arrows/PlayerArrow.tscn" id="1_b7ali"]
 [ext_resource type="ArrayMesh" uid="uid://ya07hifuuptd" path="res://Models/arrow-pick.res" id="2_svfth"]
 [ext_resource type="PackedScene" uid="uid://vt0tq2ypniq0" path="res://Prefabs/FX/FxArrowTrailPick.tscn" id="3_38gjk"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bh41gansm5c83"]
+[gd_scene load_steps=36 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -23,15 +23,15 @@
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
-[ext_resource type="PackedScene" uid="uid://c57ei2ee86qpb" path="res://Prefabs/PlayerArrows/PlayerArrowPick.tscn" id="18_erk0y"]
+[ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
 [ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="20_no75w"]
 [ext_resource type="AudioStream" uid="uid://dqx1dj05aoil5" path="res://Audio/ranger-bandage-heal.wav" id="22_cdqx6"]
 [ext_resource type="AudioStream" uid="uid://k8ogntdoh24" path="res://Audio/ranger-bandage-gather.wav" id="23_g4fk7"]
 [ext_resource type="AudioStream" uid="uid://dcv3yunkkpab4" path="res://Audio/ranger-bandage-craft.wav" id="23_gbit2"]
-[ext_resource type="PackedScene" uid="uid://c2fdqwye5mxid" path="res://Prefabs/PlayerArrows/PlayerArrowWeighted.tscn" id="27_121vu"]
-[ext_resource type="PackedScene" uid="uid://bbp1on41igffk" path="res://Prefabs/PlayerArrows/PlayerArrowNet.tscn" id="28_t6rk3"]
+[ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowWeighted.tscn" id="27_121vu"]
+[ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowNet.tscn" id="28_t6rk3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3

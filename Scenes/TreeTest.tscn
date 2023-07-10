@@ -1,8 +1,8 @@
-[gd_scene load_steps=66 format=3 uid="uid://cxmxlpq04lfhr"]
+[gd_scene load_steps=67 format=3 uid="uid://ct74wiwj3avyq"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
-[ext_resource type="PackedScene" uid="uid://bh41gansm5c83" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
+[ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="Material" uid="uid://dkncsl54qwwvb" path="res://Materials/Grass.tres" id="3_wt56b"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
@@ -42,25 +42,26 @@
 [ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="28_isvn2"]
 [ext_resource type="PackedScene" uid="uid://b5og0j0qqfgte" path="res://Prefabs/Food/PropBread2.tscn" id="29_mhsw4"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
-[ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Small Items/PropOvenTower.tscn" id="36_f7e2g"]
-[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Small Items/PropOven.tscn" id="36_tqf4g"]
-[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Small Items/PropOvenDoor.tscn" id="37_kpqqm"]
+[ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Furniture/PropOvenTower.tscn" id="36_f7e2g"]
+[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Furniture/PropOven.tscn" id="36_tqf4g"]
+[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Furniture/PropOvenDoor.tscn" id="37_kpqqm"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
-[ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/BowTargets/PropLockbox.tscn" id="50_hmjpr"]
-[ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Small Items/PropCraftingTable.tscn" id="51_0e1a5"]
-[ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/BowTargets/JumpNet.tscn" id="51_5gl37"]
+[ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="47_qeona"]
+[ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/Bow Targets/PropLockbox.tscn" id="50_hmjpr"]
+[ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="51_0e1a5"]
+[ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/Bow Targets/JumpNet.tscn" id="51_5gl37"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="51_v4cb4"]
 [ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="52_re15r"]
 [ext_resource type="PackedScene" uid="uid://xigtowfv4scj" path="res://Prefabs/SecretArea.tscn" id="53_dmf02"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="53_qkkld"]
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="54_3mvej"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
-[ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/BowTargets/PropChest.tscn" id="56_1rfgt"]
-[ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Small Items/PropOvenPeel.tscn" id="59_lg3ag"]
+[ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/Bow Targets/PropChest.tscn" id="56_1rfgt"]
+[ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Furniture/PropOvenPeel.tscn" id="59_lg3ag"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -95,6 +96,12 @@ positionSpread = 0.0
 maxRotation = 3.0
 sizeVariation = 0.3
 uniformSize = true
+
+[node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2166, 1, 13.0794)
+
+[node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -334,17 +341,14 @@ transform = Transform3D(0.788848, 0, -0.614588, 0, 1, 0, 0.614588, 0, 0.788848, 
 
 [node name="Food" type="Node3D" parent="Props"]
 
-[node name="PropApple" parent="Props/Food" instance=ExtResource("27_j1ljd")]
-transform = Transform3D(0.795768, -0.196198, 0.437482, 0.447746, 0.607284, -0.542088, -0.171487, 0.675161, 0.61472, -1.5704, 0.106047, -10.135)
+[node name="PropApple2" parent="Props/Food" instance=ExtResource("27_j1ljd")]
+transform = Transform3D(0.272775, 0, -0.888102, 0, 0.929048, 0, 0.888102, 0, 0.272775, 10.2339, 1.1042, -10.5929)
 
 [node name="@PropApple@70183" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.922664, -0.251531, 0.500145, 0.343582, 0.506806, 0.888719, -0.442001, 0.919022, -0.353208, -4.30565, 0.106047, -11.9412)
 
 [node name="@PropApple@70184" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.963802, 0.0817004, 0.131022, 0.154021, 0.567285, 0.779243, -0.0109236, 0.790106, -0.573034, -3.25783, 0.106047, -10.2018)
-
-[node name="@PropApple@70185" parent="Props/Food" instance=ExtResource("27_j1ljd")]
-transform = Transform3D(0.498506, 1.02933, 0.031782, -0.00050725, 0.0355553, -1.14358, -1.02982, 0.498251, 0.015948, 2.72958, 0.106047, -10.2264)
 
 [node name="@PropApple@70186" parent="Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(1.03346, 0.38517, -0.163333, -0.372508, 1.04529, 0.108028, 0.190451, -0.0455631, 1.0976, 1.67677, 0.106047, -12.8168)
@@ -369,6 +373,12 @@ transform = Transform3D(0.866174, 0, -0.499743, 0, 1, 0, 0.499743, 0, 0.866174, 
 
 [node name="PropBread2" parent="Props/Food" instance=ExtResource("29_mhsw4")]
 transform = Transform3D(0.91919, 0, 0.393814, 0, 1, 0, -0.393814, 0, 0.91919, 6.75821, 0.0977714, -12.6591)
+
+[node name="PropBread3" parent="Props/Food" instance=ExtResource("28_isvn2")]
+transform = Transform3D(0.879591, 0, 0.475732, 0, 1, 0, -0.475732, 0, 0.879591, 9.9402, 1.09777, -11.9578)
+
+[node name="PropBread4" parent="Props/Food" instance=ExtResource("29_mhsw4")]
+transform = Transform3D(-0.461083, 0, 0.887357, 0, 1, 0, -0.887357, 0, -0.461083, 9.45988, 1.09777, -12.3061)
 
 [node name="SmallProps" type="Node3D" parent="Props"]
 
@@ -402,6 +412,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42622, 0.28, -10.9738)
 [node name="PropBasketWithApples" parent="Props/SmallProps" instance=ExtResource("10_dvkp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43613, 0.28, -11.3498)
 
+[node name="PropBasketWithApples2" parent="Props/SmallProps" instance=ExtResource("10_dvkp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7271, 0.279999, -10.0372)
+
 [node name="PropWoodAx2" parent="Props/SmallProps" instance=ExtResource("14_lprge")]
 transform = Transform3D(-0.998264, 0.0473662, 0.0350184, 2.81469e-08, -0.594486, 0.804106, 0.0589059, 0.80271, 0.593454, -11.5727, 1.09374, 5.51444)
 
@@ -410,21 +423,6 @@ transform = Transform3D(0.989888, 0, 0.141851, 0, 1, 0, -0.141851, 0, 0.989888, 
 
 [node name="PropLogStand2" parent="Props/SmallProps" instance=ExtResource("21_0tx2t")]
 transform = Transform3D(-0.995924, 0, -0.0901978, 0, 1, 0, 0.0901978, 0, -0.995924, -12.5402, 0.625, 2.53196)
-
-[node name="PropOvenTower" parent="Props/SmallProps" instance=ExtResource("36_f7e2g")]
-transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 3.94, 0.75, -13.396)
-
-[node name="PropOven" parent="Props/SmallProps/PropOvenTower" instance=ExtResource("36_tqf4g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-
-[node name="PropOvenDoor" parent="Props/SmallProps/PropOvenTower" instance=ExtResource("37_kpqqm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11, -0.874)
-
-[node name="PropOven2" parent="Props/SmallProps" instance=ExtResource("36_tqf4g")]
-transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 6.93972, 0.5, -13.3956)
-
-[node name="PropOvenDoor2" parent="Props/SmallProps" instance=ExtResource("37_kpqqm")]
-transform = Transform3D(-0.740394, -0.284774, -0.608868, -1.49012e-08, 0.90582, -0.423662, 0.672173, -0.313677, -0.670664, 7.64818, 0.351484, -12.4116)
 
 [node name="Plants" type="Node3D" parent="Props"]
 
@@ -530,6 +528,29 @@ transform = Transform3D(-0.149517, 0.0220963, -1.07636, 0.0231391, 1.03696, 0.02
 [node name="@PropTulip3@52684" parent="Props/Plants" instance=ExtResource("7_t6cpr")]
 transform = Transform3D(0.85699, 0.0471469, 0.0160892, -0.0345719, 1.14278, -0.0387271, -0.0176545, 0.0507654, 0.856843, -10.862, 0.347475, 13.3846)
 
+[node name="Furniture" type="Node3D" parent="Props"]
+
+[node name="PropDiningTable" parent="Props/Furniture" instance=ExtResource("47_qeona")]
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 9.95725, 0.5, -11.6448)
+
+[node name="PropOvenTower" parent="Props/Furniture" instance=ExtResource("36_f7e2g")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 3.94, 0.75, -13.396)
+
+[node name="PropOven" parent="Props/Furniture/PropOvenTower" instance=ExtResource("36_tqf4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="PropOvenDoor" parent="Props/Furniture/PropOvenTower" instance=ExtResource("37_kpqqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11, -0.874)
+
+[node name="PropOven2" parent="Props/Furniture" instance=ExtResource("36_tqf4g")]
+transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 6.93972, 0.5, -13.3956)
+
+[node name="PropOvenDoor2" parent="Props/Furniture" instance=ExtResource("37_kpqqm")]
+transform = Transform3D(-0.740394, -0.284774, -0.608868, -1.49012e-08, 0.90582, -0.423662, 0.672173, -0.313677, -0.670664, 7.64818, 0.351484, -12.4116)
+
+[node name="PropOvenPeel" parent="Props/Furniture" instance=ExtResource("59_lg3ag")]
+transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 4.89166, 1.62574, -12.3193)
+
 [node name="Pickups" type="Node3D" parent="."]
 
 [node name="PickupCandiedNut" parent="Pickups" instance=ExtResource("41_oibar")]
@@ -565,12 +586,6 @@ storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb
 
 [node name="PropCraftingTable" parent="." instance=ExtResource("51_0e1a5")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -10.9, 0.4, -9.6)
-
-[node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2166, 1, 13.0794)
-
-[node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
 
 [node name="Targets" type="Node3D" parent="."]
 
@@ -689,6 +704,3 @@ use_collision = true
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.27739, 3.5, 3.32757)
 use_collision = true
-
-[node name="PropOvenPeel" parent="." instance=ExtResource("59_lg3ag")]
-transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 4.89166, 1.62574, -12.3193)
