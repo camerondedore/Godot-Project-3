@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://btd348osaw7pt"]
+
+[ext_resource type="ArrayMesh" uid="uid://khc64ubf8w8c" path="res://Models/prop-clay-pot.res" id="1_t4svr"]
+[ext_resource type="Material" uid="uid://bmy36cqvgonym" path="res://Materials/Clay.tres" id="2_3cqjg"]
+
+[node name="PropClayPot" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_t4svr")
+surface_material_override/0 = ExtResource("2_3cqjg")
