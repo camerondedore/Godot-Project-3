@@ -35,6 +35,7 @@ namespace PlayerCharacterComplex
 		[Export]
 		public RayCast3D ledgeDetectorRayHorizontal,
 			ledgeDetectorRayVertical,
+			ledgeDetectorRayGap,
 			ceilingDetectorRay;
 		[Export]
 		public PlayerBowAimer bowAimer;

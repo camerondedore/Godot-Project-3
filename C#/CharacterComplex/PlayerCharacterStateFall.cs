@@ -81,7 +81,10 @@ namespace PlayerCharacterComplex
 
             // check for ledge
             var detectingLedge = blackboard.ledgeDetectorRayHorizontal.IsColliding() && blackboard.ledgeDetectorRayVertical.IsColliding();
+            // check for ledge angle
             detectingLedge = detectingLedge && blackboard.ledgeDetectorRayVertical.GetCollisionNormal().AngleTo(-EngineGravity.direction) < 0.175f;
+            // check for gap over ledge
+            detectingLedge = detectingLedge && blackboard.ledgeDetectorRayGap.IsColliding() == false;
 
             // check for ceiling
             var detectingCeiling = blackboard.ceilingDetectorRay.IsColliding();
