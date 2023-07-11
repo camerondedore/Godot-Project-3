@@ -23,16 +23,14 @@ namespace PlayerCharacterComplex
             blackboard.Velocity = Vector3.Zero;
 
             // set character to look into ledge
-            blackboard.CharacterLook(-blackboard.ledgeDetectorRayHorizontal.GetCollisionNormal());
+            blackboard.CharacterLook(-blackboard.ledgeDetector.GetLedgeWallNormal());
 
             // get character ledge offset position
             // ledge wall hit
-            var ledgeHitPosition = blackboard.ledgeDetectorRayHorizontal.GetCollisionPoint(); 
-            // ledge top height
-            ledgeHitPosition.Y = blackboard.ledgeDetectorRayVertical.GetCollisionPoint().Y; 
+            var ledgeHitPosition = blackboard.ledgeDetector.GetLedgeCornerPoint();
 
             // adjust for rays offset from player center
-            var characterOffset = blackboard.ledgeDetectorRayHorizontal.GetCollisionNormal() * blackboard.ledgeGrabOffset.Z;
+            var characterOffset = blackboard.ledgeDetector.GetLedgeWallNormal() * blackboard.ledgeGrabOffset.Z;
             characterOffset.Y = blackboard.ledgeGrabOffset.Y;
             
             var ledgeGrapPosition = ledgeHitPosition + characterOffset;
@@ -58,7 +56,7 @@ namespace PlayerCharacterComplex
             }
 
             // check that player input is pointing away from ledge
-            var movingAwayLedge = blackboard.ledgeDetectorRayHorizontal.GetCollisionNormal().AngleTo(blackboard.GetMoveInput()) < 1.571f;
+            var movingAwayLedge = blackboard.ledgeDetector.GetLedgeWallNormal().AngleTo(blackboard.GetMoveInput()) < 1.571f;
             
             if(PlayerInput.isMoving && movingAwayLedge)
             {

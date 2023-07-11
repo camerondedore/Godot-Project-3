@@ -41,7 +41,7 @@ namespace PlayerCharacterComplex
             if(moveDirection.LengthSquared() > 0)
             {
                 // keep ledge detector rays relative to move input
-                blackboard.ledgeDetectorRaysController.LookAt(blackboard.GlobalPosition + moveDirection);
+                blackboard.ledgeDetector.LookAt(blackboard.GlobalPosition + moveDirection);
             }
         }
 
@@ -54,13 +54,15 @@ namespace PlayerCharacterComplex
 
             // animation
             blackboard.anim.Play("character-fall");
+
+            blackboard.ledgeDetector.TurnOn();
         }
 
 
 
         public override void EndState()
         {
-            
+            blackboard.ledgeDetector.TurnOff();
         }
 
 
@@ -79,20 +81,11 @@ namespace PlayerCharacterComplex
                 return blackboard.stateMove;
             }
 
-            // check for ledge
-            var detectingLedge = blackboard.ledgeDetectorRayHorizontal.IsColliding() && blackboard.ledgeDetectorRayVertical.IsColliding();
-            // check for ledge angle
-            detectingLedge = detectingLedge && blackboard.ledgeDetectorRayVertical.GetCollisionNormal().AngleTo(-EngineGravity.direction) < 0.175f;
-            // check for gap over ledge
-            detectingLedge = detectingLedge && blackboard.ledgeDetectorRayGap.IsColliding() == false;
 
-            // check for ceiling
-            var detectingCeiling = blackboard.ceilingDetectorRay.IsColliding();
-
-            if(detectingLedge && !detectingCeiling)
+            if(blackboard.ledgeDetector.DetectingValidLedge())
             {
                 // check that player input is pointing into ledge
-                var movingIntoLedge = blackboard.ledgeDetectorRayHorizontal.GetCollisionNormal().AngleTo(blackboard.GetMoveInput()) > 1.571f;
+                var movingIntoLedge = blackboard.ledgeDetector.GetLedgeWallNormal().AngleTo(blackboard.GetMoveInput()) > 1.571f;
 
                 if(movingIntoLedge)
                 {

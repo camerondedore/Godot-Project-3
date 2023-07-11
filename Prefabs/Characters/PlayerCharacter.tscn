@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=37 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
+[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterLedgeDetector.cs" id="5_rkg0g"]
 [ext_resource type="Script" path="res://C#/PlayerHealth.cs" id="6_4c4br"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
@@ -42,7 +43,7 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay", "bowAimer", "bow", "ledgeDetectorRaysController")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "bowAimer", "bow", "ledgeDetector")]
 collision_layer = 162
 collision_mask = 19
 slide_on_ceiling = false
@@ -51,13 +52,9 @@ script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
 anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
-ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRays/LedgeDetectorRayHorizontal")
-ledgeDetectorRayVertical = NodePath("LedgeDetectorRays/LedgeDetectorRayVertical")
-ledgeDetectorRayGap = NodePath("LedgeDetectorRays/LedgeDetectorRayGap")
-ceilingDetectorRay = NodePath("LedgeDetectorRays/CeilingDetectorRay")
 bowAimer = NodePath("SpringArm3D/BowAimer")
 bow = NodePath("Bow")
-ledgeDetectorRaysController = NodePath("LedgeDetectorRays")
+ledgeDetector = NodePath("LedgeDetector")
 ledgeGrabOffset = Vector3(0, -1.2, 0.3)
 acceleration = 10.0
 
@@ -106,21 +103,26 @@ margin = 0.05
 max_results = 1
 collision_mask = 83
 
-[node name="LedgeDetectorRays" type="Node3D" parent="."]
+[node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay")]
+script = ExtResource("5_rkg0g")
+ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRayHorizontal")
+ledgeDetectorRayVertical = NodePath("LedgeDetectorRayVertical")
+ledgeDetectorRayGap = NodePath("LedgeDetectorRayGap")
+ceilingDetectorRay = NodePath("CeilingDetectorRay")
 
-[node name="LedgeDetectorRayHorizontal" type="RayCast3D" parent="LedgeDetectorRays"]
+[node name="LedgeDetectorRayHorizontal" type="RayCast3D" parent="LedgeDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 0, -0.45)
 
-[node name="LedgeDetectorRayVertical" type="RayCast3D" parent="LedgeDetectorRays"]
+[node name="LedgeDetectorRayVertical" type="RayCast3D" parent="LedgeDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -0.4)
 target_position = Vector3(0, -0.35, 0)
 
-[node name="LedgeDetectorRayGap" type="RayCast3D" parent="LedgeDetectorRays"]
+[node name="LedgeDetectorRayGap" type="RayCast3D" parent="LedgeDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 target_position = Vector3(0, 0, -0.5)
 
-[node name="CeilingDetectorRay" type="RayCast3D" parent="LedgeDetectorRays"]
+[node name="CeilingDetectorRay" type="RayCast3D" parent="LedgeDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 2, 0)
 
