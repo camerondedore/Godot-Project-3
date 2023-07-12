@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ct74wiwj3avyq"]
+[gd_scene load_steps=69 format=3 uid="uid://ct74wiwj3avyq"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -63,6 +63,7 @@
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
 [ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/Bow Targets/PropChest.tscn" id="56_1rfgt"]
 [ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Furniture/PropOvenPeel.tscn" id="59_lg3ag"]
+[ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Small Items/PropLadle.tscn" id="64_he0ji"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -574,7 +575,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.11243, 1.07937, 5.7703)
 lock_rotation = false
 
 [node name="PickupNettleBroth" parent="Pickups" instance=ExtResource("37_yfk8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48197, 1.07936, -8.2424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72539, 1.07936, -10.6249)
 lock_rotation = false
 
 [node name="PickupSanicle" parent="Pickups" instance=ExtResource("43_r6irn")]
@@ -692,3 +693,6 @@ horizontalSpeed = 8.0
 
 [node name="JumpPadTarget2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.2, -8)
+
+[node name="PropLadle" parent="." instance=ExtResource("64_he0ji")]
+transform = Transform3D(0.286926, 0.557538, 0.77899, 0, 0.813182, -0.582009, -0.957953, 0.166994, 0.233323, 10.2646, 1.08792, -11.157)
