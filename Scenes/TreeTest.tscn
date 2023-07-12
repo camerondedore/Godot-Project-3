@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ct74wiwj3avyq"]
+[gd_scene load_steps=70 format=3 uid="uid://ct74wiwj3avyq"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Small Items/PropClayPot.tscn" id="40_abor7"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
+[ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Small Items/PropBowl.tscn" id="42_kaj55"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 [ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="47_qeona"]
@@ -429,6 +430,12 @@ transform = Transform3D(-0.995924, 0, -0.0901978, 0, 1, 0, 0.0901978, 0, -0.9959
 [node name="PropClayPot" parent="Props/SmallProps" instance=ExtResource("40_abor7")]
 transform = Transform3D(0.555889, 0, 0.831256, 0, 1, 0, -0.831256, 0, 0.555889, 10.5112, 1.2, -11.4732)
 
+[node name="PropLadle" parent="Props/SmallProps" instance=ExtResource("64_he0ji")]
+transform = Transform3D(-0.367362, 0.541315, 0.756323, 0, 0.813182, -0.582009, -0.930078, -0.213808, -0.298732, 10.5282, 1.08792, -11.0266)
+
+[node name="PropBowl" parent="Props/SmallProps" instance=ExtResource("42_kaj55")]
+transform = Transform3D(0.391759, 0, 0.920068, 0, 1, 0, -0.920068, 0, 0.391759, 10.773, 1.075, -10.701)
+
 [node name="Plants" type="Node3D" parent="Props"]
 
 [node name="PropBlackberryBush" parent="Props/Plants" instance=ExtResource("30_pesed")]
@@ -693,6 +700,3 @@ horizontalSpeed = 8.0
 
 [node name="JumpPadTarget2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.2, -8)
-
-[node name="PropLadle" parent="." instance=ExtResource("64_he0ji")]
-transform = Transform3D(0.286926, 0.557538, 0.77899, 0, 0.813182, -0.582009, -0.957953, 0.166994, 0.233323, 10.2646, 1.08792, -11.157)

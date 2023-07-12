@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ugpcyorjm0gc"]
+
+[ext_resource type="ArrayMesh" uid="uid://corafijw01wtx" path="res://Models/prop-bowl.res" id="1_8u1hy"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_0gti1"]
+
+[node name="PropBowl" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8u1hy")
+surface_material_override/0 = ExtResource("2_0gti1")
