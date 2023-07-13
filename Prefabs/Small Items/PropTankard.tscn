@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjih08blgkk5m"]
+
+[ext_resource type="ArrayMesh" uid="uid://cjwarfnhajp6k" path="res://Models/prop-tankard.res" id="1_1aic8"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_hh1qd"]
+
+[node name="PropTankard" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_1aic8")
+surface_material_override/0 = ExtResource("2_hh1qd")
