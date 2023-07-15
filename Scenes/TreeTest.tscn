@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://ct74wiwj3avyq"]
+[gd_scene load_steps=74 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -38,20 +38,23 @@
 [ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Lumber/PropTreeStumpOak1.tscn" id="19_nvsbc"]
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="20_vvb1k"]
 [ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
-[ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="27_j1ljd"]
-[ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="28_isvn2"]
-[ext_resource type="PackedScene" uid="uid://b5og0j0qqfgte" path="res://Prefabs/Food/PropBread2.tscn" id="29_mhsw4"]
+[ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Cooking/PropApple.tscn" id="27_j1ljd"]
+[ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Cooking/PropBread1.tscn" id="28_isvn2"]
+[ext_resource type="PackedScene" path="res://Prefabs/Cooking/PropBread2.tscn" id="29_mhsw4"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
-[ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Furniture/PropOvenTower.tscn" id="36_f7e2g"]
-[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Furniture/PropOven.tscn" id="36_tqf4g"]
-[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Furniture/PropOvenDoor.tscn" id="37_kpqqm"]
+[ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Cooking/PropOvenTower.tscn" id="36_f7e2g"]
+[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Cooking/PropOven.tscn" id="36_tqf4g"]
+[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Cooking/PropOvenDoor.tscn" id="37_kpqqm"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
-[ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Small Items/PropClayPot.tscn" id="40_abor7"]
+[ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Cooking/PropClayPot.tscn" id="40_abor7"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
-[ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Small Items/PropBowl.tscn" id="42_kaj55"]
-[ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Small Items/PropTankard.tscn" id="43_p6s0h"]
+[ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Cooking/PropBowl.tscn" id="42_kaj55"]
+[ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Cooking/PropTankard.tscn" id="43_p6s0h"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
+[ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Cooking/PropCookingSpit.tscn" id="44_xq1oh"]
+[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Cooking/PropPot1.tscn" id="45_6f0df"]
+[ext_resource type="PackedScene" path="res://Prefabs/Cooking/PropPot2.tscn" id="46_aupno"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 [ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="47_qeona"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/Bow Targets/PropLockbox.tscn" id="50_hmjpr"]
@@ -64,8 +67,8 @@
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="54_3mvej"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
 [ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/Bow Targets/PropChest.tscn" id="56_1rfgt"]
-[ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Furniture/PropOvenPeel.tscn" id="59_lg3ag"]
-[ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Small Items/PropLadle.tscn" id="64_he0ji"]
+[ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Cooking/PropOvenPeel.tscn" id="59_lg3ag"]
+[ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Cooking/PropLadle.tscn" id="64_he0ji"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -439,6 +442,15 @@ transform = Transform3D(0.391759, 0, 0.920068, 0, 1, 0, -0.920068, 0, 0.391759, 
 
 [node name="PropTankard" parent="Props/SmallProps" instance=ExtResource("43_p6s0h")]
 transform = Transform3D(-0.659844, 0, -0.751402, 0, 1, 0, 0.751402, 0, -0.659844, 10.0858, 1.15, -11.3646)
+
+[node name="PropCookingSpit" parent="Props/SmallProps" instance=ExtResource("44_xq1oh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.498, 0.8, -7.218)
+
+[node name="PropPot1" parent="Props/SmallProps/PropCookingSpit" instance=ExtResource("45_6f0df")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.6, 0.0472256, 0)
+
+[node name="PropPot2" parent="Props/SmallProps/PropCookingSpit" instance=ExtResource("46_aupno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.206423, 0)
 
 [node name="Plants" type="Node3D" parent="Props"]
 
