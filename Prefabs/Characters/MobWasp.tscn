@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci5w021qks137"]
+
+[ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_urujx"]
+radius = 0.3
+height = 0.6
+
+[sub_resource type="SphereMesh" id="SphereMesh_4mt4f"]
+radius = 0.2
+height = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_khuxh"]
+radius = 0.3
+
+[node name="MobWasp" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 19
+script = ExtResource("1_vbe2t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.227549)
+mesh = SubResource("SphereMesh_urujx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.182788)
+mesh = SubResource("SphereMesh_4mt4f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_khuxh")
+
+[node name="Faction" type="Node" parent="."]
+script = ExtResource("2_xwl4h")
