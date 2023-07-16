@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2iy3v0jc0bd1"]
+[gd_scene load_steps=10 format=3 uid="uid://c2iy3v0jc0bd1"]
 
 [ext_resource type="ArrayMesh" uid="uid://blqgx7umkd54k" path="res://Models/prop-cooking-spit.res" id="1_mcyu8"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_cc73w"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_osnte"]
 [ext_resource type="Material" uid="uid://bgv43mrb54kiv" path="res://Materials/Embers.tres" id="4_fl3gi"]
 [ext_resource type="Material" uid="uid://bss8ehpvp4onx" path="res://Materials/Rock.tres" id="4_u8sfb"]
+[ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="6_ed1ws"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3wtxr"]
 size = Vector3(0.3, 2.625, 0.3)
@@ -24,6 +25,7 @@ surface_material_override/0 = ExtResource("2_cc73w")
 surface_material_override/1 = ExtResource("3_osnte")
 surface_material_override/2 = ExtResource("4_u8sfb")
 surface_material_override/3 = ExtResource("4_fl3gi")
+surface_material_override/4 = ExtResource("6_ed1ws")
 
 [node name="CollisionStand" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.516779, 0)
