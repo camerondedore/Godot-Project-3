@@ -1,55 +1,63 @@
 using Godot;
 using System;
 
-public partial class MobWasp : CharacterBody3D
+namespace MobWasp
 {
-
-    public StateMachine machine = new StateMachine();
-    public State stateIdle,
-        stateWarn,
-        stateAttack,
-        stateHit,
-        stateDie;
-
-
-
-    public override void _Ready()
+    public partial class MobWasp : CharacterBody3D
     {
 
-        // initialize states
-        // stateIdle = new MobWaspState(){blackboard = this};
-        // stateWarn = new MobWaspState(){blackboard = this};
-        // stateAttack = new MobWaspState(){blackboard = this};
-        // stateHit = new MobWaspState(){blackboard = this};
-        // stateDie = new MobWaspState(){blackboard = this};
+        public StateMachine machine = new StateMachine();
+        public State stateIdle,
+            stateWarn,
+            stateAttack,
+            stateHit,
+            stateDie;
 
-        // set first state in machine
-        machine.SetState(stateIdle);
-    }
+        [Export]
+        public float warnDistance = 10,
+            attackDistance = 5,
+            hitDistance = 0.5f;
 
 
 
-    public override void _PhysicsProcess(double delta)
-    {
-        // time check
-        if(Engine.TimeScale == 0)
+        public override void _Ready()
         {
-            return;
-        }
 
-        // run machine
-        if(machine != null && machine.CurrentState != null)
-        {
-            machine.CurrentState.RunState(delta);
-            machine.SetState(machine.CurrentState.Transition());
+            // initialize states
+            stateIdle = new MobWaspStateIdle(){blackboard = this};
+            stateWarn = new MobWaspStateWarn(){blackboard = this};
+            stateAttack = new MobWaspStateAttack(){blackboard = this};
+            stateHit = new MobWaspStateHit(){blackboard = this};
+            stateDie = new MobWaspStateDie(){blackboard = this};
+
+            // set first state in machine
+            machine.SetState(stateIdle);
         }
 
 
-        // debug
-        // if(debugText != machine.CurrentState.ToString())
-        // {
-        // 	GD.Print(machine.CurrentState.ToString());
-        // 	debugText = machine.CurrentState.ToString();
-        // }   
+
+        public override void _PhysicsProcess(double delta)
+        {
+            // time check
+            if(Engine.TimeScale == 0)
+            {
+                return;
+            }
+
+            // run machine
+            if(machine != null && machine.CurrentState != null)
+            {
+                machine.CurrentState.RunState(delta);
+                machine.SetState(machine.CurrentState.Transition());
+            }
+
+
+            // debug
+            // if(debugText != machine.CurrentState.ToString())
+            // {
+            // 	GD.Print(machine.CurrentState.ToString());
+            // 	debugText = machine.CurrentState.ToString();
+            // }   
+        }
     }
 }

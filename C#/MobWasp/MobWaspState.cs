@@ -1,8 +1,11 @@
 using Godot;
 using System;
 
-public partial class MobWaspState : State
-{
+namespace MobWasp
+{   
+    public partial class MobWaspState : State
+    {
 
-    public MobWasp blackboard;
+        public MobWasp blackboard;
+    }
 }
