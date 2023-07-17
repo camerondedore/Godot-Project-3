@@ -12,6 +12,9 @@ namespace MobWasp
 
         public override void RunState(double delta)
         {
+            // look for enemy
+            blackboard.enemy = blackboard.detection.LookForEnemy();
+
             
         }
 
@@ -33,6 +36,31 @@ namespace MobWasp
 
         public override State Transition()
         {
+            // check for enemy
+            if(blackboard.enemy == null)
+            {
+                // cooldown
+                return blackboard.stateWarnCooldown;
+            }
+
+            // get distance squared to enemy
+            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+
+            // check if enemy is close enough for attack
+            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
+            {
+                // attack
+                return blackboard.stateAttack;
+            }
+
+            // check if enemy is too far for warning
+            if(distanceToEnemySqr > blackboard.warnDistanceSqr)
+            {
+                // cooldown
+                return blackboard.stateWarnCooldown;
+            }
+            
+           
             return this;
         }
     }

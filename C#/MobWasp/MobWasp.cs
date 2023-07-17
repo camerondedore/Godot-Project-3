@@ -9,6 +9,7 @@ namespace MobWasp
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
             stateWarn,
+            stateWarnCooldown,
             stateAttack,
             stateHit,
             stateDie;
@@ -16,18 +17,23 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
-        public float warnDistance = 10,
-            attackDistance = 5,
-            hitDistance = 0.5f;
+        public float warnDistanceSqr = 100,
+            attackDistanceSqr = 25,
+            hitDistanceSqr = 0.25f;
+        
+        public MobFaction enemy;
+        public Vector3 startPosition;
 
 
 
         public override void _Ready()
         {
-
+            startPosition = GlobalPosition;
+            
             // initialize states
             stateIdle = new MobWaspStateIdle(){blackboard = this};
             stateWarn = new MobWaspStateWarn(){blackboard = this};
+            stateWarnCooldown = new MobWaspStateWarnCooldown(){blackboard = this};
             stateAttack = new MobWaspStateAttack(){blackboard = this};
             stateHit = new MobWaspStateHit(){blackboard = this};
             stateDie = new MobWaspStateDie(){blackboard = this};
@@ -40,28 +46,20 @@ namespace MobWasp
 
 
 
-        public override void _PhysicsProcess(double delta)
-        {
-            // time check
-            // if(Engine.TimeScale == 0)
-            // {
-            //     return;
-            // }
+        // public override void _PhysicsProcess(double delta)
+        // {
+        //     time check
+        //     if(Engine.TimeScale == 0)
+        //     {
+        //         return;
+        //     }
 
-            // run machine
-            // if(machine != null && machine.CurrentState != null)
-            // {
-            //     machine.CurrentState.RunState(delta);
-            //     machine.SetState(machine.CurrentState.Transition());
-            // }
-
-
-            // debug
-            // if(debugText != machine.CurrentState.ToString())
-            // {
-            // 	GD.Print(machine.CurrentState.ToString());
-            // 	debugText = machine.CurrentState.ToString();
-            // }   
-        }
+        //     run machine
+        //     if(machine != null && machine.CurrentState != null)
+        //     {
+        //         machine.CurrentState.RunState(delta);
+        //         machine.SetState(machine.CurrentState.Transition());
+        //     }
+        // }
     }
 }
