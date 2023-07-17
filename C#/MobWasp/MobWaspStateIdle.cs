@@ -12,7 +12,12 @@ namespace MobWasp
 
         public override void RunState(double delta)
         {
-            
+            MobFaction enemy = blackboard.detection.LookForEnemy();
+
+            if(enemy != null)
+            {
+                blackboard.LookAt(enemy.GlobalPosition);
+            }
         }
 
 

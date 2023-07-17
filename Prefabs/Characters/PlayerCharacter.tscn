@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=38 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -33,6 +33,7 @@
 [ext_resource type="AudioStream" uid="uid://dcv3yunkkpab4" path="res://Audio/ranger-bandage-craft.wav" id="23_gbit2"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowWeighted.tscn" id="27_121vu"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowNet.tscn" id="28_t6rk3"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -384,5 +385,9 @@ bowDrawSound = ExtResource("20_no75w")
 
 [node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow"]
 script = ExtResource("20_4jbn7")
+
+[node name="Faction" type="Node3D" parent="."]
+script = ExtResource("34_61alq")
+faction = 1
 
 [editable path="character-player"]

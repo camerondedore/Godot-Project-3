@@ -6,13 +6,15 @@ namespace MobWasp
     public partial class MobWasp : CharacterBody3D
     {
 
-        public StateMachine machine = new StateMachine();
+        public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
             stateWarn,
             stateAttack,
             stateHit,
             stateDie;
 
+        [Export]
+        public MobDetection detection;
         [Export]
         public float warnDistance = 10,
             attackDistance = 5,
@@ -32,6 +34,8 @@ namespace MobWasp
 
             // set first state in machine
             machine.SetState(stateIdle);
+
+            machine.Enable();
         }
 
 
@@ -39,17 +43,17 @@ namespace MobWasp
         public override void _PhysicsProcess(double delta)
         {
             // time check
-            if(Engine.TimeScale == 0)
-            {
-                return;
-            }
+            // if(Engine.TimeScale == 0)
+            // {
+            //     return;
+            // }
 
             // run machine
-            if(machine != null && machine.CurrentState != null)
-            {
-                machine.CurrentState.RunState(delta);
-                machine.SetState(machine.CurrentState.Transition());
-            }
+            // if(machine != null && machine.CurrentState != null)
+            // {
+            //     machine.CurrentState.RunState(delta);
+            //     machine.SetState(machine.CurrentState.Transition());
+            // }
 
 
             // debug

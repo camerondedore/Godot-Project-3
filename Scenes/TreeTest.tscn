@@ -811,7 +811,7 @@ mesh = SubResource("CylinderMesh_8ru0d")
 shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="MobWasp" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(-0.606974, 0, 0.794722, 0, 1, 0, -0.794722, 0, -0.606974, 7, 0.222131, -24)
+transform = Transform3D(-0.923016, 0, 0.384763, 0, 1, 0, -0.384763, 0, -0.923016, 7, 0.222131, -24)
 
 [node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]
 transform = Transform3D(-0.632002, 0, -0.774967, 0, 1, 0, 0.774967, 0, -0.632002, -9.70234, 0.35, -6.71353)
