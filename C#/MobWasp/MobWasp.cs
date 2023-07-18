@@ -17,9 +17,11 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
-        public float warnDistanceSqr = 100,
-            attackDistanceSqr = 25,
-            hitDistanceSqr = 0.25f;
+        public Vector3 warnOffset = new Vector3(0, 1, 0);
+        [Export]
+        public float attackDistanceSqr = 25,
+            hitDistanceSqr = 0.25f,
+            speed = 4.5f;
         
         public MobFaction enemy;
         public Vector3 startPosition;

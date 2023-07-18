@@ -37,14 +37,8 @@ namespace MobWasp
             // check for enemy
             if(blackboard.enemy != null)
             {
-                // get distance squared to enemy
-                var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
-
-                if(distanceToEnemySqr < blackboard.warnDistanceSqr)
-                {
-                    // warn
-                    return blackboard.stateWarn;
-                }
+                // warn
+                return blackboard.stateWarn;                
             }
 
 

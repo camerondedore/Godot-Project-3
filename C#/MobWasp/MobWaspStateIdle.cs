@@ -14,6 +14,12 @@ namespace MobWasp
         {
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy();
+
+            if(blackboard.GlobalPosition != blackboard.startPosition)
+            {
+                // move to start position
+                blackboard.GlobalPosition = blackboard.GlobalPosition.MoveToward(blackboard.startPosition, blackboard.speed * ((float) delta));
+            }
         }
 
 
@@ -40,17 +46,9 @@ namespace MobWasp
                 return this;
             }
 
-            // get distance squared to enemy
-            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
-
-            if(distanceToEnemySqr < blackboard.warnDistanceSqr)
-            {
-                // warn
-                return blackboard.stateWarn;
-            }
-
-            // enemy is too far to warn
-            return this;
+            // enemy is within range
+            // warn
+            return blackboard.stateWarn;
         }
     }
 }
