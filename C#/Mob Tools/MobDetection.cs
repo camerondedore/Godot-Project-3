@@ -6,19 +6,16 @@ public partial class MobDetection : RayCast3D
 {
 
     [Export]
-    Node3D myFactionNode;
+    public MobFaction myFaction;
 
     [Export]
     public float maxRangeSqr = 100;
-    
-    MobFaction myFaction;
+
 
 
     public override void _Ready()
     {
         Enabled = false;
-
-        myFaction = (MobFaction) myFactionNode;
     }
 
 

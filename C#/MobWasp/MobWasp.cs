@@ -15,6 +15,8 @@ namespace MobWasp
             stateDie;
 
         [Export]
+        public MobWaspModelController model;
+        [Export]
         public MobDetection detection;
         [Export]
         public Vector3 warnOffset = new Vector3(0, 1, 0);
