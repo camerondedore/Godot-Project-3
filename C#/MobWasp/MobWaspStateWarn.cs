@@ -22,11 +22,8 @@ namespace MobWasp
         {
             blackboard.useOffset = true;
 
-            // get warn position
-            var targetPosition = blackboard.startPosition + blackboard.warnOffset;
-
             // target warn position
-            blackboard.targetPosition = targetPosition;
+            blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
 
             GD.Print("warn");            
         }

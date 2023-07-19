@@ -22,7 +22,8 @@ motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
 warnOffset = Vector3(0, 2, 0)
-speed = 2.0
+acceleration = 10.0
+offsetSize = 0.5
 offsetSpeed = 1.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

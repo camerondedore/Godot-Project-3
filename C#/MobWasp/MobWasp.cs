@@ -12,6 +12,7 @@ namespace MobWasp
             stateWarnCooldown,
             stateReturn,
             stateAttack,
+            stateAttackCooldown,
             stateHit,
             stateDie;
 
@@ -44,6 +45,7 @@ namespace MobWasp
             stateWarnCooldown = new MobWaspStateWarnCooldown(){blackboard = this};
             stateReturn = new MobWaspStateReturn(){blackboard = this};
             stateAttack = new MobWaspStateAttack(){blackboard = this};
+            stateAttackCooldown = new MobWaspStateAttackCooldown(){blackboard = this};
             stateHit = new MobWaspStateHit(){blackboard = this};
             stateDie = new MobWaspStateDie(){blackboard = this};
 
@@ -73,12 +75,12 @@ namespace MobWasp
                 offset *= offsetSize;
                 offset = ToGlobal(offset) - GlobalPosition;
 
-                newVelocity = ((targetPosition + offset) - GlobalPosition) * speed;
+                newVelocity = ((targetPosition + offset) - GlobalPosition).Normalized() * speed;
             }
             else if(GlobalPosition != targetPosition)
             {
                 // normal movement
-                newVelocity = (targetPosition - GlobalPosition) * speed;
+                newVelocity = (targetPosition - GlobalPosition).Normalized() * speed;
             }
 
             Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
@@ -89,8 +91,13 @@ namespace MobWasp
 
             if(enemy != null)
             {
-                // look   
+                // look at enemy
                 LookAt(enemy.GlobalPosition);
+            }
+            else if(Velocity != Vector3.Zero)
+            {
+                // look in direction of movement
+                LookAt(GlobalPosition + Velocity);
             }
         }
     }
