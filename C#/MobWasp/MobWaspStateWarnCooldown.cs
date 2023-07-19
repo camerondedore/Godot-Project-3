@@ -21,6 +21,8 @@ namespace MobWasp
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
+
+            GD.Print("warn cooldown");
         }
 
 
@@ -45,8 +47,8 @@ namespace MobWasp
             // wait for cooldown period
             if(EngineTime.timePassed > startTime + 3)
             {
-                // idle
-                return blackboard.stateIdle;
+                // return
+                return blackboard.stateReturn;
             }
 
             return this;

@@ -3,7 +3,7 @@ using System;
 
 namespace MobWasp
 {
-    public partial class MobWaspStateIdle : MobWaspState
+    public partial class MobWaspStateReturn : MobWaspState
     {
 
 
@@ -20,11 +20,10 @@ namespace MobWasp
 
         public override void StartState()
         {
-            blackboard.useOffset = false;
-
+            // target start position
             blackboard.targetPosition = blackboard.startPosition;
 
-            GD.Print("idle");
+            GD.Print("return");
         }
 
 
@@ -38,15 +37,21 @@ namespace MobWasp
 
         public override State Transition()
         {
-            // check for enemy
-            if(blackboard.enemy == null)
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 1f)
             {
-                return this;
+                // idle
+                return blackboard.stateIdle;
             }
 
-            // enemy is within range
-            // warn
-            return blackboard.stateWarn;
+            // check for enemy
+            if(blackboard.enemy != null)
+            {
+                // enemy is within range
+                // warn
+                return blackboard.stateWarn;
+            }
+
+            return this;
         }
     }
 }

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=7 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
-[ext_resource type="Script" path="res://C#/MobWasp/MobWaspModelController.cs" id="2_d3ia6"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_muehp"]
 
@@ -16,25 +15,23 @@ height = 0.4
 [sub_resource type="SphereShape3D" id="SphereShape3D_khuxh"]
 radius = 0.3
 
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("model", "detection")]
+[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection")]
 collision_layer = 2
 collision_mask = 19
+motion_mode = 1
 script = ExtResource("1_vbe2t")
-model = NodePath("ModelController")
 detection = NodePath("Detection")
+warnOffset = Vector3(0, 2, 0)
+speed = 2.0
+offsetSpeed = 1.5
 
-[node name="ModelController" type="Node3D" parent="."]
-script = ExtResource("2_d3ia6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelController"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.227549)
 mesh = SubResource("SphereMesh_urujx")
-skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="ModelController"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.182788)
 mesh = SubResource("SphereMesh_4mt4f")
-skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_khuxh")

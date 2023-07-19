@@ -13,22 +13,22 @@ namespace MobWasp
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy();
-
-            var targetPosition = blackboard.startPosition + blackboard.warnOffset;
-
-            if(blackboard.GlobalPosition != targetPosition)
-            {
-                // move to warn position
-                blackboard.GlobalPosition = blackboard.GlobalPosition.MoveToward(targetPosition, blackboard.speed * ((float) delta));
-            }
+            blackboard.enemy = blackboard.detection.LookForEnemy();            
         }
 
 
 
         public override void StartState()
         {
-            
+            blackboard.useOffset = true;
+
+            // get warn position
+            var targetPosition = blackboard.startPosition + blackboard.warnOffset;
+
+            // target warn position
+            blackboard.targetPosition = targetPosition;
+
+            GD.Print("warn");            
         }
 
 

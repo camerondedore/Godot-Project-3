@@ -10,12 +10,11 @@ namespace MobWasp
         public State stateIdle,
             stateWarn,
             stateWarnCooldown,
+            stateReturn,
             stateAttack,
             stateHit,
             stateDie;
 
-        [Export]
-        public MobWaspModelController model;
         [Export]
         public MobDetection detection;
         [Export]
@@ -23,10 +22,14 @@ namespace MobWasp
         [Export]
         public float attackDistanceSqr = 25,
             hitDistanceSqr = 0.25f,
-            speed = 4.5f;
+            speed = 3.5f,
+            offsetSize = 0.33f,
+            offsetSpeed = 1f;
         
         public MobFaction enemy;
-        public Vector3 startPosition;
+        public Vector3 startPosition,
+            targetPosition;
+        public bool useOffset = false;
 
 
 
@@ -38,6 +41,7 @@ namespace MobWasp
             stateIdle = new MobWaspStateIdle(){blackboard = this};
             stateWarn = new MobWaspStateWarn(){blackboard = this};
             stateWarnCooldown = new MobWaspStateWarnCooldown(){blackboard = this};
+            stateReturn = new MobWaspStateReturn(){blackboard = this};
             stateAttack = new MobWaspStateAttack(){blackboard = this};
             stateHit = new MobWaspStateHit(){blackboard = this};
             stateDie = new MobWaspStateDie(){blackboard = this};
@@ -50,20 +54,37 @@ namespace MobWasp
 
 
 
-        // public override void _PhysicsProcess(double delta)
-        // {
-        //     time check
-        //     if(Engine.TimeScale == 0)
-        //     {
-        //         return;
-        //     }
+        public override void _PhysicsProcess(double delta)
+        {
+            // time check
+			if(Engine.TimeScale == 0)
+			{
+				return;
+			}
 
-        //     run machine
-        //     if(machine != null && machine.CurrentState != null)
-        //     {
-        //         machine.CurrentState.RunState(delta);
-        //         machine.SetState(machine.CurrentState.Transition());
-        //     }
-        // }
+            // get velocity
+            if(useOffset)
+            {
+                var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
+                offset *= offsetSize;
+                offset = ToGlobal(offset) - GlobalPosition;
+
+                Velocity = ((targetPosition + offset) - GlobalPosition) * speed;
+            }
+            else if(GlobalPosition != targetPosition)
+            {
+                Velocity = (targetPosition - GlobalPosition) * speed;
+            }
+
+            // apply movement
+            MoveAndSlide();
+
+
+            if(enemy != null)
+            {
+                // look   
+                LookAt(enemy.GlobalPosition);
+            }
+        }
     }
 }
