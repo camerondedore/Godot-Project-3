@@ -23,6 +23,7 @@ namespace MobWasp
         public float attackDistanceSqr = 25,
             hitDistanceSqr = 0.25f,
             speed = 3.5f,
+            acceleration = 4,
             offsetSize = 0.33f,
             offsetSpeed = 1f;
         
@@ -61,20 +62,26 @@ namespace MobWasp
 			{
 				return;
 			}
+            
+            var newVelocity = Velocity;
 
             // get velocity
             if(useOffset)
             {
+                // use figure 8 offset
                 var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
                 offset *= offsetSize;
                 offset = ToGlobal(offset) - GlobalPosition;
 
-                Velocity = ((targetPosition + offset) - GlobalPosition) * speed;
+                newVelocity = ((targetPosition + offset) - GlobalPosition) * speed;
             }
             else if(GlobalPosition != targetPosition)
             {
-                Velocity = (targetPosition - GlobalPosition) * speed;
+                // normal movement
+                newVelocity = (targetPosition - GlobalPosition) * speed;
             }
+
+            Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
 
             // apply movement
             MoveAndSlide();
