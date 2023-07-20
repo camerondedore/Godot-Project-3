@@ -27,6 +27,8 @@ namespace MobWasp
         {
             blackboard.useOffset = false;
 
+            blackboard.updateLook = false;
+
             GD.Print("attack");
         }
 

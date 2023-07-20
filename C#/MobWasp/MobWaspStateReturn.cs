@@ -22,8 +22,8 @@ namespace MobWasp
         {
             blackboard.updateLook = true;
 
-            // target start position
-            blackboard.targetPosition = blackboard.startPosition;
+            // target takeoff position
+            blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
 
             GD.Print("return");
         }

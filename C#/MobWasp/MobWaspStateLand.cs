@@ -48,7 +48,7 @@ namespace MobWasp
             }
 
             // check for arrival
-            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.25f)
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.56f)
             {
                 // idle
                 return blackboard.stateIdle;

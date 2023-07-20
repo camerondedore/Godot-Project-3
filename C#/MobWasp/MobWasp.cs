@@ -74,11 +74,14 @@ namespace MobWasp
             if(useOffset)
             {
                 // use figure 8 offset
-                var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
-                offset *= offsetSize;
-                offset = ToGlobal(offset) - GlobalPosition;
+                // var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
+                // offset *= offsetSize;
+                // offset = ToGlobal(offset) - GlobalPosition;
 
-                newVelocity = ((targetPosition + offset) - GlobalPosition).Normalized() * speed;
+                //newVelocity = ((targetPosition + offset) - GlobalPosition).Normalized() * speed;
+                newVelocity = (targetPosition - GlobalPosition).Normalized() * speed;
+
+                newVelocity = newVelocity.Clamp(Vector3.Zero, );
             }
             else if(GlobalPosition != targetPosition)
             {

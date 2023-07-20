@@ -22,6 +22,8 @@ namespace MobWasp
         {
             startTime = EngineTime.timePassed;
 
+            blackboard.updateLook = false;
+
             blackboard.targetPosition = blackboard.GlobalPosition;
 
             GD.Print("cooldown");
