@@ -43,7 +43,7 @@ namespace MobWasp
             if(blackboard.enemy == null)
             {
                 // cooldown
-                return blackboard.stateWarnCooldown;
+                return blackboard.stateCooldown;
             }
 
             // get distance squared to enemy

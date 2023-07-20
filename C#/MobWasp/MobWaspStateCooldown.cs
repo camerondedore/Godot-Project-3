@@ -3,7 +3,7 @@ using System;
 
 namespace MobWasp
 {
-    public partial class MobWaspStateWarnCooldown : MobWaspState
+    public partial class MobWaspStateCooldown : MobWaspState
     {
 
         double startTime;
@@ -24,7 +24,7 @@ namespace MobWasp
 
             blackboard.targetPosition = blackboard.GlobalPosition;
 
-            GD.Print("warn cooldown");
+            GD.Print("cooldown");
         }
 
 

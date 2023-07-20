@@ -3,7 +3,7 @@ using System;
 
 namespace MobWasp
 {
-    public partial class MobWaspStateAttack : MobWaspState
+    public partial class MobWaspStateTakeoff : MobWaspState
     {
 
 
@@ -13,21 +13,17 @@ namespace MobWasp
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy();
-
-            if(blackboard.enemy != null)
-            {
-                blackboard.targetPosition = blackboard.enemy.GlobalPosition;
-            }
+            blackboard.enemy = blackboard.detection.LookForEnemy();            
         }
 
 
 
         public override void StartState()
         {
-            blackboard.useOffset = false;
+             // target warn position
+            blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
 
-            GD.Print("attack");
+            GD.Print("takeoff");            
         }
 
 
@@ -51,18 +47,11 @@ namespace MobWasp
             // get distance squared to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
-            // check if enemy is too far for attack
-            if(distanceToEnemySqr > blackboard.attackDistanceSqr)
+            // check for arrival
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.25f)
             {
-                // cooldown
-                return blackboard.stateCooldown;
-            }
-
-            // check if enemy is close enough to hit
-            if(distanceToEnemySqr < blackboard.hitDistanceSqr)
-            {
-                // hit
-                return blackboard.stateHit;
+                // warn
+                return blackboard.stateWarn;
             }
 
             return this;

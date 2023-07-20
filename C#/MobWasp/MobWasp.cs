@@ -8,11 +8,12 @@ namespace MobWasp
 
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
+            stateTakeoff,
+            stateLand,
             stateWarn,
-            stateWarnCooldown,
+            stateCooldown,
             stateReturn,
             stateAttack,
-            stateAttackCooldown,
             stateHit,
             stateDie;
 
@@ -31,7 +32,8 @@ namespace MobWasp
         public MobFaction enemy;
         public Vector3 startPosition,
             targetPosition;
-        public bool useOffset = false;
+        public bool useOffset = false,
+            updateLook = false;
 
 
 
@@ -41,11 +43,12 @@ namespace MobWasp
             
             // initialize states
             stateIdle = new MobWaspStateIdle(){blackboard = this};
+            stateTakeoff = new MobWaspStateTakeoff(){blackboard = this};
+            stateLand = new MobWaspStateLand(){blackboard = this};
             stateWarn = new MobWaspStateWarn(){blackboard = this};
-            stateWarnCooldown = new MobWaspStateWarnCooldown(){blackboard = this};
+            stateCooldown = new MobWaspStateCooldown(){blackboard = this};
             stateReturn = new MobWaspStateReturn(){blackboard = this};
             stateAttack = new MobWaspStateAttack(){blackboard = this};
-            stateAttackCooldown = new MobWaspStateAttackCooldown(){blackboard = this};
             stateHit = new MobWaspStateHit(){blackboard = this};
             stateDie = new MobWaspStateDie(){blackboard = this};
 
@@ -91,13 +94,21 @@ namespace MobWasp
 
             if(enemy != null)
             {
+                // flatten look direction
+                var target = enemy.GlobalPosition;
+                target.Y = GlobalPosition.Y;
+
                 // look at enemy
-                LookAt(enemy.GlobalPosition);
+                LookAt(target);
             }
-            else if(Velocity != Vector3.Zero)
+            else if(updateLook && Velocity != Vector3.Zero)
             {
+                // flatten look direction
+                var target = GlobalPosition + Velocity;
+                target.Y = GlobalPosition.Y;
+
                 // look in direction of movement
-                LookAt(GlobalPosition + Velocity);
+                LookAt(target);
             }
         }
     }

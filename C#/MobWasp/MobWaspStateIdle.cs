@@ -20,8 +20,6 @@ namespace MobWasp
 
         public override void StartState()
         {
-            blackboard.useOffset = false;
-
             blackboard.targetPosition = blackboard.startPosition;
 
             GD.Print("idle");
@@ -45,8 +43,8 @@ namespace MobWasp
             }
 
             // enemy is within range
-            // warn
-            return blackboard.stateWarn;
+            // takeoff
+            return blackboard.stateTakeoff;
         }
     }
 }

@@ -20,6 +20,8 @@ namespace MobWasp
 
         public override void StartState()
         {
+            blackboard.updateLook = true;
+
             // target start position
             blackboard.targetPosition = blackboard.startPosition;
 
@@ -39,8 +41,8 @@ namespace MobWasp
         {
             if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 1f)
             {
-                // idle
-                return blackboard.stateIdle;
+                // land
+                return blackboard.stateLand;
             }
 
             // check for enemy

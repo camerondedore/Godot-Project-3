@@ -3,10 +3,10 @@ using System;
 
 namespace MobWasp
 {
-    public partial class MobWaspStateAttackCooldown : MobWaspState
+    public partial class MobWaspStateLand : MobWaspState
    {
 
-        double startTime;
+
 
 
 
@@ -20,13 +20,13 @@ namespace MobWasp
 
         public override void StartState()
         {
-            startTime = EngineTime.timePassed;
+            blackboard.useOffset = false;
 
-            blackboard.useOffset = true;
+            blackboard.updateLook = false;
 
-            blackboard.targetPosition = blackboard.GlobalPosition;
+            blackboard.targetPosition = blackboard.startPosition;
 
-            GD.Print("attack cooldown");
+            GD.Print("land");
         }
 
 
@@ -43,16 +43,15 @@ namespace MobWasp
             // check for enemy
             if(blackboard.enemy != null)
             {
-                // warn
-                return blackboard.stateAttack;                
+                // takeoff
+                return blackboard.stateTakeoff;                
             }
 
-
-            // wait for cooldown period
-            if(EngineTime.timePassed > startTime + 3)
+            // check for arrival
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.25f)
             {
-                // return
-                return blackboard.stateReturn;
+                // idle
+                return blackboard.stateIdle;
             }
 
             return this;
