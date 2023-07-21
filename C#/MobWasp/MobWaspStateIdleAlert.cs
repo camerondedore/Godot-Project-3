@@ -3,7 +3,7 @@ using System;
 
 namespace MobWasp
 {
-    public partial class MobWaspStateIdle : MobWaspState
+    public partial class MobWaspStateIdleAlert : MobWaspState
     {
 
 

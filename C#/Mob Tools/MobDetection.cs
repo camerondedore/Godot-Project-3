@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 public partial class MobDetection : RayCast3D
@@ -20,7 +21,7 @@ public partial class MobDetection : RayCast3D
 
 
 
-    public MobFaction LookForEnemy()
+    public MobFaction LookForEnemy(float maxRangeSqr)
     {
         // get list of enemies
         var enemies = MobFaction.mobs.Where(m => m.faction != myFaction.faction).ToArray();
@@ -54,5 +55,15 @@ public partial class MobDetection : RayCast3D
 
         // no enemy found or no enemy visable
         return null;
+    }
+
+
+
+    public List<MobFaction> GetAllies(float maxRangeSqr)
+    {
+        // get list of allies within range
+        var allies = MobFaction.mobs.Where(m => m.faction == myFaction.faction).Where(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) < maxRangeSqr).ToList();
+
+        return allies;
     }
 }

@@ -8,6 +8,7 @@ namespace MobWasp
 
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
+            stateIdleAlert,
             stateTakeoff,
             stateLand,
             stateWarn,
@@ -22,7 +23,9 @@ namespace MobWasp
         [Export]
         public Vector3 warnOffset = new Vector3(0, 1, 0);
         [Export]
-        public float attackDistanceSqr = 25,
+        public float maxRangeForEnemies,
+            maxRangeForAllies,
+            attackDistanceSqr = 25,
             hitDistanceSqr = 0.25f,
             speed = 3.5f,
             acceleration = 4,
@@ -30,10 +33,13 @@ namespace MobWasp
             offsetSpeed = 1f;
         
         public MobFaction enemy;
+        public MobFaction[] allies;
         public Vector3 startPosition,
             targetPosition;
+        public int startinyAllyCount;
         public bool useOffset = false,
-            updateLook = false;
+            updateLook = false,
+            allyDied = false;
 
 
 
@@ -43,6 +49,7 @@ namespace MobWasp
             
             // initialize states
             stateIdle = new MobWaspStateIdle(){blackboard = this};
+            stateIdleAlert = new MobWaspStateIdleAlert(){blackboard = this};
             stateTakeoff = new MobWaspStateTakeoff(){blackboard = this};
             stateLand = new MobWaspStateLand(){blackboard = this};
             stateWarn = new MobWaspStateWarn(){blackboard = this};
