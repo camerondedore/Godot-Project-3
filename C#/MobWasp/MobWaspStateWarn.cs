@@ -20,11 +20,15 @@ namespace MobWasp
 
         public override void StartState()
         {
+            if(blackboard.useOffset == false)
+            {
+                blackboard.targetPosition = blackboard.GlobalPosition;
+            }
+
             blackboard.useOffset = true;
 
             blackboard.updateLook = false;
 
-            blackboard.targetPosition = blackboard.GlobalPosition;
 
             GD.Print("warn");            
         }

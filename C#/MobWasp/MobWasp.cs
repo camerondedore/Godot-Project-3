@@ -74,19 +74,28 @@ namespace MobWasp
             if(useOffset)
             {
                 // use figure 8 offset
-                // var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
-                // offset *= offsetSize;
-                // offset = ToGlobal(offset) - GlobalPosition;
+                var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
+                offset *= offsetSize;
+                offset = ToGlobal(offset) - GlobalPosition;
 
-                //newVelocity = ((targetPosition + offset) - GlobalPosition).Normalized() * speed;
-                newVelocity = (targetPosition - GlobalPosition).Normalized() * speed;
+                var vectorToTarget = (targetPosition + offset) - GlobalPosition;
+                var disanceToTarget = vectorToTarget.Length();
 
-                newVelocity = newVelocity.Clamp(Vector3.Zero, );
+                // clamp speed using next tic's distance traveled
+                var clampedSpeed = Mathf.Clamp(speed * ((float) delta), 0, disanceToTarget) / ((float) delta);
+
+                newVelocity = vectorToTarget.Normalized() * clampedSpeed;
             }
             else if(GlobalPosition != targetPosition)
             {
                 // normal movement
-                newVelocity = (targetPosition - GlobalPosition).Normalized() * speed;
+                var vectorToTarget = targetPosition - GlobalPosition;
+                var disanceToTarget = vectorToTarget.Length();
+                
+                // clamp speed using next tic's distance traveled
+                var clampedSpeed = Mathf.Clamp(speed * ((float) delta), 0, disanceToTarget) / ((float) delta);
+
+                newVelocity = vectorToTarget.Normalized() * clampedSpeed;
             }
 
             Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));

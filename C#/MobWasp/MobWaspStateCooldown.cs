@@ -22,9 +22,15 @@ namespace MobWasp
         {
             startTime = EngineTime.timePassed;
 
+            if(blackboard.useOffset == false)
+            {
+                blackboard.targetPosition = blackboard.GlobalPosition;
+            }
+
+            blackboard.useOffset = true;
+
             blackboard.updateLook = false;
 
-            blackboard.targetPosition = blackboard.GlobalPosition;
 
             GD.Print("cooldown");
         }

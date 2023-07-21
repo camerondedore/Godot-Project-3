@@ -20,6 +20,8 @@ namespace MobWasp
 
         public override void StartState()
         {
+            blackboard.useOffset = false;
+
             blackboard.updateLook = true;
 
             // target takeoff position
