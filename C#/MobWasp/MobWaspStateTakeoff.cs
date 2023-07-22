@@ -39,27 +39,24 @@ namespace MobWasp
 
         public override State Transition()
         {
-            // get distance squared to enemy
-            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
-
             // check for arrival
             if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.56f)
             {
                 // check for enemy
-                if(blackboard.enemy == null)
+                if(blackboard.enemy != null)
                 {
-                    // cooldown
-                    return blackboard.stateCooldown;
+                    // warn
+                    return blackboard.stateWarn;
                 }
 
-                // warn
-                return blackboard.stateWarn;
-            }
+                if(blackboard.allyDied)
+                {
+                    // idle alert
+                    return blackboard.stateIdleAlert;
+                }
 
-            if(blackboard.allyDied)
-            {
-                // idle alert
-                return blackboard.stateIdleAlert;
+                // cooldown
+                return blackboard.stateCooldown;
             }
 
             return this;

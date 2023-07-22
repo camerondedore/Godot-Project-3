@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MobWasp
 {
-    public partial class MobWasp : CharacterBody3D
+    public partial class MobWasp : CharacterBody3D, IBowTarget
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -22,6 +22,9 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
+        public string targetName = "Wasp",
+            arrowType = "weighted";
+        [Export]
         public Vector3 warnOffset = new Vector3(0, 1, 0);
         [Export]
         public float maxRangeForEnemies = 144,
@@ -37,7 +40,7 @@ namespace MobWasp
         public List<MobFaction> allies = new List<MobFaction>();
         public Vector3 startPosition,
             targetPosition;
-        public int startinyAllyCount;
+        public int startingAllyCount;
         public bool useOffset = false,
             updateLook = false,
             allyDied = false;
@@ -130,6 +133,47 @@ namespace MobWasp
                 // look in direction of movement
                 LookAt(target);
             }
+        }
+
+
+
+        public string GetName()
+        {
+            return targetName;
+        }
+
+
+
+        public string GetArrowType()
+        {
+            return arrowType;
+        }
+
+
+
+        public Vector3 GetGlobalPosition()
+        {
+            try
+            {
+                return GlobalPosition;
+            }
+            catch
+            {
+                // target was disposed
+                // nothing more to do
+                return Vector3.Zero;
+            }
+        }
+
+
+
+        public void Hit()
+        {
+            // wasp is dead
+            machine.SetState(stateDie);
+
+            // disable script
+            //SetScript(new Variant());
         }
     }
 }

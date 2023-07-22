@@ -20,6 +20,9 @@ namespace MobWasp
         public override void StartState()
         {
             blackboard.updateLook = false;
+
+            // temporary death
+            blackboard.QueueFree();
         }
 
 
