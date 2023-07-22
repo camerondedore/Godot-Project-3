@@ -13,7 +13,7 @@ namespace MobWasp
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);            
+            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);     
         }
 
 
@@ -55,7 +55,7 @@ namespace MobWasp
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
             // check if enemy is close enough for attack
-            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
+            if(distanceToEnemySqr < blackboard.attackDistanceSqr || blackboard.allyDied)
             {
                 // attack
                 return blackboard.stateAttack;

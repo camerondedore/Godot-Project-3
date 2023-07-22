@@ -21,6 +21,23 @@ namespace MobWasp
         {
             blackboard.updateLook = false;
 
+            // alert nearby allies that this mob died
+            foreach(var ally in blackboard.allies)
+            {
+                try
+                {
+                    // temporary casting; may convert to interface later
+                    var allyBase = (MobWasp) ally.Owner;
+                    allyBase.allyDied = true;
+                }
+                catch
+                {
+                    GD.Print("Mob has been disposed - skipping");
+                }
+            }
+
+            GD.Print("die");
+
             // temporary death
             blackboard.QueueFree();
         }

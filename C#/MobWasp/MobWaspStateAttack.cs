@@ -53,8 +53,8 @@ namespace MobWasp
             // get distance squared to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
-            // check if enemy is too far for attack
-            if(distanceToEnemySqr > blackboard.attackDistanceSqr)
+            // check if enemy is too far for attack and if ally has not died
+            if(distanceToEnemySqr > blackboard.attackDistanceSqr && blackboard.allyDied == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;

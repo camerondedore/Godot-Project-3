@@ -45,11 +45,17 @@ namespace MobWasp
             updateLook = false,
             allyDied = false;
 
+        float offsetPhase = 0;
+
 
 
         public override void _Ready()
         {
             startPosition = GlobalPosition;
+            targetPosition = startPosition;
+
+            offsetPhase = GD.Randf() * 3.14f;
+            offsetSpeed *= 1 + (GD.Randf() - 0.5f) * 0.1f;
             
             // initialize states
             stateIdle = new MobWaspStateIdle(){blackboard = this};
@@ -65,8 +71,20 @@ namespace MobWasp
 
             // set first state in machine
             machine.SetState(stateIdle);
+        }
 
+
+
+        public override void _EnterTree()
+        {
             machine.Enable();
+        }
+
+
+
+        public override void _ExitTree()
+        {
+            machine.Disable();
         }
 
 
@@ -79,40 +97,40 @@ namespace MobWasp
 				return;
 			}
             
-            var newVelocity = Velocity;
+            var moveTarget = targetPosition;
 
-            // get velocity
+            // check if using offset
             if(useOffset)
             {
                 // use figure 8 offset
-                var offset = new Vector3((float) Mathf.Sin(EngineTime.timePassed * offsetSpeed), (float) Mathf.Sin(EngineTime.timePassed * offsetSpeed * 2), 0);
+                var timeCursorHorizontal = EngineTime.timePassed * offsetSpeed + offsetPhase;
+                var timeCursorVertical = EngineTime.timePassed * offsetSpeed * 2 + offsetPhase;
+                var offset = new Vector3((float) Mathf.Sin(timeCursorHorizontal), (float) Mathf.Sin(timeCursorVertical), 0);
                 offset *= offsetSize;
                 offset = ToGlobal(offset) - GlobalPosition;
 
-                var vectorToTarget = (targetPosition + offset) - GlobalPosition;
-                var disanceToTarget = vectorToTarget.Length();
-
-                // clamp speed using next tic's distance traveled
-                var clampedSpeed = Mathf.Clamp(speed * ((float) delta), 0, disanceToTarget) / ((float) delta);
-
-                newVelocity = vectorToTarget.Normalized() * clampedSpeed;
+                moveTarget = targetPosition + offset;
             }
-            else if(GlobalPosition != targetPosition)
+            
+            // check if not close to move target
+            if(GlobalPosition.DistanceSquaredTo(moveTarget) > 0.01f)
             {
-                // normal movement
-                var vectorToTarget = targetPosition - GlobalPosition;
-                var disanceToTarget = vectorToTarget.Length();
-                
-                // clamp speed using next tic's distance traveled
-                var clampedSpeed = Mathf.Clamp(speed * ((float) delta), 0, disanceToTarget) / ((float) delta);
+                // move to target
+                var newVelocity = (moveTarget - GlobalPosition).Normalized() * speed;
 
-                newVelocity = vectorToTarget.Normalized() * clampedSpeed;
+                if(Velocity != newVelocity)
+                {
+                    Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
+                }  
+
+                // apply movement
+                MoveAndSlide();
             }
-
-            Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
-
-            // apply movement
-            MoveAndSlide();
+            else
+            {
+                // snap to target
+                GlobalPosition = moveTarget;
+            }
 
 
             if(enemy != null)

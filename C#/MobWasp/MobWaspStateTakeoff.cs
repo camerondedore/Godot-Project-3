@@ -13,7 +13,7 @@ namespace MobWasp
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);            
+            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);           
         }
 
 
@@ -47,12 +47,6 @@ namespace MobWasp
                 {
                     // warn
                     return blackboard.stateWarn;
-                }
-
-                if(blackboard.allyDied)
-                {
-                    // idle alert
-                    return blackboard.stateIdleAlert;
                 }
 
                 // cooldown

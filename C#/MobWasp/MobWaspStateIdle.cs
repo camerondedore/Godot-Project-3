@@ -14,15 +14,6 @@ namespace MobWasp
         {
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);
-
-            // get current allies
-            blackboard.allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
-
-            // check for dead allies
-            if(blackboard.allies.Count != blackboard.startingAllyCount)
-            {
-                blackboard.allyDied = true;
-            }
         }
 
 
@@ -35,7 +26,7 @@ namespace MobWasp
 
             // get starting allies
             blackboard.allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
-            blackboard.startingAllyCount = blackboard.allies.Count;        
+            blackboard.startingAllyCount = blackboard.allies.Count;
 
             GD.Print("idle");
         }

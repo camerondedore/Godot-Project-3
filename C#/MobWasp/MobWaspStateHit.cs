@@ -20,6 +20,8 @@ namespace MobWasp
         public override void StartState()
         {
             blackboard.updateLook = false;
+
+            GD.Print("hit");
         }
 
 

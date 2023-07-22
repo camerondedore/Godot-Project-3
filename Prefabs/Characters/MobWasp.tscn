@@ -21,10 +21,9 @@ collision_mask = 19
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
-warnOffset = Vector3(0, 2, 0)
-acceleration = 7.0
-offsetSize = 0.5
-offsetSpeed = 1.5
+attackDistanceSqr = 64.0
+hitDistanceSqr = 0.563
+acceleration = 10.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.227549)

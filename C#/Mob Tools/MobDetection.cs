@@ -62,7 +62,7 @@ public partial class MobDetection : RayCast3D
     public List<MobFaction> GetAllies(float maxRangeSqr)
     {
         // get list of allies within range
-        var allies = MobFaction.mobs.Where(m => m.faction == myFaction.faction).Where(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) < maxRangeSqr).ToList();
+        var allies = MobFaction.mobs.Where(m => m.faction == myFaction.faction && m != myFaction).Where(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) < maxRangeSqr).ToList();
 
         return allies;
     }
