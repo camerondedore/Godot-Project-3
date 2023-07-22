@@ -16,7 +16,7 @@ namespace MobWasp
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);
 
             // check for dead allies
-            if(blackboard.allies.Length != blackboard.startinyAllyCount)
+            if(blackboard.allies.Count != blackboard.startinyAllyCount)
             {
                 blackboard.allyDied = true;
             }
@@ -31,11 +31,11 @@ namespace MobWasp
             blackboard.targetPosition = blackboard.startPosition;
 
             // get allies
-            if(blackboard.allies.Length == 0)
-            {
-                blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
-                blackboard.startinyAllyCount = blackboard.allies.Length;
-            }
+            //if(blackboard.allies.Count == 0)
+            //{
+            blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
+            blackboard.startinyAllyCount = blackboard.allies.Count;
+            //}
 
             GD.Print("idle");
         }
@@ -59,14 +59,14 @@ namespace MobWasp
             }
 
             // check for enemy
-            if(blackboard.enemy == null)
+            if(blackboard.enemy != null)
             {
-                return this;
+                // enemy is within range
+                // takeoff
+                return blackboard.stateTakeoff;
             }
 
-            // enemy is within range
-            // takeoff
-            return blackboard.stateTakeoff;
+            return this;
         }
     }
 }

@@ -14,30 +14,22 @@ namespace MobWasp
         {
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);
-
-            // check for dead allies
-            if(blackboard.allies.Length != blackboard.startinyAllyCount)
-            {
-                blackboard.allyDied = true;
-            }
         }
 
 
 
         public override void StartState()
         {
-            blackboard.updateLook = false;
-            
-            blackboard.targetPosition = blackboard.startPosition;
-
-            // get allies
-            if(blackboard.allies.Length == 0)
+            if(blackboard.useOffset == false)
             {
-                blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
-                blackboard.startinyAllyCount = blackboard.allies.Length;
+                blackboard.targetPosition = blackboard.GlobalPosition;
             }
 
-            GD.Print("idle");
+            blackboard.useOffset = true;
+
+            blackboard.updateLook = false;
+
+            GD.Print("idle alert");
         }
 
 
@@ -51,22 +43,15 @@ namespace MobWasp
 
         public override State Transition()
         {
-            // check for dead allies
-            if(blackboard.allyDied)
-            {
-                // takeoff
-                return blackboard.stateTakeoff;
-            }
-
             // check for enemy
             if(blackboard.enemy == null)
             {
-                return this;
+                // enemy is within range
+                // warn
+                return blackboard.stateWarn;
             }
 
-            // enemy is within range
-            // takeoff
-            return blackboard.stateTakeoff;
+            return this;
         }
     }
 }

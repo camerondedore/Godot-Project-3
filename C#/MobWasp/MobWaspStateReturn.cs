@@ -41,8 +41,15 @@ namespace MobWasp
 
         public override State Transition()
         {
+            
             if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 1f)
             {
+                if(blackboard.allyDied)
+                {
+                    // idle alert
+                    return blackboard.stateIdleAlert;
+                }
+
                 // land
                 return blackboard.stateLand;
             }

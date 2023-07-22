@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 namespace MobWasp
 {
@@ -23,8 +24,8 @@ namespace MobWasp
         [Export]
         public Vector3 warnOffset = new Vector3(0, 1, 0);
         [Export]
-        public float maxRangeForEnemies,
-            maxRangeForAllies,
+        public float maxRangeForEnemies = 144,
+            maxRangeForAllies = 16,
             attackDistanceSqr = 25,
             hitDistanceSqr = 0.25f,
             speed = 3.5f,
@@ -33,7 +34,7 @@ namespace MobWasp
             offsetSpeed = 1f;
         
         public MobFaction enemy;
-        public MobFaction[] allies;
+        public List<MobFaction> allies = new List<MobFaction>();
         public Vector3 startPosition,
             targetPosition;
         public int startinyAllyCount;
