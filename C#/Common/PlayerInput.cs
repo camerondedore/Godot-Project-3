@@ -25,6 +25,12 @@ public partial class PlayerInput : Node
 
 	public override void _Process(double delta)
 	{
+		// time check
+		if(Engine.TimeScale == 0)
+		{
+			return;
+		}
+
 		// get move input
 		// y will be skipped to make movement easier to apply
 		move = Vector3.Zero;
@@ -57,6 +63,12 @@ public partial class PlayerInput : Node
 
 	public override void _UnhandledInput(InputEvent e)
 	{	
+		// time check
+		if(Engine.TimeScale == 0)
+		{
+			return;
+		}
+
 		// get look input
 		if(e is InputEventMouseMotion)
 		{
