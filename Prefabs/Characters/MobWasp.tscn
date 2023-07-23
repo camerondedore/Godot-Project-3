@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=7 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_muehp"]
+[ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/MobWasp.tres" id="3_rexv1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
 radius = 0.25
@@ -20,6 +21,9 @@ hitDistanceSqr = 0.563
 
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
+[node name="mob-wasp2" parent="mob-wasp" index="0"]
+surface_material_override/0 = ExtResource("3_rexv1")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_me2gy")
@@ -34,3 +38,5 @@ target_position = Vector3(0, 0, -1)
 collision_mask = 3
 script = ExtResource("3_muehp")
 myFaction = NodePath("../Faction")
+
+[editable path="mob-wasp"]
