@@ -23,7 +23,6 @@ script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
 attackDistanceSqr = 64.0
 hitDistanceSqr = 0.563
-acceleration = 10.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.227549)

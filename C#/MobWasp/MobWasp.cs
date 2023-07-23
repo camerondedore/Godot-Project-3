@@ -40,12 +40,14 @@ namespace MobWasp
         public List<MobFaction> allies = new List<MobFaction>();
         public Vector3 startPosition,
             targetPosition;
+        public double offsetCursor = 0;
         public int startingAllyCount;
         public bool useOffset = false,
             updateLook = false,
             allyDied = false;
 
-        float offsetPhase = 0;
+        int offsetDirection = 1;
+
 
 
 
@@ -54,7 +56,11 @@ namespace MobWasp
             startPosition = GlobalPosition;
             targetPosition = startPosition;
 
-            offsetPhase = GD.Randf() * 3.14f;
+            if(GD.Randi() % 2 == 1)
+            {
+                offsetDirection = -1;
+            }
+
             offsetSpeed *= 1 + (GD.Randf() - 0.5f) * 0.1f;
             
             // initialize states
@@ -102,9 +108,11 @@ namespace MobWasp
             // check if using offset
             if(useOffset)
             {
+                offsetCursor += delta * offsetSpeed * offsetDirection;
+
                 // use figure 8 offset
-                var timeCursorHorizontal = EngineTime.timePassed * offsetSpeed + offsetPhase;
-                var timeCursorVertical = EngineTime.timePassed * offsetSpeed * 2 + offsetPhase;
+                var timeCursorHorizontal = offsetCursor;
+                var timeCursorVertical = offsetCursor * 2;
                 var offset = new Vector3((float) Mathf.Sin(timeCursorHorizontal), (float) Mathf.Sin(timeCursorVertical), 0);
                 offset *= offsetSize;
                 offset = ToGlobal(offset) - GlobalPosition;
