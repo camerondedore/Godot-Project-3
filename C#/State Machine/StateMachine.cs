@@ -13,19 +13,13 @@ public class StateMachine
 			return currentState;
 		}
 	}
-	public bool frozen = false,
-		unscaled = false;
+	public bool frozen = false;
 	protected State currentState;
 
 
 
 	public void SetState(State nextState)
 	{
-		if(!unscaled && Engine.TimeScale == 0)
-		{
-			return;
-		}
-		
 		// if machine is frozen
 		if(frozen)
 		{

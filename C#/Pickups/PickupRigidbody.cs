@@ -35,12 +35,6 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
 
     public override void _PhysicsProcess(double delta)
     {
-        // time check
-		if(Engine.TimeScale == 0)
-		{
-			return;
-		}
-        
         // check for frozen rigidbody
         if(!Freeze)
         {

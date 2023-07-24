@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://bycycisv53o66"]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
 [ext_resource type="Script" path="res://C#/Common/GlobalCamera.cs" id="1_w865n"]
@@ -30,12 +30,15 @@ script = ExtResource("5_fnxei")
 script = ExtResource("1_4luc3")
 
 [node name="PlayerInput" type="Node" parent="."]
+process_mode = 3
 script = ExtResource("4_qu5pn")
 
 [node name="Pause" type="Node" parent="."]
+process_mode = 3
 script = ExtResource("5_mk66s")
 
 [node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "restartButton", "quitButton")]
+process_mode = 3
 layer = 100
 script = ExtResource("7_ogfvn")
 menuContainer = NodePath("PauseMenu")

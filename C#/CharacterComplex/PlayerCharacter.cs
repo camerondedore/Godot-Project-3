@@ -90,12 +90,6 @@ namespace PlayerCharacterComplex
 
 		public override void _PhysicsProcess(double delta)
 		{
-			// time check
-			if(Engine.TimeScale == 0)
-			{
-				return;
-			}
-
 			// run machine
 			if(machine != null && machine.CurrentState != null)
 			{

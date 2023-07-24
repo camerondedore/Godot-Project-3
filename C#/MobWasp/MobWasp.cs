@@ -99,12 +99,6 @@ namespace MobWasp
 
         public override void _PhysicsProcess(double delta)
         {
-            // time check
-			if(Engine.TimeScale == 0)
-			{
-				return;
-			}
-            
             var moveTarget = targetPosition;
 
             // check if using offset

@@ -14,7 +14,6 @@ public partial class EngineTime : Node
 	public override void _Ready()
 	{
 		timePassed = 0;
-	   //Engine.TimeScale = 0.33f;
 	}
 
 

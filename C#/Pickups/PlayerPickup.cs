@@ -23,12 +23,6 @@ public partial class PlayerPickup : Area3D
     
     public void Pickup(Node3D body)
     {
-        // time check
-        if(Engine.TimeScale == 0)
-        {
-            return;
-        }
-
         // check that body is pickup
         if(body is IPickup)
         {

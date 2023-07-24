@@ -36,13 +36,6 @@ public partial class Checkpoint : Area3D
 
     public override void _Process(double delta)
     {
-        // time check
-        if(Engine.TimeScale == 0)
-        {   
-            return;
-        }
-
-       
         // bounce
         GlobalPosition = startPosition + Vector3.Up * Mathf.Sin(((float) EngineTime.timePassed) * bounceSpeed) * bounceOffset;
     

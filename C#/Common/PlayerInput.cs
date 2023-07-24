@@ -25,9 +25,19 @@ public partial class PlayerInput : Node
 
 	public override void _Process(double delta)
 	{
-		// time check
-		if(Engine.TimeScale == 0)
+		// get pause input
+		pause = Input.GetActionStrength("player-pause");
+
+		if(GetTree().Paused)
 		{
+			// skip all other input
+			move = Vector3.Zero;
+			jump = 0;
+			fire1 = 0;
+			interact = 0;
+			heal = 0;
+			look = Vector2.Zero;
+
 			return;
 		}
 
@@ -38,7 +48,6 @@ public partial class PlayerInput : Node
 		move.Z = Input.GetActionStrength("player-backward") - Input.GetActionStrength("player-forward");   
 
 		// get button inputs
-		pause = Input.GetActionStrength("player-pause");
 		jump = Input.GetActionStrength("player-jump");
 		fire1 = Input.GetActionStrength("player-fire-1");
 		interact = Input.GetActionStrength("player-interact");
@@ -63,8 +72,8 @@ public partial class PlayerInput : Node
 
 	public override void _UnhandledInput(InputEvent e)
 	{	
-		// time check
-		if(Engine.TimeScale == 0)
+		// check for pause
+		if(GetTree().Paused)
 		{
 			return;
 		}

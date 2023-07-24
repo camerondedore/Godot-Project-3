@@ -14,12 +14,6 @@ public partial class RigidbodySpawnerDelayed : RigidbodySpawner
 
     public override void _Process(double delta)
     {
-        // time check
-        if(Engine.TimeScale == 0)
-        {
-            return;
-        }
-
         if(startSpawn && EngineTime.timePassed > startTime + delayTime)
         {
             Spawn();

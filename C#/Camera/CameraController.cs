@@ -43,11 +43,6 @@ namespace CameraControllerSpringArm
 
 		public override void _Process(double delta)
 		{
-			if(Engine.TimeScale == 0)
-			{
-				return;
-			}
-			
 			var mouseDirection = RotationDegrees;
 			mouseDirection.X -= PlayerInput.look.Y * sensitivity * ((float)delta);
 			mouseDirection.X = Mathf.Clamp(mouseDirection.X, minAngle, maxAngle);
@@ -75,12 +70,6 @@ namespace CameraControllerSpringArm
 
 		public override void _PhysicsProcess(double delta)
 		{
-			// time check
-			if(Engine.TimeScale == 0)
-			{
-				return;
-			}
-
 			// run machine
 			if(machine != null && machine.CurrentState != null)
 			{

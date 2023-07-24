@@ -24,7 +24,7 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             // enable camera spring arm
-            blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Always;
+            blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Inherit;
         }
 
 

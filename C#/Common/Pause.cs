@@ -4,7 +4,6 @@ using System;
 public partial class Pause : Node
 {
     
-    public static float savedTimeScale = 1;
     Disconnector discon = new Disconnector();
 
 
@@ -20,7 +19,7 @@ public partial class Pause : Node
     {
         if(discon.Trip(PlayerInput.pause))
         {
-            if(Engine.TimeScale > 0)
+            if(GetTree().Paused == false)
             {
                 PauseGame();
             }
@@ -33,9 +32,9 @@ public partial class Pause : Node
 
 
 
-    public static void ResumeGame()
+    public void ResumeGame()
     {
-        Engine.TimeScale = savedTimeScale;
+        GetTree().Paused = false;
                 
         // lock cursor
         Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -43,9 +42,9 @@ public partial class Pause : Node
 
 
 
-    public static void PauseGame()
+    public void PauseGame()
     {
-        Engine.TimeScale = 0;
+        GetTree().Paused = true;
                 
         // lock cursor
         Input.MouseMode = Input.MouseModeEnum.Visible;

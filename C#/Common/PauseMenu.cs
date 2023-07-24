@@ -38,13 +38,13 @@ public partial class PauseMenu : Node
         }
 
         
-        if(menuContainer.Visible == false && Engine.TimeScale == 0)
+        if(menuContainer.Visible == false && GetTree().Paused)
         {
             // enable menu
             menuContainer.Visible = true;
         }
 
-        if(menuContainer.Visible == true && Engine.TimeScale != 0)
+        if(menuContainer.Visible == true && GetTree().Paused == false)
         {
             // disable menu
             menuContainer.Visible = false;
@@ -55,7 +55,10 @@ public partial class PauseMenu : Node
 
     void Resume()
     {
-        Pause.ResumeGame();
+        GetTree().Paused = false;
+
+        // lock cursor
+        Input.MouseMode = Input.MouseModeEnum.Captured;
     }
 
 
@@ -71,16 +74,5 @@ public partial class PauseMenu : Node
     {
         // var currentScene = this.Owner.Filename;
         GetTree().ReloadCurrentScene();
-        
-        // incomplete, for dev only
-        // GetTree().ReloadCurrentScene();
-        // RequestReady();
     }
-
-
-
-    // void SetTime(float value)
-    // {
-    //     Pause.savedTimeScale = value;
-    // }
 }
