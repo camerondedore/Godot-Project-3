@@ -814,16 +814,16 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 transform = Transform3D(-0.923016, 0, 0.384763, 0, 1, 0, -0.384763, 0, -0.923016, 1.75311, 0.264603, -13.6034)
 warnOffset = Vector3(0, 2, 0)
 
-[node name="MobWasp4" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(-0.923016, 0, 0.384763, 0, 1, 0, -0.384763, 0, -0.923016, 12.5462, 0.264603, -13.3958)
-warnOffset = Vector3(0, 2, 0)
-
 [node name="MobWasp2" parent="." instance=ExtResource("67_elsxh")]
 transform = Transform3D(-0.873186, 0, -0.487387, 0, 1, 0, 0.487387, 0, -0.873186, -0.0753546, 0.264603, -13.6034)
 warnOffset = Vector3(0, 2, 0)
 
 [node name="MobWasp3" parent="." instance=ExtResource("67_elsxh")]
 transform = Transform3D(-0.415836, 0, 0.90944, 0, 1, 0, -0.90944, 0, -0.415836, 2.75496, 0.264603, -12.5984)
+warnOffset = Vector3(0, 2, 0)
+
+[node name="MobWasp4" parent="." instance=ExtResource("67_elsxh")]
+transform = Transform3D(-0.923016, 0, 0.384763, 0, 1, 0, -0.384763, 0, -0.923016, 12.5462, 0.264603, -13.3958)
 warnOffset = Vector3(0, 2, 0)
 
 [node name="PropLockbox" parent="." instance=ExtResource("50_hmjpr")]

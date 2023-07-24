@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=14 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
+[ext_resource type="PackedScene" uid="uid://omdnkl277dni" path="res://Prefabs/FX/FxWaspChunks.tscn" id="2_ghajg"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_muehp"]
 [ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/MobWasp.tres" id="3_rexv1"]
@@ -23,6 +24,7 @@ motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
 gibsActivator = NodePath("Gibs")
+waspChunksFx = ExtResource("2_ghajg")
 attackDistanceSqr = 64.0
 hitDistanceSqr = 0.563
 
