@@ -22,6 +22,8 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
+        public GibsActivator gibsActivator;
+        [Export]
         public string targetName = "Wasp",
             arrowType = "weighted";
         [Export]
@@ -147,8 +149,11 @@ namespace MobWasp
                 var target = enemy.GlobalPosition;
                 target.Y = GlobalPosition.Y;
 
-                // look at enemy
-                LookAt(target);
+                if(target != GlobalPosition)
+                {
+                    // look at enemy
+                    LookAt(target);
+                }
             }
             else if(updateLook && Velocity != Vector3.Zero)
             {

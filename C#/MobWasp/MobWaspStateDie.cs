@@ -21,6 +21,9 @@ namespace MobWasp
         {
             blackboard.updateLook = false;
 
+            // activate gibs
+            blackboard.gibsActivator.Activate();
+
             // alert nearby allies that this mob died
             foreach(var ally in blackboard.allies)
             {

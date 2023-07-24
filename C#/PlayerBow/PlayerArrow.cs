@@ -58,6 +58,7 @@ public partial class PlayerArrow : Projectile
                     trailFx.Emitting = false;
 
                     // detach trail fx
+                    // ignoring rotation as it doesn't matter for particles not set to use local
                     var trailFxPosition = trailFx.GlobalPosition;
                     trailFx.GetParent().RemoveChild(trailFx);
                     GetTree().CurrentScene.AddChild(trailFx);

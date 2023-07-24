@@ -1,21 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=13 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_muehp"]
 [ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/MobWasp.tres" id="3_rexv1"]
+[ext_resource type="PackedScene" uid="uid://cyh65ty8moprq" path="res://Prefabs/Gibs/GibWaspAbdomen.tscn" id="6_k7c3p"]
+[ext_resource type="Script" path="res://C#/GibsActivator.cs" id="6_nqxbr"]
+[ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="7_hwvjs"]
+[ext_resource type="PackedScene" uid="uid://b4iwcasvg6jw" path="res://Prefabs/Gibs/GibWaspMid.tscn" id="8_cmu72"]
+[ext_resource type="PackedScene" uid="uid://dr67ajwiaqnkk" path="res://Prefabs/Gibs/GibWaspWingL.tscn" id="9_la8w6"]
+[ext_resource type="PackedScene" uid="uid://cyp7usw06fqjr" path="res://Prefabs/Gibs/GibWaspWingR.tscn" id="10_633pr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
 radius = 0.25
 height = 0.9
 
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection")]
+[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "gibsActivator")]
 collision_layer = 2
-collision_mask = 19
+collision_mask = 17
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
+gibsActivator = NodePath("Gibs")
 attackDistanceSqr = 64.0
 hitDistanceSqr = 0.563
 
@@ -38,5 +45,27 @@ target_position = Vector3(0, 0, -1)
 collision_mask = 3
 script = ExtResource("3_muehp")
 myFaction = NodePath("../Faction")
+
+[node name="Gibs" type="Node3D" parent="."]
+visible = false
+script = ExtResource("6_nqxbr")
+speed = 4.0
+randomDirectionRadius = 0.5
+maxRotationSpeed = 4.0
+
+[node name="GibWaspAbdomen" parent="Gibs" instance=ExtResource("6_k7c3p")]
+transform = Transform3D(1, 0, 0, 0, 0.719073, -0.694935, 0, 0.694935, 0.719073, 0, -0.178034, 0.265597)
+
+[node name="GibWaspHead" parent="Gibs" instance=ExtResource("7_hwvjs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082751, -0.24326)
+
+[node name="GibWaspMid" parent="Gibs" instance=ExtResource("8_cmu72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0874378, 0.00707321)
+
+[node name="GibWaspWingL" parent="Gibs" instance=ExtResource("9_la8w6")]
+transform = Transform3D(0.939693, 0, -0.34202, -0.0885213, 0.965926, -0.24321, 0.330366, 0.258819, 0.907673, -0.2, 0.126537, 0.157943)
+
+[node name="GibWaspWingR" parent="Gibs" instance=ExtResource("10_633pr")]
+transform = Transform3D(0.939693, 0, 0.34202, 0.0885213, 0.965926, -0.24321, -0.330366, 0.258819, 0.907673, 0.2, 0.127, 0.158)
 
 [editable path="mob-wasp"]
