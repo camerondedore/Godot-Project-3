@@ -19,7 +19,7 @@ height = 0.9
 
 [node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "gibsActivator")]
 collision_layer = 2
-collision_mask = 17
+collision_mask = 19
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
@@ -52,8 +52,8 @@ myFaction = NodePath("../Faction")
 visible = false
 script = ExtResource("6_nqxbr")
 speed = 4.0
-randomDirectionRadius = 0.5
-maxRotationSpeed = 4.0
+randomDirectionRadius = 3.0
+maxRotationSpeed = 6.0
 
 [node name="GibWaspAbdomen" parent="Gibs" instance=ExtResource("6_k7c3p")]
 transform = Transform3D(1, 0, 0, 0, 0.719073, -0.694935, 0, 0.694935, 0.719073, 0, -0.178034, 0.265597)

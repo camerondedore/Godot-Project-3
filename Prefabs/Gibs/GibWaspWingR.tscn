@@ -8,6 +8,7 @@ size = Vector3(0.08, 0.04, 0.7)
 
 [node name="GibWaspWingR" instance=ExtResource("1_wvmvg")]
 collision_mask = 0
+gravity_scale = 0.5
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_7t2pa")
