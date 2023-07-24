@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyh65ty8moprq"]
 
 [ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="1_xd3aj"]
-[ext_resource type="ArrayMesh" uid="uid://bf0v2reg3wyyq" path="res://gib-wasp-abdomen.res" id="2_60jf8"]
+[ext_resource type="ArrayMesh" uid="uid://bklhkf6cymrxy" path="res://Models/gib-wasp-abdomen.res" id="2_l02bw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2cjt"]
 size = Vector3(0.195, 0.178, 0.391255)
@@ -9,7 +9,7 @@ size = Vector3(0.195, 0.178, 0.391255)
 [node name="GibWaspAbdomen" instance=ExtResource("1_xd3aj")]
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = ExtResource("2_60jf8")
+mesh = ExtResource("2_l02bw")
 
 [node name="CollisionShape3D" parent="." index="1"]
 shape = SubResource("BoxShape3D_k2cjt")

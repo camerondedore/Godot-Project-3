@@ -24,7 +24,7 @@ namespace MobWasp
         [Export]
         public GibsActivator gibsActivator;
         [Export]
-        public PackedScene waspChunksFx;
+        public PackedScene waspDeathFx;
         [Export]
         public string targetName = "Wasp",
             arrowType = "weighted";

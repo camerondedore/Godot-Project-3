@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyp7usw06fqjr"]
 
 [ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="1_wvmvg"]
-[ext_resource type="ArrayMesh" uid="uid://byf55vy0n8hau" path="res://gib-wasp-wing-r.res" id="2_7t2pa"]
+[ext_resource type="ArrayMesh" uid="uid://cjp5nqm8q31jy" path="res://Models/gib-wasp-wing-r.res" id="2_aixtj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_twjgy"]
 size = Vector3(0.08, 0.04, 0.7)
@@ -11,7 +11,7 @@ collision_mask = 0
 gravity_scale = 0.5
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = ExtResource("2_7t2pa")
+mesh = ExtResource("2_aixtj")
 
 [node name="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.117237)

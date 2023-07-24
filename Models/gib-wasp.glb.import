@@ -38,7 +38,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://gib-wasp-abdomen.res"
+"save_to_file/path": "res://Models/gib-wasp-abdomen.res"
 },
 "gib-wasp_gib-wasp-head": {
 "generate/lightmap_uv": 0,
@@ -78,7 +78,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://gib-wasp-wing-r.res"
+"save_to_file/path": "res://Models/gib-wasp-wing-r.res"
 }
 }
 }

@@ -25,7 +25,7 @@ namespace MobWasp
             blackboard.gibsActivator.Activate();
 
             // spawn fx
-            var newFx = (Node3D) blackboard.waspChunksFx.Instantiate();
+            var newFx = (Node3D) blackboard.waspDeathFx.Instantiate();
             blackboard.GetTree().CurrentScene.AddChild(newFx);
             newFx.Owner = blackboard.GetTree().CurrentScene;
             newFx.GlobalPosition = blackboard.GlobalPosition;
