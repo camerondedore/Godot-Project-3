@@ -95,7 +95,7 @@ targetNameLabel = NodePath("../../HudCanvas/Hud/TargetName")
 
 [node name="BowAimerRay" type="RayCast3D" parent="SpringArm3D/BowAimer"]
 target_position = Vector3(0, 0, -30)
-collision_mask = 83
+collision_mask = 595
 
 [node name="BowAimerShape" type="ShapeCast3D" parent="SpringArm3D/BowAimer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)

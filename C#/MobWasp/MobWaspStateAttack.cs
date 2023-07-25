@@ -50,11 +50,21 @@ namespace MobWasp
                 return blackboard.stateCooldown;
             }
 
+            // get enemy distance squared from start position
+            var distanceToStartSqr = blackboard.enemy.GlobalPosition.DistanceSquaredTo(blackboard.startPosition);
+
+            // check if max range has been hit
+            if(distanceToStartSqr > blackboard.maxFlightRangeSqr)
+            {
+                // warn
+                return blackboard.stateWarn;
+            }
+
             // get distance squared to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
             // check if enemy is too far for attack and if ally has not died
-            if(distanceToEnemySqr > blackboard.attackDistanceSqr && blackboard.allyDied == false)
+            if((distanceToEnemySqr > blackboard.attackDistanceSqr && blackboard.allyDied == false))
             {
                 // cooldown
                 return blackboard.stateCooldown;

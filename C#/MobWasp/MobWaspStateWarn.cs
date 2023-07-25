@@ -54,8 +54,11 @@ namespace MobWasp
             // get distance squared to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
-            // check if enemy is close enough for attack
-            if(distanceToEnemySqr < blackboard.attackDistanceSqr || blackboard.allyDied)
+            // get enemy distance squared from start position
+            var distanceToStartSqr = blackboard.enemy.GlobalPosition.DistanceSquaredTo(blackboard.startPosition);
+
+            // check if enemy is close enough for attack and not past max flight range
+            if((distanceToEnemySqr < blackboard.attackDistanceSqr || blackboard.allyDied) && distanceToStartSqr <= blackboard.maxFlightRangeSqr)
             {
                 // attack
                 return blackboard.stateAttack;

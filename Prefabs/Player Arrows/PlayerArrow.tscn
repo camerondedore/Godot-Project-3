@@ -14,7 +14,7 @@ missFx = ExtResource("3_rvj48")
 speed = 20.0
 speedVariation = 0.0
 rangeSqr = 900.0
-maskAsBinary = "1010011"
+maskAsBinary = "1010011001"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2

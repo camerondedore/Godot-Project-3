@@ -31,10 +31,11 @@ namespace MobWasp
         [Export]
         public Vector3 warnOffset = new Vector3(0, 1, 0);
         [Export]
-        public float maxRangeForEnemies = 144,
+        public float maxRangeForEnemies = 100,
             maxRangeForAllies = 16,
             attackDistanceSqr = 25,
-            hitDistanceSqr = 0.25f,
+            hitDistanceSqr = 0.57f,
+            maxFlightRangeSqr = 1600,
             speed = 3.5f,
             acceleration = 4,
             offsetSize = 0.33f,
