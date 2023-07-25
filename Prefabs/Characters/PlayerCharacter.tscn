@@ -388,6 +388,12 @@ bowDrawSound = ExtResource("20_no75w")
 script = ExtResource("20_4jbn7")
 
 [node name="Faction" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537816, 0)
+script = ExtResource("34_61alq")
+faction = 1
+
+[node name="Faction2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24186, 0)
 script = ExtResource("34_61alq")
 faction = 1
 

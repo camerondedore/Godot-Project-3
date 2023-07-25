@@ -6,7 +6,7 @@ namespace MobWasp
     public partial class MobWaspStateAttack : MobWaspState
     {
 
-
+        double startTime;
 
 
 
@@ -25,9 +25,14 @@ namespace MobWasp
 
         public override void StartState()
         {
+            startTime = EngineTime.timePassed;
+
             blackboard.useOffset = false;
 
             blackboard.updateLook = false;
+
+            // animation
+            blackboard.animation.Play("wasp-attack");
 
             GD.Print("attack");
         }
@@ -71,7 +76,7 @@ namespace MobWasp
             }
 
             // check if enemy is close enough to hit
-            if(distanceToEnemySqr < blackboard.hitDistanceSqr)
+            if(EngineTime.timePassed > startTime + 0.5f && distanceToEnemySqr < blackboard.hitDistanceSqr)
             {
                 // hit
                 return blackboard.stateHit;

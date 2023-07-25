@@ -10,7 +10,8 @@ public partial class MobDetection : RayCast3D
     public MobFaction myFaction;
 
     [Export]
-    public float maxRangeSqr = 100;
+    public float maxRangeSqr = 100,
+        pointBlankRangeSqr = 0.25f;
 
 
 
@@ -32,6 +33,13 @@ public partial class MobDetection : RayCast3D
         // use ray to check LOS to enemies
         foreach(var enemy in enemiesOrdered)
         {
+            // check for point-blank range
+            if(GlobalPosition.DistanceSquaredTo(enemy.GlobalPosition) < pointBlankRangeSqr)
+            {
+                // enemy found
+                return enemy;
+            }
+
             // set ray to look at enemy
             TargetPosition = this.ToLocal(enemy.GlobalPosition);
 

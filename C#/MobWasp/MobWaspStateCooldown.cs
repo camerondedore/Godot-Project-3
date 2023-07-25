@@ -31,6 +31,9 @@ namespace MobWasp
 
             blackboard.updateLook = false;
 
+            // animation
+            blackboard.animation.Play("wasp-fly");
+
 
             GD.Print("cooldown");
         }

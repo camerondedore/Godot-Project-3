@@ -25,6 +25,9 @@ namespace MobWasp
             // target takeoff position
             blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
 
+            // animation
+            blackboard.animation.Play("wasp-fly");
+
             GD.Print("takeoff");            
         }
 

@@ -14,21 +14,22 @@
 [ext_resource type="PackedScene" uid="uid://cyp7usw06fqjr" path="res://Prefabs/Gibs/GibWaspWingR.tscn" id="10_633pr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
-radius = 0.25
+radius = 0.2
 height = 0.9
 
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "gibsActivator")]
+[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "animation", "gibsActivator")]
 collision_layer = 512
 collision_mask = 529
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
+animation = NodePath("mob-wasp/AnimationPlayer")
 gibsActivator = NodePath("Gibs")
 waspDeathFx = ExtResource("2_hegcd")
 
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
-[node name="mob-wasp2" parent="mob-wasp" index="0"]
+[node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -45,6 +46,7 @@ target_position = Vector3(0, 0, -1)
 collision_mask = 3
 script = ExtResource("3_muehp")
 myFaction = NodePath("../Faction")
+pointBlankRangeSqr = 1.0
 
 [node name="Gibs" type="Node3D" parent="."]
 visible = false

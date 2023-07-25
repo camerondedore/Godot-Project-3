@@ -28,6 +28,9 @@ namespace MobWasp
             blackboard.allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
             blackboard.startingAllyCount = blackboard.allies.Count;
 
+            // animation
+            blackboard.animation.Play("wasp-idle");
+
             GD.Print("idle");
         }
 

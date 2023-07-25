@@ -22,6 +22,8 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
+        public AnimationPlayer animation;
+        [Export]
         public GibsActivator gibsActivator;
         [Export]
         public PackedScene waspDeathFx;
@@ -34,7 +36,7 @@ namespace MobWasp
         public float maxRangeForEnemies = 100,
             maxRangeForAllies = 16,
             attackDistanceSqr = 25,
-            hitDistanceSqr = 0.57f,
+            hitDistanceSqr = 0.5f,
             maxFlightRangeSqr = 1600,
             speed = 3.5f,
             acceleration = 4,
@@ -44,7 +46,8 @@ namespace MobWasp
         public MobFaction enemy;
         public List<MobFaction> allies = new List<MobFaction>();
         public Vector3 startPosition,
-            targetPosition;
+            targetPosition,
+            lookTargetPosition;
         public double offsetCursor = 0;
         public int startingAllyCount;
         public bool useOffset = false,
@@ -60,6 +63,7 @@ namespace MobWasp
         {
             startPosition = GlobalPosition;
             targetPosition = startPosition;
+            lookTargetPosition = GlobalPosition + -Basis.Z;
 
             if(GD.Randi() % 2 == 1)
             {
@@ -148,8 +152,11 @@ namespace MobWasp
 
                 if(target != GlobalPosition)
                 {
+                    // smooth look target
+                    lookTargetPosition = lookTargetPosition.Lerp(target, speed * ((float) delta));  
+
                     // look at enemy
-                    LookAt(target);
+                    LookAt(lookTargetPosition);
                 }
             }
             else if(updateLook && Velocity != Vector3.Zero)
@@ -158,8 +165,11 @@ namespace MobWasp
                 var target = GlobalPosition + Velocity;
                 target.Y = GlobalPosition.Y;
 
+                // smooth look target
+                lookTargetPosition = lookTargetPosition.Lerp(target, speed * ((float) delta));  
+
                 // look in direction of movement
-                LookAt(target);
+                LookAt(lookTargetPosition);
             }
         }
 
