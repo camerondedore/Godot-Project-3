@@ -23,7 +23,9 @@ namespace MobWasp
 
             blackboard.updateLook = false;
 
-            blackboard.targetPosition = blackboard.GlobalPosition + blackboard.Basis.Z * 0.5f;
+            var targetOffset = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f);
+
+            blackboard.targetPosition = blackboard.GlobalPosition + blackboard.Basis.Z + targetOffset;
 
             // animation
             blackboard.animation.Play("wasp-hit");
