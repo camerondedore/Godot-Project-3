@@ -28,6 +28,9 @@ namespace MobWasp
             // animation
             blackboard.animation.Play("wasp-fly");
 
+            // audio
+            blackboard.audio.PlaySound(blackboard.flySound, 0.1f);
+
             GD.Print("takeoff");            
         }
 

@@ -39,6 +39,7 @@ public partial class Projectile : Node3D
 		spaceState = GetWorld3D().DirectSpaceState;
 
 		// convert mask to decimal
+		// layer 1 is last digit
 		maskAsDecimal = Convert.ToUInt32(maskAsBinary, 2);
 	}
 

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://m802chlsn4cd" path="res://Prefabs/FX/FxWaspBloodSplash.tscn" id="1_eyerh"]
 [ext_resource type="PackedScene" uid="uid://omdnkl277dni" path="res://Prefabs/FX/FxWaspChunks.tscn" id="2_x0yhq"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="3_bmekg"]
-[ext_resource type="AudioStream" uid="uid://de2xpyq2nyc5n" path="res://Audio/lock-open-1.wav" id="4_ttxxl"]
+[ext_resource type="AudioStream" uid="uid://c83fn0fl7sm1k" path="res://Audio/mob-wasp-die.wav" id="4_7brfd"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="5_2yk5d"]
 
 [node name="FxWaspDeath" type="Node3D"]
@@ -13,8 +13,9 @@
 [node name="FxWaspChunks" parent="." instance=ExtResource("2_x0yhq")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 40.0
 script = ExtResource("3_bmekg")
-sounds = Array[AudioStream]([ExtResource("4_ttxxl")])
+sounds = Array[AudioStream]([ExtResource("4_7brfd")])
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("5_2yk5d")
