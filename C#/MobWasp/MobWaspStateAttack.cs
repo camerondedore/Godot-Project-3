@@ -31,9 +31,6 @@ namespace MobWasp
 
             blackboard.updateLook = false;
 
-            // animation
-            blackboard.animation.Play("wasp-attack");
-
             GD.Print("attack");
         }
 

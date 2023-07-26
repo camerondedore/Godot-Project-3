@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=28 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
@@ -15,6 +15,61 @@
 [ext_resource type="AudioStream" uid="uid://130buoernvce" path="res://Audio/mob-wasp-fly.wav" id="13_yyjne"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_82ttd"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2wsol"]
+animation = &"wasp-hover"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uhqfs"]
+animation = &"wasp-fly"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_at3lr"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2wsol")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_uhqfs")
+blend_point_1/pos = 1.0
+min_space = 0.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83ogc"]
+animation = &"wasp-hit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1p7d7"]
+animation = &"wasp-idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c25rg"]
+xfade_time = 0.25
+advance_mode = 2
+advance_condition = &"fly"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l6a1f"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ceqyv"]
+xfade_time = 0.1
+advance_mode = 2
+advance_condition = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvu1h"]
+xfade_time = 0.35
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sdw5n"]
+xfade_time = 0.25
+advance_mode = 2
+advance_condition = &"land"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wmtt0"]
+states/End/position = Vector2(648, 86)
+states/Fly/node = SubResource("AnimationNodeBlendSpace1D_at3lr")
+states/Fly/position = Vector2(510, 86)
+states/Start/position = Vector2(239, 86)
+states/wasp-hit/node = SubResource("AnimationNodeAnimation_83ogc")
+states/wasp-hit/position = Vector2(510, 184)
+states/wasp-idle/node = SubResource("AnimationNodeAnimation_1p7d7")
+states/wasp-idle/position = Vector2(363, 86)
+transitions = ["wasp-idle", "Fly", SubResource("AnimationNodeStateMachineTransition_c25rg"), "Start", "wasp-idle", SubResource("AnimationNodeStateMachineTransition_l6a1f"), "Fly", "wasp-hit", SubResource("AnimationNodeStateMachineTransition_ceqyv"), "wasp-hit", "Fly", SubResource("AnimationNodeStateMachineTransition_gvu1h"), "Fly", "wasp-idle", SubResource("AnimationNodeStateMachineTransition_sdw5n")]
+graph_offset = Vector2(-22, 24)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_h8hly"]
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
 radius = 0.2
 height = 0.9
@@ -25,7 +80,7 @@ collision_mask = 529
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
-animation = NodePath("mob-wasp/AnimationPlayer")
+animation = NodePath("AnimationTree")
 gibsActivator = NodePath("Gibs")
 audio = NodePath("Audio")
 flySound = ExtResource("13_yyjne")
@@ -33,8 +88,30 @@ waspDeathFx = ExtResource("2_hegcd")
 
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
+[node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
+bones/0/rotation = Quaternion(-0.465705, 9.82481e-17, 5.17037e-17, 0.88494)
+bones/1/rotation = Quaternion(0.699115, 0.106013, 0.699115, 0.106013)
+bones/2/rotation = Quaternion(0.834591, 0.103467, 0.463929, -0.278429)
+bones/3/rotation = Quaternion(-0.828251, -0.069332, 0.0352899, 0.554931)
+bones/4/rotation = Quaternion(-0.669521, -0.348594, 0.474828, 0.452506)
+bones/5/rotation = Quaternion(0.782554, -0.0283705, 0.48125, -0.393957)
+bones/6/rotation = Quaternion(0.834591, -0.103467, -0.463929, -0.278429)
+bones/7/rotation = Quaternion(-0.822216, -0.00523263, 0.107639, 0.55888)
+bones/8/rotation = Quaternion(-0.741129, 0.284449, -0.397037, 0.460628)
+bones/9/rotation = Quaternion(0.815153, 0.037105, -0.443334, -0.37095)
+
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_wmtt0")
+anim_player = NodePath("../mob-wasp/AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_h8hly")
+parameters/conditions/fly = false
+parameters/conditions/hit = false
+parameters/conditions/land = false
+parameters/Fly/blend_position = 0.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

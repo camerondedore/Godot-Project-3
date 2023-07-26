@@ -22,7 +22,7 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
-        public AnimationPlayer animation;
+        public AnimationTree animation;
         [Export]
         public GibsActivator gibsActivator;
         [Export]
@@ -74,7 +74,7 @@ namespace MobWasp
                 offsetDirection = -1;
             }
 
-            offsetSpeed *= 1 + (GD.Randf() - 0.5f) * 0.1f;
+            offsetSpeed *= 1 + (GD.Randf() - 0.5f) * 0.2f;
             
             // initialize states
             stateIdle = new MobWaspStateIdle(){blackboard = this};
@@ -143,9 +143,15 @@ namespace MobWasp
             }
             else
             {
+                // smooth velocity
+                Velocity = Velocity.Lerp(Vector3.Zero, acceleration * ((float) delta));
+
                 // snap to target
                 GlobalPosition = moveTarget;
             }
+
+            // animation fly blend using speed
+            animation.Set("parameters/Fly/blend_position", Velocity.LengthSquared() / Mathf.Pow(speed, 2));
 
 
             if(enemy != null)

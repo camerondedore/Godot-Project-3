@@ -29,7 +29,7 @@ namespace MobWasp
             blackboard.startingAllyCount = blackboard.allies.Count;
 
             // animation
-            blackboard.animation.Play("wasp-idle");
+            blackboard.animation.Set("parameters/conditions/land", true);
 
             GD.Print("idle");
         }
@@ -38,7 +38,8 @@ namespace MobWasp
 
         public override void EndState()
         {
-
+            // animation
+            blackboard.animation.Set("parameters/conditions/land", false);
         }
 
 

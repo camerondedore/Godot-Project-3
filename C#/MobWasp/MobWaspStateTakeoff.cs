@@ -26,7 +26,7 @@ namespace MobWasp
             blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
 
             // animation
-            blackboard.animation.Play("wasp-fly");
+            blackboard.animation.Set("parameters/conditions/fly", true);
 
             // audio
             blackboard.audio.PlaySound(blackboard.flySound, 0.1f);
@@ -38,7 +38,10 @@ namespace MobWasp
 
         public override void EndState()
         {
-
+            blackboard.offsetCursor = 0;
+            
+            // animation
+            blackboard.animation.Set("parameters/conditions/fly", false);
         }
 
 

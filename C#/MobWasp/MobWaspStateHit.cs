@@ -12,7 +12,8 @@ namespace MobWasp
 
         public override void RunState(double delta)
         {
-            
+            // animation
+            blackboard.animation.Set("parameters/conditions/hit", false);
         }
 
 
@@ -28,7 +29,7 @@ namespace MobWasp
             blackboard.targetPosition = blackboard.GlobalPosition + blackboard.Basis.Z + targetOffset;
 
             // animation
-            blackboard.animation.Play("wasp-hit");
+            blackboard.animation.Set("parameters/conditions/hit", true);
 
             GD.Print("hit");
         }
