@@ -6,7 +6,7 @@ namespace MobWasp
     public partial class MobWaspStateIdle : MobWaspState
     {
 
-
+        double flickTime;
 
 
 
@@ -14,6 +14,19 @@ namespace MobWasp
         {
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxRangeForEnemies);
+
+            if(EngineTime.timePassed > flickTime)
+            {
+                // flick animation
+                blackboard.animation.Set("parameters/Idle/conditions/flick", true);
+                
+                flickTime = EngineTime.timePassed + (GD.Randf() + 0.5f) * 4;
+            }
+            else
+            {
+                // stop animation
+                blackboard.animation.Set("parameters/Idle/conditions/flick", false);
+            }
         }
 
 
@@ -30,6 +43,8 @@ namespace MobWasp
 
             // animation
             blackboard.animation.Set("parameters/conditions/land", true);
+
+            flickTime = EngineTime.timePassed + (GD.Randf() + 0.5f) * 4;
 
             GD.Print("idle");
         }

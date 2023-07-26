@@ -151,7 +151,10 @@ namespace MobWasp
             }
 
             // animation fly blend using speed
-            animation.Set("parameters/Fly/blend_position", Velocity.LengthSquared() / Mathf.Pow(speed, 2));
+            var flatVelocity = Velocity;
+            flatVelocity.Y = 0;
+            var flyBlend = flatVelocity.LengthSquared() / Mathf.Pow(speed, 2);
+            animation.Set("parameters/Fly/blend_position", flyBlend);
 
 
             if(enemy != null)
