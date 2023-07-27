@@ -20,19 +20,27 @@ namespace MobWasp
 
         public override void StartState()
         {
-            blackboard.useOffset = false;
+            var warnPosition = blackboard.startPosition + blackboard.warnOffset;
 
-            blackboard.lookWithVelocity = true;
+            // check that return is meaningful
+            if(blackboard.GlobalPosition.DistanceSquaredTo(warnPosition) > 1)
+            {
+                blackboard.useOffset = false;
 
-            // target takeoff position
-            blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
+                blackboard.lookWithVelocity = true;
+
+                // target takeoff position
+                blackboard.targetPosition = warnPosition;  
+
+                blackboard.offsetCursor = 0;              
+            }
         }
 
 
 
         public override void EndState()
         {
-
+            
         }
 
 

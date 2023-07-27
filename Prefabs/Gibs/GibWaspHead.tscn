@@ -28,7 +28,7 @@ shape = SubResource("BoxShape3D_r8ddd")
 [node name="NodeLimiter" type="Node" parent="."]
 script = ExtResource("3_ghhea")
 queueName = "gibs"
-queueLimit = 20
+queueLimit = 60
 limitOnReady = false
 
 [node name="RigidbodyFreezer" type="Node" parent="."]

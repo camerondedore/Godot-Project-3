@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=35 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
@@ -99,6 +99,9 @@ graph_offset = Vector2(-22, 24)
 radius = 0.2
 height = 0.9
 
+[sub_resource type="BoxMesh" id="BoxMesh_owndy"]
+size = Vector3(0.05, 0.05, 1)
+
 [node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "animation", "gibsActivator", "audio")]
 collision_layer = 512
 collision_mask = 529
@@ -115,21 +118,21 @@ lookSpeed = 5.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/position = Vector3(8.22375e-19, 0.000897253, 0.000598169)
-bones/0/rotation = Quaternion(-0.709217, 7.82696e-17, 7.8739e-17, 0.70499)
-bones/1/rotation = Quaternion(0.707085, -0.00548954, 0.707086, -0.00548948)
-bones/2/rotation = Quaternion(0.862086, 0.0692675, 0.487645, -0.119212)
-bones/3/position = Vector3(0.0449622, -0.042677, -0.0686468)
-bones/3/rotation = Quaternion(-0.574075, -0.411071, -0.401275, 0.583469)
-bones/4/position = Vector3(0.0458659, 0.0564937, -0.0424444)
-bones/4/rotation = Quaternion(-0.493716, -0.3643, -0.293593, 0.73303)
-bones/5/rotation = Quaternion(0.784476, 0.183857, 0.513729, -0.294749)
-bones/6/rotation = Quaternion(0.862141, -0.0688431, -0.487665, -0.118978)
-bones/7/position = Vector3(-0.0450956, -0.0426706, -0.0687481)
-bones/7/rotation = Quaternion(-0.590767, 0.396455, 0.420353, 0.563135)
-bones/8/position = Vector3(-0.0458659, 0.0561829, -0.0424635)
-bones/8/rotation = Quaternion(-0.504383, 0.355796, 0.321032, 0.718294)
-bones/9/rotation = Quaternion(0.779834, -0.203275, -0.505519, -0.308201)
+bones/0/position = Vector3(7.22964e-20, 0.000488391, 0.000325594)
+bones/0/rotation = Quaternion(-0.707801, 7.84275e-17, 7.85817e-17, 0.706412)
+bones/1/rotation = Quaternion(0.707104, -0.00180346, 0.707105, -0.00180341)
+bones/2/rotation = Quaternion(0.862046, 0.0669321, 0.487837, -0.120052)
+bones/3/position = Vector3(0.0450337, -0.0426763, -0.0686575)
+bones/3/rotation = Quaternion(-0.574588, -0.410416, -0.403031, 0.582214)
+bones/4/position = Vector3(0.0457303, 0.0564199, -0.042449)
+bones/4/rotation = Quaternion(-0.494597, -0.363054, -0.29521, 0.732405)
+bones/5/rotation = Quaternion(0.785599, 0.185539, 0.513061, -0.291855)
+bones/6/rotation = Quaternion(0.862064, -0.0667926, -0.487844, -0.119975)
+bones/7/position = Vector3(-0.0450507, -0.0426719, -0.0687286)
+bones/7/rotation = Quaternion(-0.590956, 0.396137, 0.422003, 0.561926)
+bones/8/position = Vector3(-0.0457303, 0.0561921, -0.042463)
+bones/8/rotation = Quaternion(-0.504984, 0.354999, 0.322439, 0.717635)
+bones/9/rotation = Quaternion(0.780975, -0.204941, -0.504844, -0.305303)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
@@ -187,5 +190,9 @@ transform = Transform3D(0.939693, 0, 0.34202, 0.0885213, 0.965926, -0.24321, -0.
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 max_distance = 30.0
 script = ExtResource("14_82ttd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.603111)
+mesh = SubResource("BoxMesh_owndy")
 
 [editable path="mob-wasp"]

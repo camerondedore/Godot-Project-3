@@ -25,7 +25,9 @@ namespace MobWasp
                 blackboard.targetPosition = blackboard.GlobalPosition;
             }
 
-            blackboard.useOffset = true;         
+            blackboard.useOffset = true;
+
+            blackboard.lookWithVelocity = false;
         }
 
 

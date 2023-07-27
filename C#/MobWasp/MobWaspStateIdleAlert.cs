@@ -42,7 +42,7 @@ namespace MobWasp
         public override State Transition()
         {
             // check for enemy
-            if(blackboard.enemy == null)
+            if(blackboard.enemy != null)
             {
                 // enemy is within range
                 // warn

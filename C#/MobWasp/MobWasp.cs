@@ -192,12 +192,25 @@ namespace MobWasp
                 // smooth look target
                 lookTargetPosition = lookTargetPosition.Lerp(target, lookSpeed * ((float) delta));  
 
-                // look at enemy
+                // look at target
                 LookAt(lookTargetPosition, upDirection);
             }
             else
-            {
-                lookTargetPosition = GlobalPosition + -Basis.Z;
+            {                
+                // get a flattened forward
+                target = GlobalPosition + -Basis.Z;
+                target.Y = GlobalPosition.Y;
+                
+                // smooth look target
+                lookTargetPosition = lookTargetPosition.Lerp(target, lookSpeed * ((float) delta));
+                //lookTargetPosition = target;
+
+                // check angle from forward to up
+                if(Mathf.Abs(-Basis.Z.AngleTo(upDirection)) > 0.0017f)
+                {
+                    // look forward
+                    LookAt(lookTargetPosition, upDirection);
+                }
             }
         }
 
