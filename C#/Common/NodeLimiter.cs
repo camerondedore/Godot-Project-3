@@ -23,7 +23,6 @@ public partial class NodeLimiter : Node
 		{
 			AddToQueue();
 		}
-		
 	}
 
 

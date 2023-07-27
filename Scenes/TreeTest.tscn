@@ -818,6 +818,22 @@ warnOffset = Vector3(0, 2, 0)
 transform = Transform3D(-0.873186, 0, -0.487387, 0, 1, 0, 0.487387, 0, -0.873186, -0.0753546, 0.2, -13.6034)
 warnOffset = Vector3(0, 2, 0)
 
+[node name="MobWasp5" parent="." instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.927993, 0, 0.372599, 0, 1, 0, -0.372599, 0, 0.927993, 2.09337, 0.2, -12.5534)
+warnOffset = Vector3(0, 2, 0)
+
+[node name="MobWasp6" parent="." instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.281102, 0, 0.959678, 0, 1, 0, -0.959678, 0, 0.281102, 3.39741, 0.2, -13.8351)
+warnOffset = Vector3(0, 2, 0)
+
+[node name="MobWasp7" parent="." instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.240144, 0, 0.970738, 0, 1, 0, -0.970738, 0, 0.240144, 3.9426, 0.2, -12.8043)
+warnOffset = Vector3(0, 2, 0)
+
+[node name="MobWasp8" parent="." instance=ExtResource("67_elsxh")]
+transform = Transform3D(-0.614326, 0, 0.789052, 0, 1, 0, -0.789052, 0, -0.614326, 3.66495, 0.2, -14.6116)
+warnOffset = Vector3(0, 2, 0)
+
 [node name="MobWasp3" parent="." instance=ExtResource("67_elsxh")]
 transform = Transform3D(0.653566, -0.75687, 3.30838e-08, 0, -4.37114e-08, -1, 0.75687, 0.653566, -2.85683e-08, 6.17542, 1.2681, -11.9308)
 warnOffset = Vector3(-1.5, 1.5, 0)

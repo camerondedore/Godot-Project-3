@@ -29,18 +29,19 @@ namespace MobWasp
             newFx.GlobalPosition = blackboard.GlobalPosition;
 
             // alert nearby allies that this mob died
-            foreach(var ally in blackboard.allies)
+            foreach(MobFaction ally in blackboard.allies)
             {
-                try
-                {
+                // try
+                // {
                     // temporary casting; may convert to interface later
                     var allyBase = (MobWasp) ally.Owner;
                     allyBase.allyDied = true;
-                }
-                catch
-                {
-                    GD.Print("Mob Wasp: node has been disposed - skipping");
-                }
+                    allyBase.allies.Remove(blackboard.detection.myFaction);
+                // }
+                // catch
+                // {
+                //     GD.Print("Mob Wasp: node has been disposed - skipping");
+                // }
             }
 
             blackboard.QueueFree();
