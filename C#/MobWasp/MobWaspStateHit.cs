@@ -28,6 +28,9 @@ namespace MobWasp
 
             // animation
             blackboard.animation.Set("parameters/conditions/hit", true);
+
+            // audio
+            blackboard.miscAudio.PlaySound(blackboard.hitSound, 0.1f);
         }
 
 

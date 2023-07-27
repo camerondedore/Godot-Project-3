@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=35 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
 [ext_resource type="PackedScene" uid="uid://wiit04fu1oww" path="res://Prefabs/FX/FxWaspDeath.tscn" id="2_hegcd"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_muehp"]
+[ext_resource type="AudioStream" uid="uid://bwgwc6b164o5b" path="res://Audio/mob-wasp-hit.wav" id="3_mvmjm"]
 [ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/MobWasp.tres" id="3_rexv1"]
 [ext_resource type="PackedScene" uid="uid://cyh65ty8moprq" path="res://Prefabs/Gibs/GibWaspAbdomen.tscn" id="6_k7c3p"]
 [ext_resource type="Script" path="res://C#/GibsActivator.cs" id="6_nqxbr"]
@@ -99,7 +100,7 @@ graph_offset = Vector2(-22, 24)
 radius = 0.2
 height = 0.9
 
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "animation", "gibsActivator", "audio")]
+[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "animation", "gibsActivator", "flyAudio", "miscAudio")]
 collision_layer = 512
 collision_mask = 529
 motion_mode = 1
@@ -107,29 +108,31 @@ script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
 animation = NodePath("AnimationTree")
 gibsActivator = NodePath("Gibs")
-audio = NodePath("Audio")
+flyAudio = NodePath("FlyAudio")
+miscAudio = NodePath("MiscAudio")
 flySound = ExtResource("13_yyjne")
+hitSound = ExtResource("3_mvmjm")
 waspDeathFx = ExtResource("2_hegcd")
 lookSpeed = 5.0
 
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/position = Vector3(1.76465e-18, 0.00726268, 0.00484178)
-bones/0/rotation = Quaternion(-0.724368, 7.65403e-17, 8.0421e-17, 0.689413)
-bones/1/rotation = Quaternion(0.705648, -0.0454005, 0.705648, -0.0454004)
-bones/2/rotation = Quaternion(0.862185, 0.0945238, 0.485371, -0.110074)
-bones/3/position = Vector3(0.0453756, -0.0426731, -0.0687087)
-bones/3/rotation = Quaternion(-0.568329, -0.418027, -0.382124, 0.596855)
-bones/4/position = Vector3(0.0489441, 0.0581694, -0.0423384)
-bones/4/rotation = Quaternion(-0.484003, -0.377668, -0.275981, 0.739555)
-bones/5/rotation = Quaternion(0.771673, 0.165498, 0.520538, -0.325839)
-bones/6/rotation = Quaternion(0.862696, -0.0910187, -0.485569, -0.108143)
-bones/7/position = Vector3(-0.0461967, -0.0426404, -0.0692259)
-bones/7/rotation = Quaternion(-0.588564, 0.39978, 0.402379, 0.576072)
-bones/8/position = Vector3(-0.0489441, 0.0559732, -0.0424733)
-bones/8/rotation = Quaternion(-0.497765, 0.364344, 0.305726, 0.725269)
-bones/9/rotation = Quaternion(0.766838, -0.185074, -0.512417, -0.339317)
+bones/0/position = Vector3(1.36747e-18, 0.00918878, 0.00612585)
+bones/0/rotation = Quaternion(-0.728808, 7.60191e-17, 8.09139e-17, 0.684719)
+bones/1/rotation = Quaternion(0.704786, -0.0572382, 0.704786, -0.0572382)
+bones/2/rotation = Quaternion(0.862094, 0.102021, 0.484627, -0.107341)
+bones/3/position = Vector3(0.0456698, -0.0426703, -0.0687528)
+bones/3/rotation = Quaternion(-0.566552, -0.420045, -0.376384, 0.600763)
+bones/4/position = Vector3(0.0497234, 0.0585937, -0.0423115)
+bones/4/rotation = Quaternion(-0.481057, -0.381598, -0.270711, 0.741406)
+bones/5/rotation = Quaternion(0.767641, 0.159991, 0.52241, -0.334988)
+bones/6/rotation = Quaternion(0.862758, -0.097602, -0.484888, -0.104909)
+bones/7/position = Vector3(-0.0466191, -0.0426288, -0.0694092)
+bones/7/rotation = Quaternion(-0.587852, 0.40073, 0.396995, 0.579863)
+bones/8/position = Vector3(-0.0497234, 0.0559201, -0.0424758)
+bones/8/rotation = Quaternion(-0.495758, 0.366858, 0.301152, 0.727287)
+bones/9/rotation = Quaternion(0.762749, -0.179607, -0.514318, -0.34847)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
@@ -184,8 +187,14 @@ transform = Transform3D(0.939693, 0, -0.34202, -0.0885213, 0.965926, -0.24321, 0
 [node name="GibWaspWingR" parent="Gibs" instance=ExtResource("10_633pr")]
 transform = Transform3D(0.939693, 0, 0.34202, 0.0885213, 0.965926, -0.24321, -0.330366, 0.258819, 0.907673, 0.2, 0.127, 0.158)
 
-[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+[node name="FlyAudio" type="AudioStreamPlayer3D" parent="."]
 max_distance = 30.0
+max_polyphony = 2
+script = ExtResource("14_82ttd")
+
+[node name="MiscAudio" type="AudioStreamPlayer3D" parent="."]
+max_distance = 30.0
+max_polyphony = 2
 script = ExtResource("14_82ttd")
 
 [editable path="mob-wasp"]

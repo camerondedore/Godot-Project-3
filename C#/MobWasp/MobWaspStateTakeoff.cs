@@ -29,7 +29,9 @@ namespace MobWasp
             blackboard.animation.Set("parameters/conditions/fly", true);
 
             // audio
-            blackboard.audio.PlaySound(blackboard.flySound, 0.1f);          
+            blackboard.flyAudio.Stream = blackboard.flySound;
+            blackboard.flyAudio.Seek(GD.Randf() * ((float) blackboard.flySound.GetLength()));
+            blackboard.flyAudio.PlaySound(blackboard.flySound, 0.1f);          
         }
 
 
@@ -60,6 +62,9 @@ namespace MobWasp
                     // idle alert
                     return blackboard.stateIdleAlert;
                 }
+
+                // cooldown
+                return blackboard.stateCooldown;
             }
 
             return this;

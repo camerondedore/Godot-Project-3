@@ -32,7 +32,7 @@ namespace MobWasp
         public override void EndState()
         {
             // audio
-            blackboard.audio.Stop();
+            blackboard.flyAudio.Stop();
         }
 
 

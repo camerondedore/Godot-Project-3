@@ -6,7 +6,8 @@ namespace MobWasp
     public partial class MobWaspStateCooldown : MobWaspState
     {
 
-        double startTime;
+        double startTime,
+            cooldownLength;
 
 
 
@@ -30,6 +31,8 @@ namespace MobWasp
             blackboard.useOffset = true;
 
             blackboard.lookWithVelocity = false;
+
+            cooldownLength = (1 + (GD.Randf() - 0.5f) * 0.33f) * 3;
         }
 
 
@@ -52,7 +55,7 @@ namespace MobWasp
 
 
             // wait for cooldown period
-            if(EngineTime.timePassed > startTime + 3)
+            if(EngineTime.timePassed > startTime + cooldownLength)
             {
                 // return
                 return blackboard.stateReturn;
