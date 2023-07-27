@@ -22,11 +22,9 @@ namespace MobWasp
         {
             blackboard.useOffset = false;
 
-            blackboard.updateLook = false;
+            blackboard.lookWithVelocity = true;
 
             blackboard.targetPosition = blackboard.startPosition;
-
-            GD.Print("land");
         }
 
 
@@ -49,7 +47,7 @@ namespace MobWasp
             }
 
             // check for arrival
-            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.56f)
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.1f)
             {
                 // idle
                 return blackboard.stateIdle;

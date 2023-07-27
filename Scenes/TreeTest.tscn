@@ -819,8 +819,8 @@ transform = Transform3D(-0.873186, 0, -0.487387, 0, 1, 0, 0.487387, 0, -0.873186
 warnOffset = Vector3(0, 2, 0)
 
 [node name="MobWasp3" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(-0.415836, 0, 0.90944, 0, 1, 0, -0.90944, 0, -0.415836, 2.75496, 0.2, -12.5984)
-warnOffset = Vector3(0, 2, 0)
+transform = Transform3D(0.653566, -0.75687, 3.30838e-08, 0, -4.37114e-08, -1, 0.75687, 0.653566, -2.85683e-08, 6.17542, 1.2681, -11.9308)
+warnOffset = Vector3(-1.5, 1.5, 0)
 
 [node name="MobWasp4" parent="." instance=ExtResource("67_elsxh")]
 transform = Transform3D(-0.923016, 0, 0.384763, 0, 1, 0, -0.384763, 0, -0.923016, 12.5462, 0.2, -13.3958)

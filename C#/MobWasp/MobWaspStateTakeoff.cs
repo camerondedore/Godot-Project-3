@@ -20,7 +20,7 @@ namespace MobWasp
 
         public override void StartState()
         {
-            blackboard.updateLook = false;
+            blackboard.lookWithVelocity = true;
 
             // target takeoff position
             blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
@@ -29,9 +29,7 @@ namespace MobWasp
             blackboard.animation.Set("parameters/conditions/fly", true);
 
             // audio
-            blackboard.audio.PlaySound(blackboard.flySound, 0.1f);
-
-            GD.Print("takeoff");            
+            blackboard.audio.PlaySound(blackboard.flySound, 0.1f);          
         }
 
 
@@ -49,7 +47,7 @@ namespace MobWasp
         public override State Transition()
         {
             // check for arrival
-            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.56f)
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.1f)
             {
                 // warn
                 return blackboard.stateWarn;

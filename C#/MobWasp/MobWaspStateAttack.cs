@@ -28,10 +28,6 @@ namespace MobWasp
             startTime = EngineTime.timePassed;
 
             blackboard.useOffset = false;
-
-            blackboard.updateLook = false;
-
-            GD.Print("attack");
         }
 
 

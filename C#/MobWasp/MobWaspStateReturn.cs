@@ -22,12 +22,10 @@ namespace MobWasp
         {
             blackboard.useOffset = false;
 
-            blackboard.updateLook = true;
+            blackboard.lookWithVelocity = true;
 
             // target takeoff position
             blackboard.targetPosition = blackboard.startPosition + blackboard.warnOffset;
-
-            GD.Print("return");
         }
 
 

@@ -33,10 +33,10 @@ namespace MobWasp
 
         public override void StartState()
         {
-            blackboard.updateLook = false;
+            blackboard.lookWithVelocity = false;
             
-            blackboard.targetPosition = blackboard.startPosition;    
-
+            blackboard.targetPosition = blackboard.startPosition;
+            
             // get starting allies
             blackboard.allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
             blackboard.startingAllyCount = blackboard.allies.Count;
@@ -45,8 +45,6 @@ namespace MobWasp
             blackboard.animation.Set("parameters/conditions/land", true);
 
             flickTime = EngineTime.timePassed + (GD.Randf() + 0.5f) * 4;
-
-            GD.Print("idle");
         }
 
 

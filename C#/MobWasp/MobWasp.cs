@@ -43,21 +43,24 @@ namespace MobWasp
             hitDistanceSqr = 0.5f,
             maxFlightRangeSqr = 1600,
             speed = 3.5f,
+            lookSpeed = 4,
             acceleration = 4,
             offsetSize = 0.33f,
             offsetSpeed = 1f;
         
         public MobFaction enemy;
         public List<MobFaction> allies = new List<MobFaction>();
-        public Vector3 startPosition,
-            targetPosition,
-            lookTargetPosition;
+        public Vector3 targetPosition,
+            startPosition;
         public double offsetCursor = 0;
         public int startingAllyCount;
         public bool useOffset = false,
-            updateLook = false,
+            lookWithVelocity = false,
             allyDied = false;
 
+        Vector3 startForward,
+            startUp,
+            lookTargetPosition;
         int offsetDirection = 1;
 
 
@@ -66,8 +69,10 @@ namespace MobWasp
         public override void _Ready()
         {
             startPosition = GlobalPosition;
+            startForward = -Basis.Z;
+            startUp = Basis.Y;
             targetPosition = startPosition;
-            lookTargetPosition = GlobalPosition + -Basis.Z;
+            lookTargetPosition = startPosition + startForward;
 
             if(GD.Randi() % 2 == 1)
             {
@@ -128,7 +133,7 @@ namespace MobWasp
             }
             
             // check if not close to move target
-            if(GlobalPosition.DistanceSquaredTo(moveTarget) > 0.01f)
+            if(GlobalPosition.DistanceSquaredTo(moveTarget) > 0.0225f)
             {
                 // move to target
                 var newVelocity = (moveTarget - GlobalPosition).Normalized() * speed;
@@ -157,32 +162,42 @@ namespace MobWasp
             animation.Set("parameters/Fly/blend_position", flyBlend);
 
 
+            var target = Vector3.Zero;
+            var upDirection = Vector3.Up;
+
             if(enemy != null)
             {
-                // flatten look direction
-                var target = enemy.GlobalPosition;
+                // look at enemy
+                target = (enemy.GlobalPosition - GlobalPosition).Normalized() + GlobalPosition;
                 target.Y = GlobalPosition.Y;
-
-                if(target != GlobalPosition)
+            }
+            else if(lookWithVelocity)
+            {
+                if(flatVelocity.LengthSquared() > 0.4f)
                 {
-                    // smooth look target
-                    lookTargetPosition = lookTargetPosition.Lerp(target, speed * ((float) delta));  
-
-                    // look at enemy
-                    LookAt(lookTargetPosition);
+                    // look in direction of movement
+                    target = GlobalPosition + flatVelocity.Normalized();
                 }
             }
-            else if(updateLook && Velocity != Vector3.Zero)
+            else if(machine.CurrentState == stateIdle)
             {
-                // flatten look direction
-                var target = GlobalPosition + Velocity;
-                target.Y = GlobalPosition.Y;
+                // starting look
+                target = startPosition + startForward;
+                upDirection = startUp;
+            }
 
+
+            if(target != Vector3.Zero && target != GlobalPosition)
+            {
                 // smooth look target
-                lookTargetPosition = lookTargetPosition.Lerp(target, speed * ((float) delta));  
+                lookTargetPosition = lookTargetPosition.Lerp(target, lookSpeed * ((float) delta));  
 
-                // look in direction of movement
-                LookAt(lookTargetPosition);
+                // look at enemy
+                LookAt(lookTargetPosition, upDirection);
+            }
+            else
+            {
+                lookTargetPosition = GlobalPosition + -Basis.Z;
             }
         }
 

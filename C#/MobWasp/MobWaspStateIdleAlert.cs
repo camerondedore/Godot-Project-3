@@ -27,9 +27,7 @@ namespace MobWasp
 
             blackboard.useOffset = true;
 
-            blackboard.updateLook = false;
-
-            GD.Print("idle alert");
+            blackboard.lookWithVelocity = false;
         }
 
 

@@ -22,8 +22,6 @@ namespace MobWasp
         {
             startTime = EngineTime.timePassed;
 
-            blackboard.updateLook = false;
-
             var targetOffset = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f);
 
             blackboard.targetPosition = blackboard.GlobalPosition + blackboard.Basis.Z + targetOffset;

@@ -19,8 +19,6 @@ namespace MobWasp
 
         public override void StartState()
         {
-            blackboard.updateLook = false;
-
             // activate gibs
             blackboard.gibsActivator.Activate();
 
@@ -45,9 +43,6 @@ namespace MobWasp
                 }
             }
 
-            GD.Print("die");
-
-            // temporary death
             blackboard.QueueFree();
         }
 
