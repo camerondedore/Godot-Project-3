@@ -53,17 +53,8 @@ public partial class PlayerArrow : Projectile
                 // spawn hit fx
                 SpawnPrefab(hitFx, point, normal, upVector);
 
-                if(trailFx != null)
-                {
-                    trailFx.Emitting = false;
-
-                    // detach trail fx
-                    // ignoring rotation as it doesn't matter for particles not set to use local
-                    var trailFxPosition = trailFx.GlobalPosition;
-                    trailFx.GetParent().RemoveChild(trailFx);
-                    GetTree().CurrentScene.AddChild(trailFx);
-                    trailFx.GlobalPosition = trailFxPosition;
-                }
+                // detach trail
+                DetachTrail();
 
                 // destroy arrow
                 QueueFree();
@@ -91,6 +82,34 @@ public partial class PlayerArrow : Projectile
         // disable script
         SetScript(new Variant());
 
+    }
+
+
+
+    public override void OutOfRange()
+    {
+        // detach trail
+        DetachTrail();
+        
+        // destroy arrow
+        QueueFree();
+    }
+
+
+
+    void DetachTrail()
+    {
+        if(trailFx != null)
+        {
+            trailFx.Emitting = false;
+
+            // detach trail fx
+            // ignoring rotation as it doesn't matter for particles not set to use local
+            var trailFxPosition = trailFx.GlobalPosition;
+            trailFx.GetParent().RemoveChild(trailFx);
+            GetTree().CurrentScene.AddChild(trailFx);
+            trailFx.GlobalPosition = trailFxPosition;
+        }
     }
 
 

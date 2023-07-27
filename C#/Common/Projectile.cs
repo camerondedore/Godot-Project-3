@@ -81,7 +81,7 @@ public partial class Projectile : Node3D
 		// destroy at max range
 		if(distanceTraveledSqr > rangeSqr)
 		{
-			QueueFree();
+			OutOfRange();
 		}
 	}
 
@@ -92,4 +92,11 @@ public partial class Projectile : Node3D
         // destroy on hit
         QueueFree();
     }
+
+
+
+	public virtual void OutOfRange()
+	{
+		QueueFree();
+	}
 }
