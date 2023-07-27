@@ -28,8 +28,6 @@ namespace MobWasp
 
             // animation
             blackboard.animation.Set("parameters/conditions/hit", true);
-
-            GD.Print("hit");
         }
 
 

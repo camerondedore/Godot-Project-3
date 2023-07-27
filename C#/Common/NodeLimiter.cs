@@ -63,7 +63,17 @@ public class LimitQueue
 		{	
 			// remove oldest game object
 			var nodeToDestroy = queue.Dequeue();
-			nodeToDestroy.Owner.QueueFree();
+			
+			try
+			{
+				nodeToDestroy.Owner.QueueFree();
+			}
+			catch
+			{
+				// object has been disposed
+				// nothing to do
+				GD.Print("Node Limiter: Node has been disposed - skipping");
+			}
 		}
 
 		// add new game object

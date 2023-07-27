@@ -39,7 +39,7 @@ namespace MobWasp
                 }
                 catch
                 {
-                    GD.Print("Mob has been disposed - skipping");
+                    GD.Print("Mob Wasp: node has been disposed - skipping");
                 }
             }
 
