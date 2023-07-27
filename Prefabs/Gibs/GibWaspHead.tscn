@@ -1,18 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://brljsrtq78hv1"]
+[gd_scene load_steps=7 format=3 uid="uid://brljsrtq78hv1"]
 
 [ext_resource type="ArrayMesh" uid="uid://cs0ss8dm5a4bk" path="res://Models/gib-wasp-head.res" id="1_qj7l5"]
+[ext_resource type="Script" path="res://C#/Gib.cs" id="1_qlb5l"]
 [ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/MobWasp.tres" id="2_ew54o"]
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_2wcxr"]
+[ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="3_ghhea"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodyFreezer.cs" id="4_fofoy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8ddd"]
 size = Vector3(0.23583, 0.221224, 0.141044)
 
-[node name="GibWaspHead" type="RigidBody3D"]
+[node name="GibWaspHead" type="RigidBody3D" node_paths=PackedStringArray("limiter")]
 process_mode = 4
 collision_layer = 256
 collision_mask = 17
 mass = 0.1
 freeze = true
+script = ExtResource("1_qlb5l")
+limiter = NodePath("NodeLimiter")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_qj7l5")
@@ -21,5 +25,11 @@ surface_material_override/0 = ExtResource("2_ew54o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_r8ddd")
 
-[node name="AutoDestroy" type="Node" parent="."]
-script = ExtResource("3_2wcxr")
+[node name="NodeLimiter" type="Node" parent="."]
+script = ExtResource("3_ghhea")
+queueName = "gibs"
+queueLimit = 20
+limitOnReady = false
+
+[node name="RigidbodyFreezer" type="Node" parent="."]
+script = ExtResource("4_fofoy")

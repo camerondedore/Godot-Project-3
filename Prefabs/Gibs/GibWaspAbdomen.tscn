@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bklhkf6cymrxy" path="res://Models/gib-wasp-abdomen.res" id="2_l02bw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2cjt"]
-size = Vector3(0.195, 0.178, 0.391255)
+size = Vector3(0.167386, 0.162572, 0.391255)
 
 [node name="GibWaspAbdomen" instance=ExtResource("1_xd3aj")]
 
@@ -12,4 +12,5 @@ size = Vector3(0.195, 0.178, 0.391255)
 mesh = ExtResource("2_l02bw")
 
 [node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0136671, 0)
 shape = SubResource("BoxShape3D_k2cjt")

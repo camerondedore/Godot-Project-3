@@ -11,11 +11,24 @@ public partial class NodeLimiter : Node
 	string queueName;
 	[Export]
 	int queueLimit;
+	[Export]
+	bool limitOnReady = true;
 	
 
 
 
 	public override void _Ready()
+	{
+		if(limitOnReady)
+		{
+			AddToQueue();
+		}
+		
+	}
+
+
+
+	public void AddToQueue()
 	{
 		// check if queue exists
 		if(queues.ContainsKey(queueName))
@@ -30,7 +43,6 @@ public partial class NodeLimiter : Node
 			// add game object
 			queues[queueName].AddNode(this as Node);
 		}
-		
 	}
 }
 

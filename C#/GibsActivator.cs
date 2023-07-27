@@ -10,7 +10,7 @@ public partial class GibsActivator : Node3D
         randomDirectionRadius = 0.1f,
         maxRotationSpeed = 3;
 
-    List<RigidBody3D> gibs = new List<RigidBody3D>();
+    List<Gib> gibs = new List<Gib>();
 
 
 
@@ -21,7 +21,7 @@ public partial class GibsActivator : Node3D
 
         foreach(var gib in gibsRaw)
         {
-            gibs.Add((RigidBody3D) gib);
+            gibs.Add((Gib) gib);
         }
     }
 
@@ -40,8 +40,7 @@ public partial class GibsActivator : Node3D
             gib.GlobalRotation = gibRotation;
 
             // turn on
-            gib.ProcessMode = ProcessModeEnum.Inherit;
-            gib.Freeze = false;
+            gib.ActivateGib();
 
             // rigidbody velocity
             var randomDirection = new Vector3((GD.Randf() - 0.5f), (GD.Randf() - 0.5f), (GD.Randf() - 0.5f)) * randomDirectionRadius;
