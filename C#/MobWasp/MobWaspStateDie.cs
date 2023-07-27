@@ -28,20 +28,15 @@ namespace MobWasp
             newFx.Owner = blackboard.GetTree().CurrentScene;
             newFx.GlobalPosition = blackboard.GlobalPosition;
 
+            // get starting allies
+            var allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
+
             // alert nearby allies that this mob died
-            foreach(MobFaction ally in blackboard.allies)
+            foreach(MobFaction ally in allies)
             {
-                // try
-                // {
-                    // temporary casting; may convert to interface later
-                    var allyBase = (MobWasp) ally.Owner;
-                    allyBase.allyDied = true;
-                    allyBase.allies.Remove(blackboard.detection.myFaction);
-                // }
-                // catch
-                // {
-                //     GD.Print("Mob Wasp: node has been disposed - skipping");
-                // }
+                // temporary casting; may convert to interface later
+                var allyBase = (MobWasp) ally.Owner;
+                allyBase.allyDied = true;
             }
 
             blackboard.QueueFree();

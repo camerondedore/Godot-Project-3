@@ -36,10 +36,6 @@ namespace MobWasp
             blackboard.lookWithVelocity = false;
             
             blackboard.targetPosition = blackboard.startPosition;
-            
-            // get starting allies
-            blackboard.allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
-            blackboard.startingAllyCount = blackboard.allies.Count;
 
             // animation
             blackboard.animation.Set("parameters/conditions/land", true);

@@ -49,8 +49,17 @@ namespace MobWasp
             // check for arrival
             if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.1f)
             {
-                // warn
-                return blackboard.stateWarn;
+                if(blackboard.enemy != null)
+                {
+                    // warn
+                    return blackboard.stateWarn;
+                }
+
+                if(blackboard.allyDied)
+                {
+                    // idle alert
+                    return blackboard.stateIdleAlert;
+                }
             }
 
             return this;

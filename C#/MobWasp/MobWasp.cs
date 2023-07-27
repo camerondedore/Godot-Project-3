@@ -49,11 +49,9 @@ namespace MobWasp
             offsetSpeed = 1f;
         
         public MobFaction enemy;
-        public List<MobFaction> allies = new List<MobFaction>();
         public Vector3 targetPosition,
             startPosition;
         public double offsetCursor = 0;
-        public int startingAllyCount;
         public bool useOffset = false,
             lookWithVelocity = false,
             allyDied = false;

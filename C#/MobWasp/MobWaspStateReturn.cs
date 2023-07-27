@@ -22,18 +22,14 @@ namespace MobWasp
         {
             var warnPosition = blackboard.startPosition + blackboard.warnOffset;
 
-            // check that return is meaningful
-            if(blackboard.GlobalPosition.DistanceSquaredTo(warnPosition) > 1)
-            {
-                blackboard.useOffset = false;
+            // target takeoff position
+            blackboard.targetPosition = warnPosition;  
 
-                blackboard.lookWithVelocity = true;
+            blackboard.useOffset = false;
 
-                // target takeoff position
-                blackboard.targetPosition = warnPosition;  
+            blackboard.lookWithVelocity = true;
 
-                blackboard.offsetCursor = 0;              
-            }
+            blackboard.offsetCursor = 0;              
         }
 
 

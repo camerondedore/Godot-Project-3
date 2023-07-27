@@ -28,6 +28,8 @@ namespace MobWasp
             startTime = EngineTime.timePassed;
 
             blackboard.useOffset = false;
+
+            blackboard.offsetCursor = 0;
         }
 
 
