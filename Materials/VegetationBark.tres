@@ -120,6 +120,8 @@ function = 26
 
 [resource]
 code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
 uniform float Wind_Amplitude = 0.10000000149012;
 uniform float Wind_Speed = 0.5;
 uniform float Wind_Turbulance = 0.5;
