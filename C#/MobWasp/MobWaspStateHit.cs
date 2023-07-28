@@ -29,8 +29,12 @@ namespace MobWasp
             // animation
             blackboard.animation.Set("parameters/conditions/hit", true);
 
-            // audio
-            blackboard.miscAudio.PlaySound(blackboard.hitSound, 0.1f);
+            // spawn fx
+            var newFx = (Node3D) blackboard.waspHitFx.Instantiate();
+            blackboard.GetTree().CurrentScene.AddChild(newFx);
+            newFx.Owner = blackboard.GetTree().CurrentScene;
+            newFx.GlobalPosition = blackboard.GlobalPosition;
+
         }
 
 

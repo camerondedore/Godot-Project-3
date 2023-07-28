@@ -26,13 +26,12 @@ namespace MobWasp
         [Export]
         public GibsActivator gibsActivator;
         [Export]
-        public AudioTools3d flyAudio,
-            miscAudio;
+        public AudioTools3d flyAudio;
         [Export]
-        public AudioStream flySound,
-            hitSound;
+        public AudioStream flySound;
         [Export]
-        public PackedScene waspDeathFx;
+        public PackedScene waspDeathFx,
+            waspHitFx;
         [Export]
         public string targetName = "Wasp",
             arrowType = "weighted";
