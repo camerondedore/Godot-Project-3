@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=32 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
@@ -29,31 +29,26 @@ blend_point_1/node = SubResource("AnimationNodeAnimation_uhqfs")
 blend_point_1/pos = 1.0
 min_space = 0.0
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xo26i"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ceqwu"]
 animation = &"wasp-idle-flick"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k1qqa"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qor82"]
 animation = &"wasp-idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wyglw"]
-advance_mode = 2
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_elblp"]
+filter_enabled = true
+filters = ["mob-wasp-armature/Skeleton3D:wing-l", "mob-wasp-armature/Skeleton3D:wing-r"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_05efs"]
-advance_mode = 2
-advance_condition = &"flick"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gxjw0"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_li2dj"]
-states/Start/position = Vector2(269, 108)
-states/wasp-idle/node = SubResource("AnimationNodeAnimation_k1qqa")
-states/wasp-idle/position = Vector2(414, 108)
-states/wasp-idle-flick/node = SubResource("AnimationNodeAnimation_xo26i")
-states/wasp-idle-flick/position = Vector2(642, 108)
-transitions = ["Start", "wasp-idle", SubResource("AnimationNodeStateMachineTransition_wyglw"), "wasp-idle", "wasp-idle-flick", SubResource("AnimationNodeStateMachineTransition_05efs"), "wasp-idle-flick", "wasp-idle", SubResource("AnimationNodeStateMachineTransition_gxjw0")]
-graph_offset = Vector2(79, 22)
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4qkcw"]
+graph_offset = Vector2(-209, 56)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_qor82")
+nodes/Animation/position = Vector2(80, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ceqwu")
+"nodes/Animation 2/position" = Vector2(74.536, 267.531)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_elblp")
+nodes/OneShot/position = Vector2(300, 140)
+nodes/output/position = Vector2(500, 180)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 2"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83ogc"]
 animation = &"wasp-hit"
@@ -67,16 +62,14 @@ advance_condition = &"hit"
 xfade_time = 0.2
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rbb6o"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vxpty"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eejlt"]
-xfade_time = 0.2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fj7pu"]
 advance_mode = 2
 advance_condition = &"fly"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7uqa8"]
-xfade_time = 0.2
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h7fiv"]
 advance_mode = 2
 advance_condition = &"land"
 
@@ -84,17 +77,15 @@ advance_condition = &"land"
 states/End/position = Vector2(648, 86)
 states/Fly/node = SubResource("AnimationNodeBlendSpace1D_at3lr")
 states/Fly/position = Vector2(510, 86)
-states/Idle/node = SubResource("AnimationNodeStateMachine_li2dj")
-states/Idle/position = Vector2(359, 86)
+states/Idle/node = SubResource("AnimationNodeBlendTree_4qkcw")
+states/Idle/position = Vector2(360, 86)
 states/Start/position = Vector2(226, 86)
 states/wasp-hit/node = SubResource("AnimationNodeAnimation_83ogc")
 states/wasp-hit/position = Vector2(510, 184)
-transitions = ["Fly", "wasp-hit", SubResource("AnimationNodeStateMachineTransition_ceqyv"), "wasp-hit", "Fly", SubResource("AnimationNodeStateMachineTransition_gvu1h"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_rbb6o"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_eejlt"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_7uqa8")]
-graph_offset = Vector2(-22, 24)
+transitions = ["Fly", "wasp-hit", SubResource("AnimationNodeStateMachineTransition_ceqyv"), "wasp-hit", "Fly", SubResource("AnimationNodeStateMachineTransition_gvu1h"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_vxpty"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_fj7pu"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_h7fiv")]
+graph_offset = Vector2(-8, 11)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_h8hly"]
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_uv8l0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
 radius = 0.2
@@ -118,21 +109,21 @@ lookSpeed = 5.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/position = Vector3(1.36747e-18, 0.00918878, 0.00612585)
-bones/0/rotation = Quaternion(-0.728808, 7.60191e-17, 8.09139e-17, 0.684719)
-bones/1/rotation = Quaternion(0.704786, -0.0572382, 0.704786, -0.0572382)
-bones/2/rotation = Quaternion(0.862094, 0.102021, 0.484627, -0.107341)
-bones/3/position = Vector3(0.0456698, -0.0426703, -0.0687528)
-bones/3/rotation = Quaternion(-0.566552, -0.420045, -0.376384, 0.600763)
-bones/4/position = Vector3(0.0497234, 0.0585937, -0.0423115)
-bones/4/rotation = Quaternion(-0.481057, -0.381598, -0.270711, 0.741406)
-bones/5/rotation = Quaternion(0.767641, 0.159991, 0.52241, -0.334988)
-bones/6/rotation = Quaternion(0.862758, -0.097602, -0.484888, -0.104909)
-bones/7/position = Vector3(-0.0466191, -0.0426288, -0.0694092)
-bones/7/rotation = Quaternion(-0.587852, 0.40073, 0.396995, 0.579863)
-bones/8/position = Vector3(-0.0497234, 0.0559201, -0.0424758)
-bones/8/rotation = Quaternion(-0.495758, 0.366858, 0.301152, 0.727287)
-bones/9/rotation = Quaternion(0.762749, -0.179607, -0.514318, -0.34847)
+bones/0/position = Vector3(1.18259e-18, 0.00333062, 0.00222042)
+bones/0/rotation = Quaternion(-0.715044, 7.76134e-17, 7.93859e-17, 0.699079)
+bones/1/rotation = Quaternion(0.706802, -0.02074, 0.706803, -0.02074)
+bones/2/rotation = Quaternion(0.862198, 0.0789214, 0.486818, -0.115732)
+bones/3/position = Vector3(0.045136, -0.0426754, -0.0686729)
+bones/3/rotation = Quaternion(-0.571923, -0.413759, -0.393989, 0.588626)
+bones/4/position = Vector3(0.0470707, 0.0571496, -0.0424029)
+bones/4/rotation = Quaternion(-0.490042, -0.369434, -0.286887, 0.735577)
+bones/5/rotation = Quaternion(0.779725, 0.176877, 0.516422, -0.306679)
+bones/6/rotation = Quaternion(0.862416, -0.0773191, -0.4869, -0.114848)
+bones/7/position = Vector3(-0.0457377, -0.042653, -0.0690267)
+bones/7/rotation = Quaternion(-0.589961, 0.397749, 0.413512, 0.56811)
+bones/8/position = Vector3(-0.0470707, 0.0561008, -0.0424673)
+bones/8/rotation = Quaternion(-0.501879, 0.359078, 0.3152, 0.720992)
+bones/9/rotation = Quaternion(0.775009, -0.196358, -0.508245, -0.320143)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
@@ -146,8 +137,8 @@ parameters/conditions/fly = false
 parameters/conditions/hit = false
 parameters/conditions/land = false
 parameters/Fly/blend_position = 0.0
-parameters/Idle/playback = SubResource("AnimationNodeStateMachinePlayback_uv8l0")
-parameters/Idle/conditions/flick = false
+parameters/Idle/OneShot/active = false
+parameters/Idle/OneShot/request = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)

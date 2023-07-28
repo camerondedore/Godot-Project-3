@@ -18,7 +18,7 @@ namespace MobWasp
             if(EngineTime.timePassed > flickTime)
             {
                 // flick animation
-                blackboard.animation.Set("parameters/Idle/conditions/flick", true);
+                blackboard.animation.Set("parameters/Idle/OneShot/request", true);
                 
                 flickTime = EngineTime.timePassed + (GD.Randf() + 0.5f) * 4;
             }
