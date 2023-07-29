@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://m802chlsn4cd"]
+[gd_scene load_steps=9 format=3 uid="uid://m802chlsn4cd"]
 
 [ext_resource type="Material" uid="uid://frsacdpa6623" path="res://Materials/FxWaspBloodSplash.tres" id="1_vk1hr"]
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_2klsq"]
@@ -9,6 +9,13 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_mqvb8"]
 gradient = SubResource("Gradient_rtmdu")
 
+[sub_resource type="Curve" id="Curve_y2uru"]
+_data = [Vector2(0, 0.39604), 0.0, 2.25117, 0, 0, Vector2(1, 1), -0.0406197, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_edmrn"]
+curve = SubResource("Curve_y2uru")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o05rj"]
 lifetime_randomness = 0.5
 direction = Vector3(0, 1, 0)
@@ -16,8 +23,9 @@ initial_velocity_min = 2.0
 initial_velocity_max = 3.0
 angle_min = -180.0
 angle_max = 180.0
-scale_min = 0.3
-scale_max = 0.6
+scale_min = 0.6
+scale_max = 0.8
+scale_curve = SubResource("CurveTexture_edmrn")
 color_ramp = SubResource("GradientTexture1D_mqvb8")
 
 [sub_resource type="QuadMesh" id="QuadMesh_lckjj"]

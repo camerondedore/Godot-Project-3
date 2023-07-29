@@ -24,6 +24,9 @@ namespace MobWasp
                 newFx.Owner = blackboard.GetTree().CurrentScene;
                 newFx.GlobalPosition = blackboard.GlobalPosition;
 
+                // play venom fx
+                blackboard.venomFx.Emitting = true;
+
                 fxUsed = true;
             }
         }

@@ -26,6 +26,8 @@ namespace MobWasp
         [Export]
         public GibsActivator gibsActivator;
         [Export]
+        public GpuParticles3D venomFx;
+        [Export]
         public AudioTools3d flyAudio;
         [Export]
         public AudioStream flySound;
