@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=18 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
@@ -10,82 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://cyh65ty8moprq" path="res://Prefabs/Gibs/GibWaspAbdomen.tscn" id="6_k7c3p"]
 [ext_resource type="Script" path="res://C#/GibsActivator.cs" id="6_nqxbr"]
 [ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="7_hwvjs"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://dep8gxxpuhvr2" path="res://Animation/MobWaspAnimationStateMachine.tres" id="7_w7xgh"]
 [ext_resource type="PackedScene" uid="uid://b4iwcasvg6jw" path="res://Prefabs/Gibs/GibWaspMid.tscn" id="8_cmu72"]
 [ext_resource type="PackedScene" uid="uid://dr67ajwiaqnkk" path="res://Prefabs/Gibs/GibWaspWingL.tscn" id="9_la8w6"]
 [ext_resource type="PackedScene" uid="uid://cyp7usw06fqjr" path="res://Prefabs/Gibs/GibWaspWingR.tscn" id="10_633pr"]
 [ext_resource type="AudioStream" uid="uid://130buoernvce" path="res://Audio/mob-wasp-fly.wav" id="13_yyjne"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_82ttd"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2wsol"]
-animation = &"wasp-hover"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uhqfs"]
-animation = &"wasp-fly"
-
-[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_at3lr"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_2wsol")
-blend_point_0/pos = 0.0
-blend_point_1/node = SubResource("AnimationNodeAnimation_uhqfs")
-blend_point_1/pos = 1.0
-min_space = 0.0
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ceqwu"]
-animation = &"wasp-idle-flick"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qor82"]
-animation = &"wasp-idle"
-
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_elblp"]
-filter_enabled = true
-filters = ["mob-wasp-armature/Skeleton3D:wing-l", "mob-wasp-armature/Skeleton3D:wing-r"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4qkcw"]
-graph_offset = Vector2(-132, 70)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_qor82")
-nodes/Animation/position = Vector2(80, 140)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ceqwu")
-"nodes/Animation 2/position" = Vector2(74.536, 267.531)
-nodes/OneShot/node = SubResource("AnimationNodeOneShot_elblp")
-nodes/OneShot/position = Vector2(300, 140)
-nodes/output/position = Vector2(500, 180)
-node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 2"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83ogc"]
-animation = &"wasp-hit"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ceqyv"]
-xfade_time = 0.1
-advance_mode = 2
-advance_condition = &"hit"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvu1h"]
-xfade_time = 0.2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vxpty"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fj7pu"]
-xfade_time = 0.33
-advance_mode = 2
-advance_condition = &"fly"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h7fiv"]
-xfade_time = 0.33
-advance_mode = 2
-advance_condition = &"land"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_wmtt0"]
-states/End/position = Vector2(648, 86)
-states/Fly/node = SubResource("AnimationNodeBlendSpace1D_at3lr")
-states/Fly/position = Vector2(510, 86)
-states/Idle/node = SubResource("AnimationNodeBlendTree_4qkcw")
-states/Idle/position = Vector2(360, 86)
-states/Start/position = Vector2(226, 86)
-states/wasp-hit/node = SubResource("AnimationNodeAnimation_83ogc")
-states/wasp-hit/position = Vector2(510, 184)
-transitions = ["Fly", "wasp-hit", SubResource("AnimationNodeStateMachineTransition_ceqyv"), "wasp-hit", "Fly", SubResource("AnimationNodeStateMachineTransition_gvu1h"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_vxpty"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_fj7pu"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_h7fiv")]
-graph_offset = Vector2(6, 21)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
 radius = 0.2
@@ -108,27 +38,22 @@ lookSpeed = 5.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/position = Vector3(1.43369e-18, 0.00502695, 0.0033513)
-bones/0/rotation = Quaternion(-0.719064, 7.71543e-17, 7.98321e-17, 0.694944)
-bones/1/rotation = Quaternion(0.706412, -0.0313356, 0.706412, -0.0313355)
-bones/2/rotation = Quaternion(0.862222, 0.0856244, 0.486214, -0.113306)
-bones/3/position = Vector3(0.0452355, -0.0426744, -0.0686878)
-bones/3/rotation = Quaternion(-0.570403, -0.415596, -0.388928, 0.592161)
-bones/4/position = Vector3(0.0479138, 0.0576086, -0.0423739)
-bones/4/rotation = Quaternion(-0.487475, -0.372965, -0.282232, 0.737299)
-bones/5/rotation = Quaternion(0.776322, 0.172003, 0.518226, -0.314929)
-bones/6/rotation = Quaternion(0.862561, -0.0832044, -0.486342, -0.111972)
-bones/7/position = Vector3(-0.0459955, -0.0426459, -0.0691386)
-bones/7/rotation = Quaternion(-0.589375, 0.398631, 0.408741, 0.571543)
-bones/8/position = Vector3(-0.0479138, 0.0560434, -0.04247)
-bones/8/rotation = Quaternion(-0.500121, 0.361346, 0.311138, 0.722842)
-bones/9/rotation = Quaternion(0.771555, -0.191526, -0.510073, -0.328401)
+bones/0/rotation = Quaternion(-0.465705, 9.82481e-17, 5.17037e-17, 0.88494)
+bones/1/rotation = Quaternion(0.699115, 0.106013, 0.699115, 0.106013)
+bones/2/rotation = Quaternion(0.645727, 0.647188, 0.330173, -0.234885)
+bones/3/rotation = Quaternion(-0.828251, -0.069332, 0.0352899, 0.554931)
+bones/4/rotation = Quaternion(-0.669521, -0.348594, 0.474828, 0.452506)
+bones/5/rotation = Quaternion(0.782554, -0.0283705, 0.48125, -0.393957)
+bones/6/rotation = Quaternion(0.645726, -0.647187, -0.330173, -0.234886)
+bones/7/rotation = Quaternion(-0.822216, -0.0052326, 0.107639, 0.55888)
+bones/8/rotation = Quaternion(-0.741129, 0.284449, -0.397037, 0.460628)
+bones/9/rotation = Quaternion(0.815153, 0.0371049, -0.443334, -0.37095)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_wmtt0")
+tree_root = ExtResource("7_w7xgh")
 anim_player = NodePath("../mob-wasp/AnimationPlayer")
 active = true
 parameters/conditions/fly = false

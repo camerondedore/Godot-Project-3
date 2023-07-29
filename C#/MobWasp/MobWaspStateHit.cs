@@ -6,14 +6,26 @@ namespace MobWasp
     public partial class MobWaspStateHit : MobWaspState
     {
 
-        double startTime;
-
+        double startTime,
+            hitFxDelay = 0.1;
+        bool fxUsed = false;
 
 
         public override void RunState(double delta)
         {
             // animation
             blackboard.animation.Set("parameters/conditions/hit", false);
+
+            if(fxUsed == false && EngineTime.timePassed > startTime + hitFxDelay)
+            {
+                // spawn fx
+                var newFx = (Node3D) blackboard.waspHitFx.Instantiate();
+                blackboard.GetTree().CurrentScene.AddChild(newFx);
+                newFx.Owner = blackboard.GetTree().CurrentScene;
+                newFx.GlobalPosition = blackboard.GlobalPosition;
+
+                fxUsed = true;
+            }
         }
 
 
@@ -21,6 +33,8 @@ namespace MobWasp
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
+            
+            fxUsed = false;
 
             var targetOffset = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f);
 
@@ -28,13 +42,6 @@ namespace MobWasp
 
             // animation
             blackboard.animation.Set("parameters/conditions/hit", true);
-
-            // spawn fx
-            var newFx = (Node3D) blackboard.waspHitFx.Instantiate();
-            blackboard.GetTree().CurrentScene.AddChild(newFx);
-            newFx.Owner = blackboard.GetTree().CurrentScene;
-            newFx.GlobalPosition = blackboard.GlobalPosition;
-
         }
 
 

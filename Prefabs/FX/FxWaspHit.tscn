@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4nki4pgqmfl7"]
+[gd_scene load_steps=5 format=3 uid="uid://b4nki4pgqmfl7"]
 
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="1_b65ta"]
-[ext_resource type="AudioStream" uid="uid://bwgwc6b164o5b" path="res://Audio/mob-wasp-hit.wav" id="2_4tul4"]
+[ext_resource type="AudioStream" uid="uid://bwgwc6b164o5b" path="res://Audio/mob-wasp-hit-1.wav" id="2_2dlos"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_sajkx"]
+[ext_resource type="AudioStream" uid="uid://dtw6nc51od6qy" path="res://Audio/mob-wasp-hit-2.wav" id="3_yhrsb"]
 
 [node name="FxWaspHit" type="Node3D"]
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 script = ExtResource("1_b65ta")
-sounds = Array[AudioStream]([ExtResource("2_4tul4")])
+sounds = Array[AudioStream]([ExtResource("2_2dlos"), ExtResource("3_yhrsb")])
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("3_sajkx")

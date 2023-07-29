@@ -1,0 +1,73 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=14 format=3 uid="uid://dep8gxxpuhvr2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2wsol"]
+animation = &"wasp-hover"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uhqfs"]
+animation = &"wasp-fly"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_at3lr"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2wsol")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_uhqfs")
+blend_point_1/pos = 1.0
+min_space = 0.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ceqwu"]
+animation = &"wasp-idle-flick"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qor82"]
+animation = &"wasp-idle"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_elblp"]
+filter_enabled = true
+filters = ["mob-wasp-armature/Skeleton3D:wing-l", "mob-wasp-armature/Skeleton3D:wing-r"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4qkcw"]
+graph_offset = Vector2(-132, 70)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_qor82")
+nodes/Animation/position = Vector2(80, 140)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ceqwu")
+"nodes/Animation 2/position" = Vector2(74.536, 267.531)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_elblp")
+nodes/OneShot/position = Vector2(300, 140)
+nodes/output/position = Vector2(500, 180)
+node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 2"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_83ogc"]
+animation = &"wasp-hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ceqyv"]
+advance_mode = 2
+advance_condition = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gvu1h"]
+xfade_time = 0.2
+reset = false
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vxpty"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fj7pu"]
+xfade_time = 0.33
+advance_mode = 2
+advance_condition = &"fly"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h7fiv"]
+xfade_time = 0.33
+advance_mode = 2
+advance_condition = &"land"
+
+[resource]
+states/End/position = Vector2(648, 86)
+states/Fly/node = SubResource("AnimationNodeBlendSpace1D_at3lr")
+states/Fly/position = Vector2(510, 86)
+states/Idle/node = SubResource("AnimationNodeBlendTree_4qkcw")
+states/Idle/position = Vector2(360, 86)
+states/Start/position = Vector2(226, 86)
+states/wasp-hit/node = SubResource("AnimationNodeAnimation_83ogc")
+states/wasp-hit/position = Vector2(510, 184)
+transitions = ["Fly", "wasp-hit", SubResource("AnimationNodeStateMachineTransition_ceqyv"), "wasp-hit", "Fly", SubResource("AnimationNodeStateMachineTransition_gvu1h"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_vxpty"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_fj7pu"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_h7fiv")]
+graph_offset = Vector2(6, 21)
