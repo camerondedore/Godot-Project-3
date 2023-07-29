@@ -8,7 +8,7 @@ namespace MobWasp
 
         double startTime,
             hitFxDelay = 0.1;
-        bool fxUsed = false;
+        bool hit = false;
 
 
         public override void RunState(double delta)
@@ -16,7 +16,7 @@ namespace MobWasp
             // animation
             blackboard.animation.Set("parameters/conditions/hit", false);
 
-            if(fxUsed == false && EngineTime.timePassed > startTime + hitFxDelay)
+            if(hit == false && EngineTime.timePassed > startTime + hitFxDelay)
             {
                 // spawn fx
                 var newFx = (Node3D) blackboard.waspHitFx.Instantiate();
@@ -25,9 +25,16 @@ namespace MobWasp
                 newFx.GlobalPosition = blackboard.GlobalPosition;
 
                 // play venom fx
-                blackboard.venomFx.Emitting = true;
+                blackboard.venomFx.Restart();
 
-                fxUsed = true;
+                // hurt enemy
+                // get health node by name, as direct child to the faction node's owner
+                if(blackboard.enemy != null)
+                {
+                    blackboard.enemy.Owner.GetNode<Health>("Health").Damage(blackboard.damage);
+                }
+
+                hit = true;
             }
         }
 
@@ -37,7 +44,7 @@ namespace MobWasp
         {
             startTime = EngineTime.timePassed;
             
-            fxUsed = false;
+            hit = false;
 
             var targetOffset = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f);
 

@@ -8,12 +8,12 @@
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterLedgeDetector.cs" id="5_rkg0g"]
-[ext_resource type="Script" path="res://C#/PlayerHealth.cs" id="6_4c4br"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
+[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerHealth.cs" id="8_ltus6"]
 [ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiCandiedNutsPickup.tscn" id="9_cffx2"]
@@ -44,7 +44,7 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "bowAimer", "bow", "ledgeDetector")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "bowAimer", "bow", "myFactions", "ledgeDetector")]
 process_mode = 1
 collision_layer = 162
 collision_mask = 19
@@ -56,6 +56,7 @@ anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
 bowAimer = NodePath("SpringArm3D/BowAimer")
 bow = NodePath("Bow")
+myFactions = [NodePath("Faction"), NodePath("Faction2")]
 ledgeDetector = NodePath("LedgeDetector")
 ledgeGrabOffset = Vector3(0, -1.2, 0.3)
 acceleration = 10.0
@@ -134,9 +135,10 @@ script = ExtResource("4_x6l2t")
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vgi6r")
 
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio")]
-script = ExtResource("6_4c4br")
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio", "playerCharacter")]
+script = ExtResource("8_ltus6")
 characterAudio = NodePath("../CharacterAudio")
+playerCharacter = NodePath("..")
 
 [node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("7_xdgqf")

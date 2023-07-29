@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using PlayerCharacterComplex;
 
 public partial class PlayerPickup : Area3D
 {

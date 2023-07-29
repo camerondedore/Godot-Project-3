@@ -49,7 +49,8 @@ namespace MobWasp
             lookSpeed = 4,
             acceleration = 4,
             offsetSize = 0.33f,
-            offsetSpeed = 1f;
+            offsetSpeed = 1f,
+            damage = 2;
         
         public MobFaction enemy;
         public Vector3 targetPosition,
@@ -168,9 +169,16 @@ namespace MobWasp
 
             if(enemy != null)
             {
-                // look at enemy
-                target = (enemy.GlobalPosition - GlobalPosition).Normalized() + GlobalPosition;
-                target.Y = GlobalPosition.Y;
+                try
+                {
+                    // look at enemy
+                    target = (enemy.GlobalPosition - GlobalPosition).Normalized() + GlobalPosition;
+                    target.Y = GlobalPosition.Y;
+                }
+                catch
+                {
+                    // enemy has been disposed
+                }
             }
             else if(lookWithVelocity)
             {

@@ -40,18 +40,18 @@ lookSpeed = 5.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.706288, 7.85954e-17, 7.84137e-17, 0.707924)
-bones/1/rotation = Quaternion(0.707095, 0.00404312, 0.707095, 0.00404317)
-bones/2/rotation = Quaternion(0.862157, 0.0667632, 0.487787, -0.119552)
-bones/3/rotation = Quaternion(-0.575941, -0.41086, -0.403111, 0.580507)
-bones/4/rotation = Quaternion(-0.496249, -0.362937, -0.295395, 0.73127)
-bones/5/position = Vector3(0.0334444, -0.109987, -0.0553297)
-bones/5/rotation = Quaternion(0.786577, 0.187126, 0.512452, -0.289264)
-bones/6/rotation = Quaternion(0.862157, -0.0667632, -0.487787, -0.119552)
-bones/7/rotation = Quaternion(-0.592111, 0.396783, 0.422057, 0.56021)
-bones/8/rotation = Quaternion(-0.506475, 0.355148, 0.322535, 0.716467)
-bones/9/position = Vector3(-0.0334444, -0.109987, -0.0553297)
-bones/9/rotation = Quaternion(0.781982, -0.206508, -0.504203, -0.302717)
+bones/0/rotation = Quaternion(-0.709027, 7.82908e-17, 7.87179e-17, 0.705181)
+bones/1/rotation = Quaternion(0.707103, 0.00239782, 0.707103, 0.00239788)
+bones/2/rotation = Quaternion(0.86248, 0.080688, 0.486181, -0.115092)
+bones/3/rotation = Quaternion(-0.571503, -0.407778, -0.406228, 0.584876)
+bones/4/rotation = Quaternion(-0.491404, -0.360976, -0.297788, 0.734534)
+bones/5/position = Vector3(0.0334444, -0.111316, -0.0552482)
+bones/5/rotation = Quaternion(0.784918, 0.184207, 0.513509, -0.293734)
+bones/6/rotation = Quaternion(0.86248, -0.080688, -0.486181, -0.115092)
+bones/7/rotation = Quaternion(-0.587828, 0.393558, 0.425067, 0.564703)
+bones/8/rotation = Quaternion(-0.501727, 0.353008, 0.324876, 0.719799)
+bones/9/position = Vector3(-0.0334444, -0.111316, -0.0552482)
+bones/9/rotation = Quaternion(0.780247, -0.203636, -0.50537, -0.307161)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")

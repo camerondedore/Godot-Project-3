@@ -24,7 +24,8 @@ namespace PlayerCharacterComplex
 			stateBandageStationGather,
 			stateBandageStationCraft,
 			stateBowAim,
-			stateBowFire;
+			stateBowFire,
+			stateDie;
 
 		[Export]
 		public CameraController cameraSpringArm;
@@ -36,6 +37,8 @@ namespace PlayerCharacterComplex
 		public PlayerBowAimer bowAimer;
 		[Export]
 		public PlayerBow bow;
+		[Export]
+		public MobFaction[] myFactions;
 		[Export]
 		public PlayerCharacterLedgeDetector ledgeDetector;
 		[Export]
@@ -76,6 +79,7 @@ namespace PlayerCharacterComplex
 			stateBandageStationCraft = new PlayerCharacterStateBandageStationCraft(){blackboard = this};
 			stateBowAim = new PlayerCharacterStateBowAim(){blackboard = this};
 			stateBowFire = new PlayerCharacterStateBowFire(){blackboard = this};
+			stateDie = new PlayerCharacterStateDie(){blackboard = this};
 
 			// initialize sub states
 			subStateJumpPadIdle = new PlayerCharacterSubStateJumpPadIdle(){blackboard = this};
