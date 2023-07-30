@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dampjwia650ny"]
+
+[ext_resource type="ArrayMesh" uid="uid://1tvuawtxf5i0" path="res://Models/prop-torch.res" id="1_fd25c"]
+[ext_resource type="Material" uid="uid://b8pw2axsv336u" path="res://Materials/PropTorch.tres" id="2_vg25r"]
+[ext_resource type="Script" path="res://C#/PlayerBow/TorchTarget.cs" id="3_x80ui"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_htr4l"]
+radius = 0.1
+height = 0.4
+
+[node name="PropTorch" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_fd25c")
+surface_material_override/0 = ExtResource("2_vg25r")
+
+[node name="TorchTarget" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = ExtResource("3_x80ui")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TorchTarget"]
+shape = SubResource("CapsuleShape3D_htr4l")
