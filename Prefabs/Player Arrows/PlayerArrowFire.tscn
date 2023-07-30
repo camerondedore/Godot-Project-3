@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3m8qbrtf4h37"]
+
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/Player Arrows/PlayerArrow.tscn" id="1_btpnv"]
+[ext_resource type="ArrayMesh" uid="uid://drvpyvyb7ifqw" path="res://Models/arrow-fire.res" id="2_ntq37"]
+[ext_resource type="PackedScene" uid="uid://c0f784sqglc11" path="res://Prefabs/FX/FxArrowTrailFire.tscn" id="3_kryax"]
+
+[node name="PlayerArrowFire" node_paths=PackedStringArray("trailFx") instance=ExtResource("1_btpnv")]
+arrowType = "fire"
+trailFx = NodePath("FxArrowTrailFire")
+speed = 22.0
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_ntq37")
+
+[node name="FxArrowTrailFire" parent="." index="2" instance=ExtResource("3_kryax")]

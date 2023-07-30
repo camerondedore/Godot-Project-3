@@ -7,7 +7,8 @@ public partial class PlayerBow : Node3D
     [Export]
     PackedScene weightedArrow,
         pickArrow,
-        netArrow;
+        netArrow,
+        fireArrow;
     [Export]
     AudioTools3d bowAudio;
     [Export]
@@ -41,6 +42,9 @@ public partial class PlayerBow : Node3D
                 break;
             case "net":
                 arrowToFire = netArrow;
+                break;
+            case "fire":
+                arrowToFire = fireArrow;
                 break;
         }
 
