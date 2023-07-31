@@ -8,7 +8,8 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     public string targetName = "Torch",
         arrowType = "fire";
     [Export]
-    GpuParticles3D fireFx;
+    GpuParticles3D fireFx,
+        dripFx;
     [Export]
     AudioTools3d audio;
 
@@ -61,6 +62,9 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
     public void Hit()
     {
+        // stop fx
+        dripFx.Emitting = false;
+
         // start fx
         fireFx.Emitting = true;
 

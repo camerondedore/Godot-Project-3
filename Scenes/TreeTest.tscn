@@ -838,10 +838,10 @@ storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9725, 1.41187, -10.828)
 
 [node name="PropTorch2" parent="." instance=ExtResource("70_woav5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7024, 0.469012, -7.27901)
+transform = Transform3D(0.951401, -0.307954, 0, 0.307954, 0.951401, 0, 0, 0, 1, 12.7024, 0.469012, -7.24778)
 
 [node name="PropTorch3" parent="." instance=ExtResource("70_woav5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2143, 0.469012, -17.2279)
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 12.0446, 1.3161, -17.7749)
 
 [node name="PropCraftingTable" parent="." instance=ExtResource("51_0e1a5")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -10.9, 0.4, -9.6)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2ay8j416026n"]
+
+[ext_resource type="Material" uid="uid://bjd1l8hq52q3b" path="res://Materials/FxTorchDrip.tres" id="1_fg140"]
+
+[sub_resource type="Gradient" id="Gradient_qtctk"]
+offsets = PackedFloat32Array(0.772358, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pvtqr"]
+gradient = SubResource("Gradient_qtctk")
+
+[sub_resource type="Curve" id="Curve_h3hsq"]
+_data = [Vector2(0, 1), 0.0, 0.0364176, 0, 0, Vector2(1, 0), -3.28147, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_l6orr"]
+max_value = 5.0
+_data = [Vector2(0, 0.990099), 0.0, 1.08011, 0, 0, Vector2(1, 5), 7.61615, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_osd58"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_oi2cq"]
+curve_x = SubResource("Curve_h3hsq")
+curve_y = SubResource("Curve_l6orr")
+curve_z = SubResource("Curve_osd58")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ptvrt"]
+lifetime_randomness = 0.3
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.04
+emission_ring_inner_radius = 0.04
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, -7, 0)
+scale_min = 0.1
+scale_max = 0.15
+scale_curve = SubResource("CurveXYZTexture_oi2cq")
+color_ramp = SubResource("GradientTexture1D_pvtqr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_nvosf"]
+
+[node name="FxTorchDrip" type="GPUParticles3D"]
+material_override = ExtResource("1_fg140")
+amount = 2
+lifetime = 0.75
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ptvrt")
+draw_pass_1 = SubResource("QuadMesh_nvosf")

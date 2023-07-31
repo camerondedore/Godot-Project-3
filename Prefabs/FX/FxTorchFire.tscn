@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7xwcmlr26rvb"]
+
+[ext_resource type="Material" uid="uid://cvjdabq5uh8lb" path="res://Materials/FxFire1.tres" id="1_ce8b2"]
+[ext_resource type="Material" uid="uid://bgbbgao41hr42" path="res://Particles/FxFire.tres" id="2_yjixv"]
+[ext_resource type="Material" uid="uid://b8kkjfww7yegf" path="res://Materials/FxFire2.tres" id="3_gidcn"]
+[ext_resource type="Material" uid="uid://cn6mx8er72hvi" path="res://Materials/FxFire3.tres" id="4_vmb4j"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8nyan"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_42hm6"]
+
+[node name="FxTorchFire" type="GPUParticles3D"]
+material_override = ExtResource("1_ce8b2")
+amount = 4
+lifetime = 0.7
+randomness = 0.25
+process_material = ExtResource("2_yjixv")
+draw_pass_1 = SubResource("QuadMesh_8nyan")
+
+[node name="FxFireSub1" type="GPUParticles3D" parent="."]
+material_override = ExtResource("3_gidcn")
+amount = 4
+lifetime = 0.7
+process_material = ExtResource("2_yjixv")
+draw_pass_1 = SubResource("QuadMesh_42hm6")
+
+[node name="FxFireSub2" type="GPUParticles3D" parent="."]
+material_override = ExtResource("4_vmb4j")
+amount = 4
+lifetime = 0.7
+process_material = ExtResource("2_yjixv")
+draw_pass_1 = SubResource("QuadMesh_42hm6")
