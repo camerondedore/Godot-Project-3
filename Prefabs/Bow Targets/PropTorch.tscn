@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dampjwia650ny"]
+[gd_scene load_steps=10 format=3 uid="uid://dampjwia650ny"]
 
 [ext_resource type="ArrayMesh" uid="uid://1tvuawtxf5i0" path="res://Models/prop-torch.res" id="1_fd25c"]
 [ext_resource type="Material" uid="uid://b8pw2axsv336u" path="res://Materials/PropTorch.tres" id="2_vg25r"]
 [ext_resource type="PackedScene" uid="uid://b7xwcmlr26rvb" path="res://Prefabs/FX/FxTorchFire.tscn" id="3_o5m11"]
 [ext_resource type="Script" path="res://C#/PlayerBow/TorchTarget.cs" id="3_x80ui"]
+[ext_resource type="PackedScene" uid="uid://doyh10y20pcv5" path="res://Prefabs/FX/FxTorchStart.tscn" id="4_6cro1"]
 [ext_resource type="PackedScene" uid="uid://d2ay8j416026n" path="res://Prefabs/FX/FxTorchDrip.tscn" id="5_i311g"]
 [ext_resource type="AudioStream" uid="uid://bs7ar56o5yasj" path="res://Audio/fire.wav" id="5_sei0l"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_m8bin"]
@@ -23,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("3_x80ui")
 fireFx = NodePath("../FxTorchFire")
 dripFx = NodePath("../FxTorchDrip")
+hitFx = ExtResource("4_6cro1")
 audio = NodePath("../AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TorchTarget"]

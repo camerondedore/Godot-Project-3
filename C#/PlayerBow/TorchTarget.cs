@@ -11,6 +11,8 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     GpuParticles3D fireFx,
         dripFx;
     [Export]
+    PackedScene hitFx;
+    [Export]
     AudioTools3d audio;
 
 
@@ -62,10 +64,10 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
     public void Hit()
     {
-        // stop fx
+        // stop drip fx
         dripFx.Emitting = false;
 
-        // start fx
+        // start fire fx
         fireFx.Emitting = true;
 
         foreach(GpuParticles3D subFire in fireFx.GetChildren())
@@ -73,8 +75,14 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
             subFire.Emitting = true;
         }
 
-        // audio
+        // start fire audio
         audio.Play();
+
+        // create hit fx
+        var newHitFx = (Node3D) hitFx.Instantiate();
+        GetTree().CurrentScene.AddChild(newHitFx);
+        newHitFx.Owner = GetTree().CurrentScene;
+        newHitFx.GlobalPosition = GlobalPosition;
 
         // disable script
         SetScript(new Variant());
