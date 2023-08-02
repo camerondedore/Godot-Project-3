@@ -841,7 +841,7 @@ storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9725, 1.41187, -10.828)
 
 [node name="BlackWall" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 2.38419e-07, 0, 5, 0, -2.38419e-07, 0, 5, 10.4398, 2.5, -18.254)
+transform = Transform3D(1.9862e-08, 0, -5, 0, 5, 0, 5, 0, 1.9862e-08, 12.7657, 2.5, -10.802)
 mesh = SubResource("QuadMesh_gfh7q")
 surface_material_override/0 = ExtResource("71_bvabn")
 

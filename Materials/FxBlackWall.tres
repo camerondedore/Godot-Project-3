@@ -8,3 +8,6 @@ shader = ExtResource("1_dhc7h")
 shader_parameter/Albedo = null
 shader_parameter/Depth_Factor = 0.484
 shader_parameter/Depth_Power = 0.5
+shader_parameter/Wave_Turbulance = 1.0
+shader_parameter/Wave_Speed = 1.5
+shader_parameter/Wave_Amplitude = 0.1
