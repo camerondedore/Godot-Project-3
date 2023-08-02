@@ -114,6 +114,6 @@ public partial class PlayerInventory : Node
         public List<string> ArrowTypes
         {
             get; set;
-        } = new List<string>(){"weighted"};
+        } = new List<string>(){"bodkin"};
     }
 }
