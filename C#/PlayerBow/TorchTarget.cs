@@ -14,6 +14,10 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     PackedScene hitFx;
     [Export]
     AudioTools3d audio;
+    [Export]
+    Node3D targetNode;
+    [Export]
+    BlackWall blackWall;
 
 
 
@@ -50,7 +54,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     {
         try
         {
-            return GlobalPosition;
+            return targetNode.GlobalPosition;
         }
         catch
         {
@@ -83,6 +87,9 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
         GetTree().CurrentScene.AddChild(newHitFx);
         newHitFx.Owner = GetTree().CurrentScene;
         newHitFx.GlobalPosition = GlobalPosition;
+
+        // dissolve black wall
+        blackWall.Dissolve();
 
         // disable script
         SetScript(new Variant());

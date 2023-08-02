@@ -13,21 +13,20 @@
 radius = 0.1
 height = 0.4
 
-[node name="PropTorch" type="Node3D"]
+[node name="PropTorch" type="StaticBody3D" node_paths=PackedStringArray("fireFx", "dripFx", "audio", "targetNode")]
+script = ExtResource("3_x80ui")
+fireFx = NodePath("FxTorchFire")
+dripFx = NodePath("FxTorchDrip")
+hitFx = ExtResource("4_6cro1")
+audio = NodePath("AudioStreamPlayer3D")
+targetNode = NodePath("CollisionShape3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_fd25c")
 surface_material_override/0 = ExtResource("2_vg25r")
 
-[node name="TorchTarget" type="StaticBody3D" parent="." node_paths=PackedStringArray("fireFx", "dripFx", "audio")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource("3_x80ui")
-fireFx = NodePath("../FxTorchFire")
-dripFx = NodePath("../FxTorchDrip")
-hitFx = ExtResource("4_6cro1")
-audio = NodePath("../AudioStreamPlayer3D")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TorchTarget"]
 shape = SubResource("CapsuleShape3D_htr4l")
 
 [node name="FxTorchFire" parent="." instance=ExtResource("3_o5m11")]

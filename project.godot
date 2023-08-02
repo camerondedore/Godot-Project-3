@@ -92,3 +92,4 @@ player-heal={
 3d_physics/layer_8="Area Trigger"
 3d_physics/layer_9="Gib"
 3d_physics/layer_10="Flying Characters"
+3d_physics/layer_11="Black Wall"
