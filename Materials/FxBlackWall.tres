@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bs6yjtymayl1v"]
+
+[ext_resource type="Shader" uid="uid://fx7apc7qjlud" path="res://Materials/FxDepthBlocker.tres" id="1_dhc7h"]
+
+[resource]
+render_priority = -1
+shader = ExtResource("1_dhc7h")
+shader_parameter/Albedo = null
+shader_parameter/Depth_Factor = 0.484
+shader_parameter/Depth_Power = 0.5

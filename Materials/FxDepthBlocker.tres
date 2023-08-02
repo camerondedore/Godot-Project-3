@@ -1,0 +1,134 @@
+[gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://fx7apc7qjlud"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_swaj7"]
+default_input_values = [0, 0.0, 1, 0.1]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_3vi3g"]
+parameter_name = "Depth_Factor"
+hint = 1
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_2qfbu"]
+operator = 5
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_g8d0b"]
+default_input_values = [0, 1.0, 1, 0.0]
+operator = 1
+
+[sub_resource type="VisualShaderNodeLinearSceneDepth" id="VisualShaderNodeLinearSceneDepth_afukx"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_cx811"]
+expanded_output_ports = [0]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_is8h7"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_otfq3"]
+parameter_name = "Albedo"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_2rep0"]
+parameter_name = "Depth_Power"
+hint = 1
+min = 0.001
+max = 10.0
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_t1w5i"]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_disabled, unshaded, shadows_disabled, ambient_light_disabled;
+
+uniform vec4 Albedo : source_color;
+uniform sampler2D depth_tex_frg_2 : hint_depth_texture;
+uniform float Depth_Factor : hint_range(0, 1) = 0;
+uniform float Depth_Power : hint_range(0.0010000000475, 10) = 1;
+
+
+
+void fragment() {
+// ColorParameter:5
+	vec4 n_out5p0 = Albedo;
+
+
+	float n_out2p0;
+// LinearSceneDepth:2
+	{
+		float __log_depth = textureLod(depth_tex_frg_2, SCREEN_UV, 0.0).x;
+	vec4 __depth_view = INV_PROJECTION_MATRIX * vec4(SCREEN_UV * 2.0 - 1.0, __log_depth, 1.0);
+		__depth_view.xyz /= __depth_view.w;
+		n_out2p0 = -__depth_view.z;
+	}
+
+
+// Input:3
+	vec3 n_out3p0 = VERTEX;
+	float n_out3p3 = n_out3p0.b;
+
+
+// FloatOp:4
+	float n_out4p0 = n_out2p0 + n_out3p3;
+
+
+// FloatParameter:14
+	float n_out14p0 = Depth_Factor;
+
+
+// FloatOp:16
+	float n_in16p0 = 1.00000;
+	float n_out16p0 = n_in16p0 - n_out14p0;
+
+
+// FloatOp:13
+	float n_out13p0 = n_out4p0 * n_out16p0;
+
+
+// FloatParameter:6
+	float n_out6p0 = Depth_Power;
+
+
+// FloatOp:15
+	float n_out15p0 = pow(n_out13p0, n_out6p0);
+
+
+// Clamp:8
+	float n_in8p1 = 0.00000;
+	float n_in8p2 = 1.00000;
+	float n_out8p0 = clamp(n_out15p0, n_in8p1, n_in8p2);
+
+
+// Output:0
+	ALBEDO = vec3(n_out5p0.xyz);
+	ALPHA = n_out8p0;
+
+
+}
+"
+graph_offset = Vector2(-677.951, 84.5724)
+modes/specular = 2
+flags/unshaded = true
+flags/shadows_disabled = true
+flags/ambient_light_disabled = true
+nodes/fragment/2/node = SubResource("VisualShaderNodeLinearSceneDepth_afukx")
+nodes/fragment/2/position = Vector2(-820, 100)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_cx811")
+nodes/fragment/3/position = Vector2(-920, 260)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatOp_is8h7")
+nodes/fragment/4/position = Vector2(-620, 160)
+nodes/fragment/5/node = SubResource("VisualShaderNodeColorParameter_otfq3")
+nodes/fragment/5/position = Vector2(80, -40)
+nodes/fragment/6/node = SubResource("VisualShaderNodeFloatParameter_2rep0")
+nodes/fragment/6/position = Vector2(-380, 400)
+nodes/fragment/8/node = SubResource("VisualShaderNodeClamp_t1w5i")
+nodes/fragment/8/position = Vector2(220, 220)
+nodes/fragment/13/node = SubResource("VisualShaderNodeFloatOp_swaj7")
+nodes/fragment/13/position = Vector2(-420, 200)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatParameter_3vi3g")
+nodes/fragment/14/position = Vector2(-940, 460)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFloatOp_2qfbu")
+nodes/fragment/15/position = Vector2(-114.268, 294.035)
+nodes/fragment/16/node = SubResource("VisualShaderNodeFloatOp_g8d0b")
+nodes/fragment/16/position = Vector2(-680, 440)
+nodes/fragment/connections = PackedInt32Array(3, 3, 4, 1, 5, 0, 0, 0, 2, 0, 4, 0, 8, 0, 0, 1, 4, 0, 13, 0, 13, 0, 15, 0, 6, 0, 15, 1, 15, 0, 8, 0, 14, 0, 16, 1, 16, 0, 13, 1)
