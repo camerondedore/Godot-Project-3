@@ -1,8 +1,8 @@
 [gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://bgbbgao41hr42"]
 
 [sub_resource type="Gradient" id="Gradient_pcyqw"]
-offsets = PackedFloat32Array(0, 0.0699301, 1)
-colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 1, 1, 0.583333, 0, 0)
+offsets = PackedFloat32Array(0, 0.141667, 0.6, 1)
+colors = PackedColorArray(1, 0, 0, 0, 0.905269, 3.34509e-06, 1.15514e-06, 1, 0.919984, 0.126139, 0.00932136, 0.84466, 1, 0.812, 0.06, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_vooqq"]
 gradient = SubResource("Gradient_pcyqw")
@@ -16,7 +16,7 @@ point_count = 3
 curve = SubResource("Curve_k01wf")
 
 [resource]
-lifetime_randomness = 0.25
+lifetime_randomness = 0.5
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.3
@@ -29,7 +29,7 @@ angular_velocity_min = -10.0
 angular_velocity_max = 10.0
 angle_min = -10.0
 angle_max = 10.0
-scale_min = 0.4
+scale_min = 0.3
 scale_max = 0.5
 scale_curve = SubResource("CurveTexture_v12ut")
 color_ramp = SubResource("GradientTexture1D_vooqq")

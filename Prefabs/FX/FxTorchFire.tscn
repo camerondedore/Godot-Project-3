@@ -11,6 +11,7 @@
 
 [node name="FxTorchFire" type="GPUParticles3D"]
 material_override = ExtResource("1_ce8b2")
+cast_shadow = 0
 amount = 4
 lifetime = 0.7
 randomness = 0.25
@@ -19,6 +20,7 @@ draw_pass_1 = SubResource("QuadMesh_8nyan")
 
 [node name="FxFireSub1" type="GPUParticles3D" parent="."]
 material_override = ExtResource("3_gidcn")
+cast_shadow = 0
 amount = 4
 lifetime = 0.7
 process_material = ExtResource("2_yjixv")
@@ -26,6 +28,7 @@ draw_pass_1 = SubResource("QuadMesh_42hm6")
 
 [node name="FxFireSub2" type="GPUParticles3D" parent="."]
 material_override = ExtResource("4_vmb4j")
+cast_shadow = 0
 amount = 4
 lifetime = 0.7
 process_material = ExtResource("2_yjixv")

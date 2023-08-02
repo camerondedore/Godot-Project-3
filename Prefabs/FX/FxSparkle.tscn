@@ -38,6 +38,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="FxSparkle" type="GPUParticles3D"]
 material_override = ExtResource("1_3k7ci")
+cast_shadow = 0
 amount = 5
 lifetime = 1.25
 preprocess = 2.0
