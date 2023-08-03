@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=78 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -72,8 +72,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Cooking/PropLadle.tscn" id="64_he0ji"]
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Bow Targets/PropTorch.tscn" id="70_woav5"]
-[ext_resource type="Script" path="res://C#/BlackWall.cs" id="71_7nnyp"]
-[ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/FxBlackWall.tres" id="71_bvabn"]
+[ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="71_tu5qd"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fw7qn"]
 
@@ -85,11 +84,6 @@ height = 1.0
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j38tx"]
 points = PackedVector3Array(0.0920176, -0.491214, -0.491214, 0.0920176, 0.491214, 0.491214, 0.15337, 0.490905, 0.475529, -0.0920388, 0.491211, -0.491211, -0.491209, -0.491305, 0.0920476, 0.491209, -0.491326, 0.0920516, 0.458464, 0.489127, -0.1986, -0.491209, 0.491305, 0.0920476, -0.0920388, -0.491211, 0.491211, -0.353602, -0.492013, -0.353598, -0.304561, 0.487367, 0.395867, -0.458467, 0.489107, -0.198592, 0.458464, 0.489127, 0.1986, 0.304547, -0.48738, 0.395877, 0.426939, -0.488007, -0.259099, 0.259148, 0.487951, -0.426909, -0.39587, -0.487368, 0.304557, -0.491209, -0.491305, -0.0920476, -0.304561, 0.487367, -0.395867, -0.153303, -0.49093, -0.475553, 0.0920176, -0.491214, 0.491214, 0.491209, 0.491326, -0.0920516, 0.321452, 0.489877, 0.382657, -0.0920388, 0.491211, 0.491211, 0.321452, -0.489877, -0.382657, 0.426939, -0.488007, 0.259099, -0.259164, -0.48794, 0.4269, -0.426902, 0.487941, 0.259159, 0.491209, -0.491326, -0.0920516, 0.0920176, 0.491214, -0.491214, 0.395896, 0.48731, -0.304521, 0.491209, 0.491326, 0.0920516)
-
-[sub_resource type="QuadMesh" id="QuadMesh_gfh7q"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fthm0"]
-size = Vector3(5, 5, 0.5)
 
 [node name="TreeTest" type="Node3D"]
 
@@ -844,30 +838,19 @@ storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb
 [node name="PropTorch" parent="." instance=ExtResource("70_woav5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9725, 1.41187, -10.828)
 
-[node name="PropTorch2" parent="." instance=ExtResource("70_woav5")]
+[node name="PropTorch2" parent="." node_paths=PackedStringArray("blackWall") instance=ExtResource("70_woav5")]
 transform = Transform3D(0.951401, -0.307954, 0, 0.307954, 0.951401, 0, 0, 0, 1, 12.7024, 0.469012, -7.24778)
+blackWall = NodePath("../BlackWall2")
 
 [node name="PropTorch3" parent="." node_paths=PackedStringArray("blackWall") instance=ExtResource("70_woav5")]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 12.0446, 1.3161, -17.7749)
 blackWall = NodePath("../BlackWall")
 
-[node name="BlackWall" type="StaticBody3D" parent="." node_paths=PackedStringArray("mesh")]
-transform = Transform3D(0.828901, 0, -0.559396, 0, 1, 0, 0.559396, 0, 0.828901, 13.7507, 2.5, -16.8699)
-collision_layer = 1024
-collision_mask = 2
-script = ExtResource("71_7nnyp")
-mesh = NodePath("BlackWallMesh")
-fadeSpeed = 1.0
+[node name="BlackWall" parent="." instance=ExtResource("71_tu5qd")]
+transform = Transform3D(-0.78443, 0, 0.620217, 0, 1, 0, -0.620217, 0, -0.78443, 14.1443, 2.5, -16.7659)
 
-[node name="BlackWallMesh" type="MeshInstance3D" parent="BlackWall"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-mesh = SubResource("QuadMesh_gfh7q")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("71_bvabn")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BlackWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
-shape = SubResource("BoxShape3D_fthm0")
+[node name="BlackWall2" parent="." instance=ExtResource("71_tu5qd")]
+transform = Transform3D(0.620204, 0, 0.784441, 0, 1, 0, -0.784441, 0, 0.620204, 11.8291, 2.24303, -5.31366)
 
 [node name="PropCraftingTable" parent="." instance=ExtResource("51_0e1a5")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -10.9, 0.4, -9.6)
@@ -889,5 +872,5 @@ horizontalSpeed = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.16288, 1.2, 5.47151)
 
 [node name="MobWasp5" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(0.445667, 0, 0.895199, 0, 1, 0, -0.895199, 0, 0.445667, 11.9636, 0.228789, -15.8424)
+transform = Transform3D(0.445667, 0, 0.895199, 0, 1, 0, -0.895199, 0, 0.445667, 12.9402, 0.228789, -15.7071)
 warnOffset = Vector3(0, 2, 0)

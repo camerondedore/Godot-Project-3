@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://fx7apc7qjlud" path="res://Materials/FxDepthBlocker.tres" id="1_dhc7h"]
 
 [resource]
+resource_local_to_scene = true
 render_priority = -1
 shader = ExtResource("1_dhc7h")
 shader_parameter/Albedo = null

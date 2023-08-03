@@ -88,8 +88,11 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
         newHitFx.Owner = GetTree().CurrentScene;
         newHitFx.GlobalPosition = GlobalPosition;
 
-        // dissolve black wall
-        blackWall.Dissolve();
+        if(blackWall != null)
+        {
+            // dissolve black wall
+            blackWall.Dissolve();
+        }
 
         // disable script
         SetScript(new Variant());
