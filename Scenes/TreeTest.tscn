@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=70 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropLogOakStripped.tscn" id="11_se24g"]
 [ext_resource type="ArrayMesh" uid="uid://bewar3dx3tukc" path="res://Models/tmp-map-1.res" id="11_sm2ed"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="12_7d261"]
+[ext_resource type="Material" uid="uid://dkncsl54qwwvb" path="res://Materials/Grass.tres" id="12_n1aet"]
+[ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="13_bch6h"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="15_2w2bx"]
 [ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="16_8wt0o"]
@@ -91,6 +93,7 @@ shadow_enabled = true
 
 [node name="ToolPropPainter" type="Node" parent="."]
 script = ExtResource("4_41cga")
+toolSpeed = 0.5
 propsToPaint = [ExtResource("4_atmhp"), ExtResource("3_ddp4i"), ExtResource("4_pyk17"), ExtResource("11_d87cr")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -98,7 +101,7 @@ sizeVariation = 0.3
 uniformSize = true
 
 [node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2166, 1, 13.0794)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0854, 0.999999, -1.04943)
 
 [node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
@@ -112,6 +115,8 @@ metadata/_edit_group_ = true
 [node name="Plane" type="MeshInstance3D" parent="Map/Ground"]
 mesh = ExtResource("11_sm2ed")
 skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("12_n1aet")
+surface_material_override/1 = ExtResource("13_bch6h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground"]
 shape = SubResource("ConcavePolygonShape3D_l0xu4")
@@ -124,23 +129,26 @@ shape = SubResource("ConcavePolygonShape3D_l0xu4")
 
 [node name="PropTreeApple1" parent="Props/Trees/Trees" instance=ExtResource("4_6wf3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03029, -0.0174332, 11.4903)
+visible = false
 
 [node name="PropTreeApple2" parent="Props/Trees/Trees" instance=ExtResource("5_obu66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065707, 0, 11.4983)
+visible = false
 
 [node name="PropTreeApple3" parent="Props/Trees/Trees" instance=ExtResource("4_65hyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.93429, 0, 11.4983)
+visible = false
 
 [node name="Logs" type="Node3D" parent="Props/Trees"]
 
 [node name="PropLogOak1" parent="Props/Trees/Logs" instance=ExtResource("16_v380q")]
-transform = Transform3D(-0.0995039, -0.991236, -0.0868884, -0.657743, 3.1665e-08, 0.753242, -0.746641, 0.132101, -0.651979, -9.61101, 0.21487, 14.0376)
+transform = Transform3D(-0.0995039, -0.991236, -0.0868884, -0.657743, 3.1665e-08, 0.753242, -0.746641, 0.132101, -0.651979, -5.38541, 0.21487, -1.92069)
 
 [node name="PropLogOak2" parent="Props/Trees/Logs" instance=ExtResource("17_eo3gt")]
-transform = Transform3D(-0.775893, -0.628465, 0.0549835, -2.98023e-08, 0.0871557, 0.996195, -0.630866, 0.77294, -0.0676235, -11.0566, 0.482901, 13.2807)
+transform = Transform3D(-0.775893, -0.628465, 0.0549835, -2.98023e-08, 0.0871557, 0.996195, -0.630866, 0.77294, -0.0676235, -6.831, 0.482901, -2.67759)
 
 [node name="PropLogOak3" parent="Props/Trees/Logs" instance=ExtResource("18_660r0")]
-transform = Transform3D(0.337884, 0.941188, 4.11406e-08, 6.27369e-16, -4.37114e-08, 1, 0.941188, -0.337884, -1.47694e-08, -11.0453, 0.25, 15.5024)
+transform = Transform3D(0.337884, 0.941188, 4.11406e-08, 6.27369e-16, -4.37114e-08, 1, 0.941188, -0.337884, -1.47694e-08, -6.8197, 0.25, -0.455894)
 
 [node name="PropLogOakStripping" parent="Props/Trees/Logs" instance=ExtResource("10_2lcoj")]
 transform = Transform3D(-0.989544, -0.0121123, 0.143724, -0.143734, -4.5721e-08, -0.989616, 0.0119865, -0.999927, -0.00174089, -14.6006, 1.45001, 3.92517)
@@ -151,33 +159,33 @@ transform = Transform3D(0.48873, -0.092023, -0.867568, -0.871265, -4.96989e-08, 
 [node name="Stumps" type="Node3D" parent="Props/Trees"]
 
 [node name="PropTreeStumpOak1" parent="Props/Trees/Stumps" instance=ExtResource("19_nvsbc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4759, 0.25, 14.5383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2503, 0.25, -1.41999)
 
 [node name="PropTreeStumpOak2" parent="Props/Trees/Stumps" instance=ExtResource("11_1rkbt")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -10.8397, 0.25, 17.3156)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -6.6141, 0.25, 1.35731)
 
 [node name="PropTreeStumpOak3" parent="Props/Trees/Stumps" instance=ExtResource("12_7d261")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -14.9221, 0.25, 17.219)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -10.6965, 0.25, 1.26071)
 
 [node name="PropTreeSplittingStump" parent="Props/Trees/Stumps" instance=ExtResource("15_2w2bx")]
-transform = Transform3D(-0.728048, 0, -0.685527, 0, 1, 0, 0.685527, 0, -0.728048, -12.1712, 0.25, 9.95211)
+transform = Transform3D(-0.728048, 0, -0.685527, 0, 1, 0, 0.685527, 0, -0.728048, -7.9456, 0.25, -6.00618)
 
 [node name="Firewood" type="Node3D" parent="Props/Trees"]
 
 [node name="PropFirewood1" parent="Props/Trees/Firewood" instance=ExtResource("16_8wt0o")]
-transform = Transform3D(-0.728048, 0, -0.685527, 0, 1, 0, 0.685527, 0, -0.728048, -13.005, 0.385615, 10.0286)
+transform = Transform3D(-0.728048, 0, -0.685527, 0, 1, 0, 0.685527, 0, -0.728048, -8.7794, 0.385615, -5.92969)
 
 [node name="PropFirewood2" parent="Props/Trees/Firewood" instance=ExtResource("17_phn5x")]
-transform = Transform3D(0.915638, 0.398685, -0.0515608, -0.0562222, -4.70535e-08, -0.998418, -0.398054, 0.917088, 0.022415, -11.5758, 0.0705296, 10.9361)
+transform = Transform3D(0.915638, 0.398685, -0.0515608, -0.0562222, -4.70535e-08, -0.998418, -0.398054, 0.917088, 0.022415, -7.3502, 0.0705296, -5.02219)
 
 [node name="PropFirewood3" parent="Props/Trees/Firewood" instance=ExtResource("18_xfbai")]
-transform = Transform3D(-0.371756, 0.872092, 0.318205, 0.0419137, 0.358189, -0.932708, -0.927383, -0.333403, -0.169712, -11.7825, 0.228668, 10.961)
+transform = Transform3D(-0.371756, 0.872092, 0.318205, 0.0419137, 0.358189, -0.932708, -0.927383, -0.333403, -0.169712, -7.5569, 0.228668, -4.99729)
 
 [node name="PropFirewood4" parent="Props/Trees/Firewood" instance=ExtResource("19_klfg6")]
-transform = Transform3D(-0.369774, -0.908552, 0.194424, -0.465383, -5.46504e-08, -0.885109, 0.804168, -0.417772, -0.422824, -13.1144, 0.095466, 9.29863)
+transform = Transform3D(-0.369774, -0.908552, 0.194424, -0.465383, -5.46504e-08, -0.885109, 0.804168, -0.417772, -0.422824, -8.8888, 0.095466, -6.65966)
 
 [node name="PropFirewood5" parent="Props/Trees/Firewood" instance=ExtResource("20_vvb1k")]
-transform = Transform3D(0.417613, 0, -0.908625, 0, 1, 0, 0.908625, 0, 0.417613, -12.254, 0.873773, 9.88617)
+transform = Transform3D(0.417613, 0, -0.908625, 0, 1, 0, 0.908625, 0, 0.417613, -8.0284, 0.873773, -6.07212)
 
 [node name="Cooking" type="Node3D" parent="Props"]
 
@@ -241,13 +249,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.206423, 0)
 transform = Transform3D(-0.274345, 0, -0.961632, 0, 1, 0, 0.961632, 0, -0.274345, -4.15765, 0.45, 10.6537)
 
 [node name="PropFence1" parent="Props/SmallProps" instance=ExtResource("9_j2ilc")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 11.3429, 0.75, 10.3983)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 6.69087, 0.749999, 3.38384)
 
 [node name="PropFence2" parent="Props/SmallProps" instance=ExtResource("10_0j7w2")]
-transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 11.3319, 0.75, 10.4509)
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 6.67986, 0.749999, 3.43644)
 
 [node name="PropFenceEnd2" parent="Props/SmallProps" instance=ExtResource("8_qgel6")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 13.4689, 0.75, 8.29062)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 8.81686, 0.749999, 1.27616)
 
 [node name="PropBasket" parent="Props/SmallProps" instance=ExtResource("9_jepc3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7952, 0.28, 10.4948)
@@ -259,7 +267,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87991, 0.28, 9.75121)
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.767308, 0.279999, -2.00522)
 
 [node name="PropWoodAx2" parent="Props/SmallProps" instance=ExtResource("14_lprge")]
-transform = Transform3D(-0.913425, -0.327278, -0.241961, 3.35174e-08, -0.594486, 0.804106, -0.407008, 0.73449, 0.543018, -11.8031, 1.09374, 9.67103)
+transform = Transform3D(-0.913425, -0.327278, -0.241961, 3.35174e-08, -0.594486, 0.804106, -0.407008, 0.73449, 0.543018, -7.5775, 1.09374, -6.28726)
 
 [node name="PropLogStand" parent="Props/SmallProps" instance=ExtResource("21_0tx2t")]
 transform = Transform3D(0.989888, 0, 0.141851, 0, 1, 0, -0.141851, 0, 0.989888, -14.6358, 0.625, 2.33559)
@@ -270,7 +278,7 @@ transform = Transform3D(-0.995924, 0, -0.0901978, 0, 1, 0, 0.0901978, 0, -0.9959
 [node name="Plants" type="Node3D" parent="Props"]
 
 [node name="PropBlackberryBush" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.530615, 0, 0.847613, 0, 1, 0, -0.847613, 0, 0.530615, 13.0249, 1, 11.4947)
+transform = Transform3D(0.530615, 0, 0.847613, 0, 1, 0, -0.847613, 0, 0.530615, 8.37287, 0.999999, 4.48024)
 
 [node name="Furniture" type="Node3D" parent="Props"]
 
@@ -430,13 +438,13 @@ horizontalSpeed = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15323, 9.2, -17.2167)
 
 [node name="MobWasp" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(0.000314116, 0, 1, 0, 1, 0, -1, 0, 0.000314116, 10.7373, 0.2, 7.04259)
+transform = Transform3D(0.000314116, 0, 1, 0, 1, 0, -1, 0, 0.000314116, -4.30759, 0.2, 1.94309)
 
 [node name="MobWasp2" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(0.900819, 0, 0.434194, 0, 1, 0, -0.434194, 0, 0.900819, 9.89128, 0.2, 9.22286)
+transform = Transform3D(0.900819, 0, 0.434194, 0, 1, 0, -0.434194, 0, 0.900819, -5.15361, 0.2, 4.12336)
 
 [node name="MobWasp3" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(0.986196, 0, 0.165581, 0, 1, 0, -0.165581, 0, 0.986196, 8.89838, 0.2, 7.40409)
+transform = Transform3D(0.986196, 0, 0.165581, 0, 1, 0, -0.165581, 0, 0.986196, -6.14651, 0.2, 2.30459)
 
 [node name="MobWasp4" parent="." instance=ExtResource("67_elsxh")]
-transform = Transform3D(0.651688, 0, -0.758487, 0, 1, 0, 0.758487, 0, 0.651688, 8.26764, 0.2, 9.44487)
+transform = Transform3D(0.651688, 0, -0.758487, 0, 1, 0, 0.758487, 0, 0.651688, -6.77725, 0.2, 4.34537)

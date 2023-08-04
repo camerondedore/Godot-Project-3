@@ -10,6 +10,8 @@ public partial class ToolPropPainter : Node
 	[Export]
 	bool toolActive = false;
 	[Export]
+	float toolSpeed = 1;
+	[Export]
 	PackedScene[] propsToPaint;
 	[Export]
 	float positionSpread = 0.2f,
@@ -81,7 +83,7 @@ public partial class ToolPropPainter : Node
 				// paint prop into scene
 				PaintProp(rayHitPoint);
 
-				timer = 1;
+				timer = toolSpeed;
 			}
 
 			timer -= delta;
@@ -155,6 +157,8 @@ public partial class ToolPropPainter : Node
 
 		// load prop resource
 		var prop = propsToPaint[propIndex].Instantiate() as Node3D;
+
+		prop.Name = $"{prop.Name}!{Time.GetUnixTimeFromSystem()}";
 
 		// get position spread
 		var spread = new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * 2 * positionSpread;
