@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cyh65ty8moprq" path="res://Prefabs/Gibs/GibWaspAbdomen.tscn" id="6_k7c3p"]
 [ext_resource type="Script" path="res://C#/GibsActivator.cs" id="6_nqxbr"]
 [ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="7_hwvjs"]
-[ext_resource type="AnimationNodeStateMachine" uid="uid://dep8gxxpuhvr2" path="res://Animation/MobWaspAnimationStateMachine.tres" id="7_w7xgh"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://dep8gxxpuhvr2" path="res://Animation/MobWaspAnimationStateMachine.tres" id="7_sdct3"]
 [ext_resource type="PackedScene" uid="uid://b4iwcasvg6jw" path="res://Prefabs/Gibs/GibWaspMid.tscn" id="8_cmu72"]
 [ext_resource type="PackedScene" uid="uid://dr67ajwiaqnkk" path="res://Prefabs/Gibs/GibWaspWingL.tscn" id="9_la8w6"]
 [ext_resource type="PackedScene" uid="uid://cyp7usw06fqjr" path="res://Prefabs/Gibs/GibWaspWingR.tscn" id="10_633pr"]
@@ -40,24 +40,22 @@ lookSpeed = 5.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.711294, 7.8037e-17, 7.89696e-17, 0.702894)
-bones/1/rotation = Quaternion(0.707093, 0.00433676, 0.707094, 0.00433682)
-bones/2/rotation = Quaternion(0.86255, 0.0839308, 0.485784, -0.113918)
-bones/3/rotation = Quaternion(-0.567491, -0.404991, -0.409007, 0.58877)
-bones/4/rotation = Quaternion(-0.487055, -0.35921, -0.299916, 0.737425)
-bones/5/position = Vector3(0.0334444, -0.111316, -0.0552482)
-bones/5/rotation = Quaternion(0.783434, 0.181628, 0.514427, -0.29767)
-bones/6/rotation = Quaternion(0.86255, -0.0839308, -0.485784, -0.113918)
-bones/7/rotation = Quaternion(-0.583953, 0.390642, 0.427748, 0.568709)
-bones/8/rotation = Quaternion(-0.497465, 0.351082, 0.326956, 0.722752)
-bones/9/position = Vector3(-0.0334444, -0.111316, -0.0552482)
-bones/9/rotation = Quaternion(0.778696, -0.201097, -0.506385, -0.311073)
+bones/0/rotation = Quaternion(-0.707328, 7.848e-17, 7.85292e-17, 0.706885)
+bones/1/rotation = Quaternion(0.707107, 0.000219029, 0.707107, 0.000219084)
+bones/2/rotation = Quaternion(0.862046, 0.0663888, 0.487862, -0.120247)
+bones/3/rotation = Quaternion(-0.574568, -0.409907, -0.40408, 0.581866)
+bones/4/rotation = Quaternion(-0.494873, -0.362381, -0.296077, 0.732201)
+bones/5/rotation = Quaternion(0.786092, 0.186269, 0.512765, -0.290578)
+bones/6/rotation = Quaternion(0.862046, -0.0663888, -0.487862, -0.120247)
+bones/7/rotation = Quaternion(-0.590786, 0.395785, 0.422993, 0.561607)
+bones/8/rotation = Quaternion(-0.505126, 0.354541, 0.323202, 0.717418)
+bones/9/rotation = Quaternion(0.781475, -0.205665, -0.504548, -0.304024)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = ExtResource("7_w7xgh")
+tree_root = ExtResource("7_sdct3")
 anim_player = NodePath("../mob-wasp/AnimationPlayer")
 active = true
 parameters/conditions/fly = false

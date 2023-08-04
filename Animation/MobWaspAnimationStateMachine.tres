@@ -61,6 +61,7 @@ advance_mode = 2
 advance_condition = &"land"
 
 [resource]
+resource_local_to_scene = true
 states/End/position = Vector2(648, 86)
 states/Fly/node = SubResource("AnimationNodeBlendSpace1D_at3lr")
 states/Fly/position = Vector2(510, 86)
@@ -68,6 +69,6 @@ states/Idle/node = SubResource("AnimationNodeBlendTree_4qkcw")
 states/Idle/position = Vector2(360, 86)
 states/Start/position = Vector2(226, 86)
 states/wasp-hit/node = SubResource("AnimationNodeAnimation_83ogc")
-states/wasp-hit/position = Vector2(510, 184)
+states/wasp-hit/position = Vector2(510, 183)
 transitions = ["Fly", "wasp-hit", SubResource("AnimationNodeStateMachineTransition_ceqyv"), "wasp-hit", "Fly", SubResource("AnimationNodeStateMachineTransition_gvu1h"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_vxpty"), "Idle", "Fly", SubResource("AnimationNodeStateMachineTransition_fj7pu"), "Fly", "Idle", SubResource("AnimationNodeStateMachineTransition_h7fiv")]
 graph_offset = Vector2(6, 21)

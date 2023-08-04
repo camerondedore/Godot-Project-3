@@ -17,8 +17,6 @@ public partial class BlackWall : StaticBody3D
 
     public override void _Ready()
     {
-        //mesh.SetSurfaceOverrideMaterial(0, ((Material) mesh.GetSurfaceOverrideMaterial(0).Duplicate()));
-
         // get material
         blackWallMaterial = mesh.GetSurfaceOverrideMaterial(0);
 
