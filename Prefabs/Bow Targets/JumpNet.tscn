@@ -46,12 +46,11 @@ surface_material_override/0 = ExtResource("9_bmgvo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("BoxShape3D_o31fv")
 
-[node name="JumpPad" type="Area3D" parent="." node_paths=PackedStringArray("landingTarget", "jumpPadAudio", "anim", "dustFx")]
+[node name="JumpPad" type="Area3D" parent="." node_paths=PackedStringArray("jumpPadAudio", "anim", "dustFx")]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("2_fj8wc")
-landingTarget = NodePath("")
 jumpPadAudio = NodePath("../JumpPadAudio")
 bounceSound = ExtResource("7_a72qk")
 anim = NodePath("../prop-jump-net/AnimationPlayer")

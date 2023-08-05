@@ -316,7 +316,6 @@ lock_rotation = false
 [node name="TestBowTarget6" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3543, 2, 11.6372)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget6"]
@@ -328,7 +327,6 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 [node name="TestBowTarget13" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, -1, 14.6372)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget13"]
@@ -340,7 +338,6 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 [node name="TestBowTarget15" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, 6, 10.6372)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget15"]
@@ -352,7 +349,6 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 [node name="TestBowTarget19" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3543, 5.9924, 7.49769)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget19"]
@@ -364,7 +360,6 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 [node name="TestBowTarget20" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, 2.9924, 4.49769)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget20"]
@@ -376,7 +371,6 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 [node name="TestBowTarget23" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3543, 9.9924, 5.49769)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget23"]
@@ -388,7 +382,6 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 [node name="TestBowTarget28" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, 2.9924, 21.3821)
 script = ExtResource("47_lu2vf")
-targetName = "Button Cylinder"
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget28"]

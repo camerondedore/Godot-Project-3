@@ -5,15 +5,7 @@ public partial class PlayerBowTarget : Node3D, IBowTarget
 {
 
     [Export]
-    string targetName = "target",
-        arrowType = "weighted";
-    
-
-
-    public string GetName()
-    {
-        return targetName;
-    }
+    string arrowType = "weighted";
 
 
 

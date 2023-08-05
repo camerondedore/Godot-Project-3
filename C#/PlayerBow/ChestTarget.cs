@@ -5,8 +5,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string targetName = "Chest",
-        arrowType = "pick";
+    public string arrowType = "pick";
     [Export]
     FxLock lockFx;
     [Export]
@@ -42,14 +41,6 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
             // disable script
             SetScript(new Variant());
         }
-    }
-
-
-
-
-    public string GetName()
-    {
-        return targetName;
     }
 
 

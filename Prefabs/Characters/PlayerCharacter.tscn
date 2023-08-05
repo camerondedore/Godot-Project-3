@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=44 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -6,31 +6,27 @@
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowAimer.cs" id="3_uw5x1"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
-[ext_resource type="Material" uid="uid://7e1snam2ake2" path="res://Materials/FxArrowTrailWeighted.tres" id="5_7pt8l"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterLedgeDetector.cs" id="5_rkg0g"]
-[ext_resource type="Material" uid="uid://66afr0sxrgrh" path="res://Particles/FxArrowTrailWeighted.tres" id="6_2c6ru"]
+[ext_resource type="Texture2D" uid="uid://bp4wvf5xpnked" path="res://Textures/fx-arrow-trail-weighted.png" id="5_savq2"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
+[ext_resource type="Texture2D" uid="uid://btpa146lw2nrh" path="res://Textures/fx-arrow-trail-pick.png" id="7_ey0rg"]
 [ext_resource type="Script" path="res://C#/PlayerBow/BowAimerTargetFx.cs" id="7_ihwk4"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
-[ext_resource type="Material" uid="uid://cr2urnuo3ly6l" path="res://Materials/FxArrowTrailPick.tres" id="8_bbs82"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerHealth.cs" id="8_ltus6"]
+[ext_resource type="Texture2D" uid="uid://cfcpeng6uiqtu" path="res://Textures/fx-arrow-trail-net.png" id="8_nsls7"]
 [ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiCandiedNutsPickup.tscn" id="9_cffx2"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
-[ext_resource type="Material" uid="uid://d27rh7eb06bu1" path="res://Materials/FxArrowTrailNet.tres" id="9_ts220"]
+[ext_resource type="Texture2D" uid="uid://bdr72honvktal" path="res://Textures/fx-arrow-trail-fire.png" id="9_q1w1u"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
-[ext_resource type="Material" uid="uid://ct602q526s03m" path="res://Materials/FxArrowTrailFire.tres" id="10_et03l"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
-[ext_resource type="Material" uid="uid://c1ydf6itwa3w5" path="res://Particles/FxArrowTrailPick.tres" id="11_vcdk4"]
-[ext_resource type="Material" uid="uid://d1linu5y3ixb7" path="res://Particles/FxArrowTrailNet.tres" id="12_ch7f3"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
-[ext_resource type="Material" uid="uid://c1ek5b30uk1cl" path="res://Particles/FxArrowTrailFire.tres" id="13_iwsg4"]
 [ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
@@ -50,8 +46,6 @@ radius = 0.3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0m844"]
 radius = 0.33
-
-[sub_resource type="QuadMesh" id="QuadMesh_vrg3b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
@@ -102,13 +96,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 [node name="CameraTarget" type="Node3D" parent="SpringArm3D/OffsetNode"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 
-[node name="BowAimer" type="Node3D" parent="SpringArm3D" node_paths=PackedStringArray("rayCast", "shapeCast", "targetNameLabel", "targetFx")]
+[node name="BowAimer" type="Node3D" parent="SpringArm3D" node_paths=PackedStringArray("rayCast", "shapeCast", "targetFx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 script = ExtResource("3_uw5x1")
 rayCast = NodePath("BowAimerRay")
 shapeCast = NodePath("BowAimerShape")
-targetNameLabel = NodePath("../../HudCanvas/Hud/TargetName")
-targetFx = NodePath("TargetParticles")
+targetFx = NodePath("TargetSprite")
 
 [node name="BowAimerRay" type="RayCast3D" parent="SpringArm3D/BowAimer"]
 target_position = Vector3(0, 0, -30)
@@ -122,21 +115,21 @@ margin = 0.05
 max_results = 1
 collision_mask = 595
 
-[node name="TargetParticles" type="GPUParticles3D" parent="SpringArm3D/BowAimer"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-material_override = ExtResource("5_7pt8l")
-amount = 4
-process_material = ExtResource("6_2c6ru")
-draw_pass_1 = SubResource("QuadMesh_vrg3b")
+[node name="TargetSprite" type="Sprite3D" parent="SpringArm3D/BowAimer"]
+layers = 2
+modulate = Color(1, 1, 1, 0.705882)
+pixel_size = 0.0005
+billboard = 1
+double_sided = false
+no_depth_test = true
+fixed_size = true
+render_priority = 50
+texture = ExtResource("5_savq2")
 script = ExtResource("7_ihwk4")
-weightedMat = ExtResource("5_7pt8l")
-pickMat = ExtResource("8_bbs82")
-netMat = ExtResource("9_ts220")
-fireMat = ExtResource("10_et03l")
-weightedFx = ExtResource("6_2c6ru")
-pickFx = ExtResource("11_vcdk4")
-netFx = ExtResource("12_ch7f3")
-fireFx = ExtResource("13_iwsg4")
+weightedSprite = ExtResource("5_savq2")
+pickSprite = ExtResource("7_ey0rg")
+netSprite = ExtResource("8_nsls7")
+fireSprite = ExtResource("9_q1w1u")
 
 [node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay")]
 script = ExtResource("5_rkg0g")
@@ -340,24 +333,6 @@ theme = ExtResource("5_o5i36")
 text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
-
-[node name="TargetName" type="Label" parent="HudCanvas/Hud"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 20.0
-offset_right = 20.0
-offset_bottom = 30.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("5_o5i36")
-text = "Target Name"
-horizontal_alignment = 1
-vertical_alignment = 3
 
 [node name="Crosshair" type="Label" parent="HudCanvas/Hud"]
 layout_mode = 1

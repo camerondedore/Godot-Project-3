@@ -9,8 +9,6 @@ public partial class PlayerBowAimer : Node3D
     [Export]
     ShapeCast3D shapeCast;
     [Export]
-    Label targetNameLabel;
-    [Export]
     BowAimerTargetFx targetFx;
 
     public IBowTarget target,
@@ -22,7 +20,6 @@ public partial class PlayerBowAimer : Node3D
     {
         rayCast.Enabled = false;
         shapeCast.Enabled = false;
-        targetNameLabel.Text = "";
         targetFx.NoTarget();
         prevTarget = null;
     }
@@ -35,9 +32,7 @@ public partial class PlayerBowAimer : Node3D
         {
             if(prevTarget != target)
             {
-                // clear ui 
-                targetNameLabel.Text = "";
-
+                // clear target fx 
                 targetFx.NoTarget();
 
                 prevTarget = null;
@@ -61,9 +56,7 @@ public partial class PlayerBowAimer : Node3D
             {
                 if(prevTarget != target)
                 {
-                    // set ui 
-                    targetNameLabel.Text = target.GetName();
-
+                    // set target fx 
                     targetFx.HasTarget(target);
 
                     prevTarget = target;
@@ -71,9 +64,7 @@ public partial class PlayerBowAimer : Node3D
             }
             else
             {
-                // clear ui 
-                targetNameLabel.Text = "";
-
+                // clear target fx 
                 targetFx.NoTarget();
 
                 prevTarget = null;
@@ -84,9 +75,7 @@ public partial class PlayerBowAimer : Node3D
         {
             // no usable target
             target = null;
-            // clear ui 
-            targetNameLabel.Text = "";
-
+            // clear target fx 
             targetFx.NoTarget();
 
             prevTarget = null;
@@ -128,9 +117,7 @@ public partial class PlayerBowAimer : Node3D
 
     public void DisableBowAimer()
     {
-        // clear ui 
-        targetNameLabel.Text = "";
-
+        // clear target fx 
         targetFx.NoTarget();
 
         prevTarget = null;
@@ -162,7 +149,6 @@ public partial class PlayerBowAimer : Node3D
 
 public interface IBowTarget
 {
-    string GetName();
     string GetArrowType();
     void Hit();
     Vector3 GetGlobalPosition();

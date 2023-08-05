@@ -2,19 +2,14 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class BowAimerTargetFx : GpuParticles3D
+public partial class BowAimerTargetFx : Sprite3D
 {
 
     [Export]
-    Material weightedMat,
-        pickMat,
-        netMat,
-        fireMat;
-    [Export]
-    ParticleProcessMaterial weightedFx,
-        pickFx,
-        netFx,
-        fireFx;
+    Texture2D weightedSprite,
+        pickSprite,
+        netSprite,
+        fireSprite;
 
     IBowTarget activeTarget;
 
@@ -32,8 +27,7 @@ public partial class BowAimerTargetFx : GpuParticles3D
         if(activeTarget != null)
         {
             // move fx to target
-            var unitVectorToCamera = (GlobalCamera.camera.GlobalPosition - activeTarget.GetGlobalPosition()).Normalized();
-            GlobalPosition = activeTarget.GetGlobalPosition() + unitVectorToCamera * 0.5f;
+            GlobalPosition = activeTarget.GetGlobalPosition();
         }
     }
 
@@ -42,31 +36,25 @@ public partial class BowAimerTargetFx : GpuParticles3D
     public void HasTarget(IBowTarget target)
     {
         activeTarget = target;
-        Restart();
         Visible = true;        
     
         // default to weighted
-        var newMat = weightedMat;
-        var newFx = weightedFx;
+        var newTexture = weightedSprite;
 
         switch(activeTarget.GetArrowType())
         {   
             case "pick":
-                newMat = pickMat;
-                newFx = pickFx;
+                newTexture = pickSprite;
                 break;
             case "net":
-                newMat = netMat;
-                newFx = netFx;
+                newTexture = netSprite;
                 break;
             case "fire":
-                newMat = fireMat;
-                newFx = fireFx;
+                newTexture = fireSprite;
                 break;
         }
 
-        MaterialOverride = newMat;
-        ProcessMaterial = newFx;
+        Texture = newTexture;
     }
 
 

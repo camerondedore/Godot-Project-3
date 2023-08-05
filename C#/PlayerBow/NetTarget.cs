@@ -5,8 +5,7 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 {
 
      [Export]
-    public string targetName = "Jump Net",
-        arrowType = "net";
+    public string arrowType = "net";
     [Export]
     JumpPad jumpPad;
     [Export]
@@ -32,13 +31,6 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
         // hide net
         netMesh.Visible = false;
-    }
-
-
-
-    public string GetName()
-    {
-        return targetName;
     }
 
 

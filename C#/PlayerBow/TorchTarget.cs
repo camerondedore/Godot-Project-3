@@ -5,8 +5,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string targetName = "Torch",
-        arrowType = "fire";
+    public string arrowType = "fire";
     [Export]
     GpuParticles3D fireFx,
         dripFx;
@@ -32,13 +31,6 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
         }
 
 
-    }
-
-
-
-    public string GetName()
-    {
-        return targetName;
     }
 
 

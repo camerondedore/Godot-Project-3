@@ -35,8 +35,7 @@ namespace MobWasp
         public PackedScene waspDeathFx,
             waspHitFx;
         [Export]
-        public string targetName = "Wasp",
-            arrowType = "weighted";
+        public string arrowType = "weighted";
         [Export]
         public Vector3 warnOffset = new Vector3(0, 1, 0);
         [Export]
@@ -221,13 +220,6 @@ namespace MobWasp
                     LookAt(lookTargetPosition, upDirection);
                 }
             }
-        }
-
-
-
-        public string GetName()
-        {
-            return targetName;
         }
 
 
