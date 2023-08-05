@@ -130,6 +130,7 @@ weightedSprite = ExtResource("5_savq2")
 pickSprite = ExtResource("7_ey0rg")
 netSprite = ExtResource("8_nsls7")
 fireSprite = ExtResource("9_q1w1u")
+scaleSpeed = 5.0
 
 [node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay")]
 script = ExtResource("5_rkg0g")

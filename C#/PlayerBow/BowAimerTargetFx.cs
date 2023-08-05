@@ -12,6 +12,9 @@ namespace PlayerBow
             pickSprite,
             netSprite,
             fireSprite;
+        [Export]
+        float scaleSpeed = 0.5f,
+            scaleRadius = 0.1f;
 
         IBowTarget activeTarget;
 
@@ -30,6 +33,8 @@ namespace PlayerBow
             {
                 // move fx to target
                 GlobalPosition = activeTarget.GetGlobalPosition();
+
+                Scale = Vector3.One * (1 + ((float) Mathf.Sin(EngineTime.timePassed * scaleSpeed)) * scaleRadius);
             }
         }
 
