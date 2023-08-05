@@ -29,14 +29,12 @@ public partial class PlayerBow : Node3D
             return;
         }
 
+        // default weighted
         var arrowToFire = weightedArrow;
 
         // NEED TO ADD OTHER ARROWS
         switch(target.GetArrowType())
         {
-            case "weighted":
-                arrowToFire = weightedArrow;
-                break;
             case "pick":
                 arrowToFire = pickArrow;
                 break;

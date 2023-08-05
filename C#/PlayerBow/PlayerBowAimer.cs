@@ -10,8 +10,11 @@ public partial class PlayerBowAimer : Node3D
     ShapeCast3D shapeCast;
     [Export]
     Label targetNameLabel;
+    [Export]
+    BowAimerTargetFx targetFx;
 
-    public IBowTarget target;
+    public IBowTarget target,
+        prevTarget;
 
 
 
@@ -20,6 +23,8 @@ public partial class PlayerBowAimer : Node3D
         rayCast.Enabled = false;
         shapeCast.Enabled = false;
         targetNameLabel.Text = "";
+        targetFx.NoTarget();
+        prevTarget = null;
     }
 
 
@@ -28,10 +33,14 @@ public partial class PlayerBowAimer : Node3D
     {
         if(!rayCast.Enabled)
         {
-            if(targetNameLabel.Text != "")
+            if(prevTarget != target)
             {
                 // clear ui 
                 targetNameLabel.Text = "";
+
+                targetFx.NoTarget();
+
+                prevTarget = null;
             }
 
             return;
@@ -50,16 +59,24 @@ public partial class PlayerBowAimer : Node3D
             // check that player has arrow type
             if(HasValidTarget())
             {
-                if(targetNameLabel.Text != target.GetName())
+                if(prevTarget != target)
                 {
                     // set ui 
                     targetNameLabel.Text = target.GetName();
+
+                    targetFx.HasTarget(target);
+
+                    prevTarget = target;
                 }
             }
             else
             {
                 // clear ui 
                 targetNameLabel.Text = "";
+
+                targetFx.NoTarget();
+
+                prevTarget = null;
             }
 
         }   
@@ -69,6 +86,10 @@ public partial class PlayerBowAimer : Node3D
             target = null;
             // clear ui 
             targetNameLabel.Text = "";
+
+            targetFx.NoTarget();
+
+            prevTarget = null;
         }
     }
 
@@ -109,6 +130,10 @@ public partial class PlayerBowAimer : Node3D
     {
         // clear ui 
         targetNameLabel.Text = "";
+
+        targetFx.NoTarget();
+
+        prevTarget = null;
 
         // disable ray
         rayCast.Enabled = false;
