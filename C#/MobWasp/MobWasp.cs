@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using System.Collections.Generic;
+using PlayerBow;
 
 namespace MobWasp
 {

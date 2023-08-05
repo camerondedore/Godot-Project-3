@@ -53,7 +53,6 @@
 [ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Cooking/PropCookingSpit.tscn" id="44_xq1oh"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Cooking/PropPot1.tscn" id="45_6f0df"]
 [ext_resource type="PackedScene" path="res://Prefabs/Cooking/PropPot2.tscn" id="46_aupno"]
-[ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowTarget.cs" id="47_lu2vf"]
 [ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="47_qeona"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/Bow Targets/PropLockbox.tscn" id="50_hmjpr"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="51_0e1a5"]
@@ -62,6 +61,7 @@
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
 [ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/Bow Targets/PropChest.tscn" id="56_1rfgt"]
 [ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Cooking/PropOvenPeel.tscn" id="59_lg3ag"]
+[ext_resource type="Script" path="res://C#/PlayerBow/BowTarget.cs" id="59_y67w5"]
 [ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Cooking/PropLadle.tscn" id="64_he0ji"]
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Bow Targets/PropTorch.tscn" id="70_woav5"]
@@ -315,7 +315,7 @@ lock_rotation = false
 
 [node name="TestBowTarget6" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3543, 2, 11.6372)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget6"]
@@ -326,7 +326,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget13" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, -1, 14.6372)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget13"]
@@ -337,7 +337,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget15" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, 6, 10.6372)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget15"]
@@ -348,7 +348,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget19" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3543, 5.9924, 7.49769)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget19"]
@@ -359,7 +359,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget20" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, 2.9924, 4.49769)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget20"]
@@ -370,7 +370,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget23" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.3543, 9.9924, 5.49769)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget23"]
@@ -381,7 +381,7 @@ shape = SubResource("ConvexPolygonShape3D_j38tx")
 
 [node name="TestBowTarget28" type="StaticBody3D" parent="Targets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3543, 2.9924, 21.3821)
-script = ExtResource("47_lu2vf")
+script = ExtResource("59_y67w5")
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Targets/TestBowTarget28"]

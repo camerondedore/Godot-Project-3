@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using CameraControllerSpringArm;
+using PlayerBow;
 
 namespace PlayerCharacterComplex
 {
@@ -34,9 +35,9 @@ namespace PlayerCharacterComplex
 		[Export]
 		public PlayerCharacterAudio characterAudio;
 		[Export]
-		public PlayerBowAimer bowAimer;
+		public BowAimer bowAimer;
 		[Export]
-		public PlayerBow bow;
+		public Bow bow;
 		[Export]
 		public MobFaction[] myFactions;
 		[Export]

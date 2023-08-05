@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using PlayerBow;
 
 public partial class LockboxTarget : StaticBody3D, IBowTarget
 {

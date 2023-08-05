@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
 [ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
-[ext_resource type="Script" path="res://C#/PlayerBow/PlayerBowAimer.cs" id="3_uw5x1"]
+[ext_resource type="Script" path="res://C#/PlayerBow/BowAimer.cs" id="4_s8c8a"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
@@ -27,7 +27,6 @@
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
-[ext_resource type="Script" path="res://C#/PlayerBow/PlayerBow.cs" id="16_mwwtv"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
@@ -39,6 +38,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowWeighted.tscn" id="27_121vu"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowNet.tscn" id="28_t6rk3"]
 [ext_resource type="PackedScene" uid="uid://d3m8qbrtf4h37" path="res://Prefabs/Player Arrows/PlayerArrowFire.tscn" id="31_imcpe"]
+[ext_resource type="Script" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
@@ -98,7 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 
 [node name="BowAimer" type="Node3D" parent="SpringArm3D" node_paths=PackedStringArray("rayCast", "shapeCast", "targetFx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-script = ExtResource("3_uw5x1")
+script = ExtResource("4_s8c8a")
 rayCast = NodePath("BowAimerRay")
 shapeCast = NodePath("BowAimerShape")
 targetFx = NodePath("TargetSprite")
@@ -385,7 +385,7 @@ rangerBandageCraftSound = ExtResource("23_gbit2")
 
 [node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
-script = ExtResource("16_mwwtv")
+script = ExtResource("32_hlbfv")
 weightedArrow = ExtResource("27_121vu")
 pickArrow = ExtResource("18_erk0y")
 netArrow = ExtResource("28_t6rk3")
