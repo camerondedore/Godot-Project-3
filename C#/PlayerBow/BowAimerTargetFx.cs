@@ -16,6 +16,8 @@ namespace PlayerBow
         [Export]
         float scaleSpeed = 0.5f,
             scaleRadius = 0.1f;
+        [Export]
+        AudioStreamPlayer3D audio;
 
         IBowTarget activeTarget;
 
@@ -66,6 +68,9 @@ namespace PlayerBow
             }
 
             Texture = newTexture;
+
+            // play audio once
+            audio.Play();
         }
 
 
