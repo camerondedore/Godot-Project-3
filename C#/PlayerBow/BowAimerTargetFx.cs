@@ -69,7 +69,7 @@ namespace PlayerBow
 
             Texture = newTexture;
 
-            // play audio once
+            // play audio
             audio.Play();
         }
 
@@ -79,6 +79,9 @@ namespace PlayerBow
         {
             Visible = false;
             activeTarget = null;
+
+            // stop audio
+            audio.Stop();
         }
     }
 }

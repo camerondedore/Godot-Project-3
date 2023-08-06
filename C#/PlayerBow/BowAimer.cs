@@ -135,7 +135,7 @@ namespace PlayerBow
 
         public void EnableBowAimer()
         {
-            // disable ray
+            // enable ray
             rayCast.Enabled = true;
             shapeCast.Enabled = true;
 

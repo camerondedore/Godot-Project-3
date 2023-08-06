@@ -129,15 +129,12 @@ shape = SubResource("ConcavePolygonShape3D_l0xu4")
 
 [node name="PropTreeApple1" parent="Props/Trees/Trees" instance=ExtResource("4_6wf3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03029, -0.0174332, 11.4903)
-visible = false
 
 [node name="PropTreeApple2" parent="Props/Trees/Trees" instance=ExtResource("5_obu66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065707, 0, 11.4983)
-visible = false
 
 [node name="PropTreeApple3" parent="Props/Trees/Trees" instance=ExtResource("4_65hyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.93429, 0, 11.4983)
-visible = false
 
 [node name="Logs" type="Node3D" parent="Props/Trees"]
 
