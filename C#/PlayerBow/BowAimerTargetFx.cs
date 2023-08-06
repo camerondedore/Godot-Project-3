@@ -11,7 +11,8 @@ namespace PlayerBow
         Texture2D weightedSprite,
             pickSprite,
             netSprite,
-            fireSprite;
+            fireSprite,
+            bodkinSprite;
         [Export]
         float scaleSpeed = 0.5f,
             scaleRadius = 0.1f;
@@ -58,6 +59,9 @@ namespace PlayerBow
                     break;
                 case "fire":
                     newTexture = fireSprite;
+                    break;
+                case "bodkin":
+                    newTexture = bodkinSprite;
                     break;
             }
 

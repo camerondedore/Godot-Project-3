@@ -10,7 +10,8 @@ namespace PlayerBow
     PackedScene weightedArrow,
         pickArrow,
         netArrow,
-        fireArrow;
+        fireArrow,
+        bodkinArrow;
     [Export]
     AudioTools3d bowAudio;
     [Export]
@@ -45,6 +46,9 @@ namespace PlayerBow
                     break;
                 case "fire":
                     arrowToFire = fireArrow;
+                    break;
+                case "bodkin":
+                    arrowToFire = bodkinArrow;
                     break;
             }
 

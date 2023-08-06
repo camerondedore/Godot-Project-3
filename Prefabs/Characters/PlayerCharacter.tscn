@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=46 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bdr72honvktal" path="res://Textures/fx-arrow-trail-fire.png" id="9_q1w1u"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
+[ext_resource type="Texture2D" uid="uid://vv7jwomasoww" path="res://Textures/fx-arrow-trail-bodkin.png" id="10_m6ggt"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
@@ -40,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://d3m8qbrtf4h37" path="res://Prefabs/Player Arrows/PlayerArrowFire.tscn" id="31_imcpe"]
 [ext_resource type="Script" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
+[ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -130,7 +132,8 @@ weightedSprite = ExtResource("5_savq2")
 pickSprite = ExtResource("7_ey0rg")
 netSprite = ExtResource("8_nsls7")
 fireSprite = ExtResource("9_q1w1u")
-scaleSpeed = 5.0
+bodkinSprite = ExtResource("10_m6ggt")
+scaleSpeed = 10.0
 
 [node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay")]
 script = ExtResource("5_rkg0g")
@@ -391,6 +394,7 @@ weightedArrow = ExtResource("27_121vu")
 pickArrow = ExtResource("18_erk0y")
 netArrow = ExtResource("28_t6rk3")
 fireArrow = ExtResource("31_imcpe")
+bodkinArrow = ExtResource("37_os4wq")
 bowAudio = NodePath("BowAudio")
 bowFireSound = ExtResource("19_rmfin")
 bowDrawSound = ExtResource("20_no75w")

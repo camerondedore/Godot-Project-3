@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://f8vqk4ousym6"]
+
+[ext_resource type="Material" uid="uid://d0c2in3436idg" path="res://Materials/FxArrowTrailBodkin.tres" id="1_60ec6"]
+[ext_resource type="Material" uid="uid://ctphvoi6xpdr2" path="res://Particles/FxArrowTrailBodkin.tres" id="2_hhhrq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_pc5df"]
+
+[node name="FxArrowTrailBodkin" type="GPUParticles3D"]
+material_override = ExtResource("1_60ec6")
+process_material = ExtResource("2_hhhrq")
+draw_pass_1 = SubResource("QuadMesh_pc5df")
