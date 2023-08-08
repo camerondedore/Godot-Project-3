@@ -660,9 +660,6 @@ transform = Transform3D(0.646793, -0.00724353, -0.749165, 0.0515345, 0.987808, 0
 [node name="PropFern2!1691374101_333" parent="Props/Plants" instance=ExtResource("6_0nsps")]
 transform = Transform3D(0.494646, 0.00180636, -0.904115, -0.0351113, 1.02984, -0.017152, 0.903435, 0.039035, 0.494352, 2.19541, 0, 17.7627)
 
-[node name="PropFern2!1691374102_349" parent="Props/Plants" instance=ExtResource("6_0nsps")]
-transform = Transform3D(-0.308013, -0.0244517, 0.886997, -0.0301763, 0.938661, 0.0153971, -0.88682, -0.0234477, -0.308598, -9.52992, 8.05995, 25.1401)
-
 [node name="PropFern2!1691374109_932" parent="Props/Plants" instance=ExtResource("6_0nsps")]
 transform = Transform3D(-0.74738, 0.021344, 0.477663, 0.0163399, 0.886978, -0.0140676, -0.477861, -0.00305311, -0.747552, -18.8362, 5.78267, -18.7926)
 
