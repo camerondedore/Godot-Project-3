@@ -31,11 +31,22 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
-            startTime = EngineTime.timePassed;       
+            startTime = EngineTime.timePassed;   
+
+            // start station fx
+            blackboard.currentStation.craftingFx.Emitting = true;    
         }
 
-    
-    
+
+
+        public override void EndState()
+        {
+            // stop station fx
+            blackboard.currentStation.craftingFx.Emitting = false;   
+        }
+
+
+
         public override State Transition()
         {
             if(blackboard.rangerBandagesToCraft <= 0 && EngineTime.timePassed > startTime + craftTime)

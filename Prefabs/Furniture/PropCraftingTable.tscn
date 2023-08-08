@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfyoe1tbi03jj"]
+[gd_scene load_steps=11 format=3 uid="uid://bfyoe1tbi03jj"]
 
 [ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_y5gvo"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_j5u0j"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="3_erttl"]
 [ext_resource type="PackedScene" uid="uid://cennawrc312vk" path="res://Prefabs/Small Items/PropMortarPestle.tscn" id="4_ev8f2"]
+[ext_resource type="PackedScene" uid="uid://bn1ffv7hxh6lu" path="res://Prefabs/FX/FxCrafting.tscn" id="5_8yyxa"]
 [ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="5_188yf"]
 [ext_resource type="Texture2D" uid="uid://dweu0on7f0seq" path="res://Textures/fx-herb-mess.png" id="6_7lknm"]
 
@@ -45,13 +46,16 @@ shape = SubResource("BoxShape3D_fc7e7")
 [node name="PropMortarPestle" parent="." instance=ExtResource("4_ev8f2")]
 transform = Transform3D(0.720006, 0, -0.693968, 0, 1, 0, 0.693968, 0, 0.720006, 0, 0.60235, 0)
 
-[node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget")]
+[node name="FxCrafting" parent="PropMortarPestle" instance=ExtResource("5_8yyxa")]
+
+[node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget", "craftingFx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
 collision_layer = 4
 collision_mask = 2
 monitorable = false
 script = ExtResource("3_erttl")
 userTarget = NodePath("CharacterTarget")
+craftingFx = NodePath("../PropMortarPestle/FxCrafting")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CraftingArea"]
 shape = SubResource("SphereShape3D_75aye")

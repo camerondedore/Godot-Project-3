@@ -56,7 +56,9 @@ namespace PlayerCharacterComplex
 
 		public Disconnector jumpDisconnector = new Disconnector();
 		public int rangerBandagesToCraft;
-		string debugText;
+		public BandageStation currentStation;
+
+		//string debugText;
 		
 
 
@@ -183,7 +185,7 @@ namespace PlayerCharacterComplex
 
 
 
-		public void BandageStationActivated(Node3D target)
+		public void BandageStationActivated(BandageStation station)
 		{
 			// check for bandage components
 			var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
@@ -193,9 +195,8 @@ namespace PlayerCharacterComplex
 				return;
 			}
 
-
-			// apply bandage station target position
-			LookAtFromPosition(target.GlobalPosition, target.GlobalPosition + -target.GlobalTransform.Basis.Z);
+			// set station for player to use
+			currentStation = station;
 
 			// go to bandage station state
 			machine.SetState(stateBandageStationGather);

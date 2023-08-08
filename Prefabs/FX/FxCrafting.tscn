@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn1ffv7hxh6lu"]
+
+[ext_resource type="Material" uid="uid://bfrlxbn18rgl0" path="res://Materials/FxCrafting.tres" id="1_mqpkm"]
+
+[sub_resource type="Gradient" id="Gradient_7ks5y"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mj8fp"]
+gradient = SubResource("Gradient_7ks5y")
+
+[sub_resource type="Curve" id="Curve_5pu26"]
+_data = [Vector2(0, 0.742574), 0.0, 0.59802, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7vanh"]
+curve = SubResource("Curve_5pu26")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wvxr1"]
+lifetime_randomness = 0.33
+emission_shape = 1
+emission_sphere_radius = 0.05
+direction = Vector3(0, 1, 0)
+spread = 20.0
+gravity = Vector3(0, -8, 0)
+initial_velocity_min = 2.5
+initial_velocity_max = 4.0
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+angle_max = 359.0
+scale_min = 0.3
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_7vanh")
+color_ramp = SubResource("GradientTexture1D_mj8fp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_piv58"]
+
+[node name="FxCrafting" type="GPUParticles3D"]
+material_override = ExtResource("1_mqpkm")
+emitting = false
+amount = 9
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_wvxr1")
+draw_pass_1 = SubResource("QuadMesh_piv58")

@@ -5,7 +5,9 @@ public partial class BandageStation : Area3D
 {
 
     [Export]
-    Node3D userTarget;
+    public Node3D userTarget;
+    [Export]
+    public GpuParticles3D craftingFx;
 
 
 
@@ -25,7 +27,7 @@ public partial class BandageStation : Area3D
             var bandageStationUser = body as IBandageStationUser;
             
             // activate bandage station behaviour on body
-            bandageStationUser.BandageStationActivated(userTarget);
+            bandageStationUser.BandageStationActivated(this);
         }
     }
 }
@@ -34,5 +36,5 @@ public partial class BandageStation : Area3D
 
 public interface IBandageStationUser
 {
-    void BandageStationActivated(Node3D targetNode);
+    void BandageStationActivated(BandageStation station);
 }

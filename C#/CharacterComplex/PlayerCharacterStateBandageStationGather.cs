@@ -34,7 +34,12 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
-            startTime = EngineTime.timePassed;     
+            startTime = EngineTime.timePassed;   
+
+            // set position and rotation to station's target
+            var targetPosition = blackboard.currentStation.userTarget.GlobalPosition;
+            var targetLookPosition = targetPosition + -blackboard.currentStation.userTarget.GlobalTransform.Basis.Z;
+			blackboard.LookAtFromPosition(targetPosition, targetLookPosition);  
 
             // clear velocity
             blackboard.Velocity = Vector3.Zero;
