@@ -183,6 +183,8 @@ dockLeavesCounter = NodePath("Hud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("Hud/Sanicle/SanicleCounter")
 rangerBandagesCounter = NodePath("Hud/RangerBandage/RangerBandageCounter")
 hudPickups = NodePath("Hud")
+hurtHitPointsBarColor = Color(1, 0.25, 0.25, 1)
+healHitPointsBarColor = Color(0.25, 1, 0.25, 1)
 
 [node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd")]
 layout_mode = 3

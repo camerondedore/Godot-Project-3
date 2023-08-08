@@ -15,9 +15,14 @@ public partial class PlayerHud : Node
         rangerBandagesCounter;
     [Export]
     PlayerHudPickups hudPickups;
+    [Export]
+    Color hurtHitPointsBarColor,
+        healHitPointsBarColor;
 
     PlayerStatistics.Statistics currentStatistics;
     PlayerInventory.Inventory currentInventory;
+    double colorChangeStartTime,
+        colorChangeTimeLength = 0.5;
     float hitPoints,
         hitPointsPerBar,
         candiedNuts,
@@ -25,6 +30,7 @@ public partial class PlayerHud : Node
         sanicle,
         rangerBandages;
     int hitPointUpgrades;
+    bool colorChanged = false;
 
 
 
@@ -57,7 +63,7 @@ public partial class PlayerHud : Node
         }
          
         // initialize UI values
-        UpdateHitPointBars();
+        UpdateHitPointBars(0);
         candiedNutsCounter.Text = candiedNuts.ToString();
         dockLeavesCounter.Text = dockLeaves.ToString();
         sanicleCounter.Text = sanicle.ToString();
@@ -72,14 +78,15 @@ public partial class PlayerHud : Node
 
         if(hitPoints != currentStatistics.HitPoints)
         {
+            var hitPointsChange = currentStatistics.HitPoints - hitPoints;
             hitPoints = currentStatistics.HitPoints;
-            UpdateHitPointBars();
+            UpdateHitPointBars(hitPointsChange);
         }
 
         if(hitPointUpgrades != currentStatistics.HitPointUpgrades)
         {
             hitPointUpgrades = currentStatistics.HitPointUpgrades;
-            UpdateHitPointBars();
+            UpdateHitPointBars(0);
         }
 
         if(candiedNuts != currentInventory.CandiedNuts)
@@ -143,11 +150,19 @@ public partial class PlayerHud : Node
             rangerBandages = currentInventory.RangerBandages;
             rangerBandagesCounter.Text = rangerBandages.ToString();
         }
+
+        // reset hit point bar color
+        if(colorChanged && EngineTime.timePassed > colorChangeStartTime + colorChangeTimeLength)
+        {
+            // colorChanged bool is reset in method
+            UpdateHitPointBars(0);
+        }
+
     }
 
 
 
-    void UpdateHitPointBars()
+    void UpdateHitPointBars(float hitPointsChange)
     {
         // get number of bars needed
         var hitPointBarsCount = PlayerStatistics.statistics.currentStatistics.HitPointUpgrades + 1;
@@ -159,6 +174,27 @@ public partial class PlayerHud : Node
             bar.Visible = true;
             bar.MaxValue = hitPointsPerBar;
             bar.Value = hitPoints - (hitPointBarsCount - 1) * hitPointsPerBar;
+
+            // check for color change
+            if(hitPointsChange > 0)
+            {
+                bar.TintProgress = healHitPointsBarColor;
+                colorChanged = true;
+                colorChangeStartTime = EngineTime.timePassed;
+            }
+            else if(hitPointsChange < 0)
+            {
+                bar.TintProgress = hurtHitPointsBarColor;
+                colorChanged = true;
+                colorChangeStartTime = EngineTime.timePassed;
+            }
+            else
+            {
+                // reset color tint to white
+                bar.TintProgress = new Color(){R = 1, G = 1, B = 1, A = 1};
+                colorChanged = false;
+            }
+
             hitPointBarsCount--;
         }
     }
