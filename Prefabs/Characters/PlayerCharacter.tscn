@@ -141,12 +141,13 @@ audio = NodePath("../TargetAudio")
 stream = ExtResource("11_dpkpm")
 panning_strength = 0.0
 
-[node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay")]
+[node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay", "groundDetectorRay")]
 script = ExtResource("5_rkg0g")
 ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRayHorizontal")
 ledgeDetectorRayVertical = NodePath("LedgeDetectorRayVertical")
 ledgeDetectorRayGap = NodePath("LedgeDetectorRayGap")
 ceilingDetectorRay = NodePath("CeilingDetectorRay")
+groundDetectorRay = NodePath("GroundDetectorRay")
 
 [node name="LedgeDetectorRayHorizontal" type="RayCast3D" parent="LedgeDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -163,6 +164,9 @@ target_position = Vector3(0, 0, -0.5)
 [node name="CeilingDetectorRay" type="RayCast3D" parent="LedgeDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 2, 0)
+
+[node name="GroundDetectorRay" type="RayCast3D" parent="LedgeDetector"]
+target_position = Vector3(0, -1.75, 0)
 
 [node name="Statistics" type="Node" parent="."]
 script = ExtResource("4_x6l2t")

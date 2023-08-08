@@ -8,7 +8,8 @@ public partial class PlayerCharacterLedgeDetector : Node3D
 		public RayCast3D ledgeDetectorRayHorizontal,
 			ledgeDetectorRayVertical,
 			ledgeDetectorRayGap,
-			ceilingDetectorRay;
+			ceilingDetectorRay,
+            groundDetectorRay;
 
 
 
@@ -25,11 +26,13 @@ public partial class PlayerCharacterLedgeDetector : Node3D
         ledgeDetectorRayVertical.Enabled = true;
         ledgeDetectorRayGap.Enabled = true;
         ceilingDetectorRay.Enabled = true;
+        groundDetectorRay.Enabled = true;
 
         ledgeDetectorRayHorizontal.ForceRaycastUpdate();
         ledgeDetectorRayVertical.ForceRaycastUpdate();
         ledgeDetectorRayGap.ForceRaycastUpdate();
         ceilingDetectorRay.ForceRaycastUpdate();
+        groundDetectorRay.ForceRaycastUpdate();
     }
 
 
@@ -40,6 +43,7 @@ public partial class PlayerCharacterLedgeDetector : Node3D
         ledgeDetectorRayVertical.Enabled = false;
         ledgeDetectorRayGap.Enabled = false;
         ceilingDetectorRay.Enabled = false;
+        groundDetectorRay.Enabled = false;
     }
 
 
@@ -58,7 +62,10 @@ public partial class PlayerCharacterLedgeDetector : Node3D
         // check for ceiling
         var detectingCeiling = ceilingDetectorRay.IsColliding();
 
-        return detectingLedge && !detectingCeiling;
+        // check for ground
+        var detectingGround = groundDetectorRay.IsColliding();
+
+        return detectingLedge && !detectingCeiling && !detectingGround;
     }
 
 
