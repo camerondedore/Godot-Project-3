@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfyoe1tbi03jj"]
+[gd_scene load_steps=12 format=3 uid="uid://bfyoe1tbi03jj"]
 
 [ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_y5gvo"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_j5u0j"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bn1ffv7hxh6lu" path="res://Prefabs/FX/FxCrafting.tscn" id="5_8yyxa"]
 [ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="5_188yf"]
 [ext_resource type="Texture2D" uid="uid://dweu0on7f0seq" path="res://Textures/fx-herb-mess.png" id="6_7lknm"]
+[ext_resource type="AudioStream" uid="uid://x1j5a5wtihfd" path="res://Audio/crafting-with-leaves.wav" id="6_jbibn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvtkp"]
 size = Vector3(1.6, 0.1, 0.9)
@@ -48,7 +49,11 @@ transform = Transform3D(0.720006, 0, -0.693968, 0, 1, 0, 0.693968, 0, 0.720006, 
 
 [node name="FxCrafting" parent="PropMortarPestle" instance=ExtResource("5_8yyxa")]
 
-[node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget", "craftingFx")]
+[node name="CraftingAudio" type="AudioStreamPlayer3D" parent="PropMortarPestle"]
+stream = ExtResource("6_jbibn")
+max_distance = 15.0
+
+[node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget", "craftingFx", "audio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.6)
 collision_layer = 4
 collision_mask = 2
@@ -56,6 +61,7 @@ monitorable = false
 script = ExtResource("3_erttl")
 userTarget = NodePath("CharacterTarget")
 craftingFx = NodePath("../PropMortarPestle/FxCrafting")
+audio = NodePath("../PropMortarPestle/CraftingAudio")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CraftingArea"]
 shape = SubResource("SphereShape3D_75aye")

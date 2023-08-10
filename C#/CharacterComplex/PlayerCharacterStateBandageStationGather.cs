@@ -61,7 +61,7 @@ namespace PlayerCharacterComplex
             // check for bandage components
             var depletedComponents = !PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
-            if(depletedComponents)
+            if(depletedComponents && EngineTime.timePassed > startTime + gatherTime)
             {
                 // craft
                 return blackboard.stateBandageStationCraft;

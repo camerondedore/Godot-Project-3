@@ -34,7 +34,7 @@ namespace PlayerCharacterComplex
             startTime = EngineTime.timePassed;   
 
             // start station fx
-            blackboard.currentStation.craftingFx.Emitting = true;    
+            blackboard.currentStation.StartCrafting(); 
         }
 
 
@@ -42,7 +42,7 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             // stop station fx
-            blackboard.currentStation.craftingFx.Emitting = false;   
+            blackboard.currentStation.StopCrafting(); 
         }
 
 

@@ -7,7 +7,9 @@ public partial class BandageStation : Area3D
     [Export]
     public Node3D userTarget;
     [Export]
-    public GpuParticles3D craftingFx;
+    GpuParticles3D craftingFx;
+    [Export]
+    AudioStreamPlayer3D audio;
 
 
 
@@ -29,6 +31,22 @@ public partial class BandageStation : Area3D
             // activate bandage station behaviour on body
             bandageStationUser.BandageStationActivated(this);
         }
+    }
+
+
+
+    public void StartCrafting()
+    {
+        craftingFx.Emitting = true;
+        audio.Play();
+    }
+
+
+
+    public void StopCrafting()
+    {
+        craftingFx.Emitting = false;
+        audio.Stop();
     }
 }
 
