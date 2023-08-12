@@ -106,6 +106,14 @@ public partial class WorldData : Node
 
 
 
+    public void SetCheckpoint(Vector3 checkpointPosition)
+    {
+        data.currentData.SavedPosition = checkpointPosition.ToString();
+        data.currentData.SavedScene = GetTree().CurrentScene.Name;
+    }
+
+
+
     [System.Serializable]
     public class Data
     {
@@ -118,5 +126,15 @@ public partial class WorldData : Node
         {
             get; set;
         } = new List<string>();
+
+        public String SavedScene
+        {
+            get; set;
+        } = "";
+
+        public String SavedPosition
+        {
+            get; set;
+        } = Vector3.Up.ToString();
     }
 }

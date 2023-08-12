@@ -61,6 +61,9 @@ public partial class Checkpoint : Area3D
 
     void TriggerCheckpoint(Node3D body)
     {
+        // pass checkpoint to world data
+        WorldData.data.SetCheckpoint(startPosition);
+
         // save inventory, stats, and world
         PlayerInventory.inventory.SaveInventory();
         PlayerStatistics.statistics.SaveStatistics();
