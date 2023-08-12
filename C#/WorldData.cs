@@ -106,10 +106,39 @@ public partial class WorldData : Node
 
 
 
-    public void SetCheckpoint(Vector3 checkpointPosition)
+    public void SetCheckpoint(Vector3 checkpointPosition, Vector3 checkpointDirection)
     {
-        data.currentData.SavedPosition = checkpointPosition.ToString();
+        data.currentData.SavedPosition = $"{checkpointPosition.X},{checkpointPosition.Y},{checkpointPosition.Z}";
+        data.currentData.SavedDirection = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
         data.currentData.SavedScene = GetTree().CurrentScene.Name;
+    }
+
+
+
+    public Vector3 GetSavedCheckpointPosition()
+    {
+        var splitString = currentData.SavedPosition.Split(',');
+        
+        var pos = new Vector3();
+        pos.X = int.Parse(splitString[0]);
+        pos.Y = int.Parse(splitString[1]);
+        pos.Z = int.Parse(splitString[2]);
+
+        return pos;
+    }
+
+
+
+    public Vector3 GetSavedCheckpointDirection()
+    {
+        var splitString = currentData.SavedDirection.Split(',');
+        
+        var dir = new Vector3();
+        dir.X = int.Parse(splitString[0]);
+        dir.Y = int.Parse(splitString[1]);
+        dir.Z = int.Parse(splitString[2]);
+
+        return dir;
     }
 
 
@@ -127,14 +156,19 @@ public partial class WorldData : Node
             get; set;
         } = new List<string>();
 
-        public String SavedScene
+        public string SavedScene
         {
             get; set;
         } = "";
 
-        public String SavedPosition
+        public string SavedPosition
         {
             get; set;
         } = Vector3.Up.ToString();
+
+        public string SavedDirection
+        {
+            get; set;
+        } = (-Vector3.Forward).ToString();
     }
 }

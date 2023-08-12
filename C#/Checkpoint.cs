@@ -14,6 +14,8 @@ public partial class Checkpoint : Area3D
     AudioTools3d audio;
     [Export]
     AudioStream saveSound;
+    [Export]
+    Node3D saveTarget;
 
     Vector3 startPosition;
     double startTime,
@@ -27,6 +29,7 @@ public partial class Checkpoint : Area3D
 
     public override void _Ready()
     {
+        saveTarget.TopLevel = true;
         startPosition = GlobalPosition;
         savingLabel.Visible = false;
         BodyEntered += TriggerCheckpoint;
@@ -62,7 +65,7 @@ public partial class Checkpoint : Area3D
     void TriggerCheckpoint(Node3D body)
     {
         // pass checkpoint to world data
-        WorldData.data.SetCheckpoint(startPosition);
+        WorldData.data.SetCheckpoint(saveTarget.GlobalPosition, -saveTarget.Basis.Z);
 
         // save inventory, stats, and world
         PlayerInventory.inventory.SaveInventory();

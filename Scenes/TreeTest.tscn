@@ -95,7 +95,7 @@ environment = ExtResource("1_2ajl2")
 transform = Transform3D(0.901969, 0.209041, -0.377829, 0, 0.875005, 0.484113, 0.431802, -0.436655, 0.789227, -3.14517, 5.97254, 6.14502)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
-transform = Transform3D(0.31328, 0, -0.949661, 0, 1, 0, 0.949661, 0, 0.31328, 0, 1, 0)
+transform = Transform3D(0.672948, 0, -0.73969, 0, 1, 0, 0.73969, 0, 0.672948, 0, 1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.913638, 0.378101, -0.14935, 0, 0.367378, 0.930072, 0.406529, -0.849749, 0.33565, 0, 0, 0)
@@ -110,8 +110,12 @@ maxRotation = 180.0
 sizeVariation = 0.3
 uniformSize = true
 
-[node name="CheckPoint" parent="." instance=ExtResource("55_bnt5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9.5, -17.3715)
+[node name="CheckPoint" parent="." node_paths=PackedStringArray("saveTarget") instance=ExtResource("55_bnt5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9, -17.3715)
+saveTarget = NodePath("target")
+
+[node name="target" type="Node3D" parent="CheckPoint"]
+transform = Transform3D(-1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, 2, 0.0999994, 0)
 
 [node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
