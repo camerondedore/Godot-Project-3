@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=48 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 [ext_resource type="Texture2D" uid="uid://vv7jwomasoww" path="res://Textures/fx-arrow-trail-bodkin.png" id="10_m6ggt"]
+[ext_resource type="PackedScene" uid="uid://dq8dwaqq4b84a" path="res://Prefabs/FX/FxSparkleBowTarget.tscn" id="11_8krr5"]
 [ext_resource type="AudioStream" uid="uid://ch1you6rwmx40" path="res://Audio/bow-target.wav" id="11_dpkpm"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
@@ -177,7 +178,7 @@ margin = 0.05
 max_results = 1
 collision_mask = 595
 
-[node name="TargetSprite" type="Sprite3D" parent="SpringArm3D/BowAimer" node_paths=PackedStringArray("audio")]
+[node name="TargetSprite" type="Sprite3D" parent="SpringArm3D/BowAimer" node_paths=PackedStringArray("audio", "sparkleFx")]
 layers = 2
 modulate = Color(1, 1, 1, 0.705882)
 pixel_size = 0.0005
@@ -195,6 +196,9 @@ fireSprite = ExtResource("9_q1w1u")
 bodkinSprite = ExtResource("10_m6ggt")
 scaleSpeed = 10.0
 audio = NodePath("../TargetAudio")
+sparkleFx = NodePath("FxSparkleBowTarget")
+
+[node name="FxSparkleBowTarget" parent="SpringArm3D/BowAimer/TargetSprite" instance=ExtResource("11_8krr5")]
 
 [node name="TargetAudio" type="AudioStreamPlayer3D" parent="SpringArm3D/BowAimer"]
 stream = ExtResource("11_dpkpm")

@@ -18,6 +18,8 @@ namespace PlayerBow
             scaleRadius = 0.1f;
         [Export]
         AudioStreamPlayer3D audio;
+        [Export]
+        GpuParticles3D sparkleFx;
 
         IBowTarget activeTarget;
 
@@ -71,6 +73,9 @@ namespace PlayerBow
 
             // play audio
             audio.Play();
+
+            // play fx
+            sparkleFx.Restart();
         }
 
 
@@ -82,6 +87,9 @@ namespace PlayerBow
 
             // stop audio
             audio.Stop();
+
+            // stop fx
+            sparkleFx.Emitting = false;
         }
     }
 }

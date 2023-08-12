@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq8dwaqq4b84a"]
+
+[ext_resource type="Material" uid="uid://bwxwy22piif4c" path="res://Materials/FxSparkleBowTarget.tres" id="1_asg41"]
+
+[sub_resource type="Gradient" id="Gradient_cjmbd"]
+offsets = PackedFloat32Array(0.377193, 0.535088, 0.833333, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.773585, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_t2k2e"]
+gradient = SubResource("Gradient_cjmbd")
+
+[sub_resource type="Curve" id="Curve_slkpn"]
+_data = [Vector2(0, 0.178218), 0.0, 2.40869, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_o5oba"]
+curve = SubResource("Curve_slkpn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vgiqs"]
+lifetime_randomness = 0.25
+direction = Vector3(0, 0, 1)
+spread = 180.0
+gravity = Vector3(0, -1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+damping_min = 3.0
+damping_max = 4.0
+angle_max = 359.0
+scale_min = 0.03
+scale_max = 0.05
+scale_curve = SubResource("CurveTexture_o5oba")
+color_ramp = SubResource("GradientTexture1D_t2k2e")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xbmgd"]
+
+[node name="FxSparkleBowTarget" type="GPUParticles3D"]
+process_mode = 1
+material_override = ExtResource("1_asg41")
+amount = 10
+lifetime = 0.7
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_vgiqs")
+draw_pass_1 = SubResource("QuadMesh_xbmgd")
