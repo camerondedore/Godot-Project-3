@@ -118,11 +118,11 @@ public partial class WorldData : Node
     public Vector3 GetSavedCheckpointPosition()
     {
         var splitString = currentData.SavedPosition.Split(',');
-        
+
         var pos = new Vector3();
-        pos.X = int.Parse(splitString[0]);
-        pos.Y = int.Parse(splitString[1]);
-        pos.Z = int.Parse(splitString[2]);
+        pos.X = float.Parse(splitString[0]);
+        pos.Y = float.Parse(splitString[1]);
+        pos.Z = float.Parse(splitString[2]);
 
         return pos;
     }
@@ -134,9 +134,9 @@ public partial class WorldData : Node
         var splitString = currentData.SavedDirection.Split(',');
         
         var dir = new Vector3();
-        dir.X = int.Parse(splitString[0]);
-        dir.Y = int.Parse(splitString[1]);
-        dir.Z = int.Parse(splitString[2]);
+        dir.X = float.Parse(splitString[0]);
+        dir.Y = float.Parse(splitString[1]);
+        dir.Z = float.Parse(splitString[2]);
 
         return dir;
     }

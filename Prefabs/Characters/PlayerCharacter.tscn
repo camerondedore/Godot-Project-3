@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=49 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
+[ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
@@ -241,6 +242,9 @@ script = ExtResource("4_vgi6r")
 script = ExtResource("8_ltus6")
 characterAudio = NodePath("../CharacterAudio")
 playerCharacter = NodePath("..")
+
+[node name="CheckpointLoader" type="Node" parent="."]
+script = ExtResource("17_bdij4")
 
 [node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("7_xdgqf")

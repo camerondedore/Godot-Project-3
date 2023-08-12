@@ -117,6 +117,13 @@ saveTarget = NodePath("target")
 [node name="target" type="Node3D" parent="CheckPoint"]
 transform = Transform3D(-1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, 2, 0.0999994, 0)
 
+[node name="Checkpoint2" parent="." node_paths=PackedStringArray("saveTarget") instance=ExtResource("55_bnt5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0788, 11, -4.67512)
+saveTarget = NodePath("target")
+
+[node name="target" type="Node3D" parent="Checkpoint2"]
+transform = Transform3D(-0.315964, 0, 0.948771, 0, 1, 0, -0.948771, 0, -0.315964, -1.17552, 0.1, -1.68332)
+
 [node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
 
