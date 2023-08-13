@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=81 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -71,6 +71,7 @@
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="59_cgjaq"]
 [ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Cooking/PropOvenPeel.tscn" id="59_lg3ag"]
 [ext_resource type="Script" path="res://C#/PlayerBow/BowTarget.cs" id="59_y67w5"]
+[ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Plants/PropBlackberryBushOld.tscn" id="60_sywhw"]
 [ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Cooking/PropLadle.tscn" id="64_he0ji"]
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Bow Targets/PropTorch.tscn" id="70_woav5"]
@@ -670,37 +671,28 @@ transform = Transform3D(-0.995924, 0, -0.0901978, 0, 1, 0, 0.0901978, 0, -0.9959
 [node name="Plants" type="Node3D" parent="Props"]
 
 [node name="PropBlackberryBush" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.0519527, 0, 0.99865, 0, 1, 0, -0.99865, 0, 0.0519527, 25.4153, -0.100001, 8.64831)
+transform = Transform3D(0.0519527, 0, 0.99865, 0, 1, 0, -0.99865, 0, 0.0519527, 25.4153, 0, 8.03988)
 
 [node name="PropBlackberryBush9" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.384006, 0, 0.923331, 0, 1, 0, -0.923331, 0, 0.384006, 25.4074, -0.100001, 14.3134)
+transform = Transform3D(0.384006, 0, 0.923331, 0, 1, 0, -0.923331, 0, 0.384006, 25.4074, 0, 14.3134)
 
 [node name="PropBlackberryBush10" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(-0.106316, 0, -0.994332, 0, 1, 0, 0.994332, 0, -0.106316, 25.1752, -0.100001, 16.9454)
+transform = Transform3D(-0.106316, 0, -0.994332, 0, 1, 0, 0.994332, 0, -0.106316, 25.1752, 0, 16.9454)
 
 [node name="PropBlackberryBush2" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(-0.0655427, 0, -0.99785, 0, 1, 0, 0.99785, 0, -0.0655427, 25.4153, -0.100001, 5.58177)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, 4.6)
 
 [node name="PropBlackberryBush8" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.864292, 0, -0.50299, 0, 1, 0, 0.50299, 0, 0.864292, 23.4208, -0.100001, 8.78843)
-
-[node name="PropBlackberryBush6" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(-0.0788407, 0, -1.2003, 0, 1.20289, 0, 1.2003, 0, -0.0788407, 26.8928, -0.100001, 4.69062)
+transform = Transform3D(0.864292, 0, -0.50299, 0, 1, 0, 0.50299, 0, 0.864292, 23.4208, 0, 8.78843)
 
 [node name="PropBlackberryBush11" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(-0.255822, 0, -1.17537, 0, 1.20289, 0, 1.17537, 0, -0.255822, 26.9231, -0.100001, 15.0133)
+transform = Transform3D(-0.255822, 0, -1.17537, 0, 1.20289, 0, 1.17537, 0, -0.255822, 26.9231, 0, 15.0133)
 
 [node name="PropBlackberryBush7" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.266375, 0, -1.17303, 0, 1.20289, 0, 1.17303, 0, 0.266375, 25.9683, -0.100001, 11.186)
-
-[node name="PropBlackberryBush3" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(-0.104164, 0, 0.99456, 0, 1, 0, -0.99456, 0, -0.104164, 25.5593, -0.100001, 2.51125)
-
-[node name="PropBlackberryBush4" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.0906149, 0, -0.995886, 0, 1, 0, 0.995886, 0, 0.0906149, 25.0819, -0.100001, -0.5179)
+transform = Transform3D(0.266375, 0, -1.17303, 0, 1.20289, 0, 1.17303, 0, 0.266375, 25.9683, 0, 11.186)
 
 [node name="PropBlackberryBush5" parent="Props/Plants" instance=ExtResource("30_pesed")]
-transform = Transform3D(0.888929, 0, -0.458045, 0, 1, 0, 0.458045, 0, 0.888929, 25.0819, -0.100001, -2.27397)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, -2)
 
 [node name="PropFern2!1691374064_749" parent="Props/Plants" instance=ExtResource("6_0nsps")]
 transform = Transform3D(0.193129, -0.00809375, -1.10302, -0.0170493, 1.11965, -0.0112009, 1.10292, 0.0187252, 0.192974, 18.9922, 9.53674e-07, 5.41787)
@@ -787,7 +779,7 @@ transform = Transform3D(0.813264, -0.00400971, 0.336973, 0.00125447, 0.880289, 0
 transform = Transform3D(-0.594712, 0.0138126, -0.957582, -0.0565257, 1.12473, 0.0513292, 0.956012, 0.0750937, -0.592654, 16.6974, -9.53674e-07, -9.03828)
 
 [node name="PropDandelion1!1691374152_416" parent="Props/Plants" instance=ExtResource("6_is0wy")]
-transform = Transform3D(0.938396, 0.0270538, -0.646833, -0.0172274, 1.13969, 0.022675, 0.647169, -0.00888989, 0.938512, 24.1494, 0.0847712, 0.269809)
+transform = Transform3D(0.938396, 0.0270538, -0.646833, -0.0172274, 1.13969, 0.022675, 0.647169, -0.00888989, 0.938512, 23.3306, 0.0847712, -1.58659)
 
 [node name="PropDandelion2!1691374153_532" parent="Props/Plants" instance=ExtResource("5_swiy7")]
 transform = Transform3D(1.04161, 0.0352292, -0.324456, -0.0358046, 1.09095, 0.00351012, 0.324393, 0.00729324, 1.0422, 23.5985, 0, 3.94989)
@@ -887,6 +879,9 @@ transform = Transform3D(1.06864, -0.00235975, 0.294099, 0.0172694, 1.10693, -0.0
 
 [node name="PropTulip1!1691375211_684" parent="Props/Plants" instance=ExtResource("5_eggwd")]
 transform = Transform3D(-0.837181, 0.00627346, -0.640479, 0.0402157, 1.05248, -0.0422576, 0.639246, -0.057997, -0.836137, -24.3853, 1.69395, -6.3467)
+
+[node name="PropBlackberryBushOld" parent="Props/Plants" instance=ExtResource("60_sywhw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 1, 1.3)
 
 [node name="Furniture" type="Node3D" parent="Props"]
 

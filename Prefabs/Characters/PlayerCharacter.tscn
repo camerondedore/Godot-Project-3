@@ -470,7 +470,7 @@ rangerBandageGatherSound = ExtResource("23_g4fk7")
 rangerBandageCraftSound = ExtResource("23_gbit2")
 
 [node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.199066)
 script = ExtResource("32_hlbfv")
 weightedArrow = ExtResource("27_121vu")
 pickArrow = ExtResource("18_erk0y")

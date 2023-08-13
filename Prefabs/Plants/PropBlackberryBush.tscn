@@ -4,10 +4,10 @@
 [ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/LeavesBlackberry.tres" id="2_pdbt1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_khcq5"]
-size = Vector3(4, 3, 2)
+size = Vector3(3.5, 3, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_owan8"]
-size = Vector3(4, 1.41, 1.41)
+size = Vector3(3.5, 1.41, 1.41)
 
 [node name="PropBlackberryBush" type="StaticBody3D"]
 

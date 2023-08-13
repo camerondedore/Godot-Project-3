@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://gl71inotvdtq"]
+
+[ext_resource type="ArrayMesh" uid="uid://ig34hjeaev2k" path="res://Models/prop-blackberry-bush-old.res" id="1_74o7b"]
+[ext_resource type="Script" path="res://C#/PlayerBow/BlackberryBushTarget.cs" id="1_i6v5i"]
+[ext_resource type="Material" uid="uid://xvk3udisvh1k" path="res://Materials/LeavesBlackberryOld.tres" id="2_c08f5"]
+[ext_resource type="ArrayMesh" uid="uid://d14x1h5scbsot" path="res://Models/prop-blackberry-bush-old-cut.res" id="3_d6b5l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ngrm"]
+size = Vector3(3, 3, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o24o3"]
+size = Vector3(3, 1.41, 1.41)
+
+[node name="PropBlackberryBushOld" type="StaticBody3D" node_paths=PackedStringArray("uncutMesh", "cutMesh", "colliders")]
+script = ExtResource("1_i6v5i")
+uncutMesh = NodePath("MeshUncut")
+cutMesh = NodePath("MeshCut")
+colliders = [NodePath("CollisionShape3D"), NodePath("CollisionShape3D2")]
+
+[node name="MeshUncut" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_74o7b")
+surface_material_override/0 = ExtResource("2_c08f5")
+
+[node name="MeshCut" type="MeshInstance3D" parent="."]
+visible = false
+mesh = ExtResource("3_d6b5l")
+surface_material_override/0 = ExtResource("2_c08f5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_5ngrm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 2.1, 0)
+shape = SubResource("BoxShape3D_o24o3")
