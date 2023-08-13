@@ -106,10 +106,12 @@ public partial class WorldData : Node
 
 
 
-    public void SetCheckpoint(Vector3 checkpointPosition, Vector3 checkpointDirection)
+    public void SetCheckpoint(Vector3 checkpointPosition, Vector3 checkpointDirection, Vector3 cameraPosition, Vector3 cameraDirection)
     {
         data.currentData.SavedPosition = $"{checkpointPosition.X},{checkpointPosition.Y},{checkpointPosition.Z}";
         data.currentData.SavedDirection = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
+        data.currentData.SavedCameraPosition = $"{cameraPosition.X},{cameraPosition.Y},{cameraPosition.Z}";
+        data.currentData.SavedCameraDirection = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
         data.currentData.SavedScene = GetTree().CurrentScene.Name;
     }
 
@@ -143,6 +145,34 @@ public partial class WorldData : Node
 
 
 
+    public Vector3 GetSavedCheckpointCameraPosition()
+    {
+        var splitString = currentData.SavedCameraPosition.Split(',');
+
+        var pos = new Vector3();
+        pos.X = float.Parse(splitString[0]);
+        pos.Y = float.Parse(splitString[1]);
+        pos.Z = float.Parse(splitString[2]);
+
+        return pos;
+    }
+
+
+
+    public Vector3 GetSavedCheckpointCameraDirection()
+    {
+        var splitString = currentData.SavedCameraDirection.Split(',');
+        
+        var dir = new Vector3();
+        dir.X = float.Parse(splitString[0]);
+        dir.Y = float.Parse(splitString[1]);
+        dir.Z = float.Parse(splitString[2]);
+
+        return dir;
+    }
+
+
+
     [System.Serializable]
     public class Data
     {
@@ -164,11 +194,21 @@ public partial class WorldData : Node
         public string SavedPosition
         {
             get; set;
-        } = Vector3.Up.ToString();
+        } = "0,1,0";
 
         public string SavedDirection
         {
             get; set;
-        } = (-Vector3.Forward).ToString();
+        } = "0,0,-1";
+
+        public string SavedCameraPosition
+        {
+            get; set;
+        } = "0,1,0";
+
+        public string SavedCameraDirection
+        {
+            get; set;
+        } = "0,0,-1";
     }
 }

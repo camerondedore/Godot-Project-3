@@ -110,19 +110,27 @@ maxRotation = 180.0
 sizeVariation = 0.3
 uniformSize = true
 
-[node name="CheckPoint" parent="." node_paths=PackedStringArray("saveTarget") instance=ExtResource("55_bnt5b")]
+[node name="CheckPoint" parent="." node_paths=PackedStringArray("saveTarget", "cameraTarget") instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9, -17.3715)
-saveTarget = NodePath("target")
+saveTarget = NodePath("Target")
+cameraTarget = NodePath("CameraTarget")
 
-[node name="target" type="Node3D" parent="CheckPoint"]
+[node name="Target" type="Node3D" parent="CheckPoint"]
 transform = Transform3D(-1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, -1, 2, 0.0999994, 0)
 
-[node name="Checkpoint2" parent="." node_paths=PackedStringArray("saveTarget") instance=ExtResource("55_bnt5b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0788, 11, -4.67512)
-saveTarget = NodePath("target")
+[node name="CameraTarget" type="Node3D" parent="CheckPoint"]
+transform = Transform3D(0.769837, -0.313292, 0.556056, 0, 0.871234, 0.490868, -0.63824, -0.377889, 0.670708, 8.81213, 4.99811, 6.4954)
 
-[node name="target" type="Node3D" parent="Checkpoint2"]
+[node name="Checkpoint2" parent="." node_paths=PackedStringArray("saveTarget", "cameraTarget") instance=ExtResource("55_bnt5b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0788, 11, -4.67512)
+saveTarget = NodePath("Target")
+cameraTarget = NodePath("CameraTarget")
+
+[node name="Target" type="Node3D" parent="Checkpoint2"]
 transform = Transform3D(-0.315964, 0, 0.948771, 0, 1, 0, -0.948771, 0, -0.315964, -1.17552, 0.1, -1.68332)
+
+[node name="CameraTarget" type="Node3D" parent="Checkpoint2"]
+transform = Transform3D(-0.268832, 0.533687, -0.801815, 0, 0.832461, 0.554084, 0.963187, 0.148956, -0.223792, -8.30115, 4.95894, -4.16894)
 
 [node name="SecretArea" parent="." instance=ExtResource("53_dmf02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)

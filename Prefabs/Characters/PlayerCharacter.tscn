@@ -72,6 +72,20 @@ ledgeDetector = NodePath("LedgeDetector")
 ledgeGrabOffset = Vector3(0, -1.2, 0.3)
 acceleration = 10.0
 
+[node name="CheckpointLoader" type="Node" parent="."]
+script = ExtResource("17_bdij4")
+
+[node name="Statistics" type="Node" parent="."]
+script = ExtResource("4_x6l2t")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("4_vgi6r")
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio", "playerCharacter")]
+script = ExtResource("8_ltus6")
+characterAudio = NodePath("../CharacterAudio")
+playerCharacter = NodePath("..")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nx72i")
 
@@ -231,20 +245,6 @@ target_position = Vector3(0, 2, 0)
 
 [node name="GroundDetectorRay" type="RayCast3D" parent="LedgeDetector"]
 target_position = Vector3(0, -1.05, 0)
-
-[node name="Statistics" type="Node" parent="."]
-script = ExtResource("4_x6l2t")
-
-[node name="Inventory" type="Node" parent="."]
-script = ExtResource("4_vgi6r")
-
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio", "playerCharacter")]
-script = ExtResource("8_ltus6")
-characterAudio = NodePath("../CharacterAudio")
-playerCharacter = NodePath("..")
-
-[node name="CheckpointLoader" type="Node" parent="."]
-script = ExtResource("17_bdij4")
 
 [node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("7_xdgqf")
