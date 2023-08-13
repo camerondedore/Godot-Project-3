@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=51 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://ch1you6rwmx40" path="res://Audio/bow-target.wav" id="11_dpkpm"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
+[ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
@@ -45,6 +46,7 @@
 [ext_resource type="Script" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
 [ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
+[ext_resource type="PackedScene" uid="uid://pc68qled2whb" path="res://Prefabs/Player Arrows/PlayerArrowBlade.tscn" id="42_w8q66"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -209,6 +211,7 @@ pickSprite = ExtResource("7_ey0rg")
 netSprite = ExtResource("8_nsls7")
 fireSprite = ExtResource("9_q1w1u")
 bodkinSprite = ExtResource("10_m6ggt")
+bladeSprite = ExtResource("15_usho7")
 scaleSpeed = 10.0
 audio = NodePath("../TargetAudio")
 sparkleFx = NodePath("FxSparkleBowTarget")
@@ -474,6 +477,7 @@ pickArrow = ExtResource("18_erk0y")
 netArrow = ExtResource("28_t6rk3")
 fireArrow = ExtResource("31_imcpe")
 bodkinArrow = ExtResource("37_os4wq")
+bladeArrow = ExtResource("42_w8q66")
 bowAudio = NodePath("BowAudio")
 bowFireSound = ExtResource("19_rmfin")
 bowDrawSound = ExtResource("20_no75w")

@@ -12,7 +12,8 @@ namespace PlayerBow
             pickSprite,
             netSprite,
             fireSprite,
-            bodkinSprite;
+            bodkinSprite,
+            bladeSprite;
         [Export]
         float scaleSpeed = 0.5f,
             scaleRadius = 0.1f;
@@ -66,6 +67,9 @@ namespace PlayerBow
                     break;
                 case "bodkin":
                     newTexture = bodkinSprite;
+                    break;
+                case "blade":
+                    newTexture = bladeSprite;
                     break;
             }
 

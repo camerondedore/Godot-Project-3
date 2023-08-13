@@ -4,8 +4,9 @@
 [ext_resource type="ArrayMesh" uid="uid://y6a2vx1qftq6" path="res://Models/arrow-bodkin.res" id="2_f32qx"]
 [ext_resource type="PackedScene" uid="uid://f8vqk4ousym6" path="res://Prefabs/FX/FxArrowTrailBodkin.tscn" id="3_jja2r"]
 
-[node name="PlayerArrowBodkin" instance=ExtResource("1_xqnt0")]
+[node name="PlayerArrowBodkin" node_paths=PackedStringArray("trailFx") instance=ExtResource("1_xqnt0")]
 arrowType = "bodkin"
+trailFx = NodePath("FxArrowTrailBodkin")
 speed = 25.0
 
 [node name="MeshInstance3D" parent="." index="0"]

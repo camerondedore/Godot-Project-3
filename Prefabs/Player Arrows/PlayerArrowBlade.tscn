@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://pc68qled2whb"]
+
+[ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/Player Arrows/PlayerArrow.tscn" id="1_o5i4x"]
+[ext_resource type="ArrayMesh" uid="uid://bfhs762wk2ps1" path="res://Models/arrow-blade.res" id="2_y6xsn"]
+[ext_resource type="PackedScene" uid="uid://bt5msoygpgiug" path="res://Prefabs/FX/FxArrowTrailBlade.tscn" id="3_sttrr"]
+
+[node name="PlayerArrowBlade" node_paths=PackedStringArray("trailFx") instance=ExtResource("1_o5i4x")]
+arrowType = "blade"
+trailFx = NodePath("FxArrowTrailBlade")
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_y6xsn")
+
+[node name="FxArrowTrailBlade" parent="." index="2" instance=ExtResource("3_sttrr")]

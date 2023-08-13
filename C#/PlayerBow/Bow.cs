@@ -11,7 +11,8 @@ namespace PlayerBow
         pickArrow,
         netArrow,
         fireArrow,
-        bodkinArrow;
+        bodkinArrow,
+        bladeArrow;
     [Export]
     AudioTools3d bowAudio;
     [Export]
@@ -49,6 +50,9 @@ namespace PlayerBow
                     break;
                 case "bodkin":
                     arrowToFire = bodkinArrow;
+                    break;
+                case "blade":
+                    arrowToFire = bladeArrow;
                     break;
             }
 
