@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4f76op0ikakq"]
+
+[ext_resource type="Material" uid="uid://driq10n3id5cs" path="res://Materials/FxBlackberryBushCut1.tres" id="1_0na1p"]
+[ext_resource type="Material" uid="uid://b7qb72y5mdf1d" path="res://Particles/FxBlackberryBushCut.tres" id="2_ef6l4"]
+[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="3_68d0q"]
+[ext_resource type="Material" uid="uid://c01va6k2r5a6c" path="res://Materials/FxBlackberryBushCut2.tres" id="3_uq3o2"]
+[ext_resource type="Material" uid="uid://dc7gtts3kb5sv" path="res://Materials/FxBlackberryBushCut3.tres" id="4_2elc6"]
+[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="6_c1cwb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7rv8h"]
+
+[node name="FxBlackberryBushCut" type="Node3D"]
+
+[node name="FxBlackberryBushCut1" type="GPUParticles3D" parent="."]
+material_override = ExtResource("1_0na1p")
+emitting = false
+amount = 4
+lifetime = 1.25
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("2_ef6l4")
+draw_pass_1 = SubResource("QuadMesh_7rv8h")
+script = ExtResource("3_68d0q")
+
+[node name="FxBlackberryBushCut2" type="GPUParticles3D" parent="."]
+material_override = ExtResource("3_uq3o2")
+emitting = false
+amount = 4
+lifetime = 1.25
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("2_ef6l4")
+draw_pass_1 = SubResource("QuadMesh_7rv8h")
+script = ExtResource("3_68d0q")
+
+[node name="FxBlackberryBushCut3" type="GPUParticles3D" parent="."]
+material_override = ExtResource("4_2elc6")
+emitting = false
+amount = 4
+lifetime = 1.25
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("2_ef6l4")
+draw_pass_1 = SubResource("QuadMesh_7rv8h")
+script = ExtResource("3_68d0q")
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("6_c1cwb")
+lifeTime = 5.0

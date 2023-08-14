@@ -12,8 +12,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
         cutMesh;
     [Export]
     CollisionShape3D[] colliders;
-    // [Export]
-    // PackedScene cutFx;
+    [Export]
+    PackedScene cutFx;
 
 
 
@@ -59,15 +59,15 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
             c.Disabled = true;
         }
 
-        // // create fx
-        // var newFx = cutFx.Instantiate() as Node3D;
+        // create fx
+        var newFx = cutFx.Instantiate() as Node3D;
 
-        // // set transform
-        // newFx.GlobalPosition = GlobalPosition;
-        // newFx.GlobalRotation = GlobalRotation;
+        GetTree().CurrentScene.AddChild(newFx);
+        newFx.Owner = GetTree().CurrentScene;
 
-        // GetTree().CurrentScene.AddChild(newFx);
-        // newFx.Owner = GetTree().CurrentScene;
+        // set transform
+        newFx.GlobalPosition = GlobalPosition;
+        newFx.GlobalRotation = GlobalRotation;
 
         // disable script
         SetScript(new Variant());
