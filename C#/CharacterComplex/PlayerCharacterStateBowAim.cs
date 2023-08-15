@@ -77,6 +77,11 @@ namespace PlayerCharacterComplex
             {
                 blackboard.bow.Draw();
             }
+            else
+            {
+                // enable bow
+                blackboard.bowAimer.EnableBowAimer();
+            }
 
             // animation
             blackboard.anim.Play("character-draw");
