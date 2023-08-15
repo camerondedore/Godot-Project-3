@@ -11,4 +11,5 @@ initial_velocity_max = 5.0
 angular_velocity_min = -300.0
 angular_velocity_max = 300.0
 angle_max = 359.0
-scale_min = 0.9
+scale_min = 0.7
+scale_max = 0.8

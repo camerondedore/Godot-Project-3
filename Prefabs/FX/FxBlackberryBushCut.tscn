@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4f76op0ikakq"]
+[gd_scene load_steps=11 format=3 uid="uid://b4f76op0ikakq"]
 
 [ext_resource type="Material" uid="uid://driq10n3id5cs" path="res://Materials/FxBlackberryBushCut1.tres" id="1_0na1p"]
 [ext_resource type="Material" uid="uid://b7qb72y5mdf1d" path="res://Particles/FxBlackberryBushCut.tres" id="2_ef6l4"]
@@ -6,6 +6,9 @@
 [ext_resource type="Material" uid="uid://c01va6k2r5a6c" path="res://Materials/FxBlackberryBushCut2.tres" id="3_uq3o2"]
 [ext_resource type="Material" uid="uid://dc7gtts3kb5sv" path="res://Materials/FxBlackberryBushCut3.tres" id="4_2elc6"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="6_c1cwb"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="7_mo8lm"]
+[ext_resource type="AudioStream" uid="uid://d0dqseuesh4n4" path="res://Audio/blackberry-bush-cut-1.wav" id="8_q1iuu"]
+[ext_resource type="AudioStream" uid="uid://cxpjw5c8gcagb" path="res://Audio/blackberry-bush-cut-2.wav" id="9_hhmfd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_7rv8h"]
 
@@ -47,3 +50,9 @@ script = ExtResource("3_68d0q")
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("6_c1cwb")
 lifeTime = 5.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 40.0
+script = ExtResource("7_mo8lm")
+sounds = Array[AudioStream]([ExtResource("8_q1iuu"), ExtResource("9_hhmfd")])
+destroyOnFinished = false

@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv4rei08xknhb"]
+
+[ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="1_iufso"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="2_3pqwg"]
+[ext_resource type="AudioStream" uid="uid://bqg506y5rdo3g" path="res://Audio/blade-cut-1.wav" id="3_dqyub"]
+[ext_resource type="AudioStream" uid="uid://bb7fg3n8io8yx" path="res://Audio/blade-cut-2.wav" id="4_bpioo"]
+
+[node name="FxArrowHitBlade" instance=ExtResource("1_iufso")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+max_distance = 30.0
+script = ExtResource("2_3pqwg")
+sounds = Array[AudioStream]([ExtResource("3_dqyub"), ExtResource("4_bpioo")])
+destroyOnFinished = false
