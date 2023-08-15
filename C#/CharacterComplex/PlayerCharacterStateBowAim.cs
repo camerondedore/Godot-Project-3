@@ -50,6 +50,14 @@ namespace PlayerCharacterComplex
                     holdDraw = false;
                 }
             }
+            else
+            {
+                if(holdDraw)
+                {
+                    // enable bow
+                    blackboard.bowAimer.EnableBowAimer();
+                }
+            }
         }
 
 
@@ -59,7 +67,7 @@ namespace PlayerCharacterComplex
             startTime = EngineTime.timePassed;
 
             // enable bow
-            blackboard.bowAimer.EnableBowAimer();
+            //blackboard.bowAimer.EnableBowAimer();
 
             // check last bow state
             previouslyDrawn = blackboard.bow.isDrawn;
