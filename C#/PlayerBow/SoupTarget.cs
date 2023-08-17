@@ -2,25 +2,32 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class TorchTarget : StaticBody3D, IBowTarget
+public partial class SoupTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
     public string arrowType = "fire";
     [Export]
-    GpuParticles3D fireFx,
-        dripFx;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     Node3D targetNode;
     [Export]
-    BlackWall blackWall;
+    CollisionShape3D collider;
+    [Export]
+    GpuParticles3D fireFx,
+        bubbleFx,
+        steamFx;
+    [Export]
+    AudioTools3d audio;
 
 
 
     public override void _Ready()
     {
+        // turn off bubble fx
+        bubbleFx.Emitting = false;
+
+        // turn off steam fx
+        steamFx.Emitting = false;
+        
         // turn off fire fx
         fireFx.Emitting = false;
 
@@ -28,8 +35,6 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
         {  
             subFire.Emitting = false;
         }
-
-
     }
 
 
@@ -59,8 +64,14 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
     public void Hit()
     {
-        // stop drip fx
-        dripFx.Restart();
+        // disable collision
+        collider.Disabled = true;
+
+        // start bubble fx
+        bubbleFx.Restart();
+
+        // start steam fx
+        steamFx.Restart();
 
         // start fire fx
         fireFx.Restart();
@@ -72,13 +83,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
         // start fire audio
         audio.Play();
-
-        if(blackWall != null)
-        {
-            // dissolve black wall
-            blackWall.Dissolve();
-        }
-
+        
         // disable script
         SetScript(new Variant());
     }

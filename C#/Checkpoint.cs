@@ -50,7 +50,7 @@ public partial class Checkpoint : Area3D
             saved = false;
             SetDeferred("monitoring", true);
             saveMesh.Visible = true;
-            fxParticles.Emitting = true;
+            fxParticles.Restart();
             
         }
 

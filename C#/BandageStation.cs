@@ -37,7 +37,7 @@ public partial class BandageStation : Area3D
 
     public void StartCrafting()
     {
-        craftingFx.Emitting = true;
+        craftingFx.Restart();
         audio.Play();
     }
 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://do05hyfu8mpjn"]
+
+[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Cooking/PropPot1.tscn" id="1_071tj"]
+[ext_resource type="ArrayMesh" uid="uid://c4clbyxu18x7q" path="res://Models/prop-pot-1-soup.res" id="2_jgvtq"]
+[ext_resource type="Script" path="res://C#/PlayerBow/SoupTarget.cs" id="2_m6oq3"]
+[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="3_x4nd1"]
+[ext_resource type="PackedScene" uid="uid://viykanumkbs5" path="res://Prefabs/FX/FxNettleBrothBubbles.tscn" id="4_4dapt"]
+[ext_resource type="PackedScene" uid="uid://b7xwcmlr26rvb" path="res://Prefabs/FX/FxTorchFire.tscn" id="6_dptrf"]
+[ext_resource type="PackedScene" uid="uid://c4jis38v0hln5" path="res://Prefabs/FX/FxSteam.tscn" id="7_hiuku"]
+[ext_resource type="AudioStream" uid="uid://bs7ar56o5yasj" path="res://Audio/fire.wav" id="7_hlg55"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_q5577"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4trl6"]
+radius = 0.3
+
+[node name="PropPot1Soup" instance=ExtResource("1_071tj")]
+
+[node name="SoupTarget" type="StaticBody3D" parent="." index="2" node_paths=PackedStringArray("targetNode", "collider", "fireFx", "bubbleFx", "steamFx", "audio")]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("2_m6oq3")
+targetNode = NodePath("Target")
+collider = NodePath("CollisionShape3D")
+fireFx = NodePath("FxTorchFire")
+bubbleFx = NodePath("FxNettleBrothBubbles")
+steamFx = NodePath("FxSteam")
+audio = NodePath("AudioStreamPlayer3D")
+
+[node name="SoupMesh" type="MeshInstance3D" parent="SoupTarget" index="0"]
+mesh = ExtResource("2_jgvtq")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_x4nd1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SoupTarget" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+shape = SubResource("SphereShape3D_4trl6")
+
+[node name="Target" type="Node3D" parent="SoupTarget" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
+
+[node name="FxNettleBrothBubbles" parent="SoupTarget" index="3" instance=ExtResource("4_4dapt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+
+[node name="FxTorchFire" parent="SoupTarget" index="4" instance=ExtResource("6_dptrf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+
+[node name="FxSteam" parent="SoupTarget" index="5" instance=ExtResource("7_hiuku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SoupTarget" index="6"]
+stream = ExtResource("7_hlg55")
+unit_size = 3.0
+max_distance = 25.0
+script = ExtResource("8_q5577")

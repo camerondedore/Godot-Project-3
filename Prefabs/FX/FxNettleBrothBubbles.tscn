@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://viykanumkbs5"]
+
+[ext_resource type="Material" uid="uid://c8wesekyvkws7" path="res://Materials/FxNettleBrothBubble.tres" id="1_qn030"]
+[ext_resource type="ArrayMesh" uid="uid://cojdlxjtnkwts" path="res://Models/prop-pot-1-soup-bubble.res" id="2_v76i8"]
+
+[sub_resource type="Gradient" id="Gradient_mscwr"]
+offsets = PackedFloat32Array(0.561404, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_13yeq"]
+gradient = SubResource("Gradient_mscwr")
+
+[sub_resource type="Curve" id="Curve_krqhs"]
+_data = [Vector2(0, 0.49505), 0.0, 0.0347686, 0, 0, Vector2(0.774834, 0.633663), 0.351777, 0.351777, 0, 0, Vector2(1, 1), 2.27817, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5youq"]
+curve = SubResource("Curve_krqhs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2i6uk"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.0
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angle_max = 359.0
+scale_min = 0.4
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_5youq")
+color_ramp = SubResource("GradientTexture1D_13yeq")
+
+[node name="FxNettleBrothBubbles" type="GPUParticles3D"]
+material_override = ExtResource("1_qn030")
+cast_shadow = 0
+amount = 10
+randomness = 0.43
+process_material = SubResource("ParticleProcessMaterial_2i6uk")
+draw_pass_1 = ExtResource("2_v76i8")
