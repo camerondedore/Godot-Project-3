@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://do05hyfu8mpjn"]
+[gd_scene load_steps=16 format=3 uid="uid://do05hyfu8mpjn"]
 
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Cooking/PropPot1.tscn" id="1_071tj"]
 [ext_resource type="ArrayMesh" uid="uid://c4clbyxu18x7q" path="res://Models/prop-pot-1-soup.res" id="2_jgvtq"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_q5577"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="11_ebj7y"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="12_4gopd"]
+[ext_resource type="AudioStream" uid="uid://chw17drvui6t" path="res://Audio/bubbling-soup.wav" id="12_65km6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_4trl6"]
 radius = 0.3
@@ -35,13 +36,14 @@ shape = SubResource("SphereShape3D_4trl6")
 [node name="Target" type="Node3D" parent="SoupTarget" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 
-[node name="Cooker" type="Node3D" parent="SoupTarget" index="2" node_paths=PackedStringArray("fireFx", "bubbleFx", "steamFx", "fireAudio", "spawnAudio", "soupSpawner", "soupMesh")]
+[node name="Cooker" type="Node3D" parent="SoupTarget" index="2" node_paths=PackedStringArray("fireFx", "bubbleFx", "steamFx", "fireAudio", "bubbleAudio", "spawnAudio", "soupSpawner", "soupMesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 script = ExtResource("3_2bn00")
 fireFx = NodePath("FxTorchFire")
 bubbleFx = NodePath("FxNettleBrothBubbles")
 steamFx = NodePath("FxSteam")
 fireAudio = NodePath("FireAudio")
+bubbleAudio = NodePath("BubbleAudio")
 spawnAudio = NodePath("SpawnAudio")
 spawnSound = ExtResource("4_7aauw")
 soupSpawner = NodePath("SoupSpawner")
@@ -69,12 +71,19 @@ unit_size = 3.0
 max_distance = 25.0
 script = ExtResource("8_q5577")
 
-[node name="SpawnAudio" type="AudioStreamPlayer3D" parent="SoupTarget/Cooker" index="5"]
+[node name="BubbleAudio" type="AudioStreamPlayer3D" parent="SoupTarget/Cooker" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+stream = ExtResource("12_65km6")
+unit_size = 3.0
+max_distance = 25.0
+script = ExtResource("8_q5577")
+
+[node name="SpawnAudio" type="AudioStreamPlayer3D" parent="SoupTarget/Cooker" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 max_distance = 40.0
 script = ExtResource("8_q5577")
 
-[node name="SoupSpawner" type="Node3D" parent="SoupTarget/Cooker" index="6"]
+[node name="SoupSpawner" type="Node3D" parent="SoupTarget/Cooker" index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
 script = ExtResource("11_ebj7y")
 prefab = ExtResource("12_4gopd")

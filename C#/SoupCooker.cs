@@ -10,6 +10,7 @@ public partial class SoupCooker : Node
         steamFx;
     [Export]
     AudioTools3d fireAudio,
+        bubbleAudio,
         spawnAudio;
     [Export]
     AudioStream spawnSound;
@@ -62,6 +63,9 @@ public partial class SoupCooker : Node
         {
             // start bubble fx
             bubbleFx.Restart();
+
+            // play bubble audio
+            bubbleAudio.Play();
         }
 
         if(EngineTime.timePassed > startTime + cookTime)
@@ -74,9 +78,13 @@ public partial class SoupCooker : Node
 
             // turn off bubble fx
             bubbleFx.Emitting = false;
+            bubbleFx.Visible = false;
 
             // turn off steam fx
             steamFx.Emitting = false;
+
+            // stop bubble audio
+            bubbleAudio.Stop();
 
             // play audio
             spawnAudio.PlaySound(spawnSound, 0.1f);

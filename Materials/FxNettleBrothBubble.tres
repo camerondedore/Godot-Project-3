@@ -10,5 +10,7 @@ cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_vr3fe")
 roughness = 0.54
+backlight_enabled = true
+backlight = Color(0.513726, 0.513726, 0.513726, 1)
 disable_receive_shadows = true
 proximity_fade_distance = 0.05

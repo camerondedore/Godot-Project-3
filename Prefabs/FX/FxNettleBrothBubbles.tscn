@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cojdlxjtnkwts" path="res://Models/prop-pot-1-soup-bubble.res" id="2_v76i8"]
 
 [sub_resource type="Gradient" id="Gradient_mscwr"]
-offsets = PackedFloat32Array(0.561404, 1)
+offsets = PackedFloat32Array(0.754386, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_13yeq"]
@@ -26,8 +26,8 @@ emission_ring_inner_radius = 0.0
 particle_flag_rotate_y = true
 gravity = Vector3(0, 0, 0)
 angle_max = 359.0
-scale_min = 0.4
-scale_max = 0.5
+scale_min = 0.7
+scale_max = 0.8
 scale_curve = SubResource("CurveTexture_5youq")
 color_ramp = SubResource("GradientTexture1D_13yeq")
 
