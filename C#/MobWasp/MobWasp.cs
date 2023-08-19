@@ -162,6 +162,9 @@ namespace MobWasp
             var flyBlend = flatVelocity.LengthSquared() / Mathf.Pow(speed, 2);
             animation.Set("parameters/Fly/blend_position", flyBlend);
 
+            // pitch flying audio
+            flyAudio.PitchScale = 1 + flyBlend * 0.3f;
+
 
             var target = Vector3.Zero;
             var upDirection = Vector3.Up;

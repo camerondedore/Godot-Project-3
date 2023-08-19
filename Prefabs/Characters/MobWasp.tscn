@@ -40,16 +40,16 @@ lookSpeed = 5.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.707912, 7.84151e-17, 7.8594e-17, 0.706301)
-bones/1/rotation = Quaternion(0.707106, 0.00101512, 0.707106, 0.00101518)
-bones/2/rotation = Quaternion(0.862233, 0.0717822, 0.487242, -0.118307)
-bones/3/rotation = Quaternion(-0.573553, -0.409202, -0.404794, 0.582866)
-bones/4/rotation = Quaternion(-0.493631, -0.361878, -0.296692, 0.73304)
-bones/5/rotation = Quaternion(0.785661, 0.185509, 0.51304, -0.291743)
-bones/6/rotation = Quaternion(0.862233, -0.0717823, -0.487242, -0.118307)
-bones/7/rotation = Quaternion(-0.589807, 0.395048, 0.423682, 0.562635)
-bones/8/rotation = Quaternion(-0.503909, 0.353992, 0.323803, 0.718274)
-bones/9/rotation = Quaternion(0.781024, -0.204917, -0.504852, -0.305181)
+bones/0/rotation = Quaternion(-0.707398, 7.84723e-17, 7.8537e-17, 0.706815)
+bones/1/rotation = Quaternion(0.707107, 0.000367074, 0.707107, 0.00036713)
+bones/2/rotation = Quaternion(0.86206, 0.0667661, 0.487819, -0.120112)
+bones/3/rotation = Quaternion(-0.574441, -0.409818, -0.40417, 0.581991)
+bones/4/rotation = Quaternion(-0.494596, -0.362269, -0.296215, 0.732389)
+bones/5/rotation = Quaternion(0.785999, 0.186104, 0.512824, -0.290831)
+bones/6/rotation = Quaternion(0.86206, -0.0667661, -0.487819, -0.120112)
+bones/7/rotation = Quaternion(-0.590664, 0.395693, 0.42308, 0.561736)
+bones/8/rotation = Quaternion(-0.504855, 0.354418, 0.323336, 0.717609)
+bones/9/rotation = Quaternion(0.781377, -0.205502, -0.504614, -0.304275)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
@@ -108,7 +108,7 @@ transform = Transform3D(0.939693, 0, -0.34202, -0.0885213, 0.965926, -0.24321, 0
 transform = Transform3D(0.939693, 0, 0.34202, 0.0885213, 0.965926, -0.24321, -0.330366, 0.258819, 0.907673, 0.2, 0.127, 0.158)
 
 [node name="FlyAudio" type="AudioStreamPlayer3D" parent="."]
-max_distance = 30.0
+max_distance = 20.0
 max_polyphony = 2
 script = ExtResource("14_82ttd")
 
