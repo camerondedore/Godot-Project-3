@@ -29,7 +29,7 @@ namespace MobWasp
             newFx.GlobalPosition = blackboard.GlobalPosition;
 
             // get starting allies
-            var allies = blackboard.detection.GetAllies(blackboard.maxRangeForAllies);
+            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
 
             // alert nearby allies that this mob died
             foreach(MobFaction ally in allies)
