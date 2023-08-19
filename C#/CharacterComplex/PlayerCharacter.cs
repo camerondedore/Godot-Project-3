@@ -39,6 +39,8 @@ namespace PlayerCharacterComplex
 		[Export]
 		public Bow bow;
 		[Export]
+		public PlayerHealth health;
+		[Export]
 		public MobFaction[] myFactions;
 		[Export]
 		public PlayerCharacterLedgeDetector ledgeDetector;
@@ -57,6 +59,7 @@ namespace PlayerCharacterComplex
 		public Disconnector jumpDisconnector = new Disconnector();
 		public int rangerBandagesToCraft;
 		public BandageStation currentStation;
+		public float startHeight;
 
 		//string debugText;
 		

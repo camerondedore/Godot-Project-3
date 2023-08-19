@@ -7,7 +7,8 @@ public partial class PlayerCharacterAudio : AudioTools3d
     [Export]
     AudioStream rangerBandageHealSound,
         rangerBandageGatherSound,
-        rangerBandageCraftSound;
+        rangerBandageCraftSound,
+        fallDamageSound;
 
 
 
@@ -28,5 +29,12 @@ public partial class PlayerCharacterAudio : AudioTools3d
     public void PlayRangerBandageCraftSound()
     {
         PlaySound(rangerBandageCraftSound, 0.1f);
+    }
+
+
+
+    public void PlayFallDamageSound()
+    {
+        PlaySound(fallDamageSound, 0.1f);
     }
 }

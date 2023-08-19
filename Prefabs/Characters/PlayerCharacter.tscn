@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=52 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -45,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://d3m8qbrtf4h37" path="res://Prefabs/Player Arrows/PlayerArrowFire.tscn" id="31_imcpe"]
 [ext_resource type="Script" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
+[ext_resource type="AudioStream" uid="uid://dxnxfhrr70g8f" path="res://Audio/fall-damage.wav" id="37_howem"]
 [ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
 [ext_resource type="PackedScene" uid="uid://pc68qled2whb" path="res://Prefabs/Player Arrows/PlayerArrowBlade.tscn" id="42_w8q66"]
 
@@ -57,7 +58,7 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "bowAimer", "bow", "myFactions", "ledgeDetector")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "bowAimer", "bow", "health", "myFactions", "ledgeDetector")]
 process_mode = 1
 collision_layer = 162
 collision_mask = 1043
@@ -69,6 +70,7 @@ anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
 bowAimer = NodePath("SpringArm3D/BowAimer")
 bow = NodePath("Bow")
+health = NodePath("Health")
 myFactions = [NodePath("Faction"), NodePath("Faction2")]
 ledgeDetector = NodePath("LedgeDetector")
 ledgeGrabOffset = Vector3(0, -1.2, 0.3)
@@ -468,6 +470,7 @@ script = ExtResource("16_tm1am")
 rangerBandageHealSound = ExtResource("22_cdqx6")
 rangerBandageGatherSound = ExtResource("23_g4fk7")
 rangerBandageCraftSound = ExtResource("23_gbit2")
+fallDamageSound = ExtResource("37_howem")
 
 [node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.199066)

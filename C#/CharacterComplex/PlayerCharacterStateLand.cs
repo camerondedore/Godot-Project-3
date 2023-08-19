@@ -37,6 +37,22 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
+            // check for fall damage
+            var damageDistance = blackboard.startHeight - blackboard.GlobalPosition.Y - 9;
+
+            if(damageDistance > 0)
+            {
+                // apply damage
+                var damage = damageDistance * damageDistance + 10;
+                blackboard.health.Damage(damage);
+
+                // play audio
+                blackboard.characterAudio.PlayFallDamageSound();
+
+                return;
+            }
+
+
             startTime = EngineTime.timePassed;
             
             // animation
