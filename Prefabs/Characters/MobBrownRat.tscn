@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dauwd0f7v5uyx"]
+
+[ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRat.cs" id="1_tlfaj"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="2_q5ujn"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="3_qmqp4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5dfi"]
+radius = 0.3
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_l1pnc"]
+radius = 0.3
+height = 1.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_nq0nb"]
+size = Vector3(0.5, 0.2, 0.3)
+
+[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection")]
+script = ExtResource("1_tlfaj")
+detection = NodePath("Detection")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_l5dfi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_l1pnc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.2)
+mesh = SubResource("BoxMesh_nq0nb")
+
+[node name="Detection" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+enabled = false
+target_position = Vector3(0, 0, -1)
+collision_mask = 3
+script = ExtResource("2_q5ujn")
+maxRangeSqr = 400.0
+pointBlankRangeSqr = 2.0
+
+[node name="Faction" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+script = ExtResource("3_qmqp4")
+faction = 2
+
+[node name="Faction2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+script = ExtResource("3_qmqp4")
+faction = 2

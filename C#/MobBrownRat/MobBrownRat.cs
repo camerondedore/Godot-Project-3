@@ -42,7 +42,15 @@ namespace MobBrownRat
             targetPosition = GlobalPosition;
             
             // initialize states
-            //stateIdle = new MobWaspStateIdle(){blackboard = this};
+            stateIdle = new MobBrownRatStateIdle(){blackboard = this};
+            stateMove = new MobBrownRatStateMove(){blackboard = this};
+            stateFlee = new MobBrownRatStateFlee(){blackboard = this};
+            stateAim = new MobBrownRatStateAim(){blackboard = this};
+            stateFire = new MobBrownRatStateFire(){blackboard = this};
+            stateDodge = new MobBrownRatStateDodge(){blackboard = this};
+            stateCooldown = new MobBrownRatStateCooldown(){blackboard = this};
+            stateRetreat = new MobBrownRatStateRetreat(){blackboard = this};
+            stateDie = new MobBrownRatStateDie(){blackboard = this};
 
             // set first state in machine
             machine.SetState(stateIdle);
