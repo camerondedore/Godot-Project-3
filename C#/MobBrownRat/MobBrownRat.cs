@@ -21,7 +21,7 @@ namespace MobBrownRat
         [Export]
         public MobDetection detection;
         [Export]
-        NavigationAgent3D nav;
+        public NavigationAgent3D navAgent;
         [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
@@ -35,15 +35,16 @@ namespace MobBrownRat
         bool defensive = false;
 
         public MobFaction enemy;
-        public Vector3 targetPosition;
+        public Vector3 startPosition;
+        public bool lookAtTarget = false;
 
         bool delay = false;
 
 
         public override void _Ready()
-        {
-            targetPosition = GlobalPosition;
-            
+        {            
+            startPosition = GlobalPosition;
+
             // initialize states
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};
             stateMove = new MobBrownRatStateMove(){blackboard = this};
@@ -84,27 +85,38 @@ namespace MobBrownRat
                 return;
             }
 
-            // test
-            if(targetPosition.DistanceSquaredTo(GlobalPosition) < 2)
+
+            // check that target isn't current position
+            if(navAgent.TargetPosition != GlobalPosition)
             {
-                // get new test position
-                targetPosition = GlobalPosition + new Vector3((GD.Randf() - 0.5f) * 10, 0, (GD.Randf() - 0.5f) * 10);
-                nav.TargetPosition = targetPosition;
+                // get new velocity
+                var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
+                newVelocity = newVelocity.Normalized();
+                newVelocity *= speed;
+
+                // apply movement
+                Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
+                MoveAndSlide();
             }
 
-            // get new velocity
-            var newVelocity = nav.GetNextPathPosition() - GlobalPosition;
-            newVelocity.Normalized();
-            newVelocity *= speed;
 
-            // apply movement
-            Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
-            MoveAndSlide();
-
-            if(targetPosition != GlobalPosition)
+            if(lookAtTarget)
             {
-                // apply look
-                LookAt(targetPosition);
+                // get direction to enenmy and flatten
+                var lookTarget = enemy.GlobalPosition;
+                lookTarget.Y = GlobalPosition.Y;
+
+                // look at enemy
+                LookAt(lookTarget);
+            }
+            else if(navAgent.TargetPosition != GlobalPosition)
+            {
+                // get direction to next path point and flatten
+                var lookTarget = navAgent.GetNextPathPosition();
+                lookTarget.Y = GlobalPosition.Y;
+
+                // look in direction of movement
+                LookAt(lookTarget);
             }
         }
     }

@@ -13,14 +13,21 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
+            // look for enemy
+            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
 
+            if(blackboard.enemy != null)
+            {
+                // set move target
+                blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
+            }
         }
         
         
         
         public override void StartState()
         {
-            
+            GD.Print("Rat Move");
         }
 
 
@@ -34,6 +41,12 @@ namespace MobBrownRat
 
         public override State Transition()
         {
+            if(blackboard.enemy == null)
+            {
+                // cool down
+                return blackboard.stateCooldown;
+            }
+
             return this;
         }
     }

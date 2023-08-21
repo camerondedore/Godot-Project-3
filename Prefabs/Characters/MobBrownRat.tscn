@@ -15,11 +15,14 @@ height = 1.5
 [sub_resource type="BoxMesh" id="BoxMesh_nq0nb"]
 size = Vector3(0.5, 0.2, 0.3)
 
-[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "nav")]
+[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "navAgent")]
 script = ExtResource("1_tlfaj")
 detection = NodePath("Detection")
-nav = NodePath("NavigationAgent3D")
-speed = 2.0
+navAgent = NodePath("NavigationAgent3D")
+maxSightRangeSqr = 900.0
+maxSightRangeForAlliesSqr = 400.0
+attackDistanceSqr = 400.0
+fleeDistanceSqr = 100.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l5dfi")
@@ -34,13 +37,13 @@ mesh = SubResource("CapsuleMesh_l1pnc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.2)
 mesh = SubResource("BoxMesh_nq0nb")
 
-[node name="Detection" type="RayCast3D" parent="."]
+[node name="Detection" type="RayCast3D" parent="." node_paths=PackedStringArray("myFaction")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 enabled = false
 target_position = Vector3(0, 0, -1)
 collision_mask = 3
 script = ExtResource("2_q5ujn")
-maxRangeSqr = 400.0
+myFaction = NodePath("../Faction")
 pointBlankRangeSqr = 2.0
 
 [node name="Faction" type="Node3D" parent="."]

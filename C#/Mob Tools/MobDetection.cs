@@ -10,8 +10,7 @@ public partial class MobDetection : RayCast3D
     public MobFaction myFaction;
 
     [Export]
-    public float maxRangeSqr = 100,
-        pointBlankRangeSqr = 0.25f;
+    public float pointBlankRangeSqr = 0.25f;
 
 
 
