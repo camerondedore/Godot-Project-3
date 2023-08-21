@@ -15,12 +15,17 @@ height = 1.5
 [sub_resource type="BoxMesh" id="BoxMesh_nq0nb"]
 size = Vector3(0.5, 0.2, 0.3)
 
-[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection")]
+[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "nav")]
 script = ExtResource("1_tlfaj")
 detection = NodePath("Detection")
+nav = NodePath("NavigationAgent3D")
+speed = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l5dfi")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_l1pnc")

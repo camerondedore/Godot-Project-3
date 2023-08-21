@@ -21,6 +21,8 @@ namespace MobBrownRat
         [Export]
         public MobDetection detection;
         [Export]
+        NavigationAgent3D nav;
+        [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
             maxMoveRangeSqr = 1600,
@@ -35,6 +37,7 @@ namespace MobBrownRat
         public MobFaction enemy;
         public Vector3 targetPosition;
 
+        bool delay = false;
 
 
         public override void _Ready()
@@ -74,7 +77,35 @@ namespace MobBrownRat
 
         public override void _PhysicsProcess(double delta)
         {
-            // movement code here
+            // one-frame delay
+            if(delay == false)
+            {
+                delay = true;
+                return;
+            }
+
+            // test
+            if(targetPosition.DistanceSquaredTo(GlobalPosition) < 2)
+            {
+                // get new test position
+                targetPosition = GlobalPosition + new Vector3((GD.Randf() - 0.5f) * 10, 0, (GD.Randf() - 0.5f) * 10);
+                nav.TargetPosition = targetPosition;
+            }
+
+            // get new velocity
+            var newVelocity = nav.GetNextPathPosition() - GlobalPosition;
+            newVelocity.Normalized();
+            newVelocity *= speed;
+
+            // apply movement
+            Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
+            MoveAndSlide();
+
+            if(targetPosition != GlobalPosition)
+            {
+                // apply look
+                LookAt(targetPosition);
+            }
         }
     }
 }
