@@ -89,10 +89,20 @@ namespace MobBrownRat
             // check that target isn't current position
             if(navAgent.TargetPosition != GlobalPosition)
             {
-                // get new velocity
-                var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
-                newVelocity = newVelocity.Normalized();
-                newVelocity *= speed;
+                var newVelocity = Velocity;
+
+                if(IsOnFloor())
+                {
+                    // get new velocity
+                    newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
+                    newVelocity = newVelocity.Normalized();
+                    newVelocity *= speed;
+                }
+                else
+                {
+                    // apply gravity
+                    newVelocity += EngineGravity.vector * ((float) delta);
+                }
 
                 // apply movement
                 Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));

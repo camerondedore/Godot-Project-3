@@ -21,7 +21,7 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("Rat Retreat");
+            GD.Print("rat retreat " + EngineTime.timePassed);
 
             // clear target position
             blackboard.navAgent.TargetPosition = blackboard.startPosition + new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * 2;
@@ -44,7 +44,7 @@ namespace MobBrownRat
                 return blackboard.stateMove;
             }
 
-            if(blackboard.navAgent.DistanceToTarget() < 1)
+            if(blackboard.navAgent.IsNavigationFinished())
             {
                 // idle
                 return blackboard.stateIdle;

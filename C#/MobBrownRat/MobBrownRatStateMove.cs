@@ -27,7 +27,7 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("Rat Move");
+            GD.Print("rat move " + EngineTime.timePassed);
         }
 
 
@@ -43,9 +43,25 @@ namespace MobBrownRat
         {
             if(blackboard.enemy == null)
             {
-                // cool down
+                // cooldown
                 return blackboard.stateCooldown;
             }
+
+            // get distance to enemy
+            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+
+            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
+            {
+                // aim
+                return blackboard.stateAim;
+            }
+
+            // check if enemy is reachable (enemy is already not in range)
+            // if(blackboard.navAgent.GetFinalPosition().DistanceSquaredTo(blackboard.GlobalPosition) > 4)
+            // {
+            //     // cooldown
+            //     return blackboard.stateCooldown;
+            // }
 
             return this;
         }

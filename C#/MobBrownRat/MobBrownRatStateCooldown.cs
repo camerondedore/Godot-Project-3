@@ -21,7 +21,7 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("Rat Cooldown");
+            GD.Print("rat cooldown " + EngineTime.timePassed);
 
             startTime = EngineTime.timePassed;
 

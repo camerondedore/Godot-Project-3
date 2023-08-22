@@ -21,8 +21,8 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("Rat Idle");
-
+            GD.Print("rat idle " + EngineTime.timePassed);
+            
             // clear target position
             blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
         }
