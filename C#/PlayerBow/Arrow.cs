@@ -68,8 +68,11 @@ namespace PlayerBow
             // spawn miss fx
             SpawnPrefab(missFx, point, -Basis.Z, upVector);
 
-            // destroy arrow
-            //QueueFree();
+            if(hitObject is not StaticBody3D)
+            {
+                // destroy arrow
+                QueueFree();
+            }
 
             // set arrow position
             var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;

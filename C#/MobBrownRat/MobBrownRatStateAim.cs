@@ -7,7 +7,8 @@ namespace MobBrownRat
     public partial class MobBrownRatStateAim : MobBrownRatState
     {
 
-
+        double startTime;
+        int shotCountLimit = 3;
 
 
 
@@ -23,11 +24,23 @@ namespace MobBrownRat
         {
             GD.Print("rat aim " + EngineTime.timePassed);
 
+            startTime = EngineTime.timePassed;
+
             // clear target position
             blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
 
             // look at enemy
             blackboard.lookAtTarget = true;
+
+            // alternate dodge shot count
+            if(shotCountLimit == 3)
+            {
+                shotCountLimit = 2;
+            }
+            else
+            {
+                shotCountLimit = 3;
+            }
         }
 
 
@@ -55,6 +68,17 @@ namespace MobBrownRat
             {
                 // move
                 return blackboard.stateMove;
+            }
+
+            if(EngineTime.timePassed > startTime + blackboard.aimTime)
+            {
+                // fire
+                return blackboard.stateFire;
+            }
+
+            if(blackboard.shotCount >= shotCountLimit)
+            {
+                // dodge
             }
 
             return this;

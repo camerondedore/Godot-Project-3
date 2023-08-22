@@ -4,7 +4,7 @@ using System;
 namespace PlayerBow
 {
     public partial class Bow : Node3D
-{
+    {
 
     [Export]
     PackedScene weightedArrow,

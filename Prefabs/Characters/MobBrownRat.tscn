@@ -1,8 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dauwd0f7v5uyx"]
+[gd_scene load_steps=12 format=3 uid="uid://dauwd0f7v5uyx"]
 
 [ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRat.cs" id="1_tlfaj"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="2_q5ujn"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="3_qmqp4"]
+[ext_resource type="Script" path="res://C#/MobBow.cs" id="4_54knb"]
+[ext_resource type="PackedScene" uid="uid://dpixs7ufqf8p0" path="res://Prefabs/Mob Items/MobArrow.tscn" id="5_62t0c"]
+[ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="6_wf0il"]
+[ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="7_0kknr"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_bkgp3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5dfi"]
 radius = 0.3
@@ -15,12 +20,13 @@ height = 1.5
 [sub_resource type="BoxMesh" id="BoxMesh_nq0nb"]
 size = Vector3(0.5, 0.2, 0.3)
 
-[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "navAgent")]
+[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "navAgent", "bow")]
 collision_layer = 531
 floor_snap_length = 0.8
 script = ExtResource("1_tlfaj")
 detection = NodePath("Detection")
 navAgent = NodePath("NavigationAgent3D")
+bow = NodePath("Bow")
 maxSightRangeSqr = 625.0
 maxSightRangeForAlliesSqr = 400.0
 fleeDistanceSqr = 100.0
@@ -60,3 +66,15 @@ faction = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 script = ExtResource("3_qmqp4")
 faction = 2
+
+[node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
+script = ExtResource("4_54knb")
+arrow = ExtResource("5_62t0c")
+bowAudio = NodePath("BowAudio")
+bowFireSound = ExtResource("6_wf0il")
+bowDrawSound = ExtResource("7_0kknr")
+
+[node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow"]
+unit_size = 5.0
+max_distance = 20.0
+script = ExtResource("8_bkgp3")

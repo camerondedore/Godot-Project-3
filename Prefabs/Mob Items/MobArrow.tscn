@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpixs7ufqf8p0"]
+
+[ext_resource type="Script" path="res://C#/MobArrow.cs" id="1_msana"]
+[ext_resource type="ArrayMesh" uid="uid://y6a2vx1qftq6" path="res://Models/arrow-bodkin.res" id="1_rsfj6"]
+[ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="2_c6ikj"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="2_i0ho1"]
+[ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="3_rxlq1"]
+[ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_ukgsk"]
+
+[node name="MobArrow" type="Node3D"]
+script = ExtResource("1_msana")
+hitFx = ExtResource("2_c6ikj")
+missFx = ExtResource("3_ukgsk")
+speed = 15.0
+speedVariation = 0.0
+rangeSqr = 1600.0
+maskAsBinary = "01000010011"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+mesh = ExtResource("1_rsfj6")
+surface_material_override/0 = ExtResource("2_i0ho1")
+
+[node name="NodeLimiter" type="Node" parent="."]
+script = ExtResource("3_rxlq1")
+queueName = "mob arrow"
+queueLimit = 40

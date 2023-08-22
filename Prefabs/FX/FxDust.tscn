@@ -54,11 +54,12 @@ scale_max = 0.2
 
 [node name="FxDust" type="GPUParticles3D"]
 material_override = ExtResource("1_dbchy")
+emitting = false
 amount = 2
 lifetime = 3.0
 one_shot = true
 explosiveness = 1.0
-visibility_aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_gwd5j")
 draw_pass_1 = SubResource("QuadMesh_wxsq1")
 script = ExtResource("2_4le6q")
@@ -73,7 +74,7 @@ emitting = false
 amount = 7
 one_shot = true
 explosiveness = 1.0
-visibility_aabb = AABB(-2, -2, -4, 4, 4, 4)
+visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_0bg0a")
 draw_pass_1 = SubResource("QuadMesh_px3mg")
 script = ExtResource("2_4le6q")

@@ -23,6 +23,11 @@ namespace MobBrownRat
         [Export]
         public NavigationAgent3D navAgent;
         [Export]
+        public MobBow bow;
+        [Export]
+        public double aimTime = 1f,
+            fireTime = 0.5f;
+        [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
             maxMoveRangeSqr = 1600,
@@ -36,6 +41,7 @@ namespace MobBrownRat
 
         public MobFaction enemy;
         public Vector3 startPosition;
+        public int shotCount;
         public bool lookAtTarget = false;
 
         bool delay = false;
