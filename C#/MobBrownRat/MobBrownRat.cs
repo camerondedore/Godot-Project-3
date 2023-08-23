@@ -31,11 +31,13 @@ namespace MobBrownRat
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
             maxMoveRangeSqr = 1600,
-            attackDistanceSqr = 225,
+            attackDistanceMinSqr = 225,
+            attackDistanceMaxSqr = 400,
             fleeDistanceSqr = 25,
             speed = 3,
             lookSpeed = 4,
-            acceleration = 4;
+            acceleration = 4,
+            dodgeDistance = 2;
         [Export]
         bool defensive = false;
 

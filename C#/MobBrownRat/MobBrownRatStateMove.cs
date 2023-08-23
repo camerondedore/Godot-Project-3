@@ -50,7 +50,7 @@ namespace MobBrownRat
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
-            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
+            if(distanceToEnemySqr < blackboard.attackDistanceMinSqr)
             {
                 // aim
                 return blackboard.stateAim;

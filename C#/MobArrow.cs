@@ -9,6 +9,8 @@ public partial class MobArrow : Projectile
     [Export]
     GpuParticles3D trailFx;
     [Export]
+    AudioStreamPlayer3D whistleAudio;
+    [Export]
     float damage = 5;
 
 
@@ -23,12 +25,8 @@ public partial class MobArrow : Projectile
             upVector = (normal + -Basis.Z).Normalized();
         }
 
-        GD.Print(hitObject.Name);
-
         if(hitObject is CharacterBody3D)
         {
-            GD.Print("is character body");
-
             // get health node
             var hitHealth = hitObject.GetNode<Health>("Health");
 
@@ -56,6 +54,9 @@ public partial class MobArrow : Projectile
 
         if(hitObject is not StaticBody3D)
         {
+            // detach trail
+            DetachTrail();
+
             // destroy arrow
             QueueFree();
         }
@@ -69,6 +70,9 @@ public partial class MobArrow : Projectile
         {
             trailFx.Emitting = false;
         }
+
+        // stop audio
+        whistleAudio.Stop();
         
         // disable script
         SetScript(new Variant());
@@ -80,6 +84,8 @@ public partial class MobArrow : Projectile
     {
         // detach trail
         DetachTrail();
+
+        GD.Print(whistleAudio.Playing);
         
         // destroy arrow
         QueueFree();

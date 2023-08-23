@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpixs7ufqf8p0"]
+[gd_scene load_steps=9 format=3 uid="uid://dpixs7ufqf8p0"]
 
 [ext_resource type="Script" path="res://C#/MobArrow.cs" id="1_msana"]
 [ext_resource type="ArrayMesh" uid="uid://y6a2vx1qftq6" path="res://Models/arrow-bodkin.res" id="1_rsfj6"]
@@ -6,11 +6,14 @@
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="2_i0ho1"]
 [ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="3_rxlq1"]
 [ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_ukgsk"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="7_1d1md"]
+[ext_resource type="AudioStream" uid="uid://cp5vapmt543af" path="res://Audio/arrow-whistle.wav" id="8_plcwg"]
 
-[node name="MobArrow" type="Node3D"]
+[node name="MobArrow" type="Node3D" node_paths=PackedStringArray("whistleAudio")]
 script = ExtResource("1_msana")
 hitFx = ExtResource("2_c6ikj")
 missFx = ExtResource("3_ukgsk")
+whistleAudio = NodePath("AudioStreamPlayer3D")
 speed = 15.0
 speedVariation = 0.0
 rangeSqr = 1600.0
@@ -25,3 +28,10 @@ surface_material_override/0 = ExtResource("2_i0ho1")
 script = ExtResource("3_rxlq1")
 queueName = "mob arrow"
 queueLimit = 40
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 5.0
+doppler_tracking = 2
+script = ExtResource("7_1d1md")
+sounds = Array[AudioStream]([ExtResource("8_plcwg")])
+destroyOnFinished = false
