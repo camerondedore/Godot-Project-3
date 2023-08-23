@@ -29,12 +29,8 @@ script = ExtResource("1_tlfaj")
 detection = NodePath("Detection")
 navAgent = NodePath("NavigationAgent3D")
 bow = NodePath("Bow")
-maxSightRangeSqr = 400.0
+maxSightRangeSqr = 625.0
 maxSightRangeForAlliesSqr = 324.0
-maxMoveRangeSqr = 100.0
-attackDistanceMinSqr = 144.0
-attackDistanceMaxSqr = 225.0
-fleeDistanceSqr = 16.0
 fleeMoveDistance = 5.0
 dodgeDistance = 4.0
 

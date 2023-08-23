@@ -30,10 +30,9 @@ namespace MobBrownRat
         [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
-            maxMoveRangeSqr = 1600,
-            attackDistanceMinSqr = 225,
-            attackDistanceMaxSqr = 400,
-            fleeDistanceSqr = 25,
+            attackRangeMinSqr = 225,
+            attackRangeMaxSqr = 400,
+            fleeRangeSqr = 25,
             fleeMoveDistance = 8,
             fleeSpreadRadius = 3,
             speed = 3,
