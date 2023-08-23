@@ -60,6 +60,9 @@ namespace MobBrownRat
                 // reset shot count
                 blackboard.shotCount = 0;
 
+                // reset flee count
+                blackboard.fleeCount = 0;
+
                 // cool down
                 return blackboard.stateCooldown;
             }
@@ -78,24 +81,32 @@ namespace MobBrownRat
             }
 
             // check if enemy is too close
-            if(distanceToEnemySqr < blackboard.fleeRangeSqr)
+            if(blackboard.fleeCount == 0 && distanceToEnemySqr < blackboard.fleeRangeSqr)
             {
                 // reset shot count
                 blackboard.shotCount = 0;
+
+                // add to flee count
+                blackboard.fleeCount++;
 
                 // flee
                 return blackboard.stateFlee;
             }
 
-
             if(EngineTime.timePassed > startTime + blackboard.aimTime)
             {
+                // reset flee count
+                blackboard.fleeCount = 0;
+
                 // fire
                 return blackboard.stateFire;
             }
 
             if(blackboard.shotCount >= shotCountLimit)
             {
+                // reset flee count
+                blackboard.fleeCount = 0;
+
                 // dodge
                 return blackboard.stateDodge;
             }

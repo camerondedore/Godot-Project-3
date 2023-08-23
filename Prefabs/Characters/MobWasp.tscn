@@ -47,16 +47,16 @@ maxHitPoints = 1.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.707401, 7.8472e-17, 7.85373e-17, 0.706813)
-bones/1/rotation = Quaternion(0.707107, 0.000290727, 0.707107, 0.000290783)
-bones/2/rotation = Quaternion(0.862054, 0.0665851, 0.48784, -0.120177)
-bones/3/rotation = Quaternion(-0.57448, -0.409845, -0.404142, 0.581953)
-bones/4/rotation = Quaternion(-0.494706, -0.362313, -0.29616, 0.732315)
-bones/5/rotation = Quaternion(0.786036, 0.186169, 0.512801, -0.290731)
-bones/6/rotation = Quaternion(0.862054, -0.0665851, -0.48784, -0.120177)
-bones/7/rotation = Quaternion(-0.590701, 0.395721, 0.423053, 0.561697)
-bones/8/rotation = Quaternion(-0.504962, 0.354467, 0.323283, 0.717534)
-bones/9/rotation = Quaternion(0.781416, -0.205566, -0.504587, -0.304176)
+bones/0/rotation = Quaternion(-0.711334, 7.80325e-17, 7.89739e-17, 0.702854)
+bones/1/rotation = Quaternion(0.707088, 0.0051339, 0.707088, 0.00513396)
+bones/2/rotation = Quaternion(0.862712, 0.0950564, 0.484375, -0.109877)
+bones/3/rotation = Quaternion(-0.56743, -0.404949, -0.409049, 0.588829)
+bones/4/rotation = Quaternion(-0.486989, -0.359183, -0.299948, 0.737469)
+bones/5/rotation = Quaternion(0.783412, 0.181589, 0.514441, -0.29773)
+bones/6/rotation = Quaternion(0.862712, -0.0950564, -0.484375, -0.109877)
+bones/7/rotation = Quaternion(-0.583894, 0.390598, 0.427788, 0.568769)
+bones/8/rotation = Quaternion(-0.4974, 0.351053, 0.326987, 0.722796)
+bones/9/rotation = Quaternion(0.778677, -0.201066, -0.506398, -0.311121)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_rexv1")
@@ -79,6 +79,7 @@ shape = SubResource("CapsuleShape3D_me2gy")
 
 [node name="Faction" type="Node3D" parent="."]
 script = ExtResource("2_xwl4h")
+MobPriority = 2.0
 
 [node name="Detection" type="RayCast3D" parent="." node_paths=PackedStringArray("myFaction")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.17214)

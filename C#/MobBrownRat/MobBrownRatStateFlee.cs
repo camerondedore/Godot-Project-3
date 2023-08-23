@@ -20,6 +20,8 @@ namespace MobBrownRat
         
         public override void StartState()
         {
+            GD.Print("rat flee " + EngineTime.timePassed);
+
             // get flee target
             var directionToEnemy = blackboard.enemy.GlobalPosition - blackboard.GlobalPosition;
             directionToEnemy = directionToEnemy.Normalized() * blackboard.fleeMoveDistance;

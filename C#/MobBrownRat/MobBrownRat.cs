@@ -44,7 +44,8 @@ namespace MobBrownRat
 
         public MobFaction enemy;
         public Vector3 startPosition;
-        public int shotCount;
+        public int shotCount,
+            fleeCount;
         public bool lookAtTarget = false;
 
         bool delay = false;

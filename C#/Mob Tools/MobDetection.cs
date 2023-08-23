@@ -27,7 +27,7 @@ public partial class MobDetection : RayCast3D
         var enemies = MobFaction.mobs.Where(m => m.faction != myFaction.faction).ToArray();
 
         // order list of enemies by distance
-        var enemiesOrdered = enemies.Where(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) < maxRangeSqr).OrderBy(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition)).ToArray();
+        var enemiesOrdered = enemies.Where(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) < maxRangeSqr).OrderBy(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) * m.MobPriority).ToArray();
 
         // use ray to check LOS to enemies
         foreach(var enemy in enemiesOrdered)

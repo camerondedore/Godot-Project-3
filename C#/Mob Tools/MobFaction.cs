@@ -16,6 +16,8 @@ public partial class MobFaction : Node3D
 
 	[Export]
 	public Faction faction;
+	[Export]
+	public float MobPriority = 1; // high number means lower priority
 
 
 
