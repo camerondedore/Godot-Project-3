@@ -118,14 +118,21 @@ namespace MobBrownRat
             }
 
 
-            if(lookAtTarget)
+            if(enemy != null && lookAtTarget)
             {
-                // get direction to enenmy and flatten
-                var lookTarget = enemy.GlobalPosition;
-                lookTarget.Y = GlobalPosition.Y;
+                try
+                {
+                    // get direction to enenmy and flatten
+                    var lookTarget = enemy.GlobalPosition;
+                    lookTarget.Y = GlobalPosition.Y;
 
-                // look at enemy
-                LookAt(lookTarget);
+                    // look at enemy
+                    LookAt(lookTarget);
+                }
+                catch
+                {
+                    // enemy is disposed
+                }
             }
             else if(navAgent.TargetPosition != GlobalPosition)
             {

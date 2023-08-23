@@ -57,6 +57,9 @@ namespace MobBrownRat
         {
             if(blackboard.enemy == null)
             {
+                // reset shot count
+                blackboard.shotCount = 0;
+
                 // cool down
                 return blackboard.stateCooldown;
             }
@@ -66,6 +69,9 @@ namespace MobBrownRat
 
             if(distanceToEnemySqr > blackboard.attackDistanceMaxSqr)
             {
+                // reset shot count
+                blackboard.shotCount = 0;
+
                 // move
                 return blackboard.stateMove;
             }

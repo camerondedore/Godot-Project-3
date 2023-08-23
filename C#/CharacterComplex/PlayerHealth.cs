@@ -52,7 +52,7 @@ namespace PlayerCharacterComplex
 
         public bool CheckHitPointsNotMaxxed()
         {
-            return hitPoints < maxHitPoints;
+            return hitPoints < PlayerStatistics.statistics.GetMaxHitPoints();
         }
 
 

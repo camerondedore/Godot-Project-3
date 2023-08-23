@@ -20,7 +20,7 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            
+            GD.Print("rat die " + EngineTime.timePassed);
         }
 
 

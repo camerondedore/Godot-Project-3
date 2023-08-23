@@ -7,6 +7,7 @@ namespace MobBrownRat
     public partial class MobBrownRatStateCooldown: MobBrownRatState
     {
 
+        Vector3 startPosition;
         double startTime;
 
 
@@ -25,8 +26,10 @@ namespace MobBrownRat
 
             startTime = EngineTime.timePassed;
 
+            startPosition = blackboard.GlobalPosition;
+
             // clear target position
-            blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
+            //blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
         }
 
 
@@ -46,7 +49,14 @@ namespace MobBrownRat
                 return blackboard.stateMove;
             }
 
-            if(EngineTime.timePassed > startTime + 5)
+            // if(EngineTime.timePassed > startTime + 5)
+            // {
+            //     // retreat
+            //     return blackboard.stateRetreat;
+            // }
+
+            // check for 5 seconds passing or 5 meters from start
+            if(EngineTime.timePassed > startTime + 5 || startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100)
             {
                 // retreat
                 return blackboard.stateRetreat;

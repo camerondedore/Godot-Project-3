@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dauwd0f7v5uyx"]
+[gd_scene load_steps=13 format=3 uid="uid://dauwd0f7v5uyx"]
 
 [ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRat.cs" id="1_tlfaj"]
+[ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRatHealth.cs" id="2_hmem3"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="2_q5ujn"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="3_qmqp4"]
 [ext_resource type="Script" path="res://C#/MobBow.cs" id="4_54knb"]
@@ -21,7 +22,8 @@ height = 1.5
 size = Vector3(0.5, 0.2, 0.3)
 
 [node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "navAgent", "bow")]
-collision_layer = 531
+collision_layer = 2
+collision_mask = 19
 floor_snap_length = 0.8
 script = ExtResource("1_tlfaj")
 detection = NodePath("Detection")
@@ -32,6 +34,12 @@ maxSightRangeForAlliesSqr = 400.0
 attackDistanceMinSqr = 144.0
 fleeDistanceSqr = 100.0
 dodgeDistance = 4.0
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
+script = ExtResource("2_hmem3")
+rat = NodePath("..")
+hitPoints = 200.0
+maxHitPoints = 200.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l5dfi")
@@ -54,7 +62,7 @@ mesh = SubResource("BoxMesh_nq0nb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 enabled = false
 target_position = Vector3(0, 0, -1)
-collision_mask = 3
+collision_mask = 531
 script = ExtResource("2_q5ujn")
 myFaction = NodePath("../Faction")
 pointBlankRangeSqr = 2.0
