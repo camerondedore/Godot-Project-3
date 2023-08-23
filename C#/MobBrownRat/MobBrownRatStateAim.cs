@@ -67,6 +67,7 @@ namespace MobBrownRat
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
+            // check if enemy is too far
             if(distanceToEnemySqr > blackboard.attackDistanceMaxSqr)
             {
                 // reset shot count
@@ -75,6 +76,17 @@ namespace MobBrownRat
                 // move
                 return blackboard.stateMove;
             }
+
+            // check if enemy is too close
+            if(distanceToEnemySqr < blackboard.fleeDistanceSqr)
+            {
+                // reset shot count
+                blackboard.shotCount = 0;
+
+                // flee
+                return blackboard.stateFlee;
+            }
+
 
             if(EngineTime.timePassed > startTime + blackboard.aimTime)
             {

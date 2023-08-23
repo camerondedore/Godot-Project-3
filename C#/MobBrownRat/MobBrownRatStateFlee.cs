@@ -20,7 +20,14 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            
+            // get flee target
+            var directionToEnemy = blackboard.enemy.GlobalPosition - blackboard.GlobalPosition;
+            directionToEnemy = directionToEnemy.Normalized() * blackboard.fleeMoveDistance;
+            var fleeSpread = new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * blackboard.fleeSpreadRadius;
+            var fleePosition = blackboard.GlobalPosition - directionToEnemy + fleeSpread;
+
+            // set flee target
+            blackboard.navAgent.TargetPosition = fleePosition;
         }
 
 
@@ -34,6 +41,12 @@ namespace MobBrownRat
 
         public override State Transition()
         {
+            if(blackboard.navAgent.IsNavigationFinished())
+            {
+                // aim
+                return blackboard.stateAim;
+            }
+
             return this;
         }
     }

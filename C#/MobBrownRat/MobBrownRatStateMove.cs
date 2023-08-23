@@ -16,7 +16,16 @@ namespace MobBrownRat
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
 
-            if(blackboard.enemy != null)
+            // get distance from start to enemy
+            var distanceFromStartSqr = blackboard.startPosition.DistanceSquaredTo(blackboard.GlobalPosition);
+
+            // check if outside of operating area
+            if(distanceFromStartSqr > blackboard.maxMoveRangeSqr)
+            {
+                // stop moving
+                blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
+            }
+            else if(blackboard.enemy != null)
             {
                 // set move target
                 blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -47,9 +56,20 @@ namespace MobBrownRat
                 return blackboard.stateCooldown;
             }
 
+            // get distance from start to enemy
+            // var distanceFromStartToEnemySqr = blackboard.startPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+
+            // check if enemy is outside of operating area
+            // if(distanceFromStartToEnemySqr > blackboard.maxMoveRangeSqr)
+            // {
+            //     // warn
+            //     return blackboard.stateRetreat;
+            // }
+
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
+            // check if enemy is close enough
             if(distanceToEnemySqr < blackboard.attackDistanceMinSqr)
             {
                 // aim

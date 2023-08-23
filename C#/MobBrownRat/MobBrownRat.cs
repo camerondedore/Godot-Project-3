@@ -34,6 +34,8 @@ namespace MobBrownRat
             attackDistanceMinSqr = 225,
             attackDistanceMaxSqr = 400,
             fleeDistanceSqr = 25,
+            fleeMoveDistance = 8,
+            fleeSpreadRadius = 3,
             speed = 3,
             lookSpeed = 4,
             acceleration = 4,
