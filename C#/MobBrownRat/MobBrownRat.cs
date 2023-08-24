@@ -56,6 +56,9 @@ namespace MobBrownRat
         {            
             startPosition = GlobalPosition;
 
+            // set nav agent event
+            navAgent.VelocityComputed += SafeMove;
+
             // initialize states
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};
             stateMove = new MobBrownRatStateMove(){blackboard = this};
@@ -115,9 +118,11 @@ namespace MobBrownRat
                     newVelocity += EngineGravity.vector * ((float) delta);
                 }
 
-                // apply movement
-                Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
-                MoveAndSlide();
+                // smooth movement
+                newVelocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
+                
+                // pass new velocity to nav agent
+                navAgent.Velocity = newVelocity;
             }
 
 
@@ -137,15 +142,23 @@ namespace MobBrownRat
                     // enemy is disposed
                 }
             }
-            else if(navAgent.TargetPosition != GlobalPosition)
+            else if(Velocity.LengthSquared() > 0)
             {
                 // get direction to next path point and flatten
-                var lookTarget = navAgent.GetNextPathPosition();
+                var lookTarget = GlobalPosition + Velocity;
                 lookTarget.Y = GlobalPosition.Y;
 
                 // look in direction of movement
                 LookAt(lookTarget);
             }
+        }
+
+
+
+        void SafeMove(Vector3 safeVel)
+        {
+            Velocity = safeVel;
+            MoveAndSlide();
         }
     }
 }
