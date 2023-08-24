@@ -7,7 +7,7 @@
 [node name="FxArrowHitFire" instance=ExtResource("1_168mi")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
-max_distance = 30.0
+max_distance = 60.0
 script = ExtResource("2_qj8cl")
 sounds = Array[AudioStream]([ExtResource("3_fa7wx")])
 destroyOnFinished = false

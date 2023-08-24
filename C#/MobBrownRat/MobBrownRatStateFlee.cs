@@ -7,7 +7,7 @@ namespace MobBrownRat
     public partial class MobBrownRatStateFlee : MobBrownRatState
     {
 
-
+        Vector3 startPosition;
 
 
 
@@ -21,6 +21,8 @@ namespace MobBrownRat
         public override void StartState()
         {
             GD.Print("rat flee " + EngineTime.timePassed);
+
+            startPosition = blackboard.GlobalPosition;
 
             // get flee target
             var directionToEnemy = blackboard.enemy.GlobalPosition - blackboard.GlobalPosition;
@@ -43,7 +45,8 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            if(blackboard.navAgent.IsNavigationFinished())
+            // check for arriving at destination or moving 5 meters
+            if(blackboard.navAgent.IsNavigationFinished() || startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 25)
             {
                 // aim
                 return blackboard.stateAim;

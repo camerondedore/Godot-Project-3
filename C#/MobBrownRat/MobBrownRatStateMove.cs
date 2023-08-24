@@ -21,8 +21,14 @@ namespace MobBrownRat
 
             if(blackboard.enemy != null)
             {
-                // set move target
-                blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
+                var destinationDistanceToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+
+                // check if enemy has moved far enough to recalculate path
+                if(destinationDistanceToEnemy > blackboard.moveRecalculatePathRange)
+                {
+                    // set move target
+                    blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
+                }
             }
         }
         
