@@ -30,7 +30,7 @@ namespace MobBrownRat
             // get flee target
             var directionToEnemy = blackboard.enemy.GlobalPosition - blackboard.GlobalPosition;
             directionToEnemy = directionToEnemy.Normalized() * blackboard.fleeMoveDistance;
-            var fleeSpread = new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * blackboard.fleeSpreadRadius;
+            var fleeSpread = new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * blackboard.fleeSpreadRange;
             var fleePosition = blackboard.GlobalPosition - directionToEnemy + fleeSpread;
 
             // set flee target

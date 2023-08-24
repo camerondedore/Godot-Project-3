@@ -9,7 +9,8 @@ namespace MobBrownRat
 
         Vector3 startPosition;
         double startTime;
-        int lastDirection = 1;
+        int offsetDirection = 1;
+        bool initialized = false;
 
 
 
@@ -24,14 +25,24 @@ namespace MobBrownRat
         {
             GD.Print("rat dodge " + EngineTime.timePassed);
 
+            if(!initialized)
+            {
+                if(GD.Randi() % 2 == 1)
+                {
+                    offsetDirection = -1;
+                }
+
+                initialized = true;
+            }
+
             startTime = EngineTime.timePassed;
 
             startPosition = blackboard.GlobalPosition;
 
-            lastDirection *= -1;
+            offsetDirection *= -1;
             
             // get dodge offset
-            var dodgeOffset = Vector3.Right * lastDirection * blackboard.dodgeDistance;
+            var dodgeOffset = Vector3.Right * offsetDirection * blackboard.dodgeDistance;
 
             // convert to global
             var dodgePosition = blackboard.ToGlobal(dodgeOffset);

@@ -9,6 +9,7 @@ namespace MobBrownRat
 
         double startTime;
         int shotCountLimit = 3;
+        bool initialized = false;
 
 
 
@@ -23,6 +24,13 @@ namespace MobBrownRat
         public override void StartState()
         {
             GD.Print("rat aim " + EngineTime.timePassed);
+
+            if(!initialized)
+            {
+                // randomize shot count limit
+                shotCountLimit = (int) (GD.Randi() % 2 + 2);
+                initialized = true;
+            }
 
             startTime = EngineTime.timePassed;
 

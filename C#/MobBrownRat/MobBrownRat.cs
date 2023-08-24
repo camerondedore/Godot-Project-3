@@ -1,15 +1,18 @@
 using Godot;
 using System;
+using PlayerBow;
 
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRat : CharacterBody3D
+    public partial class MobBrownRat : CharacterBody3D, IBowTarget, IMobAlly
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
             stateMove,
+            statePatrol,
+            statePatrolWait,
             stateFlee,
             stateAim,
             stateFire,
@@ -27,6 +30,10 @@ namespace MobBrownRat
         [Export]
         public MobBow bow;
         [Export]
+        public Health health;
+        [Export]
+        public string arrowType = "bodkin";
+        [Export]
         public double aimTime = 1f,
             fireTime = 0.5f;
         [Export]
@@ -37,11 +44,13 @@ namespace MobBrownRat
             attackRangeMaxSqr = 400,
             fleeRangeSqr = 25,
             fleeMoveDistance = 8,
-            fleeSpreadRadius = 3,
+            fleeSpreadRange = 3,
+            PatrolRange = 10,
             speed = 3,
             lookSpeed = 4,
             acceleration = 4,
-            dodgeDistance = 2;
+            dodgeDistance = 2,
+            damageFromArrow = 50;
         [Export]
         bool defensive = false;
 
@@ -49,7 +58,8 @@ namespace MobBrownRat
         public Vector3 startPosition;
         public int shotCount,
             fleeCount;
-        public bool lookAtTarget = false;
+        public bool lookAtTarget = false,
+            allyDied;
 
         bool delay = false;
 
@@ -64,6 +74,8 @@ namespace MobBrownRat
             // initialize states
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};
             stateMove = new MobBrownRatStateMove(){blackboard = this};
+            statePatrol = new MobBrownRatStatePatrol(){blackboard = this};
+            statePatrolWait = new MobBrownRatStatePatrolWait(){blackboard = this};
             stateFlee = new MobBrownRatStateFlee(){blackboard = this};
             stateAim = new MobBrownRatStateAim(){blackboard = this};
             stateFire = new MobBrownRatStateFire(){blackboard = this};
@@ -161,6 +173,44 @@ namespace MobBrownRat
         {
             Velocity = safeVel;
             MoveAndSlide();
+        }
+
+
+
+        public string GetArrowType()
+        {
+            return arrowType;
+        }
+
+
+
+        public Vector3 GetGlobalPosition()
+        {
+            try
+            {
+                return GlobalPosition;
+            }
+            catch
+            {
+                // target was disposed
+                // nothing more to do
+                return Vector3.Zero;
+            }
+        }
+
+
+
+        public void Hit()
+        {
+            // take damage from arrow
+            health.Damage(damageFromArrow);
+        }
+
+
+
+        public void AllyKilled()
+        {
+            allyDied = true;
         }
     }
 }

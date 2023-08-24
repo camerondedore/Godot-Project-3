@@ -4,10 +4,10 @@ using System;
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRatStateIdle : MobBrownRatState
+    public partial class MobBrownRatStatePatrolWait : MobBrownRatState
     {
 
-
+        double startTime;
 
 
 
@@ -21,9 +21,11 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat idle " + EngineTime.timePassed);
+            GD.Print("rat patrol wait " + EngineTime.timePassed);
+
+            startTime = EngineTime.timePassed;
             
-            // clear target position
+            // stop moving
             blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
         }
 
@@ -44,7 +46,10 @@ namespace MobBrownRat
                 return blackboard.stateMove;
             }
 
-            if(blackboard.allyDied)
+            var isTimeUp = EngineTime.timePassed > startTime + 5;
+
+            // check for 5 seconds passing
+            if(isTimeUp)
             {
                 // patrol
                 return blackboard.statePatrol;

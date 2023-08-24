@@ -7,7 +7,7 @@ public partial class GibsActivator : Node3D
 
     [Export]
     float speed = 2,
-        randomDirectionRadius = 0.1f,
+        randomDirectionRange = 0.1f,
         maxRotationSpeed = 3;
 
     List<Gib> gibs = new List<Gib>();
@@ -43,7 +43,7 @@ public partial class GibsActivator : Node3D
             gib.ActivateGib();
 
             // rigidbody velocity
-            var randomDirection = new Vector3((GD.Randf() - 0.5f), (GD.Randf() - 0.5f), (GD.Randf() - 0.5f)) * randomDirectionRadius;
+            var randomDirection = new Vector3((GD.Randf() - 0.5f), (GD.Randf() - 0.5f), (GD.Randf() - 0.5f)) * randomDirectionRange;
             var newVelociity = (gib.GlobalPosition - GlobalPosition).Normalized() * speed + randomDirection;
             gib.LinearVelocity = newVelociity;
             

@@ -22,7 +22,7 @@ height = 1.5
 [sub_resource type="BoxMesh" id="BoxMesh_nq0nb"]
 size = Vector3(0.5, 0.2, 0.3)
 
-[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "navAgent", "bow")]
+[node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "navAgent", "bow", "health")]
 collision_layer = 2
 collision_mask = 19
 floor_snap_length = 0.8
@@ -31,6 +31,7 @@ detection = NodePath("Detection")
 eyes = NodePath("Bow/BowDetection")
 navAgent = NodePath("NavigationAgent3D")
 bow = NodePath("Bow")
+health = NodePath("Health")
 maxSightRangeSqr = 625.0
 maxSightRangeForAlliesSqr = 324.0
 fleeMoveDistance = 5.0
@@ -39,8 +40,8 @@ dodgeDistance = 4.0
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
 script = ExtResource("2_hmem3")
 rat = NodePath("..")
-hitPoints = 200.0
-maxHitPoints = 200.0
+hitPoints = 50.0
+maxHitPoints = 50.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_l5dfi")

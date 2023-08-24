@@ -28,15 +28,15 @@ namespace MobWasp
             newFx.Owner = blackboard.GetTree().CurrentScene;
             newFx.GlobalPosition = blackboard.GlobalPosition;
 
-            // get starting allies
+            // get allies
             var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
 
             // alert nearby allies that this mob died
             foreach(MobFaction ally in allies)
             {
                 // temporary casting; may convert to interface later
-                var allyBase = (MobWasp) ally.Owner;
-                allyBase.allyDied = true;
+                var allyBase = (IMobAlly) ally.Owner;
+                allyBase.AllyKilled();
             }
 
             blackboard.QueueFree();

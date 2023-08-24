@@ -4,7 +4,7 @@ using PlayerBow;
 
 namespace MobWasp
 {
-    public partial class MobWasp : CharacterBody3D, IBowTarget
+    public partial class MobWasp : CharacterBody3D, IBowTarget, IMobAlly
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -254,9 +254,13 @@ namespace MobWasp
         {
             // wasp is dead
             machine.SetState(stateDie);
+        }
 
-            // disable script
-            //SetScript(new Variant());
+
+
+        public void AllyKilled()
+        {
+            allyDied = true;
         }
     }
 }
