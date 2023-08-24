@@ -21,6 +21,8 @@ namespace MobBrownRat
         [Export]
         public MobDetection detection;
         [Export]
+        public MobEyes eyes;
+        [Export]
         public NavigationAgent3D navAgent;
         [Export]
         public MobBow bow;

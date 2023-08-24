@@ -80,7 +80,7 @@ script = ExtResource("8_q5577")
 
 [node name="SpawnAudio" type="AudioStreamPlayer3D" parent="SoupTarget/Cooker" index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
-max_distance = 40.0
+max_distance = 60.0
 script = ExtResource("8_q5577")
 
 [node name="SoupSpawner" type="Node3D" parent="SoupTarget/Cooker" index="7"]

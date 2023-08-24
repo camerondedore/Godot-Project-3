@@ -69,8 +69,8 @@ namespace MobBrownRat
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
-            // check if enemy is close enough
-            if(distanceToEnemySqr < blackboard.attackRangeMinSqr)
+            // check if enemy is close enough and bow has LOS to enemy
+            if(distanceToEnemySqr < blackboard.attackRangeMinSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy))
             {
                 // aim
                 return blackboard.stateAim;
