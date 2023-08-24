@@ -8,6 +8,7 @@ namespace MobBrownRat
     {
 
         Vector3 startPosition;
+        double startTime;
 
 
 
@@ -21,6 +22,8 @@ namespace MobBrownRat
         public override void StartState()
         {
             GD.Print("rat flee " + EngineTime.timePassed);
+
+            startTime = EngineTime.timePassed;
 
             startPosition = blackboard.GlobalPosition;
 
@@ -45,8 +48,12 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            // check for arriving at destination or moving 5 meters
-            if(blackboard.navAgent.IsNavigationFinished() || startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 25)
+            var isTimeUp = EngineTime.timePassed > startTime + 3;
+            var isPathFinished = blackboard.navAgent.IsNavigationFinished();
+            var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 25;
+
+            // check for 3 seconds passing or arriving at destination or moving 5 meters
+            if(isTimeUp || isPathFinished || isdistanceTraveled)
             {
                 // aim
                 return blackboard.stateAim;

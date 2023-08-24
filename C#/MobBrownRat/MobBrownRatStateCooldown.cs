@@ -49,8 +49,11 @@ namespace MobBrownRat
                 return blackboard.stateMove;
             }
 
+            var isTimeUp = EngineTime.timePassed > startTime + 5;
+            var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100;
+
             // check for 5 seconds passing or 10 meters from start
-            if(EngineTime.timePassed > startTime + 5 || startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100)
+            if(isTimeUp || isdistanceTraveled)
             {
                 // retreat
                 return blackboard.stateRetreat;

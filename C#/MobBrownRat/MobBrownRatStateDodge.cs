@@ -8,6 +8,7 @@ namespace MobBrownRat
     {
 
         Vector3 startPosition;
+        double startTime;
         int lastDirection = 1;
 
 
@@ -22,6 +23,8 @@ namespace MobBrownRat
         public override void StartState()
         {
             GD.Print("rat dodge " + EngineTime.timePassed);
+
+            startTime = EngineTime.timePassed;
 
             startPosition = blackboard.GlobalPosition;
 
@@ -50,8 +53,12 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            // check for arriving at destination or moving dodge distance
-            if(blackboard.navAgent.IsNavigationFinished() || startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > Mathf.Pow(blackboard.dodgeDistance, 2))
+            var isTimeUp = EngineTime.timePassed > startTime + 3;
+            var isPathFinished = blackboard.navAgent.IsNavigationFinished();
+            var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > Mathf.Pow(blackboard.dodgeDistance, 2);
+
+            // check for 3 seconds passing or arriving at destination or moving dodge distance
+            if(isTimeUp || isPathFinished || isdistanceTraveled)
             {
                 // aim
                 return blackboard.stateAim;
