@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_getu1"]
 
 [sub_resource type="Gradient" id="Gradient_1jnp3"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.43787, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.372781, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ng6wg"]
 gradient = SubResource("Gradient_1jnp3")
@@ -12,12 +13,14 @@ gradient = SubResource("Gradient_1jnp3")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ytpyl"]
 lifetime_randomness = 0.4
 direction = Vector3(0, 0, -1)
-spread = 30.0
+spread = 20.0
 initial_velocity_min = 2.0
 initial_velocity_max = 3.0
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
 angle_max = 359.0
-scale_min = 0.6
-scale_max = 0.8
+scale_min = 0.5
+scale_max = 0.7
 color_ramp = SubResource("GradientTexture1D_ng6wg")
 
 [sub_resource type="QuadMesh" id="QuadMesh_isqau"]
@@ -25,9 +28,10 @@ color_ramp = SubResource("GradientTexture1D_ng6wg")
 [node name="FxBloodSplash" type="GPUParticles3D"]
 material_override = ExtResource("1_8qji5")
 emitting = false
-amount = 6
+amount = 5
+lifetime = 0.8
 one_shot = true
-explosiveness = 0.8
+explosiveness = 1.0
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_ytpyl")
 draw_pass_1 = SubResource("QuadMesh_isqau")
