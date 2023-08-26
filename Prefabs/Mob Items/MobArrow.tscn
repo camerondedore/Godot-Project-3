@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://C#/MobArrow.cs" id="1_msana"]
 [ext_resource type="ArrayMesh" uid="uid://y6a2vx1qftq6" path="res://Models/arrow-bodkin.res" id="1_rsfj6"]
+[ext_resource type="PackedScene" uid="uid://dkql0j4oe33cn" path="res://Prefabs/FX/FxArrowHitEnemy.tscn" id="2_30351"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="2_i0ho1"]
-[ext_resource type="PackedScene" uid="uid://ify3a7s57oqx" path="res://Prefabs/FX/FxArrowHitBodkin.tscn" id="2_sal3b"]
 [ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="3_rxlq1"]
 [ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_ukgsk"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="7_1d1md"]
@@ -11,7 +11,7 @@
 
 [node name="MobArrow" type="Node3D" node_paths=PackedStringArray("whistleAudio")]
 script = ExtResource("1_msana")
-hitFx = ExtResource("2_sal3b")
+hitFx = ExtResource("2_30351")
 missFx = ExtResource("3_ukgsk")
 whistleAudio = NodePath("AudioStreamPlayer3D")
 speed = 15.0

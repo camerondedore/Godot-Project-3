@@ -1,0 +1,56 @@
+[gd_scene load_steps=13 format=3 uid="uid://dkql0j4oe33cn"]
+
+[ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/FxArrowHitEnemy.tres" id="1_8eido"]
+[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gohjn"]
+[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_d8mk0"]
+[ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_2stnk"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="5_6pgwa"]
+[ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="6_mj5ce"]
+
+[sub_resource type="Gradient" id="Gradient_h563r"]
+offsets = PackedFloat32Array(0, 0.585366, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.739837, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vy5mi"]
+gradient = SubResource("Gradient_h563r")
+
+[sub_resource type="Curve" id="Curve_v11r1"]
+_data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e4bh4"]
+curve = SubResource("Curve_v11r1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0whg0"]
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_e4bh4")
+color_ramp = SubResource("GradientTexture1D_vy5mi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pytth"]
+
+[node name="FxArrowHitEnemy" type="GPUParticles3D"]
+material_override = ExtResource("1_8eido")
+emitting = false
+amount = 1
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+process_material = SubResource("ParticleProcessMaterial_0whg0")
+draw_pass_1 = SubResource("QuadMesh_pytth")
+script = ExtResource("2_gohjn")
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("3_d8mk0")
+lifeTime = 1.0
+
+[node name="FxBloodSplash" parent="." instance=ExtResource("4_2stnk")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 60.0
+script = ExtResource("5_6pgwa")
+sounds = Array[AudioStream]([ExtResource("6_mj5ce")])
+destroyOnFinished = false
