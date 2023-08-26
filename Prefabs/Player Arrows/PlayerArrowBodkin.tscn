@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgjfsyt5i52b3"]
+[gd_scene load_steps=5 format=3 uid="uid://bgjfsyt5i52b3"]
 
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/Player Arrows/PlayerArrow.tscn" id="1_xqnt0"]
 [ext_resource type="ArrayMesh" uid="uid://y6a2vx1qftq6" path="res://Models/arrow-bodkin.res" id="2_f32qx"]
+[ext_resource type="PackedScene" uid="uid://ify3a7s57oqx" path="res://Prefabs/FX/FxArrowHitBodkin.tscn" id="2_jb1uv"]
 [ext_resource type="PackedScene" uid="uid://f8vqk4ousym6" path="res://Prefabs/FX/FxArrowTrailBodkin.tscn" id="3_jja2r"]
 
 [node name="PlayerArrowBodkin" node_paths=PackedStringArray("trailFx") instance=ExtResource("1_xqnt0")]
 arrowType = "bodkin"
+hitFx = ExtResource("2_jb1uv")
 trailFx = NodePath("FxArrowTrailBodkin")
 speed = 25.0
 

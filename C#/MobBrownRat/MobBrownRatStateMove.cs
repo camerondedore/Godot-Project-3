@@ -37,6 +37,8 @@ namespace MobBrownRat
         public override void StartState()
         {
             GD.Print("rat move " + EngineTime.timePassed);
+
+            blackboard.moving = true;
         }
 
 

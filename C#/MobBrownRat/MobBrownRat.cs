@@ -51,14 +51,13 @@ namespace MobBrownRat
             acceleration = 4,
             dodgeDistance = 2,
             damageFromArrow = 50;
-        [Export]
-        bool defensive = false;
 
         public MobFaction enemy;
         public Vector3 startPosition;
         public int shotCount,
             fleeCount;
         public bool lookAtTarget = false,
+            moving,
             allyDied;
 
         bool delay = false;
@@ -114,23 +113,14 @@ namespace MobBrownRat
             }
 
 
-            // check that target isn't current position
-            if(navAgent.TargetPosition != GlobalPosition)
+            // check that rat is in moving state
+            if(moving && IsOnFloor())
             {
-                var newVelocity = Velocity;
-
-                if(IsOnFloor())
-                {
-                    // get new velocity
-                    newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
-                    newVelocity = newVelocity.Normalized();
-                    newVelocity *= speed;
-                }
-                else
-                {
-                    // apply gravity
-                    newVelocity += EngineGravity.vector * ((float) delta);
-                }
+                // get new velocity
+                var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
+                newVelocity = newVelocity.Normalized();
+                newVelocity.Y = 0;
+                newVelocity *= speed;
 
                 // smooth movement
                 newVelocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
@@ -138,9 +128,24 @@ namespace MobBrownRat
                 // pass new velocity to nav agent
                 navAgent.Velocity = newVelocity;
             }
+            else
+            {
+                if(IsOnFloor())
+                {
+                    // pass zero velocity to nav agent
+                    Velocity = Vector3.Zero;
+                }
+                else
+                {
+                    // apply gravity
+                    Velocity += EngineGravity.vector * ((float) delta);
+                }
+                
+                MoveAndSlide();
+            }
 
 
-            if(enemy != null && lookAtTarget)
+            if(lookAtTarget && !moving && enemy != null)
             {
                 try
                 {
@@ -156,23 +161,27 @@ namespace MobBrownRat
                     // enemy is disposed
                 }
             }
-            else if(Velocity.LengthSquared() > 0)
-            {
-                // get direction to next path point and flatten
-                var lookTarget = GlobalPosition + Velocity;
-                lookTarget.Y = GlobalPosition.Y;
-
-                // look in direction of movement
-                LookAt(lookTarget);
-            }
         }
 
 
 
         void SafeMove(Vector3 safeVel)
         {
-            Velocity = safeVel;
-            MoveAndSlide();
+            if(moving && IsOnFloor())
+            {
+                Velocity = safeVel;
+                MoveAndSlide();
+
+                if(Velocity.X != 0 || Velocity.Z != 0)
+                {
+                    // get direction to next path point and flatten
+                    var lookTarget = GlobalPosition + Velocity.Normalized();
+                    lookTarget.Y = GlobalPosition.Y;
+
+                    // look in direction of movement
+                    LookAt(lookTarget, Vector3.Up);
+                }
+            }
         }
 
 

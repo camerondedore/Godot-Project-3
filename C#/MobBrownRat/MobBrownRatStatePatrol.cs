@@ -33,6 +33,7 @@ namespace MobBrownRat
 
             // set patrol target position
             blackboard.navAgent.TargetPosition = newPatrolPosition;
+            blackboard.moving = true;
         }
 
 

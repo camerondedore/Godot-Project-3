@@ -49,7 +49,7 @@ namespace MobBrownRat
 
             // set target position
             blackboard.navAgent.TargetPosition = dodgePosition;
-
+            blackboard.moving = true;
         }
 
 

@@ -35,6 +35,7 @@ namespace MobBrownRat
 
             // set flee target
             blackboard.navAgent.TargetPosition = fleePosition;
+            blackboard.moving = true;
         }
 
 

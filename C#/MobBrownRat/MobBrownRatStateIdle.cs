@@ -25,6 +25,7 @@ namespace MobBrownRat
             
             // clear target position
             blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
+            blackboard.moving = false;
         }
 
 
