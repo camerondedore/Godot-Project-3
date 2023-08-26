@@ -128,23 +128,22 @@ namespace MobBrownRat
                 // pass new velocity to nav agent
                 navAgent.Velocity = newVelocity;
             }
-            else
+            else if(IsOnFloor())
             {
-                if(IsOnFloor())
-                {
-                    // pass zero velocity to nav agent
-                    Velocity = Vector3.Zero;
-                }
-                else
-                {
-                    // apply gravity
-                    Velocity += EngineGravity.vector * ((float) delta);
-                }
-                
+                // pass zero velocity to nav agent
+                Velocity = Vector3.Zero;
+                MoveAndSlide();
+            }
+            else
+            {                
+                // falling
+                // apply gravity
+                Velocity += EngineGravity.vector * ((float) delta);                
                 MoveAndSlide();
             }
 
 
+            // check if rat is looking at target
             if(lookAtTarget && !moving && enemy != null)
             {
                 try
@@ -168,14 +167,16 @@ namespace MobBrownRat
         void SafeMove(Vector3 safeVel)
         {
             if(moving && IsOnFloor())
-            {
-                Velocity = safeVel;
-                MoveAndSlide();
-
-                if(Velocity.X != 0 || Velocity.Z != 0)
+            {        
+                // check that velocity is not zero
+                if(safeVel.X != 0 || safeVel.Z != 0)
                 {
+                    // move using obstacle avoidance
+                    Velocity = safeVel;
+                    MoveAndSlide();
+
                     // get direction to next path point and flatten
-                    var lookTarget = GlobalPosition + Velocity.Normalized();
+                    var lookTarget = GlobalPosition + safeVel.Normalized();
                     lookTarget.Y = GlobalPosition.Y;
 
                     // look in direction of movement

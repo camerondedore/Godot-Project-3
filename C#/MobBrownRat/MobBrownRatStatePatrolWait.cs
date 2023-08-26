@@ -26,7 +26,6 @@ namespace MobBrownRat
             startTime = EngineTime.timePassed;
             
             // stop moving
-            blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
             blackboard.moving = false;
         }
 

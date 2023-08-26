@@ -23,8 +23,7 @@ namespace MobBrownRat
         {
             GD.Print("rat idle " + EngineTime.timePassed);
             
-            // clear target position
-            blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
+            // stop moving
             blackboard.moving = false;
         }
 

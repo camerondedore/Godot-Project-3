@@ -34,8 +34,7 @@ namespace MobBrownRat
 
             startTime = EngineTime.timePassed;
 
-            // clear target position
-            blackboard.navAgent.TargetPosition = blackboard.GlobalPosition;
+            // stop moving
             blackboard.moving = false;
             
             // look at enemy
