@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ify3a7s57oqx"]
+[gd_scene load_steps=5 format=3 uid="uid://ify3a7s57oqx"]
 
 [ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="1_pbk8i"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="2_x276k"]
 [ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="3_dsqwc"]
+[ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_e6m4v"]
 
 [node name="FxArrowHitBodkin" instance=ExtResource("1_pbk8i")]
 
@@ -11,3 +12,5 @@ max_distance = 60.0
 script = ExtResource("2_x276k")
 sounds = Array[AudioStream]([ExtResource("3_dsqwc")])
 destroyOnFinished = false
+
+[node name="FxBloodSplash" parent="." index="3" instance=ExtResource("4_e6m4v")]
