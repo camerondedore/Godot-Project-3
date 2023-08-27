@@ -74,8 +74,8 @@ namespace MobBrownRat
             // check if enemy is close enough and bow has LOS to enemy
             if(distanceToEnemySqr < blackboard.attackRangeMinSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy))
             {
-                // aim
-                return blackboard.stateAim;
+                // attack
+                return blackboard.stateAttack;
             }
 
             // check if enemy is reachable (enemy is already not in range)

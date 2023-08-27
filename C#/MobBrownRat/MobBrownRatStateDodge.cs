@@ -71,8 +71,8 @@ namespace MobBrownRat
             // check for 3 seconds passing or arriving at destination or moving dodge distance
             if(isTimeUp || isPathFinished || isdistanceTraveled)
             {
-                // aim
-                return blackboard.stateAim;
+                // attack
+                return blackboard.stateAttack;
             }
 
             return this;

@@ -14,19 +14,20 @@ namespace MobBrownRat
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
         }
         
         
         
         public override void StartState()
         {
-            startTime = EngineTime.timePassed;
+            GD.Print("rat fire " + EngineTime.timePassed);
 
-            blackboard.shotCount++;
+            startTime = EngineTime.timePassed;
 
             // shoot
             blackboard.bow.Fire(blackboard.enemy);
+            blackboard.shotCount++;
         }
 
 
@@ -42,8 +43,8 @@ namespace MobBrownRat
         {
             if(EngineTime.timePassed > startTime + blackboard.fireTime)
             {
-                // aim
-                return blackboard.stateAim;
+                // attack
+                return blackboard.stateAttack;
             }
 
             return this;

@@ -14,6 +14,7 @@ namespace MobBrownRat
             statePatrol,
             statePatrolWait,
             stateFlee,
+            stateAttack,
             stateAim,
             stateFire,
             stateDodge,
@@ -76,6 +77,7 @@ namespace MobBrownRat
             statePatrol = new MobBrownRatStatePatrol(){blackboard = this};
             statePatrolWait = new MobBrownRatStatePatrolWait(){blackboard = this};
             stateFlee = new MobBrownRatStateFlee(){blackboard = this};
+            stateAttack = new MobBrownRatStateAttack(){blackboard = this};
             stateAim = new MobBrownRatStateAim(){blackboard = this};
             stateFire = new MobBrownRatStateFire(){blackboard = this};
             stateDodge = new MobBrownRatStateDodge(){blackboard = this};
