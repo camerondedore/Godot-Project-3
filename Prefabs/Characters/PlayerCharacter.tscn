@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=53 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -48,6 +48,7 @@
 [ext_resource type="AudioStream" uid="uid://dxnxfhrr70g8f" path="res://Audio/fall-damage.wav" id="37_howem"]
 [ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
 [ext_resource type="PackedScene" uid="uid://pc68qled2whb" path="res://Prefabs/Player Arrows/PlayerArrowBlade.tscn" id="42_w8q66"]
+[ext_resource type="PackedScene" uid="uid://dpv3c061py1ht" path="res://Prefabs/FX/FxRangerBandageHeal.tscn" id="49_p7me3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -85,10 +86,21 @@ script = ExtResource("4_x6l2t")
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vgi6r")
 
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio", "playerCharacter")]
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio", "playerCharacter", "healFx")]
 script = ExtResource("8_ltus6")
 characterAudio = NodePath("../CharacterAudio")
 playerCharacter = NodePath("..")
+healFx = NodePath("../FxRangerBandageHeal")
+
+[node name="Faction" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537816, 0)
+script = ExtResource("34_61alq")
+faction = 1
+
+[node name="Faction2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24186, 0)
+script = ExtResource("34_61alq")
+faction = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_nx72i")
@@ -488,14 +500,6 @@ bowDrawSound = ExtResource("20_no75w")
 [node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow"]
 script = ExtResource("20_4jbn7")
 
-[node name="Faction" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537816, 0)
-script = ExtResource("34_61alq")
-faction = 1
-
-[node name="Faction2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24186, 0)
-script = ExtResource("34_61alq")
-faction = 1
+[node name="FxRangerBandageHeal" parent="." instance=ExtResource("49_p7me3")]
 
 [editable path="character-player"]

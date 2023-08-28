@@ -33,7 +33,7 @@ navAgent = NodePath("NavigationAgent3D")
 bow = NodePath("Bow")
 health = NodePath("Health")
 maxSightRangeSqr = 625.0
-maxSightRangeForAlliesSqr = 324.0
+maxSightRangeForAlliesSqr = 225.0
 fleeMoveDistance = 5.0
 dodgeDistance = 4.0
 
