@@ -12,7 +12,7 @@ namespace PlayerBow
         PackedScene hitFx,
             missFx;
         [Export]
-        GpuParticles3D trailFx;
+        ArrowTrail trailFx;
         
 
 
@@ -56,7 +56,7 @@ namespace PlayerBow
                     SpawnPrefab(hitFx, point, normal, upVector);
 
                     // detach trail
-                    DetachTrail();
+                    trailFx.DetachTrail();
 
                     // destroy arrow
                     QueueFree();
@@ -70,6 +70,9 @@ namespace PlayerBow
 
             if(hitObject is not StaticBody3D)
             {
+                // detach trail
+                trailFx.DetachTrail();
+
                 // destroy arrow
                 QueueFree();
             }
@@ -94,27 +97,10 @@ namespace PlayerBow
         public override void OutOfRange()
         {
             // detach trail
-            DetachTrail();
+            trailFx.DetachTrail();
             
             // destroy arrow
             QueueFree();
-        }
-
-
-
-        void DetachTrail()
-        {
-            if(trailFx != null)
-            {
-                trailFx.Emitting = false;
-
-                // detach trail fx
-                // ignoring rotation as it doesn't matter for particles not set to use local
-                var trailFxPosition = trailFx.GlobalPosition;
-                trailFx.GetParent().RemoveChild(trailFx);
-                GetTree().CurrentScene.AddChild(trailFx);
-                trailFx.GlobalPosition = trailFxPosition;
-            }
         }
 
 

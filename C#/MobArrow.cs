@@ -7,7 +7,7 @@ public partial class MobArrow : Projectile
     PackedScene hitFx,
         missFx;
     [Export]
-    GpuParticles3D trailFx;
+    ArrowTrail trailFx;
     [Export]
     AudioStreamPlayer3D whistleAudio;
     [Export]
@@ -38,8 +38,7 @@ public partial class MobArrow : Projectile
                 // spawn hit fx
                 SpawnPrefab(hitFx, point, normal, upVector);
 
-                // detach trail
-                DetachTrail();
+                trailFx.DetachTrail();
 
                 // destroy arrow
                 QueueFree();
@@ -55,7 +54,7 @@ public partial class MobArrow : Projectile
         if(hitObject is not StaticBody3D)
         {
             // detach trail
-            DetachTrail();
+            trailFx.DetachTrail();
 
             // destroy arrow
             QueueFree();
@@ -83,29 +82,12 @@ public partial class MobArrow : Projectile
     public override void OutOfRange()
     {
         // detach trail
-        DetachTrail();
+        trailFx.DetachTrail();
 
         GD.Print(whistleAudio.Playing);
         
         // destroy arrow
         QueueFree();
-    }
-
-
-
-    void DetachTrail()
-    {
-        if(trailFx != null)
-        {
-            trailFx.Emitting = false;
-
-            // detach trail fx
-            // ignoring rotation as it doesn't matter for particles not set to use local
-            var trailFxPosition = trailFx.GlobalPosition;
-            trailFx.GetParent().RemoveChild(trailFx);
-            GetTree().CurrentScene.AddChild(trailFx);
-            trailFx.GlobalPosition = trailFxPosition;
-        }
     }
 
 

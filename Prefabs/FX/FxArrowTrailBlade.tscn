@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://bt5msoygpgiug"]
+[gd_scene load_steps=6 format=3 uid="uid://bt5msoygpgiug"]
 
 [ext_resource type="Material" uid="uid://dtigdk3mdd07x" path="res://Materials/FxArrowTrailBlade.tres" id="1_tqv6o"]
 [ext_resource type="Material" uid="uid://di6lmpj455mvk" path="res://Particles/FxArrowTrailBlade.tres" id="2_pecal"]
+[ext_resource type="Script" path="res://C#/ArrowTrail.cs" id="3_ikvly"]
+[ext_resource type="Script" path="res://C#/Common/DelayedDestroy.cs" id="3_rhqur"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_pc5df"]
 
-[node name="FxArrowTrailBlade" type="GPUParticles3D"]
+[node name="FxArrowTrailBlade" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
 material_override = ExtResource("1_tqv6o")
 amount = 20
 process_material = ExtResource("2_pecal")
 draw_pass_1 = SubResource("QuadMesh_pc5df")
+script = ExtResource("3_ikvly")
+destroyer = NodePath("DelayedDestroy")
+
+[node name="DelayedDestroy" type="Node" parent="."]
+script = ExtResource("3_rhqur")
