@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://dny2auormn3lo"]
+
+[ext_resource type="Material" uid="uid://dtv4txrerct12" path="res://Materials/FxFlame.tres" id="1_kvd1j"]
+
+[sub_resource type="Gradient" id="Gradient_8x8kk"]
+offsets = PackedFloat32Array(0, 0.177515, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rjic1"]
+gradient = SubResource("Gradient_8x8kk")
+
+[sub_resource type="Curve" id="Curve_vrji8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_wcehf"]
+max_value = 2.0
+_data = [Vector2(0, 0.930693), 0.0, 1.89037, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_xuqp7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_7ggon"]
+curve_x = SubResource("Curve_vrji8")
+curve_y = SubResource("Curve_wcehf")
+curve_z = SubResource("Curve_xuqp7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d481j"]
+lifetime_randomness = 0.25
+gravity = Vector3(0, 0.5, 0)
+angle_min = -5.0
+angle_max = 5.0
+scale_min = 0.08
+scale_max = 0.13
+scale_curve = SubResource("CurveXYZTexture_7ggon")
+color_ramp = SubResource("GradientTexture1D_rjic1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a71rx"]
+
+[node name="FxFlame" type="GPUParticles3D"]
+material_override = ExtResource("1_kvd1j")
+amount = 3
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_d481j")
+draw_pass_1 = SubResource("QuadMesh_a71rx")
