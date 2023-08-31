@@ -36,8 +36,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat move " + EngineTime.timePassed);
-
             blackboard.moving = true;
         }
 
@@ -58,16 +56,6 @@ namespace MobBrownRat
                 return blackboard.stateCooldown;
             }
 
-            // get distance from start to enemy
-            // var distanceFromStartToEnemySqr = blackboard.startPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
-
-            // check if enemy is outside of operating area
-            // if(distanceFromStartToEnemySqr > blackboard.maxMoveRangeSqr)
-            // {
-            //     // warn
-            //     return blackboard.stateRetreat;
-            // }
-
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
@@ -77,13 +65,6 @@ namespace MobBrownRat
                 // attack
                 return blackboard.stateAttack;
             }
-
-            // check if enemy is reachable (enemy is already not in range)
-            // if(blackboard.navAgent.GetFinalPosition().DistanceSquaredTo(blackboard.GlobalPosition) > 4)
-            // {
-            //     // cooldown
-            //     return blackboard.stateCooldown;
-            // }
 
             return this;
         }

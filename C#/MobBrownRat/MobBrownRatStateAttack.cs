@@ -22,8 +22,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat attack " + EngineTime.timePassed);
-
             if(!initialized)
             {
                 // randomize shot count limit

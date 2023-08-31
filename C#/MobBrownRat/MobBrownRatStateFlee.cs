@@ -21,8 +21,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat flee " + EngineTime.timePassed);
-
             startTime = EngineTime.timePassed;
 
             startPosition = blackboard.GlobalPosition;

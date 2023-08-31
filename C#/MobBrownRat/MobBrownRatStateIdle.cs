@@ -21,8 +21,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat idle " + EngineTime.timePassed);
-            
             // stop moving
             blackboard.moving = false;
         }

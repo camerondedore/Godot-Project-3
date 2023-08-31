@@ -23,8 +23,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat dodge " + EngineTime.timePassed);
-
             if(!initialized)
             {
                 if(GD.Randi() % 2 == 1)

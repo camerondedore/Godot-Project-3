@@ -21,8 +21,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat fire " + EngineTime.timePassed);
-
             startTime = EngineTime.timePassed;
 
             // shoot

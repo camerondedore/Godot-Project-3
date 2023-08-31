@@ -21,8 +21,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat patrol wait " + EngineTime.timePassed);
-
             startTime = EngineTime.timePassed;
             
             // stop moving

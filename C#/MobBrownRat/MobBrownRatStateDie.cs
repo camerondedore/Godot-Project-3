@@ -20,8 +20,6 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            GD.Print("rat die " + EngineTime.timePassed);
-
             // get allies
             var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
 
