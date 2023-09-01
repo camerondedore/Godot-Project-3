@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=83 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -16,10 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="6_0nsps"]
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="6_8m127"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="6_is0wy"]
+[ext_resource type="ArrayMesh" uid="uid://bewar3dx3tukc" path="res://Models/tmp-map-1.res" id="6_qen7m"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="7_3btvd"]
 [ext_resource type="PackedScene" path="res://Prefabs/Small Items/PropFenceEnd.tscn" id="8_qgel6"]
 [ext_resource type="PackedScene" uid="uid://cwabel6rsndr7" path="res://Prefabs/Small Items/PropFence1.tscn" id="9_j2ilc"]
 [ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="9_jepc3"]
+[ext_resource type="Material" uid="uid://c5m6htpwba4q" path="res://Materials/GrassMedium.tres" id="9_rm28j"]
 [ext_resource type="PackedScene" uid="uid://ck4yohp23qcuw" path="res://Prefabs/Small Items/PropFence2.tscn" id="10_0j7w2"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropLogOakStripping.tscn" id="10_2lcoj"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
@@ -27,7 +29,6 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="11_1rkbt"]
 [ext_resource type="PackedScene" uid="uid://croje6ueu5rqc" path="res://Prefabs/Trees/PropTreeOak4.tscn" id="11_d87cr"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropLogOakStripped.tscn" id="11_se24g"]
-[ext_resource type="ArrayMesh" uid="uid://bewar3dx3tukc" path="res://Models/tmp-map-1.res" id="11_sm2ed"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="12_7d261"]
 [ext_resource type="Material" uid="uid://dkncsl54qwwvb" path="res://Materials/Grass.tres" id="12_n1aet"]
 [ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="13_bch6h"]
@@ -126,10 +127,11 @@ collision_mask = 775
 metadata/_edit_group_ = true
 
 [node name="Plane" type="MeshInstance3D" parent="Map/NavigationRegion3D/Ground"]
-mesh = ExtResource("11_sm2ed")
+mesh = ExtResource("6_qen7m")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = ExtResource("12_n1aet")
 surface_material_override/1 = ExtResource("13_bch6h")
+surface_material_override/2 = ExtResource("9_rm28j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Ground"]
 shape = SubResource("ConcavePolygonShape3D_l0xu4")
