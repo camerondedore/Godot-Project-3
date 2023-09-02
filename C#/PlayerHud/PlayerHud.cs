@@ -6,8 +6,10 @@ public partial class PlayerHud : Node
 {
 
     [Export]
-    Control hitPointBarsContainer;
+    Control hitPointBarsContainer,
+        shieldsContainer;
     List<TextureProgressBar> hitPointBars = new List<TextureProgressBar>();
+    List<TextureRect> shields = new List<TextureRect>();
     [Export]
     Label candiedNutsCounter,
         dockLeavesCounter,
@@ -29,7 +31,8 @@ public partial class PlayerHud : Node
         dockLeaves,
         sanicle,
         rangerBandages;
-    int hitPointUpgrades;
+    int hitPointUpgrades,
+        armor;
     bool colorChanged = false;
 
 
@@ -61,9 +64,19 @@ public partial class PlayerHud : Node
             hitPointsBar.Visible = false;
             hitPointBars.Add(hitPointsBar);
         }
+
+        // get shields
+        // bug does not allow assigning nodes to array in inspector
+        foreach(var s in shieldsContainer.GetChildren())
+        {
+            var shield = (TextureRect) s;
+            shield.Visible = false;
+            shields.Add(shield);
+        }
          
         // initialize UI values
         UpdateHitPointBars(0);
+        UpdateShields();
         candiedNutsCounter.Text = candiedNuts.ToString();
         dockLeavesCounter.Text = dockLeaves.ToString();
         sanicleCounter.Text = sanicle.ToString();
@@ -81,6 +94,12 @@ public partial class PlayerHud : Node
             var hitPointsChange = currentStatistics.HitPoints - hitPoints;
             hitPoints = currentStatistics.HitPoints;
             UpdateHitPointBars(hitPointsChange);
+        }
+
+        if(armor != currentStatistics.ArmorUpgrades)
+        {
+            armor = currentStatistics.ArmorUpgrades;
+            UpdateShields();
         }
 
         if(hitPointUpgrades != currentStatistics.HitPointUpgrades)
@@ -165,7 +184,7 @@ public partial class PlayerHud : Node
     void UpdateHitPointBars(float hitPointsChange)
     {
         // get number of bars needed
-        var hitPointBarsCount = PlayerStatistics.statistics.currentStatistics.HitPointUpgrades + 1;
+        var hitPointBarsCount = currentStatistics.HitPointUpgrades + 1;
         
         while(hitPointBarsCount > 0)
         {
@@ -196,6 +215,21 @@ public partial class PlayerHud : Node
             }
 
             hitPointBarsCount--;
+        }
+    }
+
+
+
+    void UpdateShields()
+    {
+        var shieldIndex = 0;
+        
+        // set shields to visible
+        while(shieldIndex < armor)
+        {
+            shields[shieldIndex].Visible = true;            
+
+            shieldIndex++;
         }
     }
 }

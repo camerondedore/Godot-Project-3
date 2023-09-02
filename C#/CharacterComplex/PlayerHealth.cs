@@ -97,6 +97,24 @@ namespace PlayerCharacterComplex
 
 
 
+        public void FallDamage(float dmg)
+        {
+            // apply damage
+            hitPoints = Mathf.Clamp(hitPoints - dmg, 0, PlayerStatistics.statistics.GetMaxHitPoints());
+
+            // update statistics
+            PlayerStatistics.statistics.UpdateHitPoints(hitPoints);
+
+            if(hitPoints == 0 && !dead)
+            {
+                // kill player
+                dead = true;
+                Die();
+            }
+        }
+
+
+
         public override void Die()
         {
             playerCharacter.machine.SetState(playerCharacter.stateDie);

@@ -44,7 +44,7 @@ namespace PlayerCharacterComplex
             {
                 // apply damage
                 var damage = damageDistance * damageDistance + 10;
-                blackboard.health.Damage(damage);
+                blackboard.health.FallDamage(damage);
 
                 // play audio
                 blackboard.characterAudio.PlayFallDamageSound();
