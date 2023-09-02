@@ -105,7 +105,7 @@ public partial class PlayerHud : Node
         if(hitPointUpgrades != currentStatistics.HitPointUpgrades)
         {
             hitPointUpgrades = currentStatistics.HitPointUpgrades;
-            UpdateHitPointBars(0);
+            UpdateHitPointBars(1);
         }
 
         if(candiedNuts != currentInventory.CandiedNuts)

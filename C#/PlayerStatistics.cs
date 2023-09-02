@@ -72,8 +72,14 @@ public partial class PlayerStatistics : Node
 
     public void ApplyUpgrades(int hitPointUpgrade, int armorUpgrade)
     {
-        currentStatistics.HitPointUpgrades += Mathf.Clamp(currentStatistics.HitPointUpgrades + hitPointUpgrade, 0, maxHitPointUpgrades);
+        currentStatistics.HitPointUpgrades = Mathf.Clamp(currentStatistics.HitPointUpgrades + hitPointUpgrade, 0, maxHitPointUpgrades);
         currentStatistics.ArmorUpgrades = Mathf.Clamp(currentStatistics.ArmorUpgrades + armorUpgrade, 0, maxArmorUpgrades);
+
+        // if hitpoints were upgraded, give full health
+        if(hitPointUpgrade > 0)
+        {
+            currentStatistics.HitPoints = GetMaxHitPoints();
+        }
     }
 
 
@@ -87,7 +93,8 @@ public partial class PlayerStatistics : Node
 
     public float GetArmor()
     {
-        return currentStatistics.ArmorUpgrades * currentStatistics.ArmorPerUpgrade;
+        // maximum armor reduces damage by 80%
+        return Mathf.Clamp(currentStatistics.ArmorUpgrades * currentStatistics.ArmorPerUpgrade, 0, 0.8f);
     }
 
 

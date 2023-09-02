@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=85 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -78,6 +78,8 @@
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Bow Targets/PropTorch.tscn" id="70_woav5"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="71_tu5qd"]
+[ext_resource type="PackedScene" uid="uid://dmib1tgy5ee4s" path="res://Prefabs/Pickups/PickupArmor.tscn" id="73_euar7"]
+[ext_resource type="PackedScene" uid="uid://cvpfiw0o36yme" path="res://Prefabs/Pickups/PickupCider.tscn" id="75_8w06i"]
 [ext_resource type="PackedScene" uid="uid://b1e6hhtb3arh8" path="res://Prefabs/Small Items/PropBungMallet.tscn" id="76_xaefu"]
 [ext_resource type="PackedScene" uid="uid://dauwd0f7v5uyx" path="res://Prefabs/Characters/MobBrownRat.tscn" id="79_f3rqk"]
 
@@ -940,6 +942,9 @@ storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb
 
 [node name="Pickups" type="Node3D" parent="Map"]
 
+[node name="PickupArmor" parent="Map/Pickups" instance=ExtResource("73_euar7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 2)
+
 [node name="PickupCandiedNut" parent="Map/Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00942, 1.07936, 6.93603)
 lock_rotation = false
@@ -963,6 +968,9 @@ lock_rotation = false
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("43_r6irn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1.07936, -9.80821)
 lock_rotation = false
+
+[node name="PickupCider" parent="Map/Pickups" instance=ExtResource("75_8w06i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 7)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 

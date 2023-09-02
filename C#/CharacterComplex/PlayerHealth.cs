@@ -18,9 +18,7 @@ namespace PlayerCharacterComplex
 
         public override void _Ready()
         {
-            // get health values
-            hitPoints = PlayerStatistics.statistics.currentStatistics.HitPoints;
-            maxHitPoints = PlayerStatistics.statistics.GetMaxHitPoints();
+            UpdateHealth();
         }
 
 
@@ -111,6 +109,15 @@ namespace PlayerCharacterComplex
                 dead = true;
                 Die();
             }
+        }
+
+
+
+        public void UpdateHealth()
+        {
+            // get health values
+            hitPoints = PlayerStatistics.statistics.currentStatistics.HitPoints;
+            maxHitPoints = PlayerStatistics.statistics.GetMaxHitPoints();
         }
 
 
