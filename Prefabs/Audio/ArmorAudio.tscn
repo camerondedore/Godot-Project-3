@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bc0ygxhmjmekf"]
-
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="1_587vj"]
-[ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="2_0hkwv"]
-
-[node name="ArmorAudio" type="AudioStreamPlayer3D"]
-script = ExtResource("1_587vj")
-sounds = Array[AudioStream]([ExtResource("2_0hkwv")])
