@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpntiqvy2cgfx"]
+
+[ext_resource type="PackedScene" path="res://Prefabs/UI/UiPickup.tscn" id="1_iip5w"]
+[ext_resource type="Texture2D" uid="uid://dw3kwsn5xyl27" path="res://UI/ui-shield.png" id="2_4a2tq"]
+
+[node name="HudArmorPickup" instance=ExtResource("1_iip5w")]
+texture = ExtResource("2_4a2tq")

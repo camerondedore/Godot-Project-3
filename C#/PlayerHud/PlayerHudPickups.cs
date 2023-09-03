@@ -9,12 +9,16 @@ public partial class PlayerHudPickups : Control
         candiedNutsPickupEnd,
         dockLeafPickupEnd,
         saniclePickupEnd,
-        rangerBandagePickupEnd;
+        rangerBandagePickupEnd,
+        armorPickupEnd,
+        ciderPickupEnd;
     [Export]
     PackedScene candiedNutsPickup,
         dockLeafPickup,
         saniclePickup,
-        rangerBandagePickup;
+        rangerBandagePickup,
+        armorPickup,
+        ciderPickup;
 
     
 
@@ -56,6 +60,20 @@ public partial class PlayerHudPickups : Control
     public void AddRangerBandage()
     {   
         SpawnPickup(rangerBandagePickup, pickupStart.Position, rangerBandagePickupEnd.Position);
+    }
+
+
+
+    public void AddArmor()
+    {   
+        SpawnPickup(armorPickup, pickupStart.Position, armorPickupEnd.Position);
+    }
+
+
+
+    public void AddHitpointsBar()
+    {   
+        SpawnPickup(ciderPickup, pickupStart.Position, ciderPickupEnd.Position);
     }
 
 

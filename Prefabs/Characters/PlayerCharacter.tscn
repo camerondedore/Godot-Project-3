@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=56 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dq8dwaqq4b84a" path="res://Prefabs/FX/FxSparkleBowTarget.tscn" id="11_8krr5"]
 [ext_resource type="AudioStream" uid="uid://ch1you6rwmx40" path="res://Audio/bow-target.wav" id="11_dpkpm"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
+[ext_resource type="PackedScene" uid="uid://b5fo0lpwtdpl6" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
@@ -40,6 +40,8 @@
 [ext_resource type="AudioStream" uid="uid://dqx1dj05aoil5" path="res://Audio/ranger-bandage-heal.wav" id="22_cdqx6"]
 [ext_resource type="AudioStream" uid="uid://k8ogntdoh24" path="res://Audio/ranger-bandage-gather.wav" id="23_g4fk7"]
 [ext_resource type="AudioStream" uid="uid://dcv3yunkkpab4" path="res://Audio/ranger-bandage-craft.wav" id="23_gbit2"]
+[ext_resource type="PackedScene" uid="uid://dpntiqvy2cgfx" path="res://Prefabs/UI/UiArmorPickup.tscn" id="26_ent0s"]
+[ext_resource type="PackedScene" uid="uid://p8jwo71ixc6x" path="res://Prefabs/UI/UiCiderPickup.tscn" id="27_2lls6"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowWeighted.tscn" id="27_121vu"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowNet.tscn" id="28_t6rk3"]
 [ext_resource type="Texture2D" uid="uid://dw3kwsn5xyl27" path="res://UI/ui-shield.png" id="29_4s88l"]
@@ -276,7 +278,7 @@ hudPickups = NodePath("Hud")
 hurtHitPointsBarColor = Color(1, 0.25, 0.25, 1)
 healHitPointsBarColor = Color(0.25, 1, 0.25, 1)
 
-[node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd")]
+[node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "armorPickupEnd", "ciderPickupEnd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -290,10 +292,14 @@ candiedNutsPickupEnd = NodePath("CandiedNuts")
 dockLeafPickupEnd = NodePath("DockLeaves")
 saniclePickupEnd = NodePath("Sanicle")
 rangerBandagePickupEnd = NodePath("RangerBandage")
+armorPickupEnd = NodePath("Armor")
+ciderPickupEnd = NodePath("HitPointBars")
 candiedNutsPickup = ExtResource("9_cffx2")
 dockLeafPickup = ExtResource("10_dsdcr")
 saniclePickup = ExtResource("11_i1qbn")
 rangerBandagePickup = ExtResource("12_xyyhd")
+armorPickup = ExtResource("26_ent0s")
+ciderPickup = ExtResource("27_2lls6")
 
 [node name="HitPointBars" type="HBoxContainer" parent="HudCanvas/Hud"]
 layout_mode = 0

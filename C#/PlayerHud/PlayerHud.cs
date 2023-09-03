@@ -100,12 +100,18 @@ public partial class PlayerHud : Node
         {
             armor = currentStatistics.ArmorUpgrades;
             UpdateShields();
+
+            // spawn pickup
+            hudPickups.AddArmor();
         }
 
         if(hitPointUpgrades != currentStatistics.HitPointUpgrades)
         {
             hitPointUpgrades = currentStatistics.HitPointUpgrades;
             UpdateHitPointBars(1);
+
+            // spawn pickup
+            hudPickups.AddHitpointsBar();
         }
 
         if(candiedNuts != currentInventory.CandiedNuts)
