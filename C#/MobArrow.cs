@@ -25,6 +25,7 @@ public partial class MobArrow : Projectile
             upVector = (normal + -Basis.Z).Normalized();
         }
 
+
         if(hitObject is CharacterBody3D)
         {
             // get health node
@@ -38,43 +39,42 @@ public partial class MobArrow : Projectile
                 // spawn hit fx
                 SpawnPrefab(hitFx, point, normal, upVector);
 
-                trailFx.DetachTrail();
-
-                // destroy arrow
-                QueueFree();
-
-                return; 
             }
-        }
-        
-
-        // spawn miss fx
-        SpawnPrefab(missFx, point, -Basis.Z, upVector);
-
-        if(hitObject is not StaticBody3D)
-        {
-            // detach trail
+            
             trailFx.DetachTrail();
 
             // destroy arrow
             QueueFree();
         }
-
-        // set arrow position
-        var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
-        LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
-
-        // turn off trail fx
-        if(trailFx != null)
+        else if(hitObject is StaticBody3D)
         {
-            trailFx.Emitting = false;
-        }
+            // set arrow position
+            var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
+            LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
 
-        // stop audio
-        whistleAudio.Stop();
-        
-        // disable script
-        SetScript(new Variant());
+            // turn off trail fx
+            if(trailFx != null)
+            {
+                trailFx.Emitting = false;
+            }
+
+            // stop audio
+            whistleAudio.Stop();
+
+            // spawn miss fx
+            SpawnPrefab(missFx, point, -Basis.Z, upVector);
+            
+            // disable script
+            SetScript(new Variant());
+        }
+        else
+        {
+            // hit object is not a character or static
+            trailFx.DetachTrail();
+
+            // destroy arrow
+            QueueFree();
+        }
     } 
     
     
@@ -83,8 +83,6 @@ public partial class MobArrow : Projectile
     {
         // detach trail
         trailFx.DetachTrail();
-
-        GD.Print(whistleAudio.Playing);
         
         // destroy arrow
         QueueFree();
