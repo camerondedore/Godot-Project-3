@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmib1tgy5ee4s"]
+[gd_scene load_steps=9 format=3 uid="uid://dmib1tgy5ee4s"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
+[ext_resource type="PackedScene" uid="uid://bc0ygxhmjmekf" path="res://Prefabs/Audio/ArmorAudio.tscn" id="3_8el3x"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -37,7 +38,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="PickupArmor" instance=ExtResource("1_blnc4")]
 script = ExtResource("2_466iw")
-pickupPrefabs = Array[PackedScene]([])
+pickupPrefabs = Array[PackedScene]([ExtResource("3_8el3x")])
 
 [node name="FxSparkle" parent="." index="2"]
 process_material = SubResource("ParticleProcessMaterial_d17cl")
