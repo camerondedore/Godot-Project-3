@@ -39,7 +39,7 @@ namespace PlayerCharacterComplex
             blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
 
             // check draw
-            if(EngineTime.timePassed < startTime + blackboard.drawTime)
+            if(EngineTime.timePassed < startTime + blackboard.drawTime - 0.07f)
             {
                 if(PlayerInput.fire1 > 0)
                 {
