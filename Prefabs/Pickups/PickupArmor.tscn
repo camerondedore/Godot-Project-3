@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmib1tgy5ee4s"]
+[gd_scene load_steps=11 format=3 uid="uid://dmib1tgy5ee4s"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
 [ext_resource type="PackedScene" uid="uid://6l6ou0eihn0w" path="res://Prefabs/FX/FxArmorPickup.tscn" id="3_5sypj"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
+[ext_resource type="Material" uid="uid://g12rcw7pf2kw" path="res://Materials/PickupArmor.tres" id="5_ukmsv"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -44,6 +45,7 @@ pickupPrefabs = Array[PackedScene]([ExtResource("3_5sypj")])
 [node name="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
 mesh = ExtResource("4_uw6ui")
+surface_material_override/0 = ExtResource("5_ukmsv")
 
 [node name="FxSparkle" parent="." index="2"]
 process_material = SubResource("ParticleProcessMaterial_d17cl")
