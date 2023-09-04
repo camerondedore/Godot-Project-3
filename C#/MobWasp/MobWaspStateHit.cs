@@ -20,9 +20,9 @@ namespace MobWasp
             {
                 // spawn fx
                 var newFx = (Node3D) blackboard.waspHitFx.Instantiate();
+                newFx.LookAtFromPosition(blackboard.GlobalPosition, -blackboard.Basis.Z);
                 blackboard.GetTree().CurrentScene.AddChild(newFx);
                 newFx.Owner = blackboard.GetTree().CurrentScene;
-                newFx.GlobalPosition = blackboard.GlobalPosition;
 
                 // play venom fx
                 blackboard.venomFx.Restart();

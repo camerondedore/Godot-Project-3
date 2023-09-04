@@ -62,12 +62,11 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
         // create fx
         var newFx = cutFx.Instantiate() as Node3D;
 
+        // set transform
+        newFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+
         GetTree().CurrentScene.AddChild(newFx);
         newFx.Owner = GetTree().CurrentScene;
-
-        // set transform
-        newFx.GlobalPosition = GlobalPosition;
-        newFx.GlobalRotation = GlobalRotation;
 
         // disable script
         SetScript(new Variant());

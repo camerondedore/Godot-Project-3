@@ -24,9 +24,9 @@ namespace MobWasp
 
             // spawn fx
             var newFx = (Node3D) blackboard.waspDeathFx.Instantiate();
+            newFx.LookAtFromPosition(blackboard.GlobalPosition, -blackboard.Basis.Z);
             blackboard.GetTree().CurrentScene.AddChild(newFx);
             newFx.Owner = blackboard.GetTree().CurrentScene;
-            newFx.GlobalPosition = blackboard.GlobalPosition;
 
             // get allies
             var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
