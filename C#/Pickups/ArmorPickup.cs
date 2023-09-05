@@ -16,6 +16,9 @@ public partial class ArmorPickup : PickupRigidbody
         // play player fx
         data.playerFx.PlayArmorFx();
 
+        // play player audio
+		data.playerAudio.PlayArmorPickupSound();
+
         base.PickupAction(data);
     }
 }

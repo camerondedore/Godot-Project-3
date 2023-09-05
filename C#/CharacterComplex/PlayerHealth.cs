@@ -7,9 +7,9 @@ namespace PlayerCharacterComplex
     {
 
         [Export]
-        PlayerCharacterAudio characterAudio;
-        [Export]
         PlayerCharacter playerCharacter;
+        [Export]
+        PlayerAudio playerAudio;
         [Export]
         PlayerFx playerFx;
         Disconnector healDisconnector = new Disconnector();
@@ -40,7 +40,7 @@ namespace PlayerCharacterComplex
                     Heal(PlayerStatistics.statistics.currentStatistics.HitPointsPerBandage);
 
                     // play audio
-                    characterAudio.PlayRangerBandageHealSound();
+                    playerAudio.PlayBandageHealSound();
 
                     // start fx
                     playerFx.PlayHealFx();

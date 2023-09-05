@@ -13,6 +13,9 @@ public partial class SaniclePickup : PickupRigidbody
 		// add sanicle to player inventory
 		PlayerInventory.inventory.AddToInventory(0, 0, 1, 0, null);
 
+		// play player audio
+		data.playerAudio.PlaySaniclePickupSound();
+
 		base.PickupAction(data);
 	}
 }

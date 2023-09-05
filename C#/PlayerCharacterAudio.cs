@@ -12,13 +12,6 @@ public partial class PlayerCharacterAudio : AudioTools3d
 
 
 
-    public void PlayRangerBandageHealSound()
-    {
-        PlaySound(rangerBandageHealSound, 0.1f);
-    }
-
-
-
     public void PlayRangerBandageGatherSound()
     {
         PlaySound(rangerBandageGatherSound, 0.1f);

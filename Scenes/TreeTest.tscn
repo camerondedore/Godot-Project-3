@@ -1031,7 +1031,7 @@ transform = Transform3D(-0.315964, 0, 0.948771, 0, 1, 0, -0.948771, 0, -0.315964
 transform = Transform3D(-0.268832, 0.533687, -0.801815, 0, 0.832461, 0.554084, 0.963187, 0.148956, -0.223792, -8.30115, 4.95894, -4.16894)
 
 [node name="SecretArea" parent="Map" instance=ExtResource("53_dmf02")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54178, 1, 12.4618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.62775, 1, 12.4618)
 
 [node name="MobWasp" parent="." instance=ExtResource("67_elsxh")]
 transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 11.9205, 0.200001, 15.1351)

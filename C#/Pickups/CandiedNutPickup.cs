@@ -27,6 +27,9 @@ public partial class CandiedNutPickup : PickupRigidbody
         // add nut to player inventory
         PlayerInventory.inventory.AddToInventory(1, 0, 0, 0, null);
 
+        // play player audio
+		data.playerAudio.PlayCandiedNutPickupSound();
+
         base.PickupAction(data);
     }
 }

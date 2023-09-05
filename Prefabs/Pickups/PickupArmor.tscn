@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmib1tgy5ee4s"]
+[gd_scene load_steps=18 format=3 uid="uid://dmib1tgy5ee4s"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
-[ext_resource type="PackedScene" uid="uid://b0xnlm77pqnqs" path="res://Prefabs/Audio/ArmorAudio.tscn" id="3_7kbdg"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
 [ext_resource type="Material" uid="uid://g12rcw7pf2kw" path="res://Materials/PickupArmor.tres" id="5_ukmsv"]
 [ext_resource type="PackedScene" uid="uid://dd74p0os7qlsq" path="res://Prefabs/FX/FxSparkleLarge.tscn" id="6_m8ucj"]
@@ -56,7 +55,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_nmt57"]
 curve = SubResource("Curve_6cjha")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hkw1n"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_upr00"]
 resource_local_to_scene = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
@@ -76,7 +75,6 @@ color_ramp = SubResource("GradientTexture1D_ix1vo")
 
 [node name="PickupArmor" instance=ExtResource("1_blnc4")]
 script = ExtResource("2_466iw")
-pickupPrefabs = Array[PackedScene]([ExtResource("3_7kbdg")])
 
 [node name="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
@@ -95,6 +93,6 @@ process_material = SubResource("ParticleProcessMaterial_d17cl")
 visible = false
 
 [node name="FxSparkleLarge" parent="." index="4" instance=ExtResource("6_m8ucj")]
-process_material = SubResource("ParticleProcessMaterial_hkw1n")
+process_material = SubResource("ParticleProcessMaterial_upr00")
 
 [node name="FxItemHighlightLarge" parent="." index="5" instance=ExtResource("7_k68di")]

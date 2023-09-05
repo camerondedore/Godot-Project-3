@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bclbkpehdahmf"]
-
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="1_5hbb8"]
-[ext_resource type="AudioStream" uid="uid://djlxfxckxyb8h" path="res://Audio/pickup-sanicle.wav" id="2_nl5i8"]
-
-[node name="SanicleAudio" type="AudioStreamPlayer3D"]
-script = ExtResource("1_5hbb8")
-sounds = Array[AudioStream]([ExtResource("2_nl5i8")])

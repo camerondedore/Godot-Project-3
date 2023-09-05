@@ -13,6 +13,9 @@ public partial class DockLeafPickup : PickupRigidbody
         // add dock leaf to player inventory
         PlayerInventory.inventory.AddToInventory(0, 1, 0, 0, null);
 
+        // play player audio
+		data.playerAudio.PlayDockLeafPickupSound();
+
         base.PickupAction(data);
     }
 }

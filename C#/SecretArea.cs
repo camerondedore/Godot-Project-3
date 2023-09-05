@@ -5,7 +5,7 @@ public partial class SecretArea : Area3D
 {
 
     [Export]
-    AudioTools3d audio;
+    AudioTools audio;
     [Export]
     AudioStream discoverSound;
 

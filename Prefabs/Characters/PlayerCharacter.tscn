@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=66 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
 [ext_resource type="Texture2D" uid="uid://btpa146lw2nrh" path="res://Textures/fx-arrow-trail-pick.png" id="7_ey0rg"]
 [ext_resource type="Script" path="res://C#/PlayerBow/BowAimerTargetFx.cs" id="7_ihwk4"]
+[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerAudio.cs" id="7_ll10o"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
+[ext_resource type="AudioStream" uid="uid://b10wo662h0woi" path="res://Audio/pickup-candied-nut-1.wav" id="8_aqj41"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerHealth.cs" id="8_ltus6"]
 [ext_resource type="Texture2D" uid="uid://cfcpeng6uiqtu" path="res://Textures/fx-arrow-trail-net.png" id="8_nsls7"]
@@ -24,13 +26,19 @@
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiCandiedNutsPickup.tscn" id="9_cffx2"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
 [ext_resource type="Texture2D" uid="uid://bdr72honvktal" path="res://Textures/fx-arrow-trail-fire.png" id="9_q1w1u"]
+[ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut-2.wav" id="9_vai2d"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 [ext_resource type="Texture2D" uid="uid://vv7jwomasoww" path="res://Textures/fx-arrow-trail-bodkin.png" id="10_m6ggt"]
+[ext_resource type="AudioStream" uid="uid://bbbew6mr246nm" path="res://Audio/pickup-dock-leaf.wav" id="10_qxs60"]
 [ext_resource type="PackedScene" uid="uid://dq8dwaqq4b84a" path="res://Prefabs/FX/FxSparkleBowTarget.tscn" id="11_8krr5"]
 [ext_resource type="AudioStream" uid="uid://ch1you6rwmx40" path="res://Audio/bow-target.wav" id="11_dpkpm"]
 [ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
+[ext_resource type="AudioStream" uid="uid://djlxfxckxyb8h" path="res://Audio/pickup-sanicle.wav" id="11_l8a77"]
+[ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="12_i3sml"]
 [ext_resource type="PackedScene" uid="uid://b5fo0lpwtdpl6" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
+[ext_resource type="AudioStream" uid="uid://blya1ymy6ep5p" path="res://Audio/pickup-armor-1.wav" id="13_na50k"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools.cs" id="15_so0xw"]
 [ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
 [ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
@@ -91,16 +99,33 @@ script = ExtResource("4_x6l2t")
 [node name="Inventory" type="Node" parent="."]
 script = ExtResource("4_vgi6r")
 
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("characterAudio", "playerCharacter", "playerFx")]
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("playerCharacter", "playerAudio", "playerFx")]
 script = ExtResource("8_ltus6")
-characterAudio = NodePath("../CharacterAudio")
 playerCharacter = NodePath("..")
+playerAudio = NodePath("../Audio")
 playerFx = NodePath("../Fx")
 
 [node name="Fx" type="Node" parent="." node_paths=PackedStringArray("healFx", "armorFx")]
 script = ExtResource("6_mt2sm")
 healFx = NodePath("../FxRangerBandageHeal")
 armorFx = NodePath("../FxArmorPickup")
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("7_ll10o")
+candiedNutPickupSounds = Array[AudioStream]([ExtResource("8_aqj41"), ExtResource("9_vai2d")])
+dockLeafPickupSound = ExtResource("10_qxs60")
+saniclePickupSound = ExtResource("11_l8a77")
+armorPickupSound = ExtResource("12_i3sml")
+ciderPickupSound = ExtResource("13_na50k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+script = ExtResource("15_so0xw")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Audio"]
+script = ExtResource("15_so0xw")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio"]
+script = ExtResource("15_so0xw")
 
 [node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("7_xdgqf")
@@ -512,13 +537,14 @@ target_position = Vector3(0, 2, 0)
 [node name="GroundDetectorRay" type="RayCast3D" parent="LedgeDetector"]
 target_position = Vector3(0, -1.05, 0)
 
-[node name="PickupArea" type="Area3D" parent="." node_paths=PackedStringArray("playerHealth", "playerFx")]
+[node name="PickupArea" type="Area3D" parent="." node_paths=PackedStringArray("playerHealth", "playerFx", "playerAudio")]
 collision_layer = 0
 collision_mask = 4
 monitorable = false
 script = ExtResource("10_egvck")
 playerHealth = NodePath("../Health")
 playerFx = NodePath("../Fx")
+playerAudio = NodePath("../Audio")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CapsuleShape3D_t3b7p")
