@@ -1,10 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmib1tgy5ee4s"]
+[gd_scene load_steps=19 format=3 uid="uid://dmib1tgy5ee4s"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
 [ext_resource type="PackedScene" uid="uid://6l6ou0eihn0w" path="res://Prefabs/FX/FxArmorPickup.tscn" id="3_5sypj"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
 [ext_resource type="Material" uid="uid://g12rcw7pf2kw" path="res://Materials/PickupArmor.tres" id="5_ukmsv"]
+[ext_resource type="PackedScene" uid="uid://dd74p0os7qlsq" path="res://Prefabs/FX/FxSparkleLarge.tscn" id="6_m8ucj"]
+[ext_resource type="PackedScene" uid="uid://ogik1mkaed2l" path="res://Prefabs/FX/FxItemHighlightLarge.tscn" id="7_k68di"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yl14x"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -38,6 +42,38 @@ scale_max = 0.3
 scale_curve = SubResource("CurveTexture_b5u7h")
 color_ramp = SubResource("GradientTexture1D_3yg5b")
 
+[sub_resource type="Gradient" id="Gradient_nf6sb"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ix1vo"]
+gradient = SubResource("Gradient_nf6sb")
+
+[sub_resource type="Curve" id="Curve_6cjha"]
+_data = [Vector2(0, 0.474138), 0.0, 0.332598, 0, 0, Vector2(0.506329, 1), 0.0510779, 0.0510779, 0, 0, Vector2(1, 0.482759), -0.0454026, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_nmt57"]
+curve = SubResource("Curve_6cjha")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v76is"]
+resource_local_to_scene = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.5
+emission_ring_inner_radius = 0.5
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, -0.04, 0)
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+angle_max = 360.0
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_nmt57")
+color_ramp = SubResource("GradientTexture1D_ix1vo")
+
 [node name="PickupArmor" instance=ExtResource("1_blnc4")]
 script = ExtResource("2_466iw")
 pickupPrefabs = Array[PackedScene]([ExtResource("3_5sypj")])
@@ -47,5 +83,18 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 mesh = ExtResource("4_uw6ui")
 surface_material_override/0 = ExtResource("5_ukmsv")
 
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("SphereShape3D_yl14x")
+
 [node name="FxSparkle" parent="." index="2"]
+process_mode = 4
+visible = false
 process_material = SubResource("ParticleProcessMaterial_d17cl")
+
+[node name="FxItemHighlight" parent="." index="3"]
+visible = false
+
+[node name="FxSparkleLarge" parent="." index="4" instance=ExtResource("6_m8ucj")]
+process_material = SubResource("ParticleProcessMaterial_v76is")
+
+[node name="FxItemHighlightLarge" parent="." index="5" instance=ExtResource("7_k68di")]

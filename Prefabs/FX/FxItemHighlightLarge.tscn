@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ogik1mkaed2l"]
+
+[ext_resource type="PackedScene" uid="uid://4pdqs3fimvwl" path="res://Prefabs/FX/FxItemHighlight.tscn" id="1_8fchc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_qafbc"]
+size = Vector2(1.5, 1.5)
+
+[node name="FxItemHighlightLarge" instance=ExtResource("1_8fchc")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = SubResource("QuadMesh_qafbc")
