@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0xnlm77pqnqs"]
+
+[ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut-2.wav" id="1_wmjbe"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="2_nne2h"]
+[ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="3_yip1p"]
+
+[node name="ArmorAudio" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_wmjbe")
+script = ExtResource("2_nne2h")
+sounds = Array[AudioStream]([ExtResource("3_yip1p")])

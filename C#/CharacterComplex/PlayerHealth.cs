@@ -11,7 +11,8 @@ namespace PlayerCharacterComplex
         [Export]
         PlayerCharacter playerCharacter;
         [Export]
-        GpuParticles3D healFx;
+        GpuParticles3D healFx,
+            armorFx;
         Disconnector healDisconnector = new Disconnector();
 
 
@@ -125,6 +126,13 @@ namespace PlayerCharacterComplex
         public override void Die()
         {
             playerCharacter.machine.SetState(playerCharacter.stateDie);
+        }
+
+
+
+        public void GetArmor()
+        {
+            armorFx.Restart();
         }
     }
 }

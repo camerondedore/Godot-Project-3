@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://6l6ou0eihn0w"]
+[gd_scene load_steps=4 format=3 uid="uid://6l6ou0eihn0w"]
 
 [ext_resource type="Material" uid="uid://dthkc7uw5enna" path="res://Materials/FxArmorPickup.tres" id="1_2k021"]
 [ext_resource type="Material" uid="uid://08hwddc2a0x6" path="res://Particles/FxPlayerBodyEmit.tres" id="1_vx1gn"]
-[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="3_sm2v4"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="4_ebnfa"]
-[ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="5_1ophs"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ei4ll"]
 
@@ -18,8 +15,3 @@ one_shot = true
 explosiveness = 0.9
 process_material = ExtResource("1_vx1gn")
 draw_pass_1 = SubResource("QuadMesh_ei4ll")
-script = ExtResource("3_sm2v4")
-
-[node name="ArmorAudio" type="AudioStreamPlayer3D" parent="."]
-script = ExtResource("4_ebnfa")
-sounds = Array[AudioStream]([ExtResource("5_1ophs")])
