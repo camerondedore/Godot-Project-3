@@ -11,8 +11,7 @@ namespace PlayerCharacterComplex
         [Export]
         PlayerCharacter playerCharacter;
         [Export]
-        GpuParticles3D healFx,
-            armorFx;
+        PlayerFx playerFx;
         Disconnector healDisconnector = new Disconnector();
 
 
@@ -44,7 +43,7 @@ namespace PlayerCharacterComplex
                     characterAudio.PlayRangerBandageHealSound();
 
                     // start fx
-                    healFx.Restart();
+                    playerFx.PlayHealFx();
 
                     // remove bandage from inventory
                     PlayerInventory.inventory.AddToInventory(0, 0, 0, -1, null);
@@ -65,9 +64,6 @@ namespace PlayerCharacterComplex
         {
             // apply healing
             hitPoints = Mathf.Clamp(hitPoints + hp, 0, PlayerStatistics.statistics.GetMaxHitPoints());
-
-            // start fx
-            healFx.Restart();
 
             // update statistics
             PlayerStatistics.statistics.UpdateHitPoints(hitPoints);
@@ -126,13 +122,6 @@ namespace PlayerCharacterComplex
         public override void Die()
         {
             playerCharacter.machine.SetState(playerCharacter.stateDie);
-        }
-
-
-
-        public void GetArmor()
-        {
-            armorFx.Restart();
         }
     }
 }

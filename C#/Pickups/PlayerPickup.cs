@@ -7,6 +7,8 @@ public partial class PlayerPickup : Area3D
 
     [Export]
     PlayerHealth playerHealth;
+    [Export]
+    PlayerFx playerFx;
     PlayerPickupData pickupData = new PlayerPickupData();
 
 
@@ -18,6 +20,7 @@ public partial class PlayerPickup : Area3D
 
         // set up pickup data
         pickupData.playerhealth = playerHealth;
+        pickupData.playerFx = playerFx;
     }
     
     
@@ -39,6 +42,7 @@ public partial class PlayerPickup : Area3D
     public class PlayerPickupData
     {
         public PlayerHealth playerhealth;
+        public PlayerFx playerFx;
     }
 }
 

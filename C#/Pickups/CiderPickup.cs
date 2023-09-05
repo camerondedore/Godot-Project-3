@@ -16,6 +16,9 @@ public partial class CiderPickup : PickupRigidbody
         // update health
         data.playerhealth.UpdateHealth();
 
+        // play player fx
+        data.playerFx.PlayerCiderFx();
+
         base.PickupAction(data);
     }
 }
