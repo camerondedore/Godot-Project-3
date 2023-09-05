@@ -56,7 +56,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_nmt57"]
 curve = SubResource("Curve_6cjha")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v76is"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o364a"]
 resource_local_to_scene = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
@@ -95,6 +95,6 @@ process_material = SubResource("ParticleProcessMaterial_d17cl")
 visible = false
 
 [node name="FxSparkleLarge" parent="." index="4" instance=ExtResource("6_m8ucj")]
-process_material = SubResource("ParticleProcessMaterial_v76is")
+process_material = SubResource("ParticleProcessMaterial_o364a")
 
 [node name="FxItemHighlightLarge" parent="." index="5" instance=ExtResource("7_k68di")]
