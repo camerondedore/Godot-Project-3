@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=65 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -12,9 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerFx.cs" id="6_mt2sm"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
+[ext_resource type="Script" path="res://C#/PlayerAudio.cs" id="7_eessr"]
 [ext_resource type="Texture2D" uid="uid://btpa146lw2nrh" path="res://Textures/fx-arrow-trail-pick.png" id="7_ey0rg"]
 [ext_resource type="Script" path="res://C#/PlayerBow/BowAimerTargetFx.cs" id="7_ihwk4"]
-[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerAudio.cs" id="7_ll10o"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
 [ext_resource type="AudioStream" uid="uid://b10wo662h0woi" path="res://Audio/pickup-candied-nut-1.wav" id="8_aqj41"]
@@ -40,13 +40,11 @@
 [ext_resource type="AudioStream" uid="uid://blya1ymy6ep5p" path="res://Audio/pickup-armor-1.wav" id="13_na50k"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools.cs" id="15_so0xw"]
 [ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
-[ext_resource type="Script" path="res://C#/PlayerCharacterAudio.cs" id="16_tm1am"]
 [ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
 [ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="20_no75w"]
-[ext_resource type="AudioStream" uid="uid://dqx1dj05aoil5" path="res://Audio/ranger-bandage-heal.wav" id="22_cdqx6"]
 [ext_resource type="AudioStream" uid="uid://k8ogntdoh24" path="res://Audio/ranger-bandage-gather.wav" id="23_g4fk7"]
 [ext_resource type="AudioStream" uid="uid://dcv3yunkkpab4" path="res://Audio/ranger-bandage-craft.wav" id="23_gbit2"]
 [ext_resource type="PackedScene" uid="uid://dpntiqvy2cgfx" path="res://Prefabs/UI/UiArmorPickup.tscn" id="26_ent0s"]
@@ -60,6 +58,7 @@
 [ext_resource type="AudioStream" uid="uid://dxnxfhrr70g8f" path="res://Audio/fall-damage.wav" id="37_howem"]
 [ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
 [ext_resource type="PackedScene" uid="uid://pc68qled2whb" path="res://Prefabs/Player Arrows/PlayerArrowBlade.tscn" id="42_w8q66"]
+[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterAudio.cs" id="46_hidfy"]
 [ext_resource type="PackedScene" uid="uid://dpv3c061py1ht" path="res://Prefabs/FX/FxRangerBandageHeal.tscn" id="49_p7me3"]
 [ext_resource type="PackedScene" uid="uid://6l6ou0eihn0w" path="res://Prefabs/FX/FxArmorPickup.tscn" id="53_3pth2"]
 
@@ -111,7 +110,7 @@ healFx = NodePath("../FxRangerBandageHeal")
 armorFx = NodePath("../FxArmorPickup")
 
 [node name="Audio" type="Node" parent="."]
-script = ExtResource("7_ll10o")
+script = ExtResource("7_eessr")
 candiedNutPickupSounds = Array[AudioStream]([ExtResource("8_aqj41"), ExtResource("9_vai2d")])
 dockLeafPickupSound = ExtResource("10_qxs60")
 saniclePickupSound = ExtResource("11_l8a77")
@@ -551,8 +550,7 @@ shape = SubResource("CapsuleShape3D_t3b7p")
 
 [node name="CharacterAudio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
-script = ExtResource("16_tm1am")
-rangerBandageHealSound = ExtResource("22_cdqx6")
+script = ExtResource("46_hidfy")
 rangerBandageGatherSound = ExtResource("23_g4fk7")
 rangerBandageCraftSound = ExtResource("23_gbit2")
 fallDamageSound = ExtResource("37_howem")
