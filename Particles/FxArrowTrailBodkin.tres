@@ -32,5 +32,5 @@ angle_min = -10.0
 angle_max = 10.0
 scale_min = 0.5
 scale_curve = SubResource("CurveTexture_1mklh")
-color = Color(0.411765, 0.670588, 0.819608, 1)
+color = Color(0.501961, 0.815686, 1, 1)
 color_ramp = SubResource("GradientTexture1D_yjwn2")
