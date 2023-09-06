@@ -21,6 +21,9 @@ radius = 0.3
 [node name="PropPot1Soup" instance=ExtResource("1_071tj")]
 collision_layer = 16
 
+[node name="MeshInstance3D" parent="." index="0"]
+layers = 2
+
 [node name="SoupTarget" type="StaticBody3D" parent="." index="2" node_paths=PackedStringArray("targetNode", "collider", "cooker")]
 collision_layer = 64
 collision_mask = 0
@@ -51,6 +54,7 @@ soupMesh = NodePath("SoupMesh")
 
 [node name="SoupMesh" type="MeshInstance3D" parent="SoupTarget/Cooker" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+layers = 2
 mesh = ExtResource("2_jgvtq")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("3_x4nd1")

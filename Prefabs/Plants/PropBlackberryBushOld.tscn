@@ -20,11 +20,13 @@ colliders = [NodePath("CollisionShape3D"), NodePath("CollisionShape3D2")]
 cutFx = ExtResource("2_yv47g")
 
 [node name="MeshUncut" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = ExtResource("1_74o7b")
 surface_material_override/0 = ExtResource("2_c08f5")
 
 [node name="MeshCut" type="MeshInstance3D" parent="."]
 visible = false
+layers = 2
 mesh = ExtResource("3_d6b5l")
 surface_material_override/0 = ExtResource("2_c08f5")
 

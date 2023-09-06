@@ -55,7 +55,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_nmt57"]
 curve = SubResource("Curve_6cjha")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_upr00"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qc66c"]
 resource_local_to_scene = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
@@ -77,7 +77,7 @@ color_ramp = SubResource("GradientTexture1D_ix1vo")
 script = ExtResource("2_466iw")
 
 [node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 0, 0)
 mesh = ExtResource("4_uw6ui")
 surface_material_override/0 = ExtResource("5_ukmsv")
 
@@ -93,6 +93,6 @@ process_material = SubResource("ParticleProcessMaterial_d17cl")
 visible = false
 
 [node name="FxSparkleLarge" parent="." index="4" instance=ExtResource("6_m8ucj")]
-process_material = SubResource("ParticleProcessMaterial_upr00")
+process_material = SubResource("ParticleProcessMaterial_qc66c")
 
 [node name="FxItemHighlightLarge" parent="." index="5" instance=ExtResource("7_k68di")]

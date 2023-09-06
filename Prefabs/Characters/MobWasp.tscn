@@ -47,18 +47,19 @@ maxHitPoints = 1.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.711334, 7.80325e-17, 7.89739e-17, 0.702854)
-bones/1/rotation = Quaternion(0.707088, 0.0051339, 0.707088, 0.00513396)
-bones/2/rotation = Quaternion(0.862712, 0.0950564, 0.484375, -0.109877)
-bones/3/rotation = Quaternion(-0.56743, -0.404949, -0.409049, 0.588829)
-bones/4/rotation = Quaternion(-0.486989, -0.359183, -0.299948, 0.737469)
-bones/5/rotation = Quaternion(0.783412, 0.181589, 0.514441, -0.29773)
-bones/6/rotation = Quaternion(0.862712, -0.0950564, -0.484375, -0.109877)
-bones/7/rotation = Quaternion(-0.583894, 0.390598, 0.427788, 0.568769)
-bones/8/rotation = Quaternion(-0.4974, 0.351053, 0.326987, 0.722796)
-bones/9/rotation = Quaternion(0.778677, -0.201066, -0.506398, -0.311121)
+bones/0/rotation = Quaternion(-0.711792, 7.7981e-17, 7.90248e-17, 0.70239)
+bones/1/rotation = Quaternion(0.70709, 0.00492967, 0.70709, 0.00492973)
+bones/2/rotation = Quaternion(0.862603, 0.086794, 0.485428, -0.11288)
+bones/3/rotation = Quaternion(-0.566544, -0.404334, -0.409657, 0.589681)
+bones/4/rotation = Quaternion(-0.486031, -0.358793, -0.300415, 0.738101)
+bones/5/rotation = Quaternion(0.783083, 0.181021, 0.514641, -0.298593)
+bones/6/rotation = Quaternion(0.862603, -0.086794, -0.485428, -0.11288)
+bones/7/rotation = Quaternion(-0.583039, 0.389954, 0.428374, 0.569646)
+bones/8/rotation = Quaternion(-0.496461, 0.350628, 0.327443, 0.723442)
+bones/9/rotation = Quaternion(0.778329, -0.2005, -0.506622, -0.311991)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
+layers = 2
 surface_material_override/0 = ExtResource("3_rexv1")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -97,7 +98,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.142169, -0.364001)
 visible = false
 script = ExtResource("6_nqxbr")
 speed = 4.0
-randomDirectionRadius = 3.0
 maxRotationSpeed = 6.0
 
 [node name="GibWaspAbdomen" parent="Gibs" instance=ExtResource("6_k7c3p")]

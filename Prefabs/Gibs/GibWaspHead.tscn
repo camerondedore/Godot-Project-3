@@ -19,6 +19,7 @@ script = ExtResource("1_qlb5l")
 limiter = NodePath("NodeLimiter")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = ExtResource("1_qj7l5")
 surface_material_override/0 = ExtResource("2_ew54o")
 
