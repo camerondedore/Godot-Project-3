@@ -12,7 +12,8 @@ public partial class PlayerInput : Node
 		jump,
 		fire1,
 		interact,
-		heal;
+		heal,
+		tab;
 	public static bool isMouseMoving;
 
 
@@ -52,6 +53,7 @@ public partial class PlayerInput : Node
 		fire1 = Input.GetActionStrength("player-fire-1");
 		interact = Input.GetActionStrength("player-interact");
 		heal = Input.GetActionStrength("player-heal");
+		tab = Input.GetActionStrength("player-tab");
 
 
 		// to determine if move input is greater than 0 faster

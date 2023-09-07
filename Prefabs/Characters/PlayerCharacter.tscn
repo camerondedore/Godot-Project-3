@@ -128,10 +128,14 @@ script = ExtResource("15_so0xw")
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio"]
 script = ExtResource("15_so0xw")
 
-[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
+[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsRect", "dockLeafRect", "sanicleRect", "rangerBandageRect", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("7_xdgqf")
 hitPointBarsContainer = NodePath("Hud/HitPointBars")
 shieldsContainer = NodePath("Hud/Armor")
+candiedNutsRect = NodePath("Hud/CandiedNuts")
+dockLeafRect = NodePath("Hud/DockLeaves")
+sanicleRect = NodePath("Hud/Sanicle")
+rangerBandageRect = NodePath("Hud/RangerBandage")
 candiedNutsCounter = NodePath("Hud/CandiedNuts/CandiedNutsCounter")
 dockLeavesCounter = NodePath("Hud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("Hud/Sanicle/SanicleCounter")

@@ -11,6 +11,11 @@ public partial class PlayerHud : Node
     List<TextureProgressBar> hitPointBars = new List<TextureProgressBar>();
     List<TextureRect> shields = new List<TextureRect>();
     [Export]
+    TextureRect candiedNutsRect,
+        dockLeafRect,
+        sanicleRect,
+        rangerBandageRect;
+    [Export]
     Label candiedNutsCounter,
         dockLeavesCounter,
         sanicleCounter,
@@ -23,8 +28,10 @@ public partial class PlayerHud : Node
 
     PlayerStatistics.Statistics currentStatistics;
     PlayerInventory.Inventory currentInventory;
+    Disconnector tabDisconnector = new Disconnector();
     double colorChangeStartTime,
-        colorChangeTimeLength = 0.5;
+        colorChangeTimeLength = 0.5,
+        visibilityTimer;
     float hitPoints,
         hitPointsPerBar,
         candiedNuts,
@@ -33,12 +40,15 @@ public partial class PlayerHud : Node
         rangerBandages;
     int hitPointUpgrades,
         armor;
-    bool colorChanged = false;
+    bool colorChanged = false,
+        rectsVisible = true;
 
 
 
     public override void _Ready()
     {
+        visibilityTimer = 5;
+
         // get statistics object
         currentStatistics = PlayerStatistics.statistics.currentStatistics;
 
@@ -123,6 +133,7 @@ public partial class PlayerHud : Node
             // spawn pickup
             hudPickups.AddCandiedNut();
             
+            visibilityTimer = 5;
         }
 
         if(dockLeaves != currentInventory.DockLeaves)
@@ -141,6 +152,8 @@ public partial class PlayerHud : Node
             // update label
             dockLeaves = currentInventory.DockLeaves;
             dockLeavesCounter.Text = dockLeaves.ToString();
+
+            visibilityTimer = 5;
         }
 
         if(sanicle != currentInventory.Sanicle)
@@ -156,10 +169,11 @@ public partial class PlayerHud : Node
                 hudPickups.RemoveSanicle();
             }
 
-
             // update label
             sanicle = currentInventory.Sanicle;
             sanicleCounter.Text = sanicle.ToString();
+
+            visibilityTimer = 5;
         }
 
         if(rangerBandages != currentInventory.RangerBandages)
@@ -174,6 +188,8 @@ public partial class PlayerHud : Node
             // update label
             rangerBandages = currentInventory.RangerBandages;
             rangerBandagesCounter.Text = rangerBandages.ToString();
+
+            visibilityTimer = 5;
         }
 
         // reset hit point bar color
@@ -183,6 +199,39 @@ public partial class PlayerHud : Node
             UpdateHitPointBars(0);
         }
 
+
+        // check for tab input
+        if(tabDisconnector.Trip(PlayerInput.tab))
+        {
+            // reset rect visibility
+            visibilityTimer = 5;
+        }
+
+
+        // visibility timer
+        if(visibilityTimer > 0)
+        {
+            visibilityTimer -= delta;
+
+            if(rectsVisible == false)
+            {
+                candiedNutsRect.Visible = true;
+                dockLeafRect.Visible = true;
+                sanicleRect.Visible = true;
+                rangerBandageRect.Visible = true;
+
+                rectsVisible = true;
+            }
+        }
+        else if(rectsVisible == true)
+        {
+            candiedNutsRect.Visible = false;
+            dockLeafRect.Visible = false;
+            sanicleRect.Visible = false;
+            rangerBandageRect.Visible = false;
+
+            rectsVisible = false;
+        }
     }
 
 
