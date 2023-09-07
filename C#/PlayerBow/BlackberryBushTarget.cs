@@ -11,6 +11,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
     Node3D uncutMesh,
         cutMesh;
     [Export]
+    Decal cutDecal;
+    [Export]
     CollisionShape3D[] colliders;
     [Export]
     PackedScene cutFx;
@@ -49,9 +51,10 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
 
     public void Hit()
     {
-        // hide uncut
+        // flip visual nodes to show cut
         uncutMesh.Visible = false;
         cutMesh.Visible = true;
+        cutDecal.Visible = true;
 
         // disable collision
         foreach(var c in colliders)
