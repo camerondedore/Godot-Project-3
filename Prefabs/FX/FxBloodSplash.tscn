@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://disiwj2xcj7fq"]
 
-[ext_resource type="Material" uid="uid://3o8p8ebacljd" path="res://Materials/FxBloodSplash.tres" id="1_8qji5"]
+[ext_resource type="Material" uid="uid://3o8p8ebacljd" path="res://Materials/Fx/FxBloodSplash.tres" id="1_8qji5"]
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_getu1"]
 
 [sub_resource type="Gradient" id="Gradient_1jnp3"]

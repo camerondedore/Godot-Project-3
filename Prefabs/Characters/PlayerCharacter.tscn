@@ -37,7 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://djlxfxckxyb8h" path="res://Audio/pickup-sanicle.wav" id="11_l8a77"]
 [ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="12_i3sml"]
 [ext_resource type="PackedScene" uid="uid://b5fo0lpwtdpl6" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
-[ext_resource type="AudioStream" uid="uid://blya1ymy6ep5p" path="res://Audio/pickup-armor-1.wav" id="13_na50k"]
+[ext_resource type="AudioStream" uid="uid://bry4ydhi7s7h5" path="res://Audio/pickup-cider.wav" id="14_1agc6"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools.cs" id="15_so0xw"]
 [ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
 [ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
@@ -117,7 +117,7 @@ bandageHealSound = ExtResource("22_cdqx6")
 dockLeafPickupSound = ExtResource("10_qxs60")
 saniclePickupSound = ExtResource("11_l8a77")
 armorPickupSound = ExtResource("12_i3sml")
-ciderPickupSound = ExtResource("13_na50k")
+ciderPickupSound = ExtResource("14_1agc6")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 script = ExtResource("15_so0xw")

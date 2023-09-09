@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0f784sqglc11"]
 
-[ext_resource type="Material" uid="uid://ct602q526s03m" path="res://Materials/FxArrowTrailFire.tres" id="1_jfqnd"]
+[ext_resource type="Material" uid="uid://ct602q526s03m" path="res://Materials/Fx/FxArrowTrailFire.tres" id="1_jfqnd"]
 [ext_resource type="Material" uid="uid://c1ek5b30uk1cl" path="res://Particles/FxArrowTrailFire.tres" id="2_srssy"]
 [ext_resource type="Script" path="res://C#/ArrowTrail.cs" id="3_qaqfe"]
 [ext_resource type="Script" path="res://C#/Common/DelayedDestroy.cs" id="4_73kvq"]

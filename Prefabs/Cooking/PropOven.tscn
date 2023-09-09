@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bpqngqvasucy4"]
 
 [ext_resource type="ArrayMesh" uid="uid://4l5oou15its4" path="res://Models/prop-oven.res" id="1_1p6ps"]
-[ext_resource type="Material" uid="uid://b4w3o81krjs7c" path="res://Materials/PropOven.tres" id="2_pxr38"]
+[ext_resource type="Material" uid="uid://b4w3o81krjs7c" path="res://Materials/Props/PropOven.tres" id="2_pxr38"]
 [ext_resource type="Material" uid="uid://bgv43mrb54kiv" path="res://Materials/Embers.tres" id="3_sm73r"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_r174x"]

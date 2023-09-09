@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkql0j4oe33cn"]
 
-[ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/FxArrowHitEnemy.tres" id="1_8eido"]
+[ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="1_8eido"]
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gohjn"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_d8mk0"]
 [ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_2stnk"]

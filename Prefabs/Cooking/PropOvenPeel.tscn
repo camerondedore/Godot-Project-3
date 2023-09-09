@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1ubnvd3e1ahh"]
 
 [ext_resource type="ArrayMesh" uid="uid://qw84ywtphx3e" path="res://Models/prop-oven-peel.res" id="1_l2y1j"]
-[ext_resource type="Material" uid="uid://bdwgxhm1ps1vi" path="res://Materials/PropOvenPeel.tres" id="2_urbir"]
+[ext_resource type="Material" uid="uid://bdwgxhm1ps1vi" path="res://Materials/Props/PropOvenPeel.tres" id="2_urbir"]
 
 [node name="PropOvenPeel" type="Node3D"]
 

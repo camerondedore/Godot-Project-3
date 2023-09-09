@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://4pdqs3fimvwl"]
 
-[ext_resource type="Material" uid="uid://tj8je84ikn7e" path="res://Materials/FxItemHighlight.tres" id="1_c2vcs"]
+[ext_resource type="Material" uid="uid://tj8je84ikn7e" path="res://Materials/Fx/FxItemHighlight.tres" id="1_c2vcs"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_amh7b"]
 

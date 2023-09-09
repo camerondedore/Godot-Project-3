@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://dbb5yp644jsdv"]
 
-[ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/FxDust.tres" id="1_dbchy"]
+[ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/Fx/FxDust.tres" id="1_dbchy"]
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_4le6q"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_dgipw"]
-[ext_resource type="Material" uid="uid://b1fb52ywj54rw" path="res://Materials/FxDirt.tres" id="4_njdnm"]
+[ext_resource type="Material" uid="uid://b1fb52ywj54rw" path="res://Materials/Fx/FxDirt.tres" id="4_njdnm"]
 
 [sub_resource type="Gradient" id="Gradient_ckonk"]
 offsets = PackedFloat32Array(0, 0.0792683, 0.658537, 1)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuxcfmy1d3cvv"]
 
 [ext_resource type="Script" path="res://C#/BlackWall.cs" id="1_ykcgk"]
-[ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/FxBlackWall.tres" id="2_3eutq"]
+[ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="2_3eutq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_p5a8i"]
 

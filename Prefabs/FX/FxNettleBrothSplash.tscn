@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bc3we1uxwp2cl"]
 
-[ext_resource type="Material" uid="uid://cukasgk3fppuc" path="res://Materials/FxNettleBrothSplash.tres" id="1_87hcc"]
+[ext_resource type="Material" uid="uid://cukasgk3fppuc" path="res://Materials/Fx/FxNettleBrothSplash.tres" id="1_87hcc"]
 [ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_8r7rk"]
 
 [sub_resource type="Gradient" id="Gradient_ltb1p"]

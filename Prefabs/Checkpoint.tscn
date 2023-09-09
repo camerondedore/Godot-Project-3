@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
 [ext_resource type="AudioStream" uid="uid://mqbs8l06sitt" path="res://Audio/checkpoint-save.wav" id="2_28jj8"]
 [ext_resource type="ArrayMesh" uid="uid://diqgy6v65xxd7" path="res://Models/prop-checkpoint.res" id="2_afk7b"]
-[ext_resource type="Material" uid="uid://d15v4ynacq4" path="res://Materials/PropCheckpoint.tres" id="3_pxcm7"]
+[ext_resource type="Material" uid="uid://d15v4ynacq4" path="res://Materials/Props/PropCheckpoint.tres" id="3_pxcm7"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="3_x88vd"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_5ytto"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_dfee6"]

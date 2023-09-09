@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cwlxx35uf8j51"]
 
 [ext_resource type="ArrayMesh" uid="uid://dj7e04u3j24fs" path="res://Models/prop-oven-door.res" id="1_h6w06"]
-[ext_resource type="Material" uid="uid://b4w3o81krjs7c" path="res://Materials/PropOven.tres" id="2_cfuvu"]
+[ext_resource type="Material" uid="uid://b4w3o81krjs7c" path="res://Materials/Props/PropOven.tres" id="2_cfuvu"]
 
 [node name="PropOvenDoor" type="Node3D"]
 

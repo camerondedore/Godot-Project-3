@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dq8dwaqq4b84a"]
 
-[ext_resource type="Material" uid="uid://bwxwy22piif4c" path="res://Materials/FxSparkleBowTarget.tres" id="1_asg41"]
+[ext_resource type="Material" uid="uid://bwxwy22piif4c" path="res://Materials/Fx/FxSparkleBowTarget.tres" id="1_asg41"]
 
 [sub_resource type="Gradient" id="Gradient_cjmbd"]
 offsets = PackedFloat32Array(0.377193, 0.535088, 0.833333, 1)

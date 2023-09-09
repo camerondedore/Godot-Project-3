@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_brbdi"]
 [ext_resource type="Script" path="res://C#/Pickups/CiderPickup.cs" id="2_icw7e"]
 [ext_resource type="ArrayMesh" uid="uid://c1t8i5kk8ni7e" path="res://Models/pickup-cider.res" id="3_hmtwk"]
-[ext_resource type="Material" uid="uid://bfoof7dg45qdu" path="res://Materials/PickupCiderGlassRim.tres" id="4_fs0ha"]
-[ext_resource type="Material" uid="uid://cod1rlhu2o8ob" path="res://Materials/PickupCiderCork.tres" id="4_q1ijp"]
+[ext_resource type="Material" uid="uid://bfoof7dg45qdu" path="res://Materials/Pickups/PickupCiderGlassRim.tres" id="4_fs0ha"]
+[ext_resource type="Material" uid="uid://cod1rlhu2o8ob" path="res://Materials/Pickups/PickupCiderCork.tres" id="4_q1ijp"]
 [ext_resource type="PackedScene" uid="uid://ogik1mkaed2l" path="res://Prefabs/FX/FxItemHighlightLarge.tscn" id="7_jh20n"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]

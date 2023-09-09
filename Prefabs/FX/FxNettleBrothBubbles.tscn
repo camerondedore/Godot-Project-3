@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://viykanumkbs5"]
 
-[ext_resource type="Material" uid="uid://c8wesekyvkws7" path="res://Materials/FxNettleBrothBubble.tres" id="1_qn030"]
+[ext_resource type="Material" uid="uid://c8wesekyvkws7" path="res://Materials/Fx/FxNettleBrothBubble.tres" id="1_qn030"]
 [ext_resource type="ArrayMesh" uid="uid://cojdlxjtnkwts" path="res://Models/prop-pot-1-soup-bubble.res" id="2_v76i8"]
 
 [sub_resource type="Gradient" id="Gradient_mscwr"]

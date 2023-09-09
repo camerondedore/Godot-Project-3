@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bn1ffv7hxh6lu"]
 
-[ext_resource type="Material" uid="uid://bfrlxbn18rgl0" path="res://Materials/FxCrafting.tres" id="1_mqpkm"]
+[ext_resource type="Material" uid="uid://bfrlxbn18rgl0" path="res://Materials/Fx/FxCrafting.tres" id="1_mqpkm"]
 
 [sub_resource type="Gradient" id="Gradient_7ks5y"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)

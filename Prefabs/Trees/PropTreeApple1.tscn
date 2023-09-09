@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b6kr71wu0u6mh" path="res://Models/prop-tree-apple-1.res" id="1_tkot2"]
 [ext_resource type="Material" uid="uid://boymd3ukajjrr" path="res://Materials/BarkAppleWind.tres" id="2_fd2op"]
 [ext_resource type="Material" uid="uid://dnj7b6swgc61t" path="res://Materials/LeavesApple.tres" id="3_xdp72"]
-[ext_resource type="Material" uid="uid://b7eoe0ybq631i" path="res://Materials/PropAppleWind.tres" id="4_k43v2"]
+[ext_resource type="Material" uid="uid://b7eoe0ybq631i" path="res://Materials/Props/PropAppleWind.tres" id="4_k43v2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lls4m"]
 radius = 0.35

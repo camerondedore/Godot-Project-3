@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bcwg207ggadmk"]
+
+[ext_resource type="Texture2D" uid="uid://kr24b057in7d" path="res://Textures/pickup-nettle-broth-diffuse.png" id="1_27k0f"]
+[ext_resource type="Texture2D" uid="uid://da6o22m6rtv3l" path="res://Textures/pickup-nettle-broth-roughness.png" id="2_g3fyv"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_27k0f")
+metallic = 0.2
+roughness_texture = ExtResource("2_g3fyv")
+rim_enabled = true
+rim = 0.15

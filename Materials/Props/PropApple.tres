@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b7pag2pkkvl0d"]
+
+[ext_resource type="Texture2D" uid="uid://bn00b6bh3t3vm" path="res://Textures/prop-apple-diffuse.png" id="1_brsy8"]
+
+[resource]
+albedo_texture = ExtResource("1_brsy8")
+metallic = 0.1
+roughness = 0.5

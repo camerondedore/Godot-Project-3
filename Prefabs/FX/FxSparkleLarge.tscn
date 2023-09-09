@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dd74p0os7qlsq"]
 
-[ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/FxSparkle.tres" id="1_a4pd3"]
+[ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/Fx/FxSparkle.tres" id="1_a4pd3"]
 [ext_resource type="Material" uid="uid://dhmavnuv18obg" path="res://Particles/FxSparkleLarge.tres" id="2_gko8f"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_32l67"]

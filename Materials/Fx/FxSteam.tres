@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bvhy42p7ljrtr"]
+
+[ext_resource type="Texture2D" uid="uid://bbwbpxe0hca56" path="res://Textures/fx-steam.png" id="1_vk3uf"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_vk3uf")
+disable_receive_shadows = true
+billboard_mode = 2
+billboard_keep_scale = true

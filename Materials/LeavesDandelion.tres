@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dh8sadauh7jgo"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Materials/VegetationLeaves.tres" id="1_mtajw"]
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_0rnyv"]
 [ext_resource type="Texture2D" uid="uid://cqcrgl4jgxnqq" path="res://Textures/leaves-dandelion.png" id="2_hy7m8"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_mtajw")
+shader = ExtResource("1_0rnyv")
 shader_parameter/Wind_Amplitude = 0.02
 shader_parameter/Wind_Speed = 0.1
 shader_parameter/Wind_Turbulance = 1.0

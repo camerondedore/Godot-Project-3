@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://6l6ou0eihn0w"]
 
-[ext_resource type="Material" uid="uid://dthkc7uw5enna" path="res://Materials/FxArmorPickup.tres" id="1_2k021"]
+[ext_resource type="Material" uid="uid://dthkc7uw5enna" path="res://Materials/Fx/FxArmorPickup.tres" id="1_2k021"]
 [ext_resource type="Material" uid="uid://08hwddc2a0x6" path="res://Particles/FxPlayerBodyEmit.tres" id="1_vx1gn"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ei4ll"]

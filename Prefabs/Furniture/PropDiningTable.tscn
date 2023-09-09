@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://csiucvqejw8cr"]
 
 [ext_resource type="ArrayMesh" uid="uid://dbxwflg6cviym" path="res://Models/prop-dining-table.res" id="1_crokn"]
-[ext_resource type="Material" uid="uid://btmy61b6u872t" path="res://Materials/PropDiningTable.tres" id="2_vpm4o"]
+[ext_resource type="Material" uid="uid://btmy61b6u872t" path="res://Materials/Props/PropDiningTable.tres" id="2_vpm4o"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qulw0"]
 size = Vector3(3, 0.1, 1.333)

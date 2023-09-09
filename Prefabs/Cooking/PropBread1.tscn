@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2h87bnhr23vf"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqtdxfkhigsxe" path="res://Models/prop-bread-1.res" id="1_qq5gg"]
-[ext_resource type="Material" uid="uid://bco4hiptdjxhi" path="res://Materials/PropBread.tres" id="2_as2s7"]
+[ext_resource type="Material" uid="uid://bco4hiptdjxhi" path="res://Materials/Props/PropBread.tres" id="2_as2s7"]
 
 [node name="PropBread1" type="Node3D"]
 

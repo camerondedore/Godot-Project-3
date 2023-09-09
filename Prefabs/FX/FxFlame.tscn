@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dny2auormn3lo"]
 
-[ext_resource type="Material" uid="uid://dtv4txrerct12" path="res://Materials/FxFlame.tres" id="1_kvd1j"]
+[ext_resource type="Material" uid="uid://dtv4txrerct12" path="res://Materials/Fx/FxFlame.tres" id="1_kvd1j"]
 
 [sub_resource type="Gradient" id="Gradient_8x8kk"]
 offsets = PackedFloat32Array(0, 0.177515, 1)

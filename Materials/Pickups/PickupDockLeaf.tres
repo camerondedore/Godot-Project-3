@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dghimnrpe1mpq"]
+
+[ext_resource type="Texture2D" uid="uid://ui287r15406y" path="res://Textures/pickup-dock-leaf-diffuse.png" id="1_jtob7"]
+
+[resource]
+albedo_texture = ExtResource("1_jtob7")
+metallic = 0.2
+roughness = 0.7
+rim_enabled = true
+rim = 0.21

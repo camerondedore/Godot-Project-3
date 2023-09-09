@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5bp34m33aba6"]
 
-[ext_resource type="Material" uid="uid://b01ijq0ioqb8g" path="res://Materials/FxWaspVenom.tres" id="1_42o58"]
+[ext_resource type="Material" uid="uid://b01ijq0ioqb8g" path="res://Materials/Fx/FxWaspVenom.tres" id="1_42o58"]
 
 [sub_resource type="Gradient" id="Gradient_6s1mq"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
