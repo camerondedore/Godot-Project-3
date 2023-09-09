@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cod1rlhu2o8ob"]
+
+[ext_resource type="Texture2D" uid="uid://d0j7ae2k7m0pt" path="res://Textures/pickup-cider-diffuse.png" id="1_4c0oe"]
+
+[resource]
+albedo_texture = ExtResource("1_4c0oe")

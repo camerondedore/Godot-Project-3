@@ -1,12 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvpfiw0o36yme"]
+[gd_scene load_steps=12 format=3 uid="uid://cvpfiw0o36yme"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_brbdi"]
 [ext_resource type="Script" path="res://C#/Pickups/CiderPickup.cs" id="2_icw7e"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_onnmh"]
-top_radius = 0.1
-bottom_radius = 0.1
-height = 0.3
+[ext_resource type="ArrayMesh" uid="uid://c1t8i5kk8ni7e" path="res://Models/pickup-cider.res" id="3_hmtwk"]
+[ext_resource type="Material" uid="uid://bfoof7dg45qdu" path="res://Materials/PickupCiderGlassRim.tres" id="4_fs0ha"]
+[ext_resource type="Material" uid="uid://cod1rlhu2o8ob" path="res://Materials/PickupCiderCork.tres" id="4_q1ijp"]
+[ext_resource type="PackedScene" uid="uid://ogik1mkaed2l" path="res://Prefabs/FX/FxItemHighlightLarge.tscn" id="7_jh20n"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -45,7 +44,15 @@ script = ExtResource("2_icw7e")
 pickupPrefabs = Array[PackedScene]([])
 
 [node name="MeshInstance3D" parent="." index="0"]
-mesh = SubResource("CylinderMesh_onnmh")
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
+mesh = ExtResource("3_hmtwk")
+surface_material_override/0 = ExtResource("4_fs0ha")
+surface_material_override/1 = ExtResource("4_q1ijp")
 
 [node name="FxSparkle" parent="." index="2"]
 process_material = SubResource("ParticleProcessMaterial_t0han")
+
+[node name="FxItemHighlight" parent="." index="3"]
+visible = false
+
+[node name="FxItemHighlightLarge" parent="." index="4" instance=ExtResource("7_jh20n")]

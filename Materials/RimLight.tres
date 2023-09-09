@@ -92,6 +92,8 @@ input_name = "normal"
 
 [resource]
 code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
 uniform sampler2D Albedo : source_color;
 uniform sampler2D Metallic;
 uniform float Metallic_Multiplier = 0;
@@ -207,7 +209,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-429.467, -115.481)
+graph_offset = Vector2(-197.987, -8.78654)
 nodes/fragment/0/position = Vector2(660, 180)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture2DParameter_44wak")
 nodes/fragment/2/position = Vector2(-280, -220)

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://di2i8lcxxeh40" path="res://Textures/fx-sparkle.png" id="1_6nyg0"]
 
 [resource]
+render_priority = 1
 transparency = 1
 blend_mode = 1
 shading_mode = 0

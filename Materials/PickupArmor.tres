@@ -9,4 +9,5 @@ albedo_texture = ExtResource("1_c4gn8")
 metallic = 1.0
 metallic_texture = ExtResource("2_f6gah")
 roughness_texture = ExtResource("3_b1fvy")
-rim = 0.21
+rim_enabled = true
+rim = 0.1
