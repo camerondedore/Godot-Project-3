@@ -947,6 +947,9 @@ storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb
 [node name="PickupArmor" parent="Map/Pickups" instance=ExtResource("73_euar7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 2)
 
+[node name="PickupCider" parent="Map/Pickups" instance=ExtResource("75_8w06i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 7)
+
 [node name="PickupCandiedNut" parent="Map/Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00942, 1.07936, 6.93603)
 lock_rotation = false
@@ -970,9 +973,6 @@ lock_rotation = false
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("43_r6irn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1.07936, -9.80821)
 lock_rotation = false
-
-[node name="PickupCider" parent="Map/Pickups" instance=ExtResource("75_8w06i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 7)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 

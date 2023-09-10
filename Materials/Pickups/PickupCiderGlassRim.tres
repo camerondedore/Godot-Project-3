@@ -6,9 +6,10 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_8j7b1")
-shader_parameter/Rim_Sharpness = 4.75e-08
-shader_parameter/Rim_Distance = 1.0
+shader_parameter/Rim_Sharpness = 0.1
+shader_parameter/Rim_Distance = 1.2
 shader_parameter/Rim_Power = 1.0
+shader_parameter/RimColor = Color(0.529412, 0.196078, 0, 1)
 shader_parameter/Metallic = 0.0
 shader_parameter/Roughness = 0.2
 shader_parameter/Backlight = 0.25
