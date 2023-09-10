@@ -16,6 +16,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
     CollisionShape3D[] colliders;
     [Export]
     PackedScene cutFx;
+    [Export]
+    Vector3 targetOffset;
 
 
 
@@ -37,7 +39,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
     {
         try
         {
-            return GlobalPosition;
+            return GlobalPosition + targetOffset;
         }
         catch
         {
