@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnvggw6unmeja"]
+
+[ext_resource type="Material" uid="uid://2qmb0dugj1ee" path="res://Particles/FxPlayerBodyEmit.tres" id="1_erij7"]
+[ext_resource type="Material" uid="uid://chr7a8bv61h87" path="res://Materials/Fx/FxCiderPickup.tres" id="1_qmukl"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_v224w"]
+
+[node name="FxCiderPickup" type="GPUParticles3D"]
+material_override = ExtResource("1_qmukl")
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.9
+process_material = ExtResource("1_erij7")
+draw_pass_1 = SubResource("QuadMesh_v224w")

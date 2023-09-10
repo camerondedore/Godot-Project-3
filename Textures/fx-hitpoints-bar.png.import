@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cucekx4osdaw"
-path.s3tc="res://.godot/imported/ui-hitpoints-bar-progress.png-d55e54b9abec6b75b0d1e4e9ae8ec07d.s3tc.ctex"
+uid="uid://dujjiws2odos5"
+path.s3tc="res://.godot/imported/fx-hitpoints-bar.png-45de9ed4cfd0e39146a7e78d9f685e8b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://UI/ui-hitpoints-bar-progress.png"
-dest_files=["res://.godot/imported/ui-hitpoints-bar-progress.png-d55e54b9abec6b75b0d1e4e9ae8ec07d.s3tc.ctex"]
+source_file="res://Textures/fx-hitpoints-bar.png"
+dest_files=["res://.godot/imported/fx-hitpoints-bar.png-45de9ed4cfd0e39146a7e78d9f685e8b.s3tc.ctex"]
 
 [params]
 
