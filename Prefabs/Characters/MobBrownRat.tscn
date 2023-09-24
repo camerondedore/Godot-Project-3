@@ -1,15 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://dauwd0f7v5uyx"]
+[gd_scene load_steps=17 format=3 uid="uid://dauwd0f7v5uyx"]
 
 [ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRat.cs" id="1_tlfaj"]
 [ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRatHealth.cs" id="2_hmem3"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="2_q5ujn"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="3_qmqp4"]
 [ext_resource type="PackedScene" uid="uid://bbmym8sm0qe3d" path="res://Models/character-brown-rat.glb" id="3_v78fy"]
+[ext_resource type="Material" uid="uid://bko8b7bmixx2" path="res://Materials/Characters/CharacterBrownRat.tres" id="4_5va53"]
 [ext_resource type="Script" path="res://C#/MobBow.cs" id="4_54knb"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobEyes.cs" id="4_mn6e7"]
 [ext_resource type="PackedScene" uid="uid://dpixs7ufqf8p0" path="res://Prefabs/Mob Items/MobArrow.tscn" id="5_62t0c"]
+[ext_resource type="Material" uid="uid://cicvawmaggm2b" path="res://Materials/Characters/CharacterBrownRatGear.tres" id="5_kk4xn"]
+[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="6_e3pwy"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="6_wf0il"]
 [ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="7_0kknr"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="7_3enwk"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_bkgp3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l5dfi"]
@@ -49,6 +53,12 @@ max_neighbors = 5
 [node name="character-brown-rat" parent="." instance=ExtResource("3_v78fy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 
+[node name="character-brown-rat2" parent="character-brown-rat" index="0"]
+surface_material_override/0 = ExtResource("4_5va53")
+surface_material_override/1 = ExtResource("5_kk4xn")
+surface_material_override/2 = ExtResource("6_e3pwy")
+surface_material_override/3 = ExtResource("7_3enwk")
+
 [node name="Detection" type="RayCast3D" parent="." node_paths=PackedStringArray("myFaction")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 enabled = false
@@ -85,3 +95,5 @@ enabled = false
 target_position = Vector3(0, 0, -1)
 collision_mask = 531
 script = ExtResource("4_mn6e7")
+
+[editable path="character-brown-rat"]

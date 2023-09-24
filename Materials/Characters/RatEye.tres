@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dar4ecvixt71k"]
+
+[ext_resource type="Texture2D" uid="uid://d0tvx4lbqnke5" path="res://Textures/eye-rat.png" id="1_1vny3"]
+
+[resource]
+albedo_texture = ExtResource("1_1vny3")
+metallic = 0.8
+roughness = 0.05

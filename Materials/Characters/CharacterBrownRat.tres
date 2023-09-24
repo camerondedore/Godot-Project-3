@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bko8b7bmixx2"]
+
+[ext_resource type="Texture2D" uid="uid://7y58f2vnvq5" path="res://Textures/character-brown-rat-diffuse.png" id="1_3wpnh"]
+
+[resource]
+albedo_texture = ExtResource("1_3wpnh")
