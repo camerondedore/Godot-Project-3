@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://oynb1mxrapsi"]
+
+[ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="1_uj3bs"]
+[ext_resource type="ArrayMesh" uid="uid://bm1glegkfrd1h" path="res://Models/prop-carrot-trimmed.res" id="2_lho0f"]
+
+[node name="PropCarrotTrimmed" instance=ExtResource("1_uj3bs")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_lho0f")

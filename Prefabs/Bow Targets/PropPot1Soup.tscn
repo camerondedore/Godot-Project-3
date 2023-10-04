@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://do05hyfu8mpjn"]
 
-[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Cooking/PropPot1.tscn" id="1_071tj"]
+[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="1_071tj"]
 [ext_resource type="ArrayMesh" uid="uid://c4clbyxu18x7q" path="res://Models/prop-pot-1-soup.res" id="2_jgvtq"]
 [ext_resource type="Script" path="res://C#/PlayerBow/SoupTarget.cs" id="2_m6oq3"]
 [ext_resource type="Script" path="res://C#/SoupCooker.cs" id="3_2bn00"]
-[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="3_x4nd1"]
+[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/Pickups/PickupNettleBroth.tres" id="3_x4nd1"]
 [ext_resource type="PackedScene" uid="uid://viykanumkbs5" path="res://Prefabs/FX/FxNettleBrothBubbles.tscn" id="4_4dapt"]
 [ext_resource type="AudioStream" uid="uid://buaupw1cosg2g" path="res://Audio/pickup-spawn.wav" id="4_7aauw"]
 [ext_resource type="PackedScene" uid="uid://b7xwcmlr26rvb" path="res://Prefabs/FX/FxTorchFire.tscn" id="6_dptrf"]

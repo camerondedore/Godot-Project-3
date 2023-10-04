@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=88 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -45,27 +45,28 @@
 [ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Lumber/PropTreeStumpOak1.tscn" id="19_nvsbc"]
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="20_vvb1k"]
 [ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="21_0tx2t"]
-[ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Cooking/PropApple.tscn" id="27_j1ljd"]
-[ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Cooking/PropBread1.tscn" id="28_isvn2"]
-[ext_resource type="PackedScene" path="res://Prefabs/Cooking/PropBread2.tscn" id="29_mhsw4"]
+[ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="27_j1ljd"]
+[ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="28_isvn2"]
+[ext_resource type="PackedScene" path="res://Prefabs/Food/PropBread2.tscn" id="29_mhsw4"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="30_pesed"]
-[ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Cooking/PropOvenTower.tscn" id="36_f7e2g"]
-[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Cooking/PropOven.tscn" id="36_tqf4g"]
-[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Cooking/PropOvenDoor.tscn" id="37_kpqqm"]
+[ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Food/PropOvenTower.tscn" id="36_f7e2g"]
+[ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Food/PropOven.tscn" id="36_tqf4g"]
+[ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Food/PropOvenDoor.tscn" id="37_kpqqm"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="37_yfk8b"]
-[ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Cooking/PropClayPot.tscn" id="40_abor7"]
+[ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="40_abor7"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="41_oibar"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="42_1ywjb"]
-[ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Cooking/PropBowl.tscn" id="42_kaj55"]
-[ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Cooking/PropTankard.tscn" id="43_p6s0h"]
+[ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Food/PropBowl.tscn" id="42_kaj55"]
+[ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Food/PropTankard.tscn" id="43_p6s0h"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="43_r6irn"]
-[ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Cooking/PropCookingSpit.tscn" id="44_xq1oh"]
-[ext_resource type="PackedScene" uid="uid://jstpyuffxyw5" path="res://Prefabs/Cooking/PropBarrel.tscn" id="45_2jd3v"]
-[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Cooking/PropPot1.tscn" id="45_6f0df"]
+[ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Food/PropCookingSpit.tscn" id="44_xq1oh"]
+[ext_resource type="PackedScene" uid="uid://jstpyuffxyw5" path="res://Prefabs/Food/PropBarrel.tscn" id="45_2jd3v"]
+[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="45_6f0df"]
 [ext_resource type="PackedScene" uid="uid://do05hyfu8mpjn" path="res://Prefabs/Bow Targets/PropPot1Soup.tscn" id="45_am02w"]
-[ext_resource type="PackedScene" path="res://Prefabs/Cooking/PropPot2.tscn" id="46_aupno"]
+[ext_resource type="PackedScene" path="res://Prefabs/Food/PropPot2.tscn" id="46_aupno"]
 [ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="47_qeona"]
-[ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Cooking/PropCarrot.tscn" id="48_4mc8m"]
+[ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="48_4mc8m"]
+[ext_resource type="PackedScene" uid="uid://oynb1mxrapsi" path="res://Prefabs/Food/PropCarrotTrimmed.tscn" id="49_8atxj"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/Bow Targets/PropLockbox.tscn" id="50_hmjpr"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="51_0e1a5"]
 [ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/Bow Targets/JumpNet.tscn" id="51_5gl37"]
@@ -74,9 +75,9 @@
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="55_bnt5b"]
 [ext_resource type="PackedScene" uid="uid://dyncf5bghkkwb" path="res://Prefabs/Bow Targets/PropChest.tscn" id="56_1rfgt"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="59_cgjaq"]
-[ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Cooking/PropOvenPeel.tscn" id="59_lg3ag"]
+[ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Food/PropOvenPeel.tscn" id="59_lg3ag"]
 [ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Plants/PropBlackberryBushOld.tscn" id="60_sywhw"]
-[ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Cooking/PropLadle.tscn" id="64_he0ji"]
+[ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Food/PropLadle.tscn" id="64_he0ji"]
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Bow Targets/PropTorch.tscn" id="70_woav5"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="71_tu5qd"]
@@ -516,142 +517,142 @@ transform = Transform3D(0.883901, 0.0522487, -0.464747, -0.465383, -4.11119e-08,
 [node name="PropFirewood5" parent="Map/NavigationRegion3D/Props/Trees/Firewood" instance=ExtResource("20_vvb1k")]
 transform = Transform3D(0.610519, 0, 0.792002, 0, 1, 0, -0.792002, 0, 0.610519, 1.3032, 0.873772, 12.3302)
 
-[node name="Cooking" type="Node3D" parent="Map/NavigationRegion3D/Props"]
+[node name="Food" type="Node3D" parent="Map/NavigationRegion3D/Props"]
 
-[node name="PropApple2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.787241, 0, -0.493338, 0, 0.929048, 0, 0.493338, 0, -0.787241, 0.16258, 1.1042, -2.54919)
 
-[node name="PropOvenTower" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("36_f7e2g")]
+[node name="PropOvenTower" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("36_f7e2g")]
 transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, 0.55678, 0.75, -11.4033)
 
-[node name="PropOven" parent="Map/NavigationRegion3D/Props/Cooking/PropOvenTower" instance=ExtResource("36_tqf4g")]
+[node name="PropOven" parent="Map/NavigationRegion3D/Props/Food/PropOvenTower" instance=ExtResource("36_tqf4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 
-[node name="PropOvenDoor" parent="Map/NavigationRegion3D/Props/Cooking/PropOvenTower" instance=ExtResource("37_kpqqm")]
+[node name="PropOvenDoor" parent="Map/NavigationRegion3D/Props/Food/PropOvenTower" instance=ExtResource("37_kpqqm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11, -0.874)
 
-[node name="PropOven2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("36_tqf4g")]
+[node name="PropOven2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("36_tqf4g")]
 transform = Transform3D(-1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, -1, -3.4435, 0.5, -11.4029)
 
-[node name="PropOvenDoor2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("37_kpqqm")]
+[node name="PropOvenDoor2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("37_kpqqm")]
 transform = Transform3D(-0.740394, -0.284774, -0.608868, -1.49012e-08, 0.90582, -0.423662, 0.672173, -0.313677, -0.670664, -2.73504, 0.351484, -10.4189)
 
-[node name="PropOvenPeel" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("59_lg3ag")]
+[node name="PropOvenPeel" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("59_lg3ag")]
 transform = Transform3D(1, 0, 0, 0, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1.50844, 1.62574, -10.3266)
 
-[node name="PropBread1" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("28_isvn2")]
+[node name="PropBread1" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("28_isvn2")]
 transform = Transform3D(0.866174, 0, -0.499743, 0, 1, 0, 0.499743, 0, 0.866174, -3.40528, 0.0977713, -10.0017)
 
-[node name="PropBread2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("29_mhsw4")]
+[node name="PropBread2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("29_mhsw4")]
 transform = Transform3D(0.91919, 0, 0.393814, 0, 1, 0, -0.393814, 0, 0.91919, -3.62501, 0.0977714, -10.6664)
 
-[node name="PropBread3" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("28_isvn2")]
+[node name="PropBread3" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("28_isvn2")]
 transform = Transform3D(0.687177, 0, -0.726491, 0, 1, 0, 0.726491, 0, 0.687177, -0.18237, 1.09777, -3.40109)
 
-[node name="PropBread4" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("29_mhsw4")]
+[node name="PropBread4" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("29_mhsw4")]
 transform = Transform3D(0.737784, 0, 0.675037, 0, 1, 0, -0.675037, 0, 0.737784, 0.240838, 1.09777, -3.00704)
 
-[node name="PropClayPot" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("40_abor7")]
+[node name="PropClayPot" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("40_abor7")]
 transform = Transform3D(0.946806, 0, -0.321803, 0, 1, 0, 0.321803, 0, 0.946806, -1.94247, 1.2, -2.72813)
 
-[node name="PropLadle" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("64_he0ji")]
+[node name="PropLadle" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("64_he0ji")]
 transform = Transform3D(0.803306, 0.346625, 0.484304, -2.48075e-08, 0.813182, -0.582009, -0.595566, 0.467533, 0.653234, -1.68176, 1.08792, -3.44577)
 
-[node name="PropBowl" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("42_kaj55")]
+[node name="PropBowl" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("42_kaj55")]
 transform = Transform3D(0.990112, 0, -0.140279, 0, 1, 0, 0.140279, 0, 0.990112, -1.09633, 1.075, -3.30058)
 
-[node name="PropTankard" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("43_p6s0h")]
+[node name="PropTankard" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("43_p6s0h")]
 transform = Transform3D(-0.896579, 0, 0.442883, 0, 1, 0, -0.442883, 0, -0.896579, -1.56597, 1.15, -2.66778)
 
-[node name="PropCookingSpit" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("44_xq1oh")]
+[node name="PropCookingSpit" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("44_xq1oh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.77197, 0.8, -7.41826)
 
-[node name="PropPot1" parent="Map/NavigationRegion3D/Props/Cooking/PropCookingSpit" instance=ExtResource("45_6f0df")]
+[node name="PropPot1" parent="Map/NavigationRegion3D/Props/Food/PropCookingSpit" instance=ExtResource("45_6f0df")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.6, 0.0472256, 0)
 
-[node name="PropPot2" parent="Map/NavigationRegion3D/Props/Cooking/PropCookingSpit" instance=ExtResource("46_aupno")]
+[node name="PropPot2" parent="Map/NavigationRegion3D/Props/Food/PropCookingSpit" instance=ExtResource("46_aupno")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.206423, 0)
 
-[node name="PropCookingSpit2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("44_xq1oh")]
+[node name="PropCookingSpit2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("44_xq1oh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.77197, 0.8, -2.41826)
 
-[node name="PropPot1Soup" parent="Map/NavigationRegion3D/Props/Cooking/PropCookingSpit2" instance=ExtResource("45_am02w")]
+[node name="PropPot1Soup" parent="Map/NavigationRegion3D/Props/Food/PropCookingSpit2" instance=ExtResource("45_am02w")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.6, 0.0472256, 0)
 
-[node name="PropBungMallet" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("76_xaefu")]
+[node name="PropBungMallet" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("76_xaefu")]
 transform = Transform3D(0.606904, 0.782701, -0.138011, 4.47035e-08, 0.173648, 0.984808, 0.794775, -0.597684, 0.105388, -7.13907, 1.36397, -2.41509)
 
-[node name="PropBarrel" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("45_2jd3v")]
+[node name="PropBarrel" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("45_2jd3v")]
 transform = Transform3D(0.905524, 0, -0.424294, 0, 1, 0, 0.424294, 0, 0.905524, -5.77336, 0.625, -2.90711)
 
-[node name="PropBarrel2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("45_2jd3v")]
+[node name="PropBarrel2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("45_2jd3v")]
 transform = Transform3D(-0.673748, 0, 0.738961, 0, 1, 0, -0.738961, 0, -0.673748, -7.087, 0.625, -2.56709)
 
-[node name="PropBarrel3" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("45_2jd3v")]
+[node name="PropBarrel3" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("45_2jd3v")]
 transform = Transform3D(-0.170003, 5.36483e-08, -0.985444, 5.89009e-08, -1, -6.4602e-08, -0.985444, -6.90261e-08, 0.170003, -6.80951, 0.625, -3.99335)
 
-[node name="PropApple!1691375336_866" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375336_866" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.952237, -0.230031, 0.56206, 0.100953, 0.970767, 0.568333, -0.598861, 0.529414, -0.797915, 19.6638, 0.099999, 19.46)
 
-[node name="PropApple!1691375337_883" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375337_883" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.304563, 0.102743, -1.07038, -0.92115, 0.598873, -0.204616, 0.55476, 0.937992, 0.247885, 18.2077, 0.1, 16.4392)
 
-[node name="PropApple!1691375338_899" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375338_899" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.41225, -0.753862, 0.181403, 0.619727, -0.443822, -0.436033, 0.465996, -0.0766769, 0.74036, 18.8202, 0.100001, 11.729)
 
-[node name="PropApple!1691375339_899" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375339_899" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.432272, 0.7737, -0.433955, -0.739239, 0.0473373, -0.651975, -0.49036, 0.610684, 0.600332, 15.2497, 0.1, 13.2896)
 
-[node name="PropApple!1691375340_915" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375340_915" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.717475, -0.57617, 0.167372, 0.509525, 0.447345, -0.644222, 0.316811, 0.585376, 0.657054, 14.6268, 0.1, 9.68483)
 
-[node name="PropApple!1691375341_932" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375341_932" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.879836, 0.34341, 0.51899, -0.222677, 0.665512, -0.817864, -0.581117, -0.774955, -0.472377, 10.9231, 0.1, 9.23107)
 
-[node name="PropApple!1691375342_932" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375342_932" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.135346, 0.898618, -0.468233, -0.325337, -0.408843, -0.878679, -0.959641, 0.265345, 0.231851, 9.68651, 0.099999, 17.6504)
 
-[node name="PropApple!1691375343_951" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375343_951" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.91015, 0.0258111, 0.625594, -0.623439, -0.0647816, 0.909688, 0.0579396, -1.10252, -0.0388056, 4.09188, 0.1, 15.2062)
 
-[node name="PropApple!1691375344_95" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375344_95" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.196239, 1.06493, -0.279766, -0.978552, -0.298952, -0.451561, -0.504748, 0.165548, 0.984209, 5.68503, 0.099999, 14.3743)
 
-[node name="PropApple!1691375345_965" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375345_965" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.876145, 0.660496, 0.0578718, 0.656734, 0.8777, -0.0746888, -0.0911276, -0.0249666, -1.09467, 7.5999, 0.099999, 8.72431)
 
-[node name="PropApple!1691375346_966" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375346_966" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.858561, 0.149958, -0.198325, 0.0826965, -0.500154, -0.736176, -0.234482, -0.72547, 0.46654, 12.6266, 0.1, 19.1319)
 
-[node name="PropApple!1691375347_982" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375347_982" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.197035, -0.311864, -0.938616, -0.812404, -0.494857, 0.334961, -0.564145, 0.821547, -0.154541, 22.5384, 0.1, 16.5581)
 
-[node name="PropApple!1691375353_084" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375353_084" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.780781, -0.440393, 0.586746, 0.733377, -0.445943, 0.641193, -0.0193411, 0.868921, 0.626447, 12.0753, 0.0999995, 11.4688)
 
-[node name="PropApple!1691375354_098" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375354_098" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.698302, 0.604893, 0.425407, -0.113761, 0.666001, -0.760259, -0.730702, 0.474384, 0.524907, 20.1194, 0.0999995, 8.59715)
 
-[node name="PropApple!1691375355_099" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375355_099" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.778334, -0.237417, -0.778801, 0.813921, -0.254355, -0.735893, -0.0207555, -1.07128, 0.347322, 16.7866, 0.0999995, 5.59298)
 
-[node name="PropApple!1691375356_099" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375356_099" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(0.409694, 0.895827, -0.55676, 0.6246, -0.687355, -0.64634, -0.849919, -0.0733084, -0.743371, 6.45442, 0.0999995, 15.687)
 
-[node name="PropApple!1691375357_116" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375357_116" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(1.08926, 0.13949, 0.112519, 0.0182787, 0.602994, -0.924478, -0.17828, 0.914077, 0.592685, 7.32949, 0.0999995, 15.4562)
 
-[node name="PropApple!1691375358_115" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("27_j1ljd")]
+[node name="PropApple!1691375358_115" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.537276, 0.380694, -0.582345, -0.0435876, 0.715911, 0.508224, 0.694373, 0.339505, -0.418691, -21.4511, 1.28022, 33.268)
 
-[node name="PropCarrot" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("48_4mc8m")]
+[node name="PropCarrot" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_4mc8m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56586, -0.17161, 15.3208)
 
-[node name="PropCarrot3" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("48_4mc8m")]
-transform = Transform3D(0.0708698, -0.954571, 0.289433, 0.997255, 0.0740388, 0, -0.0214293, 0.288638, 0.957198, -1.88944, 1.04561, -3.06836)
-
-[node name="PropCarrot2" parent="Map/NavigationRegion3D/Props/Cooking" instance=ExtResource("48_4mc8m")]
+[node name="PropCarrot2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_4mc8m")]
 transform = Transform3D(-0.133812, 0, 0.950318, 0, 0.959692, 0, -0.950318, 0, -0.133812, 2.56545, -0.162317, 16.1333)
+
+[node name="PropCarrotTrimmed" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("49_8atxj")]
+transform = Transform3D(0.059144, -0.796632, 0.601564, 0.997255, 0.0740388, -1.78292e-09, -0.0445391, 0.599913, 0.798824, -2.06793, 1.04866, -3.43632)
 
 [node name="SmallProps" type="Node3D" parent="Map/NavigationRegion3D/Props"]
 
