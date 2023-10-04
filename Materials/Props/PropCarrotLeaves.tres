@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://vhnledlkfb81"]
+
+[ext_resource type="Texture2D" uid="uid://eiwr67oaro6r" path="res://Textures/prop-carrot-diffuse.png" id="1_w4q7r"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_w4q7r")
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3pbmupq5u4kt"]
+
+[ext_resource type="ArrayMesh" uid="uid://brou2emj2w2lw" path="res://Models/prop-carrot.res" id="1_gfxn2"]
+[ext_resource type="Material" uid="uid://c52oybe7p0au5" path="res://Materials/Props/PropCarrot.tres" id="2_wpyjl"]
+[ext_resource type="Material" uid="uid://vhnledlkfb81" path="res://Materials/Props/PropCarrotLeaves.tres" id="3_wul88"]
+
+[node name="PropCarrot" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_gfxn2")
+surface_material_override/0 = ExtResource("2_wpyjl")
+surface_material_override/1 = ExtResource("3_wul88")
