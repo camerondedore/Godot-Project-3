@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ccc1m4nqsmm47" path="res://Models/prop-fence-end.res" id="1_6prll"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_hak4j"]
-[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/BarkEndsOld1.tres" id="3_0g2lj"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Plants/BarkEndsOld1.tres" id="3_0g2lj"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_hrifq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_76741"]

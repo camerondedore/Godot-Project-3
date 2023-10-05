@@ -1,14 +1,14 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cfx16fmpivtuy"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_ynk4x"]
-[ext_resource type="Texture2D" uid="uid://cx3fntx7rv6bv" path="res://Textures/leaves-tulips.png" id="2_hqqsh"]
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_e40d4"]
+[ext_resource type="Texture2D" uid="uid://cx3fntx7rv6bv" path="res://Textures/leaves-tulips.png" id="2_108ws"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_ynk4x")
+shader = ExtResource("1_e40d4")
 shader_parameter/Wind_Amplitude = 0.05
 shader_parameter/Wind_Speed = 0.1
-shader_parameter/Wind_Turbulance = 1.0
+shader_parameter/Wind_Turbulance = 2.0
 shader_parameter/Wind_Min_Height = -0.25
 shader_parameter/Wind_Slope = 1.0
 shader_parameter/Y_Multiplier = 0.25
@@ -16,4 +16,4 @@ shader_parameter/Metallic = 0.1
 shader_parameter/Roughness = 1.0
 shader_parameter/Backlight_Strength = 0.3
 shader_parameter/Alpha_Scissor = 0.5
-shader_parameter/Albedo = ExtResource("2_hqqsh")
+shader_parameter/Albedo = ExtResource("2_108ws")

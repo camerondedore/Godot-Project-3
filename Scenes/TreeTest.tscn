@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=89 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -66,6 +66,7 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Food/PropPot2.tscn" id="46_aupno"]
 [ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="47_qeona"]
 [ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="48_4mc8m"]
+[ext_resource type="PackedScene" uid="uid://dksedfrilvg2y" path="res://Prefabs/Food/PropCarrotWind.tscn" id="48_6j8r8"]
 [ext_resource type="PackedScene" uid="uid://oynb1mxrapsi" path="res://Prefabs/Food/PropCarrotTrimmed.tscn" id="49_8atxj"]
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/Bow Targets/PropLockbox.tscn" id="50_hmjpr"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="51_0e1a5"]
@@ -645,11 +646,14 @@ transform = Transform3D(1.08926, 0.13949, 0.112519, 0.0182787, 0.602994, -0.9244
 [node name="PropApple!1691375358_115" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("27_j1ljd")]
 transform = Transform3D(-0.537276, 0.380694, -0.582345, -0.0435876, 0.715911, 0.508224, 0.694373, 0.339505, -0.418691, -21.4511, 1.28022, 33.268)
 
-[node name="PropCarrot" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_4mc8m")]
+[node name="PropCarrotWind" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_6j8r8")]
+transform = Transform3D(-0.133812, 0, 0.950318, 0, 0.959692, 0, -0.950318, 0, -0.133812, 2.56545, -0.162317, 16.1333)
+
+[node name="PropCarrotWind2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_6j8r8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56586, -0.17161, 15.3208)
 
-[node name="PropCarrot2" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_4mc8m")]
-transform = Transform3D(-0.133812, 0, 0.950318, 0, 0.959692, 0, -0.950318, 0, -0.133812, 2.56545, -0.162317, 16.1333)
+[node name="PropCarrot" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("48_4mc8m")]
+transform = Transform3D(0.597919, -0.79669, 0.0881946, 0, 0.110029, 0.993928, -0.801557, -0.594289, 0.0657885, 2.56586, 0.0525966, 14.9393)
 
 [node name="PropCarrotTrimmed" parent="Map/NavigationRegion3D/Props/Food" instance=ExtResource("49_8atxj")]
 transform = Transform3D(0.059144, -0.796632, 0.601564, 0.997255, 0.0740388, -1.78292e-09, -0.0445391, 0.599913, 0.798824, -2.06793, 1.04866, -3.43632)
@@ -854,7 +858,7 @@ transform = Transform3D(-0.539171, 0.016014, 0.669578, -0.0106503, 0.859264, -0.
 transform = Transform3D(0.836293, -0.00598293, 0.456176, 0.00875256, 0.952591, -0.00355219, -0.456131, 0.00730957, 0.836307, 16.8995, 2.66822, 9.21142)
 
 [node name="PropTulip1!1691375197_517" parent="Map/NavigationRegion3D/Props/Plants" instance=ExtResource("5_eggwd")]
-transform = Transform3D(-0.862336, -0.0214537, -0.141994, -0.0210337, 0.873948, -0.00430514, 0.142057, -0.000830259, -0.862593, 1.49186, 4.76837e-07, 14.7955)
+transform = Transform3D(-0.862336, -0.0214537, -0.141994, -0.0210337, 0.873948, -0.00430514, 0.142057, -0.000830259, -0.862593, 3.40778, 5.96046e-07, 14.817)
 
 [node name="PropTulip3!1691375198_518" parent="Map/NavigationRegion3D/Props/Plants" instance=ExtResource("7_3btvd")]
 transform = Transform3D(0.696584, -0.0561385, -0.559411, 0.0358856, 0.893315, -0.0449616, 0.561074, 0.0125616, 0.697394, -0.383042, 4.76837e-07, 12.1662)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbage8fj6ncrj"]
 
 [ext_resource type="ArrayMesh" uid="uid://q7rq4w126er8" path="res://Models/prop-fern-1.res" id="1_0dqff"]
-[ext_resource type="Material" uid="uid://cyjg3uc86ebuo" path="res://Materials/LeavesFern.tres" id="2_dklkh"]
+[ext_resource type="Material" uid="uid://cyjg3uc86ebuo" path="res://Materials/Plants/LeavesFernWind.tres" id="2_o0dnq"]
 
 [node name="PropFern1" type="Node3D"]
 
@@ -9,4 +9,4 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 layers = 2
 mesh = ExtResource("1_0dqff")
-surface_material_override/0 = ExtResource("2_dklkh")
+surface_material_override/0 = ExtResource("2_o0dnq")

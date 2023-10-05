@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dn2ow0syahcwf"]
 
 [ext_resource type="ArrayMesh" uid="uid://bhok5bkifpyos" path="res://Models/prop-log-oak-1.res" id="1_xfxy8"]
-[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/BarkOak.tres" id="2_cwmn1"]
-[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="3_yio2l"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Plants/BarkOak.tres" id="2_cwmn1"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Plants/BarkEnds1.tres" id="3_yio2l"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ouwgp"]
 radius = 0.25

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dksedfrilvg2y"]
+
+[ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="1_42ktk"]
+[ext_resource type="Material" uid="uid://b6ykpk7mmxn78" path="res://Materials/Props/PropCarrotLeavesWind.tres" id="2_6pmov"]
+
+[node name="PropCarrotWind" instance=ExtResource("1_42ktk")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/1 = ExtResource("2_6pmov")
