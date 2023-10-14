@@ -24,6 +24,9 @@ namespace MobBrownRat
             // get flee target position
             blackboard.navAgent.TargetPosition = blackboard.startPosition + new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * 2;
             blackboard.moving = true;
+
+            // animation
+            blackboard.anim.Play("brown-rat-walk");
         }
 
 

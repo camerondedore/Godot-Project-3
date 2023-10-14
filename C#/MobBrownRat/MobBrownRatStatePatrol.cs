@@ -32,6 +32,9 @@ namespace MobBrownRat
             // set patrol target position
             blackboard.navAgent.TargetPosition = newPatrolPosition;
             blackboard.moving = true;
+
+            // animation
+            blackboard.anim.Play("brown-rat-walk");
         }
 
 

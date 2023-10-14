@@ -48,6 +48,9 @@ namespace MobBrownRat
             // set target position
             blackboard.navAgent.TargetPosition = dodgePosition;
             blackboard.moving = true;
+
+            // animation
+            blackboard.anim.Play("brown-rat-walk");
         }
 
 

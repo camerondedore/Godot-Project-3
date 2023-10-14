@@ -37,6 +37,9 @@ namespace MobBrownRat
         public override void StartState()
         {
             blackboard.moving = true;
+
+            // animation
+            blackboard.anim.Play("brown-rat-walk");
         }
 
 

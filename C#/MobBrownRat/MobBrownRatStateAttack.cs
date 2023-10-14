@@ -31,9 +31,6 @@ namespace MobBrownRat
 
             // stop moving
             blackboard.moving = false;
-            
-            // look at enemy
-            blackboard.lookAtTarget = true;
 
             // alternate dodge shot count
             if(shotCountLimit == 3)
@@ -50,8 +47,7 @@ namespace MobBrownRat
 
         public override void EndState()
         {
-            // stop looking at enemy
-            blackboard.lookAtTarget = false;
+
         }
 
 

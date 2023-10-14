@@ -23,9 +23,15 @@ namespace MobBrownRat
         {
             startTime = EngineTime.timePassed;
 
+            // stop looking at enemy
+            blackboard.lookAtTarget = false;
+
             // shoot
             blackboard.bow.Fire(blackboard.enemy);
             blackboard.shotCount++;
+
+            // animation
+            blackboard.anim.Play("brown-rat-fire");
         }
 
 

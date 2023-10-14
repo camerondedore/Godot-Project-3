@@ -25,6 +25,9 @@ namespace MobBrownRat
             
             // stop moving
             blackboard.moving = false;
+
+            // animation
+            blackboard.anim.Play("brown-rat-idle");
         }
 
 

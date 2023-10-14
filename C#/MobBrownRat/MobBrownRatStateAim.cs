@@ -23,8 +23,14 @@ namespace MobBrownRat
         {
             startTime = EngineTime.timePassed;
 
+            // look at enemy
+            blackboard.lookAtTarget = true;
+
             // draw bow
             blackboard.bow.Draw();
+
+            // animation
+            blackboard.anim.Play("brown-rat-draw");
         }
 
 
