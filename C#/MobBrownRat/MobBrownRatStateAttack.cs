@@ -31,16 +31,6 @@ namespace MobBrownRat
 
             // stop moving
             blackboard.moving = false;
-
-            // alternate dodge shot count
-            if(shotCountLimit == 3)
-            {
-                shotCountLimit = 2;
-            }
-            else
-            {
-                shotCountLimit = 3;
-            }
         }
 
 
@@ -96,6 +86,16 @@ namespace MobBrownRat
             {
                 // reset flee count
                 blackboard.fleeCount = 0;
+
+                // alternate dodge shot count
+                if(shotCountLimit == 3)
+                {
+                    shotCountLimit = 2;
+                }
+                else
+                {
+                    shotCountLimit = 3;
+                }
 
                 // dodge
                 return blackboard.stateDodge;
