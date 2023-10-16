@@ -36,6 +36,7 @@ fireTime = 1.2
 maxSightRangeSqr = 625.0
 maxSightRangeForAlliesSqr = 225.0
 fleeMoveDistance = 5.0
+speed = 4.5
 dodgeDistance = 4.0
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
