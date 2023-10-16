@@ -153,8 +153,10 @@ namespace MobBrownRat
                 try
                 {
                     // get direction to enenmy and flatten
-                    var lookTarget = enemy.GlobalPosition;
-                    lookTarget.Y = GlobalPosition.Y;
+                    var forward = GlobalPosition + -Basis.Z;
+                    var lookDirection = GlobalPosition + (enemy.GlobalPosition - GlobalPosition).Normalized();
+                    lookDirection.Y = GlobalPosition.Y;
+                    var lookTarget = forward.Lerp(lookDirection, lookSpeed);
 
                     // look at enemy
                     LookAt(lookTarget);
@@ -180,8 +182,10 @@ namespace MobBrownRat
                     MoveAndSlide();
 
                     // get direction to next path point and flatten
-                    var lookTarget = GlobalPosition + safeVel.Normalized();
-                    lookTarget.Y = GlobalPosition.Y;
+                    var forward = GlobalPosition + -Basis.Z;
+                    var lookDirection = GlobalPosition + safeVel.Normalized();
+                    lookDirection.Y = GlobalPosition.Y;
+                    var lookTarget = forward.Lerp(lookDirection, lookSpeed);
 
                     // look in direction of movement
                     LookAt(lookTarget, Vector3.Up);
