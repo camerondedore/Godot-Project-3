@@ -13,6 +13,9 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
+            // animation
+            blackboard.animation.Set("parameters/conditions/draw", false);
+            
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
         }
@@ -30,14 +33,14 @@ namespace MobBrownRat
             blackboard.bow.Draw();
 
             // animation
-            blackboard.anim.Play("brown-rat-draw");
+            blackboard.animation.Set("parameters/conditions/draw", true);
         }
 
 
 
         public override void EndState()
         {
-
+            
         }
 
 

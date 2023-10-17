@@ -14,7 +14,8 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
-
+            // animation
+            blackboard.animation.Set("parameters/conditions/move", false);
         }
         
         
@@ -36,7 +37,7 @@ namespace MobBrownRat
             blackboard.moving = true;
 
             // animation
-            blackboard.anim.Play("brown-rat-walk");
+            blackboard.animation.Set("parameters/conditions/move", true);
         }
 
 

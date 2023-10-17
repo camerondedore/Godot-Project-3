@@ -14,6 +14,9 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
+            // animation
+            blackboard.animation.Set("parameters/conditions/idle", false);
+            
             // look for enemy
             blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
         }
@@ -30,7 +33,7 @@ namespace MobBrownRat
             blackboard.moving = false;
 
             // animation
-            blackboard.anim.Play("brown-rat-idle");
+            blackboard.animation.Set("parameters/conditions/idle", true);
         }
 
 

@@ -15,6 +15,9 @@ namespace MobBrownRat
         {
             // look for enemy
             //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+
+            // animation
+            blackboard.animation.Set("parameters/conditions/fire", false);
         }
         
         
@@ -31,7 +34,7 @@ namespace MobBrownRat
             blackboard.shotCount++;
 
             // animation
-            blackboard.anim.Play("brown-rat-fire");
+            blackboard.animation.Set("parameters/conditions/fire", true);
         }
 
 

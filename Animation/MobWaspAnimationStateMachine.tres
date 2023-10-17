@@ -24,7 +24,7 @@ filter_enabled = true
 filters = ["mob-wasp-armature/Skeleton3D:wing-l", "mob-wasp-armature/Skeleton3D:wing-r"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4qkcw"]
-graph_offset = Vector2(-132, 70)
+graph_offset = Vector2(-133.98, 68.1225)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_qor82")
 nodes/Animation/position = Vector2(80, 140)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ceqwu")

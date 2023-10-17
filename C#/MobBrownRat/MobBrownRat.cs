@@ -33,7 +33,7 @@ namespace MobBrownRat
         [Export]
         public Health health;
         [Export]
-        public AnimationPlayer anim;
+        public AnimationTree animation;
         [Export]
         public string arrowType = "bodkin";
         [Export]

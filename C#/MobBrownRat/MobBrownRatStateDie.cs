@@ -32,6 +32,9 @@ namespace MobBrownRat
             }
 
             blackboard.QueueFree();
+
+            // animation
+            //blackboard.animation.Set("parameters/conditions/die", true);
         }
 
 
