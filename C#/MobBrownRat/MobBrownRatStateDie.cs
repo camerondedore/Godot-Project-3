@@ -31,10 +31,20 @@ namespace MobBrownRat
                 allyBase.AllyKilled();
             }
 
-            blackboard.QueueFree();
+            //blackboard.QueueFree();
 
             // animation
-            //blackboard.animation.Set("parameters/conditions/die", true);
+            blackboard.animation.Set("parameters/conditions/die", true);
+
+            // disable mob
+            blackboard.machine.Disable();
+            //blackboard.collider.Disabled = true;
+            //blackboard.eyes.QueueFree();
+            blackboard.ProcessMode = Node.ProcessModeEnum.Disabled;
+            
+            // stop moving
+            //blackboard.moving = false;
+            //blackboard.lookAtTarget = false;
         }
 
 

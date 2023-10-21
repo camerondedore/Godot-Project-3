@@ -35,6 +35,8 @@ namespace MobBrownRat
         [Export]
         public AnimationTree animation;
         [Export]
+        public CollisionShape3D collider;
+        [Export]
         public string arrowType = "bodkin";
         [Export]
         public double aimTime = 1f,
