@@ -32,15 +32,15 @@ namespace MobBrownRat
             blackboard.bow.Draw();
 
             // animation
-            blackboard.animation.Set("parameters/conditions/draw", true);
+            blackboard.animStateMachinePlayback.Travel("brown-rat-draw");
+            //blackboard.animStateMachinePlayback.Next();
         }
 
 
 
         public override void EndState()
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/draw", false);
+
         }
 
 

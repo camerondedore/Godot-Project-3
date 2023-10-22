@@ -50,8 +50,8 @@ namespace MobBrownRat
             blackboard.moving = true;
 
             // animation
-            blackboard.animation.Set("parameters/conditions/move", true);
-            blackboard.animStateMachinePlayback.Next();
+            blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
+            //blackboard.animStateMachinePlayback.Next();
         }
 
 
@@ -60,9 +60,6 @@ namespace MobBrownRat
         {
             // reset shot count
             blackboard.shotCount = 0;
-
-            // animation
-            blackboard.animation.Set("parameters/conditions/move", false);
         }
 
 

@@ -31,15 +31,15 @@ namespace MobBrownRat
             blackboard.shotCount++;
 
             // animation
-            blackboard.animation.Set("parameters/conditions/fire", true);
+            blackboard.animStateMachinePlayback.Travel("brown-rat-fire");
+            //blackboard.animStateMachinePlayback.Next();
         }
 
 
 
         public override void EndState()
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/fire", false);
+            
         }
 
 

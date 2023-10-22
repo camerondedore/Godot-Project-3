@@ -26,7 +26,6 @@ namespace MobBrownRat
             // alert nearby allies that this mob died
             foreach(MobFaction ally in allies)
             {
-                // temporary casting; may convert to interface later
                 var allyBase = (IMobAlly) ally.Owner;
                 allyBase.AllyKilled();
             }
@@ -34,7 +33,7 @@ namespace MobBrownRat
             //blackboard.QueueFree();
 
             // animation
-            blackboard.animation.Set("parameters/conditions/die", true);
+            blackboard.animStateMachinePlayback.Travel("brown-rat-die");
             blackboard.animStateMachinePlayback.Next();
 
             // disable mob

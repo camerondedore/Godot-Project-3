@@ -36,16 +36,15 @@ namespace MobBrownRat
             blackboard.moving = true;
 
             // animation
-            blackboard.animation.Set("parameters/conditions/move", true);
-            blackboard.animStateMachinePlayback.Next();
+            blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
+            //blackboard.animStateMachinePlayback.Next();
         }
 
 
 
         public override void EndState()
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/move", false);
+            
         }
 
 

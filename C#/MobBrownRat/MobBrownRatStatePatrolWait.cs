@@ -27,16 +27,15 @@ namespace MobBrownRat
             blackboard.moving = false;
 
             // animation
-            blackboard.animation.Set("parameters/conditions/idle", true);
-            blackboard.animStateMachinePlayback.Next();
+            blackboard.animStateMachinePlayback.Travel("brown-rat-idle");
+            //blackboard.animStateMachinePlayback.Next();
         }
 
 
 
         public override void EndState()
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/idle", false);
+            
         }
 
 

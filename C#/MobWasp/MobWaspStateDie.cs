@@ -34,7 +34,6 @@ namespace MobWasp
             // alert nearby allies that this mob died
             foreach(MobFaction ally in allies)
             {
-                // temporary casting; may convert to interface later
                 var allyBase = (IMobAlly) ally.Owner;
                 allyBase.AllyKilled();
             }
