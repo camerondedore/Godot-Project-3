@@ -1075,3 +1075,15 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="MobBrownRat4" parent="." instance=ExtResource("79_f3rqk")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -26.4684, 0.85, 8.03017)
+
+[node name="MobBrownRat5" parent="." instance=ExtResource("79_f3rqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1765, 0.85, 18.7998)
+
+[node name="MobBrownRat6" parent="." instance=ExtResource("79_f3rqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3735, 0.85, 20.4984)
+
+[node name="MobBrownRat7" parent="." instance=ExtResource("79_f3rqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9375, 0.85, 17.1981)
+
+[node name="MobBrownRat8" parent="." instance=ExtResource("79_f3rqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.746, 0.85, 18.8403)

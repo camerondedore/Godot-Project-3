@@ -58,6 +58,7 @@ namespace MobBrownRat
             damageFromArrow = 50;
 
         public MobFaction enemy;
+        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
         public Vector3 startPosition;
         public int shotCount,
             fleeCount;
@@ -74,6 +75,8 @@ namespace MobBrownRat
 
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
+
+            animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
 
             // initialize states
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};

@@ -16,8 +16,7 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/move", false);
+            
         }
         
         
@@ -52,6 +51,7 @@ namespace MobBrownRat
 
             // animation
             blackboard.animation.Set("parameters/conditions/move", true);
+            blackboard.animStateMachinePlayback.Next();
         }
 
 
@@ -60,6 +60,9 @@ namespace MobBrownRat
         {
             // reset shot count
             blackboard.shotCount = 0;
+
+            // animation
+            blackboard.animation.Set("parameters/conditions/move", false);
         }
 
 

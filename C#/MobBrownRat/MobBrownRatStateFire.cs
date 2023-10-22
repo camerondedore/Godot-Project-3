@@ -15,9 +15,6 @@ namespace MobBrownRat
         {
             // look for enemy
             //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
-
-            // animation
-            blackboard.animation.Set("parameters/conditions/fire", false);
         }
         
         
@@ -41,7 +38,8 @@ namespace MobBrownRat
 
         public override void EndState()
         {
-            
+            // animation
+            blackboard.animation.Set("parameters/conditions/fire", false);
         }
 
 

@@ -35,6 +35,7 @@ namespace MobBrownRat
 
             // animation
             blackboard.animation.Set("parameters/conditions/die", true);
+            blackboard.animStateMachinePlayback.Next();
 
             // disable mob
             blackboard.machine.Disable();
