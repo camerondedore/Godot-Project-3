@@ -13,9 +13,6 @@ namespace MobWasp
 
         public override void RunState(double delta)
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/hit", false);
-
             if(hit == false && EngineTime.timePassed > startTime + hitFxDelay)
             {
                 // spawn fx
@@ -51,7 +48,7 @@ namespace MobWasp
             blackboard.targetPosition = blackboard.GlobalPosition + blackboard.Basis.Z + targetOffset;
 
             // animation
-            blackboard.animation.Set("parameters/conditions/hit", true);
+            blackboard.animStateMachinePlayback.Travel("wasp-hit");
         }
 
 

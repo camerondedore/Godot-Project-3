@@ -18,14 +18,9 @@ namespace MobWasp
             if(EngineTime.timePassed > flickTime)
             {
                 // flick animation
-                blackboard.animation.Set("parameters/Idle/OneShot/request", true);
+                blackboard.animation.Set("parameters/wasp-idle/OneShot/request", true);
                 
                 flickTime = EngineTime.timePassed + (GD.Randf() + 0.5f) * 4;
-            }
-            else
-            {
-                // stop animation
-                blackboard.animation.Set("parameters/Idle/conditions/flick", false);
             }
         }
 
@@ -38,7 +33,7 @@ namespace MobWasp
             blackboard.targetPosition = blackboard.startPosition;
 
             // animation
-            blackboard.animation.Set("parameters/conditions/land", true);
+            blackboard.animStateMachinePlayback.Travel("wasp-idle");
 
             flickTime = EngineTime.timePassed + (GD.Randf() + 0.5f) * 4;
         }
@@ -47,8 +42,7 @@ namespace MobWasp
 
         public override void EndState()
         {
-            // animation
-            blackboard.animation.Set("parameters/conditions/land", false);
+            
         }
 
 

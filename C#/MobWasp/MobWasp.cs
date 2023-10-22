@@ -52,6 +52,7 @@ namespace MobWasp
             damage = 2;
         
         public MobFaction enemy;
+        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
         public Vector3 targetPosition,
             startPosition;
         public double offsetCursor = 0;
@@ -74,6 +75,8 @@ namespace MobWasp
             startUp = Basis.Y;
             targetPosition = startPosition;
             lookTargetPosition = startPosition + startForward;
+
+            animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
 
             if(GD.Randi() % 2 == 1)
             {
@@ -160,7 +163,7 @@ namespace MobWasp
             var flatVelocity = Velocity;
             flatVelocity.Y = 0;
             var flyBlend = flatVelocity.LengthSquared() / Mathf.Pow(speed, 2);
-            animation.Set("parameters/Fly/blend_position", flyBlend);
+            animation.Set("parameters/wasp-fly/blend_position", flyBlend);
 
             // pitch flying audio
             flyAudio.PitchScale = 1 + flyBlend * 0.3f;
