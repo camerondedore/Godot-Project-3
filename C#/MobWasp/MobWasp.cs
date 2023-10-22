@@ -169,18 +169,11 @@ namespace MobWasp
             var target = Vector3.Zero;
             var upDirection = Vector3.Up;
 
-            if(enemy != null)
+            if(IsEnemyValid())
             {
-                try
-                {
-                    // look at enemy
-                    target = (enemy.GlobalPosition - GlobalPosition).Normalized() + GlobalPosition;
-                    target.Y = GlobalPosition.Y;
-                }
-                catch
-                {
-                    // enemy has been disposed
-                }
+                // look at enemy
+                target = (enemy.GlobalPosition - GlobalPosition).Normalized() + GlobalPosition;
+                target.Y = GlobalPosition.Y;
             }
             else if(lookWithVelocity)
             {
@@ -236,16 +229,12 @@ namespace MobWasp
 
         public Vector3 GetGlobalPosition()
         {
-            try
+            if(IsInstanceValid(this))
             {
                 return GlobalPosition;
             }
-            catch
-            {
-                // target was disposed
-                // nothing more to do
-                return Vector3.Zero;
-            }
+
+            return Vector3.Zero;
         }
 
 
@@ -258,9 +247,28 @@ namespace MobWasp
 
 
 
+        public bool IsEnemyValid()
+        {
+            if(enemy != null && IsInstanceValid(enemy))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+
         public void AllyKilled()
         {
             allyDied = true;
+        }
+
+
+
+        public void AllySpottedEnemy(MobFaction spottedEnemy)
+        {
+            enemy = spottedEnemy;
         }
     }
 }

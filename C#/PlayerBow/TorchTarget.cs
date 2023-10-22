@@ -43,14 +43,12 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
     public Vector3 GetGlobalPosition()
     {
-        try
+        if(IsInstanceValid(this))
         {
-            return targetNode.GlobalPosition;
+            return GlobalPosition;
         }
-        catch
+        else
         {
-            // target was disposed
-            // nothing more to do
             return Vector3.Zero;
         }
     }

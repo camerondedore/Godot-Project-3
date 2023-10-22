@@ -63,15 +63,9 @@ public class LimitQueue
 			// remove oldest game object
 			var nodeToDestroy = queue.Dequeue();
 			
-			try
+			if(GodotObject.IsInstanceValid(nodeToDestroy))
 			{
 				nodeToDestroy.Owner.QueueFree();
-			}
-			catch
-			{
-				// object has been disposed
-				// nothing to do
-				GD.Print("Node Limiter: Node has been disposed - skipping");
 			}
 		}
 

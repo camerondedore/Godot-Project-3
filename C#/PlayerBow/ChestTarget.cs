@@ -55,14 +55,12 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 
     public Vector3 GetGlobalPosition()
     {
-        try
+        if(IsInstanceValid(this))
         {
             return GlobalPosition;
         }
-        catch
+        else
         {
-            // target was disposed
-            // nothing more to do
             return Vector3.Zero;
         }
     }

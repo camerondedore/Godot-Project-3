@@ -153,23 +153,16 @@ namespace MobBrownRat
 
 
             // check if rat is looking at target
-            if(lookAtTarget && !moving && enemy != null)
+            if(lookAtTarget && !moving && enemy != null && IsInstanceValid(enemy))
             {
-                try
-                {
-                    // get direction to enenmy and flatten
-                    var forward = GlobalPosition + -Basis.Z;
-                    var lookDirection = GlobalPosition + (enemy.GlobalPosition - GlobalPosition).Normalized();
-                    lookDirection.Y = GlobalPosition.Y;
-                    var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+                // get direction to enenmy and flatten
+                var forward = GlobalPosition + -Basis.Z;
+                var lookDirection = GlobalPosition + (enemy.GlobalPosition - GlobalPosition).Normalized();
+                lookDirection.Y = GlobalPosition.Y;
+                var lookTarget = forward.Lerp(lookDirection, lookSpeed);
 
-                    // look at enemy
-                    LookAt(lookTarget);
-                }
-                catch
-                {
-                    // enemy is disposed
-                }
+                // look at enemy
+                LookAt(lookTarget);
             }
         }
 
@@ -209,16 +202,12 @@ namespace MobBrownRat
 
         public Vector3 GetGlobalPosition()
         {
-            try
+            if(IsInstanceValid(this))
             {
                 return GlobalPosition;
             }
-            catch
-            {
-                // target was disposed
-                // nothing more to do
-                return Vector3.Zero;
-            }
+
+            return Vector3.Zero;
         }
 
 
@@ -231,9 +220,28 @@ namespace MobBrownRat
 
 
 
+        public bool IsEnemyValid()
+        {
+            if(enemy != null && IsInstanceValid(enemy))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+
         public void AllyKilled()
         {
             allyDied = true;
+        }
+
+
+
+        public void AllySpottedEnemy(MobFaction spottedEnemy)
+        {
+            enemy = spottedEnemy;
         }
     }
 }

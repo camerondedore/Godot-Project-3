@@ -29,16 +29,9 @@ namespace MobWasp
 
                 // hurt enemy
                 // get health node by name, as direct child to the faction node's owner
-                if(blackboard.enemy != null)
+                if(blackboard.IsEnemyValid())
                 {
-                    try
-                    {
-                        blackboard.enemy.Owner.GetNode<Health>("Health").Damage(blackboard.damage);
-                    }
-                    catch
-                    {
-                        // enemy disposed
-                    }
+                    blackboard.enemy.Owner.GetNode<Health>("Health").Damage(blackboard.damage);
                 }
 
                 hit = true;
