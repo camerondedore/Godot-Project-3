@@ -13,7 +13,7 @@ namespace MobWasp
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);     
+            blackboard.LookForEnemy();
         }
 
 
@@ -26,8 +26,18 @@ namespace MobWasp
             }
 
             blackboard.useOffset = true;
-
             blackboard.lookWithVelocity = false;
+
+
+            // get allies
+            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
+
+            // alert nearby allies that this mob spotted an enemy
+            foreach(MobFaction ally in allies)
+            {
+                var allyBase = (IMobAlly) ally.Owner;
+                allyBase.AllySpottedEnemy(blackboard.enemy);
+            }
         }
 
 
@@ -42,14 +52,23 @@ namespace MobWasp
         public override State Transition()
         {
             // check for enemy
-            if(blackboard.enemy == null)
+            if(blackboard.IsEnemyValid() == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;
             }
 
+
             // get distance squared to enemy
-            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+            // check if enemy is out of sight range and no ally died 
+            if(distanceToEnemySqr > blackboard.maxSightRangeSqr && blackboard.allyDied == false)
+            {
+                // cooldown
+                return blackboard.stateCooldown;
+            }
+
 
             // get enemy distance squared from start position
             var distanceToStartSqr = blackboard.enemy.GlobalPosition.DistanceSquaredTo(blackboard.startPosition);
@@ -59,6 +78,13 @@ namespace MobWasp
             {
                 // attack
                 return blackboard.stateAttack;
+            }
+
+            // check if enemy is out of sight range and past max flight range
+            if(distanceToEnemySqr > blackboard.maxSightRangeSqr && distanceToStartSqr > blackboard.maxFlightRangeSqr)
+            {
+                // cooldown
+                return blackboard.stateCooldown;
             }
 
             return this;

@@ -12,8 +12,7 @@ namespace MobWasp
 
         public override void RunState(double delta)
         {
-            // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);           
+         
         }
 
 
@@ -48,7 +47,7 @@ namespace MobWasp
             // check for arrival
             if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 0.1f)
             {
-                if(blackboard.enemy != null)
+                if(blackboard.IsEnemyValid())
                 {
                     // warn
                     return blackboard.stateWarn;

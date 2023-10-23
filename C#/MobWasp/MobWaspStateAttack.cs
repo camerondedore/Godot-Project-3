@@ -13,7 +13,7 @@ namespace MobWasp
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            blackboard.LookForEnemy();
 
             if(blackboard.enemy != null)
             {
@@ -28,7 +28,6 @@ namespace MobWasp
             startTime = EngineTime.timePassed;
 
             blackboard.useOffset = false;
-
             blackboard.offsetCursor = 0;
         }
 
@@ -44,27 +43,25 @@ namespace MobWasp
         public override State Transition()
         {
             // check for enemy
-            if(blackboard.enemy == null)
+            if(blackboard.IsEnemyValid() == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;
             }
 
-            // get enemy distance squared from start position
-            var distanceToStartSqr = blackboard.enemy.GlobalPosition.DistanceSquaredTo(blackboard.startPosition);
-
-            // check if max range has been hit
-            if(distanceToStartSqr > blackboard.maxFlightRangeSqr)
+            // check if enemy is out of sight range and no ally died 
+            if(blackboard.GetDistanceSqrToEnemy() > blackboard.maxSightRangeSqr && blackboard.allyDied == false)
             {
-                // warn
-                return blackboard.stateWarn;
+                // cooldown
+                return blackboard.stateCooldown;
             }
 
+
             // get distance squared to enemy
-            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
             // check if enemy is too far for attack and if ally has not died
-            if((distanceToEnemySqr > blackboard.attackDistanceSqr && blackboard.allyDied == false))
+            if(distanceToEnemySqr > blackboard.attackDistanceSqr && blackboard.allyDied == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;
@@ -76,6 +73,17 @@ namespace MobWasp
                 // hit
                 return blackboard.stateHit;
             }
+            
+
+            // get enemy distance squared from start position
+            var distanceToStartSqr = blackboard.enemy.GlobalPosition.DistanceSquaredTo(blackboard.startPosition);
+
+            // check if max range has been hit
+            if(distanceToStartSqr > blackboard.maxFlightRangeSqr)
+            {
+                // warn
+                return blackboard.stateWarn;
+            }            
 
             return this;
         }

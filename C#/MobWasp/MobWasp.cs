@@ -262,6 +262,20 @@ namespace MobWasp
 
 
 
+        public float GetDistanceSqrToEnemy()
+        {
+            if(IsEnemyValid())
+            {
+                return GlobalPosition.DistanceSquaredTo(enemy.GlobalPosition);
+            }
+            else 
+            {
+                return float.PositiveInfinity;
+            }
+        }
+
+
+
         public void AllyKilled()
         {
             allyDied = true;
@@ -272,6 +286,22 @@ namespace MobWasp
         public void AllySpottedEnemy(MobFaction spottedEnemy)
         {
             enemy = spottedEnemy;
+        }
+
+
+
+        public void LookForEnemy()
+        {
+            // look for new enemy
+            var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
+
+            var newEnemy = detection.LookForEnemy(lookDistanceSqr);     
+
+            if(newEnemy != null)
+            {
+                // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
+                enemy = newEnemy;
+            }
         }
     }
 }
