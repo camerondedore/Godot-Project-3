@@ -14,12 +14,9 @@ namespace MobBrownRat
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            blackboard.LookForEnemy();
 
-            // get distance from start to enemy
-            var distanceFromStartSqr = blackboard.startPosition.DistanceSquaredTo(blackboard.GlobalPosition);
-
-            if(blackboard.enemy != null)
+            if(blackboard.IsEnemyValid())
             {
                 var destinationDistanceToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
@@ -38,6 +35,16 @@ namespace MobBrownRat
         {
             blackboard.moving = true;
 
+            // get allies
+            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
+
+            // alert nearby allies that this mob died
+            foreach(MobFaction ally in allies)
+            {
+                var allyBase = (IMobAlly) ally.Owner;
+                allyBase.AllySpottedEnemy(blackboard.enemy);
+            }
+
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
             //blackboard.animStateMachinePlayback.Next();
@@ -54,14 +61,16 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            if(blackboard.enemy == null)
+            // check for no enemy
+            if(blackboard.IsEnemyValid() == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;
             }
 
+
             // get distance to enemy
-            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
             // check if enemy is close enough and bow has LOS to enemy
             if(distanceToEnemySqr < blackboard.attackRangeMinSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy))

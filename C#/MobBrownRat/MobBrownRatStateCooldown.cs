@@ -15,7 +15,7 @@ namespace MobBrownRat
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            blackboard.LookForEnemy();
         }
         
         
@@ -28,10 +28,13 @@ namespace MobBrownRat
 
             // stop moving
             blackboard.moving = false;    
+            
+            // clear enemy
+            blackboard.enemy = null;
 
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-idle");
-            //blackboard.animStateMachinePlayback.Next();  
+            //blackboard.animStateMachinePlayback.Next();
         }
 
 
@@ -45,7 +48,8 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            if(blackboard.enemy != null)
+            // check for enemy
+            if(blackboard.IsEnemyValid())
             {
                 // move
                 return blackboard.stateMove;

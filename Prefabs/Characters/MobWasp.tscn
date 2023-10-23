@@ -47,16 +47,16 @@ maxHitPoints = 1.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.708176, 7.83857e-17, 7.86234e-17, 0.706035)
-bones/1/rotation = Quaternion(0.707105, 0.00134527, 0.707106, 0.00134533)
-bones/2/rotation = Quaternion(0.86231, 0.0742703, 0.48695, -0.11741)
-bones/3/rotation = Quaternion(-0.572998, -0.408816, -0.405183, 0.583411)
-bones/4/rotation = Quaternion(-0.493028, -0.361634, -0.296989, 0.733445)
-bones/5/rotation = Quaternion(0.785455, 0.185147, 0.513171, -0.292297)
-bones/6/rotation = Quaternion(0.86231, -0.0742703, -0.48695, -0.11741)
-bones/7/rotation = Quaternion(-0.589271, 0.394644, 0.424058, 0.563196)
-bones/8/rotation = Quaternion(-0.503318, 0.353726, 0.324094, 0.718688)
-bones/9/rotation = Quaternion(0.780808, -0.204561, -0.504996, -0.305732)
+bones/0/rotation = Quaternion(-0.708347, 7.83667e-17, 7.86423e-17, 0.705864)
+bones/1/rotation = Quaternion(0.707106, 0.001236, 0.707106, 0.00123606)
+bones/2/rotation = Quaternion(0.862193, 0.0705468, 0.487385, -0.118752)
+bones/3/rotation = Quaternion(-0.572745, -0.408641, -0.40536, 0.58366)
+bones/4/rotation = Quaternion(-0.492753, -0.361523, -0.297125, 0.73363)
+bones/5/rotation = Quaternion(0.785376, 0.185008, 0.513221, -0.292509)
+bones/6/rotation = Quaternion(0.862193, -0.0705468, -0.487385, -0.118752)
+bones/7/rotation = Quaternion(-0.589027, 0.39446, 0.424229, 0.563452)
+bones/8/rotation = Quaternion(-0.503049, 0.353604, 0.324226, 0.718876)
+bones/9/rotation = Quaternion(0.780726, -0.204424, -0.505051, -0.305943)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2

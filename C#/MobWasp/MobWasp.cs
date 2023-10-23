@@ -250,6 +250,22 @@ namespace MobWasp
 
 
 
+        public void LookForEnemy()
+        {
+            // look for new enemy
+            var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
+
+            var newEnemy = detection.LookForEnemy(lookDistanceSqr);     
+
+            if(newEnemy != null)
+            {
+                // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
+                enemy = newEnemy;
+            }
+        }
+
+
+
         public bool IsEnemyValid()
         {
             if(enemy != null && IsInstanceValid(enemy))
@@ -286,22 +302,6 @@ namespace MobWasp
         public void AllySpottedEnemy(MobFaction spottedEnemy)
         {
             enemy = spottedEnemy;
-        }
-
-
-
-        public void LookForEnemy()
-        {
-            // look for new enemy
-            var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
-
-            var newEnemy = detection.LookForEnemy(lookDistanceSqr);     
-
-            if(newEnemy != null)
-            {
-                // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
-                enemy = newEnemy;
-            }
         }
     }
 }

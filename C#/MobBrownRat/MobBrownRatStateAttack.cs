@@ -15,7 +15,7 @@ namespace MobBrownRat
         public override void RunState(double delta)
         {
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            blackboard.LookForEnemy();
         }
         
         
@@ -44,7 +44,8 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            if(blackboard.enemy == null)
+            // check for no enemy
+            if(blackboard.IsEnemyValid() == false)
             {
                 // reset shot count
                 blackboard.shotCount = 0;
@@ -55,6 +56,7 @@ namespace MobBrownRat
                 // cool down
                 return blackboard.stateCooldown;
             }
+
 
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);

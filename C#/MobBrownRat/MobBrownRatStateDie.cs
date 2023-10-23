@@ -30,21 +30,13 @@ namespace MobBrownRat
                 allyBase.AllyKilled();
             }
 
-            //blackboard.QueueFree();
-
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-die");
             blackboard.animStateMachinePlayback.Next();
 
             // disable mob
             blackboard.machine.Disable();
-            //blackboard.collider.Disabled = true;
-            //blackboard.eyes.QueueFree();
             blackboard.ProcessMode = Node.ProcessModeEnum.Disabled;
-            
-            // stop moving
-            //blackboard.moving = false;
-            //blackboard.lookAtTarget = false;
         }
 
 
