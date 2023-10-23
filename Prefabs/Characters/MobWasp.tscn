@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=21 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dr67ajwiaqnkk" path="res://Prefabs/Gibs/GibWaspWingL.tscn" id="9_la8w6"]
 [ext_resource type="PackedScene" uid="uid://cyp7usw06fqjr" path="res://Prefabs/Gibs/GibWaspWingR.tscn" id="10_633pr"]
 [ext_resource type="PackedScene" uid="uid://b5bp34m33aba6" path="res://Prefabs/FX/FxWaspVenom.tscn" id="10_mche4"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobEyes.cs" id="11_lig66"]
 [ext_resource type="AudioStream" uid="uid://130buoernvce" path="res://Audio/mob-wasp-fly.wav" id="13_yyjne"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_82ttd"]
 
@@ -23,12 +24,13 @@
 radius = 0.2
 height = 0.9
 
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "animation", "gibsActivator", "venomFx", "flyAudio")]
+[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "animation", "gibsActivator", "venomFx", "flyAudio")]
 collision_layer = 512
 collision_mask = 529
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
+eyes = NodePath("Eyes")
 animation = NodePath("AnimationTree")
 gibsActivator = NodePath("Gibs")
 venomFx = NodePath("FxWaspVenom")
@@ -47,16 +49,16 @@ maxHitPoints = 1.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.708347, 7.83667e-17, 7.86423e-17, 0.705864)
-bones/1/rotation = Quaternion(0.707106, 0.001236, 0.707106, 0.00123606)
-bones/2/rotation = Quaternion(0.862193, 0.0705468, 0.487385, -0.118752)
-bones/3/rotation = Quaternion(-0.572745, -0.408641, -0.40536, 0.58366)
-bones/4/rotation = Quaternion(-0.492753, -0.361523, -0.297125, 0.73363)
-bones/5/rotation = Quaternion(0.785376, 0.185008, 0.513221, -0.292509)
-bones/6/rotation = Quaternion(0.862193, -0.0705468, -0.487385, -0.118752)
-bones/7/rotation = Quaternion(-0.589027, 0.39446, 0.424229, 0.563452)
-bones/8/rotation = Quaternion(-0.503049, 0.353604, 0.324226, 0.718876)
-bones/9/rotation = Quaternion(0.780726, -0.204424, -0.505051, -0.305943)
+bones/0/rotation = Quaternion(-0.707764, 7.84316e-17, 7.85776e-17, 0.706449)
+bones/1/rotation = Quaternion(0.707106, 0.00065024, 0.707107, 0.000650296)
+bones/2/rotation = Quaternion(0.862115, 0.0682825, 0.487646, -0.119566)
+bones/3/rotation = Quaternion(-0.573726, -0.409322, -0.404672, 0.582695)
+bones/4/rotation = Quaternion(-0.493805, -0.361949, -0.296606, 0.732922)
+bones/5/rotation = Quaternion(0.785732, 0.185633, 0.512995, -0.291552)
+bones/6/rotation = Quaternion(0.862115, -0.0682825, -0.487646, -0.119566)
+bones/7/rotation = Quaternion(-0.589974, 0.395173, 0.423565, 0.56246)
+bones/8/rotation = Quaternion(-0.50408, 0.354069, 0.323719, 0.718154)
+bones/9/rotation = Quaternion(0.781098, -0.20504, -0.504802, -0.304992)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2
@@ -87,6 +89,12 @@ collision_mask = 3
 script = ExtResource("3_muehp")
 myFaction = NodePath("../Faction")
 pointBlankRangeSqr = 1.0
+
+[node name="Eyes" type="RayCast3D" parent="."]
+enabled = false
+target_position = Vector3(0, 0, -1)
+collision_mask = 19
+script = ExtResource("11_lig66")
 
 [node name="FxWaspVenom" parent="." instance=ExtResource("10_mche4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.142169, -0.364001)

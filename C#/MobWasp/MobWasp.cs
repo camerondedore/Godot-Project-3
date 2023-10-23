@@ -22,6 +22,8 @@ namespace MobWasp
         [Export]
         public MobDetection detection;
         [Export]
+        public MobEyes eyes;
+        [Export]
         public AnimationTree animation;
         [Export]
         public GibsActivator gibsActivator;
