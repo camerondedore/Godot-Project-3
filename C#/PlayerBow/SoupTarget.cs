@@ -27,7 +27,7 @@ public partial class SoupTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return GlobalPosition;
+            return targetNode.GlobalPosition;
         }
         else
         {

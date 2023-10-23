@@ -45,7 +45,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return GlobalPosition;
+            return targetNode.GlobalPosition;
         }
         else
         {
