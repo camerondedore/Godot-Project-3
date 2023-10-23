@@ -23,7 +23,7 @@ namespace MobBrownRat
             startTime = EngineTime.timePassed;
 
             // add variation to reaction time
-            reactTimeRandom = blackboard.reactTime * (1 + (GD.Randf() - 0.5f));
+            reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
             // look at enemy
             blackboard.lookAtTarget = true;

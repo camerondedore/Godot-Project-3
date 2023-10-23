@@ -17,6 +17,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
     [Export]
     PackedScene cutFx;
     [Export]
+    NavigationLink3D navLink;
+    [Export]
     Vector3 targetOffset;
 
 
@@ -55,6 +57,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
         uncutMesh.Visible = false;
         cutMesh.Visible = true;
         cutDecal.Visible = true;
+        navLink.Enabled = true;
 
         // disable collision
         foreach(var c in colliders)

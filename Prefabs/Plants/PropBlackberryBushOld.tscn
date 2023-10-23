@@ -16,13 +16,14 @@ size = Vector3(3, 1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_o24o3"]
 size = Vector3(3, 1.41, 1.41)
 
-[node name="PropBlackberryBushOld" type="StaticBody3D" node_paths=PackedStringArray("uncutMesh", "cutMesh", "cutDecal", "colliders")]
+[node name="PropBlackberryBushOld" type="StaticBody3D" node_paths=PackedStringArray("uncutMesh", "cutMesh", "cutDecal", "colliders", "navLink")]
 script = ExtResource("1_i6v5i")
 uncutMesh = NodePath("MeshUncut")
 cutMesh = NodePath("MeshCut")
 cutDecal = NodePath("Decal")
 colliders = [NodePath("CollisionShape3D"), NodePath("InvisibleWall/CollisionShape3D2"), NodePath("InvisibleWall/CollisionShape3D3")]
 cutFx = ExtResource("2_yv47g")
+navLink = NodePath("NavigationLink3D")
 targetOffset = Vector3(0, 1, 0)
 
 [node name="MeshUncut" type="MeshInstance3D" parent="."]
@@ -60,3 +61,8 @@ shape = SubResource("BoxShape3D_5xh34")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
 shape = SubResource("BoxShape3D_o24o3")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+enabled = false
+start_position = Vector3(0, 0, -2)
+end_position = Vector3(0, 0, 2)
