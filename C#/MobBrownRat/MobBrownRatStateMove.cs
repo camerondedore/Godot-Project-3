@@ -35,6 +35,9 @@ namespace MobBrownRat
         {
             blackboard.moving = true;
 
+            // set move target
+            blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
+
             // get allies
             var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
 

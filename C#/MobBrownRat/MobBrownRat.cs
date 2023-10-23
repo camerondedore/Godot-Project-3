@@ -10,6 +10,7 @@ namespace MobBrownRat
 
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
+            stateReact,
             stateMove,
             statePatrol,
             statePatrolWait,
@@ -40,7 +41,8 @@ namespace MobBrownRat
         public string arrowType = "bodkin";
         [Export]
         public double aimTime = 1f,
-            fireTime = 0.5f;
+            fireTime = 0.5f,
+            reactTime = 0.4f;
         [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
@@ -80,6 +82,7 @@ namespace MobBrownRat
 
             // initialize states
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};
+            stateReact = new MobBrownRatStateReact(){blackboard = this};
             stateMove = new MobBrownRatStateMove(){blackboard = this};
             statePatrol = new MobBrownRatStatePatrol(){blackboard = this};
             statePatrolWait = new MobBrownRatStatePatrolWait(){blackboard = this};
@@ -153,7 +156,7 @@ namespace MobBrownRat
 
 
             // check if rat is looking at target
-            if(lookAtTarget && !moving && enemy != null && IsInstanceValid(enemy))
+            if(lookAtTarget && !moving && IsInstanceValid(enemy))
             {
                 // get direction to enenmy and flatten
                 var forward = GlobalPosition + -Basis.Z;

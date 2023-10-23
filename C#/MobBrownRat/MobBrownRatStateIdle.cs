@@ -43,14 +43,14 @@ namespace MobBrownRat
             // check for enemy
             if(blackboard.IsEnemyValid())
             {
-                // move
-                return blackboard.stateMove;
+                // react
+                return blackboard.stateReact;
             }
 
             if(blackboard.allyDied)
             {
-                // patrol
-                return blackboard.statePatrol;
+                // react
+                return blackboard.stateReact;
             }
 
             return this;
