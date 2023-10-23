@@ -1,14 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://gl71inotvdtq"]
+[gd_scene load_steps=10 format=3 uid="uid://gl71inotvdtq"]
 
 [ext_resource type="ArrayMesh" uid="uid://ig34hjeaev2k" path="res://Models/prop-blackberry-bush-old.res" id="1_74o7b"]
 [ext_resource type="Script" path="res://C#/PlayerBow/BlackberryBushTarget.cs" id="1_i6v5i"]
-[ext_resource type="Material" uid="uid://xvk3udisvh1k" path="res://Materials/LeavesBlackberryOld.tres" id="2_c08f5"]
+[ext_resource type="Material" uid="uid://xvk3udisvh1k" path="res://Materials/Plants/LeavesBlackberryOldWind.tres" id="2_c08f5"]
 [ext_resource type="PackedScene" uid="uid://b4f76op0ikakq" path="res://Prefabs/FX/FxBlackberryBushCut.tscn" id="2_yv47g"]
 [ext_resource type="ArrayMesh" uid="uid://d14x1h5scbsot" path="res://Models/prop-blackberry-bush-old-cut.res" id="3_d6b5l"]
 [ext_resource type="Texture2D" uid="uid://dos1omvwxpkts" path="res://Textures/fx-blackberry-bush-cut-decal.png" id="6_gr0jp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ngrm"]
-size = Vector3(3, 3, 2)
+size = Vector3(3, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xh34"]
+size = Vector3(3, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o24o3"]
 size = Vector3(3, 1.41, 1.41)
@@ -18,7 +21,7 @@ script = ExtResource("1_i6v5i")
 uncutMesh = NodePath("MeshUncut")
 cutMesh = NodePath("MeshCut")
 cutDecal = NodePath("Decal")
-colliders = [NodePath("CollisionShape3D"), NodePath("CollisionShape3D2")]
+colliders = [NodePath("CollisionShape3D"), NodePath("InvisibleWall/CollisionShape3D2"), NodePath("InvisibleWall/CollisionShape3D3")]
 cutFx = ExtResource("2_yv47g")
 targetOffset = Vector3(0, 1, 0)
 
@@ -36,12 +39,8 @@ mesh = ExtResource("3_d6b5l")
 surface_material_override/0 = ExtResource("2_c08f5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_5ngrm")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
-shape = SubResource("BoxShape3D_o24o3")
 
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23517e-08, 0)
@@ -49,3 +48,15 @@ visible = false
 size = Vector3(3, 0.5, 3)
 texture_albedo = ExtResource("6_gr0jp")
 cull_mask = 1
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_5xh34")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
+shape = SubResource("BoxShape3D_o24o3")
