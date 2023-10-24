@@ -16,7 +16,7 @@ namespace MobBrownRat
             blackboard.animStateMachinePlayback.Next();
             
             // look for enemy
-            blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
         }
         
         
@@ -47,7 +47,7 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            if(blackboard.enemy == null)
+            if(blackboard.IsEnemyValid() == false)
             {
                 // attack
                 return blackboard.stateAttack;

@@ -29,7 +29,7 @@ namespace MobBrownRat
             blackboard.lookAtTarget = true;
 
             // animation
-            //blackboard.animStateMachinePlayback.Travel("brown-rat-idle");
+            blackboard.animStateMachinePlayback.Travel("brown-rat-react");
             //blackboard.animStateMachinePlayback.Next();
         }
 
