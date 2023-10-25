@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bycycisv53o66"]
+[gd_scene load_steps=15 format=3 uid="uid://bycycisv53o66"]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
 [ext_resource type="Script" path="res://C#/Common/GlobalCamera.cs" id="1_w865n"]
@@ -8,7 +8,12 @@
 [ext_resource type="Script" path="res://C#/WorldData.cs" id="5_fnxei"]
 [ext_resource type="Script" path="res://C#/Common/Pause.cs" id="5_mk66s"]
 [ext_resource type="Script" path="res://C#/Common/EngineGravity.cs" id="6_mfr8q"]
+[ext_resource type="Script" path="res://C#/GameSettings.cs" id="6_rcfh6"]
+[ext_resource type="Script" path="res://C#/GameSettingsLoader.cs" id="7_o0ge6"]
 [ext_resource type="Script" path="res://C#/Common/PauseMenu.cs" id="7_ogfvn"]
+[ext_resource type="Script" path="res://C#/GameSettingsUi.cs" id="12_04fn0"]
+[ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="13_j8rmr"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="14_ykato"]
 
 [node name="GlobalCamera" type="Camera3D"]
 fov = 80.0
@@ -26,6 +31,13 @@ script = ExtResource("4_apx2b")
 [node name="WorldData" type="Node" parent="."]
 script = ExtResource("5_fnxei")
 
+[node name="GameSettings" type="Node" parent="."]
+script = ExtResource("6_rcfh6")
+
+[node name="GameSettingsLoader" type="Node" parent="."]
+script = ExtResource("7_o0ge6")
+postProcessing = ExtResource("13_j8rmr")
+
 [node name="StateMachineQueuePopper" type="Node" parent="."]
 script = ExtResource("1_4luc3")
 
@@ -42,13 +54,22 @@ process_mode = 3
 layer = 100
 script = ExtResource("7_ogfvn")
 menuContainer = NodePath("PauseMenu")
-resumeButton = NodePath("PauseMenu/VBoxContainer/ResumeButton")
-restartButton = NodePath("PauseMenu/VBoxContainer/RestartButton")
-quitButton = NodePath("PauseMenu/VBoxContainer/QuitButton")
+resumeButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/ResumeButton")
+restartButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/RestartButton")
+quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
 layout_mode = 3
-anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuButtons" type="Control" parent="PauseMenuCanvas/PauseMenu"]
+layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -61,7 +82,43 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/MenuButtons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.5
+offset_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloom", "ssao")]
+layout_mode = 1
+offset_left = -40.0
+offset_top = 50.0
+offset_right = 40.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("12_04fn0")
+postProcessing = ExtResource("13_j8rmr")
+bloom = NodePath("VBoxContainer/BloomCheckBox")
+ssao = NodePath("VBoxContainer/SsaoCheckBox")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,14 +126,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResumeButton" type="Button" parent="PauseMenuCanvas/PauseMenu/VBoxContainer"]
+[node name="SettingsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
-text = "Resume"
+theme = ExtResource("14_ykato")
+text = "Settings"
+horizontal_alignment = 1
 
-[node name="RestartButton" type="Button" parent="PauseMenuCanvas/PauseMenu/VBoxContainer"]
+[node name="BloomCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+theme = ExtResource("14_ykato")
+text = "Bloom"
 
-[node name="QuitButton" type="Button" parent="PauseMenuCanvas/PauseMenu/VBoxContainer"]
+[node name="SsaoCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme = ExtResource("14_ykato")
+text = "SSAO"
