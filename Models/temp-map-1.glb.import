@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bewar3dx3tukc"
-path="res://.godot/imported/tmp-map-1.glb-fc828d4de8084551bad7318a0b0b5ad3.scn"
+uid="uid://c34udpsn7l25n"
+path="res://.godot/imported/temp-map-1.glb-40825e9a331d0f0631d5e8717b71cd36.scn"
 
 [deps]
 
-source_file="res://Models/tmp-map-1.glb"
-dest_files=["res://.godot/imported/tmp-map-1.glb-fc828d4de8084551bad7318a0b0b5ad3.scn"]
+source_file="res://Models/temp-map-1.glb"
+dest_files=["res://.godot/imported/temp-map-1.glb-40825e9a331d0f0631d5e8717b71cd36.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"tmp-map-1_tmp-map-1": {
+"temp-map-1_tmp-map-1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -38,7 +38,7 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/tmp-map-1.res"
+"save_to_file/path": "res://Models/temp-map-1.res"
 }
 }
 }

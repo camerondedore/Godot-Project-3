@@ -30,6 +30,7 @@ namespace PlayerBow
             // check for target
             if(target == null)
             {
+                GD.Print("null bow target");
                 return;
             }
 
