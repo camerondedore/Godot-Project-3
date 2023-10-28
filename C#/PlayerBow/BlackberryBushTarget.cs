@@ -69,7 +69,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
         var newFx = cutFx.Instantiate() as Node3D;
 
         // set transform
-        newFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+        var spawnPosition = GlobalPosition + targetOffset;
+        newFx.LookAtFromPosition(spawnPosition, spawnPosition + -Basis.Z);
 
         GetTree().CurrentScene.AddChild(newFx);
         newFx.Owner = GetTree().CurrentScene;

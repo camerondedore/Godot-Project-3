@@ -27,7 +27,7 @@ namespace MobBrownRat
             blackboard.animStateMachinePlayback.Next();
 
             // remove faction nodes
-            foreach(var factionNode in blackboard.factions)
+            foreach(var factionNode in blackboard.myFactions)
             {
                 factionNode.QueueFree();
             }

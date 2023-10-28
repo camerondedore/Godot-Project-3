@@ -17,7 +17,7 @@
 [node name="FxBlackberryBushCut1" type="GPUParticles3D" parent="."]
 material_override = ExtResource("1_0na1p")
 emitting = false
-amount = 4
+amount = 5
 lifetime = 1.25
 one_shot = true
 explosiveness = 1.0
@@ -28,7 +28,7 @@ script = ExtResource("3_68d0q")
 [node name="FxBlackberryBushCut2" type="GPUParticles3D" parent="."]
 material_override = ExtResource("3_uq3o2")
 emitting = false
-amount = 4
+amount = 5
 lifetime = 1.25
 one_shot = true
 explosiveness = 1.0
@@ -39,7 +39,7 @@ script = ExtResource("3_68d0q")
 [node name="FxBlackberryBushCut3" type="GPUParticles3D" parent="."]
 material_override = ExtResource("4_2elc6")
 emitting = false
-amount = 4
+amount = 5
 lifetime = 1.25
 one_shot = true
 explosiveness = 1.0

@@ -34,7 +34,7 @@ namespace MobBrownRat
         [Export]
         public Health health;
         [Export]
-        public MobFaction[] factions;
+        public MobFaction[] myFactions;
         [Export]
         public AnimationTree animation;
         [Export]
