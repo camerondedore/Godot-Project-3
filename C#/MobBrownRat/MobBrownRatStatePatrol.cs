@@ -51,8 +51,8 @@ namespace MobBrownRat
         {
             if(blackboard.IsEnemyValid())
             {
-                // move
-                return blackboard.stateMove;
+                // react
+                return blackboard.stateReact;
             }
             
 

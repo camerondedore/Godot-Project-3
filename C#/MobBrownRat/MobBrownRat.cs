@@ -34,6 +34,8 @@ namespace MobBrownRat
         [Export]
         public Health health;
         [Export]
+        public MobFaction[] factions;
+        [Export]
         public AnimationTree animation;
         [Export]
         public CollisionShape3D collider;
@@ -66,7 +68,7 @@ namespace MobBrownRat
             fleeCount;
         public bool lookAtTarget = false,
             moving,
-            allyDied;
+            isAggro;
 
         bool delay = false;
 
@@ -265,9 +267,9 @@ namespace MobBrownRat
 
 
 
-        public void AllyKilled()
+        public void AllyHurt()
         {
-            allyDied = true;
+            isAggro = true;
         }
 
 
@@ -275,6 +277,36 @@ namespace MobBrownRat
         public void AllySpottedEnemy(MobFaction spottedEnemy)
         {
             enemy = spottedEnemy;
+        }
+
+
+
+        public void AggroAllies()
+        {
+            // get allies
+            var allies = detection.GetAllies(maxSightRangeForAlliesSqr);
+
+            // alert nearby allies that this mob died
+            foreach(MobFaction ally in allies)
+            {
+                var allyBase = (IMobAlly) ally.Owner;
+                allyBase.AllyHurt();
+            }
+        }
+
+
+
+        public void SpotEnemyForAllies()
+        {
+            // get allies
+            var allies = detection.GetAllies(maxSightRangeForAlliesSqr);
+
+            // alert nearby allies that this mob spotted an enemy
+            foreach(MobFaction ally in allies)
+            {
+                var allyBase = (IMobAlly) ally.Owner;
+                allyBase.AllySpottedEnemy(enemy);
+            }
         }
     }
 }

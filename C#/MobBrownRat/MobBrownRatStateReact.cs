@@ -22,6 +22,8 @@ namespace MobBrownRat
         {
             startTime = EngineTime.timePassed;
 
+            blackboard.moving = false;
+
             // add variation to reaction time
             reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
@@ -55,7 +57,7 @@ namespace MobBrownRat
                     return blackboard.stateMove;
                 }
 
-                if(blackboard.allyDied)
+                if(blackboard.isAggro)
                 {
                     // patrol
                     return blackboard.statePatrol;

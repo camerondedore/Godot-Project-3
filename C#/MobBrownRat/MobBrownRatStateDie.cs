@@ -20,19 +20,17 @@ namespace MobBrownRat
         
         public override void StartState()
         {
-            // get allies
-            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob died
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllyKilled();
-            }
+            blackboard.AggroAllies();
 
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-die");
             blackboard.animStateMachinePlayback.Next();
+
+            // remove faction nodes
+            foreach(var factionNode in blackboard.factions)
+            {
+                factionNode.QueueFree();
+            }
 
             // disable mob
             blackboard.machine.Disable();

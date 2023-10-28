@@ -22,6 +22,10 @@ namespace MobWasp
                 dead = true;
                 Die();
             }
+
+            // aggro wasp
+            wasp.isAggro = true;
+            wasp.AggroAllies();
         }
 
 

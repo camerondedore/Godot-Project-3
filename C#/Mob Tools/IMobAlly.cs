@@ -3,6 +3,6 @@ using System;
 
 public interface IMobAlly
 {
-    void AllyKilled();
+    void AllyHurt();
     void AllySpottedEnemy(MobFaction enemy);
 }

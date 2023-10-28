@@ -24,13 +24,14 @@
 radius = 0.2
 height = 0.9
 
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "animation", "gibsActivator", "venomFx", "flyAudio")]
+[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "health", "animation", "gibsActivator", "venomFx", "flyAudio")]
 collision_layer = 512
 collision_mask = 529
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
 eyes = NodePath("Eyes")
+health = NodePath("Health")
 animation = NodePath("AnimationTree")
 gibsActivator = NodePath("Gibs")
 venomFx = NodePath("FxWaspVenom")
@@ -43,22 +44,22 @@ lookSpeed = 5.0
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("wasp")]
 script = ExtResource("5_w4k4j")
 wasp = NodePath("..")
-hitPoints = 1.0
-maxHitPoints = 1.0
+hitPoints = 15.0
+maxHitPoints = 15.0
 
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.707764, 7.84316e-17, 7.85776e-17, 0.706449)
-bones/1/rotation = Quaternion(0.707106, 0.00065024, 0.707107, 0.000650296)
-bones/2/rotation = Quaternion(0.862115, 0.0682825, 0.487646, -0.119566)
-bones/3/rotation = Quaternion(-0.573726, -0.409322, -0.404672, 0.582695)
-bones/4/rotation = Quaternion(-0.493805, -0.361949, -0.296606, 0.732922)
-bones/5/rotation = Quaternion(0.785732, 0.185633, 0.512995, -0.291552)
-bones/6/rotation = Quaternion(0.862115, -0.0682825, -0.487646, -0.119566)
-bones/7/rotation = Quaternion(-0.589974, 0.395173, 0.423565, 0.56246)
-bones/8/rotation = Quaternion(-0.50408, 0.354069, 0.323719, 0.718154)
-bones/9/rotation = Quaternion(0.781098, -0.20504, -0.504802, -0.304992)
+bones/0/rotation = Quaternion(-0.712805, 7.78668e-17, 7.91373e-17, 0.701362)
+bones/1/rotation = Quaternion(0.707082, 0.00592224, 0.707082, 0.0059223)
+bones/2/rotation = Quaternion(0.862726, 0.0968171, 0.484146, -0.109236)
+bones/3/rotation = Quaternion(-0.564852, -0.403158, -0.410814, 0.591302)
+bones/4/rotation = Quaternion(-0.484692, -0.358248, -0.301065, 0.738981)
+bones/5/rotation = Quaternion(0.782453, 0.179938, 0.51502, -0.30024)
+bones/6/rotation = Quaternion(0.862726, -0.0968171, -0.484146, -0.109236)
+bones/7/rotation = Quaternion(-0.581404, 0.388725, 0.429491, 0.571315)
+bones/8/rotation = Quaternion(-0.495148, 0.350033, 0.328078, 0.724341)
+bones/9/rotation = Quaternion(0.77767, -0.199433, -0.507043, -0.313628)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2

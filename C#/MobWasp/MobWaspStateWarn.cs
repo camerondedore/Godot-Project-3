@@ -28,16 +28,7 @@ namespace MobWasp
             blackboard.useOffset = true;
             blackboard.lookWithVelocity = false;
 
-
-            // get allies
-            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob spotted an enemy
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllySpottedEnemy(blackboard.enemy);
-            }
+            blackboard.SpotEnemyForAllies();
         }
 
 
@@ -62,8 +53,8 @@ namespace MobWasp
             // get distance squared to enemy
             var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
-            // check if enemy is out of sight range and no ally died 
-            if(distanceToEnemySqr > blackboard.maxSightRangeSqr && blackboard.allyDied == false)
+            // check if enemy is out of sight range and no aggro
+            if(distanceToEnemySqr > blackboard.maxSightRangeSqr && blackboard.isAggro == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;
@@ -77,8 +68,9 @@ namespace MobWasp
             var isEnemyInOperatingArea = distanceToStartSqr <= blackboard.maxFlightRangeSqr;
             var hasLosToEnemy = blackboard.eyes.HasLosToTarget(blackboard.enemy);
 
-            // check if enemy is close enough for attack and not past max flight range and enemy in view
-            if((isEnemyInAttackRange || blackboard.allyDied) && isEnemyInOperatingArea && hasLosToEnemy)
+            // check if enemy is close enough for attack or aggro
+            // and not past max flight range and enemy in view
+            if((isEnemyInAttackRange || blackboard.isAggro) && isEnemyInOperatingArea && hasLosToEnemy)
             {
                 // attack
                 return blackboard.stateAttack;

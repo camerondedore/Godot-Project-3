@@ -28,15 +28,7 @@ namespace MobWasp
             blackboard.GetTree().CurrentScene.AddChild(newFx);
             newFx.Owner = blackboard.GetTree().CurrentScene;
 
-            // get allies
-            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob died
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllyKilled();
-            }
+            blackboard.AggroAllies();
 
             blackboard.QueueFree();
         }

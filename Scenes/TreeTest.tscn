@@ -1072,26 +1072,34 @@ transform = Transform3D(0.651688, 0, -0.758487, 0, 1, 0, 0.758487, 0, 0.651688, 
 transform = Transform3D(-0.995913, 0.0681366, 0.059287, -0.0788706, -0.336219, -0.938475, -0.0440111, -0.939316, 0.340219, 15.4272, 2.57036, 11.4812)
 warnOffset = Vector3(0, 0.5, -1)
 
-[node name="MobBrownRat" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -23, 0.85, 11)
+factions = []
 
-[node name="MobBrownRat2" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat2" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(-0.999996, 0, -0.00289743, 0, 1, 0, 0.00289743, 0, -0.999996, -24, 0.85, 8)
+factions = []
 
-[node name="MobBrownRat3" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat3" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -26, 0.85, 10)
+factions = []
 
-[node name="MobBrownRat4" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat4" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -26.4684, 0.85, 8.03017)
+factions = []
 
-[node name="MobBrownRat5" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat5" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1765, 0.85, 18.7998)
+factions = []
 
-[node name="MobBrownRat6" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat6" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3735, 0.85, 20.4984)
+factions = []
 
-[node name="MobBrownRat7" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat7" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9375, 0.85, 17.1981)
+factions = []
 
-[node name="MobBrownRat8" parent="." instance=ExtResource("79_f3rqk")]
+[node name="MobBrownRat8" parent="." node_paths=PackedStringArray("factions") instance=ExtResource("79_f3rqk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.746, 0.85, 18.8403)
+factions = []

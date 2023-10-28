@@ -53,7 +53,7 @@ namespace MobWasp
                     return blackboard.stateWarn;
                 }
 
-                if(blackboard.allyDied)
+                if(blackboard.isAggro)
                 {
                     // idle alert
                     return blackboard.stateIdleAlert;

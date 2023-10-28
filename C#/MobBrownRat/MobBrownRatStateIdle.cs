@@ -47,7 +47,7 @@ namespace MobBrownRat
                 return blackboard.stateReact;
             }
 
-            if(blackboard.allyDied)
+            if(blackboard.isAggro)
             {
                 // react
                 return blackboard.stateReact;

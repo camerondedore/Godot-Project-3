@@ -52,8 +52,8 @@ namespace MobWasp
 
         public override State Transition()
         {
-            // check for dead allies
-            if(blackboard.allyDied)
+            // check for aggro
+            if(blackboard.isAggro)
             {
                 // takeoff
                 return blackboard.stateTakeoff;

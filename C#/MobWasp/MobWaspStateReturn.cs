@@ -44,7 +44,7 @@ namespace MobWasp
             
             if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 1f)
             {
-                if(blackboard.allyDied)
+                if(blackboard.isAggro)
                 {
                     // idle alert
                     return blackboard.stateIdleAlert;

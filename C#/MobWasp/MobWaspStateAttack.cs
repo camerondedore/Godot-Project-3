@@ -15,7 +15,7 @@ namespace MobWasp
             // look for enemy
             blackboard.LookForEnemy();
 
-            if(blackboard.enemy != null)
+            if(blackboard.IsEnemyValid())
             {
                 blackboard.targetPosition = blackboard.enemy.GlobalPosition;
             }
@@ -59,8 +59,8 @@ namespace MobWasp
                 return blackboard.stateCooldown;
             }
 
-            // check if enemy is out of sight range and no ally died 
-            if(blackboard.GetDistanceSqrToEnemy() > blackboard.maxSightRangeSqr && blackboard.allyDied == false)
+            // check if enemy is out of sight range and no aggro 
+            if(blackboard.GetDistanceSqrToEnemy() > blackboard.maxSightRangeSqr && blackboard.isAggro == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;
@@ -73,7 +73,7 @@ namespace MobWasp
             var isEnemyInAttackRange = distanceToEnemySqr < blackboard.attackDistanceSqr;
 
             // check if enemy is too far for attack and if ally has not died
-            if(isEnemyInAttackRange == false && blackboard.allyDied == false)
+            if(isEnemyInAttackRange == false && blackboard.isAggro == false)
             {
                 // cooldown
                 return blackboard.stateCooldown;

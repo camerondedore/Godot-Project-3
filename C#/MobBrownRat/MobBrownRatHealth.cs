@@ -22,6 +22,10 @@ namespace MobBrownRat
                 dead = true;
                 Die();
             }
+
+            // aggro rat
+            rat.isAggro = true;
+            rat.AggroAllies();
         }
 
 

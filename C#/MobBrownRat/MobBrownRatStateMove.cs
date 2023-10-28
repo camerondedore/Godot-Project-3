@@ -38,15 +38,7 @@ namespace MobBrownRat
             // set move target
             blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
 
-            // get allies
-            var allies = blackboard.detection.GetAllies(blackboard.maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob died
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllySpottedEnemy(blackboard.enemy);
-            }
+            blackboard.SpotEnemyForAllies();
 
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
