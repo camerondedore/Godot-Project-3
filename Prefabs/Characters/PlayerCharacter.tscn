@@ -374,12 +374,12 @@ grow_vertical = 2
 theme = ExtResource("5_o5i36")
 
 [node name="Faction" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.537816, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637816, 0)
 script = ExtResource("34_61alq")
 faction = 1
 
 [node name="Faction2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.24186, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14186, 0)
 script = ExtResource("34_61alq")
 faction = 1
 

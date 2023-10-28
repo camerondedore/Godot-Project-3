@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cprd78232h3xu"]
+
+[ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="1_whxr7"]
+[ext_resource type="Material" uid="uid://duehqgamju4kk" path="res://Materials/Props/PropRadishLeavesWind.tres" id="2_4lf20"]
+
+[node name="PropRadishWind" instance=ExtResource("1_whxr7")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/1 = ExtResource("2_4lf20")

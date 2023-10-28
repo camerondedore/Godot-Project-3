@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://vjjqrqfg6v88"]
+
+[ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="1_d73l8"]
+[ext_resource type="ArrayMesh" uid="uid://bpfwwmmb5olb3" path="res://Models/prop-radish-trimmed.res" id="2_m6m73"]
+
+[node name="PropRadishTrimmed" instance=ExtResource("1_d73l8")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_m6m73")
