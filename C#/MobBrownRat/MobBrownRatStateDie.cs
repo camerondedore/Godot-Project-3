@@ -26,10 +26,10 @@ namespace MobBrownRat
             blackboard.animStateMachinePlayback.Travel("brown-rat-die");
             blackboard.animStateMachinePlayback.Next();
 
-            // remove faction nodes
-            foreach(var factionNode in blackboard.myFactions)
+            // destroy faction nodes
+            foreach(var faction in blackboard.myFactions)
             {
-                factionNode.QueueFree();
+                faction.QueueFree();
             }
 
             // disable mob
