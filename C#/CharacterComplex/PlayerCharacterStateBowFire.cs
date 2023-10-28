@@ -7,6 +7,7 @@ namespace PlayerCharacterComplex
     {
 
         double startTime;
+        bool hasTargetAtStart;
 
 
 
@@ -43,6 +44,8 @@ namespace PlayerCharacterComplex
         {
             startTime = EngineTime.timePassed;
 
+            hasTargetAtStart = blackboard.bowAimer.target != null;
+
             // fire bow
             blackboard.bow.Fire(blackboard.bowAimer.target);
 
@@ -61,10 +64,17 @@ namespace PlayerCharacterComplex
 
         public override State Transition()
         {
-            if(!blackboard.IsOnFloor())
+            if(blackboard.IsOnFloor() == false)
             {
                 // fall
                 return blackboard.stateFall;
+            }
+
+            // lost target
+            if(hasTargetAtStart == false)
+            {
+                // move
+                return blackboard.stateMove;
             }
 
             // if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())

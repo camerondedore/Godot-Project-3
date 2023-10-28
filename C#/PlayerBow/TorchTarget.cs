@@ -58,7 +58,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     public void Hit()
     {
         // stop drip fx
-        dripFx.Restart();
+        dripFx.Emitting = false;
 
         // start fire fx
         fireFx.Restart();
