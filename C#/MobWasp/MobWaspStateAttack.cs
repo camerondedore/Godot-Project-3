@@ -50,6 +50,17 @@ namespace MobWasp
             }
 
 
+            // get distance squared to enemy
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+            // check if enemy is close enough to hit
+            if(EngineTime.timePassed > startTime + 0.5f && distanceToEnemySqr < blackboard.hitDistanceSqr)
+            {
+                // hit
+                return blackboard.stateHit;
+            }
+
+
             var hasLosToEnemy = blackboard.eyes.HasLosToTarget(blackboard.enemy);
 
             // check if no los to enemy
@@ -67,9 +78,6 @@ namespace MobWasp
             }
 
 
-            // get distance squared to enemy
-            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
-
             var isEnemyInAttackRange = distanceToEnemySqr < blackboard.attackDistanceSqr;
 
             // check if enemy is too far for attack and if ally has not died
@@ -77,14 +85,7 @@ namespace MobWasp
             {
                 // cooldown
                 return blackboard.stateCooldown;
-            }
-
-            // check if enemy is close enough to hit
-            if(EngineTime.timePassed > startTime + 0.5f && distanceToEnemySqr < blackboard.hitDistanceSqr)
-            {
-                // hit
-                return blackboard.stateHit;
-            }
+            }            
             
 
             // get enemy distance squared from start position

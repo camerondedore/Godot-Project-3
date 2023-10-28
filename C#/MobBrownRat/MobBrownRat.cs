@@ -228,9 +228,10 @@ namespace MobBrownRat
         public void LookForEnemy()
         {
             // look for new enemy
-            var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
+            // var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
 
-            var newEnemy = detection.LookForEnemy(lookDistanceSqr);     
+            // var newEnemy = detection.LookForEnemy(lookDistanceSqr);
+            var newEnemy = detection.LookForEnemy(maxSightRangeSqr);
 
             if(newEnemy != null)
             {
