@@ -60,6 +60,7 @@ quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
 layout_mode = 3
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -70,6 +71,7 @@ mouse_filter = 2
 
 [node name="MenuButtons" type="Control" parent="PauseMenuCanvas/PauseMenu"]
 layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -106,6 +108,7 @@ text = "Quit"
 
 [node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloom", "ssao")]
 layout_mode = 1
+anchors_preset = 0
 offset_left = -40.0
 offset_top = 50.0
 offset_right = 40.0
