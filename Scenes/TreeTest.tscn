@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=95 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -89,6 +89,9 @@
 [ext_resource type="PackedScene" uid="uid://cvpfiw0o36yme" path="res://Prefabs/Pickups/PickupCider.tscn" id="75_8w06i"]
 [ext_resource type="PackedScene" uid="uid://b1e6hhtb3arh8" path="res://Prefabs/Small Items/PropBungMallet.tscn" id="76_xaefu"]
 [ext_resource type="PackedScene" uid="uid://dauwd0f7v5uyx" path="res://Prefabs/Characters/MobBrownRat.tscn" id="79_f3rqk"]
+[ext_resource type="PackedScene" uid="uid://m1f3turs6go4" path="res://Prefabs/Bow Targets/PropSpiderweb1.tscn" id="86_3f7f4"]
+[ext_resource type="PackedScene" uid="uid://bawlxo6vs8yl7" path="res://Prefabs/Bow Targets/PropSpiderwebStretched.tscn" id="87_2g5pa"]
+[ext_resource type="PackedScene" uid="uid://pyccqvluykun" path="res://Prefabs/Bow Targets/PropSpiderwebCorner.tscn" id="88_ob02h"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_q1ywk"]
 resource_local_to_scene = true
@@ -1024,6 +1027,17 @@ blackWall = NodePath("../BlackWall")
 
 [node name="BlackWall" parent="Map/Torches" instance=ExtResource("71_tu5qd")]
 transform = Transform3D(-1.65454, 0, -1.44645e-07, 0, 1.65454, 0, 1.44645e-07, 0, -1.65454, 0.94328, 10.1856, -21.156)
+
+[node name="Spiderwebs" type="Node3D" parent="Map"]
+
+[node name="PropSpiderweb1" parent="Map/Spiderwebs" instance=ExtResource("86_3f7f4")]
+transform = Transform3D(0.174851, 0.254832, 0.951046, 0, 0.965926, -0.258819, -0.984595, 0.0452548, 0.168893, 3.82936, 0.304213, 11.8501)
+
+[node name="PropSpiderwebStretched" parent="Map/Spiderwebs" instance=ExtResource("87_2g5pa")]
+transform = Transform3D(-4.37114e-08, 0, 1, -0.186284, 0.982496, -8.14273e-09, -0.982496, -0.186284, -4.29463e-08, 30.6413, 3.0435, 2.66307)
+
+[node name="PropSpiderwebCorner" parent="Map/Spiderwebs" instance=ExtResource("88_ob02h")]
+transform = Transform3D(-0.0557793, 0.435421, -1.62501, -1.11759e-07, -1.62591, -0.43566, -1.68234, -0.0144366, 0.0538787, 1.69988, 0.689975, -11.4471)
 
 [node name="CheckPoint" parent="Map" node_paths=PackedStringArray("saveTarget", "cameraTarget") instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9, -17.3715)
