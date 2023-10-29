@@ -4,7 +4,7 @@
 
 [resource]
 transparency = 2
-alpha_scissor_threshold = 0.25
+alpha_scissor_threshold = 0.2
 alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("1_1akps")
