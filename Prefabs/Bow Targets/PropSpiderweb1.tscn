@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://m1f3turs6go4"]
+
+[ext_resource type="ArrayMesh" uid="uid://j3mheaux7jps" path="res://Models/prop-spiderweb-1.res" id="1_h302x"]
+[ext_resource type="Material" uid="uid://cgq7hcnxrd2bq" path="res://Materials/Props/PropSpiderwebs.tres" id="2_74fe7"]
+
+[node name="PropSpiderweb1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_h302x")
+surface_material_override/0 = ExtResource("2_74fe7")
