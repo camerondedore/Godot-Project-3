@@ -7,6 +7,8 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
 
     [Export]
     public string arrowType = "blade";
+    [Export]
+    PackedScene cutFx;
 
 
 
@@ -34,14 +36,13 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
     public void Hit()
     {
         // create fx
-        //var newFx = cutFx.Instantiate() as Node3D;
+        var newFx = cutFx.Instantiate() as Node3D;
 
         // set transform
-        //var spawnPosition = GlobalPosition + targetOffset;
-        //newFx.LookAtFromPosition(spawnPosition, spawnPosition + -Basis.Z);
+        newFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
 
-        //GetTree().CurrentScene.AddChild(newFx);
-        //newFx.Owner = GetTree().CurrentScene;
+        GetTree().CurrentScene.AddChild(newFx);
+        newFx.Owner = GetTree().CurrentScene;
 
         // destroy
         QueueFree();
