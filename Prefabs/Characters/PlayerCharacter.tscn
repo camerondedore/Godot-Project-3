@@ -484,7 +484,7 @@ targetFx = NodePath("TargetSprite")
 
 [node name="BowAimerRay" type="RayCast3D" parent="SpringArm3D/BowAimer"]
 target_position = Vector3(0, 0, -30)
-collision_mask = 595
+collision_mask = 1619
 
 [node name="BowAimerShape" type="ShapeCast3D" parent="SpringArm3D/BowAimer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -492,7 +492,7 @@ shape = SubResource("SphereShape3D_0m844")
 target_position = Vector3(0, 0, -30)
 margin = 0.05
 max_results = 1
-collision_mask = 595
+collision_mask = 1619
 
 [node name="TargetSprite" type="Sprite3D" parent="SpringArm3D/BowAimer" node_paths=PackedStringArray("audio", "sparkleFx")]
 layers = 2

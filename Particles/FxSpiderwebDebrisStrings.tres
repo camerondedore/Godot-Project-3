@@ -9,10 +9,8 @@ curve = SubResource("Curve_pvu0u")
 
 [resource]
 lifetime_randomness = 0.4
-emission_shape = 3
-emission_box_extents = Vector3(0.25, 0.25, 0.1)
 direction = Vector3(0, 1, 0)
-spread = 60.0
+spread = 180.0
 gravity = Vector3(0, -4.9, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 3.0

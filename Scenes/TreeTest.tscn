@@ -1023,7 +1023,7 @@ blackWall = NodePath("../BlackWall2")
 transform = Transform3D(-0.376305, 0, 0.926496, 0, 1, 0, -0.926496, 0, -0.376305, 25.3733, 11.9554, -8.9481)
 
 [node name="PropTorch3" parent="Map/Torches" node_paths=PackedStringArray("blackWall") instance=ExtResource("70_woav5")]
-transform = Transform3D(-4.37114e-08, -0.5, -0.866025, 0, 0.866025, -0.5, 1, -2.18557e-08, -3.78552e-08, 3.29829, 9.48625, -21.0338)
+transform = Transform3D(-4.37114e-08, -0.5, -0.866025, 0, 0.866025, -0.5, 1, -2.18557e-08, -3.78552e-08, 3.29829, 9.48625, -20.2841)
 blackWall = NodePath("../BlackWall")
 
 [node name="BlackWall" parent="Map/Torches" instance=ExtResource("71_tu5qd")]
@@ -1040,17 +1040,8 @@ transform = Transform3D(-4.37114e-08, 0, 1, -0.186284, 0.982496, -8.14273e-09, -
 [node name="PropSpiderwebCorner" parent="Map/Spiderwebs" instance=ExtResource("88_ob02h")]
 transform = Transform3D(-0.0557793, 0.435421, -1.62501, -1.11759e-07, -1.62591, -0.43566, -1.68234, -0.0144366, 0.0538787, 1.69988, 0.689975, -11.4471)
 
-[node name="PropSpiderwebCorner3" parent="Map/Spiderwebs" instance=ExtResource("88_ob02h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2099, 1.48136, -4.05343)
-
 [node name="PropSpiderweb4" parent="Map/Spiderwebs" instance=ExtResource("89_qg341")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7802, 1.9472, -4.05343)
-
-[node name="PropSpiderweb5" parent="Map/Spiderwebs" instance=ExtResource("86_3f7f4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4517, 2.16014, -4.05343)
-
-[node name="PropSpiderwebStretched2" parent="Map/Spiderwebs" instance=ExtResource("87_2g5pa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.046, 1.48136, -4.05343)
+transform = Transform3D(5.61147, 0, 0, 0, 5.61147, 0, 0, 0, 5.61147, 0.929171, 10, -25.0516)
 
 [node name="CheckPoint" parent="Map" node_paths=PackedStringArray("saveTarget", "cameraTarget") instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9, -17.3715)
