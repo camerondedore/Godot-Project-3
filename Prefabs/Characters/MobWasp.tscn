@@ -50,16 +50,16 @@ maxHitPoints = 15.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.711083, 7.80607e-17, 7.89461e-17, 0.703108)
-bones/1/rotation = Quaternion(0.70709, 0.00482172, 0.70709, 0.00482177)
-bones/2/rotation = Quaternion(0.8627, 0.093806, 0.484537, -0.110332)
-bones/3/rotation = Quaternion(-0.567896, -0.405272, -0.408728, 0.588379)
-bones/4/rotation = Quaternion(-0.487493, -0.359388, -0.299703, 0.737136)
-bones/5/rotation = Quaternion(0.783584, 0.181887, 0.514335, -0.297274)
-bones/6/rotation = Quaternion(0.8627, -0.093806, -0.484537, -0.110332)
-bones/7/rotation = Quaternion(-0.584344, 0.390936, 0.427479, 0.568307)
-bones/8/rotation = Quaternion(-0.497894, 0.351276, 0.326747, 0.722456)
-bones/9/rotation = Quaternion(0.778864, -0.20137, -0.506277, -0.310653)
+bones/0/rotation = Quaternion(-0.707218, 7.84923e-17, 7.8517e-17, 0.706995)
+bones/1/rotation = Quaternion(0.707107, 0.000140419, 0.707107, 0.000140476)
+bones/2/rotation = Quaternion(0.862034, 0.0660566, 0.4879, -0.120367)
+bones/3/rotation = Quaternion(-0.574686, -0.409988, -0.403997, 0.581749)
+bones/4/rotation = Quaternion(-0.494863, -0.362376, -0.296083, 0.732209)
+bones/5/rotation = Quaternion(0.786089, 0.186262, 0.512767, -0.290588)
+bones/6/rotation = Quaternion(0.862034, -0.0660566, -0.4879, -0.120367)
+bones/7/rotation = Quaternion(-0.5909, 0.395871, 0.422913, 0.561487)
+bones/8/rotation = Quaternion(-0.505116, 0.354536, 0.323207, 0.717425)
+bones/9/rotation = Quaternion(0.781471, -0.205658, -0.50455, -0.304034)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2
@@ -86,7 +86,7 @@ MobPriority = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.17214)
 enabled = false
 target_position = Vector3(0, 0, -1)
-collision_mask = 3
+collision_mask = 1027
 script = ExtResource("3_muehp")
 myFaction = NodePath("../Faction")
 pointBlankRangeSqr = 1.0
@@ -94,7 +94,7 @@ pointBlankRangeSqr = 1.0
 [node name="Eyes" type="RayCast3D" parent="."]
 enabled = false
 target_position = Vector3(0, 0, -1)
-collision_mask = 19
+collision_mask = 1043
 script = ExtResource("11_lig66")
 
 [node name="FxWaspVenom" parent="." instance=ExtResource("10_mche4")]
