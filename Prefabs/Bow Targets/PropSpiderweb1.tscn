@@ -9,6 +9,7 @@
 size = Vector3(0.8, 0.8, 0.1)
 
 [node name="PropSpiderweb1" type="StaticBody3D"]
+collision_layer = 64
 script = ExtResource("1_2acdw")
 cutFx = ExtResource("2_3gmco")
 
