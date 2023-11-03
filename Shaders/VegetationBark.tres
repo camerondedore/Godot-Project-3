@@ -1,4 +1,9 @@
-[gd_resource type="VisualShader" load_steps=37 format=3 uid="uid://cq8ayd6v6h7by"]
+[gd_resource type="VisualShader" load_steps=38 format=3 uid="uid://cq8ayd6v6h7by"]
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_yfklx"]
+parameter_name = "Specular"
+default_value_enabled = true
+default_value = 0.25
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_p8gy8"]
 input_name = "uv"
@@ -131,6 +136,7 @@ uniform float Y_Multiplier = 0.25;
 uniform sampler2D Albedo : source_color;
 uniform float Metallic = 0.5;
 uniform float Roughness = 1;
+uniform float Specular = 0.25;
 
 
 
@@ -290,14 +296,20 @@ void fragment() {
 	float n_out9p0 = Roughness;
 
 
+// FloatParameter:10
+	float n_out10p0 = Specular;
+
+
 // Output:0
 	ALBEDO = vec3(n_out5p0.xyz);
 	METALLIC = n_out7p0;
 	ROUGHNESS = n_out9p0;
+	SPECULAR = n_out10p0;
 
 
 }
 "
+graph_offset = Vector2(-31.1555, 18.1472)
 nodes/vertex/0/position = Vector2(1680, 340)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_imd0d")
 nodes/vertex/2/position = Vector2(-1240, 520)
@@ -372,4 +384,6 @@ nodes/fragment/7/node = SubResource("VisualShaderNodeFloatParameter_m5ovt")
 nodes/fragment/7/position = Vector2(-320, 660)
 nodes/fragment/9/node = SubResource("VisualShaderNodeFloatParameter_2mawm")
 nodes/fragment/9/position = Vector2(-320, 860)
-nodes/fragment/connections = PackedInt32Array(4, 0, 5, 2, 5, 0, 0, 0, 3, 0, 5, 0, 7, 0, 0, 2, 9, 0, 0, 3)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFloatParameter_yfklx")
+nodes/fragment/10/position = Vector2(0, 100)
+nodes/fragment/connections = PackedInt32Array(4, 0, 5, 2, 5, 0, 0, 0, 3, 0, 5, 0, 7, 0, 0, 2, 9, 0, 0, 3, 10, 0, 0, 4)

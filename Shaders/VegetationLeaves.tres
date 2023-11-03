@@ -1,8 +1,13 @@
-[gd_resource type="VisualShader" load_steps=39 format=3 uid="uid://bf5x17w6n85b1"]
+[gd_resource type="VisualShader" load_steps=40 format=3 uid="uid://bf5x17w6n85b1"]
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_kw37c"]
 parameter_name = "Backlight_Strength"
 default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_5y6xa"]
+parameter_name = "Specular"
+default_value_enabled = true
+default_value = 0.25
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_p8gy8"]
 input_name = "uv"
@@ -140,6 +145,7 @@ uniform float Y_Multiplier = 0.25;
 uniform sampler2D Albedo : source_color;
 uniform float Metallic = 0.5;
 uniform float Roughness = 1;
+uniform float Specular = 0.25;
 uniform float Backlight_Strength = 0;
 uniform float Alpha_Scissor = 0.5;
 
@@ -302,6 +308,10 @@ void fragment() {
 	float n_out9p0 = Roughness;
 
 
+// FloatParameter:11
+	float n_out11p0 = Specular;
+
+
 // FloatParameter:10
 	float n_out10p0 = Backlight_Strength;
 
@@ -315,12 +325,14 @@ void fragment() {
 	ALPHA = n_out5p4;
 	METALLIC = n_out7p0;
 	ROUGHNESS = n_out9p0;
+	SPECULAR = n_out11p0;
 	BACKLIGHT = vec3(n_out10p0);
 	ALPHA_SCISSOR_THRESHOLD = n_out6p0;
 
 
 }
 "
+graph_offset = Vector2(-158.1, 194.702)
 modes/cull = 2
 nodes/vertex/0/position = Vector2(1420, 340)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_imd0d")
@@ -400,4 +412,6 @@ nodes/fragment/9/node = SubResource("VisualShaderNodeFloatParameter_2mawm")
 nodes/fragment/9/position = Vector2(-320, 860)
 nodes/fragment/10/node = SubResource("VisualShaderNodeFloatParameter_kw37c")
 nodes/fragment/10/position = Vector2(-320, 1100)
-nodes/fragment/connections = PackedInt32Array(4, 0, 5, 2, 5, 0, 0, 0, 3, 0, 5, 0, 6, 0, 0, 19, 7, 0, 0, 2, 5, 4, 0, 1, 10, 0, 0, 18, 9, 0, 0, 3)
+nodes/fragment/11/node = SubResource("VisualShaderNodeFloatParameter_5y6xa")
+nodes/fragment/11/position = Vector2(-62.9706, 184.729)
+nodes/fragment/connections = PackedInt32Array(4, 0, 5, 2, 5, 0, 0, 0, 3, 0, 5, 0, 6, 0, 0, 19, 7, 0, 0, 2, 5, 4, 0, 1, 10, 0, 0, 18, 9, 0, 0, 3, 11, 0, 0, 4)
