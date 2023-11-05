@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://565phnp5c2il"]
+
+[ext_resource type="PackedScene" uid="uid://cam1sxltrw2vj" path="res://Prefabs/Trees/PropTreeEvergreen1.tscn" id="1_o2354"]
+[ext_resource type="ArrayMesh" uid="uid://dywngkijh5s82" path="res://Models/prop-tree-evergreen-2.res" id="2_o1xnb"]
+[ext_resource type="ArrayMesh" uid="uid://im0l54af8s7n" path="res://Models/prop-tree-evergreen-leaves-2.res" id="3_0xp2r"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_avq7h"]
+points = PackedVector3Array(0.243182, -0.127299, -0.00590891, -0.246799, -0.127299, -0.0758376, -0.246799, -0.127299, 0.0990801, -0.0717376, 5.0175, -0.0408253, 0.0681198, -0.0220466, -0.250899, 0.10318, -0.0572987, 0.239082, 0.0681198, 5.0175, 0.0640678, 0.0681198, 5.0175, -0.0758376, -0.0717376, 4.28174, 0.0990801, -0.141714, -0.127299, -0.215887, -0.106798, -0.127299, 0.239082, 0.173109, -0.127299, -0.215887, 0.243182, 0.012702, 0.0990801, -0.0717376, 4.9475, -0.0758376, 0.243182, 0.012702, -0.11085, 0.173109, -0.127299, 0.204069, -0.0367733, 4.6675, 0.0990801, -0.0367733, 0.0827026, -0.250899, -0.176727, 0.0479541, 0.204069, -0.106798, 4.21224, 0.0640678, 0.10318, 4.42224, 0.0290555, -0.211787, -0.127299, -0.145814, -0.106798, 4.31699, -0.0408253, -0.0717376, 5.0175, 0.0640678, -0.246799, 0.0479541, 0.0990801, 0.0681198, 4.35174, 0.0990801, -0.0018089, 4.24699, -0.11085, -0.0018089, 0.187956, 0.239082, 0.0331555, 4.6675, 0.0990801, 0.10318, 4.42224, -0.0408253, -0.211787, -0.0572987, 0.169009, -0.106798, 0.012702, 0.239082)
+
+[node name="PropTreeEvergreen2" instance=ExtResource("1_o2354")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_o1xnb")
+
+[node name="MeshInstance3D2" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = ExtResource("3_0xp2r")
+
+[node name="CollisionShape3D" parent="." index="2"]
+shape = SubResource("ConvexPolygonShape3D_avq7h")
