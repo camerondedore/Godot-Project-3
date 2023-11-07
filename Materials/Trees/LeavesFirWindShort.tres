@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d0cjy44fcos7m"]
+
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_iy2se"]
+[ext_resource type="Texture2D" uid="uid://dfwt7mjlljhxw" path="res://Textures/leaves-fir.png" id="2_nnsn1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_iy2se")
+shader_parameter/Wind_Amplitude = 0.05
+shader_parameter/Wind_Speed = 0.2
+shader_parameter/Wind_Turbulance = 5.0
+shader_parameter/Wind_Min_Height = -3.0
+shader_parameter/Wind_Slope = 5.0
+shader_parameter/Y_Multiplier = 0.25
+shader_parameter/Metallic = 0.1
+shader_parameter/Roughness = 1.532
+shader_parameter/Specular = 0.25
+shader_parameter/Backlight_Strength = 0.2
+shader_parameter/Alpha_Scissor = 0.5
+shader_parameter/Albedo = ExtResource("2_nnsn1")

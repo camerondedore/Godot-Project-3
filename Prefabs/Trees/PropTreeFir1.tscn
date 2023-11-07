@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cam1sxltrw2vj"]
 
 [ext_resource type="ArrayMesh" uid="uid://bt0wxr3kbylig" path="res://Models/prop-tree-fir-1.res" id="1_igs3l"]
-[ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Plants/BarkFir.tres" id="2_qdo7n"]
-[ext_resource type="Material" uid="uid://cv7hwc22ts4vd" path="res://Materials/Plants/LeavesFirWind.tres" id="3_6mw1y"]
+[ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_qdo7n"]
+[ext_resource type="Material" uid="uid://cv7hwc22ts4vd" path="res://Materials/Trees/LeavesFirWind.tres" id="3_6mw1y"]
 [ext_resource type="ArrayMesh" uid="uid://uddmfw2yjpm" path="res://Models/prop-tree-fir-leaves-1.res" id="3_ww2bu"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k2yr2"]

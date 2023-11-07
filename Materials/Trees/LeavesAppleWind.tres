@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dnj7b6swgc61t"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_0ahoa"]
-[ext_resource type="Texture2D" uid="uid://p0eylkn2cgln" path="res://Textures/leaves-apple.png" id="2_h7ctk"]
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_xreum"]
+[ext_resource type="Texture2D" uid="uid://p0eylkn2cgln" path="res://Textures/leaves-apple.png" id="2_81cv2"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_0ahoa")
+shader = ExtResource("1_xreum")
 shader_parameter/Wind_Amplitude = 0.1
 shader_parameter/Wind_Speed = 0.1
 shader_parameter/Wind_Turbulance = 0.5
@@ -17,4 +17,4 @@ shader_parameter/Roughness = 1.532
 shader_parameter/Specular = 0.25
 shader_parameter/Backlight_Strength = 0.3
 shader_parameter/Alpha_Scissor = 0.5
-shader_parameter/Albedo = ExtResource("2_h7ctk")
+shader_parameter/Albedo = ExtResource("2_81cv2")

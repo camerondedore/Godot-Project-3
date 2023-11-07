@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://boymd3ukajjrr"]
 
-[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Shaders/VegetationBark.tres" id="1_325j8"]
-[ext_resource type="Texture2D" uid="uid://bxk1o3mnox71" path="res://Textures/bark-apple.png" id="2_ydtmt"]
+[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Shaders/VegetationBark.tres" id="1_mmyho"]
+[ext_resource type="Texture2D" uid="uid://bxk1o3mnox71" path="res://Textures/bark-apple.png" id="2_jqqk6"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_325j8")
+shader = ExtResource("1_mmyho")
 shader_parameter/Wind_Amplitude = 0.1
 shader_parameter/Wind_Speed = 0.1
 shader_parameter/Wind_Turbulance = 0.5
@@ -15,4 +15,4 @@ shader_parameter/Y_Multiplier = 0.25
 shader_parameter/Metallic = 0.1
 shader_parameter/Roughness = 1.532
 shader_parameter/Specular = 0.25
-shader_parameter/Albedo = ExtResource("2_ydtmt")
+shader_parameter/Albedo = ExtResource("2_jqqk6")
