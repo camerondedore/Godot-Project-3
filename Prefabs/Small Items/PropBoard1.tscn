@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6exn"]
 size = Vector3(3, 0.3, 0.1)
 
-[node name="PropBoard1" type="RigidBody3D"]
+[node name="PropBoard1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_hsi6a")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5l8sqkkxfwt4"]
+
+[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Small Items/PropBoard1.tscn" id="1_gtwex"]
+[ext_resource type="ArrayMesh" uid="uid://u37wl8oabeac" path="res://Models/prop-board-short.res" id="2_bdn3x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgeun"]
+size = Vector3(2, 0.3, 0.1)
+
+[node name="PropBoardShort" instance=ExtResource("1_gtwex")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_bdn3x")
+
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_hgeun")

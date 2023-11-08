@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmojliasdotro"]
+
+[ext_resource type="PackedScene" uid="uid://ck8pgh1yk6qb4" path="res://Prefabs/Small Items/PropBoard1Rigid.tscn" id="1_fbsod"]
+[ext_resource type="ArrayMesh" uid="uid://u37wl8oabeac" path="res://Models/prop-board-short.res" id="2_mgb44"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ct4xj"]
+size = Vector3(2, 0.3, 0.1)
+
+[node name="PropBoardShortRigid" instance=ExtResource("1_fbsod")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_mgb44")
+
+[node name="CollisionShape3D" parent="." index="1"]
+shape = SubResource("BoxShape3D_ct4xj")

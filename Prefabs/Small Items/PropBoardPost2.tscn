@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cueqckjju13eo"]
+
+[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Small Items/PropBoardPost1.tscn" id="1_schou"]
+[ext_resource type="ArrayMesh" uid="uid://b4i2xejugnjsl" path="res://Models/prop-board-post-2.res" id="2_qu84s"]
+
+[node name="PropBoardPost2" instance=ExtResource("1_schou")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_qu84s")

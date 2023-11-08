@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck8pgh1yk6qb4"]
+
+[ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_x70fb"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_gwxrj"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_47hsn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6exn"]
+size = Vector3(3, 0.3, 0.1)
+
+[node name="PropBoard1Rigid" type="RigidBody3D"]
+collision_layer = 16
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_x70fb")
+surface_material_override/0 = ExtResource("2_gwxrj")
+surface_material_override/1 = ExtResource("3_47hsn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_j6exn")
