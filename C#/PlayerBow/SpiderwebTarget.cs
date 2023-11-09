@@ -9,6 +9,8 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
     public string arrowType = "blade";
     [Export]
     PackedScene cutFx;
+    [Export]
+    Node[] pinnedObjects;
 
 
 
@@ -43,6 +45,12 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
 
         GetTree().CurrentScene.AddChild(newFx);
         newFx.Owner = GetTree().CurrentScene;
+
+        // activate pinned objects
+        foreach(IActivatable i in pinnedObjects)
+        {
+            i.Activate();
+        }
 
         // destroy
         QueueFree();
