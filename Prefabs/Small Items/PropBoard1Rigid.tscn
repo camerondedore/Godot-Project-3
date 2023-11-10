@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck8pgh1yk6qb4"]
+[gd_scene load_steps=11 format=3 uid="uid://ck8pgh1yk6qb4"]
 
-[ext_resource type="Script" path="res://C#/PinnedRigidbody.cs" id="1_3tm6b"]
+[ext_resource type="Script" path="res://C#/Common/PinnedRigidbody.cs" id="1_wnaci"]
 [ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_x70fb"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_gwxrj"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_47hsn"]
+[ext_resource type="Script" path="res://C#/Common/AudioToolsRigidBody.cs" id="5_xe4nu"]
+[ext_resource type="AudioStream" uid="uid://rg2w4kfv2sn4" path="res://Audio/wood-board-hit-1.wav" id="6_gfgt8"]
+[ext_resource type="AudioStream" uid="uid://wiwliy3cdnhe" path="res://Audio/wood-board-hit-2.wav" id="7_5w1qm"]
+[ext_resource type="AudioStream" uid="uid://dbf4bbajwckh7" path="res://Audio/wood-board-hit-3.wav" id="8_8sicj"]
+[ext_resource type="AudioStream" uid="uid://cfp5w7aausexx" path="res://Audio/wood-board-hit-4.wav" id="9_c3a8c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j6exn"]
 size = Vector3(3, 0.3, 0.1)
 
 [node name="PropBoard1Rigid" type="RigidBody3D"]
 collision_layer = 16
+max_contacts_reported = 1
+contact_monitor = true
 freeze = true
-script = ExtResource("1_3tm6b")
+script = ExtResource("1_wnaci")
 layerAsBinary = "100000000"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -21,3 +28,9 @@ surface_material_override/1 = ExtResource("3_47hsn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_j6exn")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+max_distance = 8.0
+script = ExtResource("5_xe4nu")
+hitSounds = Array[AudioStream]([ExtResource("6_gfgt8"), ExtResource("7_5w1qm"), ExtResource("8_8sicj"), ExtResource("9_c3a8c")])
+minimumSpeedSqr = 1.0

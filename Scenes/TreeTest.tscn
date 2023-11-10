@@ -973,7 +973,7 @@ pinnedObjects = [NodePath("../PropBoard1Rigid"), NodePath("../PropBoard2Rigid"),
 
 [node name="PropBoard1Rigid" parent="Map/NavigationRegion3D/Spiderwebs" instance=ExtResource("97_jtuqx")]
 transform = Transform3D(0.996727, 0.0808426, 0, -0.0808426, 0.996727, 0, 0, 0, 1, 0.949805, 10.2102, -24.0832)
-velocity = Vector3(0, 0.5, -1)
+velocity = Vector3(0, 1.25, -2)
 velocitySpread = 0.5
 
 [node name="PropBoard2Rigid" parent="Map/NavigationRegion3D/Spiderwebs" instance=ExtResource("98_qhl4s")]
