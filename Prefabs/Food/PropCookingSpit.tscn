@@ -18,6 +18,7 @@ height = 3.17085
 [node name="PropCookingSpit" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_mcyu8")
 surface_material_override/0 = ExtResource("2_cc73w")
 surface_material_override/1 = ExtResource("3_osnte")

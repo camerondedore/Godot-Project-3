@@ -45,6 +45,7 @@ color_ramp = SubResource("GradientTexture1D_pvtqr")
 
 [node name="FxTorchDrip" type="GPUParticles3D"]
 material_override = ExtResource("1_fg140")
+gi_mode = 2
 amount = 2
 lifetime = 0.75
 randomness = 1.0

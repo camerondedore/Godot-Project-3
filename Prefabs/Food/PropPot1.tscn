@@ -9,6 +9,7 @@ radius = 0.45
 [node name="PropPot1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_30h5j")
 surface_material_override/0 = ExtResource("2_qhksk")
 

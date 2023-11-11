@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="2_8vv3q"]
 [ext_resource type="AudioStream" uid="uid://dutt7ugi03ht8" path="res://Audio/chest-open.wav" id="2_fo8lm"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_rme7f"]
-[ext_resource type="PackedScene" path="res://Prefabs/FX/FxLock.tscn" id="3_2i7no"]
+[ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="3_2i7no"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="3_7xqmg"]
 [ext_resource type="AudioStream" uid="uid://buaupw1cosg2g" path="res://Audio/pickup-spawn.wav" id="8_f7gyv"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_th5xi"]
@@ -30,6 +30,7 @@ bones/2/rotation = Quaternion(-0.5, -0.5, 0.5, 0.5)
 
 [node name="prop-chest2" parent="prop-chest-armature/Skeleton3D" index="0"]
 layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
 

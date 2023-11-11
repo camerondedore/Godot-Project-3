@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmuma8xgq3ktm"]
+[gd_scene load_steps=14 format=3 uid="uid://cmuma8xgq3ktm"]
 
 [ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
 [ext_resource type="AudioStream" uid="uid://mqbs8l06sitt" path="res://Audio/checkpoint-save.wav" id="2_28jj8"]
@@ -9,6 +9,38 @@
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_dfee6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
+
+[sub_resource type="Gradient" id="Gradient_tcd1t"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3yg5b"]
+gradient = SubResource("Gradient_tcd1t")
+
+[sub_resource type="Curve" id="Curve_qhwyd"]
+_data = [Vector2(0, 0.474138), 0.0, 0.332598, 0, 0, Vector2(0.506329, 1), 0.0510779, 0.0510779, 0, 0, Vector2(1, 0.482759), -0.0454026, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_b5u7h"]
+curve = SubResource("Curve_qhwyd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4081e"]
+resource_local_to_scene = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.35
+emission_ring_inner_radius = 0.35
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, -0.04, 0)
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+angle_max = 360.0
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_b5u7h")
+color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles", "savingLabel", "audio")]
 collision_layer = 0
@@ -22,6 +54,7 @@ audio = NodePath("CheckpointAudio")
 saveSound = ExtResource("2_28jj8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("2_afk7b")
 surface_material_override/0 = ExtResource("3_pxcm7")
 
@@ -29,6 +62,7 @@ surface_material_override/0 = ExtResource("3_pxcm7")
 shape = SubResource("SphereShape3D_66tyu")
 
 [node name="FxSparkle" parent="." instance=ExtResource("3_x88vd")]
+process_material = SubResource("ParticleProcessMaterial_4081e")
 
 [node name="CheckpointCanvas" type="CanvasLayer" parent="."]
 

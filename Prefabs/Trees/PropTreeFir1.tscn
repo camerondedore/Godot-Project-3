@@ -11,11 +11,13 @@ data = PackedVector3Array(-1.2414, 0, -0.2812, -1.0139, 0.4707, -0.3489, -1.0315
 [node name="PropTreeFir1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_igs3l")
 surface_material_override/0 = ExtResource("2_qdo7n")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+gi_mode = 2
 mesh = ExtResource("3_ww2bu")
 surface_material_override/0 = ExtResource("3_6mw1y")
 

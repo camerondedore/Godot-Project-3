@@ -36,6 +36,7 @@ color_ramp = SubResource("GradientTexture1D_ng6wg")
 [node name="FxBloodSplash" type="GPUParticles3D"]
 material_override = ExtResource("1_8qji5")
 cast_shadow = 0
+gi_mode = 2
 emitting = false
 amount = 5
 lifetime = 0.8

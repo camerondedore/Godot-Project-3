@@ -8,6 +8,7 @@
 [node name="PropWoodAx" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_24fso")
 surface_material_override/0 = ExtResource("2_hgxox")
 surface_material_override/1 = ExtResource("3_1ibqi")

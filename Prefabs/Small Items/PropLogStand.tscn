@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://db6shte2hwijv" path="res://Models/prop-log-stand.res" id="1_q6dlx"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_f58an"]
-[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Plants/BarkEnds1.tres" id="3_03ytc"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_03ytc"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_6tqjq"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bse0k"]
@@ -11,6 +11,7 @@ points = PackedVector3Array(-1.01871, -0.5788, -0.788979, -1.09941, -0.619462, -
 [node name="PropLogStand" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_q6dlx")
 surface_material_override/0 = ExtResource("2_f58an")
 surface_material_override/1 = ExtResource("3_03ytc")

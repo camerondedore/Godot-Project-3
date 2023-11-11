@@ -10,6 +10,7 @@ size = Vector3(2.2, 1.5, 2.2)
 [node name="PropOvenTower" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_fu8w8")
 surface_material_override/0 = ExtResource("2_2c7o7")
 surface_material_override/1 = ExtResource("3_ffsju")

@@ -34,6 +34,7 @@ color_ramp = SubResource("GradientTexture1D_13yeq")
 [node name="FxNettleBrothBubbles" type="GPUParticles3D"]
 material_override = ExtResource("1_qn030")
 cast_shadow = 0
+gi_mode = 2
 amount = 10
 randomness = 0.43
 process_material = SubResource("ParticleProcessMaterial_2i6uk")

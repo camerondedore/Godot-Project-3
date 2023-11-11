@@ -29,6 +29,7 @@ targetOffset = Vector3(0, 1, 0)
 [node name="MeshUncut" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_74o7b")
 surface_material_override/0 = ExtResource("2_c08f5")
 
@@ -36,6 +37,7 @@ surface_material_override/0 = ExtResource("2_c08f5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 layers = 2
+gi_mode = 2
 mesh = ExtResource("3_d6b5l")
 surface_material_override/0 = ExtResource("2_c08f5")
 

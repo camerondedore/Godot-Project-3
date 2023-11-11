@@ -14,6 +14,7 @@
 
 [node name="FxSpiders" type="GPUParticles3D" parent="."]
 material_override = ExtResource("1_gmobp")
+gi_mode = 2
 emitting = false
 amount = 2
 lifetime = 1.5
@@ -27,6 +28,7 @@ script = ExtResource("3_eswgf")
 [node name="FxStrings1" type="GPUParticles3D" parent="."]
 material_override = ExtResource("4_c6uur")
 cast_shadow = 0
+gi_mode = 2
 emitting = false
 amount = 6
 lifetime = 1.5
@@ -40,6 +42,7 @@ script = ExtResource("3_eswgf")
 [node name="FxStrings2" type="GPUParticles3D" parent="."]
 material_override = ExtResource("6_vrlns")
 cast_shadow = 0
+gi_mode = 2
 emitting = false
 amount = 6
 lifetime = 1.5

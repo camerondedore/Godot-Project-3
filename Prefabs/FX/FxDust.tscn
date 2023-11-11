@@ -54,6 +54,7 @@ scale_max = 0.2
 
 [node name="FxDust" type="GPUParticles3D"]
 material_override = ExtResource("1_dbchy")
+gi_mode = 2
 emitting = false
 amount = 2
 lifetime = 3.0
@@ -70,6 +71,7 @@ lifeTime = 5.0
 
 [node name="FxChunks" type="GPUParticles3D" parent="."]
 material_override = ExtResource("4_njdnm")
+gi_mode = 2
 emitting = false
 amount = 7
 one_shot = true

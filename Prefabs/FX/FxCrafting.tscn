@@ -36,6 +36,7 @@ color_ramp = SubResource("GradientTexture1D_mj8fp")
 
 [node name="FxCrafting" type="GPUParticles3D"]
 material_override = ExtResource("1_mqpkm")
+gi_mode = 2
 emitting = false
 amount = 9
 randomness = 0.5

@@ -32,6 +32,7 @@ color_ramp = SubResource("GradientTexture1D_mqvb8")
 
 [node name="FxWaspBloodSplash" type="GPUParticles3D"]
 material_override = ExtResource("1_vk1hr")
+gi_mode = 2
 emitting = false
 amount = 5
 lifetime = 1.25

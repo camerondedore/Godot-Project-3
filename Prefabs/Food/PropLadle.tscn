@@ -6,5 +6,6 @@
 [node name="PropLadle" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_aokv5")
 surface_material_override/0 = ExtResource("2_xpd2f")

@@ -22,6 +22,7 @@ script = ExtResource("1_wnaci")
 layerAsBinary = "100000000"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_x70fb")
 surface_material_override/0 = ExtResource("2_gwxrj")
 surface_material_override/1 = ExtResource("3_47hsn")

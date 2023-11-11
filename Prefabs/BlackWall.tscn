@@ -17,6 +17,7 @@ fadeSpeed = 1.0
 
 [node name="BlackWallMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0, 0, 0)
+gi_mode = 0
 mesh = SubResource("QuadMesh_p5a8i")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_3eutq")

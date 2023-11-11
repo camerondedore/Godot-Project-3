@@ -19,6 +19,7 @@ scale_max = 0.3
 
 [node name="FxWaspChunks" type="GPUParticles3D"]
 material_override = ExtResource("1_iongg")
+gi_mode = 2
 emitting = false
 amount = 4
 one_shot = true

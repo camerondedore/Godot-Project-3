@@ -55,6 +55,7 @@ soupMesh = NodePath("SoupMesh")
 [node name="SoupMesh" type="MeshInstance3D" parent="SoupTarget/Cooker" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_jgvtq")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("3_x4nd1")

@@ -38,6 +38,7 @@ color_ramp = SubResource("GradientTexture1D_xjaid")
 
 [node name="FxJumpPadDust" type="GPUParticles3D"]
 material_override = ExtResource("1_6ijwf")
+gi_mode = 2
 emitting = false
 amount = 20
 lifetime = 1.5

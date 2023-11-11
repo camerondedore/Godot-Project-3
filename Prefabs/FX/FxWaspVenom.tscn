@@ -23,6 +23,7 @@ color_ramp = SubResource("GradientTexture1D_f4m6b")
 
 [node name="FxWaspVenom" type="GPUParticles3D"]
 material_override = ExtResource("1_42o58")
+gi_mode = 2
 emitting = false
 amount = 3
 lifetime = 0.7

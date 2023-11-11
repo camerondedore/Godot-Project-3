@@ -31,7 +31,7 @@ import_script/path=""
 _subresources={
 "meshes": {
 "temp-map-1_tmp-map-1": {
-"generate/lightmap_uv": 0,
+"generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,

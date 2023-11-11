@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6wf4pel1e6cw"]
 
 [ext_resource type="ArrayMesh" uid="uid://devpqcjsrxei2" path="res://Models/prop-firewood-1.res" id="1_7rrrx"]
-[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Plants/BarkOak.tres" id="2_4lol4"]
-[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Plants/BarkEnds1.tres" id="3_vsges"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_4lol4"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_vsges"]
 
 [node name="PropFirewood1" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_7rrrx")
 surface_material_override/0 = ExtResource("2_4lol4")
 surface_material_override/1 = ExtResource("3_vsges")

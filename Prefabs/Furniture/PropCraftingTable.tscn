@@ -20,6 +20,7 @@ size = Vector3(0.11, 0.8, 0.11)
 [node name="PropCraftingTable" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_y5gvo")
 surface_material_override/0 = ExtResource("2_j5u0j")
 surface_material_override/1 = ExtResource("5_188yf")

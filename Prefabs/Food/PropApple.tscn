@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu6ii8tuqclkc"]
 
 [ext_resource type="ArrayMesh" uid="uid://rdut8xfm6giq" path="res://Models/prop-apple.res" id="1_gdbxm"]
-[ext_resource type="Material" uid="uid://b7pag2pkkvl0d" path="res://Materials/PropApple.tres" id="2_equej"]
+[ext_resource type="Material" uid="uid://b7pag2pkkvl0d" path="res://Materials/Props/PropApple.tres" id="2_equej"]
 
 [node name="PropApple" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_gdbxm")
 surface_material_override/0 = ExtResource("2_equej")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://jstpyuffxyw5"]
 
 [ext_resource type="ArrayMesh" uid="uid://bf02wag21ug2" path="res://Models/prop-barrel.res" id="1_sk1dm"]
-[ext_resource type="Material" uid="uid://cgp4dno6q0tmn" path="res://Materials/PropBarrel.tres" id="2_7bmhb"]
+[ext_resource type="Material" uid="uid://cgp4dno6q0tmn" path="res://Materials/Props/PropBarrel.tres" id="2_7bmhb"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_svv6d"]
 points = PackedVector3Array(-0.475342, -0.608294, -0.104531, 0.496545, 0.610934, 0.00942067, 0.475364, 0.608327, 0.104394, 0.496545, -0.610934, 0.00942067, -0.151568, -0.0378843, 0.596905, -0.306029, 0.611816, -0.392, 0.13385, -0.210264, -0.583244, -0.435009, 0.605053, 0.236236, 0.152247, -0.609238, 0.466386, 0.342627, 0.437713, 0.428113, 0.359338, 0.397189, -0.425629, -0.152227, -0.609141, -0.466426, -0.610778, -0.0190083, 0.0475446, -0.305807, -0.611374, 0.391678, -0.379358, -0.0567974, -0.483822, 0.54921, -0.0567141, 0.274445, 0.548544, -0.0566453, -0.27434, -0.152335, 0.609573, 0.466648, 0.305785, -0.611336, -0.3917, -0.435847, 0.0188739, 0.426161, 0.0939638, 0.564393, -0.498788, 0.151418, 0.0378478, 0.59632, -0.533232, 0.247536, -0.257136, -0.151346, 0.0378286, -0.596359, 0.610574, 0.0762475, 0.00940213, -0.496177, 0.610476, 0.00940642, -0.494581, -0.43741, 0.237642, 0.379624, -0.189776, 0.46496, -0.533232, -0.247536, -0.257136, 0.378959, -0.0567382, -0.483329, 0.434905, 0.604915, -0.236428, 0.152247, 0.609238, 0.466386)
@@ -9,6 +9,7 @@ points = PackedVector3Array(-0.475342, -0.608294, -0.104531, 0.496545, 0.610934,
 [node name="PropBarrel" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_sk1dm")
 surface_material_override/0 = ExtResource("2_7bmhb")
 

@@ -23,6 +23,7 @@ maskAsBinary = "01000010011"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
+gi_mode = 2
 mesh = ExtResource("4_l5ybc")
 surface_material_override/0 = ExtResource("2_i0ho1")
 

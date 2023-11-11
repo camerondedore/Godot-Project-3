@@ -21,6 +21,7 @@ targetNode = NodePath("CollisionShape3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_fd25c")
 surface_material_override/0 = ExtResource("2_vg25r")
 

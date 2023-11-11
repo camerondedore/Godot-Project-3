@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cdpesuihqsxnp"]
 
 [ext_resource type="ArrayMesh" uid="uid://bhu0pvbfg0yru" path="res://Models/prop-tree-stump-oak-1.res" id="1_coh7e"]
-[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Plants/BarkOak.tres" id="2_cexyb"]
-[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Plants/BarkEnds1.tres" id="3_nxa3h"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_cexyb"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_nxa3h"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dylyi"]
 height = 0.5
@@ -11,6 +11,7 @@ radius = 0.33
 [node name="PropTreeStumpOak1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_coh7e")
 surface_material_override/0 = ExtResource("2_cexyb")
 surface_material_override/1 = ExtResource("3_nxa3h")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://C#/Common/RigidbodyFreezer.cs" id="1_26k8l"]
 [ext_resource type="ArrayMesh" uid="uid://cn70dv5mgkveb" path="res://Models/fx-nettle-broth-bowl.res" id="1_esge7"]
-[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="2_eytmt"]
+[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/Pickups/PickupNettleBroth.tres" id="2_eytmt"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="3_pd6eq"]
 [ext_resource type="AudioStream" uid="uid://b11bpsmuxxc1j" path="res://Audio/pickup-nettle-broth.wav" id="4_ewvji"]
 [ext_resource type="PackedScene" uid="uid://bc3we1uxwp2cl" path="res://Prefabs/FX/FxNettleBrothSplash.tscn" id="5_f88sw"]
@@ -17,6 +17,7 @@ collision_layer = 8
 collision_mask = 17
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_esge7")
 surface_material_override/0 = ExtResource("2_eytmt")
 

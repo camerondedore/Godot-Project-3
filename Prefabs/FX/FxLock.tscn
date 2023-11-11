@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://cr1bprfu7i7wc"]
 
 [ext_resource type="ArrayMesh" uid="uid://donqrer6ntmi5" path="res://Models/fx-lock.res" id="1_qpfjf"]
 [ext_resource type="Script" path="res://C#/FxLock.cs" id="1_skjfe"]
@@ -11,6 +11,7 @@ script = ExtResource("1_skjfe")
 lockSpawner = NodePath("LockSpawner")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_qpfjf")
 surface_material_override/0 = ExtResource("2_ryckk")
 

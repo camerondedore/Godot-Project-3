@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://dv4wag0b4h4qc"]
 
 [ext_resource type="ArrayMesh" uid="uid://ccc1m4nqsmm47" path="res://Models/prop-fence-end.res" id="1_6prll"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_hak4j"]
-[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Plants/BarkEndsOld1.tres" id="3_0g2lj"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_0g2lj"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_hrifq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_76741"]
@@ -11,6 +11,7 @@ size = Vector3(0.2, 1.5, 0.5)
 [node name="PropFenceEnd" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_6prll")
 surface_material_override/0 = ExtResource("2_hak4j")
 surface_material_override/1 = ExtResource("3_0g2lj")

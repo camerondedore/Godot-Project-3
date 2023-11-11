@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dlygbf47nnkvn" path="res://Audio/jump-pad-attach.wav" id="2_ju7d0"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_xpl44"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="4_38g1o"]
-[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/BarkEnds1.tres" id="4_yhnq1"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="4_yhnq1"]
 [ext_resource type="Material" uid="uid://dv1i0ie533ymd" path="res://Materials/String.tres" id="6_etg3h"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad-bounce.wav" id="7_a72qk"]
 [ext_resource type="PackedScene" uid="uid://h2k2t6a3l3nk" path="res://Models/prop-jump-net.glb" id="8_ksi7r"]
@@ -34,12 +34,14 @@ attachSound = ExtResource("2_ju7d0")
 
 [node name="prop-jump-net-stakes" parent="prop-jump-net" index="0"]
 lod_bias = 3.0
+gi_mode = 2
 surface_material_override/0 = ExtResource("3_xpl44")
 surface_material_override/1 = ExtResource("4_yhnq1")
 surface_material_override/2 = ExtResource("6_etg3h")
 
 [node name="prop-jump-net2" parent="prop-jump-net/armature-jump-net/Skeleton3D" index="0"]
 layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("9_bmgvo")
 
 [node name="ArrowCollision" type="CollisionShape3D" parent="."]

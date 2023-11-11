@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1e6hhtb3arh8"]
 
 [ext_resource type="ArrayMesh" uid="uid://h30pfgot636l" path="res://Models/prop-bung-mallet.res" id="1_s4t0c"]
-[ext_resource type="Material" uid="uid://c13n2pa2mrqpd" path="res://Materials/PropBungMallet.tres" id="2_cr8lv"]
+[ext_resource type="Material" uid="uid://c13n2pa2mrqpd" path="res://Materials/Props/PropBungMallet.tres" id="2_cr8lv"]
 
 [node name="PropBungMallet" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+gi_mode = 2
 mesh = ExtResource("1_s4t0c")
 surface_material_override/0 = ExtResource("2_cr8lv")
