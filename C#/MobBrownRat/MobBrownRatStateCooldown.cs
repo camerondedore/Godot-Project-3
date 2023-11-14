@@ -51,8 +51,8 @@ namespace MobBrownRat
             // check for enemy
             if(blackboard.IsEnemyValid())
             {
-                // move
-                return blackboard.stateMove;
+                // react
+                return blackboard.stateReact;
             }
 
             var isTimeUp = EngineTime.timePassed > startTime + 5;

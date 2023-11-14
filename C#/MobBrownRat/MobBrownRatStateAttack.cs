@@ -67,8 +67,16 @@ namespace MobBrownRat
                 // reset shot count
                 blackboard.shotCount = 0;
 
-                // move
-                return blackboard.stateMove;
+                if(blackboard.isMovingRat == true)
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+                else
+                {
+                    // watch
+                    return blackboard.stateWatch;
+                }
             }
 
             // check if enemy is too close

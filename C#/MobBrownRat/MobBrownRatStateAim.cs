@@ -7,7 +7,8 @@ namespace MobBrownRat
     public partial class MobBrownRatStateAim : MobBrownRatState
     {
 
-        double startTime;
+        double startTime,
+            aimTimeRandom;
 
 
 
@@ -24,6 +25,9 @@ namespace MobBrownRat
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
+
+            // add variation to aim time
+            aimTimeRandom = blackboard.aimTime + GD.Randf() * 0.5f;
 
             // look at enemy
             blackboard.lookAtTarget = true;
@@ -53,7 +57,7 @@ namespace MobBrownRat
                 return blackboard.stateAttack;
             }
 
-            if(EngineTime.timePassed > startTime + blackboard.aimTime)
+            if(EngineTime.timePassed > startTime + aimTimeRandom)
             {
                 // reset flee count
                 blackboard.fleeCount = 0;

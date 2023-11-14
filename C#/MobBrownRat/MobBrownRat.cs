@@ -12,6 +12,7 @@ namespace MobBrownRat
         public State stateIdle,
             stateReact,
             stateMove,
+            stateWatch,
             statePatrol,
             statePatrolWait,
             stateFlee,
@@ -60,6 +61,8 @@ namespace MobBrownRat
             acceleration = 4,
             dodgeDistance = 2,
             damageFromArrow = 50;
+        [Export]
+        public bool isMovingRat = true;
 
         public MobFaction enemy;
         public AnimationNodeStateMachinePlayback animStateMachinePlayback;
@@ -86,6 +89,7 @@ namespace MobBrownRat
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};
             stateReact = new MobBrownRatStateReact(){blackboard = this};
             stateMove = new MobBrownRatStateMove(){blackboard = this};
+            stateWatch = new MobBrownRatStateWatch(){blackboard = this};
             statePatrol = new MobBrownRatStatePatrol(){blackboard = this};
             statePatrolWait = new MobBrownRatStatePatrolWait(){blackboard = this};
             stateFlee = new MobBrownRatStateFlee(){blackboard = this};
@@ -192,6 +196,10 @@ namespace MobBrownRat
 
                     // look in direction of movement
                     LookAt(lookTarget, Vector3.Up);
+
+                    // adjust walk animation speed
+                    var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
+                    animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
                 }
             }
         }
