@@ -17,7 +17,7 @@ size = Vector3(1.5, 2.5, 0.25)
 freeze = true
 script = ExtResource("1_i2th4")
 openAngle = Vector3(0, -170, 0)
-speed = 120.0
+speed = 145.0
 collider = NodePath("DoorCollider")
 lockFx = NodePath("FxLock")
 blocker = NodePath("Blocker")
@@ -32,9 +32,10 @@ shape = SubResource("BoxShape3D_c4dle")
 
 [node name="NavigationLink3D" type="NavigationLink3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -1.25, 0)
+top_level = true
 enabled = false
-start_position = Vector3(0, 0, -1.25)
-end_position = Vector3(0, 0, 1.25)
+start_position = Vector3(0, 0.25, -1.25)
+end_position = Vector3(0, 0.25, 1.25)
 
 [node name="Blocker" type="StaticBody3D" parent="." node_paths=PackedStringArray("navLink")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
