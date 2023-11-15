@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dy46evdv870yi"]
+
+[ext_resource type="Script" path="res://C#/Door.cs" id="1_i2th4"]
+[ext_resource type="Script" path="res://C#/Blocker.cs" id="2_gc5mm"]
+[ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="3_r3y81"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v6ngk"]
+size = Vector3(1.5, 2.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4dle"]
+size = Vector3(1.5, 2.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_llo6h"]
+size = Vector3(1.5, 2.5, 0.25)
+
+[node name="Door" type="RigidBody3D" node_paths=PackedStringArray("collider", "lockFx", "blocker")]
+freeze = true
+script = ExtResource("1_i2th4")
+openAngle = Vector3(0, -170, 0)
+speed = 120.0
+collider = NodePath("DoorCollider")
+lockFx = NodePath("FxLock")
+blocker = NodePath("Blocker")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
+mesh = SubResource("BoxMesh_v6ngk")
+
+[node name="DoorCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
+shape = SubResource("BoxShape3D_c4dle")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -1.25, 0)
+enabled = false
+start_position = Vector3(0, 0, -1.25)
+end_position = Vector3(0, 0, 1.25)
+
+[node name="Blocker" type="StaticBody3D" parent="." node_paths=PackedStringArray("navLink")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("2_gc5mm")
+navLink = NodePath("../NavigationLink3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blocker"]
+shape = SubResource("BoxShape3D_llo6h")
+
+[node name="FxLock" parent="." instance=ExtResource("3_r3y81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31551, -0.104866, -0.05)

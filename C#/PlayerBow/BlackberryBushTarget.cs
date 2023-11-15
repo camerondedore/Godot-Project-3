@@ -41,7 +41,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return GlobalPosition + targetOffset;
+            // ToGlobal() adds in the global position
+            return ToGlobal(targetOffset);
         }
         else
         {
