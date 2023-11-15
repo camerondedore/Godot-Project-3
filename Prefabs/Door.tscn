@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy46evdv870yi"]
+[gd_scene load_steps=10 format=3 uid="uid://dy46evdv870yi"]
 
 [ext_resource type="Script" path="res://C#/Door.cs" id="1_i2th4"]
 [ext_resource type="Script" path="res://C#/Blocker.cs" id="2_gc5mm"]
+[ext_resource type="ArrayMesh" uid="uid://drhtq2sn66fv7" path="res://Models/prop-door-old.res" id="2_julux"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="3_46548"]
 [ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="3_r3y81"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_v6ngk"]
-size = Vector3(1.5, 2.5, 0.1)
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_xkre5"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="5_js31b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c4dle"]
 size = Vector3(1.5, 2.5, 0.1)
@@ -16,6 +17,7 @@ size = Vector3(1.5, 2.5, 0.25)
 [node name="Door" type="RigidBody3D" node_paths=PackedStringArray("collider", "lockFx", "blocker")]
 freeze = true
 script = ExtResource("1_i2th4")
+targetOffset = Vector3(-1.3, -0.2, 0)
 openAngle = Vector3(0, -170, 0)
 speed = 145.0
 collider = NodePath("DoorCollider")
@@ -24,7 +26,11 @@ blocker = NodePath("Blocker")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
-mesh = SubResource("BoxMesh_v6ngk")
+gi_mode = 2
+mesh = ExtResource("2_julux")
+surface_material_override/0 = ExtResource("3_46548")
+surface_material_override/1 = ExtResource("4_xkre5")
+surface_material_override/2 = ExtResource("5_js31b")
 
 [node name="DoorCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
@@ -48,4 +54,4 @@ navLink = NodePath("../NavigationLink3D")
 shape = SubResource("BoxShape3D_llo6h")
 
 [node name="FxLock" parent="." instance=ExtResource("3_r3y81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31551, -0.104866, -0.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3, -0.244268, -0.046)
