@@ -26,6 +26,7 @@ blocker = NodePath("Blocker")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
+layers = 2
 gi_mode = 2
 mesh = ExtResource("2_julux")
 surface_material_override/0 = ExtResource("3_46548")

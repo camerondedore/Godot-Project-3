@@ -99,3 +99,7 @@ player-tab={
 3d_physics/layer_10="Flying Characters"
 3d_physics/layer_11="Black Wall"
 3d_physics/layer_12="Invisible Wall"
+
+[rendering]
+
+occlusion_culling/use_occlusion_culling=true

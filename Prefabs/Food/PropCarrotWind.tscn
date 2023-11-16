@@ -6,4 +6,5 @@
 [node name="PropCarrotWind" instance=ExtResource("1_42ktk")]
 
 [node name="MeshInstance3D" parent="." index="0"]
+layers = 2
 surface_material_override/1 = ExtResource("2_6pmov")

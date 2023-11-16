@@ -15,6 +15,7 @@ cutFx = ExtResource("2_3gmco")
 pinnedObjects = []
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_h302x")
 surface_material_override/0 = ExtResource("2_74fe7")

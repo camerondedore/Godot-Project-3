@@ -6,4 +6,5 @@
 [node name="PropRadishWind" instance=ExtResource("1_whxr7")]
 
 [node name="MeshInstance3D" parent="." index="0"]
+layers = 2
 surface_material_override/1 = ExtResource("2_4lf20")

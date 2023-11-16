@@ -11,6 +11,7 @@ script = ExtResource("1_skjfe")
 lockSpawner = NodePath("LockSpawner")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_qpfjf")
 surface_material_override/0 = ExtResource("2_ryckk")

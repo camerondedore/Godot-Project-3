@@ -6,6 +6,7 @@
 [node name="PropBowl" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_8u1hy")
 surface_material_override/0 = ExtResource("2_0gti1")

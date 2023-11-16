@@ -18,6 +18,7 @@ surface_material_override/0 = ExtResource("2_qdo7n")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
+layers = 2
 gi_mode = 2
 mesh = ExtResource("3_ww2bu")
 surface_material_override/0 = ExtResource("3_6mw1y")
