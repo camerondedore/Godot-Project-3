@@ -15,7 +15,19 @@ namespace MobBrownRat
             blackboard.animStateMachinePlayback.Next();
             
             // look for enemy
-            //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+            blackboard.LookForEnemy();
+
+            if(blackboard.isMovingRat == true && blackboard.IsEnemyValid())
+            {
+                var destinationDistanceToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+
+                // check if enemy has moved far enough to recalculate path
+                if(destinationDistanceToEnemy > blackboard.moveRecalculatePathRange)
+                {
+                    // set move target
+                    blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
+                }
+            }
         }
         
         
@@ -24,6 +36,12 @@ namespace MobBrownRat
         {
             // look at enemy
             blackboard.lookAtTarget = true;
+
+            // stop moving
+            blackboard.moving = false;
+
+            // animation
+            blackboard.animStateMachinePlayback.Travel("brown-rat-react");
         }
 
 
@@ -53,6 +71,13 @@ namespace MobBrownRat
             {
                 // attack
                 return blackboard.stateAttack;
+            }
+
+            // if not at end of path
+            if(blackboard.isMovingRat == true && blackboard.navAgent.IsNavigationFinished() == false)
+            {
+                // move
+                return blackboard.stateMove;
             }
 
             // check if enemy is too far or out of sight

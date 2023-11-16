@@ -74,6 +74,13 @@ namespace MobBrownRat
                 return blackboard.stateAttack;
             }
 
+            // if at end of path
+            if(blackboard.navAgent.IsNavigationFinished())
+            {
+                // watch
+                return blackboard.stateWatch;
+            }
+
             return this;
         }
     }
