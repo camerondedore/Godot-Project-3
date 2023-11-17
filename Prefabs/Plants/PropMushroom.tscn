@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://btd0dajjds3g0"]
+
+[ext_resource type="ArrayMesh" uid="uid://c774gdnt80vm" path="res://Models/prop-mushroom.res" id="1_kdj5e"]
+[ext_resource type="Material" uid="uid://bnn0srv8hbl4o" path="res://Materials/Plants/PropMushroom.tres" id="2_ox1fp"]
+
+[node name="PropMushroom" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_kdj5e")
+surface_material_override/0 = ExtResource("2_ox1fp")
