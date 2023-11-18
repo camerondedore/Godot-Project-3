@@ -11,13 +11,17 @@ public partial class Door : RigidBody3D, IBowTarget
     Vector3 targetOffset = new Vector3(-0.75f, 0, 0),
         openAngle = new Vector3(0, -90, 0);
     [Export]
-    float speed = 90;
+    float speed = 2;
     [Export]
     CollisionShape3D collider;
     [Export]
     FxLock lockFx;
     [Export]
     Blocker blocker;
+    [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream openSound;
 
     Vector3 startRotation;
     bool open = false,
@@ -36,7 +40,7 @@ public partial class Door : RigidBody3D, IBowTarget
     {
         if(locked == false && open == false)
         {
-            RotationDegrees = RotationDegrees.MoveToward(startRotation + openAngle, speed * ((float) delta));
+            RotationDegrees = RotationDegrees.Lerp(startRotation + openAngle, speed * ((float) delta));
 
             // check if door completed opening
             if(RotationDegrees == startRotation + openAngle)
@@ -89,6 +93,8 @@ public partial class Door : RigidBody3D, IBowTarget
         locked = false;
 
         collider.Disabled = true;
+
+        audio.PlaySound(openSound, 0.15f);
 
         // remove blocker and activate navmesh link
         blocker.Activate();
