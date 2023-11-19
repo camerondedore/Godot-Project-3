@@ -12,10 +12,10 @@
 radius = 0.1
 height = 0.4
 
-[node name="PropTorch" type="StaticBody3D" node_paths=PackedStringArray("fireFx", "dripFx", "audio", "targetNode")]
+[node name="PropTorch" type="StaticBody3D" node_paths=PackedStringArray("dripFx", "fireFx", "audio", "targetNode")]
 script = ExtResource("3_x80ui")
-fireFx = NodePath("FxTorchFire")
 dripFx = NodePath("FxTorchDrip")
+fireFx = NodePath("FxTorchFire")
 audio = NodePath("AudioStreamPlayer3D")
 targetNode = NodePath("CollisionShape3D")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bc3we1uxwp2cl"]
 
 [ext_resource type="Material" uid="uid://cukasgk3fppuc" path="res://Materials/Fx/FxNettleBrothSplash.tres" id="1_87hcc"]
-[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_8r7rk"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_t7pck"]
 
 [sub_resource type="Gradient" id="Gradient_ltb1p"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -42,4 +42,5 @@ explosiveness = 1.0
 visibility_aabb = AABB(-0.75, -0.5, -0.75, 1.5, 1.5, 1.5)
 process_material = SubResource("ParticleProcessMaterial_2yf5e")
 draw_pass_1 = SubResource("QuadMesh_ej475")
-script = ExtResource("2_8r7rk")
+script = ExtResource("2_t7pck")
+restartOnReady = true

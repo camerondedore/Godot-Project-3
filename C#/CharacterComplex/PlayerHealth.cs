@@ -43,7 +43,7 @@ namespace PlayerCharacterComplex
                     playerAudio.PlayBandageHealSound();
 
                     // start fx
-                    playerFx.PlayHealFx();
+                    playerFx.PlayRangerBandageHealFx();
 
                     // remove bandage from inventory
                     PlayerInventory.inventory.AddToInventory(0, 0, 0, -1, null);

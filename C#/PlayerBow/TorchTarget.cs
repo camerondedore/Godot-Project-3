@@ -8,8 +8,9 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     [Export]
     public string arrowType = "fire";
     [Export]
-    GpuParticles3D fireFx,
-        dripFx;
+    GpuParticles3D dripFx;
+    [Export]
+    ParticleTools fireFx;
     [Export]
     AudioTools3d audio;
     [Export]
@@ -22,14 +23,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     public override void _Ready()
     {
         // turn off fire fx
-        fireFx.Emitting = false;
-
-        foreach(GpuParticles3D subFire in fireFx.GetChildren())
-        {  
-            subFire.Emitting = false;
-        }
-
-
+        fireFx.StopParticles();
     }
 
 
@@ -61,12 +55,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
         dripFx.Emitting = false;
 
         // start fire fx
-        fireFx.Restart();
-
-        foreach(GpuParticles3D subFire in fireFx.GetChildren())
-        {  
-            subFire.Restart();
-        }
+        fireFx.RestartParticles();
 
         // start fire audio
         audio.Play();

@@ -112,9 +112,8 @@ playerCharacter = NodePath("..")
 playerAudio = NodePath("../Audio")
 playerFx = NodePath("../Fx")
 
-[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("healFx", "armorFx", "ciderFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx")]
+[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("armorFx", "ciderFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx", "rangerBandageFx")]
 script = ExtResource("6_mt2sm")
-healFx = NodePath("../FxRangerBandageHeal")
 armorFx = NodePath("../FxArmorPickup")
 ciderFx = NodePath("../FxCiderPickup")
 arrowWeightedFx = NodePath("../FxArrowPickupWeighted")
@@ -122,6 +121,7 @@ arrowPickFx = NodePath("../FxArrowPickupPick")
 arrowFireFx = NodePath("../FxArrowPickupFire")
 arrowBladeFx = NodePath("../FxArrowPickupBlade")
 arrowNetFx = NodePath("../FxArrowPickupNet")
+rangerBandageFx = NodePath("../FxRangerBandageHeal")
 
 [node name="Audio" type="Node" parent="."]
 script = ExtResource("7_eessr")

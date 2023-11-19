@@ -5,9 +5,10 @@ public partial class SoupCooker : Node
 {
 
     [Export]
-    GpuParticles3D fireFx,
-        bubbleFx,
+    GpuParticles3D bubbleFx,
         steamFx;
+    [Export]
+    ParticleTools fireFx;
     [Export]
     AudioTools3d fireAudio,
         bubbleAudio,
@@ -35,12 +36,7 @@ public partial class SoupCooker : Node
         steamFx.Emitting = false;
         
         // turn off fire fx
-        fireFx.Emitting = false;
-
-        foreach(GpuParticles3D subFire in fireFx.GetChildren())
-        {  
-            subFire.Emitting = false;
-        }
+        fireFx.StopParticles();
     }
 
 
@@ -102,13 +98,8 @@ public partial class SoupCooker : Node
         cooking = true;       
 
         // start fire fx
-        fireFx.Restart();
-
-        foreach(GpuParticles3D subFire in fireFx.GetChildren())
-        {  
-            subFire.Restart();
-        }
-
+        fireFx.RestartParticles();
+        
         // start fire audio
         fireAudio.Play();
     }

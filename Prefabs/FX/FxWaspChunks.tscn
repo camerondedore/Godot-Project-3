@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://omdnkl277dni"]
 
 [ext_resource type="Material" uid="uid://6v5snxcbb17m" path="res://Materials/Fx/FxWaspChunks.tres" id="1_iongg"]
-[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_mp4at"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_mp4at"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kiwpo"]
 lifetime_randomness = 0.5
@@ -28,3 +28,4 @@ visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_kiwpo")
 draw_pass_1 = SubResource("QuadMesh_vqp11")
 script = ExtResource("2_mp4at")
+restartOnReady = true

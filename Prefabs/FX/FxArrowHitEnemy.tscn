@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://dkql0j4oe33cn"]
 
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="1_8eido"]
-[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gohjn"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_yjouo"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_d8mk0"]
 [ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_2stnk"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="5_6pgwa"]
@@ -41,7 +41,8 @@ explosiveness = 1.0
 visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
 process_material = SubResource("ParticleProcessMaterial_0whg0")
 draw_pass_1 = SubResource("QuadMesh_pytth")
-script = ExtResource("2_gohjn")
+script = ExtResource("2_yjouo")
+restartOnReady = true
 playChildren = true
 
 [node name="AutoDestroy" type="Node" parent="."]

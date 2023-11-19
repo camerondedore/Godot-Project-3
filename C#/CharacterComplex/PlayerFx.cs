@@ -6,22 +6,23 @@ namespace PlayerCharacterComplex
     public partial class PlayerFx : Node
     {
         [Export]
-        GpuParticles3D healFx,
-            armorFx,
+        GpuParticles3D armorFx,
             ciderFx,
             arrowWeightedFx,
             arrowPickFx,
             arrowFireFx,
             arrowBladeFx,
             arrowNetFx;
+        [Export]
+        ParticleTools rangerBandageFx;
 
 
 
-        public void PlayHealFx()
+        public void PlayRangerBandageHealFx()
         {
-            if(healFx != null)
+            if(rangerBandageFx != null)
             {
-                healFx.Restart();
+                rangerBandageFx.RestartParticles();
             }
         }
 

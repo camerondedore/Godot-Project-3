@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7xwcmlr26rvb"]
+[gd_scene load_steps=13 format=3 uid="uid://b7xwcmlr26rvb"]
 
 [ext_resource type="Material" uid="uid://cvjdabq5uh8lb" path="res://Materials/Fx/FxFire1.tres" id="1_ce8b2"]
 [ext_resource type="Material" uid="uid://bgbbgao41hr42" path="res://Particles/FxFire.tres" id="2_yjixv"]
 [ext_resource type="Material" uid="uid://b8kkjfww7yegf" path="res://Materials/Fx/FxFire2.tres" id="3_gidcn"]
+[ext_resource type="Script" path="res://C#/Common/ParticleTools.cs" id="3_he6lq"]
 [ext_resource type="Material" uid="uid://cn6mx8er72hvi" path="res://Materials/Fx/FxFire3.tres" id="4_vmb4j"]
 [ext_resource type="Material" uid="uid://x1jhdpdpxsur" path="res://Materials/Fx/FxSpark.tres" id="5_v0gio"]
 
@@ -40,6 +41,8 @@ lifetime = 0.7
 randomness = 0.25
 process_material = ExtResource("2_yjixv")
 draw_pass_1 = SubResource("QuadMesh_8nyan")
+script = ExtResource("3_he6lq")
+playChildren = true
 
 [node name="FxFireSub1" type="GPUParticles3D" parent="."]
 material_override = ExtResource("3_gidcn")

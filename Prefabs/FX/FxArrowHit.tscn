@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://c248kr7mbh8b7" path="res://Materials/Fx/FxArrowHit.tres" id="1_s2cpb"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_8umw6"]
-[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="2_gwfle"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_en0gq"]
 [ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/Fx/FxSparkle.tres" id="4_fa6b1"]
 
 [sub_resource type="Gradient" id="Gradient_h563r"]
@@ -74,7 +74,8 @@ fixed_fps = 60
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_c3qcg")
 draw_pass_1 = SubResource("QuadMesh_bvefm")
-script = ExtResource("2_gwfle")
+script = ExtResource("2_en0gq")
+restartOnReady = true
 playChildren = true
 
 [node name="AutoDestroy" type="Node" parent="."]

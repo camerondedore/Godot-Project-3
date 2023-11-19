@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://d3hoinx6bykha" path="res://Materials/Fx/FxSpiderwebDebrisSpider.tres" id="1_gmobp"]
 [ext_resource type="Material" uid="uid://uhp2d28d01qm" path="res://Particles/FxSpiderwebDebrisSpiders.tres" id="2_l0te7"]
-[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="3_eswgf"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="3_284kb"]
 [ext_resource type="Material" uid="uid://b5js2fekra4tw" path="res://Materials/Fx/FxSpiderwebDebrisString1.tres" id="4_c6uur"]
 [ext_resource type="Material" uid="uid://bojrhojrdboh3" path="res://Particles/FxSpiderwebDebrisStrings.tres" id="5_lpx2d"]
 [ext_resource type="Material" uid="uid://50dhcqee1qbs" path="res://Materials/Fx/FxSpiderwebDebrisString2.tres" id="6_vrlns"]
@@ -23,7 +23,8 @@ explosiveness = 1.0
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = ExtResource("2_l0te7")
 draw_pass_1 = SubResource("QuadMesh_86xht")
-script = ExtResource("3_eswgf")
+script = ExtResource("3_284kb")
+restartOnReady = true
 playChildren = true
 
 [node name="FxStrings1" type="GPUParticles3D" parent="FxSpiders"]

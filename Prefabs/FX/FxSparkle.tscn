@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://mx0pcadbiph1"]
 
 [ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/Fx/FxSparkle.tres" id="1_3k7ci"]
-[ext_resource type="Script" path="res://C#/Common/ParticlesRandomizer.cs" id="2_lum1m"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_wvyrv"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -47,4 +47,5 @@ randomness = 1.0
 visibility_aabb = AABB(-0.35, -0.35, -0.35, 0.7, 0.7, 0.7)
 process_material = SubResource("ParticleProcessMaterial_xvvsk")
 draw_pass_1 = SubResource("QuadMesh_8qrut")
-script = ExtResource("2_lum1m")
+script = ExtResource("2_wvyrv")
+randomize = true

@@ -22,7 +22,7 @@ public partial class NettleBrothPickup : PickupRigidbody
             fxSpawner.Spawn();
 
             // play player fx
-            data.playerFx.PlayHealFx();
+            //data.playerFx.PlayHealFx();
 
             base.PickupAction(data);
         }        
