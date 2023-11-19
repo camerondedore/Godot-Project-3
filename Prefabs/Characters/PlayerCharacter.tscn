@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=73 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
 [ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
+[ext_resource type="AudioStream" uid="uid://bg7j2nh7ee6a1" path="res://Audio/pickup-arrow-5.wav" id="19_fh3gi"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
 [ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="20_no75w"]
@@ -63,6 +64,11 @@
 [ext_resource type="PackedScene" uid="uid://dpv3c061py1ht" path="res://Prefabs/FX/FxRangerBandageHeal.tscn" id="49_p7me3"]
 [ext_resource type="PackedScene" uid="uid://6l6ou0eihn0w" path="res://Prefabs/FX/FxArmorPickup.tscn" id="53_3pth2"]
 [ext_resource type="PackedScene" uid="uid://bnvggw6unmeja" path="res://Prefabs/FX/FxCiderPickup.tscn" id="63_x13rh"]
+[ext_resource type="PackedScene" uid="uid://dbfnbcir2w04y" path="res://Prefabs/FX/FxArrowPickupWeighted.tscn" id="65_03dec"]
+[ext_resource type="PackedScene" uid="uid://pg4fpwel7l2m" path="res://Prefabs/FX/FxArrowPickupPick.tscn" id="66_laruj"]
+[ext_resource type="PackedScene" uid="uid://ci6h4qi2ctfoj" path="res://Prefabs/FX/FxArrowPickupFire.tscn" id="67_huxvm"]
+[ext_resource type="PackedScene" uid="uid://dr56yw6optkqd" path="res://Prefabs/FX/FxArrowPickupBlade.tscn" id="68_ckard"]
+[ext_resource type="PackedScene" uid="uid://cghhgbvpmtbl7" path="res://Prefabs/FX/FxArrowPickupNet.tscn" id="69_mqyps"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -106,11 +112,16 @@ playerCharacter = NodePath("..")
 playerAudio = NodePath("../Audio")
 playerFx = NodePath("../Fx")
 
-[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("healFx", "armorFx", "ciderFx")]
+[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("healFx", "armorFx", "ciderFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx")]
 script = ExtResource("6_mt2sm")
 healFx = NodePath("../FxRangerBandageHeal")
 armorFx = NodePath("../FxArmorPickup")
 ciderFx = NodePath("../FxCiderPickup")
+arrowWeightedFx = NodePath("../FxArrowPickupWeighted")
+arrowPickFx = NodePath("../FxArrowPickupPick")
+arrowFireFx = NodePath("../FxArrowPickupFire")
+arrowBladeFx = NodePath("../FxArrowPickupBlade")
+arrowNetFx = NodePath("../FxArrowPickupNet")
 
 [node name="Audio" type="Node" parent="."]
 script = ExtResource("7_eessr")
@@ -120,6 +131,7 @@ dockLeafPickupSound = ExtResource("10_qxs60")
 saniclePickupSound = ExtResource("11_l8a77")
 armorPickupSound = ExtResource("12_i3sml")
 ciderPickupSound = ExtResource("14_1agc6")
+arrowPickupSound = ExtResource("19_fh3gi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 script = ExtResource("15_so0xw")
@@ -129,6 +141,13 @@ script = ExtResource("15_so0xw")
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Audio"]
 script = ExtResource("15_so0xw")
+
+[node name="CharacterAudio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
+script = ExtResource("46_hidfy")
+rangerBandageGatherSound = ExtResource("23_g4fk7")
+rangerBandageCraftSound = ExtResource("23_gbit2")
+fallDamageSound = ExtResource("37_howem")
 
 [node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsRect", "dockLeafRect", "sanicleRect", "rangerBandageRect", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
 script = ExtResource("7_xdgqf")
@@ -562,13 +581,6 @@ playerAudio = NodePath("../Audio")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
 shape = SubResource("CapsuleShape3D_t3b7p")
 
-[node name="CharacterAudio" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
-script = ExtResource("46_hidfy")
-rangerBandageGatherSound = ExtResource("23_g4fk7")
-rangerBandageCraftSound = ExtResource("23_gbit2")
-fallDamageSound = ExtResource("37_howem")
-
 [node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.199066)
 script = ExtResource("32_hlbfv")
@@ -590,5 +602,15 @@ script = ExtResource("20_4jbn7")
 [node name="FxArmorPickup" parent="." instance=ExtResource("53_3pth2")]
 
 [node name="FxCiderPickup" parent="." instance=ExtResource("63_x13rh")]
+
+[node name="FxArrowPickupWeighted" parent="." instance=ExtResource("65_03dec")]
+
+[node name="FxArrowPickupPick" parent="." instance=ExtResource("66_laruj")]
+
+[node name="FxArrowPickupFire" parent="." instance=ExtResource("67_huxvm")]
+
+[node name="FxArrowPickupBlade" parent="." instance=ExtResource("68_ckard")]
+
+[node name="FxArrowPickupNet" parent="." instance=ExtResource("69_mqyps")]
 
 [editable path="character-player"]

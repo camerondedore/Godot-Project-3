@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dh2pgw57n3v31"]
+[gd_scene load_steps=9 format=3 uid="uid://dh2pgw57n3v31"]
 
 [ext_resource type="PackedScene" uid="uid://bnv3r5gw8eh8e" path="res://Prefabs/Pickups/PickupArrowsWeighted.tscn" id="1_tmfvp"]
-[ext_resource type="PackedScene" uid="uid://cghhgbvpmtbl7" path="res://Prefabs/FX/FxArrowPickupNet.tscn" id="2_6l40u"]
 [ext_resource type="ArrayMesh" uid="uid://bndjssmijxivp" path="res://Models/arrow-net.res" id="3_qjg45"]
 [ext_resource type="Material" uid="uid://uhc8snpiwtjm" path="res://Materials/JumpNet.tres" id="4_lsrfl"]
 
@@ -39,7 +38,6 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="PickupArrowsNet" instance=ExtResource("1_tmfvp")]
 arrowType = "net"
-pickupPrefabs = Array[PackedScene]([ExtResource("2_6l40u")])
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("3_qjg45")

@@ -12,7 +12,8 @@ public partial class PlayerAudio : Node
         dockLeafPickupSound,
         saniclePickupSound,
         armorPickupSound,
-        ciderPickupSound;
+        ciderPickupSound,
+        arrowPickupSound;
 
     List<AudioTools> audioPlayers = new List<AudioTools>();
     int audioPlayerIndex = 0;
@@ -98,5 +99,12 @@ public partial class PlayerAudio : Node
     public void PlayCiderPickupSound()
     {
         PlaySound(ciderPickupSound, 0.1f);
+    }
+
+
+
+    public void PlayArrowPickupSound()
+    {
+        PlaySound(arrowPickupSound, 0.1f);
     }
 }

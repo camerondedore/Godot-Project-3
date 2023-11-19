@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6t2haanye7s0"]
+[gd_scene load_steps=8 format=3 uid="uid://b6t2haanye7s0"]
 
 [ext_resource type="PackedScene" uid="uid://bnv3r5gw8eh8e" path="res://Prefabs/Pickups/PickupArrowsWeighted.tscn" id="1_tp5vr"]
-[ext_resource type="PackedScene" uid="uid://pg4fpwel7l2m" path="res://Prefabs/FX/FxArrowPickupPick.tscn" id="2_26w37"]
 [ext_resource type="ArrayMesh" uid="uid://ya07hifuuptd" path="res://Models/arrow-pick.res" id="3_bc2n7"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
@@ -38,7 +37,6 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="PickupArrowsPick" instance=ExtResource("1_tp5vr")]
 arrowType = "pick"
-pickupPrefabs = Array[PackedScene]([ExtResource("2_26w37")])
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("3_bc2n7")

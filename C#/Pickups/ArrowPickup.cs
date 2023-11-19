@@ -15,7 +15,28 @@ public partial class ArrowPickup : PickupRigidbody
         PlayerInventory.inventory.AddToInventory(0, 0, 0, 0, arrowType);
 
         // play player audio
-		//data.playerAudio.PlayCandiedNutPickupSound();
+		data.playerAudio.PlayArrowPickupSound();
+
+        // play player fx
+        switch(arrowType)
+        {
+            case "pick":
+                data.playerFx.PlayerArrowPickFx();
+                break;
+            case "net":
+                data.playerFx.PlayerArrowNetFx();
+                break;
+            case "fire":
+                data.playerFx.PlayerArrowFireFx();
+                break;
+            case "weighted":
+                data.playerFx.PlayerArrowWeightedFx();
+                break;
+            case "blade":
+                data.playerFx.PlayerArrowBladeFx();
+                break;
+        }
+    
 
         base.PickupAction(data);
     }
