@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="1_anmk5"]
 [ext_resource type="ArrayMesh" uid="uid://x3dcuk4k6e3i" path="res://Models/pickup-candied-nut-1.res" id="3_f3xch"]
 [ext_resource type="ArrayMesh" uid="uid://bwl3ntlog5agd" path="res://Models/pickup-candied-nut-2.res" id="4_cr428"]
-[ext_resource type="Material" uid="uid://dx4tjrj1tn4vt" path="res://Materials/PickupCandiedNuts.tres" id="4_nvqdf"]
+[ext_resource type="Material" uid="uid://dx4tjrj1tn4vt" path="res://Materials/Pickups/PickupCandiedNuts.tres" id="4_nvqdf"]
 [ext_resource type="ArrayMesh" uid="uid://dlmp810rdbjvw" path="res://Models/pickup-candied-nut-3.res" id="5_gn2nl"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbfnbcir2w04y"]
+
+[ext_resource type="Material" uid="uid://7e1snam2ake2" path="res://Materials/Fx/FxArrowTrailWeighted.tres" id="1_8rdyw"]
+[ext_resource type="Material" uid="uid://248mhoj4o68x" path="res://Particles/FxArrowPickup.tres" id="2_xagpm"]
+[ext_resource type="Script" path="res://C#/Common/AutoPlayParticles.cs" id="3_db6oa"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nt3qw"]
+
+[node name="FxArrowPickupWeighted" type="GPUParticles3D"]
+material_override = ExtResource("1_8rdyw")
+cast_shadow = 0
+emitting = false
+amount = 15
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.9
+process_material = ExtResource("2_xagpm")
+draw_pass_1 = SubResource("QuadMesh_nt3qw")
+script = ExtResource("3_db6oa")

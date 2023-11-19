@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnv3r5gw8eh8e"]
+
+[ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_ydxnv"]
+[ext_resource type="Script" path="res://C#/Pickups/ArrowPickup.cs" id="2_wrbvg"]
+[ext_resource type="PackedScene" uid="uid://dbfnbcir2w04y" path="res://Prefabs/FX/FxArrowPickupWeighted.tscn" id="3_1sjj4"]
+[ext_resource type="ArrayMesh" uid="uid://dvwckpqutx3g6" path="res://Models/arrow-weighted.res" id="3_svxow"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="4_arunp"]
+
+[sub_resource type="Gradient" id="Gradient_tcd1t"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3yg5b"]
+gradient = SubResource("Gradient_tcd1t")
+
+[sub_resource type="Curve" id="Curve_qhwyd"]
+_data = [Vector2(0, 0.474138), 0.0, 0.332598, 0, 0, Vector2(0.506329, 1), 0.0510779, 0.0510779, 0, 0, Vector2(1, 0.482759), -0.0454026, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_b5u7h"]
+curve = SubResource("Curve_qhwyd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_skoyg"]
+resource_local_to_scene = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.35
+emission_ring_inner_radius = 0.35
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, -0.04, 0)
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+angle_max = 360.0
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_b5u7h")
+color_ramp = SubResource("GradientTexture1D_3yg5b")
+
+[node name="PickupArrowsWeighted" instance=ExtResource("1_ydxnv")]
+script = ExtResource("2_wrbvg")
+pickupPrefabs = Array[PackedScene]([ExtResource("3_1sjj4")])
+saveToWorldData = false
+
+[node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(0.922255, 0.386582, 0, -0.178929, 0.426863, -0.886438, -0.342681, 0.817522, 0.462847, 0, 0.236765, -0.124291)
+mesh = ExtResource("3_svxow")
+surface_material_override/0 = ExtResource("4_arunp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.982658, 0.124581, 0.137341, 0, 0.740676, -0.671863, -0.185427, 0.660211, 0.727831, -0.0461753, 0.0456002, -0.0714725)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_svxow")
+surface_material_override/0 = ExtResource("4_arunp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.957858, -0.242807, -0.153472, 0, 0.534293, -0.845299, 0.287243, 0.809676, 0.511777, 0.0374355, 0.130356, -0.12598)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_svxow")
+surface_material_override/0 = ExtResource("4_arunp")
+
+[node name="FxSparkle" parent="." index="4"]
+process_material = SubResource("ParticleProcessMaterial_skoyg")

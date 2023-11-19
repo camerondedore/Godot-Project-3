@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://pg4fpwel7l2m"]
+
+[ext_resource type="PackedScene" uid="uid://dbfnbcir2w04y" path="res://Prefabs/FX/FxArrowPickupWeighted.tscn" id="1_3us06"]
+[ext_resource type="Material" uid="uid://cr2urnuo3ly6l" path="res://Materials/Fx/FxArrowTrailPick.tres" id="2_dxrrm"]
+
+[node name="FxArrowPickupPick" instance=ExtResource("1_3us06")]
+material_override = ExtResource("2_dxrrm")

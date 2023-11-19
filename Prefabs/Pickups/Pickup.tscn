@@ -24,7 +24,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_b5u7h"]
 curve = SubResource("Curve_qhwyd")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yowxe"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1sp22"]
 resource_local_to_scene = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
@@ -57,6 +57,6 @@ mesh = SubResource("SphereMesh_iax83")
 shape = SubResource("SphereShape3D_inywu")
 
 [node name="FxSparkle" parent="." instance=ExtResource("2_imooj")]
-process_material = SubResource("ParticleProcessMaterial_yowxe")
+process_material = SubResource("ParticleProcessMaterial_1sp22")
 
 [node name="FxItemHighlight" parent="." instance=ExtResource("2_8xkpg")]

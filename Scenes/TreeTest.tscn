@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=115 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -106,6 +106,11 @@
 [ext_resource type="Script" path="res://C#/Blocker.cs" id="92_lvoik"]
 [ext_resource type="PackedScene" uid="uid://ck8pgh1yk6qb4" path="res://Prefabs/Small Items/PropBoard1Rigid.tscn" id="97_jtuqx"]
 [ext_resource type="PackedScene" uid="uid://c1d2dkbogkckq" path="res://Prefabs/Small Items/PropBoard2Rigid.tscn" id="98_qhl4s"]
+[ext_resource type="PackedScene" uid="uid://cd4rwhkdqdprp" path="res://Prefabs/Pickups/PickupArrowsBlade.tscn" id="100_j7qdo"]
+[ext_resource type="PackedScene" uid="uid://bnv3r5gw8eh8e" path="res://Prefabs/Pickups/PickupArrowsWeighted.tscn" id="100_vfj1l"]
+[ext_resource type="PackedScene" uid="uid://b6t2haanye7s0" path="res://Prefabs/Pickups/PickupArrowsPick.tscn" id="102_qo6ym"]
+[ext_resource type="PackedScene" uid="uid://d0f8vu33h2mb6" path="res://Prefabs/Pickups/PickupArrowsFire.tscn" id="103_3dgt1"]
+[ext_resource type="PackedScene" uid="uid://dh2pgw57n3v31" path="res://Prefabs/Pickups/PickupArrowsNet.tscn" id="104_6d2ca"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_q1ywk"]
 resource_local_to_scene = true
@@ -1204,6 +1209,21 @@ lock_rotation = false
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("43_r6irn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1.07936, -9.80821)
 lock_rotation = false
+
+[node name="PickupArrowsBlade" parent="Map/Pickups" instance=ExtResource("100_j7qdo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 1, -18.3)
+
+[node name="PickupArrowsWeighted" parent="Map/Pickups" instance=ExtResource("100_vfj1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 1, -18.3)
+
+[node name="PickupArrowsPick" parent="Map/Pickups" instance=ExtResource("102_qo6ym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, 1, -18.3)
+
+[node name="PickupArrowsFire" parent="Map/Pickups" instance=ExtResource("103_3dgt1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 1, -18.3)
+
+[node name="PickupArrowsNet" parent="Map/Pickups" instance=ExtResource("104_6d2ca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3, 1, -18.3)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 

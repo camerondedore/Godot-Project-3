@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cd4rwhkdqdprp"]
+
+[ext_resource type="PackedScene" uid="uid://bnv3r5gw8eh8e" path="res://Prefabs/Pickups/PickupArrowsWeighted.tscn" id="1_d6scl"]
+[ext_resource type="PackedScene" uid="uid://dr56yw6optkqd" path="res://Prefabs/FX/FxArrowPickupBlade.tscn" id="2_cqnj1"]
+[ext_resource type="ArrayMesh" uid="uid://bfhs762wk2ps1" path="res://Models/arrow-blade.res" id="2_kodv5"]
+
+[sub_resource type="Gradient" id="Gradient_tcd1t"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3yg5b"]
+gradient = SubResource("Gradient_tcd1t")
+
+[sub_resource type="Curve" id="Curve_qhwyd"]
+_data = [Vector2(0, 0.474138), 0.0, 0.332598, 0, 0, Vector2(0.506329, 1), 0.0510779, 0.0510779, 0, 0, Vector2(1, 0.482759), -0.0454026, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_b5u7h"]
+curve = SubResource("Curve_qhwyd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uhy0y"]
+resource_local_to_scene = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.2
+emission_ring_radius = 0.35
+emission_ring_inner_radius = 0.35
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, -0.04, 0)
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+angle_max = 360.0
+scale_min = 0.2
+scale_max = 0.3
+scale_curve = SubResource("CurveTexture_b5u7h")
+color_ramp = SubResource("GradientTexture1D_3yg5b")
+
+[node name="PickupArrowsBlade" instance=ExtResource("1_d6scl")]
+arrowType = "blade"
+pickupPrefabs = Array[PackedScene]([ExtResource("2_cqnj1")])
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_kodv5")
+
+[node name="MeshInstance3D2" parent="." index="1"]
+mesh = ExtResource("2_kodv5")
+
+[node name="MeshInstance3D3" parent="." index="2"]
+mesh = ExtResource("2_kodv5")
+
+[node name="FxSparkle" parent="." index="4"]
+process_material = SubResource("ParticleProcessMaterial_uhy0y")
