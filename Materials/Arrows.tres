@@ -5,3 +5,5 @@
 [resource]
 albedo_texture = ExtResource("1_txxvw")
 metallic_specular = 0.2
+rim_enabled = true
+rim = 0.1

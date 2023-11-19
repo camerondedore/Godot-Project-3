@@ -1,18 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://m1f3turs6go4"]
+[gd_scene load_steps=8 format=3 uid="uid://m1f3turs6go4"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/SpiderwebTarget.cs" id="1_2acdw"]
 [ext_resource type="ArrayMesh" uid="uid://j3mheaux7jps" path="res://Models/prop-spiderweb-1.res" id="1_h302x"]
 [ext_resource type="PackedScene" uid="uid://c4bgvs00irqer" path="res://Prefabs/FX/FxSpiderwebDebris.tscn" id="2_3gmco"]
 [ext_resource type="Material" uid="uid://cgq7hcnxrd2bq" path="res://Materials/Props/PropSpiderwebs.tres" id="2_74fe7"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="5_1tk7e"]
+[ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="6_1un68"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l0qqr"]
 size = Vector3(0.8, 0.8, 0.1)
 
-[node name="PropSpiderweb1" type="StaticBody3D" node_paths=PackedStringArray("pinnedObjects")]
+[node name="PropSpiderweb1" type="StaticBody3D" node_paths=PackedStringArray("pinnedObjects", "pickupSpawner")]
 collision_layer = 64
 script = ExtResource("1_2acdw")
 cutFx = ExtResource("2_3gmco")
 pinnedObjects = []
+pickupSpawner = NodePath("PickupSpawner")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
@@ -22,3 +25,10 @@ surface_material_override/0 = ExtResource("2_74fe7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_l0qqr")
+
+[node name="PickupSpawner" type="Node3D" parent="."]
+script = ExtResource("5_1tk7e")
+prefab = ExtResource("6_1un68")
+direction = Vector3(0, 1, 0)
+spread = 0.5
+angularSpeed = 0.0
