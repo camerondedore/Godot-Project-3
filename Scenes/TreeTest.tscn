@@ -1214,7 +1214,7 @@ lock_rotation = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 1, -18.3)
 
 [node name="PickupArrowsWeighted" parent="Map/Pickups" instance=ExtResource("100_vfj1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 1, -18.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30712, 0.995929, -18.3086)
 
 [node name="PickupArrowsPick" parent="Map/Pickups" instance=ExtResource("102_qo6ym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, 1, -18.3)

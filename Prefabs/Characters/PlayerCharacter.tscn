@@ -606,11 +606,15 @@ script = ExtResource("20_4jbn7")
 [node name="FxArrowPickupWeighted" parent="." instance=ExtResource("65_03dec")]
 
 [node name="FxArrowPickupPick" parent="." instance=ExtResource("66_laruj")]
+amount = 15
 
 [node name="FxArrowPickupFire" parent="." instance=ExtResource("67_huxvm")]
+amount = 15
 
 [node name="FxArrowPickupBlade" parent="." instance=ExtResource("68_ckard")]
+amount = 15
 
 [node name="FxArrowPickupNet" parent="." instance=ExtResource("69_mqyps")]
+amount = 15
 
 [editable path="character-player"]

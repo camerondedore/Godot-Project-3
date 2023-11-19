@@ -9,9 +9,8 @@
 material_override = ExtResource("1_8rdyw")
 cast_shadow = 0
 emitting = false
-amount = 15
-lifetime = 1.5
+amount = 30
 one_shot = true
-explosiveness = 0.9
+explosiveness = 0.7
 process_material = ExtResource("2_xagpm")
 draw_pass_1 = SubResource("QuadMesh_nt3qw")
