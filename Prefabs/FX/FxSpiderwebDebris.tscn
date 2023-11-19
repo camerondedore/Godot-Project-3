@@ -24,8 +24,9 @@ visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = ExtResource("2_l0te7")
 draw_pass_1 = SubResource("QuadMesh_86xht")
 script = ExtResource("3_eswgf")
+playChildren = true
 
-[node name="FxStrings1" type="GPUParticles3D" parent="."]
+[node name="FxStrings1" type="GPUParticles3D" parent="FxSpiders"]
 material_override = ExtResource("4_c6uur")
 cast_shadow = 0
 gi_mode = 2
@@ -37,9 +38,8 @@ explosiveness = 1.0
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = ExtResource("5_lpx2d")
 draw_pass_1 = SubResource("QuadMesh_86xht")
-script = ExtResource("3_eswgf")
 
-[node name="FxStrings2" type="GPUParticles3D" parent="."]
+[node name="FxStrings2" type="GPUParticles3D" parent="FxSpiders"]
 material_override = ExtResource("6_vrlns")
 cast_shadow = 0
 gi_mode = 2
@@ -51,7 +51,6 @@ explosiveness = 1.0
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = ExtResource("5_lpx2d")
 draw_pass_1 = SubResource("QuadMesh_86xht")
-script = ExtResource("3_eswgf")
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("7_mei8n")

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class AudioFx : AudioStreamPlayer3D
+public partial class AudioFx : AudioTools3d
 {
     /// FOR NODES THAT PLAY AUTOMATICALLY WITH NO OUTSIDE TRIGGERING
 
@@ -16,16 +16,6 @@ public partial class AudioFx : AudioStreamPlayer3D
 
     public override void _Ready()
     {
-        // get random sound
-        var soundIndex = GD.Randi() % sounds.Length;
-        var sound = sounds[soundIndex];
-
-        // assign random sound to player
-        Stream = sound;
-
-        // get random pitch
-        PitchScale = 1 + (GD.Randf() - 0.5f) * pitchRange;
-
         if(destroyOnFinished)
         {
             // destroy this player when finished
@@ -33,6 +23,6 @@ public partial class AudioFx : AudioStreamPlayer3D
         }
 
         // play sound
-        Play();
+        PlayRandomSound(sounds, pitchRange);
     }
 }

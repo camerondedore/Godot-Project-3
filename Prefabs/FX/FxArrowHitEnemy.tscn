@@ -42,6 +42,7 @@ visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
 process_material = SubResource("ParticleProcessMaterial_0whg0")
 draw_pass_1 = SubResource("QuadMesh_pytth")
 script = ExtResource("2_gohjn")
+playChildren = true
 
 [node name="AutoDestroy" type="Node" parent="."]
 script = ExtResource("3_d8mk0")
