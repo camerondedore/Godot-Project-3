@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://ob3jo5n21qjo"]
+
+[ext_resource type="PackedScene" uid="uid://cji2ubiw8m1m2" path="res://Prefabs/UI/UiPickup.tscn" id="1_nkclk"]
+[ext_resource type="Texture2D" uid="uid://bp4wvf5xpnked" path="res://Textures/fx-arrow-trail-weighted.png" id="2_idf5c"]
+
+[node name="UiPickupArrowWeighted" instance=ExtResource("1_nkclk")]
+texture = ExtResource("2_idf5c")

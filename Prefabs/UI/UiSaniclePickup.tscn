@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://dc1tsbfbuuncm"]
 
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiPickup.tscn" id="1_sxyov"]
+[ext_resource type="PackedScene" uid="uid://cji2ubiw8m1m2" path="res://Prefabs/UI/UiPickup.tscn" id="1_sxyov"]
 [ext_resource type="Texture2D" uid="uid://c8wwbdatxpsa3" path="res://UI/ui-sanicle-pickup.png" id="2_82qo3"]
 
-[node name="HudSaniclePickup" instance=ExtResource("1_sxyov")]
+[node name="UiSaniclePickup" instance=ExtResource("1_sxyov")]
 texture = ExtResource("2_82qo3")

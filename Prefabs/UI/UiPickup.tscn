@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://cji2ubiw8m1m2"]
 
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="1_ml3gg"]
 [ext_resource type="Texture2D" uid="uid://77s0pid5yy0" path="res://icon.svg" id="2_lfc61"]
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickup.cs" id="3_u12cb"]
 
-[node name="HudPickup" type="TextureRect"]
+[node name="UiPickup" type="TextureRect"]
 offset_right = 100.0
 offset_bottom = 100.0
 theme = ExtResource("1_ml3gg")

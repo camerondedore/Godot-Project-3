@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class PlayerHud : Node
 {
@@ -21,6 +22,8 @@ public partial class PlayerHud : Node
         sanicleCounter,
         rangerBandagesCounter;
     [Export]
+    BoxContainer arrowList;
+    [Export]
     PlayerHudPickups hudPickups;
     [Export]
     Color hurtHitPointsBarColor,
@@ -29,6 +32,7 @@ public partial class PlayerHud : Node
     PlayerStatistics.Statistics currentStatistics;
     PlayerInventory.Inventory currentInventory;
     Disconnector tabDisconnector = new Disconnector();
+    List<string> arrows = new List<string>();
     double colorChangeStartTime,
         colorChangeTimeLength = 0.5,
         visibilityTimer;
@@ -65,6 +69,7 @@ public partial class PlayerHud : Node
         dockLeaves = currentInventory.DockLeaves;
         sanicle = currentInventory.Sanicle;
         rangerBandages = currentInventory.RangerBandages;
+        arrows.AddRange(currentInventory.ArrowTypes);
 
         // get hit point bars
         // bug does not allow assigning nodes to array in inspector
@@ -192,6 +197,18 @@ public partial class PlayerHud : Node
             visibilityTimer = 5;
         }
 
+        if(arrows.Count != currentInventory.ArrowTypes.Count)
+        {
+            var newArrow = currentInventory.ArrowTypes.Except(arrows).First();
+
+            hudPickups.AddArrow(newArrow);
+            
+            // update arrow list
+            arrows.Add(newArrow);
+
+            visibilityTimer = 5;
+        }
+
         // reset hit point bar color
         if(colorChanged && EngineTime.timePassed > colorChangeStartTime + colorChangeTimeLength)
         {
@@ -219,6 +236,7 @@ public partial class PlayerHud : Node
                 dockLeafRect.Visible = true;
                 sanicleRect.Visible = true;
                 rangerBandageRect.Visible = true;
+                arrowList.Visible = true;
 
                 rectsVisible = true;
             }
@@ -229,6 +247,8 @@ public partial class PlayerHud : Node
             dockLeafRect.Visible = false;
             sanicleRect.Visible = false;
             rangerBandageRect.Visible = false;
+            arrowList.Visible = false;
+
 
             rectsVisible = false;
         }

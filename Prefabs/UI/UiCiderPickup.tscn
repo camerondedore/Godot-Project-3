@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://p8jwo71ixc6x"]
 
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiPickup.tscn" id="1_sb5br"]
+[ext_resource type="PackedScene" uid="uid://cji2ubiw8m1m2" path="res://Prefabs/UI/UiPickup.tscn" id="1_sb5br"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="2_2blhk"]
 
-[node name="HudCiderPickup" instance=ExtResource("1_sb5br")]
+[node name="UiCiderPickup" instance=ExtResource("1_sb5br")]
 texture = ExtResource("2_2blhk")

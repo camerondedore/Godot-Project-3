@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class PlayerHudPickups : Control
 {
@@ -11,14 +12,20 @@ public partial class PlayerHudPickups : Control
         saniclePickupEnd,
         rangerBandagePickupEnd,
         armorPickupEnd,
-        ciderPickupEnd;
+        ciderPickupEnd,
+        arrowPickupEnd;
     [Export]
     PackedScene candiedNutsPickup,
         dockLeafPickup,
         saniclePickup,
         rangerBandagePickup,
         armorPickup,
-        ciderPickup;
+        ciderPickup,
+        arrowWeightedPickup,
+        arrowBladePickup,
+        arrowPickPickup,
+        arrowNetPickup,
+        arrowFirePickup;
 
     
 
@@ -74,6 +81,30 @@ public partial class PlayerHudPickups : Control
     public void AddHitpointsBar()
     {   
         SpawnPickup(ciderPickup, pickupStart.Position, ciderPickupEnd.Position);
+    }
+
+
+
+     public void AddArrow(string arrowType)
+    {   
+        switch(arrowType)
+        {
+            case "weighted":
+                SpawnPickup(arrowWeightedPickup, pickupStart.Position, arrowPickupEnd.Position);
+                break;
+            case "blade":
+                SpawnPickup(arrowBladePickup, pickupStart.Position, arrowPickupEnd.Position);
+                break;
+            case "pick":
+                SpawnPickup(arrowPickPickup, pickupStart.Position, arrowPickupEnd.Position);
+                break;
+            case "net":
+                SpawnPickup(arrowNetPickup, pickupStart.Position, arrowPickupEnd.Position);
+                break;
+            case "fire":
+                SpawnPickup(arrowFirePickup, pickupStart.Position, arrowPickupEnd.Position);
+                break;
+        }
     }
 
 

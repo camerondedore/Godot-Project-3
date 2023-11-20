@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5fo0lpwtdpl6"]
 
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiPickup.tscn" id="1_6qydg"]
+[ext_resource type="PackedScene" uid="uid://cji2ubiw8m1m2" path="res://Prefabs/UI/UiPickup.tscn" id="1_6qydg"]
 [ext_resource type="Texture2D" uid="uid://cnjn510u3rvcl" path="res://UI/ui-ranger-bandage-pickup.png" id="2_3vkrm"]
 
-[node name="HudRangerBandagePickup" instance=ExtResource("1_6qydg")]
+[node name="UiRangerBandagePickup" instance=ExtResource("1_6qydg")]
 texture = ExtResource("2_3vkrm")

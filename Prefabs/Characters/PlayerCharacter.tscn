@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=79 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterLedgeDetector.cs" id="5_rkg0g"]
 [ext_resource type="Texture2D" uid="uid://bp4wvf5xpnked" path="res://Textures/fx-arrow-trail-weighted.png" id="5_savq2"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
-[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerFx.cs" id="6_mt2sm"]
+[ext_resource type="Script" path="res://C#/PlayerFx.cs" id="6_r2un4"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
 [ext_resource type="Script" path="res://C#/PlayerAudio.cs" id="7_eessr"]
 [ext_resource type="Texture2D" uid="uid://btpa146lw2nrh" path="res://Textures/fx-arrow-trail-pick.png" id="7_ey0rg"]
@@ -23,17 +23,17 @@
 [ext_resource type="Texture2D" uid="uid://cfcpeng6uiqtu" path="res://Textures/fx-arrow-trail-net.png" id="8_nsls7"]
 [ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiCandiedNutsPickup.tscn" id="9_cffx2"]
+[ext_resource type="PackedScene" uid="uid://dnndm6o1k03eu" path="res://Prefabs/UI/UiCandiedNutsPickup.tscn" id="9_cffx2"]
 [ext_resource type="Texture2D" uid="uid://c3c6y1kjx7atc" path="res://UI/ui-ranger-bandage-counter.png" id="9_lhn14"]
 [ext_resource type="Texture2D" uid="uid://bdr72honvktal" path="res://Textures/fx-arrow-trail-fire.png" id="9_q1w1u"]
 [ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut-2.wav" id="9_vai2d"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
+[ext_resource type="PackedScene" uid="uid://dg52rv78agi1g" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
 [ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 [ext_resource type="Texture2D" uid="uid://vv7jwomasoww" path="res://Textures/fx-arrow-trail-bodkin.png" id="10_m6ggt"]
 [ext_resource type="AudioStream" uid="uid://bbbew6mr246nm" path="res://Audio/pickup-dock-leaf.wav" id="10_qxs60"]
 [ext_resource type="PackedScene" uid="uid://dq8dwaqq4b84a" path="res://Prefabs/FX/FxSparkleBowTarget.tscn" id="11_8krr5"]
 [ext_resource type="AudioStream" uid="uid://ch1you6rwmx40" path="res://Audio/bow-target.wav" id="11_dpkpm"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
+[ext_resource type="PackedScene" uid="uid://dc1tsbfbuuncm" path="res://Prefabs/UI/UiSaniclePickup.tscn" id="11_i1qbn"]
 [ext_resource type="AudioStream" uid="uid://djlxfxckxyb8h" path="res://Audio/pickup-sanicle.wav" id="11_l8a77"]
 [ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="12_i3sml"]
 [ext_resource type="PackedScene" uid="uid://b5fo0lpwtdpl6" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
@@ -53,9 +53,14 @@
 [ext_resource type="PackedScene" uid="uid://p8jwo71ixc6x" path="res://Prefabs/UI/UiCiderPickup.tscn" id="27_2lls6"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowWeighted.tscn" id="27_121vu"]
 [ext_resource type="PackedScene" path="res://Prefabs/Player Arrows/PlayerArrowNet.tscn" id="28_t6rk3"]
+[ext_resource type="PackedScene" uid="uid://ob3jo5n21qjo" path="res://Prefabs/UI/UiPickupArrowWeighted.tscn" id="29_2ha5c"]
 [ext_resource type="Texture2D" uid="uid://dw3kwsn5xyl27" path="res://UI/ui-shield.png" id="29_4s88l"]
+[ext_resource type="PackedScene" uid="uid://dso5he210j66b" path="res://Prefabs/UI/UiPickupArrowBlade.tscn" id="30_fxaqu"]
+[ext_resource type="PackedScene" uid="uid://cee1allvlvjy6" path="res://Prefabs/UI/UiPickupArrowPick.tscn" id="31_35lc4"]
 [ext_resource type="PackedScene" uid="uid://d3m8qbrtf4h37" path="res://Prefabs/Player Arrows/PlayerArrowFire.tscn" id="31_imcpe"]
+[ext_resource type="PackedScene" uid="uid://pj4pw1m6yfgd" path="res://Prefabs/UI/UiPickupArrowNet.tscn" id="32_6du35"]
 [ext_resource type="Script" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
+[ext_resource type="PackedScene" uid="uid://4pamllwbfmk0" path="res://Prefabs/UI/UiPickupArrowFire.tscn" id="33_pvcuj"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
 [ext_resource type="AudioStream" uid="uid://dxnxfhrr70g8f" path="res://Audio/fall-damage.wav" id="37_howem"]
 [ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
@@ -115,7 +120,7 @@ playerAudio = NodePath("../Audio")
 playerFx = NodePath("../Fx")
 
 [node name="Fx" type="Node" parent="." node_paths=PackedStringArray("armorFx", "ciderFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx", "fallDamageFx", "rangerBandageFx")]
-script = ExtResource("6_mt2sm")
+script = ExtResource("6_r2un4")
 armorFx = NodePath("../FxArmorPickup")
 ciderFx = NodePath("../FxCiderPickup")
 arrowWeightedFx = NodePath("../FxArrowPickupWeighted")
@@ -152,7 +157,7 @@ rangerBandageGatherSound = ExtResource("23_g4fk7")
 rangerBandageCraftSound = ExtResource("23_gbit2")
 fallDamageSound = ExtResource("37_howem")
 
-[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsRect", "dockLeafRect", "sanicleRect", "rangerBandageRect", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "hudPickups")]
+[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsRect", "dockLeafRect", "sanicleRect", "rangerBandageRect", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "arrowList", "hudPickups")]
 script = ExtResource("7_xdgqf")
 hitPointBarsContainer = NodePath("Hud/HitPointBars")
 shieldsContainer = NodePath("Hud/Armor")
@@ -164,11 +169,12 @@ candiedNutsCounter = NodePath("Hud/CandiedNuts/CandiedNutsCounter")
 dockLeavesCounter = NodePath("Hud/DockLeaves/DockLeavesCounter")
 sanicleCounter = NodePath("Hud/Sanicle/SanicleCounter")
 rangerBandagesCounter = NodePath("Hud/RangerBandage/RangerBandageCounter")
+arrowList = NodePath("Hud/ArrowList")
 hudPickups = NodePath("Hud")
 hurtHitPointsBarColor = Color(1, 0.25, 0.25, 1)
 healHitPointsBarColor = Color(0.25, 1, 0.25, 1)
 
-[node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "armorPickupEnd", "ciderPickupEnd")]
+[node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "armorPickupEnd", "ciderPickupEnd", "arrowPickupEnd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -184,12 +190,18 @@ saniclePickupEnd = NodePath("Sanicle")
 rangerBandagePickupEnd = NodePath("RangerBandage")
 armorPickupEnd = NodePath("Armor")
 ciderPickupEnd = NodePath("HitPointBars")
+arrowPickupEnd = NodePath("ArrowList")
 candiedNutsPickup = ExtResource("9_cffx2")
 dockLeafPickup = ExtResource("10_dsdcr")
 saniclePickup = ExtResource("11_i1qbn")
 rangerBandagePickup = ExtResource("12_xyyhd")
 armorPickup = ExtResource("26_ent0s")
 ciderPickup = ExtResource("27_2lls6")
+arrowWeightedPickup = ExtResource("29_2ha5c")
+arrowBladePickup = ExtResource("30_fxaqu")
+arrowPickPickup = ExtResource("31_35lc4")
+arrowNetPickup = ExtResource("32_6du35")
+arrowFirePickup = ExtResource("33_pvcuj")
 
 [node name="HitPointBars" type="HBoxContainer" parent="HudCanvas/Hud"]
 layout_mode = 0
@@ -255,6 +267,48 @@ expand_mode = 3
 layout_mode = 2
 theme = ExtResource("5_o5i36")
 texture = ExtResource("29_4s88l")
+expand_mode = 3
+
+[node name="ArrowList" type="HBoxContainer" parent="HudCanvas/Hud"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -357.0
+offset_top = 25.0
+offset_right = -37.0
+offset_bottom = 75.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="ArrowFire" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+layout_mode = 2
+texture = ExtResource("9_q1w1u")
+expand_mode = 3
+
+[node name="ArrowNet" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+layout_mode = 2
+texture = ExtResource("8_nsls7")
+expand_mode = 3
+
+[node name="ArrowPick" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+layout_mode = 2
+texture = ExtResource("7_ey0rg")
+expand_mode = 3
+
+[node name="ArrowBlade" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+layout_mode = 2
+texture = ExtResource("15_usho7")
+expand_mode = 3
+
+[node name="ArrowWeighted" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+layout_mode = 2
+texture = ExtResource("5_savq2")
+expand_mode = 3
+
+[node name="ArrowBodkin" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+layout_mode = 2
+texture = ExtResource("10_m6ggt")
 expand_mode = 3
 
 [node name="CandiedNuts" type="TextureRect" parent="HudCanvas/Hud"]
