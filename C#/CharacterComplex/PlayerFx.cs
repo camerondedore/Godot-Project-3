@@ -12,7 +12,8 @@ namespace PlayerCharacterComplex
             arrowPickFx,
             arrowFireFx,
             arrowBladeFx,
-            arrowNetFx;
+            arrowNetFx,
+            fallDamageFx;
         [Export]
         ParticleTools rangerBandageFx;
 
@@ -38,7 +39,7 @@ namespace PlayerCharacterComplex
 
 
 
-        public void PlayerCiderFx()
+        public void PlayCiderFx()
         {
             if(ciderFx != null)
             {
@@ -48,7 +49,7 @@ namespace PlayerCharacterComplex
 
 
 
-        public void PlayerArrowWeightedFx()
+        public void PlayArrowWeightedFx()
         {
             if(arrowWeightedFx != null)
             {
@@ -58,7 +59,7 @@ namespace PlayerCharacterComplex
 
 
 
-        public void PlayerArrowPickFx()
+        public void PlayArrowPickFx()
         {
             if(arrowPickFx != null)
             {
@@ -68,7 +69,7 @@ namespace PlayerCharacterComplex
 
 
 
-        public void PlayerArrowFireFx()
+        public void PlayArrowFireFx()
         {
             if(arrowFireFx != null)
             {
@@ -78,7 +79,7 @@ namespace PlayerCharacterComplex
 
 
 
-        public void PlayerArrowBladeFx()
+        public void PlayArrowBladeFx()
         {
             if(arrowBladeFx != null)
             {
@@ -88,11 +89,21 @@ namespace PlayerCharacterComplex
 
 
 
-        public void PlayerArrowNetFx()
+        public void PlayArrowNetFx()
         {
             if(arrowNetFx != null)
             {
                 arrowNetFx.Restart();
+            }
+        }
+
+
+
+        public void PlayFallDamageFx()
+        {
+            if(fallDamageFx != null)
+            {
+                fallDamageFx.Restart();
             }
         }
     }

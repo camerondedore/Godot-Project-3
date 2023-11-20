@@ -35,6 +35,8 @@ namespace PlayerCharacterComplex
 		[Export]
 		public PlayerCharacterAudio characterAudio;
 		[Export]
+		public PlayerFx characterFx;
+		[Export]
 		public BowAimer bowAimer;
 		[Export]
 		public Bow bow;

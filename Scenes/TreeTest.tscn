@@ -1211,19 +1211,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1.07936, -9.80821)
 lock_rotation = false
 
 [node name="PickupArrowsBlade" parent="Map/Pickups" instance=ExtResource("100_j7qdo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8, 1, -18.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1, -11.9)
 
 [node name="PickupArrowsWeighted" parent="Map/Pickups" instance=ExtResource("100_vfj1l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.30712, 0.995929, -18.3086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60712, 0.995929, -11.9086)
 
 [node name="PickupArrowsPick" parent="Map/Pickups" instance=ExtResource("102_qo6ym")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, 1, -18.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 1, -11.9)
 
 [node name="PickupArrowsFire" parent="Map/Pickups" instance=ExtResource("103_3dgt1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 1, -18.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, 1, -11.9)
 
 [node name="PickupArrowsNet" parent="Map/Pickups" instance=ExtResource("104_6d2ca")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3, 1, -18.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 1, -11.9)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 

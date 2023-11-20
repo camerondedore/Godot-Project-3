@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=74 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -69,6 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://ci6h4qi2ctfoj" path="res://Prefabs/FX/FxArrowPickupFire.tscn" id="67_huxvm"]
 [ext_resource type="PackedScene" uid="uid://dr56yw6optkqd" path="res://Prefabs/FX/FxArrowPickupBlade.tscn" id="68_ckard"]
 [ext_resource type="PackedScene" uid="uid://cghhgbvpmtbl7" path="res://Prefabs/FX/FxArrowPickupNet.tscn" id="69_mqyps"]
+[ext_resource type="PackedScene" uid="uid://deyqbso1o2jgb" path="res://Prefabs/FX/FxFallDamage.tscn" id="70_w5uft"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
@@ -79,7 +80,7 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "bowAimer", "bow", "health", "myFactions", "ledgeDetector")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "characterFx", "bowAimer", "bow", "health", "myFactions", "ledgeDetector")]
 process_mode = 1
 collision_layer = 162
 collision_mask = 3091
@@ -89,6 +90,7 @@ script = ExtResource("1_atjmm")
 cameraSpringArm = NodePath("SpringArm3D")
 anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
+characterFx = NodePath("Fx")
 bowAimer = NodePath("SpringArm3D/BowAimer")
 bow = NodePath("Bow")
 health = NodePath("Health")
@@ -112,7 +114,7 @@ playerCharacter = NodePath("..")
 playerAudio = NodePath("../Audio")
 playerFx = NodePath("../Fx")
 
-[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("armorFx", "ciderFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx", "rangerBandageFx")]
+[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("armorFx", "ciderFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx", "fallDamageFx", "rangerBandageFx")]
 script = ExtResource("6_mt2sm")
 armorFx = NodePath("../FxArmorPickup")
 ciderFx = NodePath("../FxCiderPickup")
@@ -121,6 +123,7 @@ arrowPickFx = NodePath("../FxArrowPickupPick")
 arrowFireFx = NodePath("../FxArrowPickupFire")
 arrowBladeFx = NodePath("../FxArrowPickupBlade")
 arrowNetFx = NodePath("../FxArrowPickupNet")
+fallDamageFx = NodePath("../FxFallDamage")
 rangerBandageFx = NodePath("../FxRangerBandageHeal")
 
 [node name="Audio" type="Node" parent="."]
@@ -616,5 +619,8 @@ amount = 15
 
 [node name="FxArrowPickupNet" parent="." instance=ExtResource("69_mqyps")]
 amount = 15
+
+[node name="FxFallDamage" parent="." instance=ExtResource("70_w5uft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 
 [editable path="character-player"]

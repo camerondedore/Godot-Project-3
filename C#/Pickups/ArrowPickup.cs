@@ -21,19 +21,19 @@ public partial class ArrowPickup : PickupRigidbody
         switch(arrowType)
         {
             case "pick":
-                data.playerFx.PlayerArrowPickFx();
+                data.playerFx.PlayArrowPickFx();
                 break;
             case "net":
-                data.playerFx.PlayerArrowNetFx();
+                data.playerFx.PlayArrowNetFx();
                 break;
             case "fire":
-                data.playerFx.PlayerArrowFireFx();
+                data.playerFx.PlayArrowFireFx();
                 break;
             case "weighted":
-                data.playerFx.PlayerArrowWeightedFx();
+                data.playerFx.PlayArrowWeightedFx();
                 break;
             case "blade":
-                data.playerFx.PlayerArrowBladeFx();
+                data.playerFx.PlayArrowBladeFx();
                 break;
         }
     

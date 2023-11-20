@@ -17,7 +17,7 @@ public partial class CiderPickup : PickupRigidbody
         data.playerhealth.UpdateHealth();
 
         // play player fx
-        data.playerFx.PlayerCiderFx();
+        data.playerFx.PlayCiderFx();
 
         // play player audio
 		data.playerAudio.PlayCiderPickupSound();

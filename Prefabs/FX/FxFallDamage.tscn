@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://deyqbso1o2jgb"]
+
+[ext_resource type="Material" uid="uid://tlw5ostth6we" path="res://Materials/Fx/FxFallDamage.tres" id="1_elekf"]
+
+[sub_resource type="Curve" id="Curve_wucyi"]
+_data = [Vector2(0, 0.673267), 0.0, 0.33486, 0, 1, Vector2(0.975728, 1), 0.33486, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1yipe"]
+curve = SubResource("Curve_wucyi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fivm1"]
+lifetime_randomness = 0.25
+direction = Vector3(0, 0, 0)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0.8, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+damping_min = 1.5
+damping_max = 1.5
+angle_min = -15.0
+angle_max = 15.0
+scale_min = 0.4
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_1yipe")
+
+[sub_resource type="QuadMesh" id="QuadMesh_potim"]
+
+[node name="FxFallDamage" type="GPUParticles3D"]
+material_override = ExtResource("1_elekf")
+cast_shadow = 0
+emitting = false
+lifetime = 1.25
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_fivm1")
+draw_pass_1 = SubResource("QuadMesh_potim")

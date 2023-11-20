@@ -49,6 +49,9 @@ namespace PlayerCharacterComplex
                 // play audio
                 blackboard.characterAudio.PlayFallDamageSound();
 
+                // play fx
+                blackboard.characterFx.PlayFallDamageFx();
+
                 return;
             }
 
