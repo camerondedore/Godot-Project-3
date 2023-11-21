@@ -23,7 +23,8 @@ public partial class Door : RigidBody3D, IBowTarget
     [Export]
     AudioStream openSound;
 
-    Vector3 startRotation;
+    Vector3 startRotation,
+        targetRotation;
     bool open = false,
         locked = true;
 
@@ -32,6 +33,7 @@ public partial class Door : RigidBody3D, IBowTarget
     public override void _Ready()
     {
         startRotation = RotationDegrees;
+        targetRotation = startRotation + openAngle;
     }
 
 
@@ -40,10 +42,10 @@ public partial class Door : RigidBody3D, IBowTarget
     {
         if(locked == false && open == false)
         {
-            RotationDegrees = RotationDegrees.Lerp(startRotation + openAngle, speed * ((float) delta));
+            RotationDegrees = RotationDegrees.Lerp(targetRotation, speed * ((float) delta));
 
             // check if door completed opening
-            if(RotationDegrees == startRotation + openAngle)
+            if(RotationDegrees.DistanceSquaredTo(targetRotation) < 2)
             {
                 open = true;
 

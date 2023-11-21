@@ -4,4 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://btpa146lw2nrh" path="res://Textures/fx-arrow-trail-pick.png" id="2_gvswp"]
 
 [node name="UiPickupArrowPick" instance=ExtResource("1_5vrsr")]
+offset_right = 75.0
+offset_bottom = 75.0
 texture = ExtResource("2_gvswp")
