@@ -24,6 +24,13 @@ public partial class PlayerHud : Node
     [Export]
     BoxContainer arrowList;
     [Export]
+    TextureRect bodkinArrow,
+        weightedArrow,
+        bladeArrow,
+        pickArrow,
+        netArrow,
+        fireArrow;
+    [Export]
     PlayerHudPickups hudPickups;
     [Export]
     Color hurtHitPointsBarColor,
@@ -87,6 +94,39 @@ public partial class PlayerHud : Node
             var shield = (TextureRect) s;
             shield.Visible = false;
             shields.Add(shield);
+        }
+
+        // get arrows
+        bodkinArrow.Visible = false;
+        weightedArrow.Visible = false;
+        bladeArrow.Visible = false;
+        pickArrow.Visible = false;
+        netArrow.Visible = false;
+        fireArrow.Visible = false;
+
+        foreach(var arrow in arrows)
+        {
+            switch(arrow)
+            {
+                case "bodkin":
+                    bodkinArrow.Visible = true;
+                    break;
+                case "weighted":
+                    weightedArrow.Visible = true;
+                    break;
+                case "blade":
+                    bladeArrow.Visible = true;
+                    break;
+                case "pick":
+                    pickArrow.Visible = true;
+                    break;
+                case "net":
+                    netArrow.Visible = true;
+                    break;
+                case "fire":
+                    fireArrow.Visible = true;
+                    break;
+            }
         }
          
         // initialize UI values
@@ -205,6 +245,32 @@ public partial class PlayerHud : Node
             
             // update arrow list
             arrows.Add(newArrow);
+
+            // update arrow icons
+            foreach(var arrow in arrows)
+            {
+                switch(arrow)
+                {
+                    case "bodkin":
+                        bodkinArrow.Visible = true;
+                        break;
+                    case "weighted":
+                        weightedArrow.Visible = true;
+                        break;
+                    case "blade":
+                        bladeArrow.Visible = true;
+                        break;
+                    case "pick":
+                        pickArrow.Visible = true;
+                        break;
+                    case "net":
+                        netArrow.Visible = true;
+                        break;
+                    case "fire":
+                        fireArrow.Visible = true;
+                        break;
+                }
+            }
 
             visibilityTimer = 5;
         }
