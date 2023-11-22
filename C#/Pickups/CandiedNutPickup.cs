@@ -15,9 +15,12 @@ public partial class CandiedNutPickup : PickupRigidbody
     {
         base._Ready();
 
-        // random mesh
-        var meshIndex = GD.Randi() % nutMeshes.Length;
-        meshInstance.Mesh = nutMeshes[meshIndex];
+        if(nutMeshes.Length > 1)
+        {
+            // random mesh
+            var meshIndex = GD.Randi() % nutMeshes.Length;
+            meshInstance.Mesh = nutMeshes[meshIndex];
+        }
     }
 
 
