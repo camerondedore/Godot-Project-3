@@ -58,6 +58,9 @@ namespace MobBrownRat
             // check for no enemy
             if(blackboard.IsEnemyValid() == false)
             {
+                // reset brown rat aggro
+                blackboard.isAggro = false;
+                
                 // cooldown
                 return blackboard.stateCooldown;
             }

@@ -53,6 +53,9 @@ namespace MobBrownRat
                 // reset flee count
                 blackboard.fleeCount = 0;
 
+                // reset brown rat aggro
+                blackboard.isAggro = false;
+
                 // cool down
                 return blackboard.stateCooldown;
             }
