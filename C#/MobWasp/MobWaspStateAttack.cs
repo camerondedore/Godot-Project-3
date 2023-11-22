@@ -45,6 +45,9 @@ namespace MobWasp
             // check for enemy
             if(blackboard.IsEnemyValid() == false)
             {
+                // reset wasp aggro
+                blackboard.isAggro = false;
+
                 // cooldown
                 return blackboard.stateCooldown;
             }
