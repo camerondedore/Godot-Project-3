@@ -37,6 +37,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="PickupCandiedNutAcorn" instance=ExtResource("1_3y6wv")]
 nutMeshes = Array[ArrayMesh]([])
 pickupPrefabs = Array[ArrayMesh]([])
+saveToWorldData = false
 
 [node name="FxSparkle" parent="." index="2"]
 process_material = SubResource("ParticleProcessMaterial_nnjtm")

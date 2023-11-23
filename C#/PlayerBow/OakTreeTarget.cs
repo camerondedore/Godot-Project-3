@@ -15,6 +15,8 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
     [Export]
     AnimationPlayer animation;
     [Export]
+    Node nutSpawnersParent;
+    [Export]
     double cooldownTime = 60;
 
     double lastHitTime = double.NegativeInfinity;
@@ -75,6 +77,15 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         leavesFx.Emitting = false;
 
 
+        // spawn nuts
+        // bug does not allow assigning nodes to array in inspector
+        foreach(var child in nutSpawnersParent.GetChildren())
+        {       
+            var spawer = (RigidbodySpawner) child;
+            spawer.Spawn();        
+        }
+
+
         // play animation using arrow velocity
         var angleToZ = Mathf.FloorToInt(Mathf.RadToDeg(Basis.Z.AngleTo(dir)));
 
@@ -103,13 +114,8 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
             return;
         }
 
-        var angleToXNeg = Mathf.FloorToInt(Mathf.RadToDeg(Basis.X.AngleTo(-dir)));
-
-        if(angleToXNeg < 45)
-        {
-            // -X
-            animation.Play("tree-target-hit-x-neg");
-            return;
-        }        
+        // -X
+        animation.Play("tree-target-hit-x-neg");
+        return;      
     }
 }

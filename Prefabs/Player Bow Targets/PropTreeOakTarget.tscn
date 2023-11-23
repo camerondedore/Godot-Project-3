@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://e36nsayq0the"]
+[gd_scene load_steps=21 format=3 uid="uid://e36nsayq0the"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/OakTreeTarget.cs" id="1_s15u0"]
 [ext_resource type="PackedScene" uid="uid://bdb5ym1k1dmtc" path="res://Models/prop-trees-oak-target.glb" id="1_ycrlc"]
@@ -6,13 +6,15 @@
 [ext_resource type="Material" uid="uid://cci7jxpq6uo3s" path="res://Materials/Trees/LeavesOakOld.tres" id="3_k3lgc"]
 [ext_resource type="Material" uid="uid://bx572d13yu6gv" path="res://Materials/Fx/FxLeafOak.tres" id="4_d6u1t"]
 [ext_resource type="Texture2D" uid="uid://dbsymj8yp6po8" path="res://Textures/leaves-oak-old.png" id="5_h8vyp"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_mdl28"]
+[ext_resource type="PackedScene" uid="uid://ceo0x0pkepjtn" path="res://Prefabs/Pickups/PickupCandiedNutAcorn.tscn" id="8_nuuss"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ob80"]
 radius = 0.2
 height = 5.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7e8b2"]
-radius = 1.25
+radius = 1.1
 
 [sub_resource type="Gradient" id="Gradient_t0tqn"]
 offsets = PackedFloat32Array(0, 0.994083)
@@ -84,12 +86,13 @@ turbulence_influence_max = 0.05
 
 [sub_resource type="QuadMesh" id="QuadMesh_l5osk"]
 
-[node name="PropTreeOakTarget" type="StaticBody3D" node_paths=PackedStringArray("leafPuffFx", "leavesFx", "animation")]
+[node name="PropTreeOakTarget" type="StaticBody3D" node_paths=PackedStringArray("leafPuffFx", "leavesFx", "animation", "nutSpawnersParent")]
 script = ExtResource("1_s15u0")
 targetOffset = Vector3(0, 3, 0)
 leafPuffFx = NodePath("FxLeavesOakPuff")
 leavesFx = NodePath("FxLeavesOak")
 animation = NodePath("prop-trees-oak-target/AnimationPlayer")
+nutSpawnersParent = NodePath("NutSpawners")
 cooldownTime = 2.0
 
 [node name="prop-trees-oak-target" parent="." instance=ExtResource("1_ycrlc")]
@@ -105,7 +108,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("CapsuleShape3D_2ob80")
 
 [node name="ColliderLeaves" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0)
 shape = SubResource("SphereShape3D_7e8b2")
 
 [node name="FxLeavesOak" type="GPUParticles3D" parent="."]
@@ -134,5 +137,58 @@ draw_pass_1 = SubResource("QuadMesh_l5osk")
 [node name="Decal" type="Decal" parent="."]
 size = Vector3(4, 0.5, 4)
 texture_albedo = ExtResource("5_h8vyp")
+cull_mask = 1
+
+[node name="NutSpawners" type="Node3D" parent="."]
+
+[node name="NutSpawner" type="Node3D" parent="NutSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.95305, -1.1)
+script = ExtResource("7_mdl28")
+prefab = ExtResource("8_nuuss")
+direction = Vector3(0, -2, 0)
+speed = 4.0
+spread = 3.0
+angularSpeed = 0.0
+useAngularVelocity = false
+
+[node name="NutSpawner2" type="Node3D" parent="NutSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.762446, 4.06352, -0.878197)
+script = ExtResource("7_mdl28")
+prefab = ExtResource("8_nuuss")
+direction = Vector3(0, -2, 0)
+speed = 4.0
+spread = 3.0
+angularSpeed = 0.0
+useAngularVelocity = false
+
+[node name="NutSpawner3" type="Node3D" parent="NutSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0277257, 4.0988, 1.1111)
+script = ExtResource("7_mdl28")
+prefab = ExtResource("8_nuuss")
+direction = Vector3(0, -2, 0)
+speed = 4.0
+spread = 3.0
+angularSpeed = 0.0
+useAngularVelocity = false
+
+[node name="NutSpawner4" type="Node3D" parent="NutSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.852555, 4.10867, -0.753433)
+script = ExtResource("7_mdl28")
+prefab = ExtResource("8_nuuss")
+direction = Vector3(0, -2, 0)
+speed = 4.0
+spread = 3.0
+angularSpeed = 0.0
+useAngularVelocity = false
+
+[node name="NutSpawner5" type="Node3D" parent="NutSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15753, 4.07391, -0.129613)
+script = ExtResource("7_mdl28")
+prefab = ExtResource("8_nuuss")
+direction = Vector3(0, -2, 0)
+speed = 4.0
+spread = 3.0
+angularSpeed = 0.0
+useAngularVelocity = false
 
 [editable path="prop-trees-oak-target"]
