@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://e36nsayq0the"]
+[gd_scene load_steps=19 format=3 uid="uid://e36nsayq0the"]
 
+[ext_resource type="Script" path="res://C#/PlayerBow/OakTreeTarget.cs" id="1_s15u0"]
 [ext_resource type="PackedScene" uid="uid://bdb5ym1k1dmtc" path="res://Models/prop-trees-oak-target.glb" id="1_ycrlc"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_a8xx5"]
 [ext_resource type="Material" uid="uid://cci7jxpq6uo3s" path="res://Materials/Trees/LeavesOakOld.tres" id="3_k3lgc"]
@@ -34,17 +35,16 @@ point_count = 4
 [sub_resource type="CurveTexture" id="CurveTexture_rxdrr"]
 curve = SubResource("Curve_ifd0u")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lud8i"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v7dio"]
 lifetime_randomness = 0.25
 emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
-emission_ring_height = 0.5
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.2
 emission_ring_radius = 1.6
-emission_ring_inner_radius = 0.2
+emission_ring_inner_radius = 0.4
 gravity = Vector3(0, -3, 0)
-angular_velocity_min = -50.0
-angular_velocity_max = 50.0
-damping_max = 1.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
 angle_max = 359.0
 scale_min = 0.3
 scale_max = 0.4
@@ -54,10 +54,43 @@ color_initial_ramp = SubResource("GradientTexture1D_4efvs")
 turbulence_enabled = true
 turbulence_noise_scale = 5.0
 turbulence_noise_speed = Vector3(1, 1, 1)
+turbulence_influence_min = 0.03
+turbulence_influence_max = 0.05
 
 [sub_resource type="QuadMesh" id="QuadMesh_tospd"]
 
-[node name="PropTreeOakTarget" type="StaticBody3D"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lud8i"]
+lifetime_randomness = 0.25
+emission_shape = 2
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, -3, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+angle_max = 359.0
+scale_min = 0.3
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_rxdrr")
+color_ramp = SubResource("GradientTexture1D_88g1t")
+color_initial_ramp = SubResource("GradientTexture1D_4efvs")
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+turbulence_noise_speed = Vector3(1, 1, 1)
+turbulence_influence_min = 0.03
+turbulence_influence_max = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_l5osk"]
+
+[node name="PropTreeOakTarget" type="StaticBody3D" node_paths=PackedStringArray("leafPuffFx", "leavesFx", "animation")]
+script = ExtResource("1_s15u0")
+targetOffset = Vector3(0, 3, 0)
+leafPuffFx = NodePath("FxLeavesOakPuff")
+leavesFx = NodePath("FxLeavesOak")
+animation = NodePath("prop-trees-oak-target/AnimationPlayer")
+cooldownTime = 2.0
 
 [node name="prop-trees-oak-target" parent="." instance=ExtResource("1_ycrlc")]
 
@@ -79,12 +112,24 @@ shape = SubResource("SphereShape3D_7e8b2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
 layers = 2
 material_override = ExtResource("4_d6u1t")
-amount = 10
-lifetime = 5.0
-preprocess = 6.0
+amount = 5
+lifetime = 3.0
 randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_lud8i")
+process_material = SubResource("ParticleProcessMaterial_v7dio")
 draw_pass_1 = SubResource("QuadMesh_tospd")
+
+[node name="FxLeavesOakPuff" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6, 0)
+layers = 2
+material_override = ExtResource("4_d6u1t")
+emitting = false
+amount = 30
+lifetime = 4.0
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
+process_material = SubResource("ParticleProcessMaterial_lud8i")
+draw_pass_1 = SubResource("QuadMesh_l5osk")
 
 [node name="Decal" type="Decal" parent="."]
 size = Vector3(4, 0.5, 4)

@@ -15,8 +15,8 @@ public partial class Projectile : Node3D
 	uint maskAsDecimal;
 
 	PhysicsDirectSpaceState3D spaceState;
-	Vector3 velocity,
-		gravity;
+	protected Vector3 velocity;
+	Vector3 gravity;
 	float distanceTraveledSqr = 0;
 
 

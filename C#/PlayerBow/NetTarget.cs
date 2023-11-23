@@ -57,7 +57,7 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit()
+    public void Hit(Vector3 dir)
     {
         // make net visible
         netMesh.Visible = true;

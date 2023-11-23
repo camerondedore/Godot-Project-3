@@ -35,7 +35,7 @@ namespace PlayerBow
                 if(hitTarget.GetArrowType() == arrowType)
                 {
                     // hit the target
-                    hitTarget.Hit();
+                    hitTarget.Hit(velocity);
 
                     // spawn hit fx
                     SpawnPrefab(hitFx, point, normal, upVector);

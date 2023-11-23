@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pyccqvluykun"]
 
-[ext_resource type="PackedScene" uid="uid://m1f3turs6go4" path="res://Prefabs/Bow Targets/PropSpiderweb1.tscn" id="1_t4mwg"]
+[ext_resource type="PackedScene" uid="uid://m1f3turs6go4" path="res://Prefabs/Player Bow Targets/PropSpiderweb1.tscn" id="1_t4mwg"]
 [ext_resource type="ArrayMesh" uid="uid://irrac8odtv31" path="res://Models/prop-spiderweb-3.res" id="2_xh7t3"]
 
 [node name="PropSpiderwebCorner" instance=ExtResource("1_t4mwg")]

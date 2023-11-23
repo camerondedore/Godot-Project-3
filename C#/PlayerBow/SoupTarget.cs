@@ -37,7 +37,7 @@ public partial class SoupTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit()
+    public void Hit(Vector3 dir)
     {
         // disable collision
         collider.Disabled = true;

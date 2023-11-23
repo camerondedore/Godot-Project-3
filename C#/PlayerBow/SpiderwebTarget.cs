@@ -60,7 +60,7 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit()
+    public void Hit(Vector3 dir)
     {
         // create fx
         var newFx = cutFx.Instantiate() as Node3D;

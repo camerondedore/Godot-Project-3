@@ -18,7 +18,7 @@ namespace PlayerBow
 
 
 
-        public void Hit()
+        public void Hit(Vector3 dir)
         {
             QueueFree();
         }

@@ -52,7 +52,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit()
+    public void Hit(Vector3 dir)
     {
         // flip visual nodes to show cut
         uncutMesh.Visible = false;

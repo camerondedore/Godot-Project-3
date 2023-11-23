@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3f2uytrsdj5"]
 
-[ext_resource type="PackedScene" uid="uid://m1f3turs6go4" path="res://Prefabs/Bow Targets/PropSpiderweb1.tscn" id="1_5i44e"]
+[ext_resource type="PackedScene" uid="uid://m1f3turs6go4" path="res://Prefabs/Player Bow Targets/PropSpiderweb1.tscn" id="1_5i44e"]
 [ext_resource type="ArrayMesh" uid="uid://ceo7wthvnd0ab" path="res://Models/prop-spiderweb-2.res" id="2_rbo58"]
 
 [node name="PropSpiderweb2" instance=ExtResource("1_5i44e")]

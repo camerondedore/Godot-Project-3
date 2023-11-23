@@ -246,7 +246,7 @@ namespace MobWasp
 
 
 
-        public void Hit()
+        public void Hit(Vector3 dir)
         {
             // wasp is dead
             machine.SetState(stateDie);

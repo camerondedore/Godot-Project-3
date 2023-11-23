@@ -49,7 +49,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit()
+    public void Hit(Vector3 dir)
     {
         // stop drip fx
         dripFx.Emitting = false;

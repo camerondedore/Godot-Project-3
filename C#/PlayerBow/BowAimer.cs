@@ -152,7 +152,7 @@ namespace PlayerBow
     public interface IBowTarget
     {
         string GetArrowType();
-        void Hit();
+        void Hit(Vector3 direction);
         Vector3 GetGlobalPosition();
     }
 }

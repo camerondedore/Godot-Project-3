@@ -90,7 +90,7 @@ public partial class Door : RigidBody3D, IBowTarget
 
 
 
-    public void Hit()
+    public void Hit(Vector3 dir)
     {
         locked = false;
 

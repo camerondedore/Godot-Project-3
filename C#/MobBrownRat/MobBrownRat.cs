@@ -225,7 +225,7 @@ namespace MobBrownRat
 
 
 
-        public void Hit()
+        public void Hit(Vector3 dir)
         {
             // take damage from arrow
             health.Damage(damageFromArrow);
