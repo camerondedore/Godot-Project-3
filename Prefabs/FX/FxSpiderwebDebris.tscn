@@ -13,6 +13,7 @@
 [node name="FxSpiderbebDebris" type="Node3D"]
 
 [node name="FxSpiders" type="GPUParticles3D" parent="."]
+layers = 2
 material_override = ExtResource("1_gmobp")
 gi_mode = 2
 emitting = false
@@ -28,6 +29,7 @@ restartOnReady = true
 playChildren = true
 
 [node name="FxStrings1" type="GPUParticles3D" parent="FxSpiders"]
+layers = 2
 material_override = ExtResource("4_c6uur")
 cast_shadow = 0
 gi_mode = 2
@@ -41,6 +43,7 @@ process_material = ExtResource("5_lpx2d")
 draw_pass_1 = SubResource("QuadMesh_86xht")
 
 [node name="FxStrings2" type="GPUParticles3D" parent="FxSpiders"]
+layers = 2
 material_override = ExtResource("6_vrlns")
 cast_shadow = 0
 gi_mode = 2

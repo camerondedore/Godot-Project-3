@@ -7,5 +7,6 @@
 [node name="FxItemHighlight" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 mesh = SubResource("QuadMesh_amh7b")
 surface_material_override/0 = ExtResource("1_c2vcs")

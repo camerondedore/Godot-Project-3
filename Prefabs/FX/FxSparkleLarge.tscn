@@ -7,6 +7,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_32l67"]
 
 [node name="FxSparkleLarge" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_a4pd3")
 amount = 10
 lifetime = 1.25

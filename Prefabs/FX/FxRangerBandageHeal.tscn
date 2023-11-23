@@ -39,6 +39,7 @@ color_ramp = SubResource("GradientTexture1D_8vx6i")
 [sub_resource type="QuadMesh" id="QuadMesh_7l4oj"]
 
 [node name="FxRangerBandageHeal" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_awm3q")
 cast_shadow = 0
 emitting = false
@@ -52,6 +53,7 @@ script = ExtResource("2_dp3vw")
 playChildren = true
 
 [node name="FxRangerBandageHealSanicle" type="GPUParticles3D" parent="."]
+layers = 2
 material_override = ExtResource("2_8vmkn")
 cast_shadow = 0
 emitting = false

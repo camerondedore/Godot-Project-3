@@ -32,6 +32,7 @@ scale_curve = SubResource("CurveTexture_5youq")
 color_ramp = SubResource("GradientTexture1D_13yeq")
 
 [node name="FxNettleBrothBubbles" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_qn030")
 cast_shadow = 0
 gi_mode = 2

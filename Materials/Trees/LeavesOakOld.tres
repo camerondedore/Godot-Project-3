@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cci7jxpq6uo3s"]
+
+[ext_resource type="Texture2D" uid="uid://dbsymj8yp6po8" path="res://Textures/leaves-oak-old.png" id="1_wh8ou"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_wh8ou")
+metallic = 0.1
+metallic_specular = 0.25
+backlight_enabled = true
+backlight = Color(0.501961, 0.501961, 0.501961, 1)

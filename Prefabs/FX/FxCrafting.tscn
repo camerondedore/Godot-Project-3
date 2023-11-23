@@ -35,6 +35,7 @@ color_ramp = SubResource("GradientTexture1D_mj8fp")
 [sub_resource type="QuadMesh" id="QuadMesh_piv58"]
 
 [node name="FxCrafting" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_mqpkm")
 gi_mode = 2
 emitting = false

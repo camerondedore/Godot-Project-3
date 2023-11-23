@@ -31,6 +31,7 @@ color_ramp = SubResource("GradientTexture1D_mqvb8")
 [sub_resource type="QuadMesh" id="QuadMesh_lckjj"]
 
 [node name="FxWaspBloodSplash" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_vk1hr")
 gi_mode = 2
 emitting = false

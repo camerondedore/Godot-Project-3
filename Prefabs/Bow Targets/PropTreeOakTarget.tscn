@@ -1,0 +1,93 @@
+[gd_scene load_steps=16 format=3 uid="uid://e36nsayq0the"]
+
+[ext_resource type="PackedScene" uid="uid://bdb5ym1k1dmtc" path="res://Models/prop-trees-oak-target.glb" id="1_ycrlc"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_a8xx5"]
+[ext_resource type="Material" uid="uid://cci7jxpq6uo3s" path="res://Materials/Trees/LeavesOakOld.tres" id="3_k3lgc"]
+[ext_resource type="Material" uid="uid://bx572d13yu6gv" path="res://Materials/Fx/FxLeafOak.tres" id="4_d6u1t"]
+[ext_resource type="Texture2D" uid="uid://dbsymj8yp6po8" path="res://Textures/leaves-oak-old.png" id="5_h8vyp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ob80"]
+radius = 0.2
+height = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7e8b2"]
+radius = 1.25
+
+[sub_resource type="Gradient" id="Gradient_t0tqn"]
+offsets = PackedFloat32Array(0, 0.994083)
+colors = PackedColorArray(0.507, 0.78, 0, 1, 0.94, 0.689333, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4efvs"]
+gradient = SubResource("Gradient_t0tqn")
+
+[sub_resource type="Gradient" id="Gradient_0yrpv"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_88g1t"]
+gradient = SubResource("Gradient_0yrpv")
+
+[sub_resource type="Curve" id="Curve_ifd0u"]
+_data = [Vector2(0, 0), 0.0, 6.4375, 0, 1, Vector2(0.15534, 1), 6.4375, 0.0, 1, 0, Vector2(0.898058, 1), 0.0, -9.80953, 1, 1, Vector2(1, 0), -9.80953, 0.0, 1, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_rxdrr"]
+curve = SubResource("Curve_ifd0u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lud8i"]
+lifetime_randomness = 0.25
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.5
+emission_ring_radius = 1.6
+emission_ring_inner_radius = 0.2
+gravity = Vector3(0, -3, 0)
+angular_velocity_min = -50.0
+angular_velocity_max = 50.0
+damping_max = 1.0
+angle_max = 359.0
+scale_min = 0.3
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_rxdrr")
+color_ramp = SubResource("GradientTexture1D_88g1t")
+color_initial_ramp = SubResource("GradientTexture1D_4efvs")
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+turbulence_noise_speed = Vector3(1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tospd"]
+
+[node name="PropTreeOakTarget" type="StaticBody3D"]
+
+[node name="prop-trees-oak-target" parent="." instance=ExtResource("1_ycrlc")]
+
+[node name="prop-tree-oak-target" parent="prop-trees-oak-target/prop-tree-oak-target-armature/Skeleton3D" index="0"]
+layers = 2
+gi_mode = 2
+surface_material_override/0 = ExtResource("2_a8xx5")
+surface_material_override/1 = ExtResource("3_k3lgc")
+
+[node name="ColliderTrunk" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_2ob80")
+
+[node name="ColliderLeaves" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6, 0)
+shape = SubResource("SphereShape3D_7e8b2")
+
+[node name="FxLeavesOak" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.2, 0)
+layers = 2
+material_override = ExtResource("4_d6u1t")
+amount = 10
+lifetime = 5.0
+preprocess = 6.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_lud8i")
+draw_pass_1 = SubResource("QuadMesh_tospd")
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(4, 0.5, 4)
+texture_albedo = ExtResource("5_h8vyp")
+
+[editable path="prop-trees-oak-target"]

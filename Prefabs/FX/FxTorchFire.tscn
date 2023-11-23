@@ -34,6 +34,7 @@ turbulence_noise_scale = 0.2
 [sub_resource type="QuadMesh" id="QuadMesh_5vaqr"]
 
 [node name="FxTorchFire" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_ce8b2")
 cast_shadow = 0
 amount = 4
@@ -45,6 +46,7 @@ script = ExtResource("3_he6lq")
 playChildren = true
 
 [node name="FxFireSub1" type="GPUParticles3D" parent="."]
+layers = 2
 material_override = ExtResource("3_gidcn")
 cast_shadow = 0
 amount = 4
@@ -53,6 +55,7 @@ process_material = ExtResource("2_yjixv")
 draw_pass_1 = SubResource("QuadMesh_42hm6")
 
 [node name="FxFireSub2" type="GPUParticles3D" parent="."]
+layers = 2
 material_override = ExtResource("4_vmb4j")
 cast_shadow = 0
 amount = 4
@@ -61,6 +64,7 @@ process_material = ExtResource("2_yjixv")
 draw_pass_1 = SubResource("QuadMesh_42hm6")
 
 [node name="FxSparks" type="GPUParticles3D" parent="."]
+layers = 2
 material_override = ExtResource("5_v0gio")
 amount = 5
 lifetime = 1.25

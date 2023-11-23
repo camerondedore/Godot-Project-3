@@ -8,6 +8,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_ux5to"]
 
 [node name="FxArrowTrailWeighted" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
+layers = 2
 material_override = ExtResource("1_fblyw")
 amount = 20
 lifetime = 1.25

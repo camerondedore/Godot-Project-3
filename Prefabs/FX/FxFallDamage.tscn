@@ -30,6 +30,7 @@ scale_curve = SubResource("CurveTexture_1yipe")
 [sub_resource type="QuadMesh" id="QuadMesh_potim"]
 
 [node name="FxFallDamage" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_elekf")
 cast_shadow = 0
 emitting = false

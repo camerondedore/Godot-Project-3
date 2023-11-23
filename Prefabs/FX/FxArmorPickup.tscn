@@ -6,6 +6,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_ei4ll"]
 
 [node name="FxArmorPickup" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_2k021")
 cast_shadow = 0
 emitting = false

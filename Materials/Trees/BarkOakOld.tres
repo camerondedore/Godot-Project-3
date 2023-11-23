@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bxsuh5hkrmblo"]
+
+[ext_resource type="Texture2D" uid="uid://mcupq2m3vfp0" path="res://Textures/bark-oak-old.png" id="1_chb1f"]
+
+[resource]
+albedo_texture = ExtResource("1_chb1f")
+metallic_specular = 0.25

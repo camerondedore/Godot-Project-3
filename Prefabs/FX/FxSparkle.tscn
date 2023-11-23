@@ -38,6 +38,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [sub_resource type="QuadMesh" id="QuadMesh_8qrut"]
 
 [node name="FxSparkle" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_3k7ci")
 cast_shadow = 0
 amount = 5

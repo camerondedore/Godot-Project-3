@@ -22,6 +22,7 @@ color_ramp = SubResource("GradientTexture1D_f4m6b")
 [sub_resource type="QuadMesh" id="QuadMesh_i6bcf"]
 
 [node name="FxWaspVenom" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_42o58")
 gi_mode = 2
 emitting = false

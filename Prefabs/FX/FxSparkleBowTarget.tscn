@@ -37,6 +37,7 @@ color_ramp = SubResource("GradientTexture1D_t2k2e")
 
 [node name="FxSparkleBowTarget" type="GPUParticles3D"]
 process_mode = 1
+layers = 2
 material_override = ExtResource("1_asg41")
 amount = 10
 lifetime = 0.7

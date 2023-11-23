@@ -37,6 +37,7 @@ color_ramp = SubResource("GradientTexture1D_xjaid")
 [sub_resource type="QuadMesh" id="QuadMesh_jgcbc"]
 
 [node name="FxJumpPadDust" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_6ijwf")
 gi_mode = 2
 emitting = false
