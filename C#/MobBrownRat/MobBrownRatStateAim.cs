@@ -27,7 +27,7 @@ namespace MobBrownRat
             startTime = EngineTime.timePassed;
 
             // add variation to aim time
-            aimTimeRandom = blackboard.aimTime + GD.Randf() * 0.5f;
+            aimTimeRandom = blackboard.aimTime;
 
             // look at enemy
             blackboard.lookAtTarget = true;
