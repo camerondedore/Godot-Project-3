@@ -1,13 +1,15 @@
-[gd_scene load_steps=21 format=3 uid="uid://e36nsayq0the"]
+[gd_scene load_steps=23 format=3 uid="uid://e36nsayq0the"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/OakTreeTarget.cs" id="1_s15u0"]
 [ext_resource type="PackedScene" uid="uid://bdb5ym1k1dmtc" path="res://Models/prop-trees-oak-target.glb" id="1_ycrlc"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_a8xx5"]
+[ext_resource type="AudioStream" uid="uid://c0hvs13tjb4wt" path="res://Audio/tree-hit.wav" id="2_pkgg5"]
 [ext_resource type="Material" uid="uid://cci7jxpq6uo3s" path="res://Materials/Trees/LeavesOakOld.tres" id="3_k3lgc"]
 [ext_resource type="Material" uid="uid://bx572d13yu6gv" path="res://Materials/Fx/FxLeafOak.tres" id="4_d6u1t"]
-[ext_resource type="Texture2D" uid="uid://dbsymj8yp6po8" path="res://Textures/leaves-oak-old.png" id="5_h8vyp"]
+[ext_resource type="Texture2D" uid="uid://db67fhgwjxgct" path="res://Textures/fx-leaves-oak-pile.png" id="6_3o6nf"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_mdl28"]
 [ext_resource type="PackedScene" uid="uid://ceo0x0pkepjtn" path="res://Prefabs/Pickups/PickupCandiedNutAcorn.tscn" id="8_nuuss"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_j62f6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ob80"]
 radius = 0.2
@@ -86,13 +88,15 @@ turbulence_influence_max = 0.05
 
 [sub_resource type="QuadMesh" id="QuadMesh_l5osk"]
 
-[node name="PropTreeOakTarget" type="StaticBody3D" node_paths=PackedStringArray("leafPuffFx", "leavesFx", "animation", "nutSpawnersParent")]
+[node name="PropTreeOakTarget" type="StaticBody3D" node_paths=PackedStringArray("leafPuffFx", "leavesFx", "animation", "nutSpawnersParent", "audio")]
 script = ExtResource("1_s15u0")
 targetOffset = Vector3(0, 3, 0)
 leafPuffFx = NodePath("FxLeavesOakPuff")
 leavesFx = NodePath("FxLeavesOak")
 animation = NodePath("prop-trees-oak-target/AnimationPlayer")
 nutSpawnersParent = NodePath("NutSpawners")
+audio = NodePath("AudioStreamPlayer3D")
+hitSound = ExtResource("2_pkgg5")
 cooldownTime = 2.0
 
 [node name="prop-trees-oak-target" parent="." instance=ExtResource("1_ycrlc")]
@@ -135,8 +139,8 @@ process_material = SubResource("ParticleProcessMaterial_lud8i")
 draw_pass_1 = SubResource("QuadMesh_l5osk")
 
 [node name="Decal" type="Decal" parent="."]
-size = Vector3(4, 0.5, 4)
-texture_albedo = ExtResource("5_h8vyp")
+size = Vector3(6, 0.5, 6)
+texture_albedo = ExtResource("6_3o6nf")
 cull_mask = 1
 
 [node name="NutSpawners" type="Node3D" parent="."]
@@ -190,5 +194,9 @@ speed = 4.0
 spread = 3.0
 angularSpeed = 0.0
 useAngularVelocity = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 40.0
+script = ExtResource("9_j62f6")
 
 [editable path="prop-trees-oak-target"]

@@ -17,9 +17,14 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
     [Export]
     Node nutSpawnersParent;
     [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream hitSound;
+    [Export]
     double cooldownTime = 60;
 
     double lastHitTime = double.NegativeInfinity;
+    int nutsSpawned = 0;
     bool onCooldown = false;
 
 
@@ -76,17 +81,39 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         // stop leaves
         leavesFx.Emitting = false;
 
+        // play audio
+        audio.PlaySound(hitSound, 0.1f);
 
-        // spawn nuts
+
+        // get nuts info
+        var playerNuts = PlayerInventory.inventory.currentInventory.CandiedNuts;
+
+        // use the higher nuts number, player nuts or nuts spawned by tree
+        var nutsNumberCheck = playerNuts > nutsSpawned ? playerNuts : nutsSpawned;
+
+        // get number of nuts to spawn
+        var nutsToSpawn = Mathf.Round(-0.1f * nutsNumberCheck + 5);
+        nutsToSpawn = Mathf.Clamp(nutsToSpawn, 1, 5);
+
         // bug does not allow assigning nodes to array in inspector
-        foreach(var child in nutSpawnersParent.GetChildren())
+        foreach(var nutSpawner in nutSpawnersParent.GetChildren())
         {       
-            var spawer = (RigidbodySpawner) child;
-            spawer.Spawn();        
+            // spawn nuts
+            var spawer = (RigidbodySpawner) nutSpawner;
+            spawer.Spawn(); 
+
+            nutsToSpawn--;
+            nutsSpawned++;
+
+            if(nutsToSpawn == 0)
+            {
+                break;
+            }
         }
 
 
         // play animation using arrow velocity
+        dir.Y = 0;
         var angleToZ = Mathf.FloorToInt(Mathf.RadToDeg(Basis.Z.AngleTo(dir)));
 
         if(angleToZ <= 45)
