@@ -97,7 +97,7 @@ animation = NodePath("prop-trees-oak-target/AnimationPlayer")
 nutSpawnersParent = NodePath("NutSpawners")
 audio = NodePath("AudioStreamPlayer3D")
 hitSound = ExtResource("2_pkgg5")
-cooldownTime = 2.0
+cooldownTime = 20.0
 
 [node name="prop-trees-oak-target" parent="." instance=ExtResource("1_ycrlc")]
 
