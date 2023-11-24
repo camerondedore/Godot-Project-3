@@ -179,8 +179,7 @@ namespace MobWasp
             if(IsEnemyValid())
             {
                 // look at enemy
-                target = (enemy.GlobalPosition - GlobalPosition).Normalized() + GlobalPosition;
-                target.Y = GlobalPosition.Y;
+                target = enemy.GlobalPosition;
             }
             else if(lookWithVelocity)
             {
