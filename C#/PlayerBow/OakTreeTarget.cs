@@ -1,6 +1,8 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using PlayerBow;
+using System.Linq;
 
 public partial class OakTreeTarget : StaticBody3D, IBowTarget
 {
@@ -23,9 +25,21 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
     [Export]
     double cooldownTime = 60;
 
+    List<RigidbodySpawner> nutSpawners = new List<RigidbodySpawner>();
     double lastHitTime = double.NegativeInfinity;
     int nutsSpawned = 0;
     bool onCooldown = false;
+
+
+
+    public override void _Ready()
+    {
+        // get spawners
+        foreach(var child in nutSpawnersParent.GetChildren())
+        {
+            nutSpawners.Add((RigidbodySpawner) child);
+        }
+    }
 
 
 
@@ -96,19 +110,16 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         nutsToSpawn = Mathf.Clamp(nutsToSpawn, 1, 5);
 
         // bug does not allow assigning nodes to array in inspector
-        foreach(var nutSpawner in nutSpawnersParent.GetChildren())
+        while(nutsToSpawn > 0)
         {       
             // spawn nuts
-            var spawer = (RigidbodySpawner) nutSpawner;
+            var spawnerIndex = Convert.ToInt32(GD.Randi() % nutSpawners.Count);
+            var spawer = nutSpawners[spawnerIndex];
+            
             spawer.Spawn(); 
 
             nutsToSpawn--;
             nutsSpawned++;
-
-            if(nutsToSpawn == 0)
-            {
-                break;
-            }
         }
 
 
