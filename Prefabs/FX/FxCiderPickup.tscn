@@ -1,18 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnvggw6unmeja"]
+[gd_scene load_steps=12 format=3 uid="uid://bnvggw6unmeja"]
 
 [ext_resource type="Material" uid="uid://2qmb0dugj1ee" path="res://Particles/FxPlayerBodyEmit.tres" id="1_erij7"]
 [ext_resource type="Material" uid="uid://chr7a8bv61h87" path="res://Materials/Fx/FxCiderPickup.tres" id="1_qmukl"]
+[ext_resource type="Script" path="res://C#/Common/ParticleTools.cs" id="3_idn40"]
+[ext_resource type="Material" uid="uid://b016b2csd1ngx" path="res://Materials/Fx/FxBubble.tres" id="4_myc0q"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_v224w"]
+
+[sub_resource type="Gradient" id="Gradient_fjcqq"]
+offsets = PackedFloat32Array(0, 0.159763, 0.928994, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7ftbq"]
+gradient = SubResource("Gradient_fjcqq")
+
+[sub_resource type="Curve" id="Curve_lok3v"]
+max_value = 2.0
+_data = [Vector2(0.927184, 1.0099), 0.0, 13.5974, 0, 1, Vector2(1, 2), 13.5974, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_q6eo2"]
+curve = SubResource("Curve_lok3v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4sb0b"]
+lifetime_randomness = 0.3
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 0.2
+emission_ring_inner_radius = 0.2
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 1.25, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 0.5
+angle_min = -5.0
+angle_max = 5.0
+scale_min = 0.1
+scale_max = 0.15
+scale_curve = SubResource("CurveTexture_q6eo2")
+color = Color(1, 0.686275, 0.329412, 1)
+color_ramp = SubResource("GradientTexture1D_7ftbq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lppc0"]
 
 [node name="FxCiderPickup" type="GPUParticles3D"]
 layers = 2
 material_override = ExtResource("1_qmukl")
 cast_shadow = 0
 emitting = false
-amount = 20
+amount = 5
 lifetime = 2.0
 one_shot = true
 explosiveness = 0.9
 process_material = ExtResource("1_erij7")
 draw_pass_1 = SubResource("QuadMesh_v224w")
+script = ExtResource("3_idn40")
+playChildren = true
+
+[node name="FxBubbles" type="GPUParticles3D" parent="."]
+material_override = ExtResource("4_myc0q")
+emitting = false
+amount = 30
+lifetime = 1.5
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_4sb0b")
+draw_pass_1 = SubResource("QuadMesh_lppc0")

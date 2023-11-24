@@ -7,13 +7,14 @@ namespace PlayerCharacterComplex
     {
         [Export]
         GpuParticles3D armorFx,
-            ciderFx,
             arrowWeightedFx,
             arrowPickFx,
             arrowFireFx,
             arrowBladeFx,
             arrowNetFx,
             fallDamageFx;
+        [Export]
+        ParticleTools ciderFx;
         [Export]
         ParticleTools rangerBandageFx;
 
@@ -43,7 +44,7 @@ namespace PlayerCharacterComplex
         {
             if(ciderFx != null)
             {
-                ciderFx.Restart();
+                ciderFx.RestartParticles();
             }
         }
 
