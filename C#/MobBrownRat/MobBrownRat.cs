@@ -17,7 +17,7 @@ namespace MobBrownRat
             statePatrolWait,
             stateFlee,
             stateAttack,
-            stateAim,
+            stateDraw,
             stateFire,
             stateDodge,
             stateCooldown,
@@ -60,7 +60,8 @@ namespace MobBrownRat
             lookSpeed = 4,
             acceleration = 4,
             dodgeDistance = 2,
-            damageFromArrow = 50;
+            damageFromArrow = 50,
+            lookAngleNormal = 30;
         [Export]
         public bool isMovingRat = true;
 
@@ -94,7 +95,7 @@ namespace MobBrownRat
             statePatrolWait = new MobBrownRatStatePatrolWait(){blackboard = this};
             stateFlee = new MobBrownRatStateFlee(){blackboard = this};
             stateAttack = new MobBrownRatStateAttack(){blackboard = this};
-            stateAim = new MobBrownRatStateAim(){blackboard = this};
+            stateDraw = new MobBrownRatStateDraw(){blackboard = this};
             stateFire = new MobBrownRatStateFire(){blackboard = this};
             stateDodge = new MobBrownRatStateDodge(){blackboard = this};
             stateCooldown = new MobBrownRatStateCooldown(){blackboard = this};
@@ -271,6 +272,33 @@ namespace MobBrownRat
             else 
             {
                 return float.PositiveInfinity;
+            }
+        }
+
+
+
+        public float GetLookAngleToEnemy()
+        {
+            if(IsEnemyValid() == false)
+            {
+                return 0;
+            }
+
+            var enemyOwner = (Node3D) enemy.Owner;
+            var directionToEnemy = enemyOwner.GlobalPosition - GlobalPosition;
+            var distanceSqr = new Vector3(directionToEnemy.X, 0, directionToEnemy.Z).LengthSquared();
+            var heightSqr = Mathf.Pow(directionToEnemy.Y, 2);
+
+            var unsignedAngle = Mathf.RadToDeg(Mathf.Atan(heightSqr / distanceSqr));
+
+            // check direction
+            if(directionToEnemy.Y >= 0)
+            {
+                return unsignedAngle;
+            }
+            else
+            {
+                return -unsignedAngle;
             }
         }
 

@@ -62,7 +62,8 @@ namespace MobBrownRat
 
 
             // get distance to enemy
-            var distanceToEnemySqr = blackboard.GlobalPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+            
 
             // check if enemy is too far or bow has no LOS to enemy
             if(distanceToEnemySqr > blackboard.attackRangeMaxSqr || !blackboard.eyes.HasLosToTarget(blackboard.enemy))
@@ -119,7 +120,7 @@ namespace MobBrownRat
             blackboard.fleeCount = 0;
 
             // aim
-            return blackboard.stateAim;
+            return blackboard.stateDraw;
         }
     }
 }

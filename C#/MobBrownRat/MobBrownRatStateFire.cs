@@ -13,6 +13,9 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
+            var lookAngleBlend = blackboard.GetLookAngleToEnemy() / blackboard.lookAngleNormal;
+            blackboard.animation.Set("parameters/brown-rat-fire-blend/blend_position", lookAngleBlend);
+
             // look for enemy
             //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
         }
@@ -30,8 +33,9 @@ namespace MobBrownRat
             blackboard.bow.Fire(blackboard.enemy);
             blackboard.shotCount++;
 
+
             // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-fire");
+            blackboard.animStateMachinePlayback.Travel("brown-rat-fire-blend");
             //blackboard.animStateMachinePlayback.Next();
         }
 

@@ -4,7 +4,7 @@ using System;
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRatStateAim : MobBrownRatState
+    public partial class MobBrownRatStateDraw : MobBrownRatState
     {
 
         double startTime,
@@ -15,6 +15,9 @@ namespace MobBrownRat
         public override void RunState(double delta)
         {
             blackboard.animStateMachinePlayback.Next();
+
+            var lookAngleBlend = blackboard.GetLookAngleToEnemy() / blackboard.lookAngleNormal;
+            blackboard.animation.Set("parameters/brown-rat-draw-blend/blend_position", lookAngleBlend);
             
             // look for enemy
             //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
@@ -35,8 +38,9 @@ namespace MobBrownRat
             // draw bow
             blackboard.bow.Draw();
 
+
             // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-draw");
+            blackboard.animStateMachinePlayback.Travel("brown-rat-draw-blend");
             //blackboard.animStateMachinePlayback.Next();
         }
 
