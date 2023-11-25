@@ -26,8 +26,11 @@ namespace MobBrownRat
 
             startPosition = blackboard.GlobalPosition;
 
+            // setop looking at enemy
+            blackboard.lookAtTarget = false;
+
             // stop moving
-            blackboard.moving = false;    
+            blackboard.moving = false;
             
             // clear enemy
             blackboard.enemy = null;
@@ -48,11 +51,25 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            // check for enemy
             if(blackboard.IsEnemyValid())
             {
-                // react
-                return blackboard.stateReact;
+                if(blackboard.isMovingRat == true)
+                {
+                    // react
+                    return blackboard.stateReact;                                
+                }
+                else
+                {
+                    // get distance to enemy
+                    var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+                    // check if enemy is close enough and in line of sight for rats that move
+                    if(blackboard.isMovingRat == false && distanceToEnemySqr < blackboard.maxSightRangeSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
+                    {
+                        // react
+                        return blackboard.stateReact;
+                    }          
+                }
             }
 
             var isTimeUp = EngineTime.timePassed > startTime + 5;
