@@ -5,7 +5,7 @@ using PlayerBow;
 
 namespace PlayerCharacterComplex
 {
-	public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageStationUser
+	public partial class PlayerCharacter : CharacterBody3D, IJumpPadUser, IBandageStationUser, IDamageAreaUser
 	{
 
 		public StateMachine machine = new StateMachine();
@@ -183,9 +183,7 @@ namespace PlayerCharacterComplex
 				// already in jump pad state
 				// force start state
 				superStateJumpPad.StartState();
-			}
-
-			
+			}			
 		}
 
 
@@ -205,6 +203,13 @@ namespace PlayerCharacterComplex
 
 			// go to bandage station state
 			machine.SetState(stateBandageStationGather);
+		}
+
+
+
+		public void DamageAreaActivated(float damage)
+		{
+			health.Damage(damage);
 		}
 	}
 }
