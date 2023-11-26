@@ -17,6 +17,10 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
     GpuParticles3D cutFx,
         hazardFx;
     [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream cutSound;
+    [Export]
     Vector3 targetOffset;
 
 
@@ -64,6 +68,9 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
 
         // stop hazard fx
         hazardFx.Emitting = false;
+
+        // play sound
+        audio.PlaySound(cutSound, 0.1f);
 
         // disable script
         SetScript(new Variant());

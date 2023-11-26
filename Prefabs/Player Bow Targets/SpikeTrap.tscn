@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://dq4c06ulfpih7"]
+[gd_scene load_steps=23 format=3 uid="uid://dq4c06ulfpih7"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/SpikeTrapTarget.cs" id="1_iliy4"]
 [ext_resource type="Script" path="res://C#/DamageArea.cs" id="2_68mj6"]
 [ext_resource type="ArrayMesh" uid="uid://c11ee8bjc1u" path="res://Models/prop-spike-trap.res" id="2_ikaej"]
+[ext_resource type="AudioStream" uid="uid://eknqfa0j3p03" path="res://Audio/spikes-cut.wav" id="2_ndri6"]
 [ext_resource type="Material" uid="uid://bt0vyjgailocy" path="res://Materials/Props/PropSpikeTrap.tres" id="3_spg4c"]
 [ext_resource type="ArrayMesh" uid="uid://crbi40kc1ccds" path="res://Models/prop-spike-trap-dirt.res" id="3_td6lu"]
 [ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="4_xy2k7"]
@@ -12,6 +13,7 @@
 [ext_resource type="Material" uid="uid://dxwhuixfxdibn" path="res://Materials/Fx/FxArrowTrailEnemy.tres" id="10_fpdcx"]
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="11_n1lcp"]
 [ext_resource type="Material" uid="uid://bijrqeiotewi3" path="res://Particles/FxEnemyDamage.tres" id="12_n2y16"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_tfy06"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wlyac"]
 radius = 0.7
@@ -68,7 +70,7 @@ color_ramp = SubResource("GradientTexture1D_o80pr")
 
 [sub_resource type="QuadMesh" id="QuadMesh_hel7t"]
 
-[node name="SpikeTrap" type="StaticBody3D" node_paths=PackedStringArray("arrowCollider", "damageArea", "sharpMesh", "cutFx", "hazardFx")]
+[node name="SpikeTrap" type="StaticBody3D" node_paths=PackedStringArray("arrowCollider", "damageArea", "sharpMesh", "cutFx", "hazardFx", "audio")]
 collision_layer = 64
 collision_mask = 0
 input_ray_pickable = false
@@ -78,6 +80,8 @@ damageArea = NodePath("DamageArea")
 sharpMesh = NodePath("SpikesMesh")
 cutFx = NodePath("FxSpikesCut")
 hazardFx = NodePath("FxHazard")
+audio = NodePath("AudioStreamPlayer3D")
+cutSound = ExtResource("2_ndri6")
 targetOffset = Vector3(0, 0.25, 0)
 
 [node name="ArrowCollider" type="CollisionShape3D" parent="."]
@@ -94,11 +98,6 @@ surface_material_override/0 = ExtResource("3_spg4c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = ExtResource("3_td6lu")
 surface_material_override/0 = ExtResource("4_xy2k7")
-
-[node name="BloodDecal" type="Decal" parent="."]
-size = Vector3(2, 0.2, 2)
-texture_albedo = ExtResource("5_n6qke")
-cull_mask = 1
 
 [node name="DamageArea" type="Area3D" parent="." node_paths=PackedStringArray("hitFx")]
 collision_layer = 0
@@ -123,6 +122,11 @@ one_shot = true
 process_material = ExtResource("12_n2y16")
 draw_pass_1 = SubResource("QuadMesh_jo2dl")
 
+[node name="BloodDecal" type="Decal" parent="."]
+size = Vector3(2, 0.2, 2)
+texture_albedo = ExtResource("5_n6qke")
+cull_mask = 1
+
 [node name="FxSpikesCut" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 material_override = ExtResource("6_0msyq")
@@ -130,7 +134,7 @@ emitting = false
 amount = 16
 lifetime = 1.5
 one_shot = true
-explosiveness = 1.0
+explosiveness = 0.95
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_nkcdr")
@@ -144,3 +148,7 @@ lifetime = 3.0
 randomness = 0.5
 process_material = SubResource("ParticleProcessMaterial_vgvg2")
 draw_pass_1 = SubResource("QuadMesh_hel7t")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 40.0
+script = ExtResource("14_tfy06")
