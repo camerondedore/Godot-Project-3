@@ -210,6 +210,9 @@ namespace PlayerCharacterComplex
 		public void DamageAreaActivated(float damage)
 		{
 			health.Damage(damage);
+
+			// play fx
+			characterFx.PlayBloodSplashFx();
 		}
 	}
 }

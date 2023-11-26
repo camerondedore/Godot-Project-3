@@ -12,7 +12,8 @@ namespace PlayerCharacterComplex
             arrowFireFx,
             arrowBladeFx,
             arrowNetFx,
-            fallDamageFx;
+            fallDamageFx,
+            bloodSplashFx;
         [Export]
         ParticleTools ciderFx;
         [Export]
@@ -105,6 +106,16 @@ namespace PlayerCharacterComplex
             if(fallDamageFx != null)
             {
                 fallDamageFx.Restart();
+            }
+        }
+
+
+
+        public void PlayBloodSplashFx()
+        {
+            if(bloodSplashFx != null)
+            {
+                bloodSplashFx.Restart();
             }
         }
     }
