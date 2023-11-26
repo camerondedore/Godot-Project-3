@@ -22,6 +22,8 @@ public partial class NetTarget : StaticBody3D, IBowTarget
     [Export]
     Node3D jumpPadTarget;
     [Export]
+    Vector3 targetOffset;
+    [Export]
     float horizontalSpeed = 10;
 
 
@@ -47,7 +49,7 @@ public partial class NetTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return GlobalPosition;
+            return ToGlobal(targetOffset);
         }
         else
         {

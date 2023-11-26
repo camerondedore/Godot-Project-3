@@ -1252,7 +1252,7 @@ meshInstance = NodePath("../PickupCandiedNutAcorn/MeshInstance3D")
 [node name="JumpNets" type="Node3D" parent="Map"]
 
 [node name="JumpNet" parent="Map/JumpNets" node_paths=PackedStringArray("jumpPadTarget") instance=ExtResource("51_5gl37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67754, 8.2, -17.4643)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.67754, 8, -17.4643)
 jumpPadTarget = NodePath("../JumpPadTarget")
 horizontalSpeed = 7.0
 
@@ -1260,7 +1260,7 @@ horizontalSpeed = 7.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3328, 11.3669, -8.87133)
 
 [node name="JumpNet2" parent="Map/JumpNets" node_paths=PackedStringArray("jumpPadTarget") instance=ExtResource("51_5gl37")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85527, 0.199998, 5.50455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85527, -2.00421e-06, 5.50455)
 jumpPadTarget = NodePath("../JumpPadTarget2")
 horizontalSpeed = 8.0
 
