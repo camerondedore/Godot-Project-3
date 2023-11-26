@@ -209,10 +209,13 @@ namespace PlayerCharacterComplex
 
 		public void DamageAreaActivated(float damage)
 		{
-			health.Damage(damage);
-
-			// play fx
-			characterFx.PlayBloodSplashFx();
+			if(health.dead == false)
+			{
+				health.Damage(damage);
+				
+				// play fx
+				characterFx.PlayBloodSplashFx();
+			}
 		}
 	}
 }

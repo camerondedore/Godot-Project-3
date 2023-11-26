@@ -12,8 +12,10 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
     [Export]
     Node3D damageArea;
     [Export]
-    MeshInstance3D sharpMesh,
-        cutMesh;
+    MeshInstance3D sharpMesh;
+    [Export]
+    GpuParticles3D cutFx,
+        hazardFx;
     [Export]
     Vector3 targetOffset;
 
@@ -55,8 +57,13 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
         damageArea.QueueFree();
 
         // cut mesh
-        cutMesh.Visible = true;
         sharpMesh.Visible = false;
+
+        // play fx
+        cutFx.Restart();
+
+        // stop hazard fx
+        hazardFx.Emitting = false;
 
         // disable script
         SetScript(new Variant());
