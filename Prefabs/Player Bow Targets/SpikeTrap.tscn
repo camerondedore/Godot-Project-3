@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dq4c06ulfpih7"]
+[gd_scene load_steps=24 format=3 uid="uid://dq4c06ulfpih7"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/SpikeTrapTarget.cs" id="1_iliy4"]
 [ext_resource type="Script" path="res://C#/DamageArea.cs" id="2_68mj6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bnt1ehohp5rps" path="res://Textures/fx-blood-splash.png" id="5_n6qke"]
 [ext_resource type="Material" uid="uid://7jbb4ou61bne" path="res://Materials/Fx/FxSpike.tres" id="6_0msyq"]
 [ext_resource type="ArrayMesh" uid="uid://bgc01e7v5g8mi" path="res://Models/fx-spike.res" id="7_ger4w"]
+[ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="8_mosxs"]
 [ext_resource type="Material" uid="uid://dxwhuixfxdibn" path="res://Materials/Fx/FxArrowTrailEnemy.tres" id="10_fpdcx"]
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="11_n1lcp"]
 [ext_resource type="Material" uid="uid://bijrqeiotewi3" path="res://Particles/FxEnemyDamage.tres" id="12_n2y16"]
@@ -99,13 +100,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = ExtResource("3_td6lu")
 surface_material_override/0 = ExtResource("4_xy2k7")
 
-[node name="DamageArea" type="Area3D" parent="." node_paths=PackedStringArray("hitFx")]
+[node name="DamageArea" type="Area3D" parent="." node_paths=PackedStringArray("hitFx", "audio")]
 collision_layer = 0
 collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("2_68mj6")
 hitFx = NodePath("FxHit")
+audio = NodePath("DamageAudio")
+damageSound = ExtResource("8_mosxs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
@@ -121,6 +124,10 @@ lifetime = 0.25
 one_shot = true
 process_material = ExtResource("12_n2y16")
 draw_pass_1 = SubResource("QuadMesh_jo2dl")
+
+[node name="DamageAudio" type="AudioStreamPlayer3D" parent="DamageArea"]
+max_distance = 20.0
+script = ExtResource("14_tfy06")
 
 [node name="BloodDecal" type="Decal" parent="."]
 size = Vector3(2, 0.2, 2)

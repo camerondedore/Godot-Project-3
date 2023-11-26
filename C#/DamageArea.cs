@@ -10,6 +10,10 @@ public partial class DamageArea : Area3D
     [Export]
     GpuParticles3D hitFx;
     [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream damageSound;
+    [Export]
     double timeBetweenDamage = 1;
 
     List<IDamageAreaUser> bodiesInArea = new List<IDamageAreaUser>();
@@ -36,6 +40,9 @@ public partial class DamageArea : Area3D
             // play fx
             hitFx.Restart();
 
+            // play audio
+            audio.PlaySound(damageSound, 0.1f);
+
             // apply damage
             foreach(var body in bodiesInArea)
             {
@@ -60,6 +67,9 @@ public partial class DamageArea : Area3D
 
             // play fx
             hitFx.Restart();
+
+            // play audio
+            audio.PlaySound(damageSound, 0.1f);
 
             bodiesInArea.Add(damageAreaUser);
         }
