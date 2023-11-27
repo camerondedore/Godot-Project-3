@@ -17,6 +17,8 @@ namespace PlayerCharacterComplex
 
             // disable camera spring arm
             blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Disabled;
+
+            blackboard.health.invulnerable = true;
         }
 
 
@@ -25,6 +27,8 @@ namespace PlayerCharacterComplex
         {
             // enable camera spring arm
             blackboard.cameraSpringArm.ProcessMode = Node.ProcessModeEnum.Inherit;
+
+            blackboard.health.invulnerable = false;
         }
 
 
@@ -32,7 +36,7 @@ namespace PlayerCharacterComplex
         public override State Transition()
         {
             // check timer and player input
-            if(EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
+            if(blackboard.startDelayUsesTime == true && EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
             {
                 // idle
                 return blackboard.stateIdle;

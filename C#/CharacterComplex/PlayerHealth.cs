@@ -14,6 +14,8 @@ namespace PlayerCharacterComplex
         PlayerFx playerFx;
         Disconnector healDisconnector = new Disconnector();
 
+        public bool invulnerable = false;
+
 
 
         public override void _Ready()
@@ -73,6 +75,11 @@ namespace PlayerCharacterComplex
 
         public override void Damage(float dmg)
         {
+            if(invulnerable)
+            {
+                return;
+            }
+
             // apply armor
             var damageAfterArmor = (1 - PlayerStatistics.statistics.GetArmor()) * dmg;
 

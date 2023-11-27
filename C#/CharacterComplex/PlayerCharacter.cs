@@ -59,9 +59,10 @@ namespace PlayerCharacterComplex
 			drawTime = 0.5f;
 
 		public Disconnector jumpDisconnector = new Disconnector();
-		public int rangerBandagesToCraft;
 		public BandageStation currentStation;
 		public float startHeight;
+		public int rangerBandagesToCraft;
+		public bool startDelayUsesTime = true;
 
 		//string debugText;
 		
