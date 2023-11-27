@@ -8,10 +8,10 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.32549, 1, 1, 1, 0)
 gradient = SubResource("Gradient_467d0")
 
 [sub_resource type="Curve" id="Curve_8xpiv"]
-_data = [Vector2(0, 0.0948277), 0.0, 0.905172, 0, 1, Vector2(1, 1), 0.905172, 0.0, 1, 0]
+_data = [Vector2(0, 0.188119), 0.0, 0.791488, 0, 0, Vector2(1, 1), 0.811881, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_1mklh"]
+[sub_resource type="CurveTexture" id="CurveTexture_n6p3s"]
 curve = SubResource("Curve_8xpiv")
 
 [resource]
@@ -30,6 +30,6 @@ angular_velocity_min = -10.0
 angular_velocity_max = 10.0
 angle_max = 359.0
 scale_min = 0.5
-scale_curve = SubResource("CurveTexture_1mklh")
+scale_curve = SubResource("CurveTexture_n6p3s")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_yjwn2")

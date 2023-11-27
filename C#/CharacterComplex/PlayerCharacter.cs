@@ -207,7 +207,7 @@ namespace PlayerCharacterComplex
 
 
 
-		public void DamageAreaActivated(float damage)
+		public bool DamageAreaActivated(float damage)
 		{
 			if(health.dead == false)
 			{
@@ -215,6 +215,12 @@ namespace PlayerCharacterComplex
 				
 				// play fx
 				characterFx.PlayBloodSplashFx();
+
+				return true;
+			}
+			else
+			{
+				return false;
 			}
 		}
 	}

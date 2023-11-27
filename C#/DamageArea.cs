@@ -35,18 +35,28 @@ public partial class DamageArea : Area3D
     {
         if(bodiesInArea.Count > 0 && EngineTime.timePassed > lastDamageTime + timeBetweenDamage)
         {
-            lastDamageTime = EngineTime.timePassed;
-
-            // play fx
-            hitFx.Restart();
-
-            // play audio
-            audio.PlaySound(damageSound, 0.1f);
+            bool causedDamage = false;
 
             // apply damage
             foreach(var body in bodiesInArea)
             {
-                body.DamageAreaActivated(damage);
+                var didDamage = body.DamageAreaActivated(damage);
+
+                if(didDamage == true)
+                {
+                    causedDamage = true;
+                }
+            }
+            
+            if(causedDamage)
+            {
+                // play fx
+                hitFx.Restart();
+
+                // play audio
+                audio.PlaySound(damageSound, 0.1f);
+                
+                lastDamageTime = EngineTime.timePassed;         
             }
         }
     }
@@ -58,18 +68,21 @@ public partial class DamageArea : Area3D
         // check that body is damage area user
         if(body is IDamageAreaUser)
         {
-            var damageAreaUser = body as IDamageAreaUser;
-
-            lastDamageTime = EngineTime.timePassed;
+            var damageAreaUser = body as IDamageAreaUser;            
 
             // apply damage
-            damageAreaUser.DamageAreaActivated(damage);
+            var didDamage = damageAreaUser.DamageAreaActivated(damage);
 
-            // play fx
-            hitFx.Restart();
+            if(didDamage)
+            {
+                // play fx
+                hitFx.Restart();
 
-            // play audio
-            audio.PlaySound(damageSound, 0.1f);
+                // play audio
+                audio.PlaySound(damageSound, 0.1f);
+
+                lastDamageTime = EngineTime.timePassed;
+            }
 
             bodiesInArea.Add(damageAreaUser);
         }
@@ -92,5 +105,5 @@ public partial class DamageArea : Area3D
 
 public interface IDamageAreaUser
 {
-    void DamageAreaActivated(float damage);
+    bool DamageAreaActivated(float damage);
 }
