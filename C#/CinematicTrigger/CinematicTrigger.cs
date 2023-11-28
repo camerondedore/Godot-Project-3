@@ -15,6 +15,8 @@ namespace CinematicTrigger
 
         [Export]
         public CinematicTarget[] targets;
+        [Export]
+        public bool saveToWorldData = true;
         
         public PlayerCharacter player;
         public int targetIndex = 0;
@@ -25,6 +27,26 @@ namespace CinematicTrigger
 
         public override void _Ready()
         {
+            if(saveToWorldData)
+            {
+                // get if trigger was already activated
+                var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+                if(wasActivated)
+                {
+                    // clear targets
+                    foreach(var target in targets)
+                    {
+                        target.QueueFree();
+                    }
+
+                    // destroy trigger
+                    QueueFree();  
+                    
+                    return;
+                }
+            }
+
             // set up signal
             BodyEntered += Triggered;
 
