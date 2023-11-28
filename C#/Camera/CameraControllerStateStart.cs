@@ -45,7 +45,7 @@ namespace CameraControllerSpringArm
 
             // get start vectors
             startPosition = GlobalCamera.camera.GlobalPosition;
-            startLookDirection = (-GlobalCamera.camera.Basis.Z);
+            startLookDirection = -GlobalCamera.camera.Basis.Z;
         }
 
 

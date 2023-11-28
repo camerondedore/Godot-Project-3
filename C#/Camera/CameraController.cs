@@ -8,7 +8,8 @@ namespace CameraControllerSpringArm
 
 		public StateMachine machine = new StateMachine(){};
 		public State stateStart,
-			stateFollow;
+			stateFollow,
+			stateWait;
 
 		[Export]
 		public Node3D cameraTarget;
@@ -34,9 +35,10 @@ namespace CameraControllerSpringArm
 			// initialize states
 			stateStart = new CameraControllerStateStart(){blackboard = this};
 			stateFollow = new CameraControllerStateFollow(){blackboard = this};
+			stateWait = new CameraControllerStateWait(){blackboard = this};
 
 			// set first state in machine
-			machine.SetState(stateStart);
+			machine.SetState(stateWait);
 		}
 
 
