@@ -8,8 +8,8 @@ namespace CameraControllerSpringArm
 
         Vector3 startPosition,
             startLookDirection;
-        float lerpCursor,
-            lerpSpeed = 2.5f;
+        float cursor = 0,
+            moveTime = 1f;
 
 
 
@@ -26,14 +26,14 @@ namespace CameraControllerSpringArm
             // the springarm transform does not use the springarm ray
             var cameraTargetPosition = blackboard.cameraTarget.GlobalPosition;
             var cameraTargetDirection = -blackboard.Basis.Z;
-            var cameraTargetPositionSmooth = startPosition.Lerp(cameraTargetPosition, lerpCursor);
-            var cameraTargetLookDirectionSmooth = startLookDirection.Lerp(cameraTargetDirection, lerpCursor);
+            var cameraTargetPositionSmooth = SineInterpolator.Interpolate(startPosition, cameraTargetPosition, cursor);
+            var cameraTargetLookDirectionSmooth = SineInterpolator.Interpolate(startLookDirection, cameraTargetDirection, cursor);
 
             // apply camera position and look
             GlobalCamera.camera.LookAtFromPosition(cameraTargetPositionSmooth, cameraTargetPositionSmooth + cameraTargetLookDirectionSmooth);
 
             // update cursor
-            lerpCursor = Mathf.Lerp(lerpCursor, 1, lerpSpeed * ((float) delta));
+            cursor += ((float) delta) / moveTime;
         }
 
 
@@ -41,7 +41,7 @@ namespace CameraControllerSpringArm
         public override void StartState()
         {
             // reset cursor
-            lerpCursor = 0;
+            cursor = 0;
 
             // get start vectors
             startPosition = GlobalCamera.camera.GlobalPosition;
@@ -52,7 +52,7 @@ namespace CameraControllerSpringArm
 
         public override State Transition()
         {
-            if(lerpCursor >= 1)
+            if(cursor >= 1)
             {
                 // follow
                 return blackboard.stateFollow;
