@@ -7,7 +7,10 @@ namespace MobBrownRat
     public partial class MobBrownRatStateIdle : MobBrownRatState
     {
 
-
+        double lastAnimationTime,
+            timeBetweenAnimations;
+        int lastAnimation = 1,
+            animationCount = 1;
 
 
 
@@ -15,6 +18,29 @@ namespace MobBrownRat
         {            
             // look for enemy
             blackboard.LookForEnemy();
+
+            if(EngineTime.timePassed > lastAnimationTime + timeBetweenAnimations)
+            {
+                var nextAnimation = 1;
+
+                // get new animation
+                while(nextAnimation == lastAnimation && animationCount > 1)
+                {
+                    nextAnimation = (int) (1 + GD.Randi() % animationCount);
+                }
+
+                // play extra idle animation
+                switch(nextAnimation)
+                {
+                    case 1:
+                        blackboard.animStateMachinePlayback.Travel("brown-rat-idle-itch");
+                        break;
+                }
+
+                lastAnimationTime = EngineTime.timePassed; 
+                lastAnimation = nextAnimation;
+                timeBetweenAnimations = GD.Randf() * 20 + 6;        
+            }
         }
         
         
@@ -27,6 +53,8 @@ namespace MobBrownRat
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-idle");
             //blackboard.animStateMachinePlayback.Next();
+
+            timeBetweenAnimations = GD.Randf() * 20 + 4;
         }
 
 
