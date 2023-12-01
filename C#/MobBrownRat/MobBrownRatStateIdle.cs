@@ -36,7 +36,7 @@ namespace MobBrownRat
                         blackboard.animStateMachinePlayback.Travel("brown-rat-idle-itch");
                         break;
                     case 2:
-                        blackboard.animStateMachinePlayback.Travel("brown-rat-idle-look");
+                        blackboard.animStateMachinePlayback.Travel("brown-rat-idle-sniff");
                         break;
 
                 }
