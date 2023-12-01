@@ -10,7 +10,7 @@ namespace MobBrownRat
         double lastAnimationTime,
             timeBetweenAnimations;
         int lastAnimation = 1,
-            animationCount = 1;
+            animationCount = 2;
 
 
 
@@ -35,9 +35,13 @@ namespace MobBrownRat
                     case 1:
                         blackboard.animStateMachinePlayback.Travel("brown-rat-idle-itch");
                         break;
+                    case 2:
+                        blackboard.animStateMachinePlayback.Travel("brown-rat-idle-look");
+                        break;
+
                 }
 
-                lastAnimationTime = EngineTime.timePassed; 
+                lastAnimationTime = EngineTime.timePassed;
                 lastAnimation = nextAnimation;
                 timeBetweenAnimations = GD.Randf() * 20 + 6;        
             }
@@ -54,6 +58,8 @@ namespace MobBrownRat
             blackboard.animStateMachinePlayback.Travel("brown-rat-idle");
             //blackboard.animStateMachinePlayback.Next();
 
+            lastAnimationTime = EngineTime.timePassed;
+            lastAnimation = (int) (1 + GD.Randi() % animationCount);
             timeBetweenAnimations = GD.Randf() * 20 + 4;
         }
 
