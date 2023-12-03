@@ -9,7 +9,8 @@ namespace MobBrownRat
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
-        public State stateIdle,
+        public State stateStart,
+            stateIdle,
             stateReact,
             stateMove,
             stateWatch,
@@ -40,6 +41,8 @@ namespace MobBrownRat
         public AnimationTree animation;
         [Export]
         public CollisionShape3D collider;
+        [Export]
+        public Node3D startTarget;
         [Export]
         public string arrowType = "bodkin";
         [Export]
@@ -79,14 +82,13 @@ namespace MobBrownRat
 
         public override void _Ready()
         {            
-            startPosition = GlobalPosition;
-
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
 
             animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
 
             // initialize states
+            stateStart = new MobBrownRatStateStart(){blackboard = this};
             stateIdle = new MobBrownRatStateIdle(){blackboard = this};
             stateReact = new MobBrownRatStateReact(){blackboard = this};
             stateMove = new MobBrownRatStateMove(){blackboard = this};
@@ -103,7 +105,7 @@ namespace MobBrownRat
             stateDie = new MobBrownRatStateDie(){blackboard = this};
 
             // set first state in machine
-            machine.SetState(stateIdle);
+            machine.SetState(stateStart);
         }
 
 
