@@ -51,7 +51,7 @@ namespace MobBrownRat
 
         public override State Transition()
         {
-            if(blackboard.IsEnemyValid())
+            if(blackboard.IsEnemyValid() && blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
             {
                 if(blackboard.isMovingRat == true)
                 {
@@ -63,8 +63,8 @@ namespace MobBrownRat
                     // get distance to enemy
                     var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
-                    // check if enemy is close enough and in line of sight for rats that move
-                    if(blackboard.isMovingRat == false && distanceToEnemySqr < blackboard.maxSightRangeSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
+                    // check if enemy is close enough for rats that don't move
+                    if(distanceToEnemySqr < blackboard.maxSightRangeSqr)
                     {
                         // react
                         return blackboard.stateReact;

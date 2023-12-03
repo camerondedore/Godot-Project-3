@@ -77,7 +77,9 @@ namespace MobBrownRat
             moving,
             isAggro;
 
+        //string debugText;
         bool delay = false;
+
 
 
         public override void _Ready()
@@ -126,6 +128,13 @@ namespace MobBrownRat
 
         public override void _PhysicsProcess(double delta)
         {
+            // debug
+			// if(debugText != machine.CurrentState.ToString())
+			// {
+			// 	GD.Print(machine.CurrentState.ToString());
+			// 	debugText = machine.CurrentState.ToString();
+			// }   
+
             // one-frame delay
             if(delay == false)
             {
