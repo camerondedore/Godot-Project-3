@@ -29,6 +29,7 @@ netMesh = NodePath("prop-jump-net/armature-jump-net/Skeleton3D/prop-jump-net2")
 anim = NodePath("prop-jump-net/AnimationPlayer")
 audio = NodePath("JumpPadAudio")
 attachSound = ExtResource("2_ju7d0")
+targetOffset = Vector3(0, 0.3, 0)
 
 [node name="prop-jump-net" parent="." instance=ExtResource("8_ksi7r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
