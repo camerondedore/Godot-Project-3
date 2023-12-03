@@ -10,7 +10,7 @@ namespace MobBrownRat
         double lastAnimationTime,
             timeBetweenAnimations;
         int lastAnimation = 1,
-            animationCount = 3;
+            animationCount = 4;
 
 
 
@@ -41,7 +41,9 @@ namespace MobBrownRat
                     case 3:
                         blackboard.animStateMachinePlayback.Travel("brown-rat-idle-look-l");
                         break;
-
+                    case 4:
+                        blackboard.animStateMachinePlayback.Travel("brown-rat-idle-look-r");
+                        break;
                 }
 
                 lastAnimationTime = EngineTime.timePassed;
