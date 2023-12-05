@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqhdlhgxo8ft2"]
+[gd_scene load_steps=8 format=3 uid="uid://dqhdlhgxo8ft2"]
 
 [ext_resource type="ArrayMesh" uid="uid://qxv3xdt3tl84" path="res://Models/prop-log-hollow.res" id="1_sulik"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_bdxp5"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_0yqcy"]
 [ext_resource type="Material" uid="uid://bnn0srv8hbl4o" path="res://Materials/Plants/PropMushroom.tres" id="4_hq8s0"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="4_oguv8"]
 [ext_resource type="ArrayMesh" uid="uid://ce3kma073h5tf" path="res://Models/prop-log-hollow-mushrooms.res" id="4_ts5lh"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bmpg1"]
@@ -15,6 +16,7 @@ data = PackedVector3Array(0.0228, 1.8775, -1.6819, -0.2002, 1.8277, -3.3169, -0.
 mesh = ExtResource("1_sulik")
 surface_material_override/0 = ExtResource("2_bdxp5")
 surface_material_override/1 = ExtResource("3_0yqcy")
+surface_material_override/2 = ExtResource("4_oguv8")
 
 [node name="MushroomsMesh" type="MeshInstance3D" parent="."]
 layers = 2
