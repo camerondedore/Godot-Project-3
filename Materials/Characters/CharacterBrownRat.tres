@@ -6,4 +6,4 @@
 albedo_texture = ExtResource("1_3wpnh")
 roughness = 0.95
 rim_enabled = true
-rim = 0.1
+rim = 0.05

@@ -18,14 +18,14 @@ point_count = 3
 curve = SubResource("Curve_krqhs")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2i6uk"]
+particle_flag_rotate_y = true
 emission_shape = 6
 emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.0
 emission_ring_radius = 0.3
 emission_ring_inner_radius = 0.0
-particle_flag_rotate_y = true
-gravity = Vector3(0, 0, 0)
 angle_max = 359.0
+gravity = Vector3(0, 0, 0)
 scale_min = 0.7
 scale_max = 0.8
 scale_curve = SubResource("CurveTexture_5youq")

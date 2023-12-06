@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnndm6o1k03eu"]
 
-[ext_resource type="PackedScene" path="res://Prefabs/UI/UiPickup.tscn" id="1_1206r"]
+[ext_resource type="PackedScene" uid="uid://cji2ubiw8m1m2" path="res://Prefabs/UI/UiPickup.tscn" id="1_1206r"]
 [ext_resource type="Texture2D" uid="uid://brmowqul12aex" path="res://UI/ui-candied-nuts-pickup.png" id="2_8bpit"]
 
 [node name="UiCandiedNutPickup" instance=ExtResource("1_1206r")]

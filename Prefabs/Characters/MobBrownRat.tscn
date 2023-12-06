@@ -86,7 +86,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_r3buv")
 nodes/Animation/position = Vector2(-80, 120)
 nodes/WalkSpeed/node = SubResource("AnimationNodeTimeScale_ig6ru")
 nodes/WalkSpeed/position = Vector2(140, 140)
-node_connections = [&"output", 0, &"WalkSpeed", &"WalkSpeed", 0, &"Animation"]
+node_connections = [&"WalkSpeed", 0, &"Animation", &"output", 0, &"WalkSpeed"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lwuys"]
 xfade_time = 0.05

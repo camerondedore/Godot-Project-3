@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="1_pbk8i"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="2_x276k"]
 [ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="3_dsqwc"]
-[ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_e6m4v"]
+[ext_resource type="PackedScene" uid="uid://dkequrq3luqfl" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_e6m4v"]
 
 [node name="FxArrowHitBodkin" instance=ExtResource("1_pbk8i")]
 

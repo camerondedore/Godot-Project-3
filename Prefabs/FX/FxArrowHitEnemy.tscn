@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="1_8eido"]
 [ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_yjouo"]
 [ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_d8mk0"]
-[ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_2stnk"]
+[ext_resource type="PackedScene" uid="uid://dkequrq3luqfl" path="res://Prefabs/FX/FxBloodSplash.tscn" id="4_2stnk"]
 [ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="5_6pgwa"]
 [ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="6_mj5ce"]
 

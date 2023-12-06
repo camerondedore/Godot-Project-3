@@ -18,13 +18,13 @@ curve = SubResource("Curve_mhog1")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ytpyl"]
 lifetime_randomness = 0.4
+angle_max = 359.0
 direction = Vector3(0, 0, -1)
 spread = 20.0
 initial_velocity_min = 2.0
 initial_velocity_max = 3.0
 angular_velocity_min = -10.0
 angular_velocity_max = 10.0
-angle_max = 359.0
 scale_min = 0.5
 scale_max = 0.7
 scale_curve = SubResource("CurveTexture_fy145")

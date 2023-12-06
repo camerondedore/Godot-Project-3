@@ -14,4 +14,5 @@ shader_parameter/Wind_Slope = 3.0
 shader_parameter/Y_Multiplier = 0.25
 shader_parameter/Metallic = 0.1
 shader_parameter/Roughness = 1.0
+shader_parameter/Specular = 0.0
 shader_parameter/Albedo = ExtResource("2_sh50y")

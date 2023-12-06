@@ -4,12 +4,12 @@
 lifetime_randomness = 0.3
 emission_shape = 3
 emission_box_extents = Vector3(1.5, 1, 1)
+angle_max = 359.0
 direction = Vector3(0, 1, 0)
 spread = 30.0
 initial_velocity_min = 2.0
 initial_velocity_max = 5.0
 angular_velocity_min = -300.0
 angular_velocity_max = 300.0
-angle_max = 359.0
 scale_min = 0.7
 scale_max = 0.8

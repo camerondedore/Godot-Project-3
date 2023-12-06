@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://rd8bmod1fmch"]
 
 [ext_resource type="PackedScene" uid="uid://bvnogtbjot0oy" path="res://Prefabs/Player Arrows/PlayerArrow.tscn" id="1_ce0ie"]
 [ext_resource type="ArrayMesh" uid="uid://bndjssmijxivp" path="res://Models/arrow-net.res" id="2_a84qv"]

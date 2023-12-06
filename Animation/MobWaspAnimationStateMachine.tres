@@ -36,7 +36,7 @@ nodes/Animation/position = Vector2(80, 140)
 nodes/OneShot/node = SubResource("AnimationNodeOneShot_elblp")
 nodes/OneShot/position = Vector2(336.105, 156.603)
 nodes/output/position = Vector2(671.769, 136.105)
-node_connections = [&"output", 0, &"OneShot", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 2"]
+node_connections = [&"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 2", &"output", 0, &"OneShot"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ceqyv"]
 

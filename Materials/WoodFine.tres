@@ -4,4 +4,5 @@
 
 [resource]
 albedo_texture = ExtResource("1_glk1h")
+metallic_specular = 0.0
 roughness = 0.9

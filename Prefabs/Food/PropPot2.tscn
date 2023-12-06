@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://bhgoifnu2kwve"]
 
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="1_huyn2"]
 [ext_resource type="ArrayMesh" uid="uid://c674gh20o6juk" path="res://Models/prop-pot-2.res" id="2_yn80i"]
