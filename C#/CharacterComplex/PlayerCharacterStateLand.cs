@@ -30,7 +30,7 @@ namespace PlayerCharacterComplex
             blackboard.CharacterLook();
 
             // camera follow
-            blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+            blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
         }
 
 

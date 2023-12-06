@@ -16,7 +16,7 @@ namespace PlayerCharacterComplex
             startTime = EngineTime.timePassed;
 
             // disable camera spring arm
-            blackboard.cameraSpringArm.machine.SetState(blackboard.cameraSpringArm.stateWait);
+            blackboard.cameraController.machine.SetState(blackboard.cameraController.stateWait);
 
             blackboard.health.invulnerable = true;
         }
@@ -26,7 +26,7 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             // enable camera spring arm
-            blackboard.cameraSpringArm.machine.SetState(blackboard.cameraSpringArm.stateStart);
+            blackboard.cameraController.machine.SetState(blackboard.cameraController.stateStart);
 
             blackboard.health.invulnerable = false;
         }

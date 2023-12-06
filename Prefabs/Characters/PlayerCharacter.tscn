@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene load_steps=82 format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -80,24 +80,31 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]
 radius = 0.3
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_alwsf"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l3ep7"]
+radius = 0.1
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_0m844"]
 radius = 0.33
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraSpringArm", "anim", "characterAudio", "characterFx", "bowAimer", "bow", "health", "myFactions", "ledgeDetector")]
+[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("cameraController", "verticalSpringArmTarget", "anim", "characterAudio", "characterFx", "bowAimer", "bow", "health", "myFactions", "ledgeDetector")]
 process_mode = 1
 collision_layer = 162
 collision_mask = 3091
 slide_on_ceiling = false
 floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
-cameraSpringArm = NodePath("SpringArm3D")
+cameraController = NodePath("CameraController")
+verticalSpringArmTarget = NodePath("SpringArmVertical/OffsetParent/VerticalSpringArmTarget")
 anim = NodePath("character-player/AnimationPlayer")
 characterAudio = NodePath("CharacterAudio")
 characterFx = NodePath("Fx")
-bowAimer = NodePath("SpringArm3D/BowAimer")
+bowAimer = NodePath("CameraController/SpringArmHorizontal/BowAimer")
 bow = NodePath("Bow")
 health = NodePath("Health")
 myFactions = [NodePath("Faction"), NodePath("Faction2")]
@@ -545,34 +552,43 @@ gi_mode = 2
 layers = 2
 gi_mode = 2
 
-[node name="SpringArm3D" type="SpringArm3D" parent="." node_paths=PackedStringArray("cameraTarget")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+[node name="SpringArmVertical" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 collision_mask = 1025
-spring_length = 3.0
+shape = SubResource("SphereShape3D_alwsf")
+spring_length = 1.65
+
+[node name="OffsetParent" type="Node3D" parent="SpringArmVertical"]
+
+[node name="VerticalSpringArmTarget" type="Node3D" parent="SpringArmVertical/OffsetParent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15)
+
+[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("cameraTarget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 script = ExtResource("2_gvbnd")
-cameraTarget = NodePath("OffsetNode/CameraTarget")
+cameraTarget = NodePath("SpringArmHorizontal/CameraTarget")
 sensitivity = 5.0
 minAngle = -60.0
 maxAngle = 50.0
 
-[node name="OffsetNode" type="Node3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+[node name="SpringArmHorizontal" type="SpringArm3D" parent="CameraController"]
+collision_mask = 1025
+shape = SubResource("SphereShape3D_l3ep7")
+spring_length = 3.0
 
-[node name="CameraTarget" type="Node3D" parent="SpringArm3D/OffsetNode"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+[node name="CameraTarget" type="Node3D" parent="CameraController/SpringArmHorizontal"]
 
-[node name="BowAimer" type="Node3D" parent="SpringArm3D" node_paths=PackedStringArray("rayCast", "shapeCast", "targetFx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+[node name="BowAimer" type="Node3D" parent="CameraController/SpringArmHorizontal" node_paths=PackedStringArray("rayCast", "shapeCast", "targetFx")]
 script = ExtResource("4_s8c8a")
 rayCast = NodePath("BowAimerRay")
 shapeCast = NodePath("BowAimerShape")
 targetFx = NodePath("TargetSprite")
 
-[node name="BowAimerRay" type="RayCast3D" parent="SpringArm3D/BowAimer"]
+[node name="BowAimerRay" type="RayCast3D" parent="CameraController/SpringArmHorizontal/BowAimer"]
 target_position = Vector3(0, 0, -30)
 collision_mask = 1619
 
-[node name="BowAimerShape" type="ShapeCast3D" parent="SpringArm3D/BowAimer"]
+[node name="BowAimerShape" type="ShapeCast3D" parent="CameraController/SpringArmHorizontal/BowAimer"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("SphereShape3D_0m844")
 target_position = Vector3(0, 0, -30)
@@ -580,7 +596,7 @@ margin = 0.05
 max_results = 1
 collision_mask = 1619
 
-[node name="TargetSprite" type="Sprite3D" parent="SpringArm3D/BowAimer" node_paths=PackedStringArray("audio", "sparkleFx")]
+[node name="TargetSprite" type="Sprite3D" parent="CameraController/SpringArmHorizontal/BowAimer" node_paths=PackedStringArray("audio", "sparkleFx")]
 layers = 2
 modulate = Color(1, 1, 1, 0.705882)
 pixel_size = 0.0005
@@ -601,9 +617,9 @@ scaleSpeed = 10.0
 audio = NodePath("../TargetAudio")
 sparkleFx = NodePath("FxSparkleBowTarget")
 
-[node name="FxSparkleBowTarget" parent="SpringArm3D/BowAimer/TargetSprite" instance=ExtResource("11_8krr5")]
+[node name="FxSparkleBowTarget" parent="CameraController/SpringArmHorizontal/BowAimer/TargetSprite" instance=ExtResource("11_8krr5")]
 
-[node name="TargetAudio" type="AudioStreamPlayer3D" parent="SpringArm3D/BowAimer"]
+[node name="TargetAudio" type="AudioStreamPlayer3D" parent="CameraController/SpringArmHorizontal/BowAimer"]
 stream = ExtResource("11_dpkpm")
 panning_strength = 0.0
 

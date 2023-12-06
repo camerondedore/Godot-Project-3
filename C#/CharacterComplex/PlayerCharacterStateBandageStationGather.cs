@@ -45,7 +45,7 @@ namespace PlayerCharacterComplex
             blackboard.Velocity = Vector3.Zero;
 
             // camera follow
-            blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+            blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
             // cancel draw
             blackboard.bow.CancelDraw();   

@@ -29,7 +29,9 @@ namespace PlayerCharacterComplex
 			stateDie;
 
 		[Export]
-		public CameraController cameraSpringArm;
+		public CameraController cameraController;
+		[Export]
+		public Node3D verticalSpringArmTarget;
 		[Export]
 		public AnimationPlayer anim;
 		[Export]

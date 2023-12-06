@@ -3,7 +3,7 @@ using System;
 
 namespace CameraControllerSpringArm
 {
-	public partial class CameraController : SpringArm3D
+	public partial class CameraController : Node3D	
 	{
 
 		public StateMachine machine = new StateMachine(){};
@@ -14,11 +14,10 @@ namespace CameraControllerSpringArm
 		[Export]
 		public Node3D cameraTarget;
 		[Export]
-		float sensitivity = 1f,
+		public float sensitivity = 1f,
 			minAngle = -50,
 			maxAngle = 40;
-		public Vector3 offset,
-			targetPosition;
+		public Vector3 targetPosition;
 		public double smoothSpeed;
 
 
@@ -27,7 +26,6 @@ namespace CameraControllerSpringArm
 		public override void _Ready()
 		{
 			// get initial values
-			offset = Position;
 			targetPosition = GlobalPosition;
 
 			TopLevel = true;
@@ -43,26 +41,26 @@ namespace CameraControllerSpringArm
 
 
 
-		public override void _Process(double delta)
-		{
-			var mouseDirection = RotationDegrees;
-			mouseDirection.X -= PlayerInput.look.Y * sensitivity * ((float)delta);
-			mouseDirection.X = Mathf.Clamp(mouseDirection.X, minAngle, maxAngle);
-			mouseDirection.Y -= PlayerInput.look.X * sensitivity * ((float)delta);
-			mouseDirection.Y = Mathf.Wrap(mouseDirection.Y, 0, 360);
+		// public override void _Process(double delta)
+		// {
+		// 	var mouseDirection = RotationDegrees;
+		// 	mouseDirection.X -= PlayerInput.look.Y * sensitivity * ((float)delta);
+		// 	mouseDirection.X = Mathf.Clamp(mouseDirection.X, minAngle, maxAngle);
+		// 	mouseDirection.Y -= PlayerInput.look.X * sensitivity * ((float)delta);
+		// 	mouseDirection.Y = Mathf.Wrap(mouseDirection.Y, 0, 360);
 
-			RotationDegrees = mouseDirection;
+		// 	RotationDegrees = mouseDirection;
 
-			// clear mouse input
-			PlayerInput.look = Vector2.Zero;
-		}
+		// 	// clear mouse input
+		// 	PlayerInput.look = Vector2.Zero;
+		// }
 
 
 
-		public void MoveToFollowCharacter(Vector3 characterPosition, Vector3 velocity)
+		public void MoveToFollowCharacter(Vector3 position, Vector3 velocity)
 		{
 			// get position for spring arm
-			targetPosition = characterPosition + offset;
+			targetPosition = position;
 
 			// set smooth speed using character velocity
 			smoothSpeed = Mathf.Clamp(velocity.Length() * 4, 15, 80);

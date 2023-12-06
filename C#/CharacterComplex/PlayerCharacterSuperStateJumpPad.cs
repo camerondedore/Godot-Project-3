@@ -32,8 +32,6 @@ namespace PlayerCharacterComplex
             }		
 
             // apply gravity
-            //blackboard.ySpeed += Gravity.vector.Y * ((float) delta);
-
             vel += EngineGravity.vector * ((float) delta);
 
 
@@ -42,10 +40,8 @@ namespace PlayerCharacterComplex
 
             blackboard.MoveAndSlide();
 
-            //blackboard.CharacterLook();
-
             // camera follow
-            blackboard.cameraSpringArm.MoveToFollowCharacter(blackboard.GlobalPosition, blackboard.Velocity);
+            blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
             base.RunState(delta);
         }
