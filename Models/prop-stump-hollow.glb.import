@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgb4a8eo5ixnj"
-path="res://.godot/imported/prop-log-hollow.glb-f4df51c90c6316708e7ab0b1a39afe31.scn"
+uid="uid://bsew1jlueh18q"
+path="res://.godot/imported/prop-stump-hollow.glb-39b1f2f34b7e6555e1ccaa589563fa41.scn"
 
 [deps]
 
-source_file="res://Models/prop-log-hollow.glb"
-dest_files=["res://.godot/imported/prop-log-hollow.glb-f4df51c90c6316708e7ab0b1a39afe31.scn"]
+source_file="res://Models/prop-stump-hollow.glb"
+dest_files=["res://.godot/imported/prop-stump-hollow.glb-39b1f2f34b7e6555e1ccaa589563fa41.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-log-hollow_prop-log-hollow": {
+"prop-stump-hollow_prop-stump-hollow": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,9 +39,9 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-log-hollow.res"
+"save_to_file/path": "res://Models/prop-stump-hollow.res"
 },
-"prop-log-hollow_prop-log-hollow-mushrooms": {
+"prop-stump-hollow_prop-stump-hollow-mushrooms": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -49,9 +49,9 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-log-hollow-mushrooms.res"
+"save_to_file/path": "res://Models/prop-stump-hollow-mushrooms.res"
 }
 }
 }
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1

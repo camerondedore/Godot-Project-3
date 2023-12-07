@@ -30,6 +30,15 @@ project/assembly_name="Project 3"
 
 enabled=PackedStringArray("res://addons/PropPainter/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://C#/": "yellow",
+"res://Models/": "gray",
+"res://Prefabs/": "green",
+"res://Scenes/": "blue"
+}
+
 [input]
 
 player-fire-1={
