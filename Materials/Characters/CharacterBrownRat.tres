@@ -4,6 +4,7 @@
 
 [resource]
 albedo_texture = ExtResource("1_3wpnh")
+metallic_specular = 0.0
 roughness = 0.95
 rim_enabled = true
 rim = 0.05

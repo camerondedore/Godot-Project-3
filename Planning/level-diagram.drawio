@@ -1,0 +1,16 @@
+<mxfile host="app.diagrams.net" modified="2023-12-10T05:34:42.710Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="mF0elMHsML-wCrWWbrql" version="22.1.7" type="device">
+  <diagram name="Page-1" id="y5V9inDoHqL2WayP6YkX">
+    <mxGraphModel dx="1114" dy="630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SMsqWRc1ZmiGw2bDy1Mg-2" value="Intro Level" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="375" y="10" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SMsqWRc1ZmiGw2bDy1Mg-5" value="&lt;ol&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;navigation: move down path&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;cinematic: see ruined cart and black rats&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;fight: two black rats&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;secret: candied nuts hidden on ledge&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;blocker: old blackberry bush&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;cinematic: intro to cook assistant hiding on ledge and intro to soup&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;blocker removed: brown rat cuts bush&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;fight: one brown rat&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;cinematic: intro to ledges and jumping&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;navigation: climb ledges and follow side path&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;fight: brown rats inaccessible to player&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;navigation: follow assistant cook and intro to candied nuts&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;cinematic: see group of black and brown rats blocking way&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;fight: group of brown and black rats&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;blocker: old blackberry bush&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;blocker removed: assistant cook cuts bush&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;navigation: follow assistant cook to hub&lt;/li&gt;&lt;/ol&gt;" style="text;strokeColor=none;fillColor=none;html=1;whiteSpace=wrap;verticalAlign=top;overflow=hidden;" vertex="1" parent="1">
+          <mxGeometry x="10" y="40" width="470" height="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
