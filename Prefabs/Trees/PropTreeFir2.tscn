@@ -1,24 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://565phnp5c2il"]
+[gd_scene load_steps=7 format=3 uid="uid://565phnp5c2il"]
 
 [ext_resource type="PackedScene" uid="uid://cam1sxltrw2vj" path="res://Prefabs/Trees/PropTreeFir1.tscn" id="1_o2354"]
 [ext_resource type="ArrayMesh" uid="uid://ddo1d2217jpg" path="res://Models/prop-tree-fir-2.res" id="2_t37mr"]
 [ext_resource type="ArrayMesh" uid="uid://hjs7adpuec6r" path="res://Models/prop-tree-fir-leaves-2.res" id="3_wwahn"]
 [ext_resource type="Material" uid="uid://d0cjy44fcos7m" path="res://Materials/Trees/LeavesFirWindShort.tres" id="4_d7ukc"]
+[ext_resource type="ArrayMesh" uid="uid://61uu62chymch" path="res://Models/prop-tree-fir-2-shadow.res" id="5_s5cff"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cnf7o"]
 points = PackedVector3Array(-0.0097924, -2.08731, 0.236725, -0.146261, -2.10481, 0.179934, 0.129068, -2.10981, 0.185549, 0.0323001, 3, 0.0444936, -4.46737e-05, 3, 0.0549864, -0.0323451, 3, 0.0444936, -0.229338, -2.09931, 0.0598187, -0.211615, -2.10181, -0.0632885, -0.052328, 3, 0.0169728, 0.136025, -2.09931, -0.190261, 0.218703, -2.09781, 0.0705877, 0.0522829, 3, 0.0169728, -0.052328, 3, -0.017037, -0.133323, -2.09531, -0.171439, 0.00150611, -2.09581, -0.233383, 0.223311, -2.08731, -0.0682128, -4.46737e-05, 3, -0.0550046, 0.0323001, 3, -0.0445118, 0.0522829, 3, -0.017037, -0.0323451, 3, -0.0445118)
 
 [node name="PropTreeFir2" instance=ExtResource("1_o2354")]
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="MeshTrunk" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh = ExtResource("2_t37mr")
 
-[node name="MeshInstance3D2" parent="." index="1"]
+[node name="MeshLeaves" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 mesh = ExtResource("3_wwahn")
 surface_material_override/0 = ExtResource("4_d7ukc")
 
-[node name="CollisionShape3D2" parent="." index="2"]
+[node name="MeshTrunkShadow" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+mesh = ExtResource("5_s5cff")
+surface_material_override/1 = ExtResource("4_d7ukc")
+
+[node name="CollisionShape3D2" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("ConvexPolygonShape3D_cnf7o")

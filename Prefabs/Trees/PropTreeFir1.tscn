@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cam1sxltrw2vj"]
+[gd_scene load_steps=7 format=3 uid="uid://cam1sxltrw2vj"]
 
 [ext_resource type="ArrayMesh" uid="uid://bt0wxr3kbylig" path="res://Models/prop-tree-fir-1.res" id="1_igs3l"]
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_qdo7n"]
 [ext_resource type="Material" uid="uid://cv7hwc22ts4vd" path="res://Materials/Trees/LeavesFirWind.tres" id="3_6mw1y"]
+[ext_resource type="ArrayMesh" uid="uid://8t4snp1hsrf8" path="res://Models/prop-tree-fir-1-shadow.res" id="3_o8ibv"]
 [ext_resource type="ArrayMesh" uid="uid://uddmfw2yjpm" path="res://Models/prop-tree-fir-leaves-1.res" id="3_ww2bu"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u1mio"]
@@ -10,18 +11,28 @@ data = PackedVector3Array(-1.0976, -9.7646, -0.1316, -1.1279, -9.7646, -0.3205, 
 
 [node name="PropTreeFir1" type="StaticBody3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshTrunk" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("1_igs3l")
 surface_material_override/0 = ExtResource("2_qdo7n")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshLeaves" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 layers = 2
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("3_ww2bu")
 surface_material_override/0 = ExtResource("3_6mw1y")
+
+[node name="MeshTrunkShadow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+cast_shadow = 3
+gi_mode = 2
+mesh = ExtResource("3_o8ibv")
+surface_material_override/0 = ExtResource("2_qdo7n")
+surface_material_override/1 = ExtResource("3_6mw1y")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)

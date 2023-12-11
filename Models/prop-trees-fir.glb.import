@@ -51,6 +51,16 @@ _subresources={
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/prop-tree-fir-1-collider.res"
 },
+"prop-trees-fir_prop-tree-fir-1-shadow": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Models/prop-tree-fir-1-shadow.res"
+},
 "prop-trees-fir_prop-tree-fir-2": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -60,6 +70,16 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/prop-tree-fir-2.res"
+},
+"prop-trees-fir_prop-tree-fir-2-shadow": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Models/prop-tree-fir-2-shadow.res"
 },
 "prop-trees-fir_prop-tree-fir-leaves-1": {
 "generate/lightmap_uv": 0,
