@@ -295,22 +295,15 @@ namespace MobBrownRat
                 return 0;
             }
 
-            var enemyOwner = (Node3D) enemy.Owner;
-            var directionToEnemy = enemyOwner.GlobalPosition - GlobalPosition;
-            var distanceSqr = new Vector3(directionToEnemy.X, 0, directionToEnemy.Z).LengthSquared();
-            var heightSqr = Mathf.Pow(directionToEnemy.Y, 2);
+            var directionToEnemy = enemy.GlobalPosition - bow.GlobalPosition;
+            var distance = new Vector2(directionToEnemy.X, directionToEnemy.Z).Length();
+            var height = directionToEnemy.Y;
 
-            var unsignedAngle = Mathf.RadToDeg(Mathf.Atan(heightSqr / distanceSqr));
+            var unsignedAngle = Mathf.RadToDeg(Mathf.Atan(height / distance));
 
-            // check direction
-            if(directionToEnemy.Y >= 0)
-            {
-                return unsignedAngle;
-            }
-            else
-            {
-                return -unsignedAngle;
-            }
+            //GD.Print(distance + ", " + height + ", " + "angle " + unsignedAngle);
+
+            return unsignedAngle;
         }
 
 
