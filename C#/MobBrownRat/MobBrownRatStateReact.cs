@@ -27,12 +27,17 @@ namespace MobBrownRat
             // add variation to reaction time
             reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
+            var previousLookAtTarget = blackboard.lookAtTarget;
+
             // look at enemy
             blackboard.lookAtTarget = true;
 
-            // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-react");
-            //blackboard.animStateMachinePlayback.Next();
+            if(previousLookAtTarget == false)
+            {
+                // animation
+                blackboard.animStateMachinePlayback.Travel("brown-rat-react");
+                //blackboard.animStateMachinePlayback.Next();
+            }
         }
 
 
@@ -41,6 +46,8 @@ namespace MobBrownRat
         {
             // look at enemy
             blackboard.lookAtTarget = false;
+
+            blackboard.SpotEnemyForAllies();
         }
 
 

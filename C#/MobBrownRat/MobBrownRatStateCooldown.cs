@@ -36,7 +36,7 @@ namespace MobBrownRat
             blackboard.enemy = null;
 
             // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-idle");
+            blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
             //blackboard.animStateMachinePlayback.Next();
         }
 

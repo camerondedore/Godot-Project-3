@@ -41,7 +41,7 @@ namespace MobBrownRat
             blackboard.moving = false;
 
             // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-react");
+            blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
         }
 
 

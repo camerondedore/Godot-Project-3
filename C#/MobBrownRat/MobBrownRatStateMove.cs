@@ -38,7 +38,7 @@ namespace MobBrownRat
             // set move target
             blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
 
-            blackboard.SpotEnemyForAllies();
+            //blackboard.SpotEnemyForAllies();
 
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
