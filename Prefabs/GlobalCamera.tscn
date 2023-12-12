@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://C#/Common/Pause.cs" id="5_mk66s"]
 [ext_resource type="Script" path="res://C#/Common/EngineGravity.cs" id="6_mfr8q"]
 [ext_resource type="Script" path="res://C#/GameSettings.cs" id="6_rcfh6"]
-[ext_resource type="Script" path="res://C#/GameSettingsLoader.cs" id="7_o0ge6"]
+[ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="7_ad3x1"]
 [ext_resource type="Script" path="res://C#/Common/PauseMenu.cs" id="7_ogfvn"]
 [ext_resource type="Script" path="res://C#/GameSettingsUi.cs" id="12_04fn0"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="13_j8rmr"]
@@ -33,10 +33,6 @@ script = ExtResource("5_fnxei")
 
 [node name="GameSettings" type="Node" parent="."]
 script = ExtResource("6_rcfh6")
-
-[node name="GameSettingsLoader" type="Node" parent="."]
-script = ExtResource("7_o0ge6")
-postProcessing = ExtResource("13_j8rmr")
 
 [node name="StateMachineQueuePopper" type="Node" parent="."]
 script = ExtResource("1_4luc3")
@@ -106,7 +102,7 @@ text = "Restart"
 layout_mode = 2
 text = "Quit"
 
-[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloom", "ssao")]
+[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloom", "ssao", "sunShadows")]
 layout_mode = 1
 anchors_preset = 0
 offset_left = -40.0
@@ -120,6 +116,7 @@ script = ExtResource("12_04fn0")
 postProcessing = ExtResource("13_j8rmr")
 bloom = NodePath("VBoxContainer/BloomCheckBox")
 ssao = NodePath("VBoxContainer/SsaoCheckBox")
+sunShadows = NodePath("VBoxContainer/SunShadowsSlider")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
 layout_mode = 1
@@ -144,3 +141,20 @@ text = "Bloom"
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "SSAO"
+
+[node name="SunShadowsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Sun Shadows"
+
+[node name="SunShadowsSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+max_value = 3.0
+value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="GameSettingsEnvironmentLoader" type="Node" parent="."]
+script = ExtResource("7_ad3x1")
+postProcessing = ExtResource("13_j8rmr")

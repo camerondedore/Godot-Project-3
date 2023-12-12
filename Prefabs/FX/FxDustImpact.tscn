@@ -75,6 +75,7 @@ lifeTime = 5.0
 [node name="FxChunks" type="GPUParticles3D" parent="."]
 layers = 2
 material_override = ExtResource("4_njdnm")
+cast_shadow = 0
 gi_mode = 2
 emitting = false
 amount = 7

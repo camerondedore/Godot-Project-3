@@ -40,6 +40,8 @@ color_ramp = SubResource("GradientTexture1D_gp4yu")
 [node name="FxBloodSplash" type="GPUParticles3D"]
 layers = 2
 material_override = ExtResource("1_8qji5")
+cast_shadow = 0
+gi_mode = 2
 emitting = false
 amount = 15
 one_shot = true

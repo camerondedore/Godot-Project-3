@@ -44,10 +44,10 @@ public partial class GameSettings : Node
 		{
 			// no settings exist
 			currentSettings = new Settings(){};
+            
+            // save file
+            SaveSettings();
 		}
-
-        // save file
-        SaveSettings();
 	}
 
 
@@ -70,6 +70,15 @@ public partial class GameSettings : Node
 
 
 
+    public void UpdateSunShadows(int newValue)
+    {
+        currentSettings.SunShadows = newValue;
+
+        SaveSettings();
+    }
+
+
+
     [System.Serializable]
     public class Settings
     {
@@ -83,5 +92,10 @@ public partial class GameSettings : Node
         {
             get; set;
         } = true;
+
+        public int SunShadows
+        {
+            get; set;
+        } = 3;
     }
 }
