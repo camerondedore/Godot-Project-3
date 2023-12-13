@@ -267,6 +267,7 @@ environment = ExtResource("1_2ajl2")
 
 [node name="GlobalCamera" parent="." instance=ExtResource("1_4qapr")]
 transform = Transform3D(0.901969, 0.209041, -0.377829, 0, 0.875005, 0.484113, 0.431802, -0.436655, 0.789227, -3.14517, 5.97254, 6.14502)
+cull_mask = 3
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_60cnr")]
 transform = Transform3D(0.672948, 0, -0.73969, 0, 1, 0, 0.73969, 0, 0.672948, 0, 1, 0)

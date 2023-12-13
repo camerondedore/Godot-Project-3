@@ -13,9 +13,16 @@ data = PackedVector3Array(-1.0976, -9.7646, -0.1316, -1.1279, -9.7646, -0.3205, 
 
 [node name="MeshTrunk" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("1_igs3l")
 surface_material_override/0 = ExtResource("2_qdo7n")
+
+[node name="MeshTrunkShadow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+cast_shadow = 3
+gi_mode = 2
+mesh = ExtResource("3_o8ibv")
 
 [node name="MeshLeaves" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
@@ -23,15 +30,6 @@ layers = 2
 gi_mode = 2
 mesh = ExtResource("3_ww2bu")
 surface_material_override/0 = ExtResource("3_6mw1y")
-
-[node name="MeshTrunkShadow" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-visible = false
-cast_shadow = 3
-gi_mode = 2
-mesh = ExtResource("3_o8ibv")
-surface_material_override/0 = ExtResource("2_qdo7n")
-surface_material_override/1 = ExtResource("3_6mw1y")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
