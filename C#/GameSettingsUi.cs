@@ -7,16 +7,17 @@ public partial class GameSettingsUi : Node
     public static GameSettingsUi gamesSettingsUi;
 
     [Export]
-    Godot.Environment postProcessing;
+    CheckBox bloomCheckBox,
+        ssaoCheckBox;
     [Export]
-    CheckBox bloom,
-        ssao;
+    Slider sunshadowsSlider;
     [Export]
-    Slider sunShadows;
+    SpinBox mouseSensitivitySpinBox;
 
     public event Action<bool> SsaChanged;
     public event Action<bool> BloomChanged;
     public event Action<int> SunShadowsChanged;
+    public event Action<double> MouseSensitivityChanged;
 
 
 
@@ -25,40 +26,48 @@ public partial class GameSettingsUi : Node
         gamesSettingsUi = this;
 
         // load UI
-        bloom.ButtonPressed = GameSettings.settings.currentSettings.Bloom;
-        ssao.ButtonPressed = GameSettings.settings.currentSettings.Ssao;
-        sunShadows.Value = GameSettings.settings.currentSettings.SunShadows;
+        bloomCheckBox.ButtonPressed = GameSettings.settings.currentSettings.Bloom;
+        ssaoCheckBox.ButtonPressed = GameSettings.settings.currentSettings.Ssao;
+        sunshadowsSlider.Value = GameSettings.settings.currentSettings.SunShadows;
+        mouseSensitivitySpinBox.Value = GameSettings.settings.currentSettings.MouseSensitivity;
 
         // set up events on UI
-        bloom.Toggled += BloomCheckBoxToggle;
-        ssao.Toggled += SsaoCheckBoxToggle;
-        sunShadows.DragEnded += SunShadowsSliderDragEnd;
+        bloomCheckBox.Toggled += BloomCheckBoxToggle;
+        ssaoCheckBox.Toggled += SsaoCheckBoxToggle;
+        sunshadowsSlider.DragEnded += SunShadowsSliderDragEnd;
+        mouseSensitivitySpinBox.ValueChanged += MouseSensitivityValueChanged;
     }
 
 
 
-    public void BloomCheckBoxToggle(bool value)
+    void BloomCheckBoxToggle(bool value)
     {
-        //postProcessing.GlowEnabled = value;
         BloomChanged(value);
         GameSettings.settings.UpdateBloom(value);
     }
 
 
 
-    public void SsaoCheckBoxToggle(bool value)
+    void SsaoCheckBoxToggle(bool value)
     {
-        //postProcessing.SsaoEnabled = value;
         SsaChanged(value);
         GameSettings.settings.UpdateSsao(value);
     }
 
 
 
-    public void SunShadowsSliderDragEnd(bool changed)
+    void SunShadowsSliderDragEnd(bool changed)
     {
-        var newValue = Mathf.RoundToInt(sunShadows.Value);
+        var newValue = Mathf.RoundToInt(sunshadowsSlider.Value);
         SunShadowsChanged(newValue);
         GameSettings.settings.UpdateSunShadows(newValue);
+    }
+
+
+
+    void MouseSensitivityValueChanged(double value)
+    {
+        MouseSensitivityChanged(value);
+        GameSettings.settings.UpdateMouseSensitivity(value);
     }
 }

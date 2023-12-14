@@ -79,6 +79,15 @@ public partial class GameSettings : Node
 
 
 
+    public void UpdateMouseSensitivity(double newValue)
+    {
+        currentSettings.MouseSensitivity = newValue;
+
+        SaveSettings();
+    }
+
+
+
     [System.Serializable]
     public class Settings
     {
@@ -97,5 +106,10 @@ public partial class GameSettings : Node
         {
             get; set;
         } = 3;
+
+        public double MouseSensitivity
+        {
+            get; set;
+        } = 5f;
     }
 }

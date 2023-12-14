@@ -102,7 +102,7 @@ text = "Restart"
 layout_mode = 2
 text = "Quit"
 
-[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloom", "ssao", "sunShadows")]
+[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunshadowsSlider", "mouseSensitivitySpinBox")]
 layout_mode = 1
 anchors_preset = 0
 offset_left = -40.0
@@ -113,10 +113,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("12_04fn0")
-postProcessing = ExtResource("13_j8rmr")
-bloom = NodePath("VBoxContainer/BloomCheckBox")
-ssao = NodePath("VBoxContainer/SsaoCheckBox")
-sunShadows = NodePath("VBoxContainer/SunShadowsSlider")
+bloomCheckBox = NodePath("VBoxContainer/BloomCheckBox")
+ssaoCheckBox = NodePath("VBoxContainer/SsaoCheckBox")
+sunshadowsSlider = NodePath("VBoxContainer/SunShadowsSlider")
+mouseSensitivitySpinBox = NodePath("VBoxContainer/MouseSensitivitySpinBox")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
 layout_mode = 1
@@ -131,6 +131,7 @@ layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Settings"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="BloomCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
@@ -145,7 +146,7 @@ text = "SSAO"
 [node name="SunShadowsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
-text = "Sun Shadows"
+text = "Sun Shadow Quality"
 
 [node name="SunShadowsSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
@@ -154,6 +155,18 @@ max_value = 3.0
 value = 3.0
 rounded = true
 tick_count = 4
+
+[node name="MouseSensitivityLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Mouse Sensitivity"
+
+[node name="MouseSensitivitySpinBox" type="SpinBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+min_value = 0.2
+max_value = 15.0
+step = 0.2
+value = 5.0
 
 [node name="GameSettingsEnvironmentLoader" type="Node" parent="."]
 script = ExtResource("7_ad3x1")

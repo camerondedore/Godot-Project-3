@@ -14,7 +14,7 @@ namespace CameraControllerSpringArm
 		[Export]
 		public Node3D cameraTarget;
 		[Export]
-		public float sensitivity = 1f,
+		public float sensitivity = 5f,
 			minAngle = -50,
 			maxAngle = 40;
 		public Vector3 targetPosition;
@@ -25,6 +25,11 @@ namespace CameraControllerSpringArm
 		// Called when the node enters the scene tree for the first time.
 		public override void _Ready()
 		{
+			GameSettingsUi.gamesSettingsUi.MouseSensitivityChanged += UpdateMouseSensitivity;
+
+			// load settings
+			UpdateMouseSensitivity(GameSettings.settings.currentSettings.MouseSensitivity);
+
 			// get initial values
 			targetPosition = GlobalPosition;
 
@@ -76,6 +81,13 @@ namespace CameraControllerSpringArm
 				machine.CurrentState.RunState(delta);
 				machine.SetState(machine.CurrentState.Transition());
 			}
+		}
+
+
+
+		void UpdateMouseSensitivity(double value)
+		{
+			sensitivity = (float) value;
 		}
 	}
 }
