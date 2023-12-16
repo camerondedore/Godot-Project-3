@@ -1530,7 +1530,7 @@ warnOffset = Vector3(0, 0.5, -1)
 transform = Transform3D(0.88861, 0, 0.458665, 0, 1, 0, -0.458665, 0, 0.88861, -28.8551, 0.85, 13.0824)
 
 [node name="MobBrownRat2" parent="." node_paths=PackedStringArray("startTarget") instance=ExtResource("79_f3rqk")]
-transform = Transform3D(0.275537, 0, -0.961291, 0, 1, 0, 0.961291, 0, 0.275537, -30.8787, 0.85, 11.5384)
+transform = Transform3D(-0.970271, 0, 0.242024, 0, 1, 0, -0.242024, 0, -0.970271, -33.2064, 0.85, 11.9866)
 startTarget = NodePath("../RatTarget")
 
 [node name="MobBrownRat4" parent="." instance=ExtResource("79_f3rqk")]
