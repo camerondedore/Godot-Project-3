@@ -1,17 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://ci5w021qks137"]
+[gd_scene load_steps=27 format=3 uid="uid://ci5w021qks137"]
 
 [ext_resource type="Script" path="res://C#/MobWasp/MobWasp.cs" id="1_vbe2t"]
 [ext_resource type="PackedScene" uid="uid://dmttw1vyk6xy4" path="res://Models/mob-wasp.glb" id="2_blq1i"]
 [ext_resource type="PackedScene" uid="uid://wiit04fu1oww" path="res://Prefabs/FX/FxWaspDeath.tscn" id="2_hegcd"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="2_xwl4h"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_muehp"]
-[ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/MobWasp.tres" id="3_rexv1"]
 [ext_resource type="PackedScene" uid="uid://b4nki4pgqmfl7" path="res://Prefabs/FX/FxWaspHit.tscn" id="4_72040"]
 [ext_resource type="Script" path="res://C#/MobWasp/MobWaspHealth.cs" id="5_w4k4j"]
 [ext_resource type="PackedScene" uid="uid://cyh65ty8moprq" path="res://Prefabs/Gibs/GibWaspAbdomen.tscn" id="6_k7c3p"]
 [ext_resource type="Script" path="res://C#/GibsActivator.cs" id="6_nqxbr"]
 [ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="7_hwvjs"]
 [ext_resource type="AnimationNodeStateMachine" uid="uid://dep8gxxpuhvr2" path="res://Animation/MobWaspAnimationStateMachine.tres" id="7_sdct3"]
+[ext_resource type="Material" uid="uid://jpvogfgug5bt" path="res://Materials/Characters/MobWasp.tres" id="7_sty7a"]
 [ext_resource type="PackedScene" uid="uid://b4iwcasvg6jw" path="res://Prefabs/Gibs/GibWaspMid.tscn" id="8_cmu72"]
 [ext_resource type="PackedScene" uid="uid://dr67ajwiaqnkk" path="res://Prefabs/Gibs/GibWaspWingL.tscn" id="9_la8w6"]
 [ext_resource type="PackedScene" uid="uid://cyp7usw06fqjr" path="res://Prefabs/Gibs/GibWaspWingR.tscn" id="10_633pr"]
@@ -19,6 +19,422 @@
 [ext_resource type="Script" path="res://C#/Mob Tools/MobEyes.cs" id="11_lig66"]
 [ext_resource type="AudioStream" uid="uid://130buoernvce" path="res://Audio/mob-wasp-fly.wav" id="13_yyjne"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_82ttd"]
+
+[sub_resource type="Animation" id="Animation_uwxrt"]
+resource_name = "wasp-fly"
+length = 0.0666667
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.76557, 7.14265e-17, 8.49953e-17, 0.643353)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("mob-wasp-armature/Skeleton3D:abdomen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.659773, 0.254361, -0.659773, 0.254361)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("mob-wasp-armature/Skeleton3D:wing-r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.583731, -0.571342, -0.258897, 0.515556, 0.0333333, 1, -0.448686, -0.457475, -0.763672, 0.0787581, 0.0666667, 1, -0.583731, -0.571342, -0.258897, 0.515556)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.837381, -0.117259, -0.0801868, 0.527839)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.801417, -0.397099, 0.278171, 0.350234)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.778216, 0.195063, -0.303195, 0.514201)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/path = NodePath("mob-wasp-armature/Skeleton3D:wing-l")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.583731, 0.571342, 0.258897, 0.515556, 0.0333333, 1, -0.448686, 0.457475, 0.763672, 0.0787582, 0.0666667, 1, -0.583731, 0.571342, 0.258897, 0.515556)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-l")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.821128, 0.0276395, 0.179332, 0.541133)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-l")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -0.834329, 0.324525, -0.228644, 0.382492)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-l")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.798012, -0.18245, 0.282511, 0.500076)
+
+[sub_resource type="Animation" id="Animation_4bm8j"]
+resource_name = "wasp-hit"
+length = 0.333333
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.0333333, 1, 1.88662e-17, 0.0849659, 0.0872018, 0.0666667, 1, 4.01093e-17, 0.175534, 0.147097, 0.1, 1, 3.18106e-17, 0.123447, 0.154442, 0.133333, 1, 2.45428e-17, 0.05372, 0.121711, 0.166667, 1, 9.51339e-18, 0.00378579, 0.0540242, 0.2, 1, -3.40015e-18, -0.0153129, -0.00285662, 0.233333, 1, -9.60032e-18, -0.0150611, -0.0307797, 0.266667, 1, -1.27842e-17, -0.0145071, -0.0451186, 0.3, 1, -1.39572e-17, -0.0139531, -0.0504013, 0.333333, 1, -3.04229e-18, -0.0137012, -0.051156)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.804081, 6.60049e-17, 8.9271e-17, 0.594519, 0.0333333, 1, -0.722161, 7.67969e-17, 8.0176e-17, 0.691725, 0.1, 1, -0.407108, 1.01406e-16, 4.51981e-17, 0.91338, 0.133333, 1, -0.226429, 1.08139e-16, 2.51387e-17, 0.974028, 0.166667, 1, -0.0782085, 1.10682e-16, 8.68289e-18, 0.996937, 0.2, 1, -0.0179165, 1.11004e-16, 1.98914e-18, 0.999839, 0.233333, 1, -0.0864622, 1.10607e-16, 9.59923e-18, 0.996255, 0.3, 1, -0.387017, 1.02371e-16, 4.29675e-17, 0.922073, 0.333333, 1, -0.449358, 9.9182e-17, 4.98888e-17, 0.893352)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("mob-wasp-armature/Skeleton3D:abdomen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -0.641306, 0.297869, -0.641306, 0.297869, 0.0333333, 1, 0.700251, 0.0982294, 0.700251, 0.0982294, 0.0666667, 1, -0.629595, 0.321886, -0.629595, 0.321886, 0.1, 1, -0.354736, 0.611688, -0.354736, 0.611688, 0.133333, 1, -0.40102, 0.582394, -0.40102, 0.582394, 0.166667, 1, -0.481234, 0.518087, -0.481234, 0.518086, 0.2, 1, -0.519894, 0.479281, -0.519894, 0.479281, 0.233333, 1, -0.511603, 0.488121, -0.511603, 0.488121, 0.3, 1, -0.473307, 0.525338, -0.473307, 0.525338, 0.333333, 1, -0.464234, 0.533373, -0.464234, 0.533373)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("mob-wasp-armature/Skeleton3D:wing-r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.583732, -0.571342, -0.258897, 0.515556, 0.0333333, 1, -0.532002, -0.564188, -0.391765, 0.495163, 0.0666667, 1, -0.401705, -0.517401, -0.623339, 0.427058, 0.1, 1, -0.321397, -0.477142, -0.725137, 0.378437, 0.133333, 1, -0.426833, -0.434918, -0.645603, 0.460279, 0.166667, 1, -0.598766, -0.321055, -0.44403, 0.584158, 0.2, 1, -0.664756, -0.249754, -0.322586, 0.625828, 0.233333, 1, -0.627823, -0.314994, -0.382694, 0.600135, 0.266667, 1, -0.517607, -0.454694, -0.507832, 0.517149, 0.3, 1, -0.37933, -0.569745, -0.605441, 0.406128, 0.333333, 1, -0.313634, -0.609717, -0.637329, 0.351697)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.597054, -0.0813911, -0.116427, 0.789523, 0.0333333, 1, -0.524953, -0.125029, -0.0921757, 0.836837, 0.0666667, 1, -0.375681, -0.212868, -0.0481695, 0.900683, 0.1, 1, -0.288028, -0.284801, -0.0349051, 0.913625, 0.133333, 1, -0.307918, -0.330916, -0.055777, 0.890264, 0.166667, 1, -0.358206, -0.36382, -0.0729876, 0.856736, 0.2, 1, -0.40856, -0.381224, -0.0768047, 0.825741, 0.233333, 1, -0.448305, -0.37211, -0.0556159, 0.810841, 0.266667, 1, -0.480176, -0.338407, -0.016538, 0.809097, 0.3, 1, -0.499899, -0.301694, 0.0206862, 0.811575, 0.333333, 1, -0.506405, -0.284524, 0.0370946, 0.813157)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.626121, -0.469743, 0.120033, 0.61066, 0.0333333, 1, -0.548182, -0.461275, 0.0709837, 0.694034, 0.0666667, 1, -0.375988, -0.42423, -0.0260415, 0.823398, 0.1, 1, -0.275212, -0.391636, -0.0786624, 0.874467, 0.133333, 1, -0.286648, -0.366289, -0.0518704, 0.883728, 0.166667, 1, -0.312595, -0.323235, 0.000403076, 0.893198, 0.2, 1, -0.335127, -0.29743, 0.0241448, 0.893668, 0.233333, 1, -0.360453, -0.311303, 0.0151508, 0.879167, 0.266667, 1, -0.394556, -0.347314, 0.0061781, 0.850682, 0.3, 1, -0.42333, -0.383331, -0.000678635, 0.820883, 0.333333, 1, -0.435191, -0.399444, -0.00339103, 0.806872)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.546517, 0.289558, -0.214785, 0.755872, 0.0333333, 1, -0.496256, 0.252406, -0.195228, 0.807408, 0.0666667, 1, -0.394829, 0.17282, -0.159225, 0.888195, 0.1, 1, -0.337521, 0.109317, -0.149161, 0.922974, 0.133333, 1, -0.360005, 0.0699553, -0.177447, 0.913244, 0.166667, 1, -0.406094, 0.0354151, -0.208543, 0.889012, 0.2, 1, -0.447493, 0.0228951, -0.220992, 0.86625, 0.233333, 1, -0.477394, 0.0332157, -0.211161, 0.852292, 0.266667, 1, -0.502029, 0.0511195, -0.193419, 0.841393, 0.3, 1, -0.518405, 0.0679983, -0.176414, 0.833973, 0.333333, 1, -0.524306, 0.0754566, -0.168835, 0.831206)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/path = NodePath("mob-wasp-armature/Skeleton3D:wing-l")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.583731, 0.571342, 0.258897, 0.515557, 0.0333333, 1, -0.532002, 0.564188, 0.391765, 0.495163, 0.0666667, 1, -0.401705, 0.517401, 0.623339, 0.427058, 0.1, 1, -0.321397, 0.477143, 0.725137, 0.378437, 0.133333, 1, -0.426833, 0.434918, 0.645603, 0.460279, 0.166667, 1, -0.598766, 0.321055, 0.44403, 0.584158, 0.2, 1, -0.664756, 0.249754, 0.322586, 0.625828, 0.233333, 1, -0.627823, 0.314994, 0.382694, 0.600135, 0.266667, 1, -0.517606, 0.454694, 0.507832, 0.517149, 0.3, 1, -0.37933, 0.569745, 0.605441, 0.406128, 0.333333, 1, -0.313634, 0.609717, 0.637329, 0.351696)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-l")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.577155, -0.0374646, 0.177539, 0.796222, 0.0333333, 1, -0.5097, 0.0302954, 0.14212, 0.847992, 0.0666667, 1, -0.36734, 0.170697, 0.0716908, 0.911474, 0.1, 1, -0.288028, 0.284801, 0.034905, 0.913625, 0.133333, 1, -0.313148, 0.344043, 0.0471398, 0.88394, 0.166667, 1, -0.361831, 0.372127, 0.066623, 0.852151, 0.2, 1, -0.40856, 0.381224, 0.0768047, 0.825741, 0.233333, 1, -0.446517, 0.368974, 0.0591445, 0.813008, 0.266667, 1, -0.478638, 0.335634, 0.019662, 0.811091, 0.3, 1, -0.499338, 0.300659, -0.0195287, 0.812333, 0.333333, 1, -0.506406, 0.284524, -0.0370945, 0.813157)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-l")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -0.645522, 0.384356, -0.0993229, 0.652462, 0.0333333, 1, -0.561814, 0.3958, -0.0551812, 0.724335, 0.0666667, 1, -0.380396, 0.400794, 0.0314756, 0.83287, 0.1, 1, -0.275212, 0.391636, 0.0786624, 0.874467, 0.133333, 1, -0.286648, 0.366289, 0.0518704, 0.883728, 0.166667, 1, -0.312595, 0.323235, -0.000403076, 0.893198, 0.2, 1, -0.335127, 0.297431, -0.0241448, 0.893668, 0.233333, 1, -0.360453, 0.311303, -0.0151509, 0.879167, 0.266667, 1, -0.394556, 0.347314, -0.00617807, 0.850682, 0.3, 1, -0.42333, 0.383331, 0.000678617, 0.820883, 0.333333, 1, -0.435191, 0.399444, 0.00339106, 0.806872)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-l")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.570025, -0.270454, 0.199888, 0.749647, 0.0333333, 1, -0.514066, -0.237945, 0.184465, 0.803175, 0.0666667, 1, -0.401159, -0.167179, 0.155877, 0.887031, 0.1, 1, -0.337521, -0.109317, 0.149161, 0.922974, 0.133333, 1, -0.360003, -0.0707953, 0.177005, 0.913266, 0.166667, 1, -0.406091, -0.0358418, 0.20832, 0.889049, 0.2, 1, -0.447493, -0.022895, 0.220992, 0.86625, 0.233333, 1, -0.477394, -0.0332159, 0.211161, 0.852292, 0.266667, 1, -0.502029, -0.0511197, 0.193419, 0.841394, 0.3, 1, -0.518405, -0.0679984, 0.176413, 0.833973, 0.333333, 1, -0.524306, -0.0754566, 0.168835, 0.831206)
+
+[sub_resource type="Animation" id="Animation_eqlce"]
+resource_name = "wasp-hover"
+length = 0.0666667
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.465705, 9.82481e-17, 5.17037e-17, 0.88494)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("mob-wasp-armature/Skeleton3D:abdomen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.699115, 0.106013, 0.699115, 0.106013)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("mob-wasp-armature/Skeleton3D:wing-r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.694751, -0.618127, -0.106672, 0.351939, 0.0333333, 1, 0.455499, 0.592321, 0.664555, 0.00661092, 0.0666667, 1, -0.694751, -0.618127, -0.106672, 0.351939)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.828251, -0.069332, 0.0352899, 0.554931)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.669521, -0.348594, 0.474828, 0.452506)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.782554, 0.0283705, -0.48125, 0.393957)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/path = NodePath("mob-wasp-armature/Skeleton3D:wing-l")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.694751, 0.618127, 0.106672, 0.351939, 0.0333333, 1, 0.455499, -0.592321, -0.664555, 0.00661082, 0.0666667, 1, -0.694751, 0.618127, 0.106672, 0.351939)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-l")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.822216, -0.00523264, 0.107639, 0.55888)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-l")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -0.741129, 0.284449, -0.397037, 0.460628)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-l")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.815153, -0.037105, 0.443334, 0.37095)
+
+[sub_resource type="Animation" id="Animation_vuq0q"]
+resource_name = "wasp-idle"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.707107, 7.85046e-17, 7.85046e-17, 0.707107, 0.133333, 1, -0.708012, 7.8404e-17, 7.86051e-17, 0.7062, 0.2, 1, -0.708939, 7.83007e-17, 7.8708e-17, 0.70527, 0.266667, 1, -0.71, 7.81821e-17, 7.88258e-17, 0.704202, 0.333333, 1, -0.711059, 7.80634e-17, 7.89434e-17, 0.703132, 0.4, 1, -0.711982, 7.79596e-17, 7.90459e-17, 0.702198, 0.5, 1, -0.712817, 7.78656e-17, 7.91385e-17, 0.701351, 0.666667, 1, -0.71174, 7.79868e-17, 7.9019e-17, 0.702443, 0.733333, 1, -0.710614, 7.81133e-17, 7.8894e-17, 0.703582, 0.833333, 1, -0.708795, 7.83167e-17, 7.86921e-17, 0.705414, 0.9, 1, -0.707791, 7.84286e-17, 7.85806e-17, 0.706422, 1, 1, -0.707107, 7.85046e-17, 7.85046e-17, 0.707107)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("mob-wasp-armature/Skeleton3D:abdomen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.707107, 2.51215e-15, 0.707107, 5.62458e-08, 0.133333, 1, 0.707106, 0.00114158, 0.707106, 0.00114163, 0.2, 1, 0.707103, 0.00229087, 0.707103, 0.00229093, 0.3, 1, 0.707094, 0.00421729, 0.707094, 0.00421734, 0.366667, 1, 0.707086, 0.00536656, 0.707087, 0.00536662, 0.433333, 1, 0.70708, 0.00619186, 0.70708, 0.00619192, 0.633333, 1, 0.707086, 0.00536656, 0.707087, 0.00536662, 0.7, 1, 0.707094, 0.00421729, 0.707094, 0.00421734, 0.766667, 1, 0.707101, 0.00292916, 0.707101, 0.00292921, 0.833333, 1, 0.707105, 0.0016873, 0.707105, 0.00168735, 0.9, 1, 0.707106, 0.000676845, 0.707107, 0.0006769, 1, 1, 0.707107, 2.51215e-15, 0.707107, 5.62458e-08)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("mob-wasp-armature/Skeleton3D:wing-r")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.862024, -0.065789, -0.48793, 0.120463, 0.0333333, 1, -0.862044, -0.0663328, -0.487868, 0.120267, 0.0666667, 1, -0.8621, -0.0678466, -0.487696, 0.119723, 0.1, 1, -0.86218, -0.0701537, -0.487431, 0.118893, 0.133333, 1, -0.862274, -0.0730777, -0.48709, 0.11784, 0.166667, 1, -0.862372, -0.0764418, -0.486692, 0.116626, 0.2, 1, -0.862465, -0.0800693, -0.486256, 0.115315, 0.233333, 1, -0.862547, -0.0837838, -0.485802, 0.113971, 0.266667, 1, -0.862614, -0.0874088, -0.485351, 0.112657, 0.3, 1, -0.862664, -0.0907684, -0.484927, 0.111437, 0.333333, 1, -0.862699, -0.0936867, -0.484553, 0.110376, 0.366667, 1, -0.86272, -0.0959882, -0.484254, 0.109538, 0.4, 1, -0.862731, -0.0974978, -0.484057, 0.108987, 0.5, 1, -0.862726, -0.096808, -0.484147, 0.109239, 0.533333, 1, -0.862715, -0.0953857, -0.484333, 0.109757, 0.566667, 1, -0.862697, -0.0935304, -0.484573, 0.110432, 0.6, 1, -0.862671, -0.0913205, -0.484856, 0.111236, 0.633333, 1, -0.862636, -0.0888343, -0.485172, 0.112139, 0.666667, 1, -0.862592, -0.0861506, -0.485509, 0.113113, 0.7, 1, -0.862538, -0.083348, -0.485856, 0.114129, 0.733333, 1, -0.862475, -0.0805052, -0.486204, 0.115158, 0.766667, 1, -0.862406, -0.0777011, -0.486542, 0.116171, 0.8, 1, -0.862332, -0.0750146, -0.486862, 0.117141, 0.833333, 1, -0.862257, -0.0725247, -0.487155, 0.118039, 0.866667, 1, -0.862185, -0.0703104, -0.487413, 0.118837, 0.9, 1, -0.862121, -0.0684507, -0.487627, 0.119506, 0.933333, 1, -0.86207, -0.0670246, -0.48779, 0.120019, 1, 1, -0.862024, -0.065789, -0.48793, 0.120463)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-r")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.574838, -0.410094, -0.40389, 0.581599, 0.1, 1, -0.573911, -0.409451, -0.404542, 0.582513, 0.133333, 1, -0.573268, -0.409004, -0.404994, 0.583146, 0.166667, 1, -0.572506, -0.408475, -0.405527, 0.583894, 0.2, 1, -0.571655, -0.407884, -0.406122, 0.584728, 0.233333, 1, -0.570743, -0.40725, -0.406757, 0.585618, 0.266667, 1, -0.5698, -0.406595, -0.407412, 0.586535, 0.333333, 1, -0.56794, -0.405303, -0.408697, 0.588336, 0.366667, 1, -0.567082, -0.404707, -0.409287, 0.589163, 0.4, 1, -0.566313, -0.404173, -0.409815, 0.589903, 0.433333, 1, -0.565661, -0.40372, -0.410261, 0.590528, 0.5, 1, -0.564835, -0.403146, -0.410825, 0.591318, 0.6, 1, -0.565286, -0.403459, -0.410518, 0.590887, 0.633333, 1, -0.565924, -0.403903, -0.410082, 0.590276, 0.666667, 1, -0.56674, -0.404469, -0.409523, 0.589493, 0.7, 1, -0.567688, -0.405128, -0.408871, 0.58858, 0.733333, 1, -0.568723, -0.405847, -0.408157, 0.58758, 0.8, 1, -0.570876, -0.407343, -0.406665, 0.585488, 0.833333, 1, -0.571906, -0.408058, -0.405947, 0.584482, 0.866667, 1, -0.572846, -0.40871, -0.40529, 0.583561, 0.9, 1, -0.573652, -0.40927, -0.404724, 0.582768, 0.933333, 1, -0.574282, -0.409708, -0.404282, 0.582148, 1, 1, -0.574838, -0.410094, -0.40389, 0.581599)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.495028, -0.362443, -0.296001, 0.732097, 0.1, 1, -0.49402, -0.362036, -0.296499, 0.732777, 0.133333, 1, -0.493321, -0.361753, -0.296844, 0.733248, 0.166667, 1, -0.492493, -0.361418, -0.297252, 0.733804, 0.2, 1, -0.491569, -0.361043, -0.297707, 0.734424, 0.233333, 1, -0.49058, -0.360642, -0.298193, 0.735085, 0.3, 1, -0.488534, -0.359811, -0.299195, 0.736446, 0.333333, 1, -0.487541, -0.359408, -0.299679, 0.737104, 0.366667, 1, -0.486613, -0.35903, -0.300132, 0.737717, 0.4, 1, -0.48578, -0.358691, -0.300536, 0.738266, 0.466667, 1, -0.484533, -0.358183, -0.301142, 0.739085, 0.633333, 1, -0.48536, -0.35852, -0.300741, 0.738542, 0.666667, 1, -0.486242, -0.358879, -0.300312, 0.737961, 0.7, 1, -0.487268, -0.359297, -0.299812, 0.737284, 0.733333, 1, -0.488389, -0.359753, -0.299265, 0.736542, 0.8, 1, -0.490724, -0.3607, -0.298122, 0.734989, 0.833333, 1, -0.491841, -0.361153, -0.297574, 0.734242, 0.866667, 1, -0.492862, -0.361567, -0.297071, 0.733557, 0.9, 1, -0.493738, -0.361922, -0.296639, 0.732967, 0.966667, 1, -0.494869, -0.362379, -0.29608, 0.732204, 1, 1, -0.495028, -0.362443, -0.296001, 0.732097)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.786144, -0.186361, -0.512731, 0.290438, 0.1, 1, -0.785804, -0.185761, -0.512949, 0.291356, 0.166667, 1, -0.785288, -0.184854, -0.513276, 0.292745, 0.2, 1, -0.784974, -0.184305, -0.513474, 0.293585, 0.233333, 1, -0.784638, -0.183718, -0.513684, 0.294482, 0.266667, 1, -0.78429, -0.183111, -0.513901, 0.295408, 0.3, 1, -0.78394, -0.182504, -0.514117, 0.296334, 0.333333, 1, -0.783601, -0.181916, -0.514325, 0.297231, 0.366667, 1, -0.783283, -0.181366, -0.514519, 0.298069, 0.433333, 1, -0.782754, -0.180456, -0.514839, 0.299453, 0.5, 1, -0.782447, -0.179927, -0.515024, 0.300256, 0.633333, 1, -0.782852, -0.180624, -0.51478, 0.299198, 0.666667, 1, -0.783155, -0.181146, -0.514596, 0.298403, 0.7, 1, -0.783507, -0.181754, -0.514382, 0.297477, 0.733333, 1, -0.783891, -0.182418, -0.514147, 0.296465, 0.766667, 1, -0.78429, -0.183111, -0.513901, 0.295409, 0.8, 1, -0.784687, -0.183803, -0.513653, 0.294352, 0.833333, 1, -0.785067, -0.184467, -0.513416, 0.293338, 0.866667, 1, -0.785413, -0.185073, -0.513197, 0.29241, 0.9, 1, -0.785709, -0.185594, -0.513009, 0.291613, 0.966667, 1, -0.78609, -0.186266, -0.512766, 0.290583, 1, 1, -0.786144, -0.186361, -0.512731, 0.290438)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/path = NodePath("mob-wasp-armature/Skeleton3D:wing-l")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.862024, 0.065789, 0.48793, 0.120463, 0.0333333, 1, -0.862044, 0.0663328, 0.487868, 0.120267, 0.0666667, 1, -0.8621, 0.0678466, 0.487696, 0.119723, 0.1, 1, -0.86218, 0.0701537, 0.487431, 0.118893, 0.133333, 1, -0.862274, 0.0730777, 0.48709, 0.11784, 0.166667, 1, -0.862372, 0.0764418, 0.486692, 0.116626, 0.2, 1, -0.862465, 0.0800693, 0.486256, 0.115315, 0.233333, 1, -0.862547, 0.0837838, 0.485802, 0.113971, 0.266667, 1, -0.862614, 0.0874088, 0.485351, 0.112657, 0.3, 1, -0.862664, 0.0907684, 0.484927, 0.111437, 0.333333, 1, -0.862699, 0.0936867, 0.484553, 0.110376, 0.366667, 1, -0.86272, 0.0959882, 0.484254, 0.109538, 0.4, 1, -0.862731, 0.0974978, 0.484057, 0.108987, 0.5, 1, -0.862726, 0.096808, 0.484147, 0.109239, 0.533333, 1, -0.862715, 0.0953857, 0.484333, 0.109757, 0.566667, 1, -0.862697, 0.0935304, 0.484573, 0.110432, 0.6, 1, -0.862671, 0.0913205, 0.484856, 0.111236, 0.633333, 1, -0.862636, 0.0888343, 0.485172, 0.112139, 0.666667, 1, -0.862592, 0.0861506, 0.485509, 0.113113, 0.7, 1, -0.862538, 0.083348, 0.485856, 0.114129, 0.733333, 1, -0.862475, 0.0805052, 0.486204, 0.115158, 0.766667, 1, -0.862406, 0.0777011, 0.486542, 0.116171, 0.8, 1, -0.862332, 0.0750146, 0.486862, 0.117141, 0.833333, 1, -0.862257, 0.0725247, 0.487155, 0.118039, 0.866667, 1, -0.862185, 0.0703104, 0.487413, 0.118837, 0.9, 1, -0.862121, 0.0684507, 0.487627, 0.119506, 0.933333, 1, -0.86207, 0.0670246, 0.48779, 0.120019, 1, 1, -0.862024, 0.065789, 0.48793, 0.120463)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-l")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.591047, 0.395981, 0.42281, 0.561333, 0.1, 1, -0.590153, 0.395308, 0.423439, 0.562273, 0.133333, 1, -0.589532, 0.39484, 0.423875, 0.562924, 0.166667, 1, -0.588796, 0.394287, 0.42439, 0.563693, 0.2, 1, -0.587974, 0.393668, 0.424964, 0.56455, 0.233333, 1, -0.587094, 0.393005, 0.425577, 0.565466, 0.3, 1, -0.585272, 0.391634, 0.426839, 0.567352, 0.333333, 1, -0.584387, 0.390968, 0.427449, 0.568263, 0.366667, 1, -0.583558, 0.390345, 0.428018, 0.569114, 0.4, 1, -0.582815, 0.389786, 0.428528, 0.569875, 0.433333, 1, -0.582186, 0.389313, 0.428957, 0.570518, 0.5, 1, -0.581388, 0.388713, 0.429501, 0.571331, 0.6, 1, -0.581823, 0.38904, 0.429205, 0.570888, 0.633333, 1, -0.58244, 0.389504, 0.428784, 0.570259, 0.666667, 1, -0.583228, 0.390096, 0.428245, 0.569453, 0.7, 1, -0.584143, 0.390785, 0.427617, 0.568513, 0.733333, 1, -0.585143, 0.391537, 0.426928, 0.567484, 0.8, 1, -0.587222, 0.393102, 0.425488, 0.565332, 0.833333, 1, -0.588217, 0.39385, 0.424796, 0.564298, 0.866667, 1, -0.589124, 0.394533, 0.424161, 0.563351, 0.9, 1, -0.589902, 0.395119, 0.423615, 0.562535, 0.933333, 1, -0.59051, 0.395577, 0.423188, 0.561897, 1, 1, -0.591047, 0.395981, 0.42281, 0.561333)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-l")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -0.505278, 0.354609, 0.323127, 0.717311, 0.1, 1, -0.50429, 0.354164, 0.323615, 0.718006, 0.133333, 1, -0.503606, 0.353855, 0.323952, 0.718486, 0.166667, 1, -0.502795, 0.35349, 0.324351, 0.719054, 0.2, 1, -0.501889, 0.353081, 0.324796, 0.719687, 0.233333, 1, -0.500919, 0.352643, 0.325272, 0.720362, 0.3, 1, -0.498914, 0.351737, 0.326251, 0.721752, 0.333333, 1, -0.497942, 0.351298, 0.326724, 0.722423, 0.366667, 1, -0.497031, 0.350886, 0.327166, 0.72305, 0.4, 1, -0.496215, 0.350517, 0.327562, 0.72361, 0.466667, 1, -0.494993, 0.349963, 0.328154, 0.724447, 0.633333, 1, -0.495803, 0.35033, 0.327761, 0.723892, 0.666667, 1, -0.496668, 0.350722, 0.327343, 0.723299, 0.7, 1, -0.497674, 0.351177, 0.326854, 0.722608, 0.733333, 1, -0.498772, 0.351673, 0.32632, 0.72185, 0.8, 1, -0.50106, 0.352707, 0.325202, 0.720264, 0.833333, 1, -0.502155, 0.353201, 0.324665, 0.719501, 0.866667, 1, -0.503156, 0.353652, 0.324174, 0.718802, 0.9, 1, -0.504014, 0.35404, 0.323751, 0.7182, 0.966667, 1, -0.505122, 0.354539, 0.323204, 0.717421, 1, 1, -0.505278, 0.354609, 0.323127, 0.717311)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-l")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.78153, 0.205755, 0.504511, 0.303884, 0.1, 1, -0.781174, 0.205165, 0.504751, 0.304797, 0.166667, 1, -0.780634, 0.204273, 0.505113, 0.306178, 0.2, 1, -0.780306, 0.203732, 0.505331, 0.307012, 0.233333, 1, -0.779954, 0.203154, 0.505564, 0.307905, 0.266667, 1, -0.77959, 0.202557, 0.505803, 0.308825, 0.3, 1, -0.779225, 0.20196, 0.506042, 0.309746, 0.366667, 1, -0.778537, 0.200839, 0.506488, 0.31147, 0.433333, 1, -0.777986, 0.199943, 0.506842, 0.312846, 0.5, 1, -0.777664, 0.199423, 0.507047, 0.313644, 0.633333, 1, -0.778088, 0.200109, 0.506777, 0.312592, 0.666667, 1, -0.778405, 0.200623, 0.506573, 0.311802, 0.7, 1, -0.778772, 0.201221, 0.506336, 0.310882, 0.8, 1, -0.780005, 0.203238, 0.50553, 0.307775, 0.833333, 1, -0.780402, 0.203891, 0.505267, 0.306767, 0.866667, 1, -0.780764, 0.204488, 0.505026, 0.305845, 0.9, 1, -0.781074, 0.205001, 0.504818, 0.305052, 0.966667, 1, -0.781473, 0.205662, 0.504549, 0.304028, 1, 1, -0.78153, 0.205755, 0.504511, 0.303884)
+
+[sub_resource type="Animation" id="Animation_2drnu"]
+resource_name = "wasp-idle-flick"
+length = 0.1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("mob-wasp-armature/Skeleton3D:wing-r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.862024, -0.065789, -0.48793, 0.120463, 0.0333333, 1, 0.886712, 0.0484409, 0.457852, 0.0420406, 0.0666667, 1, -0.877469, -0.0573176, -0.474568, 0.0393502, 0.1, 1, -0.862024, -0.065789, -0.48793, 0.120463)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("mob-wasp-armature/Skeleton3D:wing-l")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.862024, 0.065789, 0.48793, 0.120463, 0.0333333, 1, 0.886712, -0.0484409, -0.457852, 0.0420405, 0.0666667, 1, -0.877469, 0.0573175, 0.474568, 0.0393502, 0.1, 1, -0.862024, 0.065789, 0.48793, 0.120463)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("mob-wasp-armature/Skeleton3D:body")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.707107, 7.85046e-17, 7.85046e-17, 0.707107)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("mob-wasp-armature/Skeleton3D:abdomen")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.707107, 2.51215e-15, 0.707107, 5.62458e-08)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-r")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.635718, -0.328268, -0.360273, 0.598587)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = true
+tracks/6/enabled = true
+tracks/6/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-r")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.463094, -0.425189, -0.318724, 0.709347)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = true
+tracks/7/enabled = true
+tracks/7/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-r")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, -0.815481, -0.165922, -0.446421, 0.328891)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = true
+tracks/8/enabled = true
+tracks/8/path = NodePath("mob-wasp-armature/Skeleton3D:leg-2-l")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, -0.635718, 0.328268, 0.360273, 0.598587)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = true
+tracks/9/enabled = true
+tracks/9/path = NodePath("mob-wasp-armature/Skeleton3D:leg-1-l")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, -0.463094, 0.425189, 0.318724, 0.709347)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = true
+tracks/10/enabled = true
+tracks/10/path = NodePath("mob-wasp-armature/Skeleton3D:leg-3-l")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, -0.815481, 0.165922, 0.446421, 0.328891)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gvsv"]
+_data = {
+"wasp-fly": SubResource("Animation_uwxrt"),
+"wasp-hit": SubResource("Animation_4bm8j"),
+"wasp-hover": SubResource("Animation_eqlce"),
+"wasp-idle": SubResource("Animation_vuq0q"),
+"wasp-idle-flick": SubResource("Animation_2drnu")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
 radius = 0.2
@@ -50,26 +466,29 @@ maxHitPoints = 15.0
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.707876, 7.84192e-17, 7.859e-17, 0.706337)
-bones/1/rotation = Quaternion(0.707106, 0.000969509, 0.707106, 0.000969565)
-bones/2/rotation = Quaternion(0.862218, 0.0713149, 0.487296, -0.118475)
-bones/3/rotation = Quaternion(-0.573656, -0.409273, -0.404722, 0.582765)
-bones/4/rotation = Quaternion(-0.493743, -0.361923, -0.296636, 0.732964)
-bones/5/rotation = Quaternion(0.785702, 0.185581, 0.513014, -0.291632)
-bones/6/rotation = Quaternion(0.862218, -0.0713149, -0.487296, -0.118475)
-bones/7/rotation = Quaternion(-0.589906, 0.395122, 0.423613, 0.562532)
-bones/8/rotation = Quaternion(-0.504018, 0.354042, 0.323749, 0.718197)
-bones/9/rotation = Quaternion(0.781067, -0.204988, -0.504823, -0.305071)
+bones/0/rotation = Quaternion(-0.70722, 7.8492e-17, 7.85172e-17, 0.706994)
+bones/1/rotation = Quaternion(0.707107, 0.000142697, 0.707107, 0.000142753)
+bones/2/rotation = Quaternion(0.862034, 0.0660609, 0.487899, -0.120365)
+bones/3/rotation = Quaternion(-0.574683, -0.409987, -0.403999, 0.581752)
+bones/4/rotation = Quaternion(-0.49486, -0.362375, -0.296084, 0.73221)
+bones/5/rotation = Quaternion(0.786088, 0.186261, 0.512767, -0.290591)
+bones/6/rotation = Quaternion(0.862034, -0.0660609, -0.487899, -0.120365)
+bones/7/rotation = Quaternion(-0.590898, 0.395869, 0.422915, 0.56149)
+bones/8/rotation = Quaternion(-0.505113, 0.354535, 0.323209, 0.717427)
+bones/9/rotation = Quaternion(0.78147, -0.205657, -0.504551, -0.304036)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2
 gi_mode = 2
-surface_material_override/0 = ExtResource("3_rexv1")
+surface_material_override/0 = ExtResource("7_sty7a")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../mob-wasp")
+libraries = {
+"": SubResource("AnimationLibrary_3gvsv")
+}
 tree_root = ExtResource("7_sdct3")
 anim_player = NodePath("../mob-wasp/AnimationPlayer")
-active = true
 parameters/wasp-fly/blend_position = 0.0
 parameters/wasp-idle/OneShot/active = false
 parameters/wasp-idle/OneShot/internal_active = false

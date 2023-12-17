@@ -296,6 +296,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-161.394, -106.679)
 varyings/Local_Y = "0,0"
 nodes/vertex/2/node = SubResource("VisualShaderNodeVaryingSetter_8lboc")
 nodes/vertex/2/position = Vector2(8.20241, 212.337)
@@ -332,7 +333,7 @@ nodes/fragment/17/position = Vector2(-460.742, 580.638)
 nodes/fragment/18/node = SubResource("VisualShaderNodeColorParameter_okg8q")
 nodes/fragment/18/position = Vector2(-267.101, 875.305)
 nodes/fragment/19/node = SubResource("VisualShaderNodeFloatParameter_jgxcw")
-nodes/fragment/19/position = Vector2(-287.101, 1115.31)
+nodes/fragment/19/position = Vector2(-268.181, 1079.24)
 nodes/fragment/20/node = SubResource("VisualShaderNodeVectorOp_d3w8g")
 nodes/fragment/20/position = Vector2(112.899, 735.305)
 nodes/fragment/21/node = SubResource("VisualShaderNodeVectorOp_0rfgg")

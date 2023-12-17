@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dgvmcdcm511j4"]
+
+[ext_resource type="Shader" uid="uid://cuahgl8nxrund" path="res://Shaders/Eyes.tres" id="1_a6nfm"]
+[ext_resource type="Texture2D" uid="uid://d0tvx4lbqnke5" path="res://Textures/eye-rat.png" id="2_fsqjx"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_a6nfm")
+shader_parameter/Metallic = 1.0
+shader_parameter/Roughness = 0.2
+shader_parameter/Specular = 0.0
+shader_parameter/Rim_Sharpness = -1.5
+shader_parameter/Rim_Distance = 1.5
+shader_parameter/GlowColor = Color(1, 0, 0, 1)
+shader_parameter/Glow_Power = 0.5
+shader_parameter/Albedo = ExtResource("2_fsqjx")
