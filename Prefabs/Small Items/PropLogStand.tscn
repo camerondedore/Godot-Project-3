@@ -11,6 +11,7 @@ points = PackedVector3Array(-1.01871, -0.5788, -0.788979, -1.09941, -0.619462, -
 [node name="PropLogStand" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_q6dlx")
 surface_material_override/0 = ExtResource("2_f58an")

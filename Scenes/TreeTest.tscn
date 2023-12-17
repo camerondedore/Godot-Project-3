@@ -345,7 +345,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.3609, 10.8984, -39.9227)
 transform = Transform3D(0.913638, 0.299538, -0.274851, 0, 0.676092, 0.736817, 0.406529, -0.673184, 0.617703, 0, 0, 0)
 light_energy = 1.1
 shadow_enabled = true
-directional_shadow_mode = 0
 script = ExtResource("7_f56m7")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Lighting"]

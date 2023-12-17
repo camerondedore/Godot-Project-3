@@ -11,6 +11,7 @@ height = 6.0
 [node name="PropLogOak1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_xfxy8")
 surface_material_override/0 = ExtResource("2_cwmn1")

@@ -10,6 +10,7 @@ points = PackedVector3Array(-0.062895, -0.30047, -1.43756, 0.544411, 0.584851, 0
 [node name="PropWheelBarrow" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_oxl0t")
 surface_material_override/0 = ExtResource("2_0egwk")

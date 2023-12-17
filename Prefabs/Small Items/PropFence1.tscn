@@ -14,6 +14,7 @@ size = Vector3(0.2, 1.5, 0.5)
 [node name="PropFence1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_2u6we")
 surface_material_override/0 = ExtResource("2_g1org")
