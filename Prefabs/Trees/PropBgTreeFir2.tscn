@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://xrjt7goiur8h"]
+
+[ext_resource type="ArrayMesh" uid="uid://bxy1j6ll30n4h" path="res://Models/prop-tree-fir-lq-2.res" id="1_yhopp"]
+[ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_jhkqv"]
+[ext_resource type="ArrayMesh" uid="uid://olbfu8rdhn18" path="res://Models/prop-tree-fir-lq-leaves-2.res" id="3_2qqqm"]
+[ext_resource type="Material" uid="uid://d0cjy44fcos7m" path="res://Materials/Trees/LeavesFirWindShort.tres" id="4_bvv21"]
+
+[node name="PropBgTreeFir2" type="Node3D"]
+
+[node name="TrunkMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 2
+mesh = ExtResource("1_yhopp")
+surface_material_override/0 = ExtResource("2_jhkqv")
+
+[node name="LeavesMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+layers = 2
+mesh = ExtResource("3_2qqqm")
+surface_material_override/0 = ExtResource("4_bvv21")
