@@ -41,7 +41,8 @@ namespace MobBlackRat
         [Export]
         public string arrowType = "bodkin";
         [Export]
-        public double attackTime = 1f;
+        public double attackTime = 1f,
+            reactTime = 0.4f;
         [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
@@ -74,7 +75,8 @@ namespace MobBlackRat
             animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
 
             // initialize states
-            //stateStart = new MobBrownRatStateStart(){blackboard = this};
+            stateStart = new MobBlackRatStateStart(){blackboard = this};
+            stateIdle = new MobBlackRatStateIdle(){blackboard = this};
         
 
             // set first state in machine
