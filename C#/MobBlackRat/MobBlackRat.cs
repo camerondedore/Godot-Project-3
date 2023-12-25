@@ -77,6 +77,11 @@ namespace MobBlackRat
             // initialize states
             stateStart = new MobBlackRatStateStart(){blackboard = this};
             stateIdle = new MobBlackRatStateIdle(){blackboard = this};
+            stateReact = new MobBlackRatStateReact(){blackboard = this};
+            stateMove = new MobBlackRatStateMove(){blackboard = this};
+            stateWatch = new MobBlackRatStateWatch(){blackboard = this};
+            statePatrol = new MobBlackRatStatePatrol(){blackboard = this};
+            statePatrolWait = new MobBlackRatStatePatrolWait(){blackboard = this};
         
 
             // set first state in machine
