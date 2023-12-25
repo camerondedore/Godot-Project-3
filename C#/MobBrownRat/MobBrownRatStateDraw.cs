@@ -16,7 +16,7 @@ namespace MobBrownRat
         {
             blackboard.animStateMachinePlayback.Next();
 
-            var lookAngleBlend = blackboard.GetLookAngleToEnemy() / blackboard.lookAngleNormal;
+            var lookAngleBlend = blackboard.GetUpLookAngleToEnemy() / blackboard.lookAngleNormal;
             blackboard.animation.Set("parameters/brown-rat-draw-blend/blend_position", lookAngleBlend);
             
             // look for enemy

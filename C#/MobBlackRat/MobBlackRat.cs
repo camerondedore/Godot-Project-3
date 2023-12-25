@@ -17,7 +17,6 @@ namespace MobBlackRat
             statePatrol,
             statePatrolWait,
             stateAttack,
-            stateDodge,
             stateCooldown,
             stateRetreat,
             stateDie;
@@ -41,13 +40,15 @@ namespace MobBlackRat
         [Export]
         public string arrowType = "bodkin";
         [Export]
-        public double attackTime = 1f,
+        public double swingTime = 1f,
+            attackDamageTime = 0.5f,
             reactTime = 0.4f;
         [Export]
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 100,
             moveRecalculatePathRange = 3,
             attackRangeSqr = 1,
+            attackAngle = 45,
             PatrolRange = 10,
             speed = 3,
             lookSpeed = 4,
@@ -82,6 +83,7 @@ namespace MobBlackRat
             stateWatch = new MobBlackRatStateWatch(){blackboard = this};
             statePatrol = new MobBlackRatStatePatrol(){blackboard = this};
             statePatrolWait = new MobBlackRatStatePatrolWait(){blackboard = this};
+            stateAttack = new MobBlackRatStateAttack(){blackboard = this};
         
 
             // set first state in machine
@@ -225,10 +227,6 @@ namespace MobBlackRat
 
         public void LookForEnemy()
         {
-            // look for new enemy
-            // var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
-
-            // var newEnemy = detection.LookForEnemy(lookDistanceSqr);
             var newEnemy = detection.LookForEnemy(maxSightRangeSqr);
 
             if(newEnemy != null)
@@ -266,7 +264,7 @@ namespace MobBlackRat
 
 
 
-        public float GetLookAngleToEnemy()
+        public float GetUpLookAngleToEnemy()
         {
             if(IsEnemyValid() == false)
             {
@@ -277,11 +275,25 @@ namespace MobBlackRat
             var distance = new Vector2(directionToEnemy.X, directionToEnemy.Z).Length();
             var height = directionToEnemy.Y;
 
-            var unsignedAngle = Mathf.RadToDeg(Mathf.Atan(height / distance));
+            var angle = Mathf.RadToDeg(Mathf.Atan(height / distance));
 
-            //GD.Print(distance + ", " + height + ", " + "angle " + unsignedAngle);
+            return angle;
+        }
 
-            return unsignedAngle;
+
+
+        public float GetForwardToEnemyAngle()
+        {
+            if(IsEnemyValid() == false)
+            {
+                return 0;
+            }
+
+            var unitDirectionToEnemy = (enemy.GlobalPosition - eyes.GlobalPosition).Normalized();
+
+            var angle = (-Basis.Z).AngleTo(unitDirectionToEnemy);
+        
+            return Mathf.RadToDeg(angle);
         }
 
 

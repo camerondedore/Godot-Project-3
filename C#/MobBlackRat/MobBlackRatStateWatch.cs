@@ -69,8 +69,8 @@ namespace MobBlackRat
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
-            // check if enemy is close enough and bow has LOS to enemy
-            if(distanceToEnemySqr < blackboard.attackRangeSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy))
+            // check if enemy is close enough
+            if(distanceToEnemySqr < blackboard.attackRangeSqr)
             {
                 // attack
                 return blackboard.stateAttack;

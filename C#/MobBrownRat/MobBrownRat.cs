@@ -288,7 +288,7 @@ namespace MobBrownRat
 
 
 
-        public float GetLookAngleToEnemy()
+        public float GetUpLookAngleToEnemy()
         {
             if(IsEnemyValid() == false)
             {
@@ -299,11 +299,11 @@ namespace MobBrownRat
             var distance = new Vector2(directionToEnemy.X, directionToEnemy.Z).Length();
             var height = directionToEnemy.Y;
 
-            var unsignedAngle = Mathf.RadToDeg(Mathf.Atan(height / distance));
+            var angle = Mathf.RadToDeg(Mathf.Atan(height / distance));
 
             //GD.Print(distance + ", " + height + ", " + "angle " + unsignedAngle);
 
-            return unsignedAngle;
+            return angle;
         }
 
 
