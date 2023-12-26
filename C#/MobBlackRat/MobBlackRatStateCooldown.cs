@@ -3,9 +3,10 @@ using System;
 
 namespace MobBlackRat
 {
-    public partial class MobBlackRatStatePatrolWait : MobBlackRatState
+    public partial class MobBlackRatStateCooldown: MobBlackRatState
     {
 
+        Vector3 startPosition;
         double startTime;
 
 
@@ -21,9 +22,17 @@ namespace MobBlackRat
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
-            
+
+            startPosition = blackboard.GlobalPosition;
+
+            // setop looking at enemy
+            blackboard.lookAtTarget = false;
+
             // stop moving
             blackboard.moving = false;
+            
+            // clear enemy
+            blackboard.enemy = null;
 
             // animation
             //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
@@ -41,19 +50,20 @@ namespace MobBlackRat
 
         public override State Transition()
         {
-            if(blackboard.IsEnemyValid())
+            if(blackboard.IsEnemyValid() && blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
             {
                 // react
-                return blackboard.stateReact;
+                return blackboard.stateReact;                                
             }
 
             var isTimeUp = EngineTime.timePassed > startTime + 5;
+            var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100;
 
-            // check for 5 seconds passing
-            if(isTimeUp)
+            // check for 5 seconds passing or 10 meters from start
+            if(isTimeUp || isdistanceTraveled)
             {
-                // patrol
-                return blackboard.statePatrol;
+                // retreat
+                return blackboard.stateRetreat;
             }
 
             return this;

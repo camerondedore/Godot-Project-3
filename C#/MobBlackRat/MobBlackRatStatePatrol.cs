@@ -1,5 +1,4 @@
 using Godot;
-using MobBrownRat;
 using System;
 
 namespace MobBlackRat

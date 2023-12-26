@@ -84,6 +84,9 @@ namespace MobBlackRat
             statePatrol = new MobBlackRatStatePatrol(){blackboard = this};
             statePatrolWait = new MobBlackRatStatePatrolWait(){blackboard = this};
             stateAttack = new MobBlackRatStateAttack(){blackboard = this};
+            stateCooldown = new MobBlackRatStateCooldown(){blackboard = this};
+            stateRetreat = new MobBlackRatStateRetreat(){blackboard = this};
+            stateDie = new MobBlackRatStateDie(){blackboard = this};
         
 
             // set first state in machine

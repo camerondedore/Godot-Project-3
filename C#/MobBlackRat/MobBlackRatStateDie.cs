@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-namespace MobBrownRat
+namespace MobBlackRat
 {
-    public partial class MobBrownRatStateDie : MobBrownRatState
+    public partial class MobBlackRatStateDie : MobBlackRatState
     {
 
 
@@ -22,7 +22,7 @@ namespace MobBrownRat
             blackboard.AggroAllies();
 
             // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-die");
+            //blackboard.animStateMachinePlayback.Travel("brown-rat-die");
             blackboard.animStateMachinePlayback.Next();
 
             // destroy faction nodes
