@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkw1hfkd0uses"]
+
+[ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRat.cs" id="1_46qau"]
+[ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRatHealth.cs" id="2_71lt1"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_rfqt5"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="4_3600o"]
+[ext_resource type="Script" path="res://C#/Mob Tools/MobEyes.cs" id="4_yonai"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3dud8"]
+radius = 0.4
+height = 1.9
+
+[node name="MobBlackRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "navAgent", "health", "myFactions", "collider")]
+script = ExtResource("1_46qau")
+detection = NodePath("Detection")
+eyes = NodePath("Eyes")
+navAgent = NodePath("NavigationAgent3D")
+health = NodePath("Health")
+myFactions = [NodePath("Faction"), NodePath("Faction2")]
+collider = NodePath("CollisionShape3D")
+maxSightRangeSqr = 625.0
+speed = 4.5
+lookSpeed = 0.3
+
+[node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
+script = ExtResource("2_71lt1")
+rat = NodePath("..")
+hitPoints = 50.0
+maxHitPoints = 50.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3dud8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+height = 1.5
+neighbor_distance = 5.0
+max_neighbors = 5
+
+[node name="Detection" type="RayCast3D" parent="." node_paths=PackedStringArray("myFaction")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+target_position = Vector3(0, 0, -1)
+script = ExtResource("3_rfqt5")
+myFaction = NodePath("../Faction")
+pointBlankRangeSqr = 2.0
+
+[node name="Eyes" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, -1)
+script = ExtResource("4_yonai")
+
+[node name="Faction" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+script = ExtResource("4_3600o")
+faction = 2
+
+[node name="Faction2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+script = ExtResource("4_3600o")
+faction = 2
