@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=134 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -94,6 +94,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Food/PropLadle.tscn" id="64_he0ji"]
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="69_gi3wt"]
+[ext_resource type="PackedScene" uid="uid://bslkh5g6p1aee" path="res://Prefabs/Small Items/PropWeaponSword.tscn" id="69_t0wdj"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorch.tscn" id="70_woav5"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="71_tu5qd"]
 [ext_resource type="PackedScene" uid="uid://dmib1tgy5ee4s" path="res://Prefabs/Pickups/PickupArmor.tscn" id="73_euar7"]
@@ -904,6 +905,9 @@ transform = Transform3D(-0.995924, 0, -0.0901978, 0, 1, 0, 0.0901978, 0, -0.9959
 
 [node name="PropLamp" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallProps" instance=ExtResource("51_8kugh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.706, 1.25448, -3.0278)
+
+[node name="PropWeaponSword" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallProps" instance=ExtResource("69_t0wdj")]
+transform = Transform3D(-0.456353, 0.6721, 0.583116, 0, -0.655334, 0.755339, 0.889799, 0.344701, 0.299064, 5.26965, 1.41099, 9.72442)
 
 [node name="Plants" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
