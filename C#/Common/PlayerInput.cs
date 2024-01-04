@@ -81,10 +81,10 @@ public partial class PlayerInput : Node
 		}
 
 		// get look input
-		if(e is InputEventMouseMotion)
+		if(e is InputEventMouseMotion mouseEvent)
 		{
-			look.X += ((InputEventMouseMotion) e).Relative.X;
-			look.Y += ((InputEventMouseMotion) e).Relative.Y;
+			look.X += mouseEvent.Relative.X;
+			look.Y += mouseEvent.Relative.Y;
 
 			isMouseMoving = true;
 		}
