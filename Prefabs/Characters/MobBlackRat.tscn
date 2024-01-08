@@ -1,14 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkw1hfkd0uses"]
+[gd_scene load_steps=12 format=3 uid="uid://dkw1hfkd0uses"]
 
 [ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRat.cs" id="1_46qau"]
 [ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRatHealth.cs" id="2_71lt1"]
+[ext_resource type="PackedScene" uid="uid://b1euavai00lrc" path="res://Models/character-black-rat.glb" id="3_ikkoo"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobDetection.cs" id="3_rfqt5"]
+[ext_resource type="Material" uid="uid://c568qsv5du0ld" path="res://Materials/WeaponSword.tres" id="4_5s7k5"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="4_3600o"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobEyes.cs" id="4_yonai"]
+[ext_resource type="Material" uid="uid://jdcotr5j1875" path="res://Materials/Characters/MobBlackRatRim.tres" id="5_n14mk"]
+[ext_resource type="Material" uid="uid://dgvmcdcm511j4" path="res://Materials/Characters/RatEyeGlow.tres" id="6_ib6tv"]
+[ext_resource type="Material" uid="uid://blq5nnks5d07c" path="res://Materials/Characters/MobBlackRatGearRim.tres" id="7_ji3gt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3dud8"]
 radius = 0.4
-height = 1.9
 
 [node name="MobBlackRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "navAgent", "health", "myFactions", "collider")]
 script = ExtResource("1_46qau")
@@ -37,6 +41,19 @@ height = 1.5
 neighbor_distance = 5.0
 max_neighbors = 5
 
+[node name="character-black-rat" parent="." instance=ExtResource("3_ikkoo")]
+
+[node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D/weapon-sword" index="0"]
+surface_material_override/0 = ExtResource("4_5s7k5")
+
+[node name="character-black-rat" parent="character-black-rat/character-armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("5_n14mk")
+surface_material_override/1 = ExtResource("6_ib6tv")
+surface_material_override/2 = ExtResource("7_ji3gt")
+
 [node name="Detection" type="RayCast3D" parent="." node_paths=PackedStringArray("myFaction")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 target_position = Vector3(0, 0, -1)
@@ -58,3 +75,5 @@ faction = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 script = ExtResource("4_3600o")
 faction = 2
+
+[editable path="character-black-rat"]
