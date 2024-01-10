@@ -14,6 +14,6 @@ shader_parameter/Rim_Sharpness = 0.1
 shader_parameter/Rim_Distance = 0.75
 shader_parameter/Rim_Color = Color(1, 0, 0, 1)
 shader_parameter/Rim_Power = 0.025
-shader_parameter/Rim_Min_Height = -0.9
+shader_parameter/Rim_Min_Height = -1.0
 shader_parameter/Rim_Height_Slope = 1.4
 shader_parameter/Albedo = ExtResource("2_7x483")
