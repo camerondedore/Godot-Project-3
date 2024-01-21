@@ -12,7 +12,7 @@ namespace MobBlackRat
 
         public override void RunState(double delta)
         {
-            blackboard.animStateMachinePlayback.Next();
+           // blackboard.animStateMachinePlayback.Next();
             
             // look for enemy
             blackboard.LookForEnemy();
@@ -42,6 +42,7 @@ namespace MobBlackRat
 
             // animation
             //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
+            blackboard.animation.CurrentAnimation = "black-rat-patrol-wait";
         }
 
 

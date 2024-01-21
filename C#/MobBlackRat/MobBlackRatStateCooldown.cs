@@ -37,6 +37,7 @@ namespace MobBlackRat
             // animation
             //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
             //blackboard.animStateMachinePlayback.Next();
+            blackboard.animation.CurrentAnimation = "black-rat-patrol-wait";
         }
 
 
@@ -50,10 +51,23 @@ namespace MobBlackRat
 
         public override State Transition()
         {
-            if(blackboard.IsEnemyValid() && blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
+            if(blackboard.IsEnemyValid())
             {
-                // react
-                return blackboard.stateReact;                                
+                if(blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
+                {
+                    // react
+                    return blackboard.stateReact;                                
+                }
+
+
+                // get distance to enemy
+                var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+                if(distanceToEnemySqr < 2f)
+                {
+                    // react
+                    return blackboard.stateReact;
+                }
             }
 
             var isTimeUp = EngineTime.timePassed > startTime + 5;

@@ -8,6 +8,7 @@ namespace MobBlackRat
     {
 
         double startTime;
+        int lastSwingNumber = 2;
         bool damageOutputted = false;
 
 
@@ -18,19 +19,23 @@ namespace MobBlackRat
             blackboard.LookForEnemy();
 
             
-            // check for timing to output damage
-            if(damageOutputted == false && EngineTime.timePassed > startTime + blackboard.attackDamageTime)
+            if(blackboard.IsEnemyValid())
             {
-                // get distance to enemy
-                var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
-                var angleToEnemy = blackboard.GetForwardToEnemyAngle();
-                if(distanceToEnemySqr < blackboard.attackRangeSqr && angleToEnemy < blackboard.attackAngle)
+                // check for timing to output damage
+                if(damageOutputted == false && EngineTime.timePassed > startTime + blackboard.attackDamageTime)
                 {
-                    // apply damage
-                    
-                }
+                    // get distance to enemy
+                    var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+                    var angleToEnemy = blackboard.GetForwardToEnemyAngle();
+                    if(distanceToEnemySqr < blackboard.attackRangeSqr && angleToEnemy < blackboard.attackAngle)
+                    {
+                        // hurt enemy
+                        // get health node by name, as direct child to the faction node's owner
+                        blackboard.enemy.Owner.GetNode<Health>("Health").Damage(blackboard.damage); 
+                    }
 
-                damageOutputted = true;
+                    damageOutputted = true;
+                }
             }
         }
         
@@ -39,16 +44,34 @@ namespace MobBlackRat
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
+
+            damageOutputted = false;
             
             // stop moving
             blackboard.moving = false;
+
+            // look at enemy
+            blackboard.lookAtTarget = true;
+
+            // animation
+            if(lastSwingNumber == 2)
+            {
+                blackboard.animation.CurrentAnimation = "black-rat-attack-1";
+                lastSwingNumber = 1;
+            }
+            else if(lastSwingNumber == 1)
+            {
+                blackboard.animation.CurrentAnimation = "black-rat-attack-2";
+                lastSwingNumber = 2;
+            }
         }
 
 
 
         public override void EndState()
         {
-
+            // reset swings
+            lastSwingNumber = 2;
         }
 
 
@@ -64,13 +87,27 @@ namespace MobBlackRat
                 // cool down
                 return blackboard.stateCooldown;
             }
-            
+
 
             // check if attack is over
             if(EngineTime.timePassed > startTime + blackboard.swingTime)
             {
-                // move
-                return blackboard.stateMove;
+                // get distance to enemy
+                var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+                // check if enemy is close enough
+                if(distanceToEnemySqr < blackboard.attackRangeSqr)
+                {
+                    // attack
+                    StartState();
+                    return this;
+                }
+                else
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+
             }
 
             return this;

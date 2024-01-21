@@ -23,7 +23,8 @@ namespace MobBlackRat
 
             // animation
             //blackboard.animStateMachinePlayback.Travel("brown-rat-die");
-            blackboard.animStateMachinePlayback.Next();
+            //blackboard.animStateMachinePlayback.Next();
+            //blackboard.animation.CurrentAnimation = "black-rat-die";
 
             // destroy faction nodes
             foreach(var faction in blackboard.myFactions)

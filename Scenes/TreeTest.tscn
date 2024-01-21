@@ -1589,4 +1589,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8501, 4, -9.42704)
 transform = Transform3D(-0.996239, 0, 0.0866516, 0, 1, 0, -0.0866516, 0, -0.996239, -30.5861, 1, 11.2854)
 
 [node name="MobBlackRat2" parent="." instance=ExtResource("123_ae5e8")]
-transform = Transform3D(0.651291, 0, -0.758828, 0, 1, 0, 0.758828, 0, 0.651291, -33.8969, 1, 14.8591)
+transform = Transform3D(0.18402, 0, -0.982923, 0, 1, 0, 0.982923, 0, 0.18402, -24.0433, 1.02554, 15.8552)
+
+[node name="MobBlackRat3" parent="." instance=ExtResource("123_ae5e8")]
+transform = Transform3D(-0.958129, 0, 0.286341, 0, 1, 0, -0.286341, 0, -0.958129, -24.3496, 1.02554, 13.4431)

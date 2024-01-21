@@ -40,8 +40,9 @@ namespace MobBlackRat
             //blackboard.SpotEnemyForAllies();
 
             // animation
-            //blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
-            //blackboard.animStateMachinePlayback.Next();
+            // blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
+            // blackboard.animStateMachinePlayback.Next();
+            blackboard.animation.CurrentAnimation = "black-rat-walk";
         }
 
 
@@ -77,7 +78,7 @@ namespace MobBlackRat
             }
 
             // if at end of path
-            if(blackboard.navAgent.IsNavigationFinished())
+            if(blackboard.navAgent.IsNavigationFinished() && distanceToEnemySqr > 4f)
             {
                 // watch
                 return blackboard.stateWatch;

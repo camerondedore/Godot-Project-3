@@ -32,7 +32,9 @@ namespace MobBlackRat
         [Export]
         public MobFaction[] myFactions;
         [Export]
-        public AnimationTree animation;
+        public AnimationPlayer animation;
+        //[Export]
+        //public AnimationTree animation;
         [Export]
         public CollisionShape3D collider;
         [Export]
@@ -40,8 +42,8 @@ namespace MobBlackRat
         [Export]
         public string arrowType = "bodkin";
         [Export]
-        public double swingTime = 1f,
-            attackDamageTime = 0.5f,
+        public double swingTime = .5f,
+            attackDamageTime = 0.3f,
             reactTime = 0.4f;
         [Export]
         public float maxSightRangeSqr = 100,
@@ -54,10 +56,11 @@ namespace MobBlackRat
             lookSpeed = 4,
             acceleration = 4,
             damageFromArrow = 50,
-            lookAngleNormal = 30;
+            lookAngleNormal = 30,
+            damage = 10;
 
         public MobFaction enemy;
-        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
+        //public AnimationNodeStateMachinePlayback animStateMachinePlayback;
         public Vector3 startPosition;
         public bool lookAtTarget = false,
             moving,
@@ -73,7 +76,13 @@ namespace MobBlackRat
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
 
-            animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
+            //animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
+            animation.SetBlendTime("black-rat-idle", "black-rat-attack-1", 0.05);
+            animation.SetBlendTime("black-rat-idle", "black-rat-attack-2", 0.05);
+            //animation.SetBlendTime("black-rat-idle", "black-rat-die", 0.05);
+            animation.SetBlendTime("black-rat-walk", "black-rat-attack-1", 0.05);
+            animation.SetBlendTime("black-rat-walk", "black-rat-attack-2", 0.05);
+            //animation.SetBlendTime("black-rat-walk", "black-rat-die", 0.05);
 
             // initialize states
             stateStart = new MobBlackRatStateStart(){blackboard = this};
@@ -194,9 +203,14 @@ namespace MobBlackRat
 
                     // adjust walk animation speed
                     var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
-                    animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
+                    //animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
+                    animation.SpeedScale = walkSpeed;
                 }
+
+                animation.SpeedScale = 1;
             }
+
+            animation.SpeedScale = 1;
         }
 
 

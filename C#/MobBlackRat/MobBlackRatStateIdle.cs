@@ -18,6 +18,8 @@ namespace MobBlackRat
             // look for enemy
             blackboard.LookForEnemy();
 
+            blackboard.animation.CurrentAnimation = "black-rat-idle";
+
             // if(EngineTime.timePassed > lastAnimationTime + timeBetweenAnimations)
             // {
             //     var nextAnimation = 1;
