@@ -36,6 +36,10 @@ namespace MobBlackRat
         //[Export]
         //public AnimationTree animation;
         [Export]
+        public MobBlackRatAudio audio;
+        [Export]
+        public ParticleFx swordHitFx;
+        [Export]
         public CollisionShape3D collider;
         [Export]
         public Node3D startTarget;

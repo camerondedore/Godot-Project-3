@@ -8,12 +8,29 @@ namespace MobBlackRat
 
         [Export]
         AudioStream[] footsteps;
+        [Export]
+        AudioStream swordHitSound,
+            swordSwingSound;
 
 
 
         public void PlayFootstepSound()
         {
             PlayRandomSound(footsteps, 0.1f);
+        }
+
+
+
+        public void PlaySwordHitSound()
+        {
+            PlaySound(swordHitSound, 0.1f);
+        }
+
+
+
+        public void PlaySwordSwingSound()
+        {
+            PlaySound(swordSwingSound, 0.1f);
         }
     }
 }
