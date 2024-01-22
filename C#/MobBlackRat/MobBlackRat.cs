@@ -77,11 +77,11 @@ namespace MobBlackRat
             navAgent.VelocityComputed += SafeMove;
 
             //animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
-            animation.SetBlendTime("black-rat-idle", "black-rat-attack-1", 0.05);
-            animation.SetBlendTime("black-rat-idle", "black-rat-attack-2", 0.05);
+            //animation.SetBlendTime("black-rat-idle", "black-rat-attack-1", 0.05);
+            //animation.SetBlendTime("black-rat-idle", "black-rat-attack-2", 0.05);
             //animation.SetBlendTime("black-rat-idle", "black-rat-die", 0.05);
-            animation.SetBlendTime("black-rat-walk", "black-rat-attack-1", 0.05);
-            animation.SetBlendTime("black-rat-walk", "black-rat-attack-2", 0.05);
+            //animation.SetBlendTime("black-rat-walk", "black-rat-attack-1", 0.05);
+            //animation.SetBlendTime("black-rat-walk", "black-rat-attack-2", 0.05);
             //animation.SetBlendTime("black-rat-walk", "black-rat-die", 0.05);
 
             // initialize states

@@ -44,10 +44,13 @@ namespace MobBrownRat
 
         public override void EndState()
         {
-            // look at enemy
-            blackboard.lookAtTarget = false;
+            if(blackboard.IsEnemyValid())
+            {
+                // look at enemy
+                blackboard.lookAtTarget = false;
 
-            blackboard.SpotEnemyForAllies();
+                blackboard.SpotEnemyForAllies();
+            }
         }
 
 

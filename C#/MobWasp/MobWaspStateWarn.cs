@@ -28,7 +28,10 @@ namespace MobWasp
             blackboard.useOffset = true;
             blackboard.lookWithVelocity = false;
 
-            blackboard.SpotEnemyForAllies();
+            if(blackboard.IsEnemyValid())
+            {
+                blackboard.SpotEnemyForAllies();
+            }
         }
 
 
