@@ -206,11 +206,15 @@ namespace MobBlackRat
                     //animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
                     animation.SpeedScale = walkSpeed;
                 }
-
+                else
+                {
+                    animation.SpeedScale = 1;
+                }
+            }
+            else
+            {
                 animation.SpeedScale = 1;
             }
-
-            animation.SpeedScale = 1;
         }
 
 
