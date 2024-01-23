@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkequrq3luqfl"]
+[gd_scene load_steps=9 format=3 uid="uid://myloy3htblvq"]
 
-[ext_resource type="Material" uid="uid://3o8p8ebacljd" path="res://Materials/Fx/FxBloodSplash.tres" id="1_8qji5"]
+[ext_resource type="Material" uid="uid://3o8p8ebacljd" path="res://Materials/Fx/FxBloodSplash.tres" id="1_5uc6b"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_wxt4p"]
 
 [sub_resource type="Gradient" id="Gradient_1jnp3"]
 offsets = PackedFloat32Array(0, 0.43787, 1)
@@ -16,16 +17,16 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_7oyk6"]
 curve = SubResource("Curve_mhog1")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_woy3b"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iclsi"]
 lifetime_randomness = 0.3
 emission_shape = 6
-emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_axis = Vector3(1, 0, 0)
 emission_ring_height = 1.0
 emission_ring_radius = 0.1
 emission_ring_inner_radius = 0.0
 angle_max = 359.0
 direction = Vector3(0, 0, 1)
-spread = 180.0
+spread = 50.0
 initial_velocity_min = 2.0
 initial_velocity_max = 3.0
 angular_velocity_min = -10.0
@@ -37,14 +38,15 @@ color_ramp = SubResource("GradientTexture1D_gp4yu")
 
 [sub_resource type="QuadMesh" id="QuadMesh_vxchp"]
 
-[node name="FxBloodSplash" type="GPUParticles3D"]
+[node name="FxBloodSlash" type="GPUParticles3D"]
 layers = 2
-material_override = ExtResource("1_8qji5")
+material_override = ExtResource("1_5uc6b")
 cast_shadow = 0
 gi_mode = 2
 emitting = false
 amount = 15
 one_shot = true
 explosiveness = 0.9
-process_material = SubResource("ParticleProcessMaterial_woy3b")
+process_material = SubResource("ParticleProcessMaterial_iclsi")
 draw_pass_1 = SubResource("QuadMesh_vxchp")
+script = ExtResource("2_wxt4p")

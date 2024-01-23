@@ -4,7 +4,8 @@ using System;
 public partial class MobArrow : Projectile
 {
     [Export]
-    PackedScene hitFx,
+    PackedScene hitBloodFx,
+        hitFx,
         missFx;
     [Export]
     ArrowTrail trailFx;
@@ -36,9 +37,16 @@ public partial class MobArrow : Projectile
                 // damage
                 hitHealth.Damage(damage);
 
-                // spawn hit fx
-                SpawnPrefab(hitFx, point, normal, upVector);
-
+                if(hitHealth.hasBlood)
+                {
+                    // spawn hit fx
+                    SpawnPrefab(hitBloodFx, point, normal, upVector);
+                }
+                else
+                {
+                    // spawn hit fx
+                    SpawnPrefab(hitFx, point, normal, upVector);
+                }
             }
             
             trailFx.DetachTrail();

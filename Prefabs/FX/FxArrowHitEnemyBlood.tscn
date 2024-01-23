@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg5ale2alhxmh"]
+
+[ext_resource type="PackedScene" uid="uid://dkql0j4oe33cn" path="res://Prefabs/FX/FxArrowHitEnemy.tscn" id="1_3xbpn"]
+[ext_resource type="PackedScene" uid="uid://disiwj2xcj7fq" path="res://Prefabs/FX/FxBloodSpray.tscn" id="2_idrwk"]
+
+[node name="FxArrowHitEnemyBlood" instance=ExtResource("1_3xbpn")]
+
+[node name="FxBloodSpray" parent="." index="3" instance=ExtResource("2_idrwk")]

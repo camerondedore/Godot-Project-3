@@ -40,7 +40,8 @@ namespace MobBlackRat
         [Export]
         public MobBlackRatAudio audio;
         [Export]
-        public ParticleFx swordHitFx;
+        public ParticleFx swordHitFx,
+            swordHitBloodFx;
         [Export]
         public CollisionShape3D collider;
         [Export]

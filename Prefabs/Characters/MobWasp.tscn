@@ -462,20 +462,21 @@ script = ExtResource("5_w4k4j")
 wasp = NodePath("..")
 hitPoints = 15.0
 maxHitPoints = 15.0
+hasBlood = false
 
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.712012, 7.79562e-17, 7.90493e-17, 0.702167)
-bones/1/rotation = Quaternion(0.707086, 0.00540288, 0.707086, 0.00540293)
-bones/2/rotation = Quaternion(0.862646, 0.0894908, 0.485089, -0.111901)
-bones/3/rotation = Quaternion(-0.565756, -0.403786, -0.410197, 0.590437)
-bones/4/rotation = Quaternion(-0.485316, -0.358502, -0.300762, 0.738571)
-bones/5/rotation = Quaternion(0.782825, 0.180578, 0.514796, -0.299267)
-bones/6/rotation = Quaternion(0.862646, -0.0894908, -0.485089, -0.111901)
-bones/7/rotation = Quaternion(-0.582277, 0.389381, 0.428895, 0.570425)
-bones/8/rotation = Quaternion(-0.495761, 0.350311, 0.327782, 0.723922)
-bones/9/rotation = Quaternion(0.77806, -0.200064, -0.506795, -0.312661)
+bones/0/rotation = Quaternion(-0.71038, 7.81395e-17, 7.8868e-17, 0.703818)
+bones/1/rotation = Quaternion(0.707099, 0.0033244, 0.707099, 0.00332446)
+bones/2/rotation = Quaternion(0.86245, 0.079422, 0.486335, -0.115549)
+bones/3/rotation = Quaternion(-0.569139, -0.406136, -0.40787, 0.587176)
+bones/4/rotation = Quaternion(-0.48884, -0.359936, -0.299045, 0.736243)
+bones/5/rotation = Quaternion(0.784045, 0.182686, 0.514052, -0.296057)
+bones/6/rotation = Quaternion(0.86245, -0.079422, -0.486335, -0.115549)
+bones/7/rotation = Quaternion(-0.585545, 0.39184, 0.426651, 0.567069)
+bones/8/rotation = Quaternion(-0.499215, 0.351873, 0.326104, 0.721544)
+bones/9/rotation = Quaternion(0.779344, -0.202154, -0.505965, -0.309447)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2

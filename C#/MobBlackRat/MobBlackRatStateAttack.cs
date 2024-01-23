@@ -31,10 +31,17 @@ namespace MobBlackRat
                     {
                         // hurt enemy
                         // get health node by name, as direct child to the faction node's owner
-                        blackboard.enemy.Owner.GetNode<Health>("Health").Damage(blackboard.damage); 
+                        var hitHealth = blackboard.enemy.Owner.GetNode<Health>("Health"); 
+                        hitHealth.Damage(blackboard.damage);
 
                         // play hit fx
                         blackboard.swordHitFx.Restart();
+                        
+                        if(hitHealth.hasBlood)
+                        {
+                            // play blood fx
+                            blackboard.swordHitBloodFx.Restart();
+                        }
 
                         // play hit sound
                         blackboard.audio.PlaySwordHitSound();

@@ -7,6 +7,8 @@ public partial class Health : Node
 	[Export]
 	public float hitPoints = 100,
 		maxHitPoints = 100;
+	[Export]
+	public bool hasBlood = true;
 	public bool dead = false;
 
 
