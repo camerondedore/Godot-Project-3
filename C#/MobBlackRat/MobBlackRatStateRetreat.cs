@@ -51,7 +51,7 @@ namespace MobBlackRat
             if(blackboard.navAgent.IsNavigationFinished())
             {
                 // idle
-                return blackboard.stateIdle;
+                return blackboard.superStateIdle;
             }
 
             return this;

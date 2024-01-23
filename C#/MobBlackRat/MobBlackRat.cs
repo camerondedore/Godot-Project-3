@@ -9,8 +9,10 @@ namespace MobBlackRat
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
+        public SuperState superStateIdle;
         public State stateStart,
-            stateIdle,
+            subStateIdle,
+            subStateIdleAnimation,
             stateReact,
             stateMove,
             stateWatch,
@@ -80,17 +82,11 @@ namespace MobBlackRat
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
 
-            //animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
-            //animation.SetBlendTime("black-rat-idle", "black-rat-attack-1", 0.05);
-            //animation.SetBlendTime("black-rat-idle", "black-rat-attack-2", 0.05);
-            //animation.SetBlendTime("black-rat-idle", "black-rat-die", 0.05);
-            //animation.SetBlendTime("black-rat-walk", "black-rat-attack-1", 0.05);
-            //animation.SetBlendTime("black-rat-walk", "black-rat-attack-2", 0.05);
-            //animation.SetBlendTime("black-rat-walk", "black-rat-die", 0.05);
-
             // initialize states
             stateStart = new MobBlackRatStateStart(){blackboard = this};
-            stateIdle = new MobBlackRatStateIdle(){blackboard = this};
+            superStateIdle = new MobBlackRatSuperStateIdle(){blackboard = this};
+            subStateIdle = new MobBlackRatSubStateIdle(){blackboard = this};
+            subStateIdleAnimation = new MobBlackRatSubStateIdleAnimation(){blackboard = this};
             stateReact = new MobBlackRatStateReact(){blackboard = this};
             stateMove = new MobBlackRatStateMove(){blackboard = this};
             stateWatch = new MobBlackRatStateWatch(){blackboard = this};
