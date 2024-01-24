@@ -48,8 +48,8 @@ namespace MobBlackRat
                     currentAnimationLength = 3.33;
                     break;
                 case 4:
-                    blackboard.animation.CurrentAnimation = "black-rat-idle-clean-sword";
-                    currentAnimationLength = 3.33;
+                    blackboard.animation.CurrentAnimation = "black-rat-idle-look-l";
+                    currentAnimationLength = 3.16;
                     break;
             }
 
