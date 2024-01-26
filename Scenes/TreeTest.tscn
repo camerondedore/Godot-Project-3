@@ -1591,5 +1591,9 @@ transform = Transform3D(-0.996239, 0, 0.0866516, 0, 1, 0, -0.0866516, 0, -0.9962
 [node name="MobBlackRat2" parent="." instance=ExtResource("123_ae5e8")]
 transform = Transform3D(0.18402, 0, -0.982923, 0, 1, 0, 0.982923, 0, 0.18402, -24.0433, 1.02554, 15.8552)
 
-[node name="MobBlackRat3" parent="." instance=ExtResource("123_ae5e8")]
+[node name="MobBlackRat3" parent="." node_paths=PackedStringArray("startTarget") instance=ExtResource("123_ae5e8")]
 transform = Transform3D(-0.958129, 0, 0.286341, 0, 1, 0, -0.286341, 0, -0.958129, -24.3496, 1.02554, 13.4431)
+startTarget = NodePath("../RatTarget2")
+
+[node name="RatTarget2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5742, 1, 15.914)

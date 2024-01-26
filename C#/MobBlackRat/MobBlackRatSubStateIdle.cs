@@ -22,7 +22,7 @@ namespace MobBlackRat
         {
             startTime = EngineTime.timePassed;
             
-            blackboard.animation.CurrentAnimation = "black-rat-idle";
+            blackboard.animation.Play("black-rat-idle");
             timeBetweenAnimations = GD.Randf() * 20 + 6;
         }
 

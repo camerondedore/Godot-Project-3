@@ -203,19 +203,19 @@ namespace MobBlackRat
                     LookAt(lookTarget, Vector3.Up);
 
                     // adjust walk animation speed
-                    var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
+                    // var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
                     //animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
-                    animation.SpeedScale = walkSpeed;
+                    // animation.SpeedScale = walkSpeed;
                 }
-                else
-                {
-                    animation.SpeedScale = 1;
-                }
+                // else
+                // {
+                //     animation.SpeedScale = 1;
+                // }
             }
-            else
-            {
-                animation.SpeedScale = 1;
-            }
+            // else
+            // {
+            //     animation.SpeedScale = 1;
+            // }
         }
 
 

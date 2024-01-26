@@ -210,8 +210,8 @@ namespace MobBrownRat
                     LookAt(lookTarget, Vector3.Up);
 
                     // adjust walk animation speed
-                    var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
-                    animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
+                    // var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
+                    // animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
                 }
             }
         }

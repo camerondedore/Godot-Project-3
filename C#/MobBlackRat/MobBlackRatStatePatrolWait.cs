@@ -28,7 +28,7 @@ namespace MobBlackRat
             // animation
             //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
             //blackboard.animStateMachinePlayback.Next();
-            blackboard.animation.CurrentAnimation = "black-rat-patrol-wait";
+            blackboard.animation.Play("black-rat-patrol-wait");
         }
 
 

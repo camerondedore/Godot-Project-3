@@ -36,19 +36,19 @@ namespace MobBlackRat
             switch(nextAnimation)
             {
                 case 1:
-                    blackboard.animation.CurrentAnimation = "black-rat-idle-look-r";
+                    blackboard.animation.Play("black-rat-idle-look-r");
                     currentAnimationLength = 2.66;
                     break;
                 case 2:
-                    blackboard.animation.CurrentAnimation = "black-rat-idle-itch";
+                    blackboard.animation.Play("black-rat-idle-itch");
                     currentAnimationLength = 2;
                     break;
                 case 3:
-                    blackboard.animation.CurrentAnimation = "black-rat-idle-clean-sword";
+                    blackboard.animation.Play("black-rat-idle-clean-sword");
                     currentAnimationLength = 3.33;
                     break;
                 case 4:
-                    blackboard.animation.CurrentAnimation = "black-rat-idle-look-l";
+                    blackboard.animation.Play("black-rat-idle-look-l");
                     currentAnimationLength = 3.16;
                     break;
             }

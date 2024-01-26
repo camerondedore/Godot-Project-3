@@ -37,7 +37,7 @@ namespace MobBlackRat
                 // animation
                 //blackboard.animStateMachinePlayback.Travel("brown-rat-react");
                 //blackboard.animStateMachinePlayback.Next();
-                blackboard.animation.CurrentAnimation = "black-rat-react";
+                blackboard.animation.Play("black-rat-react");
             }
         }
 

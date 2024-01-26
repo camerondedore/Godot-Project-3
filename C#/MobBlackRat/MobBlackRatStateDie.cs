@@ -22,9 +22,7 @@ namespace MobBlackRat
             blackboard.AggroAllies();
 
             // animation
-            //blackboard.animStateMachinePlayback.Travel("brown-rat-die");
-            //blackboard.animStateMachinePlayback.Next();
-            //blackboard.animation.CurrentAnimation = "black-rat-die";
+            blackboard.animation.Play("black-rat-die");
 
             // destroy faction nodes
             foreach(var faction in blackboard.myFactions)

@@ -69,12 +69,12 @@ namespace MobBlackRat
             // animation
             if(lastSwingNumber == 2)
             {
-                blackboard.animation.CurrentAnimation = "black-rat-attack-1";
+                blackboard.animation.Play("black-rat-attack-1");
                 lastSwingNumber = 1;
             }
             else if(lastSwingNumber == 1)
             {
-                blackboard.animation.CurrentAnimation = "black-rat-attack-2";
+                blackboard.animation.Play("black-rat-attack-2");
                 lastSwingNumber = 2;
             }
         }
