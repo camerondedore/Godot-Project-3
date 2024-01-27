@@ -71,7 +71,7 @@ namespace MobBlackRat
             var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
             // check if enemy is close enough
-            if(distanceToEnemySqr < blackboard.attackRangeSqr)
+            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
             {
                 // attack
                 return blackboard.stateAttack;
