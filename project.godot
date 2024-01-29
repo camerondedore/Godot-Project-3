@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project 3"
-run/main_scene="res://Scenes/TreeTest.tscn"
+run/main_scene="res://Scenes/Level1Intro.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
