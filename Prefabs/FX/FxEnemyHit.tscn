@@ -28,6 +28,7 @@ color_ramp = SubResource("GradientTexture1D_vy5mi")
 [sub_resource type="QuadMesh" id="QuadMesh_pytth"]
 
 [node name="FxEnemyHit" type="GPUParticles3D"]
+process_mode = 1
 material_override = ExtResource("1_hvc3k")
 emitting = false
 amount = 1
