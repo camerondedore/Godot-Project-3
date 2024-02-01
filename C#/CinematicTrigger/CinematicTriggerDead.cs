@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Cinematic
 {
-    public partial class CinematicTriggerDead : Node
+    public partial class CinematicTriggerDead : Timer
     {
 
         [Export]
@@ -32,11 +32,13 @@ namespace Cinematic
             {
                 watchList.Add(watchedNode as IWatchable);
             }
+
+            Timeout += Watch;
         }
 
 
 
-        public override void _Process(double delta)
+        public void Watch()
         {
             var anyAlive = false;
 
