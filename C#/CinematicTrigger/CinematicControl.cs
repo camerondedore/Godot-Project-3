@@ -2,9 +2,9 @@ using Godot;
 using System;
 using PlayerCharacterComplex;
 
-namespace CinematicTrigger
+namespace Cinematic
 {
-    public partial class CinematicTrigger : Area3D
+    public partial class CinematicControl : Node3D
     {
 
         public StateMachine machine = new StateMachine();
@@ -17,11 +17,11 @@ namespace CinematicTrigger
         public CinematicTarget[] targets;
         [Export]
         public bool saveToWorldData = true;
+        [Export]
+        public double startDelay = 0;
         
         public PlayerCharacter player;
         public int targetIndex = 0;
-
-        bool activated = false;
 
 
 
@@ -47,9 +47,6 @@ namespace CinematicTrigger
                 }
             }
 
-            // set up signal
-            BodyEntered += Triggered;
-
             // initialize states
 			stateStart = new CinematicStateStart(){blackboard = this};
 			stateTransition = new CinematicStateTransition(){blackboard = this};
@@ -71,7 +68,7 @@ namespace CinematicTrigger
 
 
 
-        void Triggered(Node3D body)
+        public void Triggered(Node3D body)
         {
             // check that body is jump pad user
             if(body is PlayerCharacter)

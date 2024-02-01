@@ -1,11 +1,12 @@
 using Godot;
 using System;
 using PlayerBow;
+using Cinematic;
 
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRat : CharacterBody3D, IBowTarget, IMobAlly
+    public partial class MobBrownRat : CharacterBody3D, IBowTarget, IMobAlly, IWatchable
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -348,6 +349,13 @@ namespace MobBrownRat
                 var allyBase = (IMobAlly) ally.Owner;
                 allyBase.AllySpottedEnemy(enemy);
             }
+        }
+
+
+
+        public bool IsAlive()
+        {
+            return health.hitPoints > 0;
         }
     }
 }

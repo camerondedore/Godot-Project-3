@@ -1,16 +1,23 @@
 using Godot;
 using System;
 
-namespace CinematicTrigger
+namespace Cinematic
 {
     public partial class CinematicStateStart : CinematicState
     {
 
-
+        double startTime;
 
 
 
         public override void StartState()
+        {
+            startTime = EngineTime.timePassed;
+        }
+
+
+
+        public override void EndState()
         {
             // set player to start state
             blackboard.player.startDelayUsesTime = false;
@@ -21,8 +28,13 @@ namespace CinematicTrigger
 
         public override State Transition()
         {
-            // transition
-            return blackboard.stateTransition;
+            if(EngineTime.timePassed > startTime + blackboard.startDelay)
+            {
+                // transition
+                return blackboard.stateTransition;
+            }
+
+            return this;
         }
     }
 }

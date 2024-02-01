@@ -1,10 +1,10 @@
 using Godot;
 using System;
 
-namespace CinematicTrigger
+namespace Cinematic
 {
     public partial class CinematicState : State
     {
-        public CinematicTrigger blackboard;
+        public CinematicControl blackboard;
     }
 }

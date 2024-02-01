@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-namespace CinematicTrigger
+namespace Cinematic
 {
     public partial class CinematicStateTransition : CinematicState
     {
