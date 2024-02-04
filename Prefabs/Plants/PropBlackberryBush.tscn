@@ -4,10 +4,10 @@
 [ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/Plants/LeavesBlackberryWind.tres" id="2_pdbt1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_khcq5"]
-size = Vector3(3.5, 2, 2)
+size = Vector3(3.5, 1.8, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_am4bt"]
-size = Vector3(3.5, 1, 2)
+size = Vector3(3.5, 1.2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_owan8"]
 size = Vector3(3.5, 1.41, 1.41)
@@ -22,7 +22,7 @@ mesh = ExtResource("1_ca3cf")
 surface_material_override/0 = ExtResource("2_pdbt1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_khcq5")
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
@@ -30,7 +30,7 @@ collision_layer = 2048
 collision_mask = 0
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 shape = SubResource("BoxShape3D_am4bt")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWall"]
