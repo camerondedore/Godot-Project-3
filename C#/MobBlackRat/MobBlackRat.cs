@@ -6,7 +6,7 @@ using Cinematic;
 
 namespace MobBlackRat
 {
-    public partial class MobBlackRat : CharacterBody3D, IBowTarget, IMobAlly, IWatchable
+    public partial class MobBlackRat : CharacterBody3D, IBowTarget, IMobAlly, IWatchable, MobSpawner.iMobSpawnable
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -369,6 +369,16 @@ namespace MobBlackRat
         public bool IsAlive()
         {
             return health.hitPoints > 0;
+        }
+
+
+
+        public void SetTarget(Node3D newTarget)
+        {
+            startTarget = newTarget;
+
+            machine.SetState(stateStart);
+            machine.CurrentState.StartState();
         }
     }
 }

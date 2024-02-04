@@ -10,5 +10,15 @@ namespace Cinematic
         public double waitTime = 3;
         [Export]
         public float moveTime = 3;
+        [Export]
+        public Node3D[] actions;
+
+
+
+
+        public interface iCinematicAction
+        {
+            void TriggerCinematicAction();
+        }
     }
 }

@@ -1505,22 +1505,25 @@ script = ExtResource("118_ykelb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/CinematicTriggers/Control1/Trigger1"]
 shape = SubResource("SphereShape3D_2m2m5")
 
-[node name="Target1" type="Node3D" parent="Map/CinematicTriggers"]
+[node name="Target1" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.7971, 0.351047, -0.491322, 0, 0.813653, 0.581351, 0.603847, 0.463395, -0.648563, 11.1484, 3.71564, 10.0489)
 script = ExtResource("112_ejmin")
 waitTime = 2.0
+actions = []
 
-[node name="Target2" type="Node3D" parent="Map/CinematicTriggers"]
+[node name="Target2" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.115094, -0.387402, 0.914698, 0, 0.920817, 0.389994, -0.993355, -0.0448861, 0.105981, -25.9418, 2.35912, 14.9328)
 script = ExtResource("112_ejmin")
 waitTime = 2.0
 moveTime = 4.0
+actions = []
 
-[node name="Target3" type="Node3D" parent="Map/CinematicTriggers"]
+[node name="Target3" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.998534, -0.0324151, 0.0433371, 0, 0.800777, 0.598962, -0.0541188, 0.598084, -0.799604, 12.3547, 5.89754, -0.421026)
 script = ExtResource("112_ejmin")
 waitTime = 0.5
 moveTime = 4.0
+actions = []
 
 [node name="CheckPoint" parent="Map" node_paths=PackedStringArray("saveTarget", "cameraTarget") instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9, -17.3715)

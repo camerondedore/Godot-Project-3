@@ -13,6 +13,12 @@ namespace Cinematic
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
+
+            // trigger cinematic actions
+            foreach(CinematicTarget.iCinematicAction actions in blackboard.targets[blackboard.targetIndex].actions)
+            {
+                actions.TriggerCinematicAction();
+            }            
         }
 
 

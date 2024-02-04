@@ -1,8 +1,9 @@
 using Godot;
 using System;
 using PlayerBow;
+using Cinematic;
 
-public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
+public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicTarget.iCinematicAction
 {
 
     [Export]
@@ -78,5 +79,12 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget
 
         // disable script
         SetScript(new Variant());
+    }
+
+
+
+    public void TriggerCinematicAction()
+    {
+        Hit(Vector3.Zero);
     }
 }
