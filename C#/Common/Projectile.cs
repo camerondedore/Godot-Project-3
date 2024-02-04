@@ -52,7 +52,7 @@ public partial class Projectile : Node3D
 
         // get ray parameters
         var rayStart = GlobalPosition;
-        var rayEnd = rayStart + velocity * ((float) delta);// * 1.1f;
+        var rayEnd = rayStart + velocity * ((float) delta) * 1.1f;
         var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
 
 		// cast ray
