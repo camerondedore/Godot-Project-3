@@ -11,7 +11,7 @@ namespace Cinematic
         [Export]
         public float moveTime = 3;
         [Export]
-        public Node3D[] actions;
+        public Node[] actions;
 
 
 

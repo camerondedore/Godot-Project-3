@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://bs7ws21ex6nl7"]
+
+[ext_resource type="Script" path="res://C#/Dialogue/DialogueUi.cs" id="1_fi4en"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="2_0uyrb"]
+
+[node name="DialogueUi" type="CanvasLayer" node_paths=PackedStringArray("dialogueContainter", "dialogueTextLabel")]
+layer = 90
+script = ExtResource("1_fi4en")
+dialogueContainter = NodePath("DialogueRoot")
+dialogueTextLabel = NodePath("DialogueRoot/DialogueText")
+mysterySpeakerColor = Color(1, 0.690196, 0.231373, 1)
+friendSpeakerColor = Color(0.231373, 0.639216, 1, 1)
+foeSpeakerColor = Color(1, 0.368627, 0.380392, 1)
+
+[node name="DialogueRoot" type="Control" parent="."]
+layout_mode = 3
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DailogueBackground" type="ColorRect" parent="DialogueRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DialogueText" type="Label" parent="DialogueRoot"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0uyrb")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Place Holder Text."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
