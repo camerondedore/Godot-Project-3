@@ -19,6 +19,11 @@ namespace Cinematic
 
         public override void RunState(double delta)
         {
+            if(currentTarget.moveTime == 0)
+            {
+                return;
+            }
+
             if(cursor <= 1)
             {
                 // move camera
@@ -37,6 +42,14 @@ namespace Cinematic
 
         public override void StartState()
         {
+            // get target
+            currentTarget = blackboard.targets[blackboard.targetIndex];
+
+            if(currentTarget.moveTime == 0)
+            {
+                return;
+            }
+
             if(camera == null)
             {
                 // get global camera
@@ -46,14 +59,12 @@ namespace Cinematic
             // reset cursor
             cursor = 0;
 
-            // get target
-            currentTarget = blackboard.targets[blackboard.targetIndex];
             
             // get info on start and end
             startPosition = camera.GlobalPosition;
-            startLookTarget = startPosition + -camera.Basis.Z;
+            startLookTarget = startPosition + -camera.GlobalBasis.Z;
             endPosition = currentTarget.GlobalPosition;
-            endLookTarget = endPosition + -currentTarget.Basis.Z;
+            endLookTarget = endPosition + -currentTarget.GlobalBasis.Z;
             lookTarget = startLookTarget;            
         }
 
@@ -62,7 +73,7 @@ namespace Cinematic
         public override State Transition()
         {
             // if camera transition is finished
-            if(cursor >= 1)
+            if(cursor >= 1 || currentTarget.moveTime == 0)
             {
                 // wait
                 return blackboard.stateWait;
