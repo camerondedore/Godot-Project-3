@@ -58,6 +58,9 @@ namespace PlayerCharacterComplex
                     blackboard.bowAimer.EnableBowAimer();
                 }
             }
+
+            // back bone pose
+            blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
         }
 
 
@@ -65,9 +68,6 @@ namespace PlayerCharacterComplex
         public override void StartState()
         {
             startTime = EngineTime.timePassed;
-
-            // enable bow
-            //blackboard.bowAimer.EnableBowAimer();
 
             // check last bow state
             previouslyDrawn = blackboard.bow.isDrawn;
@@ -85,6 +85,8 @@ namespace PlayerCharacterComplex
 
             // animation
             blackboard.anim.Play("character-draw");
+
+            blackboard.backBone.OverridePose = true;
         }
 
 

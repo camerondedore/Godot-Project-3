@@ -19,6 +19,11 @@ namespace PlayerCharacterComplex
             blackboard.cameraController.machine.SetState(blackboard.cameraController.stateWait);
 
             blackboard.health.invulnerable = true;
+
+            // animation
+            blackboard.anim.Play("character-idle");
+
+            blackboard.backBone.OverridePose = false;
         }
 
 

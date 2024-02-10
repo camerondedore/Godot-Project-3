@@ -36,6 +36,9 @@ namespace PlayerCharacterComplex
 
             // camera follow
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
+
+            // back bone pose
+            blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
         }
 
 
@@ -57,7 +60,7 @@ namespace PlayerCharacterComplex
 
         public override void EndState()
         {
-            
+            blackboard.backBone.OverridePose = false;
         }
 
 

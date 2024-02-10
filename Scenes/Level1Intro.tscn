@@ -252,7 +252,7 @@ actions = []
 [node name="Control5" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.0599, 9.5, -108.44)
 script = ExtResource("9_t8334")
-targets = [NodePath("Target1")]
+targets = [NodePath("Target1"), NodePath("Target2"), NodePath("Target3"), NodePath("Target4")]
 
 [node name="Trigger" type="Area3D" parent="Map/CinematicTriggers/Control5"]
 collision_layer = 0
@@ -269,6 +269,27 @@ transform = Transform3D(0.99999, 0.00234216, -0.00368291, 0, 0.843818, 0.536629,
 script = ExtResource("10_35g6o")
 waitTime = 1.5
 moveTime = 2.0
+actions = []
+
+[node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control5" node_paths=PackedStringArray("actions")]
+transform = Transform3D(-0.580717, 0.158825, -0.798462, 0, 0.980785, 0.195091, 0.814105, 0.113293, -0.569558, -9.60036, -4.42628, -8.43799)
+script = ExtResource("10_35g6o")
+waitTime = 0.5
+moveTime = 0.0
+actions = []
+
+[node name="Target3" type="Node3D" parent="Map/CinematicTriggers/Control5" node_paths=PackedStringArray("actions")]
+transform = Transform3D(0.203657, -0.265752, 0.942284, 0, 0.962455, 0.271441, -0.979042, -0.0552809, 0.196011, -13.1572, -7.6023, -12.8117)
+script = ExtResource("10_35g6o")
+waitTime = 0.5
+moveTime = 0.0
+actions = []
+
+[node name="Target4" type="Node3D" parent="Map/CinematicTriggers/Control5" node_paths=PackedStringArray("actions")]
+transform = Transform3D(-0.632717, 0.245716, -0.734365, 0, 0.948323, 0.317305, 0.774383, 0.200765, -0.60002, -20.3965, -4.38762, -14.2679)
+script = ExtResource("10_35g6o")
+waitTime = 0.5
+moveTime = 0.0
 actions = []
 
 [node name="Control6" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
