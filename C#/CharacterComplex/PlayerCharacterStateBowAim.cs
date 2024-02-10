@@ -106,6 +106,8 @@ namespace PlayerCharacterComplex
                 // cancel draw
                 blackboard.bow.CancelDraw();
 
+                blackboard.backBone.OverridePose = false;
+
                 // fall
                 return blackboard.stateFall;
             }
@@ -117,6 +119,8 @@ namespace PlayerCharacterComplex
             {
                 // cancel draw
                 blackboard.bow.CancelDraw();
+
+                blackboard.backBone.OverridePose = false;
 
                 // jump start
                 //return blackboard.stateJumpStart;
@@ -135,6 +139,8 @@ namespace PlayerCharacterComplex
                 // cancel draw
                 blackboard.bow.CancelDraw();
 
+                blackboard.backBone.OverridePose = false;
+
                 // move
                 return blackboard.stateMove;
             }
@@ -144,6 +150,8 @@ namespace PlayerCharacterComplex
             {
                 // cancel draw
                 blackboard.bow.CancelDraw();
+
+                blackboard.backBone.OverridePose = false;
 
                 // move
                 return blackboard.stateMove;

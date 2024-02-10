@@ -45,11 +45,6 @@ namespace Cinematic
             // get target
             currentTarget = blackboard.targets[blackboard.targetIndex];
 
-            if(currentTarget.moveTime == 0)
-            {
-                return;
-            }
-
             if(camera == null)
             {
                 // get global camera
@@ -65,7 +60,12 @@ namespace Cinematic
             startLookTarget = startPosition + -camera.GlobalBasis.Z;
             endPosition = currentTarget.GlobalPosition;
             endLookTarget = endPosition + -currentTarget.GlobalBasis.Z;
-            lookTarget = startLookTarget;            
+            lookTarget = startLookTarget;        
+
+            if(currentTarget.moveTime == 0)
+            {
+                camera.LookAtFromPosition(endPosition, endLookTarget);
+            }    
         }
 
 
