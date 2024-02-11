@@ -77,6 +77,9 @@ namespace MobBlackRat
                 blackboard.animation.Play("black-rat-attack-2");
                 lastSwingNumber = 2;
             }
+
+            // play swing sound
+            blackboard.audio.PlaySwordSwingSound();
         }
 
 
