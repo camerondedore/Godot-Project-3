@@ -30,6 +30,9 @@ namespace PlayerCharacterComplex
 
             // camera follow
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
+
+            // set animation speed
+            blackboard.anim.SpeedScale = blackboard.Velocity.Length() / blackboard.speed;
         }
 
 
@@ -44,7 +47,8 @@ namespace PlayerCharacterComplex
 
         public override void EndState()
         {
-            
+            // reset animation speed
+            blackboard.anim.SpeedScale = 1;
         }
 
 
