@@ -602,7 +602,7 @@ layers = 2
 gi_mode = 2
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="2"]
-transform = Transform3D(1, 5.12227e-09, -1.04308e-07, -1.74623e-09, 1, 0, 1.49012e-07, -4.65661e-10, 1, -0.0341791, -0.08128, 0.201509)
+transform = Transform3D(1, 9.54606e-09, -1.49012e-08, 9.54606e-09, 1, 4.65661e-10, -1.49012e-08, 4.65661e-10, 1, -0.0341791, -0.08128, 0.201509)
 bone_name = "back-control"
 bone_idx = 13
 
