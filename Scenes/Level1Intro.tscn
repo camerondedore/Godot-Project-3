@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=27 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="9_yqm1q"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTarget.cs" id="10_35g6o"]
 [ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Player Bow Targets/PropBlackberryBushOld.tscn" id="10_c2xp5"]
+[ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Small Items/PropTorchLit.tscn" id="10_fe5xw"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerArea.cs" id="12_ph3lw"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerDead.cs" id="14_kb1i8"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobSpawner.cs" id="17_q1lpa"]
@@ -78,6 +79,9 @@ shape = SubResource("ConcavePolygonShape3D_apnoe")
 
 [node name="PropWheelBarrow" parent="Map/NavigationRegion3D/Props/SmallItems" instance=ExtResource("8_owtm8")]
 transform = Transform3D(0.724388, 0, -0.689392, 0, 1, 0, 0.689392, 0, 0.724388, -19.3427, -4.55, -27.3361)
+
+[node name="PropTorchLit" parent="Map/NavigationRegion3D/Props/SmallItems" instance=ExtResource("10_fe5xw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.02899, 0.5, -34.7043)
 
 [node name="BlackberryBushes" type="Node3D" parent="Map/NavigationRegion3D/Props"]
 
@@ -154,7 +158,7 @@ shape = SubResource("BoxShape3D_okp1m")
 transform = Transform3D(0.960056, -0.0629432, 0.272636, 0, 0.97437, 0.224952, -0.279807, -0.215966, 0.93545, 3.04481, 1.83946, -3.85026)
 script = ExtResource("10_35g6o")
 waitTime = 1.0
-moveTime = 2.0
+moveTime = 1.0
 actions = []
 
 [node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control1" node_paths=PackedStringArray("actions")]
@@ -181,19 +185,20 @@ playerCharacter = NodePath("../../../../PlayerCharacter")
 transform = Transform3D(0.790701, -0.150696, 0.593365, 0, 0.96923, 0.246154, -0.612202, -0.194635, 0.766372, 6.20529, 1.34477, -2.11399)
 script = ExtResource("10_35g6o")
 waitTime = 2.0
-moveTime = 2.0
+moveTime = 1.0
 actions = [NodePath("../../../Dialogue/Dialogue1")]
 
 [node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.859394, -0.311269, 0.405652, 0, 0.793352, 0.608763, -0.511314, 0.523167, -0.681803, 2.48249, -1.65969, -2.6038)
 script = ExtResource("10_35g6o")
-waitTime = 1.0
+waitTime = 1.25
 moveTime = 1.0
 actions = [NodePath("../../../Dialogue/Dialogue2")]
 
 [node name="Target3" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.207889, -0.470482, 0.857572, 0, 0.876726, 0.48099, -0.978153, 0.0999926, -0.182262, 1.19399, -1.04236, -1.6619)
 script = ExtResource("10_35g6o")
+waitTime = 2.5
 moveTime = 1.0
 actions = [NodePath("../../../NavigationRegion3D/Props/BlackberryBushes/PropBlackberryBushOld"), NodePath("../../../Spawns/Spawn1")]
 
@@ -231,7 +236,6 @@ monitorable = false
 script = ExtResource("12_ph3lw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/CinematicTriggers/Control5/Trigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_vw7pv")
 
 [node name="Target1" type="Node3D" parent="Map/CinematicTriggers/Control5" node_paths=PackedStringArray("actions")]
