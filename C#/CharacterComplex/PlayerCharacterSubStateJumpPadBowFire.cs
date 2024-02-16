@@ -18,6 +18,9 @@ namespace PlayerCharacterComplex
             lookDirection.Y = blackboard.GlobalPosition.Y;
 
             blackboard.CharacterLook(lookDirection);
+
+            // back bone pose
+            blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
         }
 
 
@@ -37,7 +40,7 @@ namespace PlayerCharacterComplex
 
         public override void EndState()
         {
-            
+            blackboard.backBone.OverridePose = false;
         }
 
 

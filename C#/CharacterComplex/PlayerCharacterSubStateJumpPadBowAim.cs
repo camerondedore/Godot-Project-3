@@ -41,6 +41,9 @@ namespace PlayerCharacterComplex
                     blackboard.bowAimer.EnableBowAimer();
                 }
             }
+
+            // back bone pose
+            blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
         }
 
 
@@ -68,6 +71,8 @@ namespace PlayerCharacterComplex
 
             // animation
             blackboard.anim.Play("character-draw");
+
+            blackboard.backBone.OverridePose = true;
         }
 
 

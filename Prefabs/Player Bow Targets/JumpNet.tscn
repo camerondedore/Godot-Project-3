@@ -16,7 +16,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_o31fv"]
 size = Vector3(1.5, 0.2, 1.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cyjt6"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6psw"]
 size = Vector3(1.3, 0.2, 1.3)
 
 [node name="JumpNet" type="StaticBody3D" node_paths=PackedStringArray("jumpPad", "arrowCollider", "netMesh", "anim", "audio")]
@@ -65,7 +65,7 @@ horizontalSpeed = 6.0
 
 [node name="JumpCollision" type="CollisionShape3D" parent="JumpPad"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107837, 0)
-shape = SubResource("BoxShape3D_cyjt6")
+shape = SubResource("BoxShape3D_a6psw")
 
 [node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
