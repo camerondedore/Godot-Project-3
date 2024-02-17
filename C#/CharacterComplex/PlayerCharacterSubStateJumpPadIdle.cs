@@ -13,7 +13,7 @@ namespace PlayerCharacterComplex
         public override void RunState(double delta)
         {
             // check for no new fire 1 and no old fire 1 with bow already drawn
-            if(PlayerInput.fire1 == 0 && !blackboard.bow.isDrawn)
+            if(PlayerInput.fire1 == 0 && blackboard.bow.isDrawn == false)
             {
                 // look in direction of movement
                 blackboard.CharacterLook();
@@ -30,8 +30,11 @@ namespace PlayerCharacterComplex
                 blackboard.bow.CancelDraw();
             }
 
-            // animation
-            blackboard.anim.Play("character-jump");
+            if(blackboard.bow.isDrawn == false)
+            {
+                // animation
+                blackboard.anim.Play("character-jump");
+            }
         }
 
 

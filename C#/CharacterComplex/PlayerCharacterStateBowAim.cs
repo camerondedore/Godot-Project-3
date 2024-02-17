@@ -73,18 +73,18 @@ namespace PlayerCharacterComplex
             previouslyDrawn = blackboard.bow.isDrawn;
 
             // draw bow
-            if(!previouslyDrawn)
+            if(previouslyDrawn == false)
             {
                 blackboard.bow.Draw();
+
+                // animation
+                blackboard.anim.Play("character-draw");
             }
             else
             {
                 // enable bow
                 blackboard.bowAimer.EnableBowAimer();
-            }
-
-            // animation
-            blackboard.anim.Play("character-draw");
+            }            
 
             blackboard.backBone.OverridePose = true;
         }
