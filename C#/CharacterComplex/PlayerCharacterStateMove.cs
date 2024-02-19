@@ -32,7 +32,7 @@ namespace PlayerCharacterComplex
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
             // set animation speed
-            blackboard.anim.SpeedScale = blackboard.Velocity.Length() / blackboard.speed;
+            blackboard.animation.Set("parameters/character-run/TimeScale/scale", blackboard.Velocity.Length() / blackboard.speed);
         }
 
 
@@ -40,15 +40,14 @@ namespace PlayerCharacterComplex
         public override void StartState()
         {
             // animation
-            blackboard.anim.Play("character-walk");
+            blackboard.animStateMachinePlayback.Travel("character-run");
         }
 
 
 
         public override void EndState()
         {
-            // reset animation speed
-            blackboard.anim.SpeedScale = 1;
+
         }
 
 

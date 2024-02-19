@@ -42,7 +42,7 @@ namespace PlayerCharacterComplex
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
             // animation
-            blackboard.anim.Play("character-ledge");
+            blackboard.animStateMachinePlayback.Travel("character-ledge");
         }
 
     

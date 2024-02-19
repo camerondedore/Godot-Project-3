@@ -33,7 +33,7 @@ namespace PlayerCharacterComplex
         public override void StartState()
         {
             // animation
-            blackboard.anim.Play("character-idle");
+            blackboard.animStateMachinePlayback.Travel("character-idle");
         }
 
 

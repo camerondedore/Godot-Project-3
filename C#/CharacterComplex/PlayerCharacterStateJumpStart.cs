@@ -40,7 +40,7 @@ namespace PlayerCharacterComplex
             startTime = EngineTime.timePassed;
 
             // animation
-            blackboard.anim.Play("character-jump-start");
+            blackboard.animStateMachinePlayback.Travel("character-jump-start");
         }
 
 

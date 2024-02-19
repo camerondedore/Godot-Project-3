@@ -64,7 +64,7 @@ namespace PlayerCharacterComplex
                 blackboard.bow.Draw();
 
                 // animation
-                blackboard.anim.Play("character-draw");
+                blackboard.animStateMachinePlayback.Travel("character-jump-pad-draw");
             }
             else
             {

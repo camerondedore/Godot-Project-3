@@ -61,6 +61,14 @@ namespace PlayerCharacterComplex
 
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
+
+            var localVelocity = blackboard.GetLocalVelocityNormalized();
+            var animationBlendValue = new Vector2();
+            animationBlendValue.X = localVelocity.X;
+            animationBlendValue.Y = -localVelocity.Z;
+
+            // set animation blending
+            blackboard.animation.Set("parameters/character-draw/draw-2d-blend/blend_position", animationBlendValue);
         }
 
 
@@ -78,7 +86,7 @@ namespace PlayerCharacterComplex
                 blackboard.bow.Draw();
 
                 // animation
-                blackboard.anim.Play("character-draw");
+                blackboard.animStateMachinePlayback.Travel("character-draw");
             }
             else
             {

@@ -21,7 +21,7 @@ namespace PlayerCharacterComplex
             blackboard.health.invulnerable = true;
 
             // animation
-            blackboard.anim.Play("character-idle");
+            blackboard.animStateMachinePlayback.Travel("character-idle");
 
             blackboard.backBone.OverridePose = false;
         }

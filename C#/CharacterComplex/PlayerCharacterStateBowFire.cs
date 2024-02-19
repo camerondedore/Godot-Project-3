@@ -39,6 +39,14 @@ namespace PlayerCharacterComplex
 
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
+
+            var localVelocity = blackboard.GetLocalVelocityNormalized();
+            var animationBlendValue = new Vector2();
+            animationBlendValue.X = localVelocity.X;
+            animationBlendValue.Y = -localVelocity.Z;
+
+            // set animation blending
+            blackboard.animation.Set("parameters/character-fire/fire-2d-blend/blend_position", animationBlendValue);
         }
 
 
@@ -53,7 +61,7 @@ namespace PlayerCharacterComplex
             blackboard.bow.Fire(blackboard.bowAimer.target);
 
             // animation
-            blackboard.anim.Play("character-fire");
+            blackboard.animStateMachinePlayback.Travel("character-fire");
         }
 
 

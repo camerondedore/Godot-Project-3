@@ -26,7 +26,7 @@ namespace PlayerCharacterComplex
             }
 
             // animation
-            blackboard.anim.Play("character-die");
+            blackboard.animStateMachinePlayback.Travel("character-die");
         }
 
 

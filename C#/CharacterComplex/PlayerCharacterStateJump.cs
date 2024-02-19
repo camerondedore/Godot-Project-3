@@ -51,7 +51,7 @@ namespace PlayerCharacterComplex
             blackboard.Velocity = vel;
 
             // animation
-            blackboard.anim.Play("character-jump");
+            blackboard.animStateMachinePlayback.Travel("character-jump");
         }
 
 

@@ -33,7 +33,7 @@ namespace PlayerCharacterComplex
             blackboard.bow.Fire(blackboard.bowAimer.target);
 
             // animation
-            blackboard.anim.Play("character-fire");
+            blackboard.animStateMachinePlayback.Travel("character-jump-pad-fire");
         }
 
 

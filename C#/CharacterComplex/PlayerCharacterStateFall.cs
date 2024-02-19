@@ -53,7 +53,7 @@ namespace PlayerCharacterComplex
             blackboard.startHeight = blackboard.GlobalPosition.Y;
 
             // animation
-            blackboard.anim.Play("character-fall");
+            blackboard.animStateMachinePlayback.Travel("character-fall");
 
             blackboard.ledgeDetector.TurnOn();
         }

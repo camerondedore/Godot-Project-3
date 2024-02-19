@@ -33,7 +33,7 @@ namespace PlayerCharacterComplex
 		[Export]
 		public Node3D verticalSpringArmTarget;
 		[Export]
-		public AnimationPlayer anim;
+        public AnimationTree animation;
 		[Export]
 		public BoneAttachment3D backBone;
 		[Export]
@@ -62,6 +62,7 @@ namespace PlayerCharacterComplex
 			fireTime = 0.5f,
 			drawTime = 0.5f;
 
+		public AnimationNodeStateMachinePlayback animStateMachinePlayback;
 		public Disconnector jumpDisconnector = new Disconnector();
 		public BandageStation currentStation;
 		public float startHeight;
@@ -75,6 +76,8 @@ namespace PlayerCharacterComplex
 
 		public override void _Ready()
 		{
+			animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
+
 			// initialize super states
 			superStateJumpPad = new PlayerCharacterSuperStateJumpPad(){blackboard = this};
 
@@ -170,6 +173,13 @@ namespace PlayerCharacterComplex
 
 			return moveDirection.Normalized();
 		}
+
+
+
+		public Vector3 GetLocalVelocityNormalized()
+		{
+			return ToLocal(GlobalPosition + Velocity) / speed;
+		} 
 
 
 

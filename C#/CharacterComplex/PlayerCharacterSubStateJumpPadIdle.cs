@@ -33,7 +33,7 @@ namespace PlayerCharacterComplex
             if(blackboard.bow.isDrawn == false)
             {
                 // animation
-                blackboard.anim.Play("character-jump");
+                blackboard.animStateMachinePlayback.Travel("character-jump");
             }
         }
 
