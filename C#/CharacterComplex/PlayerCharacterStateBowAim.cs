@@ -8,7 +8,8 @@ namespace PlayerCharacterComplex
 
         double startTime;
         bool holdDraw = true,
-            previouslyDrawn = false;
+            previouslyDrawn = false,
+            animationFastForward = false;
 
 
 
@@ -69,6 +70,14 @@ namespace PlayerCharacterComplex
 
             // set animation blending
             blackboard.animation.Set("parameters/character-draw/draw-2d-blend/blend_position", animationBlendValue);
+
+            if(animationFastForward)
+            {
+                // animation fast forward
+                blackboard.animation.Set("parameters/character-draw/TimeSeek/seek_request", 0.4f);
+
+                animationFastForward = false;
+            }
         }
 
 
@@ -79,19 +88,21 @@ namespace PlayerCharacterComplex
 
             // check last bow state
             previouslyDrawn = blackboard.bow.isDrawn;
+            
+            // animation
+            blackboard.animStateMachinePlayback.Travel("character-draw");
 
             // draw bow
             if(previouslyDrawn == false)
             {
                 blackboard.bow.Draw();
-
-                // animation
-                blackboard.animStateMachinePlayback.Travel("character-draw");
             }
             else
             {
                 // enable bow
                 blackboard.bowAimer.EnableBowAimer();
+
+                animationFastForward = true;
             }            
 
             blackboard.backBone.OverridePose = true;

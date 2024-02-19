@@ -8,7 +8,8 @@ namespace PlayerCharacterComplex
 
         double startTime;
         bool holdDraw = true,
-            previouslyDrawn = false;
+            previouslyDrawn = false,
+            animationFastForward = false;
 
 
 
@@ -44,6 +45,14 @@ namespace PlayerCharacterComplex
 
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
+
+            if(animationFastForward)
+            {
+                // animation fast forward
+                blackboard.animation.Set("parameters/character-jump-pad-draw/TimeSeek/seek_request", 0.4f);
+
+                animationFastForward = false;
+            }
         }
 
 
@@ -52,24 +61,23 @@ namespace PlayerCharacterComplex
         {
             startTime = EngineTime.timePassed;
 
-            // enable bow
-            //blackboard.bowAimer.EnableBowAimer();
-
             // check last bow state
             previouslyDrawn = blackboard.bow.isDrawn;
+
+            // animation
+            blackboard.animStateMachinePlayback.Travel("character-jump-pad-draw");
 
             // draw bow
             if(previouslyDrawn == false)
             {
                 blackboard.bow.Draw();
-
-                // animation
-                blackboard.animStateMachinePlayback.Travel("character-jump-pad-draw");
             }
             else
             {
                 // enable bow
                 blackboard.bowAimer.EnableBowAimer();
+
+                animationFastForward = true;
             }
 
             blackboard.backBone.OverridePose = true;
