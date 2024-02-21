@@ -176,8 +176,13 @@ namespace PlayerCharacterComplex
 
 
 
-		public Vector3 GetLocalVelocityNormalized()
+		public Vector3 GetLocalVelocityNormalized(bool aiming = false)
 		{
+			if(aiming)
+			{
+				return ToLocal(GlobalPosition + Velocity) / aimSpeed;
+			}
+
 			return ToLocal(GlobalPosition + Velocity) / speed;
 		} 
 

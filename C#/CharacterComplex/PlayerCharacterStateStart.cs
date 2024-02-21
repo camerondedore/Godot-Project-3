@@ -20,6 +20,9 @@ namespace PlayerCharacterComplex
 
             blackboard.health.invulnerable = true;
 
+            // clear bow draw
+            blackboard.bow.CancelDraw();
+
             // animation
             blackboard.animStateMachinePlayback.Travel("character-idle");
 

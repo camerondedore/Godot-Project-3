@@ -63,7 +63,7 @@ namespace PlayerCharacterComplex
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
 
-            var localVelocity = blackboard.GetLocalVelocityNormalized();
+            var localVelocity = blackboard.GetLocalVelocityNormalized(true);
             var animationBlendValue = new Vector2();
             animationBlendValue.X = localVelocity.X;
             animationBlendValue.Y = -localVelocity.Z;
@@ -142,8 +142,8 @@ namespace PlayerCharacterComplex
                 blackboard.backBone.OverridePose = false;
 
                 // jump start
-                //return blackboard.stateJumpStart;
-                return blackboard.stateJump;
+                return blackboard.stateJumpStart;
+                //return blackboard.stateJump;
             }
 
             // check for fire 1 up and either full draw or previously drawn

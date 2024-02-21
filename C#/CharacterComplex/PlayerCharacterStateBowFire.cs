@@ -40,7 +40,7 @@ namespace PlayerCharacterComplex
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
 
-            var localVelocity = blackboard.GetLocalVelocityNormalized();
+            var localVelocity = blackboard.GetLocalVelocityNormalized(true);
             var animationBlendValue = new Vector2();
             animationBlendValue.X = localVelocity.X;
             animationBlendValue.Y = -localVelocity.Z;
@@ -87,13 +87,6 @@ namespace PlayerCharacterComplex
                 // move
                 return blackboard.stateMove;
             }
-
-            // if(blackboard.jumpDisconnector.Trip(PlayerInput.jump) && blackboard.IsOnFloor())
-            // {
-            //     // jump start
-            //     //return blackboard.stateJumpStart;
-            //     return blackboard.stateJump;
-            // }
 
             if(EngineTime.timePassed > startTime + blackboard.fireTime)
             {
