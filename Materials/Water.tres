@@ -1,0 +1,38 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bg5ilcdct7q4j"]
+
+[ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="1_eiigu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_am08y"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u5sew"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_am08y")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dqqev"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tvqbl"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_dqqev")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_eiigu")
+shader_parameter/waterColor = Color(0.0392157, 0.521569, 1, 1)
+shader_parameter/foamColor = Color(0.870588, 0.933333, 1, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/uvScale = 30.0
+shader_parameter/waveTimeScale = 0.05
+shader_parameter/waveVelocity1 = Vector2(0.1, 0.2)
+shader_parameter/waveVelocity2 = Vector2(-0.2, -0.1)
+shader_parameter/refractionStrengthXY = 0.1
+shader_parameter/refractionStrengthZ = 0.1
+shader_parameter/depthOffset = 1.0
+shader_parameter/beersLaw = 1.0
+shader_parameter/waterNormalMap1 = SubResource("NoiseTexture2D_u5sew")
+shader_parameter/waterNormalMap2 = SubResource("NoiseTexture2D_tvqbl")
