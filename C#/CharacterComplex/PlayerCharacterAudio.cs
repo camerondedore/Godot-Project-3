@@ -10,6 +10,8 @@ namespace PlayerCharacterComplex
         AudioStream rangerBandageGatherSound,
             rangerBandageCraftSound,
             fallDamageSound;
+        [Export]
+        AudioStream[] footsteps;
 
 
 
@@ -30,6 +32,13 @@ namespace PlayerCharacterComplex
         public void PlayFallDamageSound()
         {
             PlaySound(fallDamageSound, 0.1f);
+        }
+
+
+
+        public void PlayFootstepSound()
+        {
+            PlayRandomSound(footsteps, 0.1f);
         }
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=32 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -7,7 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_28myn"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="4_m4xsu"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="4_xfsdn"]
-[ext_resource type="Material" uid="uid://c5m6htpwba4q" path="res://Materials/GrassMedium.tres" id="7_5gv3h"]
+[ext_resource type="LightmapGIData" uid="uid://6dqsp60t5s0e" path="res://Scenes/Level1Intro.lmbake" id="5_2kvqm"]
+[ext_resource type="Material" uid="uid://dkncsl54qwwvb" path="res://Materials/Grass.tres" id="7_jhrab"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="8_0fhhb"]
 [ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="8_0wyn0"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="8_owtm8"]
@@ -57,6 +58,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 
 [node name="Map" type="Node3D" parent="."]
 
+[node name="LightmapGI" type="LightmapGI" parent="Map"]
+visible = false
+quality = 0
+light_data = ExtResource("5_2kvqm")
+
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Map/Lighting"]
@@ -73,7 +79,7 @@ navigation_mesh = SubResource("NavigationMesh_ti3m2")
 [node name="GroundMesh" type="MeshInstance3D" parent="Map/NavigationRegion3D/Ground"]
 mesh = ExtResource("1_tfilf")
 skeleton = NodePath("../../../..")
-surface_material_override/0 = ExtResource("7_5gv3h")
+surface_material_override/0 = ExtResource("7_jhrab")
 surface_material_override/1 = ExtResource("8_0wyn0")
 surface_material_override/2 = ExtResource("9_m2eqj")
 
@@ -119,6 +125,18 @@ surface_material_override/0 = ExtResource("14_7brwj")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterMesh"]
 transform = Transform3D(0.0911807, 0, 1.86265e-08, 0, 0.289708, 0, -4.47035e-08, 0, 0.289707, 0, 0.144854, 0)
+max_distance = 10.0
+box_projection = true
+
+[node name="WaterMesh2" type="MeshInstance3D" parent="Map"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -26.233, -1.83845, -186.667)
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("PlaneMesh_hvpfb")
+surface_material_override/0 = ExtResource("14_7brwj")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterMesh2"]
+transform = Transform3D(0.125, 0, 6.12842e-08, 0, 0.125, 0, -6.12842e-08, 0, 0.125, 0, 0.144854, 0)
 max_distance = 10.0
 box_projection = true
 

@@ -17,6 +17,5 @@ glow_levels/3 = 0.25
 glow_levels/4 = 0.1
 glow_levels/5 = 0.0
 glow_blend_mode = 0
-fog_density = 0.003
+fog_density = 0.005
 fog_aerial_perspective = 1.0
-fog_sky_affect = 0.0

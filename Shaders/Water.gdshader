@@ -12,6 +12,7 @@ uniform vec2 waveVelocity3 = vec2(0.15, -0.05);
 //uniform float refractionStrength : hint_range(0.0, 0.5) = 0.05;
 uniform float depthOffset = -0.75;
 uniform float beersLaw = 2.0;
+uniform float heightAmount = 5;
 uniform float heightStrength = 2;
 uniform sampler2D waterNormalMap1;
 uniform sampler2D waterNormalMap2;
@@ -55,13 +56,15 @@ void fragment()
 	vec3 waterNormal1 = texture(waterNormalMap1, worldUvCoordinates + waveOffset1).rgb;
 	vec3 waterNormal2 = texture(waterNormalMap2, worldUvCoordinates + waveOffset2).rgb;
 	vec3 waterNormal3 = texture(waterNormalMap3, worldUvCoordinates + waveOffset3).rgb;
-	vec3 combinedWaterNormal = mix(waterNormal3, mix(waterNormal1, waterNormal2, 0.5), 0.5);
+	//vec3 combinedWaterNormal = mix(waterNormal3, mix(waterNormal1, waterNormal2, 0.5), 0.5);
+	vec3 combinedWaterNormal = normalize(waterNormal3 + waterNormal1 + waterNormal2);
 	
 	// get height from texture using world position for UV coordinated
 	float waterHeight1 = texture(waterHeightMap1, worldUvCoordinates + waveOffset1).r;
 	float waterHeight2 = texture(waterHeightMap2, worldUvCoordinates + waveOffset2).r;
 	float waterHeight3 = texture(waterHeightMap3, worldUvCoordinates + waveOffset3).r;
-	float combinedWaterHeight = smoothstep(0.0, 1.0, waterHeight1 * waterHeight2 * waterHeight3);
+	float combinedWaterHeight = (waterHeight1 + waterHeight2 + waterHeight3) * 0.33;
+	combinedWaterHeight = pow(combinedWaterHeight, heightAmount);
 	vec3 waterHeight = waterColor * combinedWaterHeight * heightStrength;
 	
 	
