@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://chjbr36t4t6lq"]
+
+[ext_resource type="Material" uid="uid://di1qfr4rger5s" path="res://Materials/Fx/FxWaterRipple.tres" id="1_xx2sc"]
+[ext_resource type="Script" path="res://C#/Common/ParticleTools.cs" id="2_7qt2u"]
+
+[sub_resource type="Gradient" id="Gradient_7sfyy"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kvrgx"]
+gradient = SubResource("Gradient_7sfyy")
+
+[sub_resource type="Curve" id="Curve_1a0fa"]
+_data = [Vector2(0, 0), 0.0, 2.64197, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qpami"]
+curve = SubResource("Curve_1a0fa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lj67k"]
+angle_max = 359.0
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.9
+scale_max = 1.1
+scale_curve = SubResource("CurveTexture_qpami")
+color_ramp = SubResource("GradientTexture1D_kvrgx")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g3txk"]
+
+[node name="FxWaterCharacterSplash" type="GPUParticles3D"]
+material_override = ExtResource("1_xx2sc")
+cast_shadow = 0
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_lj67k")
+draw_pass_1 = SubResource("QuadMesh_g3txk")
+script = ExtResource("2_7qt2u")
+playChildren = true

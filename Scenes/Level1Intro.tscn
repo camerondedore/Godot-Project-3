@@ -35,7 +35,8 @@ data = PackedVector3Array(-4.0009, 0, 9.998, 3.9925, 0, 0.2263, 3.9991, 0, 9.998
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hvpfb"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_ahpkm"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_62aki"]
+size = Vector3(22, 1.75, 7)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_okp1m"]
 size = Vector3(15, 5, 1)
@@ -116,15 +117,26 @@ transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, -55.3158
 [node name="PropBlackberryBush4" parent="Map/NavigationRegion3D/Props/BlackberryBushes" instance=ExtResource("9_yqm1q")]
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, -58.5658, 5.5, -218.649)
 
-[node name="WaterMesh" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(9.4979, 0, 1.72588, 0, 3.45175, 0, -5.48362, 0, 2.98931, -29.213, 2.04496, -73.6549)
+[node name="WaterArea" type="Area3D" parent="Map"]
+transform = Transform3D(0.88722, 0, 0.461346, 0, 1, 0, -0.461346, 0, 0.88722, -29.213, 2.04496, -73.6549)
+collision_layer = 4096
+collision_mask = 0
+monitoring = false
+
+[node name="WaterMesh" type="MeshInstance3D" parent="Map/WaterArea"]
+transform = Transform3D(11, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
 cast_shadow = 0
 gi_mode = 2
 mesh = SubResource("PlaneMesh_hvpfb")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("14_7brwj")
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterMesh"]
-transform = Transform3D(0.0911807, 0, 1.86265e-08, 0, 0.289708, 0, -4.47035e-08, 0, 0.289707, 0, 0.144854, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85, 0)
+shape = SubResource("BoxShape3D_62aki")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 max_distance = 10.0
 box_projection = true
 
@@ -139,11 +151,6 @@ surface_material_override/0 = ExtResource("14_7brwj")
 transform = Transform3D(0.125, 0, 6.12842e-08, 0, 0.125, 0, -6.12842e-08, 0, 0.125, 0, 0.144854, 0)
 max_distance = 10.0
 box_projection = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -29.213, 1.91327, -73.6549)
-mesh = SubResource("SphereMesh_ahpkm")
-skeleton = NodePath("../WaterMesh")
 
 [node name="Pickups" type="Node3D" parent="Map"]
 
