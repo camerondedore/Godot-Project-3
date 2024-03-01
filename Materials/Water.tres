@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b8j7fol1iwljn" path="res://Textures/Water/water-normal-3.png" id="8_6g4nc"]
 
 [resource]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("1_eiigu")
 shader_parameter/waterColor = Color(0.0784314, 0.180392, 0.345098, 1)
 shader_parameter/foamColor = Color(0.870588, 0.933333, 1, 1)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://chjbr36t4t6lq"]
+[gd_scene load_steps=14 format=3 uid="uid://chjbr36t4t6lq"]
 
-[ext_resource type="Material" uid="uid://di1qfr4rger5s" path="res://Materials/Fx/FxWaterRipple.tres" id="1_xx2sc"]
+[ext_resource type="Material" uid="uid://di1qfr4rger5s" path="res://Materials/Fx/FxWaterSplashRipple.tres" id="1_er1ss"]
 [ext_resource type="Script" path="res://C#/Common/ParticleTools.cs" id="2_7qt2u"]
+[ext_resource type="Material" uid="uid://dxuigwyapk2a7" path="res://Materials/Fx/FxWaterSplashDroplet.tres" id="3_q2f7j"]
 
 [sub_resource type="Gradient" id="Gradient_7sfyy"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
@@ -17,21 +18,65 @@ point_count = 2
 curve = SubResource("Curve_1a0fa")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lj67k"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.0
 angle_max = 359.0
 direction = Vector3(0, 1, 0)
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
 gravity = Vector3(0, 0, 0)
-scale_min = 0.9
-scale_max = 1.1
+scale_min = 1.25
+scale_max = 1.5
 scale_curve = SubResource("CurveTexture_qpami")
+color = Color(0.505882, 0.505882, 0.505882, 1)
 color_ramp = SubResource("GradientTexture1D_kvrgx")
 
 [sub_resource type="QuadMesh" id="QuadMesh_g3txk"]
 
+[sub_resource type="Gradient" id="Gradient_06ff0"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qteas"]
+gradient = SubResource("Gradient_06ff0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vpfge"]
+lifetime_randomness = 0.3
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 0.35
+emission_ring_inner_radius = 0.35
+angle_max = 359.0
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+scale_min = 0.07
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_qteas")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ahsjb"]
+
 [node name="FxWaterCharacterSplash" type="GPUParticles3D"]
-material_override = ExtResource("1_xx2sc")
+material_override = ExtResource("1_er1ss")
 cast_shadow = 0
 emitting = false
+amount = 16
+visibility_aabb = AABB(-1.09212, -1.09491, -1.00001, 2.16764, 2.18719, 2.00002)
 process_material = SubResource("ParticleProcessMaterial_lj67k")
 draw_pass_1 = SubResource("QuadMesh_g3txk")
 script = ExtResource("2_7qt2u")
 playChildren = true
+
+[node name="FxWaterSplashDrops" type="GPUParticles3D" parent="."]
+material_override = ExtResource("3_q2f7j")
+cast_shadow = 0
+emitting = false
+amount = 20
+lifetime = 0.5
+randomness = 0.5
+visibility_aabb = AABB(-1.83954, -1.91281, -1.55443, 3.55747, 3.81178, 2.92515)
+process_material = SubResource("ParticleProcessMaterial_vpfge")
+draw_pass_1 = SubResource("QuadMesh_ahsjb")

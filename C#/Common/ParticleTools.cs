@@ -35,6 +35,29 @@ public partial class ParticleTools : GpuParticles3D
 
 
 
+    public void PlayParticles()
+    {
+        Emitting = true;
+
+        if(playChildren)
+        {
+            if(particleChildren == null)
+            {
+                particleChildren = GetChildren(true).ToArray();
+            }
+
+            foreach(var child in particleChildren)
+            {   
+                if(child is GpuParticles3D)
+                {
+                    ((GpuParticles3D) child).Emitting = true;
+                }
+            }
+        }
+    }
+
+
+
     public void StopParticles()
     {
         Emitting = false;
