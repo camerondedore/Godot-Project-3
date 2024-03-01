@@ -60,6 +60,7 @@ color_ramp = SubResource("GradientTexture1D_qteas")
 [sub_resource type="QuadMesh" id="QuadMesh_ahsjb"]
 
 [node name="FxWaterCharacterSplash" type="GPUParticles3D"]
+process_mode = 1
 material_override = ExtResource("1_er1ss")
 cast_shadow = 0
 emitting = false

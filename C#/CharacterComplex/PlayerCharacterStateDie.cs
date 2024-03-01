@@ -25,6 +25,9 @@ namespace PlayerCharacterComplex
                 faction.QueueFree();
             }
 
+            // clear velocity
+            blackboard.Velocity = Vector3.Zero;
+
             // animation
             blackboard.animStateMachinePlayback.Travel("character-die");
         }

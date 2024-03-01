@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dkw1hfkd0uses"]
+[gd_scene load_steps=23 format=3 uid="uid://dkw1hfkd0uses"]
 
 [ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRat.cs" id="1_46qau"]
 [ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRatHealth.cs" id="2_71lt1"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://ch1you6rwmx40" path="res://Audio/bow-target.wav" id="15_xmgge"]
 [ext_resource type="PackedScene" uid="uid://dqqxr6lpg1jk6" path="res://Prefabs/FX/FxEnemyHit.tscn" id="17_w0mqh"]
 [ext_resource type="PackedScene" uid="uid://myloy3htblvq" path="res://Prefabs/FX/FxBloodSlash.tscn" id="20_3wa7t"]
+[ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="21_ccxk3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3dud8"]
 radius = 0.4
@@ -157,7 +158,7 @@ bones/62/rotation = Quaternion(-0.0407275, 0.704659, 0.705933, 0.0587899)
 bones/62/scale = Vector3(0.999999, 1, 1)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.997016, -0.0658149, 0.0403532, 0.0599435, 0.989358, 0.132577, -0.0486494, -0.129763, 0.990351, 0.269849, 0.170936, -0.6745)
+transform = Transform3D(0.997016, -0.0658149, 0.0403532, 0.0599435, 0.989358, 0.132578, -0.0486494, -0.129764, 0.990351, 0.269849, 0.170936, -0.6745)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D/weapon-sword" index="0"]
 surface_material_override/0 = ExtResource("4_5s7k5")
@@ -208,5 +209,8 @@ restartOnReady = false
 
 [node name="FxBloodSlash" parent="." instance=ExtResource("20_3wa7t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347548, -1.01184)
+
+[node name="CharacterWaterArea" parent="." node_paths=PackedStringArray("characterAudioNode") instance=ExtResource("21_ccxk3")]
+characterAudioNode = NodePath("../RatAudio")
 
 [editable path="character-black-rat"]

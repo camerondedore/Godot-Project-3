@@ -3,7 +3,7 @@ using System;
 
 namespace PlayerCharacterComplex
 {
-    public partial class PlayerCharacterAudio : AudioTools3d
+    public partial class PlayerCharacterAudio : AudioTools3d, CharacterWaterSplash.IWaterReactor
     {
 
         [Export]
@@ -12,6 +12,7 @@ namespace PlayerCharacterComplex
             fallDamageSound;
         [Export]
         AudioStream[] footsteps;
+        public bool footstepsEnabled = true;
 
 
 
@@ -38,7 +39,24 @@ namespace PlayerCharacterComplex
 
         public void PlayFootstepSound()
         {
-            PlayRandomSound(footsteps, 0.1f);
+            if(footstepsEnabled == true)
+            {
+                PlayRandomSound(footsteps, 0.1f);
+            }
+        }
+
+
+
+        public void InWater()
+        {
+            footstepsEnabled = false;
+        }
+
+
+
+        public void OutOfWater()
+        {
+            footstepsEnabled = true;
         }
     }
 }

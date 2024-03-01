@@ -74,7 +74,7 @@ namespace PlayerCharacterComplex
 
         public override void EndState()
         {
-            
+            //base.EndState();
         }
 
 

@@ -1,4 +1,5 @@
 using Godot;
+using PlayerCharacterComplex;
 using System;
 
 public partial class CharacterWaterSplash : Area3D
@@ -10,10 +11,14 @@ public partial class CharacterWaterSplash : Area3D
     AudioTools3d audio;
     [Export]
     AudioStream waterSplashSound;
+    [Export]
+    Node characterAudioNode;
 
     CharacterBody3D character;
+    IWaterReactor characterAudio;
     Node3D waterNode;
     Vector3 newFxPosition;
+    float audioTargetVolume = -40f;
     bool isPlaying;
 
 
@@ -26,7 +31,11 @@ public partial class CharacterWaterSplash : Area3D
 
         character = (CharacterBody3D) GetParent();
 
+        characterAudio = (IWaterReactor) characterAudioNode;
+
         audio.Stream = waterSplashSound;
+        audio.VolumeDb = -80f;
+        audio.Play();
     }
 
 
@@ -45,15 +54,30 @@ public partial class CharacterWaterSplash : Area3D
             if(character.Velocity.LengthSquared() > 0.5f && isPlaying == false)
             {
                 waterSpashFx.PlayParticles();
-                audio.Play();
+                audioTargetVolume = 0;
                 isPlaying = true;
             }
             else if(character.Velocity.LengthSquared() < 0.5f && isPlaying == true)
             {
                 waterSpashFx.StopParticles();
-                audio.Stop();
+                audioTargetVolume = -80f;
                 isPlaying = false;
             }
+        }
+
+        // smooth audio
+        if(audio.VolumeDb != audioTargetVolume)
+        {
+            audio.VolumeDb = Mathf.MoveToward(audio.VolumeDb, audioTargetVolume, ((float) delta) * 130f);
+
+            // if(audio.VolumeDb == -40f)
+            // {
+            //     audio.Stop();
+            // }
+            // else if(audio.VolumeDb == 0)
+            // {
+            //     audio.Play();
+            // }
         }
     }
 
@@ -62,6 +86,9 @@ public partial class CharacterWaterSplash : Area3D
     public void Splash(Node3D water)
     {
         waterNode = water;
+
+        audio.VolumeDb = 0;
+        characterAudio.InWater();
     }
 
 
@@ -71,7 +98,16 @@ public partial class CharacterWaterSplash : Area3D
         waterNode = null;
 
         waterSpashFx.StopParticles();
-        audio.Stop();
+        audioTargetVolume = -80f;
+        characterAudio.OutOfWater();
         isPlaying = false;
+    }
+
+
+
+    public interface IWaterReactor
+    {
+        void InWater();
+        void OutOfWater();
     }
 }

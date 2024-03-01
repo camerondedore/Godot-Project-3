@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=34 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -37,6 +37,9 @@ data = PackedVector3Array(-4.0009, 0, 9.998, 3.9925, 0, 0.2263, 3.9991, 0, 9.998
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_62aki"]
 size = Vector3(22, 1.75, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5j72"]
+size = Vector3(50, 1, 24)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sxvx6"]
 size = Vector3(12, 1.5, 16)
@@ -144,13 +147,13 @@ max_distance = 10.0
 box_projection = true
 
 [node name="WaterArea2" type="Area3D" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3244, -2.36211, -186.729)
+transform = Transform3D(0.986903, 0, -0.161311, 0, 1, 0, 0.161311, 0, 0.986903, -27.8263, -4.26737, -32.192)
 collision_layer = 4096
 collision_mask = 0
 monitoring = false
 
 [node name="WaterMesh" type="MeshInstance3D" parent="Map/WaterArea2"]
-transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
+transform = Transform3D(25, 0, 0, 0, 3.5, 0, 0, 0, 12, 0, 0, 0)
 cast_shadow = 0
 gi_mode = 2
 mesh = SubResource("PlaneMesh_hvpfb")
@@ -158,10 +161,33 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("14_7brwj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/WaterArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_l5j72")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+max_distance = 10.0
+box_projection = true
+
+[node name="WaterArea3" type="Area3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3244, -2.36211, -186.729)
+collision_layer = 4096
+collision_mask = 0
+monitoring = false
+
+[node name="WaterMesh" type="MeshInstance3D" parent="Map/WaterArea3"]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("PlaneMesh_hvpfb")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("14_7brwj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/WaterArea3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
 shape = SubResource("BoxShape3D_sxvx6")
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterArea2"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/WaterArea3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 max_distance = 10.0
 box_projection = true

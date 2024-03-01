@@ -23,6 +23,9 @@ namespace PlayerCharacterComplex
             // clear bow draw
             blackboard.bow.CancelDraw();
 
+            // clear velocity
+            blackboard.Velocity = Vector3.Zero;
+
             // animation
             blackboard.animStateMachinePlayback.Travel("character-idle");
 

@@ -3,7 +3,7 @@ using System;
 
 namespace MobBlackRat
 {
-    public partial class MobBlackRatAudio : AudioTools3d
+    public partial class MobBlackRatAudio : AudioTools3d, CharacterWaterSplash.IWaterReactor
     {
 
         [Export]
@@ -12,11 +12,16 @@ namespace MobBlackRat
         AudioStream swordHitSound,
             swordSwingSound;
 
+        bool footstepsEnabled = true;
+
 
 
         public void PlayFootstepSound()
         {
-            PlayRandomSound(footsteps, 0.1f);
+            if(footstepsEnabled == true)
+            {
+                PlayRandomSound(footsteps, 0.1f);
+            }
         }
 
 
@@ -31,6 +36,20 @@ namespace MobBlackRat
         public void PlaySwordSwingSound()
         {
             PlaySound(swordSwingSound, 0.1f);
+        }
+
+
+
+        public void InWater()
+        {
+            footstepsEnabled = false;
+        }
+
+
+
+        public void OutOfWater()
+        {
+            footstepsEnabled = true;
         }
     }
 }

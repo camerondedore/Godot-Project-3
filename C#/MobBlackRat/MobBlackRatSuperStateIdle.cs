@@ -27,13 +27,15 @@ namespace MobBlackRat
 
             // set substate
             SetState(blackboard.subStateIdle);
+
+            base.StartState();
         }
 
 
 
         public override void EndState()
         {
-
+            base.EndState();
         }
 
 
