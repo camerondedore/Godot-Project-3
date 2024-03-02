@@ -16,6 +16,7 @@ shader_parameter/waterColor = Color(0.0784314, 0.180392, 0.345098, 1)
 shader_parameter/foamColor = Color(0.870588, 0.933333, 1, 1)
 shader_parameter/foamSharpness = 1.5
 shader_parameter/roughness = 0.05
+shader_parameter/edgeHardness = 5.0
 shader_parameter/uvScale = 20.0
 shader_parameter/waveTimeScale = 0.035
 shader_parameter/waveVelocity1 = Vector2(0.1, 0.2)

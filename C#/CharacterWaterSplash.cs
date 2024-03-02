@@ -19,7 +19,7 @@ public partial class CharacterWaterSplash : Area3D
     Node3D waterNode;
     Vector3 newFxPosition;
     float audioTargetVolume = 0f,
-        audioVolumeMax = 5f;
+        audioVolumeMax = 10f;
     bool isPlaying;
 
 
