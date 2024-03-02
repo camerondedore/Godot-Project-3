@@ -439,7 +439,6 @@ transform = Transform3D(-0.678057, 0, -0.735009, 0, 1, 0, 0.735009, 0, -0.678057
 
 [node name="MobBrownRat2" parent="." instance=ExtResource("9_4degj")]
 transform = Transform3D(-0.0122873, 0, -0.999924, 0, 1, 0, 0.999924, 0, -0.0122873, -40.8527, 12.85, -123.425)
-isMovingRat = false
 
 [node name="MobBlackRat3" parent="." instance=ExtResource("4_m4xsu")]
 transform = Transform3D(-0.979848, 0, 0.199744, 0, 1, 0, -0.199744, 0, -0.979848, -31.0591, 5.81226, -119.33)

@@ -18,7 +18,8 @@ public partial class CharacterWaterSplash : Area3D
     IWaterReactor characterAudio;
     Node3D waterNode;
     Vector3 newFxPosition;
-    float audioTargetVolume = -40f;
+    float audioTargetVolume = 0f,
+        audioVolumeMax = 5f;
     bool isPlaying;
 
 
@@ -34,7 +35,7 @@ public partial class CharacterWaterSplash : Area3D
         characterAudio = (IWaterReactor) characterAudioNode;
 
         audio.Stream = waterSplashSound;
-        audio.VolumeDb = -80f;
+        audio.UnitSize = 0f;
         audio.Play();
     }
 
@@ -54,21 +55,21 @@ public partial class CharacterWaterSplash : Area3D
             if(character.Velocity.LengthSquared() > 0.5f && isPlaying == false)
             {
                 waterSpashFx.PlayParticles();
-                audioTargetVolume = 0;
+                audioTargetVolume = audioVolumeMax;
                 isPlaying = true;
             }
             else if(character.Velocity.LengthSquared() < 0.5f && isPlaying == true)
             {
                 waterSpashFx.StopParticles();
-                audioTargetVolume = -80f;
+                audioTargetVolume = 0f;
                 isPlaying = false;
             }
         }
 
         // smooth audio
-        if(audio.VolumeDb != audioTargetVolume)
+        if(audio.UnitSize != audioTargetVolume)
         {
-            audio.VolumeDb = Mathf.MoveToward(audio.VolumeDb, audioTargetVolume, ((float) delta) * 130f);
+            audio.UnitSize = Mathf.MoveToward(audio.UnitSize, audioTargetVolume, ((float) delta) * 20f);
 
             // if(audio.VolumeDb == -40f)
             // {
@@ -87,7 +88,7 @@ public partial class CharacterWaterSplash : Area3D
     {
         waterNode = water;
 
-        audio.VolumeDb = 0;
+        //audio.UnitSize = 10f;
         characterAudio.InWater();
     }
 
@@ -98,7 +99,7 @@ public partial class CharacterWaterSplash : Area3D
         waterNode = null;
 
         waterSpashFx.StopParticles();
-        audioTargetVolume = -80f;
+        audioTargetVolume = 0;
         characterAudio.OutOfWater();
         isPlaying = false;
     }
