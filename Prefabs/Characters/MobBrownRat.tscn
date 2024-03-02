@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://dauwd0f7v5uyx"]
+[gd_scene load_steps=98 format=3 uid="uid://dauwd0f7v5uyx"]
 
 [ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRat.cs" id="1_tlfaj"]
 [ext_resource type="Script" path="res://C#/MobBrownRat/MobBrownRatHealth.cs" id="2_hmem3"]
@@ -7820,18 +7820,11 @@ nodes/WalkSpeed/node = SubResource("AnimationNodeTimeScale_ig6ru")
 nodes/WalkSpeed/position = Vector2(140, 140)
 node_connections = [&"WalkSpeed", 0, &"Animation", &"output", 0, &"WalkSpeed"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lwuys"]
-xfade_time = 0.05
-priority = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7mv45"]
 xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lnweq"]
 xfade_time = 0.2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wcixw"]
-xfade_time = 0.05
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5xej1"]
 xfade_time = 0.2
@@ -7839,17 +7832,11 @@ xfade_time = 0.2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ajbkx"]
 xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7sfp8"]
-xfade_time = 0.05
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fhven"]
 xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eaa4i"]
 xfade_time = 0.2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vqxga"]
-xfade_time = 0.05
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ua3j4"]
 xfade_time = 0.2
@@ -7862,9 +7849,6 @@ xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tel78"]
 xfade_time = 0.3
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_smrw2"]
-xfade_time = 0.05
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aimch"]
 advance_mode = 2
@@ -7913,18 +7897,6 @@ xfade_time = 0.1
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2jwo3"]
 xfade_time = 0.1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_51rpw"]
-xfade_time = 0.05
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cx5s8"]
-xfade_time = 0.05
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lso53"]
-xfade_time = 0.05
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g41ia"]
-xfade_time = 0.05
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uofuj"]
 xfade_time = 0.2
 
@@ -7967,7 +7939,7 @@ xfade_time = 0.2
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_iani1"]
 states/Start/position = Vector2(344, 28)
 states/brown-rat-die/node = SubResource("AnimationNodeAnimation_2qcmn")
-states/brown-rat-die/position = Vector2(306, -113)
+states/brown-rat-die/position = Vector2(496, 13)
 states/brown-rat-draw-blend/node = SubResource("AnimationNodeBlendSpace1D_kjrdq")
 states/brown-rat-draw-blend/position = Vector2(649, 100)
 states/brown-rat-fire-blend/node = SubResource("AnimationNodeBlendSpace1D_10rqs")
@@ -7985,11 +7957,11 @@ states/brown-rat-idle-sniff/position = Vector2(84, 184)
 states/brown-rat-patrol-wait/node = SubResource("AnimationNodeAnimation_jm8y8")
 states/brown-rat-patrol-wait/position = Vector2(95, 387)
 states/brown-rat-react/node = SubResource("AnimationNodeAnimation_675a7")
-states/brown-rat-react/position = Vector2(327, 429)
+states/brown-rat-react/position = Vector2(364, 420)
 states/brown-rat-walk/node = SubResource("AnimationNodeBlendTree_bvryh")
-states/brown-rat-walk/position = Vector2(496, 309)
-transitions = ["brown-rat-idle", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_lwuys"), "brown-rat-idle", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_7mv45"), "brown-rat-react", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_lnweq"), "brown-rat-react", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_wcixw"), "brown-rat-react", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_5xej1"), "brown-rat-walk", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_ajbkx"), "brown-rat-walk", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_7sfp8"), "brown-rat-walk", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_fhven"), "brown-rat-idle", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_eaa4i"), "brown-rat-draw-blend", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_vqxga"), "brown-rat-idle", "brown-rat-draw-blend", SubResource("AnimationNodeStateMachineTransition_ua3j4"), "brown-rat-draw-blend", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_5dvqf"), "brown-rat-fire-blend", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_4hwq6"), "brown-rat-fire-blend", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_tel78"), "brown-rat-fire-blend", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_smrw2"), "Start", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_aimch"), "brown-rat-idle-itch", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_h71fm"), "brown-rat-fire-blend", "brown-rat-draw-blend", SubResource("AnimationNodeStateMachineTransition_xsj55"), "brown-rat-draw-blend", "brown-rat-fire-blend", SubResource("AnimationNodeStateMachineTransition_gdj76"), "brown-rat-idle", "brown-rat-idle-itch", SubResource("AnimationNodeStateMachineTransition_mxid1"), "brown-rat-idle", "brown-rat-idle-sniff", SubResource("AnimationNodeStateMachineTransition_1veww"), "brown-rat-idle-sniff", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_uqida"), "brown-rat-idle-look-l", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_j3tek"), "brown-rat-idle", "brown-rat-idle-look-l", SubResource("AnimationNodeStateMachineTransition_nf8wi"), "brown-rat-idle-look-r", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_iambs"), "brown-rat-idle", "brown-rat-idle-look-r", SubResource("AnimationNodeStateMachineTransition_tt7qx"), "brown-rat-idle-look-r", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_x72oq"), "brown-rat-idle-look-l", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_mobhn"), "brown-rat-idle-itch", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_g48aq"), "brown-rat-idle-sniff", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_2jwo3"), "brown-rat-idle-look-r", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_51rpw"), "brown-rat-idle-look-l", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_cx5s8"), "brown-rat-idle-sniff", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_lso53"), "brown-rat-idle-itch", "brown-rat-die", SubResource("AnimationNodeStateMachineTransition_g41ia"), "brown-rat-patrol-wait", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_uofuj"), "brown-rat-walk", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_kgwta"), "brown-rat-idle", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_i8huf"), "brown-rat-patrol-wait", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_4lkue"), "brown-rat-react", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_t1vrn"), "brown-rat-patrol-wait", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_jd6cw"), "brown-rat-patrol-wait", "brown-rat-draw-blend", SubResource("AnimationNodeStateMachineTransition_n5lqr"), "brown-rat-draw-blend", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_xc6vn"), "brown-rat-idle-itch", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_uo8y2"), "brown-rat-idle-sniff", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_b3cq7"), "brown-rat-idle-look-l", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_opkr0"), "brown-rat-idle-look-r", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_mqru8"), "brown-rat-fire-blend", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_i6w58")]
-graph_offset = Vector2(-78.6154, 233)
+states/brown-rat-walk/position = Vector2(554, 305)
+transitions = ["brown-rat-idle", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_7mv45"), "brown-rat-react", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_lnweq"), "brown-rat-react", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_5xej1"), "brown-rat-walk", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_ajbkx"), "brown-rat-walk", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_fhven"), "brown-rat-idle", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_eaa4i"), "brown-rat-idle", "brown-rat-draw-blend", SubResource("AnimationNodeStateMachineTransition_ua3j4"), "brown-rat-draw-blend", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_5dvqf"), "brown-rat-fire-blend", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_4hwq6"), "brown-rat-fire-blend", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_tel78"), "Start", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_aimch"), "brown-rat-idle-itch", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_h71fm"), "brown-rat-fire-blend", "brown-rat-draw-blend", SubResource("AnimationNodeStateMachineTransition_xsj55"), "brown-rat-draw-blend", "brown-rat-fire-blend", SubResource("AnimationNodeStateMachineTransition_gdj76"), "brown-rat-idle", "brown-rat-idle-itch", SubResource("AnimationNodeStateMachineTransition_mxid1"), "brown-rat-idle", "brown-rat-idle-sniff", SubResource("AnimationNodeStateMachineTransition_1veww"), "brown-rat-idle-sniff", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_uqida"), "brown-rat-idle-look-l", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_j3tek"), "brown-rat-idle", "brown-rat-idle-look-l", SubResource("AnimationNodeStateMachineTransition_nf8wi"), "brown-rat-idle-look-r", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_iambs"), "brown-rat-idle", "brown-rat-idle-look-r", SubResource("AnimationNodeStateMachineTransition_tt7qx"), "brown-rat-idle-look-r", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_x72oq"), "brown-rat-idle-look-l", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_mobhn"), "brown-rat-idle-itch", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_g48aq"), "brown-rat-idle-sniff", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_2jwo3"), "brown-rat-patrol-wait", "brown-rat-walk", SubResource("AnimationNodeStateMachineTransition_uofuj"), "brown-rat-walk", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_kgwta"), "brown-rat-idle", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_i8huf"), "brown-rat-patrol-wait", "brown-rat-idle", SubResource("AnimationNodeStateMachineTransition_4lkue"), "brown-rat-react", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_t1vrn"), "brown-rat-patrol-wait", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_jd6cw"), "brown-rat-patrol-wait", "brown-rat-draw-blend", SubResource("AnimationNodeStateMachineTransition_n5lqr"), "brown-rat-draw-blend", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_xc6vn"), "brown-rat-idle-itch", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_uo8y2"), "brown-rat-idle-sniff", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_b3cq7"), "brown-rat-idle-look-l", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_opkr0"), "brown-rat-idle-look-r", "brown-rat-react", SubResource("AnimationNodeStateMachineTransition_mqru8"), "brown-rat-fire-blend", "brown-rat-patrol-wait", SubResource("AnimationNodeStateMachineTransition_i6w58")]
+graph_offset = Vector2(-60.6154, -57)
 
 [node name="MobBrownRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "navAgent", "bow", "health", "myFactions", "animation", "collider")]
 collision_layer = 2
@@ -8031,34 +8003,33 @@ max_neighbors = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
 
 [node name="Skeleton3D" parent="character-brown-rat/character-armature" index="0"]
-bones/0/position = Vector3(-2.9035e-17, -0.127127, 0.0988001)
+bones/0/position = Vector3(-2.78658e-17, -0.128399, 0.0981468)
 bones/0/rotation = Quaternion(0.994176, -0.00121293, 0.0218361, 0.105525)
-bones/1/rotation = Quaternion(0.990144, 0.000814038, 0.000271098, 0.14005)
+bones/1/rotation = Quaternion(0.991225, 0.00114389, 0.000380902, 0.132179)
 bones/1/scale = Vector3(1, 1, 1)
-bones/2/rotation = Quaternion(0.0358939, 2.79203e-05, -5.82282e-05, 0.999356)
-bones/3/rotation = Quaternion(-0.0720222, -0.00264471, 0.00554568, 0.997384)
-bones/4/rotation = Quaternion(-0.572033, 0.0310293, 0.0549841, 0.817797)
-bones/5/rotation = Quaternion(-0.00929521, -4.45185e-10, -2.01389e-09, 0.999957)
-bones/6/rotation = Quaternion(0.10743, 0.00326604, -0.0410321, 0.99336)
-bones/7/rotation = Quaternion(0.730494, 0.0905685, -0.0916392, 0.670656)
-bones/8/position = Vector3(0.109293, 0.224244, -0.0579321)
+bones/2/rotation = Quaternion(0.0381034, 6.976e-05, -0.000145498, 0.999274)
+bones/3/rotation = Quaternion(-0.0661588, -0.00255739, 0.00530241, 0.997792)
+bones/4/rotation = Quaternion(-0.584487, 0.0313322, 0.054935, 0.808935)
+bones/5/rotation = Quaternion(-0.0227658, -1.5003e-10, 4.95976e-09, 0.999741)
+bones/6/rotation = Quaternion(0.107672, 0.00325602, -0.0410329, 0.993334)
+bones/7/rotation = Quaternion(0.731359, 0.0936176, -0.0839612, 0.670298)
+bones/8/position = Vector3(0.103527, 0.224244, -0.0579322)
 bones/8/rotation = Quaternion(1.08204e-07, -6.60569e-08, -0.707107, 0.707107)
 bones/9/rotation = Quaternion(-0.169099, 3.38578e-15, -4.03164e-08, 0.985599)
 bones/10/rotation = Quaternion(0.707107, 2.66901e-08, 1.41897e-07, 0.707107)
 bones/11/rotation = Quaternion(0.5, 0.5, -0.5, 0.5)
 bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(0.10743, 0.00326604, -0.0410321, 0.99336)
-bones/13/rotation = Quaternion(0.730493, -0.0905667, 0.0916444, 0.670656)
-bones/14/position = Vector3(-0.109293, 0.224244, -0.0579321)
+bones/12/rotation = Quaternion(0.107672, 0.00325602, -0.0410329, 0.993334)
+bones/13/rotation = Quaternion(0.731359, -0.0936177, 0.0839614, 0.670298)
+bones/14/position = Vector3(-0.103527, 0.224244, -0.0579322)
 bones/14/rotation = Quaternion(-6.60569e-08, -1.08204e-07, 0.707107, 0.707107)
 bones/15/rotation = Quaternion(0.707107, -1.41897e-07, -2.66901e-08, 0.707107)
 bones/16/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
-bones/16/scale = Vector3(1, 1, 1)
 bones/17/rotation = Quaternion(-0.74882, -0.181353, -0.160458, 0.616955)
-bones/18/rotation = Quaternion(-0.633911, -0.219908, 0.0445448, 0.740144)
-bones/19/rotation = Quaternion(0.438252, 0.0511693, 0.0671503, 0.894879)
+bones/18/rotation = Quaternion(-0.644949, -0.223689, 0.0424842, 0.72952)
+bones/19/rotation = Quaternion(0.444791, 0.0509808, 0.0681522, 0.891581)
 bones/19/scale = Vector3(1, 1, 1)
-bones/20/rotation = Quaternion(-0.202937, 0.437965, -0.00422185, 0.875777)
+bones/20/rotation = Quaternion(-0.203566, 0.43811, -0.00630237, 0.875546)
 bones/20/scale = Vector3(1, 1, 1)
 bones/21/rotation = Quaternion(-0.0898098, -0.0303587, 0.0208628, 0.995278)
 bones/21/scale = Vector3(1, 1, 1)
@@ -8073,11 +8044,11 @@ bones/26/rotation = Quaternion(-0.304094, 0.0942171, -0.0130807, 0.947881)
 bones/26/scale = Vector3(1, 1, 1)
 bones/27/rotation = Quaternion(-0.16766, -0.0281511, -0.00230882, 0.98544)
 bones/27/scale = Vector3(1, 1, 1)
-bones/29/rotation = Quaternion(-0.534301, 0.358308, -0.161041, 0.748468)
+bones/29/rotation = Quaternion(-0.539874, 0.361618, -0.164813, 0.742028)
 bones/29/scale = Vector3(1, 1, 1)
-bones/30/rotation = Quaternion(0.356539, -0.0532439, -0.05463, 0.931161)
+bones/30/rotation = Quaternion(0.348292, -0.0534257, -0.0533663, 0.93434)
 bones/30/scale = Vector3(1, 1, 1)
-bones/31/rotation = Quaternion(0.253171, -0.560008, 0.21537, 0.758888)
+bones/31/rotation = Quaternion(0.26025, -0.562833, 0.211978, 0.755351)
 bones/31/scale = Vector3(1, 1, 1)
 bones/32/rotation = Quaternion(-0.375959, -0.0536243, -0.156682, 0.911718)
 bones/33/rotation = Quaternion(-0.507915, -0.0995662, -0.0106427, 0.855567)
@@ -8091,24 +8062,24 @@ bones/37/rotation = Quaternion(-0.727083, -0.0886663, -0.0344418, 0.679929)
 bones/37/scale = Vector3(1, 1, 1)
 bones/38/rotation = Quaternion(-0.624226, 0.035796, 0.0310456, 0.779806)
 bones/38/scale = Vector3(1, 1, 1)
-bones/39/rotation = Quaternion(-0.291994, 0.0241244, 0.0207104, 0.955892)
+bones/39/rotation = Quaternion(-0.293749, 0.0234191, 0.0203056, 0.95538)
 bones/39/scale = Vector3(1, 1, 1)
-bones/40/rotation = Quaternion(-0.140465, 0.0491054, 0.06989, 0.986394)
+bones/40/rotation = Quaternion(-0.15259, 0.0490728, 0.0713514, 0.984488)
 bones/40/scale = Vector3(1, 1, 1)
-bones/41/rotation = Quaternion(-0.214645, 0.0120035, 0.0427254, 0.975683)
+bones/41/rotation = Quaternion(-0.229364, 0.0131705, 0.0431013, 0.972297)
 bones/41/scale = Vector3(1, 1, 1)
-bones/42/rotation = Quaternion(-0.0183336, -0.00552736, -0.109643, 0.993787)
-bones/43/rotation = Quaternion(0.437682, 0.0681804, -0.121696, 0.888243)
-bones/44/rotation = Quaternion(-0.662166, -0.0522025, 0.0179242, 0.747322)
-bones/45/rotation = Quaternion(0.714889, -0.00462367, -0.0114022, 0.699129)
-bones/46/rotation = Quaternion(0.34004, 0.143834, -0.0774471, 0.926114)
+bones/42/rotation = Quaternion(-0.0536353, 0.00204746, -0.111438, 0.992321)
+bones/43/rotation = Quaternion(0.438216, 0.0683904, -0.12213, 0.887904)
+bones/44/rotation = Quaternion(-0.663909, -0.0521554, 0.0180198, 0.745775)
+bones/45/rotation = Quaternion(0.71614, -0.00466876, -0.0113698, 0.697849)
+bones/46/rotation = Quaternion(0.339868, 0.143805, -0.0770729, 0.926212)
 bones/46/scale = Vector3(1, 1, 1)
-bones/47/rotation = Quaternion(0.506518, -0.0452659, 0.0939731, 0.855897)
-bones/48/rotation = Quaternion(-0.62595, 0.05311, -0.0159755, 0.777889)
-bones/49/rotation = Quaternion(0.687761, 0.00368486, 0.0120585, 0.725828)
-bones/50/rotation = Quaternion(0.266619, -0.114141, 0.0633663, 0.954919)
+bones/47/rotation = Quaternion(0.50736, -0.045405, 0.0942416, 0.855361)
+bones/48/rotation = Quaternion(-0.627999, 0.053062, -0.0160838, 0.776236)
+bones/49/rotation = Quaternion(0.689352, 0.00373784, 0.0120225, 0.724317)
+bones/50/rotation = Quaternion(0.266097, -0.114007, 0.0631895, 0.955093)
 bones/50/scale = Vector3(1, 1, 1)
-bones/51/rotation = Quaternion(0.935058, 0.328392, 0.10778, 0.0787945)
+bones/51/rotation = Quaternion(0.934247, 0.33104, 0.110629, 0.0731925)
 bones/52/rotation = Quaternion(0.169881, -0.708268, 0.104377, 0.677201)
 bones/52/scale = Vector3(1, 1, 1)
 bones/53/position = Vector3(0.278383, -0.954628, 0.0932097)
@@ -8116,14 +8087,14 @@ bones/53/rotation = Quaternion(-0.693121, -0.122146, -0.139938, 0.696477)
 bones/54/position = Vector3(0.274685, -0.556069, -0.226886)
 bones/54/rotation = Quaternion(-0.706378, -0.0139991, -0.0320956, 0.706968)
 bones/54/scale = Vector3(1, 1, 1)
-bones/55/position = Vector3(0.302489, -0.197309, -0.131546)
+bones/55/position = Vector3(0.301297, -0.192325, -0.125152)
 bones/55/rotation = Quaternion(-0.878166, 0.0151614, -0.478, 0.0105097)
 bones/55/scale = Vector3(1, 1, 1)
-bones/56/position = Vector3(0.26666, 0.0168239, 0.0775248)
+bones/56/position = Vector3(0.26666, 0.0184931, 0.0806669)
 bones/56/rotation = Quaternion(0.0407274, 0.704659, 0.705933, -0.0587907)
 bones/56/scale = Vector3(0.999986, 1, 1)
-bones/57/position = Vector3(-0.226778, -0.289946, -0.262199)
-bones/57/rotation = Quaternion(-0.933404, 0.196929, -0.27288, 0.124549)
+bones/57/position = Vector3(-0.226778, -0.287273, -0.255941)
+bones/57/rotation = Quaternion(-0.933149, 0.197484, -0.272479, 0.126447)
 bones/58/rotation = Quaternion(0.814262, 6.92007e-08, 9.70676e-08, 0.580498)
 bones/59/rotation = Quaternion(0.985274, 5.43493e-09, 2.66226e-07, 0.170983)
 bones/59/scale = Vector3(1, 1, 1)
@@ -8131,17 +8102,17 @@ bones/60/rotation = Quaternion(-0.814262, 6.92007e-08, -9.70676e-08, 0.580498)
 bones/61/rotation = Quaternion(0.985274, -5.43493e-09, 2.66226e-07, -0.170983)
 bones/61/scale = Vector3(1, 1, 1)
 bones/62/rotation = Quaternion(0.707107, 2.51215e-15, 0.707107, 6.18172e-08)
-bones/63/position = Vector3(-0.257423, -0.466789, -0.310033)
-bones/63/rotation = Quaternion(-0.936407, 0.182043, -0.274797, 0.120373)
+bones/63/position = Vector3(-0.257423, -0.463917, -0.30449)
+bones/63/rotation = Quaternion(-0.936186, 0.182542, -0.274466, 0.122075)
 bones/64/position = Vector3(-0.251975, -0.96262, -0.0623695)
 bones/64/rotation = Quaternion(-0.703519, 0.0531011, 0.0711372, 0.70511)
 bones/65/position = Vector3(-0.208504, -0.528447, -0.245499)
 bones/65/rotation = Quaternion(-0.706378, 0.0139991, 0.0320956, 0.706968)
 bones/65/scale = Vector3(1, 1, 1)
-bones/66/position = Vector3(-0.240608, -0.224111, -0.189731)
-bones/66/rotation = Quaternion(0.788523, -0.069625, -0.453588, -0.409441)
+bones/66/position = Vector3(-0.240608, -0.221733, -0.183205)
+bones/66/rotation = Quaternion(0.787935, -0.0689748, -0.453687, -0.410571)
 bones/66/scale = Vector3(1, 1, 1)
-bones/67/position = Vector3(-0.298926, 0.0273075, -0.0243937)
+bones/67/position = Vector3(-0.298926, 0.0289767, -0.0212517)
 bones/67/rotation = Quaternion(-0.0407274, 0.704659, 0.705933, 0.0587907)
 bones/67/scale = Vector3(0.999986, 1, 1)
 
