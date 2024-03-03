@@ -21,6 +21,12 @@ namespace MobBlackRat
         {
             blackboard.AggroAllies();
 
+            // stop moving
+            blackboard.moving = false;
+
+            // reset animation play speed
+            blackboard.animation.SpeedScale = 1;
+
             // animation
             blackboard.animation.Play("black-rat-die");
 

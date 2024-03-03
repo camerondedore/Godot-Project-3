@@ -21,6 +21,9 @@ namespace MobBrownRat
         {
             blackboard.AggroAllies();
 
+            // stop moving
+            blackboard.moving = false;
+
             // animation
             blackboard.animStateMachinePlayback.Travel("brown-rat-die");
             blackboard.animStateMachinePlayback.Next();
