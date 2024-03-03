@@ -56,5 +56,7 @@ useAngularVelocity = false
 
 [node name="ChestAudio" type="AudioStreamPlayer3D" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-max_distance = 40.0
+unit_size = 5.0
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("8_th5xi")

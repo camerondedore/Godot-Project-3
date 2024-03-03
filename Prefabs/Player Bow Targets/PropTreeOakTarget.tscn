@@ -196,7 +196,9 @@ angularSpeed = 0.0
 useAngularVelocity = false
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unit_size = 3.0
 max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("9_j62f6")
 
 [editable path="prop-trees-oak-target"]

@@ -135,7 +135,9 @@ process_material = ExtResource("12_n2y16")
 draw_pass_1 = SubResource("QuadMesh_jo2dl")
 
 [node name="DamageAudio" type="AudioStreamPlayer3D" parent="DamageArea"]
+unit_size = 5.0
 max_distance = 20.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("14_tfy06")
 
 [node name="BloodDecal" type="Decal" parent="."]
@@ -166,5 +168,7 @@ process_material = SubResource("ParticleProcessMaterial_cwudg")
 draw_pass_1 = SubResource("QuadMesh_hel7t")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-max_distance = 40.0
+unit_size = 5.0
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("14_tfy06")

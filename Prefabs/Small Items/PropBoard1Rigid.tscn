@@ -32,8 +32,8 @@ surface_material_override/1 = ExtResource("3_47hsn")
 shape = SubResource("BoxShape3D_j6exn")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
-unit_size = 8.0
-max_distance = 15.0
+unit_size = 2.0
+max_distance = 20.0
 script = ExtResource("5_xe4nu")
 hitSounds = Array[AudioStream]([ExtResource("6_gfgt8"), ExtResource("7_5w1qm"), ExtResource("8_8sicj"), ExtResource("9_c3a8c")])
 minimumSpeedSqr = 1.0

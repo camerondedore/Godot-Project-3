@@ -70,7 +70,9 @@ shape = SubResource("BoxShape3D_a6psw")
 [node name="JumpPadAudio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 stream = ExtResource("7_a72qk")
+unit_size = 3.0
 max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("4_38g1o")
 
 [node name="Decal" type="Decal" parent="."]

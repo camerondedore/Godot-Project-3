@@ -27,6 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0169181, 0)
 shape = SubResource("CylinderShape3D_wsewa")
 
 [node name="NettleBrothAudio" type="AudioStreamPlayer3D" parent="."]
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("3_pd6eq")
 sounds = Array[AudioStream]([ExtResource("4_ewvji")])
 destroyOnFinished = false

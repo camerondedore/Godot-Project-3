@@ -58,7 +58,9 @@ script = ExtResource("6_c1cwb")
 lifeTime = 5.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-max_distance = 40.0
+unit_size = 5.0
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("7_mo8lm")
 sounds = Array[AudioStream]([ExtResource("8_q1iuu"), ExtResource("9_hhmfd")])
 destroyOnFinished = false

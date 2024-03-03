@@ -174,7 +174,9 @@ process_mode = 1
 playback_default_blend_time = 0.1
 
 [node name="RatAudio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 2.0
 max_distance = 30.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("8_cysva")
 footsteps = Array[AudioStream]([ExtResource("9_hoxjl"), ExtResource("10_n3d7m"), ExtResource("11_68c1s"), ExtResource("12_t1kxg"), ExtResource("13_pjqs4")])
 swordHitSound = ExtResource("14_wtk1r")

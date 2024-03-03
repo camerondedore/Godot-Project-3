@@ -38,7 +38,7 @@ public partial class CharacterWaterSplash : Area3D
 
         audio.Stream = waterSplashSound;
         audio.UnitSize = 0f;
-        audio.Play();
+        audio.Play(GD.Randf() * 2.0f);
     }
 
 
@@ -71,7 +71,7 @@ public partial class CharacterWaterSplash : Area3D
         // smooth audio
         if(audio.UnitSize != audioTargetVolume)
         {
-            audio.UnitSize = Mathf.MoveToward(audio.UnitSize, audioTargetVolume, ((float) delta) * 20f);
+            audio.UnitSize = Mathf.MoveToward(audio.UnitSize, audioTargetVolume, ((float) delta) * audioVolumeMax * 2f);
 
             // if(audio.VolumeDb == -40f)
             // {
@@ -90,7 +90,7 @@ public partial class CharacterWaterSplash : Area3D
     {
         waterNode = water;
 
-        //audio.UnitSize = 10f;
+        audio.UnitSize = audioVolumeMax;
         characterAudio.InWater();
     }
 
