@@ -52,6 +52,6 @@ void fragment()
 	//ALBEDO = COLOR.rgb;
 	ALBEDO = mixedTextures;
 	METALLIC = 0.0;
-	ROUGHNESS = 0.95;
-	SPECULAR = 0.25;
+	ROUGHNESS = 1.0;
+	SPECULAR = 0.0;
 }

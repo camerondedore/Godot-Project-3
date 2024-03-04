@@ -8,9 +8,12 @@ public partial class CharacterWaterSplash : Area3D
     [Export]
     ParticleTools waterSpashFx;
     [Export]
-    AudioTools3d audio;
+    AudioTools3d movementAudio,
+        splashAudio;
     [Export]
-    AudioStream waterSplashSound;
+    AudioStream waterMovementSound,
+        waterEnterSound,
+        waterExitSound;
     [Export]
     Node characterAudioNode;
 
@@ -34,11 +37,11 @@ public partial class CharacterWaterSplash : Area3D
 
         characterAudio = (IWaterReactor) characterAudioNode;
 
-        audioVolumeMax = audio.UnitSize;
+        audioVolumeMax = movementAudio.UnitSize;
 
-        audio.Stream = waterSplashSound;
-        audio.UnitSize = 0f;
-        audio.Play(GD.Randf() * 2.0f);
+        movementAudio.Stream = waterMovementSound;
+        movementAudio.UnitSize = 0f;
+        movementAudio.Play(GD.Randf() * 2.0f);
     }
 
 
@@ -69,18 +72,9 @@ public partial class CharacterWaterSplash : Area3D
         }
 
         // smooth audio
-        if(audio.UnitSize != audioTargetVolume)
+        if(movementAudio.UnitSize != audioTargetVolume)
         {
-            audio.UnitSize = Mathf.MoveToward(audio.UnitSize, audioTargetVolume, ((float) delta) * audioVolumeMax * 2f);
-
-            // if(audio.VolumeDb == -40f)
-            // {
-            //     audio.Stop();
-            // }
-            // else if(audio.VolumeDb == 0)
-            // {
-            //     audio.Play();
-            // }
+            movementAudio.UnitSize = Mathf.MoveToward(movementAudio.UnitSize, audioTargetVolume, ((float) delta) * audioVolumeMax * 2f);
         }
     }
 
@@ -90,8 +84,9 @@ public partial class CharacterWaterSplash : Area3D
     {
         waterNode = water;
 
-        audio.UnitSize = audioVolumeMax;
+        movementAudio.UnitSize = audioVolumeMax;
         characterAudio.InWater();
+        splashAudio.PlaySound(waterEnterSound, 0.1f);
     }
 
 
@@ -103,6 +98,7 @@ public partial class CharacterWaterSplash : Area3D
         waterSpashFx.StopParticles();
         audioTargetVolume = 0;
         characterAudio.OutOfWater();
+        splashAudio.PlaySound(waterExitSound, 0.1f);
         isPlaying = false;
     }
 

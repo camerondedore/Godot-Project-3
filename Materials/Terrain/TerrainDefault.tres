@@ -12,8 +12,8 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_8f7ai")
-shader_parameter/blendingHighSharpness = 0.4
-shader_parameter/blendingLowSharpness = 0.8
+shader_parameter/blendingHighSharpness = 0.3
+shader_parameter/blendingLowSharpness = 0.7
 shader_parameter/albedoDefault = ExtResource("4_j5m8n")
 shader_parameter/albedo1 = ExtResource("2_vfidg")
 shader_parameter/albedo2 = ExtResource("2_78k1d")
