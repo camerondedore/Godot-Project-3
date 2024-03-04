@@ -2,22 +2,22 @@
 
 [ext_resource type="Shader" path="res://Shaders/VertexPaint.gdshader" id="1_8f7ai"]
 [ext_resource type="Texture2D" uid="uid://duk3tcrglkyut" path="res://Textures/grass-medium.png" id="2_78k1d"]
-[ext_resource type="Texture2D" uid="uid://did0k5sqi117k" path="res://Textures/dirt-with-grass.png" id="3_t5obm"]
+[ext_resource type="Texture2D" uid="uid://bibjej8gsx02x" path="res://Textures/dirt-with-fir-needles.png" id="2_vfidg"]
 [ext_resource type="Texture2D" uid="uid://dqgneck05buse" path="res://Textures/dirt.png" id="4_j5m8n"]
 [ext_resource type="Texture2D" uid="uid://d30esal0h6rdr" path="res://Textures/grass.png" id="5_e58ou"]
+[ext_resource type="Texture2D" uid="uid://b67vxrtpmc768" path="res://Textures/dirt-with-fir-needles-height.png" id="6_3vag8"]
 [ext_resource type="Texture2D" uid="uid://7aiq7wmjkrb8" path="res://Textures/grass-medium-height.png" id="6_dofxo"]
 [ext_resource type="Texture2D" uid="uid://fcxnfq0doajg" path="res://Textures/grass-height.png" id="6_qlsna"]
-[ext_resource type="Texture2D" uid="uid://bx0s8xpefjxk7" path="res://Textures/dirt-with-grass-height.png" id="7_6bjem"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_8f7ai")
-shader_parameter/uvScale = 5.0
-shader_parameter/blendingSharpness = 1.0
+shader_parameter/blendingHighSharpness = 0.4
+shader_parameter/blendingLowSharpness = 0.8
 shader_parameter/albedoDefault = ExtResource("4_j5m8n")
-shader_parameter/albedo1 = ExtResource("3_t5obm")
+shader_parameter/albedo1 = ExtResource("2_vfidg")
 shader_parameter/albedo2 = ExtResource("2_78k1d")
 shader_parameter/albedo3 = ExtResource("5_e58ou")
-shader_parameter/height1 = ExtResource("7_6bjem")
+shader_parameter/height1 = ExtResource("6_3vag8")
 shader_parameter/height2 = ExtResource("6_dofxo")
 shader_parameter/height3 = ExtResource("6_qlsna")
