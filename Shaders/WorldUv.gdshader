@@ -1,7 +1,7 @@
 shader_type spatial;
 
 uniform sampler2D albedo : source_color;
-uniform float uvScale = 5;
+uniform float uvScale = 1;
 
 void vertex() 
 {
@@ -12,7 +12,6 @@ void fragment()
 {
 	// get world position of pixel
 	vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	//vec2 worldUvCoordinates = (worldPosition.rb) / uvScale;
 	vec3 worldNormal = abs(INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
 	
 	// get the axis the normal of the face is most facing

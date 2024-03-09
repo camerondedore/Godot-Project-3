@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bnprkrvtepd5w"]
+
+[ext_resource type="Shader" path="res://Shaders/WorldUv.gdshader" id="1_42usw"]
+[ext_resource type="Texture2D" uid="uid://d30esal0h6rdr" path="res://Textures/grass.png" id="2_pd5t2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_42usw")
+shader_parameter/uvScale = 0.166
+shader_parameter/albedo = ExtResource("2_pd5t2")

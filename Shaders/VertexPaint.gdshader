@@ -7,7 +7,7 @@ uniform sampler2D albedo3 : source_color;
 uniform sampler2D height1 : source_color;
 uniform sampler2D height2 : source_color;
 uniform sampler2D height3 : source_color;
-//uniform float uvScale = 5;
+uniform float uvScale = 1;
 uniform float blendingHighSharpness : hint_range(0.0, 0.9) = 0.4;
 uniform float blendingLowSharpness : hint_range(0.0, 0.9) = 0.8;
 
@@ -19,19 +19,35 @@ void vertex()
 void fragment() 
 {
 	// get world position of pixel
-	//vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	//vec2 worldUvCoordinates = (worldPosition.rb + worldPosition.g) / uvScale;
+	vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	vec3 worldNormal = abs(INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
+	
+	// get the axis the normal of the face is most facing
+	float normalX = round(worldNormal.r);
+	float normalY = round(worldNormal.g) - round(worldNormal.r) - round(worldNormal.b);
+	normalY = clamp(normalY, 0.0, 1.0);
+	float normalZ = round(worldNormal.b) - round(worldNormal.r);
+	normalZ = clamp(normalZ, 0.0, 1.0);
+	
+	// get uvs for each axis
+	vec2 uvX = worldPosition.zy;
+	vec2 uvY = worldPosition.xz;
+	vec2 uvZ = worldPosition.xy;
+	
+	// pick uv direction to use
+	vec2 uvToUse = uvX * normalX + uvY * normalY + uvZ * normalZ;
+	uvToUse *= uvScale;
 	
 	// get textures, uses world coordinates
-	vec3 defaultTexture = texture(albedoDefault, UV).rgb;
-	vec3 texture1 = texture(albedo1, UV).rgb;
-	vec3 texture2 = texture(albedo2, UV).rgb;
-	vec3 texture3 = texture(albedo3, UV).rgb;
+	vec3 defaultTexture = texture(albedoDefault, uvToUse).rgb;
+	vec3 texture1 = texture(albedo1, uvToUse).rgb;
+	vec3 texture2 = texture(albedo2, uvToUse).rgb;
+	vec3 texture3 = texture(albedo3, uvToUse).rgb;
 	
 	// get textures, uses world coordinates
-	float heightValue1 = texture(height1, UV).r;	
-	float heightValue2 = texture(height2, UV).r;
-	float heightValue3 = texture(height3, UV).r;
+	float heightValue1 = texture(height1, uvToUse).r;	
+	float heightValue2 = texture(height2, uvToUse).r;
+	float heightValue3 = texture(height3, uvToUse).r;
 	
 	// 1st step gets pixels from albedo using hightmap
 	// 2nd step combines the hightmap pixels and the regular albedo from the vertex colors
