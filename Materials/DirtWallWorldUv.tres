@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://eudc0sie8eyd"]
+
+[ext_resource type="Shader" path="res://Shaders/WorldUv.gdshader" id="2_ubbfy"]
+[ext_resource type="Texture2D" uid="uid://upw5cybsua5j" path="res://Textures/dirt-wall.png" id="2_wy3jw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("2_ubbfy")
+shader_parameter/uvScale = 0.166
+shader_parameter/albedo = ExtResource("2_wy3jw")

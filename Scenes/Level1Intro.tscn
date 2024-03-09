@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=34 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="9_yqm1q"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTarget.cs" id="10_35g6o"]
 [ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Player Bow Targets/PropBlackberryBushOld.tscn" id="10_c2xp5"]
+[ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/DirtWallWorldUv.tres" id="10_f4exp"]
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Small Items/PropTorchLit.tscn" id="10_fe5xw"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerArea.cs" id="12_ph3lw"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/Water.tres" id="14_7brwj"]
@@ -81,7 +82,8 @@ skeleton = NodePath("../../../..")
 surface_material_override/0 = ExtResource("6_dbtaw")
 surface_material_override/1 = ExtResource("7_jhrab")
 surface_material_override/2 = ExtResource("8_0wyn0")
-surface_material_override/3 = ExtResource("9_m2eqj")
+surface_material_override/3 = ExtResource("10_f4exp")
+surface_material_override/4 = ExtResource("9_m2eqj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/Ground"]
 shape = SubResource("ConcavePolygonShape3D_pkgag")
