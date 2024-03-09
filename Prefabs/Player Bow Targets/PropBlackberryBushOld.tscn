@@ -17,6 +17,7 @@ size = Vector3(3, 1.2, 2)
 size = Vector3(3, 1.41, 1.41)
 
 [node name="PropBlackberryBushOld" type="StaticBody3D" node_paths=PackedStringArray("uncutMesh", "cutMesh", "cutDecal", "colliders", "navLink")]
+collision_layer = 16
 script = ExtResource("1_i6v5i")
 uncutMesh = NodePath("MeshUncut")
 cutMesh = NodePath("MeshCut")
