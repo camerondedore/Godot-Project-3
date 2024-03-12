@@ -79,6 +79,15 @@ public partial class GameSettings : Node
 
 
 
+     public void UpdateShowFps(bool newShowFps)
+    {
+        currentSettings.ShowFps = newShowFps;
+
+        SaveSettings();
+    }
+
+
+
     public void UpdateMouseSensitivity(double newValue)
     {
         currentSettings.MouseSensitivity = newValue;
@@ -106,6 +115,11 @@ public partial class GameSettings : Node
         {
             get; set;
         } = 3;
+
+        public bool ShowFps
+        {
+            get; set;
+        } = false;
 
         public double MouseSensitivity
         {

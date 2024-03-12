@@ -14,7 +14,7 @@ public partial class GameSettingsEnvironmentLoader : Node
     public override void _Ready()
     {
         GameSettingsUi.gamesSettingsUi.BloomChanged += UpdateBloom;
-        GameSettingsUi.gamesSettingsUi.SsaChanged += UpdateSsao;
+        GameSettingsUi.gamesSettingsUi.SsaoChanged += UpdateSsao;
 
         // load settings
         UpdateBloom(GameSettings.settings.currentSettings.Bloom);
