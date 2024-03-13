@@ -221,6 +221,9 @@ namespace PlayerCharacterComplex
 			// set station for player to use
 			currentStation = station;
 
+			// stop back bone from being overridden
+			backBone.OverridePose = false;
+
 			// go to bandage station state
 			machine.SetState(stateBandageStationGather);
 		}
