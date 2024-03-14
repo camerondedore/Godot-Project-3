@@ -66,6 +66,7 @@ void fragment()
 
 	//ALBEDO = vec3(blend1, blend2, blend3);
 	//ALBEDO = COLOR.rgb;
+	//ALBEDO = vec3(normalX, normalY, normalZ);
 	ALBEDO = mixedTextures;
 	METALLIC = 0.0;
 	ROUGHNESS = 1.0;

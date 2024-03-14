@@ -30,6 +30,7 @@ void fragment()
 	vec2 uvToUse = uvX * normalX + uvY * normalY + uvZ * normalZ;
 	uvToUse *= uvScale;
 	
+	//ALBEDO = vec3(worldNormal.x, worldNormal.y, worldNormal.z);
 	//ALBEDO = vec3(normalX, normalY, normalZ);
 	ALBEDO = texture(albedo, uvToUse).xyz;
 	ROUGHNESS = 1.0;
