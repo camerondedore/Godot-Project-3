@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cpogenayw1osy"]
 
-[ext_resource type="Shader" uid="uid://cwjq76h8paka" path="res://Shaders/RimLightCharacter.tres" id="1_p063q"]
+[ext_resource type="Shader" uid="uid://cwjq76h8paka" path="res://Shaders/VisualRimLightCharacter.tres" id="1_p063q"]
 [ext_resource type="Texture2D" uid="uid://blr06u8kitxk2" path="res://Textures/character-brown-rat-gear-diffuse.png" id="2_86o2v"]
 
 [resource]

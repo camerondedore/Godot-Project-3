@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b6ykpk7mmxn78"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_xbc1j"]
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VisualVegetationLeaves.tres" id="1_xbc1j"]
 [ext_resource type="Texture2D" uid="uid://eiwr67oaro6r" path="res://Textures/prop-carrot-diffuse.png" id="2_pr08k"]
 
 [resource]

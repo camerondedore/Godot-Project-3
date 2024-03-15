@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dnj7b6swgc61t"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_xreum"]
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VisualVegetationLeaves.tres" id="1_xreum"]
 [ext_resource type="Texture2D" uid="uid://p0eylkn2cgln" path="res://Textures/leaves-apple.png" id="2_81cv2"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://cqujvd546wo3l"]
 
-[ext_resource type="Shader" path="res://Shaders/VertexPaint.gdshader" id="1_8f7ai"]
+[ext_resource type="Shader" path="res://Shaders/Terrain.gdshader" id="1_cokjq"]
 [ext_resource type="Texture2D" uid="uid://duk3tcrglkyut" path="res://Textures/grass-medium.png" id="2_78k1d"]
 [ext_resource type="Texture2D" uid="uid://bibjej8gsx02x" path="res://Textures/dirt-with-fir-needles.png" id="2_vfidg"]
 [ext_resource type="Texture2D" uid="uid://dqgneck05buse" path="res://Textures/dirt.png" id="4_j5m8n"]
@@ -11,7 +11,7 @@
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_8f7ai")
+shader = ExtResource("1_cokjq")
 shader_parameter/uvScale = 0.166
 shader_parameter/blendingHighSharpness = 0.3
 shader_parameter/blendingLowSharpness = 0.7

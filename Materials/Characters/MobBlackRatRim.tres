@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://jdcotr5j1875"]
 
-[ext_resource type="Shader" uid="uid://cwjq76h8paka" path="res://Shaders/RimLightCharacter.tres" id="1_8x2ls"]
+[ext_resource type="Shader" uid="uid://cwjq76h8paka" path="res://Shaders/VisualRimLightCharacter.tres" id="1_fayvx"]
 [ext_resource type="Texture2D" uid="uid://cou6ffkmn54na" path="res://Textures/character-black-rat-diffuse.png" id="2_7x483"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_8x2ls")
+shader = ExtResource("1_fayvx")
 shader_parameter/Metallic = 0.0
 shader_parameter/Roughness = 1.0
 shader_parameter/Specular = 0.0

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b7eoe0ybq631i"]
 
-[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Shaders/VegetationBark.tres" id="1_0pei4"]
+[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Shaders/VisualVegetationBark.tres" id="1_0pei4"]
 [ext_resource type="Texture2D" uid="uid://bn00b6bh3t3vm" path="res://Textures/prop-apple-diffuse.png" id="2_6s50k"]
 
 [resource]

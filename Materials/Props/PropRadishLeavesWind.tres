@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://duehqgamju4kk"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VegetationLeaves.tres" id="1_q5l7v"]
+[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VisualVegetationLeaves.tres" id="1_q5l7v"]
 [ext_resource type="Texture2D" uid="uid://ceoaycbo5rmak" path="res://Textures/prop-radish-diffuse.png" id="2_xpsy1"]
 
 [resource]

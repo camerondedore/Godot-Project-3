@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bfoof7dg45qdu"]
 
-[ext_resource type="Shader" uid="uid://bk8ivwynwpa0e" path="res://Shaders/GlassBottle.tres" id="1_8j7b1"]
+[ext_resource type="Shader" uid="uid://bk8ivwynwpa0e" path="res://Shaders/VisualGlassBottle.tres" id="1_8j7b1"]
 [ext_resource type="Texture2D" uid="uid://d0j7ae2k7m0pt" path="res://Textures/pickup-cider-diffuse.png" id="2_uiq82"]
 
 [resource]

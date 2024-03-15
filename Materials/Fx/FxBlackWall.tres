@@ -1,14 +1,14 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bs6yjtymayl1v"]
 
-[ext_resource type="Shader" uid="uid://fx7apc7qjlud" path="res://Shaders/FxDepthBlocker.tres" id="1_kri0d"]
+[ext_resource type="Shader" path="res://Shaders/FxBlackWall.gdshader" id="1_5tt57"]
 
 [resource]
 resource_local_to_scene = true
 render_priority = -1
-shader = ExtResource("1_kri0d")
-shader_parameter/Albedo = null
-shader_parameter/Depth_Factor = 0.484
-shader_parameter/Depth_Power = 0.5
-shader_parameter/Wave_Turbulance = 1.0
-shader_parameter/Wave_Speed = 1.5
-shader_parameter/Wave_Amplitude = 0.1
+shader = ExtResource("1_5tt57")
+shader_parameter/albedo = null
+shader_parameter/depthDistance = 0.5
+shader_parameter/depthFade = 1.0
+shader_parameter/waveturbulance = 1.5
+shader_parameter/waveSpeed = 1.5
+shader_parameter/waveAmplitude = 0.1

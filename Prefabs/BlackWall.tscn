@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuxcfmy1d3cvv"]
+[gd_scene load_steps=6 format=3 uid="uid://cuxcfmy1d3cvv"]
 
 [ext_resource type="Script" path="res://C#/BlackWall.cs" id="1_ykcgk"]
-[ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="2_3eutq"]
+[ext_resource type="Shader" path="res://Shaders/FxBlackWall.gdshader" id="2_uqred"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_p5a8i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3voh4"]
+resource_local_to_scene = true
+render_priority = -1
+shader = ExtResource("2_uqred")
+shader_parameter/albedo = null
+shader_parameter/depthDistance = 0.5
+shader_parameter/depthFade = 1.0
+shader_parameter/waveturbulance = 1.5
+shader_parameter/waveSpeed = 1.5
+shader_parameter/waveAmplitude = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruem7"]
 size = Vector3(5, 5, 0.5)
@@ -18,10 +29,11 @@ fadeSpeed = 1.0
 [node name="BlackWallMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0, 0, 0)
 layers = 2
+cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_p5a8i")
 skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("2_3eutq")
+surface_material_override/0 = SubResource("ShaderMaterial_3voh4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ruem7")

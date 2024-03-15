@@ -1,11 +1,11 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dgvmcdcm511j4"]
 
-[ext_resource type="Shader" uid="uid://cuahgl8nxrund" path="res://Shaders/Eyes.tres" id="1_a6nfm"]
+[ext_resource type="Shader" uid="uid://cuahgl8nxrund" path="res://Shaders/VisualEyes.tres" id="1_e0x5y"]
 [ext_resource type="Texture2D" uid="uid://d0tvx4lbqnke5" path="res://Textures/eye-rat.png" id="2_fsqjx"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_a6nfm")
+shader = ExtResource("1_e0x5y")
 shader_parameter/Metallic = 1.0
 shader_parameter/Roughness = 0.2
 shader_parameter/Specular = 0.0

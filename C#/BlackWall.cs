@@ -10,7 +10,7 @@ public partial class BlackWall : StaticBody3D
     float fadeSpeed = 2;
 
     Material blackWallMaterial;
-    float depthFactor;
+    float depthDistance;
     bool isDissolving = false;
 
 
@@ -21,7 +21,7 @@ public partial class BlackWall : StaticBody3D
         blackWallMaterial = mesh.GetSurfaceOverrideMaterial(0);
 
         // get depth factor
-        depthFactor = float.Parse(blackWallMaterial.Get("shader_parameter/Depth_Factor").ToString());
+        depthDistance = float.Parse(blackWallMaterial.Get("shader_parameter/depthDistance").ToString());
     }
 
 
@@ -31,12 +31,12 @@ public partial class BlackWall : StaticBody3D
         if(isDissolving)
         {
             // smooth depth factor
-            depthFactor = Mathf.MoveToward(depthFactor, 1, fadeSpeed * ((float) delta));
+            depthDistance = Mathf.MoveToward(depthDistance, 1, fadeSpeed * ((float) delta));
 
             // update black depth
-            mesh.GetSurfaceOverrideMaterial(0).Set("shader_parameter/Depth_Factor", depthFactor);
+            mesh.GetSurfaceOverrideMaterial(0).Set("shader_parameter/depthDistance", depthDistance);
 
-            if(depthFactor >= 1)
+            if(depthDistance >= 1)
             {
                 // fade complete
                 QueueFree();

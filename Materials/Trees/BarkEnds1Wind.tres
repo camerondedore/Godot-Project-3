@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dcqffy2bt6e17"]
 
-[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Shaders/VegetationBark.tres" id="1_cftwc"]
+[ext_resource type="Shader" uid="uid://cq8ayd6v6h7by" path="res://Shaders/VisualVegetationBark.tres" id="1_cftwc"]
 [ext_resource type="Texture2D" uid="uid://mtlr2jdmxpan" path="res://Textures/bark-end-1.png" id="2_00ui7"]
 
 [resource]
