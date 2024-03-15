@@ -9,5 +9,6 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("2_hqqsh")
 metallic = 0.1
+metallic_specular = 0.25
 backlight_enabled = true
 backlight = Color(0.431373, 0.431373, 0.431373, 1)

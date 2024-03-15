@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw1rpcyu6mm7p"]
+
+[ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_qiwwi"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_k61hj"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_4xiec"]
+[ext_resource type="Material" uid="uid://dtj7tjjw2nglw" path="res://Materials/Trees/LeavesOak.tres" id="4_4iysl"]
+
+[node name="PropBgTreeOak1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = ExtResource("1_qiwwi")
+surface_material_override/0 = ExtResource("2_k61hj")
+surface_material_override/1 = ExtResource("3_4xiec")
+surface_material_override/2 = ExtResource("4_4iysl")

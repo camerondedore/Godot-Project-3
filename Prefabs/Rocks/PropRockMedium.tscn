@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmq1a7cy06lcd"]
+
+[ext_resource type="PackedScene" uid="uid://bbryospgam6tg" path="res://Prefabs/Rocks/PropRockSmall.tscn" id="1_hqeti"]
+[ext_resource type="ArrayMesh" uid="uid://d4dlb4h6wa8eb" path="res://Models/prop-rock-medium.res" id="2_37qjr"]
+
+[node name="PropRockMedium" instance=ExtResource("1_hqeti")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_37qjr")

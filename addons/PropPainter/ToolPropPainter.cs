@@ -19,12 +19,14 @@ public partial class ToolPropPainter : Node
 		maxRotation = 2,
 		sizeVariation = 0.2f;
 	[Export]
-	bool uniformSize = false;
+	bool uniformSize = false,
+		useHitNormal;
 	[Export]
 	string maskAsBinary = "1";
 	
 	Camera3D editorCamera;
-	Vector3 rayHitPoint;
+	Vector3 rayHitPoint,
+		rayHitNormal;
 	double timer = 1;
 	uint maskAsDecimal;
 
@@ -32,7 +34,7 @@ public partial class ToolPropPainter : Node
 
 	public override void _Ready()
 	{
-		if (Engine.IsEditorHint())
+		if (Engine.IsEditorHint() == true)
 		{
 			// get editor camera
 			editorCamera = GetEditorCamera();
@@ -73,6 +75,7 @@ public partial class ToolPropPainter : Node
 
 			// get ray hit point
 			rayHitPoint = (Vector3) rayResult["position"];
+			rayHitNormal = (Vector3) rayResult["normal"];
 
 			// debug ray
 			//((Node3D) GetChild(0)).GlobalPosition = rayHitPoint;
@@ -81,7 +84,7 @@ public partial class ToolPropPainter : Node
 			if(timer <= 0 && propsToPaint.Length > 0)
 			{
 				// paint prop into scene
-				PaintProp(rayHitPoint);
+				PaintProp(rayHitPoint, rayHitNormal);
 
 				timer = toolSpeed;
 			}
@@ -150,7 +153,7 @@ public partial class ToolPropPainter : Node
 
 
 
-	void PaintProp(Vector3 paintPoint)
+	void PaintProp(Vector3 paintPoint, Vector3 paintNormal)
 	{
 		// get prop to paint from array
 		var propIndex = GD.Randi() % propsToPaint.Length;
@@ -173,18 +176,37 @@ public partial class ToolPropPainter : Node
 		var xzSpread = 1 + (GD.Randf() - 0.5f) * sizeVariation;
 		var sizeSpread = new Vector3(xzSpread, 1 + (GD.Randf() - 0.5f) * sizeVariation, xzSpread);
 
-		if(uniformSize)
+		if(uniformSize == true)
 		{
 			sizeSpread.Y = sizeSpread.X;
 		}
 
 		// set parent as root scene
-		GetTree().EditedSceneRoot.AddChild(prop);
+		GetParent().AddChild(prop);
 		prop.Owner = GetTree().EditedSceneRoot;
+
+
 
 		// apply prop transform properties
 		prop.GlobalPosition = paintPoint + spread + Vector3.Up * yOffset;
-		prop.RotationDegrees = rotationSpread;
+
+		// use ray hit normal
+		if(useHitNormal == true && rayHitNormal != Vector3.Up)
+		{
+			var crossRight = Vector3.Up.Cross(rayHitNormal);
+			var crossForward = rayHitNormal.Cross(crossRight);
+
+			prop.LookAtFromPosition(prop.GlobalPosition, prop.GlobalPosition + crossForward);
+
+			prop.RotateObjectLocal(Vector3.Right, Mathf.DegToRad(rotationSpread.X));
+			prop.RotateObjectLocal(Vector3.Up, Mathf.DegToRad(rotationSpread.Y));
+			prop.RotateObjectLocal(Vector3.Forward, Mathf.DegToRad(rotationSpread.Z));
+		}
+		else
+		{
+			prop.RotationDegrees = rotationSpread;
+		}
+
 		prop.Scale = sizeSpread;
 	}
 }

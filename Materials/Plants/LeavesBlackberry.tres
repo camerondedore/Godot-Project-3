@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cffubwl8dgc5e"]
+
+[ext_resource type="Texture2D" uid="uid://dgisbgvjthy18" path="res://Textures/leaves-blackberry.png" id="1_77j40"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_77j40")
+metallic = 0.1
+metallic_specular = 0.25
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)

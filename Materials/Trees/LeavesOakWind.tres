@@ -6,11 +6,11 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_wlonx")
-shader_parameter/Wind_Amplitude = 0.05
-shader_parameter/Wind_Speed = 0.2
-shader_parameter/Wind_Turbulance = 5.0
-shader_parameter/Wind_Min_Height = 2.0
-shader_parameter/Wind_Slope = 4.0
+shader_parameter/Wind_Amplitude = 0.025
+shader_parameter/Wind_Speed = 0.5
+shader_parameter/Wind_Turbulance = 1.0
+shader_parameter/Wind_Min_Height = 0.0
+shader_parameter/Wind_Slope = 6.0
 shader_parameter/Y_Multiplier = 0.25
 shader_parameter/Metallic = 0.1
 shader_parameter/Roughness = 1.0

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://xi0m8mskyllc"]
+
+[ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="1_viu6k"]
+[ext_resource type="ArrayMesh" uid="uid://c8tmenwq5m8uh" path="res://Models/prop-tree-oak-4.res" id="2_dxm60"]
+
+[node name="PropBgTreeOak4" instance=ExtResource("1_viu6k")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_dxm60")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2ii8qhujvfub"]
 
 [ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_hx8dg"]
-[ext_resource type="Material" uid="uid://d2q2syeel3fuj" path="res://Materials/Trees/BarkOakWind.tres" id="2_u364e"]
-[ext_resource type="Material" uid="uid://dcqffy2bt6e17" path="res://Materials/Trees/BarkEnds1Wind.tres" id="3_fl7r2"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_phppp"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_oin6n"]
 [ext_resource type="Material" uid="uid://dkdh7x3w5voc7" path="res://Materials/Trees/LeavesOakWind.tres" id="4_6buxf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ct8fg"]
@@ -18,8 +18,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_hx8dg")
-surface_material_override/0 = ExtResource("2_u364e")
-surface_material_override/1 = ExtResource("3_fl7r2")
+surface_material_override/0 = ExtResource("2_phppp")
+surface_material_override/1 = ExtResource("3_oin6n")
 surface_material_override/2 = ExtResource("4_6buxf")
 
 [node name="TrunkCollision" type="CollisionShape3D" parent="."]

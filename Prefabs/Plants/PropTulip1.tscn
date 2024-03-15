@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://q5ovbwr3uy8l"]
 
 [ext_resource type="ArrayMesh" uid="uid://d2vyel6g2ix1f" path="res://Models/prop-tulip-1.res" id="1_xoq8s"]
-[ext_resource type="Material" uid="uid://cfx16fmpivtuy" path="res://Materials/Plants/LeavesTulipWind.tres" id="2_e26ah"]
+[ext_resource type="Material" uid="uid://caxm326y8t45n" path="res://Materials/Plants/LeavesTulip.tres" id="2_c6jx7"]
 
 [node name="PropTulip1" type="Node3D"]
 
@@ -10,4 +10,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_xoq8s")
-surface_material_override/0 = ExtResource("2_e26ah")
+surface_material_override/0 = ExtResource("2_c6jx7")

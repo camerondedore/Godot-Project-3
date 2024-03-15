@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_4p86m"]
 [ext_resource type="ArrayMesh" uid="uid://ddo1d2217jpg" path="res://Models/prop-tree-fir-2.res" id="2_t37mr"]
 [ext_resource type="ArrayMesh" uid="uid://hjs7adpuec6r" path="res://Models/prop-tree-fir-leaves-2.res" id="3_wwahn"]
-[ext_resource type="Material" uid="uid://d0cjy44fcos7m" path="res://Materials/Trees/LeavesFirWindShort.tres" id="4_d7ukc"]
+[ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="4_qljc7"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwls3"]
 points = PackedVector3Array(0.243181, -2.1273, -0.00590891, -0.246799, -2.1273, -0.0758376, -0.246799, -2.1273, 0.0990801, 0.0681678, 3.0175, -0.0758376, 0.0681678, -2.1273, -0.250899, 0.10318, -2.0573, 0.239082, -0.0717377, 3.0175, 0.0640198, -0.0717377, 2.9475, -0.0758376, 0.0681678, 3.0175, 0.0640198, -0.10675, -1.9873, 0.239082, -0.141714, -2.0573, -0.215887, 0.173109, -2.0573, -0.215887, 0.243181, -1.9873, 0.0990801, 0.243181, -1.9873, -0.110898, 0.0331555, 2.6675, 0.0990801, 0.173109, -2.1273, 0.204069, -0.0367253, -1.9173, -0.250899, -0.211787, -2.1273, 0.169009, 0.10318, 2.42224, -0.0408733, -0.10675, 2.31749, -0.0408733, -0.211787, -2.1273, -0.145814, -0.246799, -1.95205, 0.0990801, -0.176727, -1.95205, 0.204069, -0.0367253, 2.6675, 0.0990801, -0.00180891, 2.24749, -0.110898, -0.00180891, -1.81204, 0.239082, 0.10318, 2.42224, 0.0290555, 0.0681678, -2.02205, -0.250899, -0.10675, 2.21224, 0.0640198, 0.0681678, 2.35224, 0.0990801, -0.10675, -2.1273, 0.239082, -0.246799, -1.95205, -0.0408733)
@@ -22,7 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_wwahn")
-surface_material_override/0 = ExtResource("4_d7ukc")
+surface_material_override/0 = ExtResource("4_qljc7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

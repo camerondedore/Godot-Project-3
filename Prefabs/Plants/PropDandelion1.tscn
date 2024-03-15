@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dqfpswbl7lof"]
 
 [ext_resource type="ArrayMesh" uid="uid://bixiox0f5f70h" path="res://Models/prop-dandelion-1.res" id="1_np62k"]
-[ext_resource type="Material" uid="uid://dh8sadauh7jgo" path="res://Materials/Plants/LeavesDandelionWind.tres" id="2_27x72"]
+[ext_resource type="Material" uid="uid://drr0o1n8k2ow2" path="res://Materials/Plants/LeavesDandelion.tres" id="2_pphgp"]
 
 [node name="PropDandelion1" type="Node3D"]
 
@@ -10,4 +10,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_np62k")
-surface_material_override/0 = ExtResource("2_27x72")
+surface_material_override/0 = ExtResource("2_pphgp")
