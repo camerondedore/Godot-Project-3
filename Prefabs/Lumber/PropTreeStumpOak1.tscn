@@ -11,6 +11,7 @@ radius = 0.33
 [node name="PropTreeStumpOak1" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_coh7e")
@@ -18,4 +19,5 @@ surface_material_override/0 = ExtResource("2_cexyb")
 surface_material_override/1 = ExtResource("3_nxa3h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("CylinderShape3D_dylyi")

@@ -57,7 +57,7 @@ public partial class ToolPropPainter : Node
 			var spaceState = editorCamera.GetWorld3D().DirectSpaceState;
 			
 			var rayStart = editorCamera.ProjectRayOrigin(cursor2dPosition);
-			var rayEnd = rayStart + editorCamera.ProjectRayNormal(cursor2dPosition) * 100;
+			var rayEnd = rayStart + editorCamera.ProjectRayNormal(cursor2dPosition) * 200;
 			//var rayEnd = rayStart + editorCamera.Basis.Z * -100;
 
 			var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
