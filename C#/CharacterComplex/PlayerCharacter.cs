@@ -145,6 +145,11 @@ namespace PlayerCharacterComplex
 
 		public void CharacterLook(Vector3 direction)
 		{
+			if(direction.LengthSquared() < 0.1f)
+			{
+				return;
+			}
+
 			// lock look vector Y
 			var lookVector = direction;
 			lookVector.Y = 0;

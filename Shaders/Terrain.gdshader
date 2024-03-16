@@ -18,7 +18,7 @@ void vertex()
 
 void fragment() 
 {
-	// get world position of pixel
+	// get world position and normal of pixel
 	vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	vec3 worldNormal = abs(INV_VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
 	

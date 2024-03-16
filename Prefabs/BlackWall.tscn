@@ -9,11 +9,11 @@
 resource_local_to_scene = true
 render_priority = -1
 shader = ExtResource("2_uqred")
-shader_parameter/albedo = null
-shader_parameter/depthDistance = 0.5
-shader_parameter/depthFade = 1.0
-shader_parameter/waveturbulance = 1.5
-shader_parameter/waveSpeed = 1.5
+shader_parameter/depthColor = null
+shader_parameter/depthDistance = 0.8
+shader_parameter/depthFade = 1.5
+shader_parameter/waveTurbulance = 2.0
+shader_parameter/waveSpeed = 1.25
 shader_parameter/waveAmplitude = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruem7"]
