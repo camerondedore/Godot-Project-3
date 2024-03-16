@@ -26,8 +26,13 @@ namespace MobBlackRat
                 {
                     // get distance to enemy
                     var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
-                    var angleToEnemy = blackboard.GetForwardToEnemyAngle();
-                    if(distanceToEnemySqr < blackboard.attackRangeSqr && angleToEnemy < blackboard.attackAngle)
+                    var angleForwardToEnemy = blackboard.GetForwardToEnemyAngle();
+                    var angleUpToEnemy = blackboard.GetUpToEnemyAngle();
+
+                    var enemyInFront = distanceToEnemySqr < blackboard.attackRangeSqr && angleForwardToEnemy < blackboard.attackAngle;
+                    var enemyAbove = distanceToEnemySqr < blackboard.attackRangeSqr * 1.5f && angleUpToEnemy < blackboard.attackAngle;
+
+                    if(enemyInFront || enemyAbove)
                     {
                         // hurt enemy
                         // get health node by name, as direct child to the faction node's owner

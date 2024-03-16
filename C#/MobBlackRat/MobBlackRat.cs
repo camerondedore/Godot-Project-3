@@ -294,24 +294,6 @@ namespace MobBlackRat
 
 
 
-        public float GetUpLookAngleToEnemy()
-        {
-            if(IsEnemyValid() == false)
-            {
-                return 0;
-            }
-
-            var directionToEnemy = enemy.GlobalPosition - eyes.GlobalPosition;
-            var distance = new Vector2(directionToEnemy.X, directionToEnemy.Z).Length();
-            var height = directionToEnemy.Y;
-
-            var angle = Mathf.RadToDeg(Mathf.Atan(height / distance));
-
-            return angle;
-        }
-
-
-
         public float GetForwardToEnemyAngle()
         {
             if(IsEnemyValid() == false)
@@ -322,6 +304,22 @@ namespace MobBlackRat
             var unitDirectionToEnemy = (enemy.GlobalPosition - eyes.GlobalPosition).Normalized();
 
             var angle = (-Basis.Z).AngleTo(unitDirectionToEnemy);
+        
+            return Mathf.RadToDeg(angle);
+        }
+
+
+
+        public float GetUpToEnemyAngle()
+        {
+            if(IsEnemyValid() == false)
+            {
+                return 0;
+            }
+
+            var unitDirectionToEnemy = (enemy.GlobalPosition - eyes.GlobalPosition).Normalized();
+
+            var angle = Basis.Y.AngleTo(unitDirectionToEnemy);
         
             return Mathf.RadToDeg(angle);
         }

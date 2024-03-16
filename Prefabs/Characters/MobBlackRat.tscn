@@ -39,6 +39,7 @@ audio = NodePath("RatAudio")
 swordHitFx = NodePath("FxEnemyHit")
 swordHitBloodFx = NodePath("FxBloodSlash")
 collider = NodePath("CollisionShape3D")
+attackRangeSqr = 6.25
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
 script = ExtResource("2_71lt1")
@@ -207,11 +208,11 @@ script = ExtResource("4_3600o")
 faction = 2
 
 [node name="FxEnemyHit" parent="." instance=ExtResource("17_w0mqh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347548, -0.811844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347548, -1.01184)
 restartOnReady = false
 
 [node name="FxBloodSlash" parent="." instance=ExtResource("20_3wa7t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347548, -1.01184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.347548, -1.21184)
 
 [node name="CharacterWaterArea" parent="." node_paths=PackedStringArray("characterAudioNode") instance=ExtResource("21_ccxk3")]
 characterAudioNode = NodePath("../RatAudio")
