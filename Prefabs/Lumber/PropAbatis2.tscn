@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkk7hfsekt3di"]
+
+[ext_resource type="PackedScene" uid="uid://r41mrweymrwp" path="res://Prefabs/Lumber/PropAbatis1.tscn" id="1_e5srk"]
+[ext_resource type="ArrayMesh" uid="uid://f05k11yajxvl" path="res://Models/prop-abatis-2.res" id="2_3rpkv"]
+
+[node name="PropAbatis2" instance=ExtResource("1_e5srk")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_3rpkv")

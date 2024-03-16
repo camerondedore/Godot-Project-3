@@ -28,11 +28,13 @@ dustFx = NodePath("FxJumpPadDust")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="prop-jump-net-stakes" parent="prop-jump-net" index="0"]
+layers = 2
 surface_material_override/0 = ExtResource("5_vu3vj")
 surface_material_override/1 = ExtResource("6_8j7hd")
 surface_material_override/2 = ExtResource("7_u6us4")
 
 [node name="prop-jump-net2" parent="prop-jump-net/armature-jump-net/Skeleton3D" index="0"]
+layers = 2
 surface_material_override/0 = ExtResource("8_4bt27")
 
 [node name="JumpCollision" type="CollisionShape3D" parent="."]

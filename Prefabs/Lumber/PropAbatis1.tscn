@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://r41mrweymrwp"]
+
+[ext_resource type="ArrayMesh" uid="uid://djje80xwrpjyo" path="res://Models/prop-abatis-1.res" id="1_lc04c"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_w806h"]
+
+[node name="PropAbatis1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+layers = 2
+mesh = ExtResource("1_lc04c")
+surface_material_override/0 = ExtResource("2_w806h")
