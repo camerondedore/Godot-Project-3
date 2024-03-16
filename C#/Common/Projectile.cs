@@ -51,9 +51,9 @@ public partial class Projectile : Node3D
 		velocity += gravity * ((float) delta) * gravityInfluence;		
 
         // get ray parameters
-        var rayStart = GlobalPosition;
+        var rayStart = GlobalPosition - velocity * ((float) delta) * 0.1f;
         var rayEnd = rayStart + velocity * ((float) delta) * 1.1f;
-        var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal, HitBackFaces = true};
+        var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
 
 		// cast ray
 		var rayResult = spaceState.IntersectRay(rayParams);
