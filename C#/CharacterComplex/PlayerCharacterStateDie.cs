@@ -12,7 +12,19 @@ namespace PlayerCharacterComplex
 
         public override void RunState(double delta)
         {
+            // set up velocity using input
+            var vel = blackboard.Velocity;
 
+            // apply gravity
+            vel += EngineGravity.vector * ((float) delta);
+
+            // apply velocity
+            blackboard.Velocity = vel;
+
+            blackboard.MoveAndSlide();
+
+            // camera follow
+            blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
         }
 
 

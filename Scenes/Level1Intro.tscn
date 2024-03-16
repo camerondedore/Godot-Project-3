@@ -885,6 +885,3 @@ transform = Transform3D(-0.496792, 0, -0.86787, 0, 1, 0, 0.86787, 0, -0.496792, 
 
 [node name="MobBrownRat9" parent="." instance=ExtResource("9_4degj")]
 transform = Transform3D(-0.484535, 0, 0.874772, 0, 1, 0, -0.874772, 0, -0.484535, -52.3064, 2.85, -213.445)
-
-[node name="MobBlackRat6" parent="." instance=ExtResource("4_m4xsu")]
-transform = Transform3D(0.347378, 0, -0.937725, 0, 1, 0, 0.937725, 0, 0.347378, -1.808, 1, -6.23868)
