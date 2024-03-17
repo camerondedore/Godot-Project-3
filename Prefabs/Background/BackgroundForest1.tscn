@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2hw7o6qym87a"]
+
+[ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/BackgroundForest1.tres" id="1_linbw"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3q1ie"]
+
+[node name="BackgroundForest1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(35.62, 0, 0, 0, 26, 0, 0, 0, 26, 0, 13, 0)
+layers = 2
+mesh = SubResource("QuadMesh_3q1ie")
+surface_material_override/0 = ExtResource("1_linbw")
