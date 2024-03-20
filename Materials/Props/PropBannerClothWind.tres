@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ciflui3hjuh6m"]
+
+[ext_resource type="Shader" path="res://Shaders/VertexWind.gdshader" id="1_4csqm"]
+[ext_resource type="Texture2D" uid="uid://binjeg76t5p7h" path="res://Textures/prop-banner-diffuse.png" id="2_nmh4j"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4csqm")
+shader_parameter/backlightStrength = 0.4
+shader_parameter/alphaClip = 0.5
+shader_parameter/waveAxis = Vector3(0.7, 0.7, 0.5)
+shader_parameter/waveSpeed = 2.0
+shader_parameter/waveTurbulance = 1.5
+shader_parameter/waveAmplitude = 0.05
+shader_parameter/albedo = ExtResource("2_nmh4j")

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cux3kaqksn82v"]
+
+[ext_resource type="Texture2D" uid="uid://binjeg76t5p7h" path="res://Textures/prop-banner-diffuse.png" id="1_ykhyw"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_ykhyw")
+metallic_specular = 0.0
+backlight_enabled = true
+backlight = Color(0.4, 0.4, 0.4, 1)
