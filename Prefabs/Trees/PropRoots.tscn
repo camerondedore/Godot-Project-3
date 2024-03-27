@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4xv8s7i3wq3t"]
+
+[ext_resource type="ArrayMesh" uid="uid://rms5qhs0stsd" path="res://Models/prop-roots.res" id="1_6f3h6"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_t2yop"]
+
+[node name="PropRoots" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, -0.2)
+layers = 2
+mesh = ExtResource("1_6f3h6")
+surface_material_override/0 = ExtResource("2_t2yop")
