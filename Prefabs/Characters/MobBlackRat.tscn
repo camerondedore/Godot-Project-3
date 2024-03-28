@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="4_3600o"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobEyes.cs" id="4_yonai"]
 [ext_resource type="Material" uid="uid://jdcotr5j1875" path="res://Materials/Characters/MobBlackRatRim.tres" id="5_n14mk"]
-[ext_resource type="Material" uid="uid://dgvmcdcm511j4" path="res://Materials/Characters/RatEyeGlow.tres" id="6_ib6tv"]
+[ext_resource type="Material" uid="uid://bf425q6a5ouef" path="res://Materials/Characters/RatEyeGlow.tres" id="6_al5mj"]
 [ext_resource type="Material" uid="uid://blq5nnks5d07c" path="res://Materials/Characters/MobBlackRatGearRim.tres" id="7_ji3gt"]
 [ext_resource type="Script" path="res://C#/MobBlackRat/MobBlackRatAudio.cs" id="8_cysva"]
 [ext_resource type="AudioStream" uid="uid://da4wwm0prr2q6" path="res://Audio/footstep-terrain-1.wav" id="9_hoxjl"]
@@ -160,14 +160,14 @@ bones/62/rotation = Quaternion(-0.0407275, 0.704659, 0.705933, 0.0587899)
 bones/62/scale = Vector3(0.999999, 1, 1)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.906989, -0.233789, -0.350305, 0.418992, 0.585085, 0.69435, 0.0426267, -0.776543, 0.628621, 0.454784, -0.000904896, -0.243781)
+transform = Transform3D(0.906989, -0.233789, -0.350306, 0.418992, 0.585084, 0.69435, 0.0426268, -0.776543, 0.628621, 0.454784, -0.000904896, -0.243781)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D/weapon-sword" index="0"]
 surface_material_override/0 = ExtResource("4_5s7k5")
 
 [node name="character-black-rat" parent="character-black-rat/character-armature/Skeleton3D" index="1"]
 surface_material_override/0 = ExtResource("5_n14mk")
-surface_material_override/1 = ExtResource("6_ib6tv")
+surface_material_override/1 = ExtResource("6_al5mj")
 surface_material_override/2 = ExtResource("7_ji3gt")
 
 [node name="AnimationPlayer" parent="character-black-rat" index="1"]
