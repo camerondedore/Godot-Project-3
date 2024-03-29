@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://k20f00pek08y"]
+
+[ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="1_3836b"]
+[ext_resource type="PackedScene" uid="uid://xrjt7goiur8h" path="res://Prefabs/Trees/PropBgTreeFir2.tscn" id="2_8ypo3"]
+[ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="3_giuob"]
+[ext_resource type="PackedScene" uid="uid://cb7naepeii5aj" path="res://Prefabs/Trees/PropBgTreeOak2.tscn" id="4_r7eej"]
+[ext_resource type="PackedScene" uid="uid://ckb3ng4tokwms" path="res://Prefabs/Trees/PropBgTreeOak3.tscn" id="5_e04q7"]
+[ext_resource type="PackedScene" uid="uid://xi0m8mskyllc" path="res://Prefabs/Trees/PropBgTreeOak4.tscn" id="6_8jrdh"]
+[ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="7_w74s1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5g5e"]
+size = Vector3(16, 10, 6)
+
+[node name="PropTreeWall" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_w5g5e")
+
+[node name="PropBgTreeFir1" parent="." instance=ExtResource("1_3836b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45736, 0, 0.470307)
+
+[node name="PropBgTreeFir3" parent="." instance=ExtResource("1_3836b")]
+transform = Transform3D(0.0681369, 0, 0.945009, 0, 0.947462, 0, -0.945009, 0, 0.0681369, 3.55494, 0, 0.526227)
+
+[node name="PropBgTreeFir2" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52559, 0, 0.389887)
+
+[node name="PropBgTreeFir4" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(-0.898432, 0, 0.651241, 0, 1.10964, 0, -0.651241, 0, -0.898432, -5.52945, 0, -0.462603)
+
+[node name="PropBgTreeFir7" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(-0.105689, 0, -1.30874, 0, 1.313, 0, 1.30874, 0, -0.105689, -4.49877, 0, 2.3609)
+
+[node name="PropBgTreeFir8" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(1.28915, 0, 0.464809, 0, 1.37038, 0, -0.464809, 0, 1.28915, 0.718156, 0, 2.10836)
+
+[node name="PropBgTreeFir9" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(-1.30001, 0, 0.433513, 0, 1.37038, 0, -0.433513, 0, -1.30001, 6.52973, 0, 2.04897)
+
+[node name="PropBgTreeFir5" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(0.00368836, 0, -0.964928, 0, 0.964935, 0, 0.964928, 0, 0.00368836, 1.79211, 0, 0.839494)
+
+[node name="PropBgTreeFir6" parent="." instance=ExtResource("2_8ypo3")]
+transform = Transform3D(0.506273, 0, 0.92807, 0, 1.05718, 0, -0.92807, 0, 0.506273, -1.17766, 0, 0.938694)
+
+[node name="PropBgTreeOak1" parent="." instance=ExtResource("3_giuob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03646, 0, -0.406569)
+
+[node name="PropBgTreeOak2" parent="." instance=ExtResource("4_r7eej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59486, 0, 0)
+
+[node name="PropBgTreeOak3" parent="." instance=ExtResource("5_e04q7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82525, 0, -0.29812)
+
+[node name="PropBgTreeOak4" parent="." instance=ExtResource("6_8jrdh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66938, 0, -0.487629)
+
+[node name="PropBlackberryBushBg" parent="." instance=ExtResource("7_w74s1")]
+transform = Transform3D(0.987756, 0, -0.156003, 0, 1, 0, 0.156003, 0, 0.987756, 4.05089, 0, 0.164018)
+
+[node name="PropBlackberryBushBg5" parent="." instance=ExtResource("7_w74s1")]
+transform = Transform3D(-0.990297, 0, -0.138966, 0, 1, 0, 0.138966, 0, -0.990297, -0.164024, 0, 1.01282)
+
+[node name="PropBlackberryBushBg2" parent="." instance=ExtResource("7_w74s1")]
+transform = Transform3D(-0.966448, 0, 0.256863, 0, 1, 0, -0.256863, 0, -0.966448, -3.74673, 0, 0.164018)
+
+[node name="PropBlackberryBushBg3" parent="." instance=ExtResource("7_w74s1")]
+transform = Transform3D(-0.971595, 0, -0.236652, 0, 1, 0, 0.236652, 0, -0.971595, -4.16602, 0, 1.19631)
+
+[node name="PropBlackberryBushBg4" parent="." instance=ExtResource("7_w74s1")]
+transform = Transform3D(-0.907521, 0, -0.420007, 0, 1, 0, 0.420007, 0, -0.907521, 2.88973, 0, 0.834366)

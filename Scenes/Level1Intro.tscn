@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=67 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -46,6 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://d40w8b73mkfq" path="res://Prefabs/Lumber/PropLogOak2.tscn" id="28_5q6u1"]
 [ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="29_862dr"]
 [ext_resource type="PackedScene" uid="uid://f1pet24tfnv7" path="res://Prefabs/Lumber/PropLogOak3.tscn" id="29_ddr30"]
+[ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="29_i8muj"]
 [ext_resource type="PackedScene" uid="uid://r41mrweymrwp" path="res://Prefabs/Lumber/PropAbatis1.tscn" id="30_brlrw"]
 [ext_resource type="PackedScene" uid="uid://bkk7hfsekt3di" path="res://Prefabs/Lumber/PropAbatis2.tscn" id="30_jvk4c"]
 [ext_resource type="PackedScene" uid="uid://vxr2ttl1f0su" path="res://Prefabs/Lumber/PropAbatis3.tscn" id="32_k0jxc"]
@@ -1952,6 +1953,47 @@ transform = Transform3D(-1.03313, -0.0251762, -0.0482684, -0.0260519, 1.03408, 0
 
 [node name="PropBgTreeFir1!1711313130_346" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("16_gnfra")]
 transform = Transform3D(-0.992689, 0.0278278, -0.0135273, 0.0274295, 0.992381, 0.028597, 0.0143178, 0.0282096, -0.992668, 23.0163, 4, 32.0311)
+
+[node name="TreeWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
+
+[node name="PropTreeWall" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.180021, 0, 0.983663, 0, 1, 0, -0.983663, 0, 0.180021, -7.23649, 0, -3.41214)
+
+[node name="PropTreeWall2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(-0.429897, 0, 0.902878, 0, 1, 0, -0.902878, 0, -0.429897, -8.46399, -9.53674e-07, -14.2833)
+
+[node name="PropTreeWall3" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.251242, 0, 0.967925, 0, 1, 0, -0.967925, 0, 0.251242, 9.88851, -9.53674e-07, -4.50219)
+
+[node name="PropTreeWall4" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.432463, 0, 0.901652, 0, 1, 0, -0.901652, 0, 0.432463, 14.7956, -9.53674e-07, -17.4418)
+
+[node name="PropTreeWall5" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.236482, 0, 0.971636, 0, 1, 0, -0.971636, 0, 0.236482, 18.7545, -2.86102e-06, -30.8124)
+
+[node name="PropTreeWall10" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(-0.0870341, 0, 0.996205, 0, 1, 0, -0.996205, 0, -0.0870341, 32.0747, 8.5, -58.2648)
+
+[node name="PropTreeWall11" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.141247, 0, -0.989974, 0, 1, 0, 0.989974, 0, 0.141247, 31.6016, 8.5, -72.795)
+
+[node name="PropTreeWall12" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(-0.498125, 0, 0.867106, 0, 1, 0, -0.867106, 0, -0.498125, 25.712, 8.5, -85.6746)
+
+[node name="PropTreeWall13" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(-0.607875, 0, 0.794033, 0, 1, 0, -0.794033, 0, -0.607875, 18.9279, 8.5, -99.2603)
+
+[node name="PropTreeWall9" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.558266, 0, 0.829662, 0, 1, 0, -0.829662, 0, 0.558266, 5.46519, 8.5, -55.7835)
+
+[node name="PropTreeWall6" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.0446131, 0, 0.999004, 0, 1, 0, -0.999004, 0, 0.0446131, 1.89752, 4, -29.2993)
+
+[node name="PropTreeWall7" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.829759, 0, -0.558122, 0, 1, 0, 0.558122, 0, 0.829759, -4.35314, 4, -36.6608)
+
+[node name="PropTreeWall8" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
+transform = Transform3D(0.684903, 0, -0.728634, 0, 1, 0, 0.728634, 0, 0.684903, -13.7394, 4, -45.7376)
 
 [node name="Roots" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
