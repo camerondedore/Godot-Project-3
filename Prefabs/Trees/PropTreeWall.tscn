@@ -12,6 +12,7 @@
 size = Vector3(16, 10, 6)
 
 [node name="PropTreeWall" type="StaticBody3D"]
+collision_layer = 2048
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

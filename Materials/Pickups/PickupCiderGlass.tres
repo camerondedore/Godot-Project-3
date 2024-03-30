@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cqdvpfq814sbp"]
+
+[ext_resource type="Shader" path="res://Shaders/GlassBottle.gdshader" id="1_hoyaf"]
+[ext_resource type="Texture2D" uid="uid://d0j7ae2k7m0pt" path="res://Textures/pickup-cider-diffuse.png" id="2_80sky"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hoyaf")
+shader_parameter/rimPower = 1.0
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 1.2
+shader_parameter/rimColor = Color(0.529412, 0.196078, 0, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.2
+shader_parameter/backlight = 0.25
+shader_parameter/albedo = ExtResource("2_80sky")
