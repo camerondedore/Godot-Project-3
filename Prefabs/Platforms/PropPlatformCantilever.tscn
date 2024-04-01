@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfi7lwdus6qt5"]
+
+[ext_resource type="PackedScene" uid="uid://b77qh7ya7mcrk" path="res://Prefabs/Platforms/PropPlatformLogs.tscn" id="1_uvysc"]
+[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Small Items/PropBoardPost1.tscn" id="2_7iihs"]
+[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Small Items/PropBoardPost2.tscn" id="3_ib14u"]
+[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Small Items/PropBoardShort.tscn" id="4_pnpqv"]
+
+[node name="PropPlatformCantilever" type="Node3D"]
+
+[node name="PropPlatformLogs" parent="." instance=ExtResource("1_uvysc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18, -0.2, 0)
+
+[node name="PropPlatformLogs2" parent="." instance=ExtResource("1_uvysc")]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, 8.74228e-08, -1, 7.64274e-15, 8.74228e-08, 0, -1, 0, -0.2, 0)
+
+[node name="PropPlatformLogs3" parent="." instance=ExtResource("1_uvysc")]
+transform = Transform3D(-1, -1.74846e-07, 8.74228e-08, -1.74846e-07, 1, -7.64274e-15, -8.74228e-08, -2.29282e-14, -1, -1.18, -0.2, 0)
+
+[node name="PropBoardPost1" parent="." instance=ExtResource("2_7iihs")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.5, -1.63677, 0.368967)
+
+[node name="PropBoardPost2" parent="." instance=ExtResource("3_ib14u")]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 1.5, -1.63677, 0.368967)
+
+[node name="PropBoardPost3" parent="." instance=ExtResource("2_7iihs")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, -0.563097, -1.01941)
+
+[node name="PropBoardPost4" parent="." instance=ExtResource("2_7iihs")]
+transform = Transform3D(4.37114e-08, -1, -8.74228e-08, 1, 4.37114e-08, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 0, -0.563097, 0.23893)
+
+[node name="PropBoardShort" parent="." instance=ExtResource("4_pnpqv")]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 1.31519, -1.17388, 0.529647)
+
+[node name="PropBoardShort2" parent="." instance=ExtResource("4_pnpqv")]
+transform = Transform3D(4.37114e-08, -8.74228e-08, -1, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -8.74228e-08, -1.315, -1.174, 0.53)
