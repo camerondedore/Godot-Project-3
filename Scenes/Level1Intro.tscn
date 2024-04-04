@@ -630,28 +630,28 @@ transform = Transform3D(0.272821, -0.0338958, 1.06337, 0.0095382, 1.09781, 0.032
 [node name="PropBgTreeFir2!1711946272_496" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(-0.532067, 0.029248, -0.803208, 0.0351409, 0.963182, 0.011795, 0.802972, -0.0227719, -0.53274, -5.99927, 2.87291, 43.5412)
 
-[node name="PropBgTreeFir1!1712108115_08" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("16_gnfra")]
+[node name="PropBgTreeFir1!1712108115_08" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("16_gnfra")]
 transform = Transform3D(-0.823671, 0.00936632, -0.651035, -0.00574895, 1.04968, 0.022375, 0.651077, 0.0211179, -0.823421, 0.121446, -0.000201225, -96.943)
 
-[node name="PropBgTreeFir2!1712108159_096" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108159_096" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(-1.02791, 0.0186298, -0.0719541, 0.0212, 1.02974, -0.0362438, 0.0712392, -0.0376296, -1.02744, 22.8935, -0.000198364, -65.924)
 
-[node name="PropBgTreeFir2!1712108160_613" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108160_613" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(0.964838, -0.0238857, -0.175782, 0.0282302, 0.980364, 0.021737, 0.175136, -0.0264371, 0.964889, 18.7407, -0.000200272, -75.6224)
 
-[node name="PropBgTreeFir2!1712108162_113" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108162_113" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(-0.466491, -0.0253897, 0.990792, 0.0489957, 1.09312, 0.0510805, -0.989906, 0.0660693, -0.464381, 2.54514, -0.154548, -100.738)
 
-[node name="PropBgTreeFir2!1712108163_612" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108163_612" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(-0.927375, 0.0117104, 0.565995, 0.00948363, 1.08645, -0.0069398, -0.566037, -0.000983063, -0.927423, 3.02963, -0.0526595, -93.4664)
 
-[node name="PropBgTreeFir2!1712108165_129" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108165_129" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(-1.06879, -0.0232584, -0.183633, -0.0293337, 1.08379, 0.0334604, 0.182761, 0.0379356, -1.06852, 6.98967, -0.000200272, -68.8805)
 
-[node name="PropBgTreeFir2!1712108183_129" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108183_129" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(-0.416806, 0.0119671, -0.839586, -0.025532, 0.936721, 0.0260268, 0.839283, 0.0344393, -0.416164, 4.70084, 0.0641994, -51.681)
 
-[node name="PropBgTreeFir2!1712108184_629" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
+[node name="PropBgTreeFir2!1712108184_629" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreesBg" instance=ExtResource("23_adhsm")]
 transform = Transform3D(0.175277, 0.0246079, -0.94563, -0.0404028, 0.961043, 0.0175202, 0.945087, 0.0365211, 0.176127, -4.78407, 0.314649, -50.786)
 
 [node name="TreeWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]

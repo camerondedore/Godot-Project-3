@@ -11,7 +11,11 @@ namespace PlayerCharacterComplex
             rangerBandageCraftSound,
             fallDamageSound;
         [Export]
-        AudioStream[] footsteps;
+        AudioStream[] footsteps,
+            terrainFootsteps;
+
+        [Export]
+        RayCast3D floorRay;
         public bool footstepsEnabled = true;
 
 
@@ -41,7 +45,27 @@ namespace PlayerCharacterComplex
         {
             if(footstepsEnabled == true)
             {
-                PlayRandomSound(footsteps, 0.1f);
+                // get floor
+                floorRay.ForceRaycastUpdate();
+                var hitCollider = floorRay.GetCollider();
+
+                if(hitCollider is StaticBody3D hitBody)
+                {
+                    // get collision shape
+                    var hitShapeId = (uint) floorRay.GetColliderShape();
+                    var hitCollisionShape = (CollisionShape3D) hitBody.ShapeOwnerGetOwner(hitShapeId);
+
+                    if(hitCollisionShape.Shape is Godot.ConcavePolygonShape3D)
+                    {
+                        // on terrain
+                        PlayRandomSound(terrainFootsteps, 0.1f);
+                    }
+                    else
+                    {
+                        // on hard surface
+                        PlayRandomSound(footsteps, 0.1f);
+                    }
+                }
             }
         }
 
