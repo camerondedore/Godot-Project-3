@@ -11,7 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://cp5vapmt543af" path="res://Audio/arrow-whistle.wav" id="8_plcwg"]
 [ext_resource type="PackedScene" uid="uid://bnwbiksj5u6vd" path="res://Prefabs/FX/FxArrowTrailEnemy.tscn" id="9_6ir5r"]
 
-[node name="MobArrow" type="Node3D" node_paths=PackedStringArray("trailFx", "whistleAudio")]
+[node name="MobArrow" type="RayCast3D" node_paths=PackedStringArray("trailFx", "whistleAudio")]
+enabled = false
+exclude_parent = false
+target_position = Vector3(0, 0, -1)
+collision_mask = 531
 script = ExtResource("1_msana")
 hitBloodFx = ExtResource("2_yyqqu")
 hitFx = ExtResource("2_30351")
@@ -21,7 +25,6 @@ whistleAudio = NodePath("AudioStreamPlayer3D")
 speed = 19.0
 speedVariation = 0.0
 rangeSqr = 1600.0
-maskAsBinary = "01000010011"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2

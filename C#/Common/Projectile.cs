@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using System.Net;
 
-public partial class Projectile : Node3D
+public partial class Projectile : RayCast3D
 {
 	
 	[Export]
@@ -9,38 +10,20 @@ public partial class Projectile : Node3D
 		speedVariation = 3f,
 		rangeSqr = 1000,
 		gravityInfluence = 1;
-	[Export]
-	string maskAsBinary = "1";
 
-	uint maskAsDecimal;
-
-	PhysicsDirectSpaceState3D spaceState;
 	protected Vector3 velocity;
 	Vector3 gravity;
-	float distanceTraveledSqr = 0;
+	float distanceTraveled = 0;
 
 
 	public override void _Ready()
 	{
-		// forward: -GlobalTransform.Basis.Z
-		// backward: GlobalTransform.Basis.Z
-		// left: -GlobalTransform.Basis.X
-		// right: GlobalTransform.Basis.X
-
 		// initialize velocity with variation
         var variation = (GD.Randf() - 0.5f) * speedVariation;
 		velocity = -GlobalTransform.Basis.Z * (speed + variation);
 
 		// get gravity
 		gravity = EngineGravity.vector;
-
-		// get physics state
-		// only works in _PhysicsProcess
-		spaceState = GetWorld3D().DirectSpaceState;
-
-		// convert mask to decimal
-		// layer 1 is last digit
-		maskAsDecimal = Convert.ToUInt32(maskAsBinary, 2);
 	}
 
 
@@ -51,35 +34,52 @@ public partial class Projectile : Node3D
 		velocity += gravity * ((float) delta) * gravityInfluence;		
 
         // get ray parameters
-        var rayStart = GlobalPosition - velocity * ((float) delta) * 0.1f;
-        var rayEnd = rayStart + velocity * ((float) delta) * 1.1f;
-        var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
+        var rayStart = GlobalPosition;
+		var rayDirection = velocity * ((float) delta);
+        var rayEnd = rayStart + rayDirection;
+
+		// update ray
+		LookAt(rayEnd);
+		TargetPosition = ToLocal(rayEnd);
 
 		// cast ray
-		var rayResult = spaceState.IntersectRay(rayParams);
+		ForceRaycastUpdate();
 
-		if(!rayResult.ContainsKey("collider"))
+		// check for ray hit
+		if(GetCollider() == null)
 		{
-			// move and rotate projectile
-			var targetPoint = GlobalPosition + velocity;
-			LookAtFromPosition(GlobalPosition + velocity * ((float) delta), targetPoint, Vector3.Up);
+			// move the projectile
+			GlobalPosition = rayEnd;
 
-			distanceTraveledSqr += velocity.LengthSquared() * ((float) delta);
+			distanceTraveled += velocity.LengthSquared() * ((float) (delta * delta));
 		}
 		else
 		{
             // get hit info
-			var hitObject = (Node3D) rayResult["collider"];
-			var hitPoint = (Vector3) rayResult["position"];
-			var hitNormal = (Vector3) rayResult["normal"];
+			var hitObject = (Node3D) GetCollider();
+			var hitPoint = GetCollisionPoint();
+			var hitNormal = GetCollisionNormal();
+
+			if(hitNormal == Vector3.Zero)
+			{
+				hitNormal = -Basis.Z;
+			}
 
 			// hit
             Hit(hitObject, hitPoint, hitNormal);
+			return;
 		}		
 
 
+		// turn on extra ray detections
+		if(HitFromInside == false && distanceTraveled > 0.3f)
+		{
+			HitFromInside = true;
+		}
+
+
 		// destroy at max range
-		if(distanceTraveledSqr > rangeSqr)
+		if(distanceTraveled > rangeSqr)
 		{
 			OutOfRange();
 		}

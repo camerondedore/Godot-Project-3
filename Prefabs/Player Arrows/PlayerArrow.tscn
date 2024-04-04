@@ -7,14 +7,17 @@
 [ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="5_fqjht"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="5_pj2yf"]
 
-[node name="PlayerArrow" type="Node3D"]
+[node name="PlayerArrow" type="RayCast3D"]
+enabled = false
+exclude_parent = false
+target_position = Vector3(0, 0, -1)
+collision_mask = 595
 script = ExtResource("1_w1ybd")
 hitFx = ExtResource("2_1gik3")
 missFx = ExtResource("3_rvj48")
 speed = 20.0
 speedVariation = 0.0
 rangeSqr = 900.0
-maskAsBinary = "1001010011"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
