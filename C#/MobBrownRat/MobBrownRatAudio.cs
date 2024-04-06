@@ -3,36 +3,22 @@ using System;
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRatAudio : AudioTools3d, CharacterWaterSplash.IWaterReactor
+    public partial class MobBrownRatAudio : AudioTools3d
     {
 
-        [Export]
-        AudioStream[] footsteps;
+        // [Export]
+        // AudioStream[] footsteps;
 
-        bool footstepsEnabled = true;
-
-
-
-        public void PlayFootstepSound()
-        {
-            if(footstepsEnabled == true)
-            {
-                PlayRandomSound(footsteps, 0.1f);
-            }
-        }
+        // bool footstepsEnabled = true;
 
 
 
-        public void InWater()
-        {
-            footstepsEnabled = false;
-        }
-
-
-
-        public void OutOfWater()
-        {
-            footstepsEnabled = true;
-        }
+        // public void PlayFootstepSound()
+        // {
+        //     if(footstepsEnabled == true)
+        //     {
+        //         PlayRandomSound(footsteps, 0.1f);
+        //     }
+        // }
     }
 }

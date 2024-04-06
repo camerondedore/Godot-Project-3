@@ -15,10 +15,10 @@ public partial class CharacterWaterSplash : Area3D
         waterEnterSound,
         waterExitSound;
     [Export]
-    Node characterAudioNode;
+    Node characterFeetAudioNode;
 
     CharacterBody3D character;
-    IWaterReactor characterAudio;
+    IWaterReactor characterFeetAudio;
     Node3D waterNode;
     Vector3 newFxPosition;
     float audioTargetVolume = 0f,
@@ -35,7 +35,7 @@ public partial class CharacterWaterSplash : Area3D
 
         character = (CharacterBody3D) GetParent();
 
-        characterAudio = (IWaterReactor) characterAudioNode;
+        characterFeetAudio = (IWaterReactor) characterFeetAudioNode;
 
         audioVolumeMax = movementAudio.UnitSize;
 
@@ -85,7 +85,7 @@ public partial class CharacterWaterSplash : Area3D
         waterNode = water;
 
         movementAudio.UnitSize = audioVolumeMax;
-        characterAudio.InWater();
+        characterFeetAudio.InWater();
         splashAudio.PlaySound(waterEnterSound, 0.1f);
     }
 
@@ -97,7 +97,7 @@ public partial class CharacterWaterSplash : Area3D
 
         waterSpashFx.StopParticles();
         audioTargetVolume = 0;
-        characterAudio.OutOfWater();
+        characterFeetAudio.OutOfWater();
         splashAudio.PlaySound(waterExitSound, 0.1f);
         isPlaying = false;
     }

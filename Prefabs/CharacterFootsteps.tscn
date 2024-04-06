@@ -1,0 +1,27 @@
+[gd_scene load_steps=12 format=3 uid="uid://dabnky0qnlvgu"]
+
+[ext_resource type="Script" path="res://C#/CharacterFootsteps.cs" id="1_bi0jt"]
+[ext_resource type="AudioStream" uid="uid://cpx1ghr2ba1fu" path="res://Audio/footstep-1.wav" id="2_aaiis"]
+[ext_resource type="AudioStream" uid="uid://clv8pgaqyxaa3" path="res://Audio/footstep-2.wav" id="3_q0xni"]
+[ext_resource type="AudioStream" uid="uid://14a2mxv3c4w5" path="res://Audio/footstep-3.wav" id="4_mg380"]
+[ext_resource type="AudioStream" uid="uid://dbdeffyes45v6" path="res://Audio/footstep-4.wav" id="5_litk4"]
+[ext_resource type="AudioStream" uid="uid://cnpdnvcc22gj7" path="res://Audio/footstep-5.wav" id="6_i2wg7"]
+[ext_resource type="AudioStream" uid="uid://da4wwm0prr2q6" path="res://Audio/footstep-terrain-1.wav" id="7_ule4k"]
+[ext_resource type="AudioStream" uid="uid://cynubuc452tly" path="res://Audio/footstep-terrain-2.wav" id="8_2xbl8"]
+[ext_resource type="AudioStream" uid="uid://defe14280l7hf" path="res://Audio/footstep-terrain-3.wav" id="9_dwh1q"]
+[ext_resource type="AudioStream" uid="uid://bf56j6i8dd53n" path="res://Audio/footstep-terrain-4.wav" id="10_jg60f"]
+[ext_resource type="AudioStream" uid="uid://bi2ive8voxfyp" path="res://Audio/footstep-terrain-5.wav" id="11_mqqk6"]
+
+[node name="CharacterFootsteps" type="AudioStreamPlayer3D" node_paths=PackedStringArray("floorRay")]
+unit_size = 2.0
+max_distance = 20.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("1_bi0jt")
+footsteps = Array[AudioStream]([ExtResource("2_aaiis"), ExtResource("3_q0xni"), ExtResource("4_mg380"), ExtResource("5_litk4"), ExtResource("6_i2wg7")])
+terrainFootsteps = Array[AudioStream]([ExtResource("7_ule4k"), ExtResource("8_2xbl8"), ExtResource("9_dwh1q"), ExtResource("10_jg60f"), ExtResource("11_mqqk6")])
+floorRay = NodePath("FloorRay")
+
+[node name="FloorRay" type="RayCast3D" parent="."]
+enabled = false
+target_position = Vector3(0, -1.25, 0)
+collision_mask = 17
