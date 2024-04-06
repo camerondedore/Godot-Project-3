@@ -66,16 +66,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82525, 0, -0.29812)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66938, 0, -0.487629)
 
 [node name="PropBlackberryBushBg" parent="." instance=ExtResource("7_w74s1")]
-transform = Transform3D(0.987756, 0, -0.156003, 0, 1, 0, 0.156003, 0, 0.987756, 4.05089, 0, 0.164018)
+transform = Transform3D(0.987756, 0, -0.156003, 0, 1, 0, 0.156003, 0, 0.987756, 4.20326, 0, -0.427795)
 
 [node name="PropBlackberryBushBg5" parent="." instance=ExtResource("7_w74s1")]
 transform = Transform3D(-0.990297, 0, -0.138966, 0, 1, 0, 0.138966, 0, -0.990297, -0.164024, 0, 1.01282)
 
 [node name="PropBlackberryBushBg2" parent="." instance=ExtResource("7_w74s1")]
-transform = Transform3D(-0.966448, 0, 0.256863, 0, 1, 0, -0.256863, 0, -0.966448, -3.74673, 0, 0.164018)
+transform = Transform3D(-0.966448, 0, 0.256863, 0, 1, 0, -0.256863, 0, -0.966448, -4.29334, 0, -0.586496)
 
 [node name="PropBlackberryBushBg3" parent="." instance=ExtResource("7_w74s1")]
 transform = Transform3D(-0.971595, 0, -0.236652, 0, 1, 0, 0.236652, 0, -0.971595, -4.16602, 0, 1.19631)
 
 [node name="PropBlackberryBushBg4" parent="." instance=ExtResource("7_w74s1")]
-transform = Transform3D(-0.907521, 0, -0.420007, 0, 1, 0, 0.420007, 0, -0.907521, 2.88973, 0, 0.834366)
+transform = Transform3D(-0.992431, 0, -0.122805, 0, 1, 0, 0.122805, 0, -0.992431, 3.76215, 0, 1.39595)
+
+[node name="PropBlackberryBushBg6" parent="." instance=ExtResource("7_w74s1")]
+transform = Transform3D(-0.999819, 0, 0.0190225, 0, 1, 0, -0.0190225, 0, -0.999819, -1.03258, 0, -0.992312)
