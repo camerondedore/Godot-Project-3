@@ -1,13 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3po0wf2eqc0p"]
+[gd_scene load_steps=5 format=3 uid="uid://d3po0wf2eqc0p"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqf363gy4mv6f" path="res://Models/prop-picket.res" id="1_cblt4"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_w2b6o"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_qyse7"]
 
-[node name="PropPicket" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sgcrt"]
+radius = 0.15
+height = 4.0
+
+[node name="PropPicket" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
 mesh = ExtResource("1_cblt4")
 surface_material_override/0 = ExtResource("2_w2b6o")
 surface_material_override/1 = ExtResource("3_qyse7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_sgcrt")

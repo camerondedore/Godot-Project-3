@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx2imdy5qfts3"]
+
+[ext_resource type="PackedScene" uid="uid://d3po0wf2eqc0p" path="res://Prefabs/Lumber/PropPicket.tscn" id="1_7ywxb"]
+[ext_resource type="PackedScene" uid="uid://r41mrweymrwp" path="res://Prefabs/Lumber/PropAbatis1.tscn" id="2_01e5m"]
+[ext_resource type="PackedScene" uid="uid://bkk7hfsekt3di" path="res://Prefabs/Lumber/PropAbatis2.tscn" id="3_81nst"]
+[ext_resource type="PackedScene" uid="uid://vxr2ttl1f0su" path="res://Prefabs/Lumber/PropAbatis3.tscn" id="4_3h7y6"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6m05e"]
+points = PackedVector3Array(2, 0, -1.5, 2, 2.5, -1.5, 2, 0, 1, -2, 0, 1, -2, 2.5, -1.5, -2, 0, -1.5)
+
+[node name="PropPicketAbatisWall" type="Node3D"]
+
+[node name="PropPicket" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(0.473149, -0.0420937, 0.879976, -0.752556, 0.5, 0.428555, -0.458028, -0.865002, 0.204896, -0.0240912, 0.465476, 0.318027)
+
+[node name="PropPicket2" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.0734852, 0.0554906, 0.995751, -0.714281, 0.693867, -0.0913804, -0.69599, -0.717962, -0.011353, -0.615032, 0.63264, 0.117512)
+
+[node name="PropPicket3" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.963676, 0.0343245, 0.264861, -0.219194, 0.464948, -0.857775, -0.152589, -0.884672, -0.440536, 1.82189, 0.465476, 0.340982)
+
+[node name="PropPicket4" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(0.368676, 7.96506e-08, 0.929558, -0.544712, 0.810318, 0.216041, -0.753238, -0.585991, 0.298745, 1.23624, 0.624292, 0.0999532)
+
+[node name="PropPicket7" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.425027, 6.74821e-08, -0.796842, 0.718413, 0.390703, -0.383194, 0.34473, -0.814221, -0.183876, 0.91509, 0.409238, 0.202151)
+
+[node name="PropPicket8" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.291663, 0.024645, 0.88156, -0.633478, 0.640141, -0.227481, -0.613564, -0.672632, -0.184192, 0.310638, 0.653829, 0.101061)
+
+[node name="PropPicket9" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.698442, -0.0365263, 0.533106, -0.476479, 0.439704, -0.594126, -0.241876, -0.760713, -0.369012, -0.963272, 0.454998, 0.214152)
+
+[node name="PropPicket10" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.805986, -0.0347494, -0.458529, 0.251973, 0.740634, -0.499038, 0.384663, -0.557962, -0.633862, -1.54357, 0.652347, 0.0947865)
+
+[node name="PropPicket5" parent="." instance=ExtResource("1_7ywxb")]
+transform = Transform3D(-0.997948, -0.0252686, 0.0588315, -0.0635769, 0.5, -0.863689, -0.00759155, -0.865657, -0.500581, -1.87816, 0.465476, 0.293737)
+
+[node name="PropAbatis1" parent="." instance=ExtResource("2_01e5m")]
+transform = Transform3D(0.375141, -0.0358465, 0.926275, -0.845995, 0.395203, 0.357922, -0.378897, -0.917894, 0.117931, 0.674416, -0.340531, 1.62305)
+
+[node name="PropAbatis2" parent="." instance=ExtResource("3_81nst")]
+transform = Transform3D(0.994447, -0.0854616, 0.0614149, -0.0230327, 0.392682, 0.919386, -0.102689, -0.915695, 0.388533, 1.62677, -0.270286, 2.03608)
+
+[node name="PropAbatis4" parent="." instance=ExtResource("3_81nst")]
+transform = Transform3D(0.311954, -0.125102, 0.941825, -0.879244, 0.337619, 0.336072, -0.360022, -0.932932, -0.0046736, -1.07376, -0.283737, 2.02229)
+
+[node name="PropAbatis3" parent="." instance=ExtResource("4_3h7y6")]
+transform = Transform3D(0.999944, -0.00858878, 0.00617212, -0.00227728, 0.395042, 0.91866, -0.0103284, -0.918623, 0.395001, -0.385732, -0.337542, 1.68383)
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+shape = SubResource("ConvexPolygonShape3D_6m05e")
