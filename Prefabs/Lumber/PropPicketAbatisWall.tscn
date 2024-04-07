@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vxr2ttl1f0su" path="res://Prefabs/Lumber/PropAbatis3.tscn" id="4_3h7y6"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6m05e"]
-points = PackedVector3Array(2, 0, -1.5, 2, 2.5, -1.5, 2, 0, 1, -2, 0, 1, -2, 2.5, -1.5, -2, 0, -1.5)
+points = PackedVector3Array(2, -0.2, -1.5, 2, 2.2, -1.5, 2, -0.2, 2, -2, -0.2, 2, -2, 2.2, -1.5, -2, -0.2, -1.5)
 
 [node name="PropPicketAbatisWall" type="Node3D"]
 

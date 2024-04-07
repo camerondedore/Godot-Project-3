@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=136 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -22,22 +22,23 @@
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="6_is0wy"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="7_3btvd"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="7_f56m7"]
-[ext_resource type="Material" uid="uid://dkncsl54qwwvb" path="res://Materials/Grass.tres" id="7_idgn2"]
 [ext_resource type="ArrayOccluder3D" uid="uid://bgjatdi7csker" path="res://Scenes/TreeTest.occ" id="7_p6n5i"]
-[ext_resource type="Material" uid="uid://c5m6htpwba4q" path="res://Materials/GrassMedium.tres" id="8_csklg"]
 [ext_resource type="PackedScene" uid="uid://dv4wag0b4h4qc" path="res://Prefabs/Small Items/PropFenceEnd.tscn" id="8_qgel6"]
 [ext_resource type="PackedScene" uid="uid://cwabel6rsndr7" path="res://Prefabs/Small Items/PropFence1.tscn" id="9_j2ilc"]
 [ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="9_jepc3"]
+[ext_resource type="Material" uid="uid://bnprkrvtepd5w" path="res://Materials/Terrain/GrassWorldUv.tres" id="9_q4xmq"]
 [ext_resource type="PackedScene" uid="uid://ck4yohp23qcuw" path="res://Prefabs/Small Items/PropFence2.tscn" id="10_0j7w2"]
 [ext_resource type="PackedScene" uid="uid://cu3qptif3a78j" path="res://Prefabs/Lumber/PropLogOakStripping.tscn" id="10_2lcoj"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
-[ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="10_f2q70"]
+[ext_resource type="Material" uid="uid://dsrvgrig2uiie" path="res://Materials/Terrain/GrassMediumWorldUv.tres" id="10_e2yde"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="11_1rkbt"]
+[ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="11_36ato"]
 [ext_resource type="PackedScene" uid="uid://croje6ueu5rqc" path="res://Prefabs/Trees/PropTreeOak4.tscn" id="11_d87cr"]
 [ext_resource type="PackedScene" uid="uid://dcqsmpmkmc8mv" path="res://Prefabs/Lumber/PropLogOakStripped.tscn" id="11_se24g"]
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="12_7d261"]
-[ext_resource type="Material" uid="uid://di0ar3h65hfhv" path="res://Materials/DirtWithNeedles.tres" id="13_ubgdw"]
+[ext_resource type="Material" uid="uid://bkwh2bok3jwil" path="res://Materials/Terrain/DirtWorldUv.tres" id="12_gqj2y"]
+[ext_resource type="Material" uid="uid://biilhjxrac63b" path="res://Materials/Terrain/DirtWithNeedlesWorldUv.tres" id="13_hqotu"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="14_lprge"]
 [ext_resource type="PackedScene" uid="uid://dxtde18xqi2vw" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="15_2w2bx"]
 [ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="16_8wt0o"]
@@ -371,11 +372,11 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
 mesh = SubResource("ArrayMesh_wsokp")
-surface_material_override/0 = ExtResource("7_idgn2")
-surface_material_override/1 = ExtResource("8_csklg")
-surface_material_override/2 = ExtResource("10_f2q70")
-surface_material_override/3 = ExtResource("10_f2q70")
-surface_material_override/4 = ExtResource("13_ubgdw")
+surface_material_override/0 = ExtResource("9_q4xmq")
+surface_material_override/1 = ExtResource("10_e2yde")
+surface_material_override/2 = ExtResource("11_36ato")
+surface_material_override/3 = ExtResource("12_gqj2y")
+surface_material_override/4 = ExtResource("13_hqotu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
 shape = SubResource("ConcavePolygonShape3D_3dgen")

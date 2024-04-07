@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://biilhjxrac63b"]
+
+[ext_resource type="Shader" path="res://Shaders/WorldUv.gdshader" id="1_tkn6k"]
+[ext_resource type="Texture2D" uid="uid://bibjej8gsx02x" path="res://Textures/dirt-with-fir-needles.png" id="2_su8rd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tkn6k")
+shader_parameter/uvScale = 0.166
+shader_parameter/albedo = ExtResource("2_su8rd")

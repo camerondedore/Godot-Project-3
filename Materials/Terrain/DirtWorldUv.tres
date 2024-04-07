@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bkwh2bok3jwil"]
+
+[ext_resource type="Shader" path="res://Shaders/WorldUv.gdshader" id="1_b0lqv"]
+[ext_resource type="Texture2D" uid="uid://dqgneck05buse" path="res://Textures/dirt.png" id="2_vlqtg"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b0lqv")
+shader_parameter/uvScale = 0.166
+shader_parameter/albedo = ExtResource("2_vlqtg")
