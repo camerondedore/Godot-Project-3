@@ -9,6 +9,6 @@ shader = ExtResource("1_5tt57")
 shader_parameter/depthColor = null
 shader_parameter/depthDistance = 0.5
 shader_parameter/depthFade = 1.0
-shader_parameter/waveTurbulance = 0.2
+shader_parameter/waveTurbulance = 1.5
 shader_parameter/waveSpeed = 1.5
 shader_parameter/waveAmplitude = 0.1

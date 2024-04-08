@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cysjtc20ju1yd"
-path="res://.godot/imported/prop-tent-small.glb-f8a0dcc637e7bd65e485221b28699620.scn"
+uid="uid://c8owvfldpo4mp"
+path="res://.godot/imported/prop-tents.glb-4f1b1fb8932b1e769ca451a629a89a22.scn"
 
 [deps]
 
-source_file="res://Models/prop-tent-small.glb"
-dest_files=["res://.godot/imported/prop-tent-small.glb-f8a0dcc637e7bd65e485221b28699620.scn"]
+source_file="res://Models/prop-tents.glb"
+dest_files=["res://.godot/imported/prop-tents.glb-4f1b1fb8932b1e769ca451a629a89a22.scn"]
 
 [params]
 
@@ -31,7 +31,7 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-tent-small_prop-tent-small": {
+"prop-tents_prop-tent-small-1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
@@ -39,7 +39,17 @@ _subresources={
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-tent-small.res"
+"save_to_file/path": "res://Models/prop-tent-small-1.res"
+},
+"prop-tents_prop-tent-small-2": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Models/prop-tent-small-2.res"
 }
 }
 }
