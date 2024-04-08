@@ -1,20 +1,20 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dkdh7x3w5voc7"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VisualVegetationLeaves.tres" id="1_wlonx"]
+[ext_resource type="Shader" path="res://Shaders/VegetationLeaves.gdshader" id="1_efech"]
 [ext_resource type="Texture2D" uid="uid://cpmg2kdaw1l46" path="res://Textures/leaves-oak.png" id="2_mrcol"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_wlonx")
-shader_parameter/Wind_Amplitude = 0.025
-shader_parameter/Wind_Speed = 0.5
-shader_parameter/Wind_Turbulance = 1.0
-shader_parameter/Wind_Min_Height = 0.0
-shader_parameter/Wind_Slope = 6.0
-shader_parameter/Y_Multiplier = 0.25
-shader_parameter/Metallic = 0.1
-shader_parameter/Roughness = 1.0
-shader_parameter/Specular = 0.25
-shader_parameter/Backlight_Strength = 0.2
-shader_parameter/Alpha_Scissor = 0.5
-shader_parameter/Albedo = ExtResource("2_mrcol")
+shader = ExtResource("1_efech")
+shader_parameter/windAmplitude = 0.02
+shader_parameter/windSpeed = 2.0
+shader_parameter/windTurbulance = 5.0
+shader_parameter/windMinHeight = 0.0
+shader_parameter/windSlope = 5.0
+shader_parameter/yMultiplier = 0.25
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.25
+shader_parameter/backlightStrength = 0.2
+shader_parameter/alphaScissor = 0.5
+shader_parameter/albedo = ExtResource("2_mrcol")

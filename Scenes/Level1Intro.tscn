@@ -718,31 +718,31 @@ transform = Transform3D(0.737812, 0.0436023, 0.750462, -0.0319388, 1.0524, -0.02
 [node name="PropTreeFir2!1712504961_087" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
 transform = Transform3D(0.845399, -0.0371086, -0.455681, 0.0188307, 0.959946, -0.0432381, 0.456801, 0.0291047, 0.845108, -20.7898, 8, -62.8746)
 
-[node name="PropTreeOak4!1712518907_988" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("16_yq7vk")]
+[node name="PropTreeOak4!1712518907_988" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("16_yq7vk")]
 transform = Transform3D(-0.541838, -0.0294944, 0.906153, 0.0273564, 1.05463, 0.0506853, -0.90622, 0.0494717, -0.540268, -13.4854, -0.000204086, -132.006)
 
-[node name="PropTreeOak2!1712518909_49" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("14_a60p7")]
+[node name="PropTreeOak2!1712518909_49" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("14_a60p7")]
 transform = Transform3D(0.646498, 0.0355216, -0.672241, -0.0417259, 0.932365, 0.00913861, 0.671885, 0.0237231, 0.647409, -35.8587, 0.0152782, -104.343)
 
-[node name="PropTreeOak3!1712518910_996" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("15_xmlr4")]
+[node name="PropTreeOak3!1712518910_996" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("15_xmlr4")]
 transform = Transform3D(0.473187, -0.0194555, 0.792095, -0.0109894, 0.922347, 0.0292197, -0.792258, -0.0244139, 0.472685, -39.8662, -0.000200272, -132.067)
 
-[node name="PropTreeFir2!1712518916_403" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
+[node name="PropTreeFir2!1712518916_403" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
 transform = Transform3D(-0.480878, 0.0201129, -0.813418, -0.0142818, 0.944501, 0.0317973, 0.813541, 0.0284694, -0.480247, -16.6689, -0.000196457, -132.468)
 
-[node name="PropTreeFir2!1712518917_909" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
+[node name="PropTreeFir2!1712518917_909" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
 transform = Transform3D(-0.865333, 0.0323234, 0.414129, 0.0473241, 0.958399, 0.0240805, -0.412684, 0.0421265, -0.865601, -10.6509, -0.000202179, -126.706)
 
-[node name="PropTreeFir2!1712518919_416" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
+[node name="PropTreeFir2!1712518919_416" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
 transform = Transform3D(0.362945, 0.0120759, -0.896097, 0.00583648, 0.966744, 0.0153919, 0.896159, -0.0111869, 0.36282, -25.2183, -0.000202179, -113.145)
 
-[node name="PropTreeFir2!1712518920_922" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
+[node name="PropTreeFir2!1712518920_922" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
 transform = Transform3D(-0.980369, 0.0593262, -0.197178, 0.0523752, 0.999576, 0.0403396, 0.199137, 0.0291691, -0.981334, -34.2722, -1.01878, -107.031)
 
-[node name="PropTreeFir2!1712518922_428" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
+[node name="PropTreeFir2!1712518922_428" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("18_y24e5")]
 transform = Transform3D(0.882917, 0.0379166, 0.184812, -0.0431566, 0.901567, 0.0212071, -0.18366, -0.029573, 0.883476, -42.6475, -0.000198364, -130.445)
 
-[node name="PropTreeOak2!1712519876_12" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("14_a60p7")]
+[node name="PropTreeOak2!1712519876_12" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Trees" instance=ExtResource("14_a60p7")]
 transform = Transform3D(-0.978861, 0.0214736, 0.0302357, 0.0204469, 0.978787, -0.0331866, -0.0309393, -0.0325317, -0.978534, -56.5496, 3.9999, -128.318)
 
 [node name="TreesBg" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]

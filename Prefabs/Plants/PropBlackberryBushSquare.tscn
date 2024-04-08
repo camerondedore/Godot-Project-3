@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ttmtqfwluehc"]
 
 [ext_resource type="ArrayMesh" uid="uid://d276o3o2mdm5s" path="res://Models/prop-blackberry-bush.res" id="1_q7g2k"]
-[ext_resource type="Material" uid="uid://cffubwl8dgc5e" path="res://Materials/Plants/LeavesBlackberry.tres" id="2_gpj61"]
+[ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/Plants/LeavesBlackberryWind.tres" id="2_fn6sp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yubvx"]
 size = Vector3(3, 1.8, 3)
@@ -16,13 +16,13 @@ collision_layer = 16
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.6)
 layers = 2
 mesh = ExtResource("1_q7g2k")
-surface_material_override/0 = ExtResource("2_gpj61")
+surface_material_override/0 = ExtResource("2_fn6sp")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0.6)
 layers = 2
 mesh = ExtResource("1_q7g2k")
-surface_material_override/0 = ExtResource("2_gpj61")
+surface_material_override/0 = ExtResource("2_fn6sp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7ytuc8otu665"]
 
 [ext_resource type="ArrayMesh" uid="uid://b2mtcgf76ej33" path="res://Models/prop-blackberry-bush-bg.res" id="1_uvdjb"]
-[ext_resource type="Material" uid="uid://cffubwl8dgc5e" path="res://Materials/Plants/LeavesBlackberry.tres" id="2_6rxmu"]
+[ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/Plants/LeavesBlackberryWind.tres" id="2_yeflk"]
 
 [node name="PropBlackberryBushBg" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = ExtResource("1_uvdjb")
-surface_material_override/0 = ExtResource("2_6rxmu")
+surface_material_override/0 = ExtResource("2_yeflk")

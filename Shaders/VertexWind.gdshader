@@ -31,13 +31,14 @@ void fragment()
 	vec4 imageRead = texture(albedo, UV);
 	
 	// clip alpha
-	if(imageRead.a < alphaClip)
-	{
-		discard;
-	}
+	//if(imageRead.a < alphaClip)
+	//{
+		//discard;
+	//}
 	
 	ALBEDO = imageRead.rgb;
-	//ALPHA = imageRead.a;
+	ALPHA = imageRead.a;
+	ALPHA_SCISSOR_THRESHOLD = alphaClip;
 	SPECULAR = 0.0;
 	METALLIC = 0.0;
 	ROUGHNESS = 1.0;

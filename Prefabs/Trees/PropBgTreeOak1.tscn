@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_qiwwi"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_k61hj"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_4xiec"]
-[ext_resource type="Material" uid="uid://dtj7tjjw2nglw" path="res://Materials/Trees/LeavesOak.tres" id="4_4iysl"]
+[ext_resource type="Material" uid="uid://dkdh7x3w5voc7" path="res://Materials/Trees/LeavesOakWind.tres" id="4_6f1nj"]
 
 [node name="PropBgTreeOak1" type="Node3D"]
 
@@ -13,4 +13,4 @@ layers = 2
 mesh = ExtResource("1_qiwwi")
 surface_material_override/0 = ExtResource("2_k61hj")
 surface_material_override/1 = ExtResource("3_4xiec")
-surface_material_override/2 = ExtResource("4_4iysl")
+surface_material_override/2 = ExtResource("4_6f1nj")

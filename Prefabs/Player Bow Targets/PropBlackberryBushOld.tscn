@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://C#/PlayerBow/BlackberryBushTarget.cs" id="1_i6v5i"]
 [ext_resource type="PackedScene" uid="uid://b4f76op0ikakq" path="res://Prefabs/FX/FxBlackberryBushCut.tscn" id="2_yv47g"]
 [ext_resource type="ArrayMesh" uid="uid://d14x1h5scbsot" path="res://Models/prop-blackberry-bush-old-cut.res" id="3_d6b5l"]
-[ext_resource type="Material" uid="uid://bpqw61vvo6ig8" path="res://Materials/Plants/LeavesBlackberryOld.tres" id="4_14iw3"]
+[ext_resource type="Material" uid="uid://1m87nl1ujmvk" path="res://Materials/Plants/LeavesBlackberryOldWind.tres" id="4_hkpge"]
 [ext_resource type="Texture2D" uid="uid://dos1omvwxpkts" path="res://Textures/fx-blackberry-bush-cut-decal.png" id="6_gr0jp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ngrm"]
@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_74o7b")
-surface_material_override/0 = ExtResource("4_14iw3")
+surface_material_override/0 = ExtResource("4_hkpge")
 
 [node name="MeshCut" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -40,7 +40,7 @@ visible = false
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_d6b5l")
-surface_material_override/0 = ExtResource("4_14iw3")
+surface_material_override/0 = ExtResource("4_hkpge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
