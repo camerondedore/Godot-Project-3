@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=68 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="14_a60p7"]
 [ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Player Bow Targets/PropBlackberryBushOld.tscn" id="14_disug"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerDead.cs" id="14_kb1i8"]
+[ext_resource type="PackedScene" uid="uid://b8wbom174i6wt" path="res://Prefabs/Small Items/PropTentSmall.tscn" id="14_mxw3m"]
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="15_xmlr4"]
 [ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="16_gnfra"]
 [ext_resource type="PackedScene" uid="uid://ttmtqfwluehc" path="res://Prefabs/Plants/PropBlackberryBushSquare.tscn" id="16_muyvp"]
@@ -151,6 +152,15 @@ transform = Transform3D(-0.960445, 0, -0.278472, 0, 1, 0, 0.278472, 0, -0.960445
 
 [node name="PropCraftingTable" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("13_o8qh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27285, 0.211835, 13.2643)
+
+[node name="PropTentSmall" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.573977, 0, -0.818872, 0, 1, 0, 0.818872, 0, 0.573977, -22.6426, 8, -59.6975)
+
+[node name="PropTentSmall2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.701855, 0, -0.71232, 0, 1, 0, 0.71232, 0, 0.701855, -21.9996, 8, -55.5692)
+
+[node name="PropTentSmall3" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.188975, 0, 0.981982, 0, 1, 0, -0.981982, 0, 0.188975, -9.82037, 8, -65.2531)
 
 [node name="Platforms" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
@@ -1155,7 +1165,7 @@ transform = Transform3D(-0.879781, 0, 0.475379, 0, 1, 0, -0.475379, 0, -0.879781
 [node name="Logs" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
 [node name="PropLogOak1" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Logs" instance=ExtResource("37_linqy")]
-transform = Transform3D(0.714717, 0.110181, 0.69068, 0.696342, -0.0196512, -0.717441, -0.065476, 0.993717, -0.090769, -9.22784, 8.22497, -68.3408)
+transform = Transform3D(0.594473, 0.575878, 0.561217, 0.696342, -0.0196512, -0.717441, -0.40213, 0.817299, -0.412691, -13.0976, 8.22497, -72.3288)
 
 [node name="PicketsAbatis" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
@@ -1525,7 +1535,7 @@ actions = []
 [node name="Target4" type="Node3D" parent="Map/CinematicTriggers/Control1" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.895524, -0.164903, 0.413333, 0, 0.928809, 0.370557, -0.445013, -0.331843, 0.831771, -1.18654, 2.5811, 8.00973)
 script = ExtResource("10_35g6o")
-waitTime = 0.5
+waitTime = 0.25
 moveTime = 1.0
 actions = []
 

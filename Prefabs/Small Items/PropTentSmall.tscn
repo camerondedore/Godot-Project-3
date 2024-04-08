@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8wbom174i6wt"]
+
+[ext_resource type="ArrayMesh" uid="uid://d2nevktxdsk2y" path="res://Models/prop-tent-small.res" id="1_5pwkx"]
+[ext_resource type="Material" uid="uid://djnoygn8d4pqp" path="res://Materials/Cloth2.tres" id="2_tsb31"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_cbvs1"]
+[ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="4_ry6fp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7fwkv"]
+points = PackedVector3Array(1.2, 0, 2.1, -1.2, 0, 2.1, 0, 2.5, 2.1, 1.2, 0, -2.1, -1.2, 0, -2.1, 0, 2.5, -2.1)
+
+[node name="PropTentSmall" type="StaticBody3D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("1_5pwkx")
+surface_material_override/0 = ExtResource("2_tsb31")
+surface_material_override/1 = ExtResource("3_cbvs1")
+surface_material_override/2 = ExtResource("4_ry6fp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7fwkv")

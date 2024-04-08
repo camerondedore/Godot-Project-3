@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bxy1j6ll30n4h" path="res://Models/prop-tree-fir-lq-2.res" id="1_yhopp"]
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_jhkqv"]
 [ext_resource type="ArrayMesh" uid="uid://olbfu8rdhn18" path="res://Models/prop-tree-fir-lq-leaves-2.res" id="3_2qqqm"]
-[ext_resource type="Material" uid="uid://cuadjjc0v33nd" path="res://Materials/Trees/LeavesFirWindShort.tres" id="4_qpish"]
+[ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="4_53drb"]
 
 [node name="PropBgTreeFir2" type="Node3D"]
 
@@ -17,4 +17,4 @@ surface_material_override/0 = ExtResource("2_jhkqv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 layers = 2
 mesh = ExtResource("3_2qqqm")
-surface_material_override/0 = ExtResource("4_qpish")
+surface_material_override/0 = ExtResource("4_53drb")
