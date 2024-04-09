@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://k20f00pek08y"]
+[gd_scene load_steps=12 format=3 uid="uid://k20f00pek08y"]
 
 [ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="1_3836b"]
 [ext_resource type="PackedScene" uid="uid://xrjt7goiur8h" path="res://Prefabs/Trees/PropBgTreeFir2.tscn" id="2_8ypo3"]
@@ -15,7 +15,11 @@ size = Vector3(16, 10, 6)
 size = Vector3(16, 4.242, 4.242)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqyxc"]
-size = Vector3(16, 8, 4)
+size = Vector3(12, 8, 4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arm3p"]
+radius = 2.0
+height = 8.0
 
 [node name="PropTreeWall" type="StaticBody3D"]
 collision_layer = 2048
@@ -88,6 +92,16 @@ transform = Transform3D(-0.999819, 0, 0.0190225, 0, 1, 0, -0.0190225, 0, -0.9998
 
 [node name="VisionBlocker" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+collision_layer = 8192
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VisionBlocker"]
 shape = SubResource("BoxShape3D_jqyxc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="VisionBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+shape = SubResource("CapsuleShape3D_arm3p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="VisionBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+shape = SubResource("CapsuleShape3D_arm3p")
