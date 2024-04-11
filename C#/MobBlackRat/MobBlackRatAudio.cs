@@ -7,8 +7,9 @@ namespace MobBlackRat
     {
 
         [Export]
-        AudioStream swordHitSound,
-            swordSwingSound;
+        AudioStream swordHitSound;
+        [Export]
+        AudioStream[] swordSwingSounds;
 
 
 
@@ -21,7 +22,7 @@ namespace MobBlackRat
 
         public void PlaySwordSwingSound()
         {
-            PlaySound(swordSwingSound, 0.1f);
+            PlayRandomSound(swordSwingSounds, 0.1f);
         }
     }
 }
