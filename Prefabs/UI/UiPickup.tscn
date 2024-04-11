@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickup.cs" id="3_u12cb"]
 
 [node name="UiPickup" type="TextureRect"]
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 110.0
+offset_bottom = 110.0
 theme = ExtResource("1_ml3gg")
 texture = ExtResource("2_lfc61")
 expand_mode = 3
