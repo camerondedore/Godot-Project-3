@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://drsrh0e050xun"]
+
+[ext_resource type="ArrayMesh" uid="uid://d276o3o2mdm5s" path="res://Models/prop-blackberry-bush.res" id="1_y8ors"]
+[ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/Plants/LeavesBlackberryWind.tres" id="2_1f2wp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ygfg"]
+size = Vector3(4, 2, 4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bp165"]
+points = PackedVector3Array(2, 0, -2, -2, 0, -2, -2, 0, 2, 2, 0, 2, 0, 2, 0)
+
+[node name="BlackBerrybushSquareLarge" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.2)
+mesh = ExtResource("1_y8ors")
+surface_material_override/0 = ExtResource("2_1f2wp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74846e-08, 1, 1.2)
+mesh = ExtResource("1_y8ors")
+surface_material_override/0 = ExtResource("2_1f2wp")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, -1.2, 1, 6.11959e-08)
+mesh = ExtResource("1_y8ors")
+surface_material_override/0 = ExtResource("2_1f2wp")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 1.2, 1, -6.11959e-08)
+mesh = ExtResource("1_y8ors")
+surface_material_override/0 = ExtResource("2_1f2wp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_4ygfg")
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("ConvexPolygonShape3D_bp165")
