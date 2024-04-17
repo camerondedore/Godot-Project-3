@@ -10,8 +10,11 @@ uniform vec3 waveAmplitude = vec3(0.1);
 
 void vertex() 
 {
+	// get world position of vertex
+	vec3 worldPosition = NODE_POSITION_WORLD + VERTEX;
+	
 	// get wave time
-	float positionCursor = (VERTEX.x + VERTEX.y + VERTEX.z) * waveTurbulance;
+	float positionCursor = (worldPosition.x + worldPosition.y + worldPosition.z) * waveTurbulance;
 	float waveCursorX = sin(positionCursor + TIME * waveSpeed.x);
 	float waveCursorY = sin(positionCursor + TIME * waveSpeed.y);
 	float waveCursorZ = sin(positionCursor + TIME * waveSpeed.z);

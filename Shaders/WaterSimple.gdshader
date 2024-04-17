@@ -16,9 +16,12 @@ uniform sampler2D waterTexture2;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
 uniform sampler2D DEPTH_TEXTURE: hint_depth_texture;
 
+//varying vex3 worldPosition;
+
 void vertex() 
 {
-	
+	// get world position of vertex
+	//worldPosition = NODE_POSITION_WORLD + VERTEX;
 }
 
 

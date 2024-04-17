@@ -16,9 +16,12 @@ uniform float alphaScissor = 0.5;
 
 void vertex() 
 {
-	float windX = sin(VERTEX.x * windTurbulance + TIME * windSpeed);
-	float windY = sin(VERTEX.y * windTurbulance + TIME * windSpeed) * yMultiplier;
-	float windZ = sin(VERTEX.z * windTurbulance + TIME * windSpeed);
+	// get world position of vertex
+	vec3 worldPosition = NODE_POSITION_WORLD + VERTEX;
+	
+	float windX = sin(worldPosition.x * windTurbulance + TIME * windSpeed);
+	float windY = sin(worldPosition.y * windTurbulance + TIME * windSpeed) * yMultiplier;
+	float windZ = sin(worldPosition.z * windTurbulance + TIME * windSpeed);
 	
 	float windYWeight = (VERTEX.y - windMinHeight) * windSlope;
 	windYWeight = clamp(windYWeight, 0.0, 1.0);
@@ -30,7 +33,6 @@ void vertex()
 
 void fragment() 
 {
-	
 	vec4 imageRead = texture(albedo, UV);
 	
 	ALBEDO = imageRead.xyz;

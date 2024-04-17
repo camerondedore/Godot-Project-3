@@ -27,10 +27,13 @@ uniform sampler2D waterFoamTexture2;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 uniform sampler2D DEPTH_TEXTURE: hint_depth_texture, filter_linear_mipmap;
 
+//varying vec3 worldPosition;
+
 
 void vertex() 
 {
-	
+	// get world position of vertex
+	//worldPosition = NODE_POSITION_WORLD + VERTEX;
 }
 
 void fragment() 

@@ -4,16 +4,19 @@ render_mode specular_disabled, unshaded, shadows_disabled, ambient_light_disable
 uniform vec4 depthColor : source_color;
 uniform float depthDistance : hint_range(0, 1) = 0.5;
 uniform float depthFade : hint_range(0.001, 10) = 1;
-uniform float waveTurbulance : hint_range(0, 5) = 0.2;
+uniform float waveTurbulance : hint_range(0,20) = 0.2;
 uniform float waveSpeed : hint_range(0, 5) = 0.2;
 uniform float waveAmplitude : hint_range(0, 1) = 0.2;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
 
+varying vec3 worldPosition;
+
 void vertex()
 {
-	
+	// get world position of vertex
+	worldPosition = NODE_POSITION_WORLD + VERTEX;
 }
 
 void fragment()
@@ -22,9 +25,6 @@ void fragment()
 	float depthTexture = texture(DEPTH_TEXTURE, SCREEN_UV).r;
 	float depth = PROJECTION_MATRIX[3][2] / (depthTexture + PROJECTION_MATRIX[2][2]);
 	float depthBlend = depth + VERTEX.z;
-	
-	// get world position of pixel
-	vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
 	
 	// get screen texture
 	vec3 screen = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;

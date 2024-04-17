@@ -7,16 +7,16 @@ uniform float emissionSpread = 0.5;
 uniform float speed = 3;
 uniform float turbulance = 3.0;
 
+varying vec3 worldPosition;
+
 void vertex() 
 {
-
+	// get world position of vertex
+	worldPosition = NODE_POSITION_WORLD + VERTEX;
 }
 
 void fragment() 
-{
-	// get world position of pixel
-	vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	
+{	
 	float combinedPosition = worldPosition.x + worldPosition.y + worldPosition.z;
 	combinedPosition *= turbulance;
 	float emissionAnimated = sin(combinedPosition + TIME * speed) * emissionSpread + 1.0;
