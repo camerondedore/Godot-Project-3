@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=73 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -13,9 +13,11 @@
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicControl.cs" id="9_t8334"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTarget.cs" id="10_35g6o"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="10_wdo41"]
+[ext_resource type="ArrayMesh" uid="uid://csnpnq41xfu" path="res://Models/level-1-tree-wall.res" id="11_glw4y"]
 [ext_resource type="PackedScene" uid="uid://b71k8ok3eu1ci" path="res://Prefabs/Platforms/PropPlatform4m.tscn" id="11_q3dqd"]
 [ext_resource type="PackedScene" uid="uid://dchgvk7qou0uy" path="res://Prefabs/Small Items/PropBanner.tscn" id="11_qguqo"]
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Small Items/PropTorchLit.tscn" id="12_3cr32"]
+[ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/BackgroundForest2.tres" id="12_ef06k"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerArea.cs" id="12_ph3lw"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="13_87upb"]
 [ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Platforms/PropPlatformSmall4m.tscn" id="13_cft54"]
@@ -127,6 +129,11 @@ skeleton = NodePath("../../../../..")
 surface_material_override/0 = ExtResource("6_dbtaw")
 surface_material_override/1 = ExtResource("8_0wyn0")
 surface_material_override/2 = ExtResource("10_wdo41")
+
+[node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+mesh = ExtResource("11_glw4y")
+skeleton = NodePath("../../../../..")
+surface_material_override/0 = ExtResource("12_ef06k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
 shape = SubResource("ConcavePolygonShape3D_ukhtd")
@@ -1351,13 +1358,13 @@ transform = Transform3D(0.109752, 0, 0.993959, 0, 1, 0, -0.993959, 0, 0.109752, 
 transform = Transform3D(0.94492, 0, 0.3273, 0, 1, 0, -0.3273, 0, 0.94492, 33.1696, 0, -66.6037)
 
 [node name="PropTreeWall11" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
-transform = Transform3D(0.521665, 0, 0.85315, 0, 1, 0, -0.85315, 0, 0.521665, 45.4339, 0, -76.3778)
+transform = Transform3D(0.521665, 0, 0.85315, 0, 1, 0, -0.85315, 0, 0.521665, 44.1008, 0, -76.3778)
 
 [node name="PropTreeWall12" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
-transform = Transform3D(0.167526, 0, 0.985867, 0, 1, 0, -0.985867, 0, 0.167526, 51.0992, 0, -91.3814)
+transform = Transform3D(0.167526, 0, 0.985867, 0, 1, 0, -0.985867, 0, 0.167526, 49.1519, 0, -91.3814)
 
 [node name="PropTreeWall13" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
-transform = Transform3D(0.0850169, 0, 0.996379, 0, 1, 0, -0.996379, 0, 0.0850169, 53.0913, 0, -107.07)
+transform = Transform3D(0.0850169, 0, 0.996379, 0, 1, 0, -0.996379, 0, 0.0850169, 51.144, 0, -107.07)
 
 [node name="PropTreeWall2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/TreeWalls" instance=ExtResource("29_i8muj")]
 transform = Transform3D(-0.277818, 0, 0.960633, 0, 1, 0, -0.960633, 0, -0.277818, -17.5728, 0, 15.467)
@@ -1774,7 +1781,7 @@ transform = Transform3D(0.754171, 0, -0.656678, 0, 1, 0, 0.656678, 0, 0.754171, 
 transform = Transform3D(0.662032, 0, -0.749476, 0, 1, 0, 0.749476, 0, 0.662032, -39.3764, 0, 12.2361)
 
 [node name="BackgroundForest7" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(0.645525, 0, -0.76374, 0, 1, 0, 0.76374, 0, 0.645525, -58.0883, 0, -1.22786)
+transform = Transform3D(0.645525, 0, -0.76374, 0, 1, 0, 0.76374, 0, 0.645525, -57.6402, 0, -2.08411)
 
 [node name="BackgroundForest8" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(0.809304, 0, -0.58739, 0, 1, 0, 0.58739, 0, 0.809304, -60.9701, 0, -19.9781)
@@ -1783,22 +1790,16 @@ transform = Transform3D(0.809304, 0, -0.58739, 0, 1, 0, 0.58739, 0, 0.809304, -6
 transform = Transform3D(0.36999, 0, -0.929036, 0, 1, 0, 0.929036, 0, 0.36999, -73.658, 0, -41.751)
 
 [node name="BackgroundForest10" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.36999, 0, 0.929036, 0, 1, 0, -0.929036, 0, -0.36999, -76.861, 0, -27.1503)
+transform = Transform3D(-0.36999, 0, 0.929036, 0, 1, 0, -0.929036, 0, -0.36999, -74.7726, 0, -29.3646)
 
 [node name="BackgroundForest14" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.67097, 0, 0.741485, 0, 1, 0, -0.741485, 0, -0.67097, -72.2197, 0, -7.44151)
+transform = Transform3D(-0.67097, 0, 0.741485, 0, 1, 0, -0.741485, 0, -0.67097, -60.7101, 0, 11.8088)
 
 [node name="BackgroundForest11" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(0.370817, 0, -0.928707, 0, 1, 0, 0.928707, 0, 0.370817, -87.032, 0, -62.8418)
 
-[node name="BackgroundForest18" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(0.220646, 0, -0.975355, 0, 1, 0, 0.975355, 0, 0.220646, -100.251, 0, -55.3896)
-
-[node name="BackgroundForest19" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(0.385681, 0, -0.922633, 0, 1, 0, 0.922633, 0, 0.385681, -85.212, 0, -22.4251)
-
 [node name="BackgroundForest12" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(0.464981, 0, -0.885321, 0, 1, 0, 0.885321, 0, 0.464981, -89.1268, 0, -39.0941)
+transform = Transform3D(0.464981, 0, -0.885321, 0, 1, 0, 0.885321, 0, 0.464981, -90.9219, 0, -45.9993)
 
 [node name="BackgroundForest13" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(0.251073, 0, -0.967969, 0, 1, 0, 0.967969, 0, 0.251073, -96.5065, -3.8147e-06, -71.5533)
@@ -1821,23 +1822,11 @@ transform = Transform3D(0.604752, 0, -0.796414, 0, 1, 0, 0.796414, 0, 0.604752, 
 [node name="BackgroundForest6" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(0.75025, 0, -0.661155, 0, 1, 0, 0.661155, 0, 0.75025, -26.5368, 3, 48.9821)
 
-[node name="BackgroundForest20" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(0.897135, 0, -0.441757, 0, 1, 0, 0.441757, 0, 0.897135, -11.1591, 3, 61.1833)
-
-[node name="BackgroundForest21" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.968174, 0, 0.250279, 0, 1, 0, -0.250279, 0, -0.968174, 7.02582, 3, 61.1509)
-
-[node name="BackgroundForest22" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.999964, 0, -0.00848217, 0, 1, 0, 0.00848217, 0, -0.999964, 20.2568, 3, 69.8338)
-
 [node name="BackgroundForest26" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(-0.715669, 0, -0.69844, 0, 1, 0, 0.69844, 0, -0.715669, 32.2469, 3, 51.6051)
 
-[node name="BackgroundForest27" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.715669, 0, -0.69844, 0, 1, 0, 0.69844, 0, -0.715669, 44.3823, 3, 50.8434)
-
 [node name="BackgroundForest28" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.503684, 0, -0.863889, 0, 1, 0, 0.863889, 0, -0.503684, 36.639, 3, 34.2499)
+transform = Transform3D(-0.503684, 0, -0.863889, 0, 1, 0, 0.863889, 0, -0.503684, 31.3566, 3, 37.2121)
 
 [node name="BackgroundForest29" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(0.503684, 0, 0.863889, 0, 1, 0, -0.863889, 0, 0.503684, 33.7152, 3, 19.8627)
@@ -1852,37 +1841,16 @@ transform = Transform3D(0.2139, 0, 0.976856, 0, 1, 0, -0.976856, 0, 0.2139, 31.4
 transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 26.0913, 9.53674e-07, -6.12657)
 
 [node name="BackgroundForest34" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 36.5371, 9.53674e-07, -19.1)
+transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 32.463, 9.53674e-07, -27.4041)
 
 [node name="BackgroundForest35" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 39.829, 9.53674e-07, -46.8564)
-
-[node name="BackgroundForest36" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 46.829, 9.53674e-07, -37.8564)
-
-[node name="BackgroundForest37" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 43.871, 9.53674e-07, -10.4044)
-
-[node name="BackgroundForest38" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.289015, 0, -0.957325, 0, 1, 0, 0.957325, 0, -0.289015, 47.662, 9.53674e-07, -61.7236)
-
-[node name="BackgroundForest39" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(0.0283929, 0, 0.999597, 0, 1, 0, -0.999597, 0, 0.0283929, 54.6688, 9.53674e-07, -60.724)
+transform = Transform3D(-0.2139, 0, -0.976856, 0, 1, 0, 0.976856, 0, -0.2139, 38.7085, 9.53674e-07, -46.8564)
 
 [node name="BackgroundForest32" parent="Map/Background" instance=ExtResource("41_y6m57")]
 transform = Transform3D(0.334745, 0, 0.942309, 0, 1, 0, -0.942309, 0, 0.334745, 22.6256, 2.86102e-06, -12.0997)
 
-[node name="BackgroundForest23" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.974433, 0, 0.224679, 0, 1, 0, -0.224679, 0, -0.974433, 0.922443, 3, 73.7613)
-
-[node name="BackgroundForest24" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.97206, 0, -0.234735, 0, 1, 0, 0.234735, 0, -0.97206, 33.0603, 3, 75.3929)
-
-[node name="BackgroundForest25" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.758897, 0, 0.651212, 0, 1, 0, -0.651212, 0, -0.758897, -26.6561, 3, 64.5667)
-
 [node name="BackgroundForest5" parent="Map/Background" instance=ExtResource("41_y6m57")]
-transform = Transform3D(-0.500665, 0, 0.865642, 0, 1, 0, -0.865642, 0, -0.500665, -41.838, 3, 26.2938)
+transform = Transform3D(-0.717045, 0, 0.697028, 0, 1, 0, -0.697028, 0, -0.717045, -39.1842, 1.5247, 26.9891)
 
 [node name="WaterArea" type="Area3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.607, 1.5, -112.811)

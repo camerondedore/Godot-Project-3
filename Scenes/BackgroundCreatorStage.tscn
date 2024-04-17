@@ -24,74 +24,463 @@ shadow_opacity = 0.9
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o13yb")
 
-[node name="PropBgTreeOak1" parent="." instance=ExtResource("1_rnsnc")]
+[node name="TreeWall" type="Node3D" parent="."]
+visible = false
+
+[node name="PropBgTreeOak1" parent="TreeWall" instance=ExtResource("1_rnsnc")]
 transform = Transform3D(0.776695, 0, 0.629876, 0, 1, 0, -0.629876, 0, 0.776695, -7.39015, 0, 3.3301)
 
-[node name="PropBgTreeOak2" parent="." instance=ExtResource("2_iygfe")]
+[node name="PropBgTreeOak2" parent="TreeWall" instance=ExtResource("2_iygfe")]
 transform = Transform3D(0.98087, 0, 0.194662, 0, 1, 0, -0.194662, 0, 0.98087, 1.00964, 0, -7.87155)
 
-[node name="PropBgTreeOak3" parent="." instance=ExtResource("3_d2pfi")]
+[node name="PropBgTreeOak3" parent="TreeWall" instance=ExtResource("3_d2pfi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405787, 9.53674e-07, 8.40844)
 
-[node name="PropBgTreeOak4" parent="." instance=ExtResource("4_mum1c")]
+[node name="PropBgTreeOak4" parent="TreeWall" instance=ExtResource("4_mum1c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93855, 0, 16.8509)
 
-[node name="PropTreeFir1" parent="." instance=ExtResource("5_t43ba")]
+[node name="PropTreeFir1" parent="TreeWall" instance=ExtResource("5_t43ba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76066, 0, -1.23246)
 
-[node name="PropTreeFir8" parent="." instance=ExtResource("5_t43ba")]
+[node name="PropTreeFir9" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.220272, 0, 0.975439, 0, 1, 0, -0.975439, 0, 0.220272, -14.0311, 0, 14.5438)
+
+[node name="PropTreeFir10" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.482029, 0, 0.876155, 0, 1, 0, -0.876155, 0, -0.482029, -23.9388, 0, 6.38891)
+
+[node name="PropTreeFir11" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.901478, 0, 0.432825, 0, 1, 0, -0.432825, 0, -0.901478, -19.2898, 0, -3.21401)
+
+[node name="PropTreeFir12" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.977101, 0, -0.212775, 0, 1, 0, 0.212775, 0, -0.977101, -21.1952, 0, -12.9694)
+
+[node name="PropTreeFir13" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.749869, 0, -0.661587, 0, 1, 0, 0.661587, 0, -0.749869, -28.4355, 0, -7.86305)
+
+[node name="PropTreeFir14" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.749869, 0, -0.661587, 0, 1, 0, 0.661587, 0, -0.749869, -27.8257, 0, -0.0892534)
+
+[node name="PropTreeFir15" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.0441599, 0, -0.999024, 0, 1, 0, 0.999024, 0, 0.0441599, -28.7403, 0, 12.9433)
+
+[node name="PropTreeFir16" parent="TreeWall" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.836621, 0, -0.547782, 0, 1, 0, 0.547782, 0, 0.836621, -20.5854, 0, 11.1904)
+
+[node name="PropTreeFir8" parent="TreeWall" instance=ExtResource("5_t43ba")]
 transform = Transform3D(-0.336194, 0.00859805, 0.77693, 0.0216443, 0.846317, 0, -0.776676, 0.0198632, -0.336304, -13.4287, 0, 3.68351)
 
-[node name="PropTreeFir4" parent="." instance=ExtResource("5_t43ba")]
+[node name="PropTreeFir4" parent="TreeWall" instance=ExtResource("5_t43ba")]
 transform = Transform3D(-0.19974, 0, 0.906055, -0.00161299, 0.927808, -0.000355583, -0.906053, -0.00165172, -0.199739, -6.78975, 0, -9.89368)
 
-[node name="PropTreeFir3" parent="." instance=ExtResource("5_t43ba")]
+[node name="PropTreeFir3" parent="TreeWall" instance=ExtResource("5_t43ba")]
 transform = Transform3D(-0.06404, 0, 0.948643, 0, 0.950802, 0, -0.948643, 0, -0.06404, -5.54607, 0, 10.1238)
 
-[node name="PropTreeFir2" parent="." instance=ExtResource("6_bk0k0")]
+[node name="PropTreeFir2" parent="TreeWall" instance=ExtResource("6_bk0k0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97275, 0, 6.37747)
 
-[node name="PropTreeFir7" parent="." instance=ExtResource("6_bk0k0")]
+[node name="PropTreeFir7" parent="TreeWall" instance=ExtResource("6_bk0k0")]
 transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -5.61538, 0, -16.3071)
 
-[node name="PropTreeFir6" parent="." instance=ExtResource("6_bk0k0")]
+[node name="PropTreeFir17" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -15.7432, 0, -14.1508)
+
+[node name="PropTreeFir18" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -21.8739, 0, -9.62812)
+
+[node name="PropTreeFir19" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -14.6211, 0, -5.44629)
+
+[node name="PropTreeFir20" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -18.4109, 0, -0.6764)
+
+[node name="PropTreeFir21" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -10.7659, 0, 6.05373)
+
+[node name="PropTreeFir22" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -12.5302, 0, 8.66737)
+
+[node name="PropTreeFir23" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -10.5699, 0, 12.1958)
+
+[node name="PropTreeFir24" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -17.104, 0, 16.5736)
+
+[node name="PropTreeFir25" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -8.47901, 0, 14.8748)
+
+[node name="PropTreeFir26" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -8.47901, 0, -11.1049)
+
+[node name="PropTreeFir27" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.223542, 0, 1.25508, 0, 1.27483, 0, -1.25508, 0, 0.223542, -8.47901, 0, 0.675628)
+
+[node name="PropTreeFir28" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-1.17888, 0, 0.485226, 0, 1.27483, 0, -0.485226, 0, -1.17888, -8.47901, 0, 11.9811)
+
+[node name="PropTreeFir29" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-1.04555, 0, -0.72941, 0, 1.27483, 0, 0.72941, 0, -1.04555, -8.47901, 0, -4.21708)
+
+[node name="PropTreeFir30" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-1.04555, 0, -0.72941, 0, 1.27483, 0, 0.72941, 0, -1.04555, -8.47901, 0, -10.5348)
+
+[node name="PropTreeFir31" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-1.04555, 0, -0.72941, 0, 1.27483, 0, 0.72941, 0, -1.04555, -8.47901, 0, -6.54468)
+
+[node name="PropTreeFir32" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(1.0085, 0, -0.779825, 0, 1.27483, 0, 0.779825, 0, 1.0085, -8.47901, 0, -1.84198)
+
+[node name="PropTreeFir33" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(1.0085, 0, -0.779825, 0, 1.27483, 0, 0.779825, 0, 1.0085, -8.47901, 0, 9.17848)
+
+[node name="PropTreeFir34" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.532165, 0, 1.15845, 0, 1.27483, 0, -1.15845, 0, -0.532165, -8.47901, 0, 8.41845)
+
+[node name="PropTreeFir35" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.532165, 0, 1.15845, 0, 1.27483, 0, -1.15845, 0, -0.532165, -8.47901, 0, 16.3038)
+
+[node name="PropTreeFir36" parent="TreeWall" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-1.09493, 0, -0.652942, 0, 1.27483, 0, 0.652942, 0, -1.09493, -8.47901, 0, -15.3332)
+
+[node name="PropTreeFir6" parent="TreeWall" instance=ExtResource("6_bk0k0")]
 transform = Transform3D(-0.104426, 0, 0.919677, 0, 0.925587, 0, -0.919677, 0, -0.104426, -1.50817, 0, -13.9904)
 
-[node name="PropTreeFir5" parent="." instance=ExtResource("6_bk0k0")]
+[node name="PropTreeFir5" parent="TreeWall" instance=ExtResource("6_bk0k0")]
 transform = Transform3D(-0.979305, 0, 0.551652, 0, 1.12399, 0, -0.551652, 0, -0.979305, -3.4091, 0, -4.76711)
 
-[node name="PropBlackberryBushBg" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.5371, 0, -11.7443)
 
-[node name="PropBlackberryBushBg3" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg3" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(-0.057233, 0, -0.998361, 0, 1, 0, 0.998361, 0, -0.057233, -10.3626, 0, 1.58894)
 
-[node name="PropBlackberryBushBg2" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg2" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -13.0569, 0, -5.11223)
 
-[node name="PropBlackberryBushBg4" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg4" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(0.241211, 0, 0.970473, 0, 1, 0, -0.970473, 0, 0.241211, -10.9153, 0, 9.25729)
 
-[node name="PropBlackberryBushBg5" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg5" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(-0.0600381, 0, 0.998196, 0, 1, 0, -0.998196, 0, -0.0600381, -16.8635, 0, 4.57148)
 
-[node name="PropBlackberryBushBg6" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg6" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(-0.00280995, 0, 0.999996, 0, 1, 0, -0.999996, 0, -0.00280995, -18.8363, 0, -8.66721)
 
-[node name="PropBlackberryBushBg7" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg7" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(0.316345, 0, -0.948644, 0, 1, 0, 0.948644, 0, 0.316345, -15.7446, 0, -2.13989)
 
-[node name="PropBlackberryBushBg8" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg8" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(0.322051, 0, -0.946722, 0, 1, 0, 0.946722, 0, 0.322051, -18.7451, 0, -9.04274)
 
-[node name="PropBlackberryBushBg9" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg9" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(0.154159, 0, -0.988046, 0, 1, 0, 0.988046, 0, 0.154159, -22.9941, 0, -7.88069)
 
-[node name="PropBlackberryBushBg10" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg10" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(0.0973572, 0, -0.99525, 0, 1, 0, 0.99525, 0, 0.0973572, -19.7783, 0, 5.11213)
 
-[node name="PropBlackberryBushBg11" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg11" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(-0.404631, 0, 0.91448, 0, 1, 0, -0.91448, 0, -0.404631, -23.4734, 0, -1.09359)
 
-[node name="PropBlackberryBushBg12" parent="." instance=ExtResource("7_c2f0p")]
+[node name="PropBlackberryBushBg12" parent="TreeWall" instance=ExtResource("7_c2f0p")]
 transform = Transform3D(0.527653, 0, 0.84946, 0, 1, 0, -0.84946, 0, 0.527653, -19.2113, 0, 11.2542)
+
+[node name="TreeWallSolid" type="Node3D" parent="."]
+
+[node name="PropBgTreeOak1" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.776695, 0, 0.629876, 0, 1, 0, -0.629876, 0, 0.776695, -7.39015, 0, 3.3301)
+
+[node name="PropBgTreeOak11" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.00220659, 0, 0.929621, 0, 0.818676, 0, -0.929621, 0, 0.00220659, -12.0846, 2.73037e-08, -3.45355)
+
+[node name="PropBgTreeOak12" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.980491, 0, 0.196562, 0, 0.956733, 0, -0.196562, 0, -0.980491, -28.3489, 0, 5.99758)
+
+[node name="PropBgTreeOak13" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.824876, 0, -0.565312, 0, 1, 0, 0.565312, 0, -0.824876, -22.9377, 0, 15.3719)
+
+[node name="PropBgTreeOak14" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.0261675, 0, -0.929255, 0, 0.818676, 0, 0.929255, 0, 0.0261675, -10.7084, 2.73037e-08, -11.4596)
+
+[node name="PropBgTreeOak2" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(0.98087, 0, 0.194662, 0, 1, 0, -0.194662, 0, 0.98087, 1.00964, 0, -7.87155)
+
+[node name="PropBgTreeOak5" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(-0.176844, 0, 0.984239, 0, 0.956733, 0, -0.984239, 0, -0.176844, -19.7205, 0, 3.17944)
+
+[node name="PropBgTreeOak6" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(-0.571924, 0, 0.732873, 0, 0.818676, 0, -0.732873, 0, -0.571924, -23.8306, 2.73037e-08, -6.42762)
+
+[node name="PropBgTreeOak7" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(-0.930065, 0, -0.367394, 0, 1, 0, 0.367394, 0, -0.930065, -23.9885, 0, 13.011)
+
+[node name="PropBgTreeOak3" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405787, 9.53674e-07, 8.40844)
+
+[node name="PropBgTreeOak8" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(0.111105, 0, 0.993809, 0, 0.956733, 0, -0.993809, 0, 0.111105, -16.182, 9.53674e-07, -8.58722)
+
+[node name="PropBgTreeOak9" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(-0.339608, 0, 0.940567, 0, 1, 0, -0.940567, 0, -0.339608, -15.115, 9.53674e-07, -0.660994)
+
+[node name="PropBgTreeOak10" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(-0.932966, 0, -0.359964, 0, 0.956733, 0, 0.359964, 0, -0.932966, -15.0388, 9.53674e-07, 9.323)
+
+[node name="PropBgTreeOak4" parent="TreeWallSolid" instance=ExtResource("4_mum1c")]
+transform = Transform3D(0.929624, 0, 0, 0, 0.818676, 0, 0, 0, 0.929624, -6.04188, 2.73037e-08, 15.7048)
+
+[node name="PropTreeFir1" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76066, 0, -1.23246)
+
+[node name="PropTreeFir28" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.418691, 0, -0.908129, 0, 1, 0, 0.908129, 0, 0.418691, -25.3544, 0, 0.355827)
+
+[node name="PropTreeFir29" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.174009, 0, 0.984744, 0, 1, 0, -0.984744, 0, 0.174009, -25.3544, 0, 13.4871)
+
+[node name="PropTreeFir30" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.823463, 0, -0.567369, 0, 0.956733, 0, 0.567369, 0, 0.823463, -25.3544, 0, -13.1079)
+
+[node name="PropTreeFir9" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.525546, 0, 0.850765, 0, 1, 0, -0.850765, 0, -0.525546, -1.76066, 0, 5.53942)
+
+[node name="PropTreeFir8" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.31158, 0.00703933, 0.722253, 0.0200597, 0.69289, 0, -0.719814, 0.0162623, -0.312636, -14.8642, 2.73037e-08, 3.46405)
+
+[node name="PropTreeFir4" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.475649, 0, 0.796612, -0.00141815, 0.887665, -0.000846766, -0.79661, -0.00158026, -0.475648, -6.78975, 0, -11.3788)
+
+[node name="PropTreeFir3" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-0.06404, 0, 0.948643, 0, 0.950802, 0, -0.948643, 0, -0.06404, -5.54607, 0, 10.1238)
+
+[node name="PropTreeFir2" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.882052, 0, 0.293573, 0, 0.783255, 0, -0.293573, 0, 0.882052, 0.383026, 2.73037e-08, 5.96841)
+
+[node name="PropTreeFir7" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -5.61538, 0, 1.04775)
+
+[node name="PropTreeFir31" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -5.61538, 0, 7.07074)
+
+[node name="PropTreeFir32" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -5.61538, 0, 11.6115)
+
+[node name="PropTreeFir33" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -5.61538, 0, -3.10984)
+
+[node name="PropTreeFir34" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.18425, 0, -1.26145, 0, 1.27483, 0, 1.26145, 0, 0.18425, -5.61538, 0, -8.76782)
+
+[node name="PropTreeFir6" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.104426, 0, 0.919677, 0, 0.925587, 0, -0.919677, 0, -0.104426, -1.50817, 0, -10.6567)
+
+[node name="PropTreeFir5" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.979305, 0, 0.551652, 0, 1.12399, 0, -0.551652, 0, -0.979305, -3.4091, 0, -4.76711)
+
+[node name="PropBgTreeOak15" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.776695, 0, -0.629876, 0, 1, 0, 0.629876, 0, -0.776695, -22.1787, 0, -2.57652)
+
+[node name="PropBgTreeOak16" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.00237355, 0, -0.999997, 0, 1, 0, 0.999997, 0, -0.00237355, -35.5266, 0, 4.51135)
+
+[node name="PropBgTreeOak17" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.911488, 0, -0.182729, 0, 0.783255, 0, 0.182729, 0, 0.911488, -18.7571, 2.73037e-08, -4.83519)
+
+[node name="PropBgTreeOak18" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.824876, 0, 0.565312, 0, 1, 0, -0.565312, 0, 0.824876, -23.0275, 0, -14.6183)
+
+[node name="PropBgTreeOak19" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.0281485, 0, 0.999603, 0, 1, 0, -0.999603, 0, -0.0281485, -19.3693, 0, 13.1235)
+
+[node name="PropBgTreeOak20" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(-0.869201, 0, -0.494457, 0, 0.956733, 0, 0.494457, 0, -0.869201, -30.5785, 0, 8.62513)
+
+[node name="PropBgTreeOak21" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(-0.143026, 0, -0.989718, 0, 1, 0, 0.989718, 0, -0.143026, -26.2448, 0, -2.42586)
+
+[node name="PropBgTreeOak22" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(0.615221, 0, -0.788354, 0, 1, 0, 0.788354, 0, 0.615221, -22.8914, 0, 7.71056)
+
+[node name="PropBgTreeOak23" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(0.864611, 0, 0.341538, 0, 0.818676, 0, -0.341538, 0, 0.864611, -22.8107, 2.73037e-08, -11.355)
+
+[node name="PropBgTreeOak24" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(-0.929624, 0, -8.12703e-08, 0, 0.818676, 0, 8.12703e-08, 0, -0.929624, -7.65471, 8.08054e-07, -7.07638)
+
+[node name="PropBgTreeOak25" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(-0.111105, 0, -0.993809, 0, 0.956733, 0, 0.993809, 0, -0.111105, -29.7832, 9.53674e-07, 9.3408)
+
+[node name="PropBgTreeOak26" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(0.315708, 0, -0.874374, 0, 0.818676, 0, 0.874374, 0, 0.315708, -31.0596, 8.08054e-07, 1.35479)
+
+[node name="PropBgTreeOak27" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(0.998899, 0, 0.0469148, 0, 1, 0, -0.0469148, 0, 0.998899, -14.53, 9.53674e-07, -8.56943)
+
+[node name="PropBgTreeOak28" parent="TreeWallSolid" instance=ExtResource("4_mum1c")]
+transform = Transform3D(-0.948826, 0, -0.315798, 0, 0.956733, 0, 0.315798, 0, -0.948826, -25.6303, 0, -16.0973)
+
+[node name="PropTreeFir10" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27.8082, 0, 1.98604)
+
+[node name="PropTreeFir11" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.48856, 0, -0.790892, 0, 0.818676, 0, 0.790892, 0, 0.48856, -6.39519, 2.73037e-08, -4.40927)
+
+[node name="PropTreeFir12" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.564343, -0.00822604, -0.631002, 0.0205367, 0.8097, 0.00683521, 0.630727, -0.0190038, 0.564367, -16.1402, 0, -2.92993)
+
+[node name="PropTreeFir13" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.19974, 3.87771e-11, -0.906055, -0.00161299, 0.927808, -0.000355583, 0.906053, 0.00165172, 0.199739, -39.1755, 0, 10.6473)
+
+[node name="PropTreeFir14" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.0640401, 0, -0.948643, 0, 0.950802, 0, 0.948643, 0, 0.0640401, -24.0228, 0, -9.37022)
+
+[node name="PropTreeFir15" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.948826, 0, -0.315798, 0, 0.956733, 0, 0.315798, 0, -0.948826, -11.859, 0, -5.62389)
+
+[node name="PropTreeFir16" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.171283, 0, 1.17267, 0, 1.04367, 0, -1.17267, 0, -0.171283, -39.8907, 2.73037e-08, 15.8998)
+
+[node name="PropTreeFir17" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.104426, 0, -0.919677, 0, 0.925587, 0, 0.919677, 0, 0.104426, -28.0607, 0, 14.744)
+
+[node name="PropTreeFir18" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.979305, 0, -0.551652, 0, 1.12399, 0, 0.551652, 0, 0.979305, -26.1598, 0, 5.52069)
+
+[node name="PropBgTreeOak29" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.722034, 0, -0.585548, 0, 0.818676, 0, 0.585548, 0, -0.722034, -33.6619, 2.73037e-08, 11.8586)
+
+[node name="PropBgTreeOak30" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.00237355, 0, -0.999997, 0, 1, 0, 0.999997, 0, -0.00237355, -36.0203, 0, 8.51166)
+
+[node name="PropBgTreeOak31" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.868242, 0, -0.49614, 0, 1, 0, 0.49614, 0, 0.868242, -15.5623, 0, -1.1548)
+
+[node name="PropBgTreeOak32" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(0.824876, 0, 0.565312, 0, 1, 0, -0.565312, 0, 0.824876, -31.433, 0, -12.3959)
+
+[node name="PropBgTreeOak33" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
+transform = Transform3D(-0.342381, 0, 0.939561, 0, 0.956733, 0, -0.939561, 0, -0.342381, -30.1749, 0, 13.0346)
+
+[node name="PropBgTreeOak34" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(-0.98087, 0, -0.194662, 0, 1, 0, 0.194662, 0, -0.98087, -21.0079, 0, 8.80292)
+
+[node name="PropBgTreeOak35" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(0.164398, 0, -0.914972, 0, 0.783255, 0, 0.914972, 0, 0.164398, -10.855, 2.73037e-08, -0.479942)
+
+[node name="PropBgTreeOak36" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(0.615221, 0, -0.788354, 0, 1, 0, 0.788354, 0, 0.615221, -32.1858, 0, 4.24363)
+
+[node name="PropBgTreeOak37" parent="TreeWallSolid" instance=ExtResource("2_iygfe")]
+transform = Transform3D(0.864611, 0, 0.341538, 0, 0.818676, 0, -0.341538, 0, 0.864611, -11.5153, 2.73037e-08, -8.46265)
+
+[node name="PropBgTreeOak38" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.2372, 9.53674e-07, -6.14363)
+
+[node name="PropBgTreeOak39" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(-0.389756, 0, -0.843973, 0, 0.818676, 0, 0.843973, 0, -0.389756, -18.2765, 8.08054e-07, -2.51579)
+
+[node name="PropBgTreeOak40" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(0.619259, 0, -0.785187, 0, 0.956733, 0, 0.785187, 0, 0.619259, -21.9211, 9.53674e-07, 5.23709)
+
+[node name="PropBgTreeOak41" parent="TreeWallSolid" instance=ExtResource("3_d2pfi")]
+transform = Transform3D(0.998899, 0, 0.0469148, 0, 1, 0, -0.0469148, 0, 0.998899, -23.1529, 9.53674e-07, 1.298)
+
+[node name="PropBgTreeOak42" parent="TreeWallSolid" instance=ExtResource("4_mum1c")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.0818, 0, -11.5636)
+
+[node name="PropTreeFir19" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.108, 0, 2.25273)
+
+[node name="PropTreeFir20" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.713321, 0, -0.596133, 0, 0.783255, 0, 0.596133, 0, 0.713321, -18.13, 2.73037e-08, -11.1857)
+
+[node name="PropTreeFir21" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.336194, -0.00859805, -0.77693, 0.0216443, 0.846317, 6.26415e-10, 0.776676, -0.0198632, 0.336304, -16.6148, 0, -6.93024)
+
+[node name="PropTreeFir22" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.185722, 3.17459e-11, -0.842329, -0.00149978, 0.759575, -0.000330574, 0.842463, 0.00135222, 0.185691, -37.6083, 2.73037e-08, 13.1607)
+
+[node name="PropTreeFir23" parent="TreeWallSolid" instance=ExtResource("5_t43ba")]
+transform = Transform3D(0.360343, 0, -0.879874, 0, 0.909664, 0, 0.879874, 0, 0.360343, -14.9855, 0, 2.98628)
+
+[node name="PropTreeFir24" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -27.7412, 0, -13.5356)
+
+[node name="PropTreeFir25" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(-0.18425, 0, 1.26145, 0, 1.27483, 0, -1.26145, 0, -0.18425, -27.6871, 0, 8.17111)
+
+[node name="PropTreeFir26" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.362102, 0, -0.780546, 0, 0.724971, 0, 0.780546, 0, 0.362102, -30.866, 2.73037e-08, 14.9857)
+
+[node name="PropTreeFir27" parent="TreeWallSolid" instance=ExtResource("6_bk0k0")]
+transform = Transform3D(0.979305, 0, -0.551652, 0, 1.12399, 0, 0.551652, 0, 0.979305, -23.1373, 0, -14.9253)
+
+[node name="PropBlackberryBushBg" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.5371, 0, -11.7443)
+
+[node name="PropBlackberryBushBg3" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.057233, 0, -0.998361, 0, 1, 0, 0.998361, 0, -0.057233, -10.3626, 0, 1.58894)
+
+[node name="PropBlackberryBushBg2" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, -13.0569, 0, -5.11223)
+
+[node name="PropBlackberryBushBg4" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.241211, 0, 0.970473, 0, 1, 0, -0.970473, 0, 0.241211, -10.9153, 0, 9.25729)
+
+[node name="PropBlackberryBushBg5" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.0600381, 0, 0.998196, 0, 1, 0, -0.998196, 0, -0.0600381, -16.8635, 0, 4.57148)
+
+[node name="PropBlackberryBushBg6" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.00280995, 0, 0.999996, 0, 1, 0, -0.999996, 0, -0.00280995, -18.8363, 0, -8.66721)
+
+[node name="PropBlackberryBushBg7" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.316345, 0, -0.948644, 0, 1, 0, 0.948644, 0, 0.316345, -15.7446, 0, -2.13989)
+
+[node name="PropBlackberryBushBg8" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.322051, 0, -0.946722, 0, 1, 0, 0.946722, 0, 0.322051, -18.7451, 0, -9.04274)
+
+[node name="PropBlackberryBushBg9" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.154159, 0, -0.988046, 0, 1, 0, 0.988046, 0, 0.154159, -22.9941, 0, -7.88069)
+
+[node name="PropBlackberryBushBg10" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.0973572, 0, -0.99525, 0, 1, 0, 0.99525, 0, 0.0973572, -19.7783, 0, 5.11213)
+
+[node name="PropBlackberryBushBg11" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.404631, 0, 0.91448, 0, 1, 0, -0.91448, 0, -0.404631, -23.4734, 0, -1.09359)
+
+[node name="PropBlackberryBushBg12" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.527653, 0, 0.84946, 0, 1, 0, -0.84946, 0, 0.527653, -19.2113, 0, 11.2542)
+
+[node name="PropBlackberryBushBg13" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.9066, 0, 12.5388)
+
+[node name="PropBlackberryBushBg14" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.0572329, 0, 0.998361, 0, 1, 0, -0.998361, 0, 0.0572329, -36.0811, 0, -0.794403)
+
+[node name="PropBlackberryBushBg15" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -33.3868, 0, 5.90677)
+
+[node name="PropBlackberryBushBg16" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.241211, 0, -0.970473, 0, 1, 0, 0.970473, 0, -0.241211, -19.132, 0, -8.46275)
+
+[node name="PropBlackberryBushBg17" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.0600382, 0, -0.998196, 0, 1, 0, 0.998196, 0, 0.0600382, -29.5802, 0, -3.77694)
+
+[node name="PropBlackberryBushBg18" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.00281004, 0, -0.999996, 0, 1, 0, 0.999996, 0, 0.00281004, -27.6074, 0, 9.46175)
+
+[node name="PropBlackberryBushBg19" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.316345, 0, 0.948644, 0, 1, 0, -0.948644, 0, -0.316345, -30.6991, 0, 2.93443)
+
+[node name="PropBlackberryBushBg20" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.322051, 0, 0.946722, 0, 1, 0, -0.946722, 0, -0.322051, -27.6986, 0, 9.83728)
+
+[node name="PropBlackberryBushBg21" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.154159, 0, 0.988046, 0, 1, 0, -0.988046, 0, -0.154159, -23.4496, 0, 8.67523)
+
+[node name="PropBlackberryBushBg22" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.0973573, 0, 0.99525, 0, 1, 0, -0.99525, 0, -0.0973573, -26.6654, 0, -4.31759)
+
+[node name="PropBlackberryBushBg23" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(0.404631, 0, -0.91448, 0, 1, 0, 0.91448, 0, 0.404631, -22.9703, 0, 1.88813)
+
+[node name="PropBlackberryBushBg24" parent="TreeWallSolid" instance=ExtResource("7_c2f0p")]
+transform = Transform3D(-0.527653, 0, -0.84946, 0, 1, 0, 0.84946, 0, -0.527653, -27.2324, 0, -10.4597)
