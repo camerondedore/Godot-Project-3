@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dunv4vxlrd3kx"]
+
+[ext_resource type="ArrayMesh" uid="uid://6vy0urrqrxep" path="res://Models/prop-fire-pit.res" id="1_4wkto"]
+[ext_resource type="Material" uid="uid://bss8ehpvp4onx" path="res://Materials/Rock.tres" id="2_hahi0"]
+[ext_resource type="Material" uid="uid://ce2dodh252xw2" path="res://Materials/EmbersAnimated.tres" id="3_hlp7p"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wbacm"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mdk54"]
+points = PackedVector3Array(0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0, 0.6, 0)
+
+[node name="PropFirePit" type="StaticBody3D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = ExtResource("1_4wkto")
+surface_material_override/0 = ExtResource("2_hahi0")
+surface_material_override/1 = ExtResource("3_hlp7p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+shape = SubResource("SphereShape3D_wbacm")
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+shape = SubResource("ConvexPolygonShape3D_mdk54")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=71 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -21,11 +21,14 @@
 [ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Platforms/PropPlatformSmall4m.tscn" id="13_cft54"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="13_p84f7"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/Water.tres" id="14_7brwj"]
+[ext_resource type="PackedScene" uid="uid://bqieml050c1mh" path="res://Prefabs/Food/PropFirePitWithStand.tscn" id="14_7eexx"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="14_a60p7"]
 [ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Player Bow Targets/PropBlackberryBushOld.tscn" id="14_disug"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerDead.cs" id="14_kb1i8"]
 [ext_resource type="PackedScene" uid="uid://b8wbom174i6wt" path="res://Prefabs/Small Items/PropTentSmall.tscn" id="14_mxw3m"]
+[ext_resource type="PackedScene" uid="uid://bhgoifnu2kwve" path="res://Prefabs/Food/PropPot2.tscn" id="15_itxqa"]
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="15_xmlr4"]
+[ext_resource type="PackedScene" uid="uid://dunv4vxlrd3kx" path="res://Prefabs/Food/PropFirePit.tscn" id="16_de3to"]
 [ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="16_gnfra"]
 [ext_resource type="PackedScene" uid="uid://croje6ueu5rqc" path="res://Prefabs/Trees/PropTreeOak4.tscn" id="16_yq7vk"]
 [ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="17_lpr68"]
@@ -179,6 +182,15 @@ transform = Transform3D(-0.993576, 0, -0.113169, 0, 1, 0, 0.113169, 0, -0.993576
 
 [node name="PropTorchLit6" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("12_3cr32")]
 transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -29.9962, 0.4999, -181.755)
+
+[node name="PropFirePitWithStand" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("14_7eexx")]
+transform = Transform3D(0.843157, 0, 0.537668, 0, 1, 0, -0.537668, 0, 0.843157, -16.0966, 3.9999, -159.893)
+
+[node name="PropPot2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems/PropFirePitWithStand" instance=ExtResource("15_itxqa")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.778171, 0)
+
+[node name="PropFirePit" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallItems" instance=ExtResource("16_de3to")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9411, -0.000200033, -180.859)
 
 [node name="Platforms" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
@@ -2089,22 +2101,22 @@ isMovingRat = false
 transform = Transform3D(-0.851214, 0, 0.524818, 0, 1, 0, -0.524818, 0, -0.851214, -44.0991, 8.85, -135.416)
 
 [node name="MobBlackRat9" parent="Enemies" instance=ExtResource("4_m4xsu")]
-transform = Transform3D(0.614175, 0, -0.78917, 0, 1, 0, 0.78917, 0, 0.614175, -19.6716, 4.9999, -156.886)
+transform = Transform3D(-0.480515, 0, -0.876987, 0, 1, 0, 0.876987, 0, -0.480515, -17.4842, 4.9999, -160.559)
 
 [node name="MobBlackRat10" parent="Enemies" instance=ExtResource("4_m4xsu")]
-transform = Transform3D(0.91609, 0, 0.400973, 0, 1, 0, -0.400973, 0, 0.91609, -17.7398, 4.9999, -155.593)
+transform = Transform3D(0.988322, 0, 0.152382, 0, 1, 0, -0.152382, 0, 0.988322, -16.5187, 4.9999, -158.043)
 
 [node name="MobBlackRat11" parent="Enemies" instance=ExtResource("4_m4xsu")]
-transform = Transform3D(0.0205935, 0, 0.999788, 0, 1, 0, -0.999788, 0, 0.0205935, -17.1528, 4.9999, -157.309)
+transform = Transform3D(0.0205935, 0, 0.999788, 0, 1, 0, -0.999788, 0, 0.0205935, -14.9131, 4.9999, -159.549)
 
 [node name="MobBlackRat12" parent="Enemies" instance=ExtResource("4_m4xsu")]
 transform = Transform3D(0.576475, 0, -0.817115, 0, 1, 0, 0.817115, 0, 0.576475, -48.1303, 0.999797, -158.208)
 
 [node name="MobBlackRat13" parent="Enemies" instance=ExtResource("4_m4xsu")]
-transform = Transform3D(0.536151, 0, 0.844122, 0, 1, 0, -0.844122, 0, 0.536151, -17.6476, 0.999796, -178.741)
+transform = Transform3D(0.536151, 0, 0.844122, 0, 1, 0, -0.844122, 0, 0.536151, -20.6355, 0.999796, -179.768)
 
 [node name="MobBlackRat14" parent="Enemies" instance=ExtResource("4_m4xsu")]
-transform = Transform3D(0.809294, 0, -0.587404, 0, 1, 0, 0.587404, 0, 0.809294, -31.5591, 1.04717, -180.716)
+transform = Transform3D(-0.974236, 0, 0.225529, 0, 1, 0, -0.225529, 0, -0.974236, -31.2023, 1.04717, -180.876)
 
 [node name="MobBrownRat2" parent="Enemies" instance=ExtResource("59_0iras")]
 transform = Transform3D(0.728969, 0, -0.684547, 0, 1, 0, 0.684547, 0, 0.728969, -41.7064, 4.85, -171.029)

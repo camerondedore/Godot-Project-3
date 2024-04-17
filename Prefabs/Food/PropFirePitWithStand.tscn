@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqieml050c1mh"]
+
+[ext_resource type="PackedScene" uid="uid://dunv4vxlrd3kx" path="res://Prefabs/Food/PropFirePit.tscn" id="1_hbg5e"]
+[ext_resource type="ArrayMesh" uid="uid://bbn4dg4uj6i4w" path="res://Models/prop-fire-pit-stand.res" id="2_03kti"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="3_uldke"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rn00h"]
+radius = 0.07
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ppqh6"]
+radius = 0.06
+height = 1.7
+
+[node name="PropFirePitWithStand" instance=ExtResource("1_hbg5e")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+mesh = ExtResource("2_03kti")
+surface_material_override/0 = ExtResource("3_uldke")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(0.99888, 0.0473157, 0, -0.0472586, 0.997675, 0.0491113, 0.00232373, -0.0490562, 0.998793, 0.669256, 0.8, -0.0324685)
+shape = SubResource("CapsuleShape3D_rn00h")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(0.997246, -0.0741607, -8.1197e-10, 0.0738601, 0.993204, -0.0899547, 0.0066711, 0.089707, 0.995946, -0.64301, 0.8, 0.010334)
+shape = SubResource("CapsuleShape3D_rn00h")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0255105, 1.33062, 0)
+shape = SubResource("CapsuleShape3D_ppqh6")
