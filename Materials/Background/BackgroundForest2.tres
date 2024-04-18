@@ -11,3 +11,4 @@ albedo_texture = ExtResource("1_gov3l")
 metallic_specular = 0.0
 backlight_enabled = true
 backlight = Color(0.6, 0.6, 0.6, 1)
+disable_receive_shadows = true
