@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2hw7o6qym87a"]
 
-[ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/BackgroundForest1.tres" id="1_linbw"]
+[ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="1_linbw"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3q1ie"]
 
