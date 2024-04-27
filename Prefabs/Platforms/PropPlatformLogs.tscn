@@ -13,6 +13,7 @@ collision_layer = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_fvj1y")
 surface_material_override/0 = ExtResource("2_jen5k")
 surface_material_override/1 = ExtResource("3_ndupt")

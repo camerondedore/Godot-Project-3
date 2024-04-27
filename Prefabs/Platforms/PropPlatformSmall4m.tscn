@@ -16,6 +16,7 @@ transform = Transform3D(1.14, 0, 0, 0, 1.14, 0, 0, 0, 1.14, 0, 1.81157, 0)
 [node name="BoardShortMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.95, 0)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -23,6 +24,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 3.95, -0.433049)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -30,6 +32,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 7.64274e-15, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 3.95, -0.847545)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -37,6 +40,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 1.91069e-14, 1.52855e-14, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 3.95, 0.434105)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -44,6 +48,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh3" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 1.74846e-07, 0, 7.64274e-15, -4.37114e-08, 1, 1.74846e-07, -1, -4.37114e-08, 0, 3.95, 0.854031)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -51,6 +56,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh6" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.0015085, 3.85415, 0.0015085)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -58,6 +64,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh8" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 7.64274e-15, -4.37114e-08, 1, 1, 4.37114e-08, -5.73206e-15, -0.849053, 3.85415, 0.00150854)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -65,6 +72,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh10" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.31134e-07, -1, -4.37114e-08, 7.64274e-15, -4.37114e-08, 1, -1, -1.31134e-07, 1.91069e-15, 0.852523, 3.85415, 0.00150846)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -72,6 +80,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh7" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 1.74846e-07, -7.64274e-15, 0, -4.37114e-08, -1, -1.74846e-07, 1, -4.37114e-08, -0.000980459, 3.75551, 0.319286)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")
@@ -79,6 +88,7 @@ surface_material_override/1 = ExtResource("4_74d77")
 [node name="BoardShortMesh9" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 8.74228e-08, 1.91069e-14, 1.52855e-14, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -0.000980534, 3.75551, -0.323359)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("2_4ntqx")
 surface_material_override/0 = ExtResource("3_fa8k7")
 surface_material_override/1 = ExtResource("4_74d77")

@@ -64,7 +64,7 @@ transform = Transform3D(0.506273, 0, 0.92807, 0, 1.05718, 0, -0.92807, 0, 0.5062
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03646, 0, -0.406569)
 
 [node name="PropBgTreeOak2" parent="." instance=ExtResource("4_r7eej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59486, 0, 0)
+transform = Transform3D(0.640552, 0, 0.767915, 0, 1, 0, -0.767915, 0, 0.640552, -6.87637, 0, 0)
 
 [node name="PropBgTreeOak3" parent="." instance=ExtResource("5_e04q7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82525, 0, -0.29812)

@@ -32,8 +32,8 @@ import_script/path=""
 _subresources={
 "meshes": {
 "level-1-intro_level-1-intro": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lightmap_uv": 1,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
@@ -43,7 +43,7 @@ _subresources={
 },
 "level-1-intro_level-1-tree-wall": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,

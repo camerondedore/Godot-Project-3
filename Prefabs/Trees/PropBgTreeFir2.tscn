@@ -10,11 +10,13 @@
 [node name="TrunkMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_yhopp")
 surface_material_override/0 = ExtResource("2_jhkqv")
 
 [node name="LeavesMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("3_2qqqm")
 surface_material_override/0 = ExtResource("4_53drb")

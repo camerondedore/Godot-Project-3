@@ -15,24 +15,28 @@ collision_layer = 16
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1.2)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_y8ors")
 surface_material_override/0 = ExtResource("2_1f2wp")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74846e-08, 1, 1.2)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_y8ors")
 surface_material_override/0 = ExtResource("2_1f2wp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, -1.2, 1, 6.11959e-08)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_y8ors")
 surface_material_override/0 = ExtResource("2_1f2wp")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 1.2, 1, -6.11959e-08)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_y8ors")
 surface_material_override/0 = ExtResource("2_1f2wp")
 

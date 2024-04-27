@@ -9,5 +9,6 @@
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(35.62, 0, 0, 0, 26, 0, 0, 0, 26, 0, 13, 0)
 layers = 2
+gi_mode = 2
 mesh = SubResource("QuadMesh_3q1ie")
 surface_material_override/0 = ExtResource("1_linbw")

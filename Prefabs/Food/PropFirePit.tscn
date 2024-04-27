@@ -16,6 +16,7 @@ collision_mask = 0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 layers = 2
+gi_mode = 2
 mesh = ExtResource("1_4wkto")
 surface_material_override/0 = ExtResource("2_hahi0")
 surface_material_override/1 = ExtResource("3_hlp7p")
