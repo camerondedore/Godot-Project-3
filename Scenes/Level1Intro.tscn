@@ -125,7 +125,6 @@ transform = Transform3D(0.990793, -0.0767207, 0.11155, -0.128352, -0.27016, 0.95
 shadow_enabled = true
 shadow_opacity = 0.9
 directional_shadow_blend_splits = true
-directional_shadow_max_distance = 65.0
 script = ExtResource("4_xfsdn")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
@@ -393,10 +392,10 @@ transform = Transform3D(-0.0481351, -3.23981e-08, 0.998841, 4.06135e-08, 1, 3.43
 transform = Transform3D(-0.227654, 0, 0.973742, 0, 1, 0, -0.973742, 0, -0.227654, -0.226171, 0, 15.7661)
 
 [node name="PropBlackberryBush36" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/BlackberryBushes" instance=ExtResource("73_7ros2")]
-transform = Transform3D(-0.227654, 6.43272e-09, 0.973742, -0.461894, 0.880337, -0.107988, -0.857221, -0.474349, -0.200412, 0.618007, 1.07438, 19.2524)
+transform = Transform3D(-0.227654, 6.43272e-09, 0.973742, -0.461894, 0.880337, -0.107988, -0.857221, -0.474349, -0.200412, 0.646192, 1.76545, 18.8829)
 
 [node name="PropBlackberryBush37" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/BlackberryBushes" instance=ExtResource("73_7ros2")]
-transform = Transform3D(-0.223096, 0.0453246, 0.973742, -0.277377, 0.954673, -0.107988, -0.9345, -0.294185, -0.200412, 1.32651, 2.10832, 21.7685)
+transform = Transform3D(-0.227344, 0.0118669, 0.973742, -0.415377, 0.903217, -0.107988, -0.880782, -0.42902, -0.200412, 1.33344, 3.13649, 21.5179)
 
 [node name="PropBlackberryBush16" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/BlackberryBushes" instance=ExtResource("73_7ros2")]
 transform = Transform3D(-0.368303, 0, 0.929706, 0, 1, 0, -0.929706, 0, -0.368303, -1.22453, 0, 12.5942)
@@ -2371,7 +2370,7 @@ actions = [NodePath("../../../Spawns/NettleBrothSpawn1"), NodePath("../../../Dia
 transform = Transform3D(0.700913, -0.326074, 0.634348, 0, 0.88938, 0.457168, -0.713247, -0.320435, 0.623378, -2.28841, -1.16134, -4.14057)
 script = ExtResource("10_35g6o")
 waitTime = 1.0
-moveTime = 2.25
+moveTime = 2.0
 actions = []
 
 [node name="Target6" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]

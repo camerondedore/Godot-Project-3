@@ -10,15 +10,17 @@ public partial class GameSettingsSunShadowsLoader : DirectionalLight3D
 
     public override void _Ready()
     {
-        GameSettingsUi.gamesSettingsUi.SunShadowsChanged += UpdateSunShadows;
+        GameSettingsUi.gamesSettingsUi.SunShadowQualityChanged += UpdateSunShadowQuality;
+        GameSettingsUi.gamesSettingsUi.SunShadowDistanceChanged += UpdateSunShadowDistance;
+        GameSettingsUi.gamesSettingsUi.SunShadowBlendSplitsChanged += UpdateSunShadowBlendSplits;
 
         // initialize shadows
-        UpdateSunShadows(GameSettings.settings.currentSettings.SunShadows);
+        UpdateSunShadowQuality(GameSettings.settings.currentSettings.SunShadowQuality);
     }
 
 
 
-    void UpdateSunShadows(int value)
+    void UpdateSunShadowQuality(int value)
     {
         // turn shadow on or off
         if(value == 0)
@@ -45,5 +47,19 @@ public partial class GameSettingsSunShadowsLoader : DirectionalLight3D
                 DirectionalShadowMode = ShadowMode.Parallel4Splits;
                 break;
         }
+    }
+
+
+
+    void UpdateSunShadowDistance (int value)
+    {
+        DirectionalShadowMaxDistance = value;
+    }
+
+
+
+    void UpdateSunShadowBlendSplits (bool value)
+    {
+        DirectionalShadowBlendSplits = value;
     }
 }

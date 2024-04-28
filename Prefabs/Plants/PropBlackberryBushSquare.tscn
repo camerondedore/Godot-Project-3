@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ttmtqfwluehc"]
+[gd_scene load_steps=6 format=3 uid="uid://ttmtqfwluehc"]
 
 [ext_resource type="ArrayMesh" uid="uid://d276o3o2mdm5s" path="res://Models/prop-blackberry-bush.res" id="1_q7g2k"]
 [ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/Plants/LeavesBlackberryWind.tres" id="2_fn6sp"]
+[ext_resource type="Texture2D" uid="uid://djlbfsr0ly23k" path="res://Textures/fx-blackberry-bush-square-shadow.png" id="3_smbhv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yubvx"]
 size = Vector3(3, 1.8, 3)
@@ -15,6 +16,7 @@ collision_layer = 16
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.6)
 layers = 2
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("1_q7g2k")
 surface_material_override/0 = ExtResource("2_fn6sp")
@@ -22,6 +24,7 @@ surface_material_override/0 = ExtResource("2_fn6sp")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0.6)
 layers = 2
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("1_q7g2k")
 surface_material_override/0 = ExtResource("2_fn6sp")
@@ -29,6 +32,15 @@ surface_material_override/0 = ExtResource("2_fn6sp")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_yubvx")
+
+[node name="ShadowDecal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108, 0, 0.011)
+size = Vector3(6.153, 1, 5.213)
+texture_albedo = ExtResource("3_smbhv")
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_length = 5.0
+cull_mask = 1
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
 collision_layer = 2048

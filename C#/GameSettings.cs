@@ -72,7 +72,25 @@ public partial class GameSettings : Node
 
     public void UpdateSunShadows(int newValue)
     {
-        currentSettings.SunShadows = newValue;
+        currentSettings.SunShadowQuality = newValue;
+
+        SaveSettings();
+    }
+
+
+
+    public void UpdateSunShadowDistance(int newValue)
+    {
+        currentSettings.SunShadowDistance = newValue;
+
+        SaveSettings();
+    }
+
+
+
+    public void UpdateSunShadowBlendSplits(bool newValue)
+    {
+        currentSettings.SunShadowBlendSplits = newValue;
 
         SaveSettings();
     }
@@ -111,10 +129,20 @@ public partial class GameSettings : Node
             get; set;
         } = true;
 
-        public int SunShadows
+        public int SunShadowQuality
         {
             get; set;
         } = 3;
+
+        public int SunShadowDistance
+        {
+            get; set;
+        } = 65;
+
+        public bool SunShadowBlendSplits
+        {
+            get; set;
+        } = false;
 
         public bool ShowFps
         {

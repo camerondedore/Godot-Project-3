@@ -57,11 +57,9 @@ quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -74,9 +72,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -150.0
+offset_top = -200.0
 offset_right = 40.0
-offset_bottom = -50.0
+offset_bottom = -99.9998
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -103,21 +101,25 @@ text = "Restart"
 layout_mode = 2
 text = "Quit"
 
-[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "fpsCheckBox", "sunshadowsSlider", "mouseSensitivitySpinBox")]
+[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "mouseSensitivitySpinBox")]
 layout_mode = 1
-anchors_preset = 0
-offset_left = -40.0
-offset_top = 50.0
-offset_right = 40.0
-offset_bottom = 150.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 100.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("12_04fn0")
 bloomCheckBox = NodePath("VBoxContainer/BloomCheckBox")
 ssaoCheckBox = NodePath("VBoxContainer/SsaoCheckBox")
+sunShadowBlendSplitsCheckBock = NodePath("VBoxContainer/SunShadowSplitsCheckBox")
 fpsCheckBox = NodePath("VBoxContainer/FpsCheckBox")
-sunshadowsSlider = NodePath("VBoxContainer/SunShadowsSlider")
+sunShadowQualitySlider = NodePath("VBoxContainer/SunShadowQualitySlider")
+sunShadowDistanceSlider = NodePath("VBoxContainer/SunShadowDistanceSlider")
 mouseSensitivitySpinBox = NodePath("VBoxContainer/MouseSensitivitySpinBox")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
@@ -145,18 +147,36 @@ layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "SSAO"
 
-[node name="SunShadowsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="SunShadowsQualityLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Sun Shadow Quality"
 
-[node name="SunShadowsSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="SunShadowQualitySlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 max_value = 3.0
 value = 3.0
 rounded = true
 tick_count = 4
+
+[node name="SunShadowDistanceLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Sun Shadow Distance"
+
+[node name="SunShadowDistanceSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+min_value = 10.0
+max_value = 120.0
+value = 65.0
+rounded = true
+
+[node name="SunShadowSplitsCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Blend Sun Shadow Splits"
 
 [node name="FpsCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
