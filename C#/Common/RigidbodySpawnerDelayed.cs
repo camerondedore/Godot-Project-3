@@ -1,7 +1,8 @@
+using Cinematic;
 using Godot;
 using System;
 
-public partial class RigidbodySpawnerDelayed : RigidbodySpawner
+public partial class RigidbodySpawnerDelayed : RigidbodySpawner, CinematicTarget.iCinematicAction
 {
 
     [Export]
@@ -32,5 +33,12 @@ public partial class RigidbodySpawnerDelayed : RigidbodySpawner
         {
             prefab = overridePrefab;
         }
+    }
+
+
+
+    public new void TriggerCinematicAction()
+    {
+        StartSpawn();
     }
 }

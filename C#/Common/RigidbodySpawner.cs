@@ -1,7 +1,8 @@
+using Cinematic;
 using Godot;
 using System;
 
-public partial class RigidbodySpawner : Node3D
+public partial class RigidbodySpawner : Node3D, CinematicTarget.iCinematicAction
 {
 
     [Export]
@@ -59,5 +60,12 @@ public partial class RigidbodySpawner : Node3D
             // apply angular velocity
             newPrefab.AngularVelocity = newAngularVelocity;
         }
+    }
+
+
+
+    public void TriggerCinematicAction()
+    {
+        Spawn();
     }
 }
