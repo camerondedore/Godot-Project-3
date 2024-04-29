@@ -9,5 +9,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 layers = 2
 cast_shadow = 0
+gi_mode = 2
 mesh = ExtResource("1_856m7")
 surface_material_override/0 = ExtResource("2_eoh7x")

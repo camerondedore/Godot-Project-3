@@ -1,13 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbage8fj6ncrj"]
+[gd_scene load_steps=4 format=3 uid="uid://bbage8fj6ncrj"]
 
 [ext_resource type="ArrayMesh" uid="uid://q7rq4w126er8" path="res://Models/prop-fern-1.res" id="1_0dqff"]
 [ext_resource type="Material" uid="uid://ba2urtvsd2elg" path="res://Materials/Plants/LeavesFern.tres" id="2_f5qoj"]
+[ext_resource type="Texture2D" uid="uid://cowg7idw0nhrs" path="res://Textures/fx-fern-1-shadow.png" id="3_fntxi"]
 
 [node name="PropFern1" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 layers = 2
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("1_0dqff")
 surface_material_override/0 = ExtResource("2_f5qoj")
+
+[node name="ShadowDecal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0144844, 0, -0.10503)
+size = Vector3(2.10009, 0.3, 2.11158)
+texture_albedo = ExtResource("3_fntxi")
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+distance_fade_length = 5.0
+cull_mask = 1
