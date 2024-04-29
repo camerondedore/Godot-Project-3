@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx2imdy5qfts3"]
+[gd_scene load_steps=7 format=3 uid="uid://cx2imdy5qfts3"]
 
 [ext_resource type="PackedScene" uid="uid://d3po0wf2eqc0p" path="res://Prefabs/Lumber/PropPicket.tscn" id="1_7ywxb"]
 [ext_resource type="PackedScene" uid="uid://r41mrweymrwp" path="res://Prefabs/Lumber/PropAbatis1.tscn" id="2_01e5m"]
 [ext_resource type="PackedScene" uid="uid://bkk7hfsekt3di" path="res://Prefabs/Lumber/PropAbatis2.tscn" id="3_81nst"]
 [ext_resource type="PackedScene" uid="uid://vxr2ttl1f0su" path="res://Prefabs/Lumber/PropAbatis3.tscn" id="4_3h7y6"]
+[ext_resource type="Texture2D" uid="uid://d3k7jcorreiqn" path="res://Textures/fx-picket-abatis-wall-shadow.png" id="5_2pspe"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6m05e"]
 points = PackedVector3Array(2, -0.2, -1.5, 2, 2.2, -1.5, 2, -0.2, 2, -2, -0.2, 2, -2, 2.2, -1.5, -2, -0.2, -1.5)
@@ -48,6 +49,15 @@ transform = Transform3D(0.311954, -0.125102, 0.941825, -0.879244, 0.337619, 0.33
 
 [node name="PropAbatis3" parent="." instance=ExtResource("4_3h7y6")]
 transform = Transform3D(0.999944, -0.00858878, 0.00617212, -0.00227728, 0.395042, 0.91866, -0.0103284, -0.918623, 0.395001, -0.385732, -0.337542, 1.68383)
+
+[node name="ShadowDecal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302841, 0, -0.632721)
+size = Vector3(5.001, 0.8, 4.907)
+texture_albedo = ExtResource("5_2pspe")
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_length = 5.0
+cull_mask = 1
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
 collision_layer = 2048
