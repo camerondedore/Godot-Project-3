@@ -49,8 +49,10 @@ shape = SubResource("BoxShape3D_5ngrm")
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23517e-08, 0)
 visible = false
-size = Vector3(3, 0.5, 3)
+size = Vector3(3, 0.75, 3)
 texture_albedo = ExtResource("6_gr0jp")
+upper_fade = 0.00288549
+lower_fade = 0.0048528
 cull_mask = 1
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
