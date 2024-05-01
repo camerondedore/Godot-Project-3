@@ -9,7 +9,7 @@
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_atvln")
 
-[node name="ShadowDecal" parent="." index="2"]
+[node name="ShadowDecal" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0568337, 0, 0.052449)
 size = Vector3(1.59149, 0.3, 1.51579)
 texture_albedo = ExtResource("3_rnd74")

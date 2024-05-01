@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="1_a4y24"]
 [ext_resource type="ArrayMesh" uid="uid://dplpye65vkf2a" path="res://Models/prop-dandelion-2.res" id="2_xsysl"]
-[ext_resource type="Texture2D" uid="uid://cwy357jtjnigl" path="res://Textures/fx-dandelion-2-shadow.png" id="3_wdoxs"]
+[ext_resource type="Texture2D" uid="uid://cwy357jtjnigl" path="res://Textures/fx-dandelion-2-shadow.png" id="3_52mgl"]
 
 [node name="PropDandelion2" instance=ExtResource("1_a4y24")]
 
 [node name="MeshInstance3D" parent="." index="0"]
 mesh = ExtResource("2_xsysl")
 
-[node name="Decal" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0280457, 0, -0.0313263)
-size = Vector3(1.15692, 0.3, 1.09793)
-texture_albedo = ExtResource("3_wdoxs")
+[node name="ShadowDecal" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0240554, 0, -0.0323594)
+size = Vector3(1.17302, 0.3, 1.2093)
+texture_albedo = ExtResource("3_52mgl")
