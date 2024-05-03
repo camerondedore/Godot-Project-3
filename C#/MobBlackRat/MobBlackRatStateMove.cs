@@ -6,7 +6,7 @@ namespace MobBlackRat
     public partial class MobBlackRatStateMove : MobBlackRatState
     {
 
-
+        float distanceToEnemySqr;
 
 
 
@@ -17,10 +17,19 @@ namespace MobBlackRat
 
             if(blackboard.IsEnemyValid())
             {
-                var destinationDistanceToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
-                // check if enemy has moved far enough to recalculate path
-                if(destinationDistanceToEnemy > blackboard.moveRecalculatePathRange)
+                // get distance to enemy
+                distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+                var distanceSqrFromDestinationToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
+
+                // get if enemy is close and in LOS
+                var isCloseToEnemy = distanceToEnemySqr < blackboard.attackDistanceSqr * 1.5f && blackboard.eyes.HasLosToTarget(blackboard.enemy);
+
+                // get if enemy is far away from rat's destination
+                var isEnemyFarFromDestination = distanceSqrFromDestinationToEnemy > blackboard.moveRecalculatePathRange;
+
+                // check if needing to recalculate path
+                if(isCloseToEnemy || isEnemyFarFromDestination)
                 {
                     // set move target
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -67,8 +76,7 @@ namespace MobBlackRat
             }
 
 
-            // get distance to enemy
-            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+            
 
             // check if enemy is close enough
             if(distanceToEnemySqr < blackboard.attackDistanceSqr)
