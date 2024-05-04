@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dabnky0qnlvgu"]
+[gd_scene load_steps=16 format=3 uid="uid://dabnky0qnlvgu"]
 
 [ext_resource type="Script" path="res://C#/CharacterFootsteps.cs" id="1_bi0jt"]
 [ext_resource type="AudioStream" uid="uid://cpx1ghr2ba1fu" path="res://Audio/footstep-1.wav" id="2_aaiis"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://bi2ive8voxfyp" path="res://Audio/footstep-terrain-5.wav" id="11_mqqk6"]
 [ext_resource type="AudioStream" uid="uid://dmko3nnad2tt3" path="res://Audio/jump.wav" id="12_8xwkn"]
 [ext_resource type="AudioStream" uid="uid://dkaqbq3eg3to1" path="res://Audio/jump-terrain.wav" id="13_eh4ob"]
+[ext_resource type="AudioStream" uid="uid://dql653kqq4njv" path="res://Audio/land.wav" id="14_gdt6s"]
+[ext_resource type="AudioStream" uid="uid://dlv0ati546kyl" path="res://Audio/land-terrain.wav" id="15_0ojyx"]
 
 [node name="CharacterFootsteps" type="AudioStreamPlayer3D" node_paths=PackedStringArray("floorRay")]
 unit_size = 2.0
@@ -23,6 +25,8 @@ footsteps = Array[AudioStream]([ExtResource("2_aaiis"), ExtResource("3_q0xni"), 
 terrainFootsteps = Array[AudioStream]([ExtResource("7_ule4k"), ExtResource("8_2xbl8"), ExtResource("9_dwh1q"), ExtResource("10_jg60f"), ExtResource("11_mqqk6")])
 jump = ExtResource("12_8xwkn")
 terrainJump = ExtResource("13_eh4ob")
+land = ExtResource("14_gdt6s")
+terrainLand = ExtResource("15_0ojyx")
 floorRay = NodePath("FloorRay")
 
 [node name="FloorRay" type="RayCast3D" parent="."]

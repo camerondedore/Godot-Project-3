@@ -9,7 +9,9 @@ public partial class CharacterFootsteps : AudioTools3d, CharacterWaterSplash.IWa
         terrainFootsteps;
     [Export]
     AudioStream jump,   
-        terrainJump;
+        terrainJump,
+        land,
+        terrainLand;
     [Export]
     RayCast3D floorRay;
 
@@ -53,6 +55,27 @@ public partial class CharacterFootsteps : AudioTools3d, CharacterWaterSplash.IWa
             {
                 // on hard surface
                 PlaySound(jump, 0.1f);
+            }            
+        }
+    }
+
+
+
+    public void PlayLandSound()
+    {
+        if(footstepsEnabled == true)
+        {
+            var isOnTerrain = OnTerrain();
+
+            if(isOnTerrain)
+            {
+                // on terrain
+                PlaySound(terrainLand, 0.1f);
+            }
+            else
+            {
+                // on hard surface
+                PlaySound(land, 0.1f);
             }            
         }
     }

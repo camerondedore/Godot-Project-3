@@ -60,6 +60,9 @@ namespace PlayerCharacterComplex
             
             // animation
             blackboard.animStateMachinePlayback.Travel("character-jump-start");
+
+            // audio
+            blackboard.characterFootsteps.PlayLandSound();
         }
 
 
