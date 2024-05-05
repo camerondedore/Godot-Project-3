@@ -1,13 +1,15 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://d1514o5nrewn5"]
 
-[ext_resource type="Material" uid="uid://2gsmdxi301jv" path="res://Materials/DaySky.tres" id="1_a7f87"]
+[ext_resource type="Material" uid="uid://rulj6q5cu48t" path="res://Materials/SkyboxLevel1.tres" id="1_12klh"]
 
 [sub_resource type="Sky" id="Sky_usgl8"]
-sky_material = ExtResource("1_a7f87")
+sky_material = ExtResource("1_12klh")
 
 [resource]
 background_mode = 2
 sky = SubResource("Sky_usgl8")
+ambient_light_source = 3
+reflected_light_source = 2
 ssao_enabled = true
 ssao_radius = 0.5
 glow_enabled = true
@@ -17,5 +19,3 @@ glow_levels/3 = 0.25
 glow_levels/4 = 0.1
 glow_levels/5 = 0.0
 glow_blend_mode = 0
-fog_density = 0.005
-fog_aerial_perspective = 1.0
