@@ -125,7 +125,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
-transform = Transform3D(0.990793, -0.0767207, 0.11155, -0.128352, -0.27016, 0.954222, -0.0430722, -0.959754, -0.27752, 0, 0, 0)
+transform = Transform3D(-0.927836, -0.35592, 0.111539, 0, 0.299041, 0.95424, -0.372988, 0.885379, -0.277461, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.9
 directional_shadow_blend_splits = true
