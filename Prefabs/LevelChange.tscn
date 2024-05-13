@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://oycdur3x5ghh"]
+
+[ext_resource type="Script" path="res://C#/LevelChange/LevelChange.cs" id="1_hxbrv"]
+
+[node name="LevelChange" type="Node" node_paths=PackedStringArray("fadeRect", "canvas")]
+script = ExtResource("1_hxbrv")
+fadeRect = NodePath("CanvasLayer/Control/FadeRect")
+canvas = NodePath("CanvasLayer")
+blockColor = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 105
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FadeRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
