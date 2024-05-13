@@ -5,7 +5,7 @@ public partial class SplashScreen : Node
 {
 
     [Export]
-    PackedScene nextLevel;
+    string nextLevel;
 
 
 

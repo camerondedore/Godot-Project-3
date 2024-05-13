@@ -8,9 +8,9 @@ public partial class SceneLoader : Node
 
 
 
-    public static void LoadScene(PackedScene newLevel, SceneTree tree)
+    public static void LoadScene(string newLevel, SceneTree tree)
     {
-        tree.ChangeSceneToPacked(newLevel);
+        tree.ChangeSceneToFile(newLevel);
     }
 
 
