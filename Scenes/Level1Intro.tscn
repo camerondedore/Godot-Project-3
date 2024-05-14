@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=100 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -89,6 +89,7 @@
 [ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="78_gafcq"]
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="79_u8w11"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="80_ponqo"]
+[ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="82_aaxjn"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="83_qpmls"]
 [ext_resource type="Script" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="89_76sdy"]
 [ext_resource type="PackedScene" uid="uid://xigtowfv4scj" path="res://Prefabs/SecretArea.tscn" id="91_nh247"]
@@ -4822,6 +4823,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7879, 0.999801, -213.38)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4537, 0.999801, -217.761)
 meshInstance = NodePath("../PickupCandiedNut14/MeshInstance3D")
 
+[node name="Audio" type="Node3D" parent="Map"]
+
+[node name="Ambience" type="AudioStreamPlayer" parent="Map/Audio"]
+stream = ExtResource("82_aaxjn")
+autoplay = true
+
 [node name="CinematicTriggers" type="Node3D" parent="Map"]
 
 [node name="Control1" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
@@ -4862,7 +4869,7 @@ moveTime = 2.0
 actions = []
 
 [node name="Target4" type="Node3D" parent="Map/CinematicTriggers/Control1" node_paths=PackedStringArray("actions")]
-transform = Transform3D(0.945219, -0.169123, 0.279206, 0, 0.855324, 0.518092, -0.326433, -0.489711, 0.808469, -3.28881, 3.75336, 11.7444)
+transform = Transform3D(0.951557, 0.149277, -0.268798, 0, 0.874233, 0.485505, 0.307468, -0.461986, 0.831883, -1.76024, 3.03893, 4.86269)
 script = ExtResource("10_35g6o")
 waitTime = 0.25
 moveTime = 1.0

@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://oycdur3x5ghh"]
+[gd_scene load_steps=3 format=3 uid="uid://oycdur3x5ghh"]
 
 [ext_resource type="Script" path="res://C#/LevelChange/LevelChangeControl.cs" id="1_hxbrv"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="2_t6gls"]
 
-[node name="LevelChange" type="Node" node_paths=PackedStringArray("fadeRect", "canvas")]
+[node name="LevelChange" type="Node" node_paths=PackedStringArray("fadeRect", "canvas", "loadingLabel")]
 script = ExtResource("1_hxbrv")
+nextLevel = "res://Scenes/Level1Intro.tscn"
 fadeRect = NodePath("CanvasLayer/Control/FadeRect")
 canvas = NodePath("CanvasLayer")
 blockColor = Color(0, 0, 0, 1)
+loadingLabel = NodePath("CanvasLayer/Control/LoadingText")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 105
@@ -30,3 +33,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="LoadingText" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -40.0
+offset_right = -19.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_t6gls")
+text = "Loading..."

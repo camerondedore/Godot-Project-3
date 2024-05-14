@@ -19,9 +19,15 @@ namespace LevelChange
 
 
             if(timeIndex >= blackboard.transitionTime)
-            {
+            {                
                 // load next scene
                 SceneLoader.LoadScene(blackboard.nextLevel, blackboard.GetTree());
+            }
+
+            if(blackboard.loadingLabel.Visible == false && timeIndex >= blackboard.transitionTime * 0.9f)
+            {
+                // show loading text
+                blackboard.loadingLabel.Visible = true;
             }
         }
 

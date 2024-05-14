@@ -22,6 +22,8 @@ namespace LevelChange
         [Export]
         public Color blockColor,
             clearColor;
+        [Export]
+        public Label loadingLabel;
 
 
 

@@ -27,6 +27,9 @@ namespace LevelChange
             // set up ui
             blackboard.canvas.Visible = true;
             blackboard.fadeRect.Color = blackboard.blockColor;
+
+            // hide loading text
+            blackboard.loadingLabel.Visible = false;
         }
 
 
