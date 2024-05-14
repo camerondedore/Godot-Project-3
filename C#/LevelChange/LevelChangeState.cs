@@ -6,6 +6,6 @@ namespace LevelChange
     public partial class LevelChangeState : State
     {
 
-        public LevelChange blackboard;
+        public LevelChangeControl blackboard;
     }
 }

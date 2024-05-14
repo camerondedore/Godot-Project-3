@@ -7,7 +7,7 @@ namespace LevelChange
     {
 
         [Export]
-        LevelChange levelChange;
+        LevelChangeControl levelChange;
 
 
         public override void _Ready()

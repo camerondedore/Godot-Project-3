@@ -3,7 +3,7 @@ using System;
 
 namespace LevelChange
 {
-    public partial class LevelChange : Node
+    public partial class LevelChangeControl : Node
     {
 
         public StateMachine machine = new StateMachine();

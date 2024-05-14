@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://oycdur3x5ghh"]
 
-[ext_resource type="Script" path="res://C#/LevelChange/LevelChange.cs" id="1_hxbrv"]
+[ext_resource type="Script" path="res://C#/LevelChange/LevelChangeControl.cs" id="1_hxbrv"]
 
 [node name="LevelChange" type="Node" node_paths=PackedStringArray("fadeRect", "canvas")]
 script = ExtResource("1_hxbrv")

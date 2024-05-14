@@ -1,20 +1,25 @@
 using Godot;
 using System;
+using LevelChange;
 
 public partial class SplashScreen : Node
 {
 
     [Export]
-    string nextLevel;
+    LevelChangeControl levelChange;
+
+    bool wasTriggered = false;
 
 
 
     public override void _UnhandledKeyInput(InputEvent e)
     {
-        if(e.IsPressed())
+        if(e.IsPressed() && wasTriggered == false)
         {
-            // load next scene
-            SceneLoader.LoadScene(nextLevel, GetTree());
+            // trigger level change
+            levelChange.SetMachineToEndState();
+
+            wasTriggered = true;
         }
     }
 }
