@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="4_ry6fp"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7fwkv"]
-points = PackedVector3Array(1.2, 0, 2.1, -1.2, 0, 2.1, 0, 2.5, 2.1, 1.2, 0, -2.1, -1.2, 0, -2.1, 0, 2.5, -2.1)
+points = PackedVector3Array(1.2, 0, 2.05, -1.2, 0, 2.05, 0, 2.5, 2.05, 1.2, 0, -2.05, -1.2, 0, -2.05, 0, 2.5, -2.05)
 
 [node name="PropTentSmall" type="StaticBody3D"]
 collision_layer = 16

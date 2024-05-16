@@ -294,6 +294,7 @@ uniformSize = true
 
 [node name="LightmapGI" type="LightmapGI" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066288, 0.0577469, 0.0354156)
+visible = false
 quality = 0
 generate_probes_subdiv = 3
 light_data = ExtResource("6_aa6ws")
