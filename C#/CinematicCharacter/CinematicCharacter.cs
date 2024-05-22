@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Cinematic;
 
 namespace CinematicCharacter
 {
@@ -11,14 +12,20 @@ namespace CinematicCharacter
             stateIdle,
             stateMove,
             stateTalk,
-            stateWave;
+            stateWave,
+            stateEnd;
 
         [Export]
         public NavigationAgent3D navAgent;
         [Export]
         public AnimationPlayer animation;
+        [Export]
+		public float speed = 5,
+            acceleration = 10,
+            lookSpeed = 0.3f;
 
         public Node3D targetNode;
+        public bool lastAction = false;
 
 
 
@@ -30,9 +37,14 @@ namespace CinematicCharacter
             stateMove = new CinematicCharacterStateMove(){blackboard = this};        
             stateTalk = new CinematicCharacterStateTalk(){blackboard = this};        
             stateWave = new CinematicCharacterStateWave(){blackboard = this};        
+            stateEnd = new CinematicCharacterStateEnd(){blackboard = this};        
 
             // set first state in machine
             machine.SetState(stateStart);
+
+            // disable
+            Visible = false;
+            ProcessMode = ProcessModeEnum.Disabled;
         }
 
 
@@ -45,6 +57,79 @@ namespace CinematicCharacter
                 machine.CurrentState.RunState(delta);
                 machine.SetState(machine.CurrentState.Transition());
             }
+        }
+
+
+
+        public void Move(double delta)
+        {
+            // check that character is in moving state
+            if(IsOnFloor())
+            {
+                // get new velocity
+                var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
+                newVelocity = newVelocity.Normalized();
+                newVelocity.Y = 0;
+                newVelocity *= speed;
+                
+                if(newVelocity.X == 0 && newVelocity.Z == 0)
+                {
+                    // no usable velocity
+                    return;
+                }
+
+                // smooth movement
+                Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
+
+                MoveAndSlide();
+
+                // get direction to next path point and flatten
+                var forward = GlobalPosition + -Basis.Z;
+                var lookDirection = GlobalPosition + Velocity.Normalized();
+                lookDirection.Y = GlobalPosition.Y;
+                var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+
+                // look in direction of movement
+                LookAt(lookTarget, Vector3.Up);
+            }
+            else
+            {                
+                // falling
+                // apply gravity
+                Velocity += EngineGravity.vector * ((float) delta);                
+                MoveAndSlide();
+            }
+        }
+
+
+
+        public void SetTargetNode(Node3D newTarget, bool hideOnArrival)
+        {
+            if(Visible == false)
+            {
+                // enable
+                Visible = true;
+                ProcessMode = ProcessModeEnum.Inherit;
+            }
+
+            targetNode = newTarget;
+            lastAction = hideOnArrival;
+
+            stateMove.StartState();
+        }
+
+
+
+        public void SetState(string newStateName)
+        {
+            if(Visible == false)
+            {
+                // enable
+                Visible = true;
+                ProcessMode = ProcessModeEnum.Inherit;
+            }
+
+            // set state using state names
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace CinematicCharacter
 {
-    public partial class CinematicCharacterStateIdle : CinematicCharacterState
+    public partial class CinematicCharacterStateEnd : CinematicCharacterState
     {
 
 
@@ -19,8 +19,10 @@ namespace CinematicCharacter
 
         public override void StartState()
         {
-            // animation
-            blackboard.animation.Play("character-idle");
+            blackboard.Visible = false;
+
+            // disable
+            blackboard.ProcessMode = Node.ProcessModeEnum.Disabled;
         }
 
 
@@ -34,12 +36,6 @@ namespace CinematicCharacter
 
         public override State Transition()
         {
-            if(blackboard.targetNode != null)
-            {
-                // move
-                return blackboard.stateMove;
-            }
-
             return this;
         }
     }

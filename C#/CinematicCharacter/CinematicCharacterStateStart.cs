@@ -19,7 +19,10 @@ namespace CinematicCharacter
 
         public override void StartState()
         {
-            base.StartState();
+            // blackboard.Visible = true;
+
+            // // enable
+            // blackboard.ProcessMode = Node.ProcessModeEnum.Inherit;
         }
 
 
@@ -33,7 +36,8 @@ namespace CinematicCharacter
 
         public override State Transition()
         {
-            return this;
+            // idle
+            return blackboard.stateIdle;
         }
     }
 }
