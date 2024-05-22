@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0d1fd6qwbddv"]
+
+[ext_resource type="ArrayMesh" uid="uid://bhok5bkifpyos" path="res://Models/prop-log-oak-1.res" id="1_2wy44"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_la8rg"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_swrd1"]
+[ext_resource type="ArrayMesh" uid="uid://c0k3i7lmm73du" path="res://Models/prop-log-oak-2.res" id="4_wtkej"]
+[ext_resource type="ArrayMesh" uid="uid://tfa02rtb6eke" path="res://Models/prop-log-oak-3.res" id="5_admk7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5xlue"]
+points = PackedVector3Array(0.9, 0, 2.95, 0.2, 1.25, 2.95, -0.2, 1.25, 2.95, -0.9, 0, 2.95, 0.9, 0, -2.95, 0.2, 1.25, -2.95, -0.2, 1.25, -2.95, -0.9, 0, -2.95)
+
+[node name="PropLogPileSmall" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="LogMesh1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0131594, 0.999914, 0, -0.999914, -0.0131594, 0, 0.250988, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_2wy44")
+surface_material_override/0 = ExtResource("2_la8rg")
+surface_material_override/1 = ExtResource("3_swrd1")
+
+[node name="LogMesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.365464, 0.0112332, -0.930758, -0.930505, -0.0218496, -0.365628, -0.0244438, 0.999698, 0.0024673, 0.317492, 0.650792, -0.109308)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_2wy44")
+surface_material_override/0 = ExtResource("2_la8rg")
+surface_material_override/1 = ExtResource("3_swrd1")
+
+[node name="LogMesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.64232, 0.0100858, -0.766371, -0.766437, -0.00845264, 0.642264, -8.74228e-08, 0.999913, 0.0131594, 0.58294, 0.250988, -0.161928)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_wtkej")
+surface_material_override/0 = ExtResource("2_la8rg")
+surface_material_override/1 = ExtResource("3_swrd1")
+
+[node name="LogMesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.627806, 0.0273279, 0.77789, -0.778133, 0.00261969, -0.628094, -0.0192023, -0.999623, 0.0196201, -0.30986, 0.670578, 0.145735)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_wtkej")
+surface_material_override/0 = ExtResource("2_la8rg")
+surface_material_override/1 = ExtResource("3_swrd1")
+
+[node name="LogMesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74152e-08, 1.15044e-09, 0, -0.0131594, 0.999913, 8.74228e-08, 0.999913, 0.0131594, -0.518169, 0.250988, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("5_admk7")
+surface_material_override/0 = ExtResource("2_la8rg")
+surface_material_override/1 = ExtResource("3_swrd1")
+
+[node name="LogMesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.999996, 0, 0.00287977, -0.00287896, 0.0236644, -0.999716, -6.8148e-05, -0.99972, -0.0236643, 0.0341238, 1.0347, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("5_admk7")
+surface_material_override/0 = ExtResource("2_la8rg")
+surface_material_override/1 = ExtResource("3_swrd1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_5xlue")
