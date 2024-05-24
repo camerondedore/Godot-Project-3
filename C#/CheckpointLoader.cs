@@ -23,5 +23,12 @@ public partial class CheckpointLoader : Node
             GlobalCamera.camera.GlobalPosition = WorldData.data.GetSavedCheckpointCameraPosition();
             GlobalCamera.camera.LookAt(GlobalCamera.camera.GlobalPosition + WorldData.data.GetSavedCheckpointCameraDirection());
         }
+        else
+        {
+            // save start of level as a checkpoint
+            // pass checkpoint to world data
+            WorldData.data.SetCheckpoint(Vector3.Up, Vector3.Forward, Vector3.Up, Vector3.Forward);
+            WorldData.data.SaveData();
+        }
     }
 }
