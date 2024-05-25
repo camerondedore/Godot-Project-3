@@ -2275,7 +2275,7 @@ transform = Transform3D(-1.6502, 0, -0.269964, 0, 1.67213, 0, 0.269964, 0, -1.65
 transform = Transform3D(-1.38056, 0, -0.943447, 0, 1.67213, 0, 0.943447, 0, -1.38056, -33.606, 7.56896, -39.873)
 
 [node name="PropRoots4" parent="Map/Props/Roots" instance=ExtResource("50_rjbtb")]
-transform = Transform3D(1.66291, -0.062576, -0.163796, -0.00170855, 1.55616, -0.611859, 0.175334, 0.608652, 1.54752, -32.5353, -1.41942, -24.8365)
+transform = Transform3D(1.66291, -0.0228039, -0.173853, -0.00170855, 1.65574, -0.233524, 0.175334, 0.232414, 1.64659, -32.526, -1.10956, -24.9221)
 
 [node name="PropRoots5" parent="Map/Props/Roots" instance=ExtResource("50_rjbtb")]
 transform = Transform3D(1.65931, 0.00289604, 0.206678, 0.0369297, 1.64091, -0.319482, -0.203373, 0.321596, 1.62826, -27.5048, -0.671089, -23.9994)
@@ -5063,20 +5063,21 @@ playerCharacter = NodePath("../../../../PlayerCharacter")
 [node name="Target1" type="Node3D" parent="Map/CinematicTriggers/Control4" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.275805, 0.339831, -0.899137, 0, 0.935418, 0.353544, 0.961214, -0.0975092, 0.257993, 12.646, 4.63758, -9.77917)
 script = ExtResource("10_35g6o")
-waitTime = 3.5
+waitTime = 4.0
 moveTime = 1.5
 actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction5")]
 
 [node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control4" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.275805, 0.339831, -0.899137, 0, 0.935418, 0.353544, 0.961214, -0.0975092, 0.257993, 12.646, 4.63758, -9.77917)
 script = ExtResource("10_35g6o")
+waitTime = 2.0
 moveTime = 0.0
 actions = [NodePath("../../../Dialogue/Dialogue5"), NodePath("../../../CinematicCharacterActions/CinematicCharacterAction6"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes/PropBlackberryBushOld2")]
 
 [node name="CinematicCharacterActions" type="Node3D" parent="Map"]
 
 [node name="CinematicCharacterAction1" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.929242, 0, -0.369471, 0, 1, 0, 0.369471, 0, -0.929242, -28.5993, 9, -42.4749)
+transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter")
 
@@ -5134,7 +5135,7 @@ useAngularVelocity = false
 [node name="Dialogue1" type="Node" parent="Map/Dialogue"]
 script = ExtResource("20_7xbtb")
 dialogueText = "Hey!  Up here!"
-displayTime = 1.1
+displayTime = 2.1
 
 [node name="Dialogue2" type="Node" parent="Map/Dialogue"]
 script = ExtResource("20_7xbtb")

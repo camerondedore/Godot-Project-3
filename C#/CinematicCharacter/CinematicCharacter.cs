@@ -61,7 +61,7 @@ namespace CinematicCharacter
 
 
 
-        public void Move(double delta)
+        public void MoveToTargetNode(double delta)
         {
             // check that character is in moving state
             if(IsOnFloor())
@@ -103,6 +103,25 @@ namespace CinematicCharacter
 
 
 
+        public void LookWithTargetNode()
+        {
+            if(targetNode == null)
+            {
+                return;
+            }
+
+            // get direction to enenmy and flatten
+            var forward = GlobalPosition + -Basis.Z;
+            var lookDirection = GlobalPosition + -targetNode.Basis.Z;
+            lookDirection.Y = GlobalPosition.Y;
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+
+            // look at enemy
+            LookAt(lookTarget);
+        }
+
+
+
         public void SetTargetNode(Node3D newTarget, bool hideOnArrival)
         {
             if(Visible == false)
@@ -115,7 +134,14 @@ namespace CinematicCharacter
             targetNode = newTarget;
             lastAction = hideOnArrival;
 
-            stateMove.StartState();
+            if(machine.CurrentState != stateMove)
+            {
+                machine.SetState(stateMove);
+            }
+            else
+            {
+                stateMove.StartState();
+            }            
         }
 
 

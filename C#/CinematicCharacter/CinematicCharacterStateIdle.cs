@@ -12,7 +12,7 @@ namespace CinematicCharacter
 
         public override void RunState(double delta)
         {
-            base.RunState(delta);
+            blackboard.LookWithTargetNode();
         }
 
 
@@ -34,12 +34,6 @@ namespace CinematicCharacter
 
         public override State Transition()
         {
-            if(blackboard.targetNode != null)
-            {
-                // move
-                return blackboard.stateMove;
-            }
-
             return this;
         }
     }

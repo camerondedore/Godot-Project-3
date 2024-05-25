@@ -12,7 +12,7 @@ namespace CinematicCharacter
 
         public override void RunState(double delta)
         {
-            blackboard.Move(delta);
+            blackboard.MoveToTargetNode(delta);
         }
 
 
@@ -30,17 +30,14 @@ namespace CinematicCharacter
 
         public override void EndState()
         {
-            // look in direction of target node
-            blackboard.LookAt(blackboard.GlobalPosition + -blackboard.targetNode.Basis.Z);
 
-            blackboard.targetNode = null;
         }
 
 
 
         public override State Transition()
         {
-            if(blackboard.navAgent.DistanceToTarget() < 0.5f)
+            if(blackboard.navAgent.IsNavigationFinished() == true)
             {
                 if(blackboard.lastAction)
                 {
