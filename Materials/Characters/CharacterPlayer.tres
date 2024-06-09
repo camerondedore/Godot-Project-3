@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c58mm6p7rfrnt"]
+
+[ext_resource type="Texture2D" uid="uid://4gm0bbj8smvr" path="res://Textures/character-player-diffuse.png" id="1_wrpgr"]
+
+[resource]
+albedo_texture = ExtResource("1_wrpgr")
+metallic_specular = 0.0
+roughness = 0.95
+rim_enabled = true
+rim = 0.05
