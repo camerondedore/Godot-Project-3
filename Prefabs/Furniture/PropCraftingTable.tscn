@@ -47,7 +47,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.4, -0.37)
 shape = SubResource("BoxShape3D_fc7e7")
 
 [node name="PropMortarPestle" parent="." instance=ExtResource("4_ev8f2")]
-transform = Transform3D(0.720006, 0, -0.693968, 0, 1, 0, 0.693968, 0, 0.720006, 0, 1.00235, 0)
+transform = Transform3D(0.720006, 0, -0.693968, 0, 1, 0, 0.693968, 0, 0.720006, 0, 1, 0)
 
 [node name="FxCrafting" parent="PropMortarPestle" instance=ExtResource("5_8yyxa")]
 
