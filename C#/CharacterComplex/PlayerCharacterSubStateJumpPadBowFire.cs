@@ -17,7 +17,7 @@ namespace PlayerCharacterComplex
             // flatten camera forward
             lookDirection.Y = blackboard.GlobalPosition.Y;
 
-            blackboard.CharacterLook(lookDirection);
+            blackboard.CharacterLook(lookDirection, delta);
 
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;

@@ -20,7 +20,7 @@ namespace PlayerCharacterComplex
             // flatten camera forward
             lookDirection.Y = blackboard.GlobalPosition.Y;
 
-            blackboard.CharacterLook(lookDirection);
+            blackboard.CharacterLook(lookDirection, delta);
 
             // check draw
             if(EngineTime.timePassed < startTime + blackboard.drawTime - 0.07f)

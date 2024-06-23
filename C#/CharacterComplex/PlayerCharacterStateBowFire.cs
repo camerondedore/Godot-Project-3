@@ -32,7 +32,7 @@ namespace PlayerCharacterComplex
             // flatten camera forward
             lookDirection.Y = blackboard.GlobalPosition.Y;
 
-            blackboard.CharacterLook(lookDirection);
+            blackboard.CharacterLook(lookDirection, delta);
 
             // camera follow
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);

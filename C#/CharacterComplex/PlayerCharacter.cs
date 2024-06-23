@@ -57,6 +57,7 @@ namespace PlayerCharacterComplex
 		[Export]
 		public float speed = 5,
 			aimSpeed = 2,
+			lookSpeed = 5,
 			acceleration = 5,
 			jumpHeight = 2.1f,
 			ledgeGrabJumpHeight = 3,
@@ -130,16 +131,19 @@ namespace PlayerCharacterComplex
 
 
 
-		public void CharacterLook()
+		public void CharacterLook(double delta)
 		{
 			// lock look vector Y
-			var lookVector = Velocity;
+			var lookVector = Velocity.Normalized();
 			lookVector.Y = 0;
 
 			if(lookVector.LengthSquared() > 0.1f)// && -Basis.Z != GlobalPosition + lookVector)
 			{
+				var smoothLookTarget = -Basis.Z;
+				smoothLookTarget = smoothLookTarget.Slerp(lookVector, lookSpeed * ((float) delta));
+
 				// apply look
-				LookAt(GlobalPosition + lookVector);
+				LookAt(GlobalPosition + smoothLookTarget);
 			}    
 		}
 
@@ -156,11 +160,28 @@ namespace PlayerCharacterComplex
 			var lookVector = direction;
 			lookVector.Y = 0;
 
-			if(lookVector.LengthSquared() > 0.1f)// && -Basis.Z != GlobalPosition + lookVector)
+			// apply look
+			LookAt(GlobalPosition + lookVector);			 
+		}
+
+
+
+		public void CharacterLook(Vector3 direction, double delta)
+		{
+			if(direction.LengthSquared() < 0.1f)
 			{
-				// apply look
-				LookAt(GlobalPosition + lookVector);
-			}    
+				return;
+			}
+
+			// lock look vector Y
+			var lookVector = direction;
+			lookVector.Y = 0;
+
+			var smoothLookTarget = -Basis.Z;
+			smoothLookTarget = smoothLookTarget.Slerp(lookVector, lookSpeed * ((float) delta));
+
+			// apply look
+			LookAt(GlobalPosition + smoothLookTarget); 
 		}
 
 

@@ -16,7 +16,7 @@ namespace PlayerCharacterComplex
             if(PlayerInput.fire1 == 0 && blackboard.bow.isDrawn == false)
             {
                 // look in direction of movement
-                blackboard.CharacterLook();
+                blackboard.CharacterLook(delta);
             }
             
         }
