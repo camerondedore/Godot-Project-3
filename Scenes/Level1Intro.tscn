@@ -5258,8 +5258,7 @@ transform = Transform3D(-0.959874, 0, -0.280432, 0, 1, 0, 0.280432, 0, -0.959874
 [node name="CinematicCharacter2" parent="." instance=ExtResource("102_ak1tj")]
 transform = Transform3D(0.664513, 0, -0.747276, 0, 1, 0, 0.747276, 0, 0.664513, -46.9107, 9, -193.994)
 
-[node name="CinematicCharacter3" parent="." node_paths=PackedStringArray("animation") instance=ExtResource("102_ak1tj")]
+[node name="CinematicCharacter3" parent="." instance=ExtResource("102_ak1tj")]
 transform = Transform3D(-0.579438, 0, 0.815017, 0, 1, 0, -0.815017, 0, -0.579438, -29.6753, 9, -274.968)
-animation = NodePath("../CinematicCharacter/character-player/AnimationPlayer")
 
 [editable path="Map/SecretArea"]

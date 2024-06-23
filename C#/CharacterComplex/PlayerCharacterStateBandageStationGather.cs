@@ -51,7 +51,7 @@ namespace PlayerCharacterComplex
             blackboard.bow.CancelDraw();   
 
             // animation
-            blackboard.animStateMachinePlayback.Travel("character-craft");
+            blackboard.animStateMachinePlayback.Travel("character-craft-gather");
         }
 
     

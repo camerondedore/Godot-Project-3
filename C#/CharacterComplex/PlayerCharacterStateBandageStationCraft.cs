@@ -35,6 +35,9 @@ namespace PlayerCharacterComplex
 
             // start station fx
             blackboard.currentStation.StartCrafting(); 
+
+            // animation
+            blackboard.animStateMachinePlayback.Travel("character-craft");
         }
 
 
