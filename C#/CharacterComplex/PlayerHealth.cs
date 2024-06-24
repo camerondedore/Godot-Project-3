@@ -12,6 +12,9 @@ namespace PlayerCharacterComplex
         PlayerAudio playerAudio;
         [Export]
         PlayerFx playerFx;
+        [Export]
+        MaterialColorFlasher flashingMesh;
+
         Disconnector healDisconnector = new Disconnector();
 
         public bool invulnerable = false;
@@ -85,6 +88,12 @@ namespace PlayerCharacterComplex
 
             // apply damage
             hitPoints = Mathf.Clamp(hitPoints - damageAfterArmor, 0, PlayerStatistics.statistics.GetMaxHitPoints());
+
+            if(damageAfterArmor > 0)
+            {
+                // flash mesh
+                flashingMesh.Flash();
+            }
 
             // update statistics
             PlayerStatistics.statistics.UpdateHitPoints(hitPoints);
