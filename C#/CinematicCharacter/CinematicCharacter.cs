@@ -20,6 +20,8 @@ namespace CinematicCharacter
         [Export]
         public AnimationPlayer animation;
         [Export]
+        public AudioTools3d voiceAudio;
+        [Export]
 		public float speed = 5,
             acceleration = 10,
             lookSpeed = 0.3f;
@@ -156,6 +158,13 @@ namespace CinematicCharacter
             }
 
             // set state using state names
+        }
+
+
+
+        public void Speak(AudioStream voiceLine)
+        {
+            voiceAudio.PlaySound(voiceLine, 0);
         }
     }
 }

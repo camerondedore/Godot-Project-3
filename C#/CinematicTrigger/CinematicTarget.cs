@@ -15,7 +15,6 @@ namespace Cinematic
 
 
 
-
         public interface iCinematicAction
         {
             void TriggerCinematicAction();

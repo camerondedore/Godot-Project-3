@@ -1,19 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://lxjx0gdmoth"]
+[gd_scene load_steps=7 format=3 uid="uid://lxjx0gdmoth"]
 
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacter.cs" id="1_hq44n"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_5o773"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="3_3c0mn"]
 [ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="4_i62pl"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_5h3hc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mwce0"]
 radius = 0.3
 
-[node name="CinematicCharacter" type="CharacterBody3D" node_paths=PackedStringArray("navAgent", "animation")]
+[node name="CinematicCharacter" type="CharacterBody3D" node_paths=PackedStringArray("navAgent", "animation", "voiceAudio")]
 collision_layer = 2
 collision_mask = 19
 script = ExtResource("1_hq44n")
 navAgent = NodePath("NavigationAgent3D")
 animation = NodePath("character-player/AnimationPlayer")
+voiceAudio = NodePath("VoiceAudio")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_mwce0")
@@ -103,5 +105,10 @@ bones/70/rotation = Quaternion(-0.834259, 0.000643164, -0.525636, 0.166485)
 
 [node name="CharacterWaterArea" parent="." node_paths=PackedStringArray("characterFeetAudioNode") instance=ExtResource("4_i62pl")]
 characterFeetAudioNode = NodePath("../CharacterFootsteps")
+
+[node name="VoiceAudio" type="AudioStreamPlayer3D" parent="."]
+max_distance = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("5_5h3hc")
 
 [editable path="character-player"]
