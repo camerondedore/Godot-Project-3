@@ -19,7 +19,20 @@ namespace LevelChange
 
 
             if(timeIndex >= blackboard.transitionTime)
-            {                
+            {               
+                if(blackboard.saveOnEnd)
+                {
+                    // save world data so saved pickups are removed from world
+                    // pass blank checkpoint to world data
+                    WorldData.data.SetCheckpoint(Vector3.Up, -Vector3.Forward, Vector3.Up, -Vector3.Forward, blackboard.nextLevel);
+
+                    // save inventory, stats, and world
+                    PlayerInventory.inventory.SaveInventory();
+                    PlayerStatistics.statistics.SaveStatistics();
+                    WorldData.data.SaveData();
+                }
+
+
                 // load next scene
                 SceneLoader.LoadScene(blackboard.nextLevel, blackboard.GetTree());
             }

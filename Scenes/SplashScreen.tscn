@@ -9,7 +9,7 @@ script = ExtResource("1_tx77f")
 levelChange = NodePath("LevelChange")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_ukljx")]
-nextLevel = "res://Scenes/Level1Intro.tscn"
+saveOnEnd = false
 
 [node name="Container" type="Control" parent="."]
 layout_mode = 3

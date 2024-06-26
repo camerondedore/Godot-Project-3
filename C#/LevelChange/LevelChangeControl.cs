@@ -14,6 +14,8 @@ namespace LevelChange
         [Export]
         public string nextLevel;
         [Export]
+        public bool saveOnEnd = true;
+        [Export]
         public double transitionTime = 1;
         [Export]
         public ColorRect fadeRect;

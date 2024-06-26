@@ -117,6 +117,17 @@ public partial class WorldData : Node
 
 
 
+    public void SetCheckpoint(Vector3 checkpointPosition, Vector3 checkpointDirection, Vector3 cameraPosition, Vector3 cameraDirection, string sceneName)
+    {
+        data.currentData.SavedPosition = $"{checkpointPosition.X},{checkpointPosition.Y},{checkpointPosition.Z}";
+        data.currentData.SavedDirection = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
+        data.currentData.SavedCameraPosition = $"{cameraPosition.X},{cameraPosition.Y},{cameraPosition.Z}";
+        data.currentData.SavedCameraDirection = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
+        data.currentData.SavedScene = sceneName;
+    }
+
+
+
     public Vector3 GetSavedCheckpointPosition()
     {
         var splitString = currentData.SavedPosition.Split(',');
