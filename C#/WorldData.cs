@@ -112,7 +112,7 @@ public partial class WorldData : Node
         data.currentData.SavedDirection = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
         data.currentData.SavedCameraPosition = $"{cameraPosition.X},{cameraPosition.Y},{cameraPosition.Z}";
         data.currentData.SavedCameraDirection = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
-        data.currentData.SavedScene = GetTree().CurrentScene.Name;
+        data.currentData.SavedScene = $"res://Scenes/{GetTree().CurrentScene.Name}.tscn";
     }
 
 
@@ -124,6 +124,13 @@ public partial class WorldData : Node
         data.currentData.SavedCameraPosition = $"{cameraPosition.X},{cameraPosition.Y},{cameraPosition.Z}";
         data.currentData.SavedCameraDirection = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
         data.currentData.SavedScene = sceneName;
+    }
+
+
+
+    public string GetSavedScene()
+    {
+        return data.currentData.SavedScene;
     }
 
 
