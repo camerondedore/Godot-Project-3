@@ -1226,10 +1226,7 @@ transform = Transform3D(-0.178714, -0.0132096, -0.892209, -0.0375403, 0.909233, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98253, 0.5, -3.02315)
 
 [node name="PropCraftingTable" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Furniture" instance=ExtResource("51_0e1a5")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -9.85031, 0.4, -9.51404)
-
-[node name="PropCraftingTable2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Furniture" instance=ExtResource("51_0e1a5")]
-transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, 32.4932, 6.25, -32.704)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -9.85, 0, -9.514)
 
 [node name="Fence" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
@@ -1449,7 +1446,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9118, 1.07936, 5.61945)
 lock_rotation = false
 
 [node name="PickupDockLeaf" parent="Map/Pickups" instance=ExtResource("42_1ywjb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2533, 1.07937, -6.7154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2533, 1, -6.7154)
 lock_rotation = false
 
 [node name="PickupNettleBroth" parent="Map/Pickups" instance=ExtResource("37_yfk8b")]
@@ -1457,7 +1454,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25839, 1, -4.18748)
 lock_rotation = false
 
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("43_r6irn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1.07936, -9.80821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1, -9.80821)
 lock_rotation = false
 
 [node name="PickupArrowsBlade" parent="Map/Pickups" instance=ExtResource("100_j7qdo")]

@@ -16,6 +16,11 @@ namespace LevelChange
         [Export]
         public bool saveOnEnd = true;
         [Export]
+        public Vector3 nextCheckpointPosition = Vector3.Up,
+            nextCheckpointDirection = -Vector3.Forward,
+            nextCameraPosition = Vector3.Up,
+            nextCameraDirection = -Vector3.Forward;
+        [Export]
         public double transitionTime = 1;
         [Export]
         public ColorRect fadeRect;
