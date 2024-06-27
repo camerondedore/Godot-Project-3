@@ -9,6 +9,7 @@ script = ExtResource("1_tx77f")
 levelChange = NodePath("LevelChange")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_ukljx")]
+nextLevel = "Level1Intro"
 saveOnEnd = false
 
 [node name="Container" type="Control" parent="."]

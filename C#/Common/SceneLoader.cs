@@ -10,7 +10,7 @@ public partial class SceneLoader : Node
 
     public static void LoadScene(string newLevel, SceneTree tree)
     {
-        tree.ChangeSceneToFile(newLevel);
+        tree.ChangeSceneToFile($"res://Scenes/{newLevel}.tscn");
     }
 
 

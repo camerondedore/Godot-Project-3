@@ -139,7 +139,7 @@ environment = ExtResource("1_dhwej")
 transform = Transform3D(0.936584, -0.178938, 0.301313, 0, 0.859813, 0.510608, -0.35044, -0.478228, 0.805288, 4.26818, 7.63186, 12.2004)
 
 [node name="LevelChange" parent="." instance=ExtResource("3_sp7be")]
-nextLevel = "res://Scenes/TreeTest.tscn"
+nextLevel = "TreeTest"
 nextCheckpointPosition = Vector3(21, 11, -6.5)
 nextCheckpointDirection = Vector3(-1, 0, 1)
 nextCameraPosition = Vector3(13.7, 16, -8.8)
