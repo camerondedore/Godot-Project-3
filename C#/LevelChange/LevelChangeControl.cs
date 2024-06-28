@@ -14,7 +14,8 @@ namespace LevelChange
         [Export]
         public string nextLevel;
         [Export]
-        public bool saveOnEnd = true;
+        public bool saveOnEnd = true,
+            loadSavedLevel = false;
         [Export]
         public Vector3 nextCheckpointPosition = Vector3.Up,
             nextCheckpointDirection = -Vector3.Forward,

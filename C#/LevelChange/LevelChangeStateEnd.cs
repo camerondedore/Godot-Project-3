@@ -20,7 +20,7 @@ namespace LevelChange
 
             if(timeIndex >= blackboard.transitionTime)
             {               
-                if(blackboard.saveOnEnd)
+                if(blackboard.saveOnEnd == true)
                 {
                     // save world data so saved pickups are removed from world
                     // pass blank checkpoint to world data
@@ -32,9 +32,16 @@ namespace LevelChange
                     WorldData.data.SaveData();
                 }
 
-
-                // load next scene
-                SceneLoader.LoadScene(blackboard.nextLevel, blackboard.GetTree());
+                if(blackboard.loadSavedLevel == true && WorldData.data.currentData.SavedScene != "")
+                {
+                    // load saved scene
+                    SceneLoader.LoadSavedScene(blackboard.GetTree());
+                }
+                else
+                {
+                    // load next scene
+                    SceneLoader.LoadScene(blackboard.nextLevel, blackboard.GetTree());
+                }
             }
 
             if(blackboard.loadingLabel.Visible == false && timeIndex >= blackboard.transitionTime * 0.9f)
