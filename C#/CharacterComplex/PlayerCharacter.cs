@@ -133,11 +133,17 @@ namespace PlayerCharacterComplex
 
 		public void CharacterLook(double delta)
 		{
-			// lock look vector Y
-			var lookVector = Velocity.Normalized();
-			lookVector.Y = 0;
+			if(Velocity.LengthSquared() < 0.1f)
+			{
+				return;
+			}
 
-			if(lookVector.LengthSquared() > 0.1f)// && -Basis.Z != GlobalPosition + lookVector)
+			// lock look vector Y
+			var lookVector = Velocity;
+			lookVector.Y = 0;
+			lookVector = lookVector.Normalized();
+
+			if(lookVector.LengthSquared() > 0.1f)
 			{
 				var smoothLookTarget = -Basis.Z;
 				smoothLookTarget = smoothLookTarget.Slerp(lookVector, lookSpeed * ((float) delta));
@@ -151,37 +157,33 @@ namespace PlayerCharacterComplex
 
 		public void CharacterLook(Vector3 direction)
 		{
-			if(direction.LengthSquared() < 0.1f)
-			{
-				return;
-			}
-
 			// lock look vector Y
 			var lookVector = direction;
 			lookVector.Y = 0;
 
-			// apply look
-			LookAt(GlobalPosition + lookVector);			 
+			if(lookVector.LengthSquared() > 0.1f)
+			{
+				// apply look
+				LookAt(GlobalPosition + lookVector);	
+			}		 
 		}
 
 
 
 		public void CharacterLook(Vector3 direction, double delta)
 		{
-			if(direction.LengthSquared() < 0.1f)
-			{
-				return;
-			}
-
 			// lock look vector Y
 			var lookVector = direction;
 			lookVector.Y = 0;
 
-			var smoothLookTarget = -Basis.Z;
-			smoothLookTarget = smoothLookTarget.Slerp(lookVector, lookSpeed * ((float) delta));
+			if(lookVector.LengthSquared() > 0.1f)
+			{
+				var smoothLookTarget = -Basis.Z;
+				smoothLookTarget = smoothLookTarget.Slerp(lookVector, lookSpeed * ((float) delta));
 
-			// apply look
-			LookAt(GlobalPosition + smoothLookTarget); 
+				// apply look
+				LookAt(GlobalPosition + smoothLookTarget); 
+			}
 		}
 
 
