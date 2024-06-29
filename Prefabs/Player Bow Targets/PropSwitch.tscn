@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://l5npymrpo4s1"]
+
+[ext_resource type="ArrayMesh" uid="uid://cyeiq1nlx07f3" path="res://Models/prop-switch.res" id="1_vxlit"]
+[ext_resource type="Material" uid="uid://dcedtu2o17bkm" path="res://Materials/Props/prop-switch.tres" id="2_uvtvs"]
+[ext_resource type="Texture2D" uid="uid://dtya4mencok0k" path="res://Textures/fx-switch-shadow.png" id="3_ole85"]
+
+[node name="PropSwitch" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_vxlit")
+surface_material_override/0 = ExtResource("2_uvtvs")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.74228e-09, 0.2)
+size = Vector3(0.75, 0.2, 0.75)
+texture_albedo = ExtResource("3_ole85")
+cull_mask = 1
