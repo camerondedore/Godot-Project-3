@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=141 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -125,6 +125,7 @@
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTarget.cs" id="112_ejmin"]
 [ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerArea.cs" id="118_ykelb"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="121_qh4xc"]
+[ext_resource type="PackedScene" uid="uid://binqhfxpr0vcx" path="res://Prefabs/Small Items/PropBoard3Rigid.tscn" id="122_175ji"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="123_ae5e8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_q1ywk"]
@@ -1554,8 +1555,27 @@ waitTime = 0.5
 moveTime = 4.0
 actions = []
 
-[node name="PropSwitch" parent="Map" instance=ExtResource("121_qh4xc")]
+[node name="PropSwitch" parent="Map" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("121_qh4xc")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 2, -14.1)
+linkedObjects = [NodePath("../PropBoard1Rigid"), NodePath("../PropBoard2Rigid"), NodePath("../PropBoard3Rigid")]
+
+[node name="PropBoard1Rigid" parent="Map" instance=ExtResource("97_jtuqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.01076, 2.872, -14.2333)
+velocity = Vector3(0, 1, 4)
+angularVelocity = Vector3(0.5, 0.5, 1)
+velocitySpread = 1.0
+
+[node name="PropBoard2Rigid" parent="Map" instance=ExtResource("98_qhl4s")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.28878, 1.51944, -14.2333)
+velocity = Vector3(0, 1, 4)
+angularVelocity = Vector3(0.5, 0.5, 1)
+velocitySpread = 1.0
+
+[node name="PropBoard3Rigid" parent="Map" instance=ExtResource("122_175ji")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.70796, 1.52527, -14.2333)
+velocity = Vector3(0, 1, 4)
+angularVelocity = Vector3(0.5, 0.5, 1)
+velocitySpread = 1.0
 
 [node name="CheckPoint" parent="Map" node_paths=PackedStringArray("saveTarget", "cameraTarget") instance=ExtResource("55_bnt5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82699, 9, -17.3715)

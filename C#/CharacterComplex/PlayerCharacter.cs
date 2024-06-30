@@ -160,6 +160,7 @@ namespace PlayerCharacterComplex
 			// lock look vector Y
 			var lookVector = direction;
 			lookVector.Y = 0;
+			lookVector = lookVector.Normalized();
 
 			if(lookVector.LengthSquared() > 0.1f)
 			{
@@ -175,6 +176,7 @@ namespace PlayerCharacterComplex
 			// lock look vector Y
 			var lookVector = direction;
 			lookVector.Y = 0;
+			lookVector = lookVector.Normalized();
 
 			if(lookVector.LengthSquared() > 0.1f)
 			{
