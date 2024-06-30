@@ -19,6 +19,10 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
     Node[] linkedObjects;
     [Export]
     GpuParticles3D hitFx;
+    [Export]
+    AudioTools3d audio;
+    [Export]
+    AudioStream hitSound;
 
 
 
@@ -60,6 +64,9 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
 
         // play fx
         hitFx.Restart();
+
+        // audio
+        audio.PlaySound(hitSound, 0.1f);
 
         if(linkedObjects.Length > 0)
         {
