@@ -17,6 +17,8 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
     CollisionShape3D switchCollider;
     [Export]
     Node[] linkedObjects;
+    [Export]
+    GpuParticles3D hitFx;
 
 
 
@@ -55,6 +57,9 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
 
         // disable collider
         switchCollider.Disabled = true;
+
+        // play fx
+        hitFx.Restart();
 
         if(linkedObjects.Length > 0)
         {
