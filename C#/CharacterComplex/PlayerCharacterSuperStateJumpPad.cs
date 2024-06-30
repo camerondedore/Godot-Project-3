@@ -75,6 +75,8 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             //base.EndState();
+
+            blackboard.backBone.OverridePose = false;
         }
 
 
