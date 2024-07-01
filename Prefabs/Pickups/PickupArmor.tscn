@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
-[ext_resource type="Material" uid="uid://g12rcw7pf2kw" path="res://Materials/PickupArmor.tres" id="5_ukmsv"]
+[ext_resource type="Material" uid="uid://g12rcw7pf2kw" path="res://Materials/Pickups/PickupArmor.tres" id="5_ukmsv"]
 [ext_resource type="PackedScene" uid="uid://dd74p0os7qlsq" path="res://Prefabs/FX/FxSparkleLarge.tscn" id="6_m8ucj"]
 [ext_resource type="PackedScene" uid="uid://ogik1mkaed2l" path="res://Prefabs/FX/FxItemHighlightLarge.tscn" id="7_k68di"]
 
@@ -30,12 +30,12 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
-gravity = Vector3(0, -0.04, 0)
 angular_velocity_min = -40.0
 angular_velocity_max = 40.0
-angle_max = 360.0
+gravity = Vector3(0, -0.04, 0)
 scale_min = 0.2
 scale_max = 0.3
 scale_curve = SubResource("CurveTexture_b5u7h")
@@ -62,12 +62,12 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.5
 emission_ring_inner_radius = 0.5
+angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
-gravity = Vector3(0, -0.04, 0)
 angular_velocity_min = -40.0
 angular_velocity_max = 40.0
-angle_max = 360.0
+gravity = Vector3(0, -0.04, 0)
 scale_min = 0.2
 scale_max = 0.3
 scale_curve = SubResource("CurveTexture_nmt57")

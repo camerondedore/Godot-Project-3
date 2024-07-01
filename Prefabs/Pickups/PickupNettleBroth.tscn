@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://C#/Pickups/NettleBrothPickup.cs" id="1_dnlt2"]
 [ext_resource type="ArrayMesh" uid="uid://ct6j7liumhcyu" path="res://Models/pickup-nettle-broth.res" id="1_n10h8"]
 [ext_resource type="PackedScene" uid="uid://cekrwcn8lm4u0" path="res://Prefabs/FX/FxNettleBrothBowl.tscn" id="3_0ki4n"]
-[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/PickupNettleBroth.tres" id="4_m360d"]
+[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/Pickups/PickupNettleBroth.tres" id="4_m360d"]
 [ext_resource type="PackedScene" uid="uid://c4jis38v0hln5" path="res://Prefabs/FX/FxSteam.tscn" id="4_t326c"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="6_r3c4u"]
 
@@ -29,12 +29,12 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
-gravity = Vector3(0, -0.04, 0)
 angular_velocity_min = -40.0
 angular_velocity_max = 40.0
-angle_max = 360.0
+gravity = Vector3(0, -0.04, 0)
 scale_min = 0.2
 scale_max = 0.3
 scale_curve = SubResource("CurveTexture_b5u7h")

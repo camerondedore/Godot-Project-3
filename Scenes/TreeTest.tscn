@@ -1396,6 +1396,7 @@ velocitySpread = 0.5
 
 [node name="PropBoard2Rigid" parent="Map/OccluderInstance3D/NavigationRegion3D/Spiderwebs" instance=ExtResource("98_qhl4s")]
 transform = Transform3D(0.998382, -0.056867, 0, 0.056867, 0.998382, 0, 0, 0, 1, 0.949805, 9.44403, -24.0832)
+mass = 1.0
 velocity = Vector3(0, 0.25, -1.5)
 velocitySpread = 0.5
 
@@ -1431,58 +1432,142 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 20)
 
 [node name="PickupArmor" parent="Map/Pickups" instance=ExtResource("73_euar7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 1, 2)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupCider" parent="Map/Pickups" instance=ExtResource("75_8w06i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5225, 0.999998, 8.11125)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupCandiedNut" parent="Map/Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00942, 1.07936, 6.93603)
-lock_rotation = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupCandiedNut2" parent="Map/Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80529, 1.07936, 7.95228)
-lock_rotation = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupCandiedNut3" parent="Map/Pickups" instance=ExtResource("41_oibar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9118, 1.07936, 5.61945)
-lock_rotation = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupDockLeaf" parent="Map/Pickups" instance=ExtResource("42_1ywjb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2533, 1, -6.7154)
-lock_rotation = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupNettleBroth" parent="Map/Pickups" instance=ExtResource("37_yfk8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25839, 1, -4.18748)
-lock_rotation = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("43_r6irn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.21779, 1, -9.80821)
-lock_rotation = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupArrowsBlade" parent="Map/Pickups" instance=ExtResource("100_j7qdo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1, -11.9)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupArrowsWeighted" parent="Map/Pickups" instance=ExtResource("100_vfj1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60712, 0.995929, -11.9086)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupArrowsPick" parent="Map/Pickups" instance=ExtResource("102_qo6ym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 1, -11.9)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupArrowsFire" parent="Map/Pickups" instance=ExtResource("103_3dgt1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1, 1, -11.9)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupArrowsNet" parent="Map/Pickups" instance=ExtResource("104_6d2ca")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 1, -11.9)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupCandiedNutAcorn" parent="Map/Pickups" instance=ExtResource("105_mju4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 11)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 
 [node name="PickupCandiedNutAcorn2" parent="Map/Pickups" node_paths=PackedStringArray("meshInstance") instance=ExtResource("105_mju4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 12)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 meshInstance = NodePath("../PickupCandiedNutAcorn/MeshInstance3D")
 
 [node name="PickupCandiedNutAcorn3" parent="Map/Pickups" node_paths=PackedStringArray("meshInstance") instance=ExtResource("105_mju4c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 12)
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+lock_rotation = true
+max_contacts_reported = 0
+contact_monitor = false
 meshInstance = NodePath("../PickupCandiedNutAcorn/MeshInstance3D")
 
 [node name="JumpNets" type="Node3D" parent="Map"]
@@ -1567,12 +1652,14 @@ velocitySpread = 1.0
 
 [node name="PropBoard2Rigid" parent="Map" instance=ExtResource("98_qhl4s")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.28878, 1.77278, -13.9941)
+mass = 1.0
 velocity = Vector3(0, 1, 4)
 angularVelocity = Vector3(0.5, 0.5, 1)
 velocitySpread = 1.0
 
 [node name="PropBoard3Rigid" parent="Map" instance=ExtResource("122_175ji")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 4.70796, 1.77861, -13.9941)
+mass = 1.0
 velocity = Vector3(0, 1, 4)
 angularVelocity = Vector3(0.5, 0.5, 1)
 velocitySpread = 1.0

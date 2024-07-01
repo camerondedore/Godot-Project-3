@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://kjtjnroe2otb"]
+[gd_scene load_steps=12 format=3 uid="uid://kjtjnroe2otb"]
 
 [ext_resource type="PackedScene" uid="uid://4pdqs3fimvwl" path="res://Prefabs/FX/FxItemHighlight.tscn" id="2_8xkpg"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="2_imooj"]
+[ext_resource type="Script" path="res://C#/Common/AudioToolsRigidBody.cs" id="3_ey532"]
+[ext_resource type="AudioStream" uid="uid://b0b68x54gijsn" path="res://Audio/pickup-rigidbody-collision.wav" id="4_575bg"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_iax83"]
 radius = 0.15
@@ -44,9 +46,13 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="Pickup" type="RigidBody3D"]
 collision_layer = 4
-lock_rotation = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 freeze = true
 freeze_mode = 1
+max_contacts_reported = 1
+contact_monitor = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
@@ -60,3 +66,11 @@ shape = SubResource("SphereShape3D_inywu")
 process_material = SubResource("ParticleProcessMaterial_1sp22")
 
 [node name="FxItemHighlight" parent="." instance=ExtResource("2_8xkpg")]
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("3_ey532")
+hitSounds = Array[AudioStream]([ExtResource("4_575bg")])
+minimumSpeedSqr = 0.1
