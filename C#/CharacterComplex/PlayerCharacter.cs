@@ -35,7 +35,8 @@ namespace PlayerCharacterComplex
 		[Export]
         public AnimationTree animation;
 		[Export]
-		public BoneAttachment3D backBone;
+		public BoneAttachment3D backBone,
+			hipBone;
 		[Export]
 		public PlayerCharacterAudio characterAudio;
 		[Export]

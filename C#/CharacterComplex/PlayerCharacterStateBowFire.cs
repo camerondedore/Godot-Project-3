@@ -39,6 +39,7 @@ namespace PlayerCharacterComplex
 
             // back bone pose
             blackboard.backBone.GlobalRotation = blackboard.cameraController.GlobalRotation;
+            blackboard.backBone.GlobalPosition = blackboard.hipBone.GlobalPosition;
 
             var localVelocity = blackboard.GetLocalVelocityNormalized(true);
             var animationBlendValue = new Vector2();
