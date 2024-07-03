@@ -52,6 +52,9 @@ namespace PlayerCharacterComplex
 
             // animation
             blackboard.animStateMachinePlayback.Travel("character-craft-gather");
+
+            // hide bow
+            blackboard.bowMesh.Visible = false;
         }
 
     

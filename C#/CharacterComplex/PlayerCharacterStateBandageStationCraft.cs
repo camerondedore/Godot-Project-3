@@ -45,7 +45,10 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             // stop station fx
-            blackboard.currentStation.StopCrafting(); 
+            blackboard.currentStation.StopCrafting();
+
+            // show bow
+            blackboard.bowMesh.Visible = true;
         }
 
 

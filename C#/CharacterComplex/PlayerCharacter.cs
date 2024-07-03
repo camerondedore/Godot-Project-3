@@ -56,6 +56,8 @@ namespace PlayerCharacterComplex
 		[Export]
 		public Vector3 ledgeGrabOffset;
 		[Export]
+    	public MeshInstance3D bowMesh;
+		[Export]
 		public float speed = 5,
 			aimSpeed = 2,
 			lookSpeed = 5,
@@ -241,14 +243,14 @@ namespace PlayerCharacterComplex
 
 
 
-		public void BandageStationActivated(BandageStation station)
+		public bool BandageStationActivated(BandageStation station)
 		{
 			// check for bandage components
 			var hasComponents = PlayerInventory.inventory.CheckInventoryForBandageComponents();
 
 			if(!hasComponents)
 			{
-				return;
+				return false;
 			}
 
 			// set station for player to use
@@ -259,6 +261,8 @@ namespace PlayerCharacterComplex
 
 			// go to bandage station state
 			machine.SetState(stateBandageStationGather);
+
+			return true;
 		}
 
 

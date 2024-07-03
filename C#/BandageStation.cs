@@ -10,6 +10,8 @@ public partial class BandageStation : Area3D
     GpuParticles3D craftingFx;
     [Export]
     AudioStreamPlayer3D audio;
+    [Export]
+    MeshInstance3D bowMesh;
 
 
 
@@ -29,7 +31,13 @@ public partial class BandageStation : Area3D
             var bandageStationUser = body as IBandageStationUser;
             
             // activate bandage station behaviour on body
-            bandageStationUser.BandageStationActivated(this);
+            var stationActivated = bandageStationUser.BandageStationActivated(this);
+
+            if(stationActivated)
+            {
+                // show bow
+                bowMesh.Visible = true;
+            }
         }
     }
 
@@ -47,6 +55,9 @@ public partial class BandageStation : Area3D
     {
         craftingFx.Emitting = false;
         audio.Stop();
+
+        // hide bow
+        bowMesh.Visible = false;
     }
 }
 
@@ -54,5 +65,5 @@ public partial class BandageStation : Area3D
 
 public interface IBandageStationUser
 {
-    void BandageStationActivated(BandageStation station);
+    bool BandageStationActivated(BandageStation station);
 }

@@ -1,13 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfyoe1tbi03jj"]
+[gd_scene load_steps=15 format=3 uid="uid://bfyoe1tbi03jj"]
 
 [ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_y5gvo"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_j5u0j"]
 [ext_resource type="Script" path="res://C#/BandageStation.cs" id="3_erttl"]
+[ext_resource type="ArrayMesh" uid="uid://kyvajoparlu5" path="res://Models/prop-crafting-table-bow.res" id="4_5gpt5"]
 [ext_resource type="PackedScene" uid="uid://cennawrc312vk" path="res://Prefabs/Small Items/PropMortarPestle.tscn" id="4_ev8f2"]
 [ext_resource type="PackedScene" uid="uid://bn1ffv7hxh6lu" path="res://Prefabs/FX/FxCrafting.tscn" id="5_8yyxa"]
 [ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="5_188yf"]
+[ext_resource type="Material" uid="uid://6uq0jae4r4tr" path="res://Materials/Characters/CharacterPlayerGear.tres" id="5_kwka8"]
 [ext_resource type="Texture2D" uid="uid://dweu0on7f0seq" path="res://Textures/fx-herb-mess.png" id="6_7lknm"]
 [ext_resource type="AudioStream" uid="uid://x1j5a5wtihfd" path="res://Audio/crafting-with-leaves.wav" id="6_jbibn"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="6_jgti4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvtkp"]
 size = Vector3(1.6, 0.1, 0.9)
@@ -19,12 +22,21 @@ size = Vector3(0.11, 0.8, 0.11)
 
 [node name="PropCraftingTable" type="StaticBody3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="TableMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 gi_mode = 2
 mesh = ExtResource("1_y5gvo")
 surface_material_override/0 = ExtResource("2_j5u0j")
 surface_material_override/1 = ExtResource("5_188yf")
+
+[node name="BowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.66, 0.93, -0.11)
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_5gpt5")
+surface_material_override/0 = ExtResource("5_kwka8")
+surface_material_override/1 = ExtResource("6_jgti4")
 
 [node name="CollisionShapeTop" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
@@ -57,7 +69,7 @@ unit_size = 2.0
 max_distance = 20.0
 attenuation_filter_cutoff_hz = 20500.0
 
-[node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget", "craftingFx", "audio")]
+[node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget", "craftingFx", "audio", "bowMesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.6)
 collision_layer = 4
 collision_mask = 2
@@ -66,6 +78,7 @@ script = ExtResource("3_erttl")
 userTarget = NodePath("CharacterTarget")
 craftingFx = NodePath("../PropMortarPestle/FxCrafting")
 audio = NodePath("../PropMortarPestle/CraftingAudio")
+bowMesh = NodePath("../BowMesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CraftingArea"]
 shape = SubResource("SphereShape3D_75aye")
