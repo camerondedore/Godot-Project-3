@@ -142,17 +142,43 @@ namespace CinematicCharacter
                 ProcessMode = ProcessModeEnum.Inherit;
             }
 
+            // check target against old target
+            var targetTransformChanged = true;
+            
+            if(targetNode != null)
+            {
+                targetTransformChanged = (targetNode.GlobalPosition - newTarget.GlobalPosition).LengthSquared() > 0.01f;
+            }
+
             targetNode = newTarget;
             lastAction = hideOnArrival;
             nextAnimationName = nextAnimation;
 
-            if(machine.CurrentState != stateMove)
+            if(targetTransformChanged == true)
             {
-                machine.SetState(stateMove);
+                if(machine.CurrentState != stateMove)
+                {
+                    // change to move state
+                    machine.SetState(stateMove);
+                }
+                else
+                {
+                    // restart move state
+                    stateMove.StartState();
+                }
             }
             else
             {
-                stateMove.StartState();
+                if(machine.CurrentState != stateIdle)
+                {
+                    // change to idle state
+                    machine.SetState(stateIdle);
+                }
+                else
+                {
+                    // restart idle state
+                    machine.CurrentState.StartState();
+                }
             }            
         }
 

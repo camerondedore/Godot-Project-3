@@ -87,7 +87,6 @@
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="79_u8w11"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="80_ponqo"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="82_aaxjn"]
-[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="83_qpmls"]
 [ext_resource type="Script" path="res://C#/LevelRandomAudio.cs" id="83_wddan"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="84_4d8c4"]
 [ext_resource type="AudioStream" uid="uid://cu35fufy5csmp" path="res://Audio/ambience-bird-2.wav" id="85_wp178"]
@@ -105,6 +104,7 @@
 [ext_resource type="AudioStream" uid="uid://chlahuiimd74c" path="res://Audio/Dialogue/npc-1-dialogue-l1-4.wav" id="99_3ygxe"]
 [ext_resource type="AudioStream" uid="uid://ddn4rcvb5hixy" path="res://Audio/Dialogue/npc-1-dialogue-l1-5.wav" id="100_r3tse"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacter.tscn" id="102_ak1tj"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawnerDelayed.cs" id="102_kidme"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="103_oo74b"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ti3m2"]
@@ -148,7 +148,7 @@ nextCameraDirection = Vector3(1, -0.7, 0.3)
 [node name="DialogueUi" parent="." instance=ExtResource("3_28myn")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_8opqg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.4858, 0.999996, -55.721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -5068,7 +5068,7 @@ actions = []
 [node name="Control2" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, -0.5, -26.9)
 script = ExtResource("9_t8334")
-targets = [NodePath("Target1"), NodePath("Target2"), NodePath("Target3"), NodePath("Target4"), NodePath("Target5"), NodePath("Target6")]
+targets = [NodePath("Target1"), NodePath("Target2"), NodePath("Target3"), NodePath("Target4"), NodePath("Target5"), NodePath("Target6"), NodePath("Target7")]
 saveToWorldData = false
 startDelay = 2.0
 
@@ -5080,46 +5080,53 @@ watchedNodes = [NodePath("../../../../Enemies/MobBlackRat"), NodePath("../../../
 playerCharacter = NodePath("../../../../PlayerCharacter")
 
 [node name="Target1" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
-transform = Transform3D(0.814093, 0.210478, 0.54125, 0, 0.932009, -0.362434, -0.580735, 0.295055, 0.758743, -2.38091, 7.00688, -10.1332)
+transform = Transform3D(0.806573, 0.217094, 0.549828, 0, 0.930122, -0.367249, -0.591136, 0.296213, 0.750212, -2.88906, 7.44123, -11.2883)
 script = ExtResource("10_35g6o")
 waitTime = 2.0
 moveTime = 1.0
 actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction1"), NodePath("../../../CinematicCharacterAudioActions/AudioAction1")]
 
 [node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
-transform = Transform3D(0.814093, 0.210478, 0.54125, 0, 0.932009, -0.362434, -0.580735, 0.295055, 0.758743, -2.38091, 7.00688, -10.1332)
+transform = Transform3D(0.806573, 0.217094, 0.549828, 0, 0.930122, -0.367249, -0.591136, 0.296213, 0.750212, -2.88906, 7.44123, -11.2883)
 script = ExtResource("10_35g6o")
 waitTime = 4.0
 moveTime = 0.0
 actions = [NodePath("../../../CinematicCharacterAudioActions/AudioAction2")]
 
 [node name="Target3" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
-transform = Transform3D(0.814093, 0.210478, 0.54125, 0, 0.932009, -0.362434, -0.580735, 0.295055, 0.758743, -2.38091, 7.00688, -10.1332)
+transform = Transform3D(0.806573, 0.217094, 0.549828, 0, 0.930122, -0.367249, -0.591136, 0.296213, 0.750212, -2.88906, 7.44123, -11.2883)
 script = ExtResource("10_35g6o")
 waitTime = 4.0
 moveTime = 0.0
 actions = [NodePath("../../../CinematicCharacterAudioActions/AudioAction3")]
 
 [node name="Target4" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
-transform = Transform3D(0.814093, 0.210478, 0.54125, 0, 0.932009, -0.362434, -0.580735, 0.295055, 0.758743, -2.38091, 7.00688, -10.1332)
+transform = Transform3D(0.806573, 0.217094, 0.549828, 0, 0.930122, -0.367249, -0.591136, 0.296213, 0.750212, -2.88906, 7.44123, -11.2883)
 script = ExtResource("10_35g6o")
 waitTime = 0.1
 moveTime = 0.0
-actions = [NodePath("../../../Spawns/NettleBrothSpawn1"), NodePath("../../../CinematicCharacterAudioActions/AudioAction4")]
+actions = [NodePath("../../../Spawns/NettleBrothSpawn1"), NodePath("../../../CinematicCharacterAudioActions/AudioAction4"), NodePath("../../../CinematicCharacterActions/CinematicCharacterAction2")]
 
 [node name="Target5" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.700913, -0.326074, 0.634348, 0, 0.88938, 0.457168, -0.713247, -0.320435, 0.623378, -2.28841, -1.16134, -4.14057)
 script = ExtResource("10_35g6o")
-waitTime = 3.1
-moveTime = 2.0
-actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction2")]
+waitTime = 2.15
+moveTime = 2.75
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction3")]
 
 [node name="Target6" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.292365, -0.246777, 0.923918, 0, 0.966131, 0.258052, -0.956307, 0.0754454, -0.282463, -10.9431, -0.791216, -2.84619)
 script = ExtResource("10_35g6o")
-waitTime = 2.5
+waitTime = 1.75
 moveTime = 1.0
-actions = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes/PropBlackberryBushOld"), NodePath("../../../Spawns/Spawn1")]
+actions = [NodePath("../../../Spawns/Spawn1")]
+
+[node name="Target7" type="Node3D" parent="Map/CinematicTriggers/Control2" node_paths=PackedStringArray("actions")]
+transform = Transform3D(-0.292365, -0.246777, 0.923918, 0, 0.966131, 0.258052, -0.956307, 0.0754454, -0.282463, -10.9431, -0.791216, -2.84619)
+script = ExtResource("10_35g6o")
+waitTime = 1.0
+moveTime = 0.0
+actions = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes/PropBlackberryBushOld")]
 
 [node name="Control3" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
 transform = Transform3D(0.95031, 0, -0.311307, 0, 1, 0, 0.311307, 0, 0.95031, 19.3971, 3.21612, -183.544)
@@ -5141,19 +5148,20 @@ transform = Transform3D(-0.167649, -0.05081, 0.984534, 0, 0.99867, 0.0515395, -0
 script = ExtResource("10_35g6o")
 waitTime = 0.0
 moveTime = 1.5
-actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction3")]
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction4")]
 
 [node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control3" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.56849, -0.236468, 0.78797, 0, 0.957799, 0.287434, -0.822687, 0.163403, -0.5445, -56.8876, 7.79695, -2.56361)
 script = ExtResource("10_35g6o")
-waitTime = 1.25
-actions = []
+waitTime = 1.5
+moveTime = 2.0
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction5")]
 
 [node name="Target3" type="Node3D" parent="Map/CinematicTriggers/Control3" node_paths=PackedStringArray("actions")]
 transform = Transform3D(-0.527763, 0.368404, -0.765339, 0, 0.901044, 0.433727, 0.849391, 0.228905, -0.475538, -9.42266, 5.09825, -6.93404)
 script = ExtResource("10_35g6o")
 waitTime = 1.0
-actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction4")]
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction6")]
 
 [node name="Control4" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.8665, 8.5, -257.536)
@@ -5172,29 +5180,30 @@ playerCharacter = NodePath("../../../../PlayerCharacter")
 [node name="Target1" type="Node3D" parent="Map/CinematicTriggers/Control4" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.275805, 0.339831, -0.899137, 0, 0.935418, 0.353544, 0.961214, -0.0975092, 0.257993, 12.646, 4.63758, -9.77917)
 script = ExtResource("10_35g6o")
+waitTime = 2.5
 moveTime = 1.5
-actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction5")]
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction7")]
 
 [node name="Target2" type="Node3D" parent="Map/CinematicTriggers/Control4" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.275805, 0.339831, -0.899137, 0, 0.935418, 0.353544, 0.961214, -0.0975092, 0.257993, 12.646, 4.63758, -9.77917)
 script = ExtResource("10_35g6o")
 waitTime = 1.0
 moveTime = 0.0
-actions = [NodePath("../../../CinematicCharacterAudioActions/AudioAction5"), NodePath("../../../CinematicCharacterActions/CinematicCharacterAction6")]
+actions = [NodePath("../../../CinematicCharacterAudioActions/AudioAction5"), NodePath("../../../CinematicCharacterActions/CinematicCharacterAction8")]
 
 [node name="Target3" type="Node3D" parent="Map/CinematicTriggers/Control4" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.275805, 0.339831, -0.899137, 0, 0.935418, 0.353544, 0.961214, -0.0975092, 0.257993, 12.646, 4.63758, -9.77917)
 script = ExtResource("10_35g6o")
 waitTime = 2.0
 moveTime = 0.0
-actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction6"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes/PropBlackberryBushOld2")]
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction8"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes/PropBlackberryBushOld2")]
 
 [node name="Target4" type="Node3D" parent="Map/CinematicTriggers/Control4" node_paths=PackedStringArray("actions")]
 transform = Transform3D(0.275805, 0.339831, -0.899137, 0, 0.935418, 0.353544, 0.961214, -0.0975092, 0.257993, 12.646, 4.63758, -9.77917)
 script = ExtResource("10_35g6o")
 waitTime = 0.0
 moveTime = 0.0
-actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction7")]
+actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction9")]
 
 [node name="CinematicCharacterActions" type="Node3D" parent="Map"]
 
@@ -5205,37 +5214,49 @@ targetCharacter = NodePath("../../../CinematicCharacter")
 nextAnimation = "wynn-wave"
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
+script = ExtResource("103_oo74b")
+targetCharacter = NodePath("../../../CinematicCharacter")
+nextAnimation = "wynn-give"
+
+[node name="CinematicCharacterAction3" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.948179, 0, -0.317735, 0, 1, 0, 0.317735, 0, 0.948179, -28.5519, 9, -55.9882)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter")
 nextAnimation = "wynn-idle"
 hideOnArrival = true
 
-[node name="CinematicCharacterAction3" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction4" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+transform = Transform3D(-0.0182202, 0, -0.999834, 0, 1, 0, 0.999834, 0, -0.0182202, -42.768, 9, -201.503)
+script = ExtResource("103_oo74b")
+targetCharacter = NodePath("../../../CinematicCharacter2")
+nextAnimation = "wynn-idle"
+
+[node name="CinematicCharacterAction5" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.0182202, 0, -0.999834, 0, 1, 0, 0.999834, 0, -0.0182202, -42.768, 9, -201.503)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter2")
 nextAnimation = "wynn-wave"
 
-[node name="CinematicCharacterAction4" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction6" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.904038, 0, 0.427453, 0, 1, 0, -0.427453, 0, -0.904038, -48.8391, 9, -193.301)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter2")
 hideOnArrival = true
 
-[node name="CinematicCharacterAction5" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction7" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.11856, 0, 0.992947, 0, 1, 0, -0.992947, 0, -0.11856, -39.401, 9, -270.274)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter3")
 nextAnimation = "wynn-idle"
 
-[node name="CinematicCharacterAction6" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction8" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.11856, 0, 0.992947, 0, 1, 0, -0.992947, 0, -0.11856, -45.9017, 9, -269.641)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter3")
 nextAnimation = "wynn-idle"
 
-[node name="CinematicCharacterAction7" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction9" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.989754, 0, -0.142784, 0, 1, 0, 0.142784, 0, 0.989754, -27.1715, 9, -280.335)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter3")
@@ -5292,7 +5313,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9814, -4, -27.3426)
 
 [node name="NettleBrothSpawn1" type="Node3D" parent="Map/Spawns"]
 transform = Transform3D(-0.983616, 0, -0.180279, 0, 1, 0, 0.180279, 0, -0.983616, -28.3834, 9, -42.1382)
-script = ExtResource("83_qpmls")
+script = ExtResource("102_kidme")
+delayTime = 0.5
 prefab = ExtResource("68_c0uoq")
 direction = Vector3(0, 0, -1)
 speed = 5.0
