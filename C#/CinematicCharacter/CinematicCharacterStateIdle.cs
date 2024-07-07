@@ -12,7 +12,7 @@ namespace CinematicCharacter
 
         public override void RunState(double delta)
         {
-            blackboard.LookWithTargetNode();
+            blackboard.LookWithTargetNode(delta);
         }
 
 

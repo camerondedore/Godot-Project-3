@@ -24,7 +24,7 @@ namespace CinematicCharacter
         [Export]
 		public float speed = 5,
             acceleration = 10,
-            lookSpeed = 0.3f;
+            lookSpeed = 5f;
 
         public Node3D targetNode;
         public bool lastAction = false;
@@ -86,13 +86,17 @@ namespace CinematicCharacter
                 MoveAndSlide();
 
                 // get direction to next path point and flatten
-                var forward = GlobalPosition + -Basis.Z;
                 var lookDirection = GlobalPosition + Velocity.Normalized();
                 lookDirection.Y = GlobalPosition.Y;
-                var lookTarget = forward.Lerp(lookDirection, lookSpeed);
 
-                // look in direction of movement
-                LookAt(lookTarget, Vector3.Up);
+                if(lookDirection.LengthSquared() > 0.1f)
+                {
+                    var smoothLookDirection = GlobalPosition + -Basis.Z;
+                    smoothLookDirection = smoothLookDirection.Slerp(lookDirection, lookSpeed * ((float) delta));
+
+                    // apply look
+                    LookAt(smoothLookDirection);
+                }    
             }
             else
             {                
@@ -105,7 +109,7 @@ namespace CinematicCharacter
 
 
 
-        public void LookWithTargetNode()
+        public void LookWithTargetNode(double delta)
         {
             if(targetNode == null)
             {
@@ -113,13 +117,17 @@ namespace CinematicCharacter
             }
 
             // get direction to enenmy and flatten
-            var forward = GlobalPosition + -Basis.Z;
-            var lookDirection = GlobalPosition + -targetNode.Basis.Z;
-            lookDirection.Y = GlobalPosition.Y;
-            var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+            var lookTarget = GlobalPosition + -targetNode.Basis.Z;
+            lookTarget.Y = GlobalPosition.Y;
 
-            // look at enemy
-            LookAt(lookTarget);
+            if(lookTarget.LengthSquared() > 0.1f)
+			{
+				var smoothLookTarget = GlobalPosition + -Basis.Z;
+				smoothLookTarget = smoothLookTarget.Slerp(lookTarget, lookSpeed * ((float) delta));
+
+				// apply look
+				LookAt(smoothLookTarget);
+			}    
         }
 
 
