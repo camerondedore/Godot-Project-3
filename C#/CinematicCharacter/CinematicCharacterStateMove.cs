@@ -23,7 +23,7 @@ namespace CinematicCharacter
             blackboard.navAgent.TargetPosition = blackboard.targetNode.GlobalPosition;
 
             // animation
-            blackboard.animation.Play("character-run");
+            blackboard.animation.Play("wynn-run");
         }
 
 

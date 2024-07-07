@@ -20,7 +20,7 @@ namespace CinematicCharacter
         public override void StartState()
         {
             // animation
-            blackboard.animation.Play("character-idle");
+            blackboard.animation.Play("wynn-idle");
         }
 
 
