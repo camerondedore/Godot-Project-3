@@ -65,7 +65,6 @@ namespace MobBlackRat
             lookSpeed = 0.3f,
             acceleration = 4,
             damageFromArrow = 50,
-            lookAngleNormal = 30,
             damage = 10;
 
         public MobFaction enemy;

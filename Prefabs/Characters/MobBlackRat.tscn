@@ -39,8 +39,9 @@ audio = NodePath("RatAudio")
 swordHitFx = NodePath("FxEnemyHit")
 swordHitBloodFx = NodePath("FxBloodSlash")
 collider = NodePath("CollisionShape3D")
-attackDistanceSqr = 4.0
+attackDistanceSqr = 6.0
 attackRangeSqr = 6.25
+attackAngle = 60.0
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
 script = ExtResource("2_71lt1")
