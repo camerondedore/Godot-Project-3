@@ -27,6 +27,7 @@ namespace CinematicCharacter
             lookSpeed = 5f;
 
         public Node3D targetNode;
+        public string nextAnimationName;
         public bool lastAction = false;
 
 
@@ -86,16 +87,16 @@ namespace CinematicCharacter
                 MoveAndSlide();
 
                 // get direction to next path point and flatten
-                var lookDirection = GlobalPosition + Velocity.Normalized();
-                lookDirection.Y = GlobalPosition.Y;
+                var lookDirection = Velocity.Normalized();
+                lookDirection.Y = 0;
 
                 if(lookDirection.LengthSquared() > 0.1f)
                 {
-                    var smoothLookDirection = GlobalPosition + -Basis.Z;
+                    var smoothLookDirection = -Basis.Z;
                     smoothLookDirection = smoothLookDirection.Slerp(lookDirection, lookSpeed * ((float) delta));
 
                     // apply look
-                    LookAt(smoothLookDirection);
+                    LookAt(GlobalPosition + smoothLookDirection);
                 }    
             }
             else
@@ -132,7 +133,7 @@ namespace CinematicCharacter
 
 
 
-        public void SetTargetNode(Node3D newTarget, bool hideOnArrival)
+        public void SetTargetNode(Node3D newTarget, bool hideOnArrival, string nextAnimation)
         {
             if(Visible == false)
             {
@@ -143,6 +144,7 @@ namespace CinematicCharacter
 
             targetNode = newTarget;
             lastAction = hideOnArrival;
+            nextAnimationName = nextAnimation;
 
             if(machine.CurrentState != stateMove)
             {
@@ -156,17 +158,29 @@ namespace CinematicCharacter
 
 
 
-        public void SetState(string newStateName)
-        {
-            if(Visible == false)
-            {
-                // enable
-                Visible = true;
-                ProcessMode = ProcessModeEnum.Inherit;
-            }
+        // public void SetState(string nextAnimation)
+        // {
+        //     if(Visible == false)
+        //     {
+        //         // enable
+        //         Visible = true;
+        //         ProcessMode = ProcessModeEnum.Inherit;
+        //     }
 
-            // set state using state names
-        }
+        //     // set next idle animation
+        //     nextAnimationName = nextAnimation;
+
+        //     if(machine.CurrentState != stateIdle)
+        //     {
+        //         // change to idle state
+        //         machine.SetState(stateIdle);
+        //     }
+        //     else
+        //     {
+        //         // restart idle state
+        //         machine.CurrentState.StartState();
+        //     }
+        // }
 
 
 

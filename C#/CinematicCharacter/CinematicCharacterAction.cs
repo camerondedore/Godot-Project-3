@@ -10,7 +10,7 @@ namespace CinematicCharacter
         [Export]
         CinematicCharacter targetCharacter;
         [Export]
-        string nextStateName = "";
+        string nextAnimation = "";
         [Export]
         bool hideOnArrival = false;
 
@@ -18,14 +18,7 @@ namespace CinematicCharacter
 
         public void TriggerCinematicAction()
         {
-            if(nextStateName == "")
-            {
-                targetCharacter.SetTargetNode(this, hideOnArrival);
-            }
-            else
-            {
-                targetCharacter.SetState(nextStateName);
-            }
+            targetCharacter.SetTargetNode(this, hideOnArrival, nextAnimation);
         }
     }
 }

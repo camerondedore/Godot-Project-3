@@ -13,14 +13,31 @@ namespace CinematicCharacter
         public override void RunState(double delta)
         {
             blackboard.LookWithTargetNode(delta);
+
+            if(blackboard.animation.IsPlaying() == false)
+            {
+                // idle animation
+                blackboard.animation.Play("wynn-idle");
+            }
         }
 
 
 
         public override void StartState()
         {
-            // animation
-            blackboard.animation.Play("wynn-idle");
+            if(blackboard.nextAnimationName == "")
+            {
+                // idle animation
+                blackboard.animation.Play("wynn-idle");
+            }
+            else
+            {
+                // idle animation
+                blackboard.animation.Play(blackboard.nextAnimationName);
+            }
+
+            // reset next animation
+            blackboard.nextAnimationName = "";
         }
 
 

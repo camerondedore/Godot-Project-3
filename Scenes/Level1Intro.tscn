@@ -5202,17 +5202,20 @@ actions = [NodePath("../../../CinematicCharacterActions/CinematicCharacterAction
 transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter")
+nextAnimation = "wynn-wave"
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.948179, 0, -0.317735, 0, 1, 0, 0.317735, 0, 0.948179, -28.5519, 9, -55.9882)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter")
+nextAnimation = "wynn-idle"
 hideOnArrival = true
 
 [node name="CinematicCharacterAction3" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.0182202, 0, -0.999834, 0, 1, 0, 0.999834, 0, -0.0182202, -42.768, 9, -201.503)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter2")
+nextAnimation = "wynn-wave"
 
 [node name="CinematicCharacterAction4" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.904038, 0, 0.427453, 0, 1, 0, -0.427453, 0, -0.904038, -48.8391, 9, -193.301)
@@ -5224,16 +5227,19 @@ hideOnArrival = true
 transform = Transform3D(-0.11856, 0, 0.992947, 0, 1, 0, -0.992947, 0, -0.11856, -39.401, 9, -270.274)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter3")
+nextAnimation = "wynn-idle"
 
 [node name="CinematicCharacterAction6" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.11856, 0, 0.992947, 0, 1, 0, -0.992947, 0, -0.11856, -45.9017, 9, -269.641)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter3")
+nextAnimation = "wynn-idle"
 
 [node name="CinematicCharacterAction7" type="Node3D" parent="Map/CinematicCharacterActions" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.989754, 0, -0.142784, 0, 1, 0, 0.142784, 0, 0.989754, -27.1715, 9, -280.335)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../../../CinematicCharacter3")
+nextAnimation = "wynn-idle"
 hideOnArrival = true
 
 [node name="CinematicCharacterAudioActions" type="Node" parent="Map"]
