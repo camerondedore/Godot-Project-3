@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using Cinematic;
 
 namespace CinematicCharacter
 {
@@ -133,7 +132,7 @@ namespace CinematicCharacter
 
 
 
-        public void SetTargetNode(Node3D newTarget, bool hideOnArrival, string nextAnimation)
+        public void SetTargetNode(Node3D newTarget, bool hideOnArrival)
         {
             if(Visible == false)
             {
@@ -152,7 +151,6 @@ namespace CinematicCharacter
 
             targetNode = newTarget;
             lastAction = hideOnArrival;
-            nextAnimationName = nextAnimation;
 
             if(targetTransformChanged == true)
             {
@@ -180,6 +178,13 @@ namespace CinematicCharacter
                     machine.CurrentState.StartState();
                 }
             }            
+        }
+
+
+
+        public void SetTargetAnimation(string nextAnimation)
+        {
+            nextAnimationName = nextAnimation;
         }
 
 

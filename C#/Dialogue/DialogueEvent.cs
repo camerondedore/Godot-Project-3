@@ -1,10 +1,10 @@
 using Godot;
 using System;
-using Cinematic;
+using CinematicSimple;
 
 namespace Dialogue
 {
-    public partial class DialogueEvent : Node, CinematicTarget.iCinematicAction
+    public partial class DialogueEvent : Node, CinematicSimpleControl.iCinematicSimpleAction
     {
         
         [Export]
@@ -16,7 +16,7 @@ namespace Dialogue
 
 
 
-        public void TriggerCinematicAction()
+        public void PlayCinematicAction()
         {
             DialogueUi.dialogueUi.DisplayDialogue(dialogueText, displayTime, speaker);
         }

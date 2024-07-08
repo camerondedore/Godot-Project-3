@@ -1,33 +1,30 @@
 using Godot;
 using System;
-using System.Runtime.CompilerServices;
 using System.Collections.Generic;
-using System.ComponentModel;
 
-namespace Cinematic
+namespace CinematicSimple
 {
-    public partial class CinematicTriggerDead : Timer
+    public partial class CinematicSimpleTriggerDead : Timer
     {
 
+        [Export]
+        CinematicSimpleControl cinematic;
+        [Export]
+        string cinematicAnimationName;
         [Export]
         Node3D[] watchedNodes;
         [Export]
         Node3D playerCharacter;
-        CinematicControl cinematic;
+        [Export]
+        float triggerDelay = 0;
+
+
         List<IWatchable> watchList = new List<IWatchable>();
 
 
 
         public override void _Ready()
         {
-            cinematic = GetParent<CinematicControl>();
-
-            if(cinematic == null || IsInstanceValid(cinematic) == false)
-            {
-                QueueFree();
-                return;
-            }
-
             foreach(var watchedNode in watchedNodes)
             {
                 watchList.Add(watchedNode as IWatchable);
@@ -52,13 +49,24 @@ namespace Cinematic
 
             if(anyAlive == false)
             {
-                cinematic.Triggered(playerCharacter);
-                QueueFree();
+                Start(triggerDelay);
+
+                Timeout -= Watch;
+                Timeout += Trigger;
             }
         }
-        
-        
-        
+
+
+
+        public void Trigger()
+        {
+            cinematic.Triggered(playerCharacter, cinematicAnimationName);
+
+            QueueFree();
+        }
+
+
+
         public interface IWatchable
         {
             bool IsAlive();

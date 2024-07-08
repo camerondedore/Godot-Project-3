@@ -4,19 +4,18 @@ using CinematicSimple;
 
 namespace CinematicCharacter
 {
-    public partial class CinematicCharacterAction : Node3D, CinematicSimpleControl.iCinematicSimpleAction
+    public partial class CinematicCharacterActionAnimation : Node3D, CinematicSimpleControl.iCinematicSimpleAction
     {
 
         [Export]
         CinematicCharacter targetCharacter;
         [Export]
-        bool hideOnArrival = false;
-
+        string nextAnimation = "";
 
 
         public void PlayCinematicAction()
         {
-            targetCharacter.SetTargetNode(this, hideOnArrival);
+            targetCharacter.SetTargetAnimation(nextAnimation);
         }
     }
 }

@@ -1,12 +1,12 @@
 using Godot;
 using System;
 using PlayerBow;
-using Cinematic;
+using CinematicSimple;
 
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRat : CharacterBody3D, IBowTarget, IMobAlly, IWatchable, MobSpawner.iMobSpawnable
+    public partial class MobBrownRat : CharacterBody3D, IBowTarget, IMobAlly, CinematicSimpleTriggerDead.IWatchable, MobSpawner.iMobSpawnable
     {
 
         public StateMachineQueue machine = new StateMachineQueue();

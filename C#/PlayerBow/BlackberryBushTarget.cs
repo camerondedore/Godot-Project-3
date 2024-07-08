@@ -1,9 +1,9 @@
 using Godot;
 using System;
 using PlayerBow;
-using Cinematic;
+using CinematicSimple;
 
-public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicTarget.iCinematicAction
+public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicSimpleControl.iCinematicSimpleAction
 {
 
     [Export]
@@ -83,7 +83,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicT
 
 
 
-    public void TriggerCinematicAction()
+    public void PlayCinematicAction()
     {
         Hit(Vector3.Zero);
     }

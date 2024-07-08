@@ -39,7 +39,7 @@ audio = NodePath("RatAudio")
 swordHitFx = NodePath("FxEnemyHit")
 swordHitBloodFx = NodePath("FxBloodSlash")
 collider = NodePath("CollisionShape3D")
-attackDistanceSqr = 6.0
+attackDistanceSqr = 4.5
 attackRangeSqr = 6.25
 attackAngle = 60.0
 

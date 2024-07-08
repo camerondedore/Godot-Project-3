@@ -1,11 +1,11 @@
 using Godot;
 using System;
-using Cinematic;
+using CinematicSimple;
 using Dialogue;
 
 namespace CinematicCharacter
 {
-    public partial class CinematicCharacterAudioAction : Node, CinematicTarget.iCinematicAction
+    public partial class CinematicCharacterAudioAction : Node, CinematicSimpleControl.iCinematicSimpleAction
     {
         [Export]
         CinematicCharacter targetCharacter;
@@ -20,7 +20,7 @@ namespace CinematicCharacter
 
 
 
-        public void TriggerCinematicAction()
+        public void PlayCinematicAction()
         {
             targetCharacter.Speak(audioClip);
 

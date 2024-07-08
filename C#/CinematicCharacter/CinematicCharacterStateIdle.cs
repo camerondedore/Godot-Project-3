@@ -14,10 +14,18 @@ namespace CinematicCharacter
         {
             blackboard.LookWithTargetNode(delta);
 
-            if(blackboard.animation.IsPlaying() == false)
+            if(blackboard.nextAnimationName != "")
             {
                 // idle animation
-                blackboard.animation.Play("wynn-idle");
+                blackboard.animation.Play(blackboard.nextAnimationName);
+
+                // reset next animation
+                blackboard.nextAnimationName = "";
+            }
+            else if(blackboard.animation.IsPlaying() == false)// || blackboard.nextAnimationName == "")
+            {
+                // idle animation
+                blackboard.animation.Play("wynn-idle");                
             }
         }
 
@@ -25,19 +33,8 @@ namespace CinematicCharacter
 
         public override void StartState()
         {
-            if(blackboard.nextAnimationName == "")
-            {
-                // idle animation
-                blackboard.animation.Play("wynn-idle");
-            }
-            else
-            {
-                // idle animation
-                blackboard.animation.Play(blackboard.nextAnimationName);
-            }
-
-            // reset next animation
-            blackboard.nextAnimationName = "";
+            // idle animation
+            blackboard.animation.Play("wynn-idle");
         }
 
 

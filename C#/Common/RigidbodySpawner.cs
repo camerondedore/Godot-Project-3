@@ -1,8 +1,8 @@
-using Cinematic;
+using CinematicSimple;
 using Godot;
 using System;
 
-public partial class RigidbodySpawner : Node3D, CinematicTarget.iCinematicAction
+public partial class RigidbodySpawner : Node3D, CinematicSimpleControl.iCinematicSimpleAction
 {
 
     [Export]
@@ -64,7 +64,7 @@ public partial class RigidbodySpawner : Node3D, CinematicTarget.iCinematicAction
 
 
 
-    public void TriggerCinematicAction()
+    public void PlayCinematicAction()
     {
         Spawn();
     }
