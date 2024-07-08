@@ -13,19 +13,7 @@ namespace CinematicSimple
 
         public override void _Ready()
         {
-            // if(saveToWorldData)
-            // {
-            //     // get if trigger was already activated
-            //     var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
-            //     if(wasActivated)
-            //     {
-            //         // remove cinematic
-            //         QueueFree();  
-                    
-            //         return;
-            //     }
-            // }
         }
 
 

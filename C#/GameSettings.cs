@@ -97,7 +97,7 @@ public partial class GameSettings : Node
 
 
 
-     public void UpdateShowFps(bool newShowFps)
+    public void UpdateShowFps(bool newShowFps)
     {
         currentSettings.ShowFps = newShowFps;
 
@@ -109,6 +109,15 @@ public partial class GameSettings : Node
     public void UpdateMouseSensitivity(double newValue)
     {
         currentSettings.MouseSensitivity = newValue;
+
+        SaveSettings();
+    }
+
+
+
+    public void UpdateVsync(int newVsync)
+    {
+        currentSettings.Vsync = newVsync;
 
         SaveSettings();
     }
@@ -153,5 +162,10 @@ public partial class GameSettings : Node
         {
             get; set;
         } = 5f;
+
+        public int Vsync
+        {
+            get; set;
+        } = 0;
     }
 }

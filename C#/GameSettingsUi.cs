@@ -16,6 +16,8 @@ public partial class GameSettingsUi : Node
         sunShadowDistanceSlider;
     [Export]
     SpinBox mouseSensitivitySpinBox;
+    [Export]
+    OptionButton vsyncOptionButton;
 
     public event Action<bool> SsaoChanged;
     public event Action<bool> BloomChanged;
@@ -24,6 +26,7 @@ public partial class GameSettingsUi : Node
     public event Action<bool> SunShadowBlendSplitsChanged;
     public event Action<bool> ShowFpsChanged;
     public event Action<double> MouseSensitivityChanged;
+    public event Action<int> VsyncChangedChanged;
 
 
 
@@ -39,6 +42,7 @@ public partial class GameSettingsUi : Node
         sunShadowBlendSplitsCheckBock.ButtonPressed = GameSettings.settings.currentSettings.SunShadowBlendSplits;
         fpsCheckBox.ButtonPressed = GameSettings.settings.currentSettings.ShowFps;
         mouseSensitivitySpinBox.Value = GameSettings.settings.currentSettings.MouseSensitivity;
+        vsyncOptionButton.Selected = GameSettings.settings.currentSettings.Vsync;
 
         // set up events on UI
         bloomCheckBox.Toggled += BloomCheckBoxToggle;
@@ -48,6 +52,7 @@ public partial class GameSettingsUi : Node
         sunShadowBlendSplitsCheckBock.Toggled += SunShadowBlendSplitsCheckBoxToggle;
         fpsCheckBox.Toggled += FpsCheckBoxToggle;
         mouseSensitivitySpinBox.ValueChanged += MouseSensitivityValueChanged;
+        vsyncOptionButton.ItemSelected += VsyncOptionsButtonItemSelected;
     }
 
 
@@ -106,5 +111,13 @@ public partial class GameSettingsUi : Node
     {
         MouseSensitivityChanged(value);
         GameSettings.settings.UpdateMouseSensitivity(value);
+    }
+
+
+
+    void VsyncOptionsButtonItemSelected(long index)
+    {
+        VsyncChangedChanged(((int)index));
+        GameSettings.settings.UpdateVsync(((int)index));
     }
 }
