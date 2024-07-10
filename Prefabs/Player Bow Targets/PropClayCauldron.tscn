@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl3tppj3wcnmy"]
+
+[ext_resource type="Script" path="res://C#/PlayerBow/ClayPotTarget.cs" id="1_8ebja"]
+[ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="2_cvrch"]
+[ext_resource type="ArrayMesh" uid="uid://bahvemr0ui8vx" path="res://Models/prop-clay-cauldron.res" id="2_wfd2g"]
+[ext_resource type="Material" uid="uid://dyh7bkfe8jo03" path="res://Materials/Props/PropClayCauldron.tres" id="3_4w1ub"]
+[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_17iwl"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="6_yd42t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4reb0"]
+height = 0.75
+radius = 0.563
+
+[node name="PropClayCauldron" type="StaticBody3D"]
+collision_layer = 16
+script = ExtResource("1_8ebja")
+arrowType = "weighted"
+storedItem = ExtResource("2_cvrch")
+positionOffset = Vector3(0, 0.6, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_wfd2g")
+surface_material_override/0 = ExtResource("3_4w1ub")
+surface_material_override/1 = ExtResource("4_17iwl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+shape = SubResource("CylinderShape3D_4reb0")
+
+[node name="PickupSpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575, 0)
+script = ExtResource("6_yd42t")
+prefab = ExtResource("2_cvrch")
+direction = Vector3(0, 1, 0)
+speed = 4.0
+spread = 0.5
+angularSpeed = 0.0
+useAngularVelocity = false
