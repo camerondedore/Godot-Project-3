@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=141 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -121,9 +121,6 @@
 [ext_resource type="PackedScene" uid="uid://d0f8vu33h2mb6" path="res://Prefabs/Pickups/PickupArrowsFire.tscn" id="103_3dgt1"]
 [ext_resource type="PackedScene" uid="uid://dh2pgw57n3v31" path="res://Prefabs/Pickups/PickupArrowsNet.tscn" id="104_6d2ca"]
 [ext_resource type="PackedScene" uid="uid://ceo0x0pkepjtn" path="res://Prefabs/Pickups/PickupCandiedNutAcorn.tscn" id="105_mju4c"]
-[ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicControl.cs" id="111_o64fy"]
-[ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTarget.cs" id="112_ejmin"]
-[ext_resource type="Script" path="res://C#/CinematicTrigger/CinematicTriggerArea.cs" id="118_ykelb"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="121_qh4xc"]
 [ext_resource type="PackedScene" uid="uid://binqhfxpr0vcx" path="res://Prefabs/Small Items/PropBoard3Rigid.tscn" id="122_175ji"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="123_ae5e8"]
@@ -273,9 +270,6 @@ size = Vector3(14, 1.75, 14)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fs0y"]
 size = Vector3(2, 4, 0.25)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_2m2m5"]
-radius = 1.5
 
 [node name="TreeTest" type="Node3D"]
 
@@ -1607,42 +1601,6 @@ blackWall = NodePath("../BlackWall")
 
 [node name="BlackWall" parent="Map/Torches" instance=ExtResource("71_tu5qd")]
 transform = Transform3D(-1.65454, 0, -1.44645e-07, 0, 1.65454, 0, 1.44645e-07, 0, -1.65454, 0.94328, 10.1856, -21.156)
-
-[node name="CinematicTriggers" type="Node3D" parent="Map"]
-
-[node name="Control1" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("targets")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2979, 1, 6.21235)
-script = ExtResource("111_o64fy")
-targets = [NodePath("../Target1"), NodePath("../Target2"), NodePath("../Target3")]
-
-[node name="Trigger1" type="Area3D" parent="Map/CinematicTriggers/Control1"]
-collision_layer = 0
-collision_mask = 128
-monitorable = false
-script = ExtResource("118_ykelb")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/CinematicTriggers/Control1/Trigger1"]
-shape = SubResource("SphereShape3D_2m2m5")
-
-[node name="Target1" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("actions")]
-transform = Transform3D(-0.7971, 0.351047, -0.491322, 0, 0.813653, 0.581351, 0.603847, 0.463395, -0.648563, 11.1484, 3.71564, 10.0489)
-script = ExtResource("112_ejmin")
-waitTime = 2.0
-actions = []
-
-[node name="Target2" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("actions")]
-transform = Transform3D(0.115094, -0.387402, 0.914698, 0, 0.920817, 0.389994, -0.993355, -0.0448861, 0.105981, -25.9418, 2.35912, 14.9328)
-script = ExtResource("112_ejmin")
-waitTime = 2.0
-moveTime = 4.0
-actions = []
-
-[node name="Target3" type="Node3D" parent="Map/CinematicTriggers" node_paths=PackedStringArray("actions")]
-transform = Transform3D(-0.998534, -0.0324151, 0.0433371, 0, 0.800777, 0.598962, -0.0541188, 0.598084, -0.799604, 12.3547, 5.89754, -0.421026)
-script = ExtResource("112_ejmin")
-waitTime = 0.5
-moveTime = 4.0
-actions = []
 
 [node name="Switches" type="Node3D" parent="Map"]
 
