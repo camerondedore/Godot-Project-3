@@ -6,30 +6,35 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string arrowType = "pick";
-    [Export]
-    FxLock lockFx;
-    [Export]
-    RigidbodySpawnerDelayed pickupSpawner;
-    [Export]
     PackedScene storedItem = null;
     [Export]
-    AnimationPlayer anim;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     AudioStream openSound;
+    
+    public string arrowType = "pick";
+    
+    FxLock lockFx;
+    RigidbodySpawnerDelayed pickupSpawner;
+    AnimationPlayer anim;
+    AudioTools3d audio;
 
 
 
     public override void _Ready()
     {
+        // get nodes used whether or not the lockbox was activated
+        lockFx = (FxLock) GetNode("FxLock");
+        anim = (AnimationPlayer) GetNode("prop-lockbox/AnimationPlayer");
+        
         // get if lockbox was already activated
         var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
         if(!wasActivated)
         {
-            anim.Play("lockbox-idle");        
+            anim.Play("lockbox-idle");
+
+            // get nodes
+            pickupSpawner = (RigidbodySpawnerDelayed) GetNode("PickupSpawnerDelayed");
+            audio = (AudioTools3d) GetNode("Audio");
         }
         else
         {

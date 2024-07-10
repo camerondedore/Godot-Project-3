@@ -10,35 +10,29 @@
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="7_rf4xg"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_30sne"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jlwy1"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a313i"]
 size = Vector3(0.75, 0.7, 0.563)
 
-[node name="PropLockbox" node_paths=PackedStringArray("lockFx", "pickupSpawner", "anim", "audio") instance=ExtResource("1_dceib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00765711, -1.49012e-08, 0.00473833)
-collision_layer = 16
+[node name="PropLockbox" type="StaticBody3D"]
 script = ExtResource("1_vcmy5")
-lockFx = NodePath("FxLock")
-pickupSpawner = NodePath("PickupSpawnerDelayed")
-anim = NodePath("AnimationPlayer")
-audio = NodePath("LockboxAudio")
 openSound = ExtResource("3_he827")
 
-[node name="prop-lockbox-armature" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+[node name="prop-lockbox" parent="." instance=ExtResource("1_dceib")]
 
-[node name="prop-lockbox2" parent="prop-lockbox-armature/Skeleton3D" index="0"]
-layers = 2
-gi_mode = 2
+[node name="Skeleton3D" parent="prop-lockbox/prop-lockbox-armature" index="0"]
+bones/3/scale = Vector3(1, 1, 1)
+
+[node name="prop-lockbox2" parent="prop-lockbox/prop-lockbox-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-shape = SubResource("BoxShape3D_jlwy1")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_a313i")
 
-[node name="FxLock" parent="." index="3" instance=ExtResource("5_cpfrh")]
+[node name="FxLock" parent="." instance=ExtResource("5_cpfrh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109548, -0.31598)
 
-[node name="PickupSpawnerDelayed" type="Node3D" parent="." index="4"]
+[node name="PickupSpawnerDelayed" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376427, -0.259344)
 script = ExtResource("6_03t3p")
 delayTime = 0.1
@@ -48,8 +42,10 @@ speed = 5.0
 angularSpeed = 0.0
 useAngularVelocity = false
 
-[node name="LockboxAudio" type="AudioStreamPlayer3D" parent="." index="5"]
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 5.0
 max_distance = 40.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("9_30sne")
+
+[editable path="prop-lockbox"]
