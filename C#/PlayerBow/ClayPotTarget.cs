@@ -6,13 +6,13 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string arrowType = "blade";
-    [Export]
     PackedScene storedItem;
-    [Export]
-    Vector3 positionOffset;
 
+    public string arrowType = "weighted";
+    
+    GibsActivator gibs;
     RigidbodySpawner pickupSpawner;
+    Vector3 positionOffset = new Vector3(0, 0.6f, 0);
 
 
 
@@ -25,7 +25,9 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
         {
             QueueFree();
         }
-
+        
+        // get nodes
+        gibs = (GibsActivator) GetNode("Gibs");
         pickupSpawner = (RigidbodySpawner) GetNode("PickupSpawner");
     }
 
@@ -70,7 +72,7 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
         WorldData.data.ActivateObject(this);
 
         // activate gibs
-
+        gibs.Activate();
 
         // destroy
         QueueFree();

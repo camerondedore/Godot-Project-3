@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl3tppj3wcnmy"]
+[gd_scene load_steps=16 format=3 uid="uid://bl3tppj3wcnmy"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/ClayPotTarget.cs" id="1_8ebja"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="2_cvrch"]
@@ -6,6 +6,14 @@
 [ext_resource type="Material" uid="uid://dyh7bkfe8jo03" path="res://Materials/Props/PropClayCauldron.tres" id="3_4w1ub"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_17iwl"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="6_yd42t"]
+[ext_resource type="Script" path="res://C#/GibsActivator.cs" id="7_olc1y"]
+[ext_resource type="PackedScene" uid="uid://u7bje8qh223h" path="res://Prefabs/Gibs/GibClayCauldron1.tscn" id="8_lc54y"]
+[ext_resource type="PackedScene" uid="uid://dc5imsocdh2xs" path="res://Prefabs/Gibs/GibClayCauldron2.tscn" id="9_s08um"]
+[ext_resource type="PackedScene" uid="uid://bi6hx015effp4" path="res://Prefabs/Gibs/GibClayCauldron3.tscn" id="10_slwkl"]
+[ext_resource type="PackedScene" uid="uid://bjhbtxub2njyu" path="res://Prefabs/Gibs/GibClayCauldron4.tscn" id="11_r2u3q"]
+[ext_resource type="PackedScene" uid="uid://dgvt1fmy5pfir" path="res://Prefabs/Gibs/GibClayCauldron5.tscn" id="12_6g2w6"]
+[ext_resource type="PackedScene" uid="uid://c3d08jua8qer0" path="res://Prefabs/Gibs/GibClayCauldron6.tscn" id="13_ou11a"]
+[ext_resource type="PackedScene" uid="uid://0ptbb34pkqvh" path="res://Prefabs/Gibs/GibClayCauldron7.tscn" id="14_q76mh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4reb0"]
 height = 0.75
@@ -14,9 +22,7 @@ radius = 0.563
 [node name="PropClayCauldron" type="StaticBody3D"]
 collision_layer = 16
 script = ExtResource("1_8ebja")
-arrowType = "weighted"
 storedItem = ExtResource("2_cvrch")
-positionOffset = Vector3(0, 0.6, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
@@ -39,3 +45,38 @@ speed = 4.0
 spread = 0.5
 angularSpeed = 0.0
 useAngularVelocity = false
+
+[node name="Gibs" type="Node3D" parent="."]
+visible = false
+script = ExtResource("7_olc1y")
+speed = 4.0
+randomDirectionRange = 0.5
+maxRotationSpeed = 5.0
+
+[node name="GibClayCauldron1" parent="Gibs" instance=ExtResource("8_lc54y")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495164, 0.604322, -0.103249)
+
+[node name="GibClayCauldron2" parent="Gibs" instance=ExtResource("9_s08um")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435382, 0.562616, 0.19601)
+
+[node name="GibClayCauldron3" parent="Gibs" instance=ExtResource("10_slwkl")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188915, 0.0710965, 0.254044)
+
+[node name="GibClayCauldron4" parent="Gibs" instance=ExtResource("11_r2u3q")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.250953, 0.216791, 0.274056)
+
+[node name="GibClayCauldron5" parent="Gibs" instance=ExtResource("12_6g2w6")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.461545, 0.614449, 0.0326343)
+
+[node name="GibClayCauldron6" parent="Gibs" instance=ExtResource("13_ou11a")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.453389, 0.27576, -0.143345)
+
+[node name="GibClayCauldron7" parent="Gibs" instance=ExtResource("14_q76mh")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0268212, 0.307045, -0.327832)
