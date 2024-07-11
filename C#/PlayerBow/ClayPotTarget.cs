@@ -9,8 +9,7 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
     PackedScene storedItem,
         breakFx;
 
-    public string arrowType = "weighted";
-    
+    string arrowType = "weighted";
     GibsActivator gibs;
     RigidbodySpawner pickupSpawner;
     Vector3 positionOffset = new Vector3(0, 0.6f, 0);

@@ -88,16 +88,9 @@ turbulence_influence_max = 0.05
 
 [sub_resource type="QuadMesh" id="QuadMesh_l5osk"]
 
-[node name="PropTreeOakTarget" type="StaticBody3D" node_paths=PackedStringArray("leafPuffFx", "leavesFx", "animation", "nutSpawnersParent", "audio")]
+[node name="PropTreeOakTarget" type="StaticBody3D"]
 script = ExtResource("1_s15u0")
-targetOffset = Vector3(0, 3, 0)
-leafPuffFx = NodePath("FxLeavesOakPuff")
-leavesFx = NodePath("FxLeavesOak")
-animation = NodePath("prop-trees-oak-target/AnimationPlayer")
-nutSpawnersParent = NodePath("NutSpawners")
-audio = NodePath("AudioStreamPlayer3D")
 hitSound = ExtResource("2_pkgg5")
-cooldownTime = 20.0
 
 [node name="prop-trees-oak-target" parent="." instance=ExtResource("1_ycrlc")]
 
@@ -195,7 +188,7 @@ spread = 3.0
 angularSpeed = 0.0
 useAngularVelocity = false
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 5.0
 max_distance = 40.0
 attenuation_filter_cutoff_hz = 20500.0

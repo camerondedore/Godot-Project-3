@@ -9,12 +9,11 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     PackedScene storedItem = null;
     [Export]
     AudioStream openSound;
-    
-    public string arrowType = "pick";
-    
+     
+    string arrowType = "pick";
     FxLock lockFx;
     RigidbodySpawnerDelayed pickupSpawner;
-    AnimationPlayer anim;
+    AnimationPlayer animation;
     AudioTools3d audio;
 
 
@@ -23,14 +22,14 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     {
         // get nodes used whether or not the lockbox was activated
         lockFx = (FxLock) GetNode("FxLock");
-        anim = (AnimationPlayer) GetNode("prop-lockbox/AnimationPlayer");
+        animation = (AnimationPlayer) GetNode("prop-lockbox/AnimationPlayer");
         
         // get if lockbox was already activated
         var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
         if(!wasActivated)
         {
-            anim.Play("lockbox-idle");
+            animation.Play("lockbox-idle");
 
             // get nodes
             pickupSpawner = (RigidbodySpawnerDelayed) GetNode("PickupSpawnerDelayed");
@@ -39,7 +38,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
         else
         {
             // play animation
-            anim.Play("lockbox-opened");
+            animation.Play("lockbox-opened");
 
             // remove lock
             lockFx.QueueFree();
@@ -75,7 +74,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     public void Hit(Vector3 dir)
     {
         // play animation
-        anim.Play("lockbox-open");
+        animation.Play("lockbox-open");
 
         // remove lock
         lockFx.Open();

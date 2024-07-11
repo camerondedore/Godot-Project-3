@@ -8,25 +8,17 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    string arrowType = "weighted";
-    [Export]
-    Vector3 targetOffset = new Vector3(0, 0, 0);
-    [Export]
-    GpuParticles3D leafPuffFx,
-    leavesFx;
-    [Export]
-    AnimationPlayer animation;
-    [Export]
-    Node nutSpawnersParent;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     AudioStream hitSound;
-    [Export]
-    double cooldownTime = 60;
 
+    string arrowType = "weighted";
+    Vector3 targetOffset = new Vector3(0, 3, 0);
+    GpuParticles3D leavesPuffFx,
+        leavesFx;
+    AnimationPlayer animation;
+    AudioTools3d audio;
     List<RigidbodySpawner> nutSpawners = new List<RigidbodySpawner>();
-    double lastHitTime = double.NegativeInfinity;
+    double lastHitTime = double.NegativeInfinity,
+        cooldownTime = 20;
     int nutsSpawned = 0;
     bool onCooldown = false;
 
@@ -34,8 +26,14 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
 
     public override void _Ready()
     {
+        // get nodes
+        leavesPuffFx = (GpuParticles3D) GetNode("FxLeavesOakPuff");
+        leavesFx = (GpuParticles3D) GetNode("FxLeavesOak");
+        animation = (AnimationPlayer) GetNode("prop-trees-oak-target/AnimationPlayer");
+        audio = (AudioTools3d) GetNode("Audio");
+        
         // get spawners
-        foreach(var child in nutSpawnersParent.GetChildren())
+        foreach(var child in GetNode("NutSpawners").GetChildren())
         {
             nutSpawners.Add((RigidbodySpawner) child);
         }
@@ -90,7 +88,7 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         lastHitTime = EngineTime.timePassed;
 
         // play puff
-        leafPuffFx.Restart();
+        leavesPuffFx.Restart();
 
         // stop leaves
         leavesFx.Emitting = false;

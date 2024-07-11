@@ -10,11 +10,10 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 	[Export]
 	AudioStream openSound;
 	
-	public string arrowType = "pick";
-	
+	string arrowType = "pick";
 	FxLock lockFx;
 	RigidbodySpawnerMultiple pickupSpawner;
-	AnimationPlayer anim;
+	AnimationPlayer animation;
 	AudioTools3d audio;
 
 
@@ -23,14 +22,14 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 	{
 		// get nodes used whether or not the lockbox was activated
 		lockFx = (FxLock) GetNode("FxLock");
-		anim = (AnimationPlayer) GetNode("prop-chest/AnimationPlayer");
+		animation = (AnimationPlayer) GetNode("prop-chest/AnimationPlayer");
 
 		// get if chest was already activated
 		var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
 		if(!wasActivated)
 		{
-			anim.Play("chest-idle");
+			animation.Play("chest-idle");
 
 			// get nodes
 			pickupSpawner = (RigidbodySpawnerMultiple) GetNode("PickupSpawnerMultiple");
@@ -39,7 +38,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 		else
 		{
 			// play animation
-			anim.Play("chest-opened");
+			animation.Play("chest-opened");
 
 			// remove lock
 			lockFx.QueueFree();
@@ -75,7 +74,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 	public void Hit(Vector3 dir)
 	{
 		// play animation
-		anim.Play("chest-open");
+		animation.Play("chest-open");
 
 		// remove lock
 		lockFx.Open();
