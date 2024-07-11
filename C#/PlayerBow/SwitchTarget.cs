@@ -6,29 +6,27 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string arrowType = "weighted";
-    [Export]
-    Vector3 positonOffset = new Vector3(0, 0, -0.15f);
-    [Export]
-    Node3D switchMesh;
-    [Export]
-    Vector3 meshHitOffset = new Vector3(0, 0, 0.15f);
-    [Export]
-    CollisionShape3D switchCollider;
-    [Export]
     Node[] linkedObjects;
     [Export]
-    GpuParticles3D hitFx;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     AudioStream hitSound;
+    
+    string arrowType = "weighted";
+    Vector3 targetOffset = new Vector3(0, 0, -0.15f), 
+        meshHitOffset = new Vector3(0, 0, 0.3f);
+    GpuParticles3D switchDustFx;
+    AudioTools3d audio;
+    CollisionShape3D switchCollider;
+    Node3D switchMesh;
 
 
 
     public override void _Ready()
     {
-
+        // get nodes
+        switchDustFx = (GpuParticles3D) GetNode("FxSwitchDust");
+        audio = (AudioTools3d) GetNode("Audio");
+        switchCollider = (CollisionShape3D) GetNode("SwitchCollider");
+        switchMesh = (Node3D) GetNode("SwitchMesh");
     }
 
 
@@ -44,7 +42,7 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return ToGlobal(positonOffset);
+            return ToGlobal(targetOffset);
         }
         else
         {
@@ -63,7 +61,7 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
         switchCollider.Disabled = true;
 
         // play fx
-        hitFx.Restart();
+        switchDustFx.Restart();
 
         // audio
         audio.PlaySound(hitSound, 0.1f);

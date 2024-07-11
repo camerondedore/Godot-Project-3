@@ -12,25 +12,20 @@
 height = 0.4
 radius = 0.3
 
-[node name="PropSwitch" type="StaticBody3D" node_paths=PackedStringArray("switchMesh", "switchCollider", "linkedObjects", "hitFx", "audio")]
+[node name="PropSwitch" type="StaticBody3D" node_paths=PackedStringArray("linkedObjects")]
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_eirct")
-switchMesh = NodePath("MeshInstance3D")
-meshHitOffset = Vector3(0, 0, 0.3)
-switchCollider = NodePath("CollisionShape3D")
 linkedObjects = []
-hitFx = NodePath("FxSwitchDust")
-audio = NodePath("AudioStreamPlayer3D")
 hitSound = ExtResource("2_x5w6g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="SwitchMesh" type="MeshInstance3D" parent="."]
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_vxlit")
 surface_material_override/0 = ExtResource("2_uvtvs")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="SwitchCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_ylyv8")
 
@@ -43,7 +38,7 @@ cull_mask = 1
 [node name="FxSwitchDust" parent="." instance=ExtResource("5_4dwdn")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 5.0
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
