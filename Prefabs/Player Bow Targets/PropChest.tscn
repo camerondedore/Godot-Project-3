@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyncf5bghkkwb"]
+[gd_scene load_steps=13 format=3 uid="uid://dyncf5bghkkwb"]
 
 [ext_resource type="PackedScene" uid="uid://b567kig0p2trd" path="res://Models/prop-chest.glb" id="1_oxeqv"]
 [ext_resource type="Script" path="res://C#/PlayerBow/ChestTarget.cs" id="1_pnrr2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_rme7f"]
 [ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="3_2i7no"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="3_7xqmg"]
+[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="6_fqhwf"]
 [ext_resource type="AudioStream" uid="uid://buaupw1cosg2g" path="res://Audio/pickup-spawn.wav" id="8_f7gyv"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_th5xi"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawnerMultiple.cs" id="9_cku3p"]
@@ -28,6 +29,7 @@ bones/4/rotation = Quaternion(0.707106, 2.37169e-20, 0.707107, 3.37311e-07)
 [node name="prop-chest2" parent="prop-chest/prop-chest-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
+surface_material_override/2 = ExtResource("6_fqhwf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
@@ -37,7 +39,7 @@ shape = SubResource("BoxShape3D_a1nr0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688, -0.5491)
 
 [node name="PickupSpawnerMultiple" type="Node3D" parent="." node_paths=PackedStringArray("audio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937039, -0.0246166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99055, 0.0103993)
 script = ExtResource("9_cku3p")
 prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
 audio = NodePath("../Audio")

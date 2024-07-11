@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://boho7pu4wvclm"]
+[gd_scene load_steps=12 format=3 uid="uid://boho7pu4wvclm"]
 
 [ext_resource type="PackedScene" uid="uid://b2g4qgmkdn744" path="res://Models/prop-lockbox.glb" id="1_dceib"]
 [ext_resource type="Script" path="res://C#/PlayerBow/LockboxTarget.cs" id="1_vcmy5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="4_rsdln"]
 [ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="5_cpfrh"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawnerDelayed.cs" id="6_03t3p"]
+[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="6_noej3"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="7_rf4xg"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_30sne"]
 
@@ -22,11 +23,16 @@ openSound = ExtResource("3_he827")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
 [node name="Skeleton3D" parent="prop-lockbox/prop-lockbox-armature" index="0"]
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-5.33851e-08, 0.707107, -0.707106, 5.33851e-08)
 bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.707107, 0, 0.707107, 0)
+bones/4/scale = Vector3(1, 1, 1)
 
 [node name="prop-lockbox2" parent="prop-lockbox/prop-lockbox-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")
+surface_material_override/2 = ExtResource("6_noej3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
