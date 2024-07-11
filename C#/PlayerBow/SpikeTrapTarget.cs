@@ -6,28 +6,28 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    string arrowType = "blade";
-    [Export]
-    CollisionShape3D arrowCollider;
-    [Export]
-    Node3D damageArea;
-    [Export]
-    MeshInstance3D sharpMesh;
-    [Export]
-    GpuParticles3D cutFx,
-        hazardFx;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     AudioStream cutSound;
-    [Export]
-    Vector3 targetOffset;
+    
+    string arrowType = "blade";
+    Vector3 targetOffset = new Vector3(0, 0.25f, 0);
+    CollisionShape3D arrowCollider;
+    Area3D damageArea;
+    MeshInstance3D spikesMesh;
+    GpuParticles3D spikesCutFx,
+        hazardFx;
+    AudioTools3d audio;
 
 
 
     public override void _Ready()
     {
-                
+        // get nodes
+        arrowCollider = (CollisionShape3D) GetNode("ArrowCollider");
+        damageArea = (Area3D) GetNode("DamageArea");
+        spikesMesh = (MeshInstance3D) GetNode("SpikesMesh");
+        spikesCutFx = (GpuParticles3D) GetNode("FxSpikesCut");
+        hazardFx = (GpuParticles3D) GetNode("FxHazard");
+        audio = (AudioTools3d) GetNode("Audio");
     }
 
 
@@ -61,10 +61,10 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
         damageArea.QueueFree();
 
         // cut mesh
-        sharpMesh.Visible = false;
+        spikesMesh.Visible = false;
 
         // play fx
-        cutFx.Restart();
+        spikesCutFx.Restart();
 
         // stop hazard fx
         hazardFx.Emitting = false;
