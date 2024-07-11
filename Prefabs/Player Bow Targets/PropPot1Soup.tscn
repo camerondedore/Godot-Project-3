@@ -21,22 +21,16 @@ radius = 0.3
 [node name="PropPot1Soup" instance=ExtResource("1_071tj")]
 collision_layer = 16
 
-[node name="SoupTarget" type="StaticBody3D" parent="." index="2" node_paths=PackedStringArray("targetNode", "collider", "cooker")]
+[node name="SoupTarget" type="StaticBody3D" parent="." index="2"]
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("2_m6oq3")
-targetNode = NodePath("Target")
-collider = NodePath("CollisionShape3D")
-cooker = NodePath("Cooker")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SoupTarget" index="0"]
+[node name="FireCollider" type="CollisionShape3D" parent="SoupTarget" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 shape = SubResource("SphereShape3D_4trl6")
 
-[node name="Target" type="Node3D" parent="SoupTarget" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
-
-[node name="Cooker" type="Node3D" parent="SoupTarget" index="2" node_paths=PackedStringArray("bubbleFx", "steamFx", "fireFx", "fireAudio", "bubbleAudio", "spawnAudio", "soupSpawner", "soupMesh")]
+[node name="Cooker" type="Node3D" parent="SoupTarget" index="1" node_paths=PackedStringArray("bubbleFx", "steamFx", "fireFx", "fireAudio", "bubbleAudio", "spawnAudio", "soupSpawner", "soupMesh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 script = ExtResource("3_2bn00")
 bubbleFx = NodePath("FxNettleBrothBubbles")

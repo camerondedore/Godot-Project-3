@@ -5,15 +5,21 @@ using PlayerBow;
 public partial class SoupTarget : StaticBody3D, IBowTarget
 {
 
-    [Export]
-    public string arrowType = "fire";
-    [Export]
-    Node3D targetNode;
-    [Export]
-    CollisionShape3D collider;
-    [Export]
+    string arrowType = "fire";
+    Vector3 targetOffset = new Vector3(0, -0.6f, 0);
+    CollisionShape3D fireCollider;
     SoupCooker cooker;
-    
+
+
+
+    public override void _Ready()
+    {
+        // get nodes
+        fireCollider = (CollisionShape3D) GetNode("FireCollider");
+        cooker = (SoupCooker) GetNode("Cooker");
+    }
+
+
 
 
     public string GetArrowType()
@@ -27,7 +33,7 @@ public partial class SoupTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return targetNode.GlobalPosition;
+            return ToGlobal(targetOffset);
         }
         else
         {
@@ -40,7 +46,7 @@ public partial class SoupTarget : StaticBody3D, IBowTarget
     public void Hit(Vector3 dir)
     {
         // disable collision
-        collider.Disabled = true;
+        fireCollider.Disabled = true;
 
         // start cooking
         cooker.StartFire();

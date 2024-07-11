@@ -831,6 +831,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.7719
 [node name="PropPot1Soup" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Food/PropCookingSpit2" instance=ExtResource("45_am02w")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.6, 0.0472256, 0)
 
+[node name="PropPot1Soup2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Food/PropCookingSpit2" instance=ExtResource("45_am02w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.30598, 0.0472256, 0)
+
 [node name="PropBungMallet" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Food" instance=ExtResource("76_xaefu")]
 transform = Transform3D(0.606904, 0.782701, -0.138011, 4.47035e-08, 0.173648, 0.984808, 0.794775, -0.597684, 0.105388, -7.13907, 1.36397, -2.41509)
 
@@ -1743,14 +1746,12 @@ bones/10/rotation = Quaternion(-1.85797e-07, -1.19209e-07, 2.21487e-14, 1)
 bones/11/rotation = Quaternion(0.780367, 0.0771695, -0.104526, 0.611675)
 bones/12/rotation = Quaternion(6.78462e-08, -8.89197e-08, -0.707107, 0.707107)
 bones/14/rotation = Quaternion(0.707107, -3.09138e-08, 1.99501e-07, 0.707107)
-bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(0.5, 0.5, -0.5, 0.5)
 bones/16/rotation = Quaternion(-1.85797e-07, -1.19209e-07, 2.21487e-14, 1)
 bones/17/rotation = Quaternion(0.780367, -0.0771696, 0.104526, 0.611675)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/rotation = Quaternion(-8.89196e-08, -6.78463e-08, 0.707107, 0.707107)
 bones/19/rotation = Quaternion(0.707107, -1.99501e-07, 3.09138e-08, 0.707107)
-bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
 bones/21/rotation = Quaternion(-0.628549, -0.00836229, -0.575998, 0.522572)
 bones/21/scale = Vector3(1, 1, 1)
@@ -1761,7 +1762,6 @@ bones/24/scale = Vector3(1, 1, 1)
 bones/25/rotation = Quaternion(-0.181084, 0.0308331, -0.00117899, 0.982983)
 bones/25/scale = Vector3(1, 1, 1)
 bones/26/rotation = Quaternion(-0.628549, 0.00836232, 0.575998, 0.522572)
-bones/26/scale = Vector3(1, 1, 1)
 bones/27/scale = Vector3(1, 1, 1)
 bones/28/rotation = Quaternion(0.682461, 0.055129, -0.153007, 0.712599)
 bones/29/rotation = Quaternion(0.118705, -0.731965, 0.116016, 0.660815)
