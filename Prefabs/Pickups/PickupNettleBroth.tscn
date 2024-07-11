@@ -40,9 +40,8 @@ scale_max = 0.3
 scale_curve = SubResource("CurveTexture_b5u7h")
 color_ramp = SubResource("GradientTexture1D_3yg5b")
 
-[node name="PickupNettleBroth" node_paths=PackedStringArray("fxSpawner") instance=ExtResource("1_8qsn3")]
+[node name="PickupNettleBroth" instance=ExtResource("1_8qsn3")]
 script = ExtResource("1_dnlt2")
-fxSpawner = NodePath("FxSpawner")
 saveToWorldData = false
 
 [node name="MeshInstance3D" parent="." index="0"]

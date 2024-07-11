@@ -5,9 +5,19 @@ public partial class NettleBrothPickup : PickupRigidbody
 {
 
     [Export]
-    RigidbodySpawner fxSpawner;
-    [Export]
     float restoredHitPoints = 100;
+    
+    RigidbodySpawner fxSpawner;
+
+
+
+    public override void _Ready()
+    {
+        base._Ready();
+
+        // get node
+        fxSpawner = (RigidbodySpawner) GetNode("FxSpawner");
+    }
 
 
 

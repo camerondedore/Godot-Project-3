@@ -43,6 +43,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 script = ExtResource("1_anmk5")
 meshInstance = NodePath("MeshInstance3D")
 nutMeshes = Array[ArrayMesh]([ExtResource("3_f3xch"), ExtResource("4_cr428"), ExtResource("5_gn2nl")])
+pickupPrefabs = Array[PackedScene]([])
 
 [node name="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
