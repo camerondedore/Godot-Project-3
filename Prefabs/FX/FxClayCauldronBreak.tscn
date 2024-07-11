@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://ccgmxw6a0pkkp"]
+
+[ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/Fx/FxDust.tres" id="1_nfc7m"]
+[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_oiqpg"]
+[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_wr4c6"]
+[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="4_68det"]
+[ext_resource type="AudioStream" uid="uid://bhk21mhtjb3ob" path="res://Audio/clay-cauldron-break-1.wav" id="5_5yag3"]
+[ext_resource type="AudioStream" uid="uid://b820svc3a57i" path="res://Audio/clay-cauldron-break-2.wav" id="6_7qcr4"]
+[ext_resource type="AudioStream" uid="uid://cam50q6pg6dcu" path="res://Audio/clay-cauldron-break-3.wav" id="7_152qy"]
+
+[sub_resource type="Gradient" id="Gradient_ifohs"]
+offsets = PackedFloat32Array(0, 0.0544218, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wffym"]
+gradient = SubResource("Gradient_ifohs")
+
+[sub_resource type="Curve" id="Curve_rhfob"]
+_data = [Vector2(0, 0.49505), 0.0, 1.18812, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kcfur"]
+curve = SubResource("Curve_rhfob")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_64q6l"]
+emission_shape = 1
+emission_sphere_radius = 0.6
+angle_max = 360.0
+direction = Vector3(0, 1, 0)
+spread = 20.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.2
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+gravity = Vector3(0, 0.4, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_kcfur")
+color_ramp = SubResource("GradientTexture1D_wffym")
+
+[sub_resource type="QuadMesh" id="QuadMesh_hf432"]
+
+[node name="FxClayCauldronBreak" type="GPUParticles3D"]
+layers = 2
+material_override = ExtResource("1_nfc7m")
+gi_mode = 2
+emitting = false
+amount = 12
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_64q6l")
+draw_pass_1 = SubResource("QuadMesh_hf432")
+script = ExtResource("2_oiqpg")
+restartOnReady = true
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("3_wr4c6")
+lifeTime = 2.5
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 5.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("4_68det")
+sounds = Array[AudioStream]([ExtResource("5_5yag3"), ExtResource("6_7qcr4"), ExtResource("7_152qy")])
+destroyOnFinished = false

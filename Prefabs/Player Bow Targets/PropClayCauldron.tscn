@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl3tppj3wcnmy"]
+[gd_scene load_steps=17 format=3 uid="uid://bl3tppj3wcnmy"]
 
 [ext_resource type="Script" path="res://C#/PlayerBow/ClayPotTarget.cs" id="1_8ebja"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="2_cvrch"]
 [ext_resource type="ArrayMesh" uid="uid://bahvemr0ui8vx" path="res://Models/prop-clay-cauldron.res" id="2_wfd2g"]
 [ext_resource type="Material" uid="uid://dyh7bkfe8jo03" path="res://Materials/Props/PropClayCauldron.tres" id="3_4w1ub"]
+[ext_resource type="PackedScene" uid="uid://ccgmxw6a0pkkp" path="res://Prefabs/FX/FxClayCauldronBreak.tscn" id="3_d010c"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_17iwl"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="6_yd42t"]
 [ext_resource type="Script" path="res://C#/GibsActivator.cs" id="7_olc1y"]
@@ -23,6 +24,7 @@ radius = 0.563
 collision_layer = 16
 script = ExtResource("1_8ebja")
 storedItem = ExtResource("2_cvrch")
+breakFx = ExtResource("3_d010c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)

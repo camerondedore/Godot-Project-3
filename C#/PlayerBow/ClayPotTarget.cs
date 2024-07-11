@@ -6,7 +6,8 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    PackedScene storedItem;
+    PackedScene storedItem,
+        breakFx;
 
     public string arrowType = "weighted";
     
@@ -57,13 +58,15 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
     public void Hit(Vector3 dir)
     {
         // create fx
-        //var newFx = cutFx.Instantiate() as Node3D;
+        var newFx = breakFx.Instantiate() as Node3D;
+
+        var fxPosition = ToGlobal(positionOffset);
 
         // set transform
-        //newFx.LookAtFromPosition(GlobalPosition, GlobalPosition + -Basis.Z);
+        newFx.LookAtFromPosition(fxPosition, fxPosition + -Basis.Z);
 
-        //GetTree().CurrentScene.AddChild(newFx);
-        //newFx.Owner = GetTree().CurrentScene;
+        GetTree().CurrentScene.AddChild(newFx);
+        newFx.Owner = GetTree().CurrentScene;
 
         // spawn pickup
         pickupSpawner.Spawn(storedItem);
