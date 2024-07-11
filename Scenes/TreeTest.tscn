@@ -1373,10 +1373,10 @@ transform = Transform3D(0.342981, -0.0097242, -0.939292, 0.0283404, 0.999599, -8
 [node name="Containers" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
 [node name="PropLockbox" parent="Map/OccluderInstance3D/NavigationRegion3D/Containers" instance=ExtResource("50_hmjpr")]
-transform = Transform3D(0.964971, 0, -0.262357, 0, 1, 0, 0.262357, 0, 0.964971, -0.51525, 1.35, -2.76647)
+transform = Transform3D(0.964971, 0, -0.262357, 0, 1, 0, 0.262357, 0, 0.964971, -0.51525, 1.0123, -2.76647)
 
 [node name="PropChest" parent="Map/OccluderInstance3D/NavigationRegion3D/Containers" instance=ExtResource("56_1rfgt")]
-transform = Transform3D(0.923519, 0, 0.383554, 0, 1, 0, -0.383554, 0, 0.923519, 24.402, 10.6, -4.359)
+transform = Transform3D(0.923519, 0, 0.383554, 0, 1, 0, -0.383554, 0, 0.923519, 24.402, 10, -4.359)
 storedItems = Array[PackedScene]([ExtResource("41_oibar"), ExtResource("42_1ywjb"), ExtResource("43_r6irn")])
 
 [node name="PropClayCauldron" parent="Map/OccluderInstance3D/NavigationRegion3D/Containers" instance=ExtResource("95_ps0dn")]

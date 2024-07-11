@@ -5,86 +5,91 @@ using PlayerBow;
 public partial class ChestTarget : StaticBody3D, IBowTarget
 {
 
-    [Export]
-    public string arrowType = "pick";
-    [Export]
-    FxLock lockFx;
-    [Export]
-    RigidbodySpawnerMultiple pickupSpawner;
-    [Export]
-    PackedScene[] storedItems;
-    [Export]
-    AnimationPlayer anim;
-    [Export]
-    AudioTools3d audio;
-    [Export]
-    AudioStream openSound;
+	[Export]
+	PackedScene[] storedItems;
+	[Export]
+	AudioStream openSound;
+	
+	public string arrowType = "pick";
+	
+	FxLock lockFx;
+	RigidbodySpawnerMultiple pickupSpawner;
+	AnimationPlayer anim;
+	AudioTools3d audio;
 
 
 
-    public override void _Ready()
-    {
-        // get if chest was already activated
-        var wasActivated = WorldData.data.CheckActivatedObjects(this);
+	public override void _Ready()
+	{
+		// get nodes used whether or not the lockbox was activated
+		lockFx = (FxLock) GetNode("FxLock");
+		anim = (AnimationPlayer) GetNode("prop-chest/AnimationPlayer");
 
-        if(!wasActivated)
-        {
-            anim.Play("chest-idle");        
-        }
-        else
-        {
-            // play animation
-            anim.Play("chest-opened");
+		// get if chest was already activated
+		var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
-            // remove lock
-            lockFx.QueueFree();
+		if(!wasActivated)
+		{
+			anim.Play("chest-idle");
 
-            // disable script
-            SetScript(new Variant());
-        }
-    }
+			// get nodes
+			pickupSpawner = (RigidbodySpawnerMultiple) GetNode("PickupSpawnerMultiple");
+			audio = (AudioTools3d) GetNode("Audio");
+		}
+		else
+		{
+			// play animation
+			anim.Play("chest-opened");
 
+			// remove lock
+			lockFx.QueueFree();
 
-
-    public string GetArrowType()
-    {
-        return arrowType;
-    }
-
-
-
-    public Vector3 GetGlobalPosition()
-    {
-        if(IsInstanceValid(this))
-        {
-            return GlobalPosition;
-        }
-        else
-        {
-            return Vector3.Zero;
-        }
-    }
+			// disable script
+			SetScript(new Variant());
+		}
+	}
 
 
 
-    public void Hit(Vector3 dir)
-    {
-        // play animation
-        anim.Play("chest-open");
+	public string GetArrowType()
+	{
+		return arrowType;
+	}
 
-        // remove lock
-        lockFx.Open();
 
-        // eject pickup
-        pickupSpawner.StartSpawn(storedItems);
 
-        // save to activated objects
-        WorldData.data.ActivateObject(this);
+	public Vector3 GetGlobalPosition()
+	{
+		if(IsInstanceValid(this))
+		{
+			return GlobalPosition;
+		}
+		else
+		{
+			return Vector3.Zero;
+		}
+	}
 
-        // play audio
-        audio.PlaySound(openSound, 0.05f);
 
-        // disable script
-        SetScript(new Variant());
-    }
+
+	public void Hit(Vector3 dir)
+	{
+		// play animation
+		anim.Play("chest-open");
+
+		// remove lock
+		lockFx.Open();
+
+		// eject pickup
+		pickupSpawner.StartSpawn(storedItems);
+
+		// save to activated objects
+		WorldData.data.ActivateObject(this);
+
+		// play audio
+		audio.PlaySound(openSound, 0.05f);
+
+		// disable script
+		SetScript(new Variant());
+	}
 }

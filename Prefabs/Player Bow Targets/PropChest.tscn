@@ -11,40 +11,36 @@
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_th5xi"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawnerMultiple.cs" id="9_cku3p"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_khpmh"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_a1nr0"]
 size = Vector3(2, 1.2, 1)
 
-[node name="PropChest" node_paths=PackedStringArray("lockFx", "pickupSpawner", "anim", "audio") instance=ExtResource("1_oxeqv")]
-collision_layer = 16
+[node name="PropChest" type="StaticBody3D"]
 script = ExtResource("1_pnrr2")
-lockFx = NodePath("FxLock")
-pickupSpawner = NodePath("PickupSpawnerDelayed")
-storedItems = Array[PackedScene]([ExtResource("2_8vv3q")])
-anim = NodePath("AnimationPlayer")
-audio = NodePath("ChestAudio")
 openSound = ExtResource("2_fo8lm")
 
-[node name="Skeleton3D" parent="prop-chest-armature" index="0"]
-bones/1/rotation = Quaternion(-0.707107, -8.42937e-08, -8.42937e-08, 0.707107)
-bones/2/rotation = Quaternion(-0.5, -0.5, 0.5, 0.5)
+[node name="prop-chest" parent="." instance=ExtResource("1_oxeqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
-[node name="prop-chest2" parent="prop-chest-armature/Skeleton3D" index="0"]
-layers = 2
-gi_mode = 2
+[node name="Skeleton3D" parent="prop-chest/prop-chest-armature" index="0"]
+bones/3/rotation = Quaternion(-0.707107, 2.00972e-14, 0.707107, -3.37311e-07)
+bones/4/rotation = Quaternion(0.707106, 2.37169e-20, 0.707107, 3.37311e-07)
+
+[node name="prop-chest2" parent="prop-chest/prop-chest-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
-shape = SubResource("BoxShape3D_khpmh")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_a1nr0")
 
-[node name="FxLock" parent="." index="3" instance=ExtResource("3_2i7no")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0879999, -0.5491)
+[node name="FxLock" parent="." instance=ExtResource("3_2i7no")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688, -0.5491)
 
-[node name="PickupSpawnerDelayed" type="Node3D" parent="." index="4" node_paths=PackedStringArray("audio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.337039, -0.0246166)
+[node name="PickupSpawnerMultiple" type="Node3D" parent="." node_paths=PackedStringArray("audio")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937039, -0.0246166)
 script = ExtResource("9_cku3p")
 prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
-audio = NodePath("../ChestAudio")
+audio = NodePath("../Audio")
 spawnSound = ExtResource("8_f7gyv")
 delayTime = 1.2
 timeBetweenSpawns = 0.33
@@ -54,9 +50,11 @@ spread = 2.0
 angularSpeed = 0.0
 useAngularVelocity = false
 
-[node name="ChestAudio" type="AudioStreamPlayer3D" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 unit_size = 5.0
 max_distance = 60.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("8_th5xi")
+
+[editable path="prop-chest"]

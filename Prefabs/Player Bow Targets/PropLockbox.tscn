@@ -14,10 +14,12 @@
 size = Vector3(0.75, 0.7, 0.563)
 
 [node name="PropLockbox" type="StaticBody3D"]
+collision_layer = 16
 script = ExtResource("1_vcmy5")
 openSound = ExtResource("3_he827")
 
 [node name="prop-lockbox" parent="." instance=ExtResource("1_dceib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
 [node name="Skeleton3D" parent="prop-lockbox/prop-lockbox-armature" index="0"]
 bones/3/scale = Vector3(1, 1, 1)
@@ -27,13 +29,14 @@ surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 shape = SubResource("BoxShape3D_a313i")
 
 [node name="FxLock" parent="." instance=ExtResource("5_cpfrh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.109548, -0.31598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245565, -0.316)
 
 [node name="PickupSpawnerDelayed" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.376427, -0.259344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.626, -0.259)
 script = ExtResource("6_03t3p")
 delayTime = 0.1
 prefab = ExtResource("7_rf4xg")
@@ -43,6 +46,7 @@ angularSpeed = 0.0
 useAngularVelocity = false
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 unit_size = 5.0
 max_distance = 40.0
 attenuation_filter_cutoff_hz = 20500.0
