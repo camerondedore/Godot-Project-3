@@ -10,12 +10,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_l0qqr"]
 size = Vector3(0.8, 0.8, 0.1)
 
-[node name="PropSpiderweb1" type="StaticBody3D" node_paths=PackedStringArray("pinnedObjects", "pickupSpawner")]
+[node name="PropSpiderweb1" type="StaticBody3D" node_paths=PackedStringArray("pinnedObjects")]
 collision_layer = 64
 script = ExtResource("1_2acdw")
 cutFx = ExtResource("2_3gmco")
 pinnedObjects = []
-pickupSpawner = NodePath("PickupSpawner")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2

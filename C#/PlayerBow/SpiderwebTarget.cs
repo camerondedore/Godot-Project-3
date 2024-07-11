@@ -8,20 +8,22 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
     // DO NOT USE PINNED OBJECTS WITH STORED ITEM
 
     [Export]
-    public string arrowType = "blade";
-    [Export]
     PackedScene cutFx;
     [Export]
     Node[] pinnedObjects;
     [Export]
-    RigidbodySpawner pickupSpawner;
-    [Export]
     PackedScene storedItem;
+    
+    string arrowType = "blade";
+    RigidbodySpawner pickupSpawner;
 
 
 
     public override void _Ready()
     {
+        // get node
+        pickupSpawner = (RigidbodySpawner) GetNode("PickupSpawner");
+
         // check if web pins anything
         if(pinnedObjects.Length > 0)
         {
