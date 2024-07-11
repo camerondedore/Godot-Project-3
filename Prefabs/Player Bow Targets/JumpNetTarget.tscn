@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://q8xtek0bikgv"]
+
+[ext_resource type="Script" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
+[ext_resource type="AudioStream" uid="uid://dlygbf47nnkvn" path="res://Audio/jump-pad-attach.wav" id="2_ju7d0"]
+[ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="3_nl5mq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o31fv"]
+size = Vector3(1.5, 0.2, 1.5)
+
+[node name="JumpNetTarget" type="StaticBody3D"]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("1_dgeyj")
+attachSound = ExtResource("2_ju7d0")
+
+[node name="ArrowCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_o31fv")
+
+[node name="JumpNet" parent="." instance=ExtResource("3_nl5mq")]

@@ -11,6 +11,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 	AudioStream openSound;
 	
 	string arrowType = "pick";
+	Vector3 targetOffset = new Vector3(0, 0.7f, 0);
 	FxLock lockFx;
 	RigidbodySpawnerMultiple pickupSpawner;
 	AnimationPlayer animation;
@@ -61,7 +62,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 	{
 		if(IsInstanceValid(this))
 		{
-			return GlobalPosition;
+			return ToGlobal(targetOffset);
 		}
 		else
 		{

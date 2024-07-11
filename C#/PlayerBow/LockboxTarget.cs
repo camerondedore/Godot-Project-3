@@ -11,6 +11,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     AudioStream openSound;
      
     string arrowType = "pick";
+    Vector3 targetOffset = new Vector3(0, 0.3f, 0);
     FxLock lockFx;
     RigidbodySpawnerDelayed pickupSpawner;
     AnimationPlayer animation;
@@ -61,7 +62,7 @@ public partial class LockboxTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return GlobalPosition;
+            return ToGlobal(targetOffset);
         }
         else
         {

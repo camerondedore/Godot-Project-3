@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bljv533un3a5m"]
+[gd_scene load_steps=13 format=3 uid="uid://bljv533un3a5m"]
 
 [ext_resource type="Script" path="res://C#/JumpPad.cs" id="1_uhwkk"]
+[ext_resource type="AudioStream" uid="uid://dlygbf47nnkvn" path="res://Audio/jump-pad-attach.wav" id="2_6jivt"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad-bounce.wav" id="2_6r71d"]
 [ext_resource type="PackedScene" uid="uid://catgd5gf5kp2k" path="res://Prefabs/FX/FxJumpPadDust.tscn" id="3_i2uk0"]
 [ext_resource type="PackedScene" uid="uid://h2k2t6a3l3nk" path="res://Models/prop-jump-net.glb" id="4_e3twb"]
@@ -14,37 +15,33 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0w8p"]
 size = Vector3(1.3, 0.2, 1.3)
 
-[node name="JumpNetReady" type="Area3D" node_paths=PackedStringArray("jumpPadAudio", "anim", "dustFx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0)
+[node name="JumpNet" type="Area3D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_uhwkk")
-jumpPadAudio = NodePath("AudioStreamPlayer3D")
+attachSound = ExtResource("2_6jivt")
 bounceSound = ExtResource("2_6r71d")
-anim = NodePath("prop-jump-net/AnimationPlayer")
-dustFx = NodePath("FxJumpPadDust")
 
 [node name="prop-jump-net" parent="." instance=ExtResource("4_e3twb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="prop-jump-net-stakes" parent="prop-jump-net" index="0"]
 layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("5_vu3vj")
 surface_material_override/1 = ExtResource("6_8j7hd")
 surface_material_override/2 = ExtResource("7_u6us4")
 
 [node name="prop-jump-net2" parent="prop-jump-net/armature-jump-net/Skeleton3D" index="0"]
 layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("8_4bt27")
 
 [node name="JumpCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308, 0)
 shape = SubResource("BoxShape3D_k0w8p")
 
-[node name="FxJumpPadDust" parent="." instance=ExtResource("3_i2uk0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 stream = ExtResource("2_6r71d")
 unit_size = 3.0
@@ -57,5 +54,8 @@ size = Vector3(1.5, 0.15, 1.5)
 texture_albedo = ExtResource("10_merhe")
 emission_energy = 0.0
 cull_mask = 1
+
+[node name="FxJumpPadDust" parent="." instance=ExtResource("3_i2uk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [editable path="prop-jump-net"]

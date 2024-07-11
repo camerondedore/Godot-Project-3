@@ -7,20 +7,27 @@ public partial class JumpPad : Area3D
     [Export]
     public Node3D landingTarget;
     [Export]
-    AudioTools3d jumpPadAudio;
-    [Export]
-    AudioStream bounceSound;
-    [Export]
-    AnimationPlayer anim;
-    [Export]
-    GpuParticles3D dustFx;
+    AudioStream attachSound,
+        bounceSound;
     [Export]
     public float horizontalSpeed = 10;
+    
+    AnimationPlayer animation;
+    AudioTools3d audio;
+    GpuParticles3D jumpPadDustFx;
+    MeshInstance3D netMesh;
 
 
 
     public override void _Ready()
     {
+        // get nodes
+        animation = (AnimationPlayer) GetNode("prop-jump-net/AnimationPlayer");
+        audio = (AudioTools3d) GetNode("Audio");
+        jumpPadDustFx = (GpuParticles3D) GetNode("FxJumpPadDust");
+        netMesh = (MeshInstance3D) GetNode("prop-jump-net/armature-jump-net/Skeleton3D/prop-jump-net2");
+
+
         // set up signal
         BodyEntered += Triggered;        
     }
@@ -41,13 +48,13 @@ public partial class JumpPad : Area3D
             bodyJumpPadUser.JumpPadActivated(jumpPadVelocity);
 
             // play audio
-            jumpPadAudio.PlaySound(bounceSound, 0.05f);
+            audio.PlaySound(bounceSound, 0.05f);
 
             // play animation
-            anim.Play("jump-net-bounce");
+            animation.Play("jump-net-bounce");
 
             // start FX
-            dustFx.Restart();
+            jumpPadDustFx.Restart();
         }
     }
 
@@ -73,6 +80,33 @@ public partial class JumpPad : Area3D
 		jumpVelocity.Y = 0.5f * EngineGravity.magnitude * timeToTarget + (landingTarget.GlobalPosition.Y - jumper.GlobalPosition.Y) / timeToTarget;
 
         return jumpVelocity;
+    }
+
+
+
+    public void HideNetMesh()
+    {
+        netMesh.Visible = false;
+    }
+
+
+
+    public void AttachMesh(Node3D newLandingTarget, float newHorizontalSpeed)
+    {
+        landingTarget = newLandingTarget;
+        horizontalSpeed = newHorizontalSpeed;
+
+        // show jump net
+        netMesh.Visible = true;
+
+        // play animation
+        animation.Play("jump-net-attach");
+
+        // play audio
+        audio.PlaySound(attachSound, 0.05f);
+
+        // enable jump pad
+        SetDeferred("monitoring", true);
     }
 }
 

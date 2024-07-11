@@ -5,35 +5,31 @@ using PlayerBow;
 public partial class NetTarget : StaticBody3D, IBowTarget
 {
 
-     [Export]
-    public string arrowType = "net";
-    [Export]
-    JumpPad jumpPad;
-    [Export]
-    CollisionShape3D arrowCollider;
-    [Export]
-    MeshInstance3D netMesh;
-    [Export]
-    AnimationPlayer anim;
-    [Export]
-    AudioTools3d audio;
     [Export]
     AudioStream attachSound;
     [Export]
     Node3D jumpPadTarget;
     [Export]
-    Vector3 targetOffset;
-    [Export]
     float horizontalSpeed = 10;
+
+    string arrowType = "net";
+    Vector3 targetOffset = new Vector3(0, 0.3f, 0);
+    JumpPad jumpPad;
+    CollisionShape3D arrowCollider;
+    
 
 
 
     public override void _Ready()
     {
+        // get nodes
+        jumpPad = (JumpPad) GetNode("JumpNet");
+        arrowCollider = (CollisionShape3D) GetNode("ArrowCollision");
+
         jumpPad.SetDeferred("monitoring", false);
 
         // hide net
-        netMesh.Visible = false;
+        jumpPad.HideNetMesh();
     }
 
 
@@ -61,22 +57,8 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
     public void Hit(Vector3 dir)
     {
-        // make net visible
-        netMesh.Visible = true;
-
-        // play animation
-        anim.Play("jump-net-attach");
-
-        // play audio
-        audio.PlaySound(attachSound, 0.05f);
-
-
-        // assign jump pad values
-        jumpPad.landingTarget = jumpPadTarget;
-        jumpPad.horizontalSpeed = horizontalSpeed;
-
-        // enable jump pad
-        jumpPad.SetDeferred("monitoring", true);
+        // attach net
+        jumpPad.AttachMesh(jumpPadTarget, horizontalSpeed);
 
         // disable collider
         arrowCollider.Disabled = true;
