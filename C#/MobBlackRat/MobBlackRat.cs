@@ -53,7 +53,7 @@ namespace MobBlackRat
             attackAngle = 60,
             PatrolRange = 10,
             speed = 5.5f,
-            lookSpeed = 0.3f,
+            lookSpeed = 15f,
             acceleration = 4,
             damageFromArrow = 50,
             damage = 10;
@@ -180,7 +180,7 @@ namespace MobBlackRat
                 var forward = GlobalPosition + -Basis.Z;
                 var lookDirection = GlobalPosition + (enemy.GlobalPosition - GlobalPosition).Normalized();
                 lookDirection.Y = GlobalPosition.Y;
-                var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+                var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
 
                 // look at enemy
                 LookAt(lookTarget);
@@ -204,7 +204,7 @@ namespace MobBlackRat
                     var forward = GlobalPosition + -Basis.Z;
                     var lookDirection = GlobalPosition + safeVel.Normalized();
                     lookDirection.Y = GlobalPosition.Y;
-                    var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+                    var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)GetPhysicsProcessDeltaTime()));
 
                     // look in direction of movement
                     LookAt(lookTarget, Vector3.Up);

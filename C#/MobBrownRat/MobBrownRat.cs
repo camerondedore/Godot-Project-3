@@ -27,64 +27,66 @@ namespace MobBrownRat
             stateDie;
 
         [Export]
-        public MobDetection detection;
-        [Export]
-        public MobEyes eyes;
-        [Export]
-        public NavigationAgent3D navAgent;
-        [Export]
-        public MobBow bow;
-        [Export]
-        public Health health;
-        [Export]
-        public MobFaction[] myFactions;
-        [Export]
-        public AnimationTree animation;
-        [Export]
-        public CollisionShape3D collider;
-        [Export]
         public Node3D startTarget;
         [Export]
-        public string arrowType = "bodkin";
-        [Export]
-        public double aimTime = 1f,
-            fireTime = 0.5f,
+        public bool isMovingRat = true;
+
+        string arrowType = "bodkin";
+        public MobDetection detection;
+        public MobEyes eyes;
+        public NavigationAgent3D navAgent;
+        public MobBow bow;
+        public Health health;
+        public MobFaction myFaction1,
+            myFaction2;
+        public AnimationTree animation;
+        public CollisionShape3D collider;
+        public MobFaction enemy;
+        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
+        public Vector3 startPosition;
+        public double aimTime = 0.5f,
+            fireTime = 1.2f,
             reactTime = 0.4f;
-        [Export]
-        public float maxSightRangeSqr = 100,
+        public float maxSightRangeSqr = 625,
             maxSightRangeForAlliesSqr = 100,
             moveRecalculatePathRange = 3,
             attackRangeMinSqr = 225,
             attackRangeMaxSqr = 400,
             fleeRangeSqr = 25,
-            fleeMoveDistance = 8,
+            fleeMoveDistance = 5,
             fleeSpreadRange = 3,
             PatrolRange = 10,
-            speed = 3,
-            lookSpeed = 4,
+            speed = 4.5f,
+            lookSpeed = 15f,
             acceleration = 4,
-            dodgeDistance = 2,
+            dodgeDistance = 4,
             damageFromArrow = 50,
             lookAngleNormal = 30;
-        [Export]
-        public bool isMovingRat = true;
-
-        public MobFaction enemy;
-        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
-        public Vector3 startPosition;
         public int shotCount,
             fleeCount;
         public bool lookAtTarget = false,
             moving,
             isAggro;
 
-        //string debugText;
         bool delay = false;
+        //string debugText;
 
 
 
         public override void _Ready()
-        {            
+        {
+            // get nodes
+            detection = (MobDetection) GetNode("Detection");
+            eyes = (MobEyes) GetNode("Bow/BowDetection");
+            navAgent = (NavigationAgent3D) GetNode("NavAgent");
+            bow = (MobBow) GetNode("Bow");
+            health = (Health) GetNode("Health");
+            myFaction1 = (MobFaction) GetNode("Faction1");
+            myFaction2 = (MobFaction) GetNode("Faction2");
+            animation = (AnimationTree) GetNode("AnimationTree");
+            collider = (CollisionShape3D) GetNode("RatCollider");
+
+
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
 
@@ -181,7 +183,7 @@ namespace MobBrownRat
                 var forward = GlobalPosition + -Basis.Z;
                 var lookDirection = GlobalPosition + (enemy.GlobalPosition - GlobalPosition).Normalized();
                 lookDirection.Y = GlobalPosition.Y;
-                var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+                var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
 
                 // look at enemy
                 LookAt(lookTarget);
@@ -205,7 +207,7 @@ namespace MobBrownRat
                     var forward = GlobalPosition + -Basis.Z;
                     var lookDirection = GlobalPosition + safeVel.Normalized();
                     lookDirection.Y = GlobalPosition.Y;
-                    var lookTarget = forward.Lerp(lookDirection, lookSpeed);
+                    var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)GetPhysicsProcessDeltaTime()));
 
                     // look in direction of movement
                     LookAt(lookTarget, Vector3.Up);
