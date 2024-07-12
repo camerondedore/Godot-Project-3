@@ -16,25 +16,19 @@ size = Vector3(3, 1.2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_o24o3"]
 size = Vector3(3, 1.41, 1.41)
 
-[node name="PropBlackberryBushOld" type="StaticBody3D" node_paths=PackedStringArray("uncutMesh", "cutMesh", "cutDecal", "colliders", "navLink")]
+[node name="PropBlackberryBushOld" type="StaticBody3D"]
 collision_layer = 16
 script = ExtResource("1_i6v5i")
-uncutMesh = NodePath("MeshUncut")
-cutMesh = NodePath("MeshCut")
-cutDecal = NodePath("Decal")
-colliders = [NodePath("CollisionShape3D"), NodePath("InvisibleWall/CollisionShape3D2"), NodePath("InvisibleWall/CollisionShape3D3")]
 cutFx = ExtResource("2_yv47g")
-navLink = NodePath("NavigationLink3D")
-targetOffset = Vector3(0, 1, 0)
 
-[node name="MeshUncut" type="MeshInstance3D" parent="."]
+[node name="UncutMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_74o7b")
 surface_material_override/0 = ExtResource("4_hkpge")
 
-[node name="MeshCut" type="MeshInstance3D" parent="."]
+[node name="CutMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 layers = 2
@@ -42,11 +36,23 @@ gi_mode = 2
 mesh = ExtResource("3_d6b5l")
 surface_material_override/0 = ExtResource("4_hkpge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="BlackberryBushCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_5ngrm")
 
-[node name="Decal" type="Decal" parent="."]
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+collision_mask = 0
+
+[node name="Collider1" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+shape = SubResource("BoxShape3D_5xh34")
+
+[node name="Collider2" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
+shape = SubResource("BoxShape3D_o24o3")
+
+[node name="CutDecal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23517e-08, 0)
 visible = false
 size = Vector3(3, 0.75, 3)
@@ -55,19 +61,7 @@ upper_fade = 0.00288549
 lower_fade = 0.0048528
 cull_mask = 1
 
-[node name="InvisibleWall" type="StaticBody3D" parent="."]
-collision_layer = 2048
-collision_mask = 0
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
-shape = SubResource("BoxShape3D_5xh34")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWall"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
-shape = SubResource("BoxShape3D_o24o3")
-
-[node name="NavigationLink3D" type="NavigationLink3D" parent="."]
+[node name="NavLink" type="NavigationLink3D" parent="."]
 enabled = false
 start_position = Vector3(0, 0, -2)
 end_position = Vector3(0, 0, 2)

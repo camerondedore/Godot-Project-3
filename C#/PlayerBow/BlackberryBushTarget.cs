@@ -5,28 +5,32 @@ using CinematicSimple;
 
 public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicSimpleControl.iCinematicSimpleAction
 {
-
-    [Export]
-    public string arrowType = "blade";
-    [Export]
-    Node3D uncutMesh,
-        cutMesh;
-    [Export]
-    Decal cutDecal;
-    [Export]
-    CollisionShape3D[] colliders;
+    
     [Export]
     PackedScene cutFx;
-    [Export]
+
+    string arrowType = "blade";
+    Vector3 targetOffset = new Vector3(0, 1f, 0);
+    Node3D uncutMesh,
+        cutMesh;
+    Decal cutDecal;
+    CollisionShape3D bushCollider,
+        invisibleWallCollider1,
+        invisibleWallCollider2;
     NavigationLink3D navLink;
-    [Export]
-    Vector3 targetOffset;
 
 
 
     public override void _Ready()
     {
-        
+        // get nodes
+        uncutMesh = (MeshInstance3D) GetNode("UncutMesh");
+        cutMesh = (MeshInstance3D) GetNode("CutMesh");
+        cutDecal = (Decal) GetNode("CutDecal");
+        bushCollider = (CollisionShape3D) GetNode("BlackberryBushCollider");
+        invisibleWallCollider1 = (CollisionShape3D) GetNode("InvisibleWall/Collider1");
+        invisibleWallCollider2 = (CollisionShape3D) GetNode("InvisibleWall/Collider2");
+        navLink = (NavigationLink3D) GetNode("NavLink");
     }
 
 
@@ -62,10 +66,9 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
         navLink.Enabled = true;
 
         // disable collision
-        foreach(var c in colliders)
-        {
-            c.Disabled = true;
-        }
+        bushCollider.Disabled = true;
+        invisibleWallCollider1.Disabled = true;
+        invisibleWallCollider2.Disabled = true;
 
         // create fx
         var newFx = cutFx.Instantiate() as Node3D;
