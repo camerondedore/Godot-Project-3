@@ -31,10 +31,8 @@ namespace MobBlackRat
             blackboard.animation.Play("black-rat-die");
 
             // destroy faction nodes
-            foreach(var faction in blackboard.myFactions)
-            {
-                faction.QueueFree();
-            }
+            blackboard.myFaction1.QueueFree();
+            blackboard.myFaction2.QueueFree();
 
             // disable mob
             blackboard.machine.Disable();

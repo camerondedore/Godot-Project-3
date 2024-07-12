@@ -25,23 +25,10 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3dud8"]
 radius = 0.4
 
-[node name="MobBlackRat" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "navAgent", "health", "myFactions", "animation", "audio", "swordHitFx", "swordHitBloodFx", "collider")]
+[node name="MobBlackRat" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 18451
 script = ExtResource("1_46qau")
-detection = NodePath("Detection")
-eyes = NodePath("Eyes")
-navAgent = NodePath("NavigationAgent3D")
-health = NodePath("Health")
-myFactions = [NodePath("Faction"), NodePath("Faction2")]
-animation = NodePath("character-black-rat/AnimationPlayer")
-audio = NodePath("RatAudio")
-swordHitFx = NodePath("FxEnemyHit")
-swordHitBloodFx = NodePath("FxBloodSlash")
-collider = NodePath("CollisionShape3D")
-attackDistanceSqr = 4.5
-attackRangeSqr = 6.25
-attackAngle = 60.0
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
 script = ExtResource("2_71lt1")
@@ -49,10 +36,10 @@ rat = NodePath("..")
 hitPoints = 50.0
 maxHitPoints = 50.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="RatCollider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3dud8")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavAgent" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
 height = 1.5
 neighbor_distance = 5.0
@@ -163,7 +150,7 @@ bones/62/rotation = Quaternion(-0.0407275, 0.704659, 0.705933, 0.0587899)
 bones/62/scale = Vector3(0.999999, 1, 1)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.906989, -0.233789, -0.350305, 0.418992, 0.585085, 0.69435, 0.0426267, -0.776543, 0.628621, 0.454784, -0.000904896, -0.243781)
+transform = Transform3D(0.906989, -0.233789, -0.350306, 0.418992, 0.585084, 0.69435, 0.0426268, -0.776543, 0.628621, 0.454784, -0.000904896, -0.243781)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D/weapon-sword" index="0"]
 layers = 2
@@ -200,7 +187,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 target_position = Vector3(0, 0, -1)
 collision_mask = 26131
 script = ExtResource("3_rfqt5")
-myFaction = NodePath("../Faction")
+myFaction = NodePath("../Faction1")
 pointBlankRangeSqr = 2.0
 
 [node name="Eyes" type="RayCast3D" parent="."]
@@ -209,7 +196,7 @@ target_position = Vector3(0, 0, -1)
 collision_mask = 26131
 script = ExtResource("4_yonai")
 
-[node name="Faction" type="Node3D" parent="."]
+[node name="Faction1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 script = ExtResource("4_3600o")
 faction = 2

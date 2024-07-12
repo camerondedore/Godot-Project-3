@@ -25,52 +25,42 @@ namespace MobBlackRat
             stateDie;
 
         [Export]
+        public Node3D startTarget;
+
+
+        string arrowType = "bodkin";
         public MobDetection detection;
-        [Export]
         public MobEyes eyes;
-        [Export]
         public NavigationAgent3D navAgent;
-        [Export]
         public Health health;
-        [Export]
-        public MobFaction[] myFactions;
-        [Export]
+        public MobFaction myFaction1,
+            myFaction2;
         public AnimationPlayer animation;
-        [Export]
         public MobBlackRatAudio audio;
-        [Export]
         public ParticleFx swordHitFx,
             swordHitBloodFx;
-        [Export]
         public CollisionShape3D collider;
-        [Export]
-        public Node3D startTarget;
-        [Export]
+        public MobFaction enemy;
+        public Vector3 startPosition;
         public double swingTime = .5f,
             attackDamageTime = 0.3f,
             reactTime = 0.4f;
-        [Export]
         public float maxSightRangeSqr = 625,
             maxSightRangeForAlliesSqr = 100,
             moveRecalculatePathRange = 0.5f,
-            attackDistanceSqr = 2.25f,
-            attackRangeSqr = 4,
-            attackAngle = 45,
+            attackDistanceSqr = 4.5f,
+            attackRangeSqr = 6.25f,
+            attackAngle = 60,
             PatrolRange = 10,
             speed = 5.5f,
             lookSpeed = 0.3f,
             acceleration = 4,
             damageFromArrow = 50,
             damage = 10;
-
-        public MobFaction enemy;
-        //public AnimationNodeStateMachinePlayback animStateMachinePlayback;
-        public Vector3 startPosition;
         public bool lookAtTarget = false,
             moving,
             isAggro;
 
-        string arrowType = "bodkin";
         bool delay = false;
         //string debugText;
 
@@ -78,6 +68,19 @@ namespace MobBlackRat
 
         public override void _Ready()
         {            
+            // get nodes
+            detection = (MobDetection) GetNode("Detection");
+            eyes = (MobEyes) GetNode("Eyes");
+            navAgent = (NavigationAgent3D) GetNode("NavAgent");
+            health = (Health) GetNode("Health");
+            myFaction1 = (MobFaction) GetNode("Faction1");
+            myFaction2 = (MobFaction) GetNode("Faction2");
+            animation = (AnimationPlayer) GetNode("character-black-rat/AnimationPlayer");
+            audio = (MobBlackRatAudio) GetNode("RatAudio");
+            swordHitFx = (ParticleFx) GetNode("FxEnemyHit");
+            swordHitBloodFx = (ParticleFx) GetNode("FxBloodSlash");
+            collider = (CollisionShape3D) GetNode("RatCollider");
+
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
 
