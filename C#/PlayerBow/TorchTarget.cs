@@ -6,24 +6,25 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    public string arrowType = "fire";
-    [Export]
-    GpuParticles3D dripFx;
-    [Export]
-    ParticleTools fireFx;
-    [Export]
-    AudioTools3d audio;
-    [Export]
-    Node3D targetNode;
-    [Export]
     BlackWall blackWall;
+
+    string arrowType = "fire";
+    Vector3 targetOffset = new Vector3(0, 0.5f, 0);
+    GpuParticles3D torchDripFx;
+    ParticleTools torchFireFx;
+    AudioTools3d audio;
 
 
 
     public override void _Ready()
     {
+        // get nodes
+        torchDripFx = (GpuParticles3D) GetNode("FxTorchDrip");
+        torchFireFx = (ParticleTools) GetNode("FxTorchFire");
+        audio = (AudioTools3d) GetNode("Audio");
+
         // turn off fire fx
-        fireFx.StopParticles();
+        torchFireFx.StopParticles();
     }
 
 
@@ -39,7 +40,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     {
         if(IsInstanceValid(this))
         {
-            return targetNode.GlobalPosition;
+            return ToGlobal(targetOffset);
         }
         else
         {
@@ -52,10 +53,10 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     public void Hit(Vector3 dir)
     {
         // stop drip fx
-        dripFx.Emitting = false;
+        torchDripFx.Emitting = false;
 
         // start fire fx
-        fireFx.RestartParticles();
+        torchFireFx.RestartParticles();
 
         // start fire audio
         audio.Play();
