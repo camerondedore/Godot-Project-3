@@ -20,6 +20,10 @@
 [ext_resource type="AudioStream" uid="uid://130buoernvce" path="res://Audio/mob-wasp-fly.wav" id="13_yyjne"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_82ttd"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
+radius = 0.2
+height = 0.9
+
 [sub_resource type="Animation" id="Animation_uwxrt"]
 resource_name = "wasp-fly"
 length = 0.0666667
@@ -436,26 +440,17 @@ _data = {
 "wasp-idle-flick": SubResource("Animation_2drnu")
 }
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_me2gy"]
-radius = 0.2
-height = 0.9
-
-[node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "health", "animation", "gibsActivator", "venomFx", "flyAudio")]
+[node name="MobWasp" type="CharacterBody3D"]
 collision_layer = 512
 collision_mask = 16913
 motion_mode = 1
 script = ExtResource("1_vbe2t")
-detection = NodePath("Detection")
-eyes = NodePath("Eyes")
-health = NodePath("Health")
-animation = NodePath("AnimationTree")
-gibsActivator = NodePath("Gibs")
-venomFx = NodePath("FxWaspVenom")
-flyAudio = NodePath("FlyAudio")
-flySound = ExtResource("13_yyjne")
 waspDeathFx = ExtResource("2_hegcd")
 waspHitFx = ExtResource("4_72040")
-lookSpeed = 5.0
+
+[node name="WaspCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_me2gy")
 
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("wasp")]
 script = ExtResource("5_w4k4j")
@@ -467,16 +462,16 @@ hasBlood = false
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.707531, 7.84575e-17, 7.85518e-17, 0.706682)
-bones/1/rotation = Quaternion(0.707107, 0.000535114, 0.707107, 0.00053517)
-bones/2/rotation = Quaternion(0.862093, 0.0676574, 0.487718, -0.119791)
-bones/3/rotation = Quaternion(-0.574259, -0.409692, -0.404298, 0.582171)
-bones/4/rotation = Quaternion(-0.494398, -0.362189, -0.296312, 0.732522)
-bones/5/rotation = Quaternion(0.785932, 0.185986, 0.512867, -0.291012)
-bones/6/rotation = Quaternion(0.862093, -0.0676574, -0.487718, -0.119791)
-bones/7/rotation = Quaternion(-0.590488, 0.395561, 0.423203, 0.561921)
-bones/8/rotation = Quaternion(-0.504661, 0.354331, 0.323432, 0.717746)
-bones/9/rotation = Quaternion(0.781307, -0.205387, -0.504661, -0.304455)
+bones/0/rotation = Quaternion(-0.710646, 7.81098e-17, 7.88975e-17, 0.70355)
+bones/1/rotation = Quaternion(0.707093, 0.0043431, 0.707094, 0.00434315)
+bones/2/rotation = Quaternion(0.862672, 0.0914074, 0.484845, -0.111205)
+bones/3/rotation = Quaternion(-0.568667, -0.405808, -0.408196, 0.587634)
+bones/4/rotation = Quaternion(-0.488316, -0.359723, -0.299301, 0.736591)
+bones/5/rotation = Quaternion(0.783866, 0.182375, 0.514162, -0.296531)
+bones/6/rotation = Quaternion(0.862672, -0.0914074, -0.484845, -0.111205)
+bones/7/rotation = Quaternion(-0.585078, 0.391488, 0.426973, 0.567551)
+bones/8/rotation = Quaternion(-0.498701, 0.351641, 0.326355, 0.721899)
+bones/9/rotation = Quaternion(0.77915, -0.201837, -0.506091, -0.309935)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2
@@ -495,10 +490,6 @@ parameters/wasp-idle/OneShot/active = false
 parameters/wasp-idle/OneShot/internal_active = false
 parameters/wasp-idle/OneShot/request = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_me2gy")
-
 [node name="Faction" type="Node3D" parent="."]
 script = ExtResource("2_xwl4h")
 MobPriority = 2.0
@@ -507,7 +498,7 @@ MobPriority = 2.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.17214)
 enabled = false
 target_position = Vector3(0, 0, -1)
-collision_mask = 1027
+collision_mask = 17411
 script = ExtResource("3_muehp")
 myFaction = NodePath("../Faction")
 pointBlankRangeSqr = 1.0
@@ -515,7 +506,7 @@ pointBlankRangeSqr = 1.0
 [node name="Eyes" type="RayCast3D" parent="."]
 enabled = false
 target_position = Vector3(0, 0, -1)
-collision_mask = 1043
+collision_mask = 17427
 script = ExtResource("11_lig66")
 
 [node name="FxWaspVenom" parent="." instance=ExtResource("10_mche4")]
@@ -542,8 +533,9 @@ transform = Transform3D(0.939693, 0, -0.34202, -0.0885213, 0.965926, -0.24321, 0
 [node name="GibWaspWingR" parent="Gibs" instance=ExtResource("10_633pr")]
 transform = Transform3D(0.939693, 0, 0.34202, 0.0885213, 0.965926, -0.24321, -0.330366, 0.258819, 0.907673, 0.2, 0.127, 0.158)
 
-[node name="FlyAudio" type="AudioStreamPlayer3D" parent="."]
-unit_size = 2.0
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_yyjne")
+unit_size = 3.0
 max_distance = 30.0
 max_polyphony = 2
 attenuation_filter_cutoff_hz = 20500.0

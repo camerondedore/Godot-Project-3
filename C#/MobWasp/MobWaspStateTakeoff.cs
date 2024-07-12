@@ -28,9 +28,8 @@ namespace MobWasp
             blackboard.animStateMachinePlayback.Travel("wasp-fly");
 
             // audio
-            blackboard.flyAudio.Stream = blackboard.flySound;
-            blackboard.flyAudio.Seek(GD.Randf() * ((float) blackboard.flySound.GetLength()));
-            blackboard.flyAudio.PlaySound(blackboard.flySound, 0.1f);          
+            blackboard.audio.Seek(GD.Randf() * ((float) blackboard.flySound.GetLength()));
+            blackboard.audio.PlaySound(blackboard.flySound, 0.1f);
         }
 
 

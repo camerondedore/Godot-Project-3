@@ -28,7 +28,6 @@ namespace MobBlackRat
         public Node3D startTarget;
 
 
-        string arrowType = "bodkin";
         public MobDetection detection;
         public MobEyes eyes;
         public NavigationAgent3D navAgent;
@@ -61,6 +60,7 @@ namespace MobBlackRat
             moving,
             isAggro;
 
+        string arrowType = "bodkin";
         bool delay = false;
         //string debugText;
 

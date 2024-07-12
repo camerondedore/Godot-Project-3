@@ -20,46 +20,36 @@ namespace MobWasp
             stateDie;
 
         [Export]
-        public MobDetection detection;
-        [Export]
-        public MobEyes eyes;
-        [Export]
-        public Health health;
-        [Export]
-        public AnimationTree animation;
-        [Export]
-        public GibsActivator gibsActivator;
-        [Export]
-        public GpuParticles3D venomFx;
-        [Export]
-        public AudioTools3d flyAudio;
-        [Export]
-        public AudioStream flySound;
-        [Export]
         public PackedScene waspDeathFx,
             waspHitFx;
-        [Export]
-        public string arrowType = "weighted";
-        [Export]
-        public Vector3 warnOffset = new Vector3(0, 1, 0);
-        [Export]
+
+        
+        string arrowType = "weighted";
+        public MobDetection detection;
+        public MobEyes eyes;
+        public Health health;
+        public AnimationTree animation;
+        public GibsActivator gibsActivator;
+        public GpuParticles3D venomFx;
+        public AudioTools3d audio;
+        public MobFaction enemy;
+        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
+        public AudioStream flySound;
+        public Vector3 targetPosition,
+            startPosition,
+            warnOffset = new Vector3(0, 1, 0);
+        public double offsetCursor = 0;
         public float maxSightRangeSqr = 100,
             maxSightRangeForAlliesSqr = 16,
             attackDistanceSqr = 25,
             hitDistanceSqr = 0.5f,
             maxFlightRangeSqr = 1600,
             speed = 3.5f,
-            lookSpeed = 4,
+            lookSpeed = 5,
             acceleration = 4,
             offsetSize = 0.33f,
             offsetSpeed = 1f,
             damage = 2;
-        
-        public MobFaction enemy;
-        public AnimationNodeStateMachinePlayback animStateMachinePlayback;
-        public Vector3 targetPosition,
-            startPosition;
-        public double offsetCursor = 0;
         public bool useOffset = false,
             lookWithVelocity = false,
             isAggro = false;
@@ -74,6 +64,18 @@ namespace MobWasp
 
         public override void _Ready()
         {
+            // get nodes
+            detection = (MobDetection) GetNode("Detection");
+            eyes = (MobEyes) GetNode("Eyes");
+            health = (Health) GetNode("Health");
+            animation = (AnimationTree) GetNode("AnimationTree");
+            gibsActivator = (GibsActivator) GetNode("Gibs");
+            venomFx = (GpuParticles3D) GetNode("FxWaspVenom");
+            audio = (AudioTools3d) GetNode("Audio");
+
+            // get flying sound from audio source
+            flySound = audio.Stream;
+
             startPosition = GlobalPosition;
             startForward = -Basis.Z;
             startUp = Basis.Y;
@@ -170,7 +172,7 @@ namespace MobWasp
             animation.Set("parameters/wasp-fly/blend_position", flyBlend);
 
             // pitch flying audio
-            flyAudio.PitchScale = 1 + flyBlend * 0.3f;
+            audio.PitchScale = 1 + flyBlend * 0.3f;
 
 
             var target = Vector3.Zero;
@@ -255,9 +257,6 @@ namespace MobWasp
 
         public void LookForEnemy()
         {
-            // look for new enemy
-            // var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
-
             // var newEnemy = detection.LookForEnemy(lookDistanceSqr);
             var newEnemy = detection.LookForEnemy(maxSightRangeSqr);    
 
@@ -265,6 +264,11 @@ namespace MobWasp
             {
                 // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
                 enemy = newEnemy;
+            }
+            else if(IsEnemyValid() == true && eyes.HasLosToTarget(enemy) == false)
+            {
+                // clear old enemy if no line of sight
+                enemy = null;
             }
         }
 

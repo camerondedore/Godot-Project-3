@@ -1678,7 +1678,6 @@ transform = Transform3D(0.651688, 0, -0.758487, 0, 1, 0, 0.758487, 0, 0.651688, 
 
 [node name="MobWasp5" parent="Enemies" instance=ExtResource("67_elsxh")]
 transform = Transform3D(-0.995913, 0.0681366, 0.059287, -0.0788706, -0.336219, -0.938475, -0.0440111, -0.939316, 0.340219, 15.4272, 2.57036, 11.4812)
-warnOffset = Vector3(0, 0.5, -1)
 
 [node name="MobBrownRat" parent="Enemies" instance=ExtResource("79_f3rqk")]
 transform = Transform3D(-0.463822, 0, -0.885929, 0, 1, 0, 0.885929, 0, -0.463822, -29.1942, 0.85, 9.26609)

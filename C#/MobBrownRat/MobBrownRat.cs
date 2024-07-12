@@ -31,7 +31,6 @@ namespace MobBrownRat
         [Export]
         public bool isMovingRat = true;
 
-        string arrowType = "bodkin";
         public MobDetection detection;
         public MobEyes eyes;
         public NavigationAgent3D navAgent;
@@ -68,6 +67,7 @@ namespace MobBrownRat
             moving,
             isAggro;
 
+        string arrowType = "bodkin";
         bool delay = false;
         //string debugText;
 
