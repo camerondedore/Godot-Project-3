@@ -21,7 +21,7 @@ height = 0.75
 radius = 0.563
 
 [node name="PropClayCauldron" type="StaticBody3D"]
-collision_layer = 16
+collision_layer = 16384
 script = ExtResource("1_8ebja")
 storedItem = ExtResource("2_cvrch")
 breakFx = ExtResource("3_d010c")
@@ -42,9 +42,7 @@ shape = SubResource("CylinderShape3D_4reb0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.575, 0)
 script = ExtResource("6_yd42t")
 prefab = ExtResource("2_cvrch")
-direction = Vector3(0, 1, 0)
-speed = 4.0
-spread = 0.5
+velocity = Vector3(0, 3, 0)
 angularSpeed = 0.0
 useAngularVelocity = false
 
@@ -82,3 +80,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.453389, 0.27576, -0.143345)
 [node name="GibClayCauldron7" parent="Gibs" instance=ExtResource("14_q76mh")]
 process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0268212, 0.307045, -0.327832)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+radius = 0.8
+height = 0.75
+use_3d_avoidance = true

@@ -44,7 +44,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 script = ExtResource("1_dnlt2")
 saveToWorldData = false
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="PickupMesh" parent="." index="0"]
 mesh = ExtResource("1_n10h8")
 surface_material_override/0 = ExtResource("4_m360d")
 

@@ -23,11 +23,9 @@ openSound = ExtResource("3_he827")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 
 [node name="Skeleton3D" parent="prop-lockbox/prop-lockbox-armature" index="0"]
-bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-5.33851e-08, 0.707107, -0.707106, 5.33851e-08)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(0.707107, 0, 0.707107, 0)
-bones/4/scale = Vector3(1, 1, 1)
 
 [node name="prop-lockbox2" parent="prop-lockbox/prop-lockbox-armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_rsdln")
@@ -42,12 +40,12 @@ shape = SubResource("BoxShape3D_a313i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245565, -0.316)
 
 [node name="PickupSpawnerDelayed" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.626, -0.259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569971, -0.123988)
 script = ExtResource("6_03t3p")
 delayTime = 0.1
 prefab = ExtResource("7_rf4xg")
-direction = Vector3(0, 5, -2)
-speed = 5.0
+velocity = Vector3(0, 5, -2)
+spread = 1.5
 angularSpeed = 0.0
 useAngularVelocity = false
 

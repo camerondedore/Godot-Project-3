@@ -14,7 +14,7 @@
 size = Vector3(3, 0.3, 0.1)
 
 [node name="PropBoard1Rigid" type="RigidBody3D"]
-collision_layer = 16
+collision_layer = 16384
 mass = 4.0
 freeze = true
 max_contacts_reported = 1

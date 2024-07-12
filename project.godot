@@ -112,6 +112,7 @@ player-tab={
 3d_physics/layer_12="Invisible Wall"
 3d_physics/layer_13="Water"
 3d_physics/layer_14="Mob Vision Blocker"
+3d_physics/layer_15="Small Props No Nav"
 
 [rendering]
 

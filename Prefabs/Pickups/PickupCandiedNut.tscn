@@ -39,14 +39,13 @@ scale_max = 0.3
 scale_curve = SubResource("CurveTexture_b5u7h")
 color_ramp = SubResource("GradientTexture1D_3yg5b")
 
-[node name="PickupCandiedNut" node_paths=PackedStringArray("meshInstance") instance=ExtResource("1_4on0y")]
+[node name="PickupCandiedNut" instance=ExtResource("1_4on0y")]
 script = ExtResource("1_anmk5")
-meshInstance = NodePath("MeshInstance3D")
 nutMeshes = Array[ArrayMesh]([ExtResource("3_f3xch"), ExtResource("4_cr428"), ExtResource("5_gn2nl")])
 pickupPrefabs = Array[PackedScene]([])
 
-[node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0)
+[node name="PickupMesh" parent="." index="0"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("3_f3xch")
 surface_material_override/0 = ExtResource("4_nvqdf")
 

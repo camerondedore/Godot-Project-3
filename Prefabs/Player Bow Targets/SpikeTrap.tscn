@@ -165,3 +165,8 @@ unit_size = 5.0
 max_distance = 60.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("14_tfy06")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+radius = 1.0
+use_3d_avoidance = true

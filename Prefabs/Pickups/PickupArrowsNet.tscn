@@ -39,7 +39,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="PickupArrowsNet" instance=ExtResource("1_tmfvp")]
 arrowType = "net"
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="PickupMesh" parent="." index="0"]
 mesh = ExtResource("3_qjg45")
 surface_material_override/1 = ExtResource("4_lsrfl")
 

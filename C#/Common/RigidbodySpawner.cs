@@ -8,10 +8,9 @@ public partial class RigidbodySpawner : Node3D, CinematicSimpleControl.iCinemati
     [Export]
     public PackedScene prefab;
     [Export]
-    Vector3 direction;
+    Vector3 velocity;
     [Export]
-    float speed = 2,
-        spread = 1,
+    float spread = 1,
         angularSpeed = 2;
     [Export] 
     bool useAngularVelocity = true;
@@ -42,11 +41,11 @@ public partial class RigidbodySpawner : Node3D, CinematicSimpleControl.iCinemati
 
 
         // get spawn velocity
-        var newDirection = direction + new Vector3((GD.Randf() - 0.5f) * 2, (GD.Randf() - 0.5f) * 2, (GD.Randf() - 0.5f) * 2) * spread;
+        var spreadVector = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * spread;
         
         // convert to global
-        newDirection = ToGlobal(newDirection) - GlobalPosition;
-        var newVelocity = newDirection.Normalized() * speed;
+        var newDirection = ToGlobal(velocity) - GlobalPosition;
+        var newVelocity = newDirection + spreadVector;
 
         // apply velocity
         newPrefab.LinearVelocity = newVelocity;   

@@ -5,15 +5,18 @@ public partial class CandiedNutPickup : PickupRigidbody
 {
 
     [Export]
-    MeshInstance3D meshInstance;
-    [Export]
     ArrayMesh[] nutMeshes;
+
+    MeshInstance3D meshInstance;
 
 
 
     public override void _Ready()
     {
         base._Ready();
+
+        // get node
+        meshInstance = (MeshInstance3D) GetNode("PickupMesh");
 
         if(nutMeshes.Length > 1)
         {

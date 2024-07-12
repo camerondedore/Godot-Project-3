@@ -42,8 +42,8 @@ script = ExtResource("2_wrbvg")
 pickupPrefabs = Array[PackedScene]([])
 saveToWorldData = false
 
-[node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(0.922255, 0.386582, 0, -0.178929, 0.426863, -0.886438, -0.342681, 0.817522, 0.462847, 0, 0.236765, -0.124291)
+[node name="PickupMesh" parent="." index="0"]
+transform = Transform3D(0.999413, -0.0260252, 0.0222836, 0.0328283, 0.913556, -0.405386, -0.00980692, 0.405879, 0.913874, -0.0155463, 0.0512257, -0.155677)
 mesh = ExtResource("3_svxow")
 surface_material_override/0 = ExtResource("4_arunp")
 
@@ -55,7 +55,7 @@ mesh = ExtResource("3_svxow")
 surface_material_override/0 = ExtResource("4_arunp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2"]
-transform = Transform3D(0.957858, -0.242807, -0.153472, 0, 0.534293, -0.845299, 0.287243, 0.809676, 0.511777, 0.0374355, 0.130356, -0.12598)
+transform = Transform3D(0.96409, -0.216741, -0.153472, -0.0144896, 0.534096, -0.845299, 0.26518, 0.817168, 0.511777, 0.0374355, 0.130356, -0.12598)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_svxow")

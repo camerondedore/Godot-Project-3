@@ -54,12 +54,12 @@ freeze_mode = 1
 max_contacts_reported = 1
 contact_monitor = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="PickupMesh" type="MeshInstance3D" parent="."]
 layers = 2
 gi_mode = 2
 mesh = SubResource("SphereMesh_iax83")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="PickupCollider" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_inywu")
 
 [node name="FxSparkle" parent="." instance=ExtResource("2_imooj")]

@@ -40,7 +40,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="PickupDockLeaf" instance=ExtResource("1_0x5b1")]
 script = ExtResource("1_jiwja")
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="PickupMesh" parent="." index="0"]
 mesh = ExtResource("3_divh6")
 surface_material_override/0 = ExtResource("4_sf6mk")
 

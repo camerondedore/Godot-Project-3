@@ -42,8 +42,8 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="PickupCider" instance=ExtResource("1_brbdi")]
 script = ExtResource("2_icw7e")
 
-[node name="MeshInstance3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0)
+[node name="PickupMesh" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
 mesh = ExtResource("3_hmtwk")
 surface_material_override/0 = ExtResource("4_tvvia")
 surface_material_override/1 = ExtResource("4_q1ijp")

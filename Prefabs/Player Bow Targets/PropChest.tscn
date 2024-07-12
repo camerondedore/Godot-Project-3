@@ -16,6 +16,7 @@
 size = Vector3(2, 1.2, 1)
 
 [node name="PropChest" type="StaticBody3D"]
+collision_layer = 16
 script = ExtResource("1_pnrr2")
 openSound = ExtResource("2_fo8lm")
 
@@ -39,15 +40,14 @@ shape = SubResource("BoxShape3D_a1nr0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688, -0.5491)
 
 [node name="PickupSpawnerMultiple" type="Node3D" parent="." node_paths=PackedStringArray("audio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99055, 0.0103993)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.851788, -0.00405507)
 script = ExtResource("9_cku3p")
 prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
 audio = NodePath("../Audio")
 spawnSound = ExtResource("8_f7gyv")
 delayTime = 1.2
 timeBetweenSpawns = 0.33
-direction = Vector3(0, 6, -3)
-speed = 6.0
+velocity = Vector3(0, 6.5, -3)
 spread = 2.0
 angularSpeed = 0.0
 useAngularVelocity = false

@@ -28,8 +28,7 @@ shape = SubResource("BoxShape3D_l0qqr")
 [node name="PickupSpawner" type="Node3D" parent="."]
 script = ExtResource("5_1tk7e")
 prefab = ExtResource("6_1un68")
-direction = Vector3(0, 1, 0)
-speed = 3.0
+velocity = Vector3(0, 1, 0)
 spread = 0.5
 angularSpeed = 0.0
 useAngularVelocity = false

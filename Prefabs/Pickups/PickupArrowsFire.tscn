@@ -38,7 +38,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="PickupArrowsFire" instance=ExtResource("1_jld4u")]
 arrowType = "fire"
 
-[node name="MeshInstance3D" parent="." index="0"]
+[node name="PickupMesh" parent="." index="0"]
 mesh = ExtResource("3_gjg2v")
 
 [node name="MeshInstance3D2" parent="." index="1"]

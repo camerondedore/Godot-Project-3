@@ -442,7 +442,7 @@ height = 0.9
 
 [node name="MobWasp" type="CharacterBody3D" node_paths=PackedStringArray("detection", "eyes", "health", "animation", "gibsActivator", "venomFx", "flyAudio")]
 collision_layer = 512
-collision_mask = 529
+collision_mask = 16913
 motion_mode = 1
 script = ExtResource("1_vbe2t")
 detection = NodePath("Detection")
@@ -467,16 +467,16 @@ hasBlood = false
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.709676, 7.82183e-17, 7.87899e-17, 0.704528)
-bones/1/rotation = Quaternion(0.707102, 0.00258876, 0.707102, 0.00258882)
-bones/2/rotation = Quaternion(0.862366, 0.0762284, 0.486718, -0.116703)
-bones/3/rotation = Quaternion(-0.57039, -0.407005, -0.407002, 0.585961)
-bones/4/rotation = Quaternion(-0.490197, -0.360486, -0.298381, 0.73534)
-bones/5/rotation = Quaternion(0.784508, 0.183491, 0.513765, -0.294829)
-bones/6/rotation = Quaternion(0.862366, -0.0762284, -0.486718, -0.116703)
-bones/7/rotation = Quaternion(-0.586753, 0.392749, 0.425814, 0.565819)
-bones/8/rotation = Quaternion(-0.500544, 0.352474, 0.325455, 0.720623)
-bones/9/rotation = Quaternion(0.779821, -0.202935, -0.505652, -0.308243)
+bones/0/rotation = Quaternion(-0.707531, 7.84575e-17, 7.85518e-17, 0.706682)
+bones/1/rotation = Quaternion(0.707107, 0.000535114, 0.707107, 0.00053517)
+bones/2/rotation = Quaternion(0.862093, 0.0676574, 0.487718, -0.119791)
+bones/3/rotation = Quaternion(-0.574259, -0.409692, -0.404298, 0.582171)
+bones/4/rotation = Quaternion(-0.494398, -0.362189, -0.296312, 0.732522)
+bones/5/rotation = Quaternion(0.785932, 0.185986, 0.512867, -0.291012)
+bones/6/rotation = Quaternion(0.862093, -0.0676574, -0.487718, -0.119791)
+bones/7/rotation = Quaternion(-0.590488, 0.395561, 0.423203, 0.561921)
+bones/8/rotation = Quaternion(-0.504661, 0.354331, 0.323432, 0.717746)
+bones/9/rotation = Quaternion(0.781307, -0.205387, -0.504661, -0.304455)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2
