@@ -36,8 +36,6 @@ namespace MobBlackRat
         public MobFaction[] myFactions;
         [Export]
         public AnimationPlayer animation;
-        //[Export]
-        //public AnimationTree animation;
         [Export]
         public MobBlackRatAudio audio;
         [Export]
@@ -47,8 +45,6 @@ namespace MobBlackRat
         public CollisionShape3D collider;
         [Export]
         public Node3D startTarget;
-        [Export]
-        public string arrowType = "bodkin";
         [Export]
         public double swingTime = .5f,
             attackDamageTime = 0.3f,
@@ -74,8 +70,9 @@ namespace MobBlackRat
             moving,
             isAggro;
 
-        //string debugText;
+        string arrowType = "bodkin";
         bool delay = false;
+        //string debugText;
 
 
 

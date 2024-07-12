@@ -16,6 +16,7 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
     GpuParticles3D spikesCutFx,
         hazardFx;
     AudioTools3d audio;
+    NavigationObstacle3D obstacle;
 
 
 
@@ -28,6 +29,7 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
         spikesCutFx = (GpuParticles3D) GetNode("FxSpikesCut");
         hazardFx = (GpuParticles3D) GetNode("FxHazard");
         audio = (AudioTools3d) GetNode("Audio");
+        obstacle = (NavigationObstacle3D) GetNode("Obstacle");
     }
 
 
@@ -71,6 +73,9 @@ public partial class SpikeTrapTarget : StaticBody3D, IBowTarget
 
         // play sound
         audio.PlaySound(cutSound, 0.1f);
+
+        // disable obstacle
+        obstacle.AvoidanceEnabled = false;
 
         // disable script
         SetScript(new Variant());

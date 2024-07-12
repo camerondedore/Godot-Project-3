@@ -1381,6 +1381,9 @@ transform = Transform3D(0.495959, 0, 0.868347, 0, 1, 0, -0.868347, 0, 0.495959, 
 [node name="PropClayCauldron3" parent="Map/OccluderInstance3D/NavigationRegion3D/Containers" instance=ExtResource("95_ps0dn")]
 transform = Transform3D(0.941288, 0, -0.337604, 0, 1, 0, 0.337604, 0, 0.941288, 6.5869, 4.76837e-07, -14.3576)
 
+[node name="PropClayCauldron4" parent="Map/OccluderInstance3D/NavigationRegion3D/Containers" instance=ExtResource("95_ps0dn")]
+transform = Transform3D(0.673012, 0, 0.739632, 0, 1, 0, -0.739632, 0, 0.673012, 31.845, 10.0092, -10.0636)
+
 [node name="Spiderwebs" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
 [node name="PropSpiderweb1" parent="Map/OccluderInstance3D/NavigationRegion3D/Spiderwebs" instance=ExtResource("86_3f7f4")]
