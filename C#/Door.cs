@@ -6,23 +6,18 @@ public partial class Door : RigidBody3D, IBowTarget
 {
 
     [Export]
-    public string arrowType = "pick";
-    [Export]
-    Vector3 targetOffset = new Vector3(-0.75f, 0, 0),
-        openAngle = new Vector3(0, -90, 0);
+    Vector3 openAngle = new Vector3(0, -170, 0);
     [Export]
     float speed = 2;
     [Export]
-    CollisionShape3D collider;
-    [Export]
-    FxLock lockFx;
-    [Export]
-    Blocker blocker;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     AudioStream openSound;
-
+    
+    string arrowType = "pick";
+    Vector3 targetOffset = new Vector3(-1.3f, -0.2f, 0);
+    CollisionShape3D doorCollider;
+    FxLock lockFx;
+    Blocker blocker;
+    AudioTools3d audio;
     Vector3 startRotation,
         targetRotation;
     bool open = false,
@@ -32,6 +27,12 @@ public partial class Door : RigidBody3D, IBowTarget
 
     public override void _Ready()
     {
+        // get nodes
+        doorCollider = (CollisionShape3D) GetNode("DoorCollider");
+        lockFx = (FxLock) GetNode("FxLock");
+        blocker = (Blocker) GetNode("Blocker");
+        audio = (AudioTools3d) GetNode("Audio");
+
         startRotation = RotationDegrees;
         targetRotation = startRotation + openAngle;
     }
@@ -49,7 +50,7 @@ public partial class Door : RigidBody3D, IBowTarget
             {
                 open = true;
 
-                collider.Disabled = false;
+                doorCollider.Disabled = false;
                 
                 // disable script
                 SetScript(new Variant());
@@ -94,7 +95,7 @@ public partial class Door : RigidBody3D, IBowTarget
     {
         locked = false;
 
-        collider.Disabled = true;
+        doorCollider.Disabled = true;
 
         audio.PlaySound(openSound, 0.15f);
 
