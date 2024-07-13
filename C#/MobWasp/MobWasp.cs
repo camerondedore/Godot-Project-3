@@ -148,27 +148,32 @@ namespace MobWasp
                 var directionToTarget = (moveTarget - GlobalPosition).Normalized();
                 var newVelocity = directionToTarget * speed;
 
-                // check for obstacle
-                var forwardClear = eyes.HasLosToPosition(GlobalPosition + -Basis.Z);
 
-                if(forwardClear == false && IsEnemyValid() == false)
+                // only avoid obstacles if not chasing enemy
+                if(IsEnemyValid() == false)
                 {
-                    var obstacleNormal = eyes.GetCollisionNormal();
-                    var projectedObstacleNormal = Basis.Z.Project(obstacleNormal);
+                    // check for obstacle
+                    var forwardClear = eyes.HasLosToPosition(GlobalPosition + -Basis.Z);
 
-                    // check if not stuck
-                    if(GetRealVelocity().LengthSquared() > 0.2f)
+                    if(forwardClear == false)
                     {
-                        // use ray normal to avoid obstacles
-                        newVelocity = (projectedObstacleNormal).Normalized() * speed;                    
-                    }
-                    else
-                    {
-                        // move up
-                        newVelocity = Vector3.Up * speed;   
-                    }
+                        var obstacleNormal = eyes.GetCollisionNormal();
+                        var projectedObstacleNormal = Basis.Z.Project(obstacleNormal);
 
+                        // check if not stuck
+                        if(GetRealVelocity().LengthSquared() > 0.2f)
+                        {
+                            // use ray normal to avoid obstacles
+                            newVelocity = (projectedObstacleNormal).Normalized() * speed;                    
+                        }
+                        else
+                        {
+                            // move up
+                            newVelocity = Vector3.Up * speed;   
+                        }
+                    }
                 }
+
 
                 if(Velocity != newVelocity)
                 {
