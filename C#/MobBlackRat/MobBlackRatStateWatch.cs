@@ -12,7 +12,7 @@ namespace MobBlackRat
 
         public override void RunState(double delta)
         {
-           // blackboard.animStateMachinePlayback.Next();
+            // blackboard.animStateMachinePlayback.Next();
             
             // look for enemy
             blackboard.LookForEnemy();
@@ -71,7 +71,7 @@ namespace MobBlackRat
             var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
             // check if enemy is close enough
-            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
+            if(distanceToEnemySqr < blackboard.attackRangeSqr)
             {
                 // attack
                 return blackboard.stateAttack;

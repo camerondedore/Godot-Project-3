@@ -13,7 +13,7 @@ namespace MobBlackRat
         public override void RunState(double delta)
         {            
             // look for enemy
-            blackboard.LookForEnemy();   
+            blackboard.LookForEnemy();
 
             base.RunState(delta); 
         }

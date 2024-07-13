@@ -4,7 +4,7 @@ using PlayerBow;
 
 namespace MobWasp
 {
-    public partial class MobWasp : CharacterBody3D, IBowTarget, IMobAlly
+    public partial class MobWasp : Mob
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -22,37 +22,27 @@ namespace MobWasp
         [Export]
         public PackedScene waspDeathFx,
             waspHitFx;
-
         
-        string arrowType = "weighted";
-        public MobDetection detection;
-        public MobEyes eyes;
-        public Health health;
         public AnimationTree animation;
         public GibsActivator gibsActivator;
         public GpuParticles3D venomFx;
         public AudioTools3d audio;
-        public MobFaction enemy;
         public AnimationNodeStateMachinePlayback animStateMachinePlayback;
         public AudioStream flySound;
         public Vector3 targetPosition,
             startPosition,
             warnOffset = new Vector3(0, 1, 0);
         public double offsetCursor = 0;
-        public float maxSightRangeSqr = 100,
-            maxSightRangeForAlliesSqr = 16,
-            attackDistanceSqr = 25,
+        public float attackDistanceSqr = 25,
             hitDistanceSqr = 0.5f,
             maxFlightRangeSqr = 1600,
-            speed = 3.5f,
             lookSpeed = 5,
             acceleration = 4,
             offsetSize = 0.33f,
             offsetSpeed = 1f,
             damage = 2;
         public bool useOffset = false,
-            lookWithVelocity = false,
-            isAggro = false;
+            lookWithVelocity = false;
 
         Vector3 startForward,
             startUp,
@@ -64,6 +54,12 @@ namespace MobWasp
 
         public override void _Ready()
         {
+            // change base fields
+            maxSightRangeForAlliesSqr = 16;
+            maxSightRangeSqr = 100;
+            speed = 3.5f;
+            arrowType = "weighted";
+
             // get nodes
             detection = (MobDetection) GetNode("Detection");
             eyes = (MobEyes) GetNode("Eyes");
@@ -205,6 +201,7 @@ namespace MobWasp
             var target = Vector3.Zero;
             var upDirection = Vector3.Up;
 
+            // get look target
             if(IsEnemyValid())
             {
                 // look at enemy
@@ -226,6 +223,7 @@ namespace MobWasp
             }
 
 
+            // apply look target
             if(target != Vector3.Zero && target != GlobalPosition)
             {
                 // smooth look target
@@ -255,34 +253,7 @@ namespace MobWasp
 
 
 
-        public string GetArrowType()
-        {
-            return arrowType;
-        }
-
-
-
-        public Vector3 GetGlobalPosition()
-        {
-            if(IsInstanceValid(this))
-            {
-                return GlobalPosition;
-            }
-
-            return Vector3.Zero;
-        }
-
-
-
-        public void Hit(Vector3 dir)
-        {
-            // wasp is dead
-            machine.SetState(stateDie);
-        }
-
-
-
-        public void LookForEnemy()
+        public override void LookForEnemy()
         {
             // var newEnemy = detection.LookForEnemy(lookDistanceSqr);
             var newEnemy = detection.LookForEnemy(maxSightRangeSqr);    
@@ -296,76 +267,6 @@ namespace MobWasp
             {
                 // clear old enemy if no line of sight
                 enemy = null;
-            }
-        }
-
-
-
-        public bool IsEnemyValid()
-        {
-            if(enemy != null && IsInstanceValid(enemy))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-
-
-        public float GetDistanceSqrToEnemy()
-        {
-            if(IsEnemyValid())
-            {
-                return GlobalPosition.DistanceSquaredTo(enemy.GlobalPosition);
-            }
-            else 
-            {
-                return float.PositiveInfinity;
-            }
-        }
-
-
-
-        public void AllyHurt()
-        {
-            isAggro = true;
-        }
-
-
-
-        public void AllySpottedEnemy(MobFaction spottedEnemy)
-        {
-            enemy = spottedEnemy;
-        }
-
-
-
-        public void AggroAllies()
-        {
-            // get allies
-            var allies = detection.GetAllies(maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob died
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllyHurt();
-            }
-        }
-
-
-
-        public void SpotEnemyForAllies()
-        {
-            // get allies
-            var allies = detection.GetAllies(maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob spotted an enemy
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllySpottedEnemy(enemy);
             }
         }
     }

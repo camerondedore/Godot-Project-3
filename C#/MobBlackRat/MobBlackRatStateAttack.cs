@@ -27,10 +27,10 @@ namespace MobBlackRat
                     // get distance to enemy
                     var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
                     var angleForwardToEnemy = blackboard.GetForwardToEnemyAngle();
-                    var angleUpToEnemy = blackboard.GetUpToEnemyAngle();
+                    var angleUpToEnemy = blackboard.GetUpAngleToEnemy();
 
-                    var enemyInFront = distanceToEnemySqr < blackboard.attackRangeSqr && angleForwardToEnemy < blackboard.attackAngle;
-                    var enemyAbove = distanceToEnemySqr < blackboard.attackRangeSqr * 2f && angleUpToEnemy < blackboard.attackAngle;
+                    var enemyInFront = distanceToEnemySqr < blackboard.damageRangeSqr && angleForwardToEnemy < blackboard.attackAngle;
+                    var enemyAbove = distanceToEnemySqr < blackboard.damageRangeSqr * 2f && angleUpToEnemy < blackboard.attackAngle;
                     var enemyClose = distanceToEnemySqr < 0.3f;
 
                     if(enemyInFront || enemyAbove || enemyClose)

@@ -6,7 +6,7 @@ using CinematicSimple;
 
 namespace MobBrownRat
 {
-    public partial class MobBrownRat : CharacterBody3D, IBowTarget, IMobAlly, CinematicSimpleTriggerDead.IWatchable, MobSpawner.iMobSpawnable
+    public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -31,43 +31,33 @@ namespace MobBrownRat
         [Export]
         public bool isMovingRat = true;
 
-        public MobDetection detection;
-        public MobEyes eyes;
         public NavigationAgent3D navAgent;
         public MobBow bow;
-        public Health health;
         public MobFaction myFaction1,
             myFaction2;
         public AnimationTree animation;
         public CollisionShape3D collider;
-        public MobFaction enemy;
         public AnimationNodeStateMachinePlayback animStateMachinePlayback;
         public Vector3 startPosition;
         public double aimTime = 0.5f,
             fireTime = 1.2f,
             reactTime = 0.4f;
-        public float maxSightRangeSqr = 625,
-            maxSightRangeForAlliesSqr = 100,
-            moveRecalculatePathRange = 3,
+        public float moveRecalculatePathRange = 3,
             attackRangeMinSqr = 225,
             attackRangeMaxSqr = 400,
             fleeRangeSqr = 25,
             fleeMoveDistance = 5,
             fleeSpreadRange = 3,
             PatrolRange = 10,
-            speed = 4.5f,
             lookSpeed = 15f,
             acceleration = 4,
             dodgeDistance = 4,
-            damageFromArrow = 50,
             lookAngleNormal = 30;
         public int shotCount,
             fleeCount;
         public bool lookAtTarget = false,
-            moving,
-            isAggro;
+            moving;
 
-        string arrowType = "bodkin";
         bool delay = false;
         //string debugText;
 
@@ -75,6 +65,9 @@ namespace MobBrownRat
 
         public override void _Ready()
         {
+            // change base fields
+            speed = 4.5f;
+
             // get nodes
             detection = (MobDetection) GetNode("Detection");
             eyes = (MobEyes) GetNode("Bow/BowDetection");
@@ -221,77 +214,7 @@ namespace MobBrownRat
 
 
 
-        public string GetArrowType()
-        {
-            return arrowType;
-        }
-
-
-
-        public Vector3 GetGlobalPosition()
-        {
-            if(IsInstanceValid(this))
-            {
-                return GlobalPosition;
-            }
-
-            return Vector3.Zero;
-        }
-
-
-
-        public void Hit(Vector3 dir)
-        {
-            // take damage from arrow
-            health.Damage(damageFromArrow);
-        }
-
-
-
-        public void LookForEnemy()
-        {
-            // look for new enemy
-            // var lookDistanceSqr = IsEnemyValid() ? GetDistanceSqrToEnemy() : maxSightRangeSqr;
-
-            // var newEnemy = detection.LookForEnemy(lookDistanceSqr);
-            var newEnemy = detection.LookForEnemy(maxSightRangeSqr);
-
-            if(newEnemy != null)
-            {
-                // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
-                enemy = newEnemy;
-            }
-        }
-
-
-
-        public bool IsEnemyValid()
-        {
-            if(enemy != null && IsInstanceValid(enemy))
-            {
-                return true;
-            }
-
-            return false;
-        }
-
-
-
-        public float GetDistanceSqrToEnemy()
-        {
-            if(IsEnemyValid())
-            {
-                return GlobalPosition.DistanceSquaredTo(enemy.GlobalPosition);
-            }
-            else 
-            {
-                return float.PositiveInfinity;
-            }
-        }
-
-
-
-        public float GetUpLookAngleToEnemy()
+        public float GetBowAngleToEnemy()
         {
             if(IsEnemyValid() == false)
             {
@@ -304,60 +227,7 @@ namespace MobBrownRat
 
             var angle = Mathf.RadToDeg(Mathf.Atan(height / distance));
 
-            //GD.Print(distance + ", " + height + ", " + "angle " + unsignedAngle);
-
             return angle;
-        }
-
-
-
-        public void AllyHurt()
-        {
-            isAggro = true;
-        }
-
-
-
-        public void AllySpottedEnemy(MobFaction spottedEnemy)
-        {
-            enemy = spottedEnemy;
-        }
-
-
-
-        public void AggroAllies()
-        {
-            // get allies
-            var allies = detection.GetAllies(maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob died
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllyHurt();
-            }
-        }
-
-
-
-        public void SpotEnemyForAllies()
-        {
-            // get allies
-            var allies = detection.GetAllies(maxSightRangeForAlliesSqr);
-
-            // alert nearby allies that this mob spotted an enemy
-            foreach(MobFaction ally in allies)
-            {
-                var allyBase = (IMobAlly) ally.Owner;
-                allyBase.AllySpottedEnemy(enemy);
-            }
-        }
-
-
-
-        public bool IsAlive()
-        {
-            return health.hitPoints > 0;
         }
 
 
@@ -368,25 +238,6 @@ namespace MobBrownRat
 
             machine.SetState(stateStart);
             machine.CurrentState.StartState();
-        }
-
-
-
-        public void ClayPotCheck()
-        {
-            // check for collision with clay pot and break any in the way
-
-            if(GetLastSlideCollision() != null)
-            {
-                // check for clay potpots to break
-                var lastHitCollider = GetLastSlideCollision().GetCollider();
-
-                if(lastHitCollider != null && lastHitCollider is ClayPotTarget hitClayPot)
-                {
-                    // break pot
-                    hitClayPot.Hit(Velocity);
-                }
-            }
         }
     }
 }

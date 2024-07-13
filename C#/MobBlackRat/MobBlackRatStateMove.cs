@@ -23,7 +23,7 @@ namespace MobBlackRat
                 var distanceSqrFromDestinationToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
                 // get if enemy is close and in LOS
-                var isCloseToEnemy = distanceToEnemySqr < blackboard.attackDistanceSqr * 1.5f && blackboard.eyes.HasLosToTarget(blackboard.enemy);
+                var isCloseToEnemy = distanceToEnemySqr < blackboard.attackRangeSqr * 1.5f && blackboard.eyes.HasLosToTarget(blackboard.enemy);
 
                 // get if enemy is far away from rat's destination
                 var isEnemyFarFromDestination = distanceSqrFromDestinationToEnemy > blackboard.moveRecalculatePathRange;
@@ -48,8 +48,6 @@ namespace MobBlackRat
 
             // set move target
             blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
-
-            //blackboard.SpotEnemyForAllies();
 
             // animation
             // blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
@@ -82,7 +80,7 @@ namespace MobBlackRat
             
 
             // check if enemy is close enough
-            if(distanceToEnemySqr < blackboard.attackDistanceSqr)
+            if(distanceToEnemySqr < blackboard.attackRangeSqr)
             {
                 // attack
                 return blackboard.stateAttack;

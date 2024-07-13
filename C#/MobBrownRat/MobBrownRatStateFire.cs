@@ -12,7 +12,7 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
-            var lookAngleBlend = blackboard.GetUpLookAngleToEnemy() / blackboard.lookAngleNormal;
+            var lookAngleBlend = blackboard.GetBowAngleToEnemy() / blackboard.lookAngleNormal;
             blackboard.animation.Set("parameters/brown-rat-fire-blend/blend_position", lookAngleBlend);
 
             // look for enemy
