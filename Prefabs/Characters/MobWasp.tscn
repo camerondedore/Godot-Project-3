@@ -462,16 +462,16 @@ hasBlood = false
 [node name="mob-wasp" parent="." instance=ExtResource("2_blq1i")]
 
 [node name="Skeleton3D" parent="mob-wasp/mob-wasp-armature" index="0"]
-bones/0/rotation = Quaternion(-0.710646, 7.81098e-17, 7.88975e-17, 0.70355)
-bones/1/rotation = Quaternion(0.707093, 0.0043431, 0.707094, 0.00434315)
-bones/2/rotation = Quaternion(0.862672, 0.0914074, 0.484845, -0.111205)
-bones/3/rotation = Quaternion(-0.568667, -0.405808, -0.408196, 0.587634)
-bones/4/rotation = Quaternion(-0.488316, -0.359723, -0.299301, 0.736591)
-bones/5/rotation = Quaternion(0.783866, 0.182375, 0.514162, -0.296531)
-bones/6/rotation = Quaternion(0.862672, -0.0914074, -0.484845, -0.111205)
-bones/7/rotation = Quaternion(-0.585078, 0.391488, 0.426973, 0.567551)
-bones/8/rotation = Quaternion(-0.498701, 0.351641, 0.326355, 0.721899)
-bones/9/rotation = Quaternion(0.77915, -0.201837, -0.506091, -0.309935)
+bones/0/rotation = Quaternion(-0.710551, 7.81204e-17, 7.8887e-17, 0.703646)
+bones/1/rotation = Quaternion(0.707098, 0.00350637, 0.707098, 0.00350643)
+bones/2/rotation = Quaternion(0.862468, 0.0802142, 0.486239, -0.115263)
+bones/3/rotation = Quaternion(-0.568835, -0.405925, -0.40808, 0.587471)
+bones/4/rotation = Quaternion(-0.48851, -0.359802, -0.299206, 0.736462)
+bones/5/rotation = Quaternion(0.783933, 0.18249, 0.514121, -0.296355)
+bones/6/rotation = Quaternion(0.862468, -0.0802142, -0.486239, -0.115263)
+bones/7/rotation = Quaternion(-0.585251, 0.391619, 0.426854, 0.567373)
+bones/8/rotation = Quaternion(-0.498891, 0.351727, 0.326262, 0.721768)
+bones/9/rotation = Quaternion(0.779227, -0.201964, -0.50604, -0.309739)
 
 [node name="mob-wasp2" parent="mob-wasp/mob-wasp-armature/Skeleton3D" index="0"]
 layers = 2

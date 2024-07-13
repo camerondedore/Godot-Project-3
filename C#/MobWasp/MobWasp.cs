@@ -145,13 +145,35 @@ namespace MobWasp
             // check if not close to move target
             if(GlobalPosition.DistanceSquaredTo(moveTarget) > 0.0225f)
             {
-                // move to target
-                var newVelocity = (moveTarget - GlobalPosition).Normalized() * speed;
+                var directionToTarget = (moveTarget - GlobalPosition).Normalized();
+                var newVelocity = directionToTarget * speed;
+
+                // check for obstacle
+                var forwardClear = eyes.HasLosToPosition(GlobalPosition + -Basis.Z);
+
+                if(forwardClear == false && IsEnemyValid() == false)
+                {
+                    var obstacleNormal = eyes.GetCollisionNormal();
+                    var projectedObstacleNormal = Basis.Z.Project(obstacleNormal);
+
+                    // check if not stuck
+                    if(GetRealVelocity().LengthSquared() > 0.2f)
+                    {
+                        // use ray normal to avoid obstacles
+                        newVelocity = (projectedObstacleNormal).Normalized() * speed;                    
+                    }
+                    else
+                    {
+                        // move up
+                        newVelocity = Vector3.Up * speed;   
+                    }
+
+                }
 
                 if(Velocity != newVelocity)
                 {
                     Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
-                }  
+                }
 
                 // apply movement
                 MoveAndSlide();

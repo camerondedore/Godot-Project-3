@@ -1667,6 +1667,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5998, 1.4598, 14.8808)
 [node name="MobWasp" parent="Enemies" instance=ExtResource("67_elsxh")]
 transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 11.9205, 0.200001, 15.1351)
 
+[node name="MobWasp6" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 18.6627, 0.200001, 10.8835)
+
+[node name="MobWasp7" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 17.0802, 0.200001, 14.4934)
+
+[node name="MobWasp8" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 13.1102, 0.200001, 10.5142)
+
+[node name="MobWasp9" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 8.11023, 0.200001, 12.5142)
+
+[node name="MobWasp10" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 6.59639, 0.200001, 17.2229)
+
+[node name="MobWasp11" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 11.5964, 0.200001, 18.2229)
+
+[node name="MobWasp12" parent="Enemies" instance=ExtResource("67_elsxh")]
+transform = Transform3D(0.978696, 0, 0.205316, 0, 1, 0, -0.205316, 0, 0.978696, 16.5698, 0.200001, 17.5063)
+
 [node name="MobWasp2" parent="Enemies" instance=ExtResource("67_elsxh")]
 transform = Transform3D(0.900819, 0, 0.434194, 0, 1, 0, -0.434194, 0, 0.900819, 14.4485, 0.200001, 14.7705)
 
