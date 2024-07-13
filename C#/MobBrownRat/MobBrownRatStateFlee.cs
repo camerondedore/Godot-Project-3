@@ -13,7 +13,7 @@ namespace MobBrownRat
 
         public override void RunState(double delta)
         {
-            
+            blackboard.ClayPotCheck();
         }
         
         

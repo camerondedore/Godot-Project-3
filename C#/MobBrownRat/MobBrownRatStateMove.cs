@@ -26,6 +26,9 @@ namespace MobBrownRat
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
             }
+
+
+            blackboard.ClayPotCheck();
         }
         
         

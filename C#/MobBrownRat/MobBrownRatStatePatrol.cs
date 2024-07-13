@@ -15,6 +15,8 @@ namespace MobBrownRat
         {         
             // look for enemy
             blackboard.LookForEnemy();
+
+            blackboard.ClayPotCheck();
         }
         
         

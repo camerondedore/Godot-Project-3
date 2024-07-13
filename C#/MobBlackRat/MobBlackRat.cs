@@ -383,5 +383,24 @@ namespace MobBlackRat
             machine.SetState(stateStart);
             machine.CurrentState.StartState();
         }
+
+
+
+        public void ClayPotCheck()
+        {
+            // check for collision with clay pot and break any in the way
+
+            if(GetLastSlideCollision() != null)
+            {
+                // check for clay potpots to break
+                var lastHitCollider = GetLastSlideCollision().GetCollider();
+
+                if(lastHitCollider != null && lastHitCollider is ClayPotTarget hitClayPot)
+                {
+                    // break pot
+                    hitClayPot.Hit(Velocity);
+                }
+            }
+        }
     }
 }
