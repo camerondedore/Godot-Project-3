@@ -13,7 +13,9 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
     string arrowType = "weighted";
     AudioTools3d audio;
     Node3D currentTarget;
-    float speed = 3f,
+    Vector3 startPositon,
+        currentTargetPosition;
+    float speed = 5f,
         cursorSpeed,
         moveCursor = 1;
 
@@ -34,7 +36,7 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
             moveCursor += cursorSpeed * ((float)delta);
 
             // move block
-            GlobalPosition = GlobalPosition.Lerp(currentTarget.GlobalPosition, moveCursor);
+            GlobalPosition = startPositon.Lerp(currentTargetPosition, moveCursor);
         }
     }
 
@@ -108,7 +110,7 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
         // find target to slide to
         foreach(var target in targetPoints)
         {
-            if(target.GlobalPosition == GlobalPosition)
+            if(target.GlobalPosition.DistanceSquaredTo(GlobalPosition) < 0.1f)
             {
                 continue;
             }
@@ -136,7 +138,8 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
         if(currentTarget != null)
         {
             moveCursor = 0;
-
+            startPositon = GlobalPosition;
+            currentTargetPosition = currentTarget.Position;
             cursorSpeed = speed / Mathf.Sqrt(shortestDistanceSqr);
         }
     }

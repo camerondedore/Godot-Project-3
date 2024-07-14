@@ -15,6 +15,13 @@ public partial class MaterialColorFlasher : MeshInstance3D
 
 
 
+    public override void _Ready()
+    {
+        GetSurfaceOverrideMaterial(0).Set("albedo_color", startColor);
+    }
+
+
+
     public override void _Process(double delta)
     {
         if(colorCursor >= 1)
