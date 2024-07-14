@@ -111,7 +111,7 @@ public partial class Mob : CharacterBody3D, IBowTarget, CinematicSimpleTriggerDe
 
         if(GetLastSlideCollision() != null)
         {
-            // check for clay potpots to break
+            // check for clay pots to break
             var lastHitCollider = GetLastSlideCollision().GetCollider();
 
             if(lastHitCollider != null && lastHitCollider is ClayPotTarget hitClayPot)
