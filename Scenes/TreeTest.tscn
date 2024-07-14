@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=145 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -125,12 +125,12 @@
 [ext_resource type="PackedScene" uid="uid://binqhfxpr0vcx" path="res://Prefabs/Small Items/PropBoard3Rigid.tscn" id="122_175ji"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="123_ae5e8"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="128_gfore"]
-[ext_resource type="Script" path="res://C#/PlayerBow/MovingBlockTarget.cs" id="129_634bb"]
+[ext_resource type="PackedScene" uid="uid://b7ob4girwag6g" path="res://Prefabs/Player Bow Targets/PropBlock2m.tscn" id="129_3f01j"]
 [ext_resource type="Material" uid="uid://c617c2gjl7fk3" path="res://Materials/Characters/CharacterWynn.tres" id="129_t8lqq"]
-[ext_resource type="AudioStream" uid="uid://cfp5w7aausexx" path="res://Audio/wood-board-hit-4.wav" id="130_ah1nj"]
+[ext_resource type="PackedScene" uid="uid://cretsril7ivwi" path="res://Prefabs/Player Bow Targets/PropBlock5m.tscn" id="130_hwkar"]
 [ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="130_m0osj"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="131_3gpyt"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="131_55nx4"]
+[ext_resource type="Material" uid="uid://bss8ehpvp4onx" path="res://Materials/Rock.tres" id="136_qdjn8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_q1ywk"]
 resource_local_to_scene = true
@@ -274,11 +274,8 @@ size = Vector3(14, 1.75, 14)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fs0y"]
 size = Vector3(2, 4, 0.25)
 
-[sub_resource type="BoxMesh" id="BoxMesh_pospt"]
-size = Vector3(1, 2, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_goryd"]
-size = Vector3(1, 2, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_wbjyo"]
+size = Vector3(2, 0.2, 0.2)
 
 [node name="TreeTest" type="Node3D"]
 
@@ -1784,33 +1781,153 @@ surface_material_override/0 = ExtResource("129_t8lqq")
 surface_material_override/1 = ExtResource("130_m0osj")
 surface_material_override/2 = ExtResource("131_3gpyt")
 
-[node name="TestBlock" type="RigidBody3D" parent="." node_paths=PackedStringArray("targetPoints")]
+[node name="PropBlock2m" parent="." node_paths=PackedStringArray("targetPoints") instance=ExtResource("129_3f01j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -16)
-collision_layer = 16
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-freeze = true
-script = ExtResource("129_634bb")
 targetPoints = [NodePath("../TargetPoint"), NodePath("../TargetPoint2"), NodePath("../TargetPoint3")]
-hitSound = ExtResource("130_ah1nj")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestBlock"]
-mesh = SubResource("BoxMesh_pospt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TestBlock"]
-shape = SubResource("BoxShape3D_goryd")
-
-[node name="Audio" type="AudioStreamPlayer3D" parent="TestBlock"]
-script = ExtResource("131_55nx4")
+[node name="PropBlock5m" parent="." node_paths=PackedStringArray("targetPoints") instance=ExtResource("130_hwkar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2.5, -2)
+targetPoints = [NodePath("../TargetPoint4"), NodePath("../TargetPoint5")]
 
 [node name="TargetPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, -16)
 
+[node name="TestBlockEnd" type="MeshInstance3D" parent="TargetPoint"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.1, -0.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd4" type="MeshInstance3D" parent="TargetPoint"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1, -0.9, 0)
+visible = false
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd2" type="MeshInstance3D" parent="TargetPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, -0.9, -1.1)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd3" type="MeshInstance3D" parent="TargetPoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, -0.9, 1.1)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
 [node name="TargetPoint2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, -16)
 
+[node name="TestBlockEnd" type="MeshInstance3D" parent="TargetPoint2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.1, -0.9, 0)
+visible = false
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd4" type="MeshInstance3D" parent="TargetPoint2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1, -0.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd2" type="MeshInstance3D" parent="TargetPoint2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, -0.9, -1.1)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd3" type="MeshInstance3D" parent="TargetPoint2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, -0.9, 1.1)
+visible = false
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
 [node name="TargetPoint3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1, -12)
+
+[node name="TestBlockEnd" type="MeshInstance3D" parent="TargetPoint3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.1, -0.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd4" type="MeshInstance3D" parent="TargetPoint3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1, -0.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd2" type="MeshInstance3D" parent="TargetPoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, -0.9, -1.1)
+visible = false
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd3" type="MeshInstance3D" parent="TargetPoint3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53674e-07, -0.9, 1.1)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TargetPoint4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, -9)
+
+[node name="TestBlockEnd" type="MeshInstance3D" parent="TargetPoint4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.1, -1.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd4" type="MeshInstance3D" parent="TargetPoint4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1, -1.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd2" type="MeshInstance3D" parent="TargetPoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, -1.1)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd3" type="MeshInstance3D" parent="TargetPoint4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, 1.1)
+visible = false
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TargetPoint5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 2, -2)
+
+[node name="TestBlockEnd" type="MeshInstance3D" parent="TargetPoint5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.1, -1.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd4" type="MeshInstance3D" parent="TargetPoint5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.1, -1.9, 0)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd2" type="MeshInstance3D" parent="TargetPoint5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, -1.1)
+visible = false
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
+
+[node name="TestBlockEnd3" type="MeshInstance3D" parent="TargetPoint5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9, 1.1)
+mesh = SubResource("BoxMesh_wbjyo")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("136_qdjn8")
 
 [editable path="character-wynn"]

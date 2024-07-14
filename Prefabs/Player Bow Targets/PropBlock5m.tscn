@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cretsril7ivwi"]
+
+[ext_resource type="PackedScene" uid="uid://b7ob4girwag6g" path="res://Prefabs/Player Bow Targets/PropBlock2m.tscn" id="1_s06pv"]
+[ext_resource type="ArrayMesh" uid="uid://dr002ltuu18s" path="res://Models/prop-block-5m.res" id="2_j80v3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_are6o"]
+height = 5.0
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ipjk"]
+size = Vector3(2, 5, 1)
+
+[node name="PropBlock5m" instance=ExtResource("1_s06pv")]
+speed = 3.0
+
+[node name="Collider" parent="." index="0"]
+shape = SubResource("CylinderShape3D_are6o")
+
+[node name="Collider2" parent="." index="1"]
+shape = SubResource("BoxShape3D_2ipjk")
+
+[node name="Collider3" parent="." index="2"]
+shape = SubResource("BoxShape3D_2ipjk")
+
+[node name="MeshInstance3D" parent="." index="3"]
+mesh = ExtResource("2_j80v3")

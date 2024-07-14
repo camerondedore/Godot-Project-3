@@ -40,8 +40,8 @@ namespace CameraControllerSpringArm
             // the springarm transform does not use the springarm ray
             var cameraTargetPosition = blackboard.cameraTarget.GlobalPosition;
             var cameraTargetDirection = -blackboard.Basis.Z;
-            var cameraTargetPositionSmooth = SineInterpolator.Interpolate(startPosition, cameraTargetPosition, cursor);
-            var cameraTargetLookDirectionSmooth = SineInterpolator.Interpolate(startLookDirection, cameraTargetDirection, cursor);
+            var cameraTargetPositionSmooth = SineInterpolator.HalfInterpolate(startPosition, cameraTargetPosition, cursor);
+            var cameraTargetLookDirectionSmooth = SineInterpolator.HalfInterpolate(startLookDirection, cameraTargetDirection, cursor);
 
             // apply camera position and look
             GlobalCamera.camera.LookAtFromPosition(cameraTargetPositionSmooth, cameraTargetPositionSmooth + cameraTargetLookDirectionSmooth);

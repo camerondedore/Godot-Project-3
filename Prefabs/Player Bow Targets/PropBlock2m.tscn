@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://b7ob4girwag6g"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnilwwvcgbvma" path="res://Models/prop-block-2m.res" id="1_703ca"]
+[ext_resource type="Script" path="res://C#/PlayerBow/MovingBlockTarget.cs" id="1_cnh7w"]
+[ext_resource type="AudioStream" uid="uid://rg2w4kfv2sn4" path="res://Audio/wood-board-hit-1.wav" id="2_8bwre"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_cax1d"]
+[ext_resource type="AudioStream" uid="uid://wiwliy3cdnhe" path="res://Audio/wood-board-hit-2.wav" id="3_allqo"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="3_q2c1a"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_q1otu"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_qagso"]
+[ext_resource type="Texture2D" uid="uid://coc5tky0b3fol" path="res://Textures/fx-painted-cross.png" id="6_imcml"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vb4od"]
+radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1gpek"]
+size = Vector3(2, 2, 1)
+
+[node name="PropBlock2m" type="RigidBody3D" node_paths=PackedStringArray("targetPoints")]
+collision_layer = 16384
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+freeze = true
+script = ExtResource("1_cnh7w")
+targetPoints = []
+hitSuccessSound = ExtResource("2_8bwre")
+hitFailSound = ExtResource("3_allqo")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_vb4od")
+
+[node name="Collider2" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1gpek")
+
+[node name="Collider3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_1gpek")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_703ca")
+surface_material_override/0 = ExtResource("2_cax1d")
+surface_material_override/1 = ExtResource("3_q2c1a")
+surface_material_override/2 = ExtResource("4_q1otu")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 5.0
+max_distance = 30.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("5_qagso")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.910685)
+layers = 2
+size = Vector3(0.6, 0.15, 0.6)
+texture_albedo = ExtResource("6_imcml")
+cull_mask = 2
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform3D(1, -8.74228e-08, 8.74228e-08, -8.74228e-08, -4.37114e-08, 1, -8.74228e-08, -1, -4.37114e-08, 0, 0, -0.911)
+layers = 2
+size = Vector3(0.6, 0.15, 0.6)
+texture_albedo = ExtResource("6_imcml")
+cull_mask = 2
+
+[node name="Decal3" type="Decal" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 0.910842, 0, -0.000157754)
+layers = 2
+size = Vector3(0.6, 0.15, 0.6)
+texture_albedo = ExtResource("6_imcml")
+cull_mask = 2
+
+[node name="Decal4" type="Decal" parent="."]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -0.910842, 0, -0.000157674)
+layers = 2
+size = Vector3(0.6, 0.15, 0.6)
+texture_albedo = ExtResource("6_imcml")
+cull_mask = 2

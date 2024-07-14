@@ -27,10 +27,10 @@ namespace Cinematic
             if(cursor <= 1)
             {
                 // move camera
-                camera.GlobalPosition = SineInterpolator.Interpolate(startPosition, endPosition, cursor);
+                camera.GlobalPosition = SineInterpolator.HalfInterpolate(startPosition, endPosition, cursor);
 
                 // apply look to camera
-                lookTarget = SineInterpolator.Interpolate(startLookTarget, endLookTarget, cursor);
+                lookTarget = SineInterpolator.HalfInterpolate(startLookTarget, endLookTarget, cursor);
                 camera.LookAt(lookTarget, Vector3.Up);
 
                 // move cursor
