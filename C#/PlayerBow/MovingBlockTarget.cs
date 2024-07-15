@@ -48,7 +48,7 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
             var realSpeed = (GlobalPosition - oldPosition).Length() / ((float)delta);
 
             // adjust audio
-            slideAudio.PitchScale = Mathf.Clamp(1f - 0.05f * (1f - (realSpeed / speed)), 0, 1f);
+            slideAudio.PitchScale = Mathf.Clamp(1f - 0.2f * (1f - (realSpeed / speed)), 0, 1f);
 
             // set old position for use in next tic
             oldPosition = GlobalPosition;
