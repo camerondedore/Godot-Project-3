@@ -14,10 +14,12 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
     float speed = 5f;
 
     string arrowType = "weighted";
-    AudioTools3d audio;
+    AudioTools3d hitAudio,
+        slideAudio;
     Node3D currentTarget;
     Vector3 startPositon,
-        currentTargetPosition;
+        currentTargetPosition,
+        oldPosition;
     float cursorSpeed,
         moveCursor = 1;
 
@@ -26,7 +28,8 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
     public override void _Ready()
     {
         // get nodes
-        audio = (AudioTools3d) GetNode("Audio");
+        hitAudio = (AudioTools3d) GetNode("HitAudio");
+        slideAudio = (AudioTools3d) GetNode("SlideAudio");
     }
 
 
@@ -39,6 +42,22 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
 
             // move block
             GlobalPosition = SineInterpolator.QuarterInterpolate(startPositon, currentTargetPosition, moveCursor);
+
+
+            // get real speed of moving block
+            var realSpeed = (GlobalPosition - oldPosition).Length() / ((float)delta);
+
+            // adjust audio
+            slideAudio.PitchScale = Mathf.Clamp(1f - 0.05f * (1f - (realSpeed / speed)), 0, 1f);
+
+            // set old position for use in next tic
+            oldPosition = GlobalPosition;
+        }
+
+        if(slideAudio.Playing && moveCursor >= 1)
+        {
+            // end slide audio
+            slideAudio.Stop();
         }
     }
 
@@ -151,19 +170,22 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
 
         if(currentTarget != null)
         {
+            // reset sliding
             moveCursor = 0;
             startPositon = GlobalPosition;
+            oldPosition = startPositon;
             currentTargetPosition = currentTarget.Position;
             currentTargetPosition.Y = GlobalPosition.Y;
             cursorSpeed = speed / Mathf.Sqrt(shortestDistanceSqr);
 
             // play audio
-            audio.PlaySound(hitSuccessSound, 0.1f);
+            hitAudio.PlaySound(hitSuccessSound, 0.1f);
+            slideAudio.Play();
         }
         else
         {
             // play audio
-            audio.PlaySound(hitFailSound, 0.1f);
+            hitAudio.PlaySound(hitFailSound, 0.1f);
         }
     }
 }
