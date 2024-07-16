@@ -72,7 +72,7 @@ namespace PlayerCharacterComplex
                 return blackboard.stateBowAim;
             }
 
-            if(!PlayerInput.isMoving)
+            if(PlayerInput.isMoving == false)
             {
                 // idle
                 return blackboard.stateIdle;

@@ -85,8 +85,16 @@ namespace PlayerCharacterComplex
 
             if(EngineTime.timePassed > startTime + delay)
             {
-                // move
-                return blackboard.stateMove;
+                if(PlayerInput.isMoving == true)
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+                else
+                {
+                    // idle
+                    return blackboard.stateIdle;
+                }
             }
 
             return this;

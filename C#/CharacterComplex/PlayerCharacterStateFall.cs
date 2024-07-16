@@ -68,14 +68,22 @@ namespace PlayerCharacterComplex
         {
             if(blackboard.IsOnFloor())
             {
-                if(blackboard.startHeight - blackboard.GlobalPosition.Y > blackboard.jumpHeight)
+                if(blackboard.GlobalPosition.Y - blackboard.startHeight < blackboard.jumpHeight * -0.5f)
                 {
                     // land
                     return blackboard.stateLand;
                 }
 
-                // move
-                return blackboard.stateMove;
+                if(PlayerInput.isMoving == true)
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+                else
+                {
+                    // idle
+                    return blackboard.stateIdle;
+                }
             }
 
 

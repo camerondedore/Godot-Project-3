@@ -161,8 +161,16 @@ namespace PlayerCharacterComplex
 
                 blackboard.backBone.OverridePose = false;
 
-                // move
-                return blackboard.stateMove;
+                if(PlayerInput.isMoving == true)
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+                else
+                {
+                    // idle
+                    return blackboard.stateIdle;
+                }
             }
 
             // check for failed draw or canceled previous draw
@@ -173,8 +181,16 @@ namespace PlayerCharacterComplex
 
                 blackboard.backBone.OverridePose = false;
 
-                // move
-                return blackboard.stateMove;
+                if(PlayerInput.isMoving == true)
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+                else
+                {
+                    // idle
+                    return blackboard.stateIdle;
+                }
             }
 
             return this;
