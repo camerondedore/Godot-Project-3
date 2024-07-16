@@ -5279,7 +5279,6 @@ transform = Transform3D(-0.999993, 0, -0.00375237, 0, 1, 0, 0.00375237, 0, -0.99
 
 [node name="MobBlackRat3" parent="Enemies" instance=ExtResource("4_m4xsu")]
 transform = Transform3D(-0.817688, 0, -0.575662, 0, 1, 0, 0.575662, 0, -0.817688, -56.1936, 0.9998, -58.9128)
-attackAngle = 65.0
 
 [node name="MobBlackRat4" parent="Enemies" instance=ExtResource("4_m4xsu")]
 transform = Transform3D(-0.477081, 0, 0.878859, 0, 1, 0, -0.878859, 0, -0.477081, -51.7426, 0.9998, -57.9781)

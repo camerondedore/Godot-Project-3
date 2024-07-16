@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://dkg53gsq4b3cn"]
+[gd_scene load_steps=151 format=3 uid="uid://dkg53gsq4b3cn"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
@@ -131,6 +131,10 @@
 [ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="130_m0osj"]
 [ext_resource type="PackedScene" uid="uid://b6tr6onc6gvr" path="res://Prefabs/Small Items/BlockTarget.tscn" id="131_2j43n"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="131_3gpyt"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="132_ispcx"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="132_wn54f"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="133_ep038"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraTracker.cs" id="134_rj3tj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_q1ywk"]
 resource_local_to_scene = true
@@ -273,6 +277,63 @@ size = Vector3(14, 1.75, 14)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fs0y"]
 size = Vector3(2, 4, 0.25)
+
+[sub_resource type="Animation" id="Animation_8v6vl"]
+resource_name = "tt1"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cinematic1/Target1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cinematic1/Tracker1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}, {
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CinematicTest")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EndCinematic"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xvjy8"]
+_data = {
+"tt1": SubResource("Animation_8v6vl")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qfdqk"]
+size = Vector3(4.0116, 2.68024, 1)
 
 [node name="TreeTest" type="Node3D"]
 
@@ -1838,6 +1899,36 @@ bones/45/scale = Vector3(0.999998, 1, 1)
 surface_material_override/0 = ExtResource("129_t8lqq")
 surface_material_override/1 = ExtResource("130_m0osj")
 surface_material_override/2 = ExtResource("131_3gpyt")
+
+[node name="CinematicTest" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xvjy8")
+}
+script = ExtResource("132_wn54f")
+
+[node name="Cinematic1" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Cinematic1" node_paths=PackedStringArray("cinematic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.25698, 7.02111)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("132_ispcx")
+cinematic = NodePath("../../CinematicTest")
+cinematicAnimationName = "tt1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cinematic1/Area3D"]
+shape = SubResource("BoxShape3D_qfdqk")
+
+[node name="Target1" type="Node3D" parent="Cinematic1"]
+transform = Transform3D(-0.995397, -0.0195158, -0.0938268, 0, 0.979046, -0.20364, 0.095835, -0.202702, -0.97454, 12.539, 1.09718, 9.71783)
+script = ExtResource("133_ep038")
+moveTime = 2.0
+
+[node name="Tracker1" type="Node3D" parent="Cinematic1" node_paths=PackedStringArray("lookTarget")]
+transform = Transform3D(-0.995397, -0.0195158, -0.0938268, 0, 0.979046, -0.20364, 0.095835, -0.202702, -0.97454, 12.539, 1.09718, 9.71783)
+script = ExtResource("134_rj3tj")
+lookTarget = NodePath("../../Enemies/MobWasp2")
 
 [editable path="Map/Blocks/BlockTarget"]
 [editable path="Map/Blocks/BlockTarget2"]

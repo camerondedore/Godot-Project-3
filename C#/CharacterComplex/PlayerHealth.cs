@@ -137,6 +137,7 @@ namespace PlayerCharacterComplex
 
         public override void Die()
         {
+            playerCharacter.machine.CurrentState.EndState();
             playerCharacter.machine.SetState(playerCharacter.stateDie);
         }
     }
