@@ -40,6 +40,9 @@ namespace PlayerCharacterComplex
             // clear velocity
             blackboard.Velocity = Vector3.Zero;
 
+            // stop overriding back bone
+            blackboard.backBone.OverridePose = false;
+
             // animation
             blackboard.animStateMachinePlayback.Travel("character-die");
         }
