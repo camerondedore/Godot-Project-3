@@ -18,7 +18,11 @@ namespace PlayerCharacterComplex
             // disable camera spring arm
             blackboard.cameraController.machine.SetState(blackboard.cameraController.stateWait);
 
+            // protect player
             blackboard.health.invulnerable = true;
+
+            // hide ui
+            blackboard.hud.Visible = false;
 
             // clear bow draw
             blackboard.bow.CancelDraw();
@@ -39,7 +43,12 @@ namespace PlayerCharacterComplex
             // enable camera spring arm
             blackboard.cameraController.machine.SetState(blackboard.cameraController.stateStart);
 
+            // clear player protection
             blackboard.health.invulnerable = false;
+
+            // show ui
+            blackboard.hud.Visible = true;
+
         }
 
 

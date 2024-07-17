@@ -50,6 +50,8 @@ namespace PlayerCharacterComplex
 		[Export]
 		public PlayerHealth health;
 		[Export]
+		public PlayerHud hud;
+		[Export]
 		public MobFaction[] myFactions;
 		[Export]
 		public PlayerCharacterLedgeDetector ledgeDetector;

@@ -5115,9 +5115,8 @@ nextAnimation = "wynn-give"
 transform = Transform3D(-0.930763, 0, -0.365624, 0, 1, 0, 0.365624, 0, -0.930763, -28.1648, 9, -42.2362)
 script = ExtResource("109_6d8j3")
 prefab = ExtResource("68_c0uoq")
-spread = 0.0
+velocity = Vector3(0, 1, -5)
 angularSpeed = 0.0
-useAngularVelocity = false
 
 [node name="SpawnBlackRat" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("mobTarget")]
 transform = Transform3D(-0.594276, 0, -0.804262, 0, 1, 0, 0.804262, 0, -0.594276, -46.8136, -1.96589, -30.9875)
