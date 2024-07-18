@@ -3,29 +3,35 @@ using System;
 
 namespace PlayerCharacterComplex
 {
-    public partial class PlayerCharacterStateStart : PlayerCharacterState
+    public partial class PlayerCharacterStateCinematic : PlayerCharacterState
     {
 
-        double startTime;
+
 
 
 
         public override void StartState()
         {
-            // get start time
-            startTime = EngineTime.timePassed;
-
             // disable camera spring arm
             blackboard.cameraController.machine.SetState(blackboard.cameraController.stateWait);
 
             // protect player
             blackboard.health.invulnerable = true;
 
-            // start letterbox and hide ui
-            blackboard.hud.InitLetterbox();
+            // clear bow draw
+            blackboard.bow.CancelDraw();
+
+            // clear velocity
+            blackboard.Velocity = Vector3.Zero;
+
+            // hide ui and show letterbox
+            blackboard.hud.ShowLetterbox();
 
             // animation
-            blackboard.animStateMachinePlayback.Travel("character-idle");        
+            blackboard.animStateMachinePlayback.Travel("character-idle");
+
+            // stop back bone override
+            blackboard.backBone.OverridePose = false;            
         }
 
 
@@ -46,13 +52,6 @@ namespace PlayerCharacterComplex
 
         public override State Transition()
         {
-            // check timer and player input
-            if(EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
-            {
-                // idle
-                return blackboard.stateIdle;
-            }
-
             return this;
         }
     }

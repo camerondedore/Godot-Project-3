@@ -11,6 +11,7 @@ namespace PlayerCharacterComplex
 		public StateMachine machine = new StateMachine();
 		public SuperState superStateJumpPad;
 		public State stateStart,
+			stateCinematic,
 			stateIdle,
 			stateMove,
 			stateFall,
@@ -75,7 +76,6 @@ namespace PlayerCharacterComplex
 		public BandageStation currentStation;
 		public float startHeight;
 		public int rangerBandagesToCraft;
-		public bool startDelayUsesTime = true;
 
 		//string debugText;
 		
@@ -91,6 +91,7 @@ namespace PlayerCharacterComplex
 
 			// initialize states
 			stateStart = new PlayerCharacterStateStart(){blackboard = this};
+			stateCinematic = new PlayerCharacterStateCinematic(){blackboard = this};
 			stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
 			stateMove = new PlayerCharacterStateMove(){blackboard = this};
 			stateFall = new PlayerCharacterStateFall(){blackboard = this};

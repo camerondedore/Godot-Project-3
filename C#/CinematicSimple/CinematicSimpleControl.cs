@@ -37,8 +37,7 @@ namespace CinematicSimple
                 player = body as PlayerCharacter;     
 
                 // set player to start state
-                player.startDelayUsesTime = false;
-                player.machine.SetState(player.stateStart);
+                player.machine.SetState(player.stateCinematic);
 
                 // play cinematic
                 Play(animationName);

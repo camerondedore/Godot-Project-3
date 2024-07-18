@@ -20,8 +20,7 @@ namespace Cinematic
         public override void EndState()
         {
             // set player to start state
-            blackboard.player.startDelayUsesTime = false;
-            blackboard.player.machine.SetState(blackboard.player.stateStart);
+            blackboard.player.machine.SetState(blackboard.player.stateCinematic);
         }
 
 

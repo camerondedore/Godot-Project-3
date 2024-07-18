@@ -35,6 +35,8 @@ public partial class PlayerHud : CanvasLayer
 	[Export]
 	Color hurtHitPointsBarColor,
 		healHitPointsBarColor;
+	[Export]
+	AnimationPlayer letterboxAnimation;
 
 	PlayerStatistics.Statistics currentStatistics;
 	PlayerInventory.Inventory currentInventory;
@@ -372,5 +374,26 @@ public partial class PlayerHud : CanvasLayer
 
 			shieldIndex++;
 		}
+	}
+
+
+
+	public void InitLetterbox()
+	{
+		letterboxAnimation.Play("first-time");
+	}
+
+
+
+	public void ShowLetterbox()
+	{
+		letterboxAnimation.Play("show-bars");
+	}
+
+
+
+	public void HideLetterbox()
+	{
+		letterboxAnimation.Play("hide-bars");
 	}
 }

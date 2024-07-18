@@ -17,6 +17,7 @@ layout_mode = 3
 anchor_top = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="DailogueBackground" type="ColorRect" parent="DialogueRoot"]
 layout_mode = 1
@@ -25,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="DialogueText" type="Label" parent="DialogueRoot"]

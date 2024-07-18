@@ -21,7 +21,8 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
         currentTargetPosition,
         oldPosition;
     float cursorSpeed,
-        moveCursor = 1;
+        moveCursor = 1,
+        maxDistanceToTarget = 100;
 
 
 
@@ -135,7 +136,7 @@ public partial class MovingBlockTarget : RigidBody3D, IBowTarget
         }
 
         
-        var shortestDistanceSqr = 2500f;
+        var shortestDistanceSqr = maxDistanceToTarget;
 
         // find target to slide to
         foreach(var target in targetPoints)

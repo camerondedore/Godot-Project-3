@@ -5116,6 +5116,7 @@ transform = Transform3D(-0.930763, 0, -0.365624, 0, 1, 0, 0.365624, 0, -0.930763
 script = ExtResource("109_6d8j3")
 prefab = ExtResource("68_c0uoq")
 velocity = Vector3(0, 1, -5)
+spread = 0.5
 angularSpeed = 0.0
 
 [node name="SpawnBlackRat" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("mobTarget")]
