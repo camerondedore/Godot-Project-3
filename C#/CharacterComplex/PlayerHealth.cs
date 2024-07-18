@@ -51,7 +51,7 @@ namespace PlayerCharacterComplex
                     playerFx.PlayRangerBandageHealFx();
 
                     // remove bandage from inventory
-                    PlayerInventory.inventory.AddToInventory(0, 0, 0, -1, null);
+                    PlayerInventory.inventory.AddRangerBandage(-1);
                 }
             }
         }

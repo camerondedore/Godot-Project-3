@@ -12,7 +12,7 @@ public partial class ArrowPickup : PickupRigidbody
     public override void PickupAction(PlayerPickup.PlayerPickupData data)
     {
         // add nut to player inventory
-        PlayerInventory.inventory.AddToInventory(0, 0, 0, 0, arrowType);
+        PlayerInventory.inventory.AddArrow(arrowType);
 
         // play player audio
 		data.playerAudio.PlayArrowPickupSound();

@@ -11,6 +11,12 @@ public partial class PlayerInventory : Node
 
     string filePath;
 
+    public event Action<int> CandiedNutsChanged;
+    public event Action<int> DockLeavesChanged;
+    public event Action<int> SanicleChanged;
+    public event Action<int> RangerBandagesChanged;
+    public event Action ArrowAdded;
+
 
 
     public override void _Ready()
@@ -50,17 +56,50 @@ public partial class PlayerInventory : Node
 
 
 
-    public void AddToInventory(int candiedNuts, int dockLeaves, int sanicle, int rangerBandages, string arrowType)
+    public void AddCandiedNuts(int candiedNuts)
     {
         currentInventory.CandiedNuts += candiedNuts;
+
+        CandiedNutsChanged.Invoke(currentInventory.CandiedNuts);
+    }
+
+
+
+    public void AddDockLeaves(int dockLeaves)
+    {
         currentInventory.DockLeaves += dockLeaves;
+
+        DockLeavesChanged.Invoke(currentInventory.DockLeaves);
+    }
+
+
+
+    public void AddSanicle(int sanicle)
+    {
         currentInventory.Sanicle += sanicle;
+
+        SanicleChanged.Invoke(currentInventory.Sanicle);
+    }
+
+
+
+    public void AddRangerBandage(int rangerBandages)
+    {
         currentInventory.RangerBandages += rangerBandages;
 
+        RangerBandagesChanged.Invoke(currentInventory.RangerBandages);
+    }
+
+
+
+    public void AddArrow(string arrowType)
+    {
         // check inventory for arrow first
         if(arrowType != null && !CheckInventoryForArrowType(arrowType))
         {
             currentInventory.ArrowTypes.Add(arrowType);
+
+            ArrowAdded.Invoke();
         }
     }
 

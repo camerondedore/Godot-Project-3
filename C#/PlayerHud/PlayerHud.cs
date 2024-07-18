@@ -47,12 +47,10 @@ public partial class PlayerHud : CanvasLayer
 		visibilityTimer;
 	float hitPoints,
 		hitPointsPerBar,
-		candiedNuts,
 		dockLeaves,
 		sanicle,
 		rangerBandages;
-	int hitPointUpgrades,
-		armor;
+	int hitPointUpgrades;
 	bool colorChanged = false,
 		rectsVisible = true;
 
@@ -74,7 +72,6 @@ public partial class PlayerHud : CanvasLayer
 		hitPointsPerBar = currentStatistics.HitPointsPerUpgrade;
 
 		// get from inventory
-		candiedNuts = currentInventory.CandiedNuts;
 		dockLeaves = currentInventory.DockLeaves;
 		sanicle = currentInventory.Sanicle;
 		rangerBandages = currentInventory.RangerBandages;
@@ -133,150 +130,27 @@ public partial class PlayerHud : CanvasLayer
 		 
 		// initialize UI values
 		UpdateHitPointBars(0);
-		UpdateShields();
-		candiedNutsCounter.Text = candiedNuts.ToString();
+		UpdateShields(currentStatistics.ArmorUpgrades);
+		candiedNutsCounter.Text = currentInventory.CandiedNuts.ToString();
 		dockLeavesCounter.Text = dockLeaves.ToString();
 		sanicleCounter.Text = sanicle.ToString();
 		rangerBandagesCounter.Text = rangerBandages.ToString();
+
+		// set up event handlers
+		PlayerStatistics.statistics.HitPointsChanged += UpdateHitPoints;
+		PlayerStatistics.statistics.HitPointUpgradesChanged += UpdateHitPointUpgrades;
+		PlayerStatistics.statistics.ArmorUpgradesChanged += UpdateArmorUpgrades;
+		PlayerInventory.inventory.CandiedNutsChanged += UpdateCandiedNuts;
+		PlayerInventory.inventory.DockLeavesChanged += UpdateDockLeaves;
+		PlayerInventory.inventory.SanicleChanged += UpdateSanicle;
+		PlayerInventory.inventory.RangerBandagesChanged += UpdateRangerBandages;
+		PlayerInventory.inventory.ArrowAdded += UpdateArrows;
 	}
 
 
 
 	public override void _Process(double delta)
 	{
-		// check for changes and apply values to UI
-
-		if(hitPoints != currentStatistics.HitPoints)
-		{
-			var hitPointsChange = currentStatistics.HitPoints - hitPoints;
-			hitPoints = currentStatistics.HitPoints;
-			UpdateHitPointBars(hitPointsChange);
-		}
-
-		if(armor != currentStatistics.ArmorUpgrades)
-		{
-			armor = currentStatistics.ArmorUpgrades;
-			UpdateShields();
-
-			// spawn pickup
-			hudPickups.AddArmor();
-		}
-
-		if(hitPointUpgrades != currentStatistics.HitPointUpgrades)
-		{
-			hitPointUpgrades = currentStatistics.HitPointUpgrades;
-			UpdateHitPointBars(1);
-
-			// spawn pickup
-			hudPickups.AddHitpointsBar();
-		}
-
-		if(candiedNuts != currentInventory.CandiedNuts)
-		{
-			// update label
-			candiedNuts = currentInventory.CandiedNuts;
-			candiedNutsCounter.Text = candiedNuts.ToString();
-
-			// spawn pickup
-			hudPickups.AddCandiedNut();
-			
-			visibilityTimer = 5;
-		}
-
-		if(dockLeaves != currentInventory.DockLeaves)
-		{
-			// check if dock leaves got added
-			if(dockLeaves < currentInventory.DockLeaves)
-			{
-				// spawn pickup
-				hudPickups.AddDockLeaf();
-			}
-			else
-			{
-				hudPickups.RemoveDockLeaf();
-			}
-
-			// update label
-			dockLeaves = currentInventory.DockLeaves;
-			dockLeavesCounter.Text = dockLeaves.ToString();
-
-			visibilityTimer = 5;
-		}
-
-		if(sanicle != currentInventory.Sanicle)
-		{
-			// check if sanicle leaves got added
-			if(sanicle < currentInventory.Sanicle)
-			{
-				// spawn pickup
-				hudPickups.AddSanicle();
-			}
-			else
-			{
-				hudPickups.RemoveSanicle();
-			}
-
-			// update label
-			sanicle = currentInventory.Sanicle;
-			sanicleCounter.Text = sanicle.ToString();
-
-			visibilityTimer = 5;
-		}
-
-		if(rangerBandages != currentInventory.RangerBandages)
-		{
-			// check if ranger bandages got added
-			if(rangerBandages < currentInventory.RangerBandages)
-			{
-				// spawn pickup
-				hudPickups.AddRangerBandage();
-			}
-			
-			// update label
-			rangerBandages = currentInventory.RangerBandages;
-			rangerBandagesCounter.Text = rangerBandages.ToString();
-
-			visibilityTimer = 5;
-		}
-
-		if(arrows.Count != currentInventory.ArrowTypes.Count)
-		{
-			var newArrow = currentInventory.ArrowTypes.Except(arrows).First();
-
-			hudPickups.AddArrow(newArrow);
-			
-			// update arrow list
-			arrows.Add(newArrow);
-
-			// update arrow icons
-			foreach(var arrow in arrows)
-			{
-				switch(arrow)
-				{
-					case "bodkin":
-						bodkinArrow.Visible = true;
-						break;
-					case "weighted":
-						weightedArrow.Visible = true;
-						break;
-					case "blade":
-						bladeArrow.Visible = true;
-						break;
-					case "pick":
-						pickArrow.Visible = true;
-						break;
-					case "net":
-						netArrow.Visible = true;
-						break;
-					case "fire":
-						fireArrow.Visible = true;
-						break;
-				}
-			}
-
-			visibilityTimer = 5;
-		}
-
 		// reset hit point bar color
 		if(colorChanged && EngineTime.timePassed > colorChangeStartTime + colorChangeTimeLength)
 		{
@@ -363,12 +237,12 @@ public partial class PlayerHud : CanvasLayer
 
 
 
-	void UpdateShields()
+	void UpdateShields(int newArmorUpgrades)
 	{
 		var shieldIndex = 0;
 		
 		// set shields to visible
-		while(shieldIndex < armor)
+		while(shieldIndex < newArmorUpgrades)
 		{
 			shields[shieldIndex].Visible = true;            
 
@@ -395,5 +269,151 @@ public partial class PlayerHud : CanvasLayer
 	public void HideLetterbox()
 	{
 		letterboxAnimation.Play("hide-bars");
+	}
+
+
+
+	public void UpdateHitPoints(float newHitPoints)
+	{
+		var delta = newHitPoints - hitPoints;
+		hitPoints = currentStatistics.HitPoints;
+		UpdateHitPointBars(delta);
+	}
+
+
+
+	public void UpdateHitPointUpgrades(int newHitPointUpgrades)
+	{
+		var delta = newHitPointUpgrades - hitPointUpgrades;
+		hitPointUpgrades = currentStatistics.HitPointUpgrades;
+		UpdateHitPointBars(delta);
+
+		// spawn pickup
+		hudPickups.AddHitpointsBar();
+	}
+
+
+
+	public void UpdateArmorUpgrades(int newArmorUpgrades)
+	{
+		UpdateShields(newArmorUpgrades);
+
+		// spawn pickup
+		hudPickups.AddArmor();
+	}
+
+
+
+	public void UpdateCandiedNuts(int newCandiedNuts)
+	{
+		// update label
+		candiedNutsCounter.Text = newCandiedNuts.ToString();
+
+		// spawn pickup
+		hudPickups.AddCandiedNut();
+		
+		visibilityTimer = 5;
+	}
+
+
+
+	public void UpdateDockLeaves(int newDockLeaves)
+	{
+		// check if dock leaves got added
+		if(dockLeaves < newDockLeaves)
+		{
+			// spawn pickup
+			hudPickups.AddDockLeaf();
+		}
+		else
+		{
+			hudPickups.RemoveDockLeaf();
+		}
+
+		// update label
+		dockLeaves = newDockLeaves;
+		dockLeavesCounter.Text = dockLeaves.ToString();
+
+		visibilityTimer = 5;
+	}
+
+
+
+	public void UpdateSanicle(int newSanicle)
+	{
+		// check if sanicle leaves got added
+		if(sanicle < newSanicle)
+		{
+			// spawn pickup
+			hudPickups.AddSanicle();
+		}
+		else
+		{
+			hudPickups.RemoveSanicle();
+		}
+
+		// update label
+		sanicle = newSanicle;
+		sanicleCounter.Text = sanicle.ToString();
+
+		visibilityTimer = 5;
+	}
+
+
+
+	public void UpdateRangerBandages(int newRangerBandages)
+	{
+		// check if ranger bandages got added
+		if(rangerBandages < newRangerBandages)
+		{
+			// spawn pickup
+			hudPickups.AddRangerBandage();
+		}
+		
+		// update label
+		rangerBandages = newRangerBandages;
+		rangerBandagesCounter.Text = rangerBandages.ToString();
+
+		visibilityTimer = 5;
+	}
+
+
+
+	public void UpdateArrows()
+	{
+		var newArrow = currentInventory.ArrowTypes.Except(arrows).First();
+
+		hudPickups.AddArrow(newArrow);
+		
+		// update arrow list
+		arrows.Add(newArrow);
+
+		// update arrow icons
+		foreach(var arrow in arrows)
+		{
+			switch(arrow)
+			{
+				case "bodkin":
+					bodkinArrow.Visible = true;
+					break;
+				case "weighted":
+					weightedArrow.Visible = true;
+					break;
+				case "blade":
+					bladeArrow.Visible = true;
+					break;
+				case "pick":
+					pickArrow.Visible = true;
+					break;
+				case "net":
+					netArrow.Visible = true;
+					break;
+				case "fire":
+					fireArrow.Visible = true;
+					break;
+			}
+		}
+
+		visibilityTimer = 5;
 	}
 }

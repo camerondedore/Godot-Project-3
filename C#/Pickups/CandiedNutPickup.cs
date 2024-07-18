@@ -31,7 +31,7 @@ public partial class CandiedNutPickup : PickupRigidbody
     public override void PickupAction(PlayerPickup.PlayerPickupData data)
     {
         // add nut to player inventory
-        PlayerInventory.inventory.AddToInventory(1, 0, 0, 0, null);
+        PlayerInventory.inventory.AddCandiedNuts(1);
 
         // play player audio
 		data.playerAudio.PlayCandiedNutPickupSound();

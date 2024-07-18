@@ -85,7 +85,7 @@ public partial class PlayerHudPickups : Control
 
 
 
-     public void AddArrow(string arrowType)
+    public void AddArrow(string arrowType)
     {   
         switch(arrowType)
         {

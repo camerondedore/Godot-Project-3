@@ -16,7 +16,7 @@ namespace PlayerCharacterComplex
             if(blackboard.rangerBandagesToCraft > 0 && EngineTime.timePassed > startTime + craftTime)
             {
                 // create bandage
-                PlayerInventory.inventory.AddToInventory(0, 0, 0, 1, null);
+                PlayerInventory.inventory.AddRangerBandage(1);
                 blackboard.rangerBandagesToCraft--;
 
                 // play audio

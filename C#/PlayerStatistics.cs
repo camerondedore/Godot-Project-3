@@ -15,6 +15,9 @@ public partial class PlayerStatistics : Node
     int maxHitPointUpgrades = 3,
         maxArmorUpgrades = 4;
 
+    public event Action<float> HitPointsChanged;
+    public event Action<int> HitPointUpgradesChanged;
+    public event Action<int> ArmorUpgradesChanged;
 
 
     public override void _Ready()
@@ -66,20 +69,34 @@ public partial class PlayerStatistics : Node
     public void UpdateHitPoints(float newHitPoints)
     {
         currentStatistics.HitPoints = newHitPoints;
+
+        HitPointsChanged.Invoke(newHitPoints);
     }
 
 
 
-    public void ApplyUpgrades(int hitPointUpgrade, int armorUpgrade)
+    public void ApplyHitPointsUpgrade(int hitPointUpgrade)
     {
         currentStatistics.HitPointUpgrades = Mathf.Clamp(currentStatistics.HitPointUpgrades + hitPointUpgrade, 0, maxHitPointUpgrades);
-        currentStatistics.ArmorUpgrades = Mathf.Clamp(currentStatistics.ArmorUpgrades + armorUpgrade, 0, maxArmorUpgrades);
+
+        HitPointUpgradesChanged.Invoke(currentStatistics.HitPointUpgrades);
 
         // if hitpoints were upgraded, give full health
         if(hitPointUpgrade > 0)
         {
             currentStatistics.HitPoints = GetMaxHitPoints();
+            
+            HitPointsChanged.Invoke(currentStatistics.HitPoints);
         }
+    }
+
+
+
+    public void ApplyArmorUpgrade(int armorUpgrade)
+    {
+        currentStatistics.ArmorUpgrades = Mathf.Clamp(currentStatistics.ArmorUpgrades + armorUpgrade, 0, maxArmorUpgrades);
+
+        ArmorUpgradesChanged.Invoke(currentStatistics.ArmorUpgrades);
     }
 
 

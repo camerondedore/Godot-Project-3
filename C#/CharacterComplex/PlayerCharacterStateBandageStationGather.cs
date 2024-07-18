@@ -19,7 +19,8 @@ namespace PlayerCharacterComplex
             if(hasComponents && EngineTime.timePassed > startTime + gatherTime)
             {
                 // take ingredients
-                PlayerInventory.inventory.AddToInventory(0, -1, -1, 0, null);
+                PlayerInventory.inventory.AddDockLeaves(-1);
+                PlayerInventory.inventory.AddSanicle(-1);
                 blackboard.rangerBandagesToCraft++;
 
                 // play audio
