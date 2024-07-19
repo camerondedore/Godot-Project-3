@@ -40,6 +40,9 @@ namespace PlayerCharacterComplex
 
             // show ui and hide letterbox
             blackboard.hud.HideLetterbox();
+
+            // show inventory in hud
+            blackboard.hud.ResetVisibilityTimer();
         }
 
 

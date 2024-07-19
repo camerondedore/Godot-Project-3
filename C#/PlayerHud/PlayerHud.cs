@@ -416,4 +416,11 @@ public partial class PlayerHud : CanvasLayer
 
 		visibilityTimer = 5;
 	}
+
+
+
+	public void ResetVisibilityTimer()
+	{
+		visibilityTimer = 5;
+	}
 }
