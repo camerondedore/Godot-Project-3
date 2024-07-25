@@ -1290,37 +1290,37 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 [node name="Fence" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 
 [node name="PropFenceEnd" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("8_qgel6")]
-transform = Transform3D(-0.997869, 0, -0.0652464, 0, 1, 0, 0.0652464, 0, -0.997869, 11.7342, 0.749999, 7.27459)
+transform = Transform3D(-0.997869, 0, -0.0652464, 0, 1, 0, 0.0652464, 0, -0.997869, 11.7342, 0, 7.27459)
 
 [node name="PropFence1" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("9_j2ilc")]
-transform = Transform3D(-0.997869, 0, -0.0652464, 0, 1, 0, 0.0652464, 0, -0.997869, 8.74612, 0.749999, 7.45699)
+transform = Transform3D(-0.997869, 0, -0.0652464, 0, 1, 0, 0.0652464, 0, -0.997869, 8.74612, 0, 7.45699)
 
 [node name="PropFence2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("10_0j7w2")]
-transform = Transform3D(-0.831557, 0, -0.55544, 0, 1, 0, 0.55544, 0, -0.831557, 8.70315, 0.749999, 7.48927)
+transform = Transform3D(-0.831557, 0, -0.55544, 0, 1, 0, 0.55544, 0, -0.831557, 8.70315, 0, 7.48927)
 
 [node name="PropFence3" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("9_j2ilc")]
-transform = Transform3D(-0.672367, 0, -0.740218, 0, 1, 0, 0.740218, 0, -0.672367, 4.18971, 0.749999, 11.3995)
+transform = Transform3D(-0.672367, 0, -0.740218, 0, 1, 0, 0.740218, 0, -0.672367, 4.18971, 0, 11.3995)
 
 [node name="PropFence9" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("9_j2ilc")]
-transform = Transform3D(0.0182202, 0, -0.999834, 0, 1, 0, 0.999834, 0, 0.0182202, 3.19229, 0.749999, 17.3572)
+transform = Transform3D(0.0182202, 0, -0.999834, 0, 1, 0, 0.999834, 0, 0.0182202, 3.19229, 0, 17.3572)
 
 [node name="PropFence4" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("10_0j7w2")]
-transform = Transform3D(-0.364568, 0, -0.931177, 0, 1, 0, 0.931177, 0, -0.364568, 4.20372, 0.749999, 11.435)
+transform = Transform3D(-0.364568, 0, -0.931177, 0, 1, 0, 0.931177, 0, -0.364568, 4.20372, 0, 11.435)
 
 [node name="PropFenceEnd2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("8_qgel6")]
-transform = Transform3D(0.954418, 0, 0.298475, 0, 1, 0, -0.298475, 0, 0.954418, 15.0008, 0.749999, 7.30869)
+transform = Transform3D(0.954418, 0, 0.298475, 0, 1, 0, -0.298475, 0, 0.954418, 15.0008, 0, 7.30869)
 
 [node name="PropFence5" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("9_j2ilc")]
-transform = Transform3D(0.954418, 0, 0.298475, 0, 1, 0, -0.298475, 0, 0.954418, 17.8618, 0.749999, 6.42752)
+transform = Transform3D(0.954418, 0, 0.298475, 0, 1, 0, -0.298475, 0, 0.954418, 17.8618, 0, 6.42752)
 
 [node name="PropFence6" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("10_0j7w2")]
-transform = Transform3D(0.984604, 0, -0.174799, 0, 1, 0, 0.174799, 0, 0.984604, 17.9123, 0.749999, 6.41337)
+transform = Transform3D(0.984604, 0, -0.174799, 0, 1, 0, 0.174799, 0, 0.984604, 17.9123, 0, 6.41337)
 
 [node name="PropFence7" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("9_j2ilc")]
-transform = Transform3D(0.874831, 0, -0.484428, 0, 1, 0, 0.484428, 0, 0.874831, 23.656, 0.749999, 8.505)
+transform = Transform3D(0.874831, 0, -0.484428, 0, 1, 0, 0.484428, 0, 0.874831, 23.656, 0, 8.505)
 
 [node name="PropFence8" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/Fence" instance=ExtResource("10_0j7w2")]
-transform = Transform3D(0.553275, 0, -0.832998, 0, 1, 0, 0.832998, 0, 0.553275, 23.7011, 0.749999, 8.53176)
+transform = Transform3D(0.553275, 0, -0.832998, 0, 1, 0, 0.832998, 0, 0.553275, 23.7011, 0, 8.53176)
 
 [node name="Boards" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Props"]
 

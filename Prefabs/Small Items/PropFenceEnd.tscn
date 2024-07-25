@@ -11,6 +11,7 @@ size = Vector3(0.2, 1.5, 0.5)
 [node name="PropFenceEnd" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_6prll")
@@ -19,4 +20,5 @@ surface_material_override/1 = ExtResource("3_0g2lj")
 surface_material_override/2 = ExtResource("4_hrifq")
 
 [node name="FenceCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("BoxShape3D_76741")
