@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://croje6ueu5rqc"]
+[gd_scene load_steps=7 format=3 uid="uid://croje6ueu5rqc"]
 
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="1_jasks"]
 [ext_resource type="ArrayMesh" uid="uid://c8tmenwq5m8uh" path="res://Models/prop-tree-oak-4.res" id="2_ry804"]
+[ext_resource type="ArrayMesh" uid="uid://bdkixli6mmu8y" path="res://Models/prop-tree-oak-4-lod.res" id="3_u1kcw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m5hei"]
 radius = 0.3
@@ -15,16 +16,19 @@ radius = 0.9
 
 [node name="PropTreeOak4" instance=ExtResource("1_jasks")]
 
-[node name="MeshInstance3D" parent="." index="0"]
-mesh = ExtResource("2_ry804")
-
-[node name="TrunkCollision" parent="." index="1"]
+[node name="TrunkCollision" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7, 0)
 shape = SubResource("CapsuleShape3D_m5hei")
 
-[node name="LeavesCollision" parent="." index="2"]
+[node name="LeavesCollision" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.99444, 0)
 shape = SubResource("SphereShape3D_cy2cw")
+
+[node name="Lod1" parent="LodObject" index="0"]
+mesh = ExtResource("2_ry804")
+
+[node name="Lod2" parent="LodObject" index="1"]
+mesh = ExtResource("3_u1kcw")
 
 [node name="LeavesCollision2" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.578419, 5.13743, -0.179471)

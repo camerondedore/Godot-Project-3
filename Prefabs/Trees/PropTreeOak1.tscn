@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2ii8qhujvfub"]
+[gd_scene load_steps=9 format=3 uid="uid://d2ii8qhujvfub"]
 
+[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="1_8mqdt"]
 [ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_hx8dg"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_phppp"]
+[ext_resource type="ArrayMesh" uid="uid://ce1ncrct04u6t" path="res://Models/prop-tree-oak-1-lod.res" id="3_6upkd"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_oin6n"]
 [ext_resource type="Material" uid="uid://dtj7tjjw2nglw" path="res://Materials/Trees/LeavesOak.tres" id="4_jfkmk"]
 
@@ -13,15 +15,6 @@ radius = 2.31029
 
 [node name="PropTreeOak1" type="StaticBody3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-layers = 2
-gi_mode = 2
-mesh = ExtResource("1_hx8dg")
-surface_material_override/0 = ExtResource("2_phppp")
-surface_material_override/1 = ExtResource("3_oin6n")
-surface_material_override/2 = ExtResource("4_jfkmk")
-
 [node name="TrunkCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 shape = SubResource("CapsuleShape3D_ct8fg")
@@ -29,3 +22,28 @@ shape = SubResource("CapsuleShape3D_ct8fg")
 [node name="LeavesCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.66343, 0)
 shape = SubResource("SphereShape3D_kgnl5")
+
+[node name="LodObject" type="Node3D" parent="."]
+script = ExtResource("1_8mqdt")
+lodDistanceSqr = 2500.0
+
+[node name="Lod1" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_hx8dg")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_phppp")
+surface_material_override/1 = ExtResource("3_oin6n")
+surface_material_override/2 = ExtResource("4_jfkmk")
+
+[node name="Lod2" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_6upkd")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_phppp")
+surface_material_override/1 = ExtResource("3_oin6n")
+surface_material_override/2 = ExtResource("4_jfkmk")
