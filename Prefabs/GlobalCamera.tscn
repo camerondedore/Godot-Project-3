@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bycycisv53o66"]
+[gd_scene load_steps=18 format=3 uid="uid://bycycisv53o66"]
 
 [ext_resource type="Script" path="res://C#/State Machine/StateMachineQueuePopper.cs" id="1_4luc3"]
 [ext_resource type="Script" path="res://C#/Common/GlobalCamera.cs" id="1_w865n"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://C#/GameSettings.cs" id="6_rcfh6"]
 [ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="7_ad3x1"]
 [ext_resource type="Script" path="res://C#/Common/PauseMenu.cs" id="7_ogfvn"]
+[ext_resource type="Script" path="res://C#/Common/LodManager.cs" id="8_ugcwb"]
 [ext_resource type="Script" path="res://C#/GameSettingsUi.cs" id="12_04fn0"]
 [ext_resource type="Script" path="res://C#/FpsCounterUi.cs" id="13_82w01"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="13_j8rmr"]
@@ -38,6 +39,9 @@ script = ExtResource("6_rcfh6")
 
 [node name="StateMachineQueuePopper" type="Node" parent="."]
 script = ExtResource("1_4luc3")
+
+[node name="LodManager" type="Node" parent="."]
+script = ExtResource("8_ugcwb")
 
 [node name="PlayerInput" type="Node" parent="."]
 process_mode = 3

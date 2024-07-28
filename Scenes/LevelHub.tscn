@@ -712,7 +712,6 @@ collision_layer = 2048
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_qo1c8")
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
