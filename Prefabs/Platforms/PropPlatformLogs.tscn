@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b77qh7ya7mcrk"]
+[gd_scene load_steps=8 format=3 uid="uid://b77qh7ya7mcrk"]
 
+[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="1_belbf"]
 [ext_resource type="ArrayMesh" uid="uid://bk46a1kiwpscp" path="res://Models/prop-platform-logs.res" id="1_fvj1y"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_jen5k"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_ndupt"]
 [ext_resource type="Material" uid="uid://djnoygn8d4pqp" path="res://Materials/Cloth2.tres" id="4_yegc3"]
+[ext_resource type="ArrayMesh" uid="uid://bkb3emkyhmdq8" path="res://Models/prop-platform-logs-lod.res" id="6_kr03j"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bqpan"]
 size = Vector3(1.17, 0.405, 3)
@@ -11,13 +13,28 @@ size = Vector3(1.17, 0.405, 3)
 [node name="PropPlatformLogs" type="StaticBody3D"]
 collision_layer = 3
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bqpan")
+
+[node name="LodObject" type="Node3D" parent="."]
+script = ExtResource("1_belbf")
+lodDistanceSqr = 400.0
+
+[node name="Lod1" type="MeshInstance3D" parent="LodObject"]
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_fvj1y")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_jen5k")
 surface_material_override/1 = ExtResource("3_ndupt")
 surface_material_override/2 = ExtResource("4_yegc3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_bqpan")
+[node name="Lod2" type="MeshInstance3D" parent="LodObject"]
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("6_kr03j")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_jen5k")
+surface_material_override/1 = ExtResource("3_ndupt")
+surface_material_override/2 = ExtResource("4_yegc3")

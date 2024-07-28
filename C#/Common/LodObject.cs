@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class LodObject : VisibleOnScreenNotifier3D
+public partial class LodObject : Node3D //VisibleOnScreenNotifier3D
 {
 
     [Export]
@@ -9,7 +9,7 @@ public partial class LodObject : VisibleOnScreenNotifier3D
 
     Node3D lod1,
         lod2;
-    bool isOnScreen = true;
+    //bool isOnScreen = true;
 
 
 
@@ -46,7 +46,7 @@ public partial class LodObject : VisibleOnScreenNotifier3D
         // get distance squared to camera
         var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition);
 
-        if(distanceSqrToCamera < lodDistanceSqr && isOnScreen)
+        if(distanceSqrToCamera < lodDistanceSqr)
         {
             if(lod1.Visible == false)
             {
