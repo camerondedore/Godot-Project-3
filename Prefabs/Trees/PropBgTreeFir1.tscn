@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqfhr2xe3nv7h"]
+[gd_scene load_steps=7 format=3 uid="uid://dqfhr2xe3nv7h"]
 
 [ext_resource type="ArrayMesh" uid="uid://bglea7ggkhpa4" path="res://Models/prop-tree-fir-lq-1.res" id="1_38nvp"]
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_kcb8e"]
 [ext_resource type="ArrayMesh" uid="uid://2f8fyohgcgsl" path="res://Models/prop-tree-fir-lq-leaves-1.res" id="3_edlkc"]
+[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="3_kkmmi"]
 [ext_resource type="Material" uid="uid://cv7hwc22ts4vd" path="res://Materials/Trees/LeavesFirWind.tres" id="4_k1712"]
+[ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="6_63yg3"]
 
 [node name="PropBgTreeFir1" type="Node3D"]
 
@@ -13,9 +15,27 @@ gi_mode = 2
 mesh = ExtResource("1_38nvp")
 surface_material_override/0 = ExtResource("2_kcb8e")
 
-[node name="LeavesMesh" type="MeshInstance3D" parent="."]
+[node name="LodObject" type="Node3D" parent="."]
+script = ExtResource("3_kkmmi")
+lodDistanceSqr = 2500.0
+
+[node name="Lod1" type="Node3D" parent="LodObject"]
+
+[node name="LeavesMesh" type="MeshInstance3D" parent="LodObject/Lod1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("3_edlkc")
+skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_k1712")
+
+[node name="Lod2" type="Node3D" parent="LodObject"]
+visible = false
+
+[node name="LeavesMesh" type="MeshInstance3D" parent="LodObject/Lod2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_edlkc")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("6_63yg3")
