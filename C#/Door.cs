@@ -20,8 +20,7 @@ public partial class Door : RigidBody3D, IBowTarget
     AudioTools3d audio;
     Vector3 startRotation,
         targetRotation;
-    bool open = false,
-        locked = true;
+    bool locked = true;
 
 
 
@@ -41,15 +40,13 @@ public partial class Door : RigidBody3D, IBowTarget
 
     public override void _PhysicsProcess(double delta)
     {
-        if(locked == false && open == false)
+        if(locked == false)
         {
             RotationDegrees = RotationDegrees.Lerp(targetRotation, speed * ((float) delta));
 
             // check if door completed opening
             if(RotationDegrees.DistanceSquaredTo(targetRotation) < 2)
             {
-                open = true;
-
                 doorCollider.Disabled = false;
                 
                 // disable script
@@ -97,6 +94,7 @@ public partial class Door : RigidBody3D, IBowTarget
 
         doorCollider.Disabled = true;
 
+        // play audio
         audio.PlaySound(openSound, 0.15f);
 
         // remove blocker and activate navmesh link
@@ -104,8 +102,5 @@ public partial class Door : RigidBody3D, IBowTarget
 
         // remove lock
         lockFx.Open();
-
-        // play audio
-        //audio.PlaySound(openSound, 0.05f);
     }
 }

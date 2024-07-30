@@ -10,6 +10,12 @@ public partial class AudioTools3d : AudioStreamPlayer3D
 
     public void PlaySound(AudioStream sound, float pitchRange)
     {
+        if(sound == null)
+        {
+            GD.Print("Audio stream is null.");
+            return;
+        }
+
         Stream = sound;
         PitchScale = 1 + (GD.Randf() - 0.5f) * pitchRange;
         Play();

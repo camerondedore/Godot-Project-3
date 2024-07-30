@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://bol8q2ml644te"]
+
+[ext_resource type="Script" path="res://C#/Portcullis.cs" id="1_vtfjp"]
+[ext_resource type="ArrayMesh" uid="uid://2kfhkrxs5pqb" path="res://Models/prop-portcullis.res" id="1_yfxvk"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_ogr3y"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_kcy8o"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_5cbje"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_en8xr"]
+[ext_resource type="Script" path="res://C#/Blocker.cs" id="5_mqle3"]
+[ext_resource type="Texture2D" uid="uid://crhm605rafg8b" path="res://Textures/fx-portcullis-holes.png" id="8_k7nsw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vt4oj"]
+size = Vector3(3, 3.5, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ayvft"]
+size = Vector3(3, 3.5, 0.3)
+
+[node name="Portcullis" type="RigidBody3D"]
+collision_layer = 16
+freeze = true
+script = ExtResource("1_vtfjp")
+openPositon = Vector3(0, 3.3, 0)
+speed = 0.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_yfxvk")
+surface_material_override/0 = ExtResource("2_ogr3y")
+surface_material_override/1 = ExtResource("4_5cbje")
+surface_material_override/2 = ExtResource("3_kcy8o")
+
+[node name="PortcullisCollider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_vt4oj")
+
+[node name="NavLink" type="NavigationLink3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+enabled = false
+start_position = Vector3(0, 0.25, -1.25)
+end_position = Vector3(0, 0.25, 1.25)
+
+[node name="Blocker" type="StaticBody3D" parent="." node_paths=PackedStringArray("navLink")]
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("5_mqle3")
+navLink = NodePath("../NavLink")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Blocker"]
+shape = SubResource("BoxShape3D_ayvft")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
+max_distance = 20.0
+script = ExtResource("5_en8xr")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75, -0.075)
+size = Vector3(3, 0.2, 0.15)
+texture_albedo = ExtResource("8_k7nsw")
+cull_mask = 1
