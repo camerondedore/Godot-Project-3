@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://bol8q2ml644te"]
+[gd_scene load_steps=13 format=3 uid="uid://bol8q2ml644te"]
 
 [ext_resource type="Script" path="res://C#/Portcullis.cs" id="1_vtfjp"]
 [ext_resource type="ArrayMesh" uid="uid://2kfhkrxs5pqb" path="res://Models/prop-portcullis.res" id="1_yfxvk"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_ogr3y"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_kcy8o"]
+[ext_resource type="AudioStream" uid="uid://dsjxwjjje2p6j" path="res://Audio/portcullis-open.wav" id="3_x0a0w"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_5cbje"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_en8xr"]
 [ext_resource type="Script" path="res://C#/Blocker.cs" id="5_mqle3"]
+[ext_resource type="AudioStream" uid="uid://dkq3inchc8mit" path="res://Audio/portcullis-opening.wav" id="7_akju8"]
 [ext_resource type="Texture2D" uid="uid://crhm605rafg8b" path="res://Textures/fx-portcullis-holes.png" id="8_k7nsw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vt4oj"]
@@ -20,6 +22,8 @@ collision_layer = 16
 freeze = true
 script = ExtResource("1_vtfjp")
 openPositon = Vector3(0, 3.3, 0)
+openingSound = ExtResource("7_akju8")
+openSound = ExtResource("3_x0a0w")
 speed = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -50,7 +54,10 @@ shape = SubResource("BoxShape3D_ayvft")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0)
-max_distance = 20.0
+stream = ExtResource("7_akju8")
+unit_size = 5.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_en8xr")
 
 [node name="Decal" type="Decal" parent="."]

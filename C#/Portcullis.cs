@@ -7,7 +7,8 @@ public partial class Portcullis : RigidBody3D, IActivatable
     [Export]
     Vector3 openPositon = new Vector3(0, 2.1f, 0);
     [Export]
-    AudioStream openSound;
+    AudioStream openingSound,
+        openSound;
     [Export]
     float speed = 1;
 
@@ -48,6 +49,9 @@ public partial class Portcullis : RigidBody3D, IActivatable
             if(GlobalPosition == targetPosition)
             {
                 portcullisCollider.Disabled = false;
+
+                // play audio
+                audio.PlaySound(openSound, 0.15f);
                 
                 // disable script
                 SetScript(new Variant());
@@ -62,7 +66,7 @@ public partial class Portcullis : RigidBody3D, IActivatable
         open = true;
 
         // play audio
-        audio.PlaySound(openSound, 0.15f);
+        audio.PlaySound(openingSound, 0.1f);
 
         // activate navmesh link
         blocker.Activate();
