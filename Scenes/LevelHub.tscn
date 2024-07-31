@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=55 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_g2gc2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -38,6 +38,10 @@
 [ext_resource type="PackedScene" uid="uid://6iap482nryxo" path="res://Prefabs/PortcullisFrame.tscn" id="31_3qh1g"]
 [ext_resource type="PackedScene" uid="uid://xi0m8mskyllc" path="res://Prefabs/Trees/PropBgTreeOak4.tscn" id="31_r4k2g"]
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="32_k8eyj"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="35_itr01"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="36_6it57"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="37_nysf4"]
+[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraTracker.cs" id="38_7dyhy"]
 [ext_resource type="PackedScene" uid="uid://d3po0wf2eqc0p" path="res://Prefabs/Lumber/PropPicket.tscn" id="38_xtb66"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="39_31y1r"]
 [ext_resource type="PackedScene" uid="uid://bnv3r5gw8eh8e" path="res://Prefabs/Pickups/PickupArrowsWeighted.tscn" id="39_icx8h"]
@@ -63,6 +67,57 @@ size = Vector3(67, 1, 78)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qo1c8"]
 size = Vector3(12, 10, 1)
+
+[sub_resource type="Animation" id="Animation_cngpp"]
+resource_name = "lhct"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinematicsHub")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EndCinematic"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinematicTest/CameraControl1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CinematicTest/CameraControl2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsxfe"]
+_data = {
+"lhct": SubResource("Animation_cngpp")
+}
 
 [node name="LevelHub" type="Node3D"]
 
@@ -694,6 +749,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 110, 0
 [node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("40_vgffv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 110, 1.75, 27.5)
 openSound = ExtResource("41_qo8i3")
+speed = 0.25
 
 [node name="WaterArea" type="Area3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.456, -0.1, -41.5888)
@@ -727,6 +783,33 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall"]
 shape = SubResource("BoxShape3D_qo1c8")
+
+[node name="Cinematics" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="CinematicsHub" type="AnimationPlayer" parent="Map/OccluderInstance3D/NavigationRegion3D/Cinematics"]
+libraries = {
+"": SubResource("AnimationLibrary_jsxfe")
+}
+script = ExtResource("35_itr01")
+
+[node name="CinematicTest" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Cinematics"]
+
+[node name="Trigger" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Cinematics/CinematicTest" node_paths=PackedStringArray("cinematic", "playerCharacter")]
+script = ExtResource("36_6it57")
+cinematic = NodePath("../../CinematicsHub")
+playerCharacter = NodePath("../../../../../../PlayerCharacter")
+cinematicAnimationName = "lhct"
+
+[node name="CameraControl1" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Cinematics/CinematicTest"]
+transform = Transform3D(-0.308986, 0.258157, -0.915359, 0, 0.962456, 0.271439, 0.951067, 0.0838708, -0.297385, 104.377, 3.36676, 26.5241)
+script = ExtResource("37_nysf4")
+moveTime = 0.5
+
+[node name="CameraControl2" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Cinematics/CinematicTest" node_paths=PackedStringArray("lookTarget")]
+transform = Transform3D(-0.308986, 0.258157, -0.915359, 0, 0.962456, 0.271439, 0.951067, 0.0838708, -0.297385, 104.377, 3.36676, 26.5241)
+script = ExtResource("38_7dyhy")
+lookTarget = NodePath("../../../NavProps/Doors/Portcullis")
+lookSpeed = 0.5
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
 
@@ -1086,4 +1169,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.233, 0.9998, 27.9005)
 
 [node name="PropSwitch" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
 transform = Transform3D(0.222365, 0, 0.974963, 0, 1, 0, -0.974963, 0, 0.222365, 108.266, 2.5, 32)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis")]
+linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), NodePath("../../OccluderInstance3D/NavigationRegion3D/Cinematics/CinematicTest/Trigger")]

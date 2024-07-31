@@ -30,7 +30,7 @@ namespace CinematicSimple
 
         public override void _Process(double delta)
         {
-            if(tracking == true)
+            if(tracking == true && IsInstanceValid(lookTarget) == true)
             {
                 var lookDirection = lookTarget.GlobalPosition - camera.GlobalPosition;
 
