@@ -3,6 +3,8 @@ shader_type spatial;
 uniform vec3 waterColor : source_color;
 uniform vec3 foamColor : source_color;
 uniform float foamSharpness = 1;
+uniform float foamWaveSpeed = 4.0;
+uniform float foamWaveSize = 0.3;
 uniform float roughness : hint_range(0.0, 1.0) = 0.05;
 uniform float edgeHardness : hint_range(2.0, 40.0) = 5;
 uniform float uvScale = 5;
@@ -67,8 +69,11 @@ void fragment()
 	combinedWaterHeight = pow(combinedWaterHeight, heightAmount);
 	vec3 waterHeight = waterColor * combinedWaterHeight * heightStrength;
 	
+	// get global waves for foam
+	float foamWave = 1.0 + foamWaveSize * (0.5 * sin(worldPosition.x + worldPosition.y + TIME * foamWaveSpeed) + 0.5);
+	
 	// foam
-	float foamBlend = clamp(smoothstep(0.25, 1.0, 1.0 - depthBlend * foamSharpness), 0.0, 1.0);
+	float foamBlend = clamp(smoothstep(0.25, 1.0, 1.0 - depthBlend * foamSharpness * foamWave), 0.0, 1.0);
 	float foam1 = texture(waterFoamTexture1, worldUvCoordinates + waveOffset1).r;
 	float foam2 = texture(waterFoamTexture2, -worldUvCoordinates + waveOffset2).r;
 	float foamCombined = clamp(smoothstep(0.1, 1.0, (foam1 + foam2) * 0.5), 0.0, 1.0);
