@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7um6v47aarit"]
+
+[ext_resource type="ArrayMesh" uid="uid://tpl3pf5eq10u" path="res://Models/prop-door-frame-old.res" id="1_wii45"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_t8lsy"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="3_6ftac"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_gas5s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yj603"]
+size = Vector3(1.25, 2.5, 0.35)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b0275"]
+size = Vector3(4, 1, 0.45)
+
+[node name="DoorFrame" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+mesh = ExtResource("1_wii45")
+surface_material_override/0 = ExtResource("2_t8lsy")
+surface_material_override/1 = ExtResource("3_6ftac")
+surface_material_override/2 = ExtResource("4_gas5s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 1.25, 0)
+shape = SubResource("BoxShape3D_yj603")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 1.25, 0)
+shape = SubResource("BoxShape3D_yj603")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_b0275")

@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://C#/Portcullis.cs" id="1_vtfjp"]
 [ext_resource type="ArrayMesh" uid="uid://2kfhkrxs5pqb" path="res://Models/prop-portcullis.res" id="1_yfxvk"]
-[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_ogr3y"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_kcy8o"]
 [ext_resource type="AudioStream" uid="uid://dsjxwjjje2p6j" path="res://Audio/portcullis-open.wav" id="3_x0a0w"]
-[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_5cbje"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="5_dvxpf"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_en8xr"]
 [ext_resource type="Script" path="res://C#/Blocker.cs" id="5_mqle3"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="6_ch81c"]
 [ext_resource type="AudioStream" uid="uid://dkq3inchc8mit" path="res://Audio/portcullis-opening.wav" id="7_akju8"]
 [ext_resource type="Texture2D" uid="uid://crhm605rafg8b" path="res://Textures/fx-portcullis-holes.png" id="8_k7nsw"]
 
@@ -30,8 +30,8 @@ speed = 0.5
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_yfxvk")
-surface_material_override/0 = ExtResource("2_ogr3y")
-surface_material_override/1 = ExtResource("4_5cbje")
+surface_material_override/0 = ExtResource("5_dvxpf")
+surface_material_override/1 = ExtResource("6_ch81c")
 surface_material_override/2 = ExtResource("3_kcy8o")
 
 [node name="PortcullisCollider" type="CollisionShape3D" parent="."]
