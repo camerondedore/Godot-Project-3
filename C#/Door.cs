@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class Door : RigidBody3D, IBowTarget
+public partial class Door : AnimatableBody3D, IBowTarget
 {
 
     [Export]

@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class MovingBlockTarget : RigidBody3D, IBowTarget
+public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget
 {
 
     [Export]

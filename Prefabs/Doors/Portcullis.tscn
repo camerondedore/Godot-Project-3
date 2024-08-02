@@ -17,9 +17,8 @@ size = Vector3(3, 3.5, 0.3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ayvft"]
 size = Vector3(3, 3.5, 0.3)
 
-[node name="Portcullis" type="RigidBody3D"]
+[node name="Portcullis" type="AnimatableBody3D"]
 collision_layer = 16
-freeze = true
 script = ExtResource("1_vtfjp")
 openPositon = Vector3(0, 3.3, 0)
 openingSound = ExtResource("7_akju8")

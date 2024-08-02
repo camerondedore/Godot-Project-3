@@ -17,12 +17,11 @@ radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_1gpek"]
 size = Vector3(2, 2, 1)
 
-[node name="PropBlock2m" type="RigidBody3D" node_paths=PackedStringArray("targetPoints")]
+[node name="PropBlock2m" type="AnimatableBody3D" node_paths=PackedStringArray("targetPoints")]
 collision_layer = 16384
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-freeze = true
 script = ExtResource("1_cnh7w")
 targetPoints = []
 hitSuccessSound = ExtResource("2_rte6k")

@@ -16,9 +16,8 @@ size = Vector3(1.5, 2.5, 0.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_f1rey"]
 size = Vector3(1.5, 2.5, 0.2)
 
-[node name="Door" type="RigidBody3D"]
+[node name="Door" type="AnimatableBody3D"]
 collision_layer = 16
-freeze = true
 script = ExtResource("1_i2th4")
 openSound = ExtResource("2_upk7y")
 

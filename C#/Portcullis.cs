@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Portcullis : RigidBody3D, IActivatable
+public partial class Portcullis : AnimatableBody3D, IActivatable
 {
 
     [Export]
