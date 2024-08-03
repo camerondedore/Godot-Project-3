@@ -9,14 +9,12 @@ namespace CinematicCharacter
 
         [Export]
         CinematicCharacter targetCharacter;
-        [Export]
-        bool hideOnArrival = false;
 
 
 
         public void PlayCinematicAction()
         {
-            targetCharacter.SetTargetNode(this, hideOnArrival);
+            targetCharacter.SetTargetNode(this);
         }
     }
 }

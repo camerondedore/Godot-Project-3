@@ -39,12 +39,6 @@ namespace CinematicCharacter
         {
             if(blackboard.navAgent.IsNavigationFinished() == true)
             {
-                if(blackboard.lastAction)
-                {
-                    // end
-                    return blackboard.stateEnd;
-                }
-
                 // idle
                 return blackboard.stateIdle;
             }

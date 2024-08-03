@@ -11,8 +11,7 @@ namespace CinematicCharacter
             stateIdle,
             stateMove,
             stateTalk,
-            stateWave,
-            stateEnd;
+            stateWave;
 
         [Export]
         public NavigationAgent3D navAgent;
@@ -27,7 +26,6 @@ namespace CinematicCharacter
 
         public Node3D targetNode;
         public string nextAnimationName;
-        public bool lastAction = false;
 
 
 
@@ -38,15 +36,13 @@ namespace CinematicCharacter
             stateIdle = new CinematicCharacterStateIdle(){blackboard = this};        
             stateMove = new CinematicCharacterStateMove(){blackboard = this};        
             stateTalk = new CinematicCharacterStateTalk(){blackboard = this};        
-            stateWave = new CinematicCharacterStateWave(){blackboard = this};        
-            stateEnd = new CinematicCharacterStateEnd(){blackboard = this};        
+            stateWave = new CinematicCharacterStateWave(){blackboard = this};             
 
             // set first state in machine
             machine.SetState(stateStart);
 
             // disable
-            Visible = false;
-            ProcessMode = ProcessModeEnum.Disabled;
+            HideCharacter();
         }
 
 
@@ -132,7 +128,7 @@ namespace CinematicCharacter
 
 
 
-        public void SetTargetNode(Node3D newTarget, bool hideOnArrival)
+        public void SetTargetNode(Node3D newTarget)
         {
             if(Visible == false)
             {
@@ -150,7 +146,6 @@ namespace CinematicCharacter
             }
 
             targetNode = newTarget;
-            lastAction = hideOnArrival;
 
             if(targetTransformChanged == true)
             {
@@ -218,6 +213,15 @@ namespace CinematicCharacter
         public void Speak(AudioStream voiceLine)
         {
             voiceAudio.PlaySound(voiceLine, 0);
+        }
+
+
+
+        public void HideCharacter()
+        {
+            // disable
+            Visible = false;
+            ProcessMode = ProcessModeEnum.Disabled;
         }
     }
 }
