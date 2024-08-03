@@ -8,6 +8,13 @@ namespace LevelChange
 
         [Export]
         LevelChangeControl levelChange;
+        [Export]
+        string nextLevel = "";
+        [Export]
+        public Vector3 nextCheckpointPosition = Vector3.Up,
+            nextCheckpointEulerRotation = Vector3.Zero,
+            nextCameraPosition = Vector3.Up,
+            nextCameraEulerRotation = Vector3.Zero;
 
 
         public override void _Ready()
@@ -20,7 +27,7 @@ namespace LevelChange
         void Triggered(Node3D body)
         {
             // change to end state
-            levelChange.SetMachineToEndState();
+            levelChange.ChangeLevel(nextLevel, nextCheckpointPosition, nextCheckpointEulerRotation, nextCameraPosition, nextCameraEulerRotation);
 
             SetDeferred("monitoring", false);
         }

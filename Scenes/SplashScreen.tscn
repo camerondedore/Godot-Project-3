@@ -5,17 +5,15 @@
 [ext_resource type="Script" path="res://C#/WorldData.cs" id="2_t4j1d"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_ukljx"]
 
-[node name="SplashScreen" type="CanvasLayer" node_paths=PackedStringArray("levelChange")]
+[node name="SplashScreen" type="CanvasLayer"]
 script = ExtResource("1_tx77f")
-levelChange = NodePath("LevelChange")
+defaultLevel = "Level1Intro"
 
 [node name="WorldData" type="Node" parent="."]
 script = ExtResource("2_t4j1d")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_ukljx")]
-nextLevel = "Level1Intro"
 saveOnEnd = false
-loadSavedLevel = true
 
 [node name="Container" type="Control" parent="."]
 layout_mode = 3

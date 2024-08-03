@@ -152,11 +152,6 @@ environment = ExtResource("1_dhwej")
 transform = Transform3D(0.936584, -0.178938, 0.301313, 0, 0.859813, 0.510608, -0.35044, -0.478228, 0.805288, 4.26818, 7.63186, 12.2004)
 
 [node name="LevelChange" parent="." instance=ExtResource("3_sp7be")]
-nextLevel = "TreeTest"
-nextCheckpointPosition = Vector3(21, 11, -6.5)
-nextCheckpointDirection = Vector3(-1, 0, 1)
-nextCameraPosition = Vector3(13.7, 16, -8.8)
-nextCameraDirection = Vector3(1, -0.7, 0.3)
 
 [node name="DialogueUi" parent="." instance=ExtResource("3_28myn")]
 
@@ -5148,21 +5143,21 @@ script = ExtResource("95_m4ha7")
 targetCharacter = NodePath("../CinematicCharacter")
 audioClip = ExtResource("97_ubo5c")
 dialogueText = "The rat clan has taken this part of the forest.  I can take you to my hamlet."
-displayTime = 4.1
+displayTime = 4.5
 
 [node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
 targetCharacter = NodePath("../CinematicCharacter")
 audioClip = ExtResource("98_6c5wd")
 dialogueText = "You'll have to make your way through the rat camp.  I'll meet you up ahead."
-displayTime = 4.1
+displayTime = 3.6
 
 [node name="AudioAction4" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
 targetCharacter = NodePath("../CinematicCharacter")
 audioClip = ExtResource("99_3ygxe")
 dialogueText = "Here's some Nettle Broth Soup.  If you've been hurt, it'll restore your health."
-displayTime = 4.6
+displayTime = 4.3
 
 [node name="Cinematic3" type="Node3D" parent="Map/Cinematics"]
 
@@ -5194,7 +5189,7 @@ moveTime = 2.0
 [node name="CameraControl3" type="Node3D" parent="Map/Cinematics/Cinematic3"]
 transform = Transform3D(-0.765961, 0.278838, -0.579271, 0, 0.901044, 0.433727, 0.642889, 0.332217, -0.690164, 12.6013, 8.31437, -193.067)
 script = ExtResource("90_msd7f")
-moveTime = 3.0
+moveTime = 2.5
 
 [node name="CineCharActionAnimation1" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
@@ -5267,6 +5262,10 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("89_76sdy")
 levelChange = NodePath("../../LevelChange")
+nextLevel = "LevelHub"
+nextCheckpointPosition = Vector3(10.7, 13, 80)
+nextCameraPosition = Vector3(13.3, 17.1, 84.3)
+nextCameraEulerRotation = Vector3(-26.5, 26.8, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080719, 0, 0)

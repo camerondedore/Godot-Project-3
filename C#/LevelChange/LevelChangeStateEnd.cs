@@ -24,7 +24,7 @@ namespace LevelChange
                 {
                     // save world data so saved pickups are removed from world
                     // pass blank checkpoint to world data
-                    WorldData.data.SetCheckpoint(blackboard.nextCheckpointPosition, blackboard.nextCheckpointDirection, blackboard.nextCameraPosition, blackboard.nextCameraDirection, blackboard.nextLevel);
+                    WorldData.data.SetCheckpoint(blackboard.nextCheckpointPosition, blackboard.nextCheckpointEulerRotation, blackboard.nextCameraPosition, blackboard.nextCameraEulerRotation, blackboard.nextLevel);
 
                     // save inventory, stats, and world
                     PlayerInventory.inventory.SaveInventory();

@@ -12,15 +12,7 @@ namespace LevelChange
             stateEnd;
 
         [Export]
-        public string nextLevel;
-        [Export]
-        public bool saveOnEnd = true,
-            loadSavedLevel = false;
-        [Export]
-        public Vector3 nextCheckpointPosition = Vector3.Up,
-            nextCheckpointDirection = -Vector3.Forward,
-            nextCameraPosition = Vector3.Up,
-            nextCameraDirection = -Vector3.Forward;
+        public bool saveOnEnd = true;
         [Export]
         public double transitionTime = 1;
         [Export]
@@ -32,6 +24,13 @@ namespace LevelChange
             clearColor;
         [Export]
         public Label loadingLabel;
+        
+        public string nextLevel;
+        public Vector3 nextCheckpointPosition = Vector3.Up,
+            nextCheckpointEulerRotation = -Vector3.Forward,
+            nextCameraPosition = Vector3.Up,
+            nextCameraEulerRotation = Vector3.Zero;
+        public bool loadSavedLevel = false;
 
 
 
@@ -60,8 +59,28 @@ namespace LevelChange
 
 
 
-        public void SetMachineToEndState()
+        public void ChangeLevel(string newLevel, Vector3 newCheckpointPosition, Vector3 newCheckpointEulerRotation, Vector3 newCameraPosition, Vector3 newCameraEulerRotation)
         {
+            nextLevel = newLevel;
+            nextCheckpointPosition = newCheckpointPosition;
+            nextCheckpointEulerRotation = newCheckpointEulerRotation;
+            nextCameraPosition = newCameraPosition;
+            nextCameraEulerRotation = newCameraEulerRotation;
+
+            machine.SetState(stateEnd);
+        }
+
+
+
+        public void LoadLevel(string defaultLevel)
+        {
+            nextLevel = defaultLevel;
+            nextCheckpointPosition = Vector3.One;
+            nextCheckpointEulerRotation = Vector3.Zero;
+            nextCameraPosition = Vector3.One;
+            nextCameraEulerRotation = Vector3.Zero;
+            loadSavedLevel = true;
+
             machine.SetState(stateEnd);
         }
     }

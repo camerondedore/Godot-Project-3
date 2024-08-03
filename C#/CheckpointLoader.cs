@@ -17,11 +17,11 @@ public partial class CheckpointLoader : Node
         {
             // move and rotate player
             player.GlobalPosition = WorldData.data.GetSavedCheckpointPosition();
-            player.LookAt(player.GlobalPosition + WorldData.data.GetSavedCheckpointDirection());
+            player.GlobalRotationDegrees = WorldData.data.GetSavedCheckpointEulerRotation();
 
             // move and rotate camera
             GlobalCamera.camera.GlobalPosition = WorldData.data.GetSavedCheckpointCameraPosition();
-            GlobalCamera.camera.LookAt(GlobalCamera.camera.GlobalPosition + WorldData.data.GetSavedCheckpointCameraDirection());
+            GlobalCamera.camera.GlobalRotationDegrees = WorldData.data.GetSavedCheckpointCameraEulerRotation();
         }
         else
         {

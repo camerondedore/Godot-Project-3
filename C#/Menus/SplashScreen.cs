@@ -6,9 +6,17 @@ public partial class SplashScreen : Node
 {
 
     [Export]
-    LevelChangeControl levelChange;
+    string defaultLevel;
 
+    LevelChangeControl levelChange;
     bool wasTriggered = false;
+
+
+
+    public override void _Ready()
+    {
+        levelChange = (LevelChangeControl) GetNode("LevelChange");
+    }
 
 
 
@@ -17,7 +25,7 @@ public partial class SplashScreen : Node
         if(e.IsPressed() && wasTriggered == false)
         {
             // trigger level change
-            levelChange.SetMachineToEndState();
+            levelChange.LoadLevel(defaultLevel);
 
             wasTriggered = true;
         }

@@ -109,9 +109,9 @@ public partial class WorldData : Node
     public void SetCheckpoint(Vector3 checkpointPosition, Vector3 checkpointDirection, Vector3 cameraPosition, Vector3 cameraDirection)
     {
         data.currentData.SavedPosition = $"{checkpointPosition.X},{checkpointPosition.Y},{checkpointPosition.Z}";
-        data.currentData.SavedDirection = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
+        data.currentData.SavedEulerRotation = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
         data.currentData.SavedCameraPosition = $"{cameraPosition.X},{cameraPosition.Y},{cameraPosition.Z}";
-        data.currentData.SavedCameraDirection = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
+        data.currentData.SavedCameraEulerRotation = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
         data.currentData.SavedScene = GetTree().CurrentScene.Name;
     }
 
@@ -120,9 +120,9 @@ public partial class WorldData : Node
     public void SetCheckpoint(Vector3 checkpointPosition, Vector3 checkpointDirection, Vector3 cameraPosition, Vector3 cameraDirection, string sceneName)
     {
         data.currentData.SavedPosition = $"{checkpointPosition.X},{checkpointPosition.Y},{checkpointPosition.Z}";
-        data.currentData.SavedDirection = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
+        data.currentData.SavedEulerRotation = $"{checkpointDirection.X},{checkpointDirection.Y},{checkpointDirection.Z}";
         data.currentData.SavedCameraPosition = $"{cameraPosition.X},{cameraPosition.Y},{cameraPosition.Z}";
-        data.currentData.SavedCameraDirection = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
+        data.currentData.SavedCameraEulerRotation = $"{cameraDirection.X},{cameraDirection.Y},{cameraDirection.Z}";
         data.currentData.SavedScene = sceneName;
     }
 
@@ -149,9 +149,9 @@ public partial class WorldData : Node
 
 
 
-    public Vector3 GetSavedCheckpointDirection()
+    public Vector3 GetSavedCheckpointEulerRotation()
     {
-        var splitString = currentData.SavedDirection.Split(',');
+        var splitString = currentData.SavedEulerRotation.Split(',');
         
         var dir = new Vector3();
         dir.X = float.Parse(splitString[0]);
@@ -177,9 +177,9 @@ public partial class WorldData : Node
 
 
 
-    public Vector3 GetSavedCheckpointCameraDirection()
+    public Vector3 GetSavedCheckpointCameraEulerRotation()
     {
-        var splitString = currentData.SavedCameraDirection.Split(',');
+        var splitString = currentData.SavedCameraEulerRotation.Split(',');
         
         var dir = new Vector3();
         dir.X = float.Parse(splitString[0]);
@@ -214,19 +214,19 @@ public partial class WorldData : Node
             get; set;
         } = "0,1,0";
 
-        public string SavedDirection
+        public string SavedEulerRotation
         {
             get; set;
-        } = "0,0,-1";
+        } = "0,0,0";
 
         public string SavedCameraPosition
         {
             get; set;
         } = "0,1,0";
 
-        public string SavedCameraDirection
+        public string SavedCameraEulerRotation
         {
             get; set;
-        } = "0,0,-1";
+        } = "0,0,0";
     }
 }
