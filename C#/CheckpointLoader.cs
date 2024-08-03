@@ -13,7 +13,7 @@ public partial class CheckpointLoader : Node
         var player = Owner as Node3D;
 
         // load from checkpoint
-        if(WorldData.data.GetSavedCheckpointPosition() != Vector3.Up)
+        if(WorldData.data.GetSavedCheckpointPosition() != Vector3.Up && WorldData.data.GetSavedScene() == GetTree().CurrentScene.Name)
         {
             // move and rotate player
             player.GlobalPosition = WorldData.data.GetSavedCheckpointPosition();
