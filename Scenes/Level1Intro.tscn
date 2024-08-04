@@ -5224,7 +5224,7 @@ transform = Transform3D(-0.765961, 0.278838, -0.579271, 0, 0.901044, 0.433727, 0
 script = ExtResource("90_msd7f")
 moveTime = 2.5
 
-[node name="CineCharActionAnimation1" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="CineCharActionAnimWave" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
 script = ExtResource("100_h5fho")
 targetCharacter = NodePath("../CinematicCharacter1")
@@ -5236,7 +5236,7 @@ script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../CinematicCharacter1")
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.904038, 0, 0.427453, 0, 1, 0, -0.427453, 0, -0.904038, -48.8391, 9, -193.301)
+transform = Transform3D(0.178906, 0, 0.983867, 0, 1, 0, -0.983867, 0, 0.178906, -61.7508, 9, -201.843)
 script = ExtResource("103_oo74b")
 targetCharacter = NodePath("../CinematicCharacter1")
 
