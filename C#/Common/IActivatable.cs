@@ -1,6 +1,6 @@
 public interface IActivatable
 {
 
-    public void Activate();
+    void Activate();
     
 }

@@ -2,19 +2,12 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-namespace CinematicSimple
+public partial class ActivatableTriggerDead : Timer
 {
-    public partial class CinematicSimpleTriggerDead : Timer
-    {
 
         [Export]
-        CinematicSimpleControl cinematic;
-        [Export]
-        string cinematicAnimationName;
-        [Export]
-        Node3D[] watchedNodes;
-        [Export]
-        Node3D playerCharacter;
+        Node3D[] watchedNodes,
+            activatableNodes;
         [Export]
         float triggerDelay = 0;
 
@@ -52,9 +45,11 @@ namespace CinematicSimple
 
         public void Trigger()
         {
-            cinematic.Triggered(playerCharacter, cinematicAnimationName);
+            foreach(IActivatable act in activatableNodes)
+            {
+                act.Activate();
+            }
 
             QueueFree();
-        }
+        }        
     }
-}

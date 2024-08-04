@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=120 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://xrjt7goiur8h" path="res://Prefabs/Trees/PropBgTreeFir2.tscn" id="23_adhsm"]
 [ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Food/PropLadle.tscn" id="28_4tkv3"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="29_i8muj"]
+[ext_resource type="Script" path="res://C#/Common/ActivatableTriggerDead.cs" id="30_do6d6"]
 [ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Lumber/PropPicketAbatisWall.tscn" id="31_sp1mm"]
 [ext_resource type="PackedScene" uid="uid://dxtde18xqi2vw" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="33_l0u0o"]
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="34_gffhv"]
@@ -325,14 +326,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2709, 8.53608, -204.585)
 [node name="PropTorchLit9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3724, 12.358, -236.693)
 
+[node name="RatWatcher" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropTorchLit9" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+wait_time = 0.5
+autostart = true
+script = ExtResource("30_do6d6")
+watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat8")]
+activatableNodes = [NodePath("..")]
+triggerDelay = 0.5
+
 [node name="PropTorchLit10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9152, 12.358, -245.234)
+
+[node name="RatWatcher2" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropTorchLit10" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+wait_time = 0.5
+autostart = true
+script = ExtResource("30_do6d6")
+watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat9")]
+activatableNodes = [NodePath("..")]
+triggerDelay = 0.5
 
 [node name="PropTorchLit11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3201, 12.358, -254.433)
 
+[node name="RatWatcher3" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropTorchLit11" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+wait_time = 0.5
+autostart = true
+script = ExtResource("30_do6d6")
+watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat10")]
+activatableNodes = [NodePath("..")]
+triggerDelay = 0.5
+
 [node name="PropTorchLit12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.928, 12.358, -266.136)
+
+[node name="RatWatcher4" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropTorchLit12" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+wait_time = 0.5
+autostart = true
+script = ExtResource("30_do6d6")
+watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat11")]
+activatableNodes = [NodePath("..")]
+triggerDelay = 0.5
 
 [node name="Platforms" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 

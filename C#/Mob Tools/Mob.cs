@@ -3,7 +3,7 @@ using System;
 using PlayerBow;
 using CinematicSimple;
 
-public partial class Mob : CharacterBody3D, IBowTarget, CinematicSimpleTriggerDead.IWatchable
+public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
 {
 
     public MobDetection detection;

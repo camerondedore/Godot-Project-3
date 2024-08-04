@@ -75,52 +75,6 @@ size = Vector3(67, 1, 78)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qo1c8"]
 size = Vector3(12, 10, 1)
 
-[sub_resource type="Animation" id="Animation_cngpp"]
-resource_name = "lhct"
-length = 3.0
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CinematicsHub")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"EndCinematic"
-}]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CinematicTest/CameraControl1")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"PlayCinematicAction"
-}]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CinematicTest/CameraControl2")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"PlayCinematicAction"
-}]
-}
-
 [sub_resource type="Animation" id="Animation_q2c44"]
 resource_name = "lhc1"
 length = 20.0
@@ -247,6 +201,52 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(6.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_cngpp"]
+resource_name = "lhct"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinematicsHub")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EndCinematic"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CinematicTest/CameraControl1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CinematicTest/CameraControl2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -554,7 +554,7 @@ transform = Transform3D(0.752118, -0.0220328, -0.745845, 0.0336793, 1.05892, 0.0
 [node name="PropTreeFir2!1722478920_974" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir2" instance=ExtResource("16_p1fwi")]
 transform = Transform3D(0.0398267, -0.0267077, 0.915164, -0.0460688, 0.914811, 0.0287022, -0.914394, -0.0472531, 0.0384142, 82.1054, -0.000200272, 17.0204)
 
-[node name="PropTreeFir2!1722707053_903" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir2" instance=ExtResource("16_p1fwi")]
+[node name="PropTreeFir2!1722707053_903" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir2" instance=ExtResource("16_p1fwi")]
 transform = Transform3D(0.763951, -0.000599423, -0.759283, 0.00885901, 1.07703, 0.0080632, 0.759232, -0.011964, 0.763909, -1.59684, 11.9939, 62.925)
 
 [node name="Oaks" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees"]
@@ -615,7 +615,7 @@ transform = Transform3D(0.569004, 0.0410003, 0.730852, -0.0277658, 0.926229, -0.
 [node name="PropTreeOak2!1722478902_562" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Oaks" instance=ExtResource("18_5s8va")]
 transform = Transform3D(0.890687, -0.0256355, -0.487913, 0.0384919, 1.01502, 0.0169365, 0.487067, -0.033336, 0.890894, 86.1536, -0.000204086, 27.5225)
 
-[node name="PropTreeOak2!1722707027_976" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Oaks" instance=ExtResource("18_5s8va")]
+[node name="PropTreeOak2!1722707027_976" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Oaks" instance=ExtResource("18_5s8va")]
 transform = Transform3D(0.552358, -0.00975516, 0.950331, -0.00642421, 1.09912, 0.0150164, -0.95036, -0.0130996, 0.55224, 0.101523, 12.0321, 67.4721)
 
 [node name="Apple" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees"]
@@ -1513,7 +1513,6 @@ script = ExtResource("48_o7o1q")
 targetCharacter = NodePath("../CinematicCharacter")
 
 [node name="CineCharActionAnimTalk" type="Node3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("49_6v2qc")
 targetCharacter = NodePath("../CinematicCharacter")
 nextAnimation = "wynn-talk"
