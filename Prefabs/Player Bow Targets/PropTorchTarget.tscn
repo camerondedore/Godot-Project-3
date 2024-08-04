@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://dampjwia650ny"]
+
+[ext_resource type="ArrayMesh" uid="uid://1tvuawtxf5i0" path="res://Models/prop-torch.res" id="1_fd25c"]
+[ext_resource type="Material" uid="uid://b8pw2axsv336u" path="res://Materials/Props/PropTorch.tres" id="2_vg25r"]
+[ext_resource type="PackedScene" uid="uid://b7xwcmlr26rvb" path="res://Prefabs/FX/FxTorchFire.tscn" id="3_o5m11"]
+[ext_resource type="Script" path="res://C#/PlayerBow/TorchTarget.cs" id="3_x80ui"]
+[ext_resource type="PackedScene" uid="uid://d2ay8j416026n" path="res://Prefabs/FX/FxTorchDrip.tscn" id="5_i311g"]
+[ext_resource type="AudioStream" uid="uid://bs7ar56o5yasj" path="res://Audio/fire.wav" id="5_sei0l"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_m8bin"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_htr4l"]
+radius = 0.1
+height = 0.4
+
+[node name="PropTorchTarget" type="StaticBody3D"]
+collision_layer = 16384
+script = ExtResource("3_x80ui")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_fd25c")
+surface_material_override/0 = ExtResource("2_vg25r")
+
+[node name="ArrowCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_htr4l")
+
+[node name="FxTorchFire" parent="." instance=ExtResource("3_o5m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.468729, 0)
+
+[node name="FxTorchDrip" parent="." instance=ExtResource("5_i311g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472881, 0)
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_sei0l")
+unit_size = 3.0
+max_distance = 20.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("6_m8bin")

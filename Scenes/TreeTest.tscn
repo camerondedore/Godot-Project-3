@@ -94,7 +94,7 @@
 [ext_resource type="PackedScene" uid="uid://ci5w021qks137" path="res://Prefabs/Characters/MobWasp.tscn" id="67_elsxh"]
 [ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="69_gi3wt"]
 [ext_resource type="PackedScene" uid="uid://bslkh5g6p1aee" path="res://Prefabs/Small Items/PropWeaponSword.tscn" id="69_t0wdj"]
-[ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorch.tscn" id="70_woav5"]
+[ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorchTarget.tscn" id="70_woav5"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="71_tu5qd"]
 [ext_resource type="PackedScene" uid="uid://dmib1tgy5ee4s" path="res://Prefabs/Pickups/PickupArmor.tscn" id="73_euar7"]
 [ext_resource type="PackedScene" uid="uid://cvpfiw0o36yme" path="res://Prefabs/Pickups/PickupCider.tscn" id="75_8w06i"]
