@@ -20,7 +20,7 @@ gi_mode = 2
 mesh = ExtResource("5_rdh0f")
 surface_material_override/0 = ExtResource("6_k325c")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_pf00h")
 
 [node name="FxTorchFire" parent="." instance=ExtResource("7_4l7dn")]

@@ -175,6 +175,7 @@ script = ExtResource("4_xfsdn")
 [node name="LightmapGI" type="LightmapGI" parent="Map"]
 bounce_indirect_energy = 1.5
 use_denoiser = false
+generate_probes_subdiv = 4
 light_data = ExtResource("7_mb3d6")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]

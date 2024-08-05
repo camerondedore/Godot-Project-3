@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class TorchTarget : StaticBody3D, IBowTarget
+public partial class TorchTarget : Torch, IBowTarget
 {
 
     [Export]
@@ -11,20 +11,22 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
     string arrowType = "fire";
     Vector3 targetOffset = new Vector3(0, 0.5f, 0);
     GpuParticles3D torchDripFx;
-    ParticleTools torchFireFx;
-    AudioTools3d audio;
 
 
 
     public override void _Ready()
     {
+        base._Ready();
+
         // get nodes
         torchDripFx = (GpuParticles3D) GetNode("FxTorchDrip");
-        torchFireFx = (ParticleTools) GetNode("FxTorchFire");
-        audio = (AudioTools3d) GetNode("Audio");
 
-        // turn off fire fx
-        torchFireFx.StopParticles();
+        if(lit == false)
+        {
+            // turn off drip fx
+            torchDripFx.Restart();
+        }
+
     }
 
 
@@ -52,14 +54,7 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
 
     public void Hit(Vector3 dir)
     {
-        // stop drip fx
-        torchDripFx.Emitting = false;
-
-        // start fire fx
-        torchFireFx.RestartParticles();
-
-        // start fire audio
-        audio.Play();
+        LightTorch();
 
         if(blackWall != null)
         {
@@ -67,7 +62,29 @@ public partial class TorchTarget : StaticBody3D, IBowTarget
             blackWall.Dissolve();
         }
 
-        // disable script
-        SetScript(new Variant());
+        // disable arrows
+        arrowType = "blank";
+    }
+
+
+
+    public override void LightTorch()
+    {
+        // light
+        torchDripFx.Emitting = false;
+        torchFireFx.RestartParticles();
+        audio.PlaySound(burnSound, 0.1f);
+        light.Visible = true;
+    }
+
+
+
+    public override void ExtinguishTorch()
+    {
+        // extinguish
+        torchDripFx.Emitting = true;
+        torchFireFx.StopParticles();
+        audio.PlaySound(extinguishSound, 0.1f);
+        light.Visible = false;
     }
 }

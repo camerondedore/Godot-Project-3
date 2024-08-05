@@ -6,14 +6,15 @@ public partial class Torch : StaticBody3D, IActivatable
 {
 
     [Export]
-    AudioStream lightSound,
+    public AudioStream lightSound,
         extinguishSound,
         burnSound;
     [Export]
-    bool lit = true;
+    public bool lit = true;
 
-    ParticleTools torchFireFx;
-    AudioTools3d audio;
+    protected ParticleTools torchFireFx;
+    protected AudioTools3d audio;
+    protected Light3D light;
 
 
 
@@ -22,12 +23,14 @@ public partial class Torch : StaticBody3D, IActivatable
         // get nodes
         torchFireFx = (ParticleTools) GetNode("FxTorchFire");
         audio = (AudioTools3d) GetNode("Audio");
+        light = (Light3D) GetNode("Light");
 
         // check if torch is lit or not at start
         if(lit == false)
         {
             torchFireFx.StopParticles();
             audio.Stop();
+            light.Visible = false;
         }
     }
 
@@ -51,22 +54,24 @@ public partial class Torch : StaticBody3D, IActivatable
 
 
 
-    public void LightTorch()
+    public virtual void LightTorch()
     {
         // light
         torchFireFx.RestartParticles();
         audio.PlaySound(lightSound, 0.1f);
+        light.Visible = true;
 
         audio.Finished += LightSoundFinished;
     }
 
 
 
-    public void ExtinguishTorch()
+    public virtual void ExtinguishTorch()
     {
         // extinguish
         torchFireFx.StopParticles();
         audio.PlaySound(extinguishSound, 0.1f);
+        light.Visible = false;
     }
 
 
