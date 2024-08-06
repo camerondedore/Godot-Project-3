@@ -41,5 +41,5 @@ light_color = Color(1, 1, 0.345098, 1)
 light_indirect_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
-distance_fade_begin = 15.0
+distance_fade_begin = 10.0
 omni_range = 6.0

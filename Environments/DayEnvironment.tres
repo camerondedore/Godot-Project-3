@@ -2,12 +2,13 @@
 
 [ext_resource type="Material" uid="uid://rulj6q5cu48t" path="res://Materials/SkyboxLevel1.tres" id="1_12klh"]
 
-[sub_resource type="Sky" id="Sky_usgl8"]
+[sub_resource type="Sky" id="Sky_dgcc7"]
 sky_material = ExtResource("1_12klh")
 
 [resource]
 background_mode = 2
-sky = SubResource("Sky_usgl8")
+sky = SubResource("Sky_dgcc7")
+ambient_light_source = 3
 ssao_enabled = true
 ssao_radius = 0.5
 glow_enabled = true
