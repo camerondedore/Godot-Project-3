@@ -19,3 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, 0)
 
 [node name="Audio" parent="." index="4"]
 autoplay = false
+
+[node name="Light" parent="." index="5"]
+light_bake_mode = 0

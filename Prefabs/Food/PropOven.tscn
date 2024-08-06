@@ -10,10 +10,12 @@ points = PackedVector3Array(0.236734, 0.473056, 0.591743, -0.666443, -0.516873, 
 [node name="PropOven" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 gi_mode = 2
 mesh = ExtResource("1_1p6ps")
 surface_material_override/0 = ExtResource("2_pxr38")
 surface_material_override/1 = ExtResource("3_sm73r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("ConvexPolygonShape3D_r174x")

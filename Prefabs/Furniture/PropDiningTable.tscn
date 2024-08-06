@@ -12,27 +12,28 @@ size = Vector3(0.15, 0.95, 0.15)
 [node name="PropDiningTable" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_crokn")
 surface_material_override/0 = ExtResource("2_vpm4o")
 
 [node name="TopCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.462296, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.962296, 0)
 shape = SubResource("BoxShape3D_qulw0")
 
 [node name="LegCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, -0.025, -0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0.475, -0.438)
 shape = SubResource("BoxShape3D_a01at")
 
 [node name="LegCollision2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, -0.025, -0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, 0.475, -0.438)
 shape = SubResource("BoxShape3D_a01at")
 
 [node name="LegCollision3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, -0.025, 0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.175, 0.475, 0.438)
 shape = SubResource("BoxShape3D_a01at")
 
 [node name="LegCollision4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, -0.025, 0.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.175, 0.475, 0.438)
 shape = SubResource("BoxShape3D_a01at")
