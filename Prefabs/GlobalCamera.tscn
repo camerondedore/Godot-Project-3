@@ -61,6 +61,7 @@ restartButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/RestartButton")
 quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

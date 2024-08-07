@@ -72,7 +72,6 @@ public partial class PauseMenu : Node
 
     void Restart()
     {
-        //GetTree().ReloadCurrentScene();
         SceneLoader.RestartScene(GetTree());
     }
 }
