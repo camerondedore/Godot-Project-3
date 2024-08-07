@@ -39,7 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://6iap482nryxo" path="res://Prefabs/Doors/PortcullisFrame.tscn" id="31_3qh1g"]
 [ext_resource type="PackedScene" uid="uid://xi0m8mskyllc" path="res://Prefabs/Trees/PropBgTreeOak4.tscn" id="31_r4k2g"]
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="32_k8eyj"]
-[ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Small Items/PropTorchLitStatic.tscn" id="34_dr17x"]
+[ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Torches/PropTorchLitStatic.tscn" id="34_dr17x"]
 [ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="35_itr01"]
 [ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Food/PropOvenTower.tscn" id="35_mhnju"]
 [ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="36_6it57"]

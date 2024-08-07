@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5x6r3il872vj"]
+
+[ext_resource type="PackedScene" uid="uid://blu2b24uq2b15" path="res://Prefabs/Torches/PropTorch.tscn" id="1_4i04g"]
+[ext_resource type="PackedScene" uid="uid://b7xwcmlr26rvb" path="res://Prefabs/FX/FxTorchFire.tscn" id="3_xsjp1"]
+[ext_resource type="AudioStream" uid="uid://bs7ar56o5yasj" path="res://Audio/fire.wav" id="4_rvovm"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_153dm"]
+
+[node name="PropTorchLit" instance=ExtResource("1_4i04g")]
+
+[node name="FxTorchFire" parent="." index="2" instance=ExtResource("3_xsjp1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+stream = ExtResource("4_rvovm")
+unit_size = 1.0
+autoplay = true
+max_distance = 20.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("5_153dm")

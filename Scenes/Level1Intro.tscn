@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="4_m4xsu"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="4_xfsdn"]
 [ext_resource type="ArrayOccluder3D" uid="uid://crn5tc6fjoafm" path="res://Scenes/Level1Intro.occ" id="6_supt6"]
-[ext_resource type="LightmapGIData" uid="uid://bxodwtx7p7hkv" path="res://Scenes/Level1Intro.lmbake" id="7_mb3d6"]
+[ext_resource type="LightmapGIData" uid="uid://q2ymtmaepse6" path="res://Scenes/Level1Intro.tres" id="7_n3tr8"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="8_upf4p"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="9_dl117"]
 [ext_resource type="ArrayMesh" uid="uid://csnpnq41xfu" path="res://Models/level-1-tree-wall.res" id="11_glw4y"]
 [ext_resource type="PackedScene" uid="uid://b71k8ok3eu1ci" path="res://Prefabs/Platforms/PropPlatform4m.tscn" id="11_q3dqd"]
 [ext_resource type="PackedScene" uid="uid://dchgvk7qou0uy" path="res://Prefabs/Small Items/PropBanner.tscn" id="11_qguqo"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="12_0it4w"]
-[ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Small Items/PropTorchLitDynamic.tscn" id="12_3cr32"]
+[ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="12_3cr32"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="12_ef06k"]
 [ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Platforms/PropPlatformSmall4m.tscn" id="13_cft54"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="13_p84f7"]
@@ -61,7 +61,7 @@
 [ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="50_rjbtb"]
 [ext_resource type="PackedScene" uid="uid://cu3qptif3a78j" path="res://Prefabs/Lumber/PropLogOakStripping.tscn" id="51_7tph2"]
 [ext_resource type="PackedScene" uid="uid://dfi7lwdus6qt5" path="res://Prefabs/Platforms/PropPlatformCantilever.tscn" id="56_1whxi"]
-[ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Small Items/PropTorchLitStatic.tscn" id="59_7thvl"]
+[ext_resource type="PackedScene" uid="uid://c5x6r3il872vj" path="res://Prefabs/Torches/PropTorchLit.tscn" id="59_w1sr2"]
 [ext_resource type="PackedScene" uid="uid://drsrh0e050xun" path="res://Prefabs/Plants/PropBlackberryBushSquareLarge.tscn" id="60_f2jj4"]
 [ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="60_tfjbe"]
 [ext_resource type="PackedScene" uid="uid://b56cc0mnlnk7r" path="res://Prefabs/Lumber/PropFirewood2.tscn" id="61_hsg58"]
@@ -173,10 +173,11 @@ directional_shadow_blend_splits = true
 script = ExtResource("4_xfsdn")
 
 [node name="LightmapGI" type="LightmapGI" parent="Map"]
+visible = false
 bounce_indirect_energy = 1.5
 use_denoiser = false
-generate_probes_subdiv = 4
-light_data = ExtResource("7_mb3d6")
+generate_probes_subdiv = 0
+light_data = ExtResource("7_n3tr8")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("6_supt6")
@@ -1844,34 +1845,37 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65.45
 
 [node name="Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
-[node name="PropTorchLitStatic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.986092, 0, -0.1662, 0, 1, 0, 0.1662, 0, -0.986092, -48.3363, 0.396792, -53.8265)
 
-[node name="PropTorchLitStatic2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.986092, 0, -0.1662, 0, 1, 0, 0.1662, 0, -0.986092, -63.248, 0.396791, -55.7853)
 
-[node name="PropTorchLitStatic3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.393925, 0, 0.919142, 0, 1, 0, -0.919142, 0, -0.393925, 22.0408, 0.528665, -45.9001)
 
-[node name="PropTorchLitStatic4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.980516, 0, -0.196443, 0, 1, 0, 0.196443, 0, -0.980516, 17.0394, 0.396792, -47.1375)
 
-[node name="PropTorchLitStatic5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(0.063975, 0, 0.997952, 0, 1, 0, -0.997952, 0, 0.063975, -18.2046, 0.4999, -170.102)
 
-[node name="PropTorchLitStatic6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -21.0756, 0.4999, -203.125)
 
-[node name="PropTorchLitStatic7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(0.465599, 0, 0.884996, 0, 1, 0, -0.884996, 0, 0.465599, -5.58776, 0.499899, -207.945)
 
-[node name="PropTorchLitStatic8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_7thvl")]
+[node name="PropTorchLit8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2709, 8.53608, -204.585)
 
-[node name="PropTorchLit9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
+[node name="PropTorchLitDynamic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3724, 12.358, -236.693)
+collision_layer = 16
+collision_mask = 0
+useLight = false
 
-[node name="RatWatcher" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLit9" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+[node name="RatWatcher" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
 wait_time = 0.5
 autostart = true
 script = ExtResource("30_do6d6")
@@ -1879,10 +1883,13 @@ watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat8")]
 activatableNodes = [NodePath("..")]
 triggerDelay = 0.5
 
-[node name="PropTorchLit10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
+[node name="PropTorchLitDynamic2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9152, 12.358, -245.234)
+collision_layer = 16
+collision_mask = 0
+useLight = false
 
-[node name="RatWatcher2" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLit10" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+[node name="RatWatcher2" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic2" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
 wait_time = 0.5
 autostart = true
 script = ExtResource("30_do6d6")
@@ -1890,10 +1897,13 @@ watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat9")]
 activatableNodes = [NodePath("..")]
 triggerDelay = 0.5
 
-[node name="PropTorchLit11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
+[node name="PropTorchLitDynamic3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3201, 12.358, -254.433)
+collision_layer = 16
+collision_mask = 0
+useLight = false
 
-[node name="RatWatcher3" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLit11" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+[node name="RatWatcher3" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic3" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
 wait_time = 0.5
 autostart = true
 script = ExtResource("30_do6d6")
@@ -1901,10 +1911,13 @@ watchedNodes = [NodePath("../../../../../../../Enemies/MobBrownRat10")]
 activatableNodes = [NodePath("..")]
 triggerDelay = 0.5
 
-[node name="PropTorchLit12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
+[node name="PropTorchLitDynamic4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.928, 12.358, -266.136)
+collision_layer = 16
+collision_mask = 0
+useLight = false
 
-[node name="RatWatcher4" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLit12" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
+[node name="RatWatcher4" type="Timer" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic4" node_paths=PackedStringArray("watchedNodes", "activatableNodes")]
 wait_time = 0.5
 autostart = true
 script = ExtResource("30_do6d6")

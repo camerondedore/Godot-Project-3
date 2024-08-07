@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci8qawjs3i4t"]
+
+[ext_resource type="PackedScene" uid="uid://c5x6r3il872vj" path="res://Prefabs/Torches/PropTorchLit.tscn" id="1_l7k0v"]
+
+[node name="PropTorchLitStatic" instance=ExtResource("1_l7k0v")]
+
+[node name="Light" type="OmniLight3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+light_color = Color(1, 1, 0.345098, 1)
+light_indirect_energy = 2.0
+light_bake_mode = 1
+distance_fade_enabled = true
+distance_fade_begin = 10.0
+omni_range = 6.0

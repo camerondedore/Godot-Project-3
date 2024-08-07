@@ -1,17 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dampjwia650ny"]
+[gd_scene load_steps=4 format=3 uid="uid://dampjwia650ny"]
 
-[ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Small Items/PropTorchLitStatic.tscn" id="1_mnjyu"]
-[ext_resource type="AudioStream" uid="uid://bcgh26fowkbln" path="res://Audio/fire-start.wav" id="3_7oley"]
+[ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="1_hithe"]
 [ext_resource type="Script" path="res://C#/PlayerBow/TorchTarget.cs" id="3_x80ui"]
-[ext_resource type="AudioStream" uid="uid://pce8yheu2woa" path="res://Audio/fire-extinguish.wav" id="4_yac0i"]
 [ext_resource type="PackedScene" uid="uid://d2ay8j416026n" path="res://Prefabs/FX/FxTorchDrip.tscn" id="5_i311g"]
-[ext_resource type="AudioStream" uid="uid://bs7ar56o5yasj" path="res://Audio/fire.wav" id="5_sei0l"]
 
-[node name="PropTorchTarget" instance=ExtResource("1_mnjyu")]
+[node name="PropTorchTarget" instance=ExtResource("1_hithe")]
 script = ExtResource("3_x80ui")
-lightSound = ExtResource("3_7oley")
-extinguishSound = ExtResource("4_yac0i")
-burnSound = ExtResource("5_sei0l")
 lit = false
 
 [node name="FxTorchDrip" parent="." index="3" instance=ExtResource("5_i311g")]
@@ -19,6 +13,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.473, 0)
 
 [node name="Audio" parent="." index="4"]
 autoplay = false
-
-[node name="Light" parent="." index="5"]
-light_bake_mode = 0

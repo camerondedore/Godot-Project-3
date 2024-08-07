@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://blu2b24uq2b15"]
+
+[ext_resource type="ArrayMesh" uid="uid://1tvuawtxf5i0" path="res://Models/prop-torch.res" id="1_fpupx"]
+[ext_resource type="Material" uid="uid://b8pw2axsv336u" path="res://Materials/Props/PropTorch.tres" id="2_d1sjv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ktx8"]
+radius = 0.06
+height = 1.4
+
+[node name="PropTorch" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_fpupx")
+surface_material_override/0 = ExtResource("2_d1sjv")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5ktx8")

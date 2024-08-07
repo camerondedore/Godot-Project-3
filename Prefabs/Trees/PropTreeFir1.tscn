@@ -36,7 +36,7 @@ surface_material_override/0 = ExtResource("2_qdo7n")
 [node name="MeshTrunkShadow" type="MeshInstance3D" parent="LodObject/Lod1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 cast_shadow = 3
-gi_mode = 2
+gi_mode = 0
 mesh = ExtResource("3_o8ibv")
 skeleton = NodePath("../../..")
 

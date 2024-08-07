@@ -10,7 +10,8 @@ public partial class Torch : StaticBody3D, IActivatable
         extinguishSound,
         burnSound;
     [Export]
-    public bool lit = true;
+    public bool lit = true,
+        useLight = true;
 
     protected ParticleTools torchFireFx;
     protected AudioTools3d audio;
@@ -30,6 +31,10 @@ public partial class Torch : StaticBody3D, IActivatable
         {
             torchFireFx.StopParticles();
             audio.Stop();
+            light.Visible = false;
+        }
+        else if(useLight == false)
+        {
             light.Visible = false;
         }
     }
@@ -59,7 +64,11 @@ public partial class Torch : StaticBody3D, IActivatable
         // light
         torchFireFx.RestartParticles();
         audio.PlaySound(lightSound, 0.1f);
-        light.Visible = true;
+
+        if(useLight == true)
+        {   
+            light.Visible = true;
+        }
 
         audio.Finished += LightSoundFinished;
     }
@@ -71,7 +80,11 @@ public partial class Torch : StaticBody3D, IActivatable
         // extinguish
         torchFireFx.StopParticles();
         audio.PlaySound(extinguishSound, 0.1f);
-        light.Visible = false;
+        
+        if(useLight == true)
+        {   
+            light.Visible = false;
+        }
     }
 
 
