@@ -91,7 +91,7 @@ public partial class Torch : StaticBody3D, IActivatable
 
     public void LightSoundFinished()
     {
-        audio.PlaySound(burnSound, 0.1f);
+        audio.PlayLoopingSound(burnSound, 0.1f);
 
         audio.Finished -= LightSoundFinished;
     }

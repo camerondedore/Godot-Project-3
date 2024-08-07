@@ -39,9 +39,8 @@ public partial class CharacterWaterSplash : Area3D
 
         audioVolumeMax = movementAudio.UnitSize;
 
-        movementAudio.Stream = waterMovementSound;
         movementAudio.UnitSize = 0f;
-        movementAudio.Play(GD.Randf() * 2.0f);
+        movementAudio.PlayLoopingSound(waterMovementSound, 0.1f);
     }
 
 

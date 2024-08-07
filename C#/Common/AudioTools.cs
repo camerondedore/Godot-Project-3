@@ -10,9 +10,33 @@ public partial class AudioTools : AudioStreamPlayer
 
     public void PlaySound(AudioStream sound, float pitchRange)
     {
+        if(sound == null)
+        {
+            GD.Print("Audio stream is null.");
+            return;
+        }
+
         Stream = sound;
         PitchScale = 1 + (GD.Randf() - 0.5f) * pitchRange;
         Play();
+    }
+
+
+
+    public void PlayLoopingSound(AudioStream sound, float pitchRange)
+    {
+        if(sound == null)
+        {
+            GD.Print("Audio stream is null.");
+            return;
+        }
+
+        Stream = sound;
+        PitchScale = 1 + (GD.Randf() - 0.5f) * pitchRange;
+
+        var startCursor = GD.Randf() * ((float) sound.GetLength());
+
+        Play(startCursor);
     }
 
 
