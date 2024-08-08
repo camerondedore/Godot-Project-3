@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbjowt80bbp5u"]
+
+[ext_resource type="ArrayMesh" uid="uid://fdjd5vmo8njt" path="res://Models/fx-lightshaft.res" id="1_fe7ow"]
+[ext_resource type="Material" uid="uid://cb4b3omgygqoc" path="res://Materials/Fx/FxLightshaft.tres" id="2_r44ad"]
+
+[node name="FxLightShaft" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_fe7ow")
+surface_material_override/0 = ExtResource("2_r44ad")
