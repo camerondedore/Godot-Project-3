@@ -1629,13 +1629,13 @@ transform = Transform3D(-0.689329, 0, -0.724449, 0, 1, 0, 0.724449, 0, -0.689329
 [node name="Lightshafts" type="Node3D" parent="Map/OccluderInstance3D/Fx"]
 
 [node name="FxLightShaft" parent="Map/OccluderInstance3D/Fx/Lightshafts" instance=ExtResource("48_leulu")]
-transform = Transform3D(1.84996, 0.428726, 0, -0.281655, 2.58272, 0.539096, 0.0846399, -0.77613, 1.79394, -81.0297, 13.5492, -10.9273)
+transform = Transform3D(-1.73801, 0.304577, 0.666707, 0, 2.60573, -0.560161, -0.698678, -0.757658, -1.65848, -80.9159, 13.5492, -10.8719)
 
 [node name="FxLightShaft2" parent="Map/OccluderInstance3D/Fx/Lightshafts" instance=ExtResource("48_leulu")]
-transform = Transform3D(1.84996, 0.428726, 0, -0.281655, 2.58272, 0.539096, 0.0846399, -0.77613, 1.79394, -84.274, 13.5492, 6.41476)
+transform = Transform3D(-1.73801, 0.304577, 0.666707, 0, 2.60573, -0.560161, -0.698678, -0.757658, -1.65848, -84.6071, 13.5492, 6.71998)
 
 [node name="FxLightShaft3" parent="Map/OccluderInstance3D/Fx/Lightshafts" instance=ExtResource("48_leulu")]
-transform = Transform3D(1.38466, 0.428726, 0, -0.210814, 2.58272, 0.391107, 0.0633514, -0.77613, 1.30148, -67.1362, 10.6827, -35.5792)
+transform = Transform3D(-1.0407, 0.304577, 0.483687, 2.38419e-08, 2.60573, -0.406389, -0.418358, -0.757658, -1.20321, -67.3842, 10.6897, -35.6547)
 
 [node name="Pickups" type="Node3D" parent="Map"]
 
