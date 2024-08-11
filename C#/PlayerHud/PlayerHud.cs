@@ -29,7 +29,8 @@ public partial class PlayerHud : CanvasLayer
 		bladeArrow,
 		pickArrow,
 		netArrow,
-		fireArrow;
+		fireArrow,
+		hitPointsDead;
 	[Export]
 	PlayerHudPickups hudPickups;
 	[Export]
@@ -277,7 +278,16 @@ public partial class PlayerHud : CanvasLayer
 	{
 		var delta = newHitPoints - hitPoints;
 		hitPoints = currentStatistics.HitPoints;
-		UpdateHitPointBars(delta);
+
+		if(hitPoints > 0)
+		{
+			UpdateHitPointBars(delta);
+		}
+		else
+		{
+			hitPointBarsContainer.Visible = false;
+			hitPointsDead.Visible = true;
+		}
 	}
 
 
