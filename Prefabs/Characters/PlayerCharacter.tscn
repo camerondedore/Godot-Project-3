@@ -9386,7 +9386,6 @@ bones/25/rotation = Quaternion(-0.169099, 6.13858e-15, -4.03164e-08, 0.985599)
 bones/26/rotation = Quaternion(0.707107, 2.66901e-08, 1.41897e-07, 0.707107)
 bones/27/rotation = Quaternion(0.707107, -1.41897e-07, -2.66901e-08, 0.707107)
 bones/28/rotation = Quaternion(0.5, 0.5, -0.5, 0.5)
-bones/28/scale = Vector3(1, 1, 1)
 bones/29/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
 bones/29/scale = Vector3(1, 1, 1)
 bones/30/rotation = Quaternion(-0.718423, -0.188827, -0.151591, 0.652099)
@@ -9488,12 +9487,12 @@ surface_material_override/0 = ExtResource("54_hitiv")
 surface_material_override/1 = ExtResource("55_ftkf4")
 
 [node name="BackBoneOverride" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="2"]
-transform = Transform3D(1, -5.12227e-09, -7.45058e-08, -4.5402e-09, 1, -4.65661e-10, 1.04308e-07, -1.39698e-09, 1, -0.0341791, -0.0293735, 0.158871)
+transform = Transform3D(1, -1.16415e-10, 0, -1.16415e-10, 1, 9.31323e-10, 0, 9.31323e-10, 1, -0.0341791, -0.0293735, 0.158871)
 bone_name = "back-control"
 bone_idx = 13
 
 [node name="HipsBoneCopy" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="3"]
-transform = Transform3D(0.975479, -0.035743, 0.217172, -0.0348888, -0.999361, -0.00776733, 0.21731, 4.65661e-10, -0.976102, -0.0341791, -0.0293735, 0.158871)
+transform = Transform3D(0.975479, -0.0357429, 0.217172, -0.0348887, -0.999361, -0.00776732, 0.217311, 2.56114e-09, -0.976102, -0.0341791, -0.0293735, 0.158871)
 bone_name = "hips"
 bone_idx = 0
 
