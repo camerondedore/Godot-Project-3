@@ -19,7 +19,7 @@ size = Vector3(2.60938, 0.200653, 3.67673)
 
 [node name="PropTreeHouse1" type="StaticBody3D"]
 
-[node name="Treehouse" type="MeshInstance3D" parent="."]
+[node name="TreeHouse" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 mesh = ExtResource("1_ao8cs")
 surface_material_override/0 = ExtResource("2_lxulc")
