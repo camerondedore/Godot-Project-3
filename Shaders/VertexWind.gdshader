@@ -8,11 +8,11 @@ uniform vec3 waveSpeed = vec3(1);
 uniform float waveTurbulance = 1;
 uniform vec3 waveAmplitude = vec3(0.1);
 
-void vertex() 
+void vertex()
 {
 	// get world position of vertex
 	vec3 worldPosition = NODE_POSITION_WORLD + VERTEX;
-	
+
 	// get wave time
 	float positionCursor = (worldPosition.x + worldPosition.y + worldPosition.z) * waveTurbulance;
 	float waveCursorX = sin(positionCursor + TIME * waveSpeed.x);
@@ -23,22 +23,22 @@ void vertex()
 	float wavesY = waveCursorY * waveAmplitude.y;
 	float wavesZ = waveCursorZ * waveAmplitude.z;
 	vec3 waves = vec3(wavesX, wavesY, wavesZ) * waveWeight;
-	
+
 	// apply waves
 	VERTEX += waves;
 }
 
-void fragment() 
+void fragment()
 {
 	// get texture data
 	vec4 imageRead = texture(albedo, UV);
-	
+
 	// clip alpha
 	//if(imageRead.a < alphaClip)
 	//{
 		//discard;
 	//}
-	
+
 	ALBEDO = imageRead.rgb;
 	ALPHA = imageRead.a;
 	ALPHA_SCISSOR_THRESHOLD = alphaClip;
