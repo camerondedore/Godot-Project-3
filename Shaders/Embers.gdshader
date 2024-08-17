@@ -9,21 +9,21 @@ uniform float turbulance = 3.0;
 
 varying vec3 worldPosition;
 
-void vertex() 
+void vertex()
 {
 	// get world position of vertex
 	worldPosition = NODE_POSITION_WORLD + VERTEX;
 }
 
-void fragment() 
-{	
+void fragment()
+{
 	float combinedPosition = worldPosition.x + worldPosition.y + worldPosition.z;
 	combinedPosition *= turbulance;
 	float emissionAnimated = sin(combinedPosition + TIME * speed) * emissionSpread + 1.0;
-	
+
 	vec3 emissionColor = texture(emission, UV).xyz;
 	emissionColor *= emissionStrength * emissionAnimated;
-	
+
 	ALBEDO = texture(albedo, UV).xyz;
 	EMISSION = emissionColor;
 }

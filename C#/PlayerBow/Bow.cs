@@ -62,7 +62,7 @@ namespace PlayerBow
             var newArrow = (Arrow) arrowToFire.Instantiate();
             
             // set new arrow position and look direction
-            var direction = GetLaunchVectorToHitTarget(GlobalPosition, target.GetGlobalPosition(), newArrow.speed);
+            var direction = GetLaunchVectorToHitTarget(GlobalPosition, target.GetTargetGlobalPosition(), newArrow.speed);
             newArrow.LookAtFromPosition(GlobalPosition, GlobalPosition + direction.Normalized());
             
             // assign to scene

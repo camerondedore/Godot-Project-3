@@ -38,7 +38,7 @@ namespace PlayerBow
             if(activeTarget != null)
             {
                 // move fx to target
-                GlobalPosition = activeTarget.GetGlobalPosition();
+                GlobalPosition = activeTarget.GetTargetGlobalPosition();
 
                 Scale = Vector3.One * (1 + ((float) Mathf.Sin(EngineTime.timePassed * scaleSpeed)) * scaleRadius);
             }

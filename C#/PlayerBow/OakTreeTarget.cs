@@ -68,7 +68,7 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
 
 
 
-    public Vector3 GetGlobalPosition()
+    public Vector3 GetTargetGlobalPosition()
     {
         if(IsInstanceValid(this))
         {

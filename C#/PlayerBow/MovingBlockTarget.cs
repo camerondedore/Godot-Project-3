@@ -79,7 +79,7 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget
 
 
 
-    public Vector3 GetGlobalPosition()
+    public Vector3 GetTargetGlobalPosition()
     {
         if(IsInstanceValid(this))
         {

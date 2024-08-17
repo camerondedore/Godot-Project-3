@@ -25,28 +25,28 @@ void fragment()
 	float depthTexture = texture(DEPTH_TEXTURE, SCREEN_UV).r;
 	float depth = PROJECTION_MATRIX[3][2] / (depthTexture + PROJECTION_MATRIX[2][2]);
 	float depthBlend = depth + VERTEX.z;
-	
+
 	// get screen texture
 	vec3 screen = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-	
+
 	// waves
 	float positionWaveInput = (worldPosition.x + worldPosition.z) * waveTurbulance;
 	float waves = sin(positionWaveInput + TIME * waveSpeed) + 1.0;
 	//float waves = (sin((NODE_POSITION_WORLD.x + NODE_POSITION_WORLD.z) * waveturbulance + TIME * waveSpeed) + 1.0);
 	waves *= waveAmplitude;
 	waves = clamp(waves, 0.0, 1.0);
-	
+
 	// fog
 	float fog = pow(depthBlend * (1.0 - depthDistance), depthFade);
-	//fog = clamp(fog, 0.0, 10.0);	
-	
+	//fog = clamp(fog, 0.0, 10.0);
+
 	// combine depth fog and waves
 	float combinedEffect = fog + waves;
 	combinedEffect *= depthBlend;
 	combinedEffect = clamp(combinedEffect, 0.0, 1.0);
-	
+
 	// blend screen with combined effect
 	vec3 screenWithEffect = mix(screen, depthColor.rgb, combinedEffect);
-	
+
 	ALBEDO = screenWithEffect;
 }

@@ -153,6 +153,6 @@ namespace PlayerBow
     {
         string GetArrowType();
         void Hit(Vector3 direction);
-        Vector3 GetGlobalPosition();
+        Vector3 GetTargetGlobalPosition();
     }
 }

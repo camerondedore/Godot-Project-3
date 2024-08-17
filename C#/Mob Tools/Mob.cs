@@ -160,7 +160,7 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
 
 
 
-    public Vector3 GetGlobalPosition()
+    public Vector3 GetTargetGlobalPosition()
     {
         if(IsInstanceValid(this))
         {

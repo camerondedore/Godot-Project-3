@@ -131,7 +131,7 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 
 
 // Varyings
-varying float Local_Y;
+varying float var_Local_Y;
 
 uniform sampler2D Albedo : source_color;
 uniform float Metallic : hint_range(0, 1) = 0;
@@ -154,7 +154,7 @@ void vertex() {
 
 
 // VaryingSetter:2
-	Local_Y = n_out3p2;
+	var_Local_Y = n_out3p2;
 
 
 }
@@ -257,7 +257,7 @@ void fragment() {
 
 
 // VaryingGetter:42
-	float n_out42p0 = Local_Y;
+	float n_out42p0 = var_Local_Y;
 
 
 // FloatParameter:35

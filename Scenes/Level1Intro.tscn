@@ -174,6 +174,7 @@ script = ExtResource("4_xfsdn")
 
 [node name="LightmapGI" type="LightmapGI" parent="Map"]
 visible = false
+quality = 0
 bounce_indirect_energy = 1.5
 use_denoiser = false
 generate_probes_subdiv = 0
@@ -4899,8 +4900,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut2" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2396, 0.9998, -21.0045)
@@ -4908,8 +4909,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut3" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6602, 0.9998, -22.5866)
@@ -4917,8 +4918,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut4" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.9148, 0.9998, -122.217)
@@ -4926,8 +4927,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut5" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1734, 0.9998, -122.817)
@@ -4935,8 +4936,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut6" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.664, 0.999799, -122.105)
@@ -4944,8 +4945,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut7" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.2745, 0.9998, -120.745)
@@ -4953,8 +4954,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut8" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.6608, 5.0023, -162.21)
@@ -4962,8 +4963,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut9" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.6152, 5.0023, -161.51)
@@ -4971,8 +4972,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut10" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.7075, 5.0023, -160.91)
@@ -4980,8 +4981,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupNettleBroth3" parent="Map/Pickups" instance=ExtResource("68_c0uoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2963, 0.9998, -169.032)
@@ -4989,8 +4990,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut11" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.289, 8.0023, -201.153)
@@ -4998,8 +4999,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut12" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0843, 10.0023, -201.153)
@@ -5007,8 +5008,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut13" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.4978, 9.0023, -201.153)
@@ -5016,8 +5017,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupNettleBroth2" parent="Map/Pickups" instance=ExtResource("68_c0uoq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.6166, 0.9998, -215.736)
@@ -5025,8 +5026,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut14" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.7879, 0.999801, -213.38)
@@ -5034,8 +5035,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="PickupCandiedNut15" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4537, 0.999801, -217.761)
@@ -5043,8 +5044,8 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 lock_rotation = true
-max_contacts_reported = 0
 contact_monitor = false
+max_contacts_reported = 0
 
 [node name="Audio" type="Node3D" parent="Map"]
 
@@ -5319,8 +5320,8 @@ monitorable = false
 script = ExtResource("89_76sdy")
 levelChange = NodePath("../../LevelChange")
 nextLevel = "LevelHub"
-nextCheckpointPosition = Vector3(10.7, 13, 80)
-nextCameraPosition = Vector3(13.3, 17.1, 84.3)
+nextCheckpointPosition = Vector3(10.7, 13, 92)
+nextCameraPosition = Vector3(13.3, 17.1, 96.3)
 nextCameraEulerRotation = Vector3(-26.5, 26.8, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]

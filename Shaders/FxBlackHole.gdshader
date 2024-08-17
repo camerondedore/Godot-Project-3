@@ -16,18 +16,18 @@ void fragment()
 	float depthTexture = texture(DEPTH_TEXTURE, SCREEN_UV).r;
 	float depth = PROJECTION_MATRIX[3][2] / (depthTexture + PROJECTION_MATRIX[2][2]);
 	float depthBlend = depth + VERTEX.z;
-	
+
 	// get screen texture
 	vec3 screen = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-	
+
 	// fog
 	float fog = pow(depthBlend * (1.0 - depthDistance), depthFade);
-	
+
 	//fog *= depthBlend;
 	fog = clamp(fog, 0.0, 1.0);
-	
+
 	// blend screen with combined effect
 	vec3 screenWithEffect = mix(screen, depthColor.rgb, fog);
-	
+
 	ALBEDO = screenWithEffect;
 }

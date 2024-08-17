@@ -42,7 +42,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
 
 
 
-    public Vector3 GetGlobalPosition()
+    public Vector3 GetTargetGlobalPosition()
     {
         if(IsInstanceValid(this))
         {
