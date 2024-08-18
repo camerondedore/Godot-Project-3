@@ -1,0 +1,26 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://bg0dm4lyp8nsq"
+path="res://.godot/imported/Level1Intro.exr-0b0515cf40ab83d480bf01f8d377af00.ctexarray"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Scenes/Lightmaps/Level1Intro.exr"
+dest_files=["res://.godot/imported/Level1Intro.exr-0b0515cf40ab83d480bf01f8d377af00.ctexarray"]
+
+[params]
+
+compress/mode=3
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=1
