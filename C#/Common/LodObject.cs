@@ -5,10 +5,11 @@ public partial class LodObject : Node3D //VisibleOnScreenNotifier3D
 {
 
     [Export]
-    float lodDistanceSqr = 5625;
+    protected float lodDistanceSqr = 5625;
 
-    Node3D lod1,
+    protected Node3D lod1,
         lod2;
+
     //bool isOnScreen = true;
 
 
@@ -41,11 +42,12 @@ public partial class LodObject : Node3D //VisibleOnScreenNotifier3D
 
 
 
-    public void LodCheck(Camera3D camera)
+    public virtual void LodCheck(Camera3D camera)
     {
         // get distance squared to camera
         var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition);
-
+        
+        // use 2 lod levels
         if(distanceSqrToCamera < lodDistanceSqr)
         {
             if(lod1.Visible == false)

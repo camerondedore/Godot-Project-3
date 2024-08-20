@@ -24,6 +24,9 @@ shadow_opacity = 0.9
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o13yb")
 
+[node name="PropTreeFir35" parent="." instance=ExtResource("5_t43ba")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.76066, 0, -1.23246)
+
 [node name="TreeWall" type="Node3D" parent="."]
 visible = false
 
@@ -184,6 +187,7 @@ transform = Transform3D(-0.404631, 0, 0.91448, 0, 1, 0, -0.91448, 0, -0.404631, 
 transform = Transform3D(0.527653, 0, 0.84946, 0, 1, 0, -0.84946, 0, 0.527653, -19.2113, 0, 11.2542)
 
 [node name="TreeWallSolid" type="Node3D" parent="."]
+visible = false
 
 [node name="PropBgTreeOak1" parent="TreeWallSolid" instance=ExtResource("1_rnsnc")]
 transform = Transform3D(0.776695, 0, 0.629876, 0, 1, 0, -0.629876, 0, 0.776695, -7.39015, 0, 3.3301)
