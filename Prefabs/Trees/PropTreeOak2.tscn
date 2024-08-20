@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gsb5ckq8e2no"]
+[gd_scene load_steps=8 format=3 uid="uid://gsb5ckq8e2no"]
 
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="1_d5cxo"]
 [ext_resource type="ArrayMesh" uid="uid://577v78doq0s8" path="res://Models/prop-tree-oak-2.res" id="1_xxyqn"]
 [ext_resource type="ArrayMesh" uid="uid://blsmc6bhpveox" path="res://Models/prop-tree-oak-2-lod.res" id="3_kaxnp"]
+[ext_resource type="ArrayMesh" uid="uid://7gotapqrn1bg" path="res://Models/prop-tree-oak-2-lod-1.res" id="4_mb7hb"]
+[ext_resource type="Material" uid="uid://c3jvd501cjiks" path="res://Materials/Trees/PropTreeOak2Lod.tres" id="5_ygepe"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wx7qu"]
 radius = 2.2
@@ -21,6 +23,10 @@ mesh = ExtResource("1_xxyqn")
 
 [node name="Lod2" parent="LodObject" index="1"]
 mesh = ExtResource("3_kaxnp")
+
+[node name="Lod3" parent="LodObject" index="2"]
+mesh = ExtResource("4_mb7hb")
+surface_material_override/0 = ExtResource("5_ygepe")
 
 [node name="TrunkCollision2" type="CollisionShape3D" parent="." index="3"]
 transform = Transform3D(0.998277, -0.0579819, 0.00899252, 0.0584823, 0.995657, -0.0724378, -0.00475338, 0.0728388, 0.997332, -0.0635448, 5.14225, 0.0960855)

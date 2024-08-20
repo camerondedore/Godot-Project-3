@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://2bggd0nmwk3n"]
+
+[ext_resource type="Texture2D" uid="uid://b2t34d758o5oh" path="res://Textures/lod-tree-oak-4.png" id="1_oe82o"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_oe82o")
+metallic_specular = 0.0
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+disable_receive_shadows = true

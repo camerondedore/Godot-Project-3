@@ -1,16 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw1rpcyu6mm7p"]
+[gd_scene load_steps=9 format=3 uid="uid://bw1rpcyu6mm7p"]
 
-[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="1_krr0g"]
 [ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_qiwwi"]
+[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="1_sod8w"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_k61hj"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_4xiec"]
 [ext_resource type="Material" uid="uid://dtj7tjjw2nglw" path="res://Materials/Trees/LeavesOak.tres" id="4_ddcwo"]
 [ext_resource type="ArrayMesh" uid="uid://ce1ncrct04u6t" path="res://Models/prop-tree-oak-1-lod.res" id="6_kbldg"]
+[ext_resource type="ArrayMesh" uid="uid://dkvtcswr7cy3y" path="res://Models/prop-tree-oak-1-lod-1.res" id="7_dk5m3"]
+[ext_resource type="Material" uid="uid://crpqfhsxi4lhn" path="res://Materials/Trees/PropTreeOak1Lod.tres" id="8_yb3x0"]
 
 [node name="PropBgTreeOak1" type="Node3D"]
 
 [node name="LodObject" type="Node3D" parent="."]
-script = ExtResource("1_krr0g")
+script = ExtResource("1_sod8w")
+lodExtraDistanceSqr = 5625.0
 lodDistanceSqr = 2500.0
 
 [node name="Lod1" type="MeshInstance3D" parent="LodObject"]
@@ -33,3 +36,12 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_k61hj")
 surface_material_override/1 = ExtResource("3_4xiec")
 surface_material_override/2 = ExtResource("4_ddcwo")
+
+[node name="Lod3" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("7_dk5m3")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_yb3x0")

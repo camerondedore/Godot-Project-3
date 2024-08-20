@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckb3ng4tokwms"]
+[gd_scene load_steps=6 format=3 uid="uid://ckb3ng4tokwms"]
 
 [ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="1_hm65c"]
 [ext_resource type="ArrayMesh" uid="uid://dl8pd7hxmy2p7" path="res://Models/prop-tree-oak-3.res" id="2_i3g8s"]
 [ext_resource type="ArrayMesh" uid="uid://bop7apr0htdl7" path="res://Models/prop-tree-oak-3-lod.res" id="3_r8ooa"]
+[ext_resource type="ArrayMesh" uid="uid://c1jvts58j670g" path="res://Models/prop-tree-oak-3-lod-1.res" id="4_n8oyy"]
+[ext_resource type="Material" uid="uid://ce351xl0bbexu" path="res://Materials/Trees/PropTreeOak3Lod.tres" id="5_rqfey"]
 
 [node name="PropBgTreeOak3" instance=ExtResource("1_hm65c")]
 
@@ -11,3 +13,7 @@ mesh = ExtResource("2_i3g8s")
 
 [node name="Lod2" parent="LodObject" index="1"]
 mesh = ExtResource("3_r8ooa")
+
+[node name="Lod3" parent="LodObject" index="2"]
+mesh = ExtResource("4_n8oyy")
+surface_material_override/0 = ExtResource("5_rqfey")
