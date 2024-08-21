@@ -45,7 +45,7 @@ public partial class LodObject : Node3D //VisibleOnScreenNotifier3D
     public virtual void LodCheck(Camera3D camera)
     {
         // get distance squared to camera
-        var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition);
+        var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition) * (1f / GameSettings.settings.currentSettings.LodMultiplier);
         
         // use 2 lod levels
         if(distanceSqrToCamera < lodDistanceSqr)

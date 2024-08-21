@@ -23,7 +23,7 @@ public partial class LodObjectExtra : LodObject
     public override void LodCheck(Camera3D camera)
     {
         // get distance squared to camera
-        var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition);
+        var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition) * (1f / GameSettings.settings.currentSettings.LodMultiplier);
 
         // use 3 lod levels
         if(distanceSqrToCamera < lodDistanceSqr)
@@ -36,7 +36,7 @@ public partial class LodObjectExtra : LodObject
                 lod3.Visible = false;
             }
         }
-        if(distanceSqrToCamera < lodExtraDistanceSqr)
+        else if(distanceSqrToCamera < lodExtraDistanceSqr)
         {
             if(lod2.Visible == false)
             {
@@ -46,12 +46,15 @@ public partial class LodObjectExtra : LodObject
                 lod3.Visible = false;
             }
         }
-        else if(lod3.Visible == false)
+        else
         {
-            // use optional third lod
-            lod1.Visible = false;
-            lod2.Visible = false;
-            lod3.Visible = true;            
+            if(lod3.Visible == false)
+            {
+                // use optional third lod
+                lod1.Visible = false;
+                lod2.Visible = false;
+                lod3.Visible = true;            
+            }
         }
     }
 }

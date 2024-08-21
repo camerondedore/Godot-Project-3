@@ -97,6 +97,15 @@ public partial class GameSettings : Node
 
 
 
+    public void UpdateLodMultiplier(double newValue)
+    {
+        currentSettings.LodMultiplier = newValue;
+
+        SaveSettings();
+    }
+
+
+
     public void UpdateShowFps(bool newShowFps)
     {
         currentSettings.ShowFps = newShowFps;
@@ -152,6 +161,11 @@ public partial class GameSettings : Node
         {
             get; set;
         } = false;
+
+        public double LodMultiplier
+        {
+            get; set;
+        } =  1;
 
         public bool ShowFps
         {

@@ -11,12 +11,6 @@
 
 [node name="PropBgTreeFir1" type="Node3D"]
 
-[node name="TrunkMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-gi_mode = 2
-mesh = ExtResource("1_38nvp")
-surface_material_override/0 = ExtResource("2_kcb8e")
-
 [node name="LodObject" type="Node3D" parent="."]
 script = ExtResource("3_ccv61")
 lodExtraDistanceSqr = 5625.0
@@ -32,6 +26,13 @@ mesh = ExtResource("3_edlkc")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_k1712")
 
+[node name="TrunkMesh" type="MeshInstance3D" parent="LodObject/Lod1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+gi_mode = 2
+mesh = ExtResource("1_38nvp")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_kcb8e")
+
 [node name="Lod2" type="Node3D" parent="LodObject"]
 visible = false
 
@@ -42,6 +43,13 @@ gi_mode = 2
 mesh = ExtResource("3_edlkc")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("6_63yg3")
+
+[node name="TrunkMesh" type="MeshInstance3D" parent="LodObject/Lod2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+gi_mode = 2
+mesh = ExtResource("1_38nvp")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_kcb8e")
 
 [node name="Lod3" type="Node3D" parent="LodObject"]
 visible = false

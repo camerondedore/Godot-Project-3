@@ -13,7 +13,8 @@ public partial class GameSettingsUi : Node
         fpsCheckBox;
     [Export]
     Slider sunShadowQualitySlider,
-        sunShadowDistanceSlider;
+        sunShadowDistanceSlider,
+        lodMultiplierSlider;
     [Export]
     SpinBox mouseSensitivitySpinBox;
     [Export]
@@ -40,6 +41,7 @@ public partial class GameSettingsUi : Node
         sunShadowQualitySlider.Value = GameSettings.settings.currentSettings.SunShadowQuality;
         sunShadowDistanceSlider.Value = GameSettings.settings.currentSettings.SunShadowDistance;
         sunShadowBlendSplitsCheckBock.ButtonPressed = GameSettings.settings.currentSettings.SunShadowBlendSplits;
+        lodMultiplierSlider.Value = GameSettings.settings.currentSettings.LodMultiplier;
         fpsCheckBox.ButtonPressed = GameSettings.settings.currentSettings.ShowFps;
         mouseSensitivitySpinBox.Value = GameSettings.settings.currentSettings.MouseSensitivity;
         vsyncOptionButton.Selected = GameSettings.settings.currentSettings.Vsync;
@@ -50,6 +52,7 @@ public partial class GameSettingsUi : Node
         sunShadowQualitySlider.DragEnded += sunShadowQualitySliderDragEnd;
         sunShadowDistanceSlider.DragEnded += SunShadowDistanceSliderDragEnd;
         sunShadowBlendSplitsCheckBock.Toggled += SunShadowBlendSplitsCheckBoxToggle;
+        lodMultiplierSlider.DragEnded += LodMultiplierSliderDragEnd;
         fpsCheckBox.Toggled += FpsCheckBoxToggle;
         mouseSensitivitySpinBox.ValueChanged += MouseSensitivityValueChanged;
         vsyncOptionButton.ItemSelected += VsyncOptionsButtonItemSelected;
@@ -95,6 +98,14 @@ public partial class GameSettingsUi : Node
     {
         SunShadowBlendSplitsChanged(value);
         GameSettings.settings.UpdateSunShadowBlendSplits(value);
+    }
+
+
+
+    void LodMultiplierSliderDragEnd(bool changed)
+    {
+        var newValue = lodMultiplierSlider.Value;
+        GameSettings.settings.UpdateLodMultiplier(newValue);
     }
 
 
