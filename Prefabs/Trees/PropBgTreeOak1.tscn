@@ -41,6 +41,7 @@ surface_material_override/2 = ExtResource("4_ddcwo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 visible = false
 layers = 2
+cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("7_dk5m3")
 skeleton = NodePath("../..")
