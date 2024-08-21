@@ -33,7 +33,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-tree-fir-1-lod_prop-tree-fir-1-lod": {
+"prop-tree-fir-1-lod_prop-tree-fir-1-lod-1": {
 "generate/lightmap_uv": 0,
 "generate/lods": 2,
 "generate/shadow_meshes": 0,

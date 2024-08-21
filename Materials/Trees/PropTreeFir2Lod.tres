@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d3k5xhtjq8fmq"]
+
+[ext_resource type="Texture2D" uid="uid://dwm8mu3a78cfu" path="res://Textures/lod-tree-fir-2.png" id="1_18owq"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_18owq")
+metallic_specular = 0.0
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+disable_receive_shadows = true

@@ -51,13 +51,12 @@ mesh = ExtResource("1_38nvp")
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("2_kcb8e")
 
-[node name="Lod3" type="Node3D" parent="LodObject"]
-visible = false
-
-[node name="MeshTrunk" type="MeshInstance3D" parent="LodObject/Lod3"]
+[node name="Lod3" type="MeshInstance3D" parent="LodObject"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+visible = false
+layers = 2
 cast_shadow = 0
 gi_mode = 2
 mesh = ExtResource("7_52xnb")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("8_1lh3w")

@@ -1,22 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://xrjt7goiur8h"]
+[gd_scene load_steps=8 format=3 uid="uid://xrjt7goiur8h"]
 
-[ext_resource type="ArrayMesh" uid="uid://bxy1j6ll30n4h" path="res://Models/prop-tree-fir-lq-2.res" id="1_yhopp"]
+[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="1_valrn"]
+[ext_resource type="ArrayMesh" uid="uid://ddo1d2217jpg" path="res://Models/prop-tree-fir-2.res" id="2_82csx"]
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_jhkqv"]
-[ext_resource type="ArrayMesh" uid="uid://olbfu8rdhn18" path="res://Models/prop-tree-fir-lq-leaves-2.res" id="3_2qqqm"]
 [ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="4_53drb"]
+[ext_resource type="ArrayMesh" uid="uid://hjs7adpuec6r" path="res://Models/prop-tree-fir-leaves-2.res" id="4_alggc"]
+[ext_resource type="ArrayMesh" uid="uid://c6ixlteu3pxy4" path="res://Models/prop-tree-fir-2-lod.res" id="6_7l74y"]
+[ext_resource type="Material" uid="uid://d3k5xhtjq8fmq" path="res://Materials/Trees/PropTreeFir2Lod.tres" id="7_a3kxn"]
 
 [node name="PropBgTreeFir2" type="Node3D"]
 
-[node name="TrunkMesh" type="MeshInstance3D" parent="."]
+[node name="LodObject" type="Node3D" parent="."]
+script = ExtResource("1_valrn")
+
+[node name="Lod1" type="Node3D" parent="LodObject"]
+
+[node name="MeshTrunk" type="MeshInstance3D" parent="LodObject/Lod1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("1_yhopp")
+mesh = ExtResource("2_82csx")
+skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("2_jhkqv")
 
-[node name="LeavesMesh" type="MeshInstance3D" parent="."]
+[node name="MeshLeaves" type="MeshInstance3D" parent="LodObject/Lod1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("3_2qqqm")
+mesh = ExtResource("4_alggc")
+skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_53drb")
+
+[node name="Lod2" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+visible = false
+layers = 2
+cast_shadow = 0
+gi_mode = 2
+mesh = ExtResource("6_7l74y")
+surface_material_override/0 = ExtResource("7_a3kxn")
