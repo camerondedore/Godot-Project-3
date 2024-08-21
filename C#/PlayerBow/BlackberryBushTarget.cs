@@ -31,8 +31,10 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
         invisibleWallCollider1 = (CollisionShape3D) GetNode("InvisibleWall/Collider1");
         invisibleWallCollider2 = (CollisionShape3D) GetNode("InvisibleWall/Collider2");
         navLink = (NavigationLink3D) GetNode("NavLink");
-    }
 
+        navLink.Enabled = false;
+    }
+    
 
 
     public string GetArrowType()

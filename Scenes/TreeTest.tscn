@@ -1451,7 +1451,6 @@ shape = SubResource("BoxShape3D_5fs0y")
 
 [node name="BlockerLink" type="NavigationLink3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Spiderwebs"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 8, -23.939)
-enabled = false
 start_position = Vector3(0, 0.25, 1)
 end_position = Vector3(0, 0.25, -1)
 
