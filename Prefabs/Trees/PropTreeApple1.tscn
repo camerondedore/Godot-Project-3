@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://ditat2n60et15"]
+[gd_scene load_steps=14 format=3 uid="uid://ditat2n60et15"]
 
+[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="1_3oyqn"]
 [ext_resource type="ArrayMesh" uid="uid://b6kr71wu0u6mh" path="res://Models/prop-tree-apple-1.res" id="1_tkot2"]
 [ext_resource type="Material" uid="uid://c3ktxycy6oq6f" path="res://Materials/Trees/BarkApple.tres" id="2_kdn5e"]
+[ext_resource type="ArrayMesh" uid="uid://dqieoa66h25wg" path="res://Models/prop-tree-apple-1-lod.res" id="3_s27ke"]
+[ext_resource type="Material" uid="uid://boymd3ukajjrr" path="res://Materials/Trees/BarkAppleWind.tres" id="3_s74sb"]
 [ext_resource type="Material" uid="uid://c3ua2wmhukglu" path="res://Materials/Trees/LeavesApple.tres" id="3_v55md"]
 [ext_resource type="Material" uid="uid://b7pag2pkkvl0d" path="res://Materials/Props/PropApple.tres" id="4_jaw73"]
+[ext_resource type="ArrayMesh" uid="uid://c705d4qae0cii" path="res://Models/prop-tree-apple-1-lod-1.res" id="4_k40gy"]
+[ext_resource type="Material" uid="uid://dnj7b6swgc61t" path="res://Materials/Trees/LeavesAppleWind.tres" id="4_sw7fm"]
+[ext_resource type="Material" uid="uid://b7eoe0ybq631i" path="res://Materials/Props/PropAppleWind.tres" id="5_d21f6"]
+[ext_resource type="Material" uid="uid://d2y0t8mami3u5" path="res://Materials/Trees/PropTreeApple1Lod.tres" id="11_s1ims"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lls4m"]
 radius = 0.35
@@ -14,15 +21,6 @@ radius = 1.6
 
 [node name="PropTreeApple1" type="StaticBody3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-layers = 2
-gi_mode = 2
-mesh = ExtResource("1_tkot2")
-surface_material_override/0 = ExtResource("2_kdn5e")
-surface_material_override/1 = ExtResource("3_v55md")
-surface_material_override/2 = ExtResource("4_jaw73")
-
 [node name="TrunkCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
 shape = SubResource("CapsuleShape3D_lls4m")
@@ -30,3 +28,39 @@ shape = SubResource("CapsuleShape3D_lls4m")
 [node name="LeavesCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.40951, 0.22052)
 shape = SubResource("SphereShape3D_26v3x")
+
+[node name="LodObject" type="Node3D" parent="."]
+script = ExtResource("1_3oyqn")
+lodExtraDistanceSqr = 5625.0
+lodDistanceSqr = 2500.0
+
+[node name="Lod1" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_tkot2")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_s74sb")
+surface_material_override/1 = ExtResource("4_sw7fm")
+surface_material_override/2 = ExtResource("5_d21f6")
+
+[node name="Lod2" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_s27ke")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_kdn5e")
+surface_material_override/1 = ExtResource("3_v55md")
+surface_material_override/2 = ExtResource("4_jaw73")
+
+[node name="Lod3" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+layers = 2
+cast_shadow = 0
+gi_mode = 2
+mesh = ExtResource("4_k40gy")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("11_s1ims")

@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjp3slss1ghik"]
+[gd_scene load_steps=8 format=3 uid="uid://bjp3slss1ghik"]
 
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="1_eg6t3"]
 [ext_resource type="ArrayMesh" uid="uid://cvfycwu4fm38x" path="res://Models/prop-tree-apple-2.res" id="1_h3ds3"]
+[ext_resource type="ArrayMesh" uid="uid://diprlbgwfgn10" path="res://Models/prop-tree-apple-2-lod.res" id="3_d2wrs"]
+[ext_resource type="ArrayMesh" uid="uid://dor4ixumm0x0v" path="res://Models/prop-tree-apple-2-lod-1.res" id="4_kmtkp"]
+[ext_resource type="Material" uid="uid://0jgkbh8vvo2b" path="res://Materials/Trees/PropTreeApple2Lod.tres" id="5_1f8w8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4tou3"]
 radius = 0.2
@@ -12,13 +15,20 @@ radius = 1.4
 
 [node name="PropTreeApple2" instance=ExtResource("1_eg6t3")]
 
-[node name="MeshInstance3D" parent="." index="0"]
-mesh = ExtResource("1_h3ds3")
-
-[node name="TrunkCollision" parent="." index="1"]
+[node name="TrunkCollision" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 shape = SubResource("CapsuleShape3D_4tou3")
 
-[node name="LeavesCollision" parent="." index="2"]
+[node name="LeavesCollision" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8541, 0)
 shape = SubResource("SphereShape3D_odx04")
+
+[node name="Lod1" parent="LodObject" index="0"]
+mesh = ExtResource("1_h3ds3")
+
+[node name="Lod2" parent="LodObject" index="1"]
+mesh = ExtResource("3_d2wrs")
+
+[node name="Lod3" parent="LodObject" index="2"]
+mesh = ExtResource("4_kmtkp")
+surface_material_override/0 = ExtResource("5_1f8w8")

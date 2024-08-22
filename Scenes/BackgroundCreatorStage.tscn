@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0ctkote21ns"]
+[gd_scene load_steps=10 format=3 uid="uid://d0ctkote21ns"]
 
+[ext_resource type="PackedScene" uid="uid://bu8b1efkxsd3e" path="res://Prefabs/Trees/PropTreeApple3.tscn" id="1_dljn0"]
 [ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="1_rnsnc"]
 [ext_resource type="PackedScene" uid="uid://cb7naepeii5aj" path="res://Prefabs/Trees/PropBgTreeOak2.tscn" id="2_iygfe"]
 [ext_resource type="PackedScene" uid="uid://ckb3ng4tokwms" path="res://Prefabs/Trees/PropBgTreeOak3.tscn" id="3_d2pfi"]
@@ -24,7 +25,7 @@ shadow_opacity = 0.9
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o13yb")
 
-[node name="PropTreeFir2" parent="." instance=ExtResource("6_bk0k0")]
+[node name="PropTreeApple3" parent="." instance=ExtResource("1_dljn0")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.97275, 0, 6.37747)
 
 [node name="TreeWall" type="Node3D" parent="."]
