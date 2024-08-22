@@ -20,10 +20,10 @@ public partial class LodObjectExtra : LodObject
 
 
 
-    public override void LodCheck(Camera3D camera)
+    public override void LodCheck(Camera3D camera, float lodMultiplier)
     {
         // get distance squared to camera
-        var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition) * (1f / GameSettings.settings.currentSettings.LodMultiplier);
+        var distanceSqrToCamera = camera.GlobalPosition.DistanceSquaredTo(GlobalPosition) * lodMultiplier;
 
         // use 3 lod levels
         if(distanceSqrToCamera < lodDistanceSqr)

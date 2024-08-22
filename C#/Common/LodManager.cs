@@ -9,7 +9,18 @@ public partial class LodManager : Node
     int objectsPerTick = 10;
 	public static List<LodObject> lodObjects = new List<LodObject>();
 	Camera3D camera;
+	float lodMultiplier = 1;
     int objectIndex = 0;
+
+
+
+    public override void _Ready()
+    {
+		// get lod multiplier from settings
+        lodMultiplier = 1f / (float) GameSettings.settings.currentSettings.LodMultiplier;
+
+		GameSettingsUi.gamesSettingsUi.LodMultiplierChanged += UpdateLodMultiplier;
+    }
 
 
 
@@ -35,7 +46,7 @@ public partial class LodManager : Node
 			// keep index in range of machines
 			if(objectIndex < lodObjects.Count)
 			{
-				lodObjects[objectIndex].LodCheck(camera);
+				lodObjects[objectIndex].LodCheck(camera, lodMultiplier);
 			}
 
 			// next machine index
@@ -53,5 +64,12 @@ public partial class LodManager : Node
 			c--;
 		}
 	
+	}
+
+
+
+	public void UpdateLodMultiplier(double value)
+	{
+		lodMultiplier = 1f / ((float) value);
 	}
 }

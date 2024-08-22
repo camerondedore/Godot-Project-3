@@ -40,10 +40,6 @@ script = ExtResource("6_rcfh6")
 [node name="StateMachineQueuePopper" type="Node" parent="."]
 script = ExtResource("1_4luc3")
 
-[node name="LodManager" type="Node" parent="."]
-process_mode = 3
-script = ExtResource("8_ugcwb")
-
 [node name="PlayerInput" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("4_qu5pn")
@@ -239,6 +235,7 @@ popup/item_3/text = "Mailbox"
 popup/item_3/id = 3
 
 [node name="OverlayCanvas" type="CanvasLayer" parent="."]
+layer = 101
 
 [node name="Overlay" type="Control" parent="OverlayCanvas"]
 layout_mode = 3
@@ -261,6 +258,10 @@ grow_horizontal = 0
 theme = ExtResource("14_ykato")
 text = "100"
 script = ExtResource("13_82w01")
+
+[node name="LodManager" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("8_ugcwb")
 
 [node name="GameSettingsEnvironmentLoader" type="Node" parent="."]
 script = ExtResource("7_ad3x1")

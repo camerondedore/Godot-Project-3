@@ -25,6 +25,7 @@ public partial class GameSettingsUi : Node
     public event Action<int> SunShadowQualityChanged;
     public event Action<int> SunShadowDistanceChanged;
     public event Action<bool> SunShadowBlendSplitsChanged;
+    public event Action<double> LodMultiplierChanged;
     public event Action<bool> ShowFpsChanged;
     public event Action<double> MouseSensitivityChanged;
     public event Action<int> VsyncChangedChanged;
@@ -105,6 +106,7 @@ public partial class GameSettingsUi : Node
     void LodMultiplierSliderDragEnd(bool changed)
     {
         var newValue = lodMultiplierSlider.Value;
+        LodMultiplierChanged(newValue);
         GameSettings.settings.UpdateLodMultiplier(newValue);
     }
 
