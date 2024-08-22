@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://565phnp5c2il"]
 
-[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="1_ne8pu"]
+[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="1_5eof1"]
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_4p86m"]
-[ext_resource type="ArrayMesh" uid="uid://ddo1d2217jpg" path="res://Models/prop-tree-fir-2.res" id="2_t37mr"]
-[ext_resource type="ArrayMesh" uid="uid://hjs7adpuec6r" path="res://Models/prop-tree-fir-leaves-2.res" id="3_wwahn"]
+[ext_resource type="Material" uid="uid://cuadjjc0v33nd" path="res://Materials/Trees/LeavesFirWindShort.tres" id="4_lh2xf"]
 [ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="4_qdybx"]
 [ext_resource type="ArrayMesh" uid="uid://c6ixlteu3pxy4" path="res://Models/prop-tree-fir-2-lod.res" id="6_frjfi"]
+[ext_resource type="ArrayMesh" uid="uid://e4l6ix0kem2w" path="res://Models/prop-tree-fir-2-lod-1.res" id="6_koih0"]
 [ext_resource type="Material" uid="uid://d3k5xhtjq8fmq" path="res://Materials/Trees/PropTreeFir2Lod.tres" id="7_fosba"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hwls3"]
@@ -18,31 +18,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("ConvexPolygonShape3D_hwls3")
 
 [node name="LodObject" type="Node3D" parent="."]
-script = ExtResource("1_ne8pu")
+script = ExtResource("1_5eof1")
+lodExtraDistanceSqr = 5625.0
+lodDistanceSqr = 2500.0
 
-[node name="Lod1" type="Node3D" parent="LodObject"]
-
-[node name="MeshTrunk" type="MeshInstance3D" parent="LodObject/Lod1"]
+[node name="Lod1" type="MeshInstance3D" parent="LodObject"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_t37mr")
-skeleton = NodePath("../../..")
+mesh = ExtResource("6_frjfi")
 surface_material_override/0 = ExtResource("2_4p86m")
-
-[node name="MeshLeaves" type="MeshInstance3D" parent="LodObject/Lod1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-layers = 2
-gi_mode = 2
-mesh = ExtResource("3_wwahn")
-skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("4_qdybx")
+surface_material_override/1 = ExtResource("4_lh2xf")
 
 [node name="Lod2" type="MeshInstance3D" parent="LodObject"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("6_frjfi")
+surface_material_override/0 = ExtResource("2_4p86m")
+surface_material_override/1 = ExtResource("4_qdybx")
+
+[node name="Lod3" type="MeshInstance3D" parent="LodObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 visible = false
 layers = 2
 cast_shadow = 0
 gi_mode = 2
-mesh = ExtResource("6_frjfi")
+mesh = ExtResource("6_koih0")
 surface_material_override/0 = ExtResource("7_fosba")
