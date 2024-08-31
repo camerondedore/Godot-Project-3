@@ -15,8 +15,9 @@ uniform vec2 waveVelocity3 = vec2(0.15, -0.05);
 //uniform float refractionStrength : hint_range(0.0, 0.5) = 0.05;
 uniform float depthOffset = -0.75;
 uniform float beersLaw = 2.0;
-uniform float heightAmount = 5;
-uniform float heightStrength = 2;
+uniform float normalMapHeight = 1;
+uniform float heightMapPower = 5;
+uniform float heightMapStrength = 2;
 uniform sampler2D waterNormalMap1 : hint_normal;
 uniform sampler2D waterNormalMap2 : hint_normal;
 uniform sampler2D waterNormalMap3 : hint_normal;
@@ -59,15 +60,16 @@ void fragment()
 	vec3 waterNormal2 = texture(waterNormalMap2, worldUvCoordinates + waveOffset2).rgb;
 	vec3 waterNormal3 = texture(waterNormalMap3, worldUvCoordinates + waveOffset3).rgb;
 	vec3 combinedWaterNormal = normalize(waterNormal3 + waterNormal1 + waterNormal2);
-	vec3 combinedWaterNormalSoftEdge = combinedWaterNormal * clamp(depthBlend * edgeHardness, 0.0, 1.0);
+	combinedWaterNormal = mix(vec3(0.5, 0.5, 1), combinedWaterNormal, normalMapHeight);
+	vec3 combinedWaterNormalSoftEdge = mix(vec3(0.5, 0.5, 1), combinedWaterNormal, clamp(depthBlend * edgeHardness, 0.0, 1.0));
 
 	// get height from texture using world position for UV coordinated
 	float waterHeight1 = texture(waterHeightMap1, worldUvCoordinates + waveOffset1).r;
 	float waterHeight2 = texture(waterHeightMap2, worldUvCoordinates + waveOffset2).r;
 	float waterHeight3 = texture(waterHeightMap3, worldUvCoordinates + waveOffset3).r;
 	float combinedWaterHeight = (waterHeight1 + waterHeight2 + waterHeight3) * 0.33;
-	combinedWaterHeight = pow(combinedWaterHeight, heightAmount);
-	vec3 waterHeight = waterColor * combinedWaterHeight * heightStrength;
+	combinedWaterHeight = pow(combinedWaterHeight, heightMapPower);
+	float waterHeight = combinedWaterHeight * heightMapStrength;
 
 	// get global waves for foam
 	float foamWave = 1.0 + foamWaveSize * (0.5 * sin(worldPosition.x + worldPosition.y + TIME * foamWaveSpeed) + 0.5);
@@ -78,7 +80,7 @@ void fragment()
 	float foam2 = texture(waterFoamTexture2, -worldUvCoordinates + waveOffset2).r;
 	float foamCombined = clamp(smoothstep(0.1, 1.0, (foam1 + foam2) * 0.5), 0.0, 1.0);
 	vec3 foamTexture = foamColor * foamCombined * foamBlend;
-	vec3 faomTextureSoftEdge = foamTexture * clamp(depthBlend * edgeHardness, 0.0, 1.0);
+	vec3 foamTextureSoftEdge = foamTexture * clamp(depthBlend * edgeHardness, 0.0, 1.0);
 
 	// refraction
 	//vec3 unpackedNormal = combinedWaterNormal;
@@ -103,16 +105,12 @@ void fragment()
 	depthForFog = clamp(depthForFog, 0.0, 1.0);
 	vec3 background = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
 	vec3 combinedBackgroundFog = mix(background, waterColor, depthForFog);
-	vec3 combinedBgFogFoam = combinedBackgroundFog + foamTexture * 0.5 + waterHeight;
+	vec3 combinedBgFogFoam = combinedBackgroundFog + foamTexture * 0.5 + waterHeight * waterColor;
 	vec3 combinedWithSoftEdge = mix(combinedBgFogFoam, background, clamp(1.0 - depthBlend * edgeHardness, 0.0, 1.0));
-
-	// roughness
-	//float roughnessSoftEdge = roughness * (1.0 - clamp(depthBlend * edgeHardness, 0.0, 1.0));
 
 	// apply
 	NORMAL_MAP = combinedWaterNormalSoftEdge;
 	ROUGHNESS = roughness;
 	EMISSION = combinedWithSoftEdge;
-	ALBEDO = faomTextureSoftEdge;
-	//ALBEDO = (1.0 - clamp(depthBlend * edgeHardness, 0.0, 1.0)) * vec3(1);
+	ALBEDO = foamTextureSoftEdge;
 }
