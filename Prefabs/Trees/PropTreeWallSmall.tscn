@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfs02jpayr7eu"]
+
+[ext_resource type="PackedScene" uid="uid://xrjt7goiur8h" path="res://Prefabs/Trees/PropBgTreeFir2.tscn" id="2_saquw"]
+[ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="3_0x3bs"]
+[ext_resource type="PackedScene" uid="uid://ckb3ng4tokwms" path="res://Prefabs/Trees/PropBgTreeOak3.tscn" id="5_2flq4"]
+[ext_resource type="PackedScene" uid="uid://xi0m8mskyllc" path="res://Prefabs/Trees/PropBgTreeOak4.tscn" id="6_o2lu6"]
+[ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="7_8yuge"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcigs"]
+size = Vector3(8, 12, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jl82n"]
+size = Vector3(8, 4.242, 4.242)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jqyxc"]
+size = Vector3(4, 8, 4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_arm3p"]
+radius = 2.0
+height = 8.0
+
+[node name="PropTreeWallSmall" type="StaticBody3D"]
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+shape = SubResource("BoxShape3D_hcigs")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 12, 0)
+shape = SubResource("BoxShape3D_jl82n")
+
+[node name="PropBgTreeFir2" parent="." instance=ExtResource("2_saquw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0982892, 0, -1.91666)
+
+[node name="PropBgTreeFir3" parent="." instance=ExtResource("2_saquw")]
+transform = Transform3D(-0.218995, 0, -0.975726, 0, 1, 0, 0.975726, 0, -0.218995, -3.08976, 0, 1.77421)
+
+[node name="PropBgTreeFir4" parent="." instance=ExtResource("2_saquw")]
+transform = Transform3D(-0.898432, 0, 0.651241, 0, 1.10964, 0, -0.651241, 0, -0.898432, -1.62033, 0, 1.55358)
+
+[node name="PropBgTreeFir7" parent="." instance=ExtResource("2_saquw")]
+transform = Transform3D(-0.105689, 0, -1.30874, 0, 1.313, 0, 1.30874, 0, -0.105689, 2.22564, -4.76837e-07, 1.20794)
+
+[node name="PropBgTreeOak1" parent="." instance=ExtResource("3_0x3bs")]
+transform = Transform3D(0.319323, 0, 0.947646, 0, 1, 0, -0.947646, 0, 0.319323, -2.74994, 0, -0.679185)
+
+[node name="PropBgTreeOak3" parent="." instance=ExtResource("5_2flq4")]
+transform = Transform3D(0.895642, 0, -0.444776, 0, 1, 0, 0.444776, 0, 0.895642, 2.46737, 0, -1.38963)
+
+[node name="PropBgTreeOak4" parent="." instance=ExtResource("6_o2lu6")]
+transform = Transform3D(0.914134, 0, 0.405413, 0, 1, 0, -0.405413, 0, 0.914134, 0.285179, 0, 1.33693)
+
+[node name="PropBlackberryBushBg5" parent="." instance=ExtResource("7_8yuge")]
+transform = Transform3D(-0.995572, 0, -0.0940044, 0, 1, 0, 0.0940044, 0, -0.995572, 0.544797, 0, 1.42676)
+
+[node name="PropBlackberryBushBg2" parent="." instance=ExtResource("7_8yuge")]
+transform = Transform3D(-0.999901, 0, -0.0141018, 0, 1, 0, 0.0141018, 0, -0.999901, -0.722967, 0, -1.52235)
+
+[node name="PropBlackberryBushBg3" parent="." instance=ExtResource("7_8yuge")]
+transform = Transform3D(-0.960973, 0, -0.276644, 0, 1, 0, 0.276644, 0, -0.960973, -0.721627, 0, 0.764378)
+
+[node name="PropBlackberryBushBg6" parent="." instance=ExtResource("7_8yuge")]
+transform = Transform3D(-0.917443, 0, 0.397868, 0, 1, 0, -0.397868, 0, -0.917443, 0.792065, 0, -0.344414)
+
+[node name="VisionBlocker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+collision_layer = 8192
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionBlocker"]
+shape = SubResource("BoxShape3D_jqyxc")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="VisionBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+shape = SubResource("CapsuleShape3D_arm3p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="VisionBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+shape = SubResource("CapsuleShape3D_arm3p")
