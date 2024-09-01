@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfi7lwdus6qt5"]
 
-[ext_resource type="PackedScene" uid="uid://b77qh7ya7mcrk" path="res://Prefabs/Platforms/PropPlatformLogs.tscn" id="1_uvysc"]
-[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Small Items/PropBoardPost1.tscn" id="2_7iihs"]
-[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Small Items/PropBoardPost2.tscn" id="3_ib14u"]
-[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Small Items/PropBoardShort.tscn" id="4_pnpqv"]
+[ext_resource type="PackedScene" uid="uid://b77qh7ya7mcrk" path="res://Prefabs/Fabrications/PropPlatformLogs.tscn" id="1_uvysc"]
+[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="2_7iihs"]
+[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Lumber/PropBoardPost2.tscn" id="3_ib14u"]
+[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Lumber/PropBoardShort.tscn" id="4_pnpqv"]
 
 [node name="PropPlatformCantilever" type="Node3D"]
 

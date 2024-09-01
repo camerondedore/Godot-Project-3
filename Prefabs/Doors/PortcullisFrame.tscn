@@ -2,8 +2,8 @@
 
 [ext_resource type="ArrayMesh" uid="uid://4exg1mq6m1cx" path="res://Models/prop-portcullis-frame.res" id="1_f2bn1"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_knjn0"]
-[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_7nt62"]
-[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="4_xkof5"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_knnrj"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="4_5swud"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_appmw"]
 size = Vector3(1.8, 3.3, 1.5)
@@ -17,8 +17,8 @@ size = Vector3(6.1, 3.75, 1.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 mesh = ExtResource("1_f2bn1")
 surface_material_override/0 = ExtResource("2_knjn0")
-surface_material_override/1 = ExtResource("3_7nt62")
-surface_material_override/2 = ExtResource("4_xkof5")
+surface_material_override/1 = ExtResource("3_knnrj")
+surface_material_override/2 = ExtResource("4_5swud")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 1.65, 0)

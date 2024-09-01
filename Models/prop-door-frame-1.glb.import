@@ -3,20 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bw5lcaxjsdtxq"
-path="res://.godot/imported/prop-doors.glb-f4d00679fd16839241bfe8ce4a2372d9.scn"
+uid="uid://d0hhl7mw31b3e"
+path="res://.godot/imported/prop-door-frame-1.glb-cf2cce90da2b2c3b2aac0888af569a3d.scn"
 
 [deps]
 
-source_file="res://Models/prop-doors.glb"
-dest_files=["res://.godot/imported/prop-doors.glb-f4d00679fd16839241bfe8ce4a2372d9.scn"]
+source_file="res://Models/prop-door-frame-1.glb"
+dest_files=["res://.godot/imported/prop-door-frame-1.glb-cf2cce90da2b2c3b2aac0888af569a3d.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -28,20 +29,20 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-doors_prop-door-old": {
-"generate/lightmap_uv": 0,
+"prop-door-frame-1_prop-door-frame-1": {
+"generate/lightmap_uv": 1,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-door-old.res"
+"save_to_file/path": "res://Models/prop-door-frame-1.res"
 }
 }
 }
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1

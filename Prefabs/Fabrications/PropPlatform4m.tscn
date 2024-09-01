@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://b71k8ok3eu1ci"]
 
-[ext_resource type="PackedScene" uid="uid://b77qh7ya7mcrk" path="res://Prefabs/Platforms/PropPlatformLogs.tscn" id="1_jqevx"]
-[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Small Items/PropBoardPost1.tscn" id="2_4whtp"]
-[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Small Items/PropBoardPost2.tscn" id="3_ykh3n"]
-[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Small Items/PropBoard1.tscn" id="4_imlmt"]
-[ext_resource type="PackedScene" uid="uid://byyhb3n7dtwht" path="res://Prefabs/Small Items/PropBoard2.tscn" id="5_k02so"]
-[ext_resource type="PackedScene" uid="uid://byfxqpcowymc0" path="res://Prefabs/Small Items/PropBoard3.tscn" id="6_wqvmk"]
-[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Small Items/PropBoardShort.tscn" id="7_gcb7s"]
+[ext_resource type="PackedScene" uid="uid://b77qh7ya7mcrk" path="res://Prefabs/Fabrications/PropPlatformLogs.tscn" id="1_jqevx"]
+[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="2_4whtp"]
+[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Lumber/PropBoardPost2.tscn" id="3_ykh3n"]
+[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Lumber/PropBoard1.tscn" id="4_imlmt"]
+[ext_resource type="PackedScene" uid="uid://byyhb3n7dtwht" path="res://Prefabs/Lumber/PropBoard2.tscn" id="5_k02so"]
+[ext_resource type="PackedScene" uid="uid://byfxqpcowymc0" path="res://Prefabs/Lumber/PropBoard3.tscn" id="6_wqvmk"]
+[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Lumber/PropBoardShort.tscn" id="7_gcb7s"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k3oox"]
 size = Vector3(2.15, 1.6, 2.6)

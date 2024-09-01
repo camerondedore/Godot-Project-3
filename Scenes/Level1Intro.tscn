@@ -13,16 +13,16 @@
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="8_upf4p"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="9_dl117"]
 [ext_resource type="ArrayMesh" uid="uid://csnpnq41xfu" path="res://Models/level-1-tree-wall.res" id="11_glw4y"]
-[ext_resource type="PackedScene" uid="uid://b71k8ok3eu1ci" path="res://Prefabs/Platforms/PropPlatform4m.tscn" id="11_q3dqd"]
+[ext_resource type="PackedScene" uid="uid://b71k8ok3eu1ci" path="res://Prefabs/Fabrications/PropPlatform4m.tscn" id="11_q3dqd"]
 [ext_resource type="PackedScene" uid="uid://dchgvk7qou0uy" path="res://Prefabs/Small Items/PropBanner.tscn" id="11_qguqo"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="12_0it4w"]
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="12_3cr32"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="12_ef06k"]
-[ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Platforms/PropPlatformSmall4m.tscn" id="13_cft54"]
+[ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Fabrications/PropPlatformSmall4m.tscn" id="13_cft54"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="13_p84f7"]
 [ext_resource type="PackedScene" uid="uid://bqieml050c1mh" path="res://Prefabs/Food/PropFirePitWithStand.tscn" id="14_7eexx"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="14_a60p7"]
-[ext_resource type="PackedScene" uid="uid://b8wbom174i6wt" path="res://Prefabs/Small Items/PropTentSmall.tscn" id="14_mxw3m"]
+[ext_resource type="PackedScene" uid="uid://b8wbom174i6wt" path="res://Prefabs/Fabrications/PropTentSmall.tscn" id="14_mxw3m"]
 [ext_resource type="PackedScene" uid="uid://bhgoifnu2kwve" path="res://Prefabs/Food/PropPot2.tscn" id="15_itxqa"]
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="15_xmlr4"]
 [ext_resource type="PackedScene" uid="uid://dunv4vxlrd3kx" path="res://Prefabs/Food/PropFirePit.tscn" id="16_de3to"]
@@ -41,7 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://dq6eehi3eqtin" path="res://Prefabs/Food/PropLadle.tscn" id="28_4tkv3"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="29_i8muj"]
 [ext_resource type="Script" path="res://C#/Common/ActivatableTriggerDead.cs" id="30_do6d6"]
-[ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Lumber/PropPicketAbatisWall.tscn" id="31_sp1mm"]
+[ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Fabrications/PropPicketAbatisWall.tscn" id="31_sp1mm"]
 [ext_resource type="PackedScene" uid="uid://dxtde18xqi2vw" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="33_l0u0o"]
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="34_gffhv"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="34_molep"]
@@ -57,11 +57,11 @@
 [ext_resource type="PackedScene" uid="uid://dmq1a7cy06lcd" path="res://Prefabs/Rocks/PropRockMedium.tscn" id="39_8qm6r"]
 [ext_resource type="PackedScene" uid="uid://dfs02jpayr7eu" path="res://Prefabs/Trees/PropTreeWallSmall.tscn" id="45_14142"]
 [ext_resource type="PackedScene" uid="uid://c0d1fd6qwbddv" path="res://Prefabs/Lumber/PropLogPileSmall.tscn" id="49_dpm30"]
-[ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Small Items/PropLogStand.tscn" id="49_r4wgc"]
+[ext_resource type="PackedScene" uid="uid://bb5wv5gl5ku4k" path="res://Prefabs/Lumber/PropLogStand.tscn" id="49_r4wgc"]
 [ext_resource type="PackedScene" uid="uid://dcqsmpmkmc8mv" path="res://Prefabs/Lumber/PropLogOakStripped.tscn" id="50_dmwpy"]
 [ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="50_rjbtb"]
 [ext_resource type="PackedScene" uid="uid://cu3qptif3a78j" path="res://Prefabs/Lumber/PropLogOakStripping.tscn" id="51_7tph2"]
-[ext_resource type="PackedScene" uid="uid://dfi7lwdus6qt5" path="res://Prefabs/Platforms/PropPlatformCantilever.tscn" id="56_1whxi"]
+[ext_resource type="PackedScene" uid="uid://dfi7lwdus6qt5" path="res://Prefabs/Fabrications/PropPlatformCantilever.tscn" id="56_1whxi"]
 [ext_resource type="PackedScene" uid="uid://c5x6r3il872vj" path="res://Prefabs/Torches/PropTorchLit.tscn" id="59_w1sr2"]
 [ext_resource type="PackedScene" uid="uid://drsrh0e050xun" path="res://Prefabs/Plants/PropBlackberryBushSquareLarge.tscn" id="60_f2jj4"]
 [ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="60_tfjbe"]
@@ -217,33 +217,6 @@ transform = Transform3D(-0.995557, 0, -0.0941612, 0, 1, 0, 0.0941612, 0, -0.9955
 [node name="PropBanner2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("11_qguqo")]
 transform = Transform3D(-0.94793, 0, 0.31848, 0, 1, 0, -0.31848, 0, -0.94793, 19.9222, -0.175893, -47.6548)
 
-[node name="PropTentSmall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(0.973087, 0, -0.23044, 0, 1, 0, 0.23044, 0, 0.973087, -22.9317, 8, -55.8674)
-
-[node name="PropTentSmall2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(0.982428, 0, 0.186644, 0, 1, 0, -0.186644, 0, 0.982428, -18.3139, 8, -55.5692)
-
-[node name="PropTentSmall3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(0.188975, 0, 0.981982, 0, 1, 0, -0.981982, 0, 0.188975, -14.0584, 8, -66.1262)
-
-[node name="PropTentSmall4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(-0.997289, 0, -0.0735862, 0, 1, 0, 0.0735862, 0, -0.997289, -14.0783, -9.98974e-05, -172.232)
-
-[node name="PropTentSmall5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(-0.99225, 0, -0.124259, 0, 1, 0, 0.124259, 0, -0.99225, -20.22, -9.98974e-05, -172.339)
-
-[node name="PropTentSmall9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(0.982894, 0, -0.184175, 0, 1, 0, 0.184175, 0, 0.982894, -12.1733, -0.000100613, -192.315)
-
-[node name="PropTentSmall10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(0.994453, 0, 0.105188, 0, 1, 0, -0.105188, 0, 0.994453, -17.3701, -0.000100613, -191.9)
-
-[node name="PropTentSmall11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(-0.616404, 0, 0.78743, 0, 1, 0, -0.78743, 0, -0.616404, -1.36083, -9.96593e-05, -206.45)
-
-[node name="PropTentSmall12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_mxw3m")]
-transform = Transform3D(-0.338558, 0, 0.940946, 0, 1, 0, -0.940946, 0, -0.338558, -2.65861, -9.96593e-05, -210.963)
-
 [node name="PropFirePitWithStand" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("14_7eexx")]
 transform = Transform3D(0.96105, 0, 0.276376, 0, 1, 0, -0.276376, 0, 0.96105, -15.9789, -9.94205e-05, -168.224)
 metadata/_edit_group_ = true
@@ -310,102 +283,129 @@ transform = Transform3D(0.997162, -0.0472704, 0.0586037, -7.45058e-09, 0.778353,
 [node name="PropBanner4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("11_qguqo")]
 transform = Transform3D(0.395433, 0, 0.918495, 0, 1, 0, -0.918495, 0, 0.395433, -63.3691, 8, -197.589)
 
-[node name="Platforms" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
+[node name="Fabrications" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
-[node name="PropPlatformCantilever" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("56_1whxi")]
+[node name="PropPlatformCantilever" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("56_1whxi")]
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -15.8437, 8, -95.5605)
 
-[node name="PropPlatformCantilever2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("56_1whxi")]
+[node name="PropPlatformCantilever2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("56_1whxi")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.8437, 8, -104.561)
 
-[node name="PropPlatformCantilever3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("56_1whxi")]
+[node name="PropPlatformCantilever3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("56_1whxi")]
 transform = Transform3D(-4.47035e-08, 0, -1, 0, 1, 0, 1, 0, -4.47035e-08, -40.8266, 8, -201.184)
 
-[node name="PropPlatformSmall4m" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("13_cft54")]
+[node name="PropPlatformSmall4m" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("13_cft54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.3191, -0.000200272, -161.452)
 metadata/_edit_group_ = true
 
-[node name="PropBlackberryBushSquare" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatformSmall4m" instance=ExtResource("19_4ji1y")]
+[node name="PropBlackberryBushSquare" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatformSmall4m" instance=ExtResource("19_4ji1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0114994, -9.53005e-07, 0.0870056)
 
-[node name="PropPlatformSmall4m2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("13_cft54")]
+[node name="PropPlatformSmall4m2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("13_cft54")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.2004, -0.000200272, -161.452)
 metadata/_edit_group_ = true
 
-[node name="PropBlackberryBushSquare" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatformSmall4m2" instance=ExtResource("19_4ji1y")]
+[node name="PropBlackberryBushSquare" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatformSmall4m2" instance=ExtResource("19_4ji1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0114994, -9.53005e-07, 0.0870056)
 
-[node name="PropPlatformSmall4m4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("13_cft54")]
+[node name="PropPlatformSmall4m4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("13_cft54")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.3178, -0.000200272, -153.349)
 metadata/_edit_group_ = true
 
-[node name="PropBlackberryBushSquare" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatformSmall4m4" instance=ExtResource("19_4ji1y")]
+[node name="PropBlackberryBushSquare" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatformSmall4m4" instance=ExtResource("19_4ji1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0114994, -9.53005e-07, 0.0870056)
 
-[node name="PropPlatform4m3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -22.2185, -0.000204086, -95.3006)
 
-[node name="PropPlatform4m5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.2185, 1.9998, -95.3006)
 
-[node name="PropPlatform4m6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -25.0155, -2.0002, -95.3006)
 
-[node name="PropPlatform4m4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.2185, -2.0002, -95.3006)
 
-[node name="PropPlatform4m7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.251, -0.000200272, -161.634)
 metadata/_edit_group_ = true
 
-[node name="BlackBerrybushSquareLarge2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatform4m7" instance=ExtResource("60_f2jj4")]
+[node name="BlackBerrybushSquareLarge2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatform4m7" instance=ExtResource("60_f2jj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00270081, 9.53994e-07, 0.0410004)
 
-[node name="PropPlatform4m9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-0.00350813, -2.68362e-13, 0.999994, -1.53344e-10, 1, -2.68355e-13, -0.999994, -1.53344e-10, -0.00350813, -31.3506, 2.9998, -201.097)
 
-[node name="PropPlatform4m10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(0.00350806, -2.68361e-13, -0.999994, 1.53344e-10, 1, 2.68343e-13, 0.999994, -1.53344e-10, 0.00350806, -31.3506, -1.0002, -201.097)
 
-[node name="PropPlatform4m13" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m13" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(0.999994, -2.68361e-13, 0.00350809, -2.68349e-13, 1, 1.53344e-10, -0.00350809, -1.53344e-10, 0.999994, -26.3506, -1.0002, -201.114)
 
-[node name="PropPlatform4m14" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m14" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-0.00350813, -2.68362e-13, 0.999994, -1.53344e-10, 1, -2.68355e-13, -0.999994, -1.53344e-10, -0.00350813, -23.7736, -3.0002, -201.123)
 
-[node name="PropPlatform4m11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-0.999994, -2.68361e-13, -0.00350818, 2.68362e-13, 1, -1.53344e-10, 0.00350818, -1.53344e-10, -0.999994, -28.6506, 0.9998, -201.106)
 
-[node name="PropPlatform4m12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(0.999994, -2.68361e-13, 0.00350809, -2.68349e-13, 1, 1.53344e-10, -0.00350809, -1.53344e-10, 0.999994, -28.6506, -3.0002, -201.106)
 
-[node name="PropPlatform4m8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.1787, 7.99981, -238.04)
 metadata/_edit_group_ = true
 
-[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatform4m8" instance=ExtResource("60_f2jj4")]
+[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatform4m8" instance=ExtResource("60_f2jj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573959, 0.000189781, 0.0290985)
 
-[node name="PropPlatform4m15" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m15" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -75.2921, 7.99981, -244.436)
 metadata/_edit_group_ = true
 
-[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatform4m15" instance=ExtResource("60_f2jj4")]
+[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatform4m15" instance=ExtResource("60_f2jj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573959, 0.000189781, 0.0290985)
 
-[node name="PropPlatform4m16" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m16" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-1, -4.37114e-08, -8.74228e-08, -4.37114e-08, 1, 4.37114e-08, 8.74228e-08, 4.37114e-08, -1, -61.5222, 7.99981, -255.8)
 metadata/_edit_group_ = true
 
-[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatform4m16" instance=ExtResource("60_f2jj4")]
+[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatform4m16" instance=ExtResource("60_f2jj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573959, 0.000189781, 0.0290985)
 
-[node name="PropPlatform4m17" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms" instance=ExtResource("11_q3dqd")]
+[node name="PropPlatform4m17" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("11_q3dqd")]
 transform = Transform3D(-0.707107, 3.55271e-15, -0.707107, -4.37114e-08, 1, 4.37114e-08, 0.707107, 6.18172e-08, -0.707107, -70.3415, 7.99981, -267.661)
 metadata/_edit_group_ = true
 
-[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Platforms/PropPlatform4m17" instance=ExtResource("60_f2jj4")]
+[node name="BlackBerrybushSquareLarge" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPlatform4m17" instance=ExtResource("60_f2jj4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0573959, 0.000189781, 0.0290985)
+
+[node name="PropTentSmall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.973087, 0, -0.23044, 0, 1, 0, 0.23044, 0, 0.973087, -22.9317, 8, -55.8674)
+
+[node name="PropTentSmall2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.982428, 0, 0.186644, 0, 1, 0, -0.186644, 0, 0.982428, -18.3139, 8, -55.5692)
+
+[node name="PropTentSmall3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.188975, 0, 0.981982, 0, 1, 0, -0.981982, 0, 0.188975, -14.0584, 8, -66.1262)
+
+[node name="PropTentSmall4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(-0.997289, 0, -0.0735862, 0, 1, 0, 0.0735862, 0, -0.997289, -14.0783, -9.98974e-05, -172.232)
+
+[node name="PropTentSmall5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(-0.99225, 0, -0.124259, 0, 1, 0, 0.124259, 0, -0.99225, -20.22, -9.98974e-05, -172.339)
+
+[node name="PropTentSmall9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.982894, 0, -0.184175, 0, 1, 0, 0.184175, 0, 0.982894, -12.1733, -0.000100613, -192.315)
+
+[node name="PropTentSmall10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(0.994453, 0, 0.105188, 0, 1, 0, -0.105188, 0, 0.994453, -17.3701, -0.000100613, -191.9)
+
+[node name="PropTentSmall11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(-0.616404, 0, 0.78743, 0, 1, 0, -0.78743, 0, -0.616404, -1.36083, -9.96593e-05, -206.45)
+
+[node name="PropTentSmall12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("14_mxw3m")]
+transform = Transform3D(-0.338558, 0, 0.940946, 0, 1, 0, -0.940946, 0, -0.338558, -2.65861, -9.96593e-05, -210.963)
 
 [node name="BlackberryBushes" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
@@ -1774,28 +1774,6 @@ transform = Transform3D(-0.448902, 0, -0.893581, 0, 1, 0, 0.893581, 0, -0.448902
 [node name="PropTreeSplittingStump!1714105077_213" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stumps" instance=ExtResource("33_l0u0o")]
 transform = Transform3D(-0.0479714, 0, -0.998849, 0, 1, 0, 0.998849, 0, -0.0479714, -22.1116, 7.9999, -77.7861)
 
-[node name="Logs" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
-
-[node name="PropLogPileSmall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Logs" instance=ExtResource("49_dpm30")]
-transform = Transform3D(0.61606, 0, -0.787699, 0, 1, 0, 0.787699, 0, 0.61606, -22.2894, 0, -211.649)
-
-[node name="PropLogPileSmall2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Logs" instance=ExtResource("49_dpm30")]
-transform = Transform3D(0.893293, 0, -0.449475, 0, 1, 0, 0.449475, 0, 0.893293, -14.7469, 8, -72.5193)
-
-[node name="PropLogStand" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Logs" instance=ExtResource("49_r4wgc")]
-transform = Transform3D(0.497035, 0, -0.867731, 0, 1, 0, 0.867731, 0, 0.497035, -11.888, 0.599801, -211.657)
-
-[node name="PropLogStand2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Logs" instance=ExtResource("49_r4wgc")]
-transform = Transform3D(-0.497034, 0, 0.867731, 0, 1, 0, -0.867731, 0, -0.497034, -15.0595, 0.599801, -209.84)
-
-[node name="PropLogOakStripped" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Logs" instance=ExtResource("50_dmwpy")]
-transform = Transform3D(0.490768, 0.87129, 3.80853e-08, 0, -4.37114e-08, 1, 0.87129, -0.490768, -2.14521e-08, -13.2544, 1.41559, -210.099)
-collision_layer = 1
-
-[node name="PropLogOakStripping" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Logs" instance=ExtResource("51_7tph2")]
-transform = Transform3D(-0.436646, 0.867642, 0.237776, -0.499949, -0.0142936, -0.865937, -0.747924, -0.496984, 0.440018, -13.9577, 1.44395, -211.131)
-collision_layer = 1
-
 [node name="Lumber" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="PropFirewood1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("60_tfjbe")]
@@ -1816,28 +1794,46 @@ transform = Transform3D(0.495019, -0.714082, 0.495019, 0.707107, -5.96046e-08, -
 [node name="PropFirewood5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("64_b0pt1")]
 transform = Transform3D(-0.683363, -5.96046e-08, 0.730079, 0, -1, -8.74228e-08, 0.730079, -2.98023e-08, 0.683363, -15.7315, 8.35236, -59.6139)
 
-[node name="PicketsAbatis" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
-
-[node name="PropPicketAbatisWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-0.93173, 0, 0.363153, 0, 1, 0, -0.363153, 0, -0.93173, 17.0564, 4.76837e-07, -44.8252)
 
-[node name="PropPicketAbatisWall3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-0.692283, 0, 0.721627, 0, 1, 0, -0.721627, 0, -0.692283, -49.2313, -4.76837e-07, -51.6285)
 
-[node name="PropPicketAbatisWall4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-0.999992, 0, -0.00417215, 0, 1, 0, 0.00417215, 0, -0.999992, -56.0026, -4.76837e-07, -55.4291)
 
-[node name="PropPicketAbatisWall5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-0.922154, 0, -0.386824, 0, 1, 0, 0.386824, 0, -0.922154, -63.8141, -4.76837e-07, -53.3637)
 
-[node name="PropPicketAbatisWall2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-0.976912, 0, 0.213644, 0, 1, 0, -0.213644, 0, -0.976912, 20.7703, 4.76837e-07, -43.1441)
 
-[node name="PropPicketAbatisWall6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65.4571, 8, -203.874)
 
-[node name="PropPicketAbatisWall7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/PicketsAbatis" instance=ExtResource("31_sp1mm")]
+[node name="PropPicketAbatisWall7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65.4571, 8, -199.874)
+
+[node name="PropLogPileSmall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("49_dpm30")]
+transform = Transform3D(0.61606, 0, -0.787699, 0, 1, 0, 0.787699, 0, 0.61606, -22.2894, 0, -211.649)
+
+[node name="PropLogPileSmall2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("49_dpm30")]
+transform = Transform3D(0.893293, 0, -0.449475, 0, 1, 0, 0.449475, 0, 0.893293, -14.7469, 8, -72.5193)
+
+[node name="PropLogStand" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("49_r4wgc")]
+transform = Transform3D(0.497035, 0, -0.867731, 0, 1, 0, 0.867731, 0, 0.497035, -11.888, 0.599801, -211.657)
+
+[node name="PropLogStand2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("49_r4wgc")]
+transform = Transform3D(-0.497034, 0, 0.867731, 0, 1, 0, -0.867731, 0, -0.497034, -15.0595, 0.599801, -209.84)
+
+[node name="PropLogOakStripped" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("50_dmwpy")]
+transform = Transform3D(0.490768, 0.87129, 3.80853e-08, 0, -4.37114e-08, 1, 0.87129, -0.490768, -2.14521e-08, -13.2544, 1.41559, -210.099)
+collision_layer = 1
+
+[node name="PropLogOakStripping" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("51_7tph2")]
+transform = Transform3D(-0.436646, 0.867642, 0.237776, -0.499949, -0.0142936, -0.865937, -0.747924, -0.496984, 0.440018, -13.9577, 1.44395, -211.131)
+collision_layer = 1
 
 [node name="Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 

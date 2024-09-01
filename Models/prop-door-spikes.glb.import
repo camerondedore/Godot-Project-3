@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3vgsgpvud3yp"
-path="res://.godot/imported/prop-door-frame-old.glb-4b57ab8dc9b132133f09671c4131ca35.scn"
+uid="uid://bvxxrw3gcbwae"
+path="res://.godot/imported/prop-door-spikes.glb-993b65eab8a9133cff2fbe283a3818a8.scn"
 
 [deps]
 
-source_file="res://Models/prop-door-frame-old.glb"
-dest_files=["res://.godot/imported/prop-door-frame-old.glb-4b57ab8dc9b132133f09671c4131ca35.scn"]
+source_file="res://Models/prop-door-spikes.glb"
+dest_files=["res://.godot/imported/prop-door-spikes.glb-993b65eab8a9133cff2fbe283a3818a8.scn"]
 
 [params]
 
@@ -17,6 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
@@ -28,18 +29,18 @@ animation/import=true
 animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-door-frame-old_prop-door-frame-old": {
+"prop-door-spikes_prop-door-spikes": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/prop-door-frame-old.res"
+"save_to_file/path": "res://Models/prop-door-spikes.res"
 }
 }
 }

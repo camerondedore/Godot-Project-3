@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://C#/Door.cs" id="1_i2th4"]
 [ext_resource type="Script" path="res://C#/Blocker.cs" id="2_gc5mm"]
-[ext_resource type="ArrayMesh" uid="uid://drhtq2sn66fv7" path="res://Models/prop-door-old.res" id="2_julux"]
 [ext_resource type="AudioStream" uid="uid://dh8g7swhlp31k" path="res://Audio/door-open.wav" id="2_upk7y"]
+[ext_resource type="ArrayMesh" uid="uid://dwvqdac681p71" path="res://Models/prop-door-1.res" id="3_fteu6"]
 [ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="3_r3y81"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="4_akwq0"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="5_hlwrt"]
@@ -25,7 +25,7 @@ openSound = ExtResource("2_upk7y")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.05)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("2_julux")
+mesh = ExtResource("3_fteu6")
 surface_material_override/0 = ExtResource("4_akwq0")
 surface_material_override/1 = ExtResource("5_hlwrt")
 surface_material_override/2 = ExtResource("5_js31b")

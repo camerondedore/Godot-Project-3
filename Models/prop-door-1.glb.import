@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dmfl2l4dxi6x2"
-path="res://.godot/imported/prop-portcullis-frame.glb-5d0442d935467908d30906dc908c2cf8.scn"
+uid="uid://dbk46lqi4iypv"
+path="res://.godot/imported/prop-door-1.glb-85f9411aabf6e1a8fc547434a9721b9d.scn"
 
 [deps]
 
-source_file="res://Models/prop-portcullis-frame.glb"
-dest_files=["res://.godot/imported/prop-portcullis-frame.glb-5d0442d935467908d30906dc908c2cf8.scn"]
+source_file="res://Models/prop-door-1.glb"
+dest_files=["res://.godot/imported/prop-door-1.glb-85f9411aabf6e1a8fc547434a9721b9d.scn"]
 
 [params]
 
@@ -33,14 +33,14 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-portcullis-frame_prop-portcullis-frame": {
-"generate/lightmap_uv": 1,
+"prop-door-1_prop-door-1": {
+"generate/lightmap_uv": 0,
 "generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Models/prop-portcullis-frame.res"
+"save_to_file/path": "res://Models/prop-door-1.res"
 }
 }
 }

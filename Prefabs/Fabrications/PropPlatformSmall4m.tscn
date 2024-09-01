@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6xu4un20esl1"]
 
-[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Small Items/PropBoardPost1.tscn" id="1_usprc"]
+[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="1_usprc"]
 [ext_resource type="ArrayMesh" uid="uid://u37wl8oabeac" path="res://Models/prop-board-short.res" id="2_4ntqx"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="3_fa8k7"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_74d77"]

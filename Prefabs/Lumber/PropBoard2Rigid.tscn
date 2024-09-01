@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c1d2dkbogkckq"]
 
-[ext_resource type="PackedScene" uid="uid://ck8pgh1yk6qb4" path="res://Prefabs/Small Items/PropBoard1Rigid.tscn" id="1_ngrrb"]
+[ext_resource type="PackedScene" uid="uid://ck8pgh1yk6qb4" path="res://Prefabs/Lumber/PropBoard1Rigid.tscn" id="1_ngrrb"]
 [ext_resource type="ArrayMesh" uid="uid://fuy7vcsdgdk2" path="res://Models/prop-board-2.res" id="2_frxjc"]
 
 [node name="PropBoard2Rigid" instance=ExtResource("1_ngrrb")]

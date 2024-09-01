@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5l8sqkkxfwt4"]
 
-[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Small Items/PropBoard1.tscn" id="1_gtwex"]
+[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Lumber/PropBoard1.tscn" id="1_gtwex"]
 [ext_resource type="ArrayMesh" uid="uid://u37wl8oabeac" path="res://Models/prop-board-short.res" id="2_bdn3x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hgeun"]
