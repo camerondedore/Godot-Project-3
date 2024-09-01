@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://fmjduia2qs6l"]
+
+[ext_resource type="PackedScene" uid="uid://d3po0wf2eqc0p" path="res://Prefabs/Lumber/PropPicket.tscn" id="1_xh2c7"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_46mqe"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_rxia0"]
+
+[node name="PropPicketNew" instance=ExtResource("1_xh2c7")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_46mqe")
+surface_material_override/1 = ExtResource("3_rxia0")
