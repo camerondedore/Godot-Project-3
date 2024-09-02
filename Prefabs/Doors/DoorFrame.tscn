@@ -6,10 +6,10 @@
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="4_5nu8p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yj603"]
-size = Vector3(1.25, 2.5, 0.35)
+size = Vector3(1.45, 2.5, 0.35)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b0275"]
-size = Vector3(4, 1, 0.45)
+size = Vector3(4.5, 1, 0.45)
 
 [node name="DoorFrame" type="StaticBody3D"]
 
@@ -21,11 +21,11 @@ surface_material_override/1 = ExtResource("3_6ftac")
 surface_material_override/2 = ExtResource("4_5nu8p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1.25, 0)
 shape = SubResource("BoxShape3D_yj603")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 1.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.25, 0)
 shape = SubResource("BoxShape3D_yj603")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]

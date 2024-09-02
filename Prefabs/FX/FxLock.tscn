@@ -19,7 +19,6 @@ surface_material_override/0 = ExtResource("2_ryckk")
 [node name="LockSpawner" type="Node3D" parent="."]
 script = ExtResource("4_rvvph")
 prefab = ExtResource("2_ajn81")
-direction = Vector3(0, 5, -5)
-speed = 6.0
+velocity = Vector3(0, 3, -5.5)
 spread = 2.0
 angularSpeed = 5.0

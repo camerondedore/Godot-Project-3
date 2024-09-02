@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhp7rjy33kbog"]
+[gd_scene load_steps=6 format=3 uid="uid://dhp7rjy33kbog"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqf363gy4mv6f" path="res://Models/prop-picket.res" id="1_5x5tc"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_hbo7q"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_wolpg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xyb14"]
+size = Vector3(6.6, 3, 0.05)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c6api"]
 points = PackedVector3Array(-3.4, 0, 0.2, -3.4, 0, -0.2, 3.4, 0, -0.2, 3.4, 0, 0.2, -3.4, 4, 0.2, -3.4, 4, -0.2, 3.4, 4, -0.2, 3.4, 4, 0.2, -3.4, 5, 0, 3.4, 5, 0)
@@ -181,6 +184,12 @@ mesh = ExtResource("1_5x5tc")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_hbo7q")
 surface_material_override/1 = ExtResource("3_wolpg")
+
+[node name="BlockerMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+gi_mode = 2
+mesh = SubResource("BoxMesh_xyb14")
+surface_material_override/0 = ExtResource("2_hbo7q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_c6api")
