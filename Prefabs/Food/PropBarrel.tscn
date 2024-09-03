@@ -9,6 +9,7 @@ points = PackedVector3Array(-0.475342, -0.608294, -0.104531, 0.496545, 0.610934,
 [node name="PropBarrel" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_sk1dm")
 surface_material_override/0 = ExtResource("2_7bmhb")

@@ -982,10 +982,10 @@ transform = Transform3D(-0.274345, 0, -0.961632, 0, 1, 0, 0.961632, 0, -0.274345
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7569, 0.28, 6.2918)
 
 [node name="PropBasketWithApples" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallProps" instance=ExtResource("10_dvkp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2977, 0.28, 11.8675)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2977, -0.02, 11.8675)
 
 [node name="PropBasketWithApples2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallProps" instance=ExtResource("10_dvkp3")]
-transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.767308, 0.279999, -2.00522)
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 0.767308, -0.020001, -2.00522)
 
 [node name="PropWoodAx2" parent="Map/OccluderInstance3D/NavigationRegion3D/Props/SmallProps" instance=ExtResource("14_lprge")]
 transform = Transform3D(0.0640444, 0.802455, 0.593266, -1.79643e-08, -0.594486, 0.804106, 0.997947, -0.0514979, -0.0380728, 0.903175, 1.09374, 12.0309)

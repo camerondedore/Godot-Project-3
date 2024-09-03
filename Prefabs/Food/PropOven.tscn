@@ -11,6 +11,7 @@ points = PackedVector3Array(0.236734, 0.473056, 0.591743, -0.666443, -0.516873, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_1p6ps")
 surface_material_override/0 = ExtResource("2_pxr38")
