@@ -213,7 +213,7 @@ surface_material_override/0 = ExtResource("3_o2a5a")
 surface_material_override/1 = ExtResource("4_fpoah")
 
 [node name="Board19" type="MeshInstance3D" parent="Platform/Boards"]
-transform = Transform3D(-1, -8.74228e-08, 6.15812e-15, -8.74228e-08, 1, -1.58933e-08, -3.82137e-15, -1.58933e-08, -1, 1.8, 0.8, 2.83158)
+transform = Transform3D(-1, -8.74228e-08, 6.15812e-15, -8.74228e-08, 1, -1.58933e-08, -3.82137e-15, -1.58933e-08, -1, 1.8, 0.8, 2.73158)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("5_1kq5v")
