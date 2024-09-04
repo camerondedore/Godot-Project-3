@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dv01bjwkmdlab"]
+[gd_scene load_steps=13 format=3 uid="uid://dv01bjwkmdlab"]
 
 [ext_resource type="PackedScene" uid="uid://fmjduia2qs6l" path="res://Prefabs/Lumber/PropPicketNew.tscn" id="1_6p13v"]
 [ext_resource type="PackedScene" uid="uid://clt2p2avbsnl4" path="res://Prefabs/Fabrications/PropPlatformLogsNew.tscn" id="2_hsjx3"]
@@ -9,9 +9,13 @@
 [ext_resource type="ArrayMesh" uid="uid://chv3liu8yao5m" path="res://Models/prop-board-3.res" id="6_tt3ub"]
 [ext_resource type="ArrayMesh" uid="uid://cbu4844447nje" path="res://Models/prop-board-post-1.res" id="7_hb8d0"]
 [ext_resource type="ArrayMesh" uid="uid://b4i2xejugnjsl" path="res://Models/prop-board-post-2.res" id="8_rxicf"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="10_d1iex"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jeljv"]
 size = Vector3(6.7, 2.05, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqa70"]
+size = Vector3(6.6, 2.5, 0.05)
 
 [node name="PropPicketBattlements" type="Node3D"]
 
@@ -348,3 +352,9 @@ surface_material_override/1 = ExtResource("4_fpoah")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.025, 1.7)
 shape = SubResource("BoxShape3D_jeljv")
+
+[node name="BlockerMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+gi_mode = 2
+mesh = SubResource("BoxMesh_rqa70")
+surface_material_override/0 = ExtResource("10_d1iex")
