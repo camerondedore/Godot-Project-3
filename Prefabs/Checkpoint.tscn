@@ -42,18 +42,14 @@ scale_max = 0.3
 scale_curve = SubResource("CurveTexture_b5u7h")
 color_ramp = SubResource("GradientTexture1D_3yg5b")
 
-[node name="Checkpoint" type="Area3D" node_paths=PackedStringArray("saveMesh", "fxParticles", "savingLabel", "audio")]
+[node name="Checkpoint" type="Area3D"]
 collision_layer = 0
 collision_mask = 32
 monitorable = false
 script = ExtResource("1_mhk5w")
-saveMesh = NodePath("MeshInstance3D")
-fxParticles = NodePath("FxSparkle")
-savingLabel = NodePath("CheckpointCanvas/Label")
-audio = NodePath("CheckpointAudio")
 saveSound = ExtResource("2_28jj8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="SaveMesh" type="MeshInstance3D" parent="."]
 layers = 2
 gi_mode = 2
 mesh = ExtResource("2_afk7b")
@@ -84,5 +80,5 @@ text = "Saving..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CheckpointAudio" type="AudioStreamPlayer3D" parent="."]
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
 script = ExtResource("6_dfee6")

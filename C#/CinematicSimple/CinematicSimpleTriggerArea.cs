@@ -42,6 +42,12 @@ namespace CinematicSimple
         {
             cinematic.Triggered(body, cinematicAnimationName);
 
+            if(saveToWorldData)
+            {            
+                // save to pickups taken
+                WorldData.data.ActivateObject(this);
+            }
+
             QueueFree();
         }
     }

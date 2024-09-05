@@ -5,19 +5,15 @@ public partial class Checkpoint : Area3D
 {
 
     [Export]
-    MeshInstance3D saveMesh;
-    [Export]
-    GpuParticles3D fxParticles;
-    [Export]
-    Label savingLabel;
-    [Export]
-    AudioTools3d audio;
-    [Export]
     AudioStream saveSound;
     [Export]
     Node3D saveTarget,
         cameraTarget;
-
+    
+    MeshInstance3D saveMesh;
+    GpuParticles3D fxParticles;
+    Label savingLabel;
+    AudioTools3d audio;
     Vector3 startPosition;
     double startTime,
         downTime = 5,
@@ -30,6 +26,12 @@ public partial class Checkpoint : Area3D
 
     public override void _Ready()
     {
+        // get nodes
+        saveMesh = (MeshInstance3D) GetNode("SaveMesh");
+        fxParticles = (GpuParticles3D) GetNode("FxSparkle");
+        savingLabel = (Label) GetNode("CheckpointCanvas/Label");
+        audio = (AudioTools3d) GetNode("Audio");
+
         saveTarget.TopLevel = true;
         startPosition = GlobalPosition;
         savingLabel.Visible = false;

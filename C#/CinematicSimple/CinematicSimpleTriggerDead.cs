@@ -17,11 +17,27 @@ namespace CinematicSimple
         Node3D playerCharacter;
         [Export]
         float triggerDelay = 0;
+        [Export]
+        bool saveToWorldData = false;
 
 
 
         public override void _Ready()
         {
+            if(saveToWorldData)
+            {
+                // get if trigger was already activated
+                var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+                if(wasActivated)
+                {
+                    // remove cinematic
+                    QueueFree();
+                    
+                    return;
+                }
+            }
+            
             Timeout += Watch;
         }
 
@@ -53,6 +69,12 @@ namespace CinematicSimple
         public void Trigger()
         {
             cinematic.Triggered(playerCharacter, cinematicAnimationName);
+
+            if(saveToWorldData)
+            {            
+                // save to pickups taken
+                WorldData.data.ActivateObject(this);
+            }
 
             QueueFree();
         }

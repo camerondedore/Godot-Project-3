@@ -1,23 +1,57 @@
 using Godot;
 using System;
-using CinematicSimple;
 
-public partial class CinematicSimpleTriggerActivatable : Node, IActivatable
+namespace CinematicSimple
 {
-
-    [Export]
-    CinematicSimpleControl cinematic;
-    [Export]
-    Node3D playerCharacter;
-    [Export]
-    string cinematicAnimationName;
-
-
-
-    public void Activate()
+    public partial class CinematicSimpleTriggerActivatable : Node, IActivatable
     {
-        cinematic.Triggered(playerCharacter, cinematicAnimationName);
 
-        QueueFree();
+        [Export]
+        CinematicSimpleControl cinematic;
+        [Export]
+        Node3D playerCharacter;
+        [Export]
+        string cinematicAnimationName;
+        [Export]
+        bool saveToWorldData = false;
+
+        bool deactivated = false;
+
+
+
+        public override void _Ready()
+        {
+            if(saveToWorldData)
+            {
+                // get if trigger was already activated
+                var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+                if(wasActivated)
+                {
+                    // prevent cinematic
+                    deactivated = true;
+                    
+                    return;
+                }
+            }
+        }
+
+
+
+        public void Activate()
+        {
+            if(deactivated == false)
+            {
+                cinematic.Triggered(playerCharacter, cinematicAnimationName);
+
+                if(saveToWorldData)
+                {            
+                    // save to pickups taken
+                    WorldData.data.ActivateObject(this);
+                }
+            }
+
+            QueueFree();
+        }
     }
 }

@@ -63,6 +63,19 @@ public partial class WorldData : Node
 
 
 
+    public bool CheckActivatedObjects(Node objectToCheck)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToCheck);
+
+        // check list of activated objects
+        var isActivated = currentData.ActivatedObjects.Contains(dataString);
+
+        return isActivated;
+    }
+
+
+
     public bool CheckPickups(Node3D pickupToCheck)
     {
         // get data string
@@ -87,6 +100,17 @@ public partial class WorldData : Node
 
 
 
+    public void ActivateObject(Node objectToActivate)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToActivate);
+
+        // add to list of activated objects
+        currentData.ActivatedObjects.Add(dataString);
+    }
+
+
+
     public void TakePickup(Node3D pickuptoTake)
     {
         // get data string
@@ -101,6 +125,14 @@ public partial class WorldData : Node
     string GetObjectDataString(Node3D objectToUse)
     {
         var dataString = $"{GetTree().CurrentScene.Name}-{objectToUse.Name}-{objectToUse.GlobalPosition}";
+        return dataString;
+    }
+
+
+
+    string GetObjectDataString(Node objectToUse)
+    {
+        var dataString = $"{GetTree().CurrentScene.Name}-{objectToUse.Name}";
         return dataString;
     }
 
