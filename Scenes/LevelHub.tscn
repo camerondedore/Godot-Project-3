@@ -1974,7 +1974,7 @@ displayTime = 4.5
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacter")
 audioClip = ExtResource("86_rcdqs")
-dialogueText = "I assume you're a northern ranger?  Lumsden will want to meet you.  He'll be around the stump hovels up ahead."
+dialogueText = "We'll need your help dealing with the rats.  Lumsden can tell you more.  He will be around the stump hovels up ahead."
 displayTime = 6.3
 
 [node name="Cinematic3" type="Node3D" parent="Map/Cinematics"]
@@ -2064,15 +2064,15 @@ displayTime = 4.3
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacter")
 audioClip = ExtResource("77_7vuyi")
-dialogueText = "That arrow is good for more than switches.  It's heavy enough to move some objects and kill pesky bugs!"
-displayTime = 6.0
+dialogueText = "That arrow is good for more than switches.  It's heavy enough to move some objects and squash venomous bugs!"
+displayTime = 7.6
 
 [node name="AudioAction5" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacter")
 audioClip = ExtResource("78_6lw2v")
-dialogueText = "Now I'm off to do some more work around here.  I trust you can find your way."
-displayTime = 4.1
+dialogueText = "Now I'll leave you here.  The kitchens need an extra pair of paws.  I'll see you tonight!"
+displayTime = 4.9
 
 [node name="Cinematic4" type="Node3D" parent="Map/Cinematics"]
 
