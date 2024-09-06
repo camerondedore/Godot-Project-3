@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://t38jhtnggb6y"]
+
+[ext_resource type="Texture2D" uid="uid://b8q0h7mux6s82" path="res://Textures/fx-dirt-patch-scrape.png" id="1_v3xq4"]
+
+[node name="FxDirtScrapeDecal" type="Decal"]
+size = Vector3(3, 0.1, 9)
+texture_albedo = ExtResource("1_v3xq4")
+distance_fade_enabled = true
+cull_mask = 1

@@ -125,7 +125,7 @@
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="121_qh4xc"]
 [ext_resource type="PackedScene" uid="uid://binqhfxpr0vcx" path="res://Prefabs/Lumber/PropBoard3Rigid.tscn" id="122_175ji"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="123_ae5e8"]
-[ext_resource type="Texture2D" uid="uid://b8q0h7mux6s82" path="res://Textures/fx-dirt-patch-scrape.png" id="125_mlkr4"]
+[ext_resource type="PackedScene" uid="uid://t38jhtnggb6y" path="res://Prefabs/FX/FxDirtScrapeDecal.tscn" id="126_rv44f"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="128_gfore"]
 [ext_resource type="PackedScene" uid="uid://b7ob4girwag6g" path="res://Prefabs/Player Bow Targets/PropBlock2m.tscn" id="129_3f01j"]
 [ext_resource type="Material" uid="uid://c617c2gjl7fk3" path="res://Materials/Characters/CharacterWynn.tres" id="129_t8lqq"]
@@ -1755,35 +1755,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -6.5)
 [node name="PropBlockStop4" parent="Map/Blocks/BlockTarget7" index="3"]
 visible = false
 
-[node name="DecalScrape" type="Decal" parent="Map/Blocks"]
+[node name="FxDirtScrapeDecal" parent="Map/Blocks" instance=ExtResource("126_rv44f")]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 10.9658, 0, -5.7609)
-size = Vector3(3, 0.1, 9)
-texture_albedo = ExtResource("125_mlkr4")
-cull_mask = 1
 
-[node name="DecalScrape4" type="Decal" parent="Map/Blocks"]
+[node name="FxDirtScrapeDecal2" parent="Map/Blocks" instance=ExtResource("126_rv44f")]
 transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 13.8443, 0, -15.9362)
 size = Vector3(3, 0.1, 7)
-texture_albedo = ExtResource("125_mlkr4")
-cull_mask = 1
 
-[node name="DecalScrape5" type="Decal" parent="Map/Blocks"]
+[node name="FxDirtScrapeDecal3" parent="Map/Blocks" instance=ExtResource("126_rv44f")]
 transform = Transform3D(1, 0, 1.7683e-07, 0, 1, 0, -1.7683e-07, 0, 1, 17.0443, 0, -12.7362)
 size = Vector3(3, 0.1, 7)
-texture_albedo = ExtResource("125_mlkr4")
-cull_mask = 1
 
-[node name="DecalScrape2" type="Decal" parent="Map/Blocks"]
+[node name="FxDirtScrapeDecal4" parent="Map/Blocks" instance=ExtResource("126_rv44f")]
 transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 14.1053, 0, -2.10503)
 size = Vector3(3, 0.1, 7)
-texture_albedo = ExtResource("125_mlkr4")
-cull_mask = 1
 
-[node name="DecalScrape3" type="Decal" parent="Map/Blocks"]
+[node name="FxDirtScrapeDecal5" parent="Map/Blocks" instance=ExtResource("126_rv44f")]
 transform = Transform3D(1, 0, 1.7683e-07, 0, 1, 0, -1.7683e-07, 0, 1, 17.0063, -4.76837e-07, -4.4317)
 size = Vector3(3, 0.1, 5)
-texture_albedo = ExtResource("125_mlkr4")
-cull_mask = 1
 
 [node name="Enemies" type="Node3D" parent="."]
 
