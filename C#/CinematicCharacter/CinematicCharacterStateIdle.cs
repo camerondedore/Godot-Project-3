@@ -25,7 +25,7 @@ namespace CinematicCharacter
             else if(blackboard.animation.IsPlaying() == false)// || blackboard.nextAnimationName == "")
             {
                 // idle animation
-                blackboard.animation.Play("wynn-idle");                
+                blackboard.animation.Play($"{blackboard.characterName}-idle");                
             }
         }
 
@@ -34,7 +34,7 @@ namespace CinematicCharacter
         public override void StartState()
         {
             // idle animation
-            blackboard.animation.Play("wynn-idle");
+            blackboard.animation.Play($"{blackboard.characterName}-idle");
         }
 
 

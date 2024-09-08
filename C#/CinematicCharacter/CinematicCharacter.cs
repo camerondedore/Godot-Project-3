@@ -9,21 +9,19 @@ namespace CinematicCharacter
     public StateMachine machine = new StateMachine();
         public State stateStart,
             stateIdle,
-            stateMove,
-            stateTalk,
-            stateWave;
+            stateMove;
 
-        [Export]
-        public NavigationAgent3D navAgent;
         [Export]
         public AnimationPlayer animation;
         [Export]
-        public AudioTools3d voiceAudio;
+        public string characterName;
         [Export]
 		public float speed = 5,
             acceleration = 10,
             lookSpeed = 5f;
 
+        public NavigationAgent3D navAgent;
+        public AudioTools3d voiceAudio;
         public Node3D targetNode;
         public string nextAnimationName;
 
@@ -31,12 +29,14 @@ namespace CinematicCharacter
 
         public override void _Ready()
         {            
+            // get nodes
+            navAgent = (NavigationAgent3D) GetNode("NavAgent");
+            voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
+
             // initialize states
-            stateStart = new CinematicCharacterStateStart(){blackboard = this};        
-            stateIdle = new CinematicCharacterStateIdle(){blackboard = this};        
-            stateMove = new CinematicCharacterStateMove(){blackboard = this};        
-            stateTalk = new CinematicCharacterStateTalk(){blackboard = this};        
-            stateWave = new CinematicCharacterStateWave(){blackboard = this};             
+            stateStart = new CinematicCharacterStateStart(){blackboard = this};
+            stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
+            stateMove = new CinematicCharacterStateMove(){blackboard = this};
 
             // set first state in machine
             machine.SetState(stateStart);

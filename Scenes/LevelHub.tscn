@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=125 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_g2gc2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -75,9 +75,8 @@
 [ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="44_gr04f"]
 [ext_resource type="PackedScene" uid="uid://dhp7rjy33kbog" path="res://Prefabs/Fabrications/PropPicketWall.tscn" id="44_k88de"]
 [ext_resource type="PackedScene" uid="uid://dv01bjwkmdlab" path="res://Prefabs/Fabrications/PropPicketBattlements.tscn" id="44_u5c06"]
-[ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacter.tscn" id="46_ssp6v"]
+[ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="46_ssp6v"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="48_o7o1q"]
-[ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterActionAnimation.cs" id="49_6v2qc"]
 [ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="49_c8p7e"]
 [ext_resource type="PackedScene" uid="uid://c7um6v47aarit" path="res://Prefabs/Doors/DoorFrame.tscn" id="50_chg6s"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAudioAction.cs" id="50_vkiwa"]
@@ -2026,7 +2025,7 @@ saveToWorldData = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic1/Trigger"]
 shape = SubResource("BoxShape3D_1wib3")
 
-[node name="CinematicCharacter" parent="Map/Cinematics/Cinematic1" instance=ExtResource("46_ssp6v")]
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic1" instance=ExtResource("46_ssp6v")]
 transform = Transform3D(-0.961036, 0, 0.276426, 0, 1, 0, -0.276426, 0, -0.961036, -40.0717, 12.9995, 74.3564)
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic1"]
@@ -2037,41 +2036,35 @@ moveTime = 1.25
 [node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.421907, 0, -0.906639, 0, 1, 0, 0.906639, 0, -0.421907, -41.0699, 13, 85.2119)
 script = ExtResource("48_o7o1q")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.805028, 0, -0.593236, 0, 1, 0, 0.593236, 0, -0.805028, -41.0699, 13, 85.2119)
 script = ExtResource("48_o7o1q")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction3" type="Node3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.849847, 0, -0.52703, 0, 1, 0, 0.52703, 0, 0.849847, -40.4059, 13, 70.15)
 script = ExtResource("48_o7o1q")
-targetCharacter = NodePath("../CinematicCharacter")
-
-[node name="CineCharActionAnimTalk" type="Node3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0)
-script = ExtResource("49_6v2qc")
-targetCharacter = NodePath("../CinematicCharacter")
-nextAnimation = "wynn-talk"
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("51_8bfyt")
 dialogueText = "My hamlet is just up ahead.  But before we head there, here's a Candied Nut."
 displayTime = 4.6
 
 [node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("52_pj5aj")
 dialogueText = "These are desirable titbits.  You'll find some creatures around here that will trade for them."
 displayTime = 4.5
 
 [node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("86_rcdqs")
 dialogueText = "We'll need your help dealing with the rats.  Lumsden can tell you more.  He will be around the stump hovels up ahead."
 displayTime = 6.3
@@ -2091,7 +2084,7 @@ saveToWorldData = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic3/Trigger"]
 shape = SubResource("BoxShape3D_1wib3")
 
-[node name="CinematicCharacter" parent="Map/Cinematics/Cinematic3" instance=ExtResource("46_ssp6v")]
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic3" instance=ExtResource("46_ssp6v")]
 transform = Transform3D(-0.600616, 0, 0.799539, 0, 1, 0, -0.799539, 0, -0.600616, 69.5477, 0.999508, 41.1324)
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic3"]
@@ -2111,23 +2104,12 @@ moveTime = 0.75
 [node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.220494, 0, 0.975388, 0, 1, 0, -0.975388, 0, 0.220494, 67.1164, 1.00001, 45.2081)
 script = ExtResource("48_o7o1q")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.999043, 0, -0.0437408, 0, 1, 0, 0.0437408, 0, 0.999043, 60.8004, 1.00001, 33.4763)
 script = ExtResource("48_o7o1q")
-targetCharacter = NodePath("../CinematicCharacter")
-
-[node name="CineCharActionAnimTalk" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.386706, 0.288801, -0.875815, 0, 0.949699, 0.313165, 0.922203, 0.121103, -0.367255, 63.2059, 3.39671, 61.3435)
-script = ExtResource("49_6v2qc")
-targetCharacter = NodePath("../CinematicCharacter")
-nextAnimation = "wynn-talk"
-
-[node name="CineCharActionAnimGive" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
-script = ExtResource("49_6v2qc")
-targetCharacter = NodePath("../CinematicCharacter")
-nextAnimation = "wynn-give"
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="ArrowSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic3"]
 transform = Transform3D(0.220495, 0, 0.975389, 0, 1, 0, -0.975389, 0, 0.220495, 66.5311, 1.20001, 45.0758)
@@ -2140,35 +2122,35 @@ useAngularVelocity = false
 
 [node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("74_ko535")
 dialogueText = "Here's where you can get through to the abandoned area."
 displayTime = 2.9
 
 [node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("75_vjtas")
 dialogueText = "To raise this gate, that switch will have to be hit hard."
 displayTime = 3.4
 
 [node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("76_ganos")
 dialogueText = "Take this weighted arrow.  Use your bow and loose it at that switch."
 displayTime = 4.3
 
 [node name="AudioAction4" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("77_7vuyi")
 dialogueText = "That arrow is good for more than switches.  It's heavy enough to move some objects and squash venomous bugs!"
 displayTime = 7.6
 
 [node name="AudioAction5" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("78_6lw2v")
 dialogueText = "Now I'll leave you here.  The kitchens need an extra pair of paws.  I'll see you tonight!"
 displayTime = 4.9

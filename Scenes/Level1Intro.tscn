@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=123 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -111,9 +111,8 @@
 [ext_resource type="AudioStream" uid="uid://xwj8oybd85c4" path="res://Audio/Dialogue/npc-1-dialogue-l1-2.wav" id="97_ubo5c"]
 [ext_resource type="AudioStream" uid="uid://c27m16hw53hj2" path="res://Audio/Dialogue/npc-1-dialogue-l1-3.wav" id="98_6c5wd"]
 [ext_resource type="AudioStream" uid="uid://chlahuiimd74c" path="res://Audio/Dialogue/npc-1-dialogue-l1-4.wav" id="99_3ygxe"]
-[ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterActionAnimation.cs" id="100_h5fho"]
 [ext_resource type="AudioStream" uid="uid://ddn4rcvb5hixy" path="res://Audio/Dialogue/npc-1-dialogue-l1-5.wav" id="100_r3tse"]
-[ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacter.tscn" id="102_ak1tj"]
+[ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="102_ak1tj"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="103_oo74b"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="109_6d8j3"]
 
@@ -5018,6 +5017,9 @@ lock_rotation = true
 contact_monitor = false
 max_contacts_reported = 0
 
+[node name="PickupCandiedNut16" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9597, 9, -207.529)
+
 [node name="Fx" type="Node3D" parent="Map"]
 
 [node name="FxWoodChipsDecal" parent="Map/Fx" instance=ExtResource("84_7lp5j")]
@@ -5139,7 +5141,7 @@ watchedNodes = [NodePath("../../../../Enemies/MobBlackRat"), NodePath("../../../
 playerCharacter = NodePath("../../../../PlayerCharacter")
 triggerDelay = 2.0
 
-[node name="CinematicCharacter" parent="Map/Cinematics/Cinematic2" instance=ExtResource("102_ak1tj")]
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic2" instance=ExtResource("102_ak1tj")]
 transform = Transform3D(-0.998548, 0, -0.0538694, 0, 1, 0, 0.0538694, 0, -0.998548, -29.7337, 9, -52.128)
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic2"]
@@ -5158,30 +5160,12 @@ script = ExtResource("90_msd7f")
 [node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.948179, 0, -0.317735, 0, 1, 0, 0.317735, 0, 0.948179, -28.5519, 9, -55.9882)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter")
-
-[node name="CineCharActionAnimWave" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
-script = ExtResource("100_h5fho")
-targetCharacter = NodePath("../CinematicCharacter")
-nextAnimation = "wynn-wave"
-
-[node name="CineCharActionAnimTalk" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
-script = ExtResource("100_h5fho")
-targetCharacter = NodePath("../CinematicCharacter")
-nextAnimation = "wynn-talk"
-
-[node name="CineCharActionAnimGive" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
-script = ExtResource("100_h5fho")
-targetCharacter = NodePath("../CinematicCharacter")
-nextAnimation = "wynn-give"
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="NettleBrothSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic2"]
 transform = Transform3D(-0.930763, 0, -0.365624, 0, 1, 0, 0.365624, 0, -0.930763, -28.1648, 9, -42.2362)
@@ -5203,28 +5187,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9814, -4, -27.3426)
 
 [node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("96_7mbpo")
 dialogueText = "Hey!  Up here!"
 displayTime = 2.1
 
 [node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("97_ubo5c")
 dialogueText = "The rat clan has taken this part of the forest.  I can take you to my hamlet."
 displayTime = 4.5
 
 [node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("98_6c5wd")
 dialogueText = "You'll have to make your way through the rat camp.  I'll meet you up ahead."
 displayTime = 3.6
 
 [node name="AudioAction4" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
-targetCharacter = NodePath("../CinematicCharacter")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("99_3ygxe")
 dialogueText = "Here's some Nettle Broth Soup.  If you've been hurt, it'll restore your health."
 displayTime = 4.3
@@ -5243,7 +5227,7 @@ cinematicAnimationName = "l1c3"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic3/Trigger"]
 shape = SubResource("BoxShape3D_okp1m")
 
-[node name="CinematicCharacter1" parent="Map/Cinematics/Cinematic3" instance=ExtResource("102_ak1tj")]
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic3" instance=ExtResource("102_ak1tj")]
 transform = Transform3D(0.664513, 0, -0.747276, 0, 1, 0, 0.747276, 0, 0.664513, -46.9107, 9, -193.994)
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic3"]
@@ -5261,21 +5245,15 @@ transform = Transform3D(-0.765961, 0.278838, -0.579271, 0, 0.901044, 0.433727, 0
 script = ExtResource("90_msd7f")
 moveTime = 2.5
 
-[node name="CineCharActionAnimWave" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
-script = ExtResource("100_h5fho")
-targetCharacter = NodePath("../CinematicCharacter1")
-nextAnimation = "wynn-wave"
-
 [node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.0182202, 0, -0.999834, 0, 1, 0, 0.999834, 0, -0.0182202, -42.768, 9, -201.503)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter1")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.178906, 0, 0.983867, 0, 1, 0, -0.983867, 0, 0.178906, -61.7508, 9, -201.843)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter1")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="Cinematic4" type="Node3D" parent="Map/Cinematics"]
 
@@ -5289,7 +5267,7 @@ watchedNodes = [NodePath("../../../../Enemies/MobBrownRat8"), NodePath("../../..
 playerCharacter = NodePath("../../../../PlayerCharacter")
 triggerDelay = 1.0
 
-[node name="CinematicCharacter2" parent="Map/Cinematics/Cinematic4" instance=ExtResource("102_ak1tj")]
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic4" instance=ExtResource("102_ak1tj")]
 transform = Transform3D(-0.579438, 0, 0.815017, 0, 1, 0, -0.815017, 0, -0.579438, -29.6753, 9, -274.968)
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
@@ -5300,27 +5278,21 @@ moveTime = 1.5
 [node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.11856, 0, 0.992947, 0, 1, 0, -0.992947, 0, -0.11856, -39.401, 9, -270.274)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter2")
-
-[node name="CineCharActionAnimTalk" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
-transform = Transform3D(-0.801953, 0, -0.597387, 0, 1, 0, 0.597387, 0, -0.801953, -28.5993, 9, -42.4749)
-script = ExtResource("100_h5fho")
-targetCharacter = NodePath("../CinematicCharacter2")
-nextAnimation = "wynn-talk"
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(-0.11856, 0, 0.992947, 0, 1, 0, -0.992947, 0, -0.11856, -45.9017, 9, -269.641)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter2")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="CinematicCharacterAction3" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.989754, 0, -0.142784, 0, 1, 0, 0.142784, 0, 0.989754, -27.1715, 9, -280.335)
 script = ExtResource("103_oo74b")
-targetCharacter = NodePath("../CinematicCharacter2")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 
 [node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("95_m4ha7")
-targetCharacter = NodePath("../CinematicCharacter2")
+targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("100_r3tse")
 dialogueText = "Hey, you made it!  Come with me before any more rats catch wind of us!"
 displayTime = 4.1
@@ -5333,8 +5305,8 @@ monitorable = false
 script = ExtResource("89_76sdy")
 levelChange = NodePath("../../LevelChange")
 nextLevel = "LevelHub"
-nextCheckpointPosition = Vector3(10.7, 13, 92)
-nextCameraPosition = Vector3(13.3, 17.1, 96.3)
+nextCheckpointPosition = Vector3(-24.3, 13, 92)
+nextCameraPosition = Vector3(-21.7, 17.1, 96.3)
 nextCameraEulerRotation = Vector3(-26.5, 26.8, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
