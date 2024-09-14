@@ -2185,7 +2185,7 @@ lookSpeed = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7426, 1, 20.6295)
 
 [node name="weapon-staff_2" parent="character-lumsden2/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0, -1)
+transform = Transform3D(1, -1.65436e-24, -2.06795e-25, 1.65436e-24, 1, 0, 2.06795e-25, 0, 1, -0.25, 1.11759e-08, -1)
 
 [node name="weapon-staff_2" parent="character-lumsden2/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 surface_material_override/0 = ExtResource("117_26der")
