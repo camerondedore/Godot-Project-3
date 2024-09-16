@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-namespace CinematicCharacter
+namespace NonPlayerCharacter
 {
-    public partial class CinematicCharacterStateStart : CinematicCharacterState
+    public partial class NpcSimpleStateTalk : NpcSimpleState
     {
 
 
@@ -19,25 +19,21 @@ namespace CinematicCharacter
 
         public override void StartState()
         {
-            // blackboard.Visible = true;
-
-            // // enable
-            // blackboard.ProcessMode = Node.ProcessModeEnum.Inherit;
+            base.StartState();
         }
 
 
 
         public override void EndState()
         {
-            base.EndState();
+            base.StartState();
         }
 
 
 
         public override State Transition()
         {
-            // idle
-            return blackboard.stateIdle;
+            return this;
         }
     }
 }

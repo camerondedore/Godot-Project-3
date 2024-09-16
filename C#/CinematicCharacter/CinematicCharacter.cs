@@ -7,8 +7,7 @@ namespace CinematicCharacter
     {
 
     public StateMachine machine = new StateMachine();
-        public State stateStart,
-            stateIdle,
+        public State stateIdle,
             stateMove;
 
         [Export]
@@ -34,12 +33,11 @@ namespace CinematicCharacter
             voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
 
             // initialize states
-            stateStart = new CinematicCharacterStateStart(){blackboard = this};
             stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
             stateMove = new CinematicCharacterStateMove(){blackboard = this};
 
             // set first state in machine
-            machine.SetState(stateStart);
+            machine.SetState(stateIdle);
 
             // disable
             HideCharacter();
@@ -112,7 +110,7 @@ namespace CinematicCharacter
                 return;
             }
 
-            // get direction to enenmy and flatten
+            // get direction and flatten
             var lookTarget = GlobalPosition + -targetNode.Basis.Z;
             lookTarget.Y = GlobalPosition.Y;
 
