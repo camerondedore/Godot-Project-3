@@ -32,9 +32,9 @@ namespace CinematicSimple
         public void Triggered(Node3D body, string animationName)
         {
             // check that body is player
-            if(body is PlayerCharacter)
+            if(body is PlayerCharacter playerBody)
             {
-                player = body as PlayerCharacter;     
+                player = playerBody;
 
                 // set player to start state
                 player.machine.SetState(player.stateCinematic);

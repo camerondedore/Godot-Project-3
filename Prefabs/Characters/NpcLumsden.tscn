@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0hvuo4osb3sc"]
+[gd_scene load_steps=10 format=3 uid="uid://b0hvuo4osb3sc"]
 
 [ext_resource type="Script" path="res://C#/Npc/NpcSimple.cs" id="1_r03m4"]
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_uc5av"]
@@ -6,16 +6,21 @@
 [ext_resource type="Material" uid="uid://bxgss8yqy8jjj" path="res://Materials/Characters/CharacterLumsden.tres" id="3_hyd6u"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_srv7g"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_cdu1t"]
+[ext_resource type="Script" path="res://C#/Npc/NpcCameraControl.cs" id="7_shrkw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aceh1"]
 radius = 0.4
 height = 1.8
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fvy2x"]
+height = 0.2
+radius = 1.75
+
 [node name="NpcLumsden" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
 script = ExtResource("1_r03m4")
 animation = NodePath("character-lumsden/AnimationPlayer")
-characterName = "lumsden"
-idleAnimationName = "lumsden-idle"
+idleAnimationName = "lumsden-mapping"
+talkAnimationName = "lumsden-talk"
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -92,7 +97,7 @@ bones/59/position = Vector3(-0.300915, -0.0468281, -0.43106)
 bones/59/rotation = Quaternion(-0.0156462, 0, 3.47416e-18, 0.999878)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, -6.94747e-18, -1.08715e-19, 6.94747e-18, 0.99951, 0.0312886, -1.08715e-19, -0.0312886, 0.99951, -0.300915, -0.0468281, -0.43106)
+transform = Transform3D(1, -6.94748e-18, -1.08715e-19, 6.94748e-18, 0.99951, 0.0312887, -1.08715e-19, -0.0312887, 0.99951, -0.300915, -0.0468281, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 layers = 2
@@ -105,10 +110,27 @@ gi_mode = 2
 surface_material_override/0 = ExtResource("3_hyd6u")
 surface_material_override/1 = ExtResource("4_srv7g")
 
+[node name="AnimationPlayer" parent="character-lumsden" index="1"]
+playback_default_blend_time = 0.15
+
 [node name="VoiceAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 20.0
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("6_cdu1t")
+
+[node name="TriggerArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+shape = SubResource("CylinderShape3D_fvy2x")
+
+[node name="NpcCameraControl" type="Node" parent="."]
+script = ExtResource("7_shrkw")
+lockedCameraHeight = 1.75
+lockedCameraRadius = 4.0
 
 [editable path="character-lumsden"]

@@ -13,8 +13,6 @@ namespace CinematicSimple
 
         GlobalCamera camera;
 
-        bool tracking = false;
-
 
 
         public override void _Ready()
@@ -22,15 +20,15 @@ namespace CinematicSimple
             // get global camera
             camera = GlobalCamera.camera;
 
-            // disable now
+            // disable
             ProcessMode = ProcessModeEnum.Disabled;
         }
 
 
 
-        public override void _Process(double delta)
+        public override void _PhysicsProcess(double delta)
         {
-            if(tracking == true && IsInstanceValid(lookTarget) == true)
+            if(IsInstanceValid(lookTarget) == true)
             {
                 var lookDirection = lookTarget.GlobalPosition - camera.GlobalPosition;
 
@@ -47,17 +45,13 @@ namespace CinematicSimple
         public void PlayCinematicAction()
         {
             // toggle tracking
-            if(tracking == false)
+            if(ProcessMode != ProcessModeEnum.Inherit)
             {
-                tracking = true;
-
                 // turn processing on
                 ProcessMode = ProcessModeEnum.Inherit;
             }
             else
             {
-                tracking = false;
-
                 // turn processing on
                 ProcessMode = ProcessModeEnum.Disabled;
             }

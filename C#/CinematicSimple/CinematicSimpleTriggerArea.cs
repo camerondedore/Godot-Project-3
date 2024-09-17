@@ -42,7 +42,7 @@ namespace CinematicSimple
         {
             cinematic.Triggered(body, cinematicAnimationName);
 
-            if(saveToWorldData)
+            if(saveToWorldData == true)
             {            
                 // save to pickups taken
                 WorldData.data.ActivateObject(this);

@@ -1,44 +1,98 @@
 using Dialogue;
 using Godot;
+using System.Collections.Generic;
 using System;
+using System.Linq;
+using PlayerCharacterComplex;
 
 namespace NonPlayerCharacter
 {
     public partial class NpcSimple : CharacterBody3D
     {
 
-        public StateMachine machine = new StateMachine();
+        public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
-            stateTalk;
+            stateTalk,
+            stateTalkRepeating;
 
         [Export]
         public AnimationPlayer animation;
         [Export]
-        public string characterName,
-            idleAnimationName;
+        public string idleAnimationName,
+            talkAnimationName;
         [Export]
 		public float speed = 5,
             acceleration = 10,
             lookSpeed = 7f;
+        [Export]
+        public bool saveToWorldData = false,
+            freezePlayer = false;
         
         [Export]
         int dialogueSpeaker = 1;
 
-        public NavigationAgent3D navAgent;
+        //public NavigationAgent3D navAgent;
         public AudioTools3d voiceAudio;
+        public Area3D triggerArea;
         public Node3D targetNode;
+        public NpcCameraControl cameraControl;
+        public List<NpcDialogue> dialogues = new List<NpcDialogue>(),
+            repeatingDialogues = new List<NpcDialogue>();
+        public bool bodyInTrigger,
+            useRepeatingDialogue = false;
+        public PlayerCharacter player;
+        
+        Vector3 startLookDirection;
 
 
 
         public override void _Ready()
         {            
             // get nodes
-            navAgent = (NavigationAgent3D) GetNode("NavAgent");
+            //navAgent = (NavigationAgent3D) GetNode("NavAgent");
             voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
+            triggerArea = (Area3D) GetNode("TriggerArea");
+            cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
+
+            // get dialogues
+            var childNodes = GetChildren(false);
+
+            foreach(var child in childNodes)
+            {
+                if(child is NpcDialogue dialogue)
+                {
+                    if(dialogue.repeat == false)
+                    {
+                        dialogues.Add(dialogue);
+                    }
+                    else
+                    {
+                        repeatingDialogues.Add(dialogue);
+                    }
+                }
+            }
+
+            // set up events
+            triggerArea.BodyEntered += TriggerDialogue;
+            triggerArea.BodyExited += TriggerReset;
+
+            startLookDirection = -Basis.Z;
+
+            if(saveToWorldData)
+            {
+                // get if trigger was already activated
+                var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+                if(wasActivated)
+                {
+                    useRepeatingDialogue = true; 
+                }
+            }
 
             // initialize states
             stateIdle = new NpcSimpleStateIdle(){blackboard = this};
             stateTalk = new NpcSimpleStateTalk(){blackboard = this};
+            stateTalkRepeating = new NpcSimpleStateTalkRepeating(){blackboard = this};
 
             // set first state in machine
             machine.SetState(stateIdle);
@@ -48,81 +102,43 @@ namespace NonPlayerCharacter
 
         public override void _PhysicsProcess(double delta)
         {
-            // run machine
-            if(machine != null && machine.CurrentState != null)
+            if(IsInstanceValid(targetNode) && targetNode != null)
             {
-                machine.CurrentState.RunState(delta);
-                machine.SetState(machine.CurrentState.Transition());
+                LookAtTargetNode(delta);
+            }
+            else
+            {
+                ResetLook(delta);
             }
         }
 
 
 
-        // public void MoveToTargetNode(double delta)
-        // {
-        //     // check that character is in moving state
-        //     if(IsOnFloor())
-        //     {
-        //         // get new velocity
-        //         var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
-        //         newVelocity = newVelocity.Normalized();
-        //         newVelocity.Y = 0;
-        //         newVelocity *= speed;
-                
-        //         if(newVelocity.X == 0 && newVelocity.Z == 0)
-        //         {
-        //             // no usable velocity
-        //             return;
-        //         }
-
-        //         // smooth movement
-        //         Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
-
-        //         MoveAndSlide();
-
-        //         // get direction to next path point and flatten
-        //         var lookDirection = Velocity.Normalized();
-        //         lookDirection.Y = 0;
-
-        //         if(lookDirection.LengthSquared() > 0.1f)
-        //         {
-        //             var smoothLookDirection = -Basis.Z;
-        //             smoothLookDirection = smoothLookDirection.Slerp(lookDirection, lookSpeed * ((float) delta));
-
-        //             // apply look
-        //             LookAt(GlobalPosition + smoothLookDirection);
-        //         }    
-        //     }
-        //     else
-        //     {                
-        //         // falling
-        //         // apply gravity
-        //         Velocity += EngineGravity.vector * ((float) delta);                
-        //         MoveAndSlide();
-        //     }
-        // }
-
-
-
-        public void LookWithTargetNode(double delta)
+        public override void _EnterTree()
         {
-            if(targetNode == null)
+            machine.Enable();
+        }
+
+
+
+        public override void _ExitTree()
+        {
+            machine.Disable();
+        }
+
+
+
+        public void ResetLook(double delta)
+        {
+            if((startLookDirection - -Basis.Z).LengthSquared() > 0.01f)
             {
-                return;
+                var targetPosition = GlobalPosition + startLookDirection;
+                var smoothLookTarget = GlobalPosition + -Basis.Z;
+                smoothLookTarget = smoothLookTarget.Slerp(targetPosition, lookSpeed * ((float) delta));
+
+                // apply look
+                LookAt(smoothLookTarget);
             }
-
-            // get direction and flatten
-            var lookTarget = GlobalPosition + -targetNode.Basis.Z;
-            lookTarget.Y = GlobalPosition.Y;
-
-            if(lookTarget.LengthSquared() > 0.1f)
-			{
-				var smoothLookTarget = GlobalPosition + -Basis.Z;
-				smoothLookTarget = smoothLookTarget.Slerp(lookTarget, lookSpeed * ((float) delta));
-
-				// apply look
-				LookAt(smoothLookTarget);
-			}    
         }
 
 
@@ -150,85 +166,57 @@ namespace NonPlayerCharacter
 
 
 
-        // public void SetTargetNode(Node3D newTarget)
-        // {
-        //     if(Visible == false)
-        //     {
-        //         // enable
-        //         Visible = true;
-        //         ProcessMode = ProcessModeEnum.Inherit;
-        //     }
-
-        //     // check target against old target
-        //     var targetTransformChanged = true;
-            
-        //     if(targetNode != null)
-        //     {
-        //         targetTransformChanged = (targetNode.GlobalPosition - newTarget.GlobalPosition).LengthSquared() > 0.01f;
-        //     }
-
-        //     targetNode = newTarget;
-
-        //     if(targetTransformChanged == true)
-        //     {
-        //         if(machine.CurrentState != stateMove)
-        //         {
-        //             // change to move state
-        //             machine.SetState(stateMove);
-        //         }
-        //         else
-        //         {
-        //             // restart move state
-        //             stateMove.StartState();
-        //         }
-        //     }
-        //     else
-        //     {
-        //         if(machine.CurrentState != stateIdle)
-        //         {
-        //             // change to idle state
-        //             machine.SetState(stateIdle);
-        //         }
-        //         else
-        //         {
-        //             // restart idle state
-        //             machine.CurrentState.StartState();
-        //         }
-        //     }            
-        // }
-
-
-
-        // public void SetState(string nextAnimation)
-        // {
-        //     if(Visible == false)
-        //     {
-        //         // enable
-        //         Visible = true;
-        //         ProcessMode = ProcessModeEnum.Inherit;
-        //     }
-
-        //     // set next idle animation
-        //     nextAnimationName = nextAnimation;
-
-        //     if(machine.CurrentState != stateIdle)
-        //     {
-        //         // change to idle state
-        //         machine.SetState(stateIdle);
-        //     }
-        //     else
-        //     {
-        //         // restart idle state
-        //         machine.CurrentState.StartState();
-        //     }
-        // }
-
-
-
         public void Speak(AudioStream voiceLine, string subtitles, double subtitlesTime)
         {
             voiceAudio.PlaySound(voiceLine, 0);
             DialogueUi.dialogueUi.DisplayDialogue(subtitles, subtitlesTime, dialogueSpeaker);
+        }
+
+
+
+        public void TriggerDialogue(Node3D body)
+        {
+            if(bodyInTrigger == false)
+            {
+                if(useRepeatingDialogue == false)
+                {
+                    // one-time dialogue
+                    machine.SetState(stateTalk);
+
+                    if(freezePlayer == true && body is PlayerCharacter playerBody)
+                    {
+                        // store hit body
+                        player = playerBody;
+
+                        // set player to start state
+                        player.machine.SetState(player.stateCinematic);
+                    }
+                }
+                else
+                {
+                    // repeating dialogue
+                    machine.SetState(stateTalkRepeating);
+                }
+
+                targetNode = body;
+            }
+
+            bodyInTrigger = true;
+        }
+
+
+
+        public void EndDialogue()
+        {
+            // set player to idle state
+            player.machine.SetState(player.stateIdle);
+        }
+
+
+
+        public void TriggerReset(Node3D body)
+        {
+            bodyInTrigger = false;
         }
     }
 }

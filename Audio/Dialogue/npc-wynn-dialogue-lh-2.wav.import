@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cx6464f4x40g3"
-path="res://.godot/imported/npc-1-dialogue-lh-2.wav-52d947b67467bd648a0b54add41f8fac.sample"
+path="res://.godot/imported/npc-wynn-dialogue-lh-2.wav-46984ea2ed9fa6913284c1b3511704dd.sample"
 
 [deps]
 
-source_file="res://Audio/Dialogue/npc-1-dialogue-lh-2.wav"
-dest_files=["res://.godot/imported/npc-1-dialogue-lh-2.wav-52d947b67467bd648a0b54add41f8fac.sample"]
+source_file="res://Audio/Dialogue/npc-wynn-dialogue-lh-2.wav"
+dest_files=["res://.godot/imported/npc-wynn-dialogue-lh-2.wav-46984ea2ed9fa6913284c1b3511704dd.sample"]
 
 [params]
 
