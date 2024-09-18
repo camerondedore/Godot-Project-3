@@ -16,11 +16,12 @@ height = 1.8
 height = 0.2
 radius = 1.75
 
-[node name="NpcLumsden" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
+[node name="NpcLumsden" type="CharacterBody3D" node_paths=PackedStringArray("animation", "linkedObjects")]
 script = ExtResource("1_r03m4")
 animation = NodePath("character-lumsden/AnimationPlayer")
 idleAnimationName = "lumsden-mapping"
 talkAnimationName = "lumsden-talk"
+linkedObjects = []
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -97,7 +98,7 @@ bones/59/position = Vector3(-0.300915, -0.0468281, -0.43106)
 bones/59/rotation = Quaternion(-0.0156462, 0, 3.47416e-18, 0.999878)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, -6.94748e-18, -1.08715e-19, 6.94748e-18, 0.99951, 0.0312887, -1.08715e-19, -0.0312887, 0.99951, -0.300915, -0.0468281, -0.43106)
+transform = Transform3D(1, -6.94747e-18, -1.08715e-19, 6.94747e-18, 0.99951, 0.0312886, -1.08715e-19, -0.0312886, 0.99951, -0.300915, -0.0468281, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 layers = 2

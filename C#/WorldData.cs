@@ -223,6 +223,20 @@ public partial class WorldData : Node
 
 
 
+    public void SetHubStage(int newStage)
+    {
+        currentData.HubStage = newStage;
+    }
+
+
+
+    public int GetHubStage()
+    {
+        return currentData.HubStage;
+    }
+
+
+
     [System.Serializable]
     public class Data
     {
@@ -260,5 +274,10 @@ public partial class WorldData : Node
         {
             get; set;
         } = "0,0,0";
+
+        public int HubStage
+        {
+            get; set;
+        } = 0;
     }
 }

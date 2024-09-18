@@ -4,7 +4,7 @@ using PlayerCharacterComplex;
 
 namespace CinematicSimple
 {
-    public partial class CinematicSimpleTriggerArea : Area3D
+    public partial class CinematicSimpleTriggerArea : Area3D, IActivatable
     {    
 
         [Export]
@@ -12,7 +12,8 @@ namespace CinematicSimple
         [Export]
         string cinematicAnimationName;
         [Export]
-        bool saveToWorldData = false;
+        bool saveToWorldData = false,
+            monitoringAtStart = true;
 
 
 
@@ -32,6 +33,9 @@ namespace CinematicSimple
                 }
             }
 
+            // set monitoring
+            SetDeferred("monitoring", monitoringAtStart);
+
             // set up signal
             BodyEntered += Triggered;
         }
@@ -49,6 +53,13 @@ namespace CinematicSimple
             }
 
             QueueFree();
+        }
+
+
+
+        public void Activate()
+        {
+            SetDeferred("monitoring", true);
         }
     }
 }

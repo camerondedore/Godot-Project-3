@@ -30,6 +30,8 @@ namespace NonPlayerCharacter
         
         [Export]
         int dialogueSpeaker = 1;
+        [Export]
+        public Node[] linkedObjects;
 
         //public NavigationAgent3D navAgent;
         public AudioTools3d voiceAudio;
@@ -86,6 +88,7 @@ namespace NonPlayerCharacter
                 if(wasActivated)
                 {
                     useRepeatingDialogue = true; 
+                    ActivateLinkedNodes();
                 }
             }
 
@@ -217,6 +220,23 @@ namespace NonPlayerCharacter
         public void TriggerReset(Node3D body)
         {
             bodyInTrigger = false;
+        }
+
+
+
+        public void ActivateLinkedNodes()
+        {
+            if(linkedObjects.Length > 0)
+            {
+                // activate pinned objects
+                foreach(IActivatable i in linkedObjects)
+                {
+                    if(IsInstanceValid((Node)i) == true)
+                    {
+                        i.Activate();
+                    }
+                }
+            }
         }
     }
 }

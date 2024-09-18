@@ -1,8 +1,10 @@
-[gd_scene load_steps=136 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=138 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_g2gc2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
+[ext_resource type="Script" path="res://C#/HubControl.cs" id="3_8tlgx"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_n8wa2"]
+[ext_resource type="Script" path="res://C#/HubStage.cs" id="4_hh5wq"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_s034b"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
@@ -170,6 +172,13 @@ environment = ExtResource("1_g2gc2")
 
 [node name="GlobalCamera" parent="." instance=ExtResource("2_vfw7t")]
 transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0.450541, -0.398983, 0.79864, -21.7, 17.1, 96.3)
+
+[node name="HubControl" type="Node" parent="."]
+script = ExtResource("3_8tlgx")
+
+[node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
+script = ExtResource("4_hh5wq")
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4")]
 
 [node name="DialogueUi" parent="." instance=ExtResource("3_n8wa2")]
 
@@ -2094,6 +2103,7 @@ script = ExtResource("44_gr04f")
 cinematic = NodePath("../../CinematicsHub")
 cinematicAnimationName = "lhc3"
 saveToWorldData = true
+monitoringAtStart = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic3/Trigger"]
 shape = SubResource("BoxShape3D_1wib3")
@@ -2190,10 +2200,11 @@ lookSpeed = 0.5
 
 [node name="Npcs" type="Node3D" parent="."]
 
-[node name="NpcLumsden" parent="Npcs" instance=ExtResource("116_4nm5h")]
+[node name="NpcLumsden" parent="Npcs" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("116_4nm5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6, 1, 20.3)
 saveToWorldData = true
 freezePlayer = true
+linkedObjects = [NodePath("../../Map/Cinematics/Cinematic3/Trigger")]
 
 [node name="Dialogue1" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")

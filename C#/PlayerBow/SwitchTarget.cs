@@ -66,16 +66,26 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
         // audio
         audio.PlaySound(hitSound, 0.1f);
 
+        ActivateLinkedNodes();
+        
+        // disable script
+        SetScript(new Variant());
+    }
+
+
+
+    void ActivateLinkedNodes()
+    {
         if(linkedObjects.Length > 0)
         {
             // activate pinned objects
             foreach(IActivatable i in linkedObjects)
             {
-                i.Activate();
+                if(IsInstanceValid((Node)i) == true)
+                {
+                    i.Activate();
+                }
             }
         }
-        
-        // disable script
-        SetScript(new Variant());
     }
 }

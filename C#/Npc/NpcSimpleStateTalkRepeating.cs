@@ -45,6 +45,8 @@ namespace NonPlayerCharacter
         public override void EndState()
         {
             blackboard.targetNode = null;
+
+            blackboard.ActivateLinkedNodes();
         }
 
 
