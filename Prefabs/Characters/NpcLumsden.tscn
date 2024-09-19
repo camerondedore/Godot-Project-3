@@ -38,6 +38,7 @@ bones/1/rotation = Quaternion(0.986204, 0.010468, 0.0687149, 0.150238)
 bones/2/rotation = Quaternion(-0.0620123, -5.57718e-09, -1.44384e-08, 0.998075)
 bones/3/rotation = Quaternion(-0.0479963, -0.0318219, 0.00152985, 0.998339)
 bones/4/rotation = Quaternion(-0.477432, -0.028018, -0.0601209, 0.876162)
+bones/5/position = Vector3(1.36184e-08, 0.132219, -0.0532135)
 bones/5/rotation = Quaternion(-0.0632831, -7.24883e-10, -1.36421e-08, 0.997996)
 bones/6/position = Vector3(0.0671968, 0.271935, 0.0571533)
 bones/6/rotation = Quaternion(0.0320906, -0.0088978, -0.00856718, 0.999409)
@@ -98,7 +99,7 @@ bones/59/position = Vector3(-0.300915, -0.0468281, -0.43106)
 bones/59/rotation = Quaternion(-0.0156462, 0, 3.47416e-18, 0.999878)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, -6.94747e-18, -1.08715e-19, 6.94747e-18, 0.99951, 0.0312886, -1.08715e-19, -0.0312886, 0.99951, -0.300915, -0.0468281, -0.43106)
+transform = Transform3D(1, -6.94748e-18, -1.08715e-19, 6.94748e-18, 0.99951, 0.0312887, -1.08715e-19, -0.0312887, 0.99951, -0.300915, -0.0468281, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 layers = 2
