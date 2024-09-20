@@ -153,9 +153,9 @@ namespace NonPlayerCharacter
 
         public void TriggerDialogue(Node3D body)
         {
-            if(bodyInTrigger == false)
+            if(bodyInTrigger == false && machine.CurrentState == stateIdle)
             {
-                if(freezePlayer == true && body is PlayerCharacter playerBody)
+                if(freezePlayer == true && body is PlayerCharacter playerBody && useRepeatingDialogue == false)
                 {
                     // store hit body
                     player = playerBody;
