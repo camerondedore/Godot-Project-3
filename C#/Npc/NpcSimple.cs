@@ -22,7 +22,8 @@ namespace NonPlayerCharacter
         [Export]
         public string idleAnimationName,
             talkAnimationName,
-            turnAnimationName;
+            turnRightAnimationName,
+            turnLeftAnimationName;
         [Export]
 		public float speed = 5f,
             lookTime = 1f,
@@ -165,11 +166,6 @@ namespace NonPlayerCharacter
                 // set look target
                 targetLookDirection = body.GlobalPosition - GlobalPosition;
                 targetLookDirection.Y = 0;
-
-                // change cursor time multiplier
-                var angleToTargetDirection = (-Basis.Z).AngleTo(targetLookDirection);
-                angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
-                cursorTimeMultiplier = 3.14f / (lookTime * angleToTargetDirection);
 
                 // repeating dialogue
                 machine.SetState(stateTurn);

@@ -22,13 +22,30 @@ namespace NonPlayerCharacter
             blackboard.lookCursor = 0;
             blackboard.startLookDirection = -blackboard.Basis.Z;
 
+            // change cursor time multiplier
+            var angleToTargetDirection = (-blackboard.Basis.Z).AngleTo(blackboard.targetLookDirection);
+            angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
+            blackboard.cursorTimeMultiplier = 3.14f / (blackboard.lookTime * angleToTargetDirection);
+
             if(blackboard.useRepeatingDialogue == false)
             {
                 blackboard.cameraControl.EnableCameraControl(blackboard.player);
             }
 
-            // animation
-            blackboard.animation.Play(blackboard.turnAnimationName);
+
+            var targetDirectionLocal = blackboard.ToLocal(blackboard.GlobalPosition + blackboard.targetLookDirection).Normalized();
+
+            if(targetDirectionLocal.X > 0)
+            {
+                // right turn animation
+                blackboard.animation.Play(blackboard.turnRightAnimationName);
+            }
+            else
+            {
+                // left turn animation
+                blackboard.animation.Play(blackboard.turnLeftAnimationName);
+            }
+
         }
 
 
