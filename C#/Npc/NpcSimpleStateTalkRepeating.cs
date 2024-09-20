@@ -44,9 +44,10 @@ namespace NonPlayerCharacter
 
         public override void EndState()
         {
-            blackboard.targetNode = null;
-
             blackboard.ActivateLinkedNodes();
+
+            // set new look direction
+            blackboard.targetLookDirection = blackboard.initLookDirection;
         }
 
 
@@ -55,8 +56,8 @@ namespace NonPlayerCharacter
         {
             if(blackboard.voiceAudio.Playing == false && EngineTime.timePassed > lastDialogueTime + dialogueLength)
             {
-                // idle
-                return blackboard.stateIdle;
+                // turn
+                return blackboard.stateTurn;
             }
 
             return this;

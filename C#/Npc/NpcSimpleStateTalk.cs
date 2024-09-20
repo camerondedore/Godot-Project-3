@@ -33,7 +33,6 @@ namespace NonPlayerCharacter
         {
             dialogueIndex = 0;
             blackboard.animation.Play(blackboard.talkAnimationName);
-            blackboard.cameraControl.EnableCameraControl(blackboard.player);
         }
 
 
@@ -41,9 +40,11 @@ namespace NonPlayerCharacter
         public override void EndState()
         {
             blackboard.useRepeatingDialogue = true;
-            blackboard.targetNode = null;
             blackboard.EndDialogue();
             blackboard.cameraControl.DisableCameraControl();
+
+            // set new look direction
+            blackboard.targetLookDirection = blackboard.initLookDirection;
 
             if(blackboard.saveToWorldData == true)
             {            
@@ -58,8 +59,8 @@ namespace NonPlayerCharacter
         {
             if(blackboard.voiceAudio.Playing == false && EngineTime.timePassed > lastDialogueTime + dialogueLength && dialogueIndex >= blackboard.dialogues.Count)
             {
-                // idle
-                return blackboard.stateIdle;
+                // turn
+                return blackboard.stateTurn;
             }
 
             return this;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using PlayerCharacterComplex;
+using PlayerBow;
 
 namespace NonPlayerCharacter
 {
@@ -13,16 +14,19 @@ namespace NonPlayerCharacter
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateIdle,
             stateTalk,
-            stateTalkRepeating;
+            stateTalkRepeating,
+            stateTurn;
 
         [Export]
         public AnimationPlayer animation;
         [Export]
         public string idleAnimationName,
-            talkAnimationName;
+            talkAnimationName,
+            turnAnimationName;
         [Export]
-		public float speed = 5,
-            acceleration = 10,
+		public float speed = 5f,
+            lookTime = 1f,
+            acceleration = 10f,
             lookSpeed = 7f;
         [Export]
         public bool saveToWorldData = false,
@@ -36,15 +40,18 @@ namespace NonPlayerCharacter
         //public NavigationAgent3D navAgent;
         public AudioTools3d voiceAudio;
         public Area3D triggerArea;
-        public Node3D targetNode;
         public NpcCameraControl cameraControl;
         public List<NpcDialogue> dialogues = new List<NpcDialogue>(),
             repeatingDialogues = new List<NpcDialogue>();
         public bool bodyInTrigger,
             useRepeatingDialogue = false;
         public PlayerCharacter player;
-        
-        Vector3 startLookDirection;
+        public Vector3 initLookDirection,
+            startLookDirection,
+            targetLookDirection;
+        public float lookCursor,
+            cursorTimeMultiplier;
+
 
 
 
@@ -55,6 +62,10 @@ namespace NonPlayerCharacter
             voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
             triggerArea = (Area3D) GetNode("TriggerArea");
             cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
+
+            cursorTimeMultiplier = 1f / lookTime;
+
+            initLookDirection = -Basis.Z;
 
             // get dialogues
             var childNodes = GetChildren(false);
@@ -78,8 +89,6 @@ namespace NonPlayerCharacter
             triggerArea.BodyEntered += TriggerDialogue;
             triggerArea.BodyExited += TriggerReset;
 
-            startLookDirection = -Basis.Z;
-
             if(saveToWorldData)
             {
                 // get if trigger was already activated
@@ -96,6 +105,7 @@ namespace NonPlayerCharacter
             stateIdle = new NpcSimpleStateIdle(){blackboard = this};
             stateTalk = new NpcSimpleStateTalk(){blackboard = this};
             stateTalkRepeating = new NpcSimpleStateTalkRepeating(){blackboard = this};
+            stateTurn = new NpcSimpleStateTalkTurn(){blackboard = this};
 
             // set first state in machine
             machine.SetState(stateIdle);
@@ -105,13 +115,15 @@ namespace NonPlayerCharacter
 
         public override void _PhysicsProcess(double delta)
         {
-            if(IsInstanceValid(targetNode) && targetNode != null)
+            if(targetLookDirection != Vector3.Zero && lookCursor <= 1.1f)
             {
-                LookAtTargetNode(delta);
-            }
-            else
-            {
-                ResetLook(delta);
+                // smooth look
+                var smoothtargetLookDirection = SineInterpolator.HalfInterpolate(startLookDirection, targetLookDirection, lookCursor);
+
+                // apply look
+                LookAt(GlobalPosition + smoothtargetLookDirection);
+
+                lookCursor += ((float)delta) * cursorTimeMultiplier;
             }
         }
 
@@ -131,44 +143,6 @@ namespace NonPlayerCharacter
 
 
 
-        public void ResetLook(double delta)
-        {
-            if((startLookDirection - -Basis.Z).LengthSquared() > 0.01f)
-            {
-                var targetPosition = GlobalPosition + startLookDirection;
-                var smoothLookTarget = GlobalPosition + -Basis.Z;
-                smoothLookTarget = smoothLookTarget.Slerp(targetPosition, lookSpeed * ((float) delta));
-
-                // apply look
-                LookAt(smoothLookTarget);
-            }
-        }
-
-
-
-        public void LookAtTargetNode(double delta)
-        {
-            if(targetNode == null)
-            {
-                return;
-            }
-
-            // get direction and flatten
-            var lookTarget = targetNode.GlobalPosition;
-            lookTarget.Y = GlobalPosition.Y;
-
-            if(lookTarget.LengthSquared() > 0.1f)
-			{
-				var smoothLookTarget = GlobalPosition + -Basis.Z;
-				smoothLookTarget = smoothLookTarget.Slerp(lookTarget, lookSpeed * ((float) delta));
-
-				// apply look
-				LookAt(smoothLookTarget);
-			}    
-        }
-
-
-
         public void Speak(AudioStream voiceLine, string subtitles, double subtitlesTime)
         {
             voiceAudio.PlaySound(voiceLine, 0);
@@ -181,30 +155,25 @@ namespace NonPlayerCharacter
         {
             if(bodyInTrigger == false)
             {
-                if(useRepeatingDialogue == false)
+                if(freezePlayer == true && body is PlayerCharacter playerBody)
                 {
-                    // one-time dialogue
-                    machine.SetState(stateTalk);
+                    // store hit body
+                    player = playerBody;
 
-                    if(freezePlayer == true && body is PlayerCharacter playerBody)
-                    {
-                        // store hit body
-                        player = playerBody;
-
-                        // set player to start state
-                        player.machine.SetState(player.stateCinematic);
-                    }
-                }
-                else
-                {
-                    // repeating dialogue
-                    machine.SetState(stateTalkRepeating);
+                    // set player to start state
+                    player.machine.SetState(player.stateCinematic);
                 }
 
-                targetNode = body;
+                // set look target
+                targetLookDirection = body.GlobalPosition - GlobalPosition;
+                targetLookDirection.Y = 0;
+
+                // repeating dialogue
+                machine.SetState(stateTurn);
+                
+                bodyInTrigger = true;
             }
 
-            bodyInTrigger = true;
         }
 
 
