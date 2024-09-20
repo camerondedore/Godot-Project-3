@@ -22,6 +22,7 @@ animation = NodePath("character-lumsden/AnimationPlayer")
 idleAnimationName = "lumsden-mapping"
 talkAnimationName = "lumsden-talk"
 turnAnimationName = "lumsden-idle"
+lookTime = 0.5
 linkedObjects = []
 
 [node name="Collider" type="CollisionShape3D" parent="."]

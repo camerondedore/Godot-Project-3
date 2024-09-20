@@ -63,8 +63,6 @@ namespace NonPlayerCharacter
             triggerArea = (Area3D) GetNode("TriggerArea");
             cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
 
-            cursorTimeMultiplier = 1f / lookTime;
-
             initLookDirection = -Basis.Z;
 
             // get dialogues
@@ -118,7 +116,7 @@ namespace NonPlayerCharacter
             if(targetLookDirection != Vector3.Zero && lookCursor <= 1.1f)
             {
                 // smooth look
-                var smoothtargetLookDirection = SineInterpolator.HalfInterpolate(startLookDirection, targetLookDirection, lookCursor);
+                var smoothtargetLookDirection = startLookDirection.Slerp(targetLookDirection, lookCursor);
 
                 // apply look
                 LookAt(GlobalPosition + smoothtargetLookDirection);
@@ -167,6 +165,11 @@ namespace NonPlayerCharacter
                 // set look target
                 targetLookDirection = body.GlobalPosition - GlobalPosition;
                 targetLookDirection.Y = 0;
+
+                // change cursor time multiplier
+                var angleToTargetDirection = (-Basis.Z).AngleTo(targetLookDirection);
+                angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
+                cursorTimeMultiplier = 3.14f / (lookTime * angleToTargetDirection);
 
                 // repeating dialogue
                 machine.SetState(stateTurn);
