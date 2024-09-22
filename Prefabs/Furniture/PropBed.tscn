@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv3ogl3f1lqaw"]
+
+[ext_resource type="ArrayMesh" uid="uid://xbo5byhr6uqs" path="res://Models/prop-bed.res" id="1_3gham"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_cwuxp"]
+[ext_resource type="Material" uid="uid://jqraxvi0r28x" path="res://Materials/Rope.tres" id="3_mgqaw"]
+[ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="4_bl0bc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g62ij"]
+size = Vector3(1.8, 0.3, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ukfey"]
+size = Vector3(1.5, 0.5, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tqej4"]
+size = Vector3(0.2, 1.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0w4vi"]
+size = Vector3(0.2, 1, 0.2)
+
+[node name="PropBed" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_3gham")
+surface_material_override/0 = ExtResource("2_cwuxp")
+surface_material_override/1 = ExtResource("3_mgqaw")
+surface_material_override/2 = ExtResource("4_bl0bc")
+
+[node name="ColliderBed" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.19209e-07)
+shape = SubResource("BoxShape3D_g62ij")
+
+[node name="ColliderHeadBoard" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 1.2)
+shape = SubResource("BoxShape3D_ukfey")
+
+[node name="ColliderLegTall" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0.75, 1.2)
+shape = SubResource("BoxShape3D_tqej4")
+
+[node name="ColliderLegTall2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0.75, 1.2)
+shape = SubResource("BoxShape3D_tqej4")
+
+[node name="ColliderLegShort" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 0.5, -1.2)
+shape = SubResource("BoxShape3D_0w4vi")
+
+[node name="ColliderLegShort2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, 0.5, -1.2)
+shape = SubResource("BoxShape3D_0w4vi")
