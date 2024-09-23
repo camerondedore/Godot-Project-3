@@ -5,3 +5,4 @@
 [resource]
 cull_mode = 2
 albedo_texture = ExtResource("1_3heus")
+metallic_specular = 0.0
