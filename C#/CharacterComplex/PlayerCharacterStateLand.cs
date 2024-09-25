@@ -82,6 +82,11 @@ namespace PlayerCharacterComplex
                 return blackboard.stateFall;
             }
 
+            if(blackboard.jumpDisconnector.Trip(PlayerInput.jump))
+            {
+                // jump start
+                return blackboard.stateJumpStart;
+            }
 
             if(EngineTime.timePassed > startTime + delay)
             {
