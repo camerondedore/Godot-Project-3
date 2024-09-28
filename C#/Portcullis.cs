@@ -5,21 +5,24 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 {
 
     [Export]
-    Vector3 openPositon = new Vector3(0, 2.1f, 0);
+    Vector3 openOffset = new Vector3(0, 3.3f, 0);
     [Export]
     AudioStream openingSound,
         openSound;
     [Export]
     float speed = 1;
+    [Export]
+    bool open;
 
     CollisionShape3D portcullisCollider;
     Blocker blocker;
     AudioTools3d audio;
     Decal decal;
-    Vector3 startPosition,
-        targetPosition;
-    float openCursor = 0;
-    bool open = false;
+    Vector3 closedPosition,
+        openPosition,
+        startPostition,
+        endPosition;
+    float openCursor = 1;
 
 
 
@@ -31,30 +34,39 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
         audio = (AudioTools3d) GetNode("Audio");
         decal = (Decal) GetNode("Decal");
         
-        startPosition = GlobalPosition;
-        targetPosition = GlobalPosition + openPositon;
+        closedPosition = GlobalPosition;
+        openPosition = GlobalPosition + openOffset;
+
+        if(open == true)
+        {
+            GlobalPosition = openPosition;
+            portcullisCollider.Disabled = true;
+            blocker.Activate();
+        }
+
+
+        decal.TopLevel = true;
     }
 
 
 
     public override void _PhysicsProcess(double delta)
     {
-        if(open == true)
+        if(openCursor < 1)
         {
             openCursor += ((float)delta) * speed;
 
-            GlobalPosition = SineInterpolator.HalfInterpolate(startPosition, targetPosition, openCursor);
+            GlobalPosition = SineInterpolator.HalfInterpolate(startPostition, endPosition, openCursor);
 
             // check if door completed opening
-            if(GlobalPosition == targetPosition)
+            if(openCursor >= 1 && GlobalPosition == openPosition)
             {
-                portcullisCollider.Disabled = false;
+                Opened();
+            }
 
-                // play audio
-                audio.PlaySound(openSound, 0.15f);
-                
-                // disable script
-                SetScript(new Variant());
+            if(openCursor >= 1 && GlobalPosition == closedPosition)
+            {
+                Closed();
             }
         }
     }
@@ -63,14 +75,43 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
     public void Activate()
     {
-        open = true;
+        if(open == false)
+        {
+            // target closed position
+            startPostition = closedPosition;
+            endPosition = openPosition;
+        }
+        else
+        {
+            // target open position
+            startPostition = openPosition;
+            endPosition = closedPosition;
+        }
+        
+        open = !open;
 
-        // play audio
-        audio.PlaySound(openingSound, 0.1f);
+        // invert cursor
+        openCursor = 1f - openCursor;
 
-        // activate navmesh link
+        // play looping audio
+        audio.PlaySound(openingSound, 0.1f);        
+    }
+
+
+
+    void Closed()
+    {
+        portcullisCollider.Disabled = false;
+        blocker.Deactivate();
+        audio.PlaySound(openSound, 0.15f);
+    }
+
+
+
+    void Opened()
+    {
+        portcullisCollider.Disabled = true;
         blocker.Activate();
-
-        decal.TopLevel = true;
+        audio.PlaySound(openSound, 0.15f);
     }
 }

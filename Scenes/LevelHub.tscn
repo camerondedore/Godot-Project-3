@@ -1370,6 +1370,25 @@ openAngle = Vector3(0, -110, 0)
 [node name="PropDoorSpikes" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame2" instance=ExtResource("44_7g1yl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
 
+[node name="PortcullisFrame2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("31_3qh1g")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -13.3755, 4.76837e-07, 2.97804)
+
+[node name="Portcullis2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("40_vgffv")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -13.3755, 1.75, 2.97804)
+speed = 0.25
+open = true
+
+[node name="PropSwitch2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -12.4655, 2.5, 5.02866)
+linkedObjects = [NodePath("../Portcullis2")]
+
+[node name="PropSwitch3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -15.4354, 2.5, 2.05882)
+linkedObjects = [NodePath("../Portcullis2")]
+
+[node name="PickupArrowsWeighted" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("39_icx8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7093, 1, 6.73427)
+
 [node name="Fabrications" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="Fences" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications"]

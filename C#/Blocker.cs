@@ -12,16 +12,20 @@ public partial class Blocker : StaticBody3D, IActivatable
     public override void _Ready()
     {
         navLink.Enabled = false;
+        navLink.TopLevel = true;
     }
 
 
 
     public void Activate()
-    {
-        navLink.TopLevel = true;
-
+    {        
         navLink.Enabled = true;
+    }
 
-        QueueFree();
+
+
+    public void Deactivate()
+    {
+        navLink.Enabled = false;
     }
 }
