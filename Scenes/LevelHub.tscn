@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=145 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_g2gc2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -78,6 +78,7 @@
 [ext_resource type="PackedScene" uid="uid://dhp7rjy33kbog" path="res://Prefabs/Fabrications/PropPicketWall.tscn" id="44_k88de"]
 [ext_resource type="PackedScene" uid="uid://dv01bjwkmdlab" path="res://Prefabs/Fabrications/PropPicketBattlements.tscn" id="44_u5c06"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="46_ssp6v"]
+[ext_resource type="PackedScene" uid="uid://bj78luxrt6dcp" path="res://Prefabs/Player Bow Targets/PropLever.tscn" id="47_6d30w"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="48_o7o1q"]
 [ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="49_c8p7e"]
 [ext_resource type="PackedScene" uid="uid://c7um6v47aarit" path="res://Prefabs/Doors/DoorFrame.tscn" id="50_chg6s"]
@@ -1384,6 +1385,10 @@ linkedObjects = [NodePath("../Portcullis2")]
 
 [node name="PropSwitch3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -15.4354, 2.5, 2.05882)
+linkedObjects = [NodePath("../Portcullis2")]
+
+[node name="PropLever" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("47_6d30w")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -15.5757, 0, 5.42426)
 linkedObjects = [NodePath("../Portcullis2")]
 
 [node name="PickupArrowsWeighted" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("39_icx8h")]

@@ -59,12 +59,12 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
             GlobalPosition = SineInterpolator.HalfInterpolate(startPostition, endPosition, openCursor);
 
             // check if door completed opening
-            if(openCursor >= 1 && GlobalPosition == openPosition)
+            if(openCursor >= 1 && open)
             {
                 Opened();
             }
 
-            if(openCursor >= 1 && GlobalPosition == closedPosition)
+            if(openCursor >= 1 && open == false)
             {
                 Closed();
             }

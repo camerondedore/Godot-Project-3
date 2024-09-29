@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://bj78luxrt6dcp"]
+
+[ext_resource type="Script" path="res://C#/PlayerBow/LeverTarget.cs" id="1_aia7k"]
+[ext_resource type="ArrayMesh" uid="uid://y0cp8g5bn2mq" path="res://Models/prop-lever-base.res" id="1_ig7bj"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_rxj3c"]
+[ext_resource type="AudioStream" uid="uid://cgbbvh138dvnp" path="res://Audio/wood-block-hit-success.wav" id="2_uv3nt"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_6vjvo"]
+[ext_resource type="AudioStream" uid="uid://ddhicpsbgpp24" path="res://Audio/wood-block-hit-fail.wav" id="3_soyiv"]
+[ext_resource type="AudioStream" uid="uid://b2n46pgjedn4m" path="res://Audio/lever-activate.wav" id="4_2lqlb"]
+[ext_resource type="ArrayMesh" uid="uid://py8r8tye8i7c" path="res://Models/prop-lever-arm.res" id="4_k0jfr"]
+[ext_resource type="Material" uid="uid://dcedtu2o17bkm" path="res://Materials/Props/prop-switch.tres" id="5_7vd6u"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_bavwj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cmuxc"]
+radius = 0.27
+height = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tgqgq"]
+size = Vector3(0.75, 0.3, 1.125)
+
+[node name="PropLever" type="AnimatableBody3D" node_paths=PackedStringArray("linkedObjects")]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_aia7k")
+linkedObjects = []
+hitSuccessSound = ExtResource("2_uv3nt")
+hitFailSound = ExtResource("3_soyiv")
+activateSound = ExtResource("4_2lqlb")
+
+[node name="LeverTargetCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_cmuxc")
+
+[node name="LeverBase" type="StaticBody3D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="LeverBaseMesh" type="MeshInstance3D" parent="LeverBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_ig7bj")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_rxj3c")
+surface_material_override/1 = ExtResource("3_6vjvo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeverBase"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_tgqgq")
+
+[node name="LeverArm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0)
+
+[node name="ArrowTarget" type="Node3D" parent="LeverArm"]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 1.3002, -2.98023e-08)
+
+[node name="LeverArmMesh" type="MeshInstance3D" parent="LeverArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_k0jfr")
+surface_material_override/0 = ExtResource("2_rxj3c")
+surface_material_override/1 = ExtResource("5_7vd6u")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+unit_size = 5.0
+max_distance = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("9_bavwj")
