@@ -1,6 +1,6 @@
 [gd_scene load_steps=145 format=3 uid="uid://dvorxoit80r4j"]
 
-[ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/DayEnvironment.tres" id="1_g2gc2"]
+[ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
 [ext_resource type="Script" path="res://C#/HubControl.cs" id="3_8tlgx"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_n8wa2"]
@@ -182,7 +182,7 @@ size = Vector3(10, 5, 1)
 [node name="LevelHub" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_g2gc2")
+environment = ExtResource("1_t2fdd")
 
 [node name="GlobalCamera" parent="." instance=ExtResource("2_vfw7t")]
 transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0.450541, -0.398983, 0.79864, -21.7, 17.1, 96.3)
@@ -207,7 +207,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
-transform = Transform3D(-0.927836, -0.35592, 0.111539, 0, 0.299041, 0.95424, -0.372988, 0.885379, -0.277461, 0, 0, 0)
+transform = Transform3D(-0.896221, -0.266395, 0.354714, 0.240142, 0.38097, 0.892857, -0.372988, 0.885379, -0.277461, 0, 0, 0)
 light_indirect_energy = 2.0
 shadow_enabled = true
 shadow_opacity = 0.9
@@ -226,7 +226,7 @@ distance_fade_begin = 10.0
 omni_range = 15.0
 
 [node name="AmbientLight" type="OmniLight3D" parent="Map/Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.6527, 2.03262, 14.7606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.9811, 1.48806, 14.9724)
 light_energy = 0.75
 light_indirect_energy = 2.0
 light_bake_mode = 1
@@ -1994,7 +1994,7 @@ transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -54.0262
 [node name="Lightshafts" type="Node3D" parent="Map/Fx"]
 
 [node name="FxLightShaft" parent="Map/Fx/Lightshafts" instance=ExtResource("77_0vi7o")]
-transform = Transform3D(-1.39175, 0.223077, 0.53388, 0, 1.90848, -0.448561, -0.559482, -0.554922, -1.32807, -61.0568, 8.5, 12.2481)
+transform = Transform3D(-1.34433, 0.709427, 0.399593, 0.360212, 1.78571, -0.571456, -0.55948, -0.554921, -1.32807, -61.0568, 8.5, 12.2481)
 
 [node name="FxWoodChipsDecal" parent="Map/Fx" instance=ExtResource("76_hnojk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1405, 0, -11.7025)

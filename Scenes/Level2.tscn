@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://dvrx58x6wafe1"]
+
+[ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
+[ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
+[ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_wvlv8"]
+[ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_n6jrc"]
+[ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_b0p0a"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b8xm6u2qv132h" path="res://Scenes/Occlusion/Level2.occ" id="6_l1egs"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_i3bc3"]
+vertices = PackedVector3Array(-9.5, 0.5, -9.5, -9.5, 0.5, 9.5, 9.5, 0.5, 9.5, 9.5, 0.5, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hf8dj"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ima2k"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Level2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_f2fj7")
+
+[node name="GlobalCamera" parent="." instance=ExtResource("2_v7b00")]
+
+[node name="DialogueUi" parent="." instance=ExtResource("3_wvlv8")]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("4_n6jrc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Lighting" type="Node3D" parent="Map"]
+
+[node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
+transform = Transform3D(-0.80353, -0.158716, 0.573716, 0.463918, 0.436937, 0.770627, -0.372988, 0.885379, -0.277461, 0, 0, 0)
+light_indirect_energy = 2.0
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_blend_splits = true
+script = ExtResource("5_b0p0a")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
+occluder = ExtResource("6_l1egs")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
+navigation_mesh = SubResource("NavigationMesh_i3bc3")
+
+[node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+mesh = SubResource("PlaneMesh_hf8dj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+shape = SubResource("ConcavePolygonShape3D_ima2k")
+
+[node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
+
+[node name="Pickups" type="Node3D" parent="Map"]
+
+[node name="Switches" type="Node3D" parent="Map"]
+
+[node name="Cinematics" type="Node3D" parent="Map"]
+
+[node name="Enemies" type="Node3D" parent="."]
