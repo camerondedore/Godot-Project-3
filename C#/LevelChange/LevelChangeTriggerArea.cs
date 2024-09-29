@@ -26,6 +26,18 @@ namespace LevelChange
 
         void Triggered(Node3D body)
         {
+            if(nextLevel.Contains("LevelHub"))
+            {
+                // get hub stage
+                string[] splitNextLevel = nextLevel.Split("-");
+                int hubStage = int.Parse(splitNextLevel[1]);
+
+                // update world data hub stage
+                WorldData.data.currentData.HubStage = hubStage;
+
+                nextLevel = splitNextLevel[0];
+            }
+
             // change to end state
             levelChange.ChangeLevel(nextLevel, nextCheckpointPosition, nextCheckpointEulerRotation, nextCameraPosition, nextCameraEulerRotation);
 
