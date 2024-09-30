@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=11 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="3_oakbt"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_wvlv8"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_n6jrc"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_b0p0a"]
@@ -23,6 +24,9 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 environment = ExtResource("1_f2fj7")
 
 [node name="GlobalCamera" parent="." instance=ExtResource("2_v7b00")]
+transform = Transform3D(0.592748, -0.0442266, 0.804173, 0, 0.998491, 0.0549134, -0.805388, -0.0325498, 0.591854, 6.73564, 4.99215, 7.42531)
+
+[node name="LevelChange" parent="." instance=ExtResource("3_oakbt")]
 
 [node name="DialogueUi" parent="." instance=ExtResource("3_wvlv8")]
 
@@ -34,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
-transform = Transform3D(-0.80353, -0.158716, 0.573716, 0.463918, 0.436937, 0.770627, -0.372988, 0.885379, -0.277461, 0, 0, 0)
+transform = Transform3D(-0.463918, 0.0810167, 0.882166, 0.80353, 0.457756, 0.380525, -0.372988, 0.885379, -0.277461, 0, 0, 0)
 light_indirect_energy = 2.0
 shadow_enabled = true
 shadow_opacity = 0.9

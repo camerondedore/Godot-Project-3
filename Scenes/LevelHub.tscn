@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://C#/HubStage.cs" id="4_hh5wq"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_s034b"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="5_rinr5"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
 [ext_resource type="LightmapGIData" uid="uid://dw0xrx3e8t6lv" path="res://Scenes/Lightmaps/LevelHub.lmbake" id="6_vg0rp"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
@@ -78,7 +79,6 @@
 [ext_resource type="PackedScene" uid="uid://dhp7rjy33kbog" path="res://Prefabs/Fabrications/PropPicketWall.tscn" id="44_k88de"]
 [ext_resource type="PackedScene" uid="uid://dv01bjwkmdlab" path="res://Prefabs/Fabrications/PropPicketBattlements.tscn" id="44_u5c06"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="46_ssp6v"]
-[ext_resource type="PackedScene" uid="uid://bj78luxrt6dcp" path="res://Prefabs/Player Bow Targets/PropLever.tscn" id="47_6d30w"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="48_o7o1q"]
 [ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="49_c8p7e"]
 [ext_resource type="PackedScene" uid="uid://c7um6v47aarit" path="res://Prefabs/Doors/DoorFrame.tscn" id="50_chg6s"]
@@ -194,6 +194,8 @@ script = ExtResource("3_8tlgx")
 script = ExtResource("4_hh5wq")
 stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4")]
 
+[node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
+
 [node name="DialogueUi" parent="." instance=ExtResource("3_n8wa2")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_s034b")]
@@ -207,7 +209,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
-transform = Transform3D(-0.896221, -0.266395, 0.354714, 0.240142, 0.38097, 0.892857, -0.372988, 0.885379, -0.277461, 0, 0, 0)
+transform = Transform3D(-0.80353, -0.158716, 0.573716, 0.463918, 0.436937, 0.770627, -0.372988, 0.885379, -0.277461, 0, 0, 0)
 light_indirect_energy = 2.0
 shadow_enabled = true
 shadow_opacity = 0.9
@@ -1370,29 +1372,6 @@ openAngle = Vector3(0, -110, 0)
 
 [node name="PropDoorSpikes" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame2" instance=ExtResource("44_7g1yl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
-
-[node name="PortcullisFrame2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("31_3qh1g")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -13.3755, 4.76837e-07, 2.97804)
-
-[node name="Portcullis2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("40_vgffv")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -13.3755, 1.75, 2.97804)
-speed = 0.25
-open = true
-
-[node name="PropSwitch2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -12.4655, 2.5, 5.02866)
-linkedObjects = [NodePath("../Portcullis2")]
-
-[node name="PropSwitch3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -15.4354, 2.5, 2.05882)
-linkedObjects = [NodePath("../Portcullis2")]
-
-[node name="PropLever" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("47_6d30w")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -15.5757, 0, 5.42426)
-linkedObjects = [NodePath("../Portcullis2")]
-
-[node name="PickupArrowsWeighted" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("39_icx8h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7093, 1, 6.73427)
 
 [node name="Fabrications" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
