@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=147 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -130,6 +130,7 @@
 [ext_resource type="AudioStream" uid="uid://4y3v155lqdas" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-4.wav" id="121_6xxti"]
 [ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="122_pk243"]
 [ext_resource type="AudioStream" uid="uid://bh0alrg1qpno6" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-5.wav" id="122_sdth6"]
+[ext_resource type="Script" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="123_de4ge"]
 [ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="124_050ex"]
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="125_iv8q0"]
 [ext_resource type="AudioStream" uid="uid://dx7jme7p5tmx4" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-9.wav" id="126_76qtq"]
@@ -178,6 +179,9 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1wib3"]
 size = Vector3(10, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0unnw"]
+size = Vector3(9, 5, 1)
 
 [node name="LevelHub" type="Node3D"]
 
@@ -2276,6 +2280,21 @@ transform = Transform3D(-0.980787, -0.0212385, 0.193925, 0, 0.994056, 0.108868, 
 script = ExtResource("38_7dyhy")
 lookTarget = NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis")
 lookSpeed = 0.5
+
+[node name="Level2ChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2, 75)
+collision_layer = 128
+collision_mask = 128
+monitorable = false
+script = ExtResource("123_de4ge")
+levelChange = NodePath("../../LevelChange")
+nextLevel = "Level2"
+nextCameraPosition = Vector3(2.70012, 3.44395, 1.93165)
+nextCameraEulerRotation = Vector3(-0.375246, 0.488692, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Level2ChangeTriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080719, 0, 0)
+shape = SubResource("BoxShape3D_0unnw")
 
 [node name="Npcs" type="Node3D" parent="."]
 

@@ -136,7 +136,7 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget
         }
 
         
-        var shortestDistanceSqr = maxDistanceToTarget;
+        var shortestDistanceSqr = maxDistanceToTarget * maxDistanceToTarget;
 
         // find target to slide to
         foreach(var target in targetPoints)

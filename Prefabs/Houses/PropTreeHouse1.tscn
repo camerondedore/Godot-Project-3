@@ -15,8 +15,8 @@ data = PackedVector3Array(1.2997, -0.7288, -1.4607, 1.4689, -0.0037, -1.0155, 1.
 [sub_resource type="BoxShape3D" id="BoxShape3D_xcjye"]
 size = Vector3(0.2, 2.5, 0.2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_21qwg"]
-size = Vector3(2.60938, 0.200653, 3.67673)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_18lrj"]
+points = PackedVector3Array(1.1, 0, 1.625, -1.1, 0, 1.625, -1.1, -0.3, 1.625, 1.1, -0.3, 1.625, 1.595, 0.07, -1.94, -1.595, 0.07, -1.94, -1.595, -0.1, -1.94, 1.595, -0.1, -1.94)
 
 [node name="PropTreeHouse1" type="StaticBody3D"]
 
@@ -50,8 +50,8 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 shape = SubResource("BoxShape3D_xcjye")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.950282, 0.31139, 0, -0.31139, 0.950282, 0, 3.00998, -2.84818)
-shape = SubResource("BoxShape3D_21qwg")
+transform = Transform3D(1, 0, 0, 0, 0.940585, 0.339559, 0, -0.339559, 0.940585, 0, 3.04682, -2.77951)
+shape = SubResource("ConvexPolygonShape3D_18lrj")
 
 [node name="Decal" type="Decal" parent="."]
 size = Vector3(4.5, 0.2, 4.5)
