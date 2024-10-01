@@ -22,7 +22,7 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget
         oldPosition;
     float cursorSpeed,
         moveCursor = 1,
-        maxDistanceToTarget = 100;
+        maxDistanceToTarget = 15;
 
 
 
