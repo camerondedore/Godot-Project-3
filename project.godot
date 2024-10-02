@@ -10,9 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Project 3"
+config/name="Claw for Claw"
 run/main_scene="res://Scenes/SplashScreen.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="ClawForClaw"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [display]
