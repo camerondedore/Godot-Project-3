@@ -1,9 +1,10 @@
-[gd_scene load_steps=123 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=124 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/Level1Environment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
 [ext_resource type="ArrayMesh" uid="uid://gg6ma27bwkj1" path="res://Models/level-1-intro.res" id="1_tfilf"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="2_8opqg"]
+[ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_4y45v"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_28myn"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="3_sp7be"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="4_m4xsu"]
@@ -149,11 +150,13 @@ size = Vector3(12, 5, 1)
 
 [node name="Level1Intro" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_dhwej")
-
 [node name="GlobalCamera" parent="." instance=ExtResource("1_fwb8n")]
 transform = Transform3D(0.936584, -0.178938, 0.301313, 0, 0.859813, 0.510608, -0.35044, -0.478228, 0.805288, 4.26818, 7.63186, 12.2004)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_dhwej")
+script = ExtResource("3_4y45v")
+postProcessing = ExtResource("1_dhwej")
 
 [node name="LevelChange" parent="." instance=ExtResource("3_sp7be")]
 

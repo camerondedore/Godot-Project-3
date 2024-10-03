@@ -1,8 +1,9 @@
-[gd_scene load_steps=147 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=148 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
 [ext_resource type="Script" path="res://C#/HubControl.cs" id="3_8tlgx"]
+[ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_hlp5u"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_n8wa2"]
 [ext_resource type="Script" path="res://C#/HubStage.cs" id="4_hh5wq"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_s034b"]
@@ -185,11 +186,13 @@ size = Vector3(9, 5, 1)
 
 [node name="LevelHub" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_t2fdd")
-
 [node name="GlobalCamera" parent="." instance=ExtResource("2_vfw7t")]
 transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0.450541, -0.398983, 0.79864, -21.7, 17.1, 96.3)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_t2fdd")
+script = ExtResource("3_hlp5u")
+postProcessing = ExtResource("1_t2fdd")
 
 [node name="HubControl" type="Node" parent="."]
 script = ExtResource("3_8tlgx")
