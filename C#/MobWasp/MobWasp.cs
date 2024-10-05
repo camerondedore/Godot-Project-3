@@ -157,7 +157,7 @@ namespace MobWasp
                         var projectedObstacleNormal = Basis.Z.Project(obstacleNormal);
 
                         // check if not stuck
-                        if(GetRealVelocity().LengthSquared() > 0.2f)
+                        if(GetRealVelocity().LengthSquared() > 0.6f)
                         {
                             // use ray normal to avoid obstacles
                             newVelocity = (projectedObstacleNormal).Normalized() * speed;                    
