@@ -31,3 +31,6 @@ shape = SubResource("BoxShape3D_yj603")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 shape = SubResource("BoxShape3D_b0275")
+
+[node name="DoorEmpty" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.733722, 1.25, -0.0398674)
