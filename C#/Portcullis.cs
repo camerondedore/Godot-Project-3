@@ -94,7 +94,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
         openCursor = 1f - openCursor;
 
         // play looping audio
-        audio.PlaySound(openingSound, 0.1f);        
+        audio.PlayLoopingSound(openingSound, 0.1f);        
     }
 
 
