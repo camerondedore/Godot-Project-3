@@ -2,7 +2,7 @@ using CinematicSimple;
 using Godot;
 using System;
 
-public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpleAction
+public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpleAction, IActivatable
 {
 
     [Export]
@@ -30,6 +30,13 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
 
 
     public void PlayCinematicAction()
+    {
+        Spawn();
+    }
+
+
+
+    public void Activate()
     {
         Spawn();
     }
