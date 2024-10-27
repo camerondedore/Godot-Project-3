@@ -63,6 +63,8 @@ namespace CinematicSimple
 
         public void PlayCinematicAction()
         {
+            cursor = 0;
+
             // get global camera
             camera = GlobalCamera.camera;
 
