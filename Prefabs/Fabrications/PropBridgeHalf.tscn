@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7ceqmc04noh0"]
+
+[ext_resource type="ArrayMesh" uid="uid://byavl1axp8vok" path="res://Models/prop-bridge-half.res" id="1_mefdg"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_npqjm"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_rchfc"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="4_sl0c5"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="5_gkoyo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bsnlm"]
+size = Vector3(4, 0.3, 5.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c576e"]
+size = Vector3(0.5, 0.5, 5.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5pdx"]
+size = Vector3(0.4, 0.4, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wlorb"]
+size = Vector3(0.4, 0.4, 3.6)
+
+[node name="PropBridgeHalf" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_mefdg")
+surface_material_override/0 = ExtResource("2_npqjm")
+surface_material_override/1 = ExtResource("3_rchfc")
+surface_material_override/2 = ExtResource("4_sl0c5")
+surface_material_override/3 = ExtResource("5_gkoyo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.25)
+shape = SubResource("BoxShape3D_bsnlm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_c576e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0.45, 0)
+shape = SubResource("BoxShape3D_c576e")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0.45, 0)
+shape = SubResource("BoxShape3D_c576e")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.934658, -0.355547, 0, 0.355547, 0.934658, -1.30806, -0.791193, 0.359304)
+shape = SubResource("BoxShape3D_a5pdx")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.934658, -0.355547, 0, 0.355547, 0.934658, 1.29194, -0.791193, 0.359304)
+shape = SubResource("BoxShape3D_a5pdx")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.115832, -0.0300457, -0.538027)
+shape = SubResource("BoxShape3D_wlorb")
