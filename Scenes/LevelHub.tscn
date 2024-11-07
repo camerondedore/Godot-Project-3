@@ -213,6 +213,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
 [node name="Level1LoadPoint" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
 
+[node name="Level1LoadCameraPoint" type="Node3D" parent="Map"]
+transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0.450541, -0.398983, 0.79864, -21.7, 17.1, 96.3)
+
+[node name="Level2LoadPoint" type="Node3D" parent="Map"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 54, 5, 42)
+
+[node name="Level2LoadCameraPoint" type="Node3D" parent="Map"]
+transform = Transform3D(0.951056, -0.120743, 0.284452, 0, 0.920505, 0.390731, -0.309017, -0.371607, 0.875452, 59.5, 8.6, 47)
+
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
