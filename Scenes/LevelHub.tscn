@@ -5,12 +5,12 @@
 [ext_resource type="Script" path="res://C#/HubControl.cs" id="3_8tlgx"]
 [ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_hlp5u"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_n8wa2"]
+[ext_resource type="Environment" uid="uid://dooskg4otcsks" path="res://Environments/LevelHub1Environment.tres" id="4_1ksvl"]
 [ext_resource type="Script" path="res://C#/HubStage.cs" id="4_hh5wq"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_s034b"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="5_rinr5"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
-[ext_resource type="LightmapGIData" uid="uid://dw0xrx3e8t6lv" path="res://Scenes/Lightmaps/LevelHub.lmbake" id="6_vg0rp"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dpwxwkgm4hvfi" path="res://Scenes/Occlusion/LevelHub.occ" id="7_uqg3o"]
 [ext_resource type="ArrayMesh" uid="uid://c17yp7e6wr0s7" path="res://Models/level-hub-tree-walls.res" id="8_4d0ss"]
@@ -189,17 +189,27 @@ size = Vector3(9, 5, 1)
 [node name="GlobalCamera" parent="." instance=ExtResource("2_vfw7t")]
 transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0.450541, -0.398983, 0.79864, -21.7, 17.1, 96.3)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment0" type="WorldEnvironment" parent="."]
 environment = ExtResource("1_t2fdd")
 script = ExtResource("3_hlp5u")
 postProcessing = ExtResource("1_t2fdd")
+
+[node name="WorldEnvironment1" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_1ksvl")
+script = ExtResource("3_hlp5u")
+postProcessing = ExtResource("4_1ksvl")
 
 [node name="HubControl" type="Node" parent="."]
 script = ExtResource("3_8tlgx")
 
 [node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
-stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4")]
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0")]
+
+[node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
+script = ExtResource("4_hh5wq")
+hubStage = 1
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1")]
 
 [node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
 
@@ -224,9 +234,19 @@ transform = Transform3D(0.951056, -0.120743, 0.284452, 0, 0.920505, 0.390731, -0
 
 [node name="Lighting" type="Node3D" parent="Map"]
 
-[node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
+[node name="DirectionalLight0" type="DirectionalLight3D" parent="Map/Lighting"]
 transform = Transform3D(-0.80353, -0.158716, 0.573716, 0.463918, 0.436937, 0.770627, -0.372988, 0.885379, -0.277461, 0, 0, 0)
 light_indirect_energy = 2.0
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_blend_splits = true
+script = ExtResource("5_k6lpv")
+
+[node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
+transform = Transform3D(-0.517347, 0.0982764, -0.850114, -0.734431, 0.458924, 0.5, 0.439276, 0.883024, -0.165246, 0, 0, 0)
+visible = false
+light_color = Color(0.68, 0.792, 1, 1)
+light_energy = 0.8
 shadow_enabled = true
 shadow_opacity = 0.9
 directional_shadow_blend_splits = true
@@ -251,13 +271,6 @@ light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 10.0
 omni_range = 17.0
-
-[node name="LightmapGI" type="LightmapGI" parent="Map"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0361862, -0.0568905, 0.0146255)
-visible = false
-use_denoiser = false
-generate_probes_subdiv = 0
-light_data = ExtResource("6_vg0rp")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("7_uqg3o")

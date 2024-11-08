@@ -166,7 +166,7 @@ postProcessing = ExtResource("1_f2fj7")
 [node name="DialogueUi" parent="." instance=ExtResource("3_wvlv8")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_n6jrc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 6, -8.5)
 
 [node name="Map" type="Node3D" parent="."]
 

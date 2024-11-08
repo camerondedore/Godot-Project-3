@@ -33,6 +33,17 @@ public partial class HubControl : Node
                     stageNode.QueueFree();
                 }
             }
+            else
+            {
+                foreach(var stageNode in stage.stageNodes)
+                {
+                    // check for lights
+                    if(stageNode is Light3D lightNode)
+                    {
+                        lightNode.Visible = true;
+                    }
+                }
+            }
         }
     }
 }
