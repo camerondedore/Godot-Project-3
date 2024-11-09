@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=149 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -103,6 +103,7 @@
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="67_5ah10"]
 [ext_resource type="Animation" uid="uid://c2r15hubmduxr" path="res://Animation/Cinematics/lhc3.res" id="67_hjihu"]
 [ext_resource type="PackedScene" uid="uid://b6t2haanye7s0" path="res://Prefabs/Pickups/PickupArrowsPick.tscn" id="68_l4xn5"]
+[ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="68_rh37y"]
 [ext_resource type="PackedScene" uid="uid://cd4rwhkdqdprp" path="res://Prefabs/Pickups/PickupArrowsBlade.tscn" id="69_3y0k1"]
 [ext_resource type="Texture2D" uid="uid://cdb6rvckruqu2" path="res://Textures/map-diffuse.png" id="69_cnpxw"]
 [ext_resource type="PackedScene" uid="uid://d0f8vu33h2mb6" path="res://Prefabs/Pickups/PickupArrowsFire.tscn" id="70_r2olo"]
@@ -209,7 +210,7 @@ stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic5"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic7"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic8"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic10"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic11"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic12"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic13")]
 
 [node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
 
@@ -248,7 +249,7 @@ visible = false
 light_color = Color(0.68, 0.792, 1, 1)
 light_energy = 0.8
 shadow_enabled = true
-shadow_opacity = 0.9
+shadow_opacity = 0.8
 directional_shadow_blend_splits = true
 script = ExtResource("5_k6lpv")
 
@@ -1671,6 +1672,47 @@ blackWall = NodePath("../BlackWall")
 
 [node name="BlackWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("65_fx7bf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -69, 2, 31.4664)
+
+[node name="HubChangingTorches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches"]
+
+[node name="PropTorchLitDynamic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0.4, 32)
+
+[node name="PropTorchLitDynamic2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0.4, 13)
+
+[node name="PropTorchLitDynamic3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0.4, -9)
+
+[node name="PropTorchLitDynamic4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0.4, -25)
+
+[node name="PropTorchLitDynamic5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0.4, -19)
+
+[node name="PropTorchLitDynamic6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8534, 2.4, -37.223)
+
+[node name="PropTorchLitDynamic7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0.4, 13)
+
+[node name="PropTorchLitDynamic8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3, 0.4, 46.7046)
+
+[node name="PropTorchLitDynamic9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09268, 0.7, -1.67392)
+
+[node name="PropTorchLitDynamic10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6532, 0.400001, -1.05272)
+
+[node name="PropTorchLitDynamic11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1312, 0.400001, 30.8445)
+
+[node name="PropTorchLitDynamic12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0121, 0.400001, -21.7926)
+
+[node name="PropTorchLitDynamic13" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3549, 0.400001, -47.2963)
 
 [node name="Ovens" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 

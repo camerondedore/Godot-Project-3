@@ -30,7 +30,15 @@ public partial class HubControl : Node
                 // remove nodes that aren't in the current stage
                 foreach(var stageNode in stage.stageNodes)
                 {
-                    stageNode.QueueFree();
+                    // check for torches
+                    if(stageNode is Torch torchNode)
+                    {
+                        torchNode.lit = false;
+                    }
+                    else
+                    {
+                        stageNode.QueueFree();
+                    }
                 }
             }
             else
