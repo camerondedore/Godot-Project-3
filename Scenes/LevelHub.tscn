@@ -204,7 +204,7 @@ script = ExtResource("3_8tlgx")
 
 [node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
-stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0")]
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft")]
 
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
