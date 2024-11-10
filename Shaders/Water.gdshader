@@ -111,6 +111,8 @@ void fragment()
 	// apply
 	NORMAL_MAP = combinedWaterNormalSoftEdge;
 	ROUGHNESS = roughness;
-	EMISSION = combinedWithSoftEdge;
-	ALBEDO = foamTextureSoftEdge;
+	//EMISSION = combinedWithSoftEdge;
+	//ALBEDO = foamTextureSoftEdge;
+	ALBEDO = mix(combinedWithSoftEdge, foamTextureSoftEdge, foamTextureSoftEdge);
+	//ALBEDO = combinedWithSoftEdge + foamTextureSoftEdge;
 }
