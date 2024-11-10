@@ -53,7 +53,7 @@ namespace PlayerCharacterComplex
             if(EngineTime.timePassed > startTime + blackboard.startDelay && (PlayerInput.isMouseMoving || PlayerInput.isMoving))
             {
                 // idle
-                return blackboard.stateIdle;
+                return blackboard.superStateIdle;
             }
 
             return this;

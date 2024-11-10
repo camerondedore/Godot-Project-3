@@ -75,7 +75,7 @@ namespace PlayerCharacterComplex
             if(PlayerInput.isMoving == false)
             {
                 // idle
-                return blackboard.stateIdle;
+                return blackboard.superStateIdle;
             }
 
             return this;

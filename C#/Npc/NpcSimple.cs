@@ -180,7 +180,7 @@ namespace NonPlayerCharacter
         public void EndDialogue()
         {
             // set player to idle state
-            player.machine.SetState(player.stateIdle);
+            player.SetToIdle();
         }
 
 

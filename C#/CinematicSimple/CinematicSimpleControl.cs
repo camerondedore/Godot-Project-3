@@ -23,7 +23,7 @@ namespace CinematicSimple
             if(player != null)
             {
                 // set player to idle state
-                player.machine.SetState(player.stateIdle);
+                player.SetToIdle();
             }
         }
 

@@ -98,7 +98,7 @@ namespace PlayerCharacterComplex
                 else
                 {
                     // idle
-                    return blackboard.stateIdle;
+                    return blackboard.superStateIdle;
                 }
             }
 

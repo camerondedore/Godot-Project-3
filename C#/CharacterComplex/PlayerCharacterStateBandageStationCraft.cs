@@ -58,7 +58,7 @@ namespace PlayerCharacterComplex
             if(blackboard.rangerBandagesToCraft <= 0 && EngineTime.timePassed > startTime + craftTime)
             {
                 // idle
-                return blackboard.stateIdle;
+                return blackboard.superStateIdle;
             }
 
 

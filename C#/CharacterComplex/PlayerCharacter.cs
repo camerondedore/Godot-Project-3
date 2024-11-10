@@ -9,10 +9,12 @@ namespace PlayerCharacterComplex
 	{
 
 		public StateMachine machine = new StateMachine();
-		public SuperState superStateJumpPad;
+		public SuperState superStateIdle,
+			superStateJumpPad;
 		public State stateStart,
 			stateCinematic,
-			stateIdle,
+			subStateIdle,
+			subStateIdleAnimation,
 			stateMove,
 			stateFall,
 			stateLand,
@@ -88,11 +90,13 @@ namespace PlayerCharacterComplex
 
 			// initialize super states
 			superStateJumpPad = new PlayerCharacterSuperStateJumpPad(){blackboard = this};
+			superStateIdle = new PlayerCharacterSuperStateIdle(){blackboard = this};
 
 			// initialize states
 			stateStart = new PlayerCharacterStateStart(){blackboard = this};
 			stateCinematic = new PlayerCharacterStateCinematic(){blackboard = this};
-			stateIdle = new PlayerCharacterStateIdle(){blackboard = this};
+			subStateIdle = new PlayerCharacterSubStateIdle(){blackboard = this};
+			subStateIdleAnimation = new PlayerCharacterSubStateIdleAnimation(){blackboard = this};
 			stateMove = new PlayerCharacterStateMove(){blackboard = this};
 			stateFall = new PlayerCharacterStateFall(){blackboard = this};
 			stateLand = new PlayerCharacterStateLand(){blackboard = this};
@@ -285,6 +289,13 @@ namespace PlayerCharacterComplex
 			{
 				return false;
 			}
+		}
+
+
+
+		public void SetToIdle()
+		{
+			machine.SetState(superStateIdle);
 		}
 	}
 }

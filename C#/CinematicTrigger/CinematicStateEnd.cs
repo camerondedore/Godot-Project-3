@@ -13,7 +13,7 @@ namespace Cinematic
         public override void StartState()
         {
             // set player to idle state
-            blackboard.player.machine.SetState(blackboard.player.stateIdle);
+            blackboard.player.SetToIdle();
 
             if(blackboard.saveToWorldData)
             {
