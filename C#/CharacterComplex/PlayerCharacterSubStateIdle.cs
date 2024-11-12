@@ -25,7 +25,7 @@ namespace PlayerCharacterComplex
             
             // animation
             blackboard.animStateMachinePlayback.Travel("character-idle");
-            timeBetweenAnimations = GD.Randf() * 1 + 1;
+            timeBetweenAnimations = GD.Randf() * 20 + 6;
         }
 
 
