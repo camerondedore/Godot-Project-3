@@ -56,6 +56,14 @@ public partial class PlayerInventory : Node
 
 
 
+    public void ClearInventory()
+    {
+        currentInventory = new Inventory(){};
+        SaveInventory();
+    }
+
+
+
     public void AddCandiedNuts(int candiedNuts)
     {
         currentInventory.CandiedNuts += candiedNuts;

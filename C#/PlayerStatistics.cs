@@ -66,6 +66,14 @@ public partial class PlayerStatistics : Node
 
 
 
+    public void ClearStatistics()
+    {
+        currentStatistics = new Statistics(){};
+        SaveStatistics();
+    }
+
+
+
     public void UpdateHitPoints(float newHitPoints)
     {
         currentStatistics.HitPoints = newHitPoints;

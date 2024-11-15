@@ -1,6 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dwdr2qmyewjs7"]
 
 [resource]
+Button/font_sizes/font_size = 24
 CheckBox/colors/font_outline_color = Color(0, 0, 0, 1)
 CheckBox/constants/outline_size = 8
 Label/colors/font_outline_color = Color(0, 0, 0, 1)

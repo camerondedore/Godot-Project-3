@@ -50,6 +50,14 @@ public partial class WorldData : Node
 
 
 
+    public void ClearData()
+    {
+        currentData = new Data(){};
+        SaveData();
+    }
+
+
+
     public bool CheckActivatedObjects(Node3D objectToCheck)
     {
         // get data string

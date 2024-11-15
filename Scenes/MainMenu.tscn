@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1lcmox5msosd"]
+
+[ext_resource type="Script" path="res://C#/WorldData.cs" id="1_5q6nv"]
+[ext_resource type="Script" path="res://C#/Menus/MainMenu.cs" id="1_xp0it"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_y0h3u"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="3_468ow"]
+[ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="3_nonmj"]
+[ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_1gkrp"]
+
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("continueButton", "newGameButton", "quitButton")]
+script = ExtResource("1_xp0it")
+continueButton = NodePath("Container/Buttons/ContinueButton")
+newGameButton = NodePath("Container/Buttons/NewGameButton")
+quitButton = NodePath("Container/Buttons/QuitButton")
+firstLevel = "Level1Intro"
+
+[node name="WorldData" type="Node" parent="."]
+script = ExtResource("1_5q6nv")
+
+[node name="Statistics" type="Node" parent="."]
+script = ExtResource("3_nonmj")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("4_1gkrp")
+
+[node name="LevelChange" parent="." instance=ExtResource("2_y0h3u")]
+saveOnEnd = false
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_top = 50.0
+offset_right = 161.0
+offset_bottom = 105.0
+grow_horizontal = 2
+theme = ExtResource("3_468ow")
+theme_override_font_sizes/font_size = 40
+text = "Claw for Claw"
+uppercase = true
+
+[node name="ControlsLabel" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = -115.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_468ow")
+text = "movement -
+camera look / aim - 
+draw bow - 
+fire bow - 
+jump - 
+launch off ledge -
+use range bandage - 
+show hud - 
+pause - "
+uppercase = true
+
+[node name="Controls" type="Label" parent="Container"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -115.5
+offset_right = 237.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_468ow")
+text = "W, A, S, D
+mouse movement
+hold left mouse button
+release left mouse button
+spacebar
+spacebar
+h
+tab
+escape"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="Buttons" type="HBoxContainer" parent="Container"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -120.0
+offset_right = 210.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Container/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "Continue"
+
+[node name="EmptySpot" type="Label" parent="Container/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "blank"
+
+[node name="NewGameButton" type="Button" parent="Container/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "New Game"
+
+[node name="EmptySpot2" type="Label" parent="Container/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "blank"
+
+[node name="QuitButton" type="Button" parent="Container/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "    Quit    "

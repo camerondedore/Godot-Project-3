@@ -59,6 +59,15 @@ namespace LevelChange
 
 
 
+        public void ChangeLevel(string newLevel)
+        {
+            nextLevel = newLevel;
+
+            machine.SetState(stateEnd);
+        }
+
+
+
         public void ChangeLevel(string newLevel, Vector3 newCheckpointPosition, Vector3 newCheckpointEulerRotation, Vector3 newCameraPosition, Vector3 newCameraEulerRotation)
         {
             nextLevel = newLevel;

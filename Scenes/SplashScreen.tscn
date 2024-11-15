@@ -1,19 +1,22 @@
 [gd_scene load_steps=5 format=3 uid="uid://djnl3hoifme36"]
 
-[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="1_m0cl1"]
 [ext_resource type="Script" path="res://C#/Menus/SplashScreen.cs" id="1_tx77f"]
-[ext_resource type="Script" path="res://C#/WorldData.cs" id="2_t4j1d"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_ukljx"]
+[ext_resource type="Texture2D" uid="uid://s5awcimfvrlf" path="res://UI/DrinkingWindGames_Logo_v3_Splat.png" id="3_1q2yu"]
+[ext_resource type="Script" path="res://C#/Common/EngineTime.cs" id="3_gqil7"]
 
 [node name="SplashScreen" type="CanvasLayer"]
-script = ExtResource("1_tx77f")
-defaultLevel = "Level1Intro"
 
-[node name="WorldData" type="Node" parent="."]
-script = ExtResource("2_t4j1d")
+[node name="EngineTime" type="Node" parent="."]
+script = ExtResource("3_gqil7")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_ukljx")]
 saveOnEnd = false
+
+[node name="SplashScreenRunner" type="Node" parent="." node_paths=PackedStringArray("levelChange")]
+script = ExtResource("1_tx77f")
+menuLevel = "MainMenu"
+levelChange = NodePath("../LevelChange")
 
 [node name="Container" type="Control" parent="."]
 layout_mode = 3
@@ -32,83 +35,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Title" type="Label" parent="Container"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -44.5
-offset_top = 50.0
-offset_right = 44.5
-offset_bottom = 73.0
-grow_horizontal = 2
-theme = ExtResource("1_m0cl1")
-theme_override_font_sizes/font_size = 40
-text = "Claw for Claw"
-uppercase = true
-
-[node name="ControlsLabel" type="Label" parent="Container"]
+[node name="Logo" type="TextureRect" parent="Container"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = -115.5
-offset_bottom = 115.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_m0cl1")
-text = "movement -
-camera look / aim - 
-draw bow - 
-fire bow - 
-jump - 
-launch off ledge -
-use range bandage - 
-show hud - 
-pause - "
-uppercase = true
-
-[node name="Controls" type="Label" parent="Container"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -115.5
-offset_right = 237.0
-offset_bottom = 115.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_m0cl1")
-text = "W, A, S, D
-mouse movement
-hold left mouse button
-release left mouse button
-spacebar
-spacebar
-h
-tab
-escape"
-horizontal_alignment = 2
-uppercase = true
-
-[node name="AnyKey" type="Label" parent="Container"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -103.0
-offset_top = -70.0
-offset_right = 108.0
-offset_bottom = -47.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("1_m0cl1")
-text = "Press any key to continue..."
+texture = ExtResource("3_1q2yu")
+expand_mode = 1
