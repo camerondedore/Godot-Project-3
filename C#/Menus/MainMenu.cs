@@ -7,8 +7,12 @@ public partial class MainMenu : Node
 
     [Export]
     Button continueButton,
-        newGameButton,
-        quitButton;
+        newGamePopUpButton,
+        quitButton,
+        newGameYesButton,
+        newGameNoButton;
+    [Export]
+    Control newGamePopUp;
     [Export]
     string firstLevel;
 
@@ -21,9 +25,11 @@ public partial class MainMenu : Node
         levelChange = (LevelChangeControl) GetNode("LevelChange");
         
         // set up buttons
-        newGameButton.Pressed += NewGame;
+        newGamePopUpButton.Pressed += NewGameWarning;
         continueButton.Pressed += ContinueGame;
         quitButton.Pressed += Quit;
+        newGameYesButton.Pressed += NewGame;
+        newGameNoButton.Pressed += NewGameCancel;
 
         // check save file
         if(WorldData.data.GetSavedScene() == "")
@@ -34,11 +40,17 @@ public partial class MainMenu : Node
 
 
 
+    void NewGameWarning()
+    {
+        newGamePopUp.Visible = true;
+    }
+
+
+
     void NewGame()
     {
-        newGameButton.Disabled = true;
-        continueButton.Disabled = true;
-        quitButton.Disabled = true;
+        newGameYesButton.Disabled = true;
+        newGameNoButton.Disabled = true;
 
         WorldData.data.ClearData();
         PlayerInventory.inventory.ClearInventory();
@@ -49,9 +61,16 @@ public partial class MainMenu : Node
 
 
 
+    void NewGameCancel()
+    {
+        newGamePopUp.Visible = false;
+    }
+
+
+
     void ContinueGame()
     {
-        newGameButton.Disabled = true;
+        newGamePopUpButton.Disabled = true;
         continueButton.Disabled = true;
         quitButton.Disabled = true;
 

@@ -7,11 +7,14 @@
 [ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="3_nonmj"]
 [ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_1gkrp"]
 
-[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("continueButton", "newGameButton", "quitButton")]
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("continueButton", "newGamePopUpButton", "quitButton", "newGameYesButton", "newGameNoButton", "newGamePopUp")]
 script = ExtResource("1_xp0it")
 continueButton = NodePath("Container/Buttons/ContinueButton")
-newGameButton = NodePath("Container/Buttons/NewGameButton")
+newGamePopUpButton = NodePath("Container/Buttons/NewGameButton")
 quitButton = NodePath("Container/Buttons/QuitButton")
+newGameYesButton = NodePath("NewGamePopUpContainer/Buttons/YesButton")
+newGameNoButton = NodePath("NewGamePopUpContainer/Buttons/NoButton")
+newGamePopUp = NodePath("NewGamePopUpContainer")
 firstLevel = "Level1Intro"
 
 [node name="WorldData" type="Node" parent="."]
@@ -149,3 +152,71 @@ text = "blank"
 layout_mode = 2
 theme = ExtResource("3_468ow")
 text = "    Quit    "
+
+[node name="NewGamePopUpContainer" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="NewGamePopUpContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="NewGameWarning" type="Label" parent="NewGamePopUpContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -115.0
+offset_right = 235.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_468ow")
+text = "Starting a new game will clear any saved game data.
+
+Do you wish to continue?"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Buttons" type="HBoxContainer" parent="NewGamePopUpContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -230.5
+offset_top = -250.0
+offset_right = 230.5
+offset_bottom = -205.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="YesButton" type="Button" parent="NewGamePopUpContainer/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "  Yes  "
+
+[node name="EmptySpot" type="Label" parent="NewGamePopUpContainer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "blank"
+
+[node name="NoButton" type="Button" parent="NewGamePopUpContainer/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "  No  "
