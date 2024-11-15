@@ -5,7 +5,6 @@
 
 [node name="LevelChange" type="Node" node_paths=PackedStringArray("fadeRect", "canvas", "loadingLabel")]
 script = ExtResource("1_hxbrv")
-nextLevel = "res://Scenes/Level1Intro.tscn"
 fadeRect = NodePath("CanvasLayer/Control/FadeRect")
 canvas = NodePath("CanvasLayer")
 blockColor = Color(0, 0, 0, 1)

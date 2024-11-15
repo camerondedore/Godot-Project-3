@@ -12,10 +12,10 @@ namespace LevelChange
 
         public override void RunState(double delta)
         {
-            timeIndex += delta * (1 / blackboard.transitionTime);
+            timeIndex += delta;
 
             // fade rect
-            blackboard.fadeRect.Color = blackboard.clearColor.Lerp(blackboard.blockColor, ((float) timeIndex));
+            blackboard.fadeRect.Color = blackboard.clearColor.Lerp(blackboard.blockColor, ((float) (timeIndex * blackboard.transitionSpeed)));
 
 
             if(timeIndex >= blackboard.transitionTime)

@@ -30,12 +30,15 @@ namespace LevelChange
             nextCheckpointEulerRotation = -Vector3.Forward,
             nextCameraPosition = Vector3.Up,
             nextCameraEulerRotation = Vector3.Zero;
+        public double transitionSpeed;
         public bool loadSavedLevel = false;
 
 
 
         public override void _Ready()
         {
+            transitionSpeed = 1f / transitionTime;
+
             // initialize states
             stateStart = new LevelChangeStateStart(){blackboard = this};
             stateWait = new LevelChangeStateWait(){blackboard = this};

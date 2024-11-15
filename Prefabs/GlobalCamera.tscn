@@ -46,14 +46,16 @@ script = ExtResource("4_qu5pn")
 process_mode = 3
 script = ExtResource("5_mk66s")
 
-[node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "restartButton", "quitButton")]
+[node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "restartButton", "quitMenuButton", "quitButton")]
 process_mode = 3
 layer = 100
 script = ExtResource("7_ogfvn")
 menuContainer = NodePath("PauseMenu")
 resumeButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/ResumeButton")
 restartButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/RestartButton")
+quitMenuButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitToMenuButton")
 quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
+menuLevel = "MainMenu"
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
 layout_mode = 3
@@ -64,6 +66,22 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Title" type="Label" parent="PauseMenuCanvas/PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme = ExtResource("14_ykato")
+theme_override_font_sizes/font_size = 20
+text = "Pause Menu"
+horizontal_alignment = 1
+uppercase = true
+
 [node name="MenuButtons" type="Control" parent="PauseMenuCanvas/PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
@@ -72,9 +90,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -40.0
-offset_top = -200.0
+offset_top = -225.0
 offset_right = 40.0
-offset_bottom = -99.9998
+offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -95,11 +113,15 @@ text = "Resume"
 
 [node name="RestartButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2
-text = "Restart"
+text = "Restart Level"
+
+[node name="QuitToMenuButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+text = "Quit To Main Menu"
 
 [node name="QuitButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Quit To Desktop"
 
 [node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "lodMultiplierSlider", "mouseSensitivitySpinBox", "vsyncOptionButton")]
 layout_mode = 1

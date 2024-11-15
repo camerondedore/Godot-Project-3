@@ -25,6 +25,7 @@ script = ExtResource("4_1gkrp")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_y0h3u")]
 saveOnEnd = false
+transitionTime = 0.5
 
 [node name="Container" type="Control" parent="."]
 layout_mode = 3
@@ -56,6 +57,7 @@ grow_horizontal = 2
 theme = ExtResource("3_468ow")
 theme_override_font_sizes/font_size = 40
 text = "Claw for Claw"
+horizontal_alignment = 1
 uppercase = true
 
 [node name="ControlsLabel" type="Label" parent="Container"]

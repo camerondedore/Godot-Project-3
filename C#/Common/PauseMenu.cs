@@ -9,7 +9,10 @@ public partial class PauseMenu : Node
     [Export]
     Button resumeButton,
         restartButton,
+        quitMenuButton,
         quitButton;
+    [Export]
+    string menuLevel;
 
 
 
@@ -24,6 +27,7 @@ public partial class PauseMenu : Node
         // set up buttons
         resumeButton.Pressed += Resume;
         restartButton.Pressed += Restart;
+        quitMenuButton.Pressed += QuitMenu;
         quitButton.Pressed += Quit;
     }
 
@@ -60,6 +64,16 @@ public partial class PauseMenu : Node
         // lock cursor
         Input.MouseMode = Input.MouseModeEnum.Captured;
     }
+
+
+
+    void QuitMenu()
+    {
+        GetTree().Paused = false;
+        
+        SceneLoader.LoadScene(menuLevel, GetTree());
+    }
+
 
 
 

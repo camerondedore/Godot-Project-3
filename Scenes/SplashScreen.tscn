@@ -12,6 +12,7 @@ script = ExtResource("3_gqil7")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_ukljx")]
 saveOnEnd = false
+transitionTime = 0.5
 
 [node name="SplashScreenRunner" type="Node" parent="." node_paths=PackedStringArray("levelChange")]
 script = ExtResource("1_tx77f")
