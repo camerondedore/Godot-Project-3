@@ -9,8 +9,13 @@ public partial class PauseMenu : Node
     [Export]
     Button resumeButton,
         lastCheckpointButton,
+        settingsButton,
         quitMenuButton,
-        quitButton;
+        quitButton,
+        settingsBackButton;
+    [Export]
+    Control menuButtonsContainer,
+        settingsContainer;
     [Export]
     string menuLevel;
 
@@ -26,9 +31,11 @@ public partial class PauseMenu : Node
 
         // set up buttons
         resumeButton.Pressed += Resume;
-        lastCheckpointButton.Pressed += Restart;
+        lastCheckpointButton.Pressed += LoadLastCheckpoint;
+        settingsButton.Pressed += OpenSettings;
         quitMenuButton.Pressed += QuitMenu;
         quitButton.Pressed += Quit;
+        settingsBackButton.Pressed += CloseSettings;
     }
 
 
@@ -84,8 +91,24 @@ public partial class PauseMenu : Node
 
 
 
-    void Restart()
+    void LoadLastCheckpoint()
     {
         SceneLoader.RestartScene(GetTree());
+    }
+
+
+
+    void OpenSettings()
+    {
+        menuButtonsContainer.Visible = false;
+        settingsContainer.Visible = true;
+    }
+
+
+
+    void CloseSettings()
+    {
+        menuButtonsContainer.Visible = true;
+        settingsContainer.Visible = false;
     }
 }

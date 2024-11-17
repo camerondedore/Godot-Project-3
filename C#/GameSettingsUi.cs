@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class GameSettingsUi : Node
+public partial class GameSettingsUi : Control
 {
 
     public static GameSettingsUi gamesSettingsUi;

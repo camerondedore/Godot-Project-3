@@ -29,18 +29,18 @@ public partial class PlayerInput : Node
 		// get pause input
 		pause = Input.GetActionStrength("player-pause");
 
-		// if(GetTree().Paused)
-		// {
-		// 	// skip all other input
-		// 	move = Vector3.Zero;
-		// 	jump = 0;
-		// 	fire1 = 0;
-		// 	interact = 0;
-		// 	heal = 0;
-		// 	look = Vector2.Zero;
+		if(GetTree().Paused)
+		{
+			// skip all other input
+			move = Vector3.Zero;
+			jump = 0;
+			fire1 = 0;
+			interact = 0;
+			heal = 0;
+			look = Vector2.Zero;
 
-		// 	return;
-		// }
+			return;
+		}
 
 		// get move input
 		// y will be skipped to make movement easier to apply

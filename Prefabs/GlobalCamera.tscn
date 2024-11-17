@@ -46,15 +46,19 @@ script = ExtResource("4_qu5pn")
 process_mode = 3
 script = ExtResource("5_mk66s")
 
-[node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "lastCheckpointButton", "quitMenuButton", "quitButton")]
+[node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "lastCheckpointButton", "settingsButton", "quitMenuButton", "quitButton", "settingsBackButton", "menuButtonsContainer", "settingsContainer")]
 process_mode = 3
 layer = 100
 script = ExtResource("7_ogfvn")
 menuContainer = NodePath("PauseMenu")
 resumeButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/ResumeButton")
 lastCheckpointButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/LastCheckpointButton")
+settingsButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/SettingsButton")
 quitMenuButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitToMenuButton")
 quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
+settingsBackButton = NodePath("PauseMenu/Settings/VBoxContainer/BackButton")
+menuButtonsContainer = NodePath("PauseMenu/MenuButtons")
+settingsContainer = NodePath("PauseMenu/Settings")
 menuLevel = "MainMenu"
 
 [node name="PauseMenu" type="Control" parent="PauseMenuCanvas"]
@@ -84,26 +88,39 @@ uppercase = true
 
 [node name="MenuButtons" type="Control" parent="PauseMenuCanvas/PauseMenu"]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="PauseMenuCanvas/PauseMenu/MenuButtons"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -225.0
-offset_right = 40.0
-offset_bottom = -125.0
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+color = Color(1, 1, 1, 0.25098)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/MenuButtons"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -0.5
-offset_bottom = 0.5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = -85.5
+offset_right = 87.0
+offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -111,27 +128,43 @@ grow_vertical = 2
 layout_mode = 2
 text = "Resume"
 
+[node name="Spacer" type="Label" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+
 [node name="LastCheckpointButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2
-text = "Load Last Checkpoint"
+text = "  Load Last Checkpoint  "
+
+[node name="Spacer2" type="Label" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
+text = "Settings
+"
+
+[node name="Spacer3" type="Label" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
 
 [node name="QuitToMenuButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2
 text = "Quit To Main Menu"
+
+[node name="Spacer4" type="Label" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+layout_mode = 2
 
 [node name="QuitButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2
 text = "Quit To Desktop"
 
 [node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "lodMultiplierSlider", "mouseSensitivitySpinBox", "vsyncOptionButton")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = 100.0
-offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -146,15 +179,32 @@ lodMultiplierSlider = NodePath("VBoxContainer/LodMultiplierSlider")
 mouseSensitivitySpinBox = NodePath("VBoxContainer/MouseSensitivitySpinBox")
 vsyncOptionButton = NodePath("VBoxContainer/VsyncOptionButton")
 
+[node name="Background" type="ColorRect" parent="PauseMenuCanvas/PauseMenu/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -300.0
+offset_right = 200.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.25098)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -108.5
-offset_top = -180.0
-offset_right = 108.5
-offset_bottom = 248.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.5
+offset_top = -236.0
+offset_right = 155.5
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -253,6 +303,13 @@ popup/item_2/text = "Adaptive"
 popup/item_2/id = 2
 popup/item_3/text = "Mailbox"
 popup/item_3/id = 3
+
+[node name="Spacer" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+text = "Return to Menu"
 
 [node name="OverlayCanvas" type="CanvasLayer" parent="."]
 layer = 101
