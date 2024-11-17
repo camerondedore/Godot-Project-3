@@ -46,7 +46,7 @@ public partial class Pause : Node
     {
         GetTree().Paused = true;
                 
-        // lock cursor
+        // unlock cursor
         Input.MouseMode = Input.MouseModeEnum.Visible;
     }
 }

@@ -46,13 +46,13 @@ script = ExtResource("4_qu5pn")
 process_mode = 3
 script = ExtResource("5_mk66s")
 
-[node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "restartButton", "quitMenuButton", "quitButton")]
+[node name="PauseMenuCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("menuContainer", "resumeButton", "lastCheckpointButton", "quitMenuButton", "quitButton")]
 process_mode = 3
 layer = 100
 script = ExtResource("7_ogfvn")
 menuContainer = NodePath("PauseMenu")
 resumeButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/ResumeButton")
-restartButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/RestartButton")
+lastCheckpointButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/LastCheckpointButton")
 quitMenuButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitToMenuButton")
 quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
 menuLevel = "MainMenu"
@@ -111,9 +111,9 @@ grow_vertical = 2
 layout_mode = 2
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
+[node name="LastCheckpointButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2
-text = "Restart Level"
+text = "Load Last Checkpoint"
 
 [node name="QuitToMenuButton" type="Button" parent="PauseMenuCanvas/PauseMenu/MenuButtons/VBoxContainer"]
 layout_mode = 2

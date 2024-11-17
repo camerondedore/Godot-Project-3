@@ -160,8 +160,16 @@ public partial class PlayerHud : CanvasLayer
 		}
 
 
+		// check for death
+		if(visibilityTimer > 0 && hitPoints <= 0)
+		{
+			// clear rect visibility
+			visibilityTimer = 0;
+		}
+
+
 		// check for tab input
-		if(tabDisconnector.Trip(PlayerInput.tab) == true)
+		if(tabDisconnector.Trip(PlayerInput.tab) == true && hitPoints > 0)
 		{
 			// reset rect visibility
 			visibilityTimer = 5;

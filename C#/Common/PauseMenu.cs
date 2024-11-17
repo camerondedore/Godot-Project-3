@@ -8,7 +8,7 @@ public partial class PauseMenu : Node
     Control menuContainer;
     [Export]
     Button resumeButton,
-        restartButton,
+        lastCheckpointButton,
         quitMenuButton,
         quitButton;
     [Export]
@@ -26,7 +26,7 @@ public partial class PauseMenu : Node
 
         // set up buttons
         resumeButton.Pressed += Resume;
-        restartButton.Pressed += Restart;
+        lastCheckpointButton.Pressed += Restart;
         quitMenuButton.Pressed += QuitMenu;
         quitButton.Pressed += Quit;
     }
