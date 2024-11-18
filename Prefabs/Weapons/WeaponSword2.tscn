@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://vtc7qm7o4qn6"]
+
+[ext_resource type="ArrayMesh" uid="uid://cww15a0gb2eef" path="res://Models/weapon-sword-2.res" id="1_680y5"]
+[ext_resource type="Material" uid="uid://by3bifucmdb84" path="res://Materials/MetalLight.tres" id="2_d3xwh"]
+[ext_resource type="Material" uid="uid://cu86khia36y2n" path="res://Materials/MetalBrass.tres" id="3_l7ahi"]
+
+[node name="WeaponSword2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_680y5")
+surface_material_override/0 = ExtResource("2_d3xwh")
+surface_material_override/1 = ExtResource("3_l7ahi")

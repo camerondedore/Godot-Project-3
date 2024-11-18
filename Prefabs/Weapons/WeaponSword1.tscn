@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bslkh5g6p1aee"]
+
+[ext_resource type="ArrayMesh" uid="uid://doj60d1b1ore6" path="res://Models/weapon-sword-1.res" id="1_p0rk5"]
+[ext_resource type="Material" uid="uid://c568qsv5du0ld" path="res://Materials/WeaponSword.tres" id="2_3llnm"]
+
+[node name="WeaponSword1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_p0rk5")
+surface_material_override/0 = ExtResource("2_3llnm")
