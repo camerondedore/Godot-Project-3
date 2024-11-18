@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b72j53vhydns4"]
+
+[ext_resource type="PackedScene" uid="uid://hdv3uamdw176" path="res://Prefabs/Weapons/WeaponSpear.tscn" id="1_2hhsb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g42j7"]
+radius = 0.04
+height = 2.2
+
+[node name="WeaponSpearStack" type="StaticBody3D"]
+
+[node name="WeaponSpear" parent="." instance=ExtResource("1_2hhsb")]
+transform = Transform3D(0.707107, 0, -0.707107, -0.183013, 0.965926, -0.183013, 0.683013, 0.258819, 0.683013, 0.0837633, 0, -0.284237)
+
+[node name="WeaponSpear2" parent="." instance=ExtResource("1_2hhsb")]
+transform = Transform3D(-0.94506, -0.224144, -0.237953, -0.183013, 0.965926, -0.183013, 0.270866, -0.129409, -0.953879, 0.245065, 0, 0.125349)
+
+[node name="WeaponSpear3" parent="." instance=ExtResource("1_2hhsb")]
+transform = Transform3D(0.234984, 0.239624, 0.942, -0.18681, 0.962202, -0.198163, -0.953879, -0.12941, 0.270866, -0.196914, 2.38419e-07, 0.0613253)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.707107, 1.49012e-08, -0.707107, -0.183013, 0.965926, -0.183013, 0.683013, 0.258819, 0.683013, 0.0837633, 0.0679657, -0.266026)
+shape = SubResource("CapsuleShape3D_g42j7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.234984, 0.239624, 0.941999, -0.18681, 0.962202, -0.198163, -0.953879, -0.12941, 0.270866, -0.184708, 0.0490121, 0.0547335)
+shape = SubResource("CapsuleShape3D_g42j7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.94506, -0.224144, -0.237953, -0.183013, 0.965926, -0.183013, 0.270866, -0.129409, -0.953879, 0.233648, 0.0492016, 0.118757)
+shape = SubResource("CapsuleShape3D_g42j7")

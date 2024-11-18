@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://br2qbm7kj1ann" path="res://Models/weapon-sword.res" id="1_63rdn"]
 [ext_resource type="Material" uid="uid://c568qsv5du0ld" path="res://Materials/WeaponSword.tres" id="2_3llnm"]
 
-[node name="PropWeaponSword" type="Node3D"]
+[node name="WeaponSword" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_63rdn")

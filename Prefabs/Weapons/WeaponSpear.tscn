@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://hdv3uamdw176"]
+
+[ext_resource type="ArrayMesh" uid="uid://caxcvm5u560ww" path="res://Models/weapon-spear.res" id="1_0el41"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_h8mle"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_dg520"]
+
+[node name="WeaponSpear" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_0el41")
+surface_material_override/0 = ExtResource("2_h8mle")
+surface_material_override/1 = ExtResource("3_dg520")

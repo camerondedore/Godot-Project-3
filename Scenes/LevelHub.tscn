@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=167 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -47,7 +47,9 @@
 [ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="27_qenpl"]
 [ext_resource type="PackedScene" uid="uid://dxtde18xqi2vw" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="28_1ouai"]
 [ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="28_ak1tu"]
+[ext_resource type="PackedScene" uid="uid://b72j53vhydns4" path="res://Prefabs/Weapons/WeaponSpearStack.tscn" id="28_vtyr8"]
 [ext_resource type="PackedScene" uid="uid://cb7naepeii5aj" path="res://Prefabs/Trees/PropBgTreeOak2.tscn" id="29_2g0jj"]
+[ext_resource type="PackedScene" uid="uid://bslkh5g6p1aee" path="res://Prefabs/Weapons/WeaponSword.tscn" id="29_eryte"]
 [ext_resource type="PackedScene" uid="uid://ckb3ng4tokwms" path="res://Prefabs/Trees/PropBgTreeOak3.tscn" id="30_6k7r1"]
 [ext_resource type="PackedScene" uid="uid://6iap482nryxo" path="res://Prefabs/Doors/PortcullisFrame.tscn" id="31_3qh1g"]
 [ext_resource type="PackedScene" uid="uid://xi0m8mskyllc" path="res://Prefabs/Trees/PropBgTreeOak4.tscn" id="31_r4k2g"]
@@ -362,6 +364,12 @@ transform = Transform3D(0.0433753, 0, 0.999059, 0, 1, 0, -0.999059, 0, 0.0433753
 
 [node name="PropBungMallet" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("23_fa0lo")]
 transform = Transform3D(-4.40999e-08, -0.596435, 0.802661, -1, -4.37114e-08, -8.74228e-08, 8.72274e-08, -0.802661, -0.596435, -62.6565, 1.32484, -5.00519)
+
+[node name="WeaponSpearStack" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("28_vtyr8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1872, 0.969311, 18.5053)
+
+[node name="WeaponSword" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("29_eryte")]
+transform = Transform3D(3.69215e-08, 0.535296, -0.844664, 1, 1.91069e-15, 4.37114e-08, 2.33985e-08, -0.844664, -0.535296, -30.9557, 1.02572, 19.4005)
 
 [node name="TreeWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
