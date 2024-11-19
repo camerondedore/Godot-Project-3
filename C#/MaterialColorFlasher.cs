@@ -17,7 +17,7 @@ public partial class MaterialColorFlasher : MeshInstance3D
 
     public override void _Ready()
     {
-        GetSurfaceOverrideMaterial(0).Set("albedo_color", startColor);
+        GetSurfaceOverrideMaterial(0).Set("shader_parameter/albedoColor", startColor);
     }
 
 
@@ -32,7 +32,7 @@ public partial class MaterialColorFlasher : MeshInstance3D
         colorCursor += ((float) delta) * flashSpeed;
 
         // set color
-        GetSurfaceOverrideMaterial(0).Set("albedo_color", flashColor.Lerp(startColor, colorCursor));
+        GetSurfaceOverrideMaterial(0).Set("shader_parameter/albedoColor", flashColor.Lerp(startColor, colorCursor));
     }
 
 
