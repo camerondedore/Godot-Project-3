@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://brj7mffrs121p"]
+
+[ext_resource type="Shader" path="res://Shaders/CharacterPlayer.gdshader" id="1_jd56r"]
+[ext_resource type="Texture2D" uid="uid://4gm0bbj8smvr" path="res://Textures/character-player-diffuse.png" id="2_8jwb7"]
+[ext_resource type="Texture2D" uid="uid://bwa1xecpt2k6g" path="res://Textures/character-player-color-mask.png" id="3_uvff7"]
+[ext_resource type="Texture2D" uid="uid://jypdo88lggam" path="res://Textures/character-player-padded-occlusion-mask.png" id="4_n4p32"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jd56r")
+shader_parameter/armorColor = Color(0.541176, 0.176471, 0, 1)
+shader_parameter/rimPower = 0.025
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(1, 0.933333, 0.5, 1)
+shader_parameter/rimMinHeight = -0.9
+shader_parameter/rimHeightSlope = 1.9
+shader_parameter/albedo = ExtResource("2_8jwb7")
+shader_parameter/armorColorMask = ExtResource("3_uvff7")
+shader_parameter/armorOcclusionMask = ExtResource("4_n4p32")
