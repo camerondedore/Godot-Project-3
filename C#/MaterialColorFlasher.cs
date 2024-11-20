@@ -1,9 +1,11 @@
 using Godot;
 using System;
 
-public partial class MaterialColorFlasher : MeshInstance3D
+public partial class MaterialColorFlasher : Node
 {
     
+    [Export]
+    MeshInstance3D mesh;
     [Export]
     Color flashColor,
         startColor;
@@ -17,7 +19,7 @@ public partial class MaterialColorFlasher : MeshInstance3D
 
     public override void _Ready()
     {
-        GetSurfaceOverrideMaterial(0).Set("shader_parameter/albedoColor", startColor);
+        mesh.GetSurfaceOverrideMaterial(0).Set("shader_parameter/albedoColor", startColor);
     }
 
 
@@ -32,7 +34,7 @@ public partial class MaterialColorFlasher : MeshInstance3D
         colorCursor += ((float) delta) * flashSpeed;
 
         // set color
-        GetSurfaceOverrideMaterial(0).Set("shader_parameter/albedoColor", flashColor.Lerp(startColor, colorCursor));
+        mesh.GetSurfaceOverrideMaterial(0).Set("shader_parameter/albedoColor", flashColor.Lerp(startColor, colorCursor));
     }
 
 

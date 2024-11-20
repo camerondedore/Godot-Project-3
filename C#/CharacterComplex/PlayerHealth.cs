@@ -13,7 +13,7 @@ namespace PlayerCharacterComplex
         [Export]
         PlayerFx playerFx;
         [Export]
-        MaterialColorFlasher flashingMesh;
+        MaterialColorFlasher meshflasher;
 
         Disconnector healDisconnector = new Disconnector();
 
@@ -92,7 +92,7 @@ namespace PlayerCharacterComplex
             if(damageAfterArmor > 0)
             {
                 // flash mesh
-                flashingMesh.Flash();
+                meshflasher.Flash();
             }
 
             // update statistics
