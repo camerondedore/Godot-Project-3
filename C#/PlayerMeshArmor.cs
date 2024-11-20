@@ -14,7 +14,7 @@ public partial class PlayerMeshArmor : MeshInstance3D
         // set starting armor color
         UpdateArmorColor(PlayerStatistics.statistics.currentStatistics.ArmorUpgrades);
 
-        // set up event handlers
+        // set up event handler
 		PlayerStatistics.statistics.ArmorUpgradesChanged += UpdateArmorColor;
     }
 

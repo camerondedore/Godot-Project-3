@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
+[ext_resource type="Material" uid="uid://b5cyspoybrawv" path="res://Materials/Pickups/PickupArmorMasked.tres" id="4_ft8qn"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
-[ext_resource type="Material" uid="uid://g12rcw7pf2kw" path="res://Materials/Pickups/PickupArmor.tres" id="5_ukmsv"]
 [ext_resource type="PackedScene" uid="uid://dd74p0os7qlsq" path="res://Prefabs/FX/FxSparkleLarge.tscn" id="6_m8ucj"]
 [ext_resource type="PackedScene" uid="uid://ogik1mkaed2l" path="res://Prefabs/FX/FxItemHighlightLarge.tscn" id="7_k68di"]
 
@@ -73,11 +73,12 @@ color_ramp = SubResource("GradientTexture1D_ix1vo")
 
 [node name="PickupArmor" instance=ExtResource("1_blnc4")]
 script = ExtResource("2_466iw")
+armorColors = PackedColorArray(0.54, 0.18, 0, 1, 0.54, 0.486, 0, 1, 0.036, 0.54, 0, 1, 0, 0.135, 0.54, 1, 0.78, 0.78, 0.78, 1)
 
 [node name="PickupMesh" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
 mesh = ExtResource("4_uw6ui")
-surface_material_override/0 = ExtResource("5_ukmsv")
+surface_material_override/0 = ExtResource("4_ft8qn")
 
 [node name="FxSparkle" parent="." index="2"]
 process_mode = 4

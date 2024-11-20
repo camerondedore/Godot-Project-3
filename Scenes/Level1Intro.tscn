@@ -1,4 +1,4 @@
-[gd_scene load_steps=124 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=123 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/Level1Environment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="4_m4xsu"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="4_xfsdn"]
 [ext_resource type="ArrayOccluder3D" uid="uid://crn5tc6fjoafm" path="res://Scenes/Occlusion/Level1Intro.occ" id="6_supt6"]
-[ext_resource type="LightmapGIData" uid="uid://cmi1ulg605nwp" path="res://Scenes/Lightmaps/Level1Intro.lmbake" id="7_n3tr8"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="8_upf4p"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="9_dl117"]
 [ext_resource type="ArrayMesh" uid="uid://csnpnq41xfu" path="res://Models/level-1-tree-wall.res" id="11_glw4y"]
@@ -175,14 +174,6 @@ shadow_enabled = true
 shadow_opacity = 0.9
 directional_shadow_blend_splits = true
 script = ExtResource("4_xfsdn")
-
-[node name="LightmapGI" type="LightmapGI" parent="Map"]
-visible = false
-quality = 0
-bounce_indirect_energy = 1.5
-use_denoiser = false
-generate_probes_subdiv = 0
-light_data = ExtResource("7_n3tr8")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("6_supt6")

@@ -8,12 +8,13 @@ public partial class PlayerStatistics : Node
     public static PlayerStatistics statistics;
     public Statistics currentStatistics;
 
+    public int maxHitPointUpgrades = 3,
+        maxArmorUpgrades = 4;
+
     string filePath;
     float minHitPointsPerUpgrade = 25,
         maxHitPointsPerUpgrade = 100,
-        maxArmor;
-    int maxHitPointUpgrades = 3,
-        maxArmorUpgrades = 4;
+        maxArmor;    
 
     public event Action<float> HitPointsChanged;
     public event Action<int> HitPointUpgradesChanged;
