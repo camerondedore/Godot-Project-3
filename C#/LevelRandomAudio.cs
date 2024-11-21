@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class LevelRandomAudio : Node3D
 {
@@ -12,13 +13,17 @@ public partial class LevelRandomAudio : Node3D
         timeRange;
 
     List<AudioTools3d> audioPlayers = new List<AudioTools3d>();
+    Queue<int> recentSoundIndexes = new Queue<int>();
     double nextSoundTime;
-    int audioPlayerIndex = 0;
+    int audioPlayerIndex = 0,
+        maxSoundsInRecentQueue;
 
 
 
     public override void _Ready()
     {
+        maxSoundsInRecentQueue = sounds.Length / 2;
+
         // get audio player children
         foreach(AudioTools3d child in GetChildren())
         {
@@ -46,7 +51,7 @@ public partial class LevelRandomAudio : Node3D
             audioPlayers[audioPlayerIndex].Position = GlobalCamera.camera.Position + positionOffset;
 
             // play random sound
-            audioPlayers[audioPlayerIndex].PlayRandomSound(sounds, 0.1f);
+            PlayRandomSound(audioPlayers[audioPlayerIndex]);
 
             // set next audio player index
             audioPlayerIndex++;
@@ -59,6 +64,31 @@ public partial class LevelRandomAudio : Node3D
 
             // get next sound time
             nextSoundTime = EngineTime.timePassed + GD.Randf() * (timeRange.Y - timeRange.X) + timeRange.X;
+        }
+    }
+
+
+
+    public void PlayRandomSound(AudioTools3d audioPlayer)
+    {
+        int nextSound = -1;
+
+        while(recentSoundIndexes.Contains(nextSound) == true || nextSound == -1)
+        {
+            // get sound that wasn't played recently
+            nextSound = (int) (GD.Randi() % sounds.Length);
+        }
+
+        // play sound
+        audioPlayer.PlaySound(sounds[nextSound], 0.1f);
+
+        // add current sound to queue
+        recentSoundIndexes.Enqueue(nextSound);
+
+        // check queue for length
+        if(recentSoundIndexes.Count > maxSoundsInRecentQueue)
+        {
+            recentSoundIndexes.Dequeue();
         }
     }
 }

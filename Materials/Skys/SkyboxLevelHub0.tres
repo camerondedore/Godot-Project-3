@@ -4,3 +4,4 @@
 
 [resource]
 panorama = ExtResource("1_gkkhp")
+energy_multiplier = 1.1

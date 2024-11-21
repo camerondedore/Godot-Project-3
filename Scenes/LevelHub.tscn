@@ -1,4 +1,4 @@
-[gd_scene load_steps=168 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=173 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -143,6 +143,11 @@
 [ext_resource type="AudioStream" uid="uid://di2j73csrvj7g" path="res://Audio/ambience-cricket-3.wav" id="101_8dmpn"]
 [ext_resource type="AudioStream" uid="uid://b12ovuuulkufu" path="res://Audio/ambience-cricket-4.wav" id="102_0gurl"]
 [ext_resource type="AudioStream" uid="uid://cxv36ao6ci65" path="res://Audio/ambience-cricket-5.wav" id="103_67nfc"]
+[ext_resource type="AudioStream" uid="uid://cnf7h1uqnbx6a" path="res://Audio/ambience-owl-1.wav" id="109_nt3pw"]
+[ext_resource type="AudioStream" uid="uid://cwak0whcpilgb" path="res://Audio/ambience-owl-2.wav" id="110_b207g"]
+[ext_resource type="AudioStream" uid="uid://doxu08u58r3so" path="res://Audio/ambience-owl-3.wav" id="111_y38v6"]
+[ext_resource type="AudioStream" uid="uid://dmwt5lgd2fkoo" path="res://Audio/ambience-owl-4.wav" id="112_84jjh"]
+[ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="113_f3n0t"]
 [ext_resource type="PackedScene" uid="uid://b0hvuo4osb3sc" path="res://Prefabs/Characters/NpcLumsden.tscn" id="116_4nm5h"]
 [ext_resource type="Script" path="res://C#/Npc/NpcDialogue.cs" id="117_d580p"]
 [ext_resource type="AudioStream" uid="uid://bfu5trt3sxypp" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-1.wav" id="118_kf60n"]
@@ -265,7 +270,7 @@ script = ExtResource("5_k6lpv")
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
 transform = Transform3D(-0.517347, 0.0982764, -0.850114, -0.734431, 0.458924, 0.5, 0.439276, 0.883024, -0.165246, 0, 0, 0)
 visible = false
-light_color = Color(0.68, 0.792, 1, 1)
+light_color = Color(0.6, 0.74, 1, 1)
 light_energy = 0.7
 shadow_enabled = true
 shadow_opacity = 0.8
@@ -2240,7 +2245,7 @@ script = ExtResource("98_3reqn")
 
 [node name="LevelRandomAudio2" type="Node3D" parent="Map/Audio"]
 script = ExtResource("91_b8kji")
-sounds = Array[AudioStream]([ExtResource("99_ydvyq"), ExtResource("100_21v7n"), ExtResource("101_8dmpn"), ExtResource("102_0gurl"), ExtResource("103_67nfc")])
+sounds = Array[AudioStream]([ExtResource("99_ydvyq"), ExtResource("100_21v7n"), ExtResource("101_8dmpn"), ExtResource("102_0gurl"), ExtResource("103_67nfc"), ExtResource("109_nt3pw"), ExtResource("110_b207g"), ExtResource("111_y38v6"), ExtResource("112_84jjh"), ExtResource("113_f3n0t")])
 range = Vector2(30, 40)
 timeRange = Vector2(7, 10)
 
