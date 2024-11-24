@@ -15,7 +15,7 @@ uniform vec4 rimColor : source_color;
 
 void vertex()
 {
-	
+
 }
 
 void fragment()
