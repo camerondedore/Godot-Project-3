@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1pblv32eue8"]
+
+[ext_resource type="PackedScene" uid="uid://dfhr2y5g2mbvs" path="res://Prefabs/Fabrications/PropBgFence1.tscn" id="1_f2qt4"]
+[ext_resource type="ArrayMesh" uid="uid://bfhk7dv78db2s" path="res://Models/prop-fence-2.res" id="2_2my0d"]
+
+[node name="PropBgFence2" instance=ExtResource("1_f2qt4")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_2my0d")

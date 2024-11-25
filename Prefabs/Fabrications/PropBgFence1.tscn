@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfhr2y5g2mbvs"]
+
+[ext_resource type="ArrayMesh" uid="uid://0qx1qpixkquq" path="res://Models/prop-fence-1.res" id="1_27mbl"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_axbh6"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_pbmc8"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_fvtwf"]
+
+[node name="PropBgFence1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_27mbl")
+surface_material_override/0 = ExtResource("2_axbh6")
+surface_material_override/1 = ExtResource("3_pbmc8")
+surface_material_override/2 = ExtResource("4_fvtwf")
