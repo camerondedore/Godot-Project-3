@@ -4,4 +4,4 @@
 
 [resource]
 panorama = ExtResource("1_4paym")
-energy_multiplier = 1.1
+energy_multiplier = 1.15
