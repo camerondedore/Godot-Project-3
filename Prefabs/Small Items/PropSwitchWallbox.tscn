@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv1j0t3q5rsfn"]
+
+[ext_resource type="ArrayMesh" uid="uid://biqy3bvfcrw4a" path="res://Models/prop-switch-wallbox.res" id="1_tnvxa"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_d5duf"]
+[ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="3_crngp"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="4_s804b"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="5_f53jv"]
+
+[node name="PropSwitchWallbox" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+mesh = ExtResource("1_tnvxa")
+surface_material_override/0 = ExtResource("2_d5duf")
+surface_material_override/1 = ExtResource("3_crngp")
+surface_material_override/2 = ExtResource("4_s804b")
+surface_material_override/3 = ExtResource("5_f53jv")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=122 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -74,13 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="49_8osyl"]
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="49_57bj5"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="50_baj1r"]
-[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Lumber/PropBoard1.tscn" id="50_h8tok"]
-[ext_resource type="PackedScene" uid="uid://byyhb3n7dtwht" path="res://Prefabs/Lumber/PropBoard2.tscn" id="51_s8xcw"]
-[ext_resource type="PackedScene" uid="uid://byfxqpcowymc0" path="res://Prefabs/Lumber/PropBoard3.tscn" id="52_o685h"]
-[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="53_jttjy"]
 [ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="53_o4hiu"]
-[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Lumber/PropBoardPost2.tscn" id="54_m1em3"]
-[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Lumber/PropBoardShort.tscn" id="55_rwrx8"]
 [ext_resource type="PackedScene" uid="uid://crnt1j26arkij" path="res://Prefabs/Lumber/PropStumpHollow.tscn" id="56_6v5g0"]
 [ext_resource type="PackedScene" uid="uid://bj78luxrt6dcp" path="res://Prefabs/Player Bow Targets/PropLever.tscn" id="58_tw5do"]
 [ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="62_xerby"]
@@ -100,6 +94,7 @@
 [ext_resource type="Animation" uid="uid://cw27tj5800xxm" path="res://Animation/Cinematics/l2c3.res" id="81_4xncj"]
 [ext_resource type="Script" path="res://C#/Common/TriggerArea.cs" id="81_vmvxv"]
 [ext_resource type="Script" path="res://C#/Mob Tools/MobSpawner.cs" id="82_0bdl6"]
+[ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="82_xvep4"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="83_rgv54"]
 [ext_resource type="PackedScene" uid="uid://dauwd0f7v5uyx" path="res://Prefabs/Characters/MobBrownRat.tscn" id="84_beh7k"]
 [ext_resource type="Script" path="res://C#/LevelRandomAudio.cs" id="84_dirwf"]
@@ -672,54 +667,6 @@ transform = Transform3D(-0.298264, -0.939788, -0.166844, 0.488195, 2.13397e-08, 
 [node name="PropFirewood5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("49_57bj5")]
 transform = Transform3D(-4.37114e-08, 1, 0, 0.572432, 2.50218e-08, -0.819952, -0.819952, -3.58412e-08, -0.572432, -21.9751, 9.14599, -129.118)
 
-[node name="PropBoard1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("50_h8tok")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.65, 11.8, -130.75)
-
-[node name="PropBoard2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("51_s8xcw")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.65, 11.5, -130.75)
-
-[node name="PropBoard3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("52_o685h")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.65, 11.2, -130.75)
-
-[node name="PropBoardPost1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("53_jttjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.85, 10.55, -129.75)
-
-[node name="PropBoardPost2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("54_m1em3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.85, 10.55, -131.75)
-
-[node name="PropBoardShort" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("55_rwrx8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.65, 10.9, -130.75)
-
-[node name="PropBoardShort2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("55_rwrx8")]
-transform = Transform3D(4.37114e-08, -8.74228e-08, -1, 8.74228e-08, 1, -8.74228e-08, 1, -8.74228e-08, 4.37114e-08, 34.65, 12.1, -130.75)
-
-[node name="PropBoardShort3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("55_rwrx8")]
-transform = Transform3D(8.74228e-08, 1, -4.37114e-08, -4.37114e-08, 4.37114e-08, 1, 1, -8.74228e-08, 4.37114e-08, 34.8, 12.3, -130.75)
-
-[node name="PropBoard4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("50_h8tok")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.7289, 1.3, -26.1745)
-
-[node name="PropBoard5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("51_s8xcw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.7289, 1, -26.1745)
-
-[node name="PropBoard6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("52_o685h")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.7289, 0.7, -26.1745)
-
-[node name="PropBoardPost3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("53_jttjy")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -34.9289, 0.05, -27.1745)
-
-[node name="PropBoardPost4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("54_m1em3")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -34.9289, 0.05, -25.1745)
-
-[node name="PropBoardShort4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("55_rwrx8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.7289, 0.4, -26.1745)
-
-[node name="PropBoardShort5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("55_rwrx8")]
-transform = Transform3D(4.37114e-08, 8.74228e-08, 1, 8.74228e-08, 1, -8.74228e-08, -1, 8.74228e-08, 4.37114e-08, -34.7289, 1.6, -26.1745)
-
-[node name="PropBoardShort6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("55_rwrx8")]
-transform = Transform3D(-1.06581e-14, -1, 4.37114e-08, -4.37114e-08, 4.37114e-08, 1, -1, 1.06581e-14, -4.37114e-08, -34.8789, 1.8, -26.1745)
-
 [node name="PropStumpHollow" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("56_6v5g0")]
 transform = Transform3D(0.297092, 0, -0.954849, 0, 1, 0, 0.954849, 0, 0.297092, 11.0365, 4, -48.3982)
 
@@ -875,33 +822,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 1, -34.5)
 
 [node name="Switches" type="Node3D" parent="Map"]
 
-[node name="PropSwitch" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.34015, 6.5, -85.2802)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame2/Portcullis")]
+[node name="PropSwitchWallbox" parent="Map/Switches" instance=ExtResource("82_xvep4")]
+transform = Transform3D(-0.996627, 0, 0.0820602, 0, 1, 0, -0.0820602, 0, -0.996627, -7.82616, 6.5, -84.322)
+
+[node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.300003)
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame2/Portcullis")]
 
 [node name="PropLever" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("58_tw5do")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 9, -134.75)
 linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame3/Portcullis"), NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame4/Portcullis")]
 
-[node name="PropSwitch2" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.42, 11.5, -130.86)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame5/Portcullis"), NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame3/Portcullis"), NodePath("../../Cinematics/Cinematic2/TriggerSwitch")]
+[node name="PropSwitchWallbox2" parent="Map/Switches" instance=ExtResource("82_xvep4")]
+transform = Transform3D(-0.2572, 0, 0.966358, 0, 1, 0, -0.966358, 0, -0.2572, 35.1463, 11.8011, -130.86)
 
-[node name="PropSwitch3" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.2, 14.5, -120.7)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame6/Portcullis"), NodePath("../../Cinematics/Cinematic3/TriggerSwitch"), NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic")]
+[node name="PropSwitch2" parent="Map/Switches/PropSwitchWallbox2" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.299999)
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame5/Portcullis"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame3/Portcullis"), NodePath("../../../Cinematics/Cinematic2/TriggerSwitch")]
 
-[node name="PropSwitch4" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.2, 14.5, -113.7)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame7/Portcullis"), NodePath("../../Cinematics/Cinematic3/TriggerSwitch2"), NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic2")]
+[node name="PropSwitchWallbox3" parent="Map/Switches" instance=ExtResource("82_xvep4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49, 14.8, -120.7)
 
-[node name="PropSwitch5" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.2, 14.5, -106.7)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame8/Portcullis"), NodePath("../../Cinematics/Cinematic3/TriggerSwitch3"), NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic3")]
+[node name="PropSwitch3" parent="Map/Switches/PropSwitchWallbox3" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.299999)
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame6/Portcullis"), NodePath("../../../Cinematics/Cinematic3/TriggerSwitch"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic")]
 
-[node name="PropSwitch6" parent="Map/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.4989, 1, -26.0645)
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame9/Portcullis")]
+[node name="PropSwitchWallbox4" parent="Map/Switches" instance=ExtResource("82_xvep4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 48.95, 14.8, -113.7)
+
+[node name="PropSwitch4" parent="Map/Switches/PropSwitchWallbox4" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.299999)
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame7/Portcullis"), NodePath("../../../Cinematics/Cinematic3/TriggerSwitch2"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic2")]
+
+[node name="PropSwitchWallbox5" parent="Map/Switches" instance=ExtResource("82_xvep4")]
+transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 49.35, 14.8, -106.7)
+
+[node name="PropSwitch5" parent="Map/Switches/PropSwitchWallbox5" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame8/Portcullis"), NodePath("../../../Cinematics/Cinematic3/TriggerSwitch3"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic3")]
+
+[node name="PropSwitchWallbox6" parent="Map/Switches" instance=ExtResource("82_xvep4")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -34.8474, 1, -26.0909)
+
+[node name="PropSwitch6" parent="Map/Switches/PropSwitchWallbox6" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.299999)
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame9/Portcullis")]
 
 [node name="Cinematics" type="Node3D" parent="Map"]
 
