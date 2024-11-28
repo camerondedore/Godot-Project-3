@@ -20,6 +20,15 @@ public partial class GameSettingsSunShadowsLoader : DirectionalLight3D
 
 
 
+    public override void _ExitTree()
+    {
+        GameSettingsUi.gamesSettingsUi.SunShadowQualityChanged -= UpdateSunShadowQuality;
+        GameSettingsUi.gamesSettingsUi.SunShadowDistanceChanged -= UpdateSunShadowDistance;
+        GameSettingsUi.gamesSettingsUi.SunShadowBlendSplitsChanged -= UpdateSunShadowBlendSplits;
+    }
+
+
+
     void UpdateSunShadowQuality(int value)
     {
         // turn shadow on or off
