@@ -1,6 +1,8 @@
 shader_type spatial;
 
 uniform sampler2D albedo : source_color;
+uniform sampler2D metallic : source_color;
+uniform sampler2D roughness : source_color;
 uniform float rimPower : hint_range(0, 1) = 1;
 uniform float rimPowerAlbedo : hint_range(0, 1) = 1;
 uniform float rimSharpness : hint_range(0, 0.5) = 0.2;
@@ -36,6 +38,6 @@ void fragment()
 	ALBEDO = albedoColor;
 	EMISSION = combinedRimEffect;
 	SPECULAR = 0.0;
-	METALLIC = 0.0;
-	ROUGHNESS = 1.0;
+	METALLIC = texture(metallic, UV).r;
+	ROUGHNESS = texture(roughness, UV).r;
 }

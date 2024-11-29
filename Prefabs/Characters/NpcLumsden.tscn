@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://C#/Npc/NpcSimple.cs" id="1_r03m4"]
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_uc5av"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_cgg3p"]
-[ext_resource type="Material" uid="uid://bxgss8yqy8jjj" path="res://Materials/Characters/CharacterLumsden.tres" id="3_hyd6u"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_srv7g"]
+[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_u4u5o"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_cdu1t"]
 [ext_resource type="Script" path="res://C#/Npc/NpcCameraControl.cs" id="7_shrkw"]
 
@@ -101,7 +101,7 @@ bones/59/position = Vector3(-0.300915, -0.0468281, -0.43106)
 bones/59/rotation = Quaternion(-0.0156462, 0, 3.47416e-18, 0.999878)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, -6.94748e-18, -1.08715e-19, 6.94748e-18, 0.99951, 0.0312887, -1.08715e-19, -0.0312887, 0.99951, -0.300915, -0.0468281, -0.43106)
+transform = Transform3D(1, -6.94747e-18, -1.08715e-19, 6.94747e-18, 0.99951, 0.0312886, -1.08715e-19, -0.0312886, 0.99951, -0.300915, -0.0468281, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 layers = 2
@@ -111,7 +111,7 @@ surface_material_override/0 = ExtResource("2_cgg3p")
 [node name="character-lumsden" parent="character-lumsden/character-armature/Skeleton3D" index="1"]
 layers = 2
 gi_mode = 2
-surface_material_override/0 = ExtResource("3_hyd6u")
+surface_material_override/0 = ExtResource("4_u4u5o")
 surface_material_override/1 = ExtResource("4_srv7g")
 
 [node name="AnimationPlayer" parent="character-lumsden" index="1"]
