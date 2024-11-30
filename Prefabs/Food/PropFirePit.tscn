@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dunv4vxlrd3kx"]
+[gd_scene load_steps=6 format=3 uid="uid://dunv4vxlrd3kx"]
 
 [ext_resource type="ArrayMesh" uid="uid://6vy0urrqrxep" path="res://Models/prop-fire-pit.res" id="1_4wkto"]
 [ext_resource type="Material" uid="uid://bss8ehpvp4onx" path="res://Materials/Rock.tres" id="2_hahi0"]
 [ext_resource type="Material" uid="uid://ce2dodh252xw2" path="res://Materials/EmbersAnimated.tres" id="3_hlp7p"]
+[ext_resource type="Texture2D" uid="uid://b71k8w50s0upu" path="res://Textures/fx-dirt-patch.png" id="4_phprj"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mdk54"]
 points = PackedVector3Array(0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0, 0.6, 0)
@@ -21,3 +22,10 @@ surface_material_override/1 = ExtResource("3_hlp7p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_mdk54")
+
+[node name="Decal" type="Decal" parent="."]
+size = Vector3(2, 0.2, 2)
+texture_albedo = ExtResource("4_phprj")
+upper_fade = 0.819624
+lower_fade = 0.819624
+cull_mask = 1

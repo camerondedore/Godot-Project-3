@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://dco0xhd7pjvcy"]
+
+[ext_resource type="ArrayMesh" uid="uid://dfapgw4teoq14" path="res://Models/prop-bench.res" id="1_4ekga"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_dfhti"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_xpko0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2swq"]
+size = Vector3(0.5, 0.1, 2)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wsa01"]
+radius = 0.065
+height = 0.7
+
+[node name="PropBench" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_4ekga")
+surface_material_override/0 = ExtResource("2_dfhti")
+surface_material_override/1 = ExtResource("3_xpko0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("BoxShape3D_q2swq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.98917, -0.145884, 0.0161392, 0.146756, 0.984774, -0.0931782, -0.0023003, 0.0945376, 0.995519, 0.197762, 0.340655, -0.836237)
+shape = SubResource("CapsuleShape3D_wsa01")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.986481, 0.163341, -0.0132319, -0.163821, 0.980833, -0.105496, -0.00425339, 0.106237, 0.994332, -0.194844, 0.340655, -0.843151)
+shape = SubResource("CapsuleShape3D_wsa01")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.986481, 0.163341, -0.013232, -0.161126, 0.981489, 0.103526, 0.029897, -0.099994, 0.994539, -0.194844, 0.340655, 0.839456)
+shape = SubResource("CapsuleShape3D_wsa01")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.989323, -0.139032, -0.0437189, 0.142644, 0.985226, 0.0947697, 0.029897, -0.099994, 0.994539, 0.189811, 0.340655, 0.831214)
+shape = SubResource("CapsuleShape3D_wsa01")
