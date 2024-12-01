@@ -9,7 +9,7 @@ size = Vector3(0.5, 0.1, 2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wsa01"]
 radius = 0.065
-height = 0.7
+height = 0.55
 
 [node name="PropBench" type="StaticBody3D"]
 collision_layer = 16
@@ -23,21 +23,21 @@ surface_material_override/0 = ExtResource("2_dfhti")
 surface_material_override/1 = ExtResource("3_xpko0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 shape = SubResource("BoxShape3D_q2swq")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.98917, -0.145884, 0.0161392, 0.146756, 0.984774, -0.0931782, -0.0023003, 0.0945376, 0.995519, 0.197762, 0.340655, -0.836237)
+transform = Transform3D(0.978901, -0.203197, 0.0215581, 0.204317, 0.971846, -0.117341, 0.00289218, 0.11927, 0.992858, 0.192259, 0.258548, -0.838925)
 shape = SubResource("CapsuleShape3D_wsa01")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.986481, 0.163341, -0.0132319, -0.163821, 0.980833, -0.105496, -0.00425339, 0.106237, 0.994332, -0.194844, 0.340655, -0.843151)
+transform = Transform3D(0.97877, 0.204203, -0.0176307, -0.204906, 0.972844, -0.107644, -0.00482919, 0.108971, 0.994033, -0.196685, 0.258876, -0.842486)
 shape = SubResource("CapsuleShape3D_wsa01")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.986481, 0.163341, -0.013232, -0.161126, 0.981489, 0.103526, 0.029897, -0.099994, 0.994539, -0.194844, 0.340655, 0.839456)
+transform = Transform3D(0.977556, 0.210514, -0.00822073, -0.207548, 0.969012, 0.133935, 0.0361611, -0.129222, 0.990956, -0.200218, 0.258822, 0.83827)
 shape = SubResource("CapsuleShape3D_wsa01")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.989323, -0.139032, -0.0437189, 0.142644, 0.985226, 0.0947697, 0.029897, -0.099994, 0.994539, 0.189811, 0.340655, 0.831214)
+transform = Transform3D(0.979038, -0.197626, -0.0493009, 0.201744, 0.974199, 0.101168, 0.0280356, -0.108993, 0.993647, 0.18727, 0.25851, 0.830894)
 shape = SubResource("CapsuleShape3D_wsa01")
