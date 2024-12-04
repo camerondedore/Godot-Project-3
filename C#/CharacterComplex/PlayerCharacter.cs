@@ -38,6 +38,8 @@ namespace PlayerCharacterComplex
 		[Export]
         public AnimationTree animation;
 		[Export]
+		public AnimationPlayer crosshairAnimation;
+		[Export]
 		public BoneAttachment3D backBone,
 			hipBone;
 		[Export]

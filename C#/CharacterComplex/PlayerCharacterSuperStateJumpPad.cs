@@ -88,6 +88,7 @@ namespace PlayerCharacterComplex
             {
                 // cancel bow draw
                 blackboard.bow.CancelDraw();
+                blackboard.crosshairAnimation.Play("crosshair-reset");
 
                 // fall
                 return blackboard.stateFall;

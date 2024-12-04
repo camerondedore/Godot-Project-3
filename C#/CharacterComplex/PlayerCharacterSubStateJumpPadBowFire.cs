@@ -31,6 +31,7 @@ namespace PlayerCharacterComplex
 
             // fire bow
             blackboard.bow.Fire(blackboard.bowAimer.target);
+            blackboard.crosshairAnimation.Play("crosshair-reset");
 
             // animation
             blackboard.animStateMachinePlayback.Travel("character-jump-pad-fire");

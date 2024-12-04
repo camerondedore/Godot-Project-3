@@ -20,6 +20,7 @@ namespace PlayerCharacterComplex
 
             // clear bow draw
             blackboard.bow.CancelDraw();
+            blackboard.crosshairAnimation.Play("crosshair-reset");
 
             // clear velocity
             blackboard.Velocity = Vector3.Zero;

@@ -25,7 +25,9 @@ namespace PlayerCharacterComplex
             blackboard.hud.InitLetterbox();
 
             // animation
-            blackboard.animStateMachinePlayback.Travel("character-idle");        
+            blackboard.animStateMachinePlayback.Travel("character-idle");    
+
+            blackboard.crosshairAnimation.Play("crosshair-reset");
         }
 
 

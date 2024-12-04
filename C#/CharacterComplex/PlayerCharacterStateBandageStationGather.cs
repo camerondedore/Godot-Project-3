@@ -49,7 +49,8 @@ namespace PlayerCharacterComplex
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
             // cancel draw
-            blackboard.bow.CancelDraw();   
+            blackboard.bow.CancelDraw();
+            blackboard.crosshairAnimation.Play("crosshair-reset");   
 
             // animation
             blackboard.animStateMachinePlayback.Travel("character-craft-gather");

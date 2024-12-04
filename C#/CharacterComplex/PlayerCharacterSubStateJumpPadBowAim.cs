@@ -71,6 +71,7 @@ namespace PlayerCharacterComplex
             if(previouslyDrawn == false)
             {
                 blackboard.bow.Draw();
+                blackboard.crosshairAnimation.Play("crosshair-draw");
             }
             else
             {
@@ -108,6 +109,7 @@ namespace PlayerCharacterComplex
 
                 // cancel draw
                 blackboard.bow.CancelDraw();
+                blackboard.crosshairAnimation.Play("crosshair-reset");
 
                 blackboard.backBone.OverridePose = false;
 
@@ -120,6 +122,7 @@ namespace PlayerCharacterComplex
             {
                 // cancel draw
                 blackboard.bow.CancelDraw();
+                blackboard.crosshairAnimation.Play("crosshair-reset");
 
                 blackboard.backBone.OverridePose = false;
                 

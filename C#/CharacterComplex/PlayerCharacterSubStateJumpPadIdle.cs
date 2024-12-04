@@ -28,6 +28,7 @@ namespace PlayerCharacterComplex
             if(blackboard.bow.isDrawn && PlayerInput.fire1 == 0)
             {
                 blackboard.bow.CancelDraw();
+                blackboard.crosshairAnimation.Play("crosshair-reset");
             }
 
             if(blackboard.bow.isDrawn == false)
