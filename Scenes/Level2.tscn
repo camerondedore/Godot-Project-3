@@ -4946,16 +4946,16 @@ transform = Transform3D(-0.643982, -0.0774227, 0.768838, -0.0446004, 1.00289, 0.
 [node name="PropFern1!1733500968_937" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("87_ww1vl")]
 transform = Transform3D(0.915175, 0.0503307, -0.428722, -0.0220482, 1.00911, 0.0714009, 0.431103, -0.0552362, 0.913773, 86.0639, 4, -136.995)
 
-[node name="PropFern1!1733545927_508" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("87_ww1vl")]
+[node name="PropFern1!1733545927_508" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("87_ww1vl")]
 transform = Transform3D(-0.91582, 0.0283638, 0.31487, -0.110042, 0.876004, -0.398975, -0.296375, -0.4129, -0.824833, 63.5373, 6.74067, -134.245)
 
-[node name="PropFern2!1733545931_801" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
+[node name="PropFern2!1733545931_801" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
 transform = Transform3D(0.629833, 0.00345883, 0.74383, -0.0430798, 0.973194, 0.0319521, -0.742589, -0.0535242, 0.629031, 69.4861, 9, -129.201)
 
-[node name="PropFern2!1733545933_968" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
+[node name="PropFern2!1733545933_968" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
 transform = Transform3D(-0.97924, -0.0122909, 0.224597, -0.0232514, 1.0034, -0.0464658, -0.223728, -0.050484, -0.978214, 62.5971, 9, -128.839)
 
-[node name="PropFern1!1733545936_118" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("87_ww1vl")]
+[node name="PropFern1!1733545936_118" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("87_ww1vl")]
 transform = Transform3D(-0.888247, -0.0543693, 0.476398, -0.227662, 0.93046, -0.318289, -0.421996, -0.387533, -0.831042, 63.3887, 8.89654, -129.717)
 
 [node name="Dandelions" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
@@ -5333,16 +5333,16 @@ transform = Transform3D(0.717219, -0.00647524, 0.565735, 0.0682953, 0.907762, -0
 [node name="PropDandelion2!1733500981_688" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("90_utmbr")]
 transform = Transform3D(0.931389, 0.0493589, -0.528362, -0.0331145, 1.07063, 0.0416435, 0.529629, -0.0198608, 0.931766, 81.3817, 4, -135.485)
 
-[node name="PropDandelion1!1733545965_668" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
+[node name="PropDandelion1!1733545965_668" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
 transform = Transform3D(0.521284, -0.019204, -0.739854, 0.349051, 0.804366, 0.225054, 0.652623, -0.41487, 0.470591, 63.8507, 6.24839, -135.278)
 
-[node name="PropDandelion1!1733545967_817" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
+[node name="PropDandelion1!1733545967_817" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
 transform = Transform3D(0.965741, -0.0013632, -0.383958, 0.180625, 0.9187, 0.451051, 0.338822, -0.485871, 0.853938, 68.9246, 7.73671, -132.153)
 
-[node name="PropDandelion1!1733545969_933" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
+[node name="PropDandelion1!1733545969_933" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
 transform = Transform3D(0.813752, 0.0102719, -0.700395, -0.0781828, 1.06822, -0.0751703, 0.696093, 0.10797, 0.810338, 58.7768, 9, -127.021)
 
-[node name="PropDandelion1!1733545972_065" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
+[node name="PropDandelion1!1733545972_065" parent="Map/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("89_8wf7p")]
 transform = Transform3D(-0.911359, 0.0845309, 0.291716, 0.0673993, 0.955961, -0.0664458, -0.296144, -0.0425703, -0.912856, 69.7697, 9, -125.74)
 
 [node name="Mushrooms" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
