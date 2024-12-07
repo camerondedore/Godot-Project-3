@@ -88,22 +88,6 @@
 [ext_resource type="PackedScene" uid="uid://dkequrq3luqfl" path="res://Prefabs/FX/FxBloodSplash.tscn" id="76_mtxb6"]
 [ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="87_ci7qi"]
 
-[sub_resource type="Animation" id="Animation_03yb8"]
-resource_name = "crosshair-reset"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Crosshair:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="Animation" id="Animation_cgge2"]
 resource_name = "crosshair-fire"
 length = 0.5
@@ -118,6 +102,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_03yb8"]
+resource_name = "crosshair-reset"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crosshair:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ppmof"]
@@ -1305,7 +1305,6 @@ bones/59/position = Vector3(-1.11982e-07, -0.259643, -2.66423e-09)
 bones/59/rotation = Quaternion(0.707107, -2.31808e-07, 0.707107, 9.21103e-08)
 bones/60/position = Vector3(0.0276244, 0.0914456, 1.11636e-07)
 bones/60/rotation = Quaternion(0.0247437, 0.706674, -0.0247435, 0.706674)
-bones/60/scale = Vector3(1, 1, 1)
 bones/61/position = Vector3(2.44942e-08, 0.0434405, 0.1)
 bones/61/rotation = Quaternion(0.707107, 1.45113e-08, -6.63222e-09, 0.707107)
 bones/62/rotation = Quaternion(0.034929, 0.00902732, -0.265333, 0.963482)
