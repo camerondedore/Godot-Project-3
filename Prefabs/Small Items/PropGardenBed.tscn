@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7yckg78btm4h"]
+
+[ext_resource type="ArrayMesh" uid="uid://ttmpggbv2bgc" path="res://Models/prop-garden-bed.res" id="1_8awuy"]
+[ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="2_sbf5m"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="3_yamuj"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_e7nlh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3fysj"]
+size = Vector3(3.8, 0.55, 1.7)
+
+[node name="PropGardenBed" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_8awuy")
+surface_material_override/0 = ExtResource("2_sbf5m")
+surface_material_override/1 = ExtResource("3_yamuj")
+surface_material_override/2 = ExtResource("4_e7nlh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
+shape = SubResource("BoxShape3D_3fysj")

@@ -24,6 +24,7 @@ size = Vector3(0.11, 0.8, 0.11)
 
 [node name="TableMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+layers = 2
 gi_mode = 2
 mesh = ExtResource("1_y5gvo")
 surface_material_override/0 = ExtResource("2_j5u0j")

@@ -28,6 +28,8 @@ bones/3/rotation = Quaternion(-0.707107, 2.00972e-14, 0.707107, -3.37311e-07)
 bones/4/rotation = Quaternion(0.707106, 2.37169e-20, 0.707107, 3.37311e-07)
 
 [node name="prop-chest2" parent="prop-chest/prop-chest-armature/Skeleton3D" index="0"]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
 surface_material_override/2 = ExtResource("6_fqhwf")

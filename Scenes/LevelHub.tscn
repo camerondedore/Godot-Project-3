@@ -2259,6 +2259,7 @@ transform = Transform3D(0.135733, 0, -0.990746, 0, 1, 0, 0.990746, 0, 0.135733, 
 
 [node name="FxRug" type="Decal" parent="Map/Fx"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.3817, 0, 12.634)
+sorting_offset = 2.0
 size = Vector3(2.5, 0.1, 5)
 texture_albedo = ExtResource("91_v5vxk")
 cull_mask = 1

@@ -28,6 +28,8 @@ bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(0.707107, 0, 0.707107, 0)
 
 [node name="prop-lockbox2" parent="prop-lockbox/prop-lockbox-armature/Skeleton3D" index="0"]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("4_rsdln")
 surface_material_override/1 = ExtResource("2_s4b3k")
 surface_material_override/2 = ExtResource("6_noej3")
