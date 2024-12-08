@@ -26,7 +26,6 @@ public partial class MobArrow : Projectile
             upVector = (normal + -Basis.Z).Normalized();
         }
 
-
         if(hitObject is CharacterBody3D)
         {
             // get health node
@@ -56,6 +55,12 @@ public partial class MobArrow : Projectile
         }
         else if(hitObject is StaticBody3D)
         {
+            if(hitObject is AnimatableBody3D)
+            {
+                this.GetParent().RemoveChild(this);
+                hitObject.AddChild(this);
+            }
+            
             // set arrow position
             var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
             LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
