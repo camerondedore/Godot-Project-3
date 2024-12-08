@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://chuhkc4ro50nf"]
+
+[ext_resource type="ArrayMesh" uid="uid://dr7l0u1mxnfp5" path="res://Models/prop-hoe.res" id="1_02v8f"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_i03su"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_y6ncy"]
+[ext_resource type="Material" uid="uid://by3bifucmdb84" path="res://Materials/MetalLight.tres" id="4_k51ol"]
+
+[node name="PropHoe" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_02v8f")
+surface_material_override/0 = ExtResource("2_i03su")
+surface_material_override/1 = ExtResource("3_y6ncy")
+surface_material_override/2 = ExtResource("4_k51ol")
