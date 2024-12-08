@@ -42,6 +42,15 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://Models/prop-tree-house-3.res"
 },
+"prop-tree-house-3_prop-tree-house-3-curtain": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-tree-house-3-curtain.res"
+},
 "prop-tree-house-3_prop-tree-house-3-shade": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
