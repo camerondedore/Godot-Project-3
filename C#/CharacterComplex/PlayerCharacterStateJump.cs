@@ -42,7 +42,7 @@ namespace PlayerCharacterComplex
         {
             var vel = blackboard.Velocity;
 
-            // set vertical speed; v = (-2hg)>(1/2)
+            // set vertical speed; v = (-2hg)^(1/2)
             vel.Y = Mathf.Sqrt((-2 * blackboard.jumpHeight * -EngineGravity.magnitude));
 
             blackboard.Velocity = vel;
