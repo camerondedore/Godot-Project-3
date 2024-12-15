@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://52tad572ea76"]
+
+[ext_resource type="ArrayMesh" uid="uid://pdxuta1efimi" path="res://Models/prop-knapsack.res" id="1_3a553"]
+[ext_resource type="Material" uid="uid://dqp37mpj2125h" path="res://Materials/Props/PropKnapSack.tres" id="2_7gj3u"]
+[ext_resource type="Material" uid="uid://by3bifucmdb84" path="res://Materials/MetalLight.tres" id="3_ysb1a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_61l3t"]
+size = Vector3(0.8, 0.8, 0.3)
+
+[node name="PropKnapsack" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_3a553")
+surface_material_override/0 = ExtResource("2_7gj3u")
+surface_material_override/1 = ExtResource("3_ysb1a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_61l3t")
