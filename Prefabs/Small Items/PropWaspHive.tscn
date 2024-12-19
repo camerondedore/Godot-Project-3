@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://da8lagd5i8ws0"]
+
+[ext_resource type="ArrayMesh" uid="uid://gf4q3mnatpdq" path="res://Models/prop-wasp-hive.res" id="1_qrj4r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhkjx"]
+cull_mode = 2
+albedo_color = Color(0.53, 0.53, 0.53, 1)
+metallic_specular = 0.0
+backlight_enabled = true
+backlight = Color(0.35, 0.35, 0.35, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_huahr"]
+albedo_color = Color(0.9, 0.9, 0.9, 1)
+metallic_specular = 0.0
+detail_enabled = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7okr0"]
+points = PackedVector3Array(0.446333, 0.0111913, 0.430019, -0.168952, 0.011109, -0.616056, -0.538019, 0.011109, 0.307015, -0.0628662, 0.438948, -0.194227, -0.0228815, -0.329168, -0.0186432, 0.466894, 0.0521023, -0.45185, -0.291931, 0.031688, 0.594104, -0.661256, 0.031688, -0.0619967, -0.0433879, 0.437102, 0.211343, 0.401123, 0.341435, 0.0185135, 0.593553, -0.102816, -0.0584991, 0.284343, -0.179796, 0.46206, 0.284939, -0.160946, -0.483657, -0.333469, -0.122379, -0.483796, -0.385244, -0.176809, 0.303658, 0.265116, 0.205691, 0.481493, 0.26167, 0.175082, -0.533893, -0.291931, 0.154585, -0.513413, -0.546205, -0.161093, -0.0391739, -0.412806, 0.226403, 0.329625, -0.465563, 0.24339, -0.154159, 0.610435, 0.113592, -0.103078, 0.159123, 0.031688, 0.614705, -0.277997, -0.104407, 0.545749, 0.435929, -0.197688, -0.0388354, 0.323353, 0.0111913, -0.595455, -0.456033, 0.0521023, -0.45173, 0.590002, 0.0111913, 0.204371, -0.159434, 0.437979, 0.134488, 0.403585, 0.226565, -0.33115, 0.481621, 0.226677, 0.193867, -0.0434249, 0.340967, 0.366066)
+
+[node name="PropWaspHive" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_qrj4r")
+surface_material_override/0 = SubResource("StandardMaterial3D_lhkjx")
+surface_material_override/1 = SubResource("StandardMaterial3D_huahr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_7okr0")
