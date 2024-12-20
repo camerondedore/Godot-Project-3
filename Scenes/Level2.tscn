@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=179 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -159,6 +159,7 @@
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/FxWoodChipsDecal.tscn" id="104_g3gg3"]
 [ext_resource type="Script" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="110_t127k"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="111_6aopb"]
+[ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="119_l61q0"]
 [ext_resource type="Texture2D" uid="uid://bd1dbi5t3vuv6" path="res://Textures/fx-rug-1.png" id="126_v51sy"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_i3bc3"]
@@ -8010,6 +8011,143 @@ transform = Transform3D(-0.536269, 0.0400203, -0.901966, 0.0765883, 1.04731, 0.0
 
 [node name="PropTulip2!1734107536_779" parent="Map/OccluderInstance3D/Props/Plants/Tulips" instance=ExtResource("94_6kog2")]
 transform = Transform3D(0.4626, -0.00323577, 0.959604, -0.0851692, 1.06094, 0.0446353, -0.955823, -0.0961022, 0.460453, 21.2854, 0, -32.8814)
+
+[node name="Roots" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="PropRoots" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.10578, 0.047747, 0.657417, 0, 1.28395, -0.0932509, -0.659148, -0.0800996, -1.10287, 2.09599, 3.40574, -59.0893)
+
+[node name="PropRoots2" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.492969, 0.047747, -1.18824, 0.0557747, 1.28395, 0.0747322, 1.18789, -0.0800996, 0.489606, -20.9094, 3.1761, -54.6973)
+
+[node name="PropRoots4" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.30836, 0.0833295, 0.730287, -0.0132609, 1.49345, -0.146652, -0.734907, 0.121404, 1.30278, 15.409, 8.41687, -66.6663)
+
+[node name="PropRoots5" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.93699, 0.106315, 1.1674, -0.0132609, 1.49345, -0.146652, -1.17215, -0.101881, -0.931528, 17.1548, 7.95107, -75.9327)
+
+[node name="PropRoots6" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.321247, 0.190016, -1.45353, 0.0597314, 1.48849, 0.181385, 1.46468, -0.0190262, -0.326199, 10.8322, 8.484, -75.5877)
+
+[node name="PropRoots3" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.279371, 0.0851113, -1.25376, 0.0557747, 1.28395, 0.0747322, 1.25541, -0.0381024, -0.282324, -20.8805, 2.7961, -57.8721)
+
+[node name="PropRoots7" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1, 0, -5.96046e-08, 4.15677e-09, 0.997565, -0.0697391, 5.94595e-08, -0.0697391, -0.997565, -9.30328, 10.0974, -84.4358)
+
+[node name="PropRoots8" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.16614, 0, -6.95072e-08, -3.4148e-09, 1.16473, 0.0572908, 6.94233e-08, 0.0572908, -1.16473, -8.09663, 9.24298, -84.4358)
+
+[node name="PropRoots9" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.34626, 0, 1.17694e-07, -1.16955e-08, 1.3396, -0.13378, -1.17111e-07, -0.13378, -1.3396, -5.6493, 7.97431, -105.379)
+
+[node name="PropRoots10" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.36173, 0, -1.19046e-07, 0, 1.36173, 0, 1.19046e-07, 0, -1.36173, -21.3013, 12.9844, -141.021)
+
+[node name="PropRoots11" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.36173, 0, -1.19046e-07, 1.71583e-08, 1.34751, -0.196268, 1.17803e-07, -0.196268, -1.34751, -13.4668, 13.5128, -141.186)
+
+[node name="PropRoots12" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-7.03263e-08, 0, -1.60888, 0, 1.60888, 0, 1.60888, 0, -7.03263e-08, -28.7571, 12.7073, -131.199)
+
+[node name="PropRoots13" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-7.01221e-08, -0.122536, -1.60421, -5.35621e-09, 1.60421, -0.122536, 1.60888, 0, -7.03264e-08, -28.9163, 11.9276, -134.585)
+
+[node name="PropRoots14" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-7.2026e-08, -0.412086, -1.64776, -1.80129e-08, 1.64776, -0.412086, 1.69851, 0, -7.42443e-08, 3.00733, 12.8742, -145.937)
+
+[node name="PropRoots15" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-7.36986e-08, -0.205555, -1.68603, -8.98508e-09, 1.68603, -0.205555, 1.69851, 1.46351e-15, -7.42443e-08, 3.00733, 13.568, -142.945)
+
+[node name="PropRoots16" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.13781, 0.416346, 1.30987, 2.98023e-08, 1.70046, -0.540497, -1.37445, 0.344664, 1.08435, 13.1721, 14.8519, -119.427)
+
+[node name="PropRoots17" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.552647, -0.141414, -1.09753, 7.45058e-09, 1.22678, -0.158069, 1.1066, 0.0706237, 0.548116, 17.3439, 15.257, -118.033)
+
+[node name="PropRoots18" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.02037, -0.102972, -0.799174, 3.49834e-09, 1.28951, -0.16615, 0.80578, 0.130395, 1.012, 18.1054, 15.5933, -116.143)
+
+[node name="PropRoots19" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.21893, -0.0268613, -0.208472, -2.38333e-09, 1.22678, -0.158069, 0.210196, 0.15577, 1.20894, 20.0455, 14.9949, -115.148)
+
+[node name="PropRoots20" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.29739, 0, 0.187512, 0, 1.31087, 0, -0.187512, 0, 1.29739, 32.1561, 15.0023, -115.254)
+
+[node name="PropRoots21" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-5.86662e-08, -0.213677, -1.34213, -9.34011e-09, 1.34213, -0.213677, 1.35903, 0, -5.94051e-08, 41.5468, 8.1163, -173)
+
+[node name="PropRoots22" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.16834, -0.109152, -0.685596, -9.34011e-09, 1.34213, -0.213677, 0.694231, 0.183694, 1.1538, 37.2111, 8.1163, -174.711)
+
+[node name="PropRoots23" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.3563, -0.013536, -0.0850209, -9.34011e-09, 1.34213, -0.213677, 0.0860915, -0.213248, -1.33943, 38.45, 8.50283, -182.383)
+
+[node name="PropRoots24" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-6.29271e-08, 0, -1.43961, 0, 1.43961, 0, 1.43961, 0, -6.29271e-08, 69.4623, 3.09677, -193.996)
+
+[node name="PropRoots25" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.43074, 0, 0.159522, 0, 1.43961, 0, -0.159522, 0, -1.43074, 81.4721, 3.40037, -203.523)
+
+[node name="PropRoots26" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.159475, 0.0349717, 1.43032, -0.00387522, 1.43918, -0.0347564, -1.43074, -5.12139e-09, 0.159522, 88.3209, 2.7357, -193.824)
+
+[node name="PropRoots27" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.0971776, 0.256987, 1.41314, -0.0319183, 1.41641, -0.255386, -1.43597, -0.0140923, 0.10131, 88.4983, 3.67546, -192.52)
+
+[node name="PropRoots28" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.0240062, 0.278642, 1.41218, -0.0418393, 1.41191, -0.277879, -1.4388, -0.0364084, 0.0316425, 88.6452, 2.6084, -191.438)
+
+[node name="PropRoots29" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.0623548, 0.0549139, 1.33211, -0.00256765, 1.33357, -0.0548539, -1.33324, 0, 0.0624076, 88.6881, 3.05288, -174.523)
+
+[node name="PropRoots30" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.120843, 0, -1.39839, 0, 1.4036, 0, 1.39839, 0, 0.120843, 69.1159, 3.10669, -167.97)
+
+[node name="PropRoots31" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.186061, 0, -1.53866, 0, 1.54986, 0, 1.53866, 0, -0.186061, 55.6983, 13.6857, -126.583)
+
+[node name="PropRoots32" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.186061, 0, -1.53866, 0, 1.54986, 0, 1.53866, 0, -0.186061, 55.2365, 13.0176, -109.897)
+
+[node name="PropRoots33" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.50937, 0, -1.31953e-07, 0, 1.50937, 0, 1.31953e-07, 0, -1.50937, 29.1819, 8.19281, -98.6127)
+
+[node name="PropRoots34" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.00148354, -0.23276, -1.49131, -0.000231547, 1.49131, -0.23276, 1.50937, 0, -0.0015015, 23.4169, 8.19281, -85.294)
+
+[node name="PropRoots35" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.0719461, 0, -1.84016, 0, 1.84156, 0, 1.84016, 0, 0.0719461, 34.5426, 7.87435, -59.5219)
+
+[node name="PropRoots36" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.75014, 0, -0.651812, 0, 1.86758, 0, 0.651812, 0, 1.75014, 42.7389, 7.95939, -48.9805)
+
+[node name="PropRoots37" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.0964451, 0, 1.51815, 0, 1.52121, 0, -1.51815, 0, 0.0964451, 49.5777, 8.15891, -30.6203)
+
+[node name="PropRoots38" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.49874, 0, 0.260495, 0, 1.52121, 0, -0.260495, 0, 1.49874, 43.226, 8.55298, -23.3554)
+
+[node name="PropRoots39" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(1.48842, 0, 0.314174, 0, 1.52121, 0, -0.314174, 0, 1.48842, 41.6515, 7.48775, -23.0881)
+
+[node name="PropRoots40" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.50364, 0, -0.0174263, 0.00346352, 1.47374, -0.298852, 0.0170787, -0.298872, -1.47364, 37.1615, 8.15821, -35.8123)
+
+[node name="PropRoots41" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-1.25455, 0, -0.396569, 0, 1.31573, 0, 0.396569, 0, -1.25455, -31.7875, 8.54705, -28.4006)
+
+[node name="PropRoots42" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.103863, 0.292852, 1.31765, -0.0230126, 1.32174, -0.291947, -1.3496, 0, 0.106382, -23.8463, 8.7707, -9.44149)
+
+[node name="PropRoots43" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.595861, 0.107355, 1.17873, 1.49012e-08, 1.31967, -0.120192, -1.18361, 0.0540458, 0.593405, -44.5254, 8.43116, -1.1799)
+
+[node name="PropRoots44" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(0.0402968, 0.104855, 1.32036, 0.00676291, 1.32094, -0.105107, -1.3245, 0.00993487, 0.0396343, -44.7511, 8.36011, 0.764628)
+
+[node name="PropRoots45" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
+transform = Transform3D(-0.480437, 0, -1.31856, 0, 1.40336, 0, 1.31856, 0, -0.480437, -34.9346, 3.30672, -37.5103)
 
 [node name="Pickups" type="Node3D" parent="Map"]
 
