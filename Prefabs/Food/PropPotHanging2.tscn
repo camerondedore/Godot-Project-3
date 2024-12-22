@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqtofmccmyrfe"]
+
+[ext_resource type="PackedScene" uid="uid://bhgoifnu2kwve" path="res://Prefabs/Food/PropPot2.tscn" id="1_i6g28"]
+[ext_resource type="ArrayMesh" uid="uid://jchwrtsub24g" path="res://Models/prop-pot-hanging-2.res" id="2_xonee"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b4f45"]
+radius = 0.358098
+height = 0.98151
+
+[node name="PropPotHanging2" instance=ExtResource("1_i6g28")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_xonee")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0669845, 0)
+shape = SubResource("CapsuleShape3D_b4f45")

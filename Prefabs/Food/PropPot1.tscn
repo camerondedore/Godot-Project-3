@@ -3,8 +3,9 @@
 [ext_resource type="ArrayMesh" uid="uid://x5biewmubp1y" path="res://Models/prop-pot-1.res" id="1_30h5j"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_qhksk"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_wxpa7"]
-radius = 0.45
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6lk5u"]
+height = 0.5
+radius = 0.445416
 
 [node name="PropPot1" type="StaticBody3D"]
 
@@ -15,5 +16,4 @@ mesh = ExtResource("1_30h5j")
 surface_material_override/0 = ExtResource("2_qhksk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.150088, 0)
-shape = SubResource("SphereShape3D_wxpa7")
+shape = SubResource("CylinderShape3D_6lk5u")

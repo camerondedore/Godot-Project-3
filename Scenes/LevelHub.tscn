@@ -1,4 +1,4 @@
-[gd_scene load_steps=186 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=187 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="16_ojyj8"]
 [ext_resource type="PackedScene" uid="uid://565phnp5c2il" path="res://Prefabs/Trees/PropTreeFir2.tscn" id="16_p1fwi"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="17_fbvor"]
-[ext_resource type="PackedScene" uid="uid://bhgoifnu2kwve" path="res://Prefabs/Food/PropPot2.tscn" id="17_qu438"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="18_5s8va"]
 [ext_resource type="PackedScene" uid="uid://bqieml050c1mh" path="res://Prefabs/Food/PropFirePitWithStand.tscn" id="18_unrax"]
 [ext_resource type="PackedScene" uid="uid://jstpyuffxyw5" path="res://Prefabs/Food/PropBarrel.tscn" id="19_dmbfs"]
@@ -97,9 +96,11 @@
 [ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Food/PropTankard.tscn" id="50_vqalf"]
 [ext_resource type="AudioStream" uid="uid://bptapxlnc86r5" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-1.wav" id="51_8bfyt"]
 [ext_resource type="AudioStream" uid="uid://cx6464f4x40g3" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-2.wav" id="52_pj5aj"]
+[ext_resource type="PackedScene" uid="uid://bku16yldk1wjl" path="res://Prefabs/Food/PropPotHanging1.tscn" id="54_a4gxv"]
 [ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="54_k1epn"]
 [ext_resource type="PackedScene" uid="uid://c0d1fd6qwbddv" path="res://Prefabs/Lumber/PropLogPileSmall.tscn" id="54_uav11"]
 [ext_resource type="PackedScene" uid="uid://b56cc0mnlnk7r" path="res://Prefabs/Lumber/PropFirewood2.tscn" id="55_04uju"]
+[ext_resource type="PackedScene" uid="uid://dqtofmccmyrfe" path="res://Prefabs/Food/PropPotHanging2.tscn" id="55_vdpdv"]
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="56_m6515"]
 [ext_resource type="PackedScene" uid="uid://6w4vqdekblvw" path="res://Prefabs/Lumber/PropFirewood3.tscn" id="56_qc0rl"]
 [ext_resource type="PackedScene" uid="uid://m7nbr4sdgca3" path="res://Prefabs/Lumber/PropFirewood4.tscn" id="57_p825b"]
@@ -1533,11 +1534,11 @@ transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926
 [node name="PropCookingSpit" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("15_2ns3d")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -64.3077, -0.00428176, 19.4647)
 
-[node name="PropPot1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food/PropCookingSpit" instance=ExtResource("16_ojyj8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.6, 0.850932, -1.90735e-06)
+[node name="PropPotHanging1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food/PropCookingSpit" instance=ExtResource("54_a4gxv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.599998, 0.850932, -1.90735e-06)
 
-[node name="PropPot2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food/PropCookingSpit" instance=ExtResource("17_qu438")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.600001, 1.01346, -9.53674e-07)
+[node name="PropPotHanging2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food/PropCookingSpit" instance=ExtResource("55_vdpdv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599998, 1.01346, -1.90735e-06)
 
 [node name="PropFirePitWithStand" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("18_unrax")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -29.7136, -1.90735e-06, 23.379)
