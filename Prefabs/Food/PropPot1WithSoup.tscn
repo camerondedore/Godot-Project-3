@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm5bfaokcntwq"]
+
+[ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="1_eiaxf"]
+[ext_resource type="ArrayMesh" uid="uid://c4clbyxu18x7q" path="res://Models/prop-pot-1-soup.res" id="2_jqt6k"]
+[ext_resource type="Material" uid="uid://bcwg207ggadmk" path="res://Materials/Pickups/PickupNettleBroth.tres" id="3_qk50i"]
+
+[node name="PropPot1WithSoup" instance=ExtResource("1_eiaxf")]
+
+[node name="SoupMesh" type="MeshInstance3D" parent="." index="2"]
+mesh = ExtResource("2_jqt6k")
+surface_material_override/0 = ExtResource("3_qk50i")

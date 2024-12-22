@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=188 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -105,6 +105,7 @@
 [ext_resource type="PackedScene" uid="uid://6w4vqdekblvw" path="res://Prefabs/Lumber/PropFirewood3.tscn" id="56_qc0rl"]
 [ext_resource type="PackedScene" uid="uid://m7nbr4sdgca3" path="res://Prefabs/Lumber/PropFirewood4.tscn" id="57_p825b"]
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="58_86mq8"]
+[ext_resource type="PackedScene" uid="uid://dp6awlmkspdaw" path="res://Prefabs/Food/PropPot2WithSoup.tscn" id="59_8scbr"]
 [ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Torches/PropTorchLitStatic.tscn" id="60_eijeb"]
 [ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/Player Bow Targets/JumpNetTarget.tscn" id="61_20rfl"]
 [ext_resource type="PackedScene" uid="uid://dh2pgw57n3v31" path="res://Prefabs/Pickups/PickupArrowsNet.tscn" id="61_ncj4n"]
@@ -1385,7 +1386,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -4, -64)
 [node name="BlackberryBushes" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="PropBlackberryBush8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("37_75886")]
-transform = Transform3D(0.0395562, 0, 0.999217, 0, 1, 0, -0.999217, 0, 0.0395562, -50.5071, 5.96046e-08, 19.0872)
+transform = Transform3D(0.0395562, 0, 0.999217, 0, 1, 0, -0.999217, 0, 0.0395562, -50.53, 5.96046e-08, 19.6664)
 
 [node name="PropBlackberryBush9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("37_75886")]
 transform = Transform3D(0.812887, 0, 0.582421, 0, 1, 0, -0.582421, 0, 0.812887, -54.1863, 5.96046e-08, 43.0213)
@@ -1548,6 +1549,9 @@ transform = Transform3D(0.669351, 0.228436, -0.706956, -4.03202e-08, 0.951557, 0
 
 [node name="PropClayPot" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("56_m6515")]
 transform = Transform3D(0.84923, 0, 0.528023, 0, 1, 0, -0.528023, 0, 0.84923, 25.9679, 0.78484, -28.7516)
+
+[node name="PropPot2WithSoup" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("59_8scbr")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -61.8539, 1.37, 14.1843)
 
 [node name="Doors" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
