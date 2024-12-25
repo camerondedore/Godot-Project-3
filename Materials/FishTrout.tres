@@ -1,9 +1,14 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c1gdk0c3nmdm3"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c1gdk0c3nmdm3"]
 
 [ext_resource type="Shader" path="res://Shaders/Fish.gdshader" id="1_272ce"]
+[ext_resource type="Texture2D" uid="uid://fk3mkv3vnqss" path="res://Textures/prop-trout-diffuse.png" id="2_3p88f"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_272ce")
-shader_parameter/waveFrequency = 15.0
-shader_parameter/waveAmplitude = 0.05
+shader_parameter/metallic = 0.8
+shader_parameter/roughness = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/waveFrequency = 20.0
+shader_parameter/waveAmplitude = 0.08
+shader_parameter/albedo = ExtResource("2_3p88f")

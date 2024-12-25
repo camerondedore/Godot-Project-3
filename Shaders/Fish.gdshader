@@ -1,6 +1,10 @@
 shader_type spatial;
 render_mode cull_disabled;
 
+uniform sampler2D albedo : source_color;
+uniform float metallic = 0.1;
+uniform float roughness = 0.5;
+uniform float specular = 0.5;
 uniform float waveFrequency = 0.1;
 uniform float waveAmplitude = 0.1;
 
@@ -21,5 +25,8 @@ void vertex()
 
 void fragment() 
 {
-	// Called for every pixel the material is visible on.
+	ALBEDO = texture(albedo, UV).rgb;
+	METALLIC = metallic;
+	ROUGHNESS = roughness;
+	SPECULAR = specular;
 }

@@ -6,6 +6,6 @@
 [node name="PropTrout" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0527227)
 mesh = ExtResource("1_ujdlx")
 surface_material_override/0 = ExtResource("2_5gbg7")
