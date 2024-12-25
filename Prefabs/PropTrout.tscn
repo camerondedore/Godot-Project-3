@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://brgstclbdpf0g"]
+
+[ext_resource type="ArrayMesh" uid="uid://b2ft5bg3qp188" path="res://Models/prop-trout.res" id="1_ujdlx"]
+[ext_resource type="Material" uid="uid://c1gdk0c3nmdm3" path="res://Materials/FishTrout.tres" id="2_5gbg7"]
+
+[node name="PropTrout" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_ujdlx")
+surface_material_override/0 = ExtResource("2_5gbg7")
