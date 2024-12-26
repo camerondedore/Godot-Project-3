@@ -4,11 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://fk3mkv3vnqss" path="res://Textures/prop-trout-diffuse.png" id="2_3p88f"]
 
 [resource]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_272ce")
 shader_parameter/metallic = 0.8
 shader_parameter/roughness = 0.5
 shader_parameter/specular = 0.5
-shader_parameter/waveFrequency = 20.0
+shader_parameter/waveCursor = 0.0
+shader_parameter/waveFrequency = 10.0
+shader_parameter/waveTurbulance = 8.0
 shader_parameter/waveAmplitude = 0.08
 shader_parameter/albedo = ExtResource("2_3p88f")
