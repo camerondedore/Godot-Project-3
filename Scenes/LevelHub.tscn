@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=192 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -219,6 +219,13 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="Curve3D" id="Curve3D_x7tps"]
+_data = {
+"points": PackedVector3Array(-7.03394, 0, 0.734093, 7.03394, 0, -0.734093, -6.95197, 0, -28.0066, -1.10627, 3.8147e-06, -6.30519, 1.10627, -3.8147e-06, 6.30519, 4.08385, 0, -19.178, -0.592155, 3.8147e-06, -5.14058, 0.592155, -3.8147e-06, 5.14058, 2.12193, 0, -4.05483, 4.40423, 3.8147e-06, -3.97906, -4.40423, -3.8147e-06, 3.97906, 6.53625, 0, 11.8858, 0, 0, 0, 0, 0, 0, -8.01467, -3.8147e-06, 3.62936, 1.89613, 3.8147e-06, 7.7312, -1.89613, -3.8147e-06, -7.7312, -19.4592, -7.62939e-06, -14.8454, -7.35358, 0, 2.43297, 7.35358, 0, -2.43297, -6.95197, 0, -28.0066),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jsxfe"]
 _data = {
@@ -2485,7 +2492,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, -0.5, -46)
 curve = SubResource("Curve3D_b7k0l")
 
 [node name="FishSchool1" type="PathFollow3D" parent="Map/Fish/FishSchoolPath1"]
-transform = Transform3D(0.785183, 0, 0.61924, 0, 0.999991, 0, -0.61924, 0, 0.785183, 6.2505, 0, -2.9841)
+transform = Transform3D(0.785182, 0, 0.619239, 0, 0.999991, 0, -0.619239, 0, 0.785182, 6.2505, 0, -2.9841)
 script = ExtResource("143_xkj6j")
 LoopTime = 60.0
 
@@ -2512,6 +2519,47 @@ speed = 0.014
 transform = Transform3D(0.785189, 0, 0.619245, 0, 0.999991, 0, -0.619245, 0, 0.785189, 98.8406, -0.599999, -47.8794)
 target = NodePath("../Target3")
 speed = 0.016
+
+[node name="FishSchoolPath2" type="Path3D" parent="Map/Fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, -0.5, -46)
+curve = SubResource("Curve3D_x7tps")
+
+[node name="FishSchool2" type="PathFollow3D" parent="Map/Fish/FishSchoolPath2"]
+transform = Transform3D(0.103799, 0, -0.99458, 0, 0.999991, 0, 0.99458, 0, 0.103799, -6.95197, 0, -28.0066)
+script = ExtResource("143_xkj6j")
+LoopTime = 100.0
+
+[node name="Target1" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, -0.705162, 0.00448638, -0.361404)
+
+[node name="Target2" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, 0.435753, 2.38419e-07, -1.27969)
+
+[node name="Target3" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.823201, -0.0999998, 0.842911)
+
+[node name="Target4" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, -0.0569687, 0.0581675, 1.0418)
+
+[node name="PropTrout" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 84.3343, -0.45, -74.7455)
+target = NodePath("../Target1")
+speed = 0.015
+
+[node name="PropTrout2" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 85.366, -0.5, -73.7061)
+target = NodePath("../Target2")
+speed = 0.014
+
+[node name="PropTrout3" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.2951, -0.599999, -73.1004)
+target = NodePath("../Target3")
+speed = 0.016
+
+[node name="PropTrout4" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.006, -0.564508, -73.9551)
+target = NodePath("../Target4")
+speed = 0.013
 
 [node name="Cinematics" type="Node3D" parent="Map"]
 

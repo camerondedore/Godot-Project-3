@@ -19,6 +19,9 @@ public partial class Fish : Node3D
     {
         mesh = (MeshInstance3D) GetNode("TroutMesh");
         material = mesh.GetSurfaceOverrideMaterial(0);
+
+        // randomize scale
+        mesh.Scale *= (GD.Randf() - 0.5f) * 0.1f + 1;
     }
 
 
