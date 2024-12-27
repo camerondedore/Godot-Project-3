@@ -2508,17 +2508,14 @@ transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.823201
 [node name="PropTrout" parent="Map/Fish/FishSchoolPath1/FishSchool1" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.785189, 0, 0.619245, 0, 0.999991, 0, -0.619245, 0, 0.785189, 96.8892, -0.45, -47.7989)
 target = NodePath("../Target1")
-speed = 0.015
 
 [node name="PropTrout2" parent="Map/Fish/FishSchoolPath1/FishSchool1" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.785189, 0, 0.619245, 0, 0.999991, 0, -0.619245, 0, 0.785189, 97.4149, -0.5, -50.4279)
 target = NodePath("../Target2")
-speed = 0.014
 
 [node name="PropTrout3" parent="Map/Fish/FishSchoolPath1/FishSchool1" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.785189, 0, 0.619245, 0, 0.999991, 0, -0.619245, 0, 0.785189, 98.8406, -0.599999, -47.8794)
 target = NodePath("../Target3")
-speed = 0.016
 
 [node name="FishSchoolPath2" type="Path3D" parent="Map/Fish"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91, -0.5, -46)
@@ -2544,22 +2541,18 @@ transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, -0.05696
 [node name="PropTrout" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 84.3343, -0.45, -74.7455)
 target = NodePath("../Target1")
-speed = 0.015
 
 [node name="PropTrout2" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 85.366, -0.5, -73.7061)
 target = NodePath("../Target2")
-speed = 0.014
 
 [node name="PropTrout3" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.2951, -0.599999, -73.1004)
 target = NodePath("../Target3")
-speed = 0.016
 
 [node name="PropTrout4" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
 transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.006, -0.564508, -73.9551)
 target = NodePath("../Target4")
-speed = 0.013
 
 [node name="Cinematics" type="Node3D" parent="Map"]
 

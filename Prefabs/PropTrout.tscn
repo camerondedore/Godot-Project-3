@@ -7,7 +7,6 @@
 [node name="PropTrout" type="Node3D"]
 top_level = true
 script = ExtResource("1_7i8s6")
-speed = 0.01
 
 [node name="TroutMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0500002)
