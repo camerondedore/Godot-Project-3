@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=193 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -86,6 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://dhp7rjy33kbog" path="res://Prefabs/Fabrications/PropPicketWall.tscn" id="44_k88de"]
 [ext_resource type="PackedScene" uid="uid://bpoh5eewwklhp" path="res://Prefabs/Small Items/PropBasket.tscn" id="44_lwa18"]
 [ext_resource type="PackedScene" uid="uid://dv01bjwkmdlab" path="res://Prefabs/Fabrications/PropPicketBattlements.tscn" id="44_u5c06"]
+[ext_resource type="PackedScene" uid="uid://ctfu1vil7krh2" path="res://Prefabs/Small Items/PropFishingPole.tscn" id="45_l8hvh"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="46_ssp6v"]
 [ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="48_o7o1q"]
 [ext_resource type="PackedScene" uid="uid://dunv4vxlrd3kx" path="res://Prefabs/Food/PropFirePit.tscn" id="48_siufe"]
@@ -1489,6 +1490,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1514, 1, -30.6569)
 
 [node name="PropBasket" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("44_lwa18")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.9883, 0.308014, -37.6425)
+
+[node name="PropFishingPole" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("45_l8hvh")]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 79.9464, 1.51323, -38.7895)
 
 [node name="Food" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 

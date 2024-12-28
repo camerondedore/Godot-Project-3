@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctfu1vil7krh2"]
+
+[ext_resource type="ArrayMesh" uid="uid://dyggqkfuu424e" path="res://Models/prop-fishing-pole.res" id="1_jddmq"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_yvaeu"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_a180c"]
+[ext_resource type="Material" uid="uid://jqraxvi0r28x" path="res://Materials/Rope.tres" id="4_2gobt"]
+
+[node name="PropFishingPole" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_jddmq")
+surface_material_override/0 = ExtResource("2_yvaeu")
+surface_material_override/1 = ExtResource("3_a180c")
+surface_material_override/2 = ExtResource("4_2gobt")
