@@ -1,5 +1,4 @@
 shader_type spatial;
-render_mode cull_disabled;
 
 uniform sampler2D albedo : source_color;
 uniform float metallic = 0.1;

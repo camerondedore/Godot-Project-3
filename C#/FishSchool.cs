@@ -20,7 +20,11 @@ public partial class FishSchool : PathFollow3D
 
     public override void _Process(double delta)
     {
-        ProgressRatio += ((float)delta) * deltaMultiplier;
+        // y = 0.25 * (sin(x) + sin(2.5 * x)) + 1
+        var speedVariation = Mathf.Sin(0.5f * EngineTime.timePassed) + Mathf.Sin(1.25f * EngineTime.timePassed);
+        speedVariation = speedVariation * 0.25f + 1f;
+
+        ProgressRatio += ((float)delta) * deltaMultiplier * ((float)speedVariation);
 
         if(ProgressRatio >= 1f)
         {
