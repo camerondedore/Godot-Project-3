@@ -32,20 +32,14 @@ namespace NonPlayerCharacter
         [Export]
         public bool saveToWorldData = false,
             freezePlayer = false;
-        
-        [Export]
-        int dialogueSpeaker = 1;
+
         [Export]
         public Node[] linkedObjects;
 
-        //public NavigationAgent3D navAgent;
-        public AudioTools3d voiceAudio;
         public Area3D triggerArea;
         public NpcCameraControl cameraControl;
-        public List<NpcDialogue> dialogues = new List<NpcDialogue>(),
-            repeatingDialogues = new List<NpcDialogue>();
-        public bool bodyInTrigger,
-            useRepeatingDialogue = false;
+        public NpcDialogue dialogue;
+        public bool bodyInTrigger;
         public PlayerCharacter player;
         public Vector3 initLookDirection,
             startLookDirection,
@@ -59,30 +53,11 @@ namespace NonPlayerCharacter
         public override void _Ready()
         {            
             // get nodes
-            //navAgent = (NavigationAgent3D) GetNode("NavAgent");
-            voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
             triggerArea = (Area3D) GetNode("TriggerArea");
             cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
+            dialogue = (NpcDialogue) GetNode("Dialogue");
 
             initLookDirection = -Basis.Z;
-
-            // get dialogues
-            var childNodes = GetChildren(false);
-
-            foreach(var child in childNodes)
-            {
-                if(child is NpcDialogue dialogue)
-                {
-                    if(dialogue.repeat == false)
-                    {
-                        dialogues.Add(dialogue);
-                    }
-                    else
-                    {
-                        repeatingDialogues.Add(dialogue);
-                    }
-                }
-            }
 
             // set up events
             triggerArea.BodyEntered += TriggerDialogue;
@@ -95,7 +70,7 @@ namespace NonPlayerCharacter
 
                 if(wasActivated)
                 {
-                    useRepeatingDialogue = true; 
+                    dialogue.useRepeatingDialogue = true; 
                     ActivateLinkedNodes();
                 }
             }
@@ -104,7 +79,7 @@ namespace NonPlayerCharacter
             stateIdle = new NpcSimpleStateIdle(){blackboard = this};
             stateTalk = new NpcSimpleStateTalk(){blackboard = this};
             stateTalkRepeating = new NpcSimpleStateTalkRepeating(){blackboard = this};
-            stateTurn = new NpcSimpleStateTalkTurn(){blackboard = this};
+            stateTurn = new NpcSimpleStateTurn(){blackboard = this};
 
             // set first state in machine
             machine.SetState(stateIdle);
@@ -142,19 +117,11 @@ namespace NonPlayerCharacter
 
 
 
-        public void Speak(AudioStream voiceLine, string subtitles, double subtitlesTime)
-        {
-            voiceAudio.PlaySound(voiceLine, 0);
-            DialogueUi.dialogueUi.DisplayDialogue(subtitles, subtitlesTime, dialogueSpeaker);
-        }
-
-
-
         public void TriggerDialogue(Node3D body)
         {
             if(bodyInTrigger == false && machine.CurrentState == stateIdle)
             {
-                if(freezePlayer == true && body is PlayerCharacter playerBody && useRepeatingDialogue == false)
+                if(freezePlayer == true && body is PlayerCharacter playerBody && dialogue.useRepeatingDialogue == false)
                 {
                     // store hit body
                     player = playerBody;

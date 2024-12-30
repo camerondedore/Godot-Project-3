@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_cgg3p"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_srv7g"]
 [ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_u4u5o"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_cdu1t"]
+[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="6_gbgo0"]
 [ext_resource type="Script" path="res://C#/NpcSimple/NpcCameraControl.cs" id="7_shrkw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aceh1"]
@@ -117,11 +117,11 @@ surface_material_override/1 = ExtResource("4_srv7g")
 [node name="AnimationPlayer" parent="character-lumsden" index="1"]
 playback_default_blend_time = 0.15
 
-[node name="VoiceAudio" type="AudioStreamPlayer3D" parent="."]
+[node name="Dialogue" type="AudioStreamPlayer3D" parent="."]
 unit_size = 20.0
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
-script = ExtResource("6_cdu1t")
+script = ExtResource("6_gbgo0")
 
 [node name="TriggerArea" type="Area3D" parent="."]
 collision_layer = 0

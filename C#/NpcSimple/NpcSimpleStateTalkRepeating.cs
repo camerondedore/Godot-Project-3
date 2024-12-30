@@ -6,16 +6,7 @@ namespace NonPlayerCharacter
     public partial class NpcSimpleStateTalkRepeating : NpcSimpleState
     {
 
-        double lastDialogueTime,
-            dialogueLength;
-        int dialogueIndex;
 
-
-
-        public override void RunState(double delta)
-        {
-            base.RunState(delta);
-        }
 
 
 
@@ -24,28 +15,14 @@ namespace NonPlayerCharacter
             // animation
             blackboard.animation.Play(blackboard.talkAnimationName);
 
-            var currentDialogue = blackboard.repeatingDialogues[dialogueIndex];
-
-            // npc speak
-            blackboard.Speak(currentDialogue.dialogueAudio, currentDialogue.dialogueText, currentDialogue.dialogueAudio.GetLength() + 0.1f);
-
-            lastDialogueTime = EngineTime.timePassed;
-            dialogueLength = currentDialogue.dialogueAudio.GetLength() + 0.1f;
-            dialogueIndex++;
-
-            if(dialogueIndex >= blackboard.repeatingDialogues.Count)
-            {
-                // reset index
-                dialogueIndex = 0;
-            }
+            // talk
+            blackboard.dialogue.Talk();
         }
 
 
 
         public override void EndState()
         {
-            blackboard.ActivateLinkedNodes();
-
             // set new look direction
             blackboard.targetLookDirection = blackboard.initLookDirection;
         }
@@ -54,7 +31,7 @@ namespace NonPlayerCharacter
 
         public override State Transition()
         {
-            if(blackboard.voiceAudio.Playing == false && EngineTime.timePassed > lastDialogueTime + dialogueLength)
+            if(blackboard.dialogue.waiting == true)
             {
                 // turn
                 return blackboard.stateTurn;

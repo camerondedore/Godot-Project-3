@@ -27,11 +27,11 @@ namespace NonPlayerCharacter
         public NavigationAgent3D navAgent;
         public AnimationTree animation;
         public AnimationNodeStateMachinePlayback animStateMachinePlayback;
-        public AudioTools3d voiceAudio;
+        public NpcDialogue dialogue;
         public Area3D triggerArea;
-        public List<NpcDialogue> dialogues = new List<NpcDialogue>(),
-            repeatingDialogues = new List<NpcDialogue>();
-        public int targetIndex = 0;
+        
+        public int targetIndex = 0,
+            dialogueIndex = 0;
         public bool bodyInTrigger,
             useRepeatingDialogue = false,
             isWalking,
@@ -44,31 +44,13 @@ namespace NonPlayerCharacter
             // get nodes
             navAgent = (NavigationAgent3D) GetNode("NavAgent");
             animation = (AnimationTree) GetNode("AnimationTree");
-            voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
+            dialogue = (NpcDialogue) GetNode("Dialogue");
             triggerArea = (Area3D) GetNode("TriggerArea");
             
             animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
 
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
-
-            // get dialogues
-            var childNodes = GetChildren(false);
-
-            foreach(var child in childNodes)
-            {
-                if(child is NpcDialogue dialogue)
-                {
-                    if(dialogue.repeat == false)
-                    {
-                        dialogues.Add(dialogue);
-                    }
-                    else
-                    {
-                        repeatingDialogues.Add(dialogue);
-                    }
-                }
-            }
 
             // set up events
             triggerArea.BodyEntered += TriggerDialogue;
@@ -180,17 +162,10 @@ namespace NonPlayerCharacter
 
 
 
-        public void Speak(AudioStream voiceLine, string subtitles, double subtitlesTime)
-        {
-            voiceAudio.PlaySound(voiceLine, 0);
-            DialogueUi.dialogueUi.DisplayDialogue(subtitles, subtitlesTime, dialogueSpeaker);
-        }
-
-
-
         public void TriggerDialogue(Node3D body)
         {
             // trigger dialogue here
+            dialogue.Talk();
         }
 
 

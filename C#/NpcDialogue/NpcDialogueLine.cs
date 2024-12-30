@@ -3,7 +3,7 @@ using System;
 
 namespace NonPlayerCharacter
 {
-    public partial class NpcDialogue : Node
+    public partial class NpcDialogueLine : Node
     {
 
         [Export]

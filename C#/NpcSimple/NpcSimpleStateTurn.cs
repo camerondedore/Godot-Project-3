@@ -3,7 +3,7 @@ using System;
 
 namespace NonPlayerCharacter
 {
-    public partial class NpcSimpleStateTalkTurn : NpcSimpleState
+    public partial class NpcSimpleStateTurn : NpcSimpleState
     {
 
 
@@ -27,7 +27,7 @@ namespace NonPlayerCharacter
             angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
             blackboard.cursorTimeMultiplier = 3.14f / (blackboard.lookTime * angleToTargetDirection);
 
-            if(blackboard.useRepeatingDialogue == false)
+            if(blackboard.dialogue.useRepeatingDialogue == false)
             {
                 blackboard.cameraControl.EnableCameraControl(blackboard.player);
             }
@@ -67,7 +67,7 @@ namespace NonPlayerCharacter
             // check if look target is init look direction
             if(blackboard.targetLookDirection != blackboard.initLookDirection)
             {
-                if(blackboard.useRepeatingDialogue == false)
+                if(blackboard.dialogue.useRepeatingDialogue == false)
                 {
                     // one-time dialogue
                     return blackboard.stateTalk;
