@@ -164,7 +164,7 @@
 [ext_resource type="AudioStream" uid="uid://dmwt5lgd2fkoo" path="res://Audio/ambience-owl-4.wav" id="112_84jjh"]
 [ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="113_f3n0t"]
 [ext_resource type="PackedScene" uid="uid://b0hvuo4osb3sc" path="res://Prefabs/Characters/NpcLumsden.tscn" id="116_4nm5h"]
-[ext_resource type="Script" path="res://C#/Npc/NpcDialogue.cs" id="117_d580p"]
+[ext_resource type="Script" path="res://C#/NpcSimple/NpcDialogue.cs" id="117_d580p"]
 [ext_resource type="AudioStream" uid="uid://bfu5trt3sxypp" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-1.wav" id="118_kf60n"]
 [ext_resource type="AudioStream" uid="uid://4tiabpvxevap" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-2.wav" id="119_ydhld"]
 [ext_resource type="AudioStream" uid="uid://6yni8hv4ri07" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-3.wav" id="120_er8c0"]
