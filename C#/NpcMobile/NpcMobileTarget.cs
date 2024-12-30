@@ -7,8 +7,8 @@ namespace NonPlayerCharacter
     {
 
         [Export]
-        String animation;
+        public string animationTreeNode;
         [Export]
-        double waitTime = 1;
+        public double animationTime = 1;
     }
 }

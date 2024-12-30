@@ -1,4 +1,4 @@
-[gd_scene load_steps=193 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=195 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -160,6 +160,8 @@
 [ext_resource type="AudioStream" uid="uid://cxv36ao6ci65" path="res://Audio/ambience-cricket-5.wav" id="103_67nfc"]
 [ext_resource type="AudioStream" uid="uid://cnf7h1uqnbx6a" path="res://Audio/ambience-owl-1.wav" id="109_nt3pw"]
 [ext_resource type="AudioStream" uid="uid://cwak0whcpilgb" path="res://Audio/ambience-owl-2.wav" id="110_b207g"]
+[ext_resource type="PackedScene" uid="uid://vic2gqv1xhp2" path="res://Prefabs/Characters/NpcMobileWynn.tscn" id="110_vxlwq"]
+[ext_resource type="Script" path="res://C#/NpcMobile/NpcMobileTarget.cs" id="111_wfmyb"]
 [ext_resource type="AudioStream" uid="uid://doxu08u58r3so" path="res://Audio/ambience-owl-3.wav" id="111_y38v6"]
 [ext_resource type="AudioStream" uid="uid://dmwt5lgd2fkoo" path="res://Audio/ambience-owl-4.wav" id="112_84jjh"]
 [ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="113_f3n0t"]
@@ -2295,6 +2297,24 @@ transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, -54.68
 [node name="PropBlackberryBushBg4" parent="Map/OccluderInstance3D/Props/BlackberryBushesBg" instance=ExtResource("75_c3yf3")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -54.0262, 12, 5.13505)
 
+[node name="NPCs" type="Node3D" parent="Map"]
+
+[node name="NpcMobileWynn" parent="Map/NPCs" node_paths=PackedStringArray("targets") instance=ExtResource("110_vxlwq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6122, 1, -29.2625)
+targets = [NodePath("../NpcTarget1"), NodePath("../NpcTarget2")]
+
+[node name="NpcTarget1" type="Node3D" parent="Map/NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3622, 1, -29.2625)
+script = ExtResource("111_wfmyb")
+animationTreeNode = "wynn-kitchen-chopping"
+animationTime = 2.0
+
+[node name="NpcTarget2" type="Node3D" parent="Map/NPCs"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 48.0122, 1, -26.1125)
+script = ExtResource("111_wfmyb")
+animationTreeNode = "wynn-kitchen-stirring"
+animationTime = 3.0
+
 [node name="Fx" type="Node3D" parent="Map"]
 
 [node name="Lightshafts" type="Node3D" parent="Map/Fx"]
@@ -2748,11 +2768,10 @@ shape = SubResource("BoxShape3D_0unnw")
 
 [node name="Npcs" type="Node3D" parent="."]
 
-[node name="NpcLumsden" parent="Npcs" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("116_4nm5h")]
+[node name="NpcLumsden" parent="Npcs" instance=ExtResource("116_4nm5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6, 1, 20.3)
 saveToWorldData = true
 freezePlayer = true
-linkedObjects = [NodePath("../../Map/Cinematics/Cinematic3/Trigger")]
 
 [node name="Dialogue1" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
