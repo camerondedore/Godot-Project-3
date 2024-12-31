@@ -267,7 +267,7 @@ script = ExtResource("3_8tlgx")
 
 [node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
-stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea")]
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn")]
 
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
@@ -2757,10 +2757,11 @@ shape = SubResource("BoxShape3D_0unnw")
 
 [node name="Npcs" type="Node3D" parent="."]
 
-[node name="NpcLumsden" parent="Npcs" instance=ExtResource("116_4nm5h")]
+[node name="NpcLumsden" parent="Npcs" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("116_4nm5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6, 1, 20.3)
 saveToWorldData = true
 freezePlayer = true
+linkedObjects = [NodePath("../../Map/Cinematics/Cinematic3/Trigger")]
 
 [node name="Dialogue1" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
@@ -2812,6 +2813,8 @@ repeat = true
 [node name="NpcMobileWynn" parent="Npcs" node_paths=PackedStringArray("targets") instance=ExtResource("110_vxlwq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -65.3878, 1, 12.7375)
 targets = [NodePath("../NpcTarget1"), NodePath("../NpcTarget2")]
+startActive = false
+saveToWorldData = true
 
 [node name="Dialogue1" type="Node" parent="Npcs/NpcMobileWynn"]
 script = ExtResource("117_d580p")

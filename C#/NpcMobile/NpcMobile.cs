@@ -6,7 +6,7 @@ using System.Net.Http.Headers;
 
 namespace NonPlayerCharacter
 {
-    public partial class NpcMobile : CharacterBody3D
+    public partial class NpcMobile : CharacterBody3D, IActivatable
     {
 
         public StateMachineQueue machine = new StateMachineQueue();
@@ -27,6 +27,9 @@ namespace NonPlayerCharacter
             lookSpeed = 7f;
         [Export]
         int dialogueSpeaker = 1;
+        [Export]
+        bool startActive = true,
+            saveToWorldData = false;
 
         public NavigationAgent3D navAgent;
         public AnimationTree animation;
@@ -68,6 +71,26 @@ namespace NonPlayerCharacter
 
             // set first state in machine
             machine.SetState(stateWalk);
+
+
+
+            if(saveToWorldData == true)
+            {
+                // get if npc was already activated
+                var wasActivated = WorldData.data.CheckActivatedObjects((Node)this);
+
+                if(wasActivated == false)
+                {
+                    // npc was not saved
+                    // hide
+                    HideNpc();
+                }
+            }
+            else if(startActive == false)
+            {
+                // unsavable npc is hidden at start
+                HideNpc();
+            }
         }
 
 
@@ -256,6 +279,30 @@ namespace NonPlayerCharacter
             var positionCheck = (GlobalPosition - GetTargetPosition()).LengthSquared() < 0.001f;
             var forwardCheck = ((-Basis.Z) - GetTargetForward()).LengthSquared() < 0.001f;
             return positionCheck == true && forwardCheck == true;
+        }
+
+
+
+        public void HideNpc()
+        {
+            // disable
+            Visible = false;
+            ProcessMode = ProcessModeEnum.Disabled;
+        }
+
+
+
+        public void Activate()
+        {
+            // enable
+            Visible = true;
+            ProcessMode = ProcessModeEnum.Inherit;
+
+            if(saveToWorldData == true)
+            {
+                // save to activated objects
+                WorldData.data.ActivateObject((Node)this);
+            }
         }
     }
 }

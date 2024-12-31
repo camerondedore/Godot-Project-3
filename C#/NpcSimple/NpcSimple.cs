@@ -63,12 +63,12 @@ namespace NonPlayerCharacter
             triggerArea.BodyEntered += TriggerDialogue;
             triggerArea.BodyExited += TriggerReset;
 
-            if(saveToWorldData)
+            if(saveToWorldData == true)
             {
                 // get if trigger was already activated
                 var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
-                if(wasActivated)
+                if(wasActivated == true)
                 {
                     dialogue.useRepeatingDialogue = true; 
                     ActivateLinkedNodes();

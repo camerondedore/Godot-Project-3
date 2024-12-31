@@ -25,13 +25,14 @@ namespace NonPlayerCharacter
         {
             blackboard.EndDialogue();
             blackboard.cameraControl.DisableCameraControl();
+            blackboard.ActivateLinkedNodes();
 
             // set new look direction
             blackboard.targetLookDirection = blackboard.initLookDirection;
 
             if(blackboard.saveToWorldData == true)
             {            
-                // save to pickups taken
+                // save to activated objects
                 WorldData.data.ActivateObject(blackboard);
             }
         }
