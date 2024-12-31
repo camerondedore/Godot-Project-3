@@ -18,6 +18,8 @@ namespace NonPlayerCharacter
         [Export]
         public string walkAnimationTreeNodeName = "wynn-run";
         [Export]
+        string[] animationTalkingBlends;
+        [Export]
 		public float speed = 5f,
             acceleration = 10f,
             lookSpeed = 7f;
@@ -62,6 +64,35 @@ namespace NonPlayerCharacter
 
             // set first state in machine
             machine.SetState(stateWalk);
+        }
+
+
+
+        public override void _Process(double delta)
+        {
+            // check if talking
+            if(dialogue.waiting == false)
+            {
+                if(((float)animation.Get(animationTalkingBlends[0])) == 0)
+                {
+                    foreach(var blend in animationTalkingBlends)
+                    {
+                        // start talking animation
+                        animation.Set(blend, 1f);
+                    }
+                }
+            }
+            else
+            {
+                if(((float)animation.Get(animationTalkingBlends[0])) == 1)
+                {
+                    foreach(var blend in animationTalkingBlends)
+                    {
+                        // start talking animation
+                        animation.Set(blend, 0);
+                    }
+                }
+            }
         }
 
 
