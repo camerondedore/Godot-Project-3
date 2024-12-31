@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://vic2gqv1xhp2"]
+[gd_scene load_steps=36 format=3 uid="uid://vic2gqv1xhp2"]
 
 [ext_resource type="Script" path="res://C#/NpcMobile/NpcMobile.cs" id="1_164ud"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="1_jff1p"]
@@ -15,8 +15,25 @@ radius = 0.3
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_06cgn"]
 animation = &"wynn-give"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ca10t"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fte0n"]
+animation = &"wynn-talk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4ymv"]
 animation = &"wynn-idle"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_312p8"]
+filter_enabled = true
+filters = ["character-armature/Skeleton3D:cheek-l", "character-armature/Skeleton3D:cheek-r", "character-armature/Skeleton3D:eye-lid-l", "character-armature/Skeleton3D:eye-lid-r", "character-armature/Skeleton3D:jaw"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ab8v0"]
+nodes/Animation/node = SubResource("AnimationNodeAnimation_v4ymv")
+nodes/Animation/position = Vector2(156, 95)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_fte0n")
+"nodes/Animation 2/position" = Vector2(173, 255)
+nodes/Blend/node = SubResource("AnimationNodeBlend2_312p8")
+nodes/Blend/position = Vector2(420, 140)
+nodes/output/position = Vector2(680, 160)
+node_connections = [&"Blend", 0, &"Animation", &"Blend", 1, &"Animation 2", &"output", 0, &"Blend"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lrc6m"]
 animation = &"wynn-talk"
@@ -82,40 +99,40 @@ node_connections = [&"Blend", 0, &"Animation", &"Blend", 1, &"Animation 2", &"ou
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vsxsh"]
 animation = &"wynn-wave"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uyoau"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i66mx"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_okikg"]
-xfade_time = 0.1
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_u8kye"]
+xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8mjh0"]
-xfade_time = 0.1
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5kdt3"]
+xfade_time = 0.2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4jl8x"]
-xfade_time = 0.1
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3vfrg"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ng0se"]
-xfade_time = 0.1
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4b7ov"]
-xfade_time = 0.1
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_7l30x"]
-states/Start/position = Vector2(123, 99)
+states/Start/position = Vector2(235, 221)
 states/wynn-give/node = SubResource("AnimationNodeAnimation_06cgn")
-states/wynn-give/position = Vector2(528, 273)
-states/wynn-idle/node = SubResource("AnimationNodeAnimation_ca10t")
-states/wynn-idle/position = Vector2(258, 102)
+states/wynn-give/position = Vector2(509, 401)
+states/wynn-idle/node = SubResource("AnimationNodeBlendTree_ab8v0")
+states/wynn-idle/position = Vector2(393, 221)
 states/wynn-kitchen-chopping/node = SubResource("AnimationNodeBlendTree_14mjy")
-states/wynn-kitchen-chopping/position = Vector2(658, 95)
+states/wynn-kitchen-chopping/position = Vector2(744, 92)
 states/wynn-kitchen-stirring/node = SubResource("AnimationNodeBlendTree_ta382")
-states/wynn-kitchen-stirring/position = Vector2(658, 203)
+states/wynn-kitchen-stirring/position = Vector2(646, 221)
 states/wynn-run/node = SubResource("AnimationNodeBlendTree_yac63")
-states/wynn-run/position = Vector2(416, 99)
+states/wynn-run/position = Vector2(818, 312)
 states/wynn-wave/node = SubResource("AnimationNodeAnimation_vsxsh")
-states/wynn-wave/position = Vector2(673, 273)
-transitions = ["Start", "wynn-idle", SubResource("AnimationNodeStateMachineTransition_uyoau"), "wynn-idle", "wynn-run", SubResource("AnimationNodeStateMachineTransition_okikg"), "wynn-run", "wynn-kitchen-chopping", SubResource("AnimationNodeStateMachineTransition_8mjh0"), "wynn-run", "wynn-kitchen-stirring", SubResource("AnimationNodeStateMachineTransition_4jl8x"), "wynn-kitchen-stirring", "wynn-run", SubResource("AnimationNodeStateMachineTransition_ng0se"), "wynn-kitchen-chopping", "wynn-run", SubResource("AnimationNodeStateMachineTransition_4b7ov")]
-graph_offset = Vector2(-23, 54)
+states/wynn-wave/position = Vector2(682, 416)
+transitions = ["Start", "wynn-idle", SubResource("AnimationNodeStateMachineTransition_i66mx"), "wynn-idle", "wynn-kitchen-stirring", SubResource("AnimationNodeStateMachineTransition_u8kye"), "wynn-idle", "wynn-kitchen-chopping", SubResource("AnimationNodeStateMachineTransition_5kdt3"), "wynn-run", "wynn-idle", SubResource("AnimationNodeStateMachineTransition_3vfrg"), "wynn-kitchen-stirring", "wynn-run", SubResource("AnimationNodeStateMachineTransition_ng0se"), "wynn-kitchen-chopping", "wynn-run", SubResource("AnimationNodeStateMachineTransition_4b7ov")]
+graph_offset = Vector2(-7, 65)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jrfpl"]
 radius = 1.0
@@ -124,7 +141,7 @@ radius = 1.0
 collision_layer = 2
 script = ExtResource("1_164ud")
 targets = []
-animationTalkingBlends = PackedStringArray("parameters/wynn-kitchen-chopping/Blend/blend_amount", "parameters/wynn-kitchen-stirring/Blend/blend_amount", "parameters/wynn-run/Blend/blend_amount")
+animationTalkingBlends = PackedStringArray("parameters/wynn-kitchen-chopping/Blend/blend_amount", "parameters/wynn-kitchen-stirring/Blend/blend_amount", "parameters/wynn-run/Blend/blend_amount", "parameters/wynn-idle/Blend/blend_amount")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_4sxix")
@@ -158,11 +175,13 @@ bones/11/position = Vector3(0.0765538, 0.017639, 0.197476)
 bones/11/rotation = Quaternion(0.782745, 0.164958, -0.0365565, 0.598968)
 bones/12/position = Vector3(0.0749542, 0.263714, -0.127745)
 bones/15/rotation = Quaternion(-0.5, -0.5, 0.5, -0.5)
+bones/15/scale = Vector3(1, 1, 1)
 bones/16/position = Vector3(-0.0699644, 0.19036, 0.0841363)
 bones/16/rotation = Quaternion(0.0464926, -0.00105764, 9.73492e-05, 0.998918)
 bones/17/position = Vector3(-0.0765538, 0.017639, 0.197476)
 bones/17/rotation = Quaternion(0.782745, -0.164958, 0.0365565, 0.598968)
 bones/18/position = Vector3(-0.0749542, 0.263714, -0.127745)
+bones/20/scale = Vector3(1, 1, 1)
 bones/21/rotation = Quaternion(-0.585984, -0.0178591, -0.595111, 0.549678)
 bones/22/rotation = Quaternion(-0.525201, -0.690403, -0.0796825, 0.491078)
 bones/23/rotation = Quaternion(0.424945, -0.0694341, 0.0952723, 0.89751)
@@ -203,6 +222,7 @@ surface_material_override/2 = ExtResource("4_iaey1")
 root_node = NodePath("../character-wynn2")
 tree_root = SubResource("AnimationNodeStateMachine_7l30x")
 anim_player = NodePath("../character-wynn2/AnimationPlayer")
+parameters/wynn-idle/Blend/blend_amount = 0
 parameters/wynn-kitchen-chopping/Blend/blend_amount = 0.0
 parameters/wynn-kitchen-stirring/Blend/blend_amount = 0.0
 parameters/wynn-run/Blend/blend_amount = 0.0

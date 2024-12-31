@@ -41,8 +41,8 @@ namespace NonPlayerCharacter
         {
             if(blackboard.navAgent.IsNavigationFinished() == true)
             {
-                // animate
-                return blackboard.stateAnimate;
+                // turn
+                return blackboard.stateTurn;
             }
 
             return this;

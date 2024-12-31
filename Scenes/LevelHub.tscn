@@ -2834,10 +2834,12 @@ repeat = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -62.8191, 1, 11.0254)
 script = ExtResource("111_wfmyb")
 animationTreeNode = "wynn-kitchen-chopping"
-animationTime = 10.0
+animationTimeMin = 8.0
+animationTimeMax = 12.0
 
 [node name="NpcTarget2" type="Node3D" parent="Npcs"]
 transform = Transform3D(1.78814e-07, 0, -1, 0, 1, 0, 1, 0, 1.78814e-07, -62.8539, 1, 14.1843)
 script = ExtResource("111_wfmyb")
 animationTreeNode = "wynn-kitchen-stirring"
-animationTime = 6.0
+animationTimeMin = 4.0
+animationTimeMax = 8.0

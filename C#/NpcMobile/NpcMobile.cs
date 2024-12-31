@@ -11,12 +11,14 @@ namespace NonPlayerCharacter
 
         public StateMachineQueue machine = new StateMachineQueue();
         public State stateAnimate,
-            stateWalk;
+            stateWalk,
+            stateTurn;
         
         [Export]
         public NpcMobileTarget[] targets;
         [Export]
-        public string walkAnimationTreeNodeName = "wynn-run";
+        public string walkAnimationTreeNodeName = "wynn-run",
+            turnAnimationTreeNodeName = "wynn-idle";
         [Export]
         string[] animationTalkingBlends;
         [Export]
@@ -37,6 +39,7 @@ namespace NonPlayerCharacter
         public bool bodyInTrigger,
             useRepeatingDialogue = false,
             isWalking,
+            isTurning,
             delay = false;
 
 
@@ -61,6 +64,7 @@ namespace NonPlayerCharacter
             // initialize states
             stateAnimate = new NpcMobileStateAnimate(){blackboard = this};
             stateWalk = new NpcMobileStateWalk(){blackboard = this};
+            stateTurn = new NpcMobileStateTurn(){blackboard = this};
 
             // set first state in machine
             machine.SetState(stateWalk);
@@ -125,7 +129,7 @@ namespace NonPlayerCharacter
                 }
                 else
                 {
-                    if(GlobalPosition != GetTargetPosition() || (-Basis.Z) != GetTargetForward())
+                    if(isTurning == true)
                     {
                         // match target
 
@@ -137,6 +141,8 @@ namespace NonPlayerCharacter
                         // apply
                         LookAtFromPosition(targetPosition, GetTargetPosition() + targetForward);
                     }
+
+                    // if not turning, do nothing
                 }
             }
             else
@@ -169,10 +175,6 @@ namespace NonPlayerCharacter
 
                     // look in direction of movement
                     LookAt(lookTarget, Vector3.Up);
-
-                    // adjust walk animation speed
-                    // var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
-                    // animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
                 }
             }
         }
@@ -243,7 +245,17 @@ namespace NonPlayerCharacter
 
         public double GetTargetAnimationTime()
         {
-            return targets[targetIndex].animationTime;
+            return targets[targetIndex].GetAnimationTime();
+        }
+
+
+
+        public bool IsAlignedWithTarget()
+        {
+            //return GlobalPosition == GetTargetPosition() && (-Basis.Z) == GetTargetForward();
+            var positionCheck = (GlobalPosition - GetTargetPosition()).LengthSquared() < 0.001f;
+            var forwardCheck = ((-Basis.Z) - GetTargetForward()).LengthSquared() < 0.001f;
+            return positionCheck == true && forwardCheck == true;
         }
     }
 }
