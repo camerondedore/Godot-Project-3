@@ -71,7 +71,7 @@ namespace NonPlayerCharacter
                 if(wasActivated == true)
                 {
                     dialogue.useRepeatingDialogue = true; 
-                    ActivateLinkedNodes();
+                    //ActivateLinkedNodes();
                 }
             }
 

@@ -33,7 +33,7 @@ namespace LevelChange
                 int hubStage = int.Parse(splitNextLevel[1]);
 
                 // update world data hub stage
-                WorldData.data.currentData.HubStage = hubStage;
+                WorldData.data.SetHubStage(hubStage);
 
                 nextLevel = splitNextLevel[0];
             }

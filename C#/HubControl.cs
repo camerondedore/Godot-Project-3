@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class HubControl : Node
 {
@@ -16,16 +17,26 @@ public partial class HubControl : Node
 
         foreach(HubStage child in childNodes)
         {
+            // fill stage list
             hubStages.Add(child);
         }
 
-        // get saved stage
-        var hubStage = WorldData.data.currentData.HubStage;
+        LoadStage();
+    }
+
+
+
+    /// <summary>
+    /// Load the current Hub Stage.  Only usable once due to deleted nodes not in the current stage.
+    /// </summary>
+    public void LoadStage()
+    {
+        var currentStage = WorldData.data.GetHubStage();
 
         // activate current stage's nodes and deactivate others
         foreach(var stage in hubStages)
         {
-            if(stage.hubStage != hubStage)
+            if(stage.hubStage != currentStage)
             {
                 // remove nodes that aren't in the current stage
                 foreach(var stageNode in stage.stageNodes)
@@ -40,6 +51,8 @@ public partial class HubControl : Node
                         stageNode.QueueFree();
                     }
                 }
+
+                stage.QueueFree();
             }
             else
             {

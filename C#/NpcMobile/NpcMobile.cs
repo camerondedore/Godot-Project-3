@@ -28,8 +28,7 @@ namespace NonPlayerCharacter
         [Export]
         int dialogueSpeaker = 1;
         [Export]
-        bool startActive = true,
-            saveToWorldData = false;
+        bool startActive = true;
 
         public NavigationAgent3D navAgent;
         public AnimationTree animation;
@@ -73,22 +72,8 @@ namespace NonPlayerCharacter
             machine.SetState(stateWalk);
 
 
-
-            if(saveToWorldData == true)
+            if(startActive == false)
             {
-                // get if npc was already activated
-                var wasActivated = WorldData.data.CheckActivatedObjects((Node)this);
-
-                if(wasActivated == false)
-                {
-                    // npc was not saved
-                    // hide
-                    HideNpc();
-                }
-            }
-            else if(startActive == false)
-            {
-                // unsavable npc is hidden at start
                 HideNpc();
             }
         }
@@ -297,12 +282,6 @@ namespace NonPlayerCharacter
             // enable
             Visible = true;
             ProcessMode = ProcessModeEnum.Inherit;
-
-            if(saveToWorldData == true)
-            {
-                // save to activated objects
-                WorldData.data.ActivateObject((Node)this);
-            }
         }
     }
 }

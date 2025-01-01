@@ -1,4 +1,4 @@
-[gd_scene load_steps=200 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=201 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="5_rinr5"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
+[ext_resource type="Script" path="res://C#/HubSet.cs" id="7_nlmtm"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dpwxwkgm4hvfi" path="res://Scenes/Occlusion/LevelHub.occ" id="7_uqg3o"]
 [ext_resource type="ArrayMesh" uid="uid://c17yp7e6wr0s7" path="res://Models/level-hub-tree-walls.res" id="8_4d0ss"]
@@ -270,6 +271,25 @@ script = ExtResource("3_8tlgx")
 script = ExtResource("4_hh5wq")
 stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn")]
 
+[node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+setNodes = [NodePath("../../../Map/Cinematics/Cinematic1/Trigger")]
+
+[node name="Set1" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+hubSet = 1
+setNodes = []
+
+[node name="Set2" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+hubSet = 2
+setNodes = [NodePath("../../../Map/Cinematics/Cinematic3/Trigger")]
+
+[node name="Set3" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+hubSet = 3
+setNodes = [NodePath("../../../Npcs/NpcMobileWynn")]
+
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
@@ -284,6 +304,7 @@ script = ExtResource("8_7o44d")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_s034b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
+speed = 20.0
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -331,8 +352,8 @@ distance_fade_begin = 10.0
 omni_range = 15.0
 
 [node name="AmbientLight" type="OmniLight3D" parent="Map/Lighting"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.9811, 1.48806, 14.9724)
-light_energy = 0.75
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.4918, 1.7251, 15.2487)
+light_energy = 0.65
 light_indirect_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
@@ -681,7 +702,7 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 transform = Transform3D(0.707106, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707106, -67.5329, 12, 24.7136)
 
 [node name="PropTreeWallSmall22" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("21_4jlpr")]
-transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, -63, 12, 16.8)
+transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, -63.1362, 12, 18.4106)
 
 [node name="PropTreeWallSmall23" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("21_4jlpr")]
 transform = Transform3D(-1, 0, -1.33118e-07, 0, 1, 0, 1.33118e-07, 0, -1, -61, 12, -11.2)
@@ -2134,7 +2155,7 @@ transform = Transform3D(-0.806252, -0.024585, 0.549886, -0.0245092, 0.97589, 0.0
 transform = Transform3D(-1.01883, -0.0375725, -0.333574, -0.0252763, 1.07153, -0.0434916, 0.334731, -0.0334472, -1.0186, -63.1262, 12, 7.44097)
 
 [node name="PropBgTreeFir1!1725423899_066" parent="Map/OccluderInstance3D/Props/Fir1" instance=ExtResource("26_74fk1")]
-transform = Transform3D(-1.0413, 0.0499459, 0.191831, 0.0427567, 1.05824, -0.0434366, -0.19356, -0.0349325, -1.04159, -56.4709, 12, 12.3664)
+transform = Transform3D(-1.0413, 0.0499459, 0.191831, 0.0427567, 1.05824, -0.0434366, -0.19356, -0.0349325, -1.04159, -53.8447, 12, 14.7059)
 
 [node name="PropBgTreeFir1!1725425251_896" parent="Map/OccluderInstance3D/Props/Fir1" instance=ExtResource("26_74fk1")]
 transform = Transform3D(0.916695, 0.0411659, -0.237988, -0.0333215, 0.946731, 0.0354111, 0.239213, -0.0258772, 0.916935, -14.5574, 12, 67.5261)
@@ -2253,13 +2274,13 @@ maxRotation = 3.0
 uniformSize = true
 
 [node name="PropBgTreeOak3!1725423906_066" parent="Map/OccluderInstance3D/Props/Oaks" instance=ExtResource("30_6k7r1")]
-transform = Transform3D(-0.65928, -0.00613188, -0.623627, 0.0336073, 0.905811, -0.0444351, 0.622751, -0.0553744, -0.657809, -56.228, 12, 8.43945)
+transform = Transform3D(-0.65928, -0.00613188, -0.623627, 0.0336073, 0.905811, -0.0444351, 0.622751, -0.0553744, -0.657809, -56.8543, 12, 6.99467)
 
 [node name="PropBgTreeOak2!1725423908_084" parent="Map/OccluderInstance3D/Props/Oaks" instance=ExtResource("29_2g0jj")]
 transform = Transform3D(0.905499, 0.0161514, -0.107192, -0.0177414, 0.911706, -0.0124965, 0.10694, 0.0144932, 0.905557, -59.5394, 12, 20.8644)
 
 [node name="PropBgTreeOak3!1725423910_099" parent="Map/OccluderInstance3D/Props/Oaks" instance=ExtResource("30_6k7r1")]
-transform = Transform3D(-0.945582, 0.0571459, -0.387058, 0.0512515, 1.02172, 0.0256417, 0.387883, 0.00430848, -0.94696, -54.7709, 12, 16.2913)
+transform = Transform3D(-0.945582, 0.0571459, -0.387058, 0.0512515, 1.02172, 0.0256417, 0.387883, 0.00430848, -0.94696, -55.5117, 12, 16.6046)
 
 [node name="PropBgTreeOak3!1725423912_102" parent="Map/OccluderInstance3D/Props/Oaks" instance=ExtResource("30_6k7r1")]
 transform = Transform3D(0.517203, -0.0232339, -0.938782, 0.0482891, 1.07099, 9.80096e-05, 0.937827, -0.0423324, 0.517724, -58.7247, 12, -5.99049)
@@ -2313,7 +2334,7 @@ transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -54.0262
 [node name="Lightshafts" type="Node3D" parent="Map/Fx"]
 
 [node name="FxLightShaft" parent="Map/Fx/Lightshafts" instance=ExtResource("77_0vi7o")]
-transform = Transform3D(-1.34433, 0.709427, 0.399593, 0.360212, 1.78571, -0.571456, -0.55948, -0.554921, -1.32807, -61.0568, 8.5, 12.2481)
+transform = Transform3D(-1.20109, 1.15161, 0.247777, 0.695849, 1.54102, -0.655737, -0.568492, -0.546826, -1.32613, -61.0568, 8.5, 12.2481)
 
 [node name="FxWoodChipsDecal" parent="Map/Fx" instance=ExtResource("76_hnojk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1405, 0, -11.7025)
@@ -2589,7 +2610,7 @@ monitorable = false
 script = ExtResource("44_gr04f")
 cinematic = NodePath("../../CinematicsHub")
 cinematicAnimationName = "lhc1"
-saveToWorldData = true
+monitoringAtStart = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic1/Trigger"]
 shape = SubResource("BoxShape3D_1wib3")
@@ -2648,7 +2669,6 @@ monitorable = false
 script = ExtResource("44_gr04f")
 cinematic = NodePath("../../CinematicsHub")
 cinematicAnimationName = "lhc3"
-saveToWorldData = true
 monitoringAtStart = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic3/Trigger"]
@@ -2765,7 +2785,7 @@ shape = SubResource("BoxShape3D_0unnw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.6, 1, 20.3)
 saveToWorldData = true
 freezePlayer = true
-linkedObjects = [NodePath("../../Map/Cinematics/Cinematic3/Trigger")]
+linkedObjects = [NodePath("../../HubControl/Stage0")]
 
 [node name="Dialogue1" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
@@ -2818,7 +2838,6 @@ repeat = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -65.3878, 1, 12.7375)
 targets = [NodePath("../NpcTarget1"), NodePath("../NpcTarget2")]
 startActive = false
-saveToWorldData = true
 
 [node name="Dialogue1" type="Node" parent="Npcs/NpcMobileWynn"]
 script = ExtResource("117_d580p")
