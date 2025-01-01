@@ -1,4 +1,4 @@
-[gd_scene load_steps=199 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=200 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dpwxwkgm4hvfi" path="res://Scenes/Occlusion/LevelHub.occ" id="7_uqg3o"]
 [ext_resource type="ArrayMesh" uid="uid://c17yp7e6wr0s7" path="res://Models/level-hub-tree-walls.res" id="8_4d0ss"]
+[ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="8_7o44d"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="8_wqm4a"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="10_m3qwn"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="11_cs5ks"]
@@ -275,6 +276,9 @@ hubStage = 1
 stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic5"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic7"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic8"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic10"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic11"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic12"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic13"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic14"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic15")]
 
 [node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
+
+[node name="SpawnedObjectLoader" type="Node" parent="."]
+script = ExtResource("8_7o44d")
 
 [node name="DialogueUi" parent="." instance=ExtResource("3_n8wa2")]
 

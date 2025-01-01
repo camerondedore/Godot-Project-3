@@ -15,12 +15,12 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
 
     public override void _Ready()
     {
-        if(saveToWorldData)
+        if(saveToWorldData == true && Freeze == true)
         {
             // get if pickup was already taken
             var wasTaken = WorldData.data.CheckPickups(this);
 
-            if(wasTaken)
+            if(wasTaken == true)
             {
                 QueueFree();  
                 return;
@@ -29,6 +29,12 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
 
         // random rotation
         Rotate(Vector3.Up, GD.Randf() * 6.28f);
+
+        if(Freeze == false)
+        {
+            // dynamically spawned pickups need to be saved if not picked up
+            SleepingStateChanged += SleepingChanged;
+        }
     }
 
 
@@ -36,8 +42,15 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
     public override void _PhysicsProcess(double delta)
     {
         // check for frozen rigidbody
-        if(!Freeze)
+        if(Freeze == false)
         {
+            if(Sleeping == false && LinearVelocity.LengthSquared() < 0.005)
+            {
+                // force sleep
+                Sleeping = true;
+                SleepingChanged();
+            }
+
             // exit here to avoid rotating an active rigidbody
             return;
         }
@@ -67,13 +80,34 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
             }
         }
 
-        if(saveToWorldData && Freeze)
+        if(saveToWorldData == true && Freeze == true)
         {
             // save to pickups taken
             WorldData.data.TakePickup(this);
         }
 
+        if(Freeze == false)
+        {
+            // remove from saved spawn list
+            WorldData.data.RemovedSpawnedObject(this);
+        }
+
         // delete pickup
         QueueFree();
+    }
+
+
+
+    void SleepingChanged()
+    {
+        if(Sleeping == true)
+        {
+            // pickup stopped moving
+            if(WorldData.data.CheckSpawnedObjects(this) == false)
+            {
+                // insert into saved spawn list
+                WorldData.data.SaveSpawnedObject(this);
+            }
+        }
     }
 }

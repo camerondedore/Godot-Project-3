@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Text.Json; 
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class WorldData : Node
 {
@@ -130,9 +131,73 @@ public partial class WorldData : Node
 
 
 
+    public void SaveSpawnedObject(Node3D spawnedObject)
+    {
+        // get data string
+        var dataString = GetSpawnedObjectDataString(spawnedObject);
+
+        // add to list of spawned objects
+        currentData.SpawnedObjects.Add(dataString);
+    }
+
+
+
+    public bool CheckSpawnedObjects(Node3D spawnedObject)
+    {
+        // get data string
+        var dataString = GetSpawnedObjectDataString(spawnedObject);
+
+        // check for spawned object in list
+        return currentData.SpawnedObjects.Contains(dataString);
+    }
+
+
+
+    public void RemovedSpawnedObject(Node3D spawnedObject)
+    {
+        // get data string
+        var dataString = GetSpawnedObjectDataString(spawnedObject);
+
+        // remove the spawned object from the list
+        var updatedList = currentData.SpawnedObjects.Where(s => s != dataString).ToList();
+
+        currentData.SpawnedObjects = updatedList;
+    }
+
+
+
+    string GetSpawnedObjectDataString(Node3D objectToUse)
+    {
+        // clean floats in position vector
+        var cleanPosition = objectToUse.GlobalPosition;
+        cleanPosition.X = ((float)Math.Round(cleanPosition.X, 3));
+        cleanPosition.Y = ((float)Math.Round(cleanPosition.Y, 3));
+        cleanPosition.Z = ((float)Math.Round(cleanPosition.Z, 3));
+
+        var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.SceneFilePath}={cleanPosition}";
+        return dataString;
+    }
+
+
+
+    string GetSpawnedObjectDataString(Node objectToUse)
+    {
+        // use to get string without position
+        var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.SceneFilePath}";
+        return dataString;
+    }
+
+
+
     string GetObjectDataString(Node3D objectToUse)
     {
-        var dataString = $"{GetTree().CurrentScene.Name}-{objectToUse.Name}-{objectToUse.GlobalPosition}";
+        // clean floats in position vector
+        var cleanPosition = objectToUse.GlobalPosition;
+        cleanPosition.X = ((float)Math.Round(cleanPosition.X, 3));
+        cleanPosition.Y = ((float)Math.Round(cleanPosition.Y, 3));
+        cleanPosition.Z = ((float)Math.Round(cleanPosition.Z, 3));
+
+        var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.Name}={cleanPosition}";
         return dataString;
     }
 
@@ -140,7 +205,7 @@ public partial class WorldData : Node
 
     string GetObjectDataString(Node objectToUse)
     {
-        var dataString = $"{GetTree().CurrentScene.Name}-{objectToUse.Name}";
+        var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.Name}";
         return dataString;
     }
 
@@ -254,6 +319,11 @@ public partial class WorldData : Node
         } = new List<string>();
 
         public List<string> Pickups
+        {
+            get; set;
+        } = new List<string>();
+
+        public List<string> SpawnedObjects
         {
             get; set;
         } = new List<string>();

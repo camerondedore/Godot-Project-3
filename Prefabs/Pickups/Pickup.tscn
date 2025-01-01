@@ -51,8 +51,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 freeze = true
 freeze_mode = 1
-max_contacts_reported = 1
 contact_monitor = true
+max_contacts_reported = 1
 
 [node name="PickupMesh" type="MeshInstance3D" parent="."]
 layers = 2

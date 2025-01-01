@@ -1,4 +1,4 @@
-[gd_scene load_steps=179 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=180 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_wvlv8"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_n6jrc"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_b0p0a"]
+[ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="5_iumrn"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b8xm6u2qv132h" path="res://Scenes/Occlusion/Level2.occ" id="6_l1egs"]
 [ext_resource type="ArrayMesh" uid="uid://bw2kngd4ep31n" path="res://Models/level-2.res" id="9_auvuc"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="10_v7b7r"]
@@ -233,6 +234,9 @@ script = ExtResource("3_14mon")
 postProcessing = ExtResource("1_f2fj7")
 
 [node name="LevelChange" parent="." instance=ExtResource("3_oakbt")]
+
+[node name="SpawnedObjectLoader" type="Node" parent="."]
+script = ExtResource("5_iumrn")
 
 [node name="DialogueUi" parent="." instance=ExtResource("3_wvlv8")]
 
