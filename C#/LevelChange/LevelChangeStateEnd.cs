@@ -19,7 +19,10 @@ namespace LevelChange
 
 
             if(timeIndex >= blackboard.transitionTime)
-            {               
+            {
+                // done with current level, clear level data
+                WorldData.data.ClearLevelData(blackboard.GetTree().CurrentScene.Name);
+
                 if(blackboard.saveOnEnd == true)
                 {
                     // save world data so saved pickups are removed from world

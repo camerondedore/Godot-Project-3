@@ -325,6 +325,24 @@ public partial class WorldData : Node
 
 
 
+    public void ClearLevelData(string levelName)
+    {       
+        if(levelName == "LevelHub")
+        {
+            // don't clear hub data
+            return;
+        }
+
+        // clear level data from activated objects
+        currentData.ActivatedObjects = currentData.ActivatedObjects.Where(a => a.Contains(levelName) == false).ToList();
+        // clear level data from pickups
+        currentData.Pickups = currentData.Pickups.Where(p => p.Contains(levelName) == false).ToList();
+        // clear level data from activated objects
+        currentData.SpawnedObjects = currentData.SpawnedObjects.Where(s => s.Contains(levelName) == false).ToList();
+    }
+
+
+
     [System.Serializable]
     public class Data
     {
