@@ -213,9 +213,6 @@ transform = Transform3D(-0.995557, 0, -0.0941612, 0, 1, 0, 0.0941612, 0, -0.9955
 [node name="PropBanner2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("11_qguqo")]
 transform = Transform3D(-0.94793, 0, 0.31848, 0, 1, 0, -0.31848, 0, -0.94793, 19.9222, -0.175893, -47.6548)
 
-[node name="PropWoodAx" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("19_4euw6")]
-transform = Transform3D(-0.994, -0.094732, -0.0546937, 5.66172e-08, -0.5, 0.866025, -0.109388, 0.860829, 0.497, -12.972, 1.12223, -199.371)
-
 [node name="PropBanner3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("11_qguqo")]
 transform = Transform3D(0.307457, 0, -0.951562, 0, 1, 0, 0.951562, 0, 0.307457, -6.83541, -0.000200749, -195.775)
 
@@ -252,9 +249,6 @@ transform = Transform3D(0.432827, -0.0265898, -0.901085, 0.393918, 0.904664, 0.1
 
 [node name="PropPot1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropWheelBarrow" instance=ExtResource("80_ponqo")]
 transform = Transform3D(-0.338034, 0.204618, -0.918621, -0.082223, 0.965926, 0.245411, 0.937535, 0.158489, -0.309692, 0.949997, -0.191554, 0.229767)
-
-[node name="PropWoodAx2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("19_4euw6")]
-transform = Transform3D(0.96198, -0.272389, -0.0199647, -0.27312, -0.959406, -0.0703196, 0, 0.0730989, -0.997325, -16.2594, 8.5989, -66.0317)
 
 [node name="PropBanner4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("11_qguqo")]
 transform = Transform3D(0.395433, 0, 0.918495, 0, 1, 0, -0.918495, 0, 0.395433, -63.3691, 8, -197.589)
@@ -1782,24 +1776,6 @@ transform = Transform3D(-0.448902, 0, -0.893581, 0, 1, 0, 0.893581, 0, -0.448902
 
 [node name="PropTreeSplittingStump!1714105077_213" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber/Stumps" instance=ExtResource("33_l0u0o")]
 transform = Transform3D(-0.0479714, 0, -0.998849, 0, 1, 0, 0.998849, 0, -0.0479714, -22.1116, 7.9999, -77.7861)
-
-[node name="PropFirewood1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("60_tfjbe")]
-transform = Transform3D(-0.993744, 0.111677, 4.88156e-09, 0, -4.37114e-08, 1, 0.111677, 0.993744, 4.3438e-08, -15.4557, 8.12488, -59.7822)
-
-[node name="PropFirewood2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("61_hsg58")]
-transform = Transform3D(0.451451, -0.784776, 0.424639, 0.685145, -8.04427e-09, -0.728407, 0.571636, 0.619779, 0.537686, -16.2957, 8.09401, -59.7305)
-
-[node name="PropFirewood3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("62_pl2xd")]
-transform = Transform3D(-0.188177, -0.947863, 0.257187, 0.807043, -5.15604e-08, 0.590493, -0.559706, 0.318678, 0.764966, -16.2709, 8.04286, -60.1289)
-
-[node name="PropFirewood6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("62_pl2xd")]
-transform = Transform3D(-0.934924, -0.187289, 0.301397, -0.269979, -0.175766, -0.946688, 0.23028, -0.966452, 0.113764, -16.3297, 8.3019, -59.4463)
-
-[node name="PropFirewood4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("63_fxlco")]
-transform = Transform3D(0.495019, -0.714082, 0.495019, 0.707107, -5.96046e-08, -0.707107, 0.504932, 0.700062, 0.504932, -16.3605, 8.10892, -59.2986)
-
-[node name="PropFirewood5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("64_b0pt1")]
-transform = Transform3D(-0.683363, -5.96046e-08, 0.730079, 0, -1, -8.74228e-08, 0.730079, -2.98023e-08, 0.683363, -15.7315, 8.35236, -59.6139)
 
 [node name="PropPicketAbatisWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber" instance=ExtResource("31_sp1mm")]
 transform = Transform3D(-0.93173, 0, 0.363153, 0, 1, 0, -0.363153, 0, -0.93173, 17.0564, 4.76837e-07, -44.8252)
@@ -4868,6 +4844,34 @@ transform = Transform3D(-0.283641, 0.004524, 0.94267, 0.0152712, 0.98431, -0.000
 
 [node name="PropRockSmall!1714782326_7" parent="Map/Props/Rocks" instance=ExtResource("38_tupot")]
 transform = Transform3D(-1.11196, -0.0956992, -0.212277, -0.0935129, 1.13204, -0.0205036, 0.213249, -0.00259537, -1.11588, -43.18, 8, -270.494)
+
+[node name="SmallItems" type="Node3D" parent="Map/Props"]
+
+[node name="PropWoodAx" parent="Map/Props/SmallItems" instance=ExtResource("19_4euw6")]
+transform = Transform3D(-0.994, -0.094732, -0.0546937, 5.66172e-08, -0.5, 0.866025, -0.109388, 0.860829, 0.497, -12.972, 1.12223, -199.371)
+
+[node name="PropWoodAx2" parent="Map/Props/SmallItems" instance=ExtResource("19_4euw6")]
+transform = Transform3D(0.96198, -0.272389, -0.0199647, -0.27312, -0.959406, -0.0703196, 0, 0.0730989, -0.997325, -16.2594, 8.5989, -66.0317)
+
+[node name="Firewood" type="Node3D" parent="Map/Props"]
+
+[node name="PropFirewood1" parent="Map/Props/Firewood" instance=ExtResource("60_tfjbe")]
+transform = Transform3D(-0.993744, 0.111677, 4.88156e-09, 0, -4.37114e-08, 1, 0.111677, 0.993744, 4.3438e-08, -15.4557, 8.12488, -59.7822)
+
+[node name="PropFirewood2" parent="Map/Props/Firewood" instance=ExtResource("61_hsg58")]
+transform = Transform3D(0.451451, -0.784776, 0.424639, 0.685145, -8.04427e-09, -0.728407, 0.571636, 0.619779, 0.537686, -16.2957, 8.09401, -59.7305)
+
+[node name="PropFirewood3" parent="Map/Props/Firewood" instance=ExtResource("62_pl2xd")]
+transform = Transform3D(-0.188177, -0.947863, 0.257187, 0.807043, -5.15604e-08, 0.590493, -0.559706, 0.318678, 0.764966, -16.2709, 8.04286, -60.1289)
+
+[node name="PropFirewood6" parent="Map/Props/Firewood" instance=ExtResource("62_pl2xd")]
+transform = Transform3D(-0.934924, -0.187289, 0.301397, -0.269979, -0.175766, -0.946688, 0.23028, -0.966452, 0.113764, -16.3297, 8.3019, -59.4463)
+
+[node name="PropFirewood4" parent="Map/Props/Firewood" instance=ExtResource("63_fxlco")]
+transform = Transform3D(0.495019, -0.714082, 0.495019, 0.707107, -5.96046e-08, -0.707107, 0.504932, 0.700062, 0.504932, -16.3605, 8.10892, -59.2986)
+
+[node name="PropFirewood5" parent="Map/Props/Firewood" instance=ExtResource("64_b0pt1")]
+transform = Transform3D(-0.683363, -5.96046e-08, 0.730079, 0, -1, -8.74228e-08, 0.730079, -2.98023e-08, 0.683363, -15.7315, 8.35236, -59.6139)
 
 [node name="Pickups" type="Node3D" parent="Map"]
 

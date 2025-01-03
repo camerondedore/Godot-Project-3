@@ -1756,21 +1756,6 @@ transform = Transform3D(0.210489, 0, 0.977596, 0, 1, 0, -0.977596, 0, 0.210489, 
 
 [node name="Food" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
-[node name="PropBowl" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("33_yyyle")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3755, 10.0753, -136.058)
-
-[node name="PropBread1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("34_kpfnv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9764, 10.0861, -135.893)
-
-[node name="PropBread2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("35_olsmk")]
-transform = Transform3D(0.869236, 0, 0.494397, 0, 1, 0, -0.494397, 0, 0.869236, -16.5879, 10.0861, -136.355)
-
-[node name="PropClayPot" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("36_gtcag")]
-transform = Transform3D(0.518594, 0, 0.855021, 0, 1, 0, -0.855021, 0, 0.518594, -14.7551, 10.2, -136.322)
-
-[node name="PropLadle" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("37_stt7j")]
-transform = Transform3D(0.950288, -0.180302, -0.253859, 0, 0.81529, -0.579054, 0.311373, 0.550268, 0.77476, -14.9967, 10.0839, -136.755)
-
 [node name="PropFirePitWithStand" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("38_rxmpe")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -14, 9, -129)
 
@@ -1783,24 +1768,6 @@ transform = Transform3D(-0.254501, 0, -0.967073, 0.233514, 0.97041, -0.061453, 0
 [node name="PropPot2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("50_oav7r")]
 transform = Transform3D(-0.200719, 0, 0.979649, 0, 1, 0, -0.979649, 0, -0.200719, -14.0248, 4.36172, -79.3275)
 
-[node name="PropLadle2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("37_stt7j")]
-transform = Transform3D(-0.418612, 0.583502, -0.695909, 0, 0.76628, 0.642507, 0.908165, 0.268961, -0.320774, -13.6377, 4.13863, -79.0635)
-
-[node name="PropTankard" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("52_p50b5")]
-transform = Transform3D(0.949519, 0, -0.313711, 0, 1, 0, 0.313711, 0, 0.949519, -4.31686, 5.34458, -74.808)
-
-[node name="PropTankard2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("52_p50b5")]
-transform = Transform3D(-0.833963, 0, -0.551821, 0, 1, 0, 0.551821, 0, -0.833963, -4.42477, 5.34458, -75.1943)
-
-[node name="PropBowl2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("33_yyyle")]
-transform = Transform3D(0.765899, 0, 0.642961, 0, 1, 0, -0.642961, 0, 0.765899, -11.2398, 4.07883, -79.7178)
-
-[node name="PropBowl3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("33_yyyle")]
-transform = Transform3D(-0.0741415, -0.0123937, -0.997171, -0.164875, 0.986314, -9.91374e-09, 0.983524, 0.164409, -0.0751702, -11.2275, 4.15562, -79.7381)
-
-[node name="PropClayPot2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("36_gtcag")]
-transform = Transform3D(-0.0846518, 0, 0.996411, 0, 1, 0, -0.996411, 0, -0.0846518, -3.35201, 4.2, -75.16)
-
 [node name="PropFirePitWithStand2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("38_rxmpe")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -12, 4, -80.5)
 
@@ -1812,27 +1779,6 @@ transform = Transform3D(0.308237, 0, -0.95131, 0, 1, 0, 0.95131, 0, 0.308237, 14
 
 [node name="PropPot3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food/PropFirePitWithStand3" instance=ExtResource("50_oav7r")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0713387, 0.79205, -0.000549316)
-
-[node name="PropBowl4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("33_yyyle")]
-transform = Transform3D(0.511443, 0, 0.859317, 0, 1, 0, -0.859317, 0, 0.511443, 78.5404, 9.66248, -101.509)
-
-[node name="PropLadle3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("37_stt7j")]
-transform = Transform3D(0.701158, 0.356255, 0.617624, 0, 0.866226, -0.499652, -0.713006, 0.350335, 0.607361, 78.4959, 9.75669, -101.586)
-
-[node name="PropClayPot3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("36_gtcag")]
-transform = Transform3D(0.292288, 0, -0.95633, 0, 1, 0, 0.95633, 0, 0.292288, 78.8474, 9.8, -100.339)
-
-[node name="PropApple" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("73_ncngx")]
-transform = Transform3D(0.872428, -0.326963, 0.36327, 0.488743, 0.583644, -0.648452, 0, 0.743273, 0.668988, 61.9923, 9.11656, -127.437)
-
-[node name="PropApple2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("73_ncngx")]
-transform = Transform3D(0.508428, -0.852025, 0.124722, 0.715755, 0.498677, 0.488893, -0.478745, -0.159297, 0.863382, 60.7466, 9.11115, -125.32)
-
-[node name="PropApple3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("73_ncngx")]
-transform = Transform3D(0.396018, 0.712317, 0.57946, -0.901039, 0.423032, 0.0957692, -0.176912, -0.560043, 0.809354, 74.6822, 9.11115, -106.87)
-
-[node name="PropApple4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("73_ncngx")]
-transform = Transform3D(0.385372, 0.251058, 0.887952, -0.545853, 0.837881, 0, -0.743998, -0.484692, 0.459936, 25.6696, 4.11925, -87.9866)
 
 [node name="PropBarrel3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("48_qscce")]
 transform = Transform3D(0.871411, 0, 0.490554, 0, 1, 0, -0.490554, 0, 0.871411, 20.3125, 9.6, -92.6756)
@@ -1957,17 +1903,8 @@ transform = Transform3D(-4.33064e-08, -5.9361e-09, 1, -0.135802, 0.990736, 0, -0
 [node name="PropChest" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("39_vujlx")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23.8763, 9, -133.042)
 
-[node name="PropWoodAx" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("53_o4hiu")]
-transform = Transform3D(-0.680324, -0.707938, -0.189691, -4.2222e-08, -0.258819, 0.965926, -0.732911, 0.657143, 0.176081, -21.6129, 9.97717, -128.168)
-
 [node name="PropBasket" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("63_o21w2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9744, 4.3, -75.8994)
-
-[node name="PropWoodAx2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("53_o4hiu")]
-transform = Transform3D(0.482963, 0.12941, 0.866026, -0.258819, 0.965926, 0, -0.836516, -0.224144, 0.5, -16.0749, 4.60935, -80.2771)
-
-[node name="PropBungMallet" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("69_um87x")]
-transform = Transform3D(-0.064725, 0.748835, 0.659588, -0.997901, -0.0472459, -0.0442848, -0.00199913, -0.66107, 0.750321, -2.25677, 4.70177, -71.7789)
 
 [node name="PropLockbox" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("38_ucy2q")]
 transform = Transform3D(0.856042, 0, 0.516907, 0, 1, 0, -0.516907, 0, 0.856042, -3.30387, 4, -70.638)
@@ -1977,9 +1914,6 @@ transform = Transform3D(0.186322, -0.00830767, -0.982454, 0.0445435, 0.999007, 0
 
 [node name="PropLockbox2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("38_ucy2q")]
 transform = Transform3D(0.216286, 0, 0.97633, 0, 1, 0, -0.97633, 0, 0.216286, 86.2783, 4, -140.775)
-
-[node name="PropLamp" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("72_ir07k")]
-transform = Transform3D(0.755179, 0, -0.655519, 0, 1, 0, 0.655519, 0, 0.755179, 85.9652, 5.13693, -139.683)
 
 [node name="PropWheelBarrow2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("37_s48ou")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 73.1295, 9.45, -93.6806)
@@ -2131,15 +2065,6 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 [node name="PropBasketWithApples2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("83_uawf6")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 73.3347, 9, -95.8332)
 
-[node name="PropHoe" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("84_l1qvq")]
-transform = Transform3D(-1, 2.26267e-08, 8.44439e-08, 0, 0.965926, -0.258819, -8.74228e-08, -0.258819, -0.965926, 59.4258, 9.84278, -115.213)
-
-[node name="PropHoe3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("84_l1qvq")]
-transform = Transform3D(0.0413353, 0.258597, 0.9651, 1.42217e-08, 0.965926, -0.258819, -0.999146, 0.0106985, 0.0399262, 74.719, 9.84948, -93.9987)
-
-[node name="PropHoe2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("84_l1qvq")]
-transform = Transform3D(0.111018, 0.96725, -0.228259, -0.879344, -0.011414, -0.47605, -0.463065, 0.253568, 0.849279, 65.3851, 9.56509, -109.431)
-
 [node name="PropWheelBarrow3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("37_s48ou")]
 transform = Transform3D(-0.405939, 0, 0.9139, 0, 1, 0, -0.9139, 0, -0.405939, 66.4074, 9.45, -111.516)
 
@@ -2151,9 +2076,6 @@ transform = Transform3D(0.0140305, 0.731036, 0.682195, 0.994993, 0.0573155, -0.0
 
 [node name="PropFabricRoll4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("70_tafml")]
 transform = Transform3D(0.464935, 0.421132, -0.77877, 0, 0.879624, 0.47567, 0.885345, -0.221156, 0.408968, 25.2172, 4.2, -87.9933)
-
-[node name="WeaponSpear" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("88_otgv8")]
-transform = Transform3D(0.0147888, -0.252084, 0.967592, 0.999776, 0.018393, -0.0104888, -0.0151527, 0.96753, 0.252299, 25.305, 4.46454, -87.6585)
 
 [node name="PropKnapsack" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("91_tr1cm")]
 transform = Transform3D(-0.866025, -0.12941, -0.482963, 0, 0.965926, -0.258819, 0.5, -0.224144, -0.836516, -21.8982, 9.44843, -130.769)
@@ -2181,12 +2103,6 @@ transform = Transform3D(0.178305, -0.116722, -0.977028, 0.956761, -0.211343, 0.1
 
 [node name="PropWaspHive7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("92_vrp2k")]
 transform = Transform3D(0.26873, 0.942644, -0.198007, -0.186086, -0.150888, -0.970878, -0.94507, 0.29775, 0.134865, -59.4722, 14.6906, -5.2176)
-
-[node name="PropWoodAx3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("53_o4hiu")]
-transform = Transform3D(-0.375644, 0.722654, -0.580227, 0.15483, 0.666215, 0.72951, 0.913739, 0.184199, -0.362148, 35.4423, 10.5619, -142.279)
-
-[node name="PropWoodAx4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("53_o4hiu")]
-transform = Transform3D(-0.00519569, 0.707088, -0.707107, 0.999973, 0.00734777, -4.35393e-08, 0.00519563, -0.707088, -0.707107, 35.7201, 9.02946, -143.829)
 
 [node name="InvisibleWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
@@ -8225,6 +8141,96 @@ transform = Transform3D(0.0402968, 0.104855, 1.32036, 0.00676291, 1.32094, -0.10
 
 [node name="PropRoots45" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("119_l61q0")]
 transform = Transform3D(-0.480437, 0, -1.31856, 0, 1.40336, 0, 1.31856, 0, -0.480437, -34.9346, 3.30672, -37.5103)
+
+[node name="Food" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="PropBowl" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("33_yyyle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3755, 10.0753, -136.058)
+
+[node name="PropBread1" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("34_kpfnv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9764, 10.0861, -135.893)
+
+[node name="PropBread2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("35_olsmk")]
+transform = Transform3D(0.869236, 0, 0.494397, 0, 1, 0, -0.494397, 0, 0.869236, -16.5879, 10.0861, -136.355)
+
+[node name="PropClayPot" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("36_gtcag")]
+transform = Transform3D(0.518594, 0, 0.855021, 0, 1, 0, -0.855021, 0, 0.518594, -14.7551, 10.2, -136.322)
+
+[node name="PropLadle" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("37_stt7j")]
+transform = Transform3D(0.950288, -0.180302, -0.253859, 0, 0.81529, -0.579054, 0.311373, 0.550268, 0.77476, -14.9967, 10.0839, -136.755)
+
+[node name="PropLadle2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("37_stt7j")]
+transform = Transform3D(-0.418612, 0.583502, -0.695909, 0, 0.76628, 0.642507, 0.908165, 0.268961, -0.320774, -13.6377, 4.13863, -79.0635)
+
+[node name="PropTankard" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("52_p50b5")]
+transform = Transform3D(0.949519, 0, -0.313711, 0, 1, 0, 0.313711, 0, 0.949519, -4.31686, 5.34458, -74.808)
+
+[node name="PropTankard2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("52_p50b5")]
+transform = Transform3D(-0.833963, 0, -0.551821, 0, 1, 0, 0.551821, 0, -0.833963, -4.42477, 5.34458, -75.1943)
+
+[node name="PropBowl2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("33_yyyle")]
+transform = Transform3D(0.765899, 0, 0.642961, 0, 1, 0, -0.642961, 0, 0.765899, -11.2398, 4.07883, -79.7178)
+
+[node name="PropBowl3" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("33_yyyle")]
+transform = Transform3D(-0.0741415, -0.0123937, -0.997171, -0.164875, 0.986314, -9.91374e-09, 0.983524, 0.164409, -0.0751702, -11.2275, 4.15562, -79.7381)
+
+[node name="PropClayPot2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("36_gtcag")]
+transform = Transform3D(-0.0846518, 0, 0.996411, 0, 1, 0, -0.996411, 0, -0.0846518, -3.35201, 4.2, -75.16)
+
+[node name="PropBowl4" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("33_yyyle")]
+transform = Transform3D(0.511443, 0, 0.859317, 0, 1, 0, -0.859317, 0, 0.511443, 78.5404, 9.66248, -101.509)
+
+[node name="PropLadle3" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("37_stt7j")]
+transform = Transform3D(0.701158, 0.356255, 0.617624, 0, 0.866226, -0.499652, -0.713006, 0.350335, 0.607361, 78.4959, 9.75669, -101.586)
+
+[node name="PropClayPot3" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("36_gtcag")]
+transform = Transform3D(0.292288, 0, -0.95633, 0, 1, 0, 0.95633, 0, 0.292288, 78.8474, 9.8, -100.339)
+
+[node name="PropApple" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("73_ncngx")]
+transform = Transform3D(0.872428, -0.326963, 0.36327, 0.488743, 0.583644, -0.648452, 0, 0.743273, 0.668988, 61.9923, 9.11656, -127.437)
+
+[node name="PropApple2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("73_ncngx")]
+transform = Transform3D(0.508428, -0.852025, 0.124722, 0.715755, 0.498677, 0.488893, -0.478745, -0.159297, 0.863382, 60.7466, 9.11115, -125.32)
+
+[node name="PropApple3" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("73_ncngx")]
+transform = Transform3D(0.396018, 0.712317, 0.57946, -0.901039, 0.423032, 0.0957692, -0.176912, -0.560043, 0.809354, 74.6822, 9.11115, -106.87)
+
+[node name="PropApple4" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("73_ncngx")]
+transform = Transform3D(0.385372, 0.251058, 0.887952, -0.545853, 0.837881, 0, -0.743998, -0.484692, 0.459936, 25.6696, 4.11925, -87.9866)
+
+[node name="SmallItems" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="PropWoodAx" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("53_o4hiu")]
+transform = Transform3D(-0.680324, -0.707938, -0.189691, -4.2222e-08, -0.258819, 0.965926, -0.732911, 0.657143, 0.176081, -21.6129, 9.97717, -128.168)
+
+[node name="PropWoodAx2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("53_o4hiu")]
+transform = Transform3D(0.482963, 0.12941, 0.866026, -0.258819, 0.965926, 0, -0.836516, -0.224144, 0.5, -16.0749, 4.60935, -80.2771)
+
+[node name="PropBungMallet" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("69_um87x")]
+transform = Transform3D(-0.064725, 0.748835, 0.659588, -0.997901, -0.0472459, -0.0442848, -0.00199913, -0.66107, 0.750321, -2.25677, 4.70177, -71.7789)
+
+[node name="PropLamp" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("72_ir07k")]
+transform = Transform3D(0.755179, 0, -0.655519, 0, 1, 0, 0.655519, 0, 0.755179, 85.9652, 5.13693, -139.683)
+
+[node name="PropHoe" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_l1qvq")]
+transform = Transform3D(-1, 2.26267e-08, 8.44439e-08, 0, 0.965926, -0.258819, -8.74228e-08, -0.258819, -0.965926, 59.4258, 9.84278, -115.213)
+
+[node name="PropHoe3" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_l1qvq")]
+transform = Transform3D(0.0413353, 0.258597, 0.9651, 1.42217e-08, 0.965926, -0.258819, -0.999146, 0.0106985, 0.0399262, 74.719, 9.84948, -93.9987)
+
+[node name="PropHoe2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_l1qvq")]
+transform = Transform3D(0.111018, 0.96725, -0.228259, -0.879344, -0.011414, -0.47605, -0.463065, 0.253568, 0.849279, 65.3851, 9.56509, -109.431)
+
+[node name="PropWoodAx3" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("53_o4hiu")]
+transform = Transform3D(-0.375644, 0.722654, -0.580227, 0.15483, 0.666215, 0.72951, 0.913739, 0.184199, -0.362148, 35.4423, 10.5619, -142.279)
+
+[node name="PropWoodAx4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("53_o4hiu")]
+transform = Transform3D(-0.00519569, 0.707088, -0.707107, 0.999973, 0.00734777, -4.35393e-08, 0.00519563, -0.707088, -0.707107, 35.7201, 9.02946, -143.829)
+
+[node name="Weapons" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="WeaponSpear" parent="Map/OccluderInstance3D/Props/Weapons" instance=ExtResource("88_otgv8")]
+transform = Transform3D(0.0147888, -0.252084, 0.967592, 0.999776, 0.018393, -0.0104888, -0.0151527, 0.96753, 0.252299, 25.305, 4.46454, -87.6585)
 
 [node name="Pickups" type="Node3D" parent="Map"]
 

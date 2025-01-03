@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://clf0nyp5k70a"]
+
+[ext_resource type="ArrayMesh" uid="uid://bk0solhvwwfie" path="res://Models/arrow-enemy.res" id="1_l43hr"]
+[ext_resource type="Material" uid="uid://cy80basrv76qy" path="res://Materials/Characters/MobBrownRatArrowsRim.tres" id="2_s75fk"]
+
+[node name="WeaponArrowEnemy" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_l43hr")
+surface_material_override/0 = ExtResource("2_s75fk")
