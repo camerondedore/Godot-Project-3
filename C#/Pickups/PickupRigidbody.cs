@@ -9,12 +9,15 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
     [Export]
     bool saveToWorldData = true;
 
+    double spawnTime;
     float turnSpeed = 1.57f;
 
 
 
     public override void _Ready()
     {
+        spawnTime = EngineTime.timePassed;
+
         if(saveToWorldData == true && Freeze == true)
         {
             // get if pickup was already taken
@@ -44,7 +47,7 @@ public partial class PickupRigidbody : RigidBody3D, IPickup
         // check for frozen rigidbody
         if(Freeze == false)
         {
-            if(Sleeping == false && LinearVelocity.LengthSquared() < 0.005)
+            if(Sleeping == false && LinearVelocity.LengthSquared() < 0.005 && EngineTime.timePassed > spawnTime + 1.5f)
             {
                 // force sleep
                 Sleeping = true;
