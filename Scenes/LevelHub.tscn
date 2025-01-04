@@ -1977,7 +1977,6 @@ monitoring = false
 
 [node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
 layers = 2
-cast_shadow = 0
 gi_mode = 2
 mesh = SubResource("PlaneMesh_fxjfu")
 skeleton = NodePath("../../../../..")

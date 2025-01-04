@@ -1,39 +1,27 @@
-[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://bg5ilcdct7q4j"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bg5ilcdct7q4j"]
 
+[ext_resource type="Material" uid="uid://dy3cdwteg2jaw" path="res://Materials/WaterFoam.tres" id="1_avi74"]
 [ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="1_eiigu"]
-[ext_resource type="Texture2D" uid="uid://dot4ytbq2wbum" path="res://Textures/Water/water-foam.png" id="2_iuc4g"]
-[ext_resource type="Texture2D" uid="uid://b8bb4d3re704y" path="res://Textures/Water/water-height-1.png" id="3_1jvua"]
 [ext_resource type="Texture2D" uid="uid://ce0hsml1432jy" path="res://Textures/Water/water-normal-1.png" id="3_ydo1k"]
-[ext_resource type="Texture2D" uid="uid://ceyigvsovoewa" path="res://Textures/Water/water-height-2.png" id="4_nprl2"]
 [ext_resource type="Texture2D" uid="uid://lgf65e06p23e" path="res://Textures/Water/water-normal-2.png" id="4_ysqba"]
-[ext_resource type="Texture2D" uid="uid://d4kepeneb58c1" path="res://Textures/Water/water-height-3.png" id="5_1cc0q"]
 [ext_resource type="Texture2D" uid="uid://b8j7fol1iwljn" path="res://Textures/Water/water-normal-3.png" id="8_6g4nc"]
 
 [resource]
 render_priority = -1
+next_pass = ExtResource("1_avi74")
 shader = ExtResource("1_eiigu")
-shader_parameter/waterColor = Color(0.0784314, 0.180392, 0.345098, 1)
-shader_parameter/foamColor = Color(0.870588, 0.933333, 1, 1)
-shader_parameter/foamSharpness = 1.5
-shader_parameter/foamWaveSpeed = 4.0
-shader_parameter/foamWaveSize = 0.3
-shader_parameter/roughness = 0.05
-shader_parameter/edgeHardness = 4.0
-shader_parameter/uvScale = 20.0
+shader_parameter/waterAbsorbColor = Color(1, 0.235294, 0, 1)
+shader_parameter/waterFogColor = Color(0, 0.192, 0.24, 1)
+shader_parameter/roughness = 0.03
+shader_parameter/uvScale = 30.0
 shader_parameter/waveTimeScale = 0.035
 shader_parameter/waveVelocity1 = Vector2(0.1, 0.2)
 shader_parameter/waveVelocity2 = Vector2(-0.2, -0.1)
 shader_parameter/waveVelocity3 = Vector2(0.15, -0.2)
-shader_parameter/depthOffset = 1.0
-shader_parameter/beersLaw = 0.6
+shader_parameter/depthDistance = 4.0
+shader_parameter/colorAbsorbtionDensity = 2.0
+shader_parameter/beersLawFog = 1.0
 shader_parameter/normalMapHeight = 0.5
-shader_parameter/heightMapPower = 5.0
-shader_parameter/heightMapStrength = 2.0
 shader_parameter/waterNormalMap1 = ExtResource("3_ydo1k")
 shader_parameter/waterNormalMap2 = ExtResource("4_ysqba")
 shader_parameter/waterNormalMap3 = ExtResource("8_6g4nc")
-shader_parameter/waterHeightMap1 = ExtResource("3_1jvua")
-shader_parameter/waterHeightMap2 = ExtResource("4_nprl2")
-shader_parameter/waterHeightMap3 = ExtResource("5_1cc0q")
-shader_parameter/waterFoamTexture1 = ExtResource("2_iuc4g")
-shader_parameter/waterFoamTexture2 = ExtResource("2_iuc4g")
