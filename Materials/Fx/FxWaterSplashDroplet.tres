@@ -3,8 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bof1p8044rqqu" path="res://Textures/fx-water-splash-drop.png" id="1_gh7eo"]
 
 [resource]
-blend_mode = 1
-shading_mode = 2
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_gh7eo")
 metallic_specular = 0.0
@@ -12,6 +13,8 @@ emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.1
 emission_operator = 1
 emission_texture = ExtResource("1_gh7eo")
+backlight_enabled = true
+backlight = Color(0.9, 0.9, 0.9, 1)
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
