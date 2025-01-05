@@ -12,8 +12,9 @@ uniform vec2 waveVelocity2 = vec2(-0.2, -0.1);
 uniform vec2 waveVelocity3 = vec2(0.15, -0.05);
 //uniform float refractionStrength : hint_range(0.0, 0.5) = 0.05;
 uniform float depthDistance = 4.0;
-uniform float colorAbsorbtionDensity = 2.0;
+uniform float colorAbsorbtionDensity : hint_range(0.0, 10.0, 0.05) = 1.0;
 uniform float beersLawFog = 1.0;
+uniform float fogOffset = 0.0;
 uniform float normalMapHeight = 0.5;
 uniform sampler2D waterNormalMap1 : hint_normal;
 uniform sampler2D waterNormalMap2 : hint_normal;
@@ -43,8 +44,8 @@ void fragment()
 	vec2 waveOffset3 = TIME * waveVelocity3 * waveTimeScale;
 	
 	// get depth and screen textures
-	float depth = textureLod(DEPTH_TEXTURE, SCREEN_UV, 0.0).r;
-	vec3 screenTexture = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
+	vec3 screenTexture = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
 	
 	// get depth of water in world position Y depth
 	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
@@ -55,7 +56,7 @@ void fragment()
 	// get blend
 	float depthBlend = clamp((vertexY - depthTextureY) / depthDistance, 0.0, 1.0);
 	float depthBlendColorAbsorbtion = depthBlend * colorAbsorbtionDensity;
-	float depthBlendFog = exp(-(1.0 - depthBlend) * beersLawFog);
+	float depthBlendFog = exp(-(1.0 - depthBlend + fogOffset) * beersLawFog);
 	
 	// get background color
 	vec3 background = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
