@@ -2549,7 +2549,7 @@ script = ExtResource("143_xkj6j")
 LoopTime = 60.0
 
 [node name="Target1" type="Node3D" parent="Map/Fish/FishSchoolPath1/FishSchool1"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.645865, 0.0500002, 0.421383)
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.645866, -0.270675, 0.421387)
 
 [node name="Target2" type="Node3D" parent="Map/Fish/FishSchoolPath1/FishSchool1"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.185978, 2.38421e-07, -0.694401)
@@ -2558,7 +2558,7 @@ transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.185978
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.823201, -0.0999998, 0.842911)
 
 [node name="PropTrout" parent="Map/Fish/FishSchoolPath1/FishSchool1" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
-transform = Transform3D(0.785189, 0, 0.619245, 0, 0.999991, 0, -0.619245, 0, 0.785189, 96.8892, -0.45, -47.7989)
+transform = Transform3D(0.785189, 0, 0.619245, 0, 0.999991, 0, -0.619245, 0, 0.785189, 96.8892, -0.770672, -47.7989)
 target = NodePath("../Target1")
 
 [node name="PropTrout2" parent="Map/Fish/FishSchoolPath1/FishSchool1" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
@@ -2579,31 +2579,31 @@ script = ExtResource("143_xkj6j")
 LoopTime = 100.0
 
 [node name="Target1" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
-transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, -0.705162, 0.00448638, -0.361404)
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, -0.705162, -0.121456, -0.361404)
 
 [node name="Target2" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
-transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, 0.435753, 2.38419e-07, -1.27969)
+transform = Transform3D(1, 0, 2.23517e-08, 0, 1, 0, -2.23517e-08, 0, 1, 0.435753, -0.00738335, -1.27969)
 
 [node name="Target3" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
-transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.823201, -0.0999998, 0.842911)
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.823204, -0.361476, 0.84288)
 
 [node name="Target4" type="Node3D" parent="Map/Fish/FishSchoolPath2/FishSchool2"]
-transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, -0.0569687, 0.0581675, 1.0418)
+transform = Transform3D(1, 0, 7.45058e-09, 0, 1, 0, -7.45058e-09, 0, 1, -0.0569839, 0.0862472, 1.04176)
 
 [node name="PropTrout" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
-transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 84.3343, -0.45, -74.7455)
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 84.3343, -0.575941, -74.7455)
 target = NodePath("../Target1")
 
 [node name="PropTrout2" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
-transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 85.366, -0.5, -73.7061)
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 85.366, -0.740981, -73.7061)
 target = NodePath("../Target2")
 
 [node name="PropTrout3" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
-transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.2951, -0.599999, -73.1004)
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.2951, -0.627876, -73.1004)
 target = NodePath("../Target3")
 
 [node name="PropTrout4" parent="Map/Fish/FishSchoolPath2/FishSchool2" node_paths=PackedStringArray("target") instance=ExtResource("143_5hehv")]
-transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.006, -0.564508, -73.9551)
+transform = Transform3D(0.1038, 0, -0.994591, 0, 0.999991, 0, 0.994591, 0, 0.1038, 83.006, -0.536429, -73.9551)
 target = NodePath("../Target4")
 
 [node name="Cinematics" type="Node3D" parent="Map"]

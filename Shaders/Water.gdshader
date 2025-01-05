@@ -13,6 +13,7 @@ uniform vec2 waveVelocity3 = vec2(0.15, -0.05);
 //uniform float refractionStrength : hint_range(0.0, 0.5) = 0.05;
 uniform float depthDistance = 4.0;
 uniform float colorAbsorbtionDensity : hint_range(0.0, 10.0, 0.05) = 1.0;
+uniform float fogStrength : hint_range(0.0, 1.0, 0.05) = 1.0;
 uniform float beersLawFog = 1.0;
 uniform float fogOffset = 0.0;
 uniform float normalMapHeight = 0.5;
@@ -56,7 +57,8 @@ void fragment()
 	// get blend
 	float depthBlend = clamp((vertexY - depthTextureY) / depthDistance, 0.0, 1.0);
 	float depthBlendColorAbsorbtion = depthBlend * colorAbsorbtionDensity;
-	float depthBlendFog = exp(-(1.0 - depthBlend + fogOffset) * beersLawFog);
+	float depthBlendFog = clamp((vertexY - depthTextureY + fogOffset) / depthDistance, 0.0, 1.0);
+	depthBlendFog = exp(-(1.0 - depthBlendFog) * beersLawFog) * fogStrength;
 	
 	// get background color
 	vec3 background = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
