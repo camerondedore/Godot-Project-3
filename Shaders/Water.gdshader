@@ -43,28 +43,28 @@ void fragment()
 	vec2 waveOffset1 = TIME * waveVelocity1 * waveTimeScale;
 	vec2 waveOffset2 = TIME * waveVelocity2 * waveTimeScale;
 	vec2 waveOffset3 = TIME * waveVelocity3 * waveTimeScale;
-	
+
 	// get depth and screen textures
 	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
 	vec3 screenTexture = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-	
+
 	// get depth of water in world position Y depth
 	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
 	vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
 	float depthTextureY = world.y / world.w;
 	float vertexY = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).y;
-	
+
 	// get blend
 	float depthBlend = clamp((vertexY - depthTextureY) / depthDistance, 0.0, 1.0);
 	float depthBlendColorAbsorbtion = depthBlend * colorAbsorbtionDensity;
 	float depthBlendFog = clamp((vertexY - depthTextureY + fogOffset) / depthDistance, 0.0, 1.0);
 	depthBlendFog = exp(-(1.0 - depthBlendFog) * beersLawFog) * fogStrength;
-	
+
 	// get background color
 	vec3 background = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
 	// apply color absorbtion to background
 	background = clamp(background - waterAbsorbColor * depthBlendColorAbsorbtion, 0.0, 1.0);
-	
+
 	// combine fog with background
 	vec3 combinedBackgroundFog = mix(background, waterFogColor, depthBlendFog);
 
