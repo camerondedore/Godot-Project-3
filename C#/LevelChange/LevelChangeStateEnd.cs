@@ -20,8 +20,11 @@ namespace LevelChange
 
             if(timeIndex >= blackboard.transitionTime)
             {
-                // done with current level, clear level data
-                WorldData.data.ClearLevelData(blackboard.GetTree().CurrentScene.Name);
+                if(WorldData.data != null)
+                {
+                    // done with current level, clear level data
+                    WorldData.data.ClearLevelData(blackboard.GetTree().CurrentScene.Name);
+                }
 
                 if(blackboard.saveOnEnd == true)
                 {
