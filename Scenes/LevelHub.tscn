@@ -2007,6 +2007,14 @@ size = Vector3(37.8691, 20, 60.5232)
 box_projection = true
 enable_shadows = true
 
+[node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea/CameraBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_qyelk")
+
 [node name="WaterArea2" type="Area3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5219, -8.1, 64.9464)
 collision_layer = 4096
@@ -2031,6 +2039,14 @@ max_distance = 100.0
 size = Vector3(10, 8, 30)
 box_projection = true
 enable_shadows = true
+
+[node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2/CameraBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_vhv02")
 
 [node name="InvisibleWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
