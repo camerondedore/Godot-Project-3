@@ -113,6 +113,12 @@ namespace PlayerCharacterComplex
             // apply damage
             hitPoints = Mathf.Clamp(hitPoints - dmg, 0, PlayerStatistics.statistics.GetMaxHitPoints());
 
+            if(dmg > 0)
+            {
+                // flash mesh
+                meshflasher.Flash();
+            }
+
             // update statistics
             PlayerStatistics.statistics.UpdateHitPoints(hitPoints);
 
