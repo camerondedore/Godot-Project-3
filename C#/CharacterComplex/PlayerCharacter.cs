@@ -192,7 +192,7 @@ namespace PlayerCharacterComplex
 
 			if(lookVector.LengthSquared() > 0.1f)
 			{
-				var smoothLookTarget = -Basis.Z;
+				var smoothLookTarget = -Basis.Z.Normalized();
 				smoothLookTarget = smoothLookTarget.Slerp(lookVector, lookSpeed * ((float) delta));
 
 				// apply look
