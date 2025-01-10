@@ -12,22 +12,25 @@ uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
 
 void fragment()
 {
+	// get depth and screen textures
+	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
+	vec3 screenTexture = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
+	
+	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
+		
 	// get depth behind black wall
-	float depthTexture = texture(DEPTH_TEXTURE, SCREEN_UV).r;
-	float depth = PROJECTION_MATRIX[3][2] / (depthTexture + PROJECTION_MATRIX[2][2]);
-	float depthBlend = depth + VERTEX.z;
-
-	// get screen texture
-	vec3 screen = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
+	vec4 viewWorld = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
+	viewWorld.z = viewWorld.z / viewWorld.w;
+	float linearDepth = -viewWorld.z + VERTEX.z;
 
 	// fog
-	float fog = pow(depthBlend * (1.0 - depthDistance), depthFade);
+	float fog = pow(linearDepth * (1.0 - depthDistance), depthFade);
 
 	//fog *= depthBlend;
 	fog = clamp(fog, 0.0, 1.0);
 
 	// blend screen with combined effect
-	vec3 screenWithEffect = mix(screen, depthColor.rgb, fog);
+	vec3 screenWithEffect = mix(screenTexture, depthColor.rgb, fog);
 
 	ALBEDO = screenWithEffect;
 }
