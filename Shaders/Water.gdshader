@@ -33,6 +33,15 @@ void vertex()
 	//worldPosition = NODE_POSITION_WORLD + VERTEX;
 }
 
+vec3 addNormals(vec3 a, vec3 b)
+{
+	a = a * 2.0 - 1.0;
+	b = b * 2.0 - 1.0;
+	vec3 c = a + b;
+	c = c * 0.5 + 0.5;
+	return c;
+}
+
 void fragment()
 {
 	// get world position of pixel
@@ -43,9 +52,21 @@ void fragment()
 	vec2 waveOffset1 = TIME * waveVelocity1 * waveTimeScale;
 	vec2 waveOffset2 = TIME * waveVelocity2 * waveTimeScale;
 	vec2 waveOffset3 = TIME * waveVelocity3 * waveTimeScale;
-
+	
+	// get normal map from texture using world position for UV coordinated
+	vec3 waterNormal1 = texture(waterNormalMap1, worldUvCoordinates + waveOffset1).rgb;
+	vec3 waterNormal2 = texture(waterNormalMap2, worldUvCoordinates + waveOffset2).rgb;
+	vec3 waterNormal3 = texture(waterNormalMap3, worldUvCoordinates + waveOffset3).rgb;
+	vec3 combinedWaterNormal = addNormals(addNormals(waterNormal1, waterNormal2), waterNormal3);
+	combinedWaterNormal = mix(vec3(0.5, 0.5, 1.0), combinedWaterNormal, normalMapHeight);
+	
+	// get refraction uvs
+	//vec3 refractionOffset = mix(NORMAL, TANGENT * combinedWaterNormal + BINORMAL * combinedWaterNormal + NORMAL * combinedWaterNormal, 1.0);
+	//vec2 refractedUv = SCREEN_UV - refractionOffset.xy * refractionStrength;
+	
 	// get depth and screen textures
 	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
+	//float refractedDepth = texture(DEPTH_TEXTURE, refractedUv).r;
 	vec3 screenTexture = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
 
 	// get depth of water in world position Y depth
@@ -67,14 +88,6 @@ void fragment()
 
 	// combine fog with background
 	vec3 combinedBackgroundFog = mix(background, waterFogColor, depthBlendFog);
-
-	// get normal map from texture using world position for UV coordinated
-	vec3 waterNormal1 = texture(waterNormalMap1, worldUvCoordinates + waveOffset1).rgb;
-	vec3 waterNormal2 = texture(waterNormalMap2, worldUvCoordinates + waveOffset2).rgb;
-	vec3 waterNormal3 = texture(waterNormalMap3, worldUvCoordinates + waveOffset3).rgb;
-	vec3 combinedWaterNormal = normalize(waterNormal3 + waterNormal1 + waterNormal2);
-	combinedWaterNormal = mix(vec3(0.5, 0.5, 1), combinedWaterNormal, normalMapHeight);
-	//vec3 combinedWaterNormalSoftEdge = mix(vec3(0.5, 0.5, 1), combinedWaterNormal, clamp(depthBlend * edgeHardness, 0.0, 1.0));
 
 	// refraction
 	//vec3 unpackedNormal = combinedWaterNormal;
@@ -99,4 +112,5 @@ void fragment()
 	NORMAL_MAP = combinedWaterNormal;
 	ROUGHNESS = roughness;
 	ALBEDO = combinedBackgroundFog;
+	//ALBEDO = vec3(refractedDepth);
 }
