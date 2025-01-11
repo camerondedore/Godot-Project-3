@@ -10,7 +10,8 @@ uniform float waveTimeScale : hint_range(0.0, 1.0) = 0.1;
 uniform vec2 waveVelocity1 = vec2(0.1, 0.2);
 uniform vec2 waveVelocity2 = vec2(-0.2, -0.1);
 uniform vec2 waveVelocity3 = vec2(0.15, -0.05);
-//uniform float refractionStrength : hint_range(0.0, 0.5) = 0.05;
+//uniform float refractionStrength : hint_range(0.0, 10.0) = 0.05;
+//uniform float refractionDistance : hint_range(0.0, 10.0) = 0.05;
 uniform float depthDistance = 4.0;
 uniform float colorAbsorbtionDensity : hint_range(0.0, 10.0, 0.05) = 1.0;
 uniform float fogStrength : hint_range(0.0, 1.0, 0.05) = 1.0;
@@ -61,7 +62,8 @@ void fragment()
 	combinedWaterNormal = mix(vec3(0.5, 0.5, 1.0), combinedWaterNormal, normalMapHeight);
 	
 	// get refraction uvs
-	//vec3 refractionOffset = mix(NORMAL, TANGENT * combinedWaterNormal + BINORMAL * combinedWaterNormal + NORMAL * combinedWaterNormal, 1.0);
+	//vec3 refractionNormal = combinedWaterNormal * 2.0 - 1.0;
+	//vec3 refractionOffset = TANGENT * refractionNormal + BINORMAL * refractionNormal + NORMAL * refractionNormal;
 	//vec2 refractedUv = SCREEN_UV - refractionOffset.xy * refractionStrength;
 	
 	// get depth and screen textures
@@ -74,6 +76,12 @@ void fragment()
 	vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
 	float depthTextureY = world.y / world.w;
 	float vertexY = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).y;
+	
+	// get depth from view
+	//vec3 ndcRefract = vec3(SCREEN_UV * 2.0 - 1.0, refractedDepth);
+	//vec4 viewWorld = INV_PROJECTION_MATRIX * vec4(ndcRefract, 1.0);
+	//viewWorld.z = viewWorld.z / viewWorld.w;
+	//float linearDepth = -viewWorld.z + VERTEX.z;
 
 	// get blend
 	float depthBlend = clamp((vertexY - depthTextureY) / depthDistance, 0.0, 1.0);
@@ -82,14 +90,14 @@ void fragment()
 	depthBlendFog = exp(-(1.0 - depthBlendFog) * beersLawFog) * fogStrength;
 
 	// get background color
-	vec3 background = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
+	vec3 background = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
 	// apply color absorbtion to background
 	background = clamp(background - waterAbsorbColor * depthBlendColorAbsorbtion, 0.0, 1.0);
 
 	// combine fog with background
 	vec3 combinedBackgroundFog = mix(background, waterFogColor, depthBlendFog);
 
-	// refraction
+	// refraction old
 	//vec3 unpackedNormal = combinedWaterNormal;
 	//unpackedNormal.xy = unpackedNormal.xy * 2.0 - 1.0;
 	//unpackedNormal.z = sqrt(max(0.0, 1.0 - dot(unpackedNormal.xy, unpackedNormal.xy)));
@@ -112,5 +120,4 @@ void fragment()
 	NORMAL_MAP = combinedWaterNormal;
 	ROUGHNESS = roughness;
 	ALBEDO = combinedBackgroundFog;
-	//ALBEDO = vec3(refractedDepth);
 }

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b8l5ecgc0wa4k"]
+
+[ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/Water.tres" id="1_vmkmw"]
+[ext_resource type="Shader" path="res://Shaders/WaterColorAbsorb.gdshader" id="2_ycg3g"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_vmkmw")
+shader = ExtResource("2_ycg3g")
+shader_parameter/depthDistance = 4.0
+shader_parameter/waterAbsorbColor = Color(1, 0.35, 0, 1)
