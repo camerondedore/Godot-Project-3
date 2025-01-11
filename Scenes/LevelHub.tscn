@@ -20,7 +20,7 @@
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="10_m3qwn"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="11_cs5ks"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="12_dcqnf"]
-[ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/Water.tres" id="12_yb115"]
+[ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/WaterWithFoam.tres" id="12_yb115"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="14_febnp"]
 [ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="14_k44qo"]
 [ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Food/PropCookingSpit.tscn" id="15_2ns3d"]

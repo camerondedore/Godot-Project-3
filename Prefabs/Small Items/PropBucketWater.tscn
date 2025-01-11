@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://tp6wqf2iywtm" path="res://Prefabs/Small Items/PropBucket.tscn" id="1_5b2so"]
 [ext_resource type="ArrayMesh" uid="uid://cm2gi6rqnwe5s" path="res://Models/prop-bucket-water.res" id="2_okn6e"]
-[ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/Water.tres" id="3_tkrep"]
+[ext_resource type="Material" uid="uid://caikfktjtqhj4" path="res://Materials/Water.tres" id="3_tkrep"]
 
 [node name="PropBucketWater" instance=ExtResource("1_5b2so")]
 

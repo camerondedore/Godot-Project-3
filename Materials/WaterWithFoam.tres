@@ -1,12 +1,14 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://caikfktjtqhj4"]
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://bg5ilcdct7q4j"]
 
+[ext_resource type="Material" uid="uid://dy3cdwteg2jaw" path="res://Materials/WaterFoam.tres" id="1_avi74"]
 [ext_resource type="Shader" path="res://Shaders/Water.gdshader" id="1_eiigu"]
 [ext_resource type="Texture2D" uid="uid://ce0hsml1432jy" path="res://Textures/Water/water-normal-1.png" id="3_ydo1k"]
 [ext_resource type="Texture2D" uid="uid://lgf65e06p23e" path="res://Textures/Water/water-normal-2.png" id="4_ysqba"]
 [ext_resource type="Texture2D" uid="uid://b8j7fol1iwljn" path="res://Textures/Water/water-normal-3.png" id="8_6g4nc"]
 
 [resource]
-render_priority = 0
+render_priority = -1
+next_pass = ExtResource("1_avi74")
 shader = ExtResource("1_eiigu")
 shader_parameter/waterAbsorbColor = Color(1, 0.235294, 0, 1)
 shader_parameter/waterFogColor = Color(0, 0.192, 0.24, 1)
