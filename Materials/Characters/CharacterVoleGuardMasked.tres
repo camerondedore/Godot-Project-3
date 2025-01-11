@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cxke31b8ufnki"]
+
+[ext_resource type="Shader" path="res://Shaders/CharacterPlayer.gdshader" id="1_v16sn"]
+[ext_resource type="Texture2D" uid="uid://bxna5sn0dac1" path="res://Textures/character-vole-guard-diffuse.png" id="2_jowjh"]
+[ext_resource type="Texture2D" uid="uid://oor8uvccuxmg" path="res://Textures/character-vole-guard-color-mask.png" id="3_7vakm"]
+[ext_resource type="Texture2D" uid="uid://da7viv4fr378s" path="res://Textures/character-vole-guard-occlusion-mask.png" id="4_nbhmd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_v16sn")
+shader_parameter/albedoColor = Color(1, 1, 1, 1)
+shader_parameter/armorColor = Color(0.144, 0.3008, 0.48, 1)
+shader_parameter/rimPower = 0.025
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(1, 0.933333, 0.5, 1)
+shader_parameter/rimMinHeight = -0.9
+shader_parameter/rimHeightSlope = 1.9
+shader_parameter/albedoTexture = ExtResource("2_jowjh")
+shader_parameter/armorColorMask = ExtResource("3_7vakm")
+shader_parameter/armorOcclusionMask = ExtResource("4_nbhmd")

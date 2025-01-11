@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxna5sn0dac1"
-path.bptc="res://.godot/imported/character-vole-guard-diffuse.png-51e04de426abc4065c2c743f8c9b34a3.bptc.ctex"
+uid="uid://da7viv4fr378s"
+path.bptc="res://.godot/imported/character-vole-guard-occlusion-mask.png-71ec61c09da9a58b5cf1bf11a22d130f.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/character-vole-guard-diffuse.png"
-dest_files=["res://.godot/imported/character-vole-guard-diffuse.png-51e04de426abc4065c2c743f8c9b34a3.bptc.ctex"]
+source_file="res://Textures/character-vole-guard-occlusion-mask.png"
+dest_files=["res://.godot/imported/character-vole-guard-occlusion-mask.png-71ec61c09da9a58b5cf1bf11a22d130f.bptc.ctex"]
 
 [params]
 
