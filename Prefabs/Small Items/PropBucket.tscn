@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://tp6wqf2iywtm"]
+
+[ext_resource type="ArrayMesh" uid="uid://lxvik430y11a" path="res://Models/prop-bucket.res" id="1_466ch"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_oq00b"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_wy6u4"]
+[ext_resource type="Material" uid="uid://jqraxvi0r28x" path="res://Materials/Rope.tres" id="5_qwyud"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_auama"]
+height = 0.5
+radius = 0.3
+
+[node name="PropBucket" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_466ch")
+surface_material_override/0 = ExtResource("2_oq00b")
+surface_material_override/1 = ExtResource("3_wy6u4")
+surface_material_override/2 = ExtResource("5_qwyud")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_auama")

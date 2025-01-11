@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwa0t4570q3b3"]
+
+[ext_resource type="PackedScene" uid="uid://tp6wqf2iywtm" path="res://Prefabs/Small Items/PropBucket.tscn" id="1_5b2so"]
+[ext_resource type="ArrayMesh" uid="uid://cm2gi6rqnwe5s" path="res://Models/prop-bucket-water.res" id="2_okn6e"]
+[ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/Water.tres" id="3_tkrep"]
+
+[node name="PropBucketWater" instance=ExtResource("1_5b2so")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_okn6e")
+surface_material_override/3 = ExtResource("3_tkrep")

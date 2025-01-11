@@ -27,7 +27,7 @@ vec3 addNormals(vec3 a, vec3 b)
 	return c;
 }
 
-void fragment() 
+void fragment()
 {
 	// get world position of pixel
 	vec3 worldPosition = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
@@ -37,20 +37,20 @@ void fragment()
 	vec2 waveOffset1 = TIME * waveVelocity1 * waveTimeScale;
 	vec2 waveOffset2 = TIME * waveVelocity2 * waveTimeScale;
 	vec2 waveOffset3 = TIME * waveVelocity3 * waveTimeScale;
-	
+
 	// get normal map from texture using world position for UV coordinated
 	vec3 waterNormal1 = texture(waterNormalMap1, worldUvCoordinates + waveOffset1).rgb;
 	vec3 waterNormal2 = texture(waterNormalMap2, worldUvCoordinates + waveOffset2).rgb;
 	vec3 waterNormal3 = texture(waterNormalMap3, worldUvCoordinates + waveOffset3).rgb;
 	vec3 combinedWaterNormal = addNormals(addNormals(waterNormal1, waterNormal2), waterNormal3);
 	combinedWaterNormal = mix(vec3(0.5, 0.5, 1.0), combinedWaterNormal, normalMapHeight);
-	
+
 	// get refraction uvs
 	vec3 refractionNormal = combinedWaterNormal * 2.0 - 1.0;
-	vec3 refractionOffset = mix(NORMAL, TANGENT * refractionNormal 
-		+ BINORMAL * refractionNormal 
+	vec3 refractionOffset = mix(NORMAL, TANGENT * refractionNormal
+		+ BINORMAL * refractionNormal
 		+ NORMAL * refractionNormal, 1.0);
-	
+
 	// get depth and screen textures
 	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
 	vec3 screenTexture = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
@@ -60,7 +60,7 @@ void fragment()
 	//vec4 world = INV_VIEW_MATRIX * INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
 	//float depthTextureY = world.y / world.w;
 	//float vertexY = (INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).y;
-	
+
 	// get depth from view
 	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
 	vec4 viewWorld = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
@@ -68,13 +68,13 @@ void fragment()
 	float linearDepth = -viewWorld.z + VERTEX.z;
 	// clamp depth
 	linearDepth = clamp(linearDepth / refractionDistance, 0.0, 1.0);
-	
+
 	vec2 refractionUvOffset = refractionOffset.xy * refractionStrength * linearDepth;
 	vec2 refractedUv = SCREEN_UV - refractionUvOffset;
-	
+
 	// get refracted depth texture
 	float refractedDepth = texture(DEPTH_TEXTURE, refractedUv).r;
-	
+
 	// get depth from view
 	vec3 ndcRefract = vec3(SCREEN_UV * 2.0 - 1.0, refractedDepth);
 	vec4 viewWorldRefract = INV_PROJECTION_MATRIX * vec4(ndcRefract, 1.0);
@@ -82,10 +82,10 @@ void fragment()
 	float linearDepthRefract = -viewWorldRefract.z + VERTEX.z;
 	// clamp depth
 	linearDepthRefract = clamp(linearDepthRefract, 0.0, 1.0);
-		
+
 	// get background color
 	vec3 background = textureLod(SCREEN_TEXTURE, SCREEN_UV - refractionOffset.xy * refractionStrength * linearDepthRefract, 0.0).rgb;
-	
+
 	ALBEDO = background;
 	NORMAL_MAP = combinedWaterNormal;
 	ROUGHNESS = roughness;
