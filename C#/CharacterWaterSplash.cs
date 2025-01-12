@@ -16,13 +16,18 @@ public partial class CharacterWaterSplash : Area3D
         waterExitSound;
     [Export]
     Node characterFeetAudioNode;
+    [Export]
+    float depthOffset = -1f,
+        maxDepth = 1f;
 
     CharacterBody3D character;
     IWaterReactor characterFeetAudio;
     Node3D waterNode;
     Vector3 newFxPosition;
     float audioTargetVolume = 0f,
-        audioVolumeMax;
+        audioVolumeMax,
+        minPitch = 0.5f,
+        maxPitch = 1.25f;
     bool isPlaying;
 
 
@@ -54,6 +59,13 @@ public partial class CharacterWaterSplash : Area3D
 
             // move fx to surface of water
             waterSpashFx.GlobalPosition = newFxPosition;
+
+            // get pitch using water depth
+            var waterDepth = Mathf.Clamp(waterNode.GlobalPosition.Y - (GlobalPosition.Y + depthOffset), 0.0f, maxDepth);
+            var newMovementPitch = (minPitch - maxPitch) * waterDepth / maxDepth + maxPitch;
+
+            // apply pitch
+            movementAudio.PitchScale = newMovementPitch;
 
             // check character velocity
             if(character.Velocity.LengthSquared() > 0.5f && isPlaying == false)
