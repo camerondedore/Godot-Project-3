@@ -15,9 +15,9 @@ void fragment()
 	// get depth and screen textures
 	float depth = texture(DEPTH_TEXTURE, SCREEN_UV).r;
 	vec3 screenTexture = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-	
+
 	vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
-		
+
 	// get depth behind black wall
 	vec4 viewWorld = INV_PROJECTION_MATRIX * vec4(ndc, 1.0);
 	viewWorld.z = viewWorld.z / viewWorld.w;

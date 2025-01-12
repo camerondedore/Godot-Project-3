@@ -12,6 +12,7 @@ sky_rotation = Vector3(0, -1.5708, 0)
 ambient_light_source = 3
 ambient_light_color = Color(0.2385, 0.277275, 0.45, 1)
 ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.8
 ssao_enabled = true
 ssao_radius = 0.5
 glow_enabled = true
