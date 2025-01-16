@@ -142,7 +142,7 @@ namespace NonPlayerCharacter
                         // match target
 
                         // smooth move
-                        var targetPosition = GlobalPosition.MoveToward(GetTargetPosition(), speed * 2f * ((float)delta));
+                        var targetPosition = GlobalPosition.MoveToward(GetTargetPosition(), speed * ((float)delta));
                         // smooth look
                         var targetForward = (-Basis.Z).MoveToward(GetTargetForward(), lookSpeed * ((float)delta));
 

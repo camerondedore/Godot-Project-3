@@ -2933,22 +2933,64 @@ dialogueText = "What I would give for a cup of roasted blackberry ale right now.
 repeat = true
 
 [node name="NpcVoleGuardTarget1" type="Node3D" parent="Npcs"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 29.3047, 3, -38.7115)
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 29.3047, 2.95, -38.7115)
 script = ExtResource("111_wfmyb")
 animationTreeNode = "vole-guard-idle-lookout"
 animationTimeMin = 8.0
 animationTimeMax = 12.0
 
 [node name="NpcVoleGuardTarget2" type="Node3D" parent="Npcs"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 33.7547, 3, -38.7115)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 33.7547, 2.95, -38.7115)
 script = ExtResource("111_wfmyb")
 animationTreeNode = "vole-guard-idle-lookout"
 animationTimeMin = 8.0
 animationTimeMax = 12.0
 
 [node name="NpcVoleGuardTarget3" type="Node3D" parent="Npcs"]
-transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 32.5047, 3, -37.3615)
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 32.5047, 2.95, -37.3615)
 script = ExtResource("111_wfmyb")
 animationTreeNode = "vole-guard-idle"
 animationTimeMin = 6.0
+animationTimeMax = 10.0
+
+[node name="NpcMobileVoleGuard2" parent="Npcs" node_paths=PackedStringArray("targets") instance=ExtResource("189_sl835")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 29.9489, 0.9, -30.8882)
+targets = [NodePath("../NpcVoleGuardTarget4"), NodePath("../NpcVoleGuardTarget5"), NodePath("../NpcVoleGuardTarget6")]
+
+[node name="Dialogue1" type="Node" parent="Npcs/NpcMobileVoleGuard2"]
+script = ExtResource("117_d580p")
+dialogueAudio = ExtResource("190_iu8am")
+dialogueText = "Dirty rats!  I should be tucked in and sleeping instead of keeping watch."
+
+[node name="DialogueRepeating1" type="Node" parent="Npcs/NpcMobileVoleGuard2"]
+script = ExtResource("117_d580p")
+dialogueAudio = ExtResource("191_p8c3y")
+dialogueText = "Have to keep an eye out.  A ratty arrow hit the last picket."
+repeat = true
+
+[node name="DialogueRepeating2" type="Node" parent="Npcs/NpcMobileVoleGuard2"]
+script = ExtResource("117_d580p")
+dialogueAudio = ExtResource("192_mue7s")
+dialogueText = "What I would give for a cup of roasted blackberry ale right now."
+repeat = true
+
+[node name="NpcVoleGuardTarget4" type="Node3D" parent="Npcs"]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 28.0707, 0.9, -30.2423)
+script = ExtResource("111_wfmyb")
+animationTreeNode = "vole-guard-idle"
+animationTimeMin = 12.0
+animationTimeMax = 20.0
+
+[node name="NpcVoleGuardTarget5" type="Node3D" parent="Npcs"]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 31.0707, 0.9, -18.7423)
+script = ExtResource("111_wfmyb")
+animationTreeNode = "vole-guard-idle-lookout"
+animationTimeMin = 4.0
+animationTimeMax = 8.0
+
+[node name="NpcVoleGuardTarget6" type="Node3D" parent="Npcs"]
+transform = Transform3D(1.49012e-07, 0, -1, 0, 1, 0, 1, 0, 1.49012e-07, 40.5707, 0.9, -22.2423)
+script = ExtResource("111_wfmyb")
+animationTreeNode = "vole-guard-idle-lookout"
+animationTimeMin = 5.0
 animationTimeMax = 10.0
