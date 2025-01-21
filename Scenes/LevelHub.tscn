@@ -1,4 +1,4 @@
-[gd_scene load_steps=207 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=212 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -119,9 +119,8 @@
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorchTarget.tscn" id="64_ywcrg"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="65_fx7bf"]
 [ext_resource type="Animation" uid="uid://j01xjnracg0m" path="res://Animation/Cinematics/lhc1.res" id="65_yf3nw"]
-[ext_resource type="Animation" uid="uid://bjckj2ki8u4iu" path="res://Animation/Cinematics/lhc4.res" id="66_f3xeq"]
+[ext_resource type="Animation" uid="uid://c2r15hubmduxr" path="res://Animation/Cinematics/lhc2.res" id="66_f3xeq"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="67_5ah10"]
-[ext_resource type="Animation" uid="uid://c2r15hubmduxr" path="res://Animation/Cinematics/lhc3.res" id="67_hjihu"]
 [ext_resource type="PackedScene" uid="uid://b6t2haanye7s0" path="res://Prefabs/Pickups/PickupArrowsPick.tscn" id="68_l4xn5"]
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="68_rh37y"]
 [ext_resource type="PackedScene" uid="uid://cd4rwhkdqdprp" path="res://Prefabs/Pickups/PickupArrowsBlade.tscn" id="69_3y0k1"]
@@ -185,6 +184,11 @@
 [ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="129_odrhq"]
 [ext_resource type="PackedScene" uid="uid://brgstclbdpf0g" path="res://Prefabs/PropTrout.tscn" id="143_5hehv"]
 [ext_resource type="Script" path="res://C#/FishSchool.cs" id="143_xkj6j"]
+[ext_resource type="Animation" uid="uid://dkgvlpehrvvwd" path="res://Animation/Cinematics/lhc4.res" id="154_40cup"]
+[ext_resource type="Animation" uid="uid://bjckj2ki8u4iu" path="res://Animation/Cinematics/lhc3.res" id="154_bkba1"]
+[ext_resource type="AudioStream" uid="uid://c3horwxmjrfaw" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-13.wav" id="172_d664u"]
+[ext_resource type="AudioStream" uid="uid://vn8dx3bi4c1i" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-14.wav" id="173_1lgrd"]
+[ext_resource type="AudioStream" uid="uid://bxucro245hmmv" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-15.wav" id="174_1ypny"]
 [ext_resource type="AudioStream" uid="uid://b8ogbj2jv6x2x" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-10.wav" id="180_n8mho"]
 [ext_resource type="AudioStream" uid="uid://dvuiqto0boxqn" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-11.wav" id="181_b6l77"]
 [ext_resource type="AudioStream" uid="uid://bva10f81s1ke7" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-12.wav" id="182_yaxql"]
@@ -245,12 +249,16 @@ point_count = 7
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jsxfe"]
 _data = {
 "lhc1": ExtResource("65_yf3nw"),
-"lhc3": ExtResource("67_hjihu"),
-"lhc4": ExtResource("66_f3xeq")
+"lhc2": ExtResource("66_f3xeq"),
+"lhc3": ExtResource("154_bkba1"),
+"lhc4": ExtResource("154_40cup")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1wib3"]
 size = Vector3(10, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocsvq"]
+size = Vector3(5, 5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0unnw"]
 size = Vector3(9, 5, 1)
@@ -275,7 +283,7 @@ script = ExtResource("3_8tlgx")
 
 [node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
-stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn")]
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic2"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
 
 [node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -289,7 +297,7 @@ setNodes = []
 [node name="Set2" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
 hubSet = 2
-setNodes = [NodePath("../../../Map/Cinematics/Cinematic3/Trigger")]
+setNodes = [NodePath("../../../Map/Cinematics/Cinematic2/Trigger")]
 
 [node name="Set3" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -299,7 +307,11 @@ setNodes = [NodePath("../../../Npcs/NpcMobileWynn")]
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic5"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic7"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic8"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic10"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic11"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic12"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic13"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic14"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic15")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic5"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic7"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic8"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic10"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic11"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic12"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic13"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic14"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubChangingTorches/PropTorchLitDynamic15"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2")]
+
+[node name="Set0" type="Node" parent="HubControl/Stage1" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+setNodes = [NodePath("../../../Map/Cinematics/Cinematic4/Trigger")]
 
 [node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
 
@@ -1946,7 +1958,10 @@ transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 
 
 [node name="Houses" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
-[node name="PropTreeHouse1" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("40_ni512")]
+[node name="PropTreeHouse1Wynn" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("40_ni512")]
+transform = Transform3D(-0.0873468, 0, 0.996178, 0, 1, 0, -0.996178, 0, -0.0873468, -17.1283, 8.34469e-07, 17.8361)
+
+[node name="PropTreeHouse1WynnCurtained" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("89_4bite")]
 transform = Transform3D(-0.0873468, 0, 0.996178, 0, 1, 0, -0.996178, 0, -0.0873468, -17.1283, 8.34469e-07, 17.8361)
 
 [node name="PropTreeHouse1Curtained" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("89_4bite")]
@@ -2518,8 +2533,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.8741, 1, -31.2041)
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("90_1q56v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.1087, 1, -3.10805)
 
+[node name="PickupNettleBroth3" parent="Map/Pickups" instance=ExtResource("91_pm6y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7355, 0.761899, 25.3493)
+
 [node name="PickupNettleBroth" parent="Map/Pickups" instance=ExtResource("91_pm6y2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1361, 1, 7.69253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 10.3925)
+
+[node name="PickupNettleBroth2" parent="Map/Pickups" instance=ExtResource("91_pm6y2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 11.6925)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 
@@ -2562,7 +2583,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.8, 3, 49)
 
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("39_31y1r")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 0, -0.299999)
-linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), NodePath("../../../Cinematics/Cinematic4/TriggerPortcullisSwitch")]
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), NodePath("../../../Cinematics/Cinematic3/TriggerPortcullisSwitch")]
 
 [node name="Fish" type="Node3D" parent="Map"]
 
@@ -2700,49 +2721,49 @@ audioClip = ExtResource("86_rcdqs")
 dialogueText = "We'll need your help dealing with the rats.  Lumsden can tell you more.  He will be around the stump hovels up ahead."
 displayTime = 6.3
 
-[node name="Cinematic3" type="Node3D" parent="Map/Cinematics"]
+[node name="Cinematic2" type="Node3D" parent="Map/Cinematics"]
 
-[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("cinematic")]
+[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("cinematic")]
 transform = Transform3D(-0.954005, 0, -0.29979, 0, 1, 0, 0.29979, 0, -0.954005, 59.7769, 2.28016, 42.7846)
 collision_layer = 0
 collision_mask = 128
 monitorable = false
 script = ExtResource("44_gr04f")
 cinematic = NodePath("../../CinematicsHub")
-cinematicAnimationName = "lhc3"
+cinematicAnimationName = "lhc2"
 monitoringAtStart = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic3/Trigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic2/Trigger"]
 shape = SubResource("BoxShape3D_1wib3")
 
-[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic3" instance=ExtResource("46_ssp6v")]
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic2" instance=ExtResource("46_ssp6v")]
 transform = Transform3D(-0.600616, 0, 0.799539, 0, 1, 0, -0.799539, 0, -0.600616, 69.5477, 0.999508, 41.1324)
 
-[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic3"]
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic2"]
 transform = Transform3D(-0.386706, 0.288801, -0.875815, 0, 0.949699, 0.313165, 0.922203, 0.121103, -0.367255, 63.2059, 3.39671, 43.8435)
 script = ExtResource("37_nysf4")
 
-[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic3"]
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic2"]
 transform = Transform3D(-0.993569, 0.0142904, -0.112327, 0, 0.992005, 0.126204, 0.113232, 0.125392, -0.985624, 65.2573, 3.3074, 44.7282)
 script = ExtResource("37_nysf4")
 moveTime = 0.75
 
-[node name="CameraControl3" type="Node3D" parent="Map/Cinematics/Cinematic3"]
+[node name="CameraControl3" type="Node3D" parent="Map/Cinematics/Cinematic2"]
 transform = Transform3D(-0.300695, 0.314433, -0.900396, 0, 0.944089, 0.329691, 0.953721, 0.0991367, -0.283883, 62.2558, 2.80696, 44.1805)
 script = ExtResource("37_nysf4")
 moveTime = 0.75
 
-[node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.220494, 0, 0.975388, 0, 1, 0, -0.975388, 0, 0.220494, 67.1164, 1.00001, 45.2081)
 script = ExtResource("48_o7o1q")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 
-[node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 transform = Transform3D(0.999043, 0, -0.0437408, 0, 1, 0, 0.0437408, 0, 0.999043, 60.8004, 1.00001, 33.4763)
 script = ExtResource("48_o7o1q")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 
-[node name="ArrowSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic3"]
+[node name="ArrowSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic2"]
 transform = Transform3D(0.220495, 0, 0.975389, 0, 1, 0, -0.975389, 0, 0.220495, 66.5311, 1.20001, 45.0758)
 script = ExtResource("77_n2y0i")
 prefab = ExtResource("39_icx8h")
@@ -2751,59 +2772,119 @@ spread = 0.0
 angularSpeed = 0.0
 useAngularVelocity = false
 
-[node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("74_ko535")
 dialogueText = "Here's where you can get through to the abandoned area."
 displayTime = 2.9
 
-[node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("75_vjtas")
 dialogueText = "To raise this gate, that switch will have to be hit hard."
 displayTime = 3.4
 
-[node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("76_ganos")
 dialogueText = "Take this weighted arrow.  Use your bow and loose it at that switch."
 displayTime = 4.3
 
-[node name="AudioAction4" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="AudioAction4" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("77_7vuyi")
 dialogueText = "That arrow is good for more than switches.  It's heavy enough to move some objects and squash venomous bugs!"
 displayTime = 7.6
 
-[node name="AudioAction5" type="Node" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("targetCharacter")]
+[node name="AudioAction5" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("78_6lw2v")
 dialogueText = "Now I'll leave you here.  The kitchens need an extra pair of paws.  I'll see you tonight!"
 displayTime = 4.9
 
-[node name="Cinematic4" type="Node3D" parent="Map/Cinematics"]
+[node name="Cinematic3" type="Node3D" parent="Map/Cinematics"]
 
-[node name="TriggerPortcullisSwitch" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("cinematic", "playerCharacter")]
+[node name="TriggerPortcullisSwitch" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("cinematic", "playerCharacter")]
 script = ExtResource("36_6it57")
 cinematic = NodePath("../../CinematicsHub")
 playerCharacter = NodePath("../../../../PlayerCharacter")
-cinematicAnimationName = "lhc4"
+cinematicAnimationName = "lhc3"
 saveToWorldData = true
 
-[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic3"]
 transform = Transform3D(-0.980787, -0.0212385, 0.193925, 0, 0.994056, 0.108868, -0.195084, 0.106777, -0.974957, 70.8949, 2.96744, 45.8049)
 script = ExtResource("37_nysf4")
 
-[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("lookTarget")]
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic3" node_paths=PackedStringArray("lookTarget")]
 transform = Transform3D(-0.980787, -0.0212385, 0.193925, 0, 0.994056, 0.108868, -0.195084, 0.106777, -0.974957, 70.8949, 2.96744, 45.8049)
 script = ExtResource("38_7dyhy")
 lookTarget = NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis")
 lookSpeed = 0.5
+
+[node name="Cinematic4" type="Node3D" parent="Map/Cinematics"]
+
+[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("cinematic")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.29576, 2.7, 1.18206e-07)
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+script = ExtResource("44_gr04f")
+cinematic = NodePath("../../CinematicsHub")
+cinematicAnimationName = "lhc4"
+monitoringAtStart = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic4/Trigger"]
+shape = SubResource("BoxShape3D_ocsvq")
+
+[node name="CinematicCharacterWynn" parent="Map/Cinematics/Cinematic4" instance=ExtResource("46_ssp6v")]
+transform = Transform3D(0.965927, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965927, -19.6712, 1, 17.8423)
+
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
+transform = Transform3D(-0.475545, -0.18887, 0.859176, 0, 0.976679, 0.2147, -0.87969, 0.1021, -0.464455, 7.1657, 2.69824, -2.28071)
+script = ExtResource("37_nysf4")
+moveTime = 1.5
+
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("lookTarget")]
+transform = Transform3D(-0.475545, -0.18887, 0.859176, 0, 0.976679, 0.2147, -0.87969, 0.1021, -0.464455, 7.1657, 2.69824, -2.28071)
+script = ExtResource("38_7dyhy")
+lookTarget = NodePath("../CinematicCharacterWynn")
+lookSpeed = 0.5
+
+[node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 1, 1.31134e-07)
+script = ExtResource("48_o7o1q")
+targetCharacter = NodePath("../CinematicCharacterWynn")
+
+[node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.5051, 1, 18.0534)
+script = ExtResource("48_o7o1q")
+targetCharacter = NodePath("../CinematicCharacterWynn")
+
+[node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterWynn")
+audioClip = ExtResource("172_d664u")
+dialogueText = "There you are!  You missed dinner.  Everyone not on watch is asleep now."
+displayTime = 4.3
+
+[node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterWynn")
+audioClip = ExtResource("173_1lgrd")
+dialogueText = "We left some soup in the kitchen for you.  Eat however much you'd like."
+displayTime = 3.6
+
+[node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterWynn")
+audioClip = ExtResource("174_1ypny")
+dialogueText = "Pick an open bed in a trunk-hut.  We'll talk more tomorrow."
+displayTime = 3.1
 
 [node name="Level2ChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5, 2.5, 84)
