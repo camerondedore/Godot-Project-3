@@ -1,4 +1,4 @@
-[gd_scene load_steps=212 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=213 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -263,6 +263,9 @@ size = Vector3(5, 5, 5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0unnw"]
 size = Vector3(9, 5, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_h5ehp"]
+radius = 2.0
+
 [node name="LevelHub" type="Node3D"]
 
 [node name="GlobalCamera" parent="." instance=ExtResource("2_vfw7t")]
@@ -313,6 +316,11 @@ stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../
 script = ExtResource("7_nlmtm")
 setNodes = [NodePath("../../../Map/Cinematics/Cinematic4/Trigger")]
 
+[node name="Set1" type="Node" parent="HubControl/Stage1" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+hubSet = 1
+setNodes = [NodePath("../../../Map/LevelHub2ChangeTriggerArea")]
+
 [node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
 
 [node name="SpawnedObjectLoader" type="Node" parent="."]
@@ -336,6 +344,12 @@ transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 78, 5,
 
 [node name="Level2LoadCameraPoint" type="Node3D" parent="Map"]
 transform = Transform3D(-0.3665, -0.426015, 0.827157, 0, 0.889017, 0.457874, -0.930418, 0.167811, -0.325824, 81.3013, 8.05686, 43.1107)
+
+[node name="LevelHub1LoadPoint" type="Node3D" parent="Map"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -24.7, 1, 28.4)
+
+[node name="LevelHub1LoadCameraPoint" type="Node3D" parent="Map"]
+transform = Transform3D(-0.976686, 0.103106, -0.188293, 0, 0.877109, 0.480291, 0.214675, 0.469093, -0.85666, -25.4164, 3.10775, 25.293)
 
 [node name="Lighting" type="Node3D" parent="Map"]
 
@@ -2900,6 +2914,22 @@ nextCameraEulerRotation = Vector3(-0.375246, 0.488692, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Level2ChangeTriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080719, 0, 0)
 shape = SubResource("BoxShape3D_0unnw")
+
+[node name="LevelHub2ChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4652, 1, 30.7739)
+collision_layer = 128
+collision_mask = 128
+monitorable = false
+script = ExtResource("123_de4ge")
+levelChange = NodePath("../../LevelChange")
+nextLevel = "LevelHub-2"
+nextCheckpointPosition = Vector3(-24.7, 1, 28.4)
+nextCheckpointEulerRotation = Vector3(0, 60, 0)
+nextCameraPosition = Vector3(-25.4164, 3.10775, 25.293)
+nextCameraEulerRotation = Vector3(-28.7, -167.6, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelHub2ChangeTriggerArea"]
+shape = SubResource("SphereShape3D_h5ehp")
 
 [node name="Npcs" type="Node3D" parent="."]
 
