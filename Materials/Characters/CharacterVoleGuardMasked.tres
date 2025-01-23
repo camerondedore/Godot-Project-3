@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://da7viv4fr378s" path="res://Textures/character-vole-guard-occlusion-mask.png" id="4_nbhmd"]
 
 [resource]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_v16sn")
 shader_parameter/albedoColor = Color(1, 1, 1, 1)
