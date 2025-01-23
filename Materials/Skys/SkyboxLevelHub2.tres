@@ -1,0 +1,7 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://d13xwt86wmn4b"]
+
+[ext_resource type="Texture2D" uid="uid://bg0g7fm7kxvqg" path="res://Textures/skybox-level-hub-2.png" id="1_k7klh"]
+
+[resource]
+panorama = ExtResource("1_k7klh")
+energy_multiplier = 1.1

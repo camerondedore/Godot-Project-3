@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=214 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -8,6 +8,7 @@
 [ext_resource type="Environment" uid="uid://dooskg4otcsks" path="res://Environments/LevelHub1Environment.tres" id="4_1ksvl"]
 [ext_resource type="Script" path="res://C#/HubStage.cs" id="4_hh5wq"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_s034b"]
+[ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/LevelHub2Environment.tres" id="5_fikle"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="5_rinr5"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
@@ -281,6 +282,11 @@ environment = ExtResource("4_1ksvl")
 script = ExtResource("3_hlp5u")
 postProcessing = ExtResource("4_1ksvl")
 
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_fikle")
+script = ExtResource("3_hlp5u")
+postProcessing = ExtResource("5_fikle")
+
 [node name="HubControl" type="Node" parent="."]
 script = ExtResource("3_8tlgx")
 
@@ -324,7 +330,7 @@ setNodes = [NodePath("../../../Map/LevelHub2ChangeTriggerArea")]
 [node name="Stage2" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 2
-stageNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
 
 [node name="Set0" type="Node" parent="HubControl/Stage2" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -377,6 +383,16 @@ light_color = Color(0.6, 0.74, 1, 1)
 light_energy = 0.6
 shadow_enabled = true
 shadow_opacity = 0.8
+directional_shadow_blend_splits = true
+script = ExtResource("5_k6lpv")
+
+[node name="DirectionalLight2" type="DirectionalLight3D" parent="Map/Lighting"]
+transform = Transform3D(-0.427332, -0.161283, -0.889593, -0.839188, 0.436854, 0.323917, 0.336379, 0.884956, -0.322028, 0, 0, 0)
+visible = false
+light_energy = 1.8
+light_indirect_energy = 2.0
+shadow_enabled = true
+shadow_opacity = 0.6
 directional_shadow_blend_splits = true
 script = ExtResource("5_k6lpv")
 
