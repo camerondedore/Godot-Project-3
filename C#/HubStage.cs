@@ -8,7 +8,8 @@ public partial class HubStage : Node, IActivatable
     [Export]
     public int hubStage;
     [Export]
-    public Node[] stageNodes;
+    public Node[] stageNodes,
+        stageExclusionNodes;
 
     List<HubSet> hubSets = new List<HubSet>();
 
@@ -45,50 +46,11 @@ public partial class HubStage : Node, IActivatable
         {
             if(set.hubSet != hubSet)
             {
-                // stop nodes that aren't in the current stage
-                foreach(var setNode in set.setNodes)
-                {
-                    if(IsInstanceValid(setNode) == false || setNode == null)
-                    {
-                        continue;
-                    }
-
-                    // check for torches
-                    if(setNode is Torch torchNode)
-                    {
-                        torchNode.lit = false;
-                    }
-                    else
-                    {
-                        setNode.ProcessMode = ProcessModeEnum.Disabled;
-                    }
-                }
+                set.DeactivateSet();
             }
             else
             {
-                foreach(var setNode in set.setNodes)
-                {
-                    if(IsInstanceValid(setNode) == false || setNode == null)
-                    {
-                        continue;
-                    }
-
-                    // check for lights
-                    if(setNode is Light3D lightNode)
-                    {
-                        lightNode.Visible = true;
-                    }
-                    else
-                    {
-                        setNode.ProcessMode = ProcessModeEnum.Inherit;
-
-                        if(setNode is IActivatable setNodeActivatable)
-                        {
-                            // activate node if it can be
-                            setNodeActivatable.Activate();
-                        }
-                    }
-                }
+                set.ActivateSet();
             }
         }
     }

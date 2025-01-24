@@ -31,14 +31,15 @@ public partial class HubControl : Node
     /// </summary>
     public void LoadStage()
     {
-        var currentStage = WorldData.data.GetHubStage();
+        var activeStage = WorldData.data.GetHubStage();
         List<Node> nodesToRemove = new List<Node>();
 
         // activate current stage's nodes and deactivate others
         foreach(var stage in hubStages)
         {
-            if(stage.hubStage != currentStage)
+            if(stage.hubStage != activeStage)
             {
+                // inactive stage
                 // remove nodes that aren't in the current stage
                 foreach(var stageNode in stage.stageNodes)
                 {
@@ -59,6 +60,7 @@ public partial class HubControl : Node
             }
             else
             {
+                // active stage
                 foreach(var stageNode in stage.stageNodes)
                 {
                     // check for lights
@@ -73,6 +75,20 @@ public partial class HubControl : Node
                             // the active stage needs this node, remove from removal list
                             nodesToRemove.Remove(stageNode);
                         }
+                    }
+                }
+
+                foreach(var stageNode in stage.stageExclusionNodes)
+                {
+                    // check for lights
+                    if(stageNode is Light3D lightNode)
+                    {
+                        lightNode.Visible = false;
+                    }
+                    else
+                    {
+                        // add exclusion nodes to removal list
+                        nodesToRemove.Add(stageNode);
                     }
                 }
             }

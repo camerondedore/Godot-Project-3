@@ -291,9 +291,10 @@ postProcessing = ExtResource("5_fikle")
 [node name="HubControl" type="Node" parent="."]
 script = ExtResource("3_8tlgx")
 
-[node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
+[node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
-stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic2"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic2"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn")]
+stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -314,10 +315,11 @@ script = ExtResource("7_nlmtm")
 hubSet = 3
 setNodes = [NodePath("../../../Npcs/NpcMobileWynn")]
 
-[node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
+[node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubNightTorches"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubNightTorches/PropTorchLitDynamic14"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubNightTorches/PropTorchLitDynamic15"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubNightTorches"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubNightTorches/PropTorchLitDynamic14"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/HubNightTorches/PropTorchLitDynamic15"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea")]
+stageExclusionNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
 
 [node name="Set0" type="Node" parent="HubControl/Stage1" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -328,10 +330,11 @@ script = ExtResource("7_nlmtm")
 hubSet = 1
 setNodes = [NodePath("../../../Map/LevelHub2ChangeTriggerArea")]
 
-[node name="Stage2" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes")]
+[node name="Stage2" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 2
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3")]
+stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage2" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
