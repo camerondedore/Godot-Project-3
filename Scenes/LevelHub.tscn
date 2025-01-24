@@ -417,6 +417,11 @@ distance_fade_enabled = true
 distance_fade_begin = 10.0
 omni_range = 17.0
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.0139, 2.5, 7.0869)
+size = Vector3(18.9721, 20, 28.2483)
+box_projection = true
+
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("7_uqg3o")
 bake_mask = 4293918721
