@@ -1830,31 +1830,38 @@ collision_layer = 1
 
 [node name="PropTorchLit" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.986092, 0, -0.1662, 0, 1, 0, 0.1662, 0, -0.986092, -48.3363, 0.396792, -53.8265)
+collision_layer = 1
 
 [node name="PropTorchLit2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.986092, 0, -0.1662, 0, 1, 0, 0.1662, 0, -0.986092, -63.248, 0.396791, -55.7853)
+collision_layer = 1
 
 [node name="PropTorchLit3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.393925, 0, 0.919142, 0, 1, 0, -0.919142, 0, -0.393925, 22.0408, 0.528665, -45.9001)
+collision_layer = 1
 
 [node name="PropTorchLit4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.980516, 0, -0.196443, 0, 1, 0, 0.196443, 0, -0.980516, 17.0394, 0.396792, -47.1375)
+collision_layer = 1
 
 [node name="PropTorchLit5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(0.063975, 0, 0.997952, 0, 1, 0, -0.997952, 0, 0.063975, -18.2046, 0.4999, -170.102)
+collision_layer = 1
 
 [node name="PropTorchLit6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -21.0756, 0.4999, -203.125)
+collision_layer = 1
 
 [node name="PropTorchLit7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(0.465599, 0, 0.884996, 0, 1, 0, -0.884996, 0, 0.465599, -5.58776, 0.499899, -207.945)
+collision_layer = 1
 
 [node name="PropTorchLit8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("59_w1sr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2709, 8.53608, -204.585)
+collision_layer = 1
 
 [node name="PropTorchLitDynamic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3724, 12.358, -236.693)
-collision_layer = 16
 collision_mask = 0
 useLight = false
 
@@ -1868,7 +1875,6 @@ triggerDelay = 0.5
 
 [node name="PropTorchLitDynamic2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9152, 12.358, -245.234)
-collision_layer = 16
 collision_mask = 0
 useLight = false
 
@@ -1882,7 +1888,6 @@ triggerDelay = 0.5
 
 [node name="PropTorchLitDynamic3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3201, 12.358, -254.433)
-collision_layer = 16
 collision_mask = 0
 useLight = false
 
@@ -1896,7 +1901,6 @@ triggerDelay = 0.5
 
 [node name="PropTorchLitDynamic4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("12_3cr32")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.928, 12.358, -266.136)
-collision_layer = 16
 collision_mask = 0
 useLight = false
 

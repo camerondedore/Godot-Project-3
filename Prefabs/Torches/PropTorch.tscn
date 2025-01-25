@@ -8,6 +8,7 @@ radius = 0.06
 height = 1.4
 
 [node name="PropTorch" type="StaticBody3D"]
+collision_layer = 16
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
