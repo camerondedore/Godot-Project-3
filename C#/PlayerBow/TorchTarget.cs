@@ -75,6 +75,7 @@ public partial class TorchTarget : Torch, IBowTarget
         torchFireFx.RestartParticles();
         audio.PlaySound(burnSound, 0.1f);
         light.Visible = true;
+        damageArea.SetDeferred("monitoring", true);
     }
 
 
@@ -86,5 +87,6 @@ public partial class TorchTarget : Torch, IBowTarget
         torchFireFx.StopParticles();
         audio.PlaySound(extinguishSound, 0.1f);
         light.Visible = false;
+        damageArea.SetDeferred("monitoring", false);
     }
 }

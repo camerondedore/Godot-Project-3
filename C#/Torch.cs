@@ -16,6 +16,7 @@ public partial class Torch : StaticBody3D, IActivatable
     protected ParticleTools torchFireFx;
     protected AudioTools3d audio;
     protected Light3D light;
+    protected Area3D damageArea;
 
 
 
@@ -25,6 +26,7 @@ public partial class Torch : StaticBody3D, IActivatable
         torchFireFx = (ParticleTools) GetNode("FxTorchFire");
         audio = (AudioTools3d) GetNode("Audio");
         light = (Light3D) GetNode("Light");
+        damageArea = (Area3D) GetNode("DamageArea");
 
         // check if torch is lit or not at start
         if(lit == false)
@@ -32,6 +34,7 @@ public partial class Torch : StaticBody3D, IActivatable
             torchFireFx.StopParticles();
             audio.Stop();
             light.Visible = false;
+            damageArea.SetDeferred("monitoring", false);
         }
         else if(useLight == false)
         {
@@ -65,6 +68,8 @@ public partial class Torch : StaticBody3D, IActivatable
         torchFireFx.RestartParticles();
         audio.PlaySound(lightSound, 0.1f);
 
+        damageArea.SetDeferred("monitoring", true);
+
         if(useLight == true)
         {   
             light.Visible = true;
@@ -80,6 +85,8 @@ public partial class Torch : StaticBody3D, IActivatable
         // extinguish
         torchFireFx.StopParticles();
         audio.PlaySound(extinguishSound, 0.1f);
+
+        damageArea.SetDeferred("monitoring", false);
         
         if(useLight == true)
         {   
