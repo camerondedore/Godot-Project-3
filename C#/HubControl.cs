@@ -40,20 +40,13 @@ public partial class HubControl : Node
             if(stage.hubStage != activeStage)
             {
                 // inactive stage
+                stage.TurnOffStageTorches();
+
                 // remove nodes that aren't in the current stage
                 foreach(var stageNode in stage.stageNodes)
                 {
-                    // check for torches
-                    if(stageNode is Torch torchNode)
-                    {
-                        torchNode.lit = false;
-                    }
-                    else
-                    {
-                        // add to removal list
-                        nodesToRemove.Add(stageNode);
-                        //stageNode.QueueFree();
-                    }
+                    // add to removal list
+                    nodesToRemove.Add(stageNode);                   
                 }
 
                 stage.QueueFree();
@@ -61,6 +54,8 @@ public partial class HubControl : Node
             else
             {
                 // active stage
+                stage.TurnOnStageTorches();
+
                 foreach(var stageNode in stage.stageNodes)
                 {
                     // check for lights

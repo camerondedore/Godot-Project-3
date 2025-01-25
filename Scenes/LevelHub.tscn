@@ -318,11 +318,12 @@ script = ExtResource("7_nlmtm")
 hubSet = 3
 setNodes = [NodePath("../../../Npcs/NpcMobileWynn")]
 
-[node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
+[node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes", "stageTochesContainer")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight5"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight7"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight8"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight10"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight11"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight12"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight13"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight14"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights/PropStreetLight15"), NodePath("../../Map/OccluderInstance3D/Props/SmallItems/PropLamp")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea"), NodePath("../../Map/OccluderInstance3D/Props/SmallItems/PropLamp"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches/PropTorchLitDynamic")]
 stageExclusionNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
+stageTochesContainer = NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches")
 
 [node name="Set0" type="Node" parent="HubControl/Stage1" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -1918,59 +1919,64 @@ blackWall = NodePath("../BlackWall")
 [node name="BlackWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("65_fx7bf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -69, 2, 31.4664)
 
-[node name="SteetLights" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches"]
+[node name="NightTorches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches"]
 
-[node name="PropTorchLitDynamic9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("68_rh37y")]
+[node name="PropTorchLitDynamic9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches" instance=ExtResource("68_rh37y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.09268, 0.7, -1.67392)
 collision_layer = 1
 
-[node name="PropTorchLitDynamic6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("68_rh37y")]
+[node name="PropTorchLitDynamic6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches" instance=ExtResource("68_rh37y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8534, 2.4, -37.223)
 collision_layer = 1
 
-[node name="PropStreetLight" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropTorchLitDynamic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(0.750019, 0.139661, 0.646503, -7.45058e-09, 0.977453, -0.211154, -0.661417, 0.15837, 0.733108, 81.1422, 0.342204, -37.0133)
+
+[node name="Stage1Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches"]
+
+[node name="PropStreetLight" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 32)
 
-[node name="PropStreetLight2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 13)
 
-[node name="PropStreetLight3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -9)
 
-[node name="PropStreetLight4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -25)
 
-[node name="PropStreetLight5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -19)
 
-[node name="PropStreetLight6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 0, 13)
 
-[node name="PropStreetLight7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4844, 0, 0.0345573)
 
-[node name="PropStreetLight8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3, 0, 46.7046)
 
-[node name="PropStreetLight9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6532, 9.83477e-07, -1.05272)
 
-[node name="PropStreetLight10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1312, 9.83477e-07, 30.8445)
 
-[node name="PropStreetLight11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0121, 9.83477e-07, -21.7926)
 
-[node name="PropStreetLight12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.3549, 9.83477e-07, -47.2963)
 
-[node name="PropStreetLight13" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight13" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6451, 9.83477e-07, 67.7037)
 
-[node name="PropStreetLight14" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight14" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.6451, 9.83477e-07, 54.7037)
 
-[node name="PropStreetLight15" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/SteetLights" instance=ExtResource("78_1d6aj")]
+[node name="PropStreetLight15" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches" instance=ExtResource("78_1d6aj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.9549, 9.83477e-07, 13.7037)
 
 [node name="Furniture" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
