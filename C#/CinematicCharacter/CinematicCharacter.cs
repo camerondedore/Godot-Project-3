@@ -13,7 +13,8 @@ namespace CinematicCharacter
         [Export]
         public AnimationPlayer animation;
         [Export]
-        public string characterName;
+        public string idleAnimationName = "wynn-idle",
+            walkAnimationName = "wynn-run";
         [Export]
 		public float speed = 5,
             acceleration = 10,
