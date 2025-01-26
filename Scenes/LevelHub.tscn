@@ -321,7 +321,7 @@ setNodes = [NodePath("../../../Npcs/NpcMobileWynn")]
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes", "stageTochesContainer")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea"), NodePath("../../Map/OccluderInstance3D/Props/SmallItems/PropLamp"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches/PropTorchLitDynamic9"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches/PropTorchLitDynamic6"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches/PropTorchLitDynamic")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea"), NodePath("../../Map/OccluderInstance3D/Props/SmallItems/PropLamp"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches")]
 stageExclusionNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
 stageTochesContainer = NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches")
 
@@ -1931,6 +1931,9 @@ collision_layer = 1
 
 [node name="PropTorchLitDynamic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches" instance=ExtResource("68_rh37y")]
 transform = Transform3D(0.750019, 0.139661, 0.646503, -7.45058e-09, 0.977453, -0.211154, -0.661417, 0.15837, 0.733108, 81.1422, 0.342204, -37.0133)
+
+[node name="PropTorchLitDynamic2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches" instance=ExtResource("68_rh37y")]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 3.81404, -6.28551, -10.6041)
 
 [node name="Stage1Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches"]
 

@@ -30,14 +30,18 @@ public partial class HubStage : Node, IActivatable
             hubSets.Add(stageChild);
         }
 
-        // get child stage lights
-        var stageLightNodes = stageTochesContainer.GetChildren();
-
-        foreach(Torch stageLight in stageLightNodes)
+        if(stageTochesContainer != null)
         {
-            // fill stage lights list
-            stageLights.Add(stageLight);
+            // get child stage lights
+            var stageLightNodes = stageTochesContainer.GetChildren();
+
+            foreach(Torch stageLight in stageLightNodes)
+            {
+                // fill stage lights list
+                stageLights.Add(stageLight);
+            }
         }
+
     }
 
 
