@@ -2968,8 +2968,8 @@ displayTime = 3.6
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("174_1ypny")
-dialogueText = "Pick an open bed in a trunk-hut.  We'll talk more tomorrow."
-displayTime = 3.1
+dialogueText = "Pick an open bed in a trunk-hut.  Tomorrow, find Lumsden.  He'll have more for you to do."
+displayTime = 5.1
 
 [node name="Level2ChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5, 2.5, 84)
