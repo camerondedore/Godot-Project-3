@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=128 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/Level1Environment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -95,6 +95,7 @@
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="84_4d8c4"]
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/FxWoodChipsDecal.tscn" id="84_7lp5j"]
 [ext_resource type="AudioStream" uid="uid://cu35fufy5csmp" path="res://Audio/ambience-bird-2.wav" id="85_wp178"]
+[ext_resource type="PackedScene" uid="uid://3hjxmsgt2uo3" path="res://Prefabs/Pickups/PickupArrowsBodkin.tscn" id="86_j57go"]
 [ext_resource type="AudioStream" uid="uid://cj02wgho4k2pf" path="res://Audio/ambience-bird-3.wav" id="86_m8u0o"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="87_nuo53"]
 [ext_resource type="AudioStream" uid="uid://bahomq36dkxci" path="res://Audio/ambience-bird-4.wav" id="87_w4ebq"]
@@ -4886,6 +4887,10 @@ transform = Transform3D(0.495019, -0.714082, 0.495019, 0.707107, -5.96046e-08, -
 transform = Transform3D(-0.683363, -5.96046e-08, 0.730079, 0, -1, -8.74228e-08, 0.730079, -2.98023e-08, 0.683363, -15.7315, 8.35236, -59.6139)
 
 [node name="Pickups" type="Node3D" parent="Map"]
+
+[node name="PickupArrowsBodkin" parent="Map/Pickups" instance=ExtResource("86_j57go")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -3)
+checkInventoryAtStart = true
 
 [node name="PickupCandiedNut" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0197, 0.9998, -20.5667)

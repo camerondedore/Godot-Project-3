@@ -7,6 +7,7 @@ namespace PlayerCharacterComplex
     {
         [Export]
         GpuParticles3D armorFx,
+            arrowBodkinFx,
             arrowWeightedFx,
             arrowPickFx,
             arrowFireFx,
@@ -46,6 +47,16 @@ namespace PlayerCharacterComplex
             if(ciderFx != null)
             {
                 ciderFx.RestartParticles();
+            }
+        }
+
+
+
+        public void PlayArrowBodkinFx()
+        {
+            if(arrowBodkinFx != null)
+            {
+                arrowBodkinFx.Restart();
             }
         }
 

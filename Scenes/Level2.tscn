@@ -5603,7 +5603,7 @@ transform = Transform3D(0.926792, -0.0469556, 0.34146, 0.0678844, 0.98527, -0.04
 transform = Transform3D(-0.992051, -0.0167105, 0.107234, -0.023576, 0.995703, -0.0629461, -0.105937, -0.0651061, -0.990193, 80.3256, -1, -184.946)
 
 [node name="PropFern2!1733449267_676" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
-transform = Transform3D(0.683349, -0.0168502, -0.739266, 0.0488329, 1.00543, 0.0222223, 0.737844, -0.0509367, 0.683195, 84.9184, -0.00969672, -192.168)
+transform = Transform3D(0.683349, -0.0168502, -0.739266, 0.0488329, 1.00543, 0.0222223, 0.737844, -0.0509367, 0.683195, 84.939, -1, -192.106)
 
 [node name="PropFern2!1733449269_792" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
 transform = Transform3D(0.840898, -0.062314, -0.566654, 0.0862654, 1.01211, 0.0167152, 0.563505, -0.0619523, 0.843038, 87.7111, -1, -187.29)
@@ -8259,6 +8259,7 @@ transform = Transform3D(0.0147888, -0.252084, 0.967592, 0.999776, 0.018393, -0.0
 
 [node name="PickupArrowsWeighted" parent="Map/Pickups" instance=ExtResource("15_pagr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+checkInventoryAtStart = true
 
 [node name="PickupCandiedNut" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 12.1, 5, -68.55)

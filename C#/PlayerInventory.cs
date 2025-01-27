@@ -100,15 +100,19 @@ public partial class PlayerInventory : Node
 
 
 
-    public void AddArrow(string arrowType)
+    public bool AddArrow(string arrowType)
     {
         // check inventory for arrow first
-        if(arrowType != null && !CheckInventoryForArrowType(arrowType))
+        if(arrowType != null && CheckInventoryForArrowType(arrowType) == false)
         {
             currentInventory.ArrowTypes.Add(arrowType);
 
             ArrowAdded.Invoke();
+
+            return true;
         }
+
+        return false;
     }
 
 
