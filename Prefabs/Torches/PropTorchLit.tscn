@@ -35,10 +35,10 @@ collision_mask = 2
 input_ray_pickable = false
 monitorable = false
 script = ExtResource("5_ecjr6")
+damage = 10.0
 hitFx = NodePath("FxHit")
 audio = NodePath("DamageAudio")
 damageSound = ExtResource("6_hl67r")
-timeBetweenDamage = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea" index="0"]
 shape = SubResource("SphereShape3D_41hys")
