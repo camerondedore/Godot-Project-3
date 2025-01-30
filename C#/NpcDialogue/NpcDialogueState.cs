@@ -1,10 +1,9 @@
 using Godot;
 using System;
 
-namespace NonPlayerCharacter
+namespace NonPlayerCharacter;
+
+public partial class NpcDialogueState : State
 {
-    public partial class NpcDialogueState : State
-    {
-        public NpcDialogue blackboard;
-    }
+    public NpcDialogue blackboard;
 }

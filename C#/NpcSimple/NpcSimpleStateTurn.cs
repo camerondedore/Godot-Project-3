@@ -1,88 +1,87 @@
 using Godot;
 using System;
 
-namespace NonPlayerCharacter
+namespace NonPlayerCharacter;
+
+public partial class NpcSimpleStateTurn : NpcSimpleState
 {
-    public partial class NpcSimpleStateTurn : NpcSimpleState
+
+
+
+
+
+    public override void RunState(double delta)
     {
+        base.RunState(delta);
+    }
 
 
 
+    public override void StartState()
+    {
+        blackboard.lookCursor = 0;
+        blackboard.startLookDirection = -blackboard.Basis.Z;
 
+        // change cursor time multiplier
+        var angleToTargetDirection = (-blackboard.Basis.Z).AngleTo(blackboard.targetLookDirection);
+        angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
+        blackboard.cursorTimeMultiplier = 3.14f / (blackboard.lookTime * angleToTargetDirection);
 
-        public override void RunState(double delta)
+        if(blackboard.dialogue.useRepeatingDialogue == false)
         {
-            base.RunState(delta);
+            blackboard.cameraControl.EnableCameraControl(blackboard.player);
         }
 
 
+        var targetDirectionLocal = blackboard.ToLocal(blackboard.GlobalPosition + blackboard.targetLookDirection).Normalized();
 
-        public override void StartState()
+        if(targetDirectionLocal.X > 0)
         {
-            blackboard.lookCursor = 0;
-            blackboard.startLookDirection = -blackboard.Basis.Z;
+            // right turn animation
+            blackboard.animation.Play(blackboard.turnRightAnimationName);
+        }
+        else
+        {
+            // left turn animation
+            blackboard.animation.Play(blackboard.turnLeftAnimationName);
+        }
 
-            // change cursor time multiplier
-            var angleToTargetDirection = (-blackboard.Basis.Z).AngleTo(blackboard.targetLookDirection);
-            angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
-            blackboard.cursorTimeMultiplier = 3.14f / (blackboard.lookTime * angleToTargetDirection);
+    }
 
+
+
+    public override void EndState()
+    {
+        blackboard.targetLookDirection = Vector3.Zero;
+    }
+
+
+
+    public override State Transition()
+    {
+        if(blackboard.lookCursor <= 1)
+        {
+            return this;
+        }
+
+        // check if look target is init look direction
+        if(blackboard.targetLookDirection != blackboard.initLookDirection)
+        {
             if(blackboard.dialogue.useRepeatingDialogue == false)
             {
-                blackboard.cameraControl.EnableCameraControl(blackboard.player);
-            }
-
-
-            var targetDirectionLocal = blackboard.ToLocal(blackboard.GlobalPosition + blackboard.targetLookDirection).Normalized();
-
-            if(targetDirectionLocal.X > 0)
-            {
-                // right turn animation
-                blackboard.animation.Play(blackboard.turnRightAnimationName);
+                // one-time dialogue
+                return blackboard.stateTalk;
             }
             else
             {
-                // left turn animation
-                blackboard.animation.Play(blackboard.turnLeftAnimationName);
+                // repeating dialogue
+                return blackboard.stateTalkRepeating;
             }
-
         }
-
-
-
-        public override void EndState()
+        else 
         {
-            blackboard.targetLookDirection = Vector3.Zero;
-        }
-
-
-
-        public override State Transition()
-        {
-            if(blackboard.lookCursor <= 1)
-            {
-                return this;
-            }
-
-            // check if look target is init look direction
-            if(blackboard.targetLookDirection != blackboard.initLookDirection)
-            {
-                if(blackboard.dialogue.useRepeatingDialogue == false)
-                {
-                    // one-time dialogue
-                    return blackboard.stateTalk;
-                }
-                else
-                {
-                    // repeating dialogue
-                    return blackboard.stateTalkRepeating;
-                }
-            }
-            else 
-            {
-                // idle
-                return blackboard.stateIdle;
-            }            
-        }
+            // idle
+            return blackboard.stateIdle;
+        }            
     }
 }

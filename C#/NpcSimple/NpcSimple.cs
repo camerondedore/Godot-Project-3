@@ -6,169 +6,168 @@ using System.Linq;
 using PlayerCharacterComplex;
 using PlayerBow;
 
-namespace NonPlayerCharacter
+namespace NonPlayerCharacter;
+
+public partial class NpcSimple : CharacterBody3D
 {
-    public partial class NpcSimple : CharacterBody3D
+
+    public StateMachineQueue machine = new StateMachineQueue();
+    public State stateIdle,
+        stateTalk,
+        stateTalkRepeating,
+        stateTurn;
+
+    [Export]
+    public AnimationPlayer animation;
+    [Export]
+    public string idleAnimationName,
+        talkAnimationName,
+        turnRightAnimationName,
+        turnLeftAnimationName;
+    [Export]
+    public float speed = 5f,
+        lookTime = 1f,
+        acceleration = 10f,
+        lookSpeed = 7f;
+    [Export]
+    public bool saveToWorldData = false,
+        freezePlayer = false;
+
+    [Export]
+    public Node[] linkedObjects;
+
+    public Area3D triggerArea;
+    public NpcCameraControl cameraControl;
+    public NpcDialogue dialogue;
+    public bool bodyInTrigger;
+    public PlayerCharacter player;
+    public Vector3 initLookDirection,
+        startLookDirection,
+        targetLookDirection;
+    public float lookCursor,
+        cursorTimeMultiplier;
+
+
+
+
+    public override void _Ready()
+    {            
+        // get nodes
+        triggerArea = (Area3D) GetNode("TriggerArea");
+        cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
+        dialogue = (NpcDialogue) GetNode("Dialogue");
+
+        initLookDirection = -Basis.Z;
+
+        // set up events
+        triggerArea.BodyEntered += TriggerDialogue;
+        triggerArea.BodyExited += TriggerReset;
+
+        if(saveToWorldData == true)
+        {
+            // get if trigger was already activated
+            var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+            if(wasActivated == true)
+            {
+                dialogue.useRepeatingDialogue = true; 
+                //ActivateLinkedNodes();
+            }
+        }
+
+        // initialize states
+        stateIdle = new NpcSimpleStateIdle(){blackboard = this};
+        stateTalk = new NpcSimpleStateTalk(){blackboard = this};
+        stateTalkRepeating = new NpcSimpleStateTalkRepeating(){blackboard = this};
+        stateTurn = new NpcSimpleStateTurn(){blackboard = this};
+
+        // set first state in machine
+        machine.SetState(stateIdle);
+    }
+
+
+
+    public override void _PhysicsProcess(double delta)
     {
+        if(targetLookDirection != Vector3.Zero && lookCursor <= 1.1f)
+        {
+            // smooth look
+            var smoothtargetLookDirection = startLookDirection.Slerp(targetLookDirection, lookCursor);
 
-        public StateMachineQueue machine = new StateMachineQueue();
-        public State stateIdle,
-            stateTalk,
-            stateTalkRepeating,
-            stateTurn;
+            // apply look
+            LookAt(GlobalPosition + smoothtargetLookDirection);
 
-        [Export]
-        public AnimationPlayer animation;
-        [Export]
-        public string idleAnimationName,
-            talkAnimationName,
-            turnRightAnimationName,
-            turnLeftAnimationName;
-        [Export]
-		public float speed = 5f,
-            lookTime = 1f,
-            acceleration = 10f,
-            lookSpeed = 7f;
-        [Export]
-        public bool saveToWorldData = false,
-            freezePlayer = false;
-
-        [Export]
-        public Node[] linkedObjects;
-
-        public Area3D triggerArea;
-        public NpcCameraControl cameraControl;
-        public NpcDialogue dialogue;
-        public bool bodyInTrigger;
-        public PlayerCharacter player;
-        public Vector3 initLookDirection,
-            startLookDirection,
-            targetLookDirection;
-        public float lookCursor,
-            cursorTimeMultiplier;
+            lookCursor += ((float)delta) * cursorTimeMultiplier;
+        }
+    }
 
 
 
+    public override void _EnterTree()
+    {
+        machine.Enable();
+    }
 
-        public override void _Ready()
-        {            
-            // get nodes
-            triggerArea = (Area3D) GetNode("TriggerArea");
-            cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
-            dialogue = (NpcDialogue) GetNode("Dialogue");
 
-            initLookDirection = -Basis.Z;
 
-            // set up events
-            triggerArea.BodyEntered += TriggerDialogue;
-            triggerArea.BodyExited += TriggerReset;
+    public override void _ExitTree()
+    {
+        machine.Disable();
+    }
 
-            if(saveToWorldData == true)
+
+
+    public void TriggerDialogue(Node3D body)
+    {
+        if(bodyInTrigger == false && machine.CurrentState == stateIdle)
+        {
+            if(freezePlayer == true && body is PlayerCharacter playerBody && dialogue.useRepeatingDialogue == false)
             {
-                // get if trigger was already activated
-                var wasActivated = WorldData.data.CheckActivatedObjects(this);
+                // store hit body
+                player = playerBody;
 
-                if(wasActivated == true)
-                {
-                    dialogue.useRepeatingDialogue = true; 
-                    //ActivateLinkedNodes();
-                }
+                // set player to start state
+                player.machine.SetState(player.stateCinematic);
             }
 
-            // initialize states
-            stateIdle = new NpcSimpleStateIdle(){blackboard = this};
-            stateTalk = new NpcSimpleStateTalk(){blackboard = this};
-            stateTalkRepeating = new NpcSimpleStateTalkRepeating(){blackboard = this};
-            stateTurn = new NpcSimpleStateTurn(){blackboard = this};
+            // set look target
+            targetLookDirection = body.GlobalPosition - GlobalPosition;
+            targetLookDirection.Y = 0;
 
-            // set first state in machine
-            machine.SetState(stateIdle);
+            // repeating dialogue
+            machine.SetState(stateTurn);
+            
+            bodyInTrigger = true;
         }
+    }
 
 
 
-        public override void _PhysicsProcess(double delta)
+    public void EndDialogue()
+    {
+        // set player to idle state
+        player.SetToIdle();
+    }
+
+
+
+    public void TriggerReset(Node3D body)
+    {
+        bodyInTrigger = false;
+    }
+
+
+
+    public void ActivateLinkedNodes()
+    {
+        if(linkedObjects.Length > 0)
         {
-            if(targetLookDirection != Vector3.Zero && lookCursor <= 1.1f)
+            // activate pinned objects
+            foreach(IActivatable i in linkedObjects)
             {
-                // smooth look
-                var smoothtargetLookDirection = startLookDirection.Slerp(targetLookDirection, lookCursor);
-
-                // apply look
-                LookAt(GlobalPosition + smoothtargetLookDirection);
-
-                lookCursor += ((float)delta) * cursorTimeMultiplier;
-            }
-        }
-
-
-
-        public override void _EnterTree()
-        {
-            machine.Enable();
-        }
-
-
-
-        public override void _ExitTree()
-        {
-            machine.Disable();
-        }
-
-
-
-        public void TriggerDialogue(Node3D body)
-        {
-            if(bodyInTrigger == false && machine.CurrentState == stateIdle)
-            {
-                if(freezePlayer == true && body is PlayerCharacter playerBody && dialogue.useRepeatingDialogue == false)
+                if(IsInstanceValid((Node)i) == true)
                 {
-                    // store hit body
-                    player = playerBody;
-
-                    // set player to start state
-                    player.machine.SetState(player.stateCinematic);
-                }
-
-                // set look target
-                targetLookDirection = body.GlobalPosition - GlobalPosition;
-                targetLookDirection.Y = 0;
-
-                // repeating dialogue
-                machine.SetState(stateTurn);
-                
-                bodyInTrigger = true;
-            }
-        }
-
-
-
-        public void EndDialogue()
-        {
-            // set player to idle state
-            player.SetToIdle();
-        }
-
-
-
-        public void TriggerReset(Node3D body)
-        {
-            bodyInTrigger = false;
-        }
-
-
-
-        public void ActivateLinkedNodes()
-        {
-            if(linkedObjects.Length > 0)
-            {
-                // activate pinned objects
-                foreach(IActivatable i in linkedObjects)
-                {
-                    if(IsInstanceValid((Node)i) == true)
-                    {
-                        i.Activate();
-                    }
+                    i.Activate();
                 }
             }
         }

@@ -1,53 +1,52 @@
 using Godot;
 using System;
 
-namespace NonPlayerCharacter
+namespace NonPlayerCharacter;
+
+public partial class NpcSimpleStateTalk : NpcSimpleState
 {
-    public partial class NpcSimpleStateTalk : NpcSimpleState
+
+    
+
+
+
+    public override void StartState()
     {
+        // animation
+        blackboard.animation.Play(blackboard.talkAnimationName);
 
-        
+        // talk
+        blackboard.dialogue.Talk();
+    }
 
 
 
-        public override void StartState()
+    public override void EndState()
+    {
+        blackboard.EndDialogue();
+        blackboard.cameraControl.DisableCameraControl();
+        blackboard.ActivateLinkedNodes();
+
+        // set new look direction
+        blackboard.targetLookDirection = blackboard.initLookDirection;
+
+        if(blackboard.saveToWorldData == true)
+        {            
+            // save to activated objects
+            WorldData.data.ActivateObject(blackboard);
+        }
+    }
+
+
+
+    public override State Transition()
+    {
+        if(blackboard.dialogue.waiting == true)
         {
-            // animation
-            blackboard.animation.Play(blackboard.talkAnimationName);
-
-            // talk
-            blackboard.dialogue.Talk();
+            // turn
+            return blackboard.stateTurn;
         }
 
-
-
-        public override void EndState()
-        {
-            blackboard.EndDialogue();
-            blackboard.cameraControl.DisableCameraControl();
-            blackboard.ActivateLinkedNodes();
-
-            // set new look direction
-            blackboard.targetLookDirection = blackboard.initLookDirection;
-
-            if(blackboard.saveToWorldData == true)
-            {            
-                // save to activated objects
-                WorldData.data.ActivateObject(blackboard);
-            }
-        }
-
-
-
-        public override State Transition()
-        {
-            if(blackboard.dialogue.waiting == true)
-            {
-                // turn
-                return blackboard.stateTurn;
-            }
-
-            return this;
-        }
+        return this;
     }
 }

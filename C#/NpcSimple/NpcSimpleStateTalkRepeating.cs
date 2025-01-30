@@ -1,43 +1,42 @@
 using Godot;
 using System;
 
-namespace NonPlayerCharacter
+namespace NonPlayerCharacter;
+
+public partial class NpcSimpleStateTalkRepeating : NpcSimpleState
 {
-    public partial class NpcSimpleStateTalkRepeating : NpcSimpleState
+
+
+
+
+
+    public override void StartState()
     {
+        // animation
+        blackboard.animation.Play(blackboard.talkAnimationName);
+
+        // talk
+        blackboard.dialogue.Talk();
+    }
 
 
 
+    public override void EndState()
+    {
+        // set new look direction
+        blackboard.targetLookDirection = blackboard.initLookDirection;
+    }
 
 
-        public override void StartState()
+
+    public override State Transition()
+    {
+        if(blackboard.dialogue.waiting == true)
         {
-            // animation
-            blackboard.animation.Play(blackboard.talkAnimationName);
-
-            // talk
-            blackboard.dialogue.Talk();
+            // turn
+            return blackboard.stateTurn;
         }
 
-
-
-        public override void EndState()
-        {
-            // set new look direction
-            blackboard.targetLookDirection = blackboard.initLookDirection;
-        }
-
-
-
-        public override State Transition()
-        {
-            if(blackboard.dialogue.waiting == true)
-            {
-                // turn
-                return blackboard.stateTurn;
-            }
-
-            return this;
-        }
+        return this;
     }
 }

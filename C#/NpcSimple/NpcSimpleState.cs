@@ -1,11 +1,10 @@
 using Godot;
 using System;
 
-namespace NonPlayerCharacter
-{
-    public partial class NpcSimpleState : State
-    {
+namespace NonPlayerCharacter;
 
-        public NpcSimple blackboard;
-    }
+public partial class NpcSimpleState : State
+{
+
+    public NpcSimple blackboard;
 }

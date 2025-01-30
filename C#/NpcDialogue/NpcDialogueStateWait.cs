@@ -1,25 +1,23 @@
 using Godot;
 using System;
 
-namespace NonPlayerCharacter
+namespace NonPlayerCharacter;
+public partial class NpcDialogueStateWait : NpcDialogueState
 {
-    public partial class NpcDialogueStateWait : NpcDialogueState
+
+
+
+
+
+    public override void StartState()
     {
+        blackboard.waiting = true;
+    }
 
 
 
-
-
-        public override void StartState()
-        {
-            blackboard.waiting = true;
-        }
-
-
-
-        public override void EndState()
-        {
-            blackboard.waiting = false;
-        }
+    public override void EndState()
+    {
+        blackboard.waiting = false;
     }
 }
