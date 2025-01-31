@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=222 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -191,11 +191,13 @@
 [ext_resource type="Script" path="res://C#/FishSchool.cs" id="143_xkj6j"]
 [ext_resource type="Animation" uid="uid://dkgvlpehrvvwd" path="res://Animation/Cinematics/lhc4.res" id="154_40cup"]
 [ext_resource type="Animation" uid="uid://bjckj2ki8u4iu" path="res://Animation/Cinematics/lhc3.res" id="154_bkba1"]
+[ext_resource type="Animation" uid="uid://dqf1c2r36a2vw" path="res://Animation/Cinematics/lhc5.res" id="160_xkaw8"]
 [ext_resource type="AudioStream" uid="uid://c3horwxmjrfaw" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-13.wav" id="172_d664u"]
 [ext_resource type="AudioStream" uid="uid://vn8dx3bi4c1i" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-14.wav" id="173_1lgrd"]
 [ext_resource type="AudioStream" uid="uid://bxucro245hmmv" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-15.wav" id="174_1ypny"]
 [ext_resource type="AudioStream" uid="uid://b8ogbj2jv6x2x" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-10.wav" id="180_n8mho"]
 [ext_resource type="AudioStream" uid="uid://dvuiqto0boxqn" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-11.wav" id="181_b6l77"]
+[ext_resource type="PackedScene" uid="uid://cvm3pev2fv15o" path="res://Prefabs/Characters/CinematicCharacterLumsden.tscn" id="181_h3mly"]
 [ext_resource type="AudioStream" uid="uid://bva10f81s1ke7" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-12.wav" id="182_yaxql"]
 [ext_resource type="PackedScene" uid="uid://bhcqps24bo24o" path="res://Prefabs/Characters/NpcMobileVoleGuard.tscn" id="189_sl835"]
 [ext_resource type="AudioStream" uid="uid://pnop3casb4g0" path="res://Audio/Dialogue/npc-vole-guard-dialogue-lh-1.wav" id="190_iu8am"]
@@ -257,7 +259,8 @@ _data = {
 "lhc1": ExtResource("65_yf3nw"),
 "lhc2": ExtResource("66_f3xeq"),
 "lhc3": ExtResource("154_bkba1"),
-"lhc4": ExtResource("154_40cup")
+"lhc4": ExtResource("154_40cup"),
+"lhc5": ExtResource("160_xkaw8")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1wib3"]
@@ -265,6 +268,9 @@ size = Vector3(10, 5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ocsvq"]
 size = Vector3(19.5, 12, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mq0n3"]
+size = Vector3(5, 4, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0unnw"]
 size = Vector3(9, 5, 1)
@@ -298,7 +304,7 @@ script = ExtResource("3_8tlgx")
 [node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic2"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio1"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn")]
-stageExclusionNodes = []
+stageExclusionNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3")]
 
 [node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
@@ -322,7 +328,7 @@ setNodes = [NodePath("../../../Npcs/NpcMobileWynn")]
 [node name="Stage1" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes", "stageTochesContainer")]
 script = ExtResource("4_hh5wq")
 hubStage = 1
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea"), NodePath("../../Map/OccluderInstance3D/Props/SmallItems/PropLamp"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight1"), NodePath("../../WorldEnvironment1"), NodePath("../../Map/Audio/LevelRandomAudio2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/Cinematics/Cinematic4"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1WynnCurtained"), NodePath("../../Map/Pickups/PickupNettleBroth"), NodePath("../../Map/Pickups/PickupNettleBroth2"), NodePath("../../Map/LevelHub2ChangeTriggerArea"), NodePath("../../Map/OccluderInstance3D/Props/SmallItems/PropLamp"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/NightTorches")]
 stageExclusionNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses/PropTreeHouse1Wynn")]
 stageTochesContainer = NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/Stage1Torches")
 
@@ -338,12 +344,17 @@ setNodes = [NodePath("../../../Map/LevelHub2ChangeTriggerArea")]
 [node name="Stage2" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 2
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Npcs/NpcLumsden2"), NodePath("../../Map/Cinematics/Cinematic5")]
 stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage2" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("7_nlmtm")
-setNodes = []
+setNodes = [NodePath("../../../Map/Cinematics/Cinematic5/Trigger")]
+
+[node name="Set1" type="Node" parent="HubControl/Stage2" node_paths=PackedStringArray("setNodes")]
+script = ExtResource("7_nlmtm")
+hubSet = 1
+setNodes = [NodePath("../../../Npcs/NpcLumsden2")]
 
 [node name="LevelChange" parent="." instance=ExtResource("5_rinr5")]
 
@@ -354,6 +365,7 @@ script = ExtResource("8_7o44d")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_s034b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
+speed = 15.0
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -2981,6 +2993,47 @@ audioClip = ExtResource("174_1ypny")
 dialogueText = "Pick an open bed in a trunk-hut.  Tomorrow, find Lumsden.  He'll have more for you to do."
 displayTime = 5.1
 
+[node name="Cinematic5" type="Node3D" parent="Map/Cinematics"]
+
+[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("cinematic")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 46.5, 1.5, -21.5)
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+script = ExtResource("44_gr04f")
+cinematic = NodePath("../../CinematicsHub")
+cinematicAnimationName = "lhc5"
+monitoringAtStart = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic5/Trigger"]
+shape = SubResource("BoxShape3D_mq0n3")
+
+[node name="CinematicCharacterLumsden" parent="Map/Cinematics/Cinematic5" instance=ExtResource("181_h3mly")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 52.4, 1, -23.2)
+hideOnStart = false
+
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic5"]
+transform = Transform3D(0.503761, 0.322959, -0.8012, 0, 0.927483, 0.373863, 0.863842, -0.188337, 0.46723, 46.831, 2.99919, -19.9279)
+script = ExtResource("37_nysf4")
+moveTime = 1.5
+
+[node name="CinematicCharacterAction1" type="Node3D" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.9, 1, -21.7)
+script = ExtResource("48_o7o1q")
+targetCharacter = NodePath("../CinematicCharacterLumsden")
+
+[node name="CinematicCharacterAction2" type="Node3D" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 52.4, 1, -23.2)
+script = ExtResource("48_o7o1q")
+targetCharacter = NodePath("../CinematicCharacterLumsden")
+
+[node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterLumsden")
+audioClip = ExtResource("172_d664u")
+dialogueText = "There you are!  You missed dinner.  Everyone not on watch is asleep now."
+displayTime = 4.3
+
 [node name="Level2ChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5, 2.5, 84)
 collision_layer = 128
@@ -3062,6 +3115,29 @@ dialogueText = "Wynn is waiting for you at the entrance to the abandoned area."
 repeat = true
 
 [node name="DialogueRepeating2" type="Node" parent="Npcs/NpcLumsden"]
+script = ExtResource("117_d580p")
+dialogueAudio = ExtResource("126_76qtq")
+dialogueText = "Once you cross the bridge, go right then left.  You're looking for the big gate."
+repeat = true
+
+[node name="NpcLumsden2" parent="Npcs" instance=ExtResource("116_4nm5h")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 52.4, 1, -23.2)
+idleAnimationName = "lumsden-idle"
+saveToWorldData = true
+freezePlayer = true
+
+[node name="Dialogue1" type="Node" parent="Npcs/NpcLumsden2"]
+script = ExtResource("117_d580p")
+dialogueAudio = ExtResource("118_kf60n")
+dialogueText = "Ah, a new face.  Hmmmm.  You must be a ranger!"
+
+[node name="DialogueRepeating1" type="Node" parent="Npcs/NpcLumsden2"]
+script = ExtResource("117_d580p")
+dialogueAudio = ExtResource("125_iv8q0")
+dialogueText = "Wynn is waiting for you at the entrance to the abandoned area."
+repeat = true
+
+[node name="DialogueRepeating2" type="Node" parent="Npcs/NpcLumsden2"]
 script = ExtResource("117_d580p")
 dialogueAudio = ExtResource("126_76qtq")
 dialogueText = "Once you cross the bridge, go right then left.  You're looking for the big gate."

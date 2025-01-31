@@ -8,7 +8,7 @@ using PlayerBow;
 
 namespace NonPlayerCharacter;
 
-public partial class NpcSimple : CharacterBody3D
+public partial class NpcSimple : CharacterBody3D, IActivatable
 {
 
     public StateMachineQueue machine = new StateMachineQueue();
@@ -39,6 +39,7 @@ public partial class NpcSimple : CharacterBody3D
     public Area3D triggerArea;
     public NpcCameraControl cameraControl;
     public NpcDialogue dialogue;
+    public CollisionShape3D collider;
     public bool bodyInTrigger;
     public PlayerCharacter player;
     public Vector3 initLookDirection,
@@ -56,6 +57,7 @@ public partial class NpcSimple : CharacterBody3D
         triggerArea = (Area3D) GetNode("TriggerArea");
         cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
         dialogue = (NpcDialogue) GetNode("Dialogue");
+        collider = (CollisionShape3D) GetNode("Collider");
 
         initLookDirection = -Basis.Z;
 
@@ -171,5 +173,23 @@ public partial class NpcSimple : CharacterBody3D
                 }
             }
         }
+    }
+
+
+
+    public void Activate()
+    {
+        Visible = true;
+        ProcessMode = ProcessModeEnum.Inherit;
+        collider.SetDeferred("disabled", false);
+    }
+
+
+
+    public void Deactivate()
+    {
+        Visible = false;
+        ProcessMode = ProcessModeEnum.Disabled;
+        collider.SetDeferred("disabled", true);
     }
 }

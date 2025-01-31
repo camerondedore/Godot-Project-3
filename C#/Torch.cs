@@ -62,6 +62,18 @@ public partial class Torch : StaticBody3D, IActivatable
 
 
 
+    public void Deactivate()
+    {
+        if(lit == true)
+        {
+            ExtinguishTorch();
+
+            lit = false;
+        }
+    }
+
+
+
     public virtual void LightTorch()
     {
         // light

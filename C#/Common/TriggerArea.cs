@@ -73,4 +73,11 @@ public partial class TriggerArea : Area3D, IActivatable
     {
         SetDeferred("monitoring", true);
     }
+
+
+
+    public void Deactivate()
+    {
+        SetDeferred("monitoring", false);
+    }
 }

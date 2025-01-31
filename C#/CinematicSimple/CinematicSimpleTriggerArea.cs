@@ -61,5 +61,12 @@ namespace CinematicSimple
         {
             SetDeferred("monitoring", true);
         }
+
+
+
+        public void Deactivate()
+        {
+            SetDeferred("monitoring", false);
+        }
     }
 }

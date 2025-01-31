@@ -283,4 +283,11 @@ public partial class NpcMobile : CharacterBody3D, IActivatable
         Visible = true;
         ProcessMode = ProcessModeEnum.Inherit;
     }
+
+
+
+    public void Deactivate()
+    {
+        HideNpc();
+    }
 }

@@ -28,12 +28,15 @@ public partial class HubSet : Node
             }
             else
             {
-                setNode.ProcessMode = ProcessModeEnum.Inherit;
-
                 if(setNode is IActivatable setNodeActivatable)
                 {
                     // activate node if it can be
                     setNodeActivatable.Activate();
+                }
+                else
+                {
+                    setNode.ProcessMode = ProcessModeEnum.Inherit;
+                    ((Node3D)setNode).Visible = true;
                 }
             }
         }
@@ -56,9 +59,15 @@ public partial class HubSet : Node
             {
                 torchNode.lit = false;
             }
+            else if(setNode is IActivatable setNodeActivatable)
+            {
+                // deactivate node if it can be
+                setNodeActivatable.Deactivate();
+            }
             else
             {
                 setNode.ProcessMode = ProcessModeEnum.Disabled;
+                ((Node3D)setNode).Visible = false;
             }
         }
     }

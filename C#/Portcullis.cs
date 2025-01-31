@@ -99,6 +99,13 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
 
 
+    public void Deactivate()
+    {
+        // nothing to do
+    }
+
+
+
     void Closed()
     {
         portcullisCollider.Disabled = false;

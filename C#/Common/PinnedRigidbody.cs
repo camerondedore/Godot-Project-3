@@ -38,4 +38,11 @@ public partial class PinnedRigidbody : RigidBody3D, IActivatable
         var newAngularVelocity = new Vector3(angularVelocity.X * GD.Randf() - 0.5f, angularVelocity.Y * GD.Randf() - 0.5f, angularVelocity.Z * GD.Randf() - 0.5f);
         AngularVelocity = newAngularVelocity;
     }
+
+
+
+    public void Deactivate()
+    {
+        // nothing to do
+    }
 }

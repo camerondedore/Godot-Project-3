@@ -107,4 +107,11 @@ public partial class HubStage : Node, IActivatable
     {
         NextSet();
     }
+
+
+
+    public void Deactivate()
+    {
+        // nothing to do
+    }
 }

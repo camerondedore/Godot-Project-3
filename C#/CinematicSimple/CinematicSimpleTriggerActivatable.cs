@@ -53,5 +53,12 @@ namespace CinematicSimple
 
             QueueFree();
         }
+
+
+
+        public void Deactivate()
+        {
+            // nothing to do
+        }
     }
 }

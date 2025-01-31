@@ -43,6 +43,13 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
 
 
 
+    public void Deactivate()
+    {
+        // nothing to do
+    }
+
+
+
     public interface iMobSpawnable
     {
         void SetTarget(Node3D target);

@@ -1,226 +1,230 @@
 using Godot;
 using System;
 
-namespace CinematicCharacter
+namespace CinematicCharacter;
+
+public partial class CinematicCharacter : CharacterBody3D
 {
-    public partial class CinematicCharacter : CharacterBody3D
-    {
 
-    public StateMachine machine = new StateMachine();
-        public State stateIdle,
-            stateMove;
+public StateMachine machine = new StateMachine();
+    public State stateIdle,
+        stateMove;
 
-        [Export]
-        public AnimationPlayer animation;
-        [Export]
-        public string idleAnimationName = "wynn-idle",
-            walkAnimationName = "wynn-run";
-        [Export]
-		public float speed = 5,
-            acceleration = 10,
-            lookSpeed = 5f;
+    [Export]
+    public AnimationPlayer animation;
+    [Export]
+    public string idleAnimationName = "wynn-idle",
+        walkAnimationName = "wynn-run";
+    [Export]
+    public float speed = 5,
+        acceleration = 10,
+        lookSpeed = 5f;
+    [Export]
+    bool hideOnStart = true;
 
-        public NavigationAgent3D navAgent;
-        public AudioTools3d voiceAudio;
-        public Node3D targetNode;
-        public string nextAnimationName;
+    public NavigationAgent3D navAgent;
+    public AudioTools3d voiceAudio;
+    public Node3D targetNode;
+    public string nextAnimationName;
 
 
 
-        public override void _Ready()
-        {            
-            // get nodes
-            navAgent = (NavigationAgent3D) GetNode("NavAgent");
-            voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
+    public override void _Ready()
+    {            
+        // get nodes
+        navAgent = (NavigationAgent3D) GetNode("NavAgent");
+        voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
 
-            // initialize states
-            stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
-            stateMove = new CinematicCharacterStateMove(){blackboard = this};
+        // initialize states
+        stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
+        stateMove = new CinematicCharacterStateMove(){blackboard = this};
 
-            // set first state in machine
-            machine.SetState(stateIdle);
+        // set first state in machine
+        machine.SetState(stateIdle);
 
+        if(hideOnStart == true)
+        {
             // disable
             HideCharacter();
         }
+    }
 
 
 
-        public override void _PhysicsProcess(double delta)
+    public override void _PhysicsProcess(double delta)
+    {
+        // run machine
+        if(machine != null && machine.CurrentState != null)
         {
-            // run machine
-            if(machine != null && machine.CurrentState != null)
-            {
-                machine.CurrentState.RunState(delta);
-                machine.SetState(machine.CurrentState.Transition());
-            }
+            machine.CurrentState.RunState(delta);
+            machine.SetState(machine.CurrentState.Transition());
         }
+    }
 
 
 
-        public void MoveToTargetNode(double delta)
+    public void MoveToTargetNode(double delta)
+    {
+        // check that character is in moving state
+        if(IsOnFloor())
         {
-            // check that character is in moving state
-            if(IsOnFloor())
+            // get new velocity
+            var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
+            newVelocity = newVelocity.Normalized();
+            newVelocity.Y = 0;
+            newVelocity *= speed;
+            
+            if(newVelocity.X == 0 && newVelocity.Z == 0)
             {
-                // get new velocity
-                var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
-                newVelocity = newVelocity.Normalized();
-                newVelocity.Y = 0;
-                newVelocity *= speed;
-                
-                if(newVelocity.X == 0 && newVelocity.Z == 0)
-                {
-                    // no usable velocity
-                    return;
-                }
-
-                // smooth movement
-                Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
-
-                MoveAndSlide();
-
-                // get direction to next path point and flatten
-                var lookDirection = Velocity.Normalized();
-                lookDirection.Y = 0;
-
-                if(lookDirection.LengthSquared() > 0.1f)
-                {
-                    var smoothLookDirection = -Basis.Z;
-                    smoothLookDirection = smoothLookDirection.Slerp(lookDirection, lookSpeed * ((float) delta));
-
-                    // apply look
-                    LookAt(GlobalPosition + smoothLookDirection);
-                }    
-            }
-            else
-            {                
-                // falling
-                // apply gravity
-                Velocity += EngineGravity.vector * ((float) delta);                
-                MoveAndSlide();
-            }
-        }
-
-
-
-        public void LookWithTargetNode(double delta)
-        {
-            if(targetNode == null)
-            {
+                // no usable velocity
                 return;
             }
 
-            // get direction and flatten
-            var lookTarget = GlobalPosition + -targetNode.Basis.Z;
-            lookTarget.Y = GlobalPosition.Y;
+            // smooth movement
+            Velocity = Velocity.Lerp(newVelocity, acceleration * ((float) delta));
 
-            if(lookTarget.LengthSquared() > 0.1f)
-			{
-				var smoothLookTarget = GlobalPosition + -Basis.Z;
-				smoothLookTarget = smoothLookTarget.Slerp(lookTarget, lookSpeed * ((float) delta));
+            MoveAndSlide();
 
-				// apply look
-				LookAt(smoothLookTarget);
-			}    
+            // get direction to next path point and flatten
+            var lookDirection = Velocity.Normalized();
+            lookDirection.Y = 0;
+
+            if(lookDirection.LengthSquared() > 0.1f)
+            {
+                var smoothLookDirection = -Basis.Z;
+                smoothLookDirection = smoothLookDirection.Slerp(lookDirection, lookSpeed * ((float) delta));
+
+                // apply look
+                LookAt(GlobalPosition + smoothLookDirection);
+            }    
+        }
+        else
+        {                
+            // falling
+            // apply gravity
+            Velocity += EngineGravity.vector * ((float) delta);                
+            MoveAndSlide();
+        }
+    }
+
+
+
+    public void LookWithTargetNode(double delta)
+    {
+        if(targetNode == null)
+        {
+            return;
         }
 
+        // get direction and flatten
+        var lookTarget = GlobalPosition + -targetNode.Basis.Z;
+        lookTarget.Y = GlobalPosition.Y;
 
-
-        public void SetTargetNode(Node3D newTarget)
+        if(lookTarget.LengthSquared() > 0.1f)
         {
-            if(Visible == false)
-            {
-                // enable
-                Visible = true;
-                ProcessMode = ProcessModeEnum.Inherit;
-            }
+            var smoothLookTarget = GlobalPosition + -Basis.Z;
+            smoothLookTarget = smoothLookTarget.Slerp(lookTarget, lookSpeed * ((float) delta));
 
-            // check target against old target
-            var targetTransformChanged = true;
-            
-            if(targetNode != null)
-            {
-                targetTransformChanged = (targetNode.GlobalPosition - newTarget.GlobalPosition).LengthSquared() > 0.01f;
-            }
+            // apply look
+            LookAt(smoothLookTarget);
+        }    
+    }
 
-            targetNode = newTarget;
 
-            if(targetTransformChanged == true)
+
+    public void SetTargetNode(Node3D newTarget)
+    {
+        if(Visible == false)
+        {
+            // enable
+            Visible = true;
+            ProcessMode = ProcessModeEnum.Inherit;
+        }
+
+        // check target against old target
+        var targetTransformChanged = true;
+        
+        if(targetNode != null)
+        {
+            targetTransformChanged = (targetNode.GlobalPosition - newTarget.GlobalPosition).LengthSquared() > 0.01f;
+        }
+
+        targetNode = newTarget;
+
+        if(targetTransformChanged == true)
+        {
+            if(machine.CurrentState != stateMove)
             {
-                if(machine.CurrentState != stateMove)
-                {
-                    // change to move state
-                    machine.SetState(stateMove);
-                }
-                else
-                {
-                    // restart move state
-                    stateMove.StartState();
-                }
+                // change to move state
+                machine.SetState(stateMove);
             }
             else
             {
-                if(machine.CurrentState != stateIdle)
-                {
-                    // change to idle state
-                    machine.SetState(stateIdle);
-                }
-                else
-                {
-                    // restart idle state
-                    machine.CurrentState.StartState();
-                }
-            }            
+                // restart move state
+                stateMove.StartState();
+            }
         }
-
-
-
-        public void SetTargetAnimation(string nextAnimation)
+        else
         {
-            nextAnimationName = nextAnimation;
-        }
+            if(machine.CurrentState != stateIdle)
+            {
+                // change to idle state
+                machine.SetState(stateIdle);
+            }
+            else
+            {
+                // restart idle state
+                machine.CurrentState.StartState();
+            }
+        }            
+    }
 
 
 
-        // public void SetState(string nextAnimation)
-        // {
-        //     if(Visible == false)
-        //     {
-        //         // enable
-        //         Visible = true;
-        //         ProcessMode = ProcessModeEnum.Inherit;
-        //     }
-
-        //     // set next idle animation
-        //     nextAnimationName = nextAnimation;
-
-        //     if(machine.CurrentState != stateIdle)
-        //     {
-        //         // change to idle state
-        //         machine.SetState(stateIdle);
-        //     }
-        //     else
-        //     {
-        //         // restart idle state
-        //         machine.CurrentState.StartState();
-        //     }
-        // }
+    public void SetTargetAnimation(string nextAnimation)
+    {
+        nextAnimationName = nextAnimation;
+    }
 
 
 
-        public void Speak(AudioStream voiceLine)
-        {
-            voiceAudio.PlaySound(voiceLine, 0);
-        }
+    // public void SetState(string nextAnimation)
+    // {
+    //     if(Visible == false)
+    //     {
+    //         // enable
+    //         Visible = true;
+    //         ProcessMode = ProcessModeEnum.Inherit;
+    //     }
+
+    //     // set next idle animation
+    //     nextAnimationName = nextAnimation;
+
+    //     if(machine.CurrentState != stateIdle)
+    //     {
+    //         // change to idle state
+    //         machine.SetState(stateIdle);
+    //     }
+    //     else
+    //     {
+    //         // restart idle state
+    //         machine.CurrentState.StartState();
+    //     }
+    // }
 
 
 
-        public void HideCharacter()
-        {
-            // disable
-            Visible = false;
-            ProcessMode = ProcessModeEnum.Disabled;
-        }
+    public void Speak(AudioStream voiceLine)
+    {
+        voiceAudio.PlaySound(voiceLine, 0);
+    }
+
+
+
+    public void HideCharacter()
+    {
+        // disable
+        Visible = false;
+        ProcessMode = ProcessModeEnum.Disabled;
     }
 }
