@@ -3034,6 +3034,15 @@ audioClip = ExtResource("172_d664u")
 dialogueText = "There you are!  You missed dinner.  Everyone not on watch is asleep now."
 displayTime = 4.3
 
+[node name="ArrowSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic5"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 49.4, 1.2, -21.7)
+script = ExtResource("77_n2y0i")
+prefab = ExtResource("68_l4xn5")
+velocity = Vector3(0, 0.75, -2)
+spread = 0.0
+angularSpeed = 0.0
+useAngularVelocity = false
+
 [node name="Level2ChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.5, 2.5, 84)
 collision_layer = 128

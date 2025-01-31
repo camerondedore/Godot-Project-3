@@ -23,6 +23,9 @@ lookSpeed = 7.0
 shape = SubResource("CapsuleShape3D_mwce0")
 
 [node name="NavAgent" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.25
+path_height_offset = -0.5
 
 [node name="character-wynn" parent="." instance=ExtResource("2_u04e0")]
 
