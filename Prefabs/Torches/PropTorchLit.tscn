@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bs7ar56o5yasj" path="res://Audio/fire.wav" id="4_rvovm"]
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_153dm"]
 [ext_resource type="Script" path="res://C#/DamageArea.cs" id="5_ecjr6"]
-[ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="6_hl67r"]
+[ext_resource type="AudioStream" uid="uid://d1j2nqummt5" path="res://Audio/fire-damage.wav" id="6_vrw1a"]
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="7_ucpnc"]
 [ext_resource type="Material" uid="uid://bijrqeiotewi3" path="res://Particles/FxEnemyDamage.tres" id="8_hhyef"]
 
@@ -38,7 +38,7 @@ script = ExtResource("5_ecjr6")
 damage = 10.0
 hitFx = NodePath("FxHit")
 audio = NodePath("DamageAudio")
-damageSound = ExtResource("6_hl67r")
+damageSound = ExtResource("6_vrw1a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea" index="0"]
 shape = SubResource("SphereShape3D_41hys")

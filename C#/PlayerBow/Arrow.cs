@@ -27,10 +27,8 @@ namespace PlayerBow
             }
 
 
-            if(hitObject is IBowTarget)
+            if(hitObject is IBowTarget hitTarget)
             {
-                var hitTarget = (IBowTarget) hitObject;
-
                 // check arrow type
                 if(hitTarget.GetArrowType() == arrowType)
                 {
@@ -39,8 +37,8 @@ namespace PlayerBow
 
                     // spawn hit fx
                     SpawnPrefab(hitFx, point, normal, upVector);
-                }       
-                    
+                }
+
                 // detach trail
                 trailFx.DetachTrail();
 
@@ -49,7 +47,7 @@ namespace PlayerBow
             }
             else if(hitObject is StaticBody3D)
             {
-                 // set arrow position
+                // set arrow position
                 var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
                 LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
 
