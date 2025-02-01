@@ -1,4 +1,4 @@
-[gd_scene load_steps=222 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=226 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -199,6 +199,10 @@
 [ext_resource type="AudioStream" uid="uid://dvuiqto0boxqn" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-11.wav" id="181_b6l77"]
 [ext_resource type="PackedScene" uid="uid://cvm3pev2fv15o" path="res://Prefabs/Characters/CinematicCharacterLumsden.tscn" id="181_h3mly"]
 [ext_resource type="AudioStream" uid="uid://bva10f81s1ke7" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-12.wav" id="182_yaxql"]
+[ext_resource type="AudioStream" uid="uid://c2w35aa8otnwq" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-10.wav" id="183_pismn"]
+[ext_resource type="AudioStream" uid="uid://c1orkn0mdepeq" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-11.wav" id="184_juduu"]
+[ext_resource type="AudioStream" uid="uid://dlf5yjlg5lttq" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-12.wav" id="185_lo1kt"]
+[ext_resource type="AudioStream" uid="uid://df65gag3q370j" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-13.wav" id="186_lgjlp"]
 [ext_resource type="PackedScene" uid="uid://bhcqps24bo24o" path="res://Prefabs/Characters/NpcMobileVoleGuard.tscn" id="189_sl835"]
 [ext_resource type="AudioStream" uid="uid://pnop3casb4g0" path="res://Audio/Dialogue/npc-vole-guard-dialogue-lh-1.wav" id="190_iu8am"]
 [ext_resource type="AudioStream" uid="uid://0pqosq73l103" path="res://Audio/Dialogue/npc-vole-guard-dialogue-lh-2.wav" id="191_p8c3y"]
@@ -3030,9 +3034,30 @@ targetCharacter = NodePath("../CinematicCharacterLumsden")
 [node name="AudioAction1" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterLumsden")
-audioClip = ExtResource("172_d664u")
-dialogueText = "There you are!  You missed dinner.  Everyone not on watch is asleep now."
-displayTime = 4.3
+audioClip = ExtResource("183_pismn")
+dialogueText = "Morning.  I'm afraid we have no time to waste.  The rats spent the night building their own fortifications."
+displayTime = 6.5
+
+[node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterLumsden")
+audioClip = ExtResource("184_juduu")
+dialogueText = "You need to attack them before they settle in and recuperate their strength."
+displayTime = 4.2
+
+[node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterLumsden")
+audioClip = ExtResource("185_lo1kt")
+dialogueText = "Here's a clever arrow of mine: a lock-picking arrow.  It'll open any container or door with a lock on it."
+displayTime = 6.7
+
+[node name="AudioAction4" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
+script = ExtResource("50_vkiwa")
+targetCharacter = NodePath("../CinematicCharacterLumsden")
+audioClip = ExtResource("186_lgjlp")
+dialogueText = "Open this door here behind me.  Go through this little fort, and hit those rats!"
+displayTime = 5.2
 
 [node name="ArrowSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic5"]
 transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 49.4, 1.2, -21.7)
