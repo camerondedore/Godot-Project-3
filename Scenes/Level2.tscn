@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=186 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_n6jrc"]
 [ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_b0p0a"]
 [ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="5_iumrn"]
+[ext_resource type="Script" path="res://C#/SecretAreas.cs" id="5_tfa5y"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b8xm6u2qv132h" path="res://Scenes/Occlusion/Level2.occ" id="6_l1egs"]
 [ext_resource type="ArrayMesh" uid="uid://bw2kngd4ep31n" path="res://Models/level-2.res" id="9_auvuc"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="10_v7b7r"]
@@ -180,6 +181,9 @@ data = PackedVector3Array(0, 0, 3.5, -2.8479, 0, 7, -2.8479, 0, 3.5, 0, 0, 3.5, 
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kwpaf"]
 size = Vector3(6, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6864n"]
+size = Vector3(8, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ya4f8"]
 size = Vector3(6, 5, 1)
@@ -2146,6 +2150,14 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.4, -0.05)
 shape = SubResource("BoxShape3D_kwpaf")
+
+[node name="InvisibleWall6" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.5, 10.5, -71.75)
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall6"]
+shape = SubResource("BoxShape3D_6864n")
 
 [node name="InvisibleWall3" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 74.653, 14, -122.582)
@@ -6349,9 +6361,6 @@ transform = Transform3D(-1.03437, 0.029684, 0.177823, 0.0243192, 1.04915, -0.033
 [node name="PropFern1!1734321377_274" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("87_ww1vl")]
 transform = Transform3D(0.11543, 0.047107, 0.995919, -0.0619795, 1.00097, -0.0401624, -0.995104, -0.0568806, 0.118026, -12.6255, 14, -112.902)
 
-[node name="PropFern2!1734321379_49" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
-transform = Transform3D(-0.433, -0.471773, -0.785463, -0.388759, 0.881274, -0.315011, 0.829691, 0.166719, -0.557518, 4.16406, 11.8312, -74.3001)
-
 [node name="PropFern2!1734321392_655" parent="Map/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("88_qapdy")]
 transform = Transform3D(-0.216518, -0.0401306, 0.978609, 0.0188656, 1.00188, 0.0452589, -0.97925, 0.0281747, -0.215504, -9.15346, 14, -140.865)
 
@@ -8997,6 +9006,7 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -26.3, 0
 size = Vector3(3, 0.1, 14)
 
 [node name="SecretAreas" type="Node3D" parent="Map"]
+script = ExtResource("5_tfa5y")
 
 [node name="SecretArea" parent="Map/SecretAreas" instance=ExtResource("20_dw8x0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7, 6, -71.65)

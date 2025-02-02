@@ -15,12 +15,14 @@ public partial class PlayerHud : CanvasLayer
 	TextureRect candiedNutsRect,
 		dockLeafRect,
 		sanicleRect,
-		rangerBandageRect;
+		rangerBandageRect,
+		secretAreasRect;
 	[Export]
 	Label candiedNutsCounter,
 		dockLeavesCounter,
 		sanicleCounter,
-		rangerBandagesCounter;
+		rangerBandagesCounter,
+		secretAreaCounter;
 	[Export]
 	BoxContainer arrowList;
 	[Export]
@@ -136,6 +138,7 @@ public partial class PlayerHud : CanvasLayer
 		dockLeavesCounter.Text = dockLeaves.ToString();
 		sanicleCounter.Text = sanicle.ToString();
 		rangerBandagesCounter.Text = rangerBandages.ToString();
+		secretAreaCounter.Text = SecretAreas.GetSecretAreaCounter();
 
 		// set up event handlers
 		PlayerStatistics.statistics.HitPointsChanged += UpdateHitPoints;
@@ -146,6 +149,7 @@ public partial class PlayerHud : CanvasLayer
 		PlayerInventory.inventory.SanicleChanged += UpdateSanicle;
 		PlayerInventory.inventory.RangerBandagesChanged += UpdateRangerBandages;
 		PlayerInventory.inventory.ArrowAdded += UpdateArrows;
+		SecretAreas.secretAreasChanged += UpdateSecretAreas;
 	}
 
 
@@ -188,6 +192,7 @@ public partial class PlayerHud : CanvasLayer
 				sanicleRect.Visible = true;
 				rangerBandageRect.Visible = true;
 				arrowList.Visible = true;
+				secretAreasRect.Visible = true;
 
 				rectsVisible = true;
 			}
@@ -199,7 +204,7 @@ public partial class PlayerHud : CanvasLayer
 			sanicleRect.Visible = false;
 			rangerBandageRect.Visible = false;
 			arrowList.Visible = false;
-
+			secretAreasRect.Visible = false;
 
 			rectsVisible = false;
 		}
@@ -431,6 +436,15 @@ public partial class PlayerHud : CanvasLayer
 					break;
 			}
 		}
+
+		visibilityTimer = 5;
+	}
+
+
+
+	public void UpdateSecretAreas(string counterText)
+	{
+		secretAreaCounter.Text = counterText;
 
 		visibilityTimer = 5;
 	}

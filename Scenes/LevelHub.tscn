@@ -1,4 +1,4 @@
-[gd_scene load_steps=227 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=228 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -18,6 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c17yp7e6wr0s7" path="res://Models/level-hub-tree-walls.res" id="8_4d0ss"]
 [ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="8_7o44d"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="8_wqm4a"]
+[ext_resource type="Script" path="res://C#/SecretAreas.cs" id="10_6ffg7"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="10_m3qwn"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="11_cs5ks"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="12_dcqnf"]
@@ -2624,6 +2625,9 @@ transform = Transform3D(0.947713, 0, -0.319125, 0, 1, 0, 0.319125, 0, 0.947713, 
 
 [node name="CameraTarget" type="Node3D" parent="Map/Checkpoints/Checkpoint2"]
 transform = Transform3D(0.803853, 0.274659, -0.52762, 0, 0.887013, 0.461745, 0.594828, -0.371175, 0.713028, -6.59996, 4.32456, 0.0202627)
+
+[node name="SecretAreas" type="Node3D" parent="Map"]
+script = ExtResource("10_6ffg7")
 
 [node name="Pickups" type="Node3D" parent="Map"]
 
