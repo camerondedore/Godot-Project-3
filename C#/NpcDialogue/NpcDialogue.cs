@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using Dialogue;
+using System.Reflection.Metadata;
 
 namespace NonPlayerCharacter;
 
@@ -41,6 +42,11 @@ public partial class NpcDialogue : AudioTools3d
                     repeatingDialogues.Add(dialogue);
                 }
             }
+        }
+
+        if(dialogues.Count == 0)
+        {
+            useRepeatingDialogue = true;
         }
 
         // initialize states
