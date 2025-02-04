@@ -351,7 +351,7 @@ setNodes = [NodePath("../../../Map/LevelHub2ChangeTriggerArea")]
 [node name="Stage2" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 2
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Npcs/NpcLumsden2"), NodePath("../../Map/Cinematics/Cinematic5")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Npcs/NpcLumsden2"), NodePath("../../Map/Cinematics/Cinematic5"), NodePath("../../Map/Pickups/PickupCandiedNut2"), NodePath("../../Map/Pickups/PickupCandiedNut3"), NodePath("../../Map/Pickups/PickupCandiedNut4")]
 stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage2" node_paths=PackedStringArray("setNodes")]
@@ -2672,6 +2672,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 10.3925)
 
 [node name="PickupNettleBroth2" parent="Map/Pickups" instance=ExtResource("91_pm6y2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 11.6925)
+
+[node name="PickupCandiedNut2" parent="Map/Pickups" instance=ExtResource("42_0hot2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1, -21)
+
+[node name="PickupCandiedNut3" parent="Map/Pickups" instance=ExtResource("42_0hot2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.75, 1, -21.9)
+
+[node name="PickupCandiedNut4" parent="Map/Pickups" instance=ExtResource("42_0hot2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, 1, -24)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 
