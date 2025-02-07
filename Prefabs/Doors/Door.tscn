@@ -46,7 +46,7 @@ collision_mask = 0
 script = ExtResource("2_gc5mm")
 navLink = NodePath("../NavLink")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blocker"]
+[node name="Collider" type="CollisionShape3D" parent="Blocker"]
 shape = SubResource("BoxShape3D_f1rey")
 
 [node name="FxLock" parent="." instance=ExtResource("3_r3y81")]

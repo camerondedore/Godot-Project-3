@@ -1,0 +1,108 @@
+[gd_scene load_steps=17 format=3 uid="uid://clu5hd73rluk6"]
+
+[ext_resource type="ArrayMesh" uid="uid://0aduxfqo5n3u" path="res://Models/prop-cage.res" id="1_g5gfx"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_hsmcf"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_o5hl0"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_garyl"]
+[ext_resource type="ArrayMesh" uid="uid://dxlhnul27hami" path="res://Models/prop-cage-door.res" id="5_7s2ka"]
+[ext_resource type="Script" path="res://C#/Door.cs" id="5_erisd"]
+[ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="6_2g244"]
+[ext_resource type="AudioStream" uid="uid://dh8g7swhlp31k" path="res://Audio/door-open.wav" id="6_gxs78"]
+[ext_resource type="Script" path="res://C#/Blocker.cs" id="9_ku0h3"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="10_ux41y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgnxb"]
+size = Vector3(0.2, 2.5, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2d4e"]
+size = Vector3(1.6, 2.5, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxrhn"]
+size = Vector3(1.6, 0.2, 2.8)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yx814"]
+points = PackedVector3Array(0.8, 0.1, 1.4, -0.8, 0.1, 1.4, -0.8, -0.1, 1.4, 0.8, -0.1, 1.4, 0.8, 0.1, -0.8, -0.8, 0.1, -0.8, -0.8, -0.1, -1.4, 0.8, -0.1, -1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apf8y"]
+size = Vector3(1.5, 2.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ym0wl"]
+size = Vector3(1.65, 2.3, 0.2)
+
+[node name="PropCage" type="StaticBody3D"]
+
+[node name="CageMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+layers = 2
+gi_mode = 0
+mesh = ExtResource("1_g5gfx")
+surface_material_override/0 = ExtResource("2_hsmcf")
+surface_material_override/1 = ExtResource("3_o5hl0")
+surface_material_override/2 = ExtResource("4_garyl")
+
+[node name="CageCollider1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.25, 0)
+shape = SubResource("BoxShape3D_vgnxb")
+
+[node name="CageCollider2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.25, 0)
+shape = SubResource("BoxShape3D_vgnxb")
+
+[node name="CageCollider3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 1.25, 1.4)
+shape = SubResource("BoxShape3D_e2d4e")
+
+[node name="CageCollider4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 2.4, -0.1)
+shape = SubResource("BoxShape3D_lxrhn")
+
+[node name="CageCollider5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.1, -0.1)
+shape = SubResource("ConvexPolygonShape3D_yx814")
+
+[node name="Door" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774, 1.153, -1.482)
+collision_layer = 16
+script = ExtResource("5_erisd")
+openAngle = Vector3(0, 95, 0)
+openSound = ExtResource("6_gxs78")
+targetOffset = Vector3(1.437, -0.165, -0.01)
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774, 0.002, 0.082)
+layers = 2
+gi_mode = 0
+mesh = ExtResource("5_7s2ka")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_hsmcf")
+surface_material_override/1 = ExtResource("3_o5hl0")
+surface_material_override/2 = ExtResource("4_garyl")
+
+[node name="DoorCollider" type="CollisionShape3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774, 0.002, 0.082)
+shape = SubResource("BoxShape3D_apf8y")
+
+[node name="FxLock" parent="Door" instance=ExtResource("6_2g244")]
+transform = Transform3D(0.483404, 0.819216, -0.308555, -0.865534, 0.394519, -0.308555, -0.131042, 0.416221, 0.899771, 1.51247, -0.123784, -0.124434)
+
+[node name="Blocker" type="StaticBody3D" parent="Door" node_paths=PackedStringArray("navLink")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0.1)
+collision_layer = 2048
+collision_mask = 0
+script = ExtResource("9_ku0h3")
+navLink = NodePath("../NavLink")
+
+[node name="Collider" type="CollisionShape3D" parent="Door/Blocker"]
+shape = SubResource("BoxShape3D_ym0wl")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, 0)
+unit_size = 5.0
+max_distance = 30.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("10_ux41y")
+
+[node name="NavLink" type="NavigationLink3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -1.25, 0.05)
+start_position = Vector3(0, 0.25, -1.25)
+end_position = Vector3(0, 0.25, 1.25)

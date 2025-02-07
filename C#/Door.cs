@@ -11,9 +11,10 @@ public partial class Door : AnimatableBody3D, IBowTarget
     float speed = 2;
     [Export]
     AudioStream openSound;
+    [Export]
+    Vector3 targetOffset = new Vector3(-1.3f, -0.2f, 0);
     
     string arrowType = "pick";
-    Vector3 targetOffset = new Vector3(-1.3f, -0.2f, 0);
     CollisionShape3D doorCollider;
     FxLock lockFx;
     Blocker blocker;
