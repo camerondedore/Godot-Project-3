@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://pb43s4cr3c7g"]
+
+[ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_2cecp"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_foh2a"]
+[ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="3_tgvs8"]
+[ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="4_2k1lg"]
+[ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="5_cww2u"]
+
+[node name="LevelTemplate" type="Node3D"]
+
+[node name="GlobalCamera" parent="." instance=ExtResource("1_2cecp")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="LevelChange" parent="." instance=ExtResource("2_foh2a")]
+
+[node name="SpawnedObjectLoader" type="Node" parent="."]
+script = ExtResource("3_tgvs8")
+
+[node name="DialogueUi" parent="." instance=ExtResource("4_2k1lg")]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("5_cww2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Lighting" type="Node3D" parent="Map"]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
+
+[node name="Enemies" type="Node3D" parent="."]
