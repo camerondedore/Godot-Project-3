@@ -25,9 +25,7 @@ public partial class NpcSimple : CharacterBody3D, IActivatable
         turnRightAnimationName,
         turnLeftAnimationName;
     [Export]
-    public float speed = 5f,
-        lookTime = 1f,
-        acceleration = 10f,
+    public float lookTime = 1f,
         lookSpeed = 7f;
     [Export]
     public bool saveToWorldData = false,
