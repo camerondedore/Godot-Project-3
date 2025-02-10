@@ -38,13 +38,13 @@ public partial class NpcSimple : CharacterBody3D, IActivatable
     public NpcCameraControl cameraControl;
     public NpcDialogue dialogue;
     public CollisionShape3D collider;
-    public bool bodyInTrigger;
     public PlayerCharacter player;
     public Vector3 initLookDirection,
         startLookDirection,
         targetLookDirection;
     public float lookCursor,
         cursorTimeMultiplier;
+    public bool bodyInTrigger;
 
 
 
