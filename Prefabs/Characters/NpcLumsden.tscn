@@ -30,8 +30,6 @@ linkedObjects = []
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("CapsuleShape3D_aceh1")
 
-[node name="NavAgent" type="NavigationAgent3D" parent="."]
-
 [node name="character-lumsden" parent="." instance=ExtResource("1_uc5av")]
 
 [node name="Skeleton3D" parent="character-lumsden/character-armature" index="0"]
