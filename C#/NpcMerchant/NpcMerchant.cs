@@ -24,8 +24,7 @@ public partial class NpcMerchant : CharacterBody3D
         turnLeftAnimationName,
         giveAnimationName;
     [Export]
-    public float lookTime = 1f,
-        lookSpeed = 7f;
+    public float lookTime = 1f;
 
     public Area3D offerTriggerArea,
         crierTriggerArea;

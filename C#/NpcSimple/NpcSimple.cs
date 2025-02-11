@@ -25,8 +25,7 @@ public partial class NpcSimple : CharacterBody3D, IActivatable
         turnRightAnimationName,
         turnLeftAnimationName;
     [Export]
-    public float lookTime = 1f,
-        lookSpeed = 7f;
+    public float lookTime = 1f;
     [Export]
     public bool saveToWorldData = false,
         freezePlayer = false;

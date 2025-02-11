@@ -27,12 +27,6 @@ public partial class NpcMerchantStateTurn : NpcMerchantState
         angleToTargetDirection = Mathf.Clamp(angleToTargetDirection, 1f, 3.14f);
         blackboard.cursorTimeMultiplier = 3.14f / (blackboard.lookTime * angleToTargetDirection);
 
-        if(blackboard.dialogue.useRepeatingDialogue == false)
-        {
-            blackboard.cameraControl.EnableCameraControl(blackboard.player);
-        }
-
-
         var targetDirectionLocal = blackboard.ToLocal(blackboard.GlobalPosition + blackboard.targetLookDirection).Normalized();
 
         if(targetDirectionLocal.X > 0)
@@ -67,16 +61,8 @@ public partial class NpcMerchantStateTurn : NpcMerchantState
         // check if look target is init look direction
         if(blackboard.targetLookDirection != blackboard.initLookDirection)
         {
-            // if(blackboard.dialogue.useRepeatingDialogue == false)
-            // {
-                // one-time dialogue
-                return blackboard.stateTalk;
-            // }
-            // else
-            // {
-            //     // repeating dialogue
-            //     return blackboard.stateTalkRepeating;
-            // }
+            // dialogue
+            return blackboard.stateTalk;
         }
         else 
         {
