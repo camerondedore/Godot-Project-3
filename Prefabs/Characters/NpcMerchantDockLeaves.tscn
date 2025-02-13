@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_181p2"]
 [ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_efpub"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_bevfa"]
-[ext_resource type="Material" uid="uid://bxgss8yqy8jjj" path="res://Materials/Characters/CharacterLumsden.tres" id="3_wtxgi"]
+[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_jphvc"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_kd7c3"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="5_36nlv"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="6_ktaee"]
@@ -117,7 +117,7 @@ transform = Transform3D(1, 1.11897e-08, -3.57453e-07, -5.558e-17, 0.99951, 0.031
 surface_material_override/0 = ExtResource("2_bevfa")
 
 [node name="character-lumsden" parent="character-lumsden/character-armature/Skeleton3D" index="1"]
-surface_material_override/0 = ExtResource("3_wtxgi")
+surface_material_override/0 = ExtResource("4_jphvc")
 surface_material_override/1 = ExtResource("4_kd7c3")
 
 [node name="CharacterFootsteps" parent="." instance=ExtResource("6_ktaee")]

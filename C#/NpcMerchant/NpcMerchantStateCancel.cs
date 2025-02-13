@@ -22,6 +22,9 @@ public partial class NpcMerchantStateCancel : NpcMerchantState
         blackboard.EndDialogue();
         blackboard.cameraControl.DisableCameraControl();
 
+        // lock cursor
+        Input.MouseMode = Input.MouseModeEnum.Captured;
+
         // set new look direction
         blackboard.targetLookDirection = blackboard.initLookDirection;
     }
