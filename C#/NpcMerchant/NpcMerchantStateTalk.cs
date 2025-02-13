@@ -23,11 +23,11 @@ public partial class NpcMerchantStateTalk : NpcMerchantState
 
     public override void EndState()
     {
-        blackboard.EndDialogue();
-        blackboard.cameraControl.DisableCameraControl();
+        //blackboard.EndDialogue();
+        //blackboard.cameraControl.DisableCameraControl();
 
         // set new look direction
-        blackboard.targetLookDirection = blackboard.initLookDirection;
+        //blackboard.targetLookDirection = blackboard.initLookDirection;
     }
 
 

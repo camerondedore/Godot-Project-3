@@ -128,6 +128,12 @@ max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_36nlv")
 
+[node name="DialogueLine" type="Node" parent="."]
+script = ExtResource("15_yxc73")
+dialogueAudio = ExtResource("16_hyrcb")
+dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
+repeat = true
+
 [node name="OfferTriggerArea" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 128
@@ -236,10 +242,5 @@ offset_right = 501.0
 offset_bottom = 117.0
 text = "Cancel
 "
-
-[node name="Dialogue2" type="Node" parent="."]
-script = ExtResource("15_yxc73")
-dialogueAudio = ExtResource("16_hyrcb")
-dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
 
 [editable path="character-lumsden"]

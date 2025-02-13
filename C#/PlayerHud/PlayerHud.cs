@@ -50,6 +50,7 @@ public partial class PlayerHud : CanvasLayer
 		visibilityTimer;
 	float hitPoints,
 		hitPointsPerBar,
+		candiedNuts,
 		dockLeaves,
 		sanicle,
 		rangerBandages;
@@ -75,6 +76,7 @@ public partial class PlayerHud : CanvasLayer
 		hitPointsPerBar = currentStatistics.HitPointsPerUpgrade;
 
 		// get from inventory
+		candiedNuts = currentInventory.CandiedNuts;
 		dockLeaves = currentInventory.DockLeaves;
 		sanicle = currentInventory.Sanicle;
 		rangerBandages = currentInventory.RangerBandages;
@@ -329,11 +331,19 @@ public partial class PlayerHud : CanvasLayer
 
 	public void UpdateCandiedNuts(int newCandiedNuts)
 	{
+		if(newCandiedNuts > candiedNuts)
+		{
+			// spawn pickup
+			hudPickups.AddCandiedNut();
+		}
+		else
+		{
+			hudPickups.RemoveCandiedNut();
+		}
+
 		// update label
 		candiedNutsCounter.Text = newCandiedNuts.ToString();
-
-		// spawn pickup
-		hudPickups.AddCandiedNut();
+		candiedNuts = newCandiedNuts;
 		
 		visibilityTimer = 5;
 	}

@@ -36,6 +36,13 @@ public partial class PlayerHudPickups : Control
 
 
 
+    public void RemoveCandiedNut()
+    {   
+        SpawnPickup(candiedNutsPickup, candiedNutsPickupEnd.Position, pickupStart.Position);
+    }
+
+
+
     public void AddDockLeaf()
     {   
         SpawnPickup(dockLeafPickup, pickupStart.Position, dockLeafPickupEnd.Position);
