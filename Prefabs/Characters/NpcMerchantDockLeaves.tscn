@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dnv8uatflbgos"]
+[gd_scene load_steps=21 format=3 uid="uid://dnv8uatflbgos"]
 
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_181p2"]
 [ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_efpub"]
@@ -6,12 +6,17 @@
 [ext_resource type="Material" uid="uid://bxgss8yqy8jjj" path="res://Materials/Characters/CharacterLumsden.tres" id="3_wtxgi"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_kd7c3"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="5_36nlv"]
+[ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="6_ktaee"]
 [ext_resource type="Script" path="res://C#/NpcSimple/NpcCameraControl.cs" id="6_uma7w"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_t71bs"]
 [ext_resource type="Texture2D" uid="uid://beas7mo07cvml" path="res://UI/ui-container.png" id="8_rr02h"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="9_0o4ei"]
+[ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="9_1yxe6"]
 [ext_resource type="Texture2D" uid="uid://bkmitgsbglkc5" path="res://UI/ui-trade-arrow.png" id="9_cb0m7"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="10_nt580"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="12_0lb34"]
+[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="15_yxc73"]
+[ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="16_hyrcb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bbtnp"]
 radius = 0.4
@@ -20,6 +25,10 @@ height = 1.8
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_48lis"]
 height = 0.2
 radius = 1.75
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lth74"]
+height = 1.5
+radius = 4.0
 
 [node name="NpcMerchantDockLeaves" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
 collision_layer = 2
@@ -111,20 +120,38 @@ surface_material_override/0 = ExtResource("2_bevfa")
 surface_material_override/0 = ExtResource("3_wtxgi")
 surface_material_override/1 = ExtResource("4_kd7c3")
 
+[node name="CharacterFootsteps" parent="." instance=ExtResource("6_ktaee")]
+
 [node name="Dialogue" type="AudioStreamPlayer3D" parent="."]
 unit_size = 20.0
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_36nlv")
 
-[node name="TriggerArea" type="Area3D" parent="."]
+[node name="OfferTriggerArea" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 128
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfferTriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 shape = SubResource("CylinderShape3D_48lis")
+
+[node name="CrierTriggerArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrierTriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("CylinderShape3D_lth74")
+
+[node name="ItemSpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65)
+script = ExtResource("7_t71bs")
+prefab = ExtResource("9_1yxe6")
+velocity = Vector3(0, 0.2, -1.5)
+useAngularVelocity = false
 
 [node name="NpcCameraControl" type="Node" parent="."]
 script = ExtResource("6_uma7w")
@@ -163,7 +190,7 @@ texture = ExtResource("9_0o4ei")
 expand_mode = 1
 metadata/_edit_group_ = true
 
-[node name="Label" type="Label" parent="MerchantUi/Background/PriceRect"]
+[node name="PriceLabel" type="Label" parent="MerchantUi/Background/PriceRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -209,5 +236,10 @@ offset_right = 501.0
 offset_bottom = 117.0
 text = "Cancel
 "
+
+[node name="Dialogue2" type="Node" parent="."]
+script = ExtResource("15_yxc73")
+dialogueAudio = ExtResource("16_hyrcb")
+dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
 
 [editable path="character-lumsden"]

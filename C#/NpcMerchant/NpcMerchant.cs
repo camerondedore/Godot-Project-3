@@ -25,18 +25,24 @@ public partial class NpcMerchant : CharacterBody3D
         giveAnimationName;
     [Export]
     public float lookTime = 1f;
+    [Export]
+    public int price = 15;
 
     public Area3D offerTriggerArea,
         crierTriggerArea;
     public NpcCameraControl cameraControl;
     public NpcDialogue dialogue;
-    public bool bodyInTrigger;
     public PlayerCharacter player;
+    public RigidbodySpawner itemSpawner;
     public Vector3 initLookDirection,
         startLookDirection,
         targetLookDirection;
+    public CanvasLayer merchantUi;
+    public Button yesButton,
+        noButton;
     public float lookCursor,
         cursorTimeMultiplier;
+    public bool bodyInTrigger;
     
 
 
@@ -48,12 +54,20 @@ public partial class NpcMerchant : CharacterBody3D
         crierTriggerArea = (Area3D) GetNode("CrierTriggerArea");
         cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
         dialogue = (NpcDialogue) GetNode("Dialogue");
+        merchantUi = (CanvasLayer) GetNode("MerchantUi");
+        yesButton = (Button) GetNode("MerchantUi/Background/YesButton");
+        noButton = (Button) GetNode("MerchantUi/Background/NoButton");
+        itemSpawner = (RigidbodySpawner) GetNode("ItemSpawner");
+
+        merchantUi.Visible = false;
 
         initLookDirection = -Basis.Z;
 
         // set up events
         offerTriggerArea.BodyEntered += TriggerOffer;
         offerTriggerArea.BodyExited += OfferTriggerReset;
+        yesButton.Pressed += AcceptTrade;
+        noButton.Pressed += CancelTrade;
 
         // initialize states
         stateIdle = new NpcMerchantStateIdle(){blackboard = this};
@@ -136,5 +150,21 @@ public partial class NpcMerchant : CharacterBody3D
     public void OfferTriggerReset(Node3D body)
     {
         bodyInTrigger = false;
+    }
+
+
+
+    public void AcceptTrade()
+    {
+        // sell
+        machine.SetState(stateSell);
+    }
+
+
+
+    public void CancelTrade()
+    {
+        // canel
+        machine.SetState(stateCancel);
     }
 }

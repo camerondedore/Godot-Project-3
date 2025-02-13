@@ -73,6 +73,17 @@ public partial class PlayerInventory : Node
 
 
 
+    public void RemoveCandiedNuts(int candiedNuts)
+    {
+        currentInventory.CandiedNuts -= candiedNuts;
+
+        currentInventory.CandiedNuts = Mathf.Clamp(currentInventory.CandiedNuts, 0, int.MaxValue);
+
+        CandiedNutsChanged.Invoke(currentInventory.CandiedNuts);
+    }
+
+
+
     public void AddDockLeaves(int dockLeaves)
     {
         currentInventory.DockLeaves += dockLeaves;
