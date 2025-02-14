@@ -31,9 +31,6 @@ public partial class NpcMerchant : CharacterBody3D
     public float lookTime = 1f;
     [Export]
     public int price = 15;
-    [Export]
-    public NpcDialogueLine offerDialogueLine,
-        crierDialogueLine;
 
     public Area3D offerTriggerArea,
         crierTriggerArea;
@@ -41,6 +38,8 @@ public partial class NpcMerchant : CharacterBody3D
     public NpcDialogue dialogue;
     public PlayerCharacter player;
     public RigidbodySpawner itemSpawner;
+    public NpcDialogueLine offerDialogueLine,
+        crierDialogueLine;
     public Vector3 initLookDirection,
         startLookDirection,
         targetLookDirection;
@@ -66,6 +65,8 @@ public partial class NpcMerchant : CharacterBody3D
         yesButton = (Button) GetNode("MerchantUi/Background/YesButton");
         noButton = (Button) GetNode("MerchantUi/Background/NoButton");
         itemSpawner = (RigidbodySpawner) GetNode("ItemSpawner");
+        offerDialogueLine = (NpcDialogueLine) GetNode("DialogueLineOffer");
+        crierDialogueLine = (NpcDialogueLine) GetNode("DialogueLineCrier");
 
         merchantUi.Visible = false;
 

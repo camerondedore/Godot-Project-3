@@ -1,0 +1,174 @@
+[gd_scene load_steps=19 format=3 uid="uid://c7slnpl4qc3rv"]
+
+[ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_v3rjd"]
+[ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="2_pgjbw"]
+[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="3_d8x7a"]
+[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="4_1cv6r"]
+[ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="5_7qm6n"]
+[ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="6_4ey2s"]
+[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_5lr1c"]
+[ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="8_y5o4o"]
+[ext_resource type="Script" path="res://C#/NpcSimple/NpcCameraControl.cs" id="9_8fp5w"]
+[ext_resource type="Texture2D" uid="uid://beas7mo07cvml" path="res://UI/ui-container.png" id="10_3n8yx"]
+[ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="11_re4cf"]
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="12_gb0k4"]
+[ext_resource type="Texture2D" uid="uid://bkmitgsbglkc5" path="res://UI/ui-trade-arrow.png" id="13_4nbxi"]
+[ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="14_h5tjt"]
+[ext_resource type="Theme" uid="uid://bjt6nx7mu8u48" path="res://UI/MenusTheme.tres" id="15_p5afd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bbtnp"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_48lis"]
+height = 0.2
+radius = 2.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lth74"]
+height = 1.5
+radius = 4.0
+
+[node name="NpcMerchantBase" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
+collision_layer = 2
+script = ExtResource("1_v3rjd")
+animation = NodePath("")
+idleAnimationName = "lumsden-idle"
+talkAnimationName = "lumsden-talk"
+crierAnimationName = "lumsden-talk"
+turnRightAnimationName = "lumsden-turn-right"
+turnLeftAnimationName = "lumsden-turn-left"
+giveAnimationName = "lumsden-give"
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("CapsuleShape3D_bbtnp")
+
+[node name="CharacterFootsteps" parent="." instance=ExtResource("2_pgjbw")]
+
+[node name="Dialogue" type="AudioStreamPlayer3D" parent="."]
+unit_size = 20.0
+max_distance = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("3_d8x7a")
+
+[node name="DialogueLineOffer" type="Node" parent="."]
+script = ExtResource("4_1cv6r")
+dialogueAudio = ExtResource("5_7qm6n")
+dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
+
+[node name="DialogueLineCrier" type="Node" parent="."]
+script = ExtResource("4_1cv6r")
+dialogueAudio = ExtResource("6_4ey2s")
+dialogueText = "Hey, would you consider a trade?"
+
+[node name="OfferTriggerArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OfferTriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+shape = SubResource("CylinderShape3D_48lis")
+
+[node name="CrierTriggerArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 128
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrierTriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("CylinderShape3D_lth74")
+
+[node name="ItemSpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
+script = ExtResource("7_5lr1c")
+prefab = ExtResource("8_y5o4o")
+velocity = Vector3(0, 0.5, -2)
+spread = 0.5
+useAngularVelocity = false
+
+[node name="NpcCameraControl" type="Node" parent="."]
+script = ExtResource("9_8fp5w")
+lockedCameraHeight = 1.75
+lockedCameraRadius = 4.0
+
+[node name="MerchantUi" type="CanvasLayer" parent="."]
+
+[node name="Background" type="NinePatchRect" parent="MerchantUi"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -200.0
+offset_right = 275.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_3n8yx")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="PriceRect" type="TextureRect" parent="MerchantUi/Background"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 31.0
+offset_right = 135.0
+offset_bottom = 131.0
+texture = ExtResource("11_re4cf")
+expand_mode = 1
+metadata/_edit_group_ = true
+
+[node name="PriceLabel" type="Label" parent="MerchantUi/Background/PriceRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_gb0k4")
+text = "15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="ArrowRect" type="TextureRect" parent="MerchantUi/Background"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 59.0
+offset_right = 216.0
+offset_bottom = 109.0
+texture = ExtResource("13_4nbxi")
+expand_mode = 1
+
+[node name="SellingRect" type="TextureRect" parent="MerchantUi/Background"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 31.0
+offset_right = 348.0
+offset_bottom = 131.0
+texture = ExtResource("14_h5tjt")
+expand_mode = 1
+
+[node name="YesButton" type="Button" parent="MerchantUi/Background"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 29.0
+offset_right = 519.0
+offset_bottom = 74.0
+theme = ExtResource("15_p5afd")
+text = "Trade"
+
+[node name="NoButton" type="Button" parent="MerchantUi/Background"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 89.0
+offset_right = 519.0
+offset_bottom = 134.0
+theme = ExtResource("15_p5afd")
+text = "Cancel
+"

@@ -13,7 +13,7 @@ public partial class NpcMerchantStateCrier : NpcMerchantState
     public override void StartState()
     {
         // animation
-        blackboard.animation.Play(blackboard.talkAnimationName);
+        blackboard.animation.Play(blackboard.crierAnimationName);
 
         // talk
         blackboard.dialogue.Talk(blackboard.crierDialogueLine);

@@ -1,55 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://dnv8uatflbgos"]
+[gd_scene load_steps=6 format=3 uid="uid://dnv8uatflbgos"]
 
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_181p2"]
-[ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_efpub"]
+[ext_resource type="PackedScene" uid="uid://c7slnpl4qc3rv" path="res://Prefabs/Characters/NpcMerchantBase.tscn" id="1_mbbxm"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_bevfa"]
 [ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_jphvc"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_kd7c3"]
-[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="5_36nlv"]
-[ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="6_ktaee"]
-[ext_resource type="Script" path="res://C#/NpcSimple/NpcCameraControl.cs" id="6_uma7w"]
-[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_t71bs"]
-[ext_resource type="Texture2D" uid="uid://beas7mo07cvml" path="res://UI/ui-container.png" id="8_rr02h"]
-[ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="9_0o4ei"]
-[ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="9_1yxe6"]
-[ext_resource type="Texture2D" uid="uid://bkmitgsbglkc5" path="res://UI/ui-trade-arrow.png" id="9_cb0m7"]
-[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="10_nt580"]
-[ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="10_skprt"]
-[ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="12_0lb34"]
-[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="15_yxc73"]
-[ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="16_hyrcb"]
-[ext_resource type="Theme" uid="uid://bjt6nx7mu8u48" path="res://UI/MenusTheme.tres" id="18_o3bsv"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bbtnp"]
-radius = 0.4
-height = 1.8
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_48lis"]
-height = 0.2
-radius = 2.0
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_lth74"]
-height = 1.5
-radius = 4.0
-
-[node name="NpcMerchantDockLeaves" type="CharacterBody3D" node_paths=PackedStringArray("animation", "offerDialogueLine", "crierDialogueLine")]
-collision_layer = 2
-script = ExtResource("1_efpub")
+[node name="NpcMerchantDockLeaves" node_paths=PackedStringArray("animation") instance=ExtResource("1_mbbxm")]
 animation = NodePath("character-lumsden/AnimationPlayer")
-idleAnimationName = "lumsden-idle"
-talkAnimationName = "lumsden-talk"
-crierAnimationName = "lumsden-talk"
-turnRightAnimationName = "lumsden-turn-right"
-turnLeftAnimationName = "lumsden-turn-left"
-giveAnimationName = "lumsden-give"
-offerDialogueLine = NodePath("DialogueLineOffer")
-crierDialogueLine = NodePath("DialogueLineCrier")
 
-[node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
-shape = SubResource("CapsuleShape3D_bbtnp")
-
-[node name="character-lumsden" parent="." instance=ExtResource("1_181p2")]
+[node name="character-lumsden" parent="." index="1" instance=ExtResource("1_181p2")]
 
 [node name="Skeleton3D" parent="character-lumsden/character-armature" index="0"]
 bones/0/position = Vector3(0.286071, -0.165846, -0.177908)
@@ -67,9 +27,11 @@ bones/8/rotation = Quaternion(-0.0632832, -5.00736e-10, -1.47062e-08, 0.997996)
 bones/9/position = Vector3(0.0671968, 0.271934, 0.0571533)
 bones/9/rotation = Quaternion(0.0320906, -0.00889782, -0.00856718, 0.999409)
 bones/11/position = Vector3(0.0671795, 0.333172, -0.0829992)
+bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0671968, 0.271934, 0.0571532)
 bones/15/rotation = Quaternion(0.0320906, -0.00889782, -0.00856718, 0.999409)
 bones/17/position = Vector3(-0.0671795, 0.333172, -0.0829992)
+bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(-0.63661, -0.316794, -0.352519, 0.608358)
 bones/21/rotation = Quaternion(-0.466409, -0.374495, 0.295273, 0.745003)
 bones/22/rotation = Quaternion(0.239543, -0.00525863, 0.0162992, 0.970735)
@@ -116,7 +78,7 @@ bones/60/position = Vector3(0.43106, -0.953172, 0.300915)
 bones/60/rotation = Quaternion(0.70702, 0.0110636, -0.70702, 0.0110636)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, 1.11897e-08, -3.57453e-07, -5.558e-17, 0.99951, 0.0312888, 3.57628e-07, -0.0312888, 0.99951, -0.300915, -0.046828, -0.43106)
+transform = Transform3D(1, 1.4915e-08, -3.57453e-07, -3.72529e-09, 0.99951, 0.0312887, 3.57628e-07, -0.0312886, 0.99951, -0.300915, -0.0468281, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 surface_material_override/0 = ExtResource("2_bevfa")
@@ -127,135 +89,5 @@ surface_material_override/1 = ExtResource("4_kd7c3")
 
 [node name="AnimationPlayer" parent="character-lumsden" index="1"]
 playback_default_blend_time = 0.1
-
-[node name="CharacterFootsteps" parent="." instance=ExtResource("6_ktaee")]
-
-[node name="Dialogue" type="AudioStreamPlayer3D" parent="."]
-unit_size = 20.0
-max_distance = 50.0
-attenuation_filter_cutoff_hz = 20500.0
-script = ExtResource("5_36nlv")
-
-[node name="DialogueLineOffer" type="Node" parent="."]
-script = ExtResource("15_yxc73")
-dialogueAudio = ExtResource("16_hyrcb")
-dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
-
-[node name="DialogueLineCrier" type="Node" parent="."]
-script = ExtResource("15_yxc73")
-dialogueAudio = ExtResource("10_skprt")
-dialogueText = "Hey, would you consider a trade?"
-
-[node name="OfferTriggerArea" type="Area3D" parent="."]
-collision_layer = 0
-collision_mask = 128
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="OfferTriggerArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
-shape = SubResource("CylinderShape3D_48lis")
-
-[node name="CrierTriggerArea" type="Area3D" parent="."]
-collision_layer = 0
-collision_mask = 128
-monitorable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CrierTriggerArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
-shape = SubResource("CylinderShape3D_lth74")
-
-[node name="ItemSpawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
-script = ExtResource("7_t71bs")
-prefab = ExtResource("9_1yxe6")
-velocity = Vector3(0, 0.5, -2)
-spread = 0.5
-useAngularVelocity = false
-
-[node name="NpcCameraControl" type="Node" parent="."]
-script = ExtResource("6_uma7w")
-lockedCameraHeight = 1.75
-lockedCameraRadius = 4.0
-
-[node name="MerchantUi" type="CanvasLayer" parent="."]
-
-[node name="Background" type="NinePatchRect" parent="MerchantUi"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -275.0
-offset_top = -200.0
-offset_right = 275.0
-offset_bottom = -40.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-texture = ExtResource("8_rr02h")
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
-
-[node name="PriceRect" type="TextureRect" parent="MerchantUi/Background"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 31.0
-offset_right = 135.0
-offset_bottom = 131.0
-texture = ExtResource("9_0o4ei")
-expand_mode = 1
-metadata/_edit_group_ = true
-
-[node name="PriceLabel" type="Label" parent="MerchantUi/Background/PriceRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("10_nt580")
-text = "15"
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="ArrowRect" type="TextureRect" parent="MerchantUi/Background"]
-layout_mode = 0
-offset_left = 166.0
-offset_top = 59.0
-offset_right = 216.0
-offset_bottom = 109.0
-texture = ExtResource("9_cb0m7")
-expand_mode = 1
-
-[node name="SellingRect" type="TextureRect" parent="MerchantUi/Background"]
-layout_mode = 0
-offset_left = 248.0
-offset_top = 31.0
-offset_right = 348.0
-offset_bottom = 131.0
-texture = ExtResource("12_0lb34")
-expand_mode = 1
-
-[node name="YesButton" type="Button" parent="MerchantUi/Background"]
-layout_mode = 0
-offset_left = 419.0
-offset_top = 29.0
-offset_right = 519.0
-offset_bottom = 74.0
-theme = ExtResource("18_o3bsv")
-text = "Trade"
-
-[node name="NoButton" type="Button" parent="MerchantUi/Background"]
-layout_mode = 0
-offset_left = 419.0
-offset_top = 89.0
-offset_right = 519.0
-offset_bottom = 134.0
-theme = ExtResource("18_o3bsv")
-text = "Cancel
-"
 
 [editable path="character-lumsden"]
