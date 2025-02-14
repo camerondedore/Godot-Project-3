@@ -6,13 +6,13 @@ namespace NonPlayerCharacter;
 public partial class NpcMerchantStateCancel : NpcMerchantState
 {
 
-    
+    double startTime;
 
 
 
     public override void StartState()
     {
-
+        startTime = EngineTime.timePassed;        
     }
 
 
@@ -33,7 +33,12 @@ public partial class NpcMerchantStateCancel : NpcMerchantState
 
     public override State Transition()
     {
-        // turn
-        return blackboard.stateTurn;
+        if(EngineTime.timePassed > startTime + 0.15f)
+        {
+            // turn
+            return blackboard.stateTurn;
+        }
+
+        return this;
     }
 }

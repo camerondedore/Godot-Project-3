@@ -30,7 +30,7 @@ public partial class NpcMerchantStateSell : NpcMerchantState
     public override void StartState()
     {
         startTime = EngineTime.timePassed;
-        itemGiven = false;
+        itemGiven = false;        
 
         // animation
         blackboard.animation.Play(blackboard.giveAnimationName);

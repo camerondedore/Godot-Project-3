@@ -19,6 +19,12 @@ public partial class NpcMerchantStateTurn : NpcMerchantState
 
     public override void StartState()
     {
+        // check if look target is turning to look at player
+        if(blackboard.targetLookDirection != blackboard.initLookDirection)
+        {
+            blackboard.cameraControl.EnableCameraControl(blackboard.player);
+        }
+
         blackboard.lookCursor = 0;
         blackboard.startLookDirection = -blackboard.Basis.Z;
 

@@ -28,6 +28,8 @@ public partial class NpcMerchantStateTalk : NpcMerchantState
 
         // set new look direction
         //blackboard.targetLookDirection = blackboard.initLookDirection;
+
+        blackboard.animation.Play(blackboard.idleAnimationName);
     }
 
 
