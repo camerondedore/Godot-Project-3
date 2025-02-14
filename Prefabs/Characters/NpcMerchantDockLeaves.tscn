@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dnv8uatflbgos"]
+[gd_scene load_steps=23 format=3 uid="uid://dnv8uatflbgos"]
 
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_181p2"]
 [ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_efpub"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="9_1yxe6"]
 [ext_resource type="Texture2D" uid="uid://bkmitgsbglkc5" path="res://UI/ui-trade-arrow.png" id="9_cb0m7"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="10_nt580"]
+[ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="10_skprt"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="12_0lb34"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="15_yxc73"]
 [ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="16_hyrcb"]
@@ -31,15 +32,18 @@ radius = 2.0
 height = 1.5
 radius = 4.0
 
-[node name="NpcMerchantDockLeaves" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
+[node name="NpcMerchantDockLeaves" type="CharacterBody3D" node_paths=PackedStringArray("animation", "offerDialogueLine", "crierDialogueLine")]
 collision_layer = 2
 script = ExtResource("1_efpub")
 animation = NodePath("character-lumsden/AnimationPlayer")
 idleAnimationName = "lumsden-idle"
 talkAnimationName = "lumsden-talk"
+crierAnimationName = "lumsden-talk"
 turnRightAnimationName = "lumsden-turn-right"
 turnLeftAnimationName = "lumsden-turn-left"
 giveAnimationName = "lumsden-give"
+offerDialogueLine = NodePath("DialogueLineOffer")
+crierDialogueLine = NodePath("DialogueLineCrier")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -132,11 +136,15 @@ max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_36nlv")
 
-[node name="DialogueLine" type="Node" parent="."]
+[node name="DialogueLineOffer" type="Node" parent="."]
 script = ExtResource("15_yxc73")
 dialogueAudio = ExtResource("16_hyrcb")
 dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
-repeat = true
+
+[node name="DialogueLineCrier" type="Node" parent="."]
+script = ExtResource("15_yxc73")
+dialogueAudio = ExtResource("10_skprt")
+dialogueText = "Hey, would you consider a trade?"
 
 [node name="OfferTriggerArea" type="Area3D" parent="."]
 collision_layer = 0

@@ -17,7 +17,7 @@ public partial class NpcDialogueStateTalkRepeating : NpcDialogueState
         var currentDialogue = blackboard.repeatingDialogues[dialogueIndex];
 
         // npc speak
-        blackboard.Speak(currentDialogue.dialogueAudio, currentDialogue.dialogueText, currentDialogue.dialogueAudio.GetLength() + 0.1f);
+        blackboard.Speak(currentDialogue);
 
         lastDialogueTime = EngineTime.timePassed;
         dialogueLength = currentDialogue.dialogueAudio.GetLength() + 0.1f;

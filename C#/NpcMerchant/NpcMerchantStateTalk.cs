@@ -16,7 +16,7 @@ public partial class NpcMerchantStateTalk : NpcMerchantState
         blackboard.animation.Play(blackboard.talkAnimationName);
 
         // talk
-        blackboard.dialogue.Talk();
+        blackboard.dialogue.Talk(blackboard.offerDialogueLine);
     }
 
 

@@ -12,13 +12,15 @@ public partial class NpcDialogue : AudioTools3d
     public StateMachineQueue machine = new StateMachineQueue();
     public State stateWait,
         stateTalk,
-        stateTalkRepeating;
+        stateTalkRepeating,
+        stateTalkOnDemand;
 
     [Export]
     int dialogueSpeaker = 1;
     
     public List<NpcDialogueLine> dialogues = new List<NpcDialogueLine>(),
         repeatingDialogues = new List<NpcDialogueLine>();
+    public NpcDialogueLine dialogueOnDemand;
     public bool useRepeatingDialogue = false,   
         waiting = true;
 
@@ -53,6 +55,7 @@ public partial class NpcDialogue : AudioTools3d
         stateWait = new NpcDialogueStateWait(){blackboard = this};
         stateTalk = new NpcDialogueStateTalk(){blackboard = this};
         stateTalkRepeating = new NpcDialogueStateTalkRepeating(){blackboard = this};
+        stateTalkOnDemand = new NpcDialogueStateTalkOnDemand(){blackboard = this};
 
         // set first state in machine
         machine.SetState(stateWait);
@@ -82,6 +85,14 @@ public partial class NpcDialogue : AudioTools3d
 
 
 
+    public void Speak(NpcDialogueLine line)
+    {
+        PlaySound(line.dialogueAudio, 0);
+        DialogueUi.dialogueUi.DisplayDialogue(line.dialogueText, line.dialogueAudio.GetLength() + 0.1f);
+    }
+
+
+
     public void Talk()
     {
         if(useRepeatingDialogue == false)
@@ -94,5 +105,16 @@ public partial class NpcDialogue : AudioTools3d
             // talk repeating
             machine.SetState(stateTalkRepeating);
         }
+    }
+
+
+
+    public void Talk(NpcDialogueLine line)
+    {
+        dialogueOnDemand = line;
+
+        // talk on demand
+        machine.SetState(stateTalkOnDemand);
+        machine.CurrentState.StartState();
     }
 }

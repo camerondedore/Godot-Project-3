@@ -1,6 +1,8 @@
 using Godot;
 using System;
 using PlayerCharacterComplex;
+using Dialogue;
+using System.Net.Http.Headers;
 
 namespace NonPlayerCharacter;
 
@@ -10,6 +12,7 @@ public partial class NpcMerchant : CharacterBody3D
     public StateMachineQueue machine = new StateMachineQueue();
     public State stateIdle,
         stateTalk,
+        stateCrier,
         stateOffer,
         stateSell,
         stateCancel,
@@ -20,6 +23,7 @@ public partial class NpcMerchant : CharacterBody3D
     [Export]
     public string idleAnimationName,
         talkAnimationName,
+        crierAnimationName,
         turnRightAnimationName,
         turnLeftAnimationName,
         giveAnimationName;
@@ -27,6 +31,9 @@ public partial class NpcMerchant : CharacterBody3D
     public float lookTime = 1f;
     [Export]
     public int price = 15;
+    [Export]
+    public NpcDialogueLine offerDialogueLine,
+        crierDialogueLine;
 
     public Area3D offerTriggerArea,
         crierTriggerArea;
@@ -42,7 +49,8 @@ public partial class NpcMerchant : CharacterBody3D
         noButton;
     public float lookCursor,
         cursorTimeMultiplier;
-    public bool bodyInTrigger;
+    public bool bodyInOfferTrigger,
+        bodyInCrierTrigger;
     
 
 
@@ -66,12 +74,15 @@ public partial class NpcMerchant : CharacterBody3D
         // set up events
         offerTriggerArea.BodyEntered += TriggerOffer;
         offerTriggerArea.BodyExited += OfferTriggerReset;
+        crierTriggerArea.BodyEntered += TriggerCrier;
+        crierTriggerArea.BodyExited += CrierTriggerReset;
         yesButton.Pressed += AcceptTrade;
         noButton.Pressed += CancelTrade;
 
         // initialize states
         stateIdle = new NpcMerchantStateIdle(){blackboard = this};
         stateTalk = new NpcMerchantStateTalk(){blackboard = this};
+        stateCrier = new NpcMerchantStateCrier(){blackboard = this};
         stateTurn = new NpcMerchantStateTurn(){blackboard = this};
         stateOffer = new NpcMerchantStateOffer(){blackboard = this};
         stateSell = new NpcMerchantStateSell(){blackboard = this};
@@ -115,7 +126,7 @@ public partial class NpcMerchant : CharacterBody3D
 
     public void TriggerOffer(Node3D body)
     {
-        if(bodyInTrigger == false && machine.CurrentState == stateIdle)
+        if(bodyInOfferTrigger == false)
         {
             if(body is PlayerCharacter playerBody)
             {
@@ -133,7 +144,7 @@ public partial class NpcMerchant : CharacterBody3D
             // repeating dialogue
             machine.SetState(stateTurn);
             
-            bodyInTrigger = true;
+            bodyInOfferTrigger = true;
         }
     }
 
@@ -149,7 +160,7 @@ public partial class NpcMerchant : CharacterBody3D
 
     public void OfferTriggerReset(Node3D body)
     {
-        bodyInTrigger = false;
+        bodyInOfferTrigger = false;
     }
 
 
@@ -164,7 +175,38 @@ public partial class NpcMerchant : CharacterBody3D
 
     public void CancelTrade()
     {
-        // canel
+        // cancel
         machine.SetState(stateCancel);
+    }
+
+
+
+    public void TriggerCrier(Node3D body)
+    {
+        var randomChanceNumber = GD.Randi() % 5;
+
+        //GD.Print(randomChanceNumber);
+        
+        // 60% chance of not going to crier state
+        if(randomChanceNumber > 1)
+        {
+            bodyInCrierTrigger = true;
+            return;
+        }
+        
+        if(bodyInCrierTrigger == false && machine.CurrentState == stateIdle && dialogue.waiting == true)
+        {
+            // crier
+            machine.SetState(stateCrier);
+
+            bodyInCrierTrigger = true;
+        }
+    }
+
+
+
+    public void CrierTriggerReset(Node3D body)
+    {
+        bodyInCrierTrigger = false;
     }
 }
