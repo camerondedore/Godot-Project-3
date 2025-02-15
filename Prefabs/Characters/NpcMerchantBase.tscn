@@ -92,6 +92,7 @@ lockedCameraHeight = 1.75
 lockedCameraRadius = 4.0
 
 [node name="MerchantUi" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Container" type="Control" parent="MerchantUi"]
 layout_mode = 3
