@@ -27,7 +27,7 @@ public partial class NpcMerchantStateOffer : NpcMerchantState
         blackboard.playerCandiedNutsCounter.Text = PlayerInventory.inventory.currentInventory.CandiedNuts.ToString();
 
         // check player inventory
-        if(PlayerInventory.inventory.currentInventory.CandiedNuts < blackboard.price)
+        if(PlayerInventory.inventory.currentInventory.CandiedNuts < blackboard.price || blackboard.CheckInventory(blackboard.inventory) == false)
         {
             // not enough candied nuts
             // disable trade button

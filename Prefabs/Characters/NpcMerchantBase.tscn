@@ -88,8 +88,8 @@ shape = SubResource("CylinderShape3D_lth74")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -0.45)
 script = ExtResource("7_5lr1c")
 prefab = ExtResource("8_y5o4o")
-velocity = Vector3(2, 1.5, -1.5)
-spread = 0.0
+velocity = Vector3(0, 2, -3)
+spread = 0.5
 useAngularVelocity = false
 
 [node name="NpcCameraControl" type="Node" parent="."]

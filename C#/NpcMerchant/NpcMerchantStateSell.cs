@@ -40,15 +40,7 @@ public partial class NpcMerchantStateSell : NpcMerchantState
 
     public override void EndState()
     {
-        blackboard.EndDialogue();
-        blackboard.cameraControl.DisableCameraControl();
-        blackboard.stateAfterTurn = "idle";
 
-        // lock cursor
-        Input.MouseMode = Input.MouseModeEnum.Captured;
-
-        // set new look direction
-        blackboard.targetLookDirection = blackboard.initLookDirection;
     }
 
 
@@ -57,8 +49,23 @@ public partial class NpcMerchantStateSell : NpcMerchantState
     {
         if(EngineTime.timePassed > startTime + 1.5f)
         {
-            // turn
-            return blackboard.stateTurn;
+            if(blackboard.CheckInventory(blackboard.inventory) == true)
+            {
+                // offer
+                return blackboard.stateOffer;
+            }
+            else
+            {
+                blackboard.EndDialogue();
+                blackboard.cameraControl.DisableCameraControl();
+                blackboard.stateAfterTurn = "noInventory";
+
+                // lock cursor
+                Input.MouseMode = Input.MouseModeEnum.Captured;
+
+                // no inventory
+                return blackboard.stateNoInventory;
+            }
         }
 
         return this;
