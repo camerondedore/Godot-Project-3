@@ -28,10 +28,9 @@ radius = 2.0
 height = 1.5
 radius = 4.0
 
-[node name="NpcMerchantBase" type="CharacterBody3D" node_paths=PackedStringArray("animation")]
+[node name="NpcMerchantBase" type="CharacterBody3D"]
 collision_layer = 2
 script = ExtResource("1_v3rjd")
-animation = NodePath("")
 idleAnimationName = "lumsden-idle"
 talkAnimationName = "lumsden-talk"
 crierAnimationName = "lumsden-talk"
@@ -94,15 +93,50 @@ lockedCameraRadius = 4.0
 
 [node name="MerchantUi" type="CanvasLayer" parent="."]
 
-[node name="Background" type="NinePatchRect" parent="MerchantUi"]
+[node name="Container" type="Control" parent="MerchantUi"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CandiedNuts" type="TextureRect" parent="MerchantUi/Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_bottom = 0.1
+offset_left = 25.0
+offset_top = 175.0
+offset_right = 135.0
+offset_bottom = 285.0
+grow_vertical = 2
+theme = ExtResource("12_gb0k4")
+texture = ExtResource("11_re4cf")
+expand_mode = 3
+
+[node name="CandiedNutsCounter" type="Label" parent="MerchantUi/Container/CandiedNuts"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("12_gb0k4")
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Background" type="NinePatchRect" parent="MerchantUi/Container"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -275.0
+offset_left = -245.0
 offset_top = -200.0
-offset_right = 275.0
+offset_right = 245.0
 offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -114,7 +148,7 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
-[node name="PriceRect" type="TextureRect" parent="MerchantUi/Background"]
+[node name="PriceRect" type="TextureRect" parent="MerchantUi/Container/Background"]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 31.0
@@ -124,7 +158,7 @@ texture = ExtResource("11_re4cf")
 expand_mode = 1
 metadata/_edit_group_ = true
 
-[node name="PriceLabel" type="Label" parent="MerchantUi/Background/PriceRect"]
+[node name="PriceLabel" type="Label" parent="MerchantUi/Container/Background/PriceRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,38 +170,38 @@ text = "15"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="ArrowRect" type="TextureRect" parent="MerchantUi/Background"]
+[node name="ArrowRect" type="TextureRect" parent="MerchantUi/Container/Background"]
 layout_mode = 0
-offset_left = 166.0
+offset_left = 155.0
 offset_top = 59.0
-offset_right = 216.0
+offset_right = 205.0
 offset_bottom = 109.0
 texture = ExtResource("13_4nbxi")
 expand_mode = 1
 
-[node name="SellingRect" type="TextureRect" parent="MerchantUi/Background"]
+[node name="SellingRect" type="TextureRect" parent="MerchantUi/Container/Background"]
 layout_mode = 0
-offset_left = 248.0
+offset_left = 225.0
 offset_top = 31.0
-offset_right = 348.0
+offset_right = 325.0
 offset_bottom = 131.0
 texture = ExtResource("14_h5tjt")
 expand_mode = 1
 
-[node name="YesButton" type="Button" parent="MerchantUi/Background"]
+[node name="YesButton" type="Button" parent="MerchantUi/Container/Background"]
 layout_mode = 0
-offset_left = 419.0
+offset_left = 362.0
 offset_top = 29.0
-offset_right = 519.0
+offset_right = 462.0
 offset_bottom = 74.0
 theme = ExtResource("15_p5afd")
 text = "Trade"
 
-[node name="NoButton" type="Button" parent="MerchantUi/Background"]
+[node name="NoButton" type="Button" parent="MerchantUi/Container/Background"]
 layout_mode = 0
-offset_left = 419.0
+offset_left = 362.0
 offset_top = 89.0
-offset_right = 519.0
+offset_right = 462.0
 offset_bottom = 134.0
 theme = ExtResource("15_p5afd")
 text = "Cancel

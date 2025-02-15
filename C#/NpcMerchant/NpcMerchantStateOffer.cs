@@ -23,6 +23,9 @@ public partial class NpcMerchantStateOffer : NpcMerchantState
         // show ui
         blackboard.merchantUi.Visible = true;
 
+        // update player candied nuts counter
+        blackboard.playerCandiedNutsCounter.Text = PlayerInventory.inventory.currentInventory.CandiedNuts.ToString();
+
         // check player inventory
         if(PlayerInventory.inventory.currentInventory.CandiedNuts < blackboard.price)
         {

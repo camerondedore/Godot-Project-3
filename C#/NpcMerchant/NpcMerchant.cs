@@ -46,6 +46,7 @@ public partial class NpcMerchant : CharacterBody3D
     public CanvasLayer merchantUi;
     public Button yesButton,
         noButton;
+    public Label playerCandiedNutsCounter;
     public float lookCursor,
         cursorTimeMultiplier;
     public bool bodyInOfferTrigger,
@@ -62,8 +63,9 @@ public partial class NpcMerchant : CharacterBody3D
         cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
         dialogue = (NpcDialogue) GetNode("Dialogue");
         merchantUi = (CanvasLayer) GetNode("MerchantUi");
-        yesButton = (Button) GetNode("MerchantUi/Background/YesButton");
-        noButton = (Button) GetNode("MerchantUi/Background/NoButton");
+        yesButton = (Button) GetNode("MerchantUi/Container/Background/YesButton");
+        noButton = (Button) GetNode("MerchantUi/Container/Background/NoButton");
+        playerCandiedNutsCounter = (Label) GetNode("MerchantUi/Container/CandiedNuts/CandiedNutsCounter");
         itemSpawner = (RigidbodySpawner) GetNode("ItemSpawner");
         offerDialogueLine = (NpcDialogueLine) GetNode("DialogueLineOffer");
         crierDialogueLine = (NpcDialogueLine) GetNode("DialogueLineCrier");
