@@ -13,8 +13,7 @@ public partial class PlayerStatistics : Node
 
     string filePath;
     float minHitPointsPerUpgrade = 25,
-        maxHitPointsPerUpgrade = 100,
-        maxArmor;    
+        maxHitPointsPerUpgrade = 100;    
 
     public event Action<float> HitPointsChanged;
     public event Action<int> HitPointUpgradesChanged;
@@ -121,6 +120,22 @@ public partial class PlayerStatistics : Node
     {
         // maximum armor reduces damage by 80%
         return Mathf.Clamp(currentStatistics.ArmorUpgrades * currentStatistics.ArmorPerUpgrade, 0, 0.8f);
+    }
+
+
+
+    public bool AtMaxArmor()
+    {
+        // check if at maximum armor upgrades
+        return currentStatistics.ArmorUpgrades == maxArmorUpgrades;
+    }
+
+
+
+    public bool AtMaxHitPointUpgrades()
+    {
+        // check if at maximum hit-point upgrades
+        return currentStatistics.HitPointUpgrades == maxHitPointUpgrades;
     }
 
 

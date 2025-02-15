@@ -3,28 +3,27 @@ using System;
 
 namespace NonPlayerCharacter;
 
-public partial class NpcMerchantStateCancel : NpcMerchantState
+public partial class NpcMerchantStateNoInventory : NpcMerchantState
 {
 
-    double startTime;
+
 
 
 
     public override void StartState()
     {
-        startTime = EngineTime.timePassed;
+        // animation
+        blackboard.animation.Play(blackboard.talkAnimationName);
+
+        // talk
+        blackboard.dialogue.Talk(blackboard.noInventoryDialogueLine);        
     }
 
 
 
     public override void EndState()
     {
-        blackboard.EndDialogue();
-        blackboard.cameraControl.DisableCameraControl();
         blackboard.stateAfterTurn = "idle";
-
-        // lock cursor
-        Input.MouseMode = Input.MouseModeEnum.Captured;
 
         // set new look direction
         blackboard.targetLookDirection = blackboard.initLookDirection;
@@ -34,7 +33,7 @@ public partial class NpcMerchantStateCancel : NpcMerchantState
 
     public override State Transition()
     {
-        if(EngineTime.timePassed > startTime + 0.15f)
+        if(blackboard.dialogue.waiting == true)
         {
             // turn
             return blackboard.stateTurn;

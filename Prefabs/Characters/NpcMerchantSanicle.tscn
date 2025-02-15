@@ -1,14 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh256u0ww3ecb"]
+[gd_scene load_steps=8 format=3 uid="uid://dh256u0ww3ecb"]
 
 [ext_resource type="PackedScene" uid="uid://c7slnpl4qc3rv" path="res://Prefabs/Characters/NpcMerchantBase.tscn" id="1_6cjx6"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="2_g2lwn"]
 [ext_resource type="Material" uid="uid://bjcflxq43ap6e" path="res://Materials/Characters/CharacterWynnRim.tres" id="3_gvb0s"]
 [ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="4_es6s5"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="5_togmk"]
-[ext_resource type="AudioStream" uid="uid://bptapxlnc86r5" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-1.wav" id="6_bbulw"]
-[ext_resource type="AudioStream" uid="uid://b4rcakcb67mua" path="res://Audio/Dialogue/npc-wynn-dialogue-l1-1.wav" id="7_wu2ny"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="8_bad6u"]
-[ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_bbuxy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hv7fk"]
 radius = 0.3
@@ -21,6 +18,7 @@ crierAnimationName = "wynn-wave"
 turnRightAnimationName = "wynn-walk"
 turnLeftAnimationName = "wynn-walk"
 giveAnimationName = "wynn-give"
+inventory = "sanicle"
 
 [node name="Collider" parent="." index="0"]
 shape = SubResource("CapsuleShape3D_hv7fk")
@@ -46,13 +44,11 @@ bones/12/position = Vector3(0.0765538, 0.017639, 0.197477)
 bones/12/rotation = Quaternion(0.782745, 0.164958, -0.0365565, 0.598968)
 bones/13/position = Vector3(0.0749542, 0.263714, -0.127745)
 bones/16/rotation = Quaternion(-0.5, -0.5, 0.5, -0.5)
-bones/16/scale = Vector3(1, 1, 1)
 bones/17/position = Vector3(-0.0699644, 0.19036, 0.0841363)
 bones/17/rotation = Quaternion(0.0464926, -0.00105764, 9.73492e-05, 0.998918)
 bones/18/position = Vector3(-0.0765539, 0.017639, 0.197477)
 bones/18/rotation = Quaternion(0.782745, -0.164958, 0.0365565, 0.598968)
 bones/19/position = Vector3(-0.0749542, 0.263714, -0.127745)
-bones/21/scale = Vector3(1, 1, 1)
 bones/22/rotation = Quaternion(-0.585984, -0.0178591, -0.595111, 0.549678)
 bones/23/rotation = Quaternion(-0.525201, -0.690403, -0.0796827, 0.491078)
 bones/24/rotation = Quaternion(0.424945, -0.0694341, 0.0952724, 0.89751)
@@ -92,17 +88,12 @@ surface_material_override/2 = ExtResource("5_togmk")
 playback_default_blend_time = 0.1
 
 [node name="DialogueLineOffer" parent="." index="4"]
-dialogueAudio = ExtResource("6_bbulw")
 dialogueText = "I am offering Sanicle for 15 candied nuts."
 
 [node name="DialogueLineCrier" parent="." index="5"]
-dialogueAudio = ExtResource("7_wu2ny")
 dialogueText = "Are you interested in a trade?"
 
-[node name="ItemSpawner" parent="." index="8"]
+[node name="ItemSpawner" parent="." index="9"]
 prefab = ExtResource("8_bad6u")
-
-[node name="SellingRect" parent="MerchantUi/Background" index="2"]
-texture = ExtResource("8_bbuxy")
 
 [editable path="character-wynn"]

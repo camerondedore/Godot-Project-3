@@ -52,7 +52,6 @@ public partial class NpcMerchantStateOffer : NpcMerchantState
 
     public override State Transition()
     {
-
         return this;
     }
 }

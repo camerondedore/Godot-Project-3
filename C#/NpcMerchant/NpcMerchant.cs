@@ -16,7 +16,8 @@ public partial class NpcMerchant : CharacterBody3D
         stateOffer,
         stateSell,
         stateCancel,
-        stateTurn;
+        stateTurn,
+        stateNoInventory;
 
     [Export]
     public AnimationPlayer animation;
@@ -31,6 +32,8 @@ public partial class NpcMerchant : CharacterBody3D
     public float lookTime = 1f;
     [Export]
     public int price = 15;
+    [Export]
+    public string inventory = "dock leaves";
 
     public Area3D offerTriggerArea,
         crierTriggerArea;
@@ -39,7 +42,8 @@ public partial class NpcMerchant : CharacterBody3D
     public PlayerCharacter player;
     public RigidbodySpawner itemSpawner;
     public NpcDialogueLine offerDialogueLine,
-        crierDialogueLine;
+        crierDialogueLine,
+        noInventoryDialogueLine;
     public Vector3 initLookDirection,
         startLookDirection,
         targetLookDirection;
@@ -47,6 +51,7 @@ public partial class NpcMerchant : CharacterBody3D
     public Button yesButton,
         noButton;
     public Label playerCandiedNutsCounter;
+    public string stateAfterTurn;
     public float lookCursor,
         cursorTimeMultiplier;
     public bool bodyInOfferTrigger,
@@ -69,6 +74,7 @@ public partial class NpcMerchant : CharacterBody3D
         itemSpawner = (RigidbodySpawner) GetNode("ItemSpawner");
         offerDialogueLine = (NpcDialogueLine) GetNode("DialogueLineOffer");
         crierDialogueLine = (NpcDialogueLine) GetNode("DialogueLineCrier");
+        noInventoryDialogueLine = (NpcDialogueLine) GetNode("DialogueLineNoInventory");
 
         merchantUi.Visible = false;
 
@@ -90,6 +96,7 @@ public partial class NpcMerchant : CharacterBody3D
         stateOffer = new NpcMerchantStateOffer(){blackboard = this};
         stateSell = new NpcMerchantStateSell(){blackboard = this};
         stateCancel = new NpcMerchantStateCancel(){blackboard = this};
+        stateNoInventory = new NpcMerchantStateNoInventory(){blackboard = this};
 
         // set first state in machine
         machine.SetState(stateIdle);
@@ -131,6 +138,31 @@ public partial class NpcMerchant : CharacterBody3D
     {
         if(bodyInOfferTrigger == false)
         {
+            // check inventory
+            if(CheckInventory(inventory) == false)
+            {
+                if(machine.CurrentState == stateNoInventory)
+                {
+                    bodyInOfferTrigger = true;
+
+                    return;
+                }
+
+                // set look target
+                targetLookDirection = body.GlobalPosition - GlobalPosition;
+                targetLookDirection.Y = 0;
+
+                stateAfterTurn = "noInventory";
+
+                // turn state
+                machine.SetState(stateTurn);
+                
+                bodyInOfferTrigger = true;
+
+                return;
+            }
+
+
             if(body is PlayerCharacter playerBody)
             {
                 // store hit body
@@ -144,7 +176,9 @@ public partial class NpcMerchant : CharacterBody3D
             targetLookDirection = body.GlobalPosition - GlobalPosition;
             targetLookDirection.Y = 0;
 
-            // repeating dialogue
+            stateAfterTurn = "talk";
+
+            // turn state
             machine.SetState(stateTurn);
             
             bodyInOfferTrigger = true;
@@ -186,9 +220,16 @@ public partial class NpcMerchant : CharacterBody3D
 
     public void TriggerCrier(Node3D body)
     {
-        var randomChanceNumber = GD.Randi() % 5;
+        // check inventory
+        if(CheckInventory(inventory) == false)
+        {
+            bodyInCrierTrigger = true;
 
-        //GD.Print(randomChanceNumber);
+            // no intentory, do not go to crier state
+            return;
+        }
+
+        var randomChanceNumber = GD.Randi() % 5;
         
         // 60% chance of not going to crier state
         if(randomChanceNumber > 1)
@@ -211,5 +252,30 @@ public partial class NpcMerchant : CharacterBody3D
     public void CrierTriggerReset(Node3D body)
     {
         bodyInCrierTrigger = false;
+    }
+
+
+
+    public bool CheckInventory(string itemName)
+    {
+        bool hasInventory = false;
+
+        switch(itemName)
+        {
+            case "dock leaves":
+                hasInventory = true;
+                break;
+            case "sanicle":
+                hasInventory = true;
+                break;
+            case "armor":
+                hasInventory = !PlayerStatistics.statistics.AtMaxArmor();
+                break;
+            case "cider":
+                hasInventory = !PlayerStatistics.statistics.AtMaxHitPointUpgrades();
+                break;
+        }
+
+        return hasInventory;
     }
 }

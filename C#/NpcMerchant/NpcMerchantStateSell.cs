@@ -30,8 +30,8 @@ public partial class NpcMerchantStateSell : NpcMerchantState
     public override void StartState()
     {
         startTime = EngineTime.timePassed;
-        itemGiven = false;        
-
+        itemGiven = false;
+        
         // animation
         blackboard.animation.Play(blackboard.giveAnimationName);
     }
@@ -42,6 +42,7 @@ public partial class NpcMerchantStateSell : NpcMerchantState
     {
         blackboard.EndDialogue();
         blackboard.cameraControl.DisableCameraControl();
+        blackboard.stateAfterTurn = "idle";
 
         // lock cursor
         Input.MouseMode = Input.MouseModeEnum.Captured;

@@ -1,12 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7slnpl4qc3rv"]
+[gd_scene load_steps=20 format=3 uid="uid://c7slnpl4qc3rv"]
 
 [ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_v3rjd"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="2_pgjbw"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="3_d8x7a"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="4_1cv6r"]
-[ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="5_7qm6n"]
-[ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="6_4ey2s"]
+[ext_resource type="AudioStream" uid="uid://cvkip81heily1" path="res://Audio/Dialogue/npc-merchant-1-dialogue-offer-1.wav" id="5_fw155"]
+[ext_resource type="AudioStream" uid="uid://husjv3b11ave" path="res://Audio/Dialogue/npc-merchant-1-dialogue-crier-1.wav" id="6_kcd6b"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_5lr1c"]
+[ext_resource type="AudioStream" uid="uid://cbewgvley4sbd" path="res://Audio/Dialogue/npc-merchant-1-dialogue-noinventory-1.wav" id="7_sq0tj"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="8_y5o4o"]
 [ext_resource type="Script" path="res://C#/NpcSimple/NpcCameraControl.cs" id="9_8fp5w"]
 [ext_resource type="Texture2D" uid="uid://beas7mo07cvml" path="res://UI/ui-container.png" id="10_3n8yx"]
@@ -52,13 +53,18 @@ script = ExtResource("3_d8x7a")
 
 [node name="DialogueLineOffer" type="Node" parent="."]
 script = ExtResource("4_1cv6r")
-dialogueAudio = ExtResource("5_7qm6n")
+dialogueAudio = ExtResource("5_fw155")
 dialogueText = "I have dock leaves for sale; 15 candied nuts per leaf!"
 
 [node name="DialogueLineCrier" type="Node" parent="."]
 script = ExtResource("4_1cv6r")
-dialogueAudio = ExtResource("6_4ey2s")
+dialogueAudio = ExtResource("6_kcd6b")
 dialogueText = "Hey, would you consider a trade?"
+
+[node name="DialogueLineNoInventory" type="Node" parent="."]
+script = ExtResource("4_1cv6r")
+dialogueAudio = ExtResource("7_sq0tj")
+dialogueText = "Sorry, I have no more to sell."
 
 [node name="OfferTriggerArea" type="Area3D" parent="."]
 collision_layer = 0
@@ -79,11 +85,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("CylinderShape3D_lth74")
 
 [node name="ItemSpawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -0.45)
 script = ExtResource("7_5lr1c")
 prefab = ExtResource("8_y5o4o")
-velocity = Vector3(0, 0.5, -2)
-spread = 0.5
+velocity = Vector3(2, 1.5, -1.5)
+spread = 0.0
 useAngularVelocity = false
 
 [node name="NpcCameraControl" type="Node" parent="."]

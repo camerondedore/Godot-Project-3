@@ -27,11 +27,9 @@ bones/8/rotation = Quaternion(-0.0632832, -5.00736e-10, -1.47062e-08, 0.997996)
 bones/9/position = Vector3(0.0671968, 0.271934, 0.0571533)
 bones/9/rotation = Quaternion(0.0320906, -0.00889782, -0.00856718, 0.999409)
 bones/11/position = Vector3(0.0671795, 0.333172, -0.0829992)
-bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0671968, 0.271934, 0.0571532)
 bones/15/rotation = Quaternion(0.0320906, -0.00889782, -0.00856718, 0.999409)
 bones/17/position = Vector3(-0.0671795, 0.333172, -0.0829992)
-bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(-0.63661, -0.316794, -0.352519, 0.608358)
 bones/21/rotation = Quaternion(-0.466409, -0.374495, 0.295273, 0.745003)
 bones/22/rotation = Quaternion(0.239543, -0.00525863, 0.0162992, 0.970735)
@@ -78,7 +76,7 @@ bones/60/position = Vector3(0.43106, -0.953172, 0.300915)
 bones/60/rotation = Quaternion(0.70702, 0.0110636, -0.70702, 0.0110636)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(1, 1.4915e-08, -3.57453e-07, -3.72529e-09, 0.99951, 0.0312887, 3.57628e-07, -0.0312886, 0.99951, -0.300915, -0.0468281, -0.43106)
+transform = Transform3D(1, 1.11897e-08, -3.57453e-07, -5.558e-17, 0.99951, 0.0312888, 3.57628e-07, -0.0312888, 0.99951, -0.300915, -0.046828, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
 surface_material_override/0 = ExtResource("2_bevfa")
@@ -89,5 +87,8 @@ surface_material_override/1 = ExtResource("4_kd7c3")
 
 [node name="AnimationPlayer" parent="character-lumsden" index="1"]
 playback_default_blend_time = 0.1
+
+[node name="DialogueLineNoInventory" parent="." index="6"]
+dialogueText = "Sorry, I have no more leaves to trade."
 
 [editable path="character-lumsden"]

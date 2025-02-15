@@ -20,7 +20,7 @@ public partial class NpcMerchantStateTurn : NpcMerchantState
     public override void StartState()
     {
         // check if look target is turning to look at player
-        if(blackboard.targetLookDirection != blackboard.initLookDirection)
+        if(blackboard.stateAfterTurn == "talk")
         {
             blackboard.cameraControl.EnableCameraControl(blackboard.player);
         }
@@ -64,16 +64,20 @@ public partial class NpcMerchantStateTurn : NpcMerchantState
             return this;
         }
 
-        // check if look target is init look direction
-        if(blackboard.targetLookDirection != blackboard.initLookDirection)
+        if(blackboard.stateAfterTurn == "talk")
         {
             // dialogue
             return blackboard.stateTalk;
+        }
+        else if(blackboard.stateAfterTurn == "noInventory")
+        {
+            // no inventory
+            return blackboard.stateNoInventory;
         }
         else 
         {
             // idle
             return blackboard.stateIdle;
-        }            
+        }
     }
 }

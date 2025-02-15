@@ -11,6 +11,7 @@
 [node name="NpcMerchantCider" node_paths=PackedStringArray("animation") instance=ExtResource("1_u54yn")]
 animation = NodePath("character-lumsden/AnimationPlayer")
 price = 100
+inventory = "cider"
 
 [node name="character-lumsden" parent="." index="1" instance=ExtResource("2_klyu1")]
 
@@ -97,7 +98,7 @@ dialogueText = "I have cider that boosts hit points!  100 candied nuts."
 [node name="DialogueLineCrier" parent="." index="5"]
 dialogueText = "Are you in the market for some cider?"
 
-[node name="ItemSpawner" parent="." index="8"]
+[node name="ItemSpawner" parent="." index="9"]
 prefab = ExtResource("2_apv1o")
 
 [node name="PriceLabel" parent="MerchantUi/Container/Background/PriceRect" index="0"]
