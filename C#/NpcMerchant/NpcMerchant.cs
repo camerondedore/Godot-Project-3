@@ -57,6 +57,8 @@ public partial class NpcMerchant : CharacterBody3D
     public bool bodyInOfferTrigger,
         bodyInCrierTrigger;
     
+    double lastCrierTime = -15.0;
+    
 
 
 
@@ -225,21 +227,30 @@ public partial class NpcMerchant : CharacterBody3D
         {
             bodyInCrierTrigger = true;
 
-            // no intentory, do not go to crier state
+            // no inventory, do not go to crier state
             return;
         }
 
-        var randomChanceNumber = GD.Randi() % 5;
+        var randomChanceNumber = GD.Randi() % 2;
         
-        // 60% chance of not going to crier state
-        if(randomChanceNumber > 1)
+        // 50% chance of not going to crier state
+        if(randomChanceNumber == 1)
         {
+            bodyInCrierTrigger = true;
+            return;
+        }
+
+        if(EngineTime.timePassed < lastCrierTime + 15.0)
+        {
+            // too soon to go to crier state
             bodyInCrierTrigger = true;
             return;
         }
         
         if(bodyInCrierTrigger == false && machine.CurrentState == stateIdle && dialogue.waiting == true)
         {
+            lastCrierTime = EngineTime.timePassed;
+
             // crier
             machine.SetState(stateCrier);
 
