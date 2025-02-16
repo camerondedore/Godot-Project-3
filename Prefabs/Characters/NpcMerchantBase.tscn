@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7slnpl4qc3rv"]
+[gd_scene load_steps=22 format=3 uid="uid://c7slnpl4qc3rv"]
 
 [ext_resource type="Script" path="res://C#/NpcMerchant/NpcMerchant.cs" id="1_v3rjd"]
+[ext_resource type="AudioStream" uid="uid://buaupw1cosg2g" path="res://Audio/pickup-spawn.wav" id="2_63f30"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="2_pgjbw"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="3_d8x7a"]
 [ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="4_1cv6r"]
 [ext_resource type="AudioStream" uid="uid://cvkip81heily1" path="res://Audio/Dialogue/npc-merchant-1-dialogue-offer-1.wav" id="5_fw155"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_mrtrn"]
 [ext_resource type="AudioStream" uid="uid://husjv3b11ave" path="res://Audio/Dialogue/npc-merchant-1-dialogue-crier-1.wav" id="6_kcd6b"]
 [ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_5lr1c"]
 [ext_resource type="AudioStream" uid="uid://cbewgvley4sbd" path="res://Audio/Dialogue/npc-merchant-1-dialogue-noinventory-1.wav" id="7_sq0tj"]
@@ -38,6 +40,7 @@ crierAnimationName = "lumsden-talk"
 turnRightAnimationName = "lumsden-turn-right"
 turnLeftAnimationName = "lumsden-turn-left"
 giveAnimationName = "lumsden-give"
+giveSound = ExtResource("2_63f30")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
@@ -50,6 +53,13 @@ unit_size = 20.0
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("3_d8x7a")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+unit_size = 5.0
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("5_mrtrn")
 
 [node name="DialogueLineOffer" type="Node" parent="."]
 script = ExtResource("4_1cv6r")

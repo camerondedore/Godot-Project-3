@@ -21,6 +21,9 @@ public partial class NpcMerchantStateSell : NpcMerchantState
             // spawn item
             blackboard.itemSpawner.Spawn();
 
+            // play sound
+            blackboard.audio.PlaySound(blackboard.giveSound, 0.1f);
+
             itemGiven = true;
         }
     }

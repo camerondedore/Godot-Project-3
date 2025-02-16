@@ -34,6 +34,8 @@ public partial class NpcMerchant : CharacterBody3D
     public int price = 15;
     [Export]
     public string inventory = "dock leaves";
+    [Export]
+    public AudioStream giveSound;
 
     public Area3D offerTriggerArea,
         crierTriggerArea;
@@ -41,6 +43,7 @@ public partial class NpcMerchant : CharacterBody3D
     public NpcDialogue dialogue;
     public PlayerCharacter player;
     public RigidbodySpawner itemSpawner;
+    public AudioTools3d audio;
     public NpcDialogueLine offerDialogueLine,
         crierDialogueLine,
         noInventoryDialogueLine;
@@ -74,6 +77,7 @@ public partial class NpcMerchant : CharacterBody3D
         noButton = (Button) GetNode("MerchantUi/Container/Background/NoButton");
         playerCandiedNutsCounter = (Label) GetNode("MerchantUi/Container/CandiedNuts/CandiedNutsCounter");
         itemSpawner = (RigidbodySpawner) GetNode("ItemSpawner");
+        audio = (AudioTools3d) GetNode("Audio");
         offerDialogueLine = (NpcDialogueLine) GetNode("DialogueLineOffer");
         crierDialogueLine = (NpcDialogueLine) GetNode("DialogueLineCrier");
         noInventoryDialogueLine = (NpcDialogueLine) GetNode("DialogueLineNoInventory");
