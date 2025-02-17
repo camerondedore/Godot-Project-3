@@ -243,7 +243,7 @@ surface_material_override/1 = ExtResource("3_mp7hq")
 [node name="Posts" type="Node3D" parent="."]
 
 [node name="Post7" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-8.74228e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -8.74228e-08, -1.25, -0.428319, -0.517369)
+transform = Transform3D(-4.37114e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -4.37114e-08, -1.25, -0.428319, -0.517369)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_ps8jo")
@@ -252,7 +252,7 @@ surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
 [node name="Post8" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 4.37114e-08, -1.31134e-07, 4.37114e-08, -1, 8.74228e-08, -1.31134e-07, -8.74228e-08, -1, -1.25, 0.2, -1.75)
+transform = Transform3D(1, 1.50996e-07, -1.50996e-07, 1.50996e-07, -1, 8.74228e-08, -1.50996e-07, -8.74228e-08, -1, -1.25, 0.2, -1.75)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_yh0pu")
@@ -261,7 +261,7 @@ surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
 [node name="Post9" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -1, 8.74228e-08, 4.37114e-08, 8.74228e-08, 1, 1.25, -0.428319, -0.517369)
+transform = Transform3D(-1, -1.50996e-07, 4.37114e-08, 1.50996e-07, -1, 8.74228e-08, 4.37114e-08, 8.74228e-08, 1, 1.25, -0.428319, -0.517369)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_ps8jo")
@@ -270,7 +270,7 @@ surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
 [node name="Post10" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 4.37114e-08, -1.31134e-07, 4.37114e-08, -1, 8.74228e-08, -1.31134e-07, -8.74228e-08, -1, 1.25, 0.2, -1.75)
+transform = Transform3D(1, 1.50996e-07, -1.50996e-07, 1.50996e-07, -1, 8.74228e-08, -1.50996e-07, -8.74228e-08, -1, 1.25, 0.2, -1.75)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_yh0pu")
