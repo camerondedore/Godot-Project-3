@@ -8,7 +8,7 @@
 size = Vector3(6.6, 3, 0.05)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c6api"]
-points = PackedVector3Array(-3.4, 0, 0.2, -3.4, 0, -0.2, 3.4, 0, -0.2, 3.4, 0, 0.2, -3.4, 4, 0.2, -3.4, 4, -0.2, 3.4, 4, -0.2, 3.4, 4, 0.2, -3.4, 5, 0, 3.4, 5, 0)
+points = PackedVector3Array(-3.4, 0, 0.2, -3.4, 0, -0.2, 3.4, 0, -0.2, 3.4, 0, 0.2, -3.4, 5, 0.2, -3.4, 5, -0.2, 3.4, 5, -0.2, 3.4, 5, 0.2, -3.4, 6, 0, 3.4, 6, 0)
 
 [node name="PropPicketWall" type="StaticBody3D"]
 
