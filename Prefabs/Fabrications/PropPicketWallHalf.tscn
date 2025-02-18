@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://byvwf1mfvnsfe"]
+[gd_scene load_steps=7 format=3 uid="uid://byvwf1mfvnsfe"]
 
 [ext_resource type="ArrayMesh" uid="uid://cqf363gy4mv6f" path="res://Models/prop-picket.res" id="1_bs4w6"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_74k60"]
@@ -8,7 +8,10 @@
 size = Vector3(3.3, 3, 0.05)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5ufk7"]
-points = PackedVector3Array(-1.7, 0, 0.2, -1.7, 0, -0.2, 1.7, 0, -0.2, 1.7, 0, 0.2, -1.7, 5, 0.2, -1.7, 5, -0.2, 1.7, 5, -0.2, 1.7, 5, 0.2, -1.7, 6, 0, 1.7, 6, 0)
+points = PackedVector3Array(-1.7, 0, 0.2, -1.7, 0, -0.2, 1.7, 0, -0.2, 1.7, 0, 0.2, -1.7, 4, 0.2, -1.7, 4, -0.2, 1.7, 4, -0.2, 1.7, 4, 0.2, -1.7, 5, 0, 1.7, 5, 0)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_46aqk"]
+points = PackedVector3Array(-1.7, 4, 0.2, -1.7, 4, -0.2, 1.7, 4, -0.2, 1.7, 4, 0.2, -1.7, 7, 0, 1.7, 7, 0)
 
 [node name="PropPicketWallHalf" type="StaticBody3D"]
 
@@ -112,3 +115,9 @@ surface_material_override/0 = ExtResource("2_74k60")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_5ufk7")
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+shape = SubResource("ConvexPolygonShape3D_46aqk")
