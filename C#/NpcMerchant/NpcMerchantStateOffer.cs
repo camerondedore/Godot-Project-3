@@ -20,6 +20,9 @@ public partial class NpcMerchantStateOffer : NpcMerchantState
     
     public override void StartState()
     {
+        // animation
+        blackboard.animation.Play(blackboard.idleAnimationName);    
+        
         // show ui
         blackboard.merchantUi.Visible = true;
 
