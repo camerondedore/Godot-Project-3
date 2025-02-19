@@ -357,7 +357,7 @@ setNodes = [NodePath("../../../Map/LevelHub2ChangeTriggerArea")]
 [node name="Stage2" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 2
-stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Npcs/NpcLumsden2"), NodePath("../../Map/Cinematics/Cinematic5"), NodePath("../../Map/Pickups/PickupCandiedNut2"), NodePath("../../Map/Pickups/PickupCandiedNut3"), NodePath("../../Map/Pickups/PickupCandiedNut4"), NodePath("../../Map/Level3ChangeTriggerArea")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight2"), NodePath("../../WorldEnvironment2"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3"), NodePath("../../Npcs/NpcLumsden2"), NodePath("../../Map/Cinematics/Cinematic5"), NodePath("../../Map/Pickups/PickupCandiedNut2"), NodePath("../../Map/Pickups/PickupCandiedNut3"), NodePath("../../Map/Pickups/PickupCandiedNut4"), NodePath("../../Map/Level3ChangeTriggerArea"), NodePath("../../Map/Audio/LevelRandomAudio3")]
 stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage2" node_paths=PackedStringArray("setNodes")]
@@ -2613,6 +2613,27 @@ attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("98_3reqn")
 
 [node name="AudioPlayer3" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio2"]
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("98_3reqn")
+
+[node name="LevelRandomAudio3" type="Node3D" parent="Map/Audio"]
+script = ExtResource("91_b8kji")
+sounds = Array[AudioStream]([ExtResource("92_7lfn2"), ExtResource("93_r8el4"), ExtResource("94_6iro2"), ExtResource("95_qxxk0"), ExtResource("96_4yqdt"), ExtResource("97_nn8ui")])
+range = Vector2(30, 40)
+timeRange = Vector2(7, 10)
+
+[node name="AudioPlayer1" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio3"]
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("98_3reqn")
+
+[node name="AudioPlayer2" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio3"]
+max_distance = 60.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("98_3reqn")
+
+[node name="AudioPlayer3" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio3"]
 max_distance = 60.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("98_3reqn")
