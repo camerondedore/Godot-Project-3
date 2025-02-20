@@ -7,6 +7,7 @@ namespace MobBlackRat
     {
 
         float distanceToEnemySqr;
+        int stuckTicks;
 
 
 
@@ -34,6 +35,12 @@ namespace MobBlackRat
                     // set move target
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
+
+                // check if rat is stuck
+                if(blackboard.Velocity.LengthSquared() < 0.7f)
+                {
+                    stuckTicks++;
+                }
             }
 
 
@@ -45,6 +52,8 @@ namespace MobBlackRat
         public override void StartState()
         {
             blackboard.moving = true;
+
+            stuckTicks = 0;
 
             // set move target
             blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -75,9 +84,13 @@ namespace MobBlackRat
                 // cooldown
                 return blackboard.stateCooldown;
             }
-
-
             
+            if(stuckTicks > 10)
+            {
+                // rat is stuck
+                // idle
+                return blackboard.superStateIdle;
+            }
 
             // check if enemy is close enough
             if(distanceToEnemySqr < blackboard.attackRangeSqr)

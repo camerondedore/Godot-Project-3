@@ -6,7 +6,7 @@ namespace MobBrownRat
     public partial class MobBrownRatStateMove : MobBrownRatState
     {
 
-
+        int stuckTicks;
 
 
 
@@ -25,6 +25,12 @@ namespace MobBrownRat
                     // set move target
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
+
+                // check if rat is stuck
+                if(blackboard.Velocity.LengthSquared() < 0.7f)
+                {
+                    stuckTicks++;
+                }
             }
 
 
@@ -35,6 +41,8 @@ namespace MobBrownRat
         
         public override void StartState()
         {
+            stuckTicks = 0;
+            
             blackboard.moving = true;
 
             // set move target
@@ -68,6 +76,12 @@ namespace MobBrownRat
                 return blackboard.stateCooldown;
             }
 
+            if(stuckTicks > 10)
+            {
+                // rat is stuck
+                // cooldown
+                return blackboard.stateCooldown;
+            }
 
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();

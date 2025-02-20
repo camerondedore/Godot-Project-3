@@ -6,7 +6,7 @@ namespace MobBrownRat
     public partial class MobBrownRatStateRetreat : MobBrownRatState
     {
 
-
+        int stuckTicks;
 
 
 
@@ -16,12 +16,20 @@ namespace MobBrownRat
             blackboard.LookForEnemy();
 
             blackboard.ClayPotCheck();
+
+            // check if rat is stuck
+            if(blackboard.Velocity.LengthSquared() < 0.7f)
+            {
+                stuckTicks++;
+            }
         }
         
         
         
         public override void StartState()
         {
+            stuckTicks = 0;
+            
             // get flee target position
             blackboard.navAgent.TargetPosition = blackboard.startPosition + new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * 2;
             blackboard.moving = true;
@@ -47,6 +55,13 @@ namespace MobBrownRat
             {
                 // react
                 return blackboard.stateReact;
+            }
+
+            if(stuckTicks > 10)
+            {
+                // rat is stuck
+                // cooldown
+                return blackboard.stateCooldown;
             }
 
             if(blackboard.navAgent.IsNavigationFinished())

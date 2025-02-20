@@ -45,7 +45,7 @@ namespace MobBlackRat
         public float moveRecalculatePathRange = 0.5f,
             attackRangeSqr = 4.5f,
             damageRangeSqr = 6.25f,
-            attackAngle = 60,
+            attackAngle = 45,
             damage = 10,
             PatrolRange = 10,
             lookSpeed = 15f,
