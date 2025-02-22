@@ -123,7 +123,7 @@ public StateMachine machine = new StateMachine();
         if(lookTarget.LengthSquared() > 0.1f)
         {
             var smoothLookTarget = GlobalPosition + -Basis.Z;
-            smoothLookTarget = smoothLookTarget.Slerp(lookTarget, lookSpeed * ((float) delta));
+            smoothLookTarget = smoothLookTarget.Lerp(lookTarget, lookSpeed * ((float) delta));
 
             // apply look
             LookAt(smoothLookTarget);
