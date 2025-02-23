@@ -65,7 +65,15 @@ public partial class PlayerCharacterLedgeDetector : Node3D
         // check for ground
         var detectingGround = groundDetectorRay.IsColliding();
 
-        return detectingLedge && !detectingCeiling && !detectingGround;
+        // check for animatable body
+        var animatableBodyMoving = false;
+
+        if(ledgeDetectorRayVertical.GetCollider() is IAnimatableBody animBody)
+        {
+            animatableBodyMoving = animBody.IsMoving();
+        }
+
+        return detectingLedge && !detectingCeiling && !detectingGround && !animatableBodyMoving;
     }
 
 

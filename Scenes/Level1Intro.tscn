@@ -19,7 +19,7 @@
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="12_0it4w"]
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="12_3cr32"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="12_ef06k"]
-[ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Fabrications/PropPlatformSmall4m.tscn" id="13_cft54"]
+[ext_resource type="PackedScene" uid="uid://c6xu4un20esl1" path="res://Prefabs/Fabrications/PropPlatform4mSmall.tscn" id="13_cft54"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="13_p84f7"]
 [ext_resource type="PackedScene" uid="uid://bqieml050c1mh" path="res://Prefabs/Food/PropFirePitWithStand.tscn" id="14_7eexx"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="14_a60p7"]

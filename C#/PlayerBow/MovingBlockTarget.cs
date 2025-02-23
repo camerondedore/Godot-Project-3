@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget
+public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatableBody
 {
 
     [Export]
@@ -188,5 +188,12 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget
             // play audio
             hitAudio.PlaySound(hitFailSound, 0.1f);
         }
+    }
+
+
+
+    public bool IsMoving()
+    {
+        return moveCursor < 1f;
     }
 }

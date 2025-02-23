@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Portcullis : AnimatableBody3D, IActivatable
+public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatableBody
 {
 
 	[Export]
@@ -14,10 +14,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 	[Export]
 	bool open;
 
-	CollisionShape3D portcullisCollider;
-	Blocker blocker;
 	AudioTools3d audio;
-	Decal decal;
 	Vector3 closedPosition,
 		openPosition,
 		startPostition,
@@ -29,10 +26,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 	public override void _Ready()
 	{
 		// get nodes
-		portcullisCollider = (CollisionShape3D) GetNode("PortcullisCollider");
-		blocker = (Blocker) GetNode("Blocker");
 		audio = (AudioTools3d) GetNode("Audio");
-		decal = (Decal) GetNode("Decal");
 		
 		closedPosition = GlobalPosition;
 		openPosition = GlobalPosition + openOffset;
@@ -40,12 +34,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 		if(open == true)
 		{
 			GlobalPosition = openPosition;
-			portcullisCollider.Disabled = true;
-			blocker.Activate();
 		}
-
-
-		decal.TopLevel = true;
 	}
 
 
@@ -108,8 +97,6 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
 	void Closed()
 	{
-		portcullisCollider.Disabled = false;
-		blocker.Deactivate();
 		audio.PlaySound(openSound, 0.15f);
 	}
 
@@ -117,8 +104,13 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
 	void Opened()
 	{
-		portcullisCollider.Disabled = true;
-		blocker.Activate();
 		audio.PlaySound(openSound, 0.15f);
 	}
+
+
+
+    public bool IsMoving()
+    {
+        return openCursor < 1f;
+    }
 }

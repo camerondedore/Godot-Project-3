@@ -1,0 +1,129 @@
+[gd_scene load_steps=11 format=3 uid="uid://oikctmultp1o"]
+
+[ext_resource type="Script" path="res://C#/MovingPlatform.cs" id="1_5ybh8"]
+[ext_resource type="ArrayMesh" uid="uid://cbu4844447nje" path="res://Models/prop-board-post-1.res" id="1_81bgb"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_4hmlv"]
+[ext_resource type="AudioStream" uid="uid://dkq3inchc8mit" path="res://Audio/portcullis-opening.wav" id="2_r4177"]
+[ext_resource type="ArrayMesh" uid="uid://u37wl8oabeac" path="res://Models/prop-board-short.res" id="2_u2lwf"]
+[ext_resource type="AudioStream" uid="uid://dsjxwjjje2p6j" path="res://Audio/portcullis-open.wav" id="3_q3inj"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_r0m8p"]
+[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_firyo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3ql71"]
+points = PackedVector3Array(1, -0.15, 1, 1, -0.15, -1, -1, -0.15, -1, -1, -0.15, 1, 1, 0.15, 1, 1, 0.15, -1, -1, 0.15, -1, -1, 0.15, 1, 0, -1.5, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sp6ha"]
+size = Vector3(0.33, 3.85, 0.33)
+
+[node name="PropPlatform4mSmallMoving" type="AnimatableBody3D"]
+collision_layer = 16
+script = ExtResource("1_5ybh8")
+openOffset = Vector3(0, 3.8, 0)
+openingSound = ExtResource("2_r4177")
+openSound = ExtResource("3_q3inj")
+speed = 0.5
+open = true
+
+[node name="BoardPostMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.14, 0, 0, 0, 1.14, 0, 0, 0, 1.14, 0, 1.829, 0)
+layers = 2
+gi_mode = 0
+mesh = ExtResource("1_81bgb")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.95, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 3.95, -0.433049)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 7.64274e-15, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 3.95, -0.847545)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 1.91069e-14, 1.52855e-14, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 3.95, 0.434105)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, 0, 7.64274e-15, -4.37114e-08, 1, 1.74846e-07, -1, -4.37114e-08, 0, 3.95, 0.854031)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.0015085, 3.85415, 0.0015085)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 7.64274e-15, -4.37114e-08, 1, 1, 4.37114e-08, -5.73206e-15, -0.849053, 3.85415, 0.00150854)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, -1, -4.37114e-08, 7.64274e-15, -4.37114e-08, 1, -1, -1.31134e-07, 1.91069e-15, 0.852523, 3.85415, 0.00150846)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 1.74846e-07, -7.64274e-15, 0, -4.37114e-08, -1, -1.74846e-07, 1, -4.37114e-08, -0.000980459, 3.75551, 0.319286)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="BoardShortMesh9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 1.91069e-14, 1.52855e-14, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -0.000980534, 3.75551, -0.323359)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_u2lwf")
+surface_material_override/0 = ExtResource("2_4hmlv")
+surface_material_override/1 = ExtResource("3_r0m8p")
+
+[node name="PlatformCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.84505, 0)
+shape = SubResource("ConvexPolygonShape3D_3ql71")
+
+[node name="BoardPostCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.775, 0)
+shape = SubResource("BoxShape3D_sp6ha")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("2_r4177")
+unit_size = 5.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("8_firyo")
