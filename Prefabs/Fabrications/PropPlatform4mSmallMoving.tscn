@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://oikctmultp1o"]
+[gd_scene load_steps=12 format=3 uid="uid://oikctmultp1o"]
 
 [ext_resource type="Script" path="res://C#/MovingPlatform.cs" id="1_5ybh8"]
 [ext_resource type="ArrayMesh" uid="uid://cbu4844447nje" path="res://Models/prop-board-post-1.res" id="1_81bgb"]
@@ -10,10 +10,13 @@
 [ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_firyo"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3ql71"]
-points = PackedVector3Array(1, -0.15, 1, 1, -0.15, -1, -1, -0.15, -1, -1, -0.15, 1, 1, 0.15, 1, 1, 0.15, -1, -1, 0.15, -1, -1, 0.15, 1, 0, -1.5, 0)
+points = PackedVector3Array(1, -0.15, 1, 1, -0.15, -1, -1, -0.15, -1, -1, -0.15, 1, 1, 0.15, 1, 1, 0.15, -1, -1, 0.15, -1, -1, 0.15, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sp6ha"]
 size = Vector3(0.33, 3.85, 0.33)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sw084"]
+points = PackedVector3Array(1, -0.15, 1, 1, -0.15, -1, -1, -0.15, -1, -1, -0.15, 1, 0, -1.5, 0)
 
 [node name="PropPlatform4mSmallMoving" type="AnimatableBody3D"]
 collision_layer = 16
@@ -119,6 +122,13 @@ shape = SubResource("ConvexPolygonShape3D_3ql71")
 [node name="BoardPostCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.775, 0)
 shape = SubResource("BoxShape3D_sp6ha")
+
+[node name="InvisibleWall" type="AnimatableBody3D" parent="."]
+collision_layer = 2048
+
+[node name="Collider" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.84505, 0)
+shape = SubResource("ConvexPolygonShape3D_sw084")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

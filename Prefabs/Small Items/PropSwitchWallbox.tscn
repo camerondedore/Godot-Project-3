@@ -10,6 +10,8 @@
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
+layers = 2
+gi_mode = 2
 mesh = ExtResource("1_tnvxa")
 surface_material_override/0 = ExtResource("2_d5duf")
 surface_material_override/1 = ExtResource("3_crngp")
