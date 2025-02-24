@@ -36,6 +36,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
 
+[node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
+
 [node name="Cinematics" type="Node3D" parent="Map"]
 
 [node name="CinematicsLevelX" type="AnimationPlayer" parent="Map/Cinematics"]
