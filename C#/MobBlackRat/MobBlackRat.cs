@@ -129,8 +129,10 @@ namespace MobBlackRat
             }
 
 
+            var isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), GlobalPosition).DistanceSquaredTo(GlobalPosition) < 1f;
+
             // check that rat is in moving state
-            if(moving && IsOnFloor())
+            if(moving && IsOnFloor() && isOnNavmesh)
             {
                 // get new velocity
                 var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
@@ -143,6 +145,32 @@ namespace MobBlackRat
                 
                 // pass new velocity to nav agent
                 navAgent.Velocity = newVelocity;
+            }
+            else if(moving && IsOnFloor() && isOnNavmesh == false)
+            {
+                // get new velocity
+                var newVelocity = navAgent.TargetPosition - GlobalPosition;
+                newVelocity = newVelocity.Normalized();
+                newVelocity.Y = 0;
+                newVelocity *= speed;
+                
+                // move
+                Velocity = newVelocity;
+                MoveAndSlide();
+
+                // get direction to next path point and flatten
+                var forward = GlobalPosition + -Basis.Z;
+                var lookDirection = GlobalPosition + Velocity.Normalized();
+                lookDirection.Y = GlobalPosition.Y;
+                var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)GetPhysicsProcessDeltaTime()));
+
+                // look in direction of movement
+                LookAt(lookTarget, Vector3.Up);
+
+                // adjust walk animation speed
+                var walkSpeed = Velocity.LengthSquared() / Mathf.Pow(speed, 2);
+                //animation.Set("parameters/brown-rat-walk/WalkSpeed/scale", walkSpeed);
+                animation.SpeedScale = walkSpeed;
             }
             else if(IsOnFloor())
             {
