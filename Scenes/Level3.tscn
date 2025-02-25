@@ -153,14 +153,14 @@ script = ExtResource("3_bwek3")
 [node name="DialogueUi" parent="." instance=ExtResource("4_e327v")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("5_kqsfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 5, -85.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Map" type="Node3D" parent="."]
 
 [node name="Lighting" type="Node3D" parent="Map"]
 
 [node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
-transform = Transform3D(-0.927836, -0.35592, 0.111539, 0, 0.299041, 0.95424, -0.372988, 0.885379, -0.277461, 0, 0, 0)
+transform = Transform3D(-0.925089, -0.35592, -0.132403, -0.246976, 0.299041, 0.921725, -0.288467, 0.885379, -0.364543, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.9
 directional_shadow_blend_splits = true
@@ -203,28 +203,28 @@ positionSpread = 0.0
 maxRotation = 3.0
 uniformSize = true
 
-[node name="PropTreeFir1!1740413343_936" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413343_936" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(-0.853765, 0.00894048, 0.505312, -0.00725024, 0.991663, -0.0297954, -0.505339, -0.0293325, -0.853292, -5.03121, 1.9999, -24.6661)
 
-[node name="PropTreeFir1!1740413345_95" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413345_95" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(0.00147956, 0.0364966, -1.04051, -0.0339179, 1.03996, 0.0364291, 1.04059, 0.0338453, 0.00266683, 11.8894, 1.9999, -33.1942)
 
-[node name="PropTreeFir1!1740413347_966" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413347_966" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(-0.919042, 0.0463779, -0.531997, 0.0340352, 1.06184, 0.0337714, 0.532929, 0.0121652, -0.919591, -20.9576, 1.9999, -24.477)
 
-[node name="PropTreeFir1!1740413362_847" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413362_847" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(-0.902711, 0.00958049, -0.620506, 0.0097496, 1.0954, 0.00272908, 0.620504, -0.00327366, -0.902758, -69.0048, 4, -79.3717)
 
-[node name="PropTreeFir1!1740413364_864" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413364_864" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(0.182502, -0.0334099, -1.0141, 0.0441963, 1.02966, -0.0259687, 1.01369, -0.0388776, 0.183708, -45.7425, 4, -75.4279)
 
-[node name="PropTreeFir1!1740413366_864" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413366_864" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(0.859819, -0.0262047, 0.464135, 0.00943381, 0.976673, 0.0376659, -0.464778, -0.0286537, 0.859394, -44.7002, 4, -115.138)
 
-[node name="PropTreeFir1!1740413368_881" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413368_881" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(-0.927128, -0.0453429, -0.104197, -0.0473364, 0.93274, 0.015295, 0.103307, 0.0204619, -0.92811, -37.7284, 4, -96.3416)
 
-[node name="PropTreeFir1!1740413399_397" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1740413399_397" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(0.432247, 0.0563288, -0.990741, -0.0551502, 1.08034, 0.0373618, 0.990807, 0.03556, 0.434298, -56.6439, 4, -75.9356)
 
 [node name="Fir2" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees"]
