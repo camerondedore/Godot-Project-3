@@ -53,7 +53,8 @@ namespace MobBlackRat
         public bool lookAtTarget = false,
             moving;
 
-        bool delay = false;
+        bool delay = false,
+            isOnNavmesh;
         //string debugText;
 
 
@@ -129,7 +130,7 @@ namespace MobBlackRat
             }
 
 
-            var isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), GlobalPosition).DistanceSquaredTo(GlobalPosition) < 1f;
+            isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), GlobalPosition).DistanceSquaredTo(GlobalPosition) < 1f;
 
             // check that rat is in moving state
             if(moving && IsOnFloor() && isOnNavmesh)
