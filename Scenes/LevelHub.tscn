@@ -234,6 +234,9 @@ alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("69_cnpxw")
 metallic_specular = 0.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qo1c8"]
+size = Vector3(12, 10, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_fxjfu"]
 size = Vector2(70, 130)
 
@@ -245,9 +248,6 @@ size = Vector2(8, 25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vhv02"]
 size = Vector3(8, 1, 25)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qo1c8"]
-size = Vector3(12, 10, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_b7k0l"]
 _data = {
@@ -2129,85 +2129,6 @@ storedItems = Array[PackedScene]([ExtResource("42_0hot2"), ExtResource("42_0hot2
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 46, 0, -45.8)
 storedItems = Array[PackedScene]([ExtResource("89_8fmtt"), ExtResource("90_1q56v"), ExtResource("42_0hot2")])
 
-[node name="WaterArea" type="Area3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.779, -0.1, -30.0802)
-collision_layer = 4096
-collision_mask = 0
-monitoring = false
-
-[node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
-layers = 2
-gi_mode = 2
-mesh = SubResource("PlaneMesh_fxjfu")
-skeleton = NodePath("../../../../..")
-surface_material_override/0 = ExtResource("12_yb115")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_qyelk")
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96999, 1.47229, -41.0005)
-max_distance = 100.0
-size = Vector3(50.6063, 20, 45.2925)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe2" type="ReflectionProbe" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11772, 1.47229, -5.43194)
-max_distance = 100.0
-size = Vector3(55.3857, 20, 35.8687)
-box_projection = true
-enable_shadows = true
-
-[node name="ReflectionProbe3" type="ReflectionProbe" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8005, 1.47229, 32.0258)
-max_distance = 100.0
-size = Vector3(37.8691, 20, 60.5232)
-box_projection = true
-enable_shadows = true
-
-[node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea"]
-collision_layer = 4096
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea/CameraBlocker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_qyelk")
-
-[node name="WaterArea2" type="Area3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5219, -8.1, 64.9464)
-collision_layer = 4096
-collision_mask = 0
-monitoring = false
-
-[node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2"]
-layers = 2
-cast_shadow = 0
-gi_mode = 2
-mesh = SubResource("PlaneMesh_11ew1")
-skeleton = NodePath("../../../../..")
-surface_material_override/0 = ExtResource("12_yb115")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_vhv02")
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-max_distance = 100.0
-size = Vector3(10, 8, 30)
-box_projection = true
-enable_shadows = true
-
-[node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2"]
-collision_layer = 4096
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/WaterArea2/CameraBlocker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-shape = SubResource("BoxShape3D_vhv02")
-
 [node name="InvisibleWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
 [node name="InvisibleWall" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
@@ -2521,6 +2442,85 @@ transform = Transform3D(1, 0, 0, 0, 0.0332598, 0.999447, 0, -0.999447, 0.0332598
 
 [node name="PropOvenPeel" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("38_c4rh7")]
 transform = Transform3D(-4.37114e-08, 0.866025, 0.5, 4.23516e-22, 0.5, -0.866025, -1, -2.29539e-08, -4.76652e-08, -67.2229, 1.45553, 7.66792)
+
+[node name="WaterArea" type="Area3D" parent="Map/OccluderInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.779, -0.1, -30.0802)
+collision_layer = 4096
+collision_mask = 0
+monitoring = false
+
+[node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/WaterArea"]
+layers = 2
+gi_mode = 2
+mesh = SubResource("PlaneMesh_fxjfu")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = ExtResource("12_yb115")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_qyelk")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96999, 1.47229, -41.0005)
+max_distance = 100.0
+size = Vector3(50.6063, 20, 45.2925)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe2" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11772, 1.47229, -5.43194)
+max_distance = 100.0
+size = Vector3(55.3857, 20, 35.8687)
+box_projection = true
+enable_shadows = true
+
+[node name="ReflectionProbe3" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8005, 1.47229, 32.0258)
+max_distance = 100.0
+size = Vector3(37.8691, 20, 60.5232)
+box_projection = true
+enable_shadows = true
+
+[node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/WaterArea/CameraBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_qyelk")
+
+[node name="WaterArea2" type="Area3D" parent="Map/OccluderInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5219, -8.1, 64.9464)
+collision_layer = 4096
+collision_mask = 0
+monitoring = false
+
+[node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/WaterArea2"]
+layers = 2
+cast_shadow = 0
+gi_mode = 2
+mesh = SubResource("PlaneMesh_11ew1")
+skeleton = NodePath("../../../..")
+surface_material_override/0 = ExtResource("12_yb115")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/WaterArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_vhv02")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+max_distance = 100.0
+size = Vector3(10, 8, 30)
+box_projection = true
+enable_shadows = true
+
+[node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea2"]
+collision_layer = 4096
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/WaterArea2/CameraBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_vhv02")
 
 [node name="Fx" type="Node3D" parent="Map"]
 
