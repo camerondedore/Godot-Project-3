@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmpydh6hgb54y"]
+
+[ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_huolr"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_liflw"]
+[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_wf68u"]
+
+[node name="PropWatchTowerBg" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_37em4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+surface_material_override/2 = ExtResource("4_wf68u")
