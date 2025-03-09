@@ -16,16 +16,17 @@ namespace MobWasp
             // apply damage
             hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
+            // aggro wasp
+            wasp.isAggro = true;
+            wasp.SpotEnemyForAllies();
+            wasp.AggroAllies();
+            
             if(hitPoints == 0 && !dead)
             {
                 // kill wasp
                 dead = true;
                 Die();
             }
-
-            // aggro wasp
-            wasp.isAggro = true;
-            wasp.AggroAllies();
         }
 
 

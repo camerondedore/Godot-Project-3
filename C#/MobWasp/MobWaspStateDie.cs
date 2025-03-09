@@ -28,7 +28,8 @@ namespace MobWasp
             blackboard.GetTree().CurrentScene.AddChild(newFx);
             newFx.Owner = blackboard.GetTree().CurrentScene;
 
-            blackboard.AggroAllies();
+            // moved to health
+            //blackboard.AggroAllies();
 
             blackboard.QueueFree();
         }

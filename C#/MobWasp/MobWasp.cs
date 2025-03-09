@@ -55,7 +55,7 @@ namespace MobWasp
         public override void _Ready()
         {
             // change base fields
-            maxSightRangeForAlliesSqr = 16;
+            maxSightRangeForAlliesSqr = 64;
             maxSightRangeSqr = 100;
             speed = 3.5f;
             arrowType = "weighted";
