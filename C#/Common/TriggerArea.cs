@@ -56,7 +56,7 @@ public partial class TriggerArea : Area3D, IActivatable
     {
         if(linkedObjects.Length > 0)
         {
-            // activate pinned objects
+            // activate linked objects
             foreach(IActivatable i in linkedObjects)
             {
                 if(IsInstanceValid((Node)i) == true)

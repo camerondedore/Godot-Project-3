@@ -56,12 +56,5 @@ namespace Cinematic
                 QueueFree();
             }
         }
-        
-        
-        
-        public interface IWatchable
-        {
-            bool IsAlive();
-        }
     }
 }

@@ -9,6 +9,8 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
     PackedScene mob;
     [Export]
     Node3D mobTarget;
+    [Export]
+    TriggerDead mobWatcher; // optional
 
 
 
@@ -25,6 +27,12 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
 
         // assign start target
         ((iMobSpawnable) newMob).SetTarget(mobTarget);
+
+        if(newMob is IWatchable watchableMob)
+        {
+            // add new mob to watcher
+            mobWatcher.AddWatchable(watchableMob);
+        }
     }
 
 
