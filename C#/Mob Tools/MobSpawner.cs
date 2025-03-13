@@ -28,7 +28,7 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
         // assign start target
         ((iMobSpawnable) newMob).SetTarget(mobTarget);
 
-        if(newMob is IWatchable watchableMob)
+        if(mobWatcher != null && newMob is IWatchable watchableMob)
         {
             // add new mob to watcher
             mobWatcher.AddWatchable(watchableMob);
