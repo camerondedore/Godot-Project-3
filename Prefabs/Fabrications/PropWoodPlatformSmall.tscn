@@ -1,0 +1,193 @@
+[gd_scene load_steps=9 format=3 uid="uid://0f6b2c266iwi"]
+
+[ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_8wihv"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_ahtth"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_h3eud"]
+[ext_resource type="ArrayMesh" uid="uid://fuy7vcsdgdk2" path="res://Models/prop-board-2.res" id="4_imiph"]
+[ext_resource type="ArrayMesh" uid="uid://chv3liu8yao5m" path="res://Models/prop-board-3.res" id="5_5b2e6"]
+[ext_resource type="ArrayMesh" uid="uid://cbu4844447nje" path="res://Models/prop-board-post-1.res" id="6_27y40"]
+[ext_resource type="ArrayMesh" uid="uid://b4i2xejugnjsl" path="res://Models/prop-board-post-2.res" id="7_6jikl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yaqd0"]
+size = Vector3(3.35, 2.05, 3)
+
+[node name="PropWoodPlatformSmall" type="StaticBody3D"]
+
+[node name="Boards" type="Node3D" parent="."]
+
+[node name="Board4" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(1.91069e-15, 1.06581e-14, -1, -4.37114e-08, 1, 1.06581e-14, 1, 4.37114e-08, 1.91069e-15, -1.34381, 1.11187, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_8wihv")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board7" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(4.37114e-08, -1, 4.37114e-08, -8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, -8.74228e-08, -1.52283, 2, 0.03158)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_8wihv")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board10" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-0.0194767, -0.99981, -4.37031e-08, 0, -4.37114e-08, 1, -0.99981, 0.0194767, 8.51353e-10, -0.45, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_8wihv")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board11" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-1.31134e-07, 1, -4.37114e-08, -8.74228e-08, -4.37114e-08, -1, -1, -1.31134e-07, 8.74228e-08, -0.817413, 2, 0.03158)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_imiph")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board12" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -1.15542, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("5_5b2e6")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board13" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-4.37114e-08, 1, -5.96046e-08, 0, -5.96046e-08, -1, -1, -4.37114e-08, 3.55271e-15, 0.75, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_8wihv")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board14" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0.35, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_imiph")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board15" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-1.31134e-07, -1, -4.37114e-08, 8.74228e-08, 4.37114e-08, -1, 1, -1.31134e-07, 8.74228e-08, -0.05, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("5_5b2e6")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board17" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(4.37114e-08, -1, 4.37114e-08, -8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, -8.74228e-08, 1.51911, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_imiph")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board18" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-4.37114e-08, 1, -5.96046e-08, 0, -5.96046e-08, -1, -1, -4.37114e-08, 3.55271e-15, 1.15, 2, 4.84288e-08)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("5_5b2e6")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board19" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-1, -8.74228e-08, 6.15812e-15, -8.74228e-08, 1, -1.58933e-08, -3.82137e-15, -1.58933e-08, -1, -5.58794e-08, 0.8, 0.88158)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_imiph")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board23" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(-1, -8.74228e-08, 6.15812e-15, 8.74228e-08, -1, -7.15295e-08, 1.14641e-14, -7.15295e-08, 1, -5.58794e-08, 0.8, -1.24148)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_imiph")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Board21" type="MeshInstance3D" parent="Boards"]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, 1.74846e-07, 1, 8.74228e-08, 1, -1.74846e-07, 4.37114e-08, 1.35, 1.1, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("5_5b2e6")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Posts" type="Node3D" parent="."]
+
+[node name="Post3" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(-7.54979e-08, 0.95, -1.50996e-07, 1, 7.1723e-08, -4.37114e-08, -4.37114e-08, -1.43446e-07, -1, 0, 1.8, 1.35)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("6_27y40")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Post4" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(7.54979e-08, 0.95, -4.37114e-08, -1, 7.1723e-08, 1.31134e-07, 1.31134e-07, 4.15258e-08, 1, 0, 1.8, -1.35)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("7_6jikl")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Post9" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(-1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -1, 8.74228e-08, 4.37114e-08, 8.74228e-08, 1, -1.15, 0.2, 1.05)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("6_27y40")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Post10" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(1, 4.37114e-08, -1.31134e-07, 4.37114e-08, -1, 8.74228e-08, -1.31134e-07, -8.74228e-08, -1, -1.15, 0.2, -1.05)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("7_6jikl")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Post11" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(8.74228e-08, 8.74228e-08, 1, 4.37114e-08, -1, 8.74228e-08, 1, 4.37114e-08, -8.74228e-08, 1.15, 0.2, 1.05)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("6_27y40")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="Post12" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(-8.74228e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -8.74228e-08, 1.15, 0.2, -1.05)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("7_6jikl")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_ahtth")
+surface_material_override/1 = ExtResource("3_h3eud")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.025, 4.84288e-08)
+shape = SubResource("BoxShape3D_yaqd0")
