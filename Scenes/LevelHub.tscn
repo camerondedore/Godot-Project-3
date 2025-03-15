@@ -1694,6 +1694,7 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 52.3, 0, -34)
 [node name="Door" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame" instance=ExtResource("49_c8p7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750027, 1.25, -0.0499916)
 openAngle = Vector3(0, -110, 0)
+saveToWorldData = true
 
 [node name="PropDoorSpikes" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame" instance=ExtResource("44_7g1yl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
@@ -1704,6 +1705,7 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 52.3, 0, -47.7)
 [node name="Door" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame2" instance=ExtResource("49_c8p7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750027, 1.25, -0.0499916)
 openAngle = Vector3(0, -110, 0)
+saveToWorldData = true
 
 [node name="PropDoorSpikes" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame2" instance=ExtResource("44_7g1yl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)

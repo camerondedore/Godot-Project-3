@@ -13,6 +13,8 @@ public partial class Door : AnimatableBody3D, IBowTarget
     AudioStream openSound;
     [Export]
     Vector3 targetOffset = new Vector3(-1.3f, -0.2f, 0);
+    [Export]
+    bool saveToWorldData = false;
     
     string arrowType = "pick";
     CollisionShape3D doorCollider;
@@ -35,6 +37,26 @@ public partial class Door : AnimatableBody3D, IBowTarget
 
         startRotation = RotationDegrees;
         targetRotation = startRotation + openAngle;
+
+        // check saved data
+        var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+        if(wasActivated)
+        {
+            locked = false;
+
+            // rotate door
+            RotationDegrees = targetRotation;
+
+            // remove blocker and activate navmesh link
+            blocker.Activate();
+
+            // remove lock
+            lockFx.QueueFree();
+
+            // disable script
+            SetScript(new Variant());
+        }
     }
 
 
@@ -103,5 +125,11 @@ public partial class Door : AnimatableBody3D, IBowTarget
 
         // remove lock
         lockFx.Open();
+
+        if(saveToWorldData == true)
+        {            
+            // save to pickups taken
+            WorldData.data.ActivateObject(this);
+        }
     }
 }
