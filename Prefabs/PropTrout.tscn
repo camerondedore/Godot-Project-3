@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://brgstclbdpf0g"]
 
-[ext_resource type="Script" path="res://C#/Fish.cs" id="1_7i8s6"]
+[ext_resource type="Script" uid="uid://q5lfyd6iqhdt" path="res://C#/Fish.cs" id="1_7i8s6"]
 [ext_resource type="ArrayMesh" uid="uid://b2ft5bg3qp188" path="res://Models/prop-trout.res" id="1_ujdlx"]
 [ext_resource type="Material" uid="uid://c1gdk0c3nmdm3" path="res://Materials/FishTrout.tres" id="2_5gbg7"]
 

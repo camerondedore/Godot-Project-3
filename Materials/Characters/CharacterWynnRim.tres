@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bjcflxq43ap6e"]
 
-[ext_resource type="Shader" path="res://Shaders/CharacterRimLight.gdshader" id="1_qtmls"]
+[ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_qtmls"]
 [ext_resource type="Texture2D" uid="uid://dnvo12td6yi08" path="res://Textures/character-wynn-diffuse.png" id="2_able0"]
 [ext_resource type="Texture2D" uid="uid://bjom0dc6fraiq" path="res://Textures/character-wynn-metallic.png" id="3_ocuo0"]
 [ext_resource type="Texture2D" uid="uid://dgvyuy7c210l6" path="res://Textures/character-wynn-roughness.png" id="4_fydtr"]
@@ -8,6 +8,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_qtmls")
+shader_parameter/albedo = ExtResource("2_able0")
+shader_parameter/metallic = ExtResource("3_ocuo0")
+shader_parameter/roughness = ExtResource("4_fydtr")
 shader_parameter/rimPower = 0.025
 shader_parameter/rimPowerAlbedo = 0.15
 shader_parameter/rimSharpness = 0.1
@@ -15,6 +18,3 @@ shader_parameter/rimDistance = 0.75
 shader_parameter/rimColor = Color(0.76, 0.9, 1, 1)
 shader_parameter/rimMinHeight = -0.9
 shader_parameter/rimHeightSlope = 2.0
-shader_parameter/albedo = ExtResource("2_able0")
-shader_parameter/metallic = ExtResource("3_ocuo0")
-shader_parameter/roughness = ExtResource("4_fydtr")

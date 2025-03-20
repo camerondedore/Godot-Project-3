@@ -85,11 +85,11 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_d
 
 uniform vec4 Albedo : source_color;
 uniform sampler2D depth_tex_frg_2 : hint_depth_texture;
-uniform float Depth_Factor : hint_range(0, 1) = 0;
-uniform float Depth_Power : hint_range(0.0010000000475, 10) = 1;
-uniform float Wave_Turbulance : hint_range(0, 5) = 0.20000000298023;
-uniform float Wave_Speed : hint_range(0, 5) = 0.20000000298023;
-uniform float Wave_Amplitude : hint_range(0, 1) = 0.20000000298023;
+uniform float Depth_Factor : hint_range(0.0, 1.0) = 0.0;
+uniform float Depth_Power : hint_range(0.0010000000475, 10.0) = 1.0;
+uniform float Wave_Turbulance : hint_range(0.0, 5.0) = 0.20000000298023;
+uniform float Wave_Speed : hint_range(0.0, 5.0) = 0.20000000298023;
+uniform float Wave_Amplitude : hint_range(0.0, 1.0) = 0.20000000298023;
 
 
 

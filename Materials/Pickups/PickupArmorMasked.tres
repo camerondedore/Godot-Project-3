@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://b5cyspoybrawv"]
 
-[ext_resource type="Shader" path="res://Shaders/ArmorPickup.gdshader" id="1_e318g"]
+[ext_resource type="Shader" uid="uid://m0gg2nh1wrsb" path="res://Shaders/ArmorPickup.gdshader" id="1_e318g"]
 [ext_resource type="Texture2D" uid="uid://dqjwpmad3xuwe" path="res://Textures/pickup-armor-diffuse.png" id="2_751cd"]
 [ext_resource type="Texture2D" uid="uid://cwqhgjjcsn4dn" path="res://Textures/pickup-armor-color-mask.png" id="3_4ej7m"]
 [ext_resource type="Texture2D" uid="uid://dhqtawhjrjht" path="res://Textures/pickup-armor-occlusion-mask.png" id="4_px2ul"]
@@ -10,15 +10,15 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_e318g")
+shader_parameter/albedoTexture = ExtResource("2_751cd")
+shader_parameter/metallicTexture = ExtResource("5_2tfei")
+shader_parameter/roughnessTexture = ExtResource("6_h5xu5")
 shader_parameter/albedoColor = Color(1, 1, 1, 1)
+shader_parameter/armorColorMask = ExtResource("3_4ej7m")
+shader_parameter/armorOcclusionMask = ExtResource("4_px2ul")
 shader_parameter/armorColor = Color(0.54, 0.18, 0, 1)
 shader_parameter/rimPower = 0.0
 shader_parameter/rimPowerAlbedo = 0.4
 shader_parameter/rimSharpness = 0.1
 shader_parameter/rimDistance = 0.75
 shader_parameter/rimColor = Color(0, 0, 0, 1)
-shader_parameter/albedoTexture = ExtResource("2_751cd")
-shader_parameter/metallicTexture = ExtResource("5_2tfei")
-shader_parameter/roughnessTexture = ExtResource("6_h5xu5")
-shader_parameter/armorColorMask = ExtResource("3_4ej7m")
-shader_parameter/armorOcclusionMask = ExtResource("4_px2ul")

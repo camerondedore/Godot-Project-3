@@ -8,7 +8,7 @@ colors = PackedColorArray(1, 0, 0, 0, 0.905269, 3.34509e-06, 1.15514e-06, 1, 0.9
 gradient = SubResource("Gradient_pcyqw")
 
 [sub_resource type="Curve" id="Curve_k01wf"]
-max_value = 2.0
+_limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 0.356436), 0.0, 1.72394, 0, 0, Vector2(1e-05, 0.514852), 0.0, 0.0, 0, 0, Vector2(1, 1.60396), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -22,6 +22,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.3
 emission_ring_radius = 0.0
 emission_ring_inner_radius = 0.06
+emission_ring_cone_angle = 90.0
 angle_min = -10.0
 angle_max = 10.0
 direction = Vector3(0, 1, 0)

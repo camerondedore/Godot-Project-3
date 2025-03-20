@@ -2,11 +2,11 @@
 
 [ext_resource type="Material" uid="uid://driq10n3id5cs" path="res://Materials/Fx/FxBlackberryBushCut1.tres" id="1_0na1p"]
 [ext_resource type="Material" uid="uid://b7qb72y5mdf1d" path="res://Particles/FxBlackberryBushCut.tres" id="2_ef6l4"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="3_rpb6l"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="3_rpb6l"]
 [ext_resource type="Material" uid="uid://c01va6k2r5a6c" path="res://Materials/Fx/FxBlackberryBushCut2.tres" id="3_uq3o2"]
 [ext_resource type="Material" uid="uid://dc7gtts3kb5sv" path="res://Materials/Fx/FxBlackberryBushCut3.tres" id="4_2elc6"]
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="6_c1cwb"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="7_mo8lm"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="6_c1cwb"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="7_mo8lm"]
 [ext_resource type="AudioStream" uid="uid://d0dqseuesh4n4" path="res://Audio/blackberry-bush-cut-1.wav" id="8_q1iuu"]
 [ext_resource type="AudioStream" uid="uid://cxpjw5c8gcagb" path="res://Audio/blackberry-bush-cut-2.wav" id="9_hhmfd"]
 

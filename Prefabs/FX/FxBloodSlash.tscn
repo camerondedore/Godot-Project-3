@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://myloy3htblvq"]
 
 [ext_resource type="Material" uid="uid://3o8p8ebacljd" path="res://Materials/Fx/FxBloodSplash.tres" id="1_5uc6b"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_wxt4p"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="2_wxt4p"]
 
 [sub_resource type="Gradient" id="Gradient_1jnp3"]
 offsets = PackedFloat32Array(0, 0.43787, 1)
@@ -24,6 +24,7 @@ emission_ring_axis = Vector3(1, 0, 0)
 emission_ring_height = 1.0
 emission_ring_radius = 0.1
 emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
 angle_max = 359.0
 direction = Vector3(0, 0, 1)
 spread = 50.0

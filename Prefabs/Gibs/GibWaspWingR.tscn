@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://brljsrtq78hv1" path="res://Prefabs/Gibs/GibWaspHead.tscn" id="1_wvmvg"]
 [ext_resource type="ArrayMesh" uid="uid://cjp5nqm8q31jy" path="res://Models/gib-wasp-wing-r.res" id="2_aixtj"]
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_2bqqv"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="3_2bqqv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_twjgy"]
 size = Vector3(0.08, 0.04, 0.7)

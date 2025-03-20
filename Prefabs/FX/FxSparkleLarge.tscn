@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/Fx/FxSparkle.tres" id="1_a4pd3"]
 [ext_resource type="Material" uid="uid://dhmavnuv18obg" path="res://Particles/FxSparkleLarge.tres" id="2_gko8f"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="3_k2sjs"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="3_k2sjs"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_32l67"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bnv3r5gw8eh8e"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_ydxnv"]
-[ext_resource type="Script" path="res://C#/Pickups/ArrowPickup.cs" id="2_wrbvg"]
+[ext_resource type="Script" uid="uid://bxy0t8b0ji3x3" path="res://C#/Pickups/ArrowPickup.cs" id="2_wrbvg"]
 [ext_resource type="ArrayMesh" uid="uid://dvwckpqutx3g6" path="res://Models/arrow-weighted.res" id="3_svxow"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="4_arunp"]
 
@@ -26,6 +26,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0

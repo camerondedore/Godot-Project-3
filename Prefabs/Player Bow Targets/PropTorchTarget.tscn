@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dampjwia650ny"]
 
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="1_hithe"]
-[ext_resource type="Script" path="res://C#/PlayerBow/TorchTarget.cs" id="3_x80ui"]
+[ext_resource type="Script" uid="uid://ekinf5vumt1n" path="res://C#/PlayerBow/TorchTarget.cs" id="3_x80ui"]
 [ext_resource type="PackedScene" uid="uid://d2ay8j416026n" path="res://Prefabs/FX/FxTorchDrip.tscn" id="5_i311g"]
 
 [node name="PropTorchTarget" instance=ExtResource("1_hithe")]

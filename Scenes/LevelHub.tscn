@@ -2,29 +2,29 @@
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
-[ext_resource type="Script" path="res://C#/HubControl.cs" id="3_8tlgx"]
-[ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_hlp5u"]
+[ext_resource type="Script" uid="uid://clqt84p2g2lla" path="res://C#/HubControl.cs" id="3_8tlgx"]
+[ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_hlp5u"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_n8wa2"]
 [ext_resource type="Environment" uid="uid://dooskg4otcsks" path="res://Environments/LevelHub1Environment.tres" id="4_1ksvl"]
-[ext_resource type="Script" path="res://C#/HubStage.cs" id="4_hh5wq"]
+[ext_resource type="Script" uid="uid://bie4ja2vf2s1o" path="res://C#/HubStage.cs" id="4_hh5wq"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_s034b"]
 [ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/LevelHub2Environment.tres" id="5_fikle"]
-[ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
+[ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="5_rinr5"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
-[ext_resource type="Script" path="res://C#/HubSet.cs" id="7_nlmtm"]
+[ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="7_nlmtm"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dpwxwkgm4hvfi" path="res://Scenes/Occlusion/LevelHub.occ" id="7_uqg3o"]
 [ext_resource type="ArrayMesh" uid="uid://c17yp7e6wr0s7" path="res://Models/level-hub-tree-walls.res" id="8_4d0ss"]
-[ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="8_7o44d"]
+[ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="8_7o44d"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="8_wqm4a"]
-[ext_resource type="Script" path="res://C#/SecretAreas.cs" id="10_6ffg7"]
+[ext_resource type="Script" uid="uid://dp7ot8li6s4md" path="res://C#/SecretAreas.cs" id="10_6ffg7"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="10_m3qwn"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="11_cs5ks"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="12_dcqnf"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/WaterWithFoam.tres" id="12_yb115"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="14_febnp"]
-[ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="14_k44qo"]
+[ext_resource type="Script" uid="uid://bsd6kqk6kcwxx" path="res://addons/PropPainter/ToolPropPainter.cs" id="14_k44qo"]
 [ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Food/PropCookingSpit.tscn" id="15_2ns3d"]
 [ext_resource type="PackedScene" uid="uid://cam1sxltrw2vj" path="res://Prefabs/Trees/PropTreeFir1.tscn" id="15_agjmb"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="16_ojyj8"]
@@ -44,10 +44,10 @@
 [ext_resource type="PackedScene" uid="uid://b1e6hhtb3arh8" path="res://Prefabs/Small Items/PropBungMallet.tscn" id="23_fa0lo"]
 [ext_resource type="PackedScene" uid="uid://bu8b1efkxsd3e" path="res://Prefabs/Trees/PropTreeApple3.tscn" id="23_nju8k"]
 [ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Lumber/PropTreeStumpOak1.tscn" id="25_6sl6c"]
-[ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="26_4gd46"]
+[ext_resource type="PackedScene" uid="uid://cy2fdh1yugj80" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="26_4gd46"]
 [ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="26_74fk1"]
 [ext_resource type="PackedScene" uid="uid://xrjt7goiur8h" path="res://Prefabs/Trees/PropBgTreeFir2.tscn" id="27_fw0iu"]
-[ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="27_qenpl"]
+[ext_resource type="PackedScene" uid="uid://cciwvf66jw5lm" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="27_qenpl"]
 [ext_resource type="PackedScene" uid="uid://dxtde18xqi2vw" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="28_1ouai"]
 [ext_resource type="PackedScene" uid="uid://bw1rpcyu6mm7p" path="res://Prefabs/Trees/PropBgTreeOak1.tscn" id="28_ak1tu"]
 [ext_resource type="PackedScene" uid="uid://b72j53vhydns4" path="res://Prefabs/Weapons/WeaponSpearStack.tscn" id="28_vtyr8"]
@@ -62,15 +62,15 @@
 [ext_resource type="PackedScene" uid="uid://ck4yohp23qcuw" path="res://Prefabs/Fabrications/PropFence2.tscn" id="32_2vcjr"]
 [ext_resource type="PackedScene" uid="uid://dqhdlhgxo8ft2" path="res://Prefabs/Lumber/PropLogHollow.tscn" id="32_4ho4x"]
 [ext_resource type="PackedScene" uid="uid://dv4wag0b4h4qc" path="res://Prefabs/Fabrications/PropFenceEnd.tscn" id="33_pwncl"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="35_itr01"]
+[ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="35_itr01"]
 [ext_resource type="PackedScene" uid="uid://dexsff1ceqobd" path="res://Prefabs/Food/PropOvenTower.tscn" id="35_mhnju"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="36_6it57"]
+[ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="36_6it57"]
 [ext_resource type="PackedScene" uid="uid://bpqngqvasucy4" path="res://Prefabs/Food/PropOven.tscn" id="36_qfdog"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="37_75886"]
 [ext_resource type="PackedScene" uid="uid://crnt1j26arkij" path="res://Prefabs/Lumber/PropStumpHollow.tscn" id="37_ngaji"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="37_nysf4"]
+[ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="37_nysf4"]
 [ext_resource type="PackedScene" uid="uid://cwlxx35uf8j51" path="res://Prefabs/Food/PropOvenDoor.tscn" id="37_u6lqd"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraTracker.cs" id="38_7dyhy"]
+[ext_resource type="Script" uid="uid://bbhfdc16qgjhb" path="res://C#/CinematicSimple/CinematicSimpleCameraTracker.cs" id="38_7dyhy"]
 [ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Food/PropOvenPeel.tscn" id="38_c4rh7"]
 [ext_resource type="PackedScene" uid="uid://gl71inotvdtq" path="res://Prefabs/Player Bow Targets/PropBlackberryBushOld.tscn" id="38_otm6b"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="39_31y1r"]
@@ -88,18 +88,18 @@
 [ext_resource type="PackedScene" uid="uid://cwa0t4570q3b3" path="res://Prefabs/Small Items/PropBucketWater.tscn" id="42_t0adj"]
 [ext_resource type="PackedScene" uid="uid://52tad572ea76" path="res://Prefabs/Small Items/PropKnapsack.tscn" id="43_w47c2"]
 [ext_resource type="PackedScene" uid="uid://c2lrd4688wt65" path="res://Prefabs/Doors/PropDoorSpikes.tscn" id="44_7g1yl"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="44_gr04f"]
+[ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="44_gr04f"]
 [ext_resource type="PackedScene" uid="uid://dhp7rjy33kbog" path="res://Prefabs/Fabrications/PropPicketWall.tscn" id="44_k88de"]
 [ext_resource type="PackedScene" uid="uid://dv01bjwkmdlab" path="res://Prefabs/Fabrications/PropPicketBattlements.tscn" id="44_u5c06"]
 [ext_resource type="PackedScene" uid="uid://ctfu1vil7krh2" path="res://Prefabs/Small Items/PropFishingPole.tscn" id="45_l8hvh"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="46_ssp6v"]
 [ext_resource type="PackedScene" uid="uid://clf0nyp5k70a" path="res://Prefabs/Weapons/WeaponArrowEnemy.tscn" id="48_melq6"]
-[ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="48_o7o1q"]
+[ext_resource type="Script" uid="uid://deoaa3om66g6o" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="48_o7o1q"]
 [ext_resource type="PackedScene" uid="uid://dunv4vxlrd3kx" path="res://Prefabs/Food/PropFirePit.tscn" id="48_siufe"]
 [ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="49_c8p7e"]
 [ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Food/PropBowl.tscn" id="49_otiid"]
 [ext_resource type="PackedScene" uid="uid://c7um6v47aarit" path="res://Prefabs/Doors/DoorFrame.tscn" id="50_chg6s"]
-[ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacterAudioAction.cs" id="50_vkiwa"]
+[ext_resource type="Script" uid="uid://bk2oontuca4uj" path="res://C#/CinematicCharacter/CinematicCharacterAudioAction.cs" id="50_vkiwa"]
 [ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Food/PropTankard.tscn" id="50_vqalf"]
 [ext_resource type="AudioStream" uid="uid://bptapxlnc86r5" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-1.wav" id="51_8bfyt"]
 [ext_resource type="AudioStream" uid="uid://cx6464f4x40g3" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-2.wav" id="52_pj5aj"]
@@ -141,7 +141,7 @@
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="76_p2dva"]
 [ext_resource type="PackedScene" uid="uid://cbjowt80bbp5u" path="res://Prefabs/FX/FxLightShaft.tscn" id="77_0vi7o"]
 [ext_resource type="AudioStream" uid="uid://b5xcyqc1ssf5a" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-8.wav" id="77_7vuyi"]
-[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="77_n2y0i"]
+[ext_resource type="Script" uid="uid://dsdsnbs15g3di" path="res://C#/Common/RigidbodySpawner.cs" id="77_n2y0i"]
 [ext_resource type="PackedScene" uid="uid://dw5aibdac1ld2" path="res://Prefabs/Torches/PropStreetLight.tscn" id="78_1d6aj"]
 [ext_resource type="AudioStream" uid="uid://c2yavictyi2b3" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-9.wav" id="78_6lw2v"]
 [ext_resource type="PackedScene" uid="uid://dco0xhd7pjvcy" path="res://Prefabs/Furniture/PropBench.tscn" id="82_sau7d"]
@@ -152,7 +152,7 @@
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="89_8fmtt"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="90_1q56v"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="90_u6uju"]
-[ext_resource type="Script" path="res://C#/LevelRandomAudio.cs" id="91_b8kji"]
+[ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="91_b8kji"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="91_pm6y2"]
 [ext_resource type="Texture2D" uid="uid://bd1dbi5t3vuv6" path="res://Textures/fx-rug-1.png" id="91_v5vxk"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="92_7lfn2"]
@@ -161,7 +161,7 @@
 [ext_resource type="AudioStream" uid="uid://bahomq36dkxci" path="res://Audio/ambience-bird-4.wav" id="95_qxxk0"]
 [ext_resource type="AudioStream" uid="uid://dcqvje631k6qq" path="res://Audio/ambience-bird-5.wav" id="96_4yqdt"]
 [ext_resource type="AudioStream" uid="uid://dml818uriixut" path="res://Audio/ambience-bird-6.wav" id="97_nn8ui"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="98_3reqn"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="98_3reqn"]
 [ext_resource type="AudioStream" uid="uid://yrsln87l1odc" path="res://Audio/ambience-cricket-1.wav" id="99_ydvyq"]
 [ext_resource type="AudioStream" uid="uid://dvptvqjxj1kak" path="res://Audio/ambience-cricket-2.wav" id="100_21v7n"]
 [ext_resource type="AudioStream" uid="uid://di2j73csrvj7g" path="res://Audio/ambience-cricket-3.wav" id="101_8dmpn"]
@@ -172,25 +172,25 @@
 [ext_resource type="AudioStream" uid="uid://cnf7h1uqnbx6a" path="res://Audio/ambience-owl-1.wav" id="109_nt3pw"]
 [ext_resource type="AudioStream" uid="uid://cwak0whcpilgb" path="res://Audio/ambience-owl-2.wav" id="110_b207g"]
 [ext_resource type="PackedScene" uid="uid://vic2gqv1xhp2" path="res://Prefabs/Characters/NpcMobileWynn.tscn" id="110_vxlwq"]
-[ext_resource type="Script" path="res://C#/NpcMobile/NpcMobileTarget.cs" id="111_wfmyb"]
+[ext_resource type="Script" uid="uid://b0faxdgqnh3yd" path="res://C#/NpcMobile/NpcMobileTarget.cs" id="111_wfmyb"]
 [ext_resource type="AudioStream" uid="uid://doxu08u58r3so" path="res://Audio/ambience-owl-3.wav" id="111_y38v6"]
 [ext_resource type="AudioStream" uid="uid://dmwt5lgd2fkoo" path="res://Audio/ambience-owl-4.wav" id="112_84jjh"]
 [ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="113_f3n0t"]
 [ext_resource type="PackedScene" uid="uid://b0hvuo4osb3sc" path="res://Prefabs/Characters/NpcLumsden.tscn" id="116_4nm5h"]
-[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="117_d580p"]
+[ext_resource type="Script" uid="uid://dnb48ygak3efu" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="117_d580p"]
 [ext_resource type="AudioStream" uid="uid://bfu5trt3sxypp" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-1.wav" id="118_kf60n"]
 [ext_resource type="AudioStream" uid="uid://4tiabpvxevap" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-2.wav" id="119_ydhld"]
 [ext_resource type="AudioStream" uid="uid://6yni8hv4ri07" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-3.wav" id="120_er8c0"]
 [ext_resource type="AudioStream" uid="uid://4y3v155lqdas" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-4.wav" id="121_6xxti"]
 [ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="122_pk243"]
 [ext_resource type="AudioStream" uid="uid://bh0alrg1qpno6" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-5.wav" id="122_sdth6"]
-[ext_resource type="Script" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="123_de4ge"]
+[ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="123_de4ge"]
 [ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="124_050ex"]
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="125_iv8q0"]
 [ext_resource type="AudioStream" uid="uid://dx7jme7p5tmx4" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-9.wav" id="126_76qtq"]
 [ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="129_odrhq"]
 [ext_resource type="PackedScene" uid="uid://brgstclbdpf0g" path="res://Prefabs/PropTrout.tscn" id="143_5hehv"]
-[ext_resource type="Script" path="res://C#/FishSchool.cs" id="143_xkj6j"]
+[ext_resource type="Script" uid="uid://bh7ydeskbx4yi" path="res://C#/FishSchool.cs" id="143_xkj6j"]
 [ext_resource type="Animation" uid="uid://dkgvlpehrvvwd" path="res://Animation/Cinematics/lhc4.res" id="154_40cup"]
 [ext_resource type="Animation" uid="uid://bjckj2ki8u4iu" path="res://Animation/Cinematics/lhc3.res" id="154_bkba1"]
 [ext_resource type="Animation" uid="uid://dqf1c2r36a2vw" path="res://Animation/Cinematics/lhc5.res" id="160_xkaw8"]
@@ -269,11 +269,11 @@ point_count = 7
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jsxfe"]
 _data = {
-"lhc1": ExtResource("65_yf3nw"),
-"lhc2": ExtResource("66_f3xeq"),
-"lhc3": ExtResource("154_bkba1"),
-"lhc4": ExtResource("154_40cup"),
-"lhc5": ExtResource("160_xkaw8")
+&"lhc1": ExtResource("65_yf3nw"),
+&"lhc2": ExtResource("66_f3xeq"),
+&"lhc3": ExtResource("154_bkba1"),
+&"lhc4": ExtResource("154_40cup"),
+&"lhc5": ExtResource("160_xkaw8")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1wib3"]
@@ -2486,7 +2486,7 @@ collision_mask = 0
 monitoring = false
 
 [node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/WaterArea"]
-layers = 2
+layers = 8
 gi_mode = 2
 mesh = SubResource("PlaneMesh_fxjfu")
 skeleton = NodePath("../../../..")
@@ -2498,24 +2498,33 @@ shape = SubResource("BoxShape3D_qyelk")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96999, 1.47229, -41.0005)
+blend_distance = 2.0
 max_distance = 100.0
 size = Vector3(50.6063, 20, 45.2925)
 box_projection = true
 enable_shadows = true
+cull_mask = 1048567
+reflection_mask = 1048568
 
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.11772, 1.47229, -5.43194)
+blend_distance = 2.0
 max_distance = 100.0
 size = Vector3(55.3857, 20, 35.8687)
 box_projection = true
 enable_shadows = true
+cull_mask = 1048567
+reflection_mask = 1048568
 
 [node name="ReflectionProbe3" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8005, 1.47229, 32.0258)
+blend_distance = 2.0
 max_distance = 100.0
 size = Vector3(37.8691, 20, 60.5232)
 box_projection = true
 enable_shadows = true
+cull_mask = 1048567
+reflection_mask = 1048568
 
 [node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea"]
 collision_layer = 4096
@@ -2532,7 +2541,7 @@ collision_mask = 0
 monitoring = false
 
 [node name="WaterMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/WaterArea2"]
-layers = 2
+layers = 8
 cast_shadow = 0
 gi_mode = 2
 mesh = SubResource("PlaneMesh_11ew1")
@@ -2545,10 +2554,13 @@ shape = SubResource("BoxShape3D_vhv02")
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+blend_distance = 2.0
 max_distance = 100.0
 size = Vector3(10, 8, 30)
 box_projection = true
 enable_shadows = true
+cull_mask = 1048567
+reflection_mask = 1048568
 
 [node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea2"]
 collision_layer = 4096
@@ -2873,7 +2885,7 @@ target = NodePath("../Target4")
 
 [node name="CinematicsHub" type="AnimationPlayer" parent="Map/Cinematics"]
 libraries = {
-"": SubResource("AnimationLibrary_jsxfe")
+&"": SubResource("AnimationLibrary_jsxfe")
 }
 script = ExtResource("35_itr01")
 

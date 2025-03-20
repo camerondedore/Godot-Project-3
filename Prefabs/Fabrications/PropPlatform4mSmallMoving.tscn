@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://oikctmultp1o"]
 
-[ext_resource type="Script" path="res://C#/MovingPlatform.cs" id="1_5ybh8"]
+[ext_resource type="Script" uid="uid://b6ccqrgkd1spu" path="res://C#/MovingPlatform.cs" id="1_5ybh8"]
 [ext_resource type="ArrayMesh" uid="uid://cbu4844447nje" path="res://Models/prop-board-post-1.res" id="1_81bgb"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_4hmlv"]
 [ext_resource type="AudioStream" uid="uid://dkq3inchc8mit" path="res://Audio/portcullis-opening.wav" id="2_r4177"]
 [ext_resource type="ArrayMesh" uid="uid://u37wl8oabeac" path="res://Models/prop-board-short.res" id="2_u2lwf"]
 [ext_resource type="AudioStream" uid="uid://dsjxwjjje2p6j" path="res://Audio/portcullis-open.wav" id="3_q3inj"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_r0m8p"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="8_firyo"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="8_firyo"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3ql71"]
 points = PackedVector3Array(1, -0.15, 1, 1, -0.15, -1, -1, -0.15, -1, -1, -0.15, 1, 1, 0.15, 1, 1, 0.15, -1, -1, 0.15, -1, -1, 0.15, 1)

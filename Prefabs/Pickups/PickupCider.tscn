@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cvpfiw0o36yme"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_brbdi"]
-[ext_resource type="Script" path="res://C#/Pickups/CiderPickup.cs" id="2_icw7e"]
+[ext_resource type="Script" uid="uid://beugnn1bcp85r" path="res://C#/Pickups/CiderPickup.cs" id="2_icw7e"]
 [ext_resource type="ArrayMesh" uid="uid://c1t8i5kk8ni7e" path="res://Models/pickup-cider.res" id="3_hmtwk"]
 [ext_resource type="Material" uid="uid://cod1rlhu2o8ob" path="res://Materials/Pickups/PickupCiderCork.tres" id="4_q1ijp"]
 [ext_resource type="Material" uid="uid://cqdvpfq814sbp" path="res://Materials/Pickups/PickupCiderGlass.tres" id="4_tvvia"]
@@ -28,6 +28,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0

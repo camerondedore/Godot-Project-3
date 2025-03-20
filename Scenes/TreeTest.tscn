@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]
 [ext_resource type="PackedScene" uid="uid://ditat2n60et15" path="res://Prefabs/Trees/PropTreeApple1.tscn" id="4_6wf3t"]
-[ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="4_41cga"]
+[ext_resource type="Script" uid="uid://bsd6kqk6kcwxx" path="res://addons/PropPainter/ToolPropPainter.cs" id="4_41cga"]
 [ext_resource type="PackedScene" uid="uid://bu8b1efkxsd3e" path="res://Prefabs/Trees/PropTreeApple3.tscn" id="4_65hyp"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="4_atmhp"]
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="4_pyk17"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="6_8m127"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="6_is0wy"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="7_3btvd"]
-[ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="7_f56m7"]
+[ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="7_f56m7"]
 [ext_resource type="ArrayOccluder3D" uid="uid://bgjatdi7csker" path="res://Scenes/Occlusion/TreeTest.occ" id="7_p6n5i"]
 [ext_resource type="PackedScene" uid="uid://dv4wag0b4h4qc" path="res://Prefabs/Fabrications/PropFenceEnd.tscn" id="8_qgel6"]
 [ext_resource type="PackedScene" uid="uid://cwabel6rsndr7" path="res://Prefabs/Fabrications/PropFence1.tscn" id="9_j2ilc"]
@@ -31,11 +31,11 @@
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="10_dvkp3"]
 [ext_resource type="Material" uid="uid://dsrvgrig2uiie" path="res://Materials/Terrain/GrassMediumWorldUv.tres" id="10_e2yde"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="11_1esxr"]
-[ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="11_1rkbt"]
+[ext_resource type="PackedScene" uid="uid://cy2fdh1yugj80" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="11_1rkbt"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="11_36ato"]
 [ext_resource type="PackedScene" uid="uid://croje6ueu5rqc" path="res://Prefabs/Trees/PropTreeOak4.tscn" id="11_d87cr"]
 [ext_resource type="PackedScene" uid="uid://dcqsmpmkmc8mv" path="res://Prefabs/Lumber/PropLogOakStripped.tscn" id="11_se24g"]
-[ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="12_7d261"]
+[ext_resource type="PackedScene" uid="uid://cciwvf66jw5lm" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="12_7d261"]
 [ext_resource type="Material" uid="uid://bkwh2bok3jwil" path="res://Materials/Terrain/DirtWorldUv.tres" id="12_gqj2y"]
 [ext_resource type="Material" uid="uid://biilhjxrac63b" path="res://Materials/Terrain/DirtWithNeedlesWorldUv.tres" id="13_hqotu"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/WaterWithFoam.tres" id="14_1swae"]
@@ -109,7 +109,7 @@
 [ext_resource type="PackedScene" uid="uid://m1f3turs6go4" path="res://Prefabs/Player Bow Targets/PropSpiderweb1.tscn" id="86_3f7f4"]
 [ext_resource type="PackedScene" uid="uid://d3f2uytrsdj5" path="res://Prefabs/Player Bow Targets/PropSpiderweb2.tscn" id="89_qg341"]
 [ext_resource type="PackedScene" uid="uid://c7um6v47aarit" path="res://Prefabs/Doors/DoorFrame.tscn" id="92_gsxbt"]
-[ext_resource type="Script" path="res://C#/Blocker.cs" id="92_lvoik"]
+[ext_resource type="Script" uid="uid://colpnpbpmrp48" path="res://C#/Blocker.cs" id="92_lvoik"]
 [ext_resource type="PackedScene" uid="uid://bl3tppj3wcnmy" path="res://Prefabs/Player Bow Targets/PropClayCauldron.tscn" id="95_ps0dn"]
 [ext_resource type="PackedScene" uid="uid://ck8pgh1yk6qb4" path="res://Prefabs/Lumber/PropBoard1Rigid.tscn" id="97_jtuqx"]
 [ext_resource type="PackedScene" uid="uid://dq4c06ulfpih7" path="res://Prefabs/Player Bow Targets/SpikeTrap.tscn" id="98_hatsk"]
@@ -132,10 +132,10 @@
 [ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="130_m0osj"]
 [ext_resource type="PackedScene" uid="uid://b6tr6onc6gvr" path="res://Prefabs/Small Items/BlockTarget.tscn" id="131_2j43n"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="131_3gpyt"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="132_ispcx"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="132_wn54f"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="133_ep038"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraTracker.cs" id="134_rj3tj"]
+[ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="132_ispcx"]
+[ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="132_wn54f"]
+[ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="133_ep038"]
+[ext_resource type="Script" uid="uid://bbhfdc16qgjhb" path="res://C#/CinematicSimple/CinematicSimpleCameraTracker.cs" id="134_rj3tj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_q1ywk"]
 resource_local_to_scene = true
@@ -330,7 +330,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvjy8"]
 _data = {
-"tt1": SubResource("Animation_8v6vl")
+&"tt1": SubResource("Animation_8v6vl")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qfdqk"]

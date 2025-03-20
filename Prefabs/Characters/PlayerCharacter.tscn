@@ -1,26 +1,26 @@
 [gd_scene load_steps=182 format=3 uid="uid://cth53i8qsxlqy"]
 
-[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
+[ext_resource type="Script" uid="uid://bxpv3jxvu8vmc" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
-[ext_resource type="Script" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
-[ext_resource type="Script" path="res://C#/PlayerBow/BowAimer.cs" id="4_s8c8a"]
-[ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
-[ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
-[ext_resource type="Script" path="res://C#/SecretAreas.cs" id="5_mxwwd"]
+[ext_resource type="Script" uid="uid://dv65ao66bsma7" path="res://C#/Camera/CameraController.cs" id="2_gvbnd"]
+[ext_resource type="Script" uid="uid://tfo3l00xpqyu" path="res://C#/PlayerBow/BowAimer.cs" id="4_s8c8a"]
+[ext_resource type="Script" uid="uid://c2l115cxmslwp" path="res://C#/PlayerInventory.cs" id="4_vgi6r"]
+[ext_resource type="Script" uid="uid://dhl5e0j7i7qdn" path="res://C#/PlayerStatistics.cs" id="4_x6l2t"]
+[ext_resource type="Script" uid="uid://dp7ot8li6s4md" path="res://C#/SecretAreas.cs" id="5_mxwwd"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_o5i36"]
-[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterLedgeDetector.cs" id="5_rkg0g"]
+[ext_resource type="Script" uid="uid://b87rgfkt2gfgq" path="res://C#/CharacterComplex/PlayerCharacterLedgeDetector.cs" id="5_rkg0g"]
 [ext_resource type="Texture2D" uid="uid://bp4wvf5xpnked" path="res://Textures/fx-arrow-trail-weighted.png" id="5_savq2"]
 [ext_resource type="Texture2D" uid="uid://c2j1ukisxbnpb" path="res://UI/ui-candied-nuts-counter.png" id="6_crt7e"]
-[ext_resource type="Script" path="res://C#/PlayerFx.cs" id="6_r2un4"]
+[ext_resource type="Script" uid="uid://dstne2l6pj2yj" path="res://C#/PlayerFx.cs" id="6_r2un4"]
 [ext_resource type="Texture2D" uid="uid://jg0mimnwomm5" path="res://UI/ui-dock-leaves-counter.png" id="7_5q08g"]
-[ext_resource type="Script" path="res://C#/PlayerAudio.cs" id="7_eessr"]
+[ext_resource type="Script" uid="uid://dtqgkytjy6ls4" path="res://C#/PlayerAudio.cs" id="7_eessr"]
 [ext_resource type="Texture2D" uid="uid://btpa146lw2nrh" path="res://Textures/fx-arrow-trail-pick.png" id="7_ey0rg"]
-[ext_resource type="Script" path="res://C#/PlayerBow/BowAimerTargetFx.cs" id="7_ihwk4"]
-[ext_resource type="Script" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
-[ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
+[ext_resource type="Script" uid="uid://b4wx33pymx26a" path="res://C#/PlayerBow/BowAimerTargetFx.cs" id="7_ihwk4"]
+[ext_resource type="Script" uid="uid://eoq24n0fa47b" path="res://C#/PlayerHud/PlayerHud.cs" id="7_xdgqf"]
+[ext_resource type="Script" uid="uid://dmihatrnrmj6g" path="res://C#/PlayerHud/PlayerHudPickups.cs" id="8_0uu1v"]
 [ext_resource type="AudioStream" uid="uid://b10wo662h0woi" path="res://Audio/pickup-candied-nut-1.wav" id="8_aqj41"]
 [ext_resource type="Texture2D" uid="uid://d3qp1neeafhc7" path="res://UI/ui-sanicle-counter.png" id="8_dbq86"]
-[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerHealth.cs" id="8_ltus6"]
+[ext_resource type="Script" uid="uid://63hqxbfo02tu" path="res://C#/CharacterComplex/PlayerHealth.cs" id="8_ltus6"]
 [ext_resource type="Texture2D" uid="uid://cfcpeng6uiqtu" path="res://Textures/fx-arrow-trail-net.png" id="8_nsls7"]
 [ext_resource type="Texture2D" uid="uid://r7pt067loi4s" path="res://UI/ui-hitpoints-bar-overlay.png" id="8_qxqx4"]
 [ext_resource type="Texture2D" uid="uid://cucekx4osdaw" path="res://UI/ui-hitpoints-bar-progress.png" id="9_4i0ne"]
@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bdr72honvktal" path="res://Textures/fx-arrow-trail-fire.png" id="9_q1w1u"]
 [ext_resource type="AudioStream" uid="uid://cgtsqc8ud2sow" path="res://Audio/pickup-candied-nut-2.wav" id="9_vai2d"]
 [ext_resource type="PackedScene" uid="uid://dg52rv78agi1g" path="res://Prefabs/UI/UiDockLeafPickup.tscn" id="10_dsdcr"]
-[ext_resource type="Script" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
+[ext_resource type="Script" uid="uid://dygtfyiqo4dmc" path="res://C#/Pickups/PlayerPickup.cs" id="10_egvck"]
 [ext_resource type="Texture2D" uid="uid://vv7jwomasoww" path="res://Textures/fx-arrow-trail-bodkin.png" id="10_m6ggt"]
 [ext_resource type="AudioStream" uid="uid://bbbew6mr246nm" path="res://Audio/pickup-dock-leaf.wav" id="10_qxs60"]
 [ext_resource type="PackedScene" uid="uid://dq8dwaqq4b84a" path="res://Prefabs/FX/FxSparkleBowTarget.tscn" id="11_8krr5"]
@@ -39,13 +39,13 @@
 [ext_resource type="AudioStream" uid="uid://cac7ya48hcvci" path="res://Audio/pickup-armor-2.wav" id="12_i3sml"]
 [ext_resource type="PackedScene" uid="uid://b5fo0lpwtdpl6" path="res://Prefabs/UI/UiRangerBandagePickup.tscn" id="12_xyyhd"]
 [ext_resource type="AudioStream" uid="uid://bry4ydhi7s7h5" path="res://Audio/pickup-cider.wav" id="14_1agc6"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools.cs" id="15_so0xw"]
+[ext_resource type="Script" uid="uid://cgmn73x2ykan3" path="res://C#/Common/AudioTools.cs" id="15_so0xw"]
 [ext_resource type="Texture2D" uid="uid://m3khnn4rp570" path="res://Textures/fx-arrow-trail-blade.png" id="15_usho7"]
-[ext_resource type="Script" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
+[ext_resource type="Script" uid="uid://cr6256jiocixh" path="res://C#/CheckpointLoader.cs" id="17_bdij4"]
 [ext_resource type="PackedScene" uid="uid://caishuq4reer8" path="res://Prefabs/Player Arrows/PlayerArrowPick.tscn" id="18_erk0y"]
 [ext_resource type="AudioStream" uid="uid://bg7j2nh7ee6a1" path="res://Audio/pickup-arrow-5.wav" id="19_fh3gi"]
 [ext_resource type="AudioStream" uid="uid://bqx4yct6xw2tx" path="res://Audio/bow-fire-1.wav" id="19_rmfin"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="20_4jbn7"]
 [ext_resource type="AudioStream" uid="uid://b6gkiut06t67b" path="res://Audio/bow-draw-1.wav" id="20_no75w"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="21_644xy"]
 [ext_resource type="AudioStream" uid="uid://dqx1dj05aoil5" path="res://Audio/ranger-bandage-heal.wav" id="22_cdqx6"]
@@ -61,16 +61,16 @@
 [ext_resource type="PackedScene" uid="uid://cee1allvlvjy6" path="res://Prefabs/UI/UiPickupArrowPick.tscn" id="31_35lc4"]
 [ext_resource type="PackedScene" uid="uid://d3m8qbrtf4h37" path="res://Prefabs/Player Arrows/PlayerArrowFire.tscn" id="31_imcpe"]
 [ext_resource type="PackedScene" uid="uid://pj4pw1m6yfgd" path="res://Prefabs/UI/UiPickupArrowNet.tscn" id="32_6du35"]
-[ext_resource type="Script" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
+[ext_resource type="Script" uid="uid://ou2xoys456s6" path="res://C#/PlayerBow/Bow.cs" id="32_hlbfv"]
 [ext_resource type="PackedScene" uid="uid://4pamllwbfmk0" path="res://Prefabs/UI/UiPickupArrowFire.tscn" id="33_pvcuj"]
-[ext_resource type="Script" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
+[ext_resource type="Script" uid="uid://i55lxywq03xt" path="res://C#/Mob Tools/MobFaction.cs" id="34_61alq"]
 [ext_resource type="AudioStream" uid="uid://dxnxfhrr70g8f" path="res://Audio/fall-damage.wav" id="37_howem"]
 [ext_resource type="PackedScene" uid="uid://bgjfsyt5i52b3" path="res://Prefabs/Player Arrows/PlayerArrowBodkin.tscn" id="37_os4wq"]
 [ext_resource type="Texture2D" uid="uid://8a0nk0co1ily" path="res://UI/ui-hitpoints-bar-dead.png" id="38_m8gav"]
 [ext_resource type="PackedScene" uid="uid://pc68qled2whb" path="res://Prefabs/Player Arrows/PlayerArrowBlade.tscn" id="42_w8q66"]
-[ext_resource type="Script" path="res://C#/CharacterComplex/PlayerCharacterAudio.cs" id="46_hidfy"]
+[ext_resource type="Script" uid="uid://brh216d2r4882" path="res://C#/CharacterComplex/PlayerCharacterAudio.cs" id="46_hidfy"]
 [ext_resource type="PackedScene" uid="uid://dpv3c061py1ht" path="res://Prefabs/FX/FxRangerBandageHeal.tscn" id="49_p7me3"]
-[ext_resource type="Script" path="res://C#/PlayerHud/PlayerHudDeath.cs" id="51_s7gr6"]
+[ext_resource type="Script" uid="uid://ceknybmkpv3sp" path="res://C#/PlayerHud/PlayerHudDeath.cs" id="51_s7gr6"]
 [ext_resource type="Texture2D" uid="uid://cs6hybqh08eft" path="res://UI/ui-ranger-secret-area.png" id="52_3iuey"]
 [ext_resource type="Texture2D" uid="uid://c3gq6us7u682f" path="res://UI/ui-crosshair-sheet.png" id="52_23icf"]
 [ext_resource type="PackedScene" uid="uid://6l6ou0eihn0w" path="res://Prefabs/FX/FxArmorPickup.tscn" id="53_3pth2"]
@@ -78,8 +78,8 @@
 [ext_resource type="Material" uid="uid://6uq0jae4r4tr" path="res://Materials/Characters/CharacterPlayerGear.tres" id="54_hitiv"]
 [ext_resource type="Material" uid="uid://brj7mffrs121p" path="res://Materials/Characters/CharacterPlayerMasked.tres" id="54_rdy4g"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="55_ftkf4"]
-[ext_resource type="Script" path="res://C#/MaterialColorFlasher.cs" id="56_o6bh0"]
-[ext_resource type="Script" path="res://C#/PlayerMeshArmor.cs" id="59_no1jn"]
+[ext_resource type="Script" uid="uid://cnr88n1rpytkh" path="res://C#/MaterialColorFlasher.cs" id="56_o6bh0"]
+[ext_resource type="Script" uid="uid://catpa1prcos7i" path="res://C#/PlayerMeshArmor.cs" id="59_no1jn"]
 [ext_resource type="PackedScene" uid="uid://bnvggw6unmeja" path="res://Prefabs/FX/FxCiderPickup.tscn" id="63_x13rh"]
 [ext_resource type="PackedScene" uid="uid://dbfnbcir2w04y" path="res://Prefabs/FX/FxArrowPickupWeighted.tscn" id="65_03dec"]
 [ext_resource type="PackedScene" uid="uid://pg4fpwel7l2m" path="res://Prefabs/FX/FxArrowPickupPick.tscn" id="66_laruj"]
@@ -126,8 +126,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ppmof"]
 _data = {
-"crosshair-draw": SubResource("Animation_cgge2"),
-"crosshair-reset": SubResource("Animation_03yb8")
+&"crosshair-draw": SubResource("Animation_cgge2"),
+&"crosshair-reset": SubResource("Animation_03yb8")
 }
 
 [sub_resource type="Animation" id="Animation_u6o1a"]
@@ -338,10 +338,10 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3luhx"]
 _data = {
-"clear": SubResource("Animation_u6o1a"),
-"first-time": SubResource("Animation_x1jjd"),
-"hide-bars": SubResource("Animation_b74ry"),
-"show-bars": SubResource("Animation_wyq1s")
+&"clear": SubResource("Animation_u6o1a"),
+&"first-time": SubResource("Animation_x1jjd"),
+&"hide-bars": SubResource("Animation_b74ry"),
+&"show-bars": SubResource("Animation_wyq1s")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nx72i"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://ck8pgh1yk6qb4"]
 
-[ext_resource type="Script" path="res://C#/Common/PinnedRigidbody.cs" id="1_wnaci"]
+[ext_resource type="Script" uid="uid://bhul4k7mg1jny" path="res://C#/Common/PinnedRigidbody.cs" id="1_wnaci"]
 [ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_x70fb"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="2_gwxrj"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_47hsn"]
-[ext_resource type="Script" path="res://C#/Common/AudioToolsRigidBody.cs" id="5_xe4nu"]
+[ext_resource type="Script" uid="uid://dfr5twmrytauh" path="res://C#/Common/AudioToolsRigidBody.cs" id="5_xe4nu"]
 [ext_resource type="AudioStream" uid="uid://rg2w4kfv2sn4" path="res://Audio/wood-board-hit-1.wav" id="6_gfgt8"]
 [ext_resource type="AudioStream" uid="uid://wiwliy3cdnhe" path="res://Audio/wood-board-hit-2.wav" id="7_5w1qm"]
 [ext_resource type="AudioStream" uid="uid://dbf4bbajwckh7" path="res://Audio/wood-board-hit-3.wav" id="8_8sicj"]

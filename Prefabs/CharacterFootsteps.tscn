@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dabnky0qnlvgu"]
 
-[ext_resource type="Script" path="res://C#/CharacterFootsteps.cs" id="1_bi0jt"]
+[ext_resource type="Script" uid="uid://5tnjt2v1kavc" path="res://C#/CharacterFootsteps.cs" id="1_bi0jt"]
 [ext_resource type="AudioStream" uid="uid://cpx1ghr2ba1fu" path="res://Audio/footstep-1.wav" id="2_aaiis"]
 [ext_resource type="AudioStream" uid="uid://clv8pgaqyxaa3" path="res://Audio/footstep-2.wav" id="3_q0xni"]
 [ext_resource type="AudioStream" uid="uid://14a2mxv3c4w5" path="res://Audio/footstep-3.wav" id="4_mg380"]

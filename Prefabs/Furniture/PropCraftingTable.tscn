@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_y5gvo"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_j5u0j"]
-[ext_resource type="Script" path="res://C#/BandageStation.cs" id="3_erttl"]
+[ext_resource type="Script" uid="uid://dqqg2ipwco80s" path="res://C#/BandageStation.cs" id="3_erttl"]
 [ext_resource type="ArrayMesh" uid="uid://kyvajoparlu5" path="res://Models/prop-crafting-table-bow.res" id="4_5gpt5"]
 [ext_resource type="PackedScene" uid="uid://cennawrc312vk" path="res://Prefabs/Small Items/PropMortarPestle.tscn" id="4_ev8f2"]
 [ext_resource type="PackedScene" uid="uid://bn1ffv7hxh6lu" path="res://Prefabs/FX/FxCrafting.tscn" id="5_8yyxa"]

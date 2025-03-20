@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://lxjx0gdmoth"]
 
-[ext_resource type="Script" path="res://C#/CinematicCharacter/CinematicCharacter.cs" id="1_hq44n"]
+[ext_resource type="Script" uid="uid://071047fgb5qu" path="res://C#/CinematicCharacter/CinematicCharacter.cs" id="1_hq44n"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="2_u04e0"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="3_3c0mn"]
 [ext_resource type="Material" uid="uid://bjcflxq43ap6e" path="res://Materials/Characters/CharacterWynnRim.tres" id="3_otiua"]
 [ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="4_i62pl"]
 [ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="4_oofo3"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_5h3hc"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="5_5h3hc"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="5_e0hb8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mwce0"]

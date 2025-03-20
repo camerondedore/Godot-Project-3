@@ -6,6 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_5t7bp")
+shader_parameter/Albedo = ExtResource("2_ymk7x")
 shader_parameter/Metallic = 0.0
 shader_parameter/Roughness = 1.0
 shader_parameter/Specular = 0.0
@@ -16,4 +17,3 @@ shader_parameter/Rim_Color = Color(1, 0, 0, 1)
 shader_parameter/Rim_Power = 0.025
 shader_parameter/Rim_Min_Height = -1.5
 shader_parameter/Rim_Height_Slope = 1.4
-shader_parameter/Albedo = ExtResource("2_ymk7x")

@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://b7ob4girwag6g"]
 
 [ext_resource type="ArrayMesh" uid="uid://cnilwwvcgbvma" path="res://Models/prop-block-2m.res" id="1_703ca"]
-[ext_resource type="Script" path="res://C#/PlayerBow/MovingBlockTarget.cs" id="1_cnh7w"]
+[ext_resource type="Script" uid="uid://cnd8w170au1g6" path="res://C#/PlayerBow/MovingBlockTarget.cs" id="1_cnh7w"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_cax1d"]
 [ext_resource type="AudioStream" uid="uid://cgbbvh138dvnp" path="res://Audio/wood-block-hit-success.wav" id="2_rte6k"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="3_q2c1a"]
 [ext_resource type="AudioStream" uid="uid://ddhicpsbgpp24" path="res://Audio/wood-block-hit-fail.wav" id="3_wxvns"]
 [ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="4_q1otu"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="5_qagso"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="5_qagso"]
 [ext_resource type="Texture2D" uid="uid://coc5tky0b3fol" path="res://Textures/fx-painted-cross.png" id="6_imcml"]
 [ext_resource type="AudioStream" uid="uid://ddtrus73ll2e" path="res://Audio/wood-block-slide.wav" id="9_mqeo3"]
 

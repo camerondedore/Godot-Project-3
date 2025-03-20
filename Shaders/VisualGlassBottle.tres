@@ -126,13 +126,13 @@ code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
 
 uniform sampler2D Albedo : source_color;
-uniform float Rim_Power : hint_range(0, 1) = 1;
-uniform float Rim_Sharpness : hint_range(-1, 0.5) = 0.5;
-uniform float Rim_Distance : hint_range(0, 2) = 1;
+uniform float Rim_Power : hint_range(0.0, 1.0) = 1.0;
+uniform float Rim_Sharpness : hint_range(-1.0, 0.5) = 0.5;
+uniform float Rim_Distance : hint_range(0.0, 2.0) = 1.0;
 uniform vec4 RimColor : source_color;
-uniform float Metallic : hint_range(0, 1) = 0;
-uniform float Roughness : hint_range(0, 1) = 0;
-uniform float Backlight : hint_range(0, 1);
+uniform float Metallic : hint_range(0.0, 1.0) = 0.0;
+uniform float Roughness : hint_range(0.0, 1.0) = 0.0;
+uniform float Backlight : hint_range(0.0, 1.0);
 
 
 

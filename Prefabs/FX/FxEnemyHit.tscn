@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dqqxr6lpg1jk6"]
 
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="1_hvc3k"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_q635b"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="2_q635b"]
 
 [sub_resource type="Gradient" id="Gradient_h563r"]
 offsets = PackedFloat32Array(0, 0.585366, 1)

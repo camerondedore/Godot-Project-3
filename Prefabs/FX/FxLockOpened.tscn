@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://daam6bhcq3c1k"]
 
-[ext_resource type="Script" path="res://C#/Common/RigidbodyFreezer.cs" id="1_c1gdv"]
+[ext_resource type="Script" uid="uid://cx8gavm5kt6a" path="res://C#/Common/RigidbodyFreezer.cs" id="1_c1gdv"]
 [ext_resource type="ArrayMesh" uid="uid://co3vdg57f7qsw" path="res://Models/fx-lock-open.res" id="1_g4cpb"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_61yyt"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="4_ef3cl"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="4_ef3cl"]
 [ext_resource type="AudioStream" uid="uid://de2xpyq2nyc5n" path="res://Audio/lock-open-1.wav" id="5_6j8rm"]
 [ext_resource type="AudioStream" uid="uid://6c5pa11iibrw" path="res://Audio/lock-open-2.wav" id="6_s0yc2"]
-[ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="8_og2x0"]
+[ext_resource type="Script" uid="uid://kucxbnvpb3oq" path="res://C#/Common/NodeLimiter.cs" id="8_og2x0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhvmv"]
 size = Vector3(0.25, 0.3, 0.08)

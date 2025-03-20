@@ -14,7 +14,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_wcehf"]
-max_value = 2.0
+_limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 0.930693), 0.0, 1.89037, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
 point_count = 2
 

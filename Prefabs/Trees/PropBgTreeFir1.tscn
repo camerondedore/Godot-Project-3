@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_kcb8e"]
 [ext_resource type="ArrayMesh" uid="uid://bt0wxr3kbylig" path="res://Models/prop-tree-fir-1.res" id="2_xkpgr"]
-[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="3_ccv61"]
+[ext_resource type="Script" uid="uid://7ixwrthotvus" path="res://C#/Common/LodObjectExtra.cs" id="3_ccv61"]
 [ext_resource type="Material" uid="uid://cv7hwc22ts4vd" path="res://Materials/Trees/LeavesFirWind.tres" id="4_k1712"]
 [ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="6_63yg3"]
 [ext_resource type="ArrayMesh" uid="uid://7ngflral4ytw" path="res://Models/prop-tree-fir-1-lod.res" id="7_52xnb"]

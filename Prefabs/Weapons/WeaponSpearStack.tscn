@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://b72j53vhydns4"]
 
 [ext_resource type="PackedScene" uid="uid://hdv3uamdw176" path="res://Prefabs/Weapons/WeaponSpear.tscn" id="1_2hhsb"]
-[ext_resource type="Script" path="res://C#/DamageArea.cs" id="2_ulgc5"]
+[ext_resource type="Script" uid="uid://bsxmbl2e2kfbk" path="res://C#/DamageArea.cs" id="2_ulgc5"]
 [ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="3_r5ls6"]
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="4_co0m2"]
 [ext_resource type="Material" uid="uid://bijrqeiotewi3" path="res://Particles/FxEnemyDamage.tres" id="5_jionv"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_3qyij"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_3qyij"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g42j7"]
 radius = 0.04

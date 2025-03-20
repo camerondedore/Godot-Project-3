@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://ccgmxw6a0pkkp"]
 
 [ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/Fx/FxDust.tres" id="1_nfc7m"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_oiqpg"]
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_wr4c6"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="4_68det"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="2_oiqpg"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="3_wr4c6"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="4_68det"]
 [ext_resource type="AudioStream" uid="uid://bhk21mhtjb3ob" path="res://Audio/clay-cauldron-break-1.wav" id="5_5yag3"]
 [ext_resource type="AudioStream" uid="uid://b820svc3a57i" path="res://Audio/clay-cauldron-break-2.wav" id="6_7qcr4"]
 [ext_resource type="AudioStream" uid="uid://cam50q6pg6dcu" path="res://Audio/clay-cauldron-break-3.wav" id="7_152qy"]

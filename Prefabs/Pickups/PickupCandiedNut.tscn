@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://jg8y61unu8ao"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_4on0y"]
-[ext_resource type="Script" path="res://C#/Pickups/CandiedNutPickup.cs" id="1_anmk5"]
+[ext_resource type="Script" uid="uid://dxqvrgsbeei8c" path="res://C#/Pickups/CandiedNutPickup.cs" id="1_anmk5"]
 [ext_resource type="ArrayMesh" uid="uid://x3dcuk4k6e3i" path="res://Models/pickup-candied-nut-1.res" id="3_f3xch"]
 [ext_resource type="ArrayMesh" uid="uid://bwl3ntlog5agd" path="res://Models/pickup-candied-nut-2.res" id="4_cr428"]
 [ext_resource type="Material" uid="uid://dx4tjrj1tn4vt" path="res://Materials/Pickups/PickupCandiedNuts.tres" id="4_nvqdf"]
@@ -28,6 +28,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0

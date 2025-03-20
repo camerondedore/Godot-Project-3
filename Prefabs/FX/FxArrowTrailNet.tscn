@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://d27rh7eb06bu1" path="res://Materials/Fx/FxArrowTrailNet.tres" id="1_4nsho"]
 [ext_resource type="Material" uid="uid://d1linu5y3ixb7" path="res://Particles/FxArrowTrailNet.tres" id="2_3rc1u"]
-[ext_resource type="Script" path="res://C#/ArrowTrail.cs" id="3_me4h7"]
-[ext_resource type="Script" path="res://C#/Common/DelayedDestroy.cs" id="4_8q8pp"]
+[ext_resource type="Script" uid="uid://4wdvlpek0nn8" path="res://C#/ArrowTrail.cs" id="3_me4h7"]
+[ext_resource type="Script" uid="uid://clrneo00oni0y" path="res://C#/Common/DelayedDestroy.cs" id="4_8q8pp"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_ux5to"]
 

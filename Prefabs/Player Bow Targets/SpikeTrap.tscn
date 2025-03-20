@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://dq4c06ulfpih7"]
 
-[ext_resource type="Script" path="res://C#/PlayerBow/SpikeTrapTarget.cs" id="1_iliy4"]
-[ext_resource type="Script" path="res://C#/DamageArea.cs" id="2_68mj6"]
+[ext_resource type="Script" uid="uid://htk1x7h05ye3" path="res://C#/PlayerBow/SpikeTrapTarget.cs" id="1_iliy4"]
+[ext_resource type="Script" uid="uid://bsxmbl2e2kfbk" path="res://C#/DamageArea.cs" id="2_68mj6"]
 [ext_resource type="ArrayMesh" uid="uid://c11ee8bjc1u" path="res://Models/prop-spike-trap.res" id="2_ikaej"]
 [ext_resource type="AudioStream" uid="uid://eknqfa0j3p03" path="res://Audio/spikes-cut.wav" id="2_ndri6"]
 [ext_resource type="Material" uid="uid://bt0vyjgailocy" path="res://Materials/Props/PropSpikeTrap.tres" id="3_spg4c"]
@@ -14,7 +14,7 @@
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="11_n1lcp"]
 [ext_resource type="Texture2D" uid="uid://bmcspou5bvlae" path="res://Textures/fx-blood-patch.png" id="12_76410"]
 [ext_resource type="Material" uid="uid://bijrqeiotewi3" path="res://Particles/FxEnemyDamage.tres" id="12_n2y16"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="14_tfy06"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="14_tfy06"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wlyac"]
 radius = 0.7
@@ -32,6 +32,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 1.25
 emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
 angle_min = -60.0
 angle_max = 60.0
 direction = Vector3(0, 1, 0)
@@ -50,7 +51,7 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_bak4g")
 
 [sub_resource type="Curve" id="Curve_ls717"]
-max_value = 1.5
+_limits = [0.0, 1.5, 0.0, 1.0]
 _data = [Vector2(0, 0.460396), 0.0, 0.235339, 0, 0, Vector2(1, 1.5), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -64,6 +65,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.1
 emission_ring_radius = 1.0
 emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
 angle_max = 359.0
 direction = Vector3(0, 1, 0)
 spread = 0.0

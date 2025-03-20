@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://d2ii8qhujvfub"]
 
 [ext_resource type="ArrayMesh" uid="uid://8g30vlsy6rwy" path="res://Models/prop-tree-oak-1.res" id="1_hx8dg"]
-[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="1_st277"]
+[ext_resource type="Script" uid="uid://7ixwrthotvus" path="res://C#/Common/LodObjectExtra.cs" id="1_st277"]
 [ext_resource type="Material" uid="uid://b5uxf3pqkhqlo" path="res://Materials/Trees/BarkOak.tres" id="2_phppp"]
 [ext_resource type="ArrayMesh" uid="uid://ce1ncrct04u6t" path="res://Models/prop-tree-oak-1-lod.res" id="3_6upkd"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_oin6n"]

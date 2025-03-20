@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvnogtbjot0oy"]
 
-[ext_resource type="Script" path="res://C#/PlayerBow/Arrow.cs" id="1_w1ybd"]
+[ext_resource type="Script" uid="uid://dt8xjeg0jpdmq" path="res://C#/PlayerBow/Arrow.cs" id="1_w1ybd"]
 [ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="2_1gik3"]
 [ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_rvj48"]
 [ext_resource type="ArrayMesh" uid="uid://dvwckpqutx3g6" path="res://Models/arrow-weighted.res" id="4_qyooq"]
-[ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="5_fqjht"]
+[ext_resource type="Script" uid="uid://kucxbnvpb3oq" path="res://C#/Common/NodeLimiter.cs" id="5_fqjht"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="5_pj2yf"]
 
 [node name="PlayerArrow" type="RayCast3D"]

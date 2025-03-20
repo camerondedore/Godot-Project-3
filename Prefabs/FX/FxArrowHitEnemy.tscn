@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dkql0j4oe33cn"]
 
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="3_d8mk0"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="5_6pgwa"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="3_d8mk0"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="5_6pgwa"]
 [ext_resource type="PackedScene" uid="uid://dqqxr6lpg1jk6" path="res://Prefabs/FX/FxEnemyHit.tscn" id="5_g70s6"]
 [ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="6_mj5ce"]
 

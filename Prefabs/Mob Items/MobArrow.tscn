@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://dpixs7ufqf8p0"]
 
-[ext_resource type="Script" path="res://C#/MobArrow.cs" id="1_msana"]
+[ext_resource type="Script" uid="uid://ixs70qy5wxj1" path="res://C#/MobArrow.cs" id="1_msana"]
 [ext_resource type="PackedScene" uid="uid://dkql0j4oe33cn" path="res://Prefabs/FX/FxArrowHitEnemy.tscn" id="2_30351"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="2_i0ho1"]
 [ext_resource type="PackedScene" uid="uid://dg5ale2alhxmh" path="res://Prefabs/FX/FxArrowHitEnemyBlood.tscn" id="2_yyqqu"]
-[ext_resource type="Script" path="res://C#/Common/NodeLimiter.cs" id="3_rxlq1"]
+[ext_resource type="Script" uid="uid://kucxbnvpb3oq" path="res://C#/Common/NodeLimiter.cs" id="3_rxlq1"]
 [ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_ukgsk"]
 [ext_resource type="ArrayMesh" uid="uid://bk0solhvwwfie" path="res://Models/arrow-enemy.res" id="4_l5ybc"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="7_1d1md"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="7_1d1md"]
 [ext_resource type="AudioStream" uid="uid://cp5vapmt543af" path="res://Audio/arrow-whistle.wav" id="8_plcwg"]
 [ext_resource type="PackedScene" uid="uid://bnwbiksj5u6vd" path="res://Prefabs/FX/FxArrowTrailEnemy.tscn" id="9_6ir5r"]
 

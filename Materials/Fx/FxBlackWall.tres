@@ -1,12 +1,12 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bs6yjtymayl1v"]
 
-[ext_resource type="Shader" path="res://Shaders/FxBlackWall.gdshader" id="1_5tt57"]
+[ext_resource type="Shader" uid="uid://vhe64vqgqscf" path="res://Shaders/FxBlackWall.gdshader" id="1_5tt57"]
 
 [resource]
 resource_local_to_scene = true
 render_priority = -1
 shader = ExtResource("1_5tt57")
-shader_parameter/depthColor = null
+shader_parameter/depthColor = Color(0, 0, 0, 1)
 shader_parameter/depthDistance = 0.5
 shader_parameter/depthFade = 1.0
 shader_parameter/waveTurbulance = 1.5

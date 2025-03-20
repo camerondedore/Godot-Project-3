@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chjbr36t4t6lq"]
 
-[ext_resource type="Script" path="res://C#/Common/ParticleTools.cs" id="2_7qt2u"]
+[ext_resource type="Script" uid="uid://cp4jxe16mfbb0" path="res://C#/Common/ParticleTools.cs" id="2_7qt2u"]
 [ext_resource type="Material" uid="uid://gyvtd6ho3kui" path="res://Particles/FxWaterCharacterSplashDroplets.tres" id="2_lpvr5"]
 [ext_resource type="Material" uid="uid://dxuigwyapk2a7" path="res://Materials/Fx/FxWaterSplashDroplet.tres" id="3_q2f7j"]
 

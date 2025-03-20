@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://q7rq4w126er8" path="res://Models/prop-fern-1.res" id="1_0dqff"]
 [ext_resource type="Material" uid="uid://ba2urtvsd2elg" path="res://Materials/Plants/LeavesFern.tres" id="2_f5qoj"]
-[ext_resource type="Script" path="res://C#/Common/LodObject.cs" id="2_ju8ys"]
+[ext_resource type="Script" uid="uid://bnpbhpb2o4j2h" path="res://C#/Common/LodObject.cs" id="2_ju8ys"]
 [ext_resource type="Texture2D" uid="uid://cowg7idw0nhrs" path="res://Textures/fx-fern-1-shadow.png" id="3_fntxi"]
 [ext_resource type="ArrayMesh" uid="uid://ddcx2p0swx05d" path="res://Models/prop-fern-1-lod.res" id="5_6trwo"]
 

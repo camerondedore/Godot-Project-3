@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://1m87nl1ujmvk"]
 
-[ext_resource type="Shader" path="res://Shaders/VegetationLeaves.gdshader" id="1_2hmhb"]
+[ext_resource type="Shader" uid="uid://5efv8i4fm5d0" path="res://Shaders/VegetationLeaves.gdshader" id="1_2hmhb"]
 [ext_resource type="Texture2D" uid="uid://foli2j315vtb" path="res://Textures/leaves-blackberry-old.png" id="2_xldau"]
 
 [resource]
@@ -12,9 +12,9 @@ shader_parameter/windTurbulance = 3.0
 shader_parameter/windMinHeight = 0.0
 shader_parameter/windSlope = 1.0
 shader_parameter/yMultiplier = 0.25
+shader_parameter/albedo = ExtResource("2_xldau")
 shader_parameter/metallic = 0.1
 shader_parameter/roughness = 1.0
 shader_parameter/specular = 0.25
 shader_parameter/backlightStrength = 0.3
 shader_parameter/alphaScissor = 0.5
-shader_parameter/albedo = ExtResource("2_xldau")

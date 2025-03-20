@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://cmuma8xgq3ktm"]
 
-[ext_resource type="Script" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
+[ext_resource type="Script" uid="uid://d1bfrko5n0ni2" path="res://C#/Checkpoint.cs" id="1_mhk5w"]
 [ext_resource type="AudioStream" uid="uid://mqbs8l06sitt" path="res://Audio/checkpoint-save.wav" id="2_28jj8"]
 [ext_resource type="ArrayMesh" uid="uid://diqgy6v65xxd7" path="res://Models/prop-checkpoint.res" id="2_afk7b"]
 [ext_resource type="Material" uid="uid://d15v4ynacq4" path="res://Materials/Props/PropCheckpoint.tres" id="3_pxcm7"]
 [ext_resource type="PackedScene" uid="uid://mx0pcadbiph1" path="res://Prefabs/FX/FxSparkle.tscn" id="3_x88vd"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="5_5ytto"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="6_dfee6"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_dfee6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_66tyu"]
 
@@ -31,6 +31,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0

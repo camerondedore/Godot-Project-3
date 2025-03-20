@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bljv533un3a5m"]
 
-[ext_resource type="Script" path="res://C#/JumpPad.cs" id="1_uhwkk"]
+[ext_resource type="Script" uid="uid://jm2h01u8337e" path="res://C#/JumpPad.cs" id="1_uhwkk"]
 [ext_resource type="AudioStream" uid="uid://dlygbf47nnkvn" path="res://Audio/jump-pad-attach.wav" id="2_6jivt"]
 [ext_resource type="AudioStream" uid="uid://ca3lkrjd6kthr" path="res://Audio/jump-pad-bounce.wav" id="2_6r71d"]
 [ext_resource type="PackedScene" uid="uid://catgd5gf5kp2k" path="res://Prefabs/FX/FxJumpPadDust.tscn" id="3_i2uk0"]
@@ -9,7 +9,7 @@
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="6_8j7hd"]
 [ext_resource type="Material" uid="uid://dv1i0ie533ymd" path="res://Materials/String.tres" id="7_u6us4"]
 [ext_resource type="Material" uid="uid://uhc8snpiwtjm" path="res://Materials/JumpNet.tres" id="8_4bt27"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_ccd8f"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="9_ccd8f"]
 [ext_resource type="Texture2D" uid="uid://b71k8w50s0upu" path="res://Textures/fx-dirt-patch.png" id="10_merhe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0w8p"]

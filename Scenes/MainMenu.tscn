@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1lcmox5msosd"]
 
-[ext_resource type="Script" path="res://C#/WorldData.cs" id="1_5q6nv"]
-[ext_resource type="Script" path="res://C#/Menus/MainMenu.cs" id="1_xp0it"]
+[ext_resource type="Script" uid="uid://d33rhofybo2ew" path="res://C#/WorldData.cs" id="1_5q6nv"]
+[ext_resource type="Script" uid="uid://rrwvgktgblvj" path="res://C#/Menus/MainMenu.cs" id="1_xp0it"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_y0h3u"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="3_468ow"]
-[ext_resource type="Script" path="res://C#/PlayerStatistics.cs" id="3_nonmj"]
-[ext_resource type="Script" path="res://C#/PlayerInventory.cs" id="4_1gkrp"]
+[ext_resource type="Script" uid="uid://dhl5e0j7i7qdn" path="res://C#/PlayerStatistics.cs" id="3_nonmj"]
+[ext_resource type="Script" uid="uid://c2l115cxmslwp" path="res://C#/PlayerInventory.cs" id="4_1gkrp"]
 
 [node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("continueButton", "newGamePopUpButton", "quitButton", "newGameYesButton", "newGameNoButton", "newGamePopUp")]
 script = ExtResource("1_xp0it")

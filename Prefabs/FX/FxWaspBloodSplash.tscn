@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://m802chlsn4cd"]
 
 [ext_resource type="Material" uid="uid://frsacdpa6623" path="res://Materials/Fx/FxWaspBloodSplash.tres" id="1_vk1hr"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_2klsq"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="2_2klsq"]
 
 [sub_resource type="Gradient" id="Gradient_rtmdu"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)

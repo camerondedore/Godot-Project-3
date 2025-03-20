@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dmib1tgy5ee4s"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
-[ext_resource type="Script" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
+[ext_resource type="Script" uid="uid://dgav2xptwir6q" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
 [ext_resource type="Material" uid="uid://b5cyspoybrawv" path="res://Materials/Pickups/PickupArmorMasked.tres" id="4_ft8qn"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
 [ext_resource type="PackedScene" uid="uid://dd74p0os7qlsq" path="res://Prefabs/FX/FxSparkleLarge.tscn" id="6_m8ucj"]
@@ -28,6 +28,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0
@@ -60,6 +61,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.5
 emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0

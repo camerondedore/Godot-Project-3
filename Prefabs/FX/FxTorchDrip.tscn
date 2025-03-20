@@ -14,7 +14,7 @@ _data = [Vector2(0, 1), 0.0, 0.0364176, 0, 0, Vector2(1, 0), -3.28147, 0.0, 0, 0
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_l6orr"]
-max_value = 5.0
+_limits = [0.0, 5.0, 0.0, 1.0]
 _data = [Vector2(0, 0.990099), 0.0, 1.08011, 0, 0, Vector2(1, 5), 7.61615, 0.0, 0, 0]
 point_count = 2
 
@@ -34,6 +34,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.04
 emission_ring_inner_radius = 0.04
+emission_ring_cone_angle = 90.0
 direction = Vector3(0, 0, 0)
 gravity = Vector3(0, -7, 0)
 scale_min = 0.1

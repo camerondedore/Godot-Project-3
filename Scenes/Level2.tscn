@@ -2,13 +2,13 @@
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
-[ext_resource type="Script" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_14mon"]
+[ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_14mon"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="3_oakbt"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="3_wvlv8"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="4_n6jrc"]
-[ext_resource type="Script" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_b0p0a"]
-[ext_resource type="Script" path="res://C#/SpawnedObjectLoaders.cs" id="5_iumrn"]
-[ext_resource type="Script" path="res://C#/SecretAreas.cs" id="5_tfa5y"]
+[ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_b0p0a"]
+[ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="5_iumrn"]
+[ext_resource type="Script" uid="uid://dp7ot8li6s4md" path="res://C#/SecretAreas.cs" id="5_tfa5y"]
 [ext_resource type="ArrayOccluder3D" uid="uid://b8xm6u2qv132h" path="res://Scenes/Occlusion/Level2.occ" id="6_l1egs"]
 [ext_resource type="ArrayMesh" uid="uid://bw2kngd4ep31n" path="res://Models/level-2.res" id="9_auvuc"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="10_v7b7r"]
@@ -45,17 +45,17 @@
 [ext_resource type="PackedScene" uid="uid://dfs02jpayr7eu" path="res://Prefabs/Trees/PropTreeWallSmall.tscn" id="24_ntqcw"]
 [ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="24_t4vt4"]
 [ext_resource type="PackedScene" uid="uid://bjp3slss1ghik" path="res://Prefabs/Trees/PropTreeApple2.tscn" id="24_u6kys"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="24_y3eg7"]
-[ext_resource type="Script" path="res://addons/PropPainter/ToolPropPainter.cs" id="25_6sqhb"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="25_hc283"]
+[ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="24_y3eg7"]
+[ext_resource type="Script" uid="uid://bsd6kqk6kcwxx" path="res://addons/PropPainter/ToolPropPainter.cs" id="25_6sqhb"]
+[ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="25_hc283"]
 [ext_resource type="PackedScene" uid="uid://bu8b1efkxsd3e" path="res://Prefabs/Trees/PropTreeApple3.tscn" id="25_ket2q"]
 [ext_resource type="PackedScene" uid="uid://ch4wcoilxqfyn" path="res://Prefabs/Plants/PropBlackberryBushLargeWall.tscn" id="26_d30pj"]
 [ext_resource type="PackedScene" uid="uid://cdpesuihqsxnp" path="res://Prefabs/Lumber/PropTreeStumpOak1.tscn" id="26_fr1jv"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="26_osx3v"]
-[ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="27_6deoc"]
+[ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="26_osx3v"]
+[ext_resource type="PackedScene" uid="uid://cy2fdh1yugj80" path="res://Prefabs/Lumber/PropTreeStumpOak2.tscn" id="27_6deoc"]
 [ext_resource type="PackedScene" uid="uid://dfi7lwdus6qt5" path="res://Prefabs/Fabrications/PropPlatformCantilever.tscn" id="27_yhe0o"]
 [ext_resource type="PackedScene" uid="uid://b71k8ok3eu1ci" path="res://Prefabs/Fabrications/PropPlatform4m.tscn" id="28_1krw3"]
-[ext_resource type="PackedScene" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="28_74g4q"]
+[ext_resource type="PackedScene" uid="uid://cciwvf66jw5lm" path="res://Prefabs/Lumber/PropTreeStumpOak3.tscn" id="28_74g4q"]
 [ext_resource type="PackedScene" uid="uid://c7ceqmc04noh0" path="res://Prefabs/Fabrications/PropBridgeHalf.tscn" id="29_50vp5"]
 [ext_resource type="PackedScene" uid="uid://dxtde18xqi2vw" path="res://Prefabs/Lumber/PropTreeSplittingStump.tscn" id="29_d3q1x"]
 [ext_resource type="PackedScene" uid="uid://csiucvqejw8cr" path="res://Prefabs/Furniture/PropDiningTable.tscn" id="32_ibvye"]
@@ -102,7 +102,7 @@
 [ext_resource type="PackedScene" uid="uid://ckb3ng4tokwms" path="res://Prefabs/Trees/PropBgTreeOak3.tscn" id="66_7ntm5"]
 [ext_resource type="PackedScene" uid="uid://xi0m8mskyllc" path="res://Prefabs/Trees/PropBgTreeOak4.tscn" id="67_vd8pi"]
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="68_3fjb2"]
-[ext_resource type="Script" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="68_s24a5"]
+[ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="68_s24a5"]
 [ext_resource type="PackedScene" uid="uid://b1e6hhtb3arh8" path="res://Prefabs/Small Items/PropBungMallet.tscn" id="69_um87x"]
 [ext_resource type="PackedScene" uid="uid://dxrqw1fx5hdum" path="res://Prefabs/Small Items/PropFabricRoll.tscn" id="70_tafml"]
 [ext_resource type="PackedScene" uid="uid://bqbpyxlt7m4ad" path="res://Prefabs/Small Items/PropLamp.tscn" id="72_ir07k"]
@@ -127,13 +127,13 @@
 [ext_resource type="Animation" uid="uid://1ooinoxpv06y" path="res://Animation/Cinematics/l2c2.res" id="80_tt5ai"]
 [ext_resource type="Animation" uid="uid://cw27tj5800xxm" path="res://Animation/Cinematics/l2c3.res" id="81_4xncj"]
 [ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="81_08i3x"]
-[ext_resource type="Script" path="res://C#/Common/TriggerArea.cs" id="81_vmvxv"]
-[ext_resource type="Script" path="res://C#/Mob Tools/MobSpawner.cs" id="82_0bdl6"]
+[ext_resource type="Script" uid="uid://dg2remqmickpr" path="res://C#/Common/TriggerArea.cs" id="81_vmvxv"]
+[ext_resource type="Script" uid="uid://54o0f787yck8" path="res://C#/Mob Tools/MobSpawner.cs" id="82_0bdl6"]
 [ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="82_xvep4"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="83_rgv54"]
 [ext_resource type="PackedScene" uid="uid://bn7h1qqxbne50" path="res://Prefabs/Small Items/PropBasketWithApples.tscn" id="83_uawf6"]
 [ext_resource type="PackedScene" uid="uid://dauwd0f7v5uyx" path="res://Prefabs/Characters/MobBrownRat.tscn" id="84_beh7k"]
-[ext_resource type="Script" path="res://C#/LevelRandomAudio.cs" id="84_dirwf"]
+[ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="84_dirwf"]
 [ext_resource type="PackedScene" uid="uid://chuhkc4ro50nf" path="res://Prefabs/Small Items/PropHoe.tscn" id="84_l1qvq"]
 [ext_resource type="PackedScene" uid="uid://cwa0t4570q3b3" path="res://Prefabs/Small Items/PropBucketWater.tscn" id="84_wwwr4"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="85_3a1yl"]
@@ -156,14 +156,14 @@
 [ext_resource type="PackedScene" uid="uid://52tad572ea76" path="res://Prefabs/Small Items/PropKnapsack.tscn" id="91_tr1cm"]
 [ext_resource type="AudioStream" uid="uid://dvptvqjxj1kak" path="res://Audio/ambience-cricket-2.wav" id="92_680kr"]
 [ext_resource type="PackedScene" uid="uid://da8lagd5i8ws0" path="res://Prefabs/Small Items/PropWaspHive.tscn" id="92_vrp2k"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="93_h8qi6"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="93_h8qi6"]
 [ext_resource type="PackedScene" uid="uid://q5ovbwr3uy8l" path="res://Prefabs/Plants/PropTulip1.tscn" id="93_vb7qk"]
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="94_6kog2"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="95_2ajt0"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="96_djqcu"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="98_eiudq"]
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/FxWoodChipsDecal.tscn" id="104_g3gg3"]
-[ext_resource type="Script" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="110_t127k"]
+[ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="110_t127k"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="111_6aopb"]
 [ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="119_l61q0"]
 [ext_resource type="Texture2D" uid="uid://bd1dbi5t3vuv6" path="res://Textures/fx-rug-1.png" id="126_v51sy"]
@@ -199,9 +199,9 @@ size = Vector3(6, 10, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ytqy4"]
 _data = {
-"l2c1": ExtResource("79_n40vy"),
-"l2c2": ExtResource("80_tt5ai"),
-"l2c3": ExtResource("81_4xncj")
+&"l2c1": ExtResource("79_n40vy"),
+&"l2c2": ExtResource("80_tt5ai"),
+&"l2c3": ExtResource("81_4xncj")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gb145"]
@@ -8412,7 +8412,7 @@ linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavPro
 
 [node name="CinematicsLevel2" type="AnimationPlayer" parent="Map/Cinematics"]
 libraries = {
-"": SubResource("AnimationLibrary_ytqy4")
+&"": SubResource("AnimationLibrary_ytqy4")
 }
 script = ExtResource("24_y3eg7")
 

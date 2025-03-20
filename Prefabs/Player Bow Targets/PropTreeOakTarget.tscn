@@ -1,15 +1,15 @@
 [gd_scene load_steps=23 format=3 uid="uid://e36nsayq0the"]
 
-[ext_resource type="Script" path="res://C#/PlayerBow/OakTreeTarget.cs" id="1_s15u0"]
+[ext_resource type="Script" uid="uid://dtox2t8yu3w3x" path="res://C#/PlayerBow/OakTreeTarget.cs" id="1_s15u0"]
 [ext_resource type="PackedScene" uid="uid://bdb5ym1k1dmtc" path="res://Models/prop-trees-oak-target.glb" id="1_ycrlc"]
 [ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_a8xx5"]
 [ext_resource type="AudioStream" uid="uid://c0hvs13tjb4wt" path="res://Audio/tree-hit.wav" id="2_pkgg5"]
 [ext_resource type="Material" uid="uid://cci7jxpq6uo3s" path="res://Materials/Trees/LeavesOakOld.tres" id="3_k3lgc"]
 [ext_resource type="Material" uid="uid://bx572d13yu6gv" path="res://Materials/Fx/FxLeafOak.tres" id="4_d6u1t"]
 [ext_resource type="Texture2D" uid="uid://db67fhgwjxgct" path="res://Textures/fx-leaves-oak-pile.png" id="6_3o6nf"]
-[ext_resource type="Script" path="res://C#/Common/RigidbodySpawner.cs" id="7_mdl28"]
+[ext_resource type="Script" uid="uid://dsdsnbs15g3di" path="res://C#/Common/RigidbodySpawner.cs" id="7_mdl28"]
 [ext_resource type="PackedScene" uid="uid://ceo0x0pkepjtn" path="res://Prefabs/Pickups/PickupCandiedNutAcorn.tscn" id="8_nuuss"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_j62f6"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="9_j62f6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ob80"]
 radius = 0.2
@@ -46,6 +46,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 0.2
 emission_ring_radius = 1.6
 emission_ring_inner_radius = 0.4
+emission_ring_cone_angle = 90.0
 angle_max = 359.0
 angular_velocity_min = -80.0
 angular_velocity_max = 80.0

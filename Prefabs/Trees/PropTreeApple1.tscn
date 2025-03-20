@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://ditat2n60et15"]
 
-[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="1_3oyqn"]
+[ext_resource type="Script" uid="uid://7ixwrthotvus" path="res://C#/Common/LodObjectExtra.cs" id="1_3oyqn"]
 [ext_resource type="ArrayMesh" uid="uid://b6kr71wu0u6mh" path="res://Models/prop-tree-apple-1.res" id="1_tkot2"]
 [ext_resource type="Material" uid="uid://c3ktxycy6oq6f" path="res://Materials/Trees/BarkApple.tres" id="2_kdn5e"]
 [ext_resource type="ArrayMesh" uid="uid://dqieoa66h25wg" path="res://Models/prop-tree-apple-1-lod.res" id="3_s27ke"]

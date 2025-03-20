@@ -139,14 +139,14 @@ render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_lambert, specul
 uniform float Wind_Amplitude = 0.10000000149012;
 uniform float Wind_Speed = 0.5;
 uniform float Wind_Turbulance = 0.5;
-uniform float Wind_Min_Height = 1;
-uniform float Wind_Slope = 1;
+uniform float Wind_Min_Height = 1.0;
+uniform float Wind_Slope = 1.0;
 uniform float Y_Multiplier = 0.25;
 uniform sampler2D Albedo : source_color;
 uniform float Metallic = 0.5;
-uniform float Roughness = 1;
+uniform float Roughness = 1.0;
 uniform float Specular = 0.25;
-uniform float Backlight_Strength = 0;
+uniform float Backlight_Strength = 0.0;
 uniform float Alpha_Scissor = 0.5;
 
 

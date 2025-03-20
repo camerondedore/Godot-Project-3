@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://565phnp5c2il"]
 
-[ext_resource type="Script" path="res://C#/Common/LodObjectExtra.cs" id="1_5eof1"]
+[ext_resource type="Script" uid="uid://7ixwrthotvus" path="res://C#/Common/LodObjectExtra.cs" id="1_5eof1"]
 [ext_resource type="Material" uid="uid://0lww2ku3npyx" path="res://Materials/Trees/BarkFir.tres" id="2_4p86m"]
 [ext_resource type="Material" uid="uid://cuadjjc0v33nd" path="res://Materials/Trees/LeavesFirWindShort.tres" id="4_lh2xf"]
 [ext_resource type="Material" uid="uid://drhdvo42a71ts" path="res://Materials/Trees/LeavesFir.tres" id="4_qdybx"]

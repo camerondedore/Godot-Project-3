@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://baclh2cy2xu1y"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_0x5b1"]
-[ext_resource type="Script" path="res://C#/Pickups/DockLeafPickup.cs" id="1_jiwja"]
+[ext_resource type="Script" uid="uid://cm7bht5j3tn3a" path="res://C#/Pickups/DockLeafPickup.cs" id="1_jiwja"]
 [ext_resource type="ArrayMesh" uid="uid://co4eetfrc7nu6" path="res://Models/pickup-dock-leaf.res" id="3_divh6"]
 [ext_resource type="Material" uid="uid://dghimnrpe1mpq" path="res://Materials/Pickups/PickupDockLeaf.tres" id="4_sf6mk"]
 
@@ -26,6 +26,7 @@ emission_ring_axis = Vector3(0, 1, 0)
 emission_ring_height = 0.2
 emission_ring_radius = 0.35
 emission_ring_inner_radius = 0.35
+emission_ring_cone_angle = 90.0
 angle_max = 360.0
 direction = Vector3(0, 0, 0)
 spread = 0.0

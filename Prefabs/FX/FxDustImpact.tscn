@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://dbb5yp644jsdv"]
 
 [ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/Fx/FxDust.tres" id="1_dbchy"]
-[ext_resource type="Script" path="res://C#/Common/ParticleFx.cs" id="2_7lfs7"]
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="2_dgipw"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="2_7lfs7"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="2_dgipw"]
 [ext_resource type="Material" uid="uid://b1fb52ywj54rw" path="res://Materials/Fx/FxDirt.tres" id="4_njdnm"]
 
 [sub_resource type="Gradient" id="Gradient_ckonk"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://gl71inotvdtq"]
 
 [ext_resource type="ArrayMesh" uid="uid://ig34hjeaev2k" path="res://Models/prop-blackberry-bush-old.res" id="1_74o7b"]
-[ext_resource type="Script" path="res://C#/PlayerBow/BlackberryBushTarget.cs" id="1_i6v5i"]
+[ext_resource type="Script" uid="uid://deckf63vppfk3" path="res://C#/PlayerBow/BlackberryBushTarget.cs" id="1_i6v5i"]
 [ext_resource type="PackedScene" uid="uid://b4f76op0ikakq" path="res://Prefabs/FX/FxBlackberryBushCut.tscn" id="2_yv47g"]
 [ext_resource type="ArrayMesh" uid="uid://d14x1h5scbsot" path="res://Models/prop-blackberry-bush-old-cut.res" id="3_d6b5l"]
 [ext_resource type="Material" uid="uid://1m87nl1ujmvk" path="res://Materials/Plants/LeavesBlackberryOldWind.tres" id="4_hkpge"]

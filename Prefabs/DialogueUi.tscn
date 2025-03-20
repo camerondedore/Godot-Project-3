@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bs7ws21ex6nl7"]
 
-[ext_resource type="Script" path="res://C#/Dialogue/DialogueUi.cs" id="1_fi4en"]
+[ext_resource type="Script" uid="uid://ck4fk00jlqwa" path="res://C#/Dialogue/DialogueUi.cs" id="1_fi4en"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="2_0uyrb"]
 
 [node name="DialogueUi" type="CanvasLayer" node_paths=PackedStringArray("dialogueContainter", "dialogueTextLabel")]

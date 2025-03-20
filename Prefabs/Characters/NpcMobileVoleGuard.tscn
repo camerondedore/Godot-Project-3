@@ -1,14 +1,14 @@
 [gd_scene load_steps=31 format=3 uid="uid://bhcqps24bo24o"]
 
 [ext_resource type="PackedScene" uid="uid://b5iub7smv5k7q" path="res://Models/character-vole-guard.glb" id="1_66ffc"]
-[ext_resource type="Script" path="res://C#/NpcMobile/NpcMobileVoleGuard.cs" id="1_gy60r"]
+[ext_resource type="Script" uid="uid://dkrn7t6caqghb" path="res://C#/NpcMobile/NpcMobileVoleGuard.cs" id="1_gy60r"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_nejpf"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_85b0m"]
 [ext_resource type="Material" uid="uid://cxke31b8ufnki" path="res://Materials/Characters/CharacterVoleGuardMasked.tres" id="4_p73lp"]
 [ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="5_3f7i6"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="6_0ej3p"]
 [ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="8_tbd8u"]
-[ext_resource type="Script" path="res://C#/NpcDialogue/NpcDialogue.cs" id="9_t88b5"]
+[ext_resource type="Script" uid="uid://csfcp3vr6xx8c" path="res://C#/NpcDialogue/NpcDialogue.cs" id="9_t88b5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_71lbi"]
 radius = 0.4

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bj78luxrt6dcp"]
 
-[ext_resource type="Script" path="res://C#/PlayerBow/LeverTarget.cs" id="1_aia7k"]
+[ext_resource type="Script" uid="uid://tgqtgmlwiaqn" path="res://C#/PlayerBow/LeverTarget.cs" id="1_aia7k"]
 [ext_resource type="ArrayMesh" uid="uid://y0cp8g5bn2mq" path="res://Models/prop-lever-base.res" id="1_ig7bj"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_rxj3c"]
 [ext_resource type="AudioStream" uid="uid://cgbbvh138dvnp" path="res://Audio/wood-block-hit-success.wav" id="2_uv3nt"]
@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b2n46pgjedn4m" path="res://Audio/lever-activate.wav" id="4_2lqlb"]
 [ext_resource type="ArrayMesh" uid="uid://py8r8tye8i7c" path="res://Models/prop-lever-arm.res" id="4_k0jfr"]
 [ext_resource type="Material" uid="uid://dcedtu2o17bkm" path="res://Materials/Props/prop-switch.tres" id="5_7vd6u"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_bavwj"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="9_bavwj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cmuxc"]
 radius = 0.27

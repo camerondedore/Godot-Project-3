@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci1lbtanc0g30"]
 
-[ext_resource type="Script" path="res://C#/Common/AutoDestroy.cs" id="1_vdls7"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="1_vdls7"]
 [ext_resource type="PackedScene" uid="uid://dbb5yp644jsdv" path="res://Prefabs/FX/FxDustImpact.tscn" id="1_xorff"]
 [ext_resource type="AudioStream" uid="uid://qvu87s0jqirx" path="res://Audio/arrow-miss.wav" id="2_talep"]
-[ext_resource type="Script" path="res://C#/Common/AudioFx.cs" id="3_h35mi"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="3_h35mi"]
 
 [node name="FxArrowMiss" type="Node3D"]
 

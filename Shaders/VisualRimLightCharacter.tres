@@ -134,16 +134,16 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 varying float var_Local_Y;
 
 uniform sampler2D Albedo : source_color;
-uniform float Metallic : hint_range(0, 1) = 0;
-uniform float Roughness : hint_range(0, 1) = 1;
-uniform float Specular : hint_range(0, 1) = 0;
-uniform float Diffuse_Rim_Power = 1;
-uniform float Rim_Sharpness : hint_range(0, 0.5) = 0.5;
-uniform float Rim_Distance = 1;
+uniform float Metallic : hint_range(0.0, 1.0) = 0.0;
+uniform float Roughness : hint_range(0.0, 1.0) = 1.0;
+uniform float Specular : hint_range(0.0, 1.0) = 0.0;
+uniform float Diffuse_Rim_Power = 1.0;
+uniform float Rim_Sharpness : hint_range(0.0, 0.5) = 0.5;
+uniform float Rim_Distance = 1.0;
 uniform vec4 Rim_Color : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-uniform float Rim_Power = 1;
+uniform float Rim_Power = 1.0;
 uniform float Rim_Min_Height;
-uniform float Rim_Height_Slope = 1;
+uniform float Rim_Height_Slope = 1.0;
 
 
 

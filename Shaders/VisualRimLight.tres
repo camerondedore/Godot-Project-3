@@ -96,12 +96,12 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 
 uniform sampler2D Albedo : source_color;
 uniform sampler2D Metallic;
-uniform float Metallic_Multiplier = 0;
+uniform float Metallic_Multiplier = 0.0;
 uniform sampler2D Roughness;
-uniform float Rim_Sharpness : hint_range(0, 0.5) = 0.5;
-uniform float Rim_Distance = 1;
+uniform float Rim_Sharpness : hint_range(0.0, 0.5) = 0.5;
+uniform float Rim_Distance = 1.0;
 uniform vec4 Rim_Color : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
-uniform float Rim_Power = 1;
+uniform float Rim_Power = 1.0;
 uniform float Alpha_Scissor = 0.5;
 
 

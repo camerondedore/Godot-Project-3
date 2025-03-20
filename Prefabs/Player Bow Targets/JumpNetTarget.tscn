@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://q8xtek0bikgv"]
 
-[ext_resource type="Script" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
+[ext_resource type="Script" uid="uid://bpf4vtcuovx5a" path="res://C#/PlayerBow/NetTarget.cs" id="1_dgeyj"]
 [ext_resource type="AudioStream" uid="uid://dlygbf47nnkvn" path="res://Audio/jump-pad-attach.wav" id="2_ju7d0"]
 [ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="3_nl5mq"]
 

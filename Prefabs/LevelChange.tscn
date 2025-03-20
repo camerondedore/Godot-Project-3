@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://oycdur3x5ghh"]
 
-[ext_resource type="Script" path="res://C#/LevelChange/LevelChangeControl.cs" id="1_hxbrv"]
+[ext_resource type="Script" uid="uid://6ghxa5hhu570" path="res://C#/LevelChange/LevelChangeControl.cs" id="1_hxbrv"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="2_t6gls"]
 
 [node name="LevelChange" type="Node" node_paths=PackedStringArray("fadeRect", "canvas", "loadingLabel")]

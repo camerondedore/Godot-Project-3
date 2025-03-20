@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://cq0tn2qmf50ap"]
 
-[ext_resource type="Script" path="res://C#/CharacterWaterSplash.cs" id="1_rw0vh"]
+[ext_resource type="Script" uid="uid://dfb1x6s2ekn8c" path="res://C#/CharacterWaterSplash.cs" id="1_rw0vh"]
 [ext_resource type="PackedScene" uid="uid://chjbr36t4t6lq" path="res://Prefabs/FX/FxWaterCharacterSplash.tscn" id="2_y7tqf"]
 [ext_resource type="AudioStream" uid="uid://cxre8b8avbnys" path="res://Audio/water-splash-enter.wav" id="3_4kupy"]
 [ext_resource type="AudioStream" uid="uid://dqw5qd8h6btgh" path="res://Audio/water-sloshing.wav" id="3_gbmw2"]
 [ext_resource type="AudioStream" uid="uid://nppmgs2m4dvf" path="res://Audio/water-splash-exit.wav" id="4_6vd5y"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="4_q6hbf"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="4_q6hbf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4in3w"]
 radius = 0.3

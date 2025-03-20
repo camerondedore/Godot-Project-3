@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://boho7pu4wvclm"]
 
 [ext_resource type="PackedScene" uid="uid://b2g4qgmkdn744" path="res://Models/prop-lockbox.glb" id="1_dceib"]
-[ext_resource type="Script" path="res://C#/PlayerBow/LockboxTarget.cs" id="1_vcmy5"]
+[ext_resource type="Script" uid="uid://c8k5b8vqx72wp" path="res://C#/PlayerBow/LockboxTarget.cs" id="1_vcmy5"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_s4b3k"]
 [ext_resource type="AudioStream" uid="uid://cf6rb4jfyo1xv" path="res://Audio/lockbox-open.wav" id="3_he827"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="4_rsdln"]
 [ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="5_cpfrh"]
-[ext_resource type="Script" path="res://C#/Common/RigidbodySpawnerDelayed.cs" id="6_03t3p"]
+[ext_resource type="Script" uid="uid://c2kr2e7ldkjm1" path="res://C#/Common/RigidbodySpawnerDelayed.cs" id="6_03t3p"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="6_noej3"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="7_rf4xg"]
-[ext_resource type="Script" path="res://C#/Common/AudioTools3d.cs" id="9_30sne"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="9_30sne"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a313i"]
 size = Vector3(0.75, 0.7, 0.563)
