@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=150 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -102,6 +102,7 @@
 [ext_resource type="AudioStream" uid="uid://dml818uriixut" path="res://Audio/ambience-bird-6.wav" id="66_f182m"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="69_hradr"]
 [ext_resource type="PackedScene" uid="uid://fmjduia2qs6l" path="res://Prefabs/Lumber/PropPicketNew.tscn" id="69_kci5e"]
+[ext_resource type="PackedScene" uid="uid://cjb0g5qu5jtb3" path="res://Prefabs/Weapons/WeaponShield.tscn" id="70_b65b3"]
 [ext_resource type="Animation" uid="uid://dsa18ccitgxw6" path="res://Animation/Cinematics/l3c1.res" id="70_l4b7v"]
 [ext_resource type="PackedScene" uid="uid://ch4wcoilxqfyn" path="res://Prefabs/Plants/PropBlackberryBushLargeWall.tscn" id="71_lhp6n"]
 [ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="71_qbr3e"]
@@ -1730,6 +1731,11 @@ open = false
 [node name="PropPlatform4mSmallMoving2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("51_4606n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 5, -108.6)
 openOffset = Vector3(0, 3, 0)
+
+[node name="Weapons" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
+
+[node name="WeaponShield" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Weapons" instance=ExtResource("70_b65b3")]
+transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, 13.6548, 6.52414, -40.5)
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
 
