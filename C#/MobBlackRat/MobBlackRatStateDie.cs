@@ -30,6 +30,9 @@ namespace MobBlackRat
             // animation
             blackboard.animation.Play("black-rat-die");
 
+            // clear head look target
+            blackboard.headControl.ClearTarget();
+
             // destroy faction nodes
             blackboard.myFaction1.QueueFree();
             blackboard.myFaction2.QueueFree();

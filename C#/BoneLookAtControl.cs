@@ -6,9 +6,7 @@ public partial class BoneLookAtControl : LookAtModifier3D
 
     [Export]
     float rangeSqr = 225,
-        maxAngleDeg = 80;
-    [Export]
-    Node3D test;
+        maxAngleDeg = 75;
 
     Node3D owner;
     Node3D lookTarget;
@@ -47,7 +45,7 @@ public partial class BoneLookAtControl : LookAtModifier3D
         var angleToLookTarget = Mathf.RadToDeg(forward.AngleTo(directionToTarget));
 
         // adjust influence using look angle
-        Influence = Mathf.Clamp(1f - (angleToLookTarget - maxAngleDeg) * 0.1f, 0f , 1f);
+        Influence = Mathf.Clamp(1f - (angleToLookTarget - maxAngleDeg) * 0.066f, 0f , 1f);
     }
 
 
