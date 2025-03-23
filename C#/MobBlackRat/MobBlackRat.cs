@@ -37,14 +37,15 @@ namespace MobBlackRat
         public ParticleFx swordHitFx,
             swordHitBloodFx;
         public CollisionShape3D collider;
+        public BoneLookAtControl headControl;
         
         public Vector3 startPosition;
         public double swingTime = .5f,
             attackDamageTime = 0.3f,
             reactTime = 0.4f;
         public float moveRecalculatePathRange = 0.5f,
-            attackRangeSqr = 4.5f,
-            damageRangeSqr = 6.25f,
+            attackRangeSqr = 3.1f,
+            damageRangeSqr = 5.1f,
             attackAngle = 45,
             damage = 10,
             PatrolRange = 10,
@@ -73,6 +74,7 @@ namespace MobBlackRat
             swordHitFx = (ParticleFx) GetNode("FxEnemyHit");
             swordHitBloodFx = (ParticleFx) GetNode("FxBloodSlash");
             collider = (CollisionShape3D) GetNode("RatCollider");
+            headControl = (BoneLookAtControl) GetNode("character-black-rat/character-armature/Skeleton3D/HeadLookAt");
 
             // set nav agent event
             navAgent.VelocityComputed += SafeMove;
@@ -254,6 +256,45 @@ namespace MobBlackRat
 
             machine.SetState(stateStart);
             machine.CurrentState.StartState();
+        }
+
+
+
+        public bool CanAttackEnemy()
+        {
+            var distanceToEnemySqr = GetDistanceSqrToEnemy();
+
+            var isCloseToEnemy = distanceToEnemySqr < attackRangeSqr;
+            var isNotAboveEnemy = (enemy.GlobalPosition.Y - GlobalPosition.Y) > -0.75f;
+
+            // check if enemy is close enough
+            if(isCloseToEnemy && isNotAboveEnemy)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+
+        public bool CanDamageEnemy()
+        {
+            // get distance to enemy
+            var distanceToEnemySqr = GetDistanceSqrToEnemy();
+            var angleForwardToEnemy = GetForwardToEnemyAngle();
+            var angleUpToEnemy = GetUpAngleToEnemy();
+
+            var enemyInFront = distanceToEnemySqr < damageRangeSqr && angleForwardToEnemy < attackAngle;
+            var enemyAbove = distanceToEnemySqr < damageRangeSqr * 2f && angleUpToEnemy < attackAngle;
+            var enemyClose = distanceToEnemySqr < 0.3f;
+
+            if(enemyInFront || enemyAbove || enemyClose)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

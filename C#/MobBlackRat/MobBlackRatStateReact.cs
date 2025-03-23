@@ -39,6 +39,9 @@ namespace MobBlackRat
                 //blackboard.animStateMachinePlayback.Next();
                 blackboard.animation.Play("black-rat-react");
             }
+
+            // set head look target
+            blackboard.headControl.SetTarget(blackboard.enemy);
         }
 
 

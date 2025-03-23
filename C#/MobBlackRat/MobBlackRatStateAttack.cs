@@ -24,16 +24,7 @@ namespace MobBlackRat
                 // check for timing to output damage
                 if(damageOutputted == false && EngineTime.timePassed > startTime + blackboard.attackDamageTime)
                 {
-                    // get distance to enemy
-                    var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
-                    var angleForwardToEnemy = blackboard.GetForwardToEnemyAngle();
-                    var angleUpToEnemy = blackboard.GetUpAngleToEnemy();
-
-                    var enemyInFront = distanceToEnemySqr < blackboard.damageRangeSqr && angleForwardToEnemy < blackboard.attackAngle;
-                    var enemyAbove = distanceToEnemySqr < blackboard.damageRangeSqr * 2f && angleUpToEnemy < blackboard.attackAngle;
-                    var enemyClose = distanceToEnemySqr < 0.3f;
-
-                    if(enemyInFront || enemyAbove || enemyClose)
+                    if(blackboard.CanDamageEnemy() == true)
                     {
                         // hurt enemy
                         // get health node by name, as direct child to the faction node's owner
@@ -111,11 +102,7 @@ namespace MobBlackRat
             // check if attack is over
             if(EngineTime.timePassed > startTime + blackboard.swingTime)
             {
-                // get distance to enemy
-                var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
-
-                // check if enemy is close enough
-                if(distanceToEnemySqr < blackboard.attackRangeSqr)
+                if(blackboard.CanAttackEnemy() == true)
                 {
                     // attack
                     StartState();

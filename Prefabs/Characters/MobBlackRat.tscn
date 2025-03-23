@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dkw1hfkd0uses"]
+[gd_scene load_steps=24 format=3 uid="uid://dkw1hfkd0uses"]
 
 [ext_resource type="Script" uid="uid://d3b6wqu6ayoqw" path="res://C#/MobBlackRat/MobBlackRat.cs" id="1_46qau"]
 [ext_resource type="Script" uid="uid://cqcw7snsv163v" path="res://C#/MobBlackRat/MobBlackRatHealth.cs" id="2_71lt1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://jdcotr5j1875" path="res://Materials/Characters/MobBlackRatRim.tres" id="5_n14mk"]
 [ext_resource type="Material" uid="uid://bf425q6a5ouef" path="res://Materials/Characters/RatEyeGlow.tres" id="6_al5mj"]
 [ext_resource type="Material" uid="uid://blq5nnks5d07c" path="res://Materials/Characters/MobBlackRatGearRim.tres" id="7_ji3gt"]
+[ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="8_ccavo"]
 [ext_resource type="Script" uid="uid://bx4drobbkrft" path="res://C#/MobBlackRat/MobBlackRatAudio.cs" id="8_cysva"]
 [ext_resource type="AudioStream" uid="uid://fd1mvgf6fbwf" path="res://Audio/melee-hit.wav" id="9_b23nn"]
 [ext_resource type="AudioStream" uid="uid://cmhkmrb8ou7x8" path="res://Audio/melee-swing-1.wav" id="10_exf00"]
@@ -167,6 +168,26 @@ gi_mode = 2
 surface_material_override/0 = ExtResource("5_n14mk")
 surface_material_override/1 = ExtResource("6_al5mj")
 surface_material_override/2 = ExtResource("7_ji3gt")
+
+[node name="HeadLookAt" type="LookAtModifier3D" parent="character-black-rat/character-armature/Skeleton3D" index="2"]
+bone_name = "head"
+bone = 4
+forward_axis = 2
+primary_rotation_axis = 0
+duration = 0.5
+transition_type = 8
+ease_type = 1
+use_angle_limitation = true
+symmetry_limitation = false
+primary_positive_limit_angle = 0.523599
+primary_positive_damp_threshold = 1.0
+primary_negative_limit_angle = 0.523599
+primary_negative_damp_threshold = 1.0
+secondary_positive_limit_angle = 0.785398
+secondary_positive_damp_threshold = 1.0
+secondary_negative_limit_angle = 0.785398
+secondary_negative_damp_threshold = 1.0
+script = ExtResource("8_ccavo")
 
 [node name="AnimationPlayer" parent="character-black-rat" index="1"]
 process_mode = 1

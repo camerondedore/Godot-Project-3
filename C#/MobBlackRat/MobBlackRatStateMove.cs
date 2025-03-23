@@ -20,7 +20,7 @@ namespace MobBlackRat
             {
 
                 // get distance to enemy
-                distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+                var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
                 var distanceSqrFromDestinationToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
                 // get if enemy is close and in LOS
@@ -42,7 +42,7 @@ namespace MobBlackRat
                     stuckTicks++;
                 }
             }
-
+            
 
             blackboard.ClayPotCheck();
         }
@@ -59,8 +59,6 @@ namespace MobBlackRat
             blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
 
             // animation
-            // blackboard.animStateMachinePlayback.Travel("brown-rat-walk");
-            // blackboard.animStateMachinePlayback.Next();
             blackboard.animation.Play("black-rat-walk");
         }
 
@@ -92,15 +90,14 @@ namespace MobBlackRat
                 return blackboard.superStateIdle;
             }
 
-            // check if enemy is close enough
-            if(distanceToEnemySqr < blackboard.attackRangeSqr)
+            if(blackboard.CanAttackEnemy() == true)
             {
                 // attack
                 return blackboard.stateAttack;
             }
 
             // if at end of path
-            if(blackboard.navAgent.IsNavigationFinished() && distanceToEnemySqr > 4f)
+            if(blackboard.navAgent.IsNavigationFinished())
             {
                 // watch
                 return blackboard.stateWatch;
