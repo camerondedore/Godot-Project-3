@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="2_klyu1"]
 [ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="3_3d2ch"]
 [ext_resource type="Texture2D" uid="uid://cs0ahe51wy0v8" path="res://UI/ui-cider-counter.png" id="3_wx0bl"]
-[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_48luy"]
-[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="5_ytcwt"]
+[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsden.tres" id="4_48luy"]
+[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/EyeRat.tres" id="5_ytcwt"]
 
 [node name="NpcMerchantCider" node_paths=PackedStringArray("animation") instance=ExtResource("1_u54yn")]
 animation = NodePath("character-lumsden/AnimationPlayer")

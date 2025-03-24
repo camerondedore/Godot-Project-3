@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c7slnpl4qc3rv" path="res://Prefabs/Characters/NpcMerchantBase.tscn" id="1_ccfui"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="2_gr3vk"]
-[ext_resource type="Material" uid="uid://bjcflxq43ap6e" path="res://Materials/Characters/CharacterWynnRim.tres" id="3_u0hjs"]
-[ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="4_i4x1t"]
+[ext_resource type="Material" uid="uid://bjcflxq43ap6e" path="res://Materials/Characters/CharacterWynn.tres" id="3_u0hjs"]
+[ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/EyeHare.tres" id="4_i4x1t"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="5_nb3go"]
 [ext_resource type="PackedScene" uid="uid://dmib1tgy5ee4s" path="res://Prefabs/Pickups/PickupArmor.tscn" id="6_vvgpr"]
 [ext_resource type="Texture2D" uid="uid://geos667sl53o" path="res://UI/ui-armor-counter.png" id="7_x4rha"]

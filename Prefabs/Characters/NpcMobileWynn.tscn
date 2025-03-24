@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://1mm28ll82ysf" path="res://C#/NpcMobile/NpcMobile.cs" id="1_164ud"]
 [ext_resource type="PackedScene" uid="uid://dx2s20sg0k15w" path="res://Models/character-wynn.glb" id="1_jff1p"]
-[ext_resource type="Material" uid="uid://bjcflxq43ap6e" path="res://Materials/Characters/CharacterWynnRim.tres" id="2_7jj0c"]
+[ext_resource type="Material" uid="uid://bjcflxq43ap6e" path="res://Materials/Characters/CharacterWynn.tres" id="2_7jj0c"]
 [ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="2_eyfap"]
-[ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/HareEye.tres" id="3_1ou5g"]
+[ext_resource type="Material" uid="uid://ciltja578e1dk" path="res://Materials/Characters/EyeHare.tres" id="3_1ou5g"]
 [ext_resource type="Material" uid="uid://byq34v3fjbgtb" path="res://Materials/Characters/Eyelash.tres" id="4_iaey1"]
 [ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="6_fyx4p"]
 [ext_resource type="Script" uid="uid://csfcp3vr6xx8c" path="res://C#/NpcDialogue/NpcDialogue.cs" id="8_kl1hr"]

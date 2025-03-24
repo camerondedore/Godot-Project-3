@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://ducix7g3xfmjw"]
+
+[ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_yiw38"]
+[ext_resource type="Texture2D" uid="uid://bss81jj68s58w" path="res://Textures/arrows-diffuse.png" id="2_yiw38"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yiw38")
+shader_parameter/albedo = ExtResource("2_yiw38")
+shader_parameter/metallicPower = 0.0
+shader_parameter/roughnessPower = 1.0
+shader_parameter/rimPower = 0.04
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(1, 0, 0, 1)
+shader_parameter/rimMinHeight = -0.9
+shader_parameter/rimHeightSlope = 1.8

@@ -131,8 +131,8 @@
 [ext_resource type="Script" uid="uid://dl3wj7r2626ye" path="res://C#/Common/TriggerDead.cs" id="121_igisw"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="127_fg2b4"]
 [ext_resource type="PackedScene" uid="uid://cfpvp1q0phyed" path="res://Models/character-shield-rat.glb" id="131_h4a87"]
-[ext_resource type="Material" uid="uid://c50xfjvqeut1o" path="res://Materials/Characters/MobShieldRatRim.tres" id="132_072lc"]
-[ext_resource type="Material" uid="uid://bf425q6a5ouef" path="res://Materials/Characters/RatEyeGlow.tres" id="133_17ll5"]
+[ext_resource type="Material" uid="uid://c50xfjvqeut1o" path="res://Materials/Characters/MobShieldRat.tres" id="132_072lc"]
+[ext_resource type="Material" uid="uid://bf425q6a5ouef" path="res://Materials/Characters/EyeRatGlow.tres" id="133_17ll5"]
 [ext_resource type="PackedScene" uid="uid://y2yvccriylqc" path="res://Prefabs/Weapons/WeaponHatchet.tscn" id="134_072lc"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_8ftbp"]

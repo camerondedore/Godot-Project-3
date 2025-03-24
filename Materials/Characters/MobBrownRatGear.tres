@@ -1,10 +1,18 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cicvawmaggm2b"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://jcagdqp25b1r"]
 
-[ext_resource type="Texture2D" uid="uid://blr06u8kitxk2" path="res://Textures/character-brown-rat-gear-diffuse.png" id="1_241ur"]
+[ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_jiw4k"]
+[ext_resource type="Texture2D" uid="uid://blr06u8kitxk2" path="res://Textures/character-brown-rat-gear-diffuse.png" id="2_jiw4k"]
 
 [resource]
-albedo_texture = ExtResource("1_241ur")
-metallic_specular = 0.0
-roughness = 0.95
-rim_enabled = true
-rim = 0.05
+render_priority = 0
+shader = ExtResource("1_jiw4k")
+shader_parameter/albedo = ExtResource("2_jiw4k")
+shader_parameter/metallicPower = 0.0
+shader_parameter/roughnessPower = 1.0
+shader_parameter/rimPower = 0.04
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(1, 0, 0, 1)
+shader_parameter/rimMinHeight = -0.9
+shader_parameter/rimHeightSlope = 1.8

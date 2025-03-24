@@ -74,7 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://cs6hybqh08eft" path="res://UI/ui-ranger-secret-area.png" id="52_3iuey"]
 [ext_resource type="Texture2D" uid="uid://c3gq6us7u682f" path="res://UI/ui-crosshair-sheet.png" id="52_23icf"]
 [ext_resource type="PackedScene" uid="uid://6l6ou0eihn0w" path="res://Prefabs/FX/FxArmorPickup.tscn" id="53_3pth2"]
-[ext_resource type="Material" uid="uid://c3o6xes86q4q5" path="res://Materials/Characters/SquirrelEye.tres" id="53_o3rf2"]
+[ext_resource type="Material" uid="uid://c3o6xes86q4q5" path="res://Materials/Characters/EyeSquirrel.tres" id="53_o3rf2"]
 [ext_resource type="Material" uid="uid://6uq0jae4r4tr" path="res://Materials/Characters/CharacterPlayerGear.tres" id="54_hitiv"]
 [ext_resource type="Material" uid="uid://brj7mffrs121p" path="res://Materials/Characters/CharacterPlayerMasked.tres" id="54_rdy4g"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="55_ftkf4"]

@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_181p2"]
 [ext_resource type="PackedScene" uid="uid://c7slnpl4qc3rv" path="res://Prefabs/Characters/NpcMerchantBase.tscn" id="1_mbbxm"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_bevfa"]
-[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_jphvc"]
-[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_kd7c3"]
+[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsden.tres" id="4_jphvc"]
+[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/EyeRat.tres" id="4_kd7c3"]
 
 [node name="NpcMerchantDockLeaves" node_paths=PackedStringArray("animation") instance=ExtResource("1_mbbxm")]
 animation = NodePath("character-lumsden/AnimationPlayer")

@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://547gsofyv6yc" path="res://C#/NpcSimple/NpcSimple.cs" id="1_r03m4"]
 [ext_resource type="PackedScene" uid="uid://ceb6vogphed04" path="res://Models/character-lumsden.glb" id="1_uc5av"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_cgg3p"]
-[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/RatEye.tres" id="4_srv7g"]
-[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsdenRim.tres" id="4_u4u5o"]
+[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/EyeRat.tres" id="4_srv7g"]
+[ext_resource type="Material" uid="uid://of2xnvwaha6" path="res://Materials/Characters/CharacterLumsden.tres" id="4_u4u5o"]
 [ext_resource type="Script" uid="uid://csfcp3vr6xx8c" path="res://C#/NpcDialogue/NpcDialogue.cs" id="6_gbgo0"]
 [ext_resource type="Script" uid="uid://dp0g8ya7owmv4" path="res://C#/NpcSimple/NpcCameraControl.cs" id="7_shrkw"]
 

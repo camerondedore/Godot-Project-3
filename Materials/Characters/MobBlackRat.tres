@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://hxu5sxmu4ru"]
+
+[ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_wvj66"]
+[ext_resource type="Texture2D" uid="uid://cou6ffkmn54na" path="res://Textures/character-black-rat-diffuse.png" id="2_wvj66"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wvj66")
+shader_parameter/albedo = ExtResource("2_wvj66")
+shader_parameter/metallicPower = 0.0
+shader_parameter/roughnessPower = 1.0
+shader_parameter/rimPower = 0.04
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(1, 0, 0, 1)
+shader_parameter/rimMinHeight = -1.0
+shader_parameter/rimHeightSlope = 2.0

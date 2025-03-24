@@ -7,9 +7,9 @@
 [ext_resource type="Material" uid="uid://c568qsv5du0ld" path="res://Materials/Props/WeaponSword.tres" id="4_5s7k5"]
 [ext_resource type="Script" uid="uid://i55lxywq03xt" path="res://C#/Mob Tools/MobFaction.cs" id="4_3600o"]
 [ext_resource type="Script" uid="uid://1vff8etgep15" path="res://C#/Mob Tools/MobEyes.cs" id="4_yonai"]
-[ext_resource type="Material" uid="uid://jdcotr5j1875" path="res://Materials/Characters/MobBlackRatRim.tres" id="5_n14mk"]
-[ext_resource type="Material" uid="uid://bf425q6a5ouef" path="res://Materials/Characters/RatEyeGlow.tres" id="6_al5mj"]
-[ext_resource type="Material" uid="uid://blq5nnks5d07c" path="res://Materials/Characters/MobBlackRatGearRim.tres" id="7_ji3gt"]
+[ext_resource type="Material" uid="uid://hxu5sxmu4ru" path="res://Materials/Characters/MobBlackRat.tres" id="5_ccavo"]
+[ext_resource type="Material" uid="uid://bf425q6a5ouef" path="res://Materials/Characters/EyeRatGlow.tres" id="6_al5mj"]
+[ext_resource type="Material" uid="uid://ddcbnfas38iv6" path="res://Materials/Characters/MobBlackRatGear.tres" id="7_ccavo"]
 [ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="8_ccavo"]
 [ext_resource type="Script" uid="uid://bx4drobbkrft" path="res://C#/MobBlackRat/MobBlackRatAudio.cs" id="8_cysva"]
 [ext_resource type="AudioStream" uid="uid://fd1mvgf6fbwf" path="res://Audio/melee-hit.wav" id="9_b23nn"]
@@ -165,9 +165,9 @@ surface_material_override/0 = ExtResource("4_5s7k5")
 [node name="character-black-rat" parent="character-black-rat/character-armature/Skeleton3D" index="1"]
 layers = 2
 gi_mode = 2
-surface_material_override/0 = ExtResource("5_n14mk")
+surface_material_override/0 = ExtResource("5_ccavo")
 surface_material_override/1 = ExtResource("6_al5mj")
-surface_material_override/2 = ExtResource("7_ji3gt")
+surface_material_override/2 = ExtResource("7_ccavo")
 
 [node name="HeadLookAt" type="LookAtModifier3D" parent="character-black-rat/character-armature/Skeleton3D" index="2"]
 bone_name = "head"
