@@ -7,6 +7,9 @@ public partial class BoneLookAtControl : LookAtModifier3D
     [Export]
     float rangeSqr = 225,
         maxAngleDeg = 75;
+    
+    [Export]
+    bool dynamicTarget = true;
 
     Node3D owner;
     Node3D lookTarget;
@@ -16,16 +19,24 @@ public partial class BoneLookAtControl : LookAtModifier3D
     public override void _Ready()
     {
         owner = (Node3D) Owner;
+
+        if(dynamicTarget == false)
+        {
+            lookTarget = (Node3D) GetNode(TargetNode);
+        }
     }
 
 
 
     public override void _Process(double delta)
     {
-        if(TargetNode == null || IsInstanceValid(lookTarget) == false || lookTarget == null)
+        if(dynamicTarget == true)
         {
-            TargetNode = null;
-            return;
+            if(TargetNode == null || IsInstanceValid(lookTarget) == false || lookTarget == null)
+            {
+                TargetNode = null;
+                return;
+            }
         }
 
 
