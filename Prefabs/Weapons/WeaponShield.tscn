@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjb0g5qu5jtb3"]
 
 [ext_resource type="ArrayMesh" uid="uid://bq0s37wusxiyc" path="res://Models/weapon-shield.res" id="1_r8dt7"]
-[ext_resource type="Material" uid="uid://by6puqrpwr1fo" path="res://Materials/WeaponShield.tres" id="2_4gt8n"]
+[ext_resource type="Material" uid="uid://by6puqrpwr1fo" path="res://Materials/Props/WeaponShield.tres" id="2_4gt8n"]
 
 [node name="WeaponShield" type="Node3D"]
 

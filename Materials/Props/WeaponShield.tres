@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://by6puqrpwr1fo"]
+
+[ext_resource type="Texture2D" uid="uid://dx1f2d8jk6411" path="res://Textures/weapon-shield-diffuse.png" id="1_4cy7g"]
+[ext_resource type="Texture2D" uid="uid://ccqelj8yu2aid" path="res://Textures/weapon-shield-metallic.png" id="2_mkv8u"]
+[ext_resource type="Texture2D" uid="uid://dkwnnuu6tb6uh" path="res://Textures/weapon-shield-roughness.png" id="3_bv1e3"]
+
+[resource]
+albedo_texture = ExtResource("1_4cy7g")
+metallic_texture = ExtResource("2_mkv8u")
+roughness_texture = ExtResource("3_bv1e3")

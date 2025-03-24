@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cqcw7snsv163v" path="res://C#/MobBlackRat/MobBlackRatHealth.cs" id="2_71lt1"]
 [ext_resource type="PackedScene" uid="uid://b1euavai00lrc" path="res://Models/character-black-rat.glb" id="3_ikkoo"]
 [ext_resource type="Script" uid="uid://cmum65hv0vqle" path="res://C#/Mob Tools/MobDetection.cs" id="3_rfqt5"]
-[ext_resource type="Material" uid="uid://c568qsv5du0ld" path="res://Materials/WeaponSword.tres" id="4_5s7k5"]
+[ext_resource type="Material" uid="uid://c568qsv5du0ld" path="res://Materials/Props/WeaponSword.tres" id="4_5s7k5"]
 [ext_resource type="Script" uid="uid://i55lxywq03xt" path="res://C#/Mob Tools/MobFaction.cs" id="4_3600o"]
 [ext_resource type="Script" uid="uid://1vff8etgep15" path="res://C#/Mob Tools/MobEyes.cs" id="4_yonai"]
 [ext_resource type="Material" uid="uid://jdcotr5j1875" path="res://Materials/Characters/MobBlackRatRim.tres" id="5_n14mk"]

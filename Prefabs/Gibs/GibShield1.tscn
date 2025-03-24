@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0gsdga2wys4c" path="res://C#/Gib.cs" id="1_anger"]
 [ext_resource type="ArrayMesh" uid="uid://p8lew2kntfj5" path="res://Models/shield-fragment-1.res" id="2_qpelj"]
-[ext_resource type="Material" uid="uid://by6puqrpwr1fo" path="res://Materials/WeaponShield.tres" id="3_nudns"]
+[ext_resource type="Material" uid="uid://by6puqrpwr1fo" path="res://Materials/Props/WeaponShield.tres" id="3_nudns"]
 [ext_resource type="Script" uid="uid://kucxbnvpb3oq" path="res://C#/Common/NodeLimiter.cs" id="4_po1l0"]
 [ext_resource type="Script" uid="uid://cx8gavm5kt6a" path="res://C#/Common/RigidbodyFreezer.cs" id="5_g26qx"]
 

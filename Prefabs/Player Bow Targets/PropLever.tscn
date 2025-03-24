@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://ddhicpsbgpp24" path="res://Audio/wood-block-hit-fail.wav" id="3_soyiv"]
 [ext_resource type="AudioStream" uid="uid://b2n46pgjedn4m" path="res://Audio/lever-activate.wav" id="4_2lqlb"]
 [ext_resource type="ArrayMesh" uid="uid://py8r8tye8i7c" path="res://Models/prop-lever-arm.res" id="4_k0jfr"]
-[ext_resource type="Material" uid="uid://dcedtu2o17bkm" path="res://Materials/Props/prop-switch.tres" id="5_7vd6u"]
+[ext_resource type="Material" uid="uid://dcedtu2o17bkm" path="res://Materials/Props/PropSwitch.tres" id="5_7vd6u"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="9_bavwj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cmuxc"]
