@@ -131,8 +131,8 @@ namespace MobBlackRat
                 return;
             }
 
-
-            isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), GlobalPosition).DistanceSquaredTo(GlobalPosition) < 1f;
+            var positionForNavCheck = GlobalPosition + Vector3.Down * 0.75f;
+            isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), positionForNavCheck).DistanceSquaredTo(positionForNavCheck) < 0.5f;
 
             // check that rat is in moving state
             if(moving && IsOnFloor() && isOnNavmesh)
@@ -152,7 +152,7 @@ namespace MobBlackRat
             else if(moving && IsOnFloor() && isOnNavmesh == false)
             {
                 // get new velocity
-                var newVelocity = navAgent.TargetPosition - GlobalPosition;
+                var newVelocity = enemy.GlobalPosition - GlobalPosition;
                 newVelocity = newVelocity.Normalized();
                 newVelocity.Y = 0;
                 newVelocity *= speed;
@@ -219,6 +219,9 @@ namespace MobBlackRat
                 // check that velocity is not zero
                 if(safeVel.X != 0 || safeVel.Z != 0)
                 {
+                    // clamp safe velocity
+                    safeVel = safeVel.LimitLength(speed);
+
                     // move using obstacle avoidance
                     Velocity = safeVel;
                     MoveAndSlide();

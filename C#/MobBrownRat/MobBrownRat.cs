@@ -216,6 +216,9 @@ namespace MobBrownRat
                 // check that velocity is not zero
                 if(safeVel.X != 0 || safeVel.Z != 0)
                 {
+                    // clamp safe velocity
+                    safeVel = safeVel.LimitLength(speed);
+                    
                     // move using obstacle avoidance
                     Velocity = safeVel;
                     MoveAndSlide();

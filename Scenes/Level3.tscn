@@ -2760,13 +2760,13 @@ bones/62/rotation = Quaternion(0.754653, 0.442471, -0.396574, -0.278292)
 bones/63/position = Vector3(-0.451659, 0.308544, 0.0716919)
 
 [node name="weapon-shield" parent="Enemies/character-shield-rat2/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.105279, -0.401671, -0.242334, 0.883139, -0.247665, 0.0525021, -0.345699)
+transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.10528, -0.401672, -0.242335, 0.883139, -0.247665, 0.052502, -0.345699)
 
 [node name="weapon-shield" parent="Enemies/character-shield-rat2/character-armature/Skeleton3D/weapon-shield" index="0"]
 surface_material_override/0 = ExtResource("132_hav6v")
 
 [node name="weapon-hatchet" parent="Enemies/character-shield-rat2/character-armature/Skeleton3D" index="1"]
-transform = Transform3D(0.963609, -0.213565, -0.160773, 0.116787, -0.20466, 0.971841, -0.240455, -0.955251, -0.17227, 0.407803, -0.133417, -0.0771808)
+transform = Transform3D(0.963609, -0.213565, -0.160772, 0.116787, -0.20466, 0.971841, -0.240455, -0.955251, -0.172271, 0.407803, -0.133417, -0.0771807)
 
 [node name="weapon-hatchet" parent="Enemies/character-shield-rat2/character-armature/Skeleton3D/weapon-hatchet" index="0"]
 surface_material_override/0 = ExtResource("133_uu4up")
