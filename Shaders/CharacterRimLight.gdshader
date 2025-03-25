@@ -40,6 +40,6 @@ void fragment()
 	ALBEDO = albedoColor;
 	EMISSION = combinedRimEffect;
 	SPECULAR = 0.0;
-	METALLIC = min(texture(metallic, UV).r, metallicPower);
-	ROUGHNESS = min(texture(roughness, UV).r, roughnessPower);
+	METALLIC = texture(metallic, UV).r * metallicPower;
+	ROUGHNESS = texture(roughness, UV).r * roughnessPower;
 }
