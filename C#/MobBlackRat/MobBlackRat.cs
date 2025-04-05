@@ -40,9 +40,9 @@ namespace MobBlackRat
         public BoneLookAtControl headControl;
         
         public Vector3 startPosition;
-        public double swingTime = .5f,
-            attackDamageTime = 0.3f,
-            reactTime = 0.4f;
+        public double swingTime = 0.5,
+            attackDamageTime = 0.3,
+            reactTime = 0.4;
         public float moveRecalculatePathRange = 0.5f,
             attackRangeSqr = 3.1f,
             damageRangeSqr = 5.1f,

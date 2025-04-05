@@ -1,5 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dxskuy6d1qj65"]
+[gd_scene load_steps=24 format=3 uid="uid://dxskuy6d1qj65"]
 
+[ext_resource type="Script" uid="uid://5y6jtwn5uiw3" path="res://C#/MobShieldRat/MobShieldRat.cs" id="1_8ffjn"]
+[ext_resource type="Script" uid="uid://cang3w7ed0lt6" path="res://C#/MobShieldRat/MobShieldRatHealth.cs" id="1_87xy5"]
 [ext_resource type="PackedScene" uid="uid://cfpvp1q0phyed" path="res://Models/character-shield-rat.glb" id="1_n2j8p"]
 [ext_resource type="Material" uid="uid://by6puqrpwr1fo" path="res://Materials/Props/WeaponShield.tres" id="2_w3tdm"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="3_8fh61"]
@@ -17,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://jfyi0fvcnrkp" path="res://Prefabs/Gibs/GibShield5.tscn" id="11_8ffjn"]
 [ext_resource type="Script" uid="uid://i55lxywq03xt" path="res://C#/Mob Tools/MobFaction.cs" id="11_cif3u"]
 [ext_resource type="PackedScene" uid="uid://dqqxr6lpg1jk6" path="res://Prefabs/FX/FxEnemyHit.tscn" id="12_yxx6p"]
+[ext_resource type="Script" uid="uid://dg0y1g0nahpws" path="res://C#/MobShieldRat/MobShieldRatAudio.cs" id="13_7dh74"]
 [ext_resource type="PackedScene" uid="uid://myloy3htblvq" path="res://Prefabs/FX/FxBloodSlash.tscn" id="13_70x6j"]
+[ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="14_k18ji"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n2j8p"]
 radius = 0.4
@@ -25,8 +29,10 @@ radius = 0.4
 [node name="MobShieldRat" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 18451
+script = ExtResource("1_8ffjn")
 
 [node name="Health" type="Node" parent="."]
+script = ExtResource("1_87xy5")
 
 [node name="RatCollider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_n2j8p")
@@ -113,13 +119,13 @@ bones/64/position = Vector3(-0.313666, 0.152197, -0.255086)
 bones/64/rotation = Quaternion(0.754653, 0.442471, -0.396574, -0.278292)
 
 [node name="weapon-shield" parent="character-shield-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.105279, -0.401671, -0.242334, 0.883139, -0.251975, 0.101453, -0.345699)
+transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.10528, -0.401672, -0.242335, 0.883139, -0.251974, 0.101456, -0.345699)
 
 [node name="weapon-shield" parent="character-shield-rat/character-armature/Skeleton3D/weapon-shield" index="0"]
 surface_material_override/0 = ExtResource("2_w3tdm")
 
 [node name="weapon-hatchet" parent="character-shield-rat/character-armature/Skeleton3D" index="1"]
-transform = Transform3D(0.941791, -0.287799, -0.173784, 0.0917718, -0.277207, 0.956417, -0.32343, -0.916694, -0.234659, 0.393023, -0.103665, -0.105844)
+transform = Transform3D(0.941791, -0.287799, -0.173784, 0.091772, -0.277208, 0.956417, -0.323431, -0.916694, -0.23466, 0.393023, -0.103665, -0.105844)
 
 [node name="weapon-hatchet" parent="character-shield-rat/character-armature/Skeleton3D/weapon-hatchet" index="0"]
 surface_material_override/0 = ExtResource("3_8fh61")
@@ -130,7 +136,7 @@ surface_material_override/0 = ExtResource("5_oqdte")
 surface_material_override/1 = ExtResource("6_70w1b")
 
 [node name="ShieldBoneCopy" type="BoneAttachment3D" parent="character-shield-rat/character-armature/Skeleton3D" index="3"]
-transform = Transform3D(0.852821, -0.457146, 0.252416, -0.333701, -0.105279, 0.936782, -0.401671, -0.883139, -0.242334, -0.229117, 0.106717, -0.301542)
+transform = Transform3D(0.852821, -0.457146, 0.252416, -0.333701, -0.10528, 0.936782, -0.401672, -0.883139, -0.242335, -0.229117, 0.10672, -0.301542)
 bone_name = "shield"
 bone_idx = 59
 
@@ -153,6 +159,27 @@ transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -
 [node name="GibShield5" parent="character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs" instance=ExtResource("11_8ffjn")]
 transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -1, -3.72529e-08, 1, 1.31134e-07, -0.0813421, 0.0999496, -0.0247593)
 
+[node name="HeadLookAt" type="LookAtModifier3D" parent="character-shield-rat/character-armature/Skeleton3D" index="4"]
+bone_name = "head"
+bone = 4
+forward_axis = 2
+primary_rotation_axis = 0
+origin_offset = Vector3(0, 0.125, 0)
+duration = 0.5
+transition_type = 8
+ease_type = 1
+use_angle_limitation = true
+symmetry_limitation = false
+primary_positive_limit_angle = 0.523599
+primary_positive_damp_threshold = 1.0
+primary_negative_limit_angle = 0.523599
+primary_negative_damp_threshold = 1.0
+secondary_positive_limit_angle = 0.785398
+secondary_positive_damp_threshold = 1.0
+secondary_negative_limit_angle = 0.785398
+secondary_negative_damp_threshold = 1.0
+script = ExtResource("14_k18ji")
+
 [node name="AnimationPlayer" parent="character-shield-rat" index="1"]
 playback_default_blend_time = 0.1
 
@@ -161,6 +188,7 @@ unit_size = 2.0
 max_distance = 30.0
 max_polyphony = 2
 attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("13_7dh74")
 
 [node name="CharacterFootsteps" parent="." instance=ExtResource("7_70w1b")]
 
