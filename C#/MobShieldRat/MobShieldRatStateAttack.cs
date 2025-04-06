@@ -48,15 +48,11 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
 
                             // play hit sound
                             blackboard.audio.PlayAxeHitSound();
-
-                            axeSwingCount++;
                         }
                         else
                         {
                             // play shield bash sound
                             blackboard.audio.PlayShieldBashSound();
-
-                            axeSwingCount = 0;
                         }
                     }
                     else
@@ -91,9 +87,11 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
         // look at enemy
         blackboard.lookAtTarget = true;
 
+
+
         // animation
         if(blackboard.hasShield == true)
-        {
+        {            
             if(axeSwingCount < 2)
             {
                 // play axe animation with shield
@@ -116,8 +114,13 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
 
     public override void EndState()
     {
+        axeSwingCount++;
+
         // reset swings
-        axeSwingCount = 0;
+        if(axeSwingCount > 2)
+        {
+            axeSwingCount = 0;
+        }
     }
 
 
@@ -141,6 +144,7 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
             if(blackboard.CanAttackEnemy() == true)
             {
                 // attack
+                EndState();
                 StartState();
                 return this;
             }

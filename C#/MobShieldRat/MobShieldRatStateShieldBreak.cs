@@ -31,9 +31,12 @@ public partial class MobShieldRatStateShieldBreak : MobShieldRatState
         blackboard.audio.PlayShieldBreakSound();
 
         // look toward arrow
-        var lookTarget = -blackboard.arrowHitDirection + blackboard.GlobalPosition;
-        lookTarget.Y = blackboard.GlobalPosition.Y;
-        blackboard.LookAt(lookTarget);
+        if(blackboard.arrowHitDirection.LengthSquared() > 0.1f)
+        {
+            var lookTarget = -blackboard.arrowHitDirection + blackboard.GlobalPosition;
+            lookTarget.Y = blackboard.GlobalPosition.Y;
+            blackboard.LookAt(lookTarget);
+        }
     }
 
 

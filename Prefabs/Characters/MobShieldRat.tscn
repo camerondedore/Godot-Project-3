@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dxskuy6d1qj65"]
+[gd_scene load_steps=35 format=3 uid="uid://dxskuy6d1qj65"]
 
 [ext_resource type="Script" uid="uid://5y6jtwn5uiw3" path="res://C#/MobShieldRat/MobShieldRat.cs" id="1_8ffjn"]
 [ext_resource type="Script" uid="uid://cang3w7ed0lt6" path="res://C#/MobShieldRat/MobShieldRatHealth.cs" id="1_87xy5"]
@@ -24,11 +24,13 @@
 [ext_resource type="PackedScene" uid="uid://myloy3htblvq" path="res://Prefabs/FX/FxBloodSlash.tscn" id="13_70x6j"]
 [ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="14_k18ji"]
 [ext_resource type="AudioStream" uid="uid://fd1mvgf6fbwf" path="res://Audio/melee-hit.wav" id="16_12cki"]
-[ext_resource type="AudioStream" uid="uid://qvu87s0jqirx" path="res://Audio/arrow-miss.wav" id="17_pthbg"]
 [ext_resource type="AudioStream" uid="uid://cmhkmrb8ou7x8" path="res://Audio/melee-swing-1.wav" id="18_0cy4u"]
 [ext_resource type="AudioStream" uid="uid://cbkudqnnwfbxw" path="res://Audio/shield-break.wav" id="18_y1dn4"]
+[ext_resource type="AudioStream" uid="uid://brk6y6kj2hf2d" path="res://Audio/shield-fragment-hit-2.wav" id="19_k6pej"]
 [ext_resource type="AudioStream" uid="uid://cym0cmomxa2op" path="res://Audio/melee-swing-2.wav" id="19_y1dn4"]
 [ext_resource type="AudioStream" uid="uid://bj84b8rv1djd0" path="res://Audio/melee-swing-3.wav" id="20_k6pej"]
+[ext_resource type="AudioStream" uid="uid://b5ho8shw0d4ow" path="res://Audio/shield-swing.wav" id="20_vtb2x"]
+[ext_resource type="AudioStream" uid="uid://c1xko84f8o33q" path="res://Audio/shield-bash.wav" id="21_k6pej"]
 [ext_resource type="AudioStream" uid="uid://dmb5idc74qwjp" path="res://Audio/melee-swing-4.wav" id="21_vtb2x"]
 [ext_resource type="AudioStream" uid="uid://dfoff2giqmbmh" path="res://Audio/melee-swing-5.wav" id="22_u02ty"]
 
@@ -131,13 +133,13 @@ bones/64/position = Vector3(-0.313666, 0.152197, -0.255086)
 bones/64/rotation = Quaternion(0.754653, 0.442471, -0.396574, -0.278292)
 
 [node name="weapon-shield" parent="character-shield-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.10528, -0.401672, -0.242335, 0.883139, -0.251974, 0.101456, -0.345699)
+transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.105279, -0.401671, -0.242334, 0.883139, -0.251975, 0.101453, -0.345699)
 
 [node name="weapon-shield" parent="character-shield-rat/character-armature/Skeleton3D/weapon-shield" index="0"]
 surface_material_override/0 = ExtResource("2_w3tdm")
 
 [node name="weapon-hatchet" parent="character-shield-rat/character-armature/Skeleton3D" index="1"]
-transform = Transform3D(0.941791, -0.287799, -0.173784, 0.091772, -0.277208, 0.956417, -0.323431, -0.916694, -0.23466, 0.393023, -0.103665, -0.105844)
+transform = Transform3D(0.941791, -0.287799, -0.173784, 0.0917718, -0.277207, 0.956417, -0.32343, -0.916694, -0.234659, 0.393023, -0.103665, -0.105844)
 
 [node name="weapon-hatchet" parent="character-shield-rat/character-armature/Skeleton3D/weapon-hatchet" index="0"]
 surface_material_override/0 = ExtResource("3_8fh61")
@@ -148,7 +150,7 @@ surface_material_override/0 = ExtResource("5_oqdte")
 surface_material_override/1 = ExtResource("6_70w1b")
 
 [node name="ShieldBoneCopy" type="BoneAttachment3D" parent="character-shield-rat/character-armature/Skeleton3D" index="3"]
-transform = Transform3D(0.852821, -0.457146, 0.252416, -0.333701, -0.10528, 0.936782, -0.401672, -0.883139, -0.242335, -0.229117, 0.10672, -0.301542)
+transform = Transform3D(0.852821, -0.457146, 0.252416, -0.333701, -0.105279, 0.936782, -0.401671, -0.883139, -0.242334, -0.229117, 0.106717, -0.301542)
 bone_name = "shield"
 bone_idx = 59
 
@@ -156,7 +158,7 @@ bone_idx = 59
 transform = Transform3D(1, 2.98023e-08, -7.45058e-09, 0, 1, -1.49012e-08, -1.49012e-08, 0, 1, 0, 0, 0)
 visible = false
 script = ExtResource("9_pthbg")
-speed = 4.0
+speed = 5.0
 randomDirectionRange = 0.2
 maxRotationSpeed = 7.0
 
@@ -220,9 +222,9 @@ attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("13_7dh74")
 axeHitSound = ExtResource("16_12cki")
 shieldBreakSound = ExtResource("18_y1dn4")
-shieldHitSound = ExtResource("17_pthbg")
-shieldSwingSound = ExtResource("18_0cy4u")
-shieldBashSound = ExtResource("17_pthbg")
+shieldHitSound = ExtResource("19_k6pej")
+shieldSwingSound = ExtResource("20_vtb2x")
+shieldBashSound = ExtResource("21_k6pej")
 axeSwingSounds = Array[AudioStream]([ExtResource("18_0cy4u"), ExtResource("19_y1dn4"), ExtResource("20_k6pej"), ExtResource("21_vtb2x"), ExtResource("22_u02ty")])
 
 [node name="CharacterFootsteps" parent="." instance=ExtResource("7_70w1b")]

@@ -46,5 +46,5 @@ unit_size = 2.0
 max_distance = 40.0
 script = ExtResource("6_g26qx")
 hitSounds = Array[AudioStream]([ExtResource("7_mkmu7"), ExtResource("8_fhswt"), ExtResource("9_i5tbr")])
-minimumSpeedSqr = 1.0
+minimumSpeedSqr = 0.1
 timeBetweenHits = 0.3
