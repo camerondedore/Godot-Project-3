@@ -131,13 +131,13 @@ bones/64/position = Vector3(-0.313666, 0.152197, -0.255086)
 bones/64/rotation = Quaternion(0.754653, 0.442471, -0.396574, -0.278292)
 
 [node name="weapon-shield" parent="character-shield-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.105279, -0.401671, -0.242334, 0.883139, -0.251975, 0.101453, -0.345699)
+transform = Transform3D(0.852821, 0.252416, 0.457146, -0.333701, 0.936782, 0.10528, -0.401672, -0.242335, 0.883139, -0.251974, 0.101456, -0.345699)
 
 [node name="weapon-shield" parent="character-shield-rat/character-armature/Skeleton3D/weapon-shield" index="0"]
 surface_material_override/0 = ExtResource("2_w3tdm")
 
 [node name="weapon-hatchet" parent="character-shield-rat/character-armature/Skeleton3D" index="1"]
-transform = Transform3D(0.941791, -0.287799, -0.173784, 0.0917718, -0.277207, 0.956417, -0.32343, -0.916694, -0.234659, 0.393023, -0.103665, -0.105844)
+transform = Transform3D(0.941791, -0.287799, -0.173784, 0.091772, -0.277208, 0.956417, -0.323431, -0.916694, -0.23466, 0.393023, -0.103665, -0.105844)
 
 [node name="weapon-hatchet" parent="character-shield-rat/character-armature/Skeleton3D/weapon-hatchet" index="0"]
 surface_material_override/0 = ExtResource("3_8fh61")
@@ -148,7 +148,7 @@ surface_material_override/0 = ExtResource("5_oqdte")
 surface_material_override/1 = ExtResource("6_70w1b")
 
 [node name="ShieldBoneCopy" type="BoneAttachment3D" parent="character-shield-rat/character-armature/Skeleton3D" index="3"]
-transform = Transform3D(0.852821, -0.457146, 0.252416, -0.333701, -0.105279, 0.936782, -0.401671, -0.883139, -0.242334, -0.229117, 0.106717, -0.301542)
+transform = Transform3D(0.852821, -0.457146, 0.252416, -0.333701, -0.10528, 0.936782, -0.401672, -0.883139, -0.242335, -0.229117, 0.10672, -0.301542)
 bone_name = "shield"
 bone_idx = 59
 
@@ -164,16 +164,28 @@ maxRotationSpeed = 7.0
 transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -1, -3.72529e-08, 1, 1.31134e-07, -0.248027, 0.0499496, -0.0233211)
 
 [node name="GibShield2" parent="character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs" instance=ExtResource("8_kagkb")]
+physics_interpolation_mode = 0
 transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -1, -3.72529e-08, 1, 1.31134e-07, 0.142301, 0.0499496, -0.00325515)
+contact_monitor = false
+max_contacts_reported = 0
 
 [node name="GibShield3" parent="character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs" instance=ExtResource("9_87xy5")]
+physics_interpolation_mode = 0
 transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -1, -3.72529e-08, 1, 1.31134e-07, 0.342289, 0.0499496, -0.00325515)
+contact_monitor = false
+max_contacts_reported = 0
 
 [node name="GibShield4" parent="character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs" instance=ExtResource("10_7dh74")]
+physics_interpolation_mode = 0
 transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -1, -3.72529e-08, 1, 1.31134e-07, -0.126501, 0.0499496, 0.33651)
+contact_monitor = false
+max_contacts_reported = 0
 
 [node name="GibShield5" parent="character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs" instance=ExtResource("11_8ffjn")]
+physics_interpolation_mode = 0
 transform = Transform3D(1, 3.72529e-08, 2.23517e-08, 2.23517e-08, 1.31134e-07, -1, -3.72529e-08, 1, 1.31134e-07, -0.0813421, 0.0999496, -0.0247593)
+contact_monitor = false
+max_contacts_reported = 0
 
 [node name="HeadLookAt" type="LookAtModifier3D" parent="character-shield-rat/character-armature/Skeleton3D" index="4"]
 bone_name = "head"

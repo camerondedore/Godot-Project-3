@@ -1,19 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh0jvesis055d"]
+[gd_scene load_steps=11 format=3 uid="uid://dh0jvesis055d"]
 
 [ext_resource type="Script" uid="uid://b0gsdga2wys4c" path="res://C#/Gib.cs" id="1_anger"]
 [ext_resource type="ArrayMesh" uid="uid://p8lew2kntfj5" path="res://Models/shield-fragment-1.res" id="2_qpelj"]
 [ext_resource type="Material" uid="uid://by6puqrpwr1fo" path="res://Materials/Props/WeaponShield.tres" id="3_nudns"]
 [ext_resource type="Script" uid="uid://kucxbnvpb3oq" path="res://C#/Common/NodeLimiter.cs" id="4_po1l0"]
 [ext_resource type="Script" uid="uid://cx8gavm5kt6a" path="res://C#/Common/RigidbodyFreezer.cs" id="5_g26qx"]
+[ext_resource type="Script" uid="uid://dfr5twmrytauh" path="res://C#/Common/AudioToolsRigidBody.cs" id="6_g26qx"]
+[ext_resource type="AudioStream" uid="uid://ctcuxadm0661b" path="res://Audio/shield-fragment-hit-1.wav" id="7_mkmu7"]
+[ext_resource type="AudioStream" uid="uid://brk6y6kj2hf2d" path="res://Audio/shield-fragment-hit-2.wav" id="8_fhswt"]
+[ext_resource type="AudioStream" uid="uid://6yxc7g244vgt" path="res://Audio/shield-fragment-hit-3.wav" id="9_i5tbr"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mkmu7"]
 points = PackedVector3Array(0.284678, -0.307447, 0.0234236, -0.263427, -0.0125011, 0.0374762, -0.0385194, 0.423227, 0.0374762, 0.0737734, 0.310795, -0.032762, 0.144057, -0.448053, -0.046827, 0.256564, -0.16693, 0.0796587, 0.00365071, -0.419967, 0.0374762, -0.16503, 0.296708, -0.046827, -0.16503, -0.237276, -0.046827, 0.256564, -0.138844, -0.032762, 0.256564, -0.476227, 0.0374762, -0.150973, 0.296708, 0.0515288, 0.284678, -0.0966708, 0.0655937, -0.150973, -0.237276, 0.0515288, 0.256564, -0.476227, -0.032762, -0.235314, 0.212362, -0.032762, -0.0806896, 0.423227, -0.032762, -0.12286, -0.335621, -0.032762, -0.221257, 0.128017, 0.0515288, -0.235314, -0.0684968, -0.046827, -0.2072, -0.209191, 0.0374762, 0.144057, -0.434054, 0.0515288, -0.2072, 0.268622, 0.0374762, 0.144057, 0.198363, 0.0374762, 0.284678, -0.0966708, 0.0234236, 0.0597166, -0.448053, -0.032762, 0.17217, -0.405792, -0.046827, -0.12286, 0.395053, 0.0374762, -0.12286, -0.335621, 0.0374762, -0.221257, -0.0684968, 0.0515288, 0.270621, -0.419967, 0.0515288, 0.0316032, 0.366967, 0.0374762)
 
 [node name="GibShield1" type="RigidBody3D" node_paths=PackedStringArray("limiter")]
 process_mode = 4
+physics_interpolation_mode = 1
 collision_layer = 256
 collision_mask = 17
 freeze = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_anger")
 limiter = NodePath("NodeLimiter")
 
@@ -33,3 +40,11 @@ limitOnReady = false
 
 [node name="RigidbodyFreezer" type="Node" parent="."]
 script = ExtResource("5_g26qx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 2.0
+max_distance = 40.0
+script = ExtResource("6_g26qx")
+hitSounds = Array[AudioStream]([ExtResource("7_mkmu7"), ExtResource("8_fhswt"), ExtResource("9_i5tbr")])
+minimumSpeedSqr = 1.0
+timeBetweenHits = 0.3

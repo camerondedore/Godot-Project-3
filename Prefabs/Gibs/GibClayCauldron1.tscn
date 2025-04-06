@@ -13,6 +13,7 @@ points = PackedVector3Array(-0.0532384, -0.303728, 0.0703974, -0.127716, 0.11023
 process_mode = 4
 collision_layer = 256
 collision_mask = 17
+freeze = true
 script = ExtResource("1_uoxwx")
 limiter = NodePath("NodeLimiter")
 
