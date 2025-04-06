@@ -172,7 +172,7 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
 
 
 
-    public void Hit(Vector3 dir)
+    public virtual void Hit(Vector3 dir)
     {
         // take damage from arrow
         health.Damage(damageFromArrow);

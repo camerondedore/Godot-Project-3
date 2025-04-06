@@ -157,7 +157,7 @@ namespace MobBrownRat
                 // pass new velocity to nav agent
                 navAgent.Velocity = newVelocity;
             }
-            else if(moving && IsOnFloor() && isOnNavmesh == false)
+            else if(moving && IsOnFloor() && isOnNavmesh == false && IsEnemyValid())
             {
                 // get new velocity
                 var newVelocity = navAgent.TargetPosition - GlobalPosition;

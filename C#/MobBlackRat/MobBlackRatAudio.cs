@@ -22,6 +22,7 @@ namespace MobBlackRat
 
         public void PlaySwordSwingSound()
         {
+            // method called from animation
             PlayRandomSound(swordSwingSounds, 0.1f);
         }
     }

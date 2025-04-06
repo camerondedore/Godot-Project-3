@@ -7,4 +7,53 @@ namespace MobShieldRat;
 public partial class MobShieldRatStateShieldBreak : MobShieldRatState
 {
     
+    double startTime;
+
+
+
+    public override void StartState()
+    {
+        startTime = EngineTime.timePassed;
+
+        // stop moving
+        blackboard.moving = false;
+
+        // animation
+        blackboard.animation.Play("shield-rat-shield-break");
+
+        // gibs
+        blackboard.gibs.Activate();
+
+        // hide shield
+        blackboard.shieldMesh.Visible = false;
+
+        // audio
+        blackboard.audio.PlayShieldBreakSound();
+
+        // look toward arrow
+        var lookTarget = -blackboard.arrowHitDirection - blackboard.GlobalPosition;
+        lookTarget.Y = blackboard.GlobalPosition.Y;
+        blackboard.LookAt(lookTarget);
+    }
+
+
+
+    public override State Transition()
+    {
+        if(EngineTime.timePassed > startTime + blackboard.shieldBreakTime)
+        {
+            if(blackboard.IsEnemyValid())
+            {
+                // move
+                return blackboard.stateMove;
+            }
+            else
+            {
+                // patrol
+                return blackboard.statePatrol;
+            }
+        }
+
+        return this;
+    }
 }

@@ -30,13 +30,16 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         myFaction2;
     public AnimationPlayer animation;
     public MobShieldRatAudio audio;
-    public ParticleFx swordHitFx,
-        swordHitBloodFx;
+    public ParticleFx axeHitFx,
+        axeHitBloodFx;
     public CollisionShape3D collider;
     public BoneLookAtControl headControl;
+    public GibsActivator gibs;
+    public MeshInstance3D shieldMesh;
 
-    public Vector3 startPosition;
-    public double swingTime = 0.5,
+    public Vector3 startPosition,
+        arrowHitDirection;
+    public double swingTime = 0.66,
         attackDamageTime = 0.3,
         reactTime = 0.4,
         shieldBreakTime = 0.66;
@@ -49,7 +52,8 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         lookSpeed = 15f,
         acceleration = 4;
     public bool lookAtTarget = false,
-        moving;
+        moving,
+        hasShield = true;
 
     bool delay = false,
         isOnNavmesh;
@@ -65,12 +69,14 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         health = (Health) GetNode("Health");
         myFaction1 = (MobFaction) GetNode("Faction1");
         myFaction2 = (MobFaction) GetNode("Faction2");
-        animation = (AnimationPlayer) GetNode("character-black-rat/AnimationPlayer");
+        animation = (AnimationPlayer) GetNode("character-shield-rat/AnimationPlayer");
         audio = (MobShieldRatAudio) GetNode("RatAudio");
-        swordHitFx = (ParticleFx) GetNode("FxEnemyHit");
-        swordHitBloodFx = (ParticleFx) GetNode("FxBloodSlash");
+        axeHitFx = (ParticleFx) GetNode("FxEnemyHit");
+        axeHitBloodFx = (ParticleFx) GetNode("FxBloodSlash");
         collider = (CollisionShape3D) GetNode("RatCollider");
-        headControl = (BoneLookAtControl) GetNode("character-black-rat/character-armature/Skeleton3D/HeadLookAt");
+        headControl = (BoneLookAtControl) GetNode("character-shield-rat/character-armature/Skeleton3D/HeadLookAt");
+        gibs = (GibsActivator) GetNode("character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs");
+        shieldMesh = (MeshInstance3D) GetNode("character-shield-rat/character-armature/Skeleton3D/weapon-shield/weapon-shield");
 
         // set nav agent event
         navAgent.VelocityComputed += SafeMove;
@@ -90,7 +96,9 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         stateRetreat = new MobShieldRatStateRetreat(){blackboard = this};
         stateShieldBreak = new MobShieldRatStateShieldBreak(){blackboard = this};
         stateDie = new MobShieldRatStateDie(){blackboard = this};
-    
+
+        // change mob values
+        arrowType = "weighted";
 
         // set first state in machine
         machine.SetState(stateStart);
@@ -139,7 +147,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
             // pass new velocity to nav agent
             navAgent.Velocity = newVelocity;
         }
-        else if(moving && IsOnFloor() && isOnNavmesh == false)
+        else if(moving && IsOnFloor() && isOnNavmesh == false && IsEnemyValid())
         {
             // get new velocity
             var newVelocity = enemy.GlobalPosition - GlobalPosition;
@@ -279,5 +287,24 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         }
 
         return false;
+    }
+
+
+
+    public override void Hit(Vector3 dir)
+    {
+        if(hasShield == true)
+        {
+            // break shield
+            machine.SetState(stateShieldBreak);
+            hasShield = false;
+            arrowType = "bodkin";
+            arrowHitDirection = dir;
+        }
+        else
+        {
+            // take damage from arrow
+            health.Damage(damageFromArrow);
+        }
     }
 }

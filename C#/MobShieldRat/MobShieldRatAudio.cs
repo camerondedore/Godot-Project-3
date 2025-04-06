@@ -7,7 +7,8 @@ public partial class MobShieldRatAudio : AudioTools3d
 {
     [Export]
     AudioStream axeHitSound,
-        shieldArrowHitSound,
+        shieldBreakSound,
+        shieldHitSound,
         shieldSwingSound,
         shieldBashSound;
     [Export]
@@ -24,20 +25,29 @@ public partial class MobShieldRatAudio : AudioTools3d
 
     public void PlayAxeSwingSound()
     {
+        // method called from animation
         PlayRandomSound(axeSwingSounds, 0.1f);
     }
 
 
 
-    public void PlayShieldArrowHitSound()
+    public void PlayShieldBreakSound()
     {
-        PlaySound(shieldArrowHitSound, 0.1f);
+        PlaySound(shieldBreakSound, 0.1f);
+    }
+
+
+
+    public void PlayShieldHitSound()
+    {
+        PlaySound(shieldBreakSound, 0.1f);
     }
 
 
 
     public void PlayShieldSwingSound()
     {
+        // method called from animation
         PlaySound(shieldSwingSound, 0.1f);
     }
 

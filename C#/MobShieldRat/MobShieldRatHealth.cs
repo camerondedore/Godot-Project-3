@@ -12,6 +12,15 @@ public partial class MobShieldRatHealth : Health
 
     public override void Damage(float dmg)
     {
+        if(rat.hasShield == true)
+        {
+            // shield blocks all damage
+            dmg = 0;
+
+            // audio
+            rat.audio.PlayShieldHitSound();
+        }
+
         // apply damage
         hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
