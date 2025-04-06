@@ -10,14 +10,11 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4in3w"]
 radius = 0.3
 
-[node name="CharacterWaterArea" type="Area3D" node_paths=PackedStringArray("waterSpashFx", "movementAudio", "splashAudio")]
+[node name="CharacterWaterArea" type="Area3D"]
 collision_layer = 0
 collision_mask = 4096
 monitorable = false
 script = ExtResource("1_rw0vh")
-waterSpashFx = NodePath("FxWaterCharacterSplash")
-movementAudio = NodePath("MovementAudio")
-splashAudio = NodePath("SplashAudio")
 waterMovementSound = ExtResource("3_gbmw2")
 waterEnterSound = ExtResource("3_4kupy")
 waterExitSound = ExtResource("4_6vd5y")

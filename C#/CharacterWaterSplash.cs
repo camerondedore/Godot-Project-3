@@ -6,11 +6,6 @@ public partial class CharacterWaterSplash : Area3D
 {
 
     [Export]
-    ParticleTools waterSpashFx;
-    [Export]
-    AudioTools3d movementAudio,
-        splashAudio;
-    [Export]
     AudioStream waterMovementSound,
         waterEnterSound,
         waterExitSound;
@@ -20,6 +15,9 @@ public partial class CharacterWaterSplash : Area3D
     float depthOffset = -1f,
         maxDepth = 1f;
 
+    ParticleTools waterSplashFx;
+    AudioTools3d movementAudio,
+        splashAudio;
     CharacterBody3D character;
     IWaterReactor characterFeetAudio;
     Node3D waterNode;
@@ -34,6 +32,11 @@ public partial class CharacterWaterSplash : Area3D
 
     public override void _Ready()
     {
+        // get nodes
+        waterSplashFx = (ParticleTools) GetNode("FxWaterCharacterSplash");
+        movementAudio = (AudioTools3d) GetNode("MovementAudio");
+        splashAudio = (AudioTools3d) GetNode("SplashAudio");
+
         // set up signal
         AreaEntered += Splash;
         AreaExited += StopSplash;
@@ -58,7 +61,7 @@ public partial class CharacterWaterSplash : Area3D
             newFxPosition.Y = waterNode.GlobalPosition.Y;
 
             // move fx to surface of water
-            waterSpashFx.GlobalPosition = newFxPosition;
+            waterSplashFx.GlobalPosition = newFxPosition;
 
             // get pitch using water depth
             var waterDepth = Mathf.Clamp(waterNode.GlobalPosition.Y - (GlobalPosition.Y + depthOffset), 0.0f, maxDepth);
@@ -70,13 +73,13 @@ public partial class CharacterWaterSplash : Area3D
             // check character velocity
             if(character.Velocity.LengthSquared() > 0.5f && isPlaying == false)
             {
-                waterSpashFx.PlayParticles();
+                waterSplashFx.PlayParticles();
                 audioTargetVolume = audioVolumeMax;
                 isPlaying = true;
             }
             else if(character.Velocity.LengthSquared() < 0.5f && isPlaying == true)
             {
-                waterSpashFx.StopParticles();
+                waterSplashFx.StopParticles();
                 audioTargetVolume = 0f;
                 isPlaying = false;
             }
@@ -106,7 +109,7 @@ public partial class CharacterWaterSplash : Area3D
     {
         waterNode = null;
 
-        waterSpashFx.StopParticles();
+        waterSplashFx.StopParticles();
         audioTargetVolume = 0;
         characterFeetAudio.OutOfWater();
         splashAudio.PlaySound(waterExitSound, 0.1f);
