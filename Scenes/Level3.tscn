@@ -2504,7 +2504,7 @@ mob = ExtResource("31_jdoyc")
 [node name="RatSpawn3" type="Node3D" parent="Map/TriggerAreas"]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -53, 30.5, -231.5)
 script = ExtResource("73_yth1y")
-mob = ExtResource("31_jdoyc")
+mob = ExtResource("131_cw7uk")
 
 [node name="RatSpawn4" type="Node3D" parent="Map/TriggerAreas"]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -53, 30, -234)
@@ -2689,13 +2689,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.5, 14.9, -186)
 transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 63.5, 14.9, -186)
 
 [node name="MobBlackRat6" parent="Enemies" instance=ExtResource("31_jdoyc")]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 75.5, 13, -180)
+transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, 68, 13, -182)
 
 [node name="MobShieldRat" parent="Enemies" instance=ExtResource("131_cw7uk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -32.5)
 
 [node name="MobShieldRat2" parent="Enemies" instance=ExtResource("131_cw7uk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 7, -85.6493)
+
+[node name="MobShieldRat3" parent="Enemies" instance=ExtResource("131_cw7uk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 75, 13, -180)
 
 [editable path="Map/Blocks/BlockTarget"]
 [editable path="Map/Blocks/BlockTarget2"]
