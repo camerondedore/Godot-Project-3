@@ -34,8 +34,32 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
                     // play hit fx
                     blackboard.axeHitFx.Restart();
                     
-                    // check if axe attack
-                    if(axeSwingCount < 2)
+                    // check for shield
+                    if(blackboard.hasShield == true)
+                    {
+                        // check if axe attack
+                        if(axeSwingCount < 2)
+                        {
+                            if(hitHealth.hasBlood)
+                            {
+                                // only play blood fx for axe swing
+                                blackboard.axeHitBloodFx.Restart();
+                            }
+
+                            // play hit sound
+                            blackboard.audio.PlayAxeHitSound();
+
+                            axeSwingCount++;
+                        }
+                        else
+                        {
+                            // play shield bash sound
+                            blackboard.audio.PlayShieldBashSound();
+
+                            axeSwingCount = 0;
+                        }
+                    }
+                    else
                     {
                         if(hitHealth.hasBlood)
                         {
@@ -45,15 +69,6 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
 
                         // play hit sound
                         blackboard.audio.PlayAxeHitSound();
-
-                        axeSwingCount++;
-                    }
-                    else
-                    {
-                        // play shield bash sound
-                        blackboard.audio.PlayShieldBashSound();
-
-                        axeSwingCount = 0;
                     }
                 }
 
