@@ -48,6 +48,7 @@ script = ExtResource("1_87xy5")
 rat = NodePath("..")
 hitPoints = 50.0
 maxHitPoints = 50.0
+hasBlood = false
 
 [node name="RatCollider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_n2j8p")

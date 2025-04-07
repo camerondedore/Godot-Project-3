@@ -299,8 +299,6 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         {
             // break shield
             machine.SetState(stateShieldBreak);
-            hasShield = false;
-            arrowType = "bodkin";
             arrowHitDirection = dir;
         }
         else

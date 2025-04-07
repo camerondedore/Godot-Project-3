@@ -15,6 +15,11 @@ public partial class MobShieldRatStateShieldBreak : MobShieldRatState
     {
         startTime = EngineTime.timePassed;
 
+        // modify rat values to not use shield
+        blackboard.hasShield = false;
+        blackboard.arrowType = "bodkin";
+        blackboard.health.hasBlood = true;
+
         // stop moving
         blackboard.moving = false;
 
