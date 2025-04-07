@@ -36,6 +36,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
     public BoneLookAtControl headControl;
     public GibsActivator gibs;
     public MeshInstance3D shieldMesh;
+    public GpuParticles3D shieldBreakFx;
 
     public Vector3 startPosition,
         arrowHitDirection;
@@ -77,6 +78,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         headControl = (BoneLookAtControl) GetNode("character-shield-rat/character-armature/Skeleton3D/HeadLookAt");
         gibs = (GibsActivator) GetNode("character-shield-rat/character-armature/Skeleton3D/ShieldBoneCopy/Gibs");
         shieldMesh = (MeshInstance3D) GetNode("character-shield-rat/character-armature/Skeleton3D/weapon-shield/weapon-shield");
+        shieldBreakFx = (GpuParticles3D) GetNode("FxShieldBreak");
 
         // set nav agent event
         navAgent.VelocityComputed += SafeMove;

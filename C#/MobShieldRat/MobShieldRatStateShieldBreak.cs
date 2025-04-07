@@ -21,6 +21,9 @@ public partial class MobShieldRatStateShieldBreak : MobShieldRatState
         // animation
         blackboard.animation.Play("shield-rat-shield-break");
 
+        // fx
+        blackboard.shieldBreakFx.Restart();
+
         // gibs
         blackboard.gibs.Activate();
 
