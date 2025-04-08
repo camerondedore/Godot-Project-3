@@ -68,6 +68,7 @@ namespace MobBrownRat
         {
             // change base fields
             speed = 4.5f;
+            characterHeight = 1.7f;
 
             // get nodes
             detection = (MobDetection) GetNode("Detection");
@@ -140,10 +141,8 @@ namespace MobBrownRat
             }
 
 
-            isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), GlobalPosition).DistanceSquaredTo(GlobalPosition) < 1f;
-
             // check that rat is in moving state
-            if(moving && IsOnFloor() && isOnNavmesh)
+            if(moving && IsOnFloor() && IsOnNavmesh(navAgent) == true)
             {
                 // get new velocity
                 var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
@@ -157,7 +156,7 @@ namespace MobBrownRat
                 // pass new velocity to nav agent
                 navAgent.Velocity = newVelocity;
             }
-            else if(moving && IsOnFloor() && isOnNavmesh == false && IsEnemyValid())
+            else if(moving && IsOnFloor() && IsOnNavmesh(navAgent) == true && IsEnemyValid())
             {
                 // get new velocity
                 var newVelocity = navAgent.TargetPosition - GlobalPosition;

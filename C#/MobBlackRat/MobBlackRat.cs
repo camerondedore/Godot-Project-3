@@ -130,12 +130,10 @@ namespace MobBlackRat
                 delay = true;
                 return;
             }
-
-            var positionForNavCheck = GlobalPosition + Vector3.Down * 0.75f;
-            isOnNavmesh = NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), positionForNavCheck).DistanceSquaredTo(positionForNavCheck) < 0.5f;
+            
 
             // check that rat is in moving state
-            if(moving && IsOnFloor() && isOnNavmesh)
+            if(moving && IsOnFloor() && IsOnNavmesh(navAgent) == true)
             {
                 // get new velocity
                 var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
@@ -149,7 +147,7 @@ namespace MobBlackRat
                 // pass new velocity to nav agent
                 navAgent.Velocity = newVelocity;
             }
-            else if(moving && IsOnFloor() && isOnNavmesh == false && IsEnemyValid())
+            else if(moving && IsOnFloor() && IsOnNavmesh(navAgent) == false && IsEnemyValid())
             {
                 // get new velocity
                 var newVelocity = enemy.GlobalPosition - GlobalPosition;

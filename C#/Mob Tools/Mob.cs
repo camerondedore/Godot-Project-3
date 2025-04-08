@@ -13,7 +13,8 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
     public float damageFromArrow = 50,
         maxSightRangeForAlliesSqr = 100,
         maxSightRangeSqr = 625,
-        speed = 5.5f;
+        speed = 5.5f,
+        characterHeight = 2f;
     public string arrowType = "bodkin";
     public bool isAggro;
 
@@ -183,5 +184,13 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
     public bool IsAlive()
     {
         return health.hitPoints > 0;
+    }
+
+
+
+    public bool IsOnNavmesh(NavigationAgent3D navAgent)
+    {
+        var positionForNavCheck = GlobalPosition + Vector3.Down * (characterHeight * 0.5f - 0.25f);
+        return NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), positionForNavCheck).DistanceSquaredTo(positionForNavCheck) < 0.5f;
     }
 }
