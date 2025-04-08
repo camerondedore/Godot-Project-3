@@ -64,7 +64,7 @@ bones/26/rotation = Quaternion(-0.0635574, -0.0236834, 0.0196779, 0.997503)
 bones/27/rotation = Quaternion(-0.178617, 0.131236, -0.0397273, 0.974318)
 bones/28/rotation = Quaternion(-0.0451523, -0.0192138, -0.000635849, 0.998795)
 bones/29/rotation = Quaternion(-0.308029, 0.0942709, -0.0126892, 0.94661)
-bones/30/rotation = Quaternion(-0.126277, -0.0277134, -0.00513776, 0.991595)
+bones/30/rotation = Quaternion(-0.126277, -0.0277134, -0.00513776, 0.991594)
 bones/31/rotation = Quaternion(-0.644766, 0.294879, 0.213161, 0.672224)
 bones/32/rotation = Quaternion(-0.309569, 0.232432, -0.360552, 0.848613)
 bones/33/rotation = Quaternion(0.545948, 0.00453404, -0.0371478, 0.836983)
@@ -108,6 +108,7 @@ surface_material_override/0 = ExtResource("3_jcmma")
 
 [node name="character-lumsden" parent="character-lumsden/character-armature/Skeleton3D" index="1"]
 layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("4_ef2yt")
 surface_material_override/1 = ExtResource("5_y4yrq")
 

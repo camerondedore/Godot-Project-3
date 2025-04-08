@@ -40,7 +40,7 @@ public partial class MobShieldRatAudio : AudioTools3d
 
     public void PlayShieldHitSound()
     {
-        PlaySound(shieldBreakSound, 0.1f);
+        PlaySound(shieldHitSound, 0.1f);
     }
 
 

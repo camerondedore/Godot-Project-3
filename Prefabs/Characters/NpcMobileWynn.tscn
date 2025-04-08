@@ -253,6 +253,8 @@ bones/45/rotation = Quaternion(0.0912114, 0.53513, -0.163882, 0.823686)
 bones/46/position = Vector3(0.0462874, -1.17626, 0.294563)
 
 [node name="character-wynn" parent="character-wynn/character-armature/Skeleton3D" index="0"]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("2_7jj0c")
 surface_material_override/1 = ExtResource("3_1ou5g")
 surface_material_override/2 = ExtResource("4_iaey1")

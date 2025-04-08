@@ -100,9 +100,13 @@ bones/60/rotation = Quaternion(0.70702, 0.0110636, -0.70702, 0.0110636)
 transform = Transform3D(1, 1.11897e-08, -3.57453e-07, -5.558e-17, 0.99951, 0.0312888, 3.57628e-07, -0.0312888, 0.99951, -0.300915, -0.046828, -0.43106)
 
 [node name="weapon-staff_2" parent="character-lumsden/character-armature/Skeleton3D/weapon-staff_2" index="0"]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("2_cgg3p")
 
 [node name="character-lumsden" parent="character-lumsden/character-armature/Skeleton3D" index="1"]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("4_u4u5o")
 surface_material_override/1 = ExtResource("4_srv7g")
 

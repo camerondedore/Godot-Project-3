@@ -82,6 +82,8 @@ bones/45/rotation = Quaternion(0.0912114, 0.53513, -0.163882, 0.823686)
 bones/46/position = Vector3(0.0462874, -1.17626, 0.294563)
 
 [node name="character-wynn" parent="character-wynn/character-armature/Skeleton3D" index="0"]
+layers = 2
+gi_mode = 2
 surface_material_override/0 = ExtResource("3_u0hjs")
 surface_material_override/1 = ExtResource("4_i4x1t")
 surface_material_override/2 = ExtResource("5_nb3go")
@@ -89,13 +91,13 @@ surface_material_override/2 = ExtResource("5_nb3go")
 [node name="AnimationPlayer" parent="character-wynn" index="1"]
 playback_default_blend_time = 0.1
 
-[node name="DialogueLineOffer" parent="." index="4"]
+[node name="DialogueLineOffer" parent="." index="5"]
 dialogueText = "I have armor, good for reducing damage!  75 candied nuts."
 
-[node name="DialogueLineCrier" parent="." index="5"]
+[node name="DialogueLineCrier" parent="." index="6"]
 dialogueText = "Armor for sale!"
 
-[node name="ItemSpawner" parent="." index="9"]
+[node name="ItemSpawner" parent="." index="10"]
 prefab = ExtResource("6_vvgpr")
 
 [node name="PriceLabel" parent="MerchantUi/Container/Background/PriceRect" index="0"]
