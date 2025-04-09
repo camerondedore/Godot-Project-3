@@ -193,4 +193,11 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
         var positionForNavCheck = GlobalPosition + Vector3.Down * (characterHeight * 0.5f - 0.25f);
         return NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), positionForNavCheck).DistanceSquaredTo(positionForNavCheck) < 0.5f;
     }
+
+
+
+    public float GetMaxStuckSpeedSqr()
+    {
+        return Mathf.Pow(speed * 0.8f, 2f);
+    }
 }

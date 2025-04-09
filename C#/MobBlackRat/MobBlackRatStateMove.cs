@@ -37,9 +37,16 @@ namespace MobBlackRat
                 }
 
                 // check if rat is stuck
-                if(blackboard.Velocity.LengthSquared() < 0.7f)
+                if(blackboard.Velocity.LengthSquared() < blackboard.GetMaxStuckSpeedSqr())
                 {
                     stuckTicks++;
+                }
+
+                if(stuckTicks > 20)
+                {
+                    // rat is stuck
+                    // restart
+                    StartState();
                 }
             }
             
@@ -81,13 +88,6 @@ namespace MobBlackRat
 
                 // cooldown
                 return blackboard.stateCooldown;
-            }
-            
-            if(stuckTicks > 10)
-            {
-                // rat is stuck
-                // idle
-                return blackboard.superStateIdle;
             }
 
             if(blackboard.CanAttackEnemy() == true)
