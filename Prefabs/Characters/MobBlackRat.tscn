@@ -12,7 +12,7 @@
 [ext_resource type="Material" uid="uid://ddcbnfas38iv6" path="res://Materials/Characters/MobBlackRatGear.tres" id="7_ccavo"]
 [ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="8_ccavo"]
 [ext_resource type="Script" uid="uid://bx4drobbkrft" path="res://C#/MobBlackRat/MobBlackRatAudio.cs" id="8_cysva"]
-[ext_resource type="AudioStream" uid="uid://fd1mvgf6fbwf" path="res://Audio/melee-hit.wav" id="9_b23nn"]
+[ext_resource type="AudioStream" uid="uid://fd1mvgf6fbwf" path="res://Audio/melee-hit-1.wav" id="9_b23nn"]
 [ext_resource type="AudioStream" uid="uid://cmhkmrb8ou7x8" path="res://Audio/melee-swing-1.wav" id="10_exf00"]
 [ext_resource type="AudioStream" uid="uid://cym0cmomxa2op" path="res://Audio/melee-swing-2.wav" id="11_uacww"]
 [ext_resource type="AudioStream" uid="uid://bj84b8rv1djd0" path="res://Audio/melee-swing-3.wav" id="12_3ag21"]
@@ -69,14 +69,12 @@ bones/8/rotation = Quaternion(-7.97953e-07, -9.72213e-07, -0.707107, 0.707107)
 bones/9/rotation = Quaternion(-0.1691, -8.63415e-14, -4.03165e-08, 0.985599)
 bones/10/position = Vector3(0.0968204, 0.305978, 0.110795)
 bones/10/rotation = Quaternion(0.707106, 2.66901e-08, 1.41897e-07, 0.707108)
-bones/11/scale = Vector3(1, 1, 1)
 bones/12/rotation = Quaternion(0.106904, -1.19209e-07, -2.8989e-10, 0.994269)
 bones/13/rotation = Quaternion(0.732827, -0.103131, 0.450328, 0.499533)
 bones/14/position = Vector3(-0.104202, 0.295535, -0.0750512)
 bones/14/rotation = Quaternion(-9.72213e-07, 7.97952e-07, 0.707107, 0.707107)
 bones/15/position = Vector3(-0.0968205, 0.305978, 0.110795)
 bones/15/rotation = Quaternion(0.707106, -1.41897e-07, -2.669e-08, 0.707108)
-bones/16/scale = Vector3(1, 1, 1)
 bones/17/rotation = Quaternion(-0.577358, -0.432267, -0.34784, 0.599007)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/rotation = Quaternion(-0.495142, -0.568059, 0.338665, 0.563426)
@@ -157,7 +155,7 @@ bones/62/rotation = Quaternion(-0.0407275, 0.704659, 0.705933, 0.0587899)
 bones/62/scale = Vector3(0.999999, 1, 1)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.906989, -0.233789, -0.350306, 0.418992, 0.585084, 0.69435, 0.0426268, -0.776543, 0.628621, 0.454784, -0.000904896, -0.243781)
+transform = Transform3D(0.906989, -0.233789, -0.350305, 0.418992, 0.585085, 0.69435, 0.0426267, -0.776543, 0.628621, 0.454784, -0.000904896, -0.243781)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D/weapon-sword" index="0"]
 layers = 2

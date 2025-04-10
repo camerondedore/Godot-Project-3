@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://myloy3htblvq" path="res://Prefabs/FX/FxBloodSlash.tscn" id="13_70x6j"]
 [ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="14_k18ji"]
 [ext_resource type="PackedScene" uid="uid://blvmj2pdjvqor" path="res://Prefabs/FX/FxShieldBreak.tscn" id="15_vtb2x"]
-[ext_resource type="AudioStream" uid="uid://fd1mvgf6fbwf" path="res://Audio/melee-hit.wav" id="16_12cki"]
+[ext_resource type="AudioStream" uid="uid://dgnnqdkgg653e" path="res://Audio/melee-hit-2.wav" id="17_vtb2x"]
 [ext_resource type="AudioStream" uid="uid://cmhkmrb8ou7x8" path="res://Audio/melee-swing-1.wav" id="18_0cy4u"]
 [ext_resource type="AudioStream" uid="uid://cbkudqnnwfbxw" path="res://Audio/shield-break.wav" id="18_y1dn4"]
 [ext_resource type="AudioStream" uid="uid://brk6y6kj2hf2d" path="res://Audio/shield-fragment-hit-2.wav" id="19_k6pej"]
@@ -220,7 +220,7 @@ max_distance = 30.0
 max_polyphony = 2
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("13_7dh74")
-axeHitSound = ExtResource("16_12cki")
+axeHitSound = ExtResource("17_vtb2x")
 shieldBreakSound = ExtResource("18_y1dn4")
 shieldHitSound = ExtResource("19_k6pej")
 shieldSwingSound = ExtResource("20_vtb2x")
