@@ -6,7 +6,7 @@ namespace MobBlackRat
     public partial class MobBlackRatStateMove : MobBlackRatState
     {
 
-        float distanceToEnemySqr;
+        Vector3 lastPosition;
         int stuckTicks;
 
 
@@ -36,17 +36,10 @@ namespace MobBlackRat
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
 
-                // check if rat is stuck
-                if(blackboard.Velocity.LengthSquared() < blackboard.GetMaxStuckSpeedSqr())
+                // check if rat is slow or stuck
+                if(blackboard.Velocity.LengthSquared() < blackboard.GetMaxStuckSpeedSqr() || blackboard.GlobalPosition == lastPosition)
                 {
                     stuckTicks++;
-                }
-
-                if(stuckTicks > 20)
-                {
-                    // rat is stuck
-                    // restart
-                    StartState();
                 }
             }
             
@@ -73,7 +66,7 @@ namespace MobBlackRat
 
         public override void EndState()
         {
-
+            lastPosition = blackboard.GlobalPosition;
         }
 
 
@@ -88,6 +81,13 @@ namespace MobBlackRat
 
                 // cooldown
                 return blackboard.stateCooldown;
+            }
+
+            if(stuckTicks > 20)
+            {
+                // rat is stuck
+                // react
+                return blackboard.stateReact;
             }
 
             if(blackboard.CanAttackEnemy() == true)
