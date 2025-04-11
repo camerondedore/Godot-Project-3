@@ -2458,7 +2458,7 @@ cinematicAnimationName = "l3c4"
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
 transform = Transform3D(0.887025, 0.176693, -0.426577, 0, 0.92388, 0.382682, 0.461723, -0.339448, 0.819504, 73.6916, 15.6559, -202.147)
 script = ExtResource("72_7il2i")
-moveTime = 2.5
+moveTime = 2.0
 
 [node name="TriggerAreas" type="Node3D" parent="Map"]
 
@@ -2690,9 +2690,6 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 
 [node name="MobBlackRat6" parent="Enemies" instance=ExtResource("31_jdoyc")]
 transform = Transform3D(0.5, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.5, 68, 13, -182)
-
-[node name="MobShieldRat" parent="Enemies" instance=ExtResource("131_cw7uk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -32.5)
 
 [node name="MobShieldRat2" parent="Enemies" instance=ExtResource("131_cw7uk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 7, -85.6493)
