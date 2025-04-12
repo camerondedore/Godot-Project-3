@@ -82,7 +82,7 @@ draw bow -
 fire bow - 
 jump - 
 launch off ledge -
-use range bandage - 
+use ranger bandage - 
 show hud - 
 pause - "
 uppercase = true

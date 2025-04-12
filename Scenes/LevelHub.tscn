@@ -392,7 +392,6 @@ script = ExtResource("8_7o44d")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_s034b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
-speed = 15.0
 
 [node name="Map" type="Node3D" parent="."]
 

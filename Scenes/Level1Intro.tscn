@@ -5052,6 +5052,12 @@ max_contacts_reported = 0
 [node name="PickupCandiedNut16" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.9597, 9, -207.529)
 
+[node name="PickupCandiedNut17" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5, 9, -46)
+
+[node name="PickupCandiedNut18" parent="Map/Pickups" instance=ExtResource("67_rtjt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59, 9, -120.414)
+
 [node name="Fx" type="Node3D" parent="Map"]
 
 [node name="FxWoodChipsDecal" parent="Map/Fx" instance=ExtResource("84_7lp5j")]
