@@ -27,11 +27,13 @@ namespace MobBrownRat
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
 
-                // check if rat is slow or stuck
-                if(blackboard.Velocity.LengthSquared() < blackboard.GetMaxStuckSpeedSqr() || blackboard.GlobalPosition == lastPosition)
+                // check if rat is stuck
+                if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) < 0.001f)
                 {
                     stuckTicks++;
                 }
+
+                lastPosition = blackboard.GlobalPosition;
             }
 
 
@@ -60,7 +62,7 @@ namespace MobBrownRat
 
         public override void EndState()
         {
-            lastPosition = blackboard.GlobalPosition;
+            
         }
 
 
@@ -77,7 +79,7 @@ namespace MobBrownRat
                 return blackboard.stateCooldown;
             }
 
-            if(stuckTicks > 20)
+            if(stuckTicks > 40)
             {
                 // rat is stuck
                 // react
