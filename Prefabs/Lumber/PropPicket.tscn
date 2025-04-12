@@ -20,3 +20,4 @@ surface_material_override/1 = ExtResource("3_qyse7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sgcrt")
+debug_color = Color(1, 1, 1, 1)

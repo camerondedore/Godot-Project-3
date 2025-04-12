@@ -48,6 +48,7 @@ surface_material_override/0 = ExtResource("2_1f2wp")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_4ygfg")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
 collision_layer = 2048
@@ -55,6 +56,7 @@ collision_layer = 2048
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("ConvexPolygonShape3D_bp165")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="ShadowDecal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155418, 0, 0.0142556)

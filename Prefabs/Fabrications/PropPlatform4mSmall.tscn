@@ -99,3 +99,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0450454, 0)
 shape = SubResource("BoxShape3D_k820y")
+debug_color = Color(1, 1, 1, 1)

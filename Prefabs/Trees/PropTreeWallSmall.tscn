@@ -26,10 +26,12 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 shape = SubResource("BoxShape3D_hcigs")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 12, 0)
 shape = SubResource("BoxShape3D_jl82n")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="PropBgTreeFir2" parent="." instance=ExtResource("2_saquw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0982892, 0, -1.91666)
@@ -71,11 +73,14 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VisionBlocker"]
 shape = SubResource("BoxShape3D_jqyxc")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="VisionBlocker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 shape = SubResource("CapsuleShape3D_arm3p")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="VisionBlocker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 shape = SubResource("CapsuleShape3D_arm3p")
+debug_color = Color(1, 0, 0, 1)

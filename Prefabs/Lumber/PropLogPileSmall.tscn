@@ -62,3 +62,4 @@ surface_material_override/1 = ExtResource("3_swrd1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_5xlue")
+debug_color = Color(1, 1, 1, 1)

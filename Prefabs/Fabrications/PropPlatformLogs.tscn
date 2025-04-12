@@ -15,6 +15,7 @@ collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_bqpan")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="LodObject" type="Node3D" parent="."]
 script = ExtResource("1_belbf")

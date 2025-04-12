@@ -118,6 +118,7 @@ surface_material_override/1 = ExtResource("3_r0m8p")
 [node name="PlatformCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.84505, 0)
 shape = SubResource("ConvexPolygonShape3D_3ql71")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="BoardPostCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.775, 0)
@@ -129,6 +130,7 @@ collision_layer = 2048
 [node name="Collider" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.84505, 0)
 shape = SubResource("ConvexPolygonShape3D_sw084")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

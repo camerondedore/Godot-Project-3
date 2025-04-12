@@ -39,6 +39,7 @@ surface_material_override/0 = ExtResource("4_hkpge")
 [node name="BlackberryBushCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_5ngrm")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
 collision_layer = 2048
@@ -47,10 +48,12 @@ collision_mask = 0
 [node name="Collider1" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 shape = SubResource("BoxShape3D_5xh34")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="Collider2" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
 shape = SubResource("BoxShape3D_o24o3")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CutDecal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23517e-08, 0)

@@ -29,13 +29,16 @@ hitFailSound = ExtResource("3_wxvns")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_vb4od")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="Collider2" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1gpek")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="Collider3" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 shape = SubResource("BoxShape3D_1gpek")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2

@@ -43,22 +43,27 @@ surface_material_override/2 = ExtResource("4_garyl")
 [node name="CageCollider1" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.25, 0)
 shape = SubResource("BoxShape3D_vgnxb")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CageCollider2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.25, 0)
 shape = SubResource("BoxShape3D_vgnxb")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CageCollider3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 1.25, 1.4)
 shape = SubResource("BoxShape3D_e2d4e")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CageCollider4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 2.4, -0.1)
 shape = SubResource("BoxShape3D_lxrhn")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CageCollider5" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.1, -0.1)
 shape = SubResource("ConvexPolygonShape3D_yx814")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="Door" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774, 1.153, -1.482)

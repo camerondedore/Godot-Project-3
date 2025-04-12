@@ -115,9 +115,11 @@ surface_material_override/0 = ExtResource("2_74k60")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_5ufk7")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="InvisibleWall" type="StaticBody3D" parent="."]
 collision_layer = 2048
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
 shape = SubResource("ConvexPolygonShape3D_46aqk")
+debug_color = Color(1, 1, 1, 1)

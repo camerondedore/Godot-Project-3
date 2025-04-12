@@ -118,7 +118,7 @@
 [ext_resource type="PackedScene" uid="uid://dfhr2y5g2mbvs" path="res://Prefabs/Fabrications/PropBgFence1.tscn" id="75_xh5qs"]
 [ext_resource type="PackedScene" uid="uid://dksedfrilvg2y" path="res://Prefabs/Food/PropCarrotWind.tscn" id="76_84sod"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="76_n521u"]
-[ext_resource type="PackedScene" uid="uid://6277v0fp047v" path="res://Prefabs/Fabrications/PropBgEnd.tscn" id="76_t5jvb"]
+[ext_resource type="PackedScene" uid="uid://6277v0fp047v" path="res://Prefabs/Fabrications/PropBgFenceEnd.tscn" id="76_t5jvb"]
 [ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Lumber/PropBoardShort.tscn" id="76_yhwqy"]
 [ext_resource type="PackedScene" uid="uid://cprd78232h3xu" path="res://Prefabs/Food/PropRadishWind.tscn" id="77_y078u"]
 [ext_resource type="Animation" uid="uid://dcebpk3yxti70" path="res://Animation/Cinematics/l2c1.res" id="79_n40vy"]

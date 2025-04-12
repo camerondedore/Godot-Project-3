@@ -30,6 +30,7 @@ surface_material_override/0 = ExtResource("2_mkc34")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("BoxShape3D_khcq5")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="ShadowDecal" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112, 0, 0.011)
@@ -49,10 +50,12 @@ collision_mask = 0
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
 shape = SubResource("BoxShape3D_am4bt")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="InvisibleWall"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3, 0)
 shape = SubResource("BoxShape3D_owan8")
+debug_color = Color(1, 1, 1, 1)
 
 [node name="MobVisionBlocker" type="StaticBody3D" parent="."]
 collision_layer = 8192
@@ -61,3 +64,5 @@ collision_mask = 0
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="MobVisionBlocker"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.8, 0)
 shape = SubResource("CylinderShape3D_c028n")
+debug_color = Color(1, 0, 0, 0.419608)
+debug_fill = false

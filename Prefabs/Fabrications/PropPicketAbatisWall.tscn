@@ -65,3 +65,4 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
 shape = SubResource("ConvexPolygonShape3D_6m05e")
+debug_color = Color(1, 1, 1, 1)
