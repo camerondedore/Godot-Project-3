@@ -38,7 +38,7 @@ public partial class MobShieldRatStateMove : MobShieldRatState
             }
 
             // check if rat is stuck
-            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) < 0.001f)
+            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) < 0.001f && blackboard.navAgent.IsNavigationFinished() == false)
             {
                 stuckTicks++;
             }
