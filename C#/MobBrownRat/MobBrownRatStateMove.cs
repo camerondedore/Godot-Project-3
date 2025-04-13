@@ -7,7 +7,7 @@ namespace MobBrownRat
     {
 
         Vector3 lastPosition;
-        int stuckTicks;
+        double lastMovementTime;
 
 
 
@@ -27,13 +27,12 @@ namespace MobBrownRat
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
 
-                // check if rat is stuck
-                if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) < 0.001f && blackboard.navAgent.IsNavigationFinished() == false)
+                // check if rat is moving
+                if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.navAgent.IsNavigationFinished() == false)
                 {
-                    stuckTicks++;
+                    lastPosition = blackboard.GlobalPosition;
+                    lastMovementTime = EngineTime.timePassed;
                 }
-
-                lastPosition = blackboard.GlobalPosition;
             }
 
 
@@ -43,9 +42,7 @@ namespace MobBrownRat
         
         
         public override void StartState()
-        {
-            stuckTicks = 0;
-            
+        {            
             blackboard.moving = true;
 
             // set move target
@@ -79,13 +76,6 @@ namespace MobBrownRat
                 return blackboard.stateCooldown;
             }
 
-            if(stuckTicks > 40)
-            {
-                // rat is stuck
-                // react
-                return blackboard.stateReact;
-            }
-
             // get distance to enemy
             var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
@@ -94,6 +84,15 @@ namespace MobBrownRat
             {
                 // attack
                 return blackboard.stateAttack;
+            }
+
+            if(EngineTime.timePassed > lastMovementTime + 1.5)
+            {
+                GD.Print(EngineTime.timePassed +  ", black rat stuck");
+
+                // rat is stuck
+                // react
+                return blackboard.stateReact;
             }
 
             // if at end of path

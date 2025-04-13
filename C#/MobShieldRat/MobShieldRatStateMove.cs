@@ -8,7 +8,7 @@ public partial class MobShieldRatStateMove : MobShieldRatState
 {
 
     Vector3 lastPosition;
-    int stuckTicks;
+    double lastMovementTime;
 
 
 
@@ -37,13 +37,12 @@ public partial class MobShieldRatStateMove : MobShieldRatState
                 blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
             }
 
-            // check if rat is stuck
-            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) < 0.001f && blackboard.navAgent.IsNavigationFinished() == false)
+            // check if rat is moving
+            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.navAgent.IsNavigationFinished() == false)
             {
-                stuckTicks++;
+                lastPosition = blackboard.GlobalPosition;
+                lastMovementTime = EngineTime.timePassed;
             }
-
-            lastPosition = blackboard.GlobalPosition;
         }
         
 
@@ -55,8 +54,6 @@ public partial class MobShieldRatStateMove : MobShieldRatState
     public override void StartState()
     {
         blackboard.moving = true;
-
-        stuckTicks = 0;
 
         // set move target
         blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -94,17 +91,19 @@ public partial class MobShieldRatStateMove : MobShieldRatState
             return blackboard.stateCooldown;
         }
 
-        if(stuckTicks > 40)
-        {
-            // rat is stuck
-            // react
-            return blackboard.stateReact;
-        }
-
         if(blackboard.CanAttackEnemy() == true)
         {
             // attack
             return blackboard.stateAttack;
+        }
+
+        if(EngineTime.timePassed > lastMovementTime + 1.5)
+        {
+            GD.Print(EngineTime.timePassed +  ", black rat stuck");
+
+            // rat is stuck
+            // react
+            return blackboard.stateReact;
         }
 
         // if at end of path
