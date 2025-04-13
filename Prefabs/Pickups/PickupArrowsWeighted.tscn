@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnv3r5gw8eh8e"]
+[gd_scene load_steps=11 format=3 uid="uid://bnv3r5gw8eh8e"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_ydxnv"]
 [ext_resource type="Script" uid="uid://bxy0t8b0ji3x3" path="res://C#/Pickups/ArrowPickup.cs" id="2_wrbvg"]
+[ext_resource type="PackedScene" uid="uid://c5t6g81abp67c" path="res://Prefabs/FX/FxPickupGhost.tscn" id="3_3ifh0"]
 [ext_resource type="ArrayMesh" uid="uid://dvwckpqutx3g6" path="res://Models/arrow-weighted.res" id="3_svxow"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="4_arunp"]
 
@@ -40,7 +41,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="PickupArrowsWeighted" instance=ExtResource("1_ydxnv")]
 script = ExtResource("2_wrbvg")
-pickupPrefabs = Array[PackedScene]([])
+pickupPrefabs = Array[PackedScene]([ExtResource("3_3ifh0")])
 saveToWorldData = false
 
 [node name="PickupMesh" parent="." index="0"]

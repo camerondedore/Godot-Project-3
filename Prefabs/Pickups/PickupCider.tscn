@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvpfiw0o36yme"]
+[gd_scene load_steps=13 format=3 uid="uid://cvpfiw0o36yme"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_brbdi"]
 [ext_resource type="Script" uid="uid://beugnn1bcp85r" path="res://C#/Pickups/CiderPickup.cs" id="2_icw7e"]
+[ext_resource type="PackedScene" uid="uid://c5t6g81abp67c" path="res://Prefabs/FX/FxPickupGhost.tscn" id="3_74tq2"]
 [ext_resource type="ArrayMesh" uid="uid://c1t8i5kk8ni7e" path="res://Models/pickup-cider.res" id="3_hmtwk"]
 [ext_resource type="Material" uid="uid://cod1rlhu2o8ob" path="res://Materials/Pickups/PickupCiderCork.tres" id="4_q1ijp"]
 [ext_resource type="Material" uid="uid://cqdvpfq814sbp" path="res://Materials/Pickups/PickupCiderGlass.tres" id="4_tvvia"]
@@ -42,6 +43,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 
 [node name="PickupCider" instance=ExtResource("1_brbdi")]
 script = ExtResource("2_icw7e")
+pickupPrefabs = Array[PackedScene]([ExtResource("3_74tq2")])
 
 [node name="PickupMesh" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)

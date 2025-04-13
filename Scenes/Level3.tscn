@@ -2136,6 +2136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 5, -84.7)
 
 [node name="PickupNettleBroth2" parent="Map/Pickups" instance=ExtResource("46_t7hnf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.1, 8.2, -91.85)
+pickupPrefabs = Array[PackedScene]([])
 
 [node name="PickupCandiedNut9" parent="Map/Pickups" instance=ExtResource("34_g5lip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 9, -68.5)
@@ -2587,7 +2588,7 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 
 [node name="TriggerDead" type="Timer" parent="Map/TriggerAreas" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
 script = ExtResource("121_igisw")
-watchedNodes = []
+watchedNodes = Array[PackedScene]([])
 linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame4/Portcullis")]
 
 [node name="SecretAreas" type="Node3D" parent="Map"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmib1tgy5ee4s"]
+[gd_scene load_steps=18 format=3 uid="uid://dmib1tgy5ee4s"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_blnc4"]
 [ext_resource type="Script" uid="uid://dgav2xptwir6q" path="res://C#/Pickups/ArmorPickup.cs" id="2_466iw"]
+[ext_resource type="PackedScene" uid="uid://c5t6g81abp67c" path="res://Prefabs/FX/FxPickupGhost.tscn" id="3_lgmxp"]
 [ext_resource type="Material" uid="uid://b5cyspoybrawv" path="res://Materials/Pickups/PickupArmorMasked.tres" id="4_ft8qn"]
 [ext_resource type="ArrayMesh" uid="uid://dbynpysu540ah" path="res://Models/pickup-armor.res" id="4_uw6ui"]
 [ext_resource type="PackedScene" uid="uid://dd74p0os7qlsq" path="res://Prefabs/FX/FxSparkleLarge.tscn" id="6_m8ucj"]
@@ -76,6 +77,7 @@ color_ramp = SubResource("GradientTexture1D_ix1vo")
 [node name="PickupArmor" instance=ExtResource("1_blnc4")]
 script = ExtResource("2_466iw")
 armorColors = PackedColorArray(0.54, 0.18, 0, 1, 0.54, 0.486, 0, 1, 0.036, 0.54, 0, 1, 0, 0.135, 0.54, 1, 0.78, 0.78, 0.78, 1)
+pickupPrefabs = Array[PackedScene]([ExtResource("3_lgmxp")])
 
 [node name="PickupMesh" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)

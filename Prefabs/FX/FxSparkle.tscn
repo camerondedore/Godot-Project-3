@@ -42,6 +42,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 layers = 2
 material_override = ExtResource("1_3k7ci")
 cast_shadow = 0
+gi_mode = 2
 amount = 5
 lifetime = 1.25
 preprocess = 2.0

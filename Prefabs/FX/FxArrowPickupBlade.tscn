@@ -5,3 +5,4 @@
 
 [node name="FxArrowPickupBlade" instance=ExtResource("1_rdakx")]
 material_override = ExtResource("2_3y37k")
+gi_mode = 2

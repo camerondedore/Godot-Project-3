@@ -10,6 +10,7 @@
 [node name="FxArrowTrailNet" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
 layers = 2
 material_override = ExtResource("1_4nsho")
+gi_mode = 2
 amount = 20
 lifetime = 1.5
 randomness = 0.5

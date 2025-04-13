@@ -10,6 +10,7 @@
 [node name="FxArrowTrailEnemy" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
 layers = 2
 material_override = ExtResource("1_17d4m")
+gi_mode = 2
 amount = 20
 visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = ExtResource("2_hl51g")

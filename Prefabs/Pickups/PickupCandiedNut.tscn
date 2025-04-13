@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jg8y61unu8ao"]
+[gd_scene load_steps=13 format=3 uid="uid://jg8y61unu8ao"]
 
 [ext_resource type="PackedScene" uid="uid://kjtjnroe2otb" path="res://Prefabs/Pickups/Pickup.tscn" id="1_4on0y"]
 [ext_resource type="Script" uid="uid://dxqvrgsbeei8c" path="res://C#/Pickups/CandiedNutPickup.cs" id="1_anmk5"]
@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bwl3ntlog5agd" path="res://Models/pickup-candied-nut-2.res" id="4_cr428"]
 [ext_resource type="Material" uid="uid://dx4tjrj1tn4vt" path="res://Materials/Pickups/PickupCandiedNuts.tres" id="4_nvqdf"]
 [ext_resource type="ArrayMesh" uid="uid://dlmp810rdbjvw" path="res://Models/pickup-candied-nut-3.res" id="5_gn2nl"]
+[ext_resource type="PackedScene" uid="uid://c5t6g81abp67c" path="res://Prefabs/FX/FxPickupGhost.tscn" id="6_y8twj"]
 
 [sub_resource type="Gradient" id="Gradient_tcd1t"]
 offsets = PackedFloat32Array(0, 0.5, 1)
@@ -43,7 +44,7 @@ color_ramp = SubResource("GradientTexture1D_3yg5b")
 [node name="PickupCandiedNut" instance=ExtResource("1_4on0y")]
 script = ExtResource("1_anmk5")
 nutMeshes = Array[ArrayMesh]([ExtResource("3_f3xch"), ExtResource("4_cr428"), ExtResource("5_gn2nl")])
-pickupPrefabs = Array[PackedScene]([])
+pickupPrefabs = Array[PackedScene]([ExtResource("6_y8twj")])
 
 [node name="PickupMesh" parent="." index="0"]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)

@@ -33,10 +33,13 @@ scale_curve = SubResource("CurveTexture_eu25c")
 [sub_resource type="QuadMesh" id="QuadMesh_dcdvy"]
 
 [node name="FxShieldBreak" type="GPUParticles3D"]
+layers = 2
 material_override = ExtResource("1_a4gem")
+gi_mode = 2
 emitting = false
 amount = 20
 one_shot = true
 explosiveness = 1.0
+visibility_aabb = AABB(-20, -20, -20, 40, 40, 40)
 process_material = SubResource("ParticleProcessMaterial_eu25c")
 draw_pass_1 = SubResource("QuadMesh_dcdvy")

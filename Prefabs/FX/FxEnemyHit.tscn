@@ -29,7 +29,9 @@ color_ramp = SubResource("GradientTexture1D_vy5mi")
 
 [node name="FxEnemyHit" type="GPUParticles3D"]
 process_mode = 1
+layers = 2
 material_override = ExtResource("1_hvc3k")
+gi_mode = 2
 emitting = false
 amount = 1
 lifetime = 0.25

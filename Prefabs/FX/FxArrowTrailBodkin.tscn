@@ -10,6 +10,7 @@
 [node name="FxArrowTrailBodkin" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
 layers = 2
 material_override = ExtResource("1_60ec6")
+gi_mode = 2
 amount = 20
 process_material = ExtResource("2_hhhrq")
 draw_pass_1 = SubResource("QuadMesh_pc5df")

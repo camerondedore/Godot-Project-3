@@ -33,6 +33,7 @@ scale_curve = SubResource("CurveTexture_1yipe")
 layers = 2
 material_override = ExtResource("1_elekf")
 cast_shadow = 0
+gi_mode = 2
 emitting = false
 lifetime = 1.25
 one_shot = true

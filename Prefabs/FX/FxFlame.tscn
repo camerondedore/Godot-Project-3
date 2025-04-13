@@ -42,6 +42,7 @@ color_ramp = SubResource("GradientTexture1D_rjic1")
 [node name="FxFlame" type="GPUParticles3D"]
 layers = 2
 material_override = ExtResource("1_kvd1j")
+gi_mode = 2
 amount = 3
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_d481j")

@@ -10,6 +10,7 @@
 [node name="FxArrowTrailPick" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
 layers = 2
 material_override = ExtResource("1_4ry1s")
+gi_mode = 2
 amount = 16
 process_material = ExtResource("2_dqlan")
 draw_pass_1 = SubResource("QuadMesh_8cq86")

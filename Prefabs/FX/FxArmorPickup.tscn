@@ -9,6 +9,7 @@
 layers = 2
 material_override = ExtResource("1_2k021")
 cast_shadow = 0
+gi_mode = 2
 emitting = false
 amount = 20
 lifetime = 2.0

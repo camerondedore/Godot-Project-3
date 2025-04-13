@@ -1,0 +1,45 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5t6g81abp67c"]
+
+[ext_resource type="Material" uid="uid://gnkktmrkbiiy" path="res://Materials/Fx/FxPickupGhost.tres" id="1_tvoe2"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="2_0khji"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="3_c4em8"]
+
+[sub_resource type="Curve" id="Curve_0khji"]
+_data = [Vector2(0, 0), 0.0, 32.2207, 0, 0, Vector2(0.0338983, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.01496, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_c4em8"]
+curve = SubResource("Curve_0khji")
+
+[sub_resource type="Curve" id="Curve_01pw1"]
+_data = [Vector2(0, 0.717391), 0.0, 2.6667, 0, 0, Vector2(0.0881356, 0.862978), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_j142l"]
+curve = SubResource("Curve_01pw1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_srqes"]
+gravity = Vector3(0, 0, 0)
+scale_max = 1.1
+scale_curve = SubResource("CurveTexture_j142l")
+color = Color(1, 1, 1, 0.0980392)
+alpha_curve = SubResource("CurveTexture_c4em8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gcjxm"]
+
+[node name="FxPickupGhost" type="GPUParticles3D"]
+layers = 2
+material_override = ExtResource("1_tvoe2")
+gi_mode = 2
+emitting = false
+amount = 1
+lifetime = 2.0
+one_shot = true
+visibility_aabb = AABB(-5, -5, -5, 10, 10, 10)
+process_material = SubResource("ParticleProcessMaterial_srqes")
+draw_pass_1 = SubResource("QuadMesh_gcjxm")
+script = ExtResource("2_0khji")
+restartOnReady = true
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("3_c4em8")

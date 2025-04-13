@@ -66,6 +66,7 @@ color_ramp = SubResource("GradientTexture1D_uke2v")
 [node name="FxArrowHit" type="GPUParticles3D"]
 layers = 2
 material_override = ExtResource("1_s2cpb")
+gi_mode = 2
 emitting = false
 amount = 1
 lifetime = 0.25
@@ -86,6 +87,7 @@ lifeTime = 1.0
 [node name="FxSparkleBlast" type="GPUParticles3D" parent="."]
 layers = 2
 material_override = ExtResource("4_fa6b1")
+gi_mode = 2
 emitting = false
 amount = 10
 lifetime = 0.6

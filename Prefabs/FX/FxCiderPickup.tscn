@@ -60,7 +60,9 @@ script = ExtResource("3_idn40")
 playChildren = true
 
 [node name="FxBubbles" type="GPUParticles3D" parent="."]
+layers = 2
 material_override = ExtResource("4_myc0q")
+gi_mode = 2
 emitting = false
 amount = 30
 lifetime = 1.5
