@@ -1,87 +1,86 @@
 using Godot;
 using System;
 
-namespace MobBlackRat
+namespace MobBlackRat;
+
+public partial class MobBlackRatStateReact : MobBlackRatState
 {
-    public partial class MobBlackRatStateReact : MobBlackRatState
+
+    double startTime,
+        reactTimeRandom;
+
+
+
+    public override void RunState(double delta)
+    {            
+
+    }
+    
+    
+    
+    public override void StartState()
     {
+        startTime = EngineTime.timePassed;
 
-        double startTime,
-            reactTimeRandom;
+        blackboard.moving = false;
 
+        // add variation to reaction time
+        reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
+        var previousLookAtTarget = blackboard.lookAtTarget;
 
-        public override void RunState(double delta)
-        {            
+        // look at enemy
+        blackboard.lookAtTarget = true;
 
-        }
-        
-        
-        
-        public override void StartState()
+        if(previousLookAtTarget == false)
         {
-            startTime = EngineTime.timePassed;
+            // animation
+            //blackboard.animStateMachinePlayback.Travel("brown-rat-react");
+            //blackboard.animStateMachinePlayback.Next();
+            blackboard.animation.Play("black-rat-react");
+        }
 
-            blackboard.moving = false;
+        if(blackboard.IsEnemyValid())
+        {
+            // set head look target
+            blackboard.headControl.SetTarget(blackboard.enemy);
+        }
+    }
 
-            // add variation to reaction time
-            reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
-            var previousLookAtTarget = blackboard.lookAtTarget;
 
+    public override void EndState()
+    {
+        if(blackboard.IsEnemyValid())
+        {
             // look at enemy
-            blackboard.lookAtTarget = true;
+            blackboard.lookAtTarget = false;
 
-            if(previousLookAtTarget == false)
-            {
-                // animation
-                //blackboard.animStateMachinePlayback.Travel("brown-rat-react");
-                //blackboard.animStateMachinePlayback.Next();
-                blackboard.animation.Play("black-rat-react");
-            }
+            blackboard.SpotEnemyForAllies();
+        }
+    }
 
+
+
+    public override State Transition()
+    {
+        // check for timer
+        if(EngineTime.timePassed > startTime + reactTimeRandom)
+        {
+            // check for enemy
             if(blackboard.IsEnemyValid())
             {
-                // set head look target
-                blackboard.headControl.SetTarget(blackboard.enemy);
+                // move
+                return blackboard.stateMove;
             }
-        }
 
-
-
-        public override void EndState()
-        {
-            if(blackboard.IsEnemyValid())
+            if(blackboard.isAggro)
             {
-                // look at enemy
-                blackboard.lookAtTarget = false;
-
-                blackboard.SpotEnemyForAllies();
+                // patrol
+                return blackboard.statePatrol;
             }
         }
 
-
-
-        public override State Transition()
-        {
-            // check for timer
-            if(EngineTime.timePassed > startTime + reactTimeRandom)
-            {
-                // check for enemy
-                if(blackboard.IsEnemyValid())
-                {
-                    // move
-                    return blackboard.stateMove;
-                }
-
-                if(blackboard.isAggro)
-                {
-                    // patrol
-                    return blackboard.statePatrol;
-                }
-            }
-
-            return this;
-        }
+        return this;
     }
 }

@@ -191,7 +191,7 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
     public bool IsOnNavmesh(NavigationAgent3D navAgent)
     {
         var positionForNavCheck = GlobalPosition + Vector3.Down * (characterHeight * 0.5f - 0.25f);
-        return NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), positionForNavCheck).DistanceSquaredTo(positionForNavCheck) < 0.5f;
+        return NavigationServer3D.MapGetClosestPoint(navAgent.GetNavigationMap(), positionForNavCheck).DistanceSquaredTo(positionForNavCheck) < 0.3f;
     }
 
 

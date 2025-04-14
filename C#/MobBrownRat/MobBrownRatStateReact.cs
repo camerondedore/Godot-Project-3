@@ -1,96 +1,95 @@
 using Godot;
 using System;
 
-namespace MobBrownRat
+namespace MobBrownRat;
+
+public partial class MobBrownRatStateReact : MobBrownRatState
 {
-    public partial class MobBrownRatStateReact : MobBrownRatState
+
+    double startTime,
+        reactTimeRandom;
+
+
+
+    public override void RunState(double delta)
+    {            
+
+    }
+    
+    
+    
+    public override void StartState()
     {
+        startTime = EngineTime.timePassed;
 
-        double startTime,
-            reactTimeRandom;
+        blackboard.moving = false;
 
+        // add variation to reaction time
+        reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
+        var previousLookAtTarget = blackboard.lookAtTarget;
 
-        public override void RunState(double delta)
-        {            
+        // look at enemy
+        blackboard.lookAtTarget = true;
 
-        }
-        
-        
-        
-        public override void StartState()
+        if(previousLookAtTarget == false)
         {
-            startTime = EngineTime.timePassed;
+            // animation
+            blackboard.animStateMachinePlayback.Travel("brown-rat-react");
+            //blackboard.animStateMachinePlayback.Next();
+        }
+    }
 
-            blackboard.moving = false;
 
-            // add variation to reaction time
-            reactTimeRandom = blackboard.reactTime * (1 + GD.Randf());
 
-            var previousLookAtTarget = blackboard.lookAtTarget;
-
+    public override void EndState()
+    {
+        if(blackboard.IsEnemyValid())
+        {
             // look at enemy
-            blackboard.lookAtTarget = true;
+            blackboard.lookAtTarget = false;
 
-            if(previousLookAtTarget == false)
-            {
-                // animation
-                blackboard.animStateMachinePlayback.Travel("brown-rat-react");
-                //blackboard.animStateMachinePlayback.Next();
-            }
+            blackboard.SpotEnemyForAllies();
         }
+    }
 
 
 
-        public override void EndState()
+    public override State Transition()
+    {
+        // check for timer
+        if(EngineTime.timePassed > startTime + reactTimeRandom)
         {
+            // check for enemy
             if(blackboard.IsEnemyValid())
             {
-                // look at enemy
-                blackboard.lookAtTarget = false;
-
-                blackboard.SpotEnemyForAllies();
+                if(blackboard.isMovingRat)
+                {
+                    // move
+                    return blackboard.stateMove;
+                }
+                else
+                {
+                    // watch
+                    return blackboard.stateWatch;
+                }
             }
-        }
 
-
-
-        public override State Transition()
-        {
-            // check for timer
-            if(EngineTime.timePassed > startTime + reactTimeRandom)
+            if(blackboard.isAggro)
             {
-                // check for enemy
-                if(blackboard.IsEnemyValid())
+                if(blackboard.isMovingRat)
                 {
-                    if(blackboard.isMovingRat)
-                    {
-                        // move
-                        return blackboard.stateMove;
-                    }
-                    else
-                    {
-                        // watch
-                        return blackboard.stateWatch;
-                    }
+                    // patrol
+                    return blackboard.statePatrol;
                 }
-
-                if(blackboard.isAggro)
+                else
                 {
-                    if(blackboard.isMovingRat)
-                    {
-                        // patrol
-                        return blackboard.statePatrol;
-                    }
-                    else
-                    {
-                        // watch
-                        return blackboard.stateWatch;
-                    }
+                    // watch
+                    return blackboard.stateWatch;
                 }
             }
-
-            return this;
         }
+
+        return this;
     }
 }

@@ -1,24 +1,23 @@
 using Godot;
 using System;
 
-namespace MobBrownRat
+namespace MobBrownRat;
+
+public partial class MobBrownRatAudio : AudioTools3d
 {
-    public partial class MobBrownRatAudio : AudioTools3d
-    {
 
-        // [Export]
-        // AudioStream[] footsteps;
+    // [Export]
+    // AudioStream[] footsteps;
 
-        // bool footstepsEnabled = true;
+    // bool footstepsEnabled = true;
 
 
 
-        // public void PlayFootstepSound()
-        // {
-        //     if(footstepsEnabled == true)
-        //     {
-        //         PlayRandomSound(footsteps, 0.1f);
-        //     }
-        // }
-    }
+    // public void PlayFootstepSound()
+    // {
+    //     if(footstepsEnabled == true)
+    //     {
+    //         PlayRandomSound(footsteps, 0.1f);
+    //     }
+    // }
 }

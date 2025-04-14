@@ -7,7 +7,8 @@ namespace MobShieldRat;
 public partial class MobShieldRatStateRetreat : MobShieldRatState
 {
 
-    int stuckTicks;
+    Vector3 lastPosition;
+    double lastMovementTime;
 
 
 
@@ -18,10 +19,11 @@ public partial class MobShieldRatStateRetreat : MobShieldRatState
 
         blackboard.ClayPotCheck();
 
-        // check if rat is stuck
-        if(blackboard.Velocity.LengthSquared() < 0.7f)
+        // check if rat is moving or if rat is straying far from path
+        if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.IsAvoidanceDirectionFarFromPath() == false)
         {
-            stuckTicks++;
+            lastPosition = blackboard.GlobalPosition;
+            lastMovementTime = EngineTime.timePassed;
         }
     }
     
@@ -29,7 +31,7 @@ public partial class MobShieldRatStateRetreat : MobShieldRatState
     
     public override void StartState()
     {
-        stuckTicks = 0;
+        lastMovementTime = EngineTime.timePassed;
         
         // get flee target position
         blackboard.navAgent.TargetPosition = blackboard.startPosition + new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * 2;
@@ -65,11 +67,13 @@ public partial class MobShieldRatStateRetreat : MobShieldRatState
             return blackboard.stateReact;
         }
 
-        if(stuckTicks > 10)
+        if(EngineTime.timePassed > lastMovementTime + 1.5)
         {
+            GD.Print(EngineTime.timePassed +  ", black rat stuck");
+
             // rat is stuck
-            // cooldown
-            return blackboard.stateCooldown;
+            // react
+            return blackboard.stateReact;
         }
 
         if(blackboard.navAgent.IsNavigationFinished())

@@ -1,75 +1,74 @@
 using Godot;
 using System;
 
-namespace MobBrownRat
+namespace MobBrownRat;
+
+public partial class MobBrownRatStateDraw : MobBrownRatState
 {
-    public partial class MobBrownRatStateDraw : MobBrownRatState
+
+    double startTime,
+        aimTimeRandom;
+
+
+
+    public override void RunState(double delta)
+    {
+        blackboard.animStateMachinePlayback.Next();
+
+        var lookAngleBlend = blackboard.GetBowAngleToEnemy() / blackboard.lookAngleNormal;
+        blackboard.animation.Set("parameters/brown-rat-draw-blend/blend_position", lookAngleBlend);
+        
+        // look for enemy
+        //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
+    }
+    
+    
+    
+    public override void StartState()
+    {
+        startTime = EngineTime.timePassed;
+
+        // add variation to aim time
+        aimTimeRandom = blackboard.aimTime;
+
+        // look at enemy
+        blackboard.lookAtTarget = true;
+
+        // draw bow
+        blackboard.bow.Draw();
+
+
+        // animation
+        blackboard.animStateMachinePlayback.Travel("brown-rat-draw-blend");
+        //blackboard.animStateMachinePlayback.Next();
+    }
+
+
+
+    public override void EndState()
     {
 
-        double startTime,
-            aimTimeRandom;
+    }
 
 
 
-        public override void RunState(double delta)
+    public override State Transition()
+    {
+        if(blackboard.IsEnemyValid() == false)
         {
-            blackboard.animStateMachinePlayback.Next();
-
-            var lookAngleBlend = blackboard.GetBowAngleToEnemy() / blackboard.lookAngleNormal;
-            blackboard.animation.Set("parameters/brown-rat-draw-blend/blend_position", lookAngleBlend);
-            
-            // look for enemy
-            //blackboard.enemy = blackboard.detection.LookForEnemy(blackboard.maxSightRangeSqr);
-        }
-        
-        
-        
-        public override void StartState()
-        {
-            startTime = EngineTime.timePassed;
-
-            // add variation to aim time
-            aimTimeRandom = blackboard.aimTime;
-
-            // look at enemy
-            blackboard.lookAtTarget = true;
-
-            // draw bow
-            blackboard.bow.Draw();
-
-
-            // animation
-            blackboard.animStateMachinePlayback.Travel("brown-rat-draw-blend");
-            //blackboard.animStateMachinePlayback.Next();
+            // attack
+            return blackboard.stateAttack;
         }
 
-
-
-        public override void EndState()
+        if(EngineTime.timePassed > startTime + aimTimeRandom)
         {
+            // reset flee count
+            blackboard.fleeCount = 0;
 
+            // fire
+            return blackboard.stateFire;
         }
 
-
-
-        public override State Transition()
-        {
-            if(blackboard.IsEnemyValid() == false)
-            {
-                // attack
-                return blackboard.stateAttack;
-            }
-
-            if(EngineTime.timePassed > startTime + aimTimeRandom)
-            {
-                // reset flee count
-                blackboard.fleeCount = 0;
-
-                // fire
-                return blackboard.stateFire;
-            }
-
-            return this;
-        }
+        return this;
     }
 }

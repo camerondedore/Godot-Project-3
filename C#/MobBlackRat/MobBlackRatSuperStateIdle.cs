@@ -1,61 +1,60 @@
 using Godot;
 using System;
 
-namespace MobBlackRat
+namespace MobBlackRat;
+
+public partial class MobBlackRatSuperStateIdle : MobBlackRatSuperState
 {
-    public partial class MobBlackRatSuperStateIdle : MobBlackRatSuperState
+
+
+
+
+
+    public override void RunState(double delta)
+    {            
+        // look for enemy
+        blackboard.LookForEnemy();
+
+        base.RunState(delta); 
+    }
+    
+    
+    
+    public override void StartState()
     {
+        // stop moving
+        blackboard.moving = false;
+
+        // set substate
+        SetState(blackboard.subStateIdle);
+
+        base.StartState();
+    }
 
 
 
+    public override void EndState()
+    {
+        base.EndState();
+    }
 
 
-        public override void RunState(double delta)
-        {            
-            // look for enemy
-            blackboard.LookForEnemy();
 
-            base.RunState(delta); 
-        }
-        
-        
-        
-        public override void StartState()
+    public override State Transition()
+    {
+        // check for enemy
+        if(blackboard.IsEnemyValid())
         {
-            // stop moving
-            blackboard.moving = false;
-
-            // set substate
-            SetState(blackboard.subStateIdle);
-
-            base.StartState();
+            // react
+            return blackboard.stateReact;
         }
 
-
-
-        public override void EndState()
+        if(blackboard.isAggro)
         {
-            base.EndState();
+            // react
+            return blackboard.stateReact;
         }
 
-
-
-        public override State Transition()
-        {
-            // check for enemy
-            if(blackboard.IsEnemyValid())
-            {
-                // react
-                return blackboard.stateReact;
-            }
-
-            if(blackboard.isAggro)
-            {
-                // react
-                return blackboard.stateReact;
-            }
-
-            return this;
-        }
+        return this;
     }
 }

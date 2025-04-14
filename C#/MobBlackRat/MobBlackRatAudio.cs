@@ -1,29 +1,28 @@
 using Godot;
 using System;
 
-namespace MobBlackRat
+namespace MobBlackRat;
+
+public partial class MobBlackRatAudio : AudioTools3d
 {
-    public partial class MobBlackRatAudio : AudioTools3d
+
+    [Export]
+    AudioStream swordHitSound;
+    [Export]
+    AudioStream[] swordSwingSounds;
+
+
+
+    public void PlaySwordHitSound()
     {
-
-        [Export]
-        AudioStream swordHitSound;
-        [Export]
-        AudioStream[] swordSwingSounds;
+        PlaySound(swordHitSound, 0.1f);
+    }
 
 
 
-        public void PlaySwordHitSound()
-        {
-            PlaySound(swordHitSound, 0.1f);
-        }
-
-
-
-        public void PlaySwordSwingSound()
-        {
-            // method called from animation
-            PlayRandomSound(swordSwingSounds, 0.1f);
-        }
+    public void PlaySwordSwingSound()
+    {
+        // method called from animation
+        PlayRandomSound(swordSwingSounds, 0.1f);
     }
 }

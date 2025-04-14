@@ -1,63 +1,62 @@
 using Godot;
 using System;
 
-namespace MobBlackRat
+namespace MobBlackRat;
+
+public partial class MobBlackRatStatePatrolWait : MobBlackRatState
 {
-    public partial class MobBlackRatStatePatrolWait : MobBlackRatState
+
+    double startTime;
+
+
+
+    public override void RunState(double delta)
     {
-
-        double startTime;
-
-
-
-        public override void RunState(double delta)
-        {
-            // look for enemy
-            blackboard.LookForEnemy();
-        }
+        // look for enemy
+        blackboard.LookForEnemy();
+    }
+    
+    
+    
+    public override void StartState()
+    {
+        startTime = EngineTime.timePassed;
         
+        // stop moving
+        blackboard.moving = false;
+
+        // animation
+        //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
+        //blackboard.animStateMachinePlayback.Next();
+        blackboard.animation.Play("black-rat-patrol-wait");
+    }
+
+
+
+    public override void EndState()
+    {
         
-        
-        public override void StartState()
-        {
-            startTime = EngineTime.timePassed;
-            
-            // stop moving
-            blackboard.moving = false;
+    }
 
-            // animation
-            //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
-            //blackboard.animStateMachinePlayback.Next();
-            blackboard.animation.Play("black-rat-patrol-wait");
+
+
+    public override State Transition()
+    {
+        if(blackboard.IsEnemyValid())
+        {
+            // react
+            return blackboard.stateReact;
         }
 
+        var isTimeUp = EngineTime.timePassed > startTime + 5;
 
-
-        public override void EndState()
+        // check for 5 seconds passing
+        if(isTimeUp)
         {
-            
+            // patrol
+            return blackboard.statePatrol;
         }
 
-
-
-        public override State Transition()
-        {
-            if(blackboard.IsEnemyValid())
-            {
-                // react
-                return blackboard.stateReact;
-            }
-
-            var isTimeUp = EngineTime.timePassed > startTime + 5;
-
-            // check for 5 seconds passing
-            if(isTimeUp)
-            {
-                // patrol
-                return blackboard.statePatrol;
-            }
-
-            return this;
-        }
+        return this;
     }
 }

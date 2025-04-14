@@ -1,10 +1,9 @@
 using Godot;
 using System;
 
-namespace MobBlackRat
+namespace MobBlackRat;
+
+public partial class MobBlackRatSuperState : SuperState
 {
-    public partial class MobBlackRatSuperState : SuperState
-    {
-        public MobBlackRat blackboard;
-    }
+    public MobBlackRat blackboard;
 }

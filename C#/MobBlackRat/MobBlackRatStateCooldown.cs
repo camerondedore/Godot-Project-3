@@ -1,89 +1,88 @@
 using Godot;
 using System;
 
-namespace MobBlackRat
+namespace MobBlackRat;
+
+public partial class MobBlackRatStateCooldown: MobBlackRatState
 {
-    public partial class MobBlackRatStateCooldown: MobBlackRatState
+
+    Vector3 startPosition;
+    double startTime;
+
+
+
+    public override void RunState(double delta)
     {
+        // look for enemy
+        blackboard.LookForEnemy();
+    }
+    
+    
+    
+    public override void StartState()
+    {
+        startTime = EngineTime.timePassed;
 
-        Vector3 startPosition;
-        double startTime;
+        startPosition = blackboard.GlobalPosition;
 
+        // setop looking at enemy
+        blackboard.lookAtTarget = false;
 
-
-        public override void RunState(double delta)
-        {
-            // look for enemy
-            blackboard.LookForEnemy();
-        }
+        // stop moving
+        blackboard.moving = false;
         
+        // clear enemy
+        blackboard.enemy = null;
+
+        // animation
+        //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
+        //blackboard.animStateMachinePlayback.Next();
+        blackboard.animation.Play("black-rat-patrol-wait");
+
+        // clear head look target
+        blackboard.headControl.ClearTarget();
+    }
+
+
+
+    public override void EndState()
+    {
         
-        
-        public override void StartState()
+    }
+
+
+
+    public override State Transition()
+    {
+        if(blackboard.IsEnemyValid())
         {
-            startTime = EngineTime.timePassed;
-
-            startPosition = blackboard.GlobalPosition;
-
-            // setop looking at enemy
-            blackboard.lookAtTarget = false;
-
-            // stop moving
-            blackboard.moving = false;
-            
-            // clear enemy
-            blackboard.enemy = null;
-
-            // animation
-            //blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
-            //blackboard.animStateMachinePlayback.Next();
-            blackboard.animation.Play("black-rat-patrol-wait");
-
-            // clear head look target
-            blackboard.headControl.ClearTarget();
-        }
-
-
-
-        public override void EndState()
-        {
-            
-        }
-
-
-
-        public override State Transition()
-        {
-            if(blackboard.IsEnemyValid())
+            if(blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
             {
-                if(blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
-                {
-                    // react
-                    return blackboard.stateReact;                                
-                }
-
-
-                // get distance to enemy
-                var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
-
-                if(distanceToEnemySqr < 2f)
-                {
-                    // react
-                    return blackboard.stateReact;
-                }
+                // react
+                return blackboard.stateReact;                                
             }
 
-            var isTimeUp = EngineTime.timePassed > startTime + 5;
-            var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100;
 
-            // check for 5 seconds passing or 10 meters from start
-            if(isTimeUp || isdistanceTraveled)
+            // get distance to enemy
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+            if(distanceToEnemySqr < 2f)
             {
-                // retreat
-                return blackboard.stateRetreat;
+                // react
+                return blackboard.stateReact;
             }
-
-            return this;
         }
+
+        var isTimeUp = EngineTime.timePassed > startTime + 5;
+        var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100;
+
+        // check for 5 seconds passing or 10 meters from start
+        if(isTimeUp || isdistanceTraveled)
+        {
+            // retreat
+            return blackboard.stateRetreat;
+        }
+
+        return this;
     }
 }

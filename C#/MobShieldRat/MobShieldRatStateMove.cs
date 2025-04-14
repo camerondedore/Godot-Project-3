@@ -38,7 +38,7 @@ public partial class MobShieldRatStateMove : MobShieldRatState
             }
 
             // check if rat is moving
-            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.navAgent.IsNavigationFinished() == false)
+            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.IsAvoidanceDirectionFarFromPath() == false)
             {
                 lastPosition = blackboard.GlobalPosition;
                 lastMovementTime = EngineTime.timePassed;

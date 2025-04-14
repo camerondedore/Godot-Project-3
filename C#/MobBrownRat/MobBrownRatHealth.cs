@@ -1,38 +1,37 @@
 using Godot;
 using System;
 
-namespace MobBrownRat
+namespace MobBrownRat;
+
+public partial class MobBrownRatHealth : Health
 {
-    public partial class MobBrownRatHealth : Health
+
+    [Export]
+    MobBrownRat rat;
+
+
+
+    public override void Damage(float dmg)
     {
+        // apply damage
+        hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
-        [Export]
-        MobBrownRat rat;
-
-
-
-        public override void Damage(float dmg)
+        if(hitPoints == 0 && !dead)
         {
-            // apply damage
-            hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
-
-            if(hitPoints == 0 && !dead)
-            {
-                // kill rat
-                dead = true;
-                Die();
-            }
-
-            // aggro rat
-            rat.isAggro = true;
-            rat.AggroAllies();
+            // kill rat
+            dead = true;
+            Die();
         }
 
+        // aggro rat
+        rat.isAggro = true;
+        rat.AggroAllies();
+    }
 
 
-        public override void Die()
-        {
-            rat.machine.SetState(rat.stateDie);
-        }
+
+    public override void Die()
+    {
+        rat.machine.SetState(rat.stateDie);
     }
 }

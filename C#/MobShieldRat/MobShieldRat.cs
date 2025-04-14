@@ -39,6 +39,8 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
     public GpuParticles3D shieldBreakFx;
 
     public Vector3 startPosition,
+        dirToNextPathPoint,
+        avoidanceDir,
         arrowHitDirection;
     public double swingTime = 0.66,
         attackDamageTime = 0.3,
@@ -304,5 +306,14 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
             // take damage from arrow
             health.Damage(damageFromArrow);
         }
+    }
+
+
+
+    public bool IsAvoidanceDirectionFarFromPath()
+    {
+        var angle = Mathf.RadToDeg(avoidanceDir.AngleTo(dirToNextPathPoint));
+
+        return angle > 50;
     }
 }
