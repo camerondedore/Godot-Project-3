@@ -37,7 +37,7 @@ public partial class MobShieldRatStateMove : MobShieldRatState
                 blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
             }
 
-            // check if rat is moving
+            // check if rat is moving or if rat is straying far from path
             if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.IsAvoidanceDirectionFarFromPath() == false)
             {
                 lastPosition = blackboard.GlobalPosition;
@@ -54,6 +54,8 @@ public partial class MobShieldRatStateMove : MobShieldRatState
     public override void StartState()
     {
         blackboard.moving = true;
+
+        lastMovementTime = EngineTime.timePassed;
 
         // set move target
         blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -99,7 +101,7 @@ public partial class MobShieldRatStateMove : MobShieldRatState
 
         if(EngineTime.timePassed > lastMovementTime + 1.5)
         {
-            GD.Print(EngineTime.timePassed +  ", black rat stuck");
+            GD.Print(EngineTime.timePassed +  ", shield rat stuck");
 
             // rat is stuck
             // react
