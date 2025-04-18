@@ -30,10 +30,10 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
             return;
         }
 
-        // get if lockbox was already activated
+        // get if spiderweb was already activated
         var wasActivated = WorldData.data.CheckActivatedObjects(this);
 
-        if(wasActivated)
+        if(wasActivated == true)
         {
             QueueFree();
         }

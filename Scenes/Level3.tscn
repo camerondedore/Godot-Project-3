@@ -1,4 +1,4 @@
-[gd_scene load_steps=151 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=150 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -168,9 +168,6 @@ _data = {
 &"l3c3": ExtResource("73_fhqrq"),
 &"l3c4": ExtResource("111_gtujv")
 }
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_q7nja"]
-size = Vector3(8, 4, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_03n5r"]
 size = Vector3(8, 4, 1)
@@ -343,7 +340,7 @@ transform = Transform3D(-0.976183, -0.00178189, 0.155672, 0.00456488, 0.987702, 
 [node name="PropTreeFir1!1744773912_875" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(0.654343, 0.0125185, -0.853321, 0.00894659, 1.07512, 0.0226328, 0.853366, -0.0208704, 0.654071, 49.9938, 9.9994, -168.47)
 
-[node name="PropTreeFir1!1744815462_961" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
+[node name="PropTreeFir1!1744815462_961" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1" instance=ExtResource("17_ly4gl")]
 transform = Transform3D(0.723434, -0.0485021, -0.578918, 0.0236814, 0.926277, -0.048011, 0.580464, 0.0226586, 0.723467, 63.2433, 9.9994, -198.474)
 
 [node name="Fir2" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees"]
@@ -1809,14 +1806,16 @@ transform = Transform3D(0.49848, -0.866026, -0.0389598, -0.0779196, 2.22045e-16,
 
 [node name="Fabrications" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
-[node name="PropWatchTowerBg" parent="Map/OccluderInstance3D/Props/Fabrications" instance=ExtResource("76_m440i")]
+[node name="PropWatchTowerBg" parent="Map/OccluderInstance3D/Props/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 9, -63)
+linkedObjects3 = [NodePath("../../../../Cinematics/Cinematic1/Trigger")]
 
 [node name="PropWatchTowerBg2" parent="Map/OccluderInstance3D/Props/Fabrications" instance=ExtResource("76_m440i")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -79.0233, 12, -93.0369)
 
-[node name="PropWatchTowerBg3" parent="Map/OccluderInstance3D/Props/Fabrications" instance=ExtResource("76_m440i")]
+[node name="PropWatchTowerBg3" parent="Map/OccluderInstance3D/Props/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 82.2383, 16, -172.238)
+linkedObjects3 = [NodePath("../../../../Cinematics/Cinematic4/Trigger")]
 
 [node name="BlackberryBushes" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
@@ -2093,7 +2092,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.1, 5, -71.35)
 
 [node name="PickupNettleBroth2" parent="Map/Pickups" instance=ExtResource("46_t7hnf")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -70.6652, 8.2, -98.5427)
-pickupPrefabs = Array[PackedScene]([])
+pickupPrefabs = []
 
 [node name="PickupCandiedNut9" parent="Map/Pickups" instance=ExtResource("34_g5lip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8, 9, -68.5)
@@ -2274,18 +2273,11 @@ script = ExtResource("59_w44n8")
 
 [node name="Cinematic1" type="Node3D" parent="Map/Cinematics"]
 
-[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("cinematic")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 6, -65)
-collision_layer = 0
-collision_mask = 128
-monitorable = false
-script = ExtResource("71_qbr3e")
+[node name="Trigger" type="Node" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("cinematic", "playerCharacter")]
+script = ExtResource("121_2vvni")
 cinematic = NodePath("../../CinematicsLevel3")
+playerCharacter = NodePath("../../../../PlayerCharacter")
 cinematicAnimationName = "l3c1"
-saveToWorldData = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic1/Trigger"]
-shape = SubResource("BoxShape3D_q7nja")
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic1"]
 transform = Transform3D(0.922194, 0.210628, -0.324337, 0, 0.83867, 0.54464, 0.386728, -0.502264, 0.773416, 10.5527, 8.54053, -65.7583)
@@ -2385,7 +2377,7 @@ script = ExtResource("72_7il2i")
 moveTime = 1.5
 
 [node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic3"]
-transform = Transform3D(-0.987688, -0.00204779, 0.156426, 0, 0.999914, 0.01309, -0.156439, 0.0129288, -0.987603, -21.4409, 7.59365, -89.8263)
+transform = Transform3D(-0.999915, -0.00414452, 0.0123866, 0, 0.948323, 0.317307, -0.0130615, 0.31728, -0.948242, -21.7374, 8.63638, -91.7264)
 script = ExtResource("72_7il2i")
 moveTime = 1.5
 
@@ -2413,7 +2405,7 @@ mob = ExtResource("31_jdoyc")
 
 [node name="Cinematic4" type="Node3D" parent="Map/Cinematics"]
 
-[node name="TriggerSwitch" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("cinematic", "playerCharacter")]
+[node name="Trigger" type="Node" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("cinematic", "playerCharacter")]
 script = ExtResource("121_2vvni")
 cinematic = NodePath("../../CinematicsLevel3")
 playerCharacter = NodePath("../../../../PlayerCharacter")
@@ -2551,7 +2543,7 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 
 [node name="TriggerDead" type="Timer" parent="Map/TriggerAreas" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
 script = ExtResource("121_igisw")
-watchedNodes = Array[PackedScene]([])
+watchedNodes = []
 linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame4/Portcullis")]
 
 [node name="SecretAreas" type="Node3D" parent="Map"]

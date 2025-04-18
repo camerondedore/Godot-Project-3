@@ -1,11 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmpydh6hgb54y"]
+[gd_scene load_steps=9 format=3 uid="uid://bmpydh6hgb54y"]
 
 [ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
+[ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
+[ext_resource type="AudioStream" uid="uid://wiwliy3cdnhe" path="res://Audio/wood-board-hit-2.wav" id="2_0b4li"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_huolr"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_liflw"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_wf68u"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_0b4li"]
 
-[node name="PropWatchTowerBg" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_0v20a"]
+size = Vector3(3, 3, 3)
+
+[node name="PropWatchTowerBg" type="StaticBody3D" node_paths=PackedStringArray("linkedObjects1", "linkedObjects2", "linkedObjects3")]
+script = ExtResource("1_o76x5")
+linkedObjects1 = []
+linkedObjects2 = []
+linkedObjects3 = []
+hitSound = ExtResource("2_0b4li")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
@@ -15,3 +26,14 @@ mesh = ExtResource("1_37em4")
 surface_material_override/0 = ExtResource("2_huolr")
 surface_material_override/1 = ExtResource("3_liflw")
 surface_material_override/2 = ExtResource("4_wf68u")
+
+[node name="TowerCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("BoxShape3D_0v20a")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+unit_size = 4.0
+max_distance = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("6_0b4li")
