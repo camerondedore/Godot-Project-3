@@ -10,17 +10,24 @@ public partial class AudioToolsRigidBody : AudioTools3d
     float minimumSpeedSqr = 0.81f,
         timeBetweenHits = 0.5f;
 
-    RigidBody3D rigidOwner;
+    RigidBody3D rigid;
     double lastHitTime;
 
 
 
     public override void _Ready()
     {
-        rigidOwner = (RigidBody3D) Owner;
+        if(Owner is RigidBody3D ownerRigid)
+        {
+            rigid = ownerRigid;
+        }
+        else if(GetParent() is RigidBody3D parentRigid)
+        {
+            rigid = parentRigid;
+        }
 
         // set up signal
-        rigidOwner.BodyEntered += Hit;
+        rigid.BodyEntered += Hit;
     }
 
 
@@ -35,7 +42,7 @@ public partial class AudioToolsRigidBody : AudioTools3d
         }
 
         // check for minimum speed
-        if(rigidOwner.LinearVelocity.LengthSquared() < minimumSpeedSqr)
+        if(rigid.LinearVelocity.LengthSquared() < minimumSpeedSqr)
         {
             // not fast enough
             return;

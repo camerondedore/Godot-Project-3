@@ -113,7 +113,7 @@
 [ext_resource type="Script" uid="uid://54o0f787yck8" path="res://C#/Mob Tools/MobSpawner.cs" id="73_yth1y"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/WaterWithFoam.tres" id="74_ymc6j"]
 [ext_resource type="Animation" uid="uid://7qk7yn6mlrxj" path="res://Animation/Cinematics/l3c2.res" id="75_0bdon"]
-[ext_resource type="PackedScene" uid="uid://bmpydh6hgb54y" path="res://Prefabs/Fabrications/PropWatchTowerBg.tscn" id="76_m440i"]
+[ext_resource type="PackedScene" uid="uid://bmpydh6hgb54y" path="res://Prefabs/Player Bow Targets/PropWatchTower.tscn" id="76_m440i"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="80_wujbj"]
 [ext_resource type="Script" uid="uid://deoaa3om66g6o" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="81_bjuva"]
 [ext_resource type="Script" uid="uid://bk2oontuca4uj" path="res://C#/CinematicCharacter/CinematicCharacterAudioAction.cs" id="82_tmun0"]
@@ -1529,6 +1529,21 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -33.15
 [node name="PropBridgeHalf2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("39_i5gru")]
 transform = Transform3D(-4.37114e-08, -3.82137e-15, 1, -8.74228e-08, 1, 0, -1, -8.74228e-08, -4.37114e-08, -12.35, 21, -203)
 
+[node name="PropWatchTower" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 9, -63)
+linkedObjects3 = [NodePath("../../../../../Cinematics/Cinematic1/Trigger")]
+
+[node name="PropWatchTower2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -79.0233, 12, -93.0369)
+linkedObjects3 = [NodePath("../../../../../Cinematics/Cinematic4/Trigger")]
+
+[node name="PropWatchTower3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 82.2383, 16, -172.238)
+linkedObjects3 = [NodePath("../../../../../Cinematics/Cinematic5/Trigger")]
+
+[node name="PropWatchTower4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("76_m440i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00412, 2.05483, -29.9938)
+
 [node name="Doors" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="DoorFrame" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("22_o8esg")]
@@ -1901,18 +1916,6 @@ transform = Transform3D(-0.954959, -0.296475, -0.0125011, -0.0130896, -5.72163e-
 transform = Transform3D(0.49848, -0.866026, -0.0389598, -0.0779196, 2.22045e-16, -0.99696, 0.863392, 0.5, -0.0674804, 3.02352, 4.1499, -52.1486)
 
 [node name="Fabrications" type="Node3D" parent="Map/OccluderInstance3D/Props"]
-
-[node name="PropWatchTowerBg" parent="Map/OccluderInstance3D/Props/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 9, -63)
-linkedObjects3 = [NodePath("../../../../Cinematics/Cinematic1/Trigger")]
-
-[node name="PropWatchTowerBg2" parent="Map/OccluderInstance3D/Props/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -79.0233, 12, -93.0369)
-linkedObjects3 = [NodePath("../../../../Cinematics/Cinematic4/Trigger")]
-
-[node name="PropWatchTowerBg3" parent="Map/OccluderInstance3D/Props/Fabrications" node_paths=PackedStringArray("linkedObjects3") instance=ExtResource("76_m440i")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 82.2383, 16, -172.238)
-linkedObjects3 = [NodePath("../../../../Cinematics/Cinematic5/Trigger")]
 
 [node name="BlackberryBushes" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

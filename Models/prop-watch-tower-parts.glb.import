@@ -1,0 +1,120 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://b8x6g6gxc8y7i"
+path="res://.godot/imported/prop-watch-tower-parts.glb-0dbd29006be45ff4dca5b0c30bf96641.scn"
+
+[deps]
+
+source_file="res://Models/prop-watch-tower-parts.glb"
+dest_files=["res://.godot/imported/prop-watch-tower-parts.glb-0dbd29006be45ff4dca5b0c30bf96641.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"meshes": {
+"prop-watch-tower-parts_prop-watch-tower-black": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-black.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-floor-board": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-floor-board.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-ladder": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-ladder.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-ladder-step": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-ladder-step.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-posts": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-posts.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-support": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-support.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-support-long": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-support-long.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-support-short": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-support-short.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-truss-board": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-truss-board.res"
+},
+"prop-watch-tower-parts_prop-watch-tower-wall-board": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Models/prop-watch-tower-wall-board.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

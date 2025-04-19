@@ -1,0 +1,1638 @@
+[gd_scene load_steps=34 format=3 uid="uid://bmpydh6hgb54y"]
+
+[ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
+[ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
+[ext_resource type="AudioStream" uid="uid://wiwliy3cdnhe" path="res://Audio/wood-board-hit-2.wav" id="2_0b4li"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_huolr"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_liflw"]
+[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_wf68u"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_0b4li"]
+[ext_resource type="ArrayMesh" uid="uid://blyi0hbng72nj" path="res://Models/prop-watch-tower-posts.res" id="7_bewtm"]
+[ext_resource type="Script" uid="uid://bhul4k7mg1jny" path="res://C#/Common/PinnedRigidbody.cs" id="9_mma1k"]
+[ext_resource type="ArrayMesh" uid="uid://dkxw07myip2tg" path="res://Models/prop-watch-tower-black.res" id="9_q50xx"]
+[ext_resource type="ArrayMesh" uid="uid://buk5oqbxokkrx" path="res://Models/prop-watch-tower-support-long.res" id="10_q50xx"]
+[ext_resource type="Script" uid="uid://dfr5twmrytauh" path="res://C#/Common/AudioToolsRigidBody.cs" id="11_k1egh"]
+[ext_resource type="AudioStream" uid="uid://rg2w4kfv2sn4" path="res://Audio/wood-board-hit-1.wav" id="12_2xryf"]
+[ext_resource type="AudioStream" uid="uid://dbf4bbajwckh7" path="res://Audio/wood-board-hit-3.wav" id="13_04b65"]
+[ext_resource type="AudioStream" uid="uid://cfp5w7aausexx" path="res://Audio/wood-board-hit-4.wav" id="14_i6rbm"]
+[ext_resource type="ArrayMesh" uid="uid://y78etl0835pi" path="res://Models/prop-watch-tower-floor-board.res" id="15_mma1k"]
+[ext_resource type="ArrayMesh" uid="uid://bqrabwjuc8wkt" path="res://Models/prop-watch-tower-support.res" id="16_k1egh"]
+[ext_resource type="ArrayMesh" uid="uid://dm5g6xhdkw8lj" path="res://Models/prop-watch-tower-support-short.res" id="17_pou6k"]
+[ext_resource type="ArrayMesh" uid="uid://dvqiv44rq045s" path="res://Models/prop-watch-tower-wall-board.res" id="19_3vqo4"]
+[ext_resource type="ArrayMesh" uid="uid://bm08bich2l4tq" path="res://Models/prop-watch-tower-truss-board.res" id="19_v3f2i"]
+[ext_resource type="ArrayMesh" uid="uid://b8lubvhxgwlam" path="res://Models/prop-watch-tower-ladder.res" id="20_nfnnu"]
+[ext_resource type="ArrayMesh" uid="uid://w7cjobx8kkqx" path="res://Models/prop-watch-tower-ladder-step.res" id="21_3vqo4"]
+[ext_resource type="Script" uid="uid://bmtun66lcr0k1" path="res://C#/MeshActivable.cs" id="21_ibf7r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0v20a"]
+size = Vector3(3.3, 3.3, 3)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bewtm"]
+radius = 0.18
+height = 9.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3f2i"]
+size = Vector3(2.4, 0.3, 0.18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qs27t"]
+size = Vector3(2.6, 0.53, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q50xx"]
+size = Vector3(3.2, 0.1, 0.53)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hcby"]
+size = Vector3(1.3, 0.1, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ltfw"]
+size = Vector3(5, 0.3, 0.18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xryf"]
+size = Vector3(3, 0.3, 0.18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ce6qm"]
+size = Vector3(0.2, 0.2, 1.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibf7r"]
+size = Vector3(1.5, 5.5, 0.3)
+
+[node name="PropWatchTower" type="StaticBody3D" node_paths=PackedStringArray("linkedObjects1", "linkedObjects2", "linkedObjects3")]
+collision_layer = 64
+script = ExtResource("1_o76x5")
+linkedObjects1 = []
+linkedObjects2 = []
+linkedObjects3 = []
+hitSound = ExtResource("2_0b4li")
+
+[node name="ArrowCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+shape = SubResource("BoxShape3D_0v20a")
+debug_color = Color(0.781057, 0.124824, 1, 0.42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+visible = false
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_37em4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+surface_material_override/2 = ExtResource("4_wf68u")
+
+[node name="Posts" type="StaticBody3D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="TowerPosts" type="MeshInstance3D" parent="Posts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("7_bewtm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Posts"]
+transform = Transform3D(0.997425, -0.0716031, 0.0041587, 0.0717238, 0.995747, -0.0578329, 0, 0.0579822, 0.998318, 1.41498, 4.1557, -1.43616)
+shape = SubResource("CapsuleShape3D_bewtm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Posts"]
+transform = Transform3D(-0.258152, 0.0745387, 0.963224, 0.0717237, 0.995747, -0.0578329, -0.963438, 0.0541564, -0.262401, -1.40534, 4.1557, -1.43616)
+shape = SubResource("CapsuleShape3D_bewtm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Posts"]
+transform = Transform3D(-0.997425, 0.0716031, -0.00415861, 0.0717237, 0.995747, -0.0578329, -8.72675e-08, -0.0579822, -0.998318, -1.40534, 4.1557, 1.42108)
+shape = SubResource("CapsuleShape3D_bewtm")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Posts"]
+transform = Transform3D(0.258152, -0.0745387, -0.963224, 0.0717237, 0.995747, -0.0578329, 0.963438, -0.0541564, 0.2624, 1.41498, 4.1557, 1.42108)
+shape = SubResource("CapsuleShape3D_bewtm")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+unit_size = 4.0
+max_distance = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("6_0b4li")
+
+[node name="Break1" type="Node3D" parent="."]
+
+[node name="SupportShort" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, -0.0871557, 0, 0.0871557, 0.996195, 0, 8.32853, -1.41227)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/SupportShort"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("17_pou6k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/SupportShort"]
+shape = SubResource("BoxShape3D_v3f2i")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/SupportShort"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard3" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.71485e-08, -0.996862, -0.0791551, -6.91995e-09, -0.0791551, 0.996862, 0, 7.89192, -1.41687)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/WallBoard3"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/WallBoard3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard6" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(3.67914e-08, 0.079155, -0.996862, -8.71485e-08, 0.996862, 0.079155, 1, 8.39628e-08, 4.35742e-08, -1.36057, 7.89192, -0.0032351)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard6"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/WallBoard6"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/WallBoard6"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard7" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(5.06314e-08, 0.0791551, -0.996862, -8.71485e-08, -0.996862, -0.0791551, -1, 9.08828e-08, -4.35742e-08, 1.47498, 6.29694, -0.0032351)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard7"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/WallBoard7"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/WallBoard7"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard12" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(1, 1.30343e-09, -2.61319e-07, 1.21072e-08, 0.998741, 0.0501571, 2.64496e-07, -0.050157, 0.998741, -0.0433471, 7.91417, 1.53555)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard12"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/WallBoard12"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/WallBoard12"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard2" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(-1.89276e-07, -0.5, 0.866025, 1.09278e-07, -0.866025, -0.5, 1, -2.51377e-14, 2.18557e-07, 0.711545, 9.07319, -0.00736891)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/RoofBoard2"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard4" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(-1.89276e-07, -0.5, 0.866025, 1.09278e-07, -0.866025, -0.5, 1, 3.28405e-15, 2.18557e-07, 1.67258, 8.51834, -0.00736872)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/RoofBoard4"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard7" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(1.01853e-07, -0.5, 0.866025, 1.09278e-07, 0.866025, 0.5, -1, 4.37114e-08, 1.42847e-07, -1.18374, 8.79604, -0.00736886)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard7"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/RoofBoard7"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard7"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard8" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(1.01853e-07, 0.5, -0.866025, 1.09278e-07, -0.866025, -0.5, -1, -4.37114e-08, -1.42847e-07, -1.66473, 8.51834, -0.00736894)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard8"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/RoofBoard8"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard8"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="LadderStep5" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(-1, -7.64274e-15, 8.74228e-08, 0, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 0, 5.27436, 1.81535)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/LadderStep5"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("21_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/LadderStep5"]
+shape = SubResource("BoxShape3D_3hcby")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/LadderStep5"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="FloorBoard3" type="RigidBody3D" parent="Break1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0506, 0.0293514)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -2, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/FloorBoard3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/FloorBoard3"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/FloorBoard3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Break2" type="Node3D" parent="."]
+
+[node name="SupportLong" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(0.613927, -0.789363, 0, 0.787606, 0.612561, -0.0666744, 0.0526302, 0.0409332, 0.997775, -0.131496, 3.38469, -1.74773)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportLong"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("10_q50xx")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/SupportLong"]
+shape = SubResource("BoxShape3D_2ltfw")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/SupportLong"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="SupportLong4" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(-0.0600936, -0.0349549, 0.997581, -0.780028, 0.625242, -0.02508, -0.622853, -0.779647, -0.0648388, -1.72899, 3.51676, -0.139441)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportLong4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("10_q50xx")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/SupportLong4"]
+shape = SubResource("BoxShape3D_2ltfw")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/SupportLong4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Support2" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(1, -9.50422e-08, 8.70901e-08, -8.70901e-08, -0.996195, -0.0871557, 9.50422e-08, 0.0871557, -0.996195, 0, 5.58973, 1.60835)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("16_k1egh")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/Support2"]
+shape = SubResource("BoxShape3D_2xryf")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/Support2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Support4" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(-4.37114e-08, -0.0871557, -0.996195, 0, 0.996195, -0.0871557, 1, -3.8097e-09, -4.35451e-08, 1.55127, 5.83238, -0.00776482)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("16_k1egh")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/Support4"]
+shape = SubResource("BoxShape3D_2xryf")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/Support4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Support5" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(1.31134e-07, 0.0871557, 0.996195, -4.44089e-16, 0.996195, -0.0871557, -1, 1.14291e-08, 1.30635e-07, -1.55491, 5.83238, -0.00776482)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support5"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("16_k1egh")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/Support5"]
+shape = SubResource("BoxShape3D_2xryf")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/Support5"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard2" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(1, 0, 0, 0, -0.996862, 0.0791551, 0, -0.0791551, -0.996862, 0, 6.84521, -1.49998)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/WallBoard2"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/WallBoard2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard4" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(-4.37114e-08, -0.0791551, -0.996862, 0, -0.996862, 0.0791551, -1, 3.45998e-09, 4.35742e-08, -1.48722, 6.29694, -0.0032351)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/WallBoard4"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/WallBoard4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard10" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(-4.48636e-08, 1, -1.80205e-07, -0.998741, -3.49246e-08, 0.0501571, 0.0501571, 2.01166e-07, 0.998741, 0.918777, 6.9661, 1.48205)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard10"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/WallBoard10"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/WallBoard10"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="LadderStep4" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7914, 1.94476)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/LadderStep4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("21_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/LadderStep4"]
+shape = SubResource("BoxShape3D_3hcby")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/LadderStep4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(1.13566e-07, 0.5, 0.866025, -6.55671e-08, 0.866025, -0.5, -1, 3.82137e-15, 1.31134e-07, 0.23609, 9.3477, -0.00736898)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/RoofBoard"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/RoofBoard"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/RoofBoard"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard5" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(-2.61428e-08, 0.5, 0.866025, -6.55671e-08, -0.866025, 0.5, 1, -4.37114e-08, 5.54238e-08, -0.228244, 9.3477, -0.0073688)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/RoofBoard5"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/RoofBoard5"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/RoofBoard5"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="FloorBoard2" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 6.0506, -0.516179)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 2, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/FloorBoard2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/FloorBoard2"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/FloorBoard2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="SupportShort2" type="RigidBody3D" parent="Break2"]
+transform = Transform3D(-4.37114e-08, 0.0871557, 0.996195, 0, 0.996195, -0.0871557, -1, -3.8097e-09, -4.35451e-08, -1.35602, 8.32853, -0.00200737)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+velocitySpread = 2.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportShort2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("17_pou6k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break2/SupportShort2"]
+shape = SubResource("BoxShape3D_v3f2i")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break2/SupportShort2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Break3" type="Node3D" parent="."]
+
+[node name="Black" type="MeshInstance3D" parent="Break3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("9_q50xx")
+skeleton = NodePath("../../Break2/SupportLong")
+surface_material_override/0 = ExtResource("4_wf68u")
+script = ExtResource("21_ibf7r")
+
+[node name="SupportShort4" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-1, -7.6194e-09, -8.70901e-08, 0, 0.996195, -0.0871557, 8.74228e-08, -0.0871557, -0.996195, 0, 8.32853, 1.42726)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/SupportShort4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("17_pou6k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/SupportShort4"]
+shape = SubResource("BoxShape3D_v3f2i")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/SupportShort4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="TrussBoard" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-3.78552e-08, -0.5, -0.866025, -2.18557e-08, 0.866025, -0.5, 1, 0, -4.37114e-08, -0.83463, 8.81776, 1.21399)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_v3f2i")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/TrussBoard"]
+shape = SubResource("BoxShape3D_ce6qm")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/TrussBoard"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="TrussBoard2" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-4.95676e-08, 0.5, 0.866025, -2.18557e-08, 0.866025, -0.5, -1, -4.37114e-08, -3.1999e-08, 0.83482, 8.81776, 1.21399)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_v3f2i")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/TrussBoard2"]
+shape = SubResource("BoxShape3D_ce6qm")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/TrussBoard2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="TrussBoard3" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-3.78552e-08, -0.5, -0.866025, -2.18557e-08, 0.866025, -0.5, 1, 0, -4.37114e-08, -0.83463, 8.81776, -1.21717)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_v3f2i")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/TrussBoard3"]
+shape = SubResource("BoxShape3D_ce6qm")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/TrussBoard3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="TrussBoard4" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-4.95676e-08, 0.5, 0.866025, -2.18557e-08, 0.866025, -0.5, -1, -4.37114e-08, -3.1999e-08, 0.83482, 8.81776, -1.21717)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_v3f2i")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/TrussBoard4"]
+shape = SubResource("BoxShape3D_ce6qm")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/TrussBoard4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard3" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(2.64986e-07, 0.5, 0.866025, -1.5299e-07, 0.866025, -0.5, -1, 5.71121e-14, 3.0598e-07, 1.19158, 8.79604, -0.00736884)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/RoofBoard3"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/RoofBoard3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard6" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-2.61428e-08, -0.5, -0.866025, -6.55671e-08, 0.866025, -0.5, 1, 4.37114e-08, -5.54238e-08, -0.703699, 9.07319, -0.00736883)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 4, 0)
+angularVelocity = Vector3(15, 10, 5)
+velocitySpread = 1.0
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard6"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/RoofBoard6"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/RoofBoard6"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard8" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-4.37114e-08, -0.079155, -0.996862, -2.22045e-16, 0.996862, -0.079155, 1, -3.45998e-09, -4.35742e-08, 1.43145, 6.84521, -0.0032351)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard8"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/WallBoard8"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/WallBoard8"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard9" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-1.3778e-07, 0.0791551, 0.996862, 8.02286e-08, -0.996862, 0.079155, 1, 9.08828e-08, 1.30997e-07, 1.34834, 7.89192, -0.00323511)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard9"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/WallBoard9"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/WallBoard9"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="FloorBoard4" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-1, 0, -7.45058e-08, 0, 1, 0, 8.9407e-08, 0, -1, 0, 6.0506, 0.578947)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -2, 0)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/FloorBoard4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/FloorBoard4"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/FloorBoard4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="LadderStep" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34251, 2.33298)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("21_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/LadderStep"]
+shape = SubResource("BoxShape3D_3hcby")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/LadderStep"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="LadderStep2" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 3.82547, 2.20358)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, 4)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("21_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/LadderStep2"]
+shape = SubResource("BoxShape3D_3hcby")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/LadderStep2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="LadderStep3" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 4.30844, 2.07417)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("21_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/LadderStep3"]
+shape = SubResource("BoxShape3D_3hcby")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/LadderStep3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard11" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-4.48636e-08, -1, 2.67627e-07, -0.998742, 3.03262e-08, -0.0501571, 0.0501572, -2.88468e-07, -0.998741, -0.902664, 6.9661, 1.48205)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(15, 10, 5)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard11"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/WallBoard11"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/WallBoard11"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="SupportLong2" type="RigidBody3D" parent="."]
+transform = Transform3D(0.652289, -0.757963, 0.00331158, -0.756836, -0.651546, -0.0518354, 0.0414469, 0.0313053, -0.99865, 0.144497, 2.77611, 1.73343)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SupportLong2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("10_q50xx")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SupportLong2"]
+shape = SubResource("BoxShape3D_2ltfw")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="SupportLong2"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="SupportLong3" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0526304, 0.0409332, -0.997775, -0.780567, 0.62488, -0.0155377, 0.622853, 0.779647, 0.0648387, 1.71749, 3.51676, 0.101258)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SupportLong3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("10_q50xx")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SupportLong3"]
+shape = SubResource("BoxShape3D_2ltfw")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="SupportLong3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Support" type="RigidBody3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 8.88178e-16, -8.70901e-08, -0.996195, -0.0871557, -7.6194e-09, -0.0871557, 0.996195, 0, 5.58973, -1.59165)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Support"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("16_k1egh")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Support"]
+shape = SubResource("BoxShape3D_2xryf")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Support"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Support3" type="RigidBody3D" parent="."]
+transform = Transform3D(-1, 7.6194e-09, 8.70901e-08, 0, 0.996195, -0.0871557, -8.74228e-08, -0.0871557, -0.996195, 0, 4.98093, 1.6464)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Support3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("16_k1egh")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Support3"]
+shape = SubResource("BoxShape3D_2xryf")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Support3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="SupportShort3" type="RigidBody3D" parent="."]
+transform = Transform3D(1.31134e-07, -0.0871557, -0.996195, 4.44089e-16, 0.996195, -0.0871557, 1, 1.14291e-08, 1.30635e-07, 1.36767, 8.32853, -0.00200737)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+angularVelocity = Vector3(10, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SupportShort3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("17_pou6k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SupportShort3"]
+shape = SubResource("BoxShape3D_v3f2i")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="SupportShort3"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="FloorBoard" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.0506, -1.06295)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -2, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBoard"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorBoard"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="FloorBoard"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="FloorBoard5" type="RigidBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 7.64274e-15, -1, -8.74228e-08, -8.74228e-08, -8.74228e-08, 1, 0, 6.0506, 1.13133)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 2, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBoard5"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorBoard5"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="FloorBoard5"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996862, -0.0791551, 0, 0.0791551, 0.996862, 0, 6.29694, -1.54352)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WallBoard"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallBoard"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="WallBoard"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="WallBoard5" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.0791552, 0.996862, 0, 0.996862, -0.0791552, -1, -3.45998e-09, -4.35742e-08, -1.44368, 6.84521, -0.0032351)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, 0, -4)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="WallBoard5"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("19_3vqo4")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallBoard5"]
+shape = SubResource("BoxShape3D_qs27t")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="WallBoard5"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="Ladder" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 1.89362, 2.72121)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ladder"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("20_nfnnu")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ladder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_ibf7r")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Ladder"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0

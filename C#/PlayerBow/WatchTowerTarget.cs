@@ -16,7 +16,10 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
     string arrowType = "weighted";
     Vector3 targetOffset = new Vector3(0, 7.5f, 0);
     AudioTools3d audio;
-    CollisionShape3D towerCollider;
+    CollisionShape3D arrowCollider;
+    Node[] breakingNodes1,
+        breakingNodes2,
+        breakingNodes3;
     int hitPoints = 3;
 
 
@@ -25,7 +28,12 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
     {
         // get nodes
         audio = (AudioTools3d) GetNode("Audio");
-        towerCollider = (CollisionShape3D) GetNode("TowerCollider");
+        arrowCollider = (CollisionShape3D) GetNode("ArrowCollider");
+
+        // get breaking nodes
+        breakingNodes1 = GetNode("Break1").GetChildren().ToArray();
+        breakingNodes2 = GetNode("Break2").GetChildren().ToArray();
+        breakingNodes3 = GetNode("Break3").GetChildren().ToArray();
 
         // get if tower was already activated
         var wasActivated = WorldData.data.CheckActivatedObjects(this);
@@ -43,7 +51,7 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
             }
 
             // disable collider
-            towerCollider.Disabled = true;
+            arrowCollider.Disabled = true;
             // disable script
             SetScript(new Variant());
         }
@@ -87,15 +95,18 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
         {
             case 3:
                 ActivateLinkedNodes(linkedObjects1);
+                ActivateLinkedNodes(breakingNodes1);
                 break;
             case 2:
                 ActivateLinkedNodes(linkedObjects2);
+                ActivateLinkedNodes(breakingNodes2);
                 break;
             case 1:
                 // cinematic can be in this array of linked nodes
                 ActivateLinkedNodes(linkedObjects3);
+                ActivateLinkedNodes(breakingNodes3);
                 // disable collider
-                towerCollider.Disabled = true;
+                arrowCollider.Disabled = true;
                 // disable script
                 SetScript(new Variant());
                 break;
