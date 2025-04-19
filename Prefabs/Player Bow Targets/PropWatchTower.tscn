@@ -125,8 +125,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/SupportShort"]
@@ -157,8 +158,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard3"]
@@ -189,8 +191,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard6"]
@@ -221,8 +224,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard7"]
@@ -253,8 +257,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard12"]
@@ -285,8 +290,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard2"]
@@ -317,8 +323,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard4"]
@@ -349,8 +356,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard7"]
@@ -381,8 +389,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard8"]
@@ -413,8 +422,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/LadderStep5"]
@@ -445,8 +455,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -2, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/FloorBoard3"]
@@ -479,8 +490,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportLong"]
@@ -511,8 +523,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportLong4"]
@@ -543,8 +556,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support2"]
@@ -575,8 +589,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support4"]
@@ -607,8 +622,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support5"]
@@ -639,8 +655,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard2"]
@@ -671,8 +688,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard4"]
@@ -703,8 +721,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard10"]
@@ -735,8 +754,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/LadderStep4"]
@@ -767,8 +787,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/RoofBoard"]
@@ -799,8 +820,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/RoofBoard5"]
@@ -831,8 +853,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 2, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/FloorBoard2"]
@@ -863,8 +886,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 2.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportShort2"]
@@ -906,7 +930,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(10, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/SupportShort4"]
@@ -937,7 +962,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard"]
@@ -968,7 +994,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard2"]
@@ -999,7 +1026,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard3"]
@@ -1030,7 +1058,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard4"]
@@ -1061,8 +1090,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard3"]
@@ -1093,8 +1123,9 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 4, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
 velocitySpread = 1.0
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard6"]
@@ -1125,7 +1156,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard8"]
@@ -1156,7 +1188,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard9"]
@@ -1187,7 +1220,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -2, 0)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/FloorBoard4"]
@@ -1218,7 +1252,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep"]
@@ -1249,7 +1284,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep2"]
@@ -1280,7 +1316,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep3"]
@@ -1311,7 +1348,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
-angularVelocity = Vector3(15, 10, 5)
+angularVelocity = Vector3(5, 5, 5)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard11"]
@@ -1343,6 +1381,7 @@ script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
 angularVelocity = Vector3(10, 0, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SupportLong2"]
@@ -1374,6 +1413,7 @@ script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
 angularVelocity = Vector3(10, 0, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SupportLong3"]
@@ -1405,6 +1445,7 @@ script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
 angularVelocity = Vector3(10, 0, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Support"]
@@ -1436,6 +1477,7 @@ script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
 angularVelocity = Vector3(10, 0, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Support3"]
@@ -1467,6 +1509,7 @@ script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
 angularVelocity = Vector3(10, 0, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SupportShort3"]
@@ -1497,6 +1540,7 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, -2, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBoard"]
@@ -1527,6 +1571,7 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 2, 0)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBoard5"]
@@ -1557,6 +1602,7 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WallBoard"]
@@ -1587,6 +1633,7 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -4)
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WallBoard5"]
@@ -1616,6 +1663,7 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
+localVelocity = true
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ladder"]

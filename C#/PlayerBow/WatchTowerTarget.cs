@@ -40,7 +40,7 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
 
         if(wasActivated == true)
         {
-            var linkedObjects = linkedObjects1.Concat(linkedObjects2).Concat(linkedObjects3).ToArray();
+            var linkedObjects = linkedObjects1.Concat(linkedObjects2).Concat(linkedObjects3).Concat(breakingNodes1).Concat(breakingNodes2).Concat(breakingNodes3).ToArray();
 
             foreach(var obj in linkedObjects)
             {

@@ -11,6 +11,8 @@ public partial class PinnedRigidbody : RigidBody3D, IActivatable
         angularVelocity;
     [Export]
     float velocitySpread;
+    [Export]
+    bool localVelocity = false;
 
     uint layerAsDecimal = 0;
 
@@ -32,7 +34,15 @@ public partial class PinnedRigidbody : RigidBody3D, IActivatable
 
         // apply velocity
         var spread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * velocitySpread;
-        LinearVelocity = velocity + spread;
+
+        if(localVelocity == true)
+        {
+            LinearVelocity = ToGlobal(velocity) - GlobalPosition + spread;
+        }
+        else
+        {
+            LinearVelocity = velocity + spread;
+        }
 
         // apply angular velocity
         var newAngularVelocity = new Vector3(angularVelocity.X * GD.Randf() - 0.5f, angularVelocity.Y * GD.Randf() - 0.5f, angularVelocity.Z * GD.Randf() - 0.5f);
