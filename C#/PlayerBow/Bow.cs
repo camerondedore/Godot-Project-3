@@ -23,7 +23,7 @@ namespace PlayerBow
 
 
 
-    public void Fire(IBowTarget target)
+    public bool Fire(IBowTarget target)
     {
             isDrawn = false;
 
@@ -31,7 +31,7 @@ namespace PlayerBow
             if(target == null)
             {
                 GD.Print("null bow target");
-                return;
+                return false;
             }
 
             // default weighted
@@ -63,6 +63,12 @@ namespace PlayerBow
             
             // set new arrow position and look direction
             var direction = GetLaunchVectorToHitTarget(GlobalPosition, target.GetTargetGlobalPosition(), newArrow.speed);
+
+            if(direction == Vector3.Zero)
+            {
+                return false;
+            }
+
             newArrow.LookAtFromPosition(GlobalPosition, GlobalPosition + direction.Normalized());
             
             // assign to scene
@@ -71,6 +77,8 @@ namespace PlayerBow
 
             // play audio
             bowAudio.PlaySound(bowFireSound, 0.05f);
+
+            return true;
         }
 
 
@@ -112,13 +120,24 @@ namespace PlayerBow
             var x = flatDirection.Length();
             var y = direction.Y;
 
-            // theta = atan( (s^2 +/- sqrt(s^4 - g(g*x^2 - 2*s^2*y))) / (g*x))
+            // theta = atan( (s^2 +/- sqrt( s^4 - g(g*x^2 - 2*s^2*y) )) / (g*x) )
             // get launch angle
             var gravity = -EngineGravity.magnitude;
 
             var speedSquared = Mathf.Pow(speed, 2);
-            var top = -speedSquared + Mathf.Sqrt(Mathf.Pow(speed, 4) - gravity * (gravity * Mathf.Pow(x, 2) - 2 * speedSquared * y));
+            var speedQuad = Mathf.Pow(speed, 4);
+            var gravityAgainstSpeed = gravity * (gravity * Mathf.Pow(x, 2) - 2 * speedSquared * y);
+            var top = -speedSquared + Mathf.Sqrt(speedQuad - gravityAgainstSpeed);
             var bottom = gravity * x;
+
+
+            if(speedQuad < gravityAgainstSpeed)
+            {
+                GD.Print("arrow cannot hit target: " + speedQuad + " - " + gravityAgainstSpeed + " is negative");
+                
+                // arrow cannot hit target
+                return Vector3.Zero;
+            }
 
             var angle = Mathf.Atan(top / bottom);
 
@@ -133,6 +152,37 @@ namespace PlayerBow
             launchVelocity.Y = vY;
             
             return launchVelocity;
+        }
+
+
+
+        public bool ArrowCanHitTarget(Vector3 start, Vector3 target, float speed)
+        {
+            // get vector to target
+            var direction = target - start;
+
+            // get components of vector to target
+            var flatDirection = direction;
+            flatDirection.Y = 0;
+
+            var x = flatDirection.Length();
+            var y = direction.Y;
+
+            // theta = atan( (s^2 +/- sqrt( s^4 - g(g*x^2 - 2*s^2*y) )) / (g*x) )
+            // get launch angle
+            var gravity = -EngineGravity.magnitude;
+
+            var speedSquared = Mathf.Pow(speed, 2);
+            var speedQuad = Mathf.Pow(speed, 4);
+            var gravityAgainstSpeed = gravity * (gravity * Mathf.Pow(x, 2) - 2 * speedSquared * y);
+
+            if(speedQuad < gravityAgainstSpeed)
+            {            
+                // arrow cannot hit target
+                return false;
+            }
+
+            return true;
         }
     }
 }

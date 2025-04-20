@@ -7,7 +7,8 @@ namespace PlayerCharacterComplex
     {
 
         double startTime;
-        bool hasTargetAtStart;
+        bool hasTargetAtStart,
+            bowFired;
 
 
 
@@ -59,11 +60,14 @@ namespace PlayerCharacterComplex
             hasTargetAtStart = blackboard.bowAimer.target != null;
 
             // fire bow
-            blackboard.bow.Fire(blackboard.bowAimer.target);
+            bowFired = blackboard.bow.Fire(blackboard.bowAimer.target);
             blackboard.crosshairAnimation.Play("crosshair-reset");
 
-            // animation
-            blackboard.animStateMachinePlayback.Travel("character-fire");
+            if(bowFired == true)
+            {
+                // animation
+                blackboard.animStateMachinePlayback.Travel("character-fire");
+            }
         }
 
 
@@ -90,7 +94,7 @@ namespace PlayerCharacterComplex
                 return blackboard.stateMove;
             }
 
-            if(EngineTime.timePassed > startTime + blackboard.fireTime)
+            if(EngineTime.timePassed > startTime + blackboard.fireTime || bowFired == false)
             {
                 if(PlayerInput.fire1 > 0)
                 {

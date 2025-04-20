@@ -242,7 +242,7 @@ tracks/5/path = NodePath("../OccluderInstance3D/NavigationRegion3D/NavProps/Blac
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(3.33333),
+"times": PackedFloat32Array(3.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -302,7 +302,7 @@ script = ExtResource("3_bwek3")
 [node name="DialogueUi" parent="." instance=ExtResource("4_e327v")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("5_kqsfe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5, 5, -87)
 
 [node name="Map" type="Node3D" parent="."]
 
