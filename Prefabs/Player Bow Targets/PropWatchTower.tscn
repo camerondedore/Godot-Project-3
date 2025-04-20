@@ -402,39 +402,6 @@ script = ExtResource("11_k1egh")
 hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
 minimumSpeedSqr = 1.0
 
-[node name="RoofBoard4" type="RigidBody3D" parent="Break1"]
-transform = Transform3D(-1.89276e-07, -0.5, 0.866025, 1.09278e-07, -0.866025, -0.5, 1, 3.28405e-15, 2.18557e-07, 1.67258, 8.51834, -0.00736872)
-collision_layer = 256
-mass = 4.0
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("9_mma1k")
-layerAsBinary = "100000000"
-velocity = Vector3(0, -4, 0)
-angularVelocity = Vector3(5, 1, 1)
-velocitySpread = 1.0
-localVelocity = true
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard4"]
-layers = 2
-gi_mode = 2
-mesh = ExtResource("15_mma1k")
-surface_material_override/0 = ExtResource("2_huolr")
-surface_material_override/1 = ExtResource("3_liflw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/RoofBoard4"]
-shape = SubResource("BoxShape3D_q50xx")
-
-[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard4"]
-unit_size = 2.0
-max_distance = 40.0
-attenuation_filter_cutoff_hz = 20500.0
-script = ExtResource("11_k1egh")
-hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
-minimumSpeedSqr = 1.0
-
 [node name="RoofBoard7" type="RigidBody3D" parent="Break1"]
 transform = Transform3D(1.01853e-07, -0.5, 0.866025, 1.09278e-07, 0.866025, 0.5, -1, 4.37114e-08, 1.42847e-07, -1.18374, 8.79604, -0.00736886)
 collision_layer = 256
@@ -461,39 +428,6 @@ surface_material_override/1 = ExtResource("3_liflw")
 shape = SubResource("BoxShape3D_q50xx")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard7"]
-unit_size = 2.0
-max_distance = 40.0
-attenuation_filter_cutoff_hz = 20500.0
-script = ExtResource("11_k1egh")
-hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
-minimumSpeedSqr = 1.0
-
-[node name="RoofBoard8" type="RigidBody3D" parent="Break1"]
-transform = Transform3D(1.01853e-07, 0.5, -0.866025, 1.09278e-07, -0.866025, -0.5, -1, -4.37114e-08, -1.42847e-07, -1.66473, 8.51834, -0.00736894)
-collision_layer = 256
-mass = 4.0
-freeze = true
-contact_monitor = true
-max_contacts_reported = 1
-script = ExtResource("9_mma1k")
-layerAsBinary = "100000000"
-velocity = Vector3(0, -4, 0)
-angularVelocity = Vector3(5, 1, 1)
-velocitySpread = 1.0
-localVelocity = true
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard8"]
-layers = 2
-gi_mode = 2
-mesh = ExtResource("15_mma1k")
-surface_material_override/0 = ExtResource("2_huolr")
-surface_material_override/1 = ExtResource("3_liflw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Break1/RoofBoard8"]
-shape = SubResource("BoxShape3D_q50xx")
-
-[node name="Audio" type="AudioStreamPlayer3D" parent="Break1/RoofBoard8"]
 unit_size = 2.0
 max_distance = 40.0
 attenuation_filter_cutoff_hz = 20500.0
@@ -1458,6 +1392,72 @@ surface_material_override/1 = ExtResource("3_liflw")
 shape = SubResource("BoxShape3D_qs27t")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="Break3/WallBoard11"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard4" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(-1.89276e-07, -0.5, 0.866025, 1.09278e-07, -0.866025, -0.5, 1, 3.28405e-15, 2.18557e-07, 1.67258, 8.51834, -0.00736872)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -4, 0)
+angularVelocity = Vector3(5, 1, 1)
+velocitySpread = 1.0
+localVelocity = true
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/RoofBoard4"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/RoofBoard4"]
+unit_size = 2.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("11_k1egh")
+hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
+minimumSpeedSqr = 1.0
+
+[node name="RoofBoard8" type="RigidBody3D" parent="Break3"]
+transform = Transform3D(1.01853e-07, 0.5, -0.866025, 1.09278e-07, -0.866025, -0.5, -1, -4.37114e-08, -1.42847e-07, -1.66473, 8.51834, -0.00736894)
+collision_layer = 256
+mass = 4.0
+freeze = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("9_mma1k")
+layerAsBinary = "100000000"
+velocity = Vector3(0, -4, 0)
+angularVelocity = Vector3(5, 1, 1)
+velocitySpread = 1.0
+localVelocity = true
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard8"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("15_mma1k")
+surface_material_override/0 = ExtResource("2_huolr")
+surface_material_override/1 = ExtResource("3_liflw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Break3/RoofBoard8"]
+shape = SubResource("BoxShape3D_q50xx")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="Break3/RoofBoard8"]
 unit_size = 2.0
 max_distance = 40.0
 attenuation_filter_cutoff_hz = 20500.0

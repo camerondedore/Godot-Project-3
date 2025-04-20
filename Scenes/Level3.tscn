@@ -1811,7 +1811,7 @@ openOffset = Vector3(0, 1.5, 0)
 open = false
 
 [node name="PropPlatform4mSmallMoving2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("51_4606n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 5, -108.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 5, -108.6)
 openOffset = Vector3(0, 3, 0)
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]

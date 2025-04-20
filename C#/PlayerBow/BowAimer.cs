@@ -108,7 +108,7 @@ namespace PlayerBow
             {
                 var arrowType = ((IBowTarget) rayCast.GetCollider()).GetArrowType();
                 var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
-                var canHit = bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
+                var canHit = target != null && bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
                 return hasArrow && canHit;
             }
 
@@ -116,7 +116,7 @@ namespace PlayerBow
             {
                 var arrowType = ((IBowTarget) shapeCast.GetCollider(0)).GetArrowType();
                 var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
-                var canHit =  bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
+                var canHit = target != null && bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
                 return hasArrow && canHit;
             }
 

@@ -82,7 +82,7 @@ public partial class MobBrownRatStateMove : MobBrownRatState
         var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
         // check if enemy is close enough and bow has LOS to enemy
-        if(distanceToEnemySqr < blackboard.attackRangeMinSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy))
+        if(distanceToEnemySqr < blackboard.attackRangeMaxSqr && blackboard.eyes.HasLosToTarget(blackboard.enemy))
         {
             // attack
             return blackboard.stateAttack;
