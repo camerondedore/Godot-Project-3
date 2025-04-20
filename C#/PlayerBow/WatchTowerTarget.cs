@@ -17,6 +17,7 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
     Vector3 targetOffset = new Vector3(0, 7.5f, 0);
     AudioTools3d audio;
     CollisionShape3D arrowCollider;
+    ParticleTools towerFx;
     Node[] breakingNodes1,
         breakingNodes2,
         breakingNodes3;
@@ -29,6 +30,7 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
         // get nodes
         audio = (AudioTools3d) GetNode("Audio");
         arrowCollider = (CollisionShape3D) GetNode("ArrowCollider");
+        towerFx = (ParticleTools) GetNode("FxTowerHitDust");
 
         // get breaking nodes
         breakingNodes1 = GetNode("Break1").GetChildren().ToArray();
@@ -90,6 +92,9 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
 
         // audio
         audio.PlaySound(hitSound, 0.1f);
+
+        // fx
+        towerFx.RestartParticles();
 
         switch (hitPoints)
         {

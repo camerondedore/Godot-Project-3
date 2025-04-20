@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bmpydh6hgb54y"]
+[gd_scene load_steps=47 format=3 uid="uid://bmpydh6hgb54y"]
 
 [ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
 [ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
@@ -8,10 +8,13 @@
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_wf68u"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_0b4li"]
 [ext_resource type="ArrayMesh" uid="uid://blyi0hbng72nj" path="res://Models/prop-watch-tower-posts.res" id="7_bewtm"]
+[ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/Fx/FxDust.tres" id="9_3hcby"]
 [ext_resource type="Script" uid="uid://bhul4k7mg1jny" path="res://C#/Common/PinnedRigidbody.cs" id="9_mma1k"]
 [ext_resource type="ArrayMesh" uid="uid://dkxw07myip2tg" path="res://Models/prop-watch-tower-black.res" id="9_q50xx"]
 [ext_resource type="ArrayMesh" uid="uid://buk5oqbxokkrx" path="res://Models/prop-watch-tower-support-long.res" id="10_q50xx"]
+[ext_resource type="Script" uid="uid://cp4jxe16mfbb0" path="res://C#/Common/ParticleTools.cs" id="10_qs27t"]
 [ext_resource type="Script" uid="uid://dfr5twmrytauh" path="res://C#/Common/AudioToolsRigidBody.cs" id="11_k1egh"]
+[ext_resource type="Material" uid="uid://b1fb52ywj54rw" path="res://Materials/Fx/FxDirt.tres" id="11_k3vra"]
 [ext_resource type="AudioStream" uid="uid://rg2w4kfv2sn4" path="res://Audio/wood-board-hit-1.wav" id="12_2xryf"]
 [ext_resource type="AudioStream" uid="uid://dbf4bbajwckh7" path="res://Audio/wood-board-hit-3.wav" id="13_04b65"]
 [ext_resource type="AudioStream" uid="uid://cfp5w7aausexx" path="res://Audio/wood-board-hit-4.wav" id="14_i6rbm"]
@@ -30,6 +33,61 @@ size = Vector3(3.3, 3.3, 3)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bewtm"]
 radius = 0.18
 height = 9.0
+
+[sub_resource type="Curve" id="Curve_qs27t"]
+_data = [Vector2(0, 0), 0.0, 4.24856, 0, 0, Vector2(0.0372881, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_k3vra"]
+curve = SubResource("Curve_qs27t")
+
+[sub_resource type="Curve" id="Curve_vu4l1"]
+_data = [Vector2(0, 0.49473), 0.0, 1.3513, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_7a184"]
+curve = SubResource("Curve_vu4l1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xaljl"]
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(1.5, 1.5, 1.5)
+angle_min = -18.0
+angle_max = 180.0
+angular_velocity_min = -45.0
+angular_velocity_max = 45.0
+gravity = Vector3(0, -1.5, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 0.499998
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_7a184")
+alpha_curve = SubResource("CurveTexture_k3vra")
+
+[sub_resource type="QuadMesh" id="QuadMesh_2e486"]
+
+[sub_resource type="Curve" id="Curve_k3vra"]
+_data = [Vector2(0, 0), 0.0, 17.9004, 0, 0, Vector2(0.0271186, 1), 0.0, 0.0, 0, 0, Vector2(0.830508, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -17.5873, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_vu4l1"]
+curve = SubResource("Curve_k3vra")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vu4l1"]
+lifetime_randomness = 0.25
+emission_shape = 3
+emission_box_extents = Vector3(1.4, 1.4, 1.4)
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+radial_velocity_min = 3.99998
+radial_velocity_max = 4.99998
+scale_min = 0.1
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_vu4l1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7a184"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3f2i"]
 size = Vector3(2.4, 0.3, 0.18)
@@ -112,6 +170,37 @@ unit_size = 4.0
 max_distance = 50.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("6_0b4li")
+
+[node name="FxTowerHitDust" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
+layers = 2
+material_override = ExtResource("9_3hcby")
+cast_shadow = 0
+gi_mode = 2
+emitting = false
+amount = 20
+lifetime = 2.5
+one_shot = true
+explosiveness = 0.95
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+process_material = SubResource("ParticleProcessMaterial_xaljl")
+draw_pass_1 = SubResource("QuadMesh_2e486")
+script = ExtResource("10_qs27t")
+playChildren = true
+
+[node name="FxTowerHitChunks" type="GPUParticles3D" parent="FxTowerHitDust"]
+layers = 2
+material_override = ExtResource("11_k3vra")
+cast_shadow = 0
+gi_mode = 2
+emitting = false
+amount = 20
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+process_material = SubResource("ParticleProcessMaterial_vu4l1")
+draw_pass_1 = SubResource("QuadMesh_7a184")
 
 [node name="Break1" type="Node3D" parent="."]
 
