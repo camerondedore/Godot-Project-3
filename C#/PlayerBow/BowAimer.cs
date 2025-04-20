@@ -12,6 +12,8 @@ namespace PlayerBow
         ShapeCast3D shapeCast;
         [Export]
         BowAimerTargetFx targetFx;
+        [Export]
+        Bow bow;
 
         public IBowTarget target,
             prevTarget;
@@ -104,12 +106,18 @@ namespace PlayerBow
         {
             if(HasRayTarget())
             {
-                return PlayerInventory.inventory.CheckInventoryForArrowType(((IBowTarget) rayCast.GetCollider()).GetArrowType());
+                var arrowType = ((IBowTarget) rayCast.GetCollider()).GetArrowType();
+                var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
+                var canHit = bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
+                return hasArrow && canHit;
             }
 
             if(HasShapeTarget())
             {
-                return PlayerInventory.inventory.CheckInventoryForArrowType(((IBowTarget) shapeCast.GetCollider(0)).GetArrowType());;
+                var arrowType = ((IBowTarget) shapeCast.GetCollider(0)).GetArrowType();
+                var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
+                var canHit =  bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
+                return hasArrow && canHit;
             }
 
             return false;

@@ -34,29 +34,7 @@ namespace PlayerBow
                 return false;
             }
 
-            // default weighted
-            var arrowToFire = weightedArrow;
-
-            // NEED TO ADD OTHER ARROWS
-            switch(target.GetArrowType())
-            {
-                case "pick":
-                    arrowToFire = pickArrow;
-                    break;
-                case "net":
-                    arrowToFire = netArrow;
-                    break;
-                case "fire":
-                    arrowToFire = fireArrow;
-                    break;
-                case "bodkin":
-                    arrowToFire = bodkinArrow;
-                    break;
-                case "blade":
-                    arrowToFire = bladeArrow;
-                    break;
-            }
-
+            var arrowToFire = GetArrowPrefab(target.GetArrowType());
 
             // create new arrow
             var newArrow = (Arrow) arrowToFire.Instantiate();
@@ -79,6 +57,35 @@ namespace PlayerBow
             bowAudio.PlaySound(bowFireSound, 0.05f);
 
             return true;
+        }
+
+
+
+        PackedScene GetArrowPrefab(string arrowType)
+        {
+            // default weighted
+            var arrowToFire = weightedArrow;
+
+            switch(arrowType)
+            {
+                case "pick":
+                    arrowToFire = pickArrow;
+                    break;
+                case "net":
+                    arrowToFire = netArrow;
+                    break;
+                case "fire":
+                    arrowToFire = fireArrow;
+                    break;
+                case "bodkin":
+                    arrowToFire = bodkinArrow;
+                    break;
+                case "blade":
+                    arrowToFire = bladeArrow;
+                    break;
+            }
+
+            return arrowToFire;
         }
 
 
@@ -109,7 +116,7 @@ namespace PlayerBow
 
 
         public Vector3 GetLaunchVectorToHitTarget(Vector3 start, Vector3 target, float speed)
-        {
+        {            
             // get vector to target
             var direction = target - start;
 
@@ -156,8 +163,17 @@ namespace PlayerBow
 
 
 
-        public bool ArrowCanHitTarget(Vector3 start, Vector3 target, float speed)
+        public bool ArrowCanHitTarget(Vector3 start, Vector3 target, string arrowType)
         {
+            var arrow = GetArrowPrefab(arrowType);
+
+            // create new arrow
+            var newArrow = (Arrow) arrow.Instantiate();
+
+            var speed = newArrow.speed;
+
+            newArrow.QueueFree();
+
             // get vector to target
             var direction = target - start;
 
