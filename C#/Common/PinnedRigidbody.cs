@@ -12,8 +12,12 @@ public partial class PinnedRigidbody : RigidBody3D, IActivatable
     [Export]
     float velocitySpread;
     [Export]
-    bool localVelocity = false;
+    bool localVelocity = false,
+        destroyAfterActivation = false;
+    [Export]
+    double destroyTime = 10;
 
+    double activationTime;
     uint layerAsDecimal = 0;
 
 
@@ -26,11 +30,24 @@ public partial class PinnedRigidbody : RigidBody3D, IActivatable
 
 
 
+    public override void _Process(double delta)
+    {
+        // timed destroy
+        if(destroyAfterActivation == true && Freeze == false && EngineTime.timePassed > activationTime + destroyTime)
+        {
+            QueueFree();
+        }
+    }
+
+
+
     public void Activate()
     {
         Freeze = false;
 
         CollisionLayer = layerAsDecimal;
+
+        activationTime = EngineTime.timePassed + GD.Randf() * 2f;
 
         // apply velocity
         var spread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * velocitySpread;

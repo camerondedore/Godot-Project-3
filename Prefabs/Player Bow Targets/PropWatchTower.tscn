@@ -217,6 +217,8 @@ velocity = Vector3(0, 0, -3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/SupportShort"]
@@ -250,6 +252,8 @@ velocity = Vector3(0, -1, -3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard3"]
@@ -283,6 +287,8 @@ velocity = Vector3(0, 1, 3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard6"]
@@ -316,6 +322,8 @@ velocity = Vector3(0, 0, -2)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard7"]
@@ -349,6 +357,8 @@ velocity = Vector3(0, 1, 3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/WallBoard12"]
@@ -382,6 +392,8 @@ velocity = Vector3(0, -4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard2"]
@@ -415,6 +427,8 @@ velocity = Vector3(0, 4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/RoofBoard7"]
@@ -448,6 +462,8 @@ velocity = Vector3(0, -4, 4)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 2.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/LadderStep5"]
@@ -480,6 +496,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, -1, 0)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break1/FloorBoard3"]
@@ -515,6 +533,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportLong"]
@@ -548,6 +568,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportLong4"]
@@ -581,6 +603,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 2.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support2"]
@@ -614,6 +638,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 2.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support4"]
@@ -647,6 +673,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 2.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/Support5"]
@@ -680,6 +708,8 @@ velocity = Vector3(0, 0, 2)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard2"]
@@ -713,6 +743,8 @@ velocity = Vector3(0, 0, 2)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard4"]
@@ -746,6 +778,8 @@ velocity = Vector3(0.5, 0, 2)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/WallBoard10"]
@@ -779,6 +813,8 @@ velocity = Vector3(0, 3, 4)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 2.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/LadderStep4"]
@@ -812,6 +848,8 @@ velocity = Vector3(0, 4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/RoofBoard"]
@@ -845,6 +883,8 @@ velocity = Vector3(0, -4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/RoofBoard5"]
@@ -877,6 +917,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, -1, 0)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/FloorBoard2"]
@@ -910,6 +952,8 @@ velocity = Vector3(0, 0, -3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break2/SupportShort2"]
@@ -954,6 +998,8 @@ velocity = Vector3(0, 0, -3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/SupportShort4"]
@@ -987,6 +1033,8 @@ velocity = Vector3(0, 2, -0.5)
 angularVelocity = Vector3(1, 1, 5)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard"]
@@ -1020,6 +1068,8 @@ velocity = Vector3(0, 2, -0.5)
 angularVelocity = Vector3(1, 1, 5)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard2"]
@@ -1053,6 +1103,8 @@ velocity = Vector3(0, 2, -0.5)
 angularVelocity = Vector3(1, 1, 5)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard3"]
@@ -1086,6 +1138,8 @@ velocity = Vector3(0, 2, -0.5)
 angularVelocity = Vector3(1, 1, 5)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/TrussBoard4"]
@@ -1119,6 +1173,8 @@ velocity = Vector3(0, 4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard3"]
@@ -1152,6 +1208,8 @@ velocity = Vector3(0, 4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard6"]
@@ -1185,6 +1243,8 @@ velocity = Vector3(0, 0, -2)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard8"]
@@ -1218,6 +1278,8 @@ velocity = Vector3(0, -1, 3)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard9"]
@@ -1250,6 +1312,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, -1, 0)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/FloorBoard4"]
@@ -1282,6 +1346,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, 0, 4)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep"]
@@ -1314,6 +1380,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, -1, -3)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep2"]
@@ -1346,6 +1414,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, 2, -2)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/LadderStep3"]
@@ -1379,6 +1449,8 @@ velocity = Vector3(-0.5, 0, -2)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/WallBoard11"]
@@ -1412,6 +1484,8 @@ velocity = Vector3(0, -4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard4"]
@@ -1445,6 +1519,8 @@ velocity = Vector3(0, -4, 0)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Break3/RoofBoard8"]
@@ -1478,6 +1554,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SupportLong2"]
@@ -1511,6 +1589,8 @@ velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(5, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SupportLong3"]
@@ -1543,6 +1623,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(10, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Support"]
@@ -1575,6 +1657,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, 0, -1)
 angularVelocity = Vector3(10, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Support3"]
@@ -1608,6 +1692,8 @@ velocity = Vector3(0, 0, -3)
 angularVelocity = Vector3(10, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SupportShort3"]
@@ -1640,6 +1726,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, -1, 0)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBoard"]
@@ -1672,6 +1760,8 @@ layerAsBinary = "100000000"
 velocity = Vector3(0, 1, 0)
 angularVelocity = Vector3(5, 1, 1)
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBoard5"]
@@ -1705,6 +1795,8 @@ velocity = Vector3(0, 0, -2)
 angularVelocity = Vector3(0, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WallBoard"]
@@ -1738,6 +1830,8 @@ velocity = Vector3(0, 0, -2)
 angularVelocity = Vector3(0, 1, 1)
 velocitySpread = 1.0
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WallBoard5"]
@@ -1768,6 +1862,8 @@ max_contacts_reported = 1
 script = ExtResource("9_mma1k")
 layerAsBinary = "100000000"
 localVelocity = true
+destroyAfterActivation = true
+destroyTime = 30.0
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ladder"]
