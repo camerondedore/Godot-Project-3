@@ -3154,15 +3154,15 @@ targetCharacter = NodePath("../CinematicCharacterLumsden")
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterLumsden")
 audioClip = ExtResource("183_pismn")
-dialogueText = "Morning.  I'm afraid we have no time to waste.  The rats spent the night building their own fortifications."
-displayTime = 6.5
+dialogueText = "Good morning.  We're in need of your help again.  The rats have been building forts South of here."
+displayTime = 6.0
 
 [node name="AudioAction2" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")
 targetCharacter = NodePath("../CinematicCharacterLumsden")
 audioClip = ExtResource("184_juduu")
-dialogueText = "You need to attack them before they settle in and recuperate their strength."
-displayTime = 4.2
+dialogueText = "We've tried to hinder their efforts, but they've erected watch towers to spot us when we come close."
+displayTime = 5.0
 
 [node name="AudioAction3" type="Node" parent="Map/Cinematics/Cinematic5" node_paths=PackedStringArray("targetCharacter")]
 script = ExtResource("50_vkiwa")

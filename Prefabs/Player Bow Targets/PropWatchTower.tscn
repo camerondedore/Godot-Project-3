@@ -380,7 +380,7 @@ hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"),
 minimumSpeedSqr = 1.0
 
 [node name="RoofBoard2" type="RigidBody3D" parent="Break1"]
-transform = Transform3D(-1.89276e-07, -0.5, 0.866025, 1.09278e-07, -0.866025, -0.5, 1, -2.51377e-14, 2.18557e-07, 0.711545, 9.07319, -0.00736891)
+transform = Transform3D(1.13565e-07, -0.5, -0.866025, -6.55675e-08, -0.866025, 0.5, -1, -2.46003e-14, -1.31134e-07, 0.711545, 9.07319, -0.00736891)
 collision_layer = 256
 mass = 4.0
 freeze = true
@@ -1161,7 +1161,7 @@ hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"),
 minimumSpeedSqr = 1.0
 
 [node name="RoofBoard3" type="RigidBody3D" parent="Break3"]
-transform = Transform3D(2.64986e-07, 0.5, 0.866025, -1.5299e-07, 0.866025, -0.5, -1, 5.71121e-14, 3.0598e-07, 1.19158, 8.79604, -0.00736884)
+transform = Transform3D(-1.89276e-07, 0.5, -0.866025, 1.09278e-07, 0.866025, 0.5, 1, 5.65747e-14, -2.18557e-07, 1.19158, 8.79604, -0.00736884)
 collision_layer = 256
 mass = 4.0
 freeze = true
