@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bmpydh6hgb54y"]
+[gd_scene load_steps=52 format=3 uid="uid://bmpydh6hgb54y"]
 
 [ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
 [ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dfr5twmrytauh" path="res://C#/Common/AudioToolsRigidBody.cs" id="11_k1egh"]
 [ext_resource type="Material" uid="uid://b1fb52ywj54rw" path="res://Materials/Fx/FxDirt.tres" id="11_k3vra"]
 [ext_resource type="AudioStream" uid="uid://rg2w4kfv2sn4" path="res://Audio/wood-board-hit-1.wav" id="12_2xryf"]
+[ext_resource type="Material" uid="uid://ctops8yvr1glu" path="res://Materials/Fx/FxNails.tres" id="12_vu4l1"]
 [ext_resource type="AudioStream" uid="uid://dbf4bbajwckh7" path="res://Audio/wood-board-hit-3.wav" id="13_04b65"]
 [ext_resource type="AudioStream" uid="uid://cfp5w7aausexx" path="res://Audio/wood-board-hit-4.wav" id="14_i6rbm"]
 [ext_resource type="ArrayMesh" uid="uid://y78etl0835pi" path="res://Models/prop-watch-tower-floor-board.res" id="15_mma1k"]
@@ -88,6 +89,33 @@ scale_max = 0.2
 scale_curve = SubResource("CurveTexture_vu4l1")
 
 [sub_resource type="QuadMesh" id="QuadMesh_7a184"]
+
+[sub_resource type="Curve" id="Curve_7a184"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0711864, 1), 0.0, 0.0, 0, 0, Vector2(0.884746, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_xaljl"]
+curve = SubResource("Curve_7a184")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2e486"]
+lifetime_randomness = 0.3
+emission_shape_scale = Vector3(1.5, 1.5, 1.5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+radial_accel_min = 4.0
+radial_accel_max = 5.0
+scale_min = 0.4
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_xaljl")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3b8ea"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3f2i"]
 size = Vector3(2.4, 0.3, 0.18)
@@ -201,6 +229,19 @@ explosiveness = 1.0
 visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
 process_material = SubResource("ParticleProcessMaterial_vu4l1")
 draw_pass_1 = SubResource("QuadMesh_7a184")
+
+[node name="FxTowerNails" type="GPUParticles3D" parent="FxTowerHitDust"]
+layers = 2
+material_override = ExtResource("12_vu4l1")
+gi_mode = 2
+emitting = false
+amount = 10
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.9
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+process_material = SubResource("ParticleProcessMaterial_2e486")
+draw_pass_1 = SubResource("QuadMesh_3b8ea")
 
 [node name="Break1" type="Node3D" parent="."]
 
