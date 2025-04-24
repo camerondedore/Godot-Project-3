@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bmpydh6hgb54y"]
+[gd_scene load_steps=53 format=3 uid="uid://bmpydh6hgb54y"]
 
 [ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
 [ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_wf68u"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_0b4li"]
 [ext_resource type="ArrayMesh" uid="uid://blyi0hbng72nj" path="res://Models/prop-watch-tower-posts.res" id="7_bewtm"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="8_7a184"]
 [ext_resource type="Material" uid="uid://dvk0snjed0cok" path="res://Materials/Fx/FxDust.tres" id="9_3hcby"]
 [ext_resource type="Script" uid="uid://bhul4k7mg1jny" path="res://C#/Common/PinnedRigidbody.cs" id="9_mma1k"]
 [ext_resource type="ArrayMesh" uid="uid://dkxw07myip2tg" path="res://Models/prop-watch-tower-black.res" id="9_q50xx"]
@@ -175,6 +176,7 @@ mesh = ExtResource("7_bewtm")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_huolr")
 surface_material_override/1 = ExtResource("3_liflw")
+surface_material_override/2 = ExtResource("8_7a184")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Posts"]
 transform = Transform3D(0.997425, -0.0716031, 0.0041587, 0.0717238, 0.995747, -0.0578329, 0, 0.0579822, 0.998318, 1.41498, 4.1557, -1.43616)
