@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
 [ext_resource type="AudioStream" uid="uid://wiwliy3cdnhe" path="res://Audio/wood-board-hit-2.wav" id="2_0b4li"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_huolr"]
+[ext_resource type="AudioStream" uid="uid://bqptbcsebqyj8" path="res://Audio/watch-tower-hit.wav" id="2_xaljl"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_liflw"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="4_wf68u"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_0b4li"]
@@ -31,10 +32,6 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0v20a"]
 size = Vector3(3.3, 3.3, 3)
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bewtm"]
-radius = 0.18
-height = 9.0
 
 [sub_resource type="Curve" id="Curve_qs27t"]
 _data = [Vector2(0, 0), 0.0, 4.24856, 0, 0, Vector2(0.0372881, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -148,7 +145,7 @@ script = ExtResource("1_o76x5")
 linkedObjects1 = []
 linkedObjects2 = []
 linkedObjects3 = []
-hitSound = ExtResource("2_0b4li")
+hitSound = ExtResource("2_xaljl")
 
 [node name="ArrowCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
@@ -165,7 +162,7 @@ surface_material_override/0 = ExtResource("2_huolr")
 surface_material_override/1 = ExtResource("3_liflw")
 surface_material_override/2 = ExtResource("4_wf68u")
 
-[node name="Posts" type="StaticBody3D" parent="."]
+[node name="Posts" type="Node3D" parent="."]
 metadata/_edit_group_ = true
 
 [node name="TowerPosts" type="MeshInstance3D" parent="Posts"]
@@ -178,26 +175,10 @@ surface_material_override/0 = ExtResource("2_huolr")
 surface_material_override/1 = ExtResource("3_liflw")
 surface_material_override/2 = ExtResource("8_7a184")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Posts"]
-transform = Transform3D(0.997425, -0.0716031, 0.0041587, 0.0717238, 0.995747, -0.0578329, 0, 0.0579822, 0.998318, 1.41498, 4.1557, -1.43616)
-shape = SubResource("CapsuleShape3D_bewtm")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Posts"]
-transform = Transform3D(-0.258152, 0.0745387, 0.963224, 0.0717237, 0.995747, -0.0578329, -0.963438, 0.0541564, -0.262401, -1.40534, 4.1557, -1.43616)
-shape = SubResource("CapsuleShape3D_bewtm")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Posts"]
-transform = Transform3D(-0.997425, 0.0716031, -0.00415861, 0.0717237, 0.995747, -0.0578329, -8.72675e-08, -0.0579822, -0.998318, -1.40534, 4.1557, 1.42108)
-shape = SubResource("CapsuleShape3D_bewtm")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Posts"]
-transform = Transform3D(0.258152, -0.0745387, -0.963224, 0.0717237, 0.995747, -0.0578329, 0.963438, -0.0541564, 0.2624, 1.41498, 4.1557, 1.42108)
-shape = SubResource("CapsuleShape3D_bewtm")
-
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 0)
-unit_size = 4.0
-max_distance = 50.0
+unit_size = 6.0
+max_distance = 60.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("6_0b4li")
 
