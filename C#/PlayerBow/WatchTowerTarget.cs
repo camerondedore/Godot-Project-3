@@ -3,7 +3,7 @@ using PlayerBow;
 using System;
 using System.Linq;
 
-public partial class WatchTowerTarget : StaticBody3D, IBowTarget
+public partial class WatchTowerTarget : StaticBody3D, IBowTarget, IWatchable
 {
 
     [Export]
@@ -113,7 +113,8 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
                 // disable collider
                 arrowCollider.Disabled = true;
                 // disable script
-                SetScript(new Variant());
+                arrowType = "none";
+                //SetScript(new Variant());
                 break;
         }
 
@@ -135,5 +136,12 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget
                 }
             }
         }
+    }
+
+
+
+    public bool IsAlive()
+    {
+        return hitPoints > 0;
     }
 }
