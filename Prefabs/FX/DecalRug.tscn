@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://crwm2pivlof4s"]
+
+[ext_resource type="Texture2D" uid="uid://bd1dbi5t3vuv6" path="res://Textures/fx-rug-1.png" id="1_pt16v"]
+
+[node name="DecalRug" type="Decal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+sorting_offset = 2.0
+size = Vector3(2.25, 0.1, 4)
+texture_albedo = ExtResource("1_pt16v")
+cull_mask = 1

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://clpd25ys1ctjj"]
+
+[ext_resource type="Texture2D" uid="uid://di1irr670xiwn" path="res://Textures/fx-flowers-daisy-heavy.png" id="1_j6tqe"]
+
+[node name="DecalFlowersDaisyHeavy" type="Decal"]
+size = Vector3(3, 0.2, 3)
+texture_albedo = ExtResource("1_j6tqe")
+distance_fade_enabled = true
+distance_fade_begin = 30.0
+cull_mask = 1

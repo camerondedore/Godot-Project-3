@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dlsoxs5hjvjd2" path="res://Textures/fx-wood-chips.png" id="1_18kn8"]
 
-[node name="FxWoodChipsDecal" type="Decal"]
+[node name="DecalWoodChips" type="Decal"]
 size = Vector3(4, 0.1, 4)
 texture_albedo = ExtResource("1_18kn8")
 distance_fade_enabled = true

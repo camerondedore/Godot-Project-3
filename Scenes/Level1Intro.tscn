@@ -94,7 +94,7 @@
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="82_aaxjn"]
 [ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="83_wddan"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="84_4d8c4"]
-[ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/FxWoodChipsDecal.tscn" id="84_7lp5j"]
+[ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/DecalWoodChips.tscn" id="84_7lp5j"]
 [ext_resource type="AudioStream" uid="uid://cu35fufy5csmp" path="res://Audio/ambience-bird-2.wav" id="85_wp178"]
 [ext_resource type="PackedScene" uid="uid://3hjxmsgt2uo3" path="res://Prefabs/Pickups/PickupArrowsBodkin.tscn" id="86_j57go"]
 [ext_resource type="AudioStream" uid="uid://cj02wgho4k2pf" path="res://Audio/ambience-bird-3.wav" id="86_m8u0o"]

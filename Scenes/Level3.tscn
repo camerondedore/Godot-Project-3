@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=156 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -127,6 +127,9 @@
 [ext_resource type="PackedScene" uid="uid://cbjowt80bbp5u" path="res://Prefabs/FX/FxLightShaft.tscn" id="89_xqtue"]
 [ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="95_kevwi"]
 [ext_resource type="PackedScene" uid="uid://bnv3r5gw8eh8e" path="res://Prefabs/Pickups/PickupArrowsWeighted.tscn" id="95_w3bb5"]
+[ext_resource type="PackedScene" uid="uid://clpd25ys1ctjj" path="res://Prefabs/FX/DecalFlowersDaisyHeavy.tscn" id="102_hav6v"]
+[ext_resource type="PackedScene" uid="uid://da8fpmslmrb08" path="res://Prefabs/FX/DecalFlowersDaisyLight.tscn" id="103_uu4up"]
+[ext_resource type="PackedScene" uid="uid://b4rt67ncby5fn" path="res://Prefabs/FX/DecalFlowersDaisyMedium.tscn" id="104_b6ejq"]
 [ext_resource type="Animation" uid="uid://vee4qekv0ydn" path="res://Animation/Cinematics/l3c5.res" id="111_gtujv"]
 [ext_resource type="PackedScene" uid="uid://xigtowfv4scj" path="res://Prefabs/SecretArea.tscn" id="114_gjeu7"]
 [ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="121_2vvni"]
@@ -2406,6 +2409,21 @@ surface_material_override/0 = ExtResource("95_kevwi")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.00001, 20.5, -183.75)
 mesh = SubResource("QuadMesh_f1lcd")
 surface_material_override/0 = ExtResource("95_kevwi")
+
+[node name="DecalFlowersDaisyHeavy" parent="Map/FX" instance=ExtResource("102_hav6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.821565, 2, -27.452)
+
+[node name="DecalFlowersDaisyLight" parent="Map/FX" instance=ExtResource("103_uu4up")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05964, 2, -26.2182)
+
+[node name="DecalFlowersDaisyLight2" parent="Map/FX" instance=ExtResource("103_uu4up")]
+transform = Transform3D(-0.0852778, 0, 0.996357, 0, 1, 0, -0.996357, 0, -0.0852778, -2.19155, 2, -31.0482)
+
+[node name="DecalFlowersDaisyMedium" parent="Map/FX" instance=ExtResource("104_b6ejq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16027, 2, -25.7856)
+
+[node name="DecalFlowersDaisyMedium2" parent="Map/FX" instance=ExtResource("104_b6ejq")]
+transform = Transform3D(-0.712663, 0, 0.701507, 0, 1, 0, -0.701507, 0, -0.712663, 0.296674, 2, -31.4741)
 
 [node name="Audio" type="Node3D" parent="Map"]
 

@@ -137,7 +137,7 @@
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="75_c3yf3"]
 [ext_resource type="AudioStream" uid="uid://dccwcm8mitwgg" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-6.wav" id="75_vjtas"]
 [ext_resource type="AudioStream" uid="uid://dbpdet48gvpsv" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-7.wav" id="76_ganos"]
-[ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/FxWoodChipsDecal.tscn" id="76_hnojk"]
+[ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/DecalWoodChips.tscn" id="76_hnojk"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="76_p2dva"]
 [ext_resource type="PackedScene" uid="uid://cbjowt80bbp5u" path="res://Prefabs/FX/FxLightShaft.tscn" id="77_0vi7o"]
 [ext_resource type="AudioStream" uid="uid://b5xcyqc1ssf5a" path="res://Audio/Dialogue/npc-wynn-dialogue-lh-8.wav" id="77_7vuyi"]
@@ -154,7 +154,6 @@
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="90_u6uju"]
 [ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="91_b8kji"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="91_pm6y2"]
-[ext_resource type="Texture2D" uid="uid://bd1dbi5t3vuv6" path="res://Textures/fx-rug-1.png" id="91_v5vxk"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="92_7lfn2"]
 [ext_resource type="AudioStream" uid="uid://cu35fufy5csmp" path="res://Audio/ambience-bird-2.wav" id="93_r8el4"]
 [ext_resource type="AudioStream" uid="uid://cj02wgho4k2pf" path="res://Audio/ambience-bird-3.wav" id="94_6iro2"]
@@ -187,6 +186,7 @@
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="123_de4ge"]
 [ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="124_050ex"]
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="125_iv8q0"]
+[ext_resource type="PackedScene" uid="uid://crwm2pivlof4s" path="res://Prefabs/FX/DecalRug.tscn" id="125_k4r5j"]
 [ext_resource type="AudioStream" uid="uid://dx7jme7p5tmx4" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-9.wav" id="126_76qtq"]
 [ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="129_odrhq"]
 [ext_resource type="PackedScene" uid="uid://brgstclbdpf0g" path="res://Prefabs/PropTrout.tscn" id="143_5hehv"]
@@ -2613,12 +2613,9 @@ transform = Transform3D(0.135733, 0, -0.990746, 0, 1, 0, 0.990746, 0, 0.135733, 
 [node name="FxWoodChipsDecal8" parent="Map/Fx" instance=ExtResource("76_hnojk")]
 transform = Transform3D(0.135733, 0, -0.990746, 0, 1, 0, 0.990746, 0, 0.135733, -15.712, 9.53674e-07, 22.5633)
 
-[node name="FxRug" type="Decal" parent="Map/Fx"]
+[node name="DecalRug" parent="Map/Fx" instance=ExtResource("125_k4r5j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.3817, 0, 12.634)
-sorting_offset = 2.0
 size = Vector3(2.5, 0.1, 5)
-texture_albedo = ExtResource("91_v5vxk")
-cull_mask = 1
 
 [node name="Audio" type="Node3D" parent="Map"]
 
