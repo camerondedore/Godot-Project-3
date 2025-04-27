@@ -2742,9 +2742,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.2396, 12.9999, 86.2956)
 [node name="PickupArrowsNet" parent="Map/Pickups" instance=ExtResource("61_ncj4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5432, 1, -40.9299)
 
-[node name="PickupArrowsPick" parent="Map/Pickups" instance=ExtResource("68_l4xn5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1981, 1, -32.2934)
-
 [node name="PickupArrowsBlade" parent="Map/Pickups" instance=ExtResource("69_3y0k1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00863, 1, -27.358)
 
