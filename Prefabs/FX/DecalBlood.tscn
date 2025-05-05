@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://orgjpwy0y210"]
+
+[ext_resource type="Texture2D" uid="uid://bmcspou5bvlae" path="res://Textures/fx-blood-patch.png" id="1_bp65a"]
+
+[node name="DecalBlood" type="Decal"]
+size = Vector3(3, 0.2, 3)
+texture_albedo = ExtResource("1_bp65a")
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+cull_mask = 1

@@ -12,8 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dcntcbtvplwc8" path="res://Audio/bodkin-stab.wav" id="8_mosxs"]
 [ext_resource type="Material" uid="uid://dxwhuixfxdibn" path="res://Materials/Fx/FxArrowTrailEnemy.tres" id="10_fpdcx"]
 [ext_resource type="Material" uid="uid://bap8tyvfl4xi0" path="res://Materials/Fx/FxArrowHitEnemy.tres" id="11_n1lcp"]
-[ext_resource type="Texture2D" uid="uid://bmcspou5bvlae" path="res://Textures/fx-blood-patch.png" id="12_76410"]
 [ext_resource type="Material" uid="uid://bijrqeiotewi3" path="res://Particles/FxEnemyDamage.tres" id="12_n2y16"]
+[ext_resource type="PackedScene" uid="uid://orgjpwy0y210" path="res://Prefabs/FX/DecalBlood.tscn" id="12_ovhps"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="14_tfy06"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wlyac"]
@@ -135,10 +135,7 @@ max_distance = 20.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("14_tfy06")
 
-[node name="BloodDecal" type="Decal" parent="."]
-size = Vector3(3, 0.2, 3)
-texture_albedo = ExtResource("12_76410")
-cull_mask = 1
+[node name="DecalBlood" parent="." instance=ExtResource("12_ovhps")]
 
 [node name="FxSpikesCut" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
