@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxrqw1fx5hdum"]
 
 [ext_resource type="ArrayMesh" uid="uid://ns421t2r0dsv" path="res://Models/prop-fabric-roll.res" id="1_7r4nt"]
-[ext_resource type="Material" uid="uid://djnoygn8d4pqp" path="res://Materials/Cloth2.tres" id="2_um8gy"]
+[ext_resource type="Material" uid="uid://jqraxvi0r28x" path="res://Materials/Rope.tres" id="2_44bys"]
 [ext_resource type="Material" uid="uid://dpx0yvmggqvvt" path="res://Materials/LeatherStrip.tres" id="3_jjfra"]
 [ext_resource type="Material" uid="uid://by3bifucmdb84" path="res://Materials/MetalLight.tres" id="4_expcx"]
 
@@ -16,7 +16,7 @@ collision_layer = 16
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_7r4nt")
-surface_material_override/0 = ExtResource("2_um8gy")
+surface_material_override/0 = ExtResource("2_44bys")
 surface_material_override/1 = ExtResource("3_jjfra")
 surface_material_override/2 = ExtResource("4_expcx")
 
