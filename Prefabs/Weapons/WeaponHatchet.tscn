@@ -7,6 +7,8 @@
 [node name="WeaponHatchet" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
 mesh = ExtResource("1_1w0i6")
 surface_material_override/0 = ExtResource("2_7tvlo")
 surface_material_override/1 = ExtResource("3_1413b")

@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=3 uid="uid://x1hj54hni2us"]
+
+[ext_resource type="PackedScene" uid="uid://b56cc0mnlnk7r" path="res://Prefabs/Lumber/PropFirewood2.tscn" id="1_vb6uj"]
+[ext_resource type="PackedScene" uid="uid://6w4vqdekblvw" path="res://Prefabs/Lumber/PropFirewood3.tscn" id="2_djiam"]
+[ext_resource type="PackedScene" uid="uid://m7nbr4sdgca3" path="res://Prefabs/Lumber/PropFirewood4.tscn" id="3_yli0u"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vb6uj"]
+points = PackedVector3Array(1, 0, 0.4, 0.6, 0.8, 0.4, -0.6, 0.8, 0.4, -1, 0, 0.4, 1, 0, -0.4, 0.6, 0.8, -0.4, -0.6, 0.8, -0.4, -1, 0, -0.4)
+
+[node name="PropFirewoodStack" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="Wood" type="Node3D" parent="."]
+
+[node name="PropFirewood2" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.857554, -2.24849e-08, 0.514395, -0.514395, -3.74849e-08, 0.857554, 0, -1, -4.37114e-08, -0.238377, 0.0665049, 0)
+
+[node name="PropFirewood16" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.862337, 2.21326e-08, -0.506335, 0.506335, -3.76939e-08, 0.862337, -1.52332e-15, -1, -4.37114e-08, -0.596262, 0.229932, -0.065878)
+
+[node name="PropFirewood12" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.995854, -8.1246e-08, -0.0909628, -0.0909628, -2.40383e-08, 0.995854, -8.30958e-08, 1, 1.65483e-08, 0.224692, 0.276302, -0.065878)
+
+[node name="PropFirewood5" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.906485, 4.74807e-08, -0.422238, -0.422238, -4.28405e-08, -0.906485, -6.11294e-08, 1, -1.87861e-08, 0.367965, 0.0780907, 0.0404692)
+
+[node name="PropFirewood23" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.973619, -5.52301e-08, 0.228181, 0.228181, 3.22391e-08, 0.973619, -6.11294e-08, 1, -1.87861e-08, 0.52142, 0.444335, 0)
+
+[node name="PropFirewood20" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.998907, -6.01846e-08, 0.0467403, 0.0467403, 2.16228e-08, 0.998907, -6.11294e-08, 1, -1.87861e-08, 0.582802, 0.266328, -0.065878)
+
+[node name="PropFirewood39" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.877498, 4.46315e-08, -0.47958, -0.47958, -4.58012e-08, -0.877498, -6.11294e-08, 1, -1.87861e-08, 0.276634, 0.582839, -0.0254089)
+
+[node name="PropFirewood15" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.998689, -6.00877e-08, 0.0511856, 0.0511856, 2.18904e-08, 0.998689, -6.11294e-08, 1, -1.87861e-08, 0.85204, 0.0905029, 0)
+
+[node name="PropFirewood8" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.990545, 6.31287e-08, 0.137185, 0.137185, -1.02224e-08, -0.990545, -6.11294e-08, 1, -1.87861e-08, -0.152064, 0.202776, 0.0404692)
+
+[node name="PropFirewood43" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.862248, 6.22236e-08, 0.506485, 0.506485, 1.47629e-08, -0.862248, -6.11294e-08, 1, -1.87861e-08, 0.113037, 0.732977, -0.049647)
+
+[node name="PropFirewood36" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(0.800669, 3.76895e-08, -0.599107, -0.599107, -5.16645e-08, -0.800669, -6.11294e-08, 1, -1.87861e-08, -0.606289, 0.542422, 0)
+
+[node name="PropFirewood25" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.811584, -6.05872e-08, -0.584235, -0.584235, -2.04675e-08, 0.811584, -6.11294e-08, 1, -1.87861e-08, -0.021116, 0.329632, -0.065878)
+
+[node name="PropFirewood45" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.922369, -6.36412e-08, -0.386309, -0.386309, -6.2871e-09, 0.922369, -6.11294e-08, 1, -1.87861e-08, 0.341121, 0.732342, 0.0498004)
+
+[node name="PropFirewood34" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.746336, -5.81266e-08, -0.665569, -0.665569, -2.66651e-08, 0.746336, -6.11294e-08, 1, -1.87861e-08, -0.254367, 0.53833, 0)
+
+[node name="PropFirewood41" parent="Wood" instance=ExtResource("1_vb6uj")]
+transform = Transform3D(-0.810624, -6.05535e-08, -0.585566, -0.585566, -2.05669e-08, 0.810624, -6.11294e-08, 1, -1.87861e-08, -0.543752, 0.714389, 0.0243916)
+
+[node name="PropFirewood3" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.347738, -4.09834e-08, 0.937592, -0.937592, -1.52001e-08, 0.347738, 0, -1, -4.37114e-08, 0.16229, 0.060515, 0)
+
+[node name="PropFirewood17" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.984653, -7.62871e-09, 0.174525, -0.174525, -4.30405e-08, 0.984653, 1.09537e-15, -1, -4.37114e-08, -0.358697, 0.258736, 0.0404692)
+
+[node name="PropFirewood35" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.985803, 7.33934e-09, -0.167904, 0.167904, -4.30908e-08, 0.985803, 1.09537e-15, -1, -4.37114e-08, -0.426217, 0.46948, -0.065878)
+
+[node name="PropFirewood40" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.712638, 3.06649e-08, -0.701531, 0.701531, -3.11504e-08, 0.712638, 1.09537e-15, -1, -4.37114e-08, 0.589666, 0.67387, 0)
+
+[node name="PropFirewood19" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.724124, -3.01464e-08, 0.68967, -0.68967, -3.16525e-08, 0.724124, 1.09537e-15, -1, -4.37114e-08, 0.76459, 0.1994, 0.0404692)
+
+[node name="PropFirewood28" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.835098, -2.40457e-08, 0.550102, -0.550102, -3.65033e-08, 0.835098, 2.96238e-16, -1, -4.37114e-08, -0.0886175, 0.442881, -0.065878)
+
+[node name="PropFirewood42" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.96721, -1.11017e-08, 0.253977, -0.253977, -4.22781e-08, 0.96721, 4.97513e-15, -1, -4.37114e-08, -0.315268, 0.677627, 0)
+
+[node name="PropFirewood31" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.895432, -1.94602e-08, 0.445198, -0.445198, -3.91406e-08, 0.895432, 3.73402e-15, -1, -4.37114e-08, -0.649951, 0.37096, 0)
+
+[node name="PropFirewood13" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(0.347738, -4.09834e-08, 0.937592, -0.937592, -1.52001e-08, 0.347738, 0, -1, -4.37114e-08, -0.781035, 0.0646525, -0.065878)
+
+[node name="PropFirewood14" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.841643, -5.45731e-08, 0.540035, 0.540035, -1.18544e-07, 0.841643, 1.80867e-08, 1, 1.29243e-07, -0.926413, 0.062609, 0)
+
+[node name="PropFirewood7" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.712528, 1.1355e-08, -0.701643, -0.701643, -1.16408e-07, 0.712528, -7.35862e-08, 1, 9.09112e-08, -0.425219, 0.174293, -0.0254089)
+
+[node name="PropFirewood29" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.826629, -9.66843e-09, -0.562747, -0.562747, -1.1656e-07, 0.826629, -7.35862e-08, 1, 9.09112e-08, 0.121079, 0.450511, 0)
+
+[node name="PropFirewood44" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.228963, 7.16477e-08, -0.973435, -0.973435, -9.24466e-08, 0.228963, -7.35862e-08, 1, 9.09112e-08, -0.111643, 0.735849, 0)
+
+[node name="PropFirewood37" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.560711, -1.16536e-07, 0.828011, 0.828011, 9.95526e-09, 0.560711, -7.35862e-08, 1, 9.09112e-08, -0.434099, 0.599028, 0)
+
+[node name="PropFirewood33" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.999969, -7.28635e-08, -0.00792374, -0.00792374, -9.14914e-08, 0.999969, -7.35862e-08, 1, 9.09112e-08, 0.436014, 0.567295, 0)
+
+[node name="PropFirewood11" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.377049, 5.64558e-08, -0.926193, -0.926193, -1.02433e-07, 0.377049, -7.35862e-08, 1, 9.09112e-08, 0.707593, 0.0663341, 0.00304112)
+
+[node name="PropFirewood27" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.578299, 3.16128e-08, -0.815825, -0.815825, -1.12607e-07, 0.578299, -7.35862e-08, 1, 9.09112e-08, -0.472984, 0.34869, -0.0628369)
+
+[node name="PropFirewood30" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.848473, -1.1055e-07, 0.529238, 0.529238, -3.81911e-08, 0.848473, -7.35862e-08, 1, 9.09112e-08, -0.792242, 0.34869, 0.00304112)
+
+[node name="PropFirewood22" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.994269, -6.34455e-08, -0.106906, -0.106906, -9.8257e-08, 0.994269, -7.35862e-08, 1, 9.09112e-08, 0.730099, 0.344598, 0.0435103)
+
+[node name="PropFirewood21" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.954058, -9.74445e-08, 0.299624, 0.299624, -6.46863e-08, 0.954058, -7.35862e-08, 1, 9.09112e-08, 0.429329, 0.299585, 0.00304112)
+
+[node name="PropFirewood9" parent="Wood" instance=ExtResource("2_djiam")]
+transform = Transform3D(-0.629196, -0.00262456, 0.777242, 0.777245, -0.000240598, 0.629198, -0.00146436, 0.999997, 0.00219131, 0.0537553, 0.178855, -0.0254089)
+
+[node name="PropFirewood4" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(-0.99957, -1.2815e-09, 0.0293174, -0.0293174, 4.36926e-08, -0.99957, 0, -1, -4.37114e-08, -0.00829434, 0.0838958, 0)
+
+[node name="PropFirewood38" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(-0.988868, 6.50396e-09, -0.148793, 0.148793, 4.32248e-08, -0.988868, -1.60518e-16, -1, -4.37114e-08, 0.0185987, 0.611414, 0.00810215)
+
+[node name="PropFirewood24" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(0.954303, 1.30628e-08, -0.298841, 0.298841, -4.17139e-08, 0.954303, -1.04156e-16, -1, -4.37114e-08, 0.2802, 0.425588, 0)
+
+[node name="PropFirewood18" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(-0.921924, -1.69325e-08, 0.387371, -0.387371, 4.02986e-08, -0.921924, -1.48109e-16, -1, -4.37114e-08, -0.802931, 0.245279, -0.065878)
+
+[node name="PropFirewood10" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(0.757007, -2.85613e-08, 0.653407, -0.653407, -3.30898e-08, 0.757007, -1.04156e-16, -1, -4.37114e-08, 0.495009, 0.138636, 0)
+
+[node name="PropFirewood32" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(0.953643, -1.31545e-08, 0.300939, -0.300939, -4.16851e-08, 0.953643, -2.42553e-15, -1, -4.37114e-08, 0.625526, 0.539754, -0.0341371)
+
+[node name="PropFirewood6" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(-0.999978, -8.77127e-08, 0.00663224, 0.00663224, -4.37104e-08, 0.999978, -8.74209e-08, 1, 4.42912e-08, -0.533743, 0.0590715, 0.0404692)
+
+[node name="PropFirewood26" parent="Wood" instance=ExtResource("3_yli0u")]
+transform = Transform3D(-0.944325, -9.71261e-08, 0.329015, 0.329015, -1.30625e-08, 0.944325, -8.74209e-08, 1, 4.42912e-08, -0.245248, 0.374165, -0.0681849)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vb6uj")

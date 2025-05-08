@@ -6,5 +6,7 @@
 [node name="WeaponSword1" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
 mesh = ExtResource("1_p0rk5")
 surface_material_override/0 = ExtResource("2_3llnm")
