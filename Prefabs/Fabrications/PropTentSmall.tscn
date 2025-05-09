@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8wbom174i6wt"]
 
-[ext_resource type="ArrayMesh" uid="uid://dob3qylg2e30g" path="res://Models/prop-tent-small-1.res" id="1_pxvso"]
+[ext_resource type="ArrayMesh" uid="uid://toadvmqshobc" path="res://Models/prop-tent-small.res" id="1_tcuen"]
 [ext_resource type="Material" uid="uid://wc60fox67i4l" path="res://Materials/Props/PropTentSmall1.tres" id="2_2fall"]
 [ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="4_ry6fp"]
 
@@ -15,7 +15,7 @@ collision_mask = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 layers = 2
 gi_mode = 2
-mesh = ExtResource("1_pxvso")
+mesh = ExtResource("1_tcuen")
 surface_material_override/0 = ExtResource("2_2fall")
 surface_material_override/1 = ExtResource("4_ry6fp")
 
