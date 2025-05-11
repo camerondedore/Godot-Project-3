@@ -1,4 +1,4 @@
-[gd_scene load_steps=187 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=188 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -167,6 +167,7 @@
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="110_t127k"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="111_6aopb"]
 [ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="119_l61q0"]
+[ext_resource type="PackedScene" uid="uid://cujoqe6affuc6" path="res://Prefabs/Small Items/PropLanternLit.tscn" id="125_b034f"]
 [ext_resource type="PackedScene" uid="uid://crwm2pivlof4s" path="res://Prefabs/FX/DecalRug.tscn" id="153_65yvo"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_i3bc3"]
@@ -8265,6 +8266,9 @@ transform = Transform3D(-0.375644, 0.722654, -0.580227, 0.15483, 0.666215, 0.729
 
 [node name="PropWoodAx4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("53_o4hiu")]
 transform = Transform3D(-0.00519569, 0.707088, -0.707107, 0.999973, 0.00734777, -4.35393e-08, 0.00519563, -0.707088, -0.707107, 35.7201, 9.02946, -143.829)
+
+[node name="PropLanternLit" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("125_b034f")]
+transform = Transform3D(0.923572, 0, 0.383425, 0, 1, 0, -0.383425, 0, 0.923572, 78.1648, 10.2, -101.122)
 
 [node name="Weapons" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

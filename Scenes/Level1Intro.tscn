@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://dpcb4t4panrb"]
+[gd_scene load_steps=131 format=3 uid="uid://dpcb4t4panrb"]
 
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/Level1Environment.tres" id="1_dhwej"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_fwb8n"]
@@ -92,6 +92,7 @@
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="79_u8w11"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="80_ponqo"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="82_aaxjn"]
+[ext_resource type="PackedScene" uid="uid://bvo5ku6no5bnj" path="res://Prefabs/Small Items/PropLantern.tscn" id="82_hgo7i"]
 [ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="83_wddan"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="84_4d8c4"]
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/DecalWoodChips.tscn" id="84_7lp5j"]
@@ -4886,6 +4887,9 @@ transform = Transform3D(-0.994, -0.094732, -0.0546937, 5.66172e-08, -0.5, 0.8660
 
 [node name="PropWoodAx2" parent="Map/Props/SmallItems" instance=ExtResource("19_4euw6")]
 transform = Transform3D(0.96198, -0.272389, -0.0199647, -0.27312, -0.959406, -0.0703196, 0, 0.0730989, -0.997325, -16.2594, 8.5989, -66.0317)
+
+[node name="PropLantern" parent="Map/Props/SmallItems" instance=ExtResource("82_hgo7i")]
+transform = Transform3D(0.96603, -0.0623933, -0.250786, 0, 0.970418, -0.241431, 0.258431, 0.233229, 0.937453, -11.764, 1.92746, -194.424)
 
 [node name="Firewood" type="Node3D" parent="Map/Props"]
 

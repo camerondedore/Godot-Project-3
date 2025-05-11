@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvo5ku6no5bnj"]
+
+[ext_resource type="ArrayMesh" uid="uid://c4q25bobekvps" path="res://Models/prop-lantern.res" id="1_tth2e"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_0kdvq"]
+[ext_resource type="Material" uid="uid://csufkuobwvxip" path="res://Materials/Wax.tres" id="3_84frb"]
+[ext_resource type="Material" uid="uid://clp6kygf4fv83" path="res://Materials/Props/PropLamp.tres" id="4_8qrhc"]
+
+[node name="PropLantern" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_tth2e")
+surface_material_override/0 = ExtResource("2_0kdvq")
+surface_material_override/1 = ExtResource("3_84frb")
+surface_material_override/2 = ExtResource("4_8qrhc")

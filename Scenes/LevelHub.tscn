@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=238 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -177,6 +177,7 @@
 [ext_resource type="AudioStream" uid="uid://doxu08u58r3so" path="res://Audio/ambience-owl-3.wav" id="111_y38v6"]
 [ext_resource type="AudioStream" uid="uid://dmwt5lgd2fkoo" path="res://Audio/ambience-owl-4.wav" id="112_84jjh"]
 [ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="113_f3n0t"]
+[ext_resource type="PackedScene" uid="uid://bvo5ku6no5bnj" path="res://Prefabs/Small Items/PropLantern.tscn" id="114_05v1e"]
 [ext_resource type="PackedScene" uid="uid://b0hvuo4osb3sc" path="res://Prefabs/Characters/NpcLumsden.tscn" id="116_4nm5h"]
 [ext_resource type="Script" uid="uid://dnb48ygak3efu" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="117_d580p"]
 [ext_resource type="AudioStream" uid="uid://bfu5trt3sxypp" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-1.wav" id="118_kf60n"]
@@ -2444,6 +2445,9 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 
 
 [node name="PropLamp" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("108_4wyr5")]
 transform = Transform3D(-0.704201, 0, -0.710001, 0, 1, 0, 0.710001, 0, -0.704201, -30.4065, 1.05132, 18.9853)
+
+[node name="PropLantern" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("114_05v1e")]
+transform = Transform3D(-0.505296, 0, -0.862946, 0, 1, 0, 0.862946, 0, -0.505296, 48.5977, 1.2, -41.136)
 
 [node name="Firewood" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cujoqe6affuc6"]
+
+[ext_resource type="PackedScene" uid="uid://bvo5ku6no5bnj" path="res://Prefabs/Small Items/PropLantern.tscn" id="1_7e4s6"]
+[ext_resource type="PackedScene" uid="uid://dny2auormn3lo" path="res://Prefabs/FX/FxFlame.tscn" id="2_4px5h"]
+
+[node name="PropLanternLit" instance=ExtResource("1_7e4s6")]
+
+[node name="FxFlame" parent="." index="1" instance=ExtResource("2_4px5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00490844, 0.00882238, -0.0028027)
