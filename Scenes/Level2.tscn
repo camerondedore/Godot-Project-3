@@ -8279,94 +8279,124 @@ transform = Transform3D(0.0147888, -0.252084, 0.967592, 0.999776, 0.018393, -0.0
 
 [node name="PickupArrowsWeighted" parent="Map/Pickups" instance=ExtResource("15_pagr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
+collision_mask = 1
 checkInventoryAtStart = true
 
 [node name="PickupCandiedNut" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 12.1, 5, -68.55)
+collision_mask = 1
 
 [node name="PickupCandiedNut2" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 14.1, 5, -68.55)
+collision_mask = 1
 
 [node name="PickupCandiedNut3" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 16.1, 5, -68.55)
+collision_mask = 1
 
 [node name="PickupCandiedNut4" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 12.1, 5, -74.95)
+collision_mask = 1
 
 [node name="PickupCandiedNut5" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 14.1, 5, -74.95)
+collision_mask = 1
 
 [node name="PickupCandiedNut6" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -4.37114e-08, 16.1, 5, -74.95)
+collision_mask = 1
 
 [node name="PickupNettleBroth" parent="Map/Pickups" instance=ExtResource("49_8osyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 10.1631, -135.7)
+collision_mask = 1
 
 [node name="PickupCandiedNut7" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.234, 17, -111.761)
+collision_mask = 1
 
 [node name="PickupCandiedNut8" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.03786, 17, -116.571)
+collision_mask = 1
 
 [node name="PickupCandiedNut17" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.5, 12.5, -132.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut18" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 12.5, -132.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut19" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3, 12.5, -131)
+collision_mask = 1
 
 [node name="PickupCandiedNut9" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 17, -114.75)
+collision_mask = 1
 
 [node name="PickupCandiedNut10" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.8874, 9, -180.496)
+collision_mask = 1
 
 [node name="PickupCandiedNut11" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77, 5, -173)
+collision_mask = 1
 
 [node name="PickupDockLeaf" parent="Map/Pickups" instance=ExtResource("76_n521u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 6, -187)
+collision_mask = 1
 
 [node name="PickupCandiedNut12" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 10, -38)
+collision_mask = 1
 
 [node name="PickupCandiedNut13" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 10, -40.5)
+collision_mask = 1
 
 [node name="PickupSanicle" parent="Map/Pickups" instance=ExtResource("79_rsoqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 10, -35.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut14" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -26.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut15" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5, 1, -33)
+collision_mask = 1
 
 [node name="PickupCandiedNut16" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 1, -34.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut20" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5, 6, -11.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut21" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 6, -7)
+collision_mask = 1
 
 [node name="PickupNettleBroth2" parent="Map/Pickups" instance=ExtResource("49_8osyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.9547, 5, -140.441)
+collision_mask = 1
 
 [node name="PickupNettleBroth3" parent="Map/Pickups" instance=ExtResource("49_8osyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, -31.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut22" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.5, 10, -102)
+collision_mask = 1
 
 [node name="PickupCandiedNut23" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 10, -94.5)
+collision_mask = 1
 
 [node name="PickupCandiedNut24" parent="Map/Pickups" instance=ExtResource("15_cr34e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, -114)
+collision_mask = 1
 
 [node name="Switches" type="Node3D" parent="Map"]
 

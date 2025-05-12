@@ -8,6 +8,8 @@
 [node name="PropLantern" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
 mesh = ExtResource("1_tth2e")
 surface_material_override/0 = ExtResource("2_0kdvq")
 surface_material_override/1 = ExtResource("3_84frb")
