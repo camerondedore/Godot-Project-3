@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cssithjt8latf"]
+
+[ext_resource type="PackedScene" uid="uid://0dl6mcdd5sim" path="res://Prefabs/Food/PropKitchenKnife1.tscn" id="1_x002g"]
+[ext_resource type="ArrayMesh" uid="uid://cfrbk0ht1kito" path="res://Models/prop-kitchen-knife-2.res" id="2_810bi"]
+
+[node name="PropKitchenKnife2" instance=ExtResource("1_x002g")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_810bi")

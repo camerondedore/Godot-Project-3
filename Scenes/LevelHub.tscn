@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=241 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -192,6 +192,8 @@
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="125_iv8q0"]
 [ext_resource type="PackedScene" uid="uid://crwm2pivlof4s" path="res://Prefabs/FX/DecalRug.tscn" id="125_k4r5j"]
 [ext_resource type="AudioStream" uid="uid://dx7jme7p5tmx4" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-9.wav" id="126_76qtq"]
+[ext_resource type="PackedScene" uid="uid://0dl6mcdd5sim" path="res://Prefabs/Food/PropKitchenKnife1.tscn" id="126_shya7"]
+[ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="127_oyy7r"]
 [ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="129_odrhq"]
 [ext_resource type="PackedScene" uid="uid://brgstclbdpf0g" path="res://Prefabs/PropTrout.tscn" id="143_5hehv"]
 [ext_resource type="Script" uid="uid://bh7ydeskbx4yi" path="res://C#/FishSchool.cs" id="143_xkj6j"]
@@ -2495,6 +2497,12 @@ transform = Transform3D(1, 0, 0, 0, 0.0332598, 0.999447, 0, -0.999447, 0.0332598
 
 [node name="PropOvenPeel" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("38_c4rh7")]
 transform = Transform3D(-4.37114e-08, 0.866025, 0.5, 4.23516e-22, 0.5, -0.866025, -1, -2.29539e-08, -4.76652e-08, -67.2229, 1.45553, 7.66792)
+
+[node name="PropKitchenKnife1" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("126_shya7")]
+transform = Transform3D(0.733362, 6.41126e-08, -0.679838, 8.74228e-08, -1, 0, -0.679838, -5.94334e-08, -0.733362, -61.6071, 1.02992, 10.1061)
+
+[node name="PropKitchenKnife2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("127_oyy7r")]
+transform = Transform3D(0.292889, 0, -0.956146, 0, 1, 0, 0.956146, 0, 0.292889, -62.1206, 1.04041, 11.951)
 
 [node name="WaterArea" type="Area3D" parent="Map/OccluderInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.779, -0.1, -30.0802)

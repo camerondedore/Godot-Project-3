@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://0dl6mcdd5sim"]
+
+[ext_resource type="ArrayMesh" uid="uid://iq8v1ekkx42o" path="res://Models/prop-kitchen-knife-1.res" id="1_qtai6"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_clyiw"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_lcb6j"]
+
+[node name="PropKitchenKnife1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_qtai6")
+surface_material_override/0 = ExtResource("2_clyiw")
+surface_material_override/1 = ExtResource("3_lcb6j")

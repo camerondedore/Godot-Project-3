@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=194 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -170,6 +170,8 @@
 [ext_resource type="PackedScene" uid="uid://vjjqrqfg6v88" path="res://Prefabs/Food/PropRadishTrimmed.tscn" id="120_2rloc"]
 [ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="121_2vvni"]
 [ext_resource type="Script" uid="uid://dl3wj7r2626ye" path="res://C#/Common/TriggerDead.cs" id="121_igisw"]
+[ext_resource type="PackedScene" uid="uid://0dl6mcdd5sim" path="res://Prefabs/Food/PropKitchenKnife1.tscn" id="121_ra1ms"]
+[ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="122_7625h"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="127_fg2b4"]
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="131_cw7uk"]
 
@@ -4324,6 +4326,12 @@ transform = Transform3D(0.455964, 0, -0.889998, 0, 1, 0, 0.889998, 0, 0.455964, 
 
 [node name="PropBread6" parent="Map/Lighting/OccluderInstance3D/Props/Food" instance=ExtResource("69_rafp1")]
 transform = Transform3D(0.969774, 0, 0.244004, 0, 1, 0, -0.244004, 0, 0.969774, -7.14272, 7.10698, -83.0818)
+
+[node name="PropKitchenKnife1" parent="Map/Lighting/OccluderInstance3D/Props/Food" instance=ExtResource("121_ra1ms")]
+transform = Transform3D(0.58391, 0, 0.811819, 0, 1, 0, -0.811819, 0, 0.58391, -11.1076, 7.01317, -82.5788)
+
+[node name="PropKitchenKnife2" parent="Map/Lighting/OccluderInstance3D/Props/Food" instance=ExtResource("122_7625h")]
+transform = Transform3D(-0.315748, 0, -0.948843, 0, 1, 0, 0.948843, 0, -0.315748, -12.9248, 7.04859, -83.3267)
 
 [node name="WaterArea" type="Area3D" parent="Map/Lighting/OccluderInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.75, 8.9, -125.25)
