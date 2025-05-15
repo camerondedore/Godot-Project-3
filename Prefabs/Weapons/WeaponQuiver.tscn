@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfxe8jkcbxj6a"]
+
+[ext_resource type="ArrayMesh" uid="uid://bnv1wgiijh1tf" path="res://Models/weapon-quiver.res" id="1_5dxr0"]
+[ext_resource type="Material" uid="uid://jcagdqp25b1r" path="res://Materials/Characters/MobBrownRatGear.tres" id="2_6fuv5"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="3_8kgxk"]
+
+[node name="WeaponQuiver" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_5dxr0")
+surface_material_override/0 = ExtResource("2_6fuv5")
+surface_material_override/1 = ExtResource("3_8kgxk")
