@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=243 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -180,6 +180,8 @@
 [ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="113_f3n0t"]
 [ext_resource type="PackedScene" uid="uid://bvo5ku6no5bnj" path="res://Prefabs/Small Items/PropLantern.tscn" id="114_05v1e"]
 [ext_resource type="PackedScene" uid="uid://b0hvuo4osb3sc" path="res://Prefabs/Characters/NpcLumsden.tscn" id="116_4nm5h"]
+[ext_resource type="PackedScene" uid="uid://biatpmpd1ud26" path="res://Prefabs/Small Items/PropScroll1.tscn" id="116_oyy7r"]
+[ext_resource type="PackedScene" uid="uid://k7bvmpbgqtg5" path="res://Prefabs/Small Items/PropScroll2.tscn" id="117_c8w67"]
 [ext_resource type="Script" uid="uid://dnb48ygak3efu" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="117_d580p"]
 [ext_resource type="AudioStream" uid="uid://bfu5trt3sxypp" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-1.wav" id="118_kf60n"]
 [ext_resource type="AudioStream" uid="uid://4tiabpvxevap" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-2.wav" id="119_ydhld"]
@@ -2454,6 +2456,12 @@ transform = Transform3D(-0.704201, 0, -0.710001, 0, 1, 0, 0.710001, 0, -0.704201
 
 [node name="PropLantern" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("114_05v1e")]
 transform = Transform3D(-0.505296, 0, -0.862946, 0, 1, 0, 0.862946, 0, -0.505296, 45.6941, 1.2, -40.3742)
+
+[node name="PropScroll1" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("116_oyy7r")]
+transform = Transform3D(0.0418235, -0.96607, -0.254871, 0.986802, 1.49012e-08, 0.161931, -0.156437, -0.25828, 0.95332, -28.4987, 1.05516, 18.9359)
+
+[node name="PropScroll2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("117_c8w67")]
+transform = Transform3D(0.0755531, -0.997142, 4.35865e-08, -2.53281e-15, -4.37114e-08, -1, 0.997142, 0.0755531, -3.30253e-09, -28.4622, 1.0456, 19.2609)
 
 [node name="Firewood" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

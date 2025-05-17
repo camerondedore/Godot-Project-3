@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://biatpmpd1ud26"]
+
+[ext_resource type="ArrayMesh" uid="uid://cpyds1t3k2n5g" path="res://Models/prop-scroll-1.res" id="1_bjsyh"]
+[ext_resource type="Material" uid="uid://b8gx0daxsdskl" path="res://Materials/Paper.tres" id="2_pga5i"]
+
+[node name="PropScroll1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_bjsyh")
+surface_material_override/0 = ExtResource("2_pga5i")

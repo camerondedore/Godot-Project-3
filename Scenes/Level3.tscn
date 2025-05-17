@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=210 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -174,7 +174,9 @@
 [ext_resource type="PackedScene" uid="uid://bfxe8jkcbxj6a" path="res://Prefabs/Weapons/WeaponQuiver.tscn" id="109_dvo64"]
 [ext_resource type="PackedScene" uid="uid://clf0nyp5k70a" path="res://Prefabs/Weapons/WeaponArrowEnemy.tscn" id="110_bw5vy"]
 [ext_resource type="Animation" uid="uid://vee4qekv0ydn" path="res://Animation/Cinematics/l3c5.res" id="111_gtujv"]
+[ext_resource type="PackedScene" uid="uid://biatpmpd1ud26" path="res://Prefabs/Small Items/PropScroll1.tscn" id="113_jv8nj"]
 [ext_resource type="PackedScene" uid="uid://xigtowfv4scj" path="res://Prefabs/SecretArea.tscn" id="114_gjeu7"]
+[ext_resource type="PackedScene" uid="uid://k7bvmpbgqtg5" path="res://Prefabs/Small Items/PropScroll2.tscn" id="114_ohtgy"]
 [ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Food/PropBowl.tscn" id="114_us22i"]
 [ext_resource type="PackedScene" uid="uid://oynb1mxrapsi" path="res://Prefabs/Food/PropCarrotTrimmed.tscn" id="116_p6v7j"]
 [ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="118_ra1ms"]
@@ -3524,7 +3526,7 @@ transform = Transform3D(-0.280628, 0.0423013, -1.02908, 0.0523956, 1.0658, 0.029
 [node name="PropBgTreeFir2!1746889177_518" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
 transform = Transform3D(0.969407, 0.0204903, -0.329967, -0.00746824, 1.02336, 0.0416075, 0.330518, -0.0369744, 0.968731, 79.6411, 15.9997, -166.752)
 
-[node name="PropBgTreeFir2!1747407897_244" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
+[node name="PropBgTreeFir2!1747407897_244" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
 transform = Transform3D(-0.655143, -0.0527541, 0.83465, -0.0326723, 1.06106, 0.041419, -0.835677, -0.000126615, -0.655957, -79.2868, 30.9996, -210.056)
 
 [node name="Oaks" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees"]
@@ -3927,7 +3929,7 @@ transform = Transform3D(0.719299, -0.0432148, 0.559964, 0.0373133, 0.91155, 0.02
 [node name="PropBgTreeOak4!1746889184_319" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("64_m12yu")]
 transform = Transform3D(0.120959, 0.0356986, 1.08381, -0.0106191, 1.09052, -0.0347345, -1.08435, -0.00669736, 0.121239, 87.7653, 15.9997, -176.397)
 
-[node name="PropBgTreeOak2!1747407892_348" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("62_jukvp")]
+[node name="PropBgTreeOak2!1747407892_348" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("62_jukvp")]
 transform = Transform3D(0.042032, -0.0227035, -0.911612, -0.0384319, 0.911725, -0.0244783, 0.911084, 0.0395063, 0.0410238, -67.6576, 30.9996, -209.752)
 
 [node name="SmallItems" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
@@ -3952,6 +3954,12 @@ transform = Transform3D(-0.723088, 0, -0.690756, 0, 1, 0, 0.690756, 0, -0.723088
 
 [node name="PropWoodAx4" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("49_kmmf3")]
 transform = Transform3D(-0.965926, 0.258819, -8.59334e-08, -0.258819, -0.965926, -1.13133e-08, -8.59334e-08, 1.13133e-08, 1, -69.8223, 7.59516, -110.59)
+
+[node name="PropScroll1" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("113_jv8nj")]
+transform = Transform3D(-0.430511, -0.902585, 3.94533e-08, 0, -4.37114e-08, -1, 0.902585, -0.430511, 1.88182e-08, 16.683, 5.04724, -60.9426)
+
+[node name="PropScroll2" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("114_ohtgy")]
+transform = Transform3D(0.671009, -0.741449, 3.24098e-08, 0, -4.37114e-08, -1, 0.741449, 0.671009, -2.93307e-08, 81.4232, 12.6442, -184.701)
 
 [node name="Firewood" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
 

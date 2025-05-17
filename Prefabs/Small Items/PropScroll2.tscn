@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://k7bvmpbgqtg5"]
+
+[ext_resource type="PackedScene" uid="uid://biatpmpd1ud26" path="res://Prefabs/Small Items/PropScroll1.tscn" id="1_dm7gn"]
+[ext_resource type="ArrayMesh" uid="uid://b57m274evstvc" path="res://Models/prop-scroll-2.res" id="2_6fsqg"]
+
+[node name="PropScroll2" instance=ExtResource("1_dm7gn")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_6fsqg")
