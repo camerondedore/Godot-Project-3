@@ -1,4 +1,4 @@
-[gd_scene load_steps=212 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=213 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -181,6 +181,7 @@
 [ext_resource type="PackedScene" uid="uid://cnifv3almrlsh" path="res://Prefabs/Small Items/PropRatBone1.tscn" id="115_dxq2i"]
 [ext_resource type="PackedScene" uid="uid://cg47kjcdsfpvt" path="res://Prefabs/Small Items/PropRatSkull.tscn" id="116_b6i1s"]
 [ext_resource type="PackedScene" uid="uid://oynb1mxrapsi" path="res://Prefabs/Food/PropCarrotTrimmed.tscn" id="116_p6v7j"]
+[ext_resource type="PackedScene" uid="uid://wr86v8c4lglm" path="res://Prefabs/Small Items/PropRatRibcage.tscn" id="117_087pg"]
 [ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="118_ra1ms"]
 [ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="119_7625h"]
 [ext_resource type="PackedScene" uid="uid://vjjqrqfg6v88" path="res://Prefabs/Food/PropRadishTrimmed.tscn" id="120_2rloc"]
@@ -3982,10 +3983,13 @@ transform = Transform3D(-0.430511, -0.902585, 3.94533e-08, 0, -4.37114e-08, -1, 
 transform = Transform3D(0.671009, -0.741449, 3.24098e-08, 0, -4.37114e-08, -1, 0.741449, 0.671009, -2.93307e-08, 81.4232, 12.6442, -184.701)
 
 [node name="PropRatBone1" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("115_dxq2i")]
-transform = Transform3D(-0.891388, -0.0497436, 0.450504, -0.0448038, 0.998762, 0.0216301, -0.451022, -0.00090346, -0.892513, -86.2072, 17.0209, -160.401)
+transform = Transform3D(0.635814, 0.442053, -0.632717, -0.287823, 0.896411, 0.337053, 0.71617, -0.0321921, 0.697183, -85.9478, 16.9838, -160.452)
 
 [node name="PropRatSkull" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("116_b6i1s")]
-transform = Transform3D(0.561033, 0.347634, 0.751261, -0.21954, 0.937533, -0.269878, -0.798151, -0.0135209, 0.602306, -85.6806, 17.0128, -160.793)
+transform = Transform3D(0.551374, 0.362759, 0.751261, -0.244949, 0.931217, -0.269878, -0.797488, -0.0352167, 0.602306, -85.6735, 17.031, -160.794)
+
+[node name="PropRatRibcage" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("117_087pg")]
+transform = Transform3D(0.285202, 0.379427, -0.880168, -0.867638, 0.492404, -0.0688735, 0.407266, 0.783309, 0.46964, -86.3392, 16.9314, -160.615)
 
 [node name="Firewood" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
 

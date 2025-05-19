@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://wr86v8c4lglm"]
+
+[ext_resource type="ArrayMesh" uid="uid://bmt1siw6mdloq" path="res://Models/prop-rat-ribcage.res" id="1_1cs8r"]
+[ext_resource type="Material" uid="uid://c5rs5vp7fxhmt" path="res://Materials/Bone.tres" id="2_wig3s"]
+
+[node name="PropRatRibcage" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_1cs8r")
+surface_material_override/0 = ExtResource("2_wig3s")
