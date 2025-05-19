@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnifv3almrlsh"]
+
+[ext_resource type="ArrayMesh" uid="uid://cw5knjud4pllc" path="res://Models/prop-rat-bone-1.res" id="1_23uoe"]
+[ext_resource type="Material" uid="uid://c5rs5vp7fxhmt" path="res://Materials/Bone.tres" id="2_beb2x"]
+
+[node name="PropRatBone1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_23uoe")
+surface_material_override/0 = ExtResource("2_beb2x")

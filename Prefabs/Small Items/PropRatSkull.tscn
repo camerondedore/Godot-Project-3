@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg47kjcdsfpvt"]
+
+[ext_resource type="ArrayMesh" uid="uid://cooojdijmnaer" path="res://Models/prop-rat-skull.res" id="1_gul84"]
+[ext_resource type="Material" uid="uid://c5rs5vp7fxhmt" path="res://Materials/Bone.tres" id="2_7vc3o"]
+
+[node name="PropRatSkull" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_gul84")
+surface_material_override/0 = ExtResource("2_7vc3o")
