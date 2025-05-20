@@ -2085,6 +2085,9 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 64.1591, 14.2589, -186.995)
 [node name="PropFabricRoll7" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("53_txmbx")]
 transform = Transform3D(-6.29259e-08, 0.694194, -0.719788, 6.06884e-08, 0.719788, 0.694194, 1, 0, -8.74228e-08, 66.1569, 14.2589, -186.998)
 
+[node name="PropBucket5" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("47_qcn1h")]
+transform = Transform3D(-0.900964, -0.418861, 0.113229, -7.40401e-08, 0.26096, 0.96535, -0.433895, 0.869745, -0.235115, -75.6831, 16.8517, -176.65)
+
 [node name="Torches" type="Node3D" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="PropTorchLitStatic2" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("29_lyx6o")]
@@ -4446,6 +4449,57 @@ transform = Transform3D(-1.23552, -0.0523434, 0.625962, 1.13091e-08, 1.38121, 0.
 [node name="PropRoots21" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7607, 22.3533, -169.959)
 
+[node name="PropRoots22" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.970675, 0, 1.00608, 0, 1.398, 0, -1.00608, 0, 0.970675, 20.156, 9.89419, -85.9336)
+
+[node name="PropRoots23" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.324197, 0, 1.35989, 0, 1.398, 0, -1.35989, 0, 0.324197, 21.6622, 10.2372, -90.4343)
+
+[node name="PropRoots24" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-0.362701, 0, 1.35013, 0, 1.398, 0, -1.35013, 0, -0.362701, 21.0691, 10.1643, -101.71)
+
+[node name="PropRoots25" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.192147, 0, -1.38473, 0, 1.398, 0, 1.38473, 0, 0.192147, 6.47427, 10.1643, -90.3971)
+
+[node name="PropRoots26" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.0880489, 0, -1.39522, 0, 1.398, 0, 1.39522, 0, 0.0880489, 6.20024, 9.82119, -95.4096)
+
+[node name="PropRoots28" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(1.30409, 0, -0.50373, 0, 1.398, 0, 0.50373, 0, 1.30409, 3.21867, 9.57379, -99.6114)
+
+[node name="PropRoots29" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(1.38225, 0, -0.209219, 0, 1.398, 0, 0.209219, 0, 1.38225, 0.954973, 8.56351, -100.486)
+
+[node name="PropRoots30" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1.39781, 0, 0.0227396, 0, 1.398, 0, -0.0227396, 0, -1.39781, 9.2345, 9.91653, -109.188)
+
+[node name="PropRoots31" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1.39781, 0, 0.0227396, 0, 1.398, 0, -0.0227396, 0, -1.39781, 6.57997, 8.76217, -109.42)
+
+[node name="PropRoots27" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.0959643, 0, -1.52065, 0, 1.52367, 0, 1.52065, 0, 0.0959643, 6.20484, 11.0482, -94.0991)
+
+[node name="PropRoots32" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1.17355, 0, 0.759726, 0, 1.398, 0, -0.759726, 0, -1.17355, -4.00187, 9.82593, -87.1618)
+
+[node name="PropRoots33" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1.38748, 0, -0.60609, 0, 1.51408, 0, 0.60609, 0, -1.38748, -73.6495, 16.1073, -129.081)
+
+[node name="PropRoots34" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1.12054, 0, -1.01826, 0, 1.51408, 0, 1.01826, 0, -1.12054, -75.6359, 15.522, -127.678)
+
+[node name="PropRoots35" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-0.161523, 0, -1.50544, 0, 1.51408, 0, 1.50544, 0, -0.161523, -91.4721, 16.2845, -101.767)
+
+[node name="PropRoots36" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-0.161523, 0, -1.50544, 0, 1.51408, 0, 1.50544, 0, -0.161523, -91.7509, 15.5905, -99.5384)
+
+[node name="PropRoots37" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-0.451588, 0, -1.44517, 0, 1.51408, 0, 1.44517, 0, -0.451588, -91.1065, 16.182, -110.434)
+
+[node name="PropRoots38" parent="Map/Lighting/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1.48214, 0, -0.309366, 0, 1.51408, 0, 0.309366, 0, -1.48214, -90.4528, 15.457, -111.875)
+
 [node name="Food" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
 
 [node name="PropLadle" parent="Map/Lighting/OccluderInstance3D/Props/Food" instance=ExtResource("67_mxi10")]
@@ -5720,6 +5774,12 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 
 [node name="MobShieldRat3" parent="Enemies" instance=ExtResource("131_cw7uk")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 71.2075, 11, -170.092)
+
+[node name="PropRoots" parent="." instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -83.9858, 12.6054, -112.398)
+
+[node name="PropRoots2" parent="." instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.996768, 0, -0.0803381, 0, 1, 0, 0.0803381, 0, 0.996768, -83.9858, 12.6076, -115.135)
 
 [editable path="Map/Blocks/BlockTarget"]
 [editable path="Map/Blocks/BlockTarget2"]
