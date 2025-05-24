@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyncf5bghkkwb"]
+[gd_scene load_steps=15 format=3 uid="uid://dyncf5bghkkwb"]
 
 [ext_resource type="PackedScene" uid="uid://b567kig0p2trd" path="res://Models/prop-chest.glb" id="1_oxeqv"]
 [ext_resource type="Script" uid="uid://btpqu2m6rbaq1" path="res://C#/PlayerBow/ChestTarget.cs" id="1_pnrr2"]
@@ -13,7 +13,13 @@
 [ext_resource type="Script" uid="uid://dbny7egg4na1b" path="res://C#/Common/RigidbodySpawnerMultiple.cs" id="9_cku3p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a1nr0"]
-size = Vector3(2, 1.2, 1)
+size = Vector3(2, 1.2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yt0y0"]
+size = Vector3(0.1, 1.2, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h3ejo"]
+size = Vector3(1.8, 1.2, 0.8)
 
 [node name="PropChest" type="StaticBody3D"]
 collision_layer = 16
@@ -34,9 +40,28 @@ surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
 surface_material_override/2 = ExtResource("6_fqhwf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+[node name="ColliderBack" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.45)
 shape = SubResource("BoxShape3D_a1nr0")
+
+[node name="ColliderFront" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.45)
+shape = SubResource("BoxShape3D_a1nr0")
+
+[node name="ColliderRight" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.6, 0)
+shape = SubResource("BoxShape3D_yt0y0")
+
+[node name="ColliderLeft" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.6, 0)
+shape = SubResource("BoxShape3D_yt0y0")
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_h3ejo")
 
 [node name="FxLock" parent="." instance=ExtResource("3_2i7no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688, -0.5491)
