@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjweueun13s38"
-path.s3tc="res://.godot/imported/fx-flowers-daisy-light.png-9a2ed486ec1def28bb392ebbbe767f02.s3tc.ctex"
+uid="uid://g2gwl4gcn8gx"
+path.s3tc="res://.godot/imported/bark-end-target.png-afb034e8ae9f15ca172a0d38cf85f0c8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/fx-flowers-daisy-light.png"
-dest_files=["res://.godot/imported/fx-flowers-daisy-light.png-9a2ed486ec1def28bb392ebbbe767f02.s3tc.ctex"]
+source_file="res://Textures/bark-end-target.png"
+dest_files=["res://.godot/imported/bark-end-target.png-afb034e8ae9f15ca172a0d38cf85f0c8.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=512
-detect_3d/compress_to=1
+detect_3d/compress_to=0

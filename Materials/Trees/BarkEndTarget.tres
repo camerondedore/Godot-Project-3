@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://d11yxyb5adsuu"]
+
+[ext_resource type="Texture2D" uid="uid://g2gwl4gcn8gx" path="res://Textures/bark-end-target.png" id="1_0gwri"]
+
+[resource]
+albedo_texture = ExtResource("1_0gwri")
+metallic_specular = 0.0
