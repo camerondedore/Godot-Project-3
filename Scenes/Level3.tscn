@@ -3571,6 +3571,15 @@ transform = Transform3D(0.969407, 0.0204903, -0.329967, -0.00746824, 1.02336, 0.
 [node name="PropBgTreeFir2!1747407897_244" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
 transform = Transform3D(-0.655143, -0.0527541, 0.83465, -0.0326723, 1.06106, 0.041419, -0.835677, -0.000126615, -0.655957, -79.2868, 30.9996, -210.056)
 
+[node name="PropBgTreeFir2!1748280239_357" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
+transform = Transform3D(-0.593551, 0.0200088, -0.91966, -0.0281274, 1.09358, 0.0419464, 0.919448, 0.0463713, -0.592405, -94.994, 28.9995, -184.699)
+
+[node name="PropBgTreeFir2!1748280241_358" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
+transform = Transform3D(-0.684787, -0.0374564, -0.753869, -0.0157764, 1.01838, -0.0362679, 0.754634, -0.0126994, -0.684851, -98.25, 28.9995, -187.003)
+
+[node name="PropBgTreeFir2!1748280243_375" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
+transform = Transform3D(-0.838654, -0.0298921, 0.416947, -0.0311265, 0.936531, 0.00453403, -0.416857, -0.00979196, -0.839174, -94.2968, 28.9995, -187.364)
+
 [node name="Oaks" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees"]
 
 [node name="ToolPropPainterOak" type="Node" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks"]
@@ -3974,6 +3983,15 @@ transform = Transform3D(0.120959, 0.0356986, 1.08381, -0.0106191, 1.09052, -0.03
 [node name="PropBgTreeOak2!1747407892_348" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("62_jukvp")]
 transform = Transform3D(0.042032, -0.0227035, -0.911612, -0.0384319, 0.911725, -0.0244783, 0.911084, 0.0395063, 0.0410238, -67.6576, 30.9996, -209.752)
 
+[node name="PropBgTreeOak4!1748280229_975" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("64_m12yu")]
+transform = Transform3D(0.995967, 0.00362587, -0.317314, 0.0110955, 1.0442, 0.0467576, 0.317141, -0.0479191, 0.994876, -102.246, 28.9995, -186.862)
+
+[node name="PropBgTreeOak3!1748280231_974" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("63_agm8i")]
+transform = Transform3D(1.07261, -0.024954, 0.133999, 0.0207284, 1.08047, 0.035286, -0.134717, -0.0324357, 1.07232, -101.324, 28.9995, -192.553)
+
+[node name="PropBgTreeOak3!1748280233_991" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Oaks" instance=ExtResource("63_agm8i")]
+transform = Transform3D(-0.899059, -0.0447655, 0.16539, -0.0411557, 0.914008, 0.0236692, -0.166325, 0.0158136, -0.899862, -94.6868, 28.9995, -189.443)
+
 [node name="SmallItems" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
 
 [node name="PropWoodAx" parent="Map/Lighting/OccluderInstance3D/Props/SmallItems" instance=ExtResource("49_kmmf3")]
@@ -4342,6 +4360,15 @@ transform = Transform3D(-0.04137, 0, 0.999144, 0, 1, 0, -0.999144, 0, -0.04137, 
 
 [node name="PropBlackberryBushBg95" parent="Map/Lighting/OccluderInstance3D/Props/BlackberryBushes" instance=ExtResource("72_f2ap1")]
 transform = Transform3D(-0.880767, 0, 0.47355, 0, 1, 0, -0.47355, 0, -0.880767, 33.995, 18.884, -179.093)
+
+[node name="PropBlackberryBushBg97" parent="Map/Lighting/OccluderInstance3D/Props/BlackberryBushes" instance=ExtResource("72_f2ap1")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -96.5971, 29, -188.431)
+
+[node name="PropBlackberryBushBg98" parent="Map/Lighting/OccluderInstance3D/Props/BlackberryBushes" instance=ExtResource("72_f2ap1")]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -97.7337, 29, -183.625)
+
+[node name="PropBlackberryBushBg99" parent="Map/Lighting/OccluderInstance3D/Props/BlackberryBushes" instance=ExtResource("72_f2ap1")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -97.6593, 29, -194.647)
 
 [node name="Weapons" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
 
@@ -5341,293 +5368,683 @@ transform = Transform3D(0.998919, -0.0676122, -0.510856, 0.0520162, 1.12182, -0.
 [node name="PropRockSmall!1748139731_681" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.711311, -0.194823, 0.806536, -0.14752, 1.07511, 0.129596, -0.816513, -0.024519, -0.726033, -14.5954, 5.9998, -80.3382)
 
-[node name="PropRockSmall!1748230731_808" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230731_808" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.0570845, -0.00164714, -0.913885, -0.0881251, 0.911409, 0.00386193, 0.909628, 0.0881943, -0.0569775, -50.0562, 3.9997, -104.097)
 
-[node name="PropRockSmall!1748230733_804" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230733_804" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.795965, 0.506157, -0.617225, 0.0890166, 0.922502, 0.641707, 0.793245, 0.404372, -0.691352, -49.8993, 4.23954, -105.054)
 
-[node name="PropRockMedium!1748230735_82" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230735_82" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.889442, 0.407583, -0.297636, -0.490755, 0.839214, -0.317329, 0.117774, 0.418824, 0.925491, -49.6246, 4.00108, -104.78)
 
-[node name="PropRockSmall!1748230739_853" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230739_853" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.0603526, 0.277186, 0.860323, 0.134971, 0.855336, -0.266111, -0.89374, 0.110453, -0.0982835, -49.3068, 4.10432, -108.064)
 
-[node name="PropRockSmall!1748230741_87" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230741_87" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.445302, 0.00619074, -0.89422, 0.0623277, 0.996742, -0.0241373, 0.892067, -0.0665509, -0.44469, -50.3508, 3.9997, -110.045)
 
-[node name="PropRockMedium!1748230743_886" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230743_886" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.598795, 0.459974, 0.814341, -0.133367, 0.915068, -0.614935, -0.92571, -0.429367, -0.438162, -51.6286, 4.12056, -110.439)
 
-[node name="PropRockSmall!1748230747_919" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230747_919" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.264436, 0.142258, -0.979683, 0.0973426, 1.01285, 0.120801, 0.985161, -0.0618941, -0.274902, -49.5373, 3.9997, -108.769)
 
-[node name="PropRockSmall!1748230749_937" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230749_937" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.33746, 0.337095, 0.852293, -0.401326, 0.870877, -0.185543, -0.823998, -0.286104, 0.439416, -50.5556, 4.47866, -108.54)
 
-[node name="PropRockSmall!1748230751_953" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230751_953" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.737208, 0.475731, 0.464039, -0.43554, 0.869319, -0.19929, -0.501953, -0.0556043, 0.854447, -49.7307, 4.26556, -107.818)
 
-[node name="PropRockMedium!1748230753_953" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230753_953" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.163556, 0.346976, -0.805452, -0.382522, 0.765519, 0.252098, 0.789191, 0.299139, 0.289118, -50.6069, 4.09656, -104.002)
 
-[node name="PropRockSmall!1748230755_969" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230755_969" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.391002, 0.0776759, -0.751818, -0.00489574, 0.846705, 0.0849332, 0.755805, -0.0346997, 0.38949, -52.1065, 3.9997, -101.766)
 
-[node name="PropRockMedium!1748230757_986" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230757_986" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.779137, 0.217552, -0.491125, 0.146924, 0.91858, 0.173814, 0.516668, 0.0668528, -0.790046, -52.6634, 4.05773, -101.529)
 
-[node name="PropRockSmall!1748230760_003" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230760_003" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.614866, -0.025679, 0.604987, -0.00953009, 0.861684, 0.0462603, -0.605457, -0.0396412, 0.613661, -52.0444, 3.9997, -102.209)
 
-[node name="PropRockMedium!1748230762_019" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230762_019" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.408921, 0.320931, -0.69711, -0.182685, 0.726483, 0.441615, 0.745376, 0.35412, -0.274206, -51.8068, 4.26711, -103.155)
 
-[node name="PropRockSmall!1748230764_036" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230764_036" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.515302, 0.158338, -0.672312, 0.124166, 0.846371, 0.104162, 0.679453, -0.0345849, -0.528921, -54.6906, 4.63624, -101.671)
 
-[node name="PropRockSmall!1748230766_036" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230766_036" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.672748, 0.424124, -0.758221, -0.0570837, 0.93532, 0.573836, 0.866903, 0.390724, -0.55062, -55.726, 5.14389, -102.146)
 
-[node name="PropRockMedium!1748230768_053" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230768_053" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.721365, 0.25941, -0.435558, 0.0405452, 0.784608, 0.400147, 0.505332, 0.307356, -0.653868, -55.0095, 5.0246, -102.414)
 
-[node name="PropRockSmall!1748230770_07" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230770_07" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.795722, 0.339731, 0.226674, 0.163562, 0.719951, -0.504866, -0.374227, -0.407707, -0.702639, -55.3686, 5.20184, -110.971)
 
-[node name="PropRockSmall!1748230772_086" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230772_086" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.451572, 0.339832, 0.859781, 0.129019, 0.970665, -0.315896, -0.915458, -0.0308311, -0.468628, -55.8097, 4.93172, -111.87)
 
-[node name="PropRockMedium!1748230774_104" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230774_104" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.557764, 0.264504, 0.759734, -0.245463, 0.936351, -0.145785, -0.766098, -0.10744, 0.599841, -53.9288, 4.40873, -112.486)
 
-[node name="PropRockMedium!1748230776_119" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230776_119" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.395547, 0.264067, 0.787847, -0.0580012, 0.879205, -0.265567, -0.828897, 0.0644903, 0.394541, -53.802, 4.37517, -111.824)
 
-[node name="PropRockSmall!1748230778_136" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230778_136" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.255507, 0.0979487, 0.992351, -0.0543708, 1.02152, -0.114827, -0.99569, -0.080916, -0.24838, -52.132, 3.9997, -112.075)
 
-[node name="PropRockMedium!1748230780_153" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230780_153" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.439952, 0.0696012, -1.04013, -0.0830271, 1.12305, 0.110268, 1.03915, 0.119198, -0.431559, -48.6393, 3.9997, -107.039)
 
-[node name="PropRockSmall!1748230782_169" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230782_169" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.570968, 0.478931, 0.615585, -0.345592, 0.839277, -0.332421, -0.699203, -0.0237318, 0.66699, -49.0942, 4.04735, -106.635)
 
-[node name="PropRockMedium!1748230788_203" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230788_203" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.708577, 0.212985, 0.454097, 0.0517699, 0.750716, -0.432889, -0.498885, 0.380409, 0.600042, -53.9378, 5.56665, -104.3)
 
-[node name="PropRockMedium!1748230790_203" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230790_203" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.709299, 0.321107, -0.494402, 0.165595, 0.63382, 0.649229, 0.565793, -0.588057, 0.429786, -54.3504, 5.42003, -109.802)
 
-[node name="PropRockSmall!1748230792_22" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230792_22" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.730853, 0.382916, 0.77006, 0.304901, 1.06029, -0.237859, -0.804147, 0.0540065, -0.790059, -52.3968, 5.27542, -106.477)
 
-[node name="PropRockSmall!1748230794_22" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230794_22" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.239304, 0.383935, 1.0242, 0.232337, 1.04235, -0.336451, -1.06884, 0.140618, -0.302446, -51.2096, 4.82846, -107.825)
 
-[node name="PropRockSmall!1748230824_486" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230824_486" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.51498, 0.0221345, 0.71307, 0.105407, 0.867429, -0.103051, -0.705584, 0.14574, 0.505049, -56.567, 6.9995, -108.014)
 
-[node name="PropRockMedium!1748230828_502" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230828_502" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-1.01731, 0.108717, -0.500163, 0.145808, 1.12827, -0.0513205, 0.490634, -0.109883, -1.02181, -57.1541, 6.9995, -106.84)
 
-[node name="PropRockSmall!1748230830_518" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230830_518" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-1.01698, 0.39281, -0.00515453, 0.392806, 1.017, 0.00178313, 0.00545079, -0.000193825, -1.09021, -55.6029, 6.79883, -105.732)
 
-[node name="PropRockSmall!1748230832_535" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230832_535" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.732378, -0.0148781, 0.773603, -0.00321538, 1.06513, 0.0235288, -0.77374, -0.0185091, 0.732151, -60.0351, 6.9995, -108.827)
 
-[node name="PropRockSmall!1748230834_552" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230834_552" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.468047, -0.0109101, -0.711494, 0.0731739, 0.847833, 0.0351357, 0.707805, -0.0804358, 0.466854, -58.8976, 6.9995, -108.805)
 
-[node name="PropRockMedium!1748230836_568" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230836_568" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.612972, 0.00635655, 0.805391, -0.0230769, 1.01156, -0.0255472, -0.805086, -0.0338349, -0.612473, -59.3231, 6.9995, -105.799)
 
-[node name="PropRockSmall!1748230838_585" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230838_585" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.931061, -0.0388047, 0.555527, -0.0122872, 1.08056, 0.0960727, -0.556745, -0.0887419, 0.926904, -57.3625, 6.9995, -104.626)
 
-[node name="PropRockSmall!1748230877_331" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230877_331" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.634657, 0.0453527, 0.808109, 0.0858894, 1.01735, -0.12455, -0.804811, 0.144336, 0.623966, -77.1603, 11.9995, -91.5366)
 
-[node name="PropRockSmall!1748230879_33" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230879_33" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.184873, -0.124839, 0.975194, 0.0591656, 0.9919, 0.115762, -0.98137, 0.0362828, 0.190689, -80.5855, 11.9995, -90.6005)
 
-[node name="PropRockSmall!1748230881_33" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230881_33" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.846944, -0.0996015, -0.751441, 0.0853781, 1.13213, -0.0538312, 0.753189, -0.0163332, 0.85108, -79.5764, 11.9995, -90.1129)
 
-[node name="PropRockMedium!1748230883_347" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230883_347" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.0741555, -0.0836602, 0.906893, -0.100631, 0.905075, 0.075264, -0.905167, -0.093767, -0.0826643, -80.4472, 11.9995, -95.1126)
 
-[node name="PropRockSmall!1748230885_363" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230885_363" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.991937, 0.0324955, -0.214643, 0.063056, 1.00382, -0.139432, 0.207729, -0.149537, -0.982626, -76.3948, 11.9995, -90.0854)
 
-[node name="PropRockSmall!1748230887_38" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230887_38" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.800313, 0.0148993, 0.417142, -0.039835, 0.900658, 0.0442569, -0.415502, -0.0576499, 0.799227, -80.8682, 11.9995, -93.7017)
 
-[node name="PropRockMedium!1748230903_78" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230903_78" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.099793, -0.0350326, -1.09481, -0.0665214, 1.09712, -0.0411701, 1.09335, 0.0699484, 0.0974215, -85.5958, 11.9995, -106.342)
 
-[node name="PropRockSmall!1748230905_78" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230905_78" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.948191, -0.0999273, -0.305622, -0.0688679, 0.99268, -0.110908, 0.314082, -0.0840111, -0.94697, -85.4809, 11.9995, -105.138)
 
-[node name="PropRockSmall!1748230907_78" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230907_78" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.434714, 0.0108333, 0.886382, -0.0962962, 0.98081, -0.0592145, -0.881202, -0.112525, -0.430798, -82.6232, 11.9995, -103.967)
 
-[node name="PropRockMedium!1748230914_146" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230914_146" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.374584, 0.179961, 0.988395, 0.137271, 1.05414, -0.139908, -0.995222, 0.0776634, -0.391312, -83.4091, 8.9996, -108.244)
 
-[node name="PropRockSmall!1748230916_145" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230916_145" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(1.09467, -0.014022, 0.247673, -0.0145816, 1.11506, 0.127577, -0.247641, -0.127639, 1.0873, -84.7511, 8.9996, -110.151)
 
-[node name="PropRockMedium!1748230918_162" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230918_162" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.825038, -0.112289, 0.780396, -0.139597, 1.13252, 0.0153714, -0.775976, -0.0843497, -0.832503, -84.7211, 8.9996, -106.785)
 
-[node name="PropRockSmall!1748230920_179" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230920_179" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.201832, 0.0413804, 1.04669, -0.0903514, 1.06128, -0.0593797, -1.0436, -0.0998849, -0.197288, -84.1496, 8.9996, -106.466)
 
-[node name="PropRockSmall!1748230922_195" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230922_195" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.479885, 0.02643, 0.886521, 0.0317417, 1.00681, -0.0471984, -0.886347, 0.0503655, 0.478289, -83.2611, 8.9996, -109.361)
 
-[node name="PropRockSmall!1748230924_212" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230924_212" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.848523, 0.103872, -0.547903, 0.111786, 1.00903, 0.0181734, 0.546343, -0.0451338, -0.854664, -83.4899, 8.9996, -114.227)
 
-[node name="PropRockSmall!1748230926_228" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230926_228" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.904242, 0.148088, 0.267482, 0.138725, 0.942905, -0.0530593, -0.272456, -0.0113899, -0.91475, -85.0674, 8.98773, -116.306)
 
-[node name="PropRockSmall!1748230928_229" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230928_229" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.563917, 0.0385424, 0.925024, 0.073793, 1.08153, -7.74977e-05, -0.922882, 0.0629277, -0.565233, -84.7545, 8.9996, -114.569)
 
-[node name="PropRockSmall!1748230930_228" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230930_228" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.166651, -0.0199172, 1.05405, -0.00209108, 1.06714, 0.019834, -1.05424, 0.00103177, -0.16666, -83.2767, 8.9996, -113.258)
 
-[node name="PropRockSmall!1748230932_229" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230932_229" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.684779, 0.0143977, 0.603704, 0.122855, 0.896984, 0.117962, -0.591247, 0.169708, -0.674696, -82.8973, 8.9996, -117.133)
 
-[node name="PropRockSmall!1748230949_899" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230949_899" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.827456, 0.118426, -0.364762, -0.0654744, 0.898325, 0.143129, 0.377875, -0.103673, 0.823543, -86.318, 9.00053, -119.959)
 
-[node name="PropRockMedium!1748230951_914" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230951_914" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.933746, 0.250862, 0.255271, -0.255383, 0.966698, -0.0158439, -0.250748, -0.0503983, 0.966727, -89.3126, 9.04776, -121.798)
 
-[node name="PropRockSmall!1748230953_931" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230953_931" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.437131, 0.339332, 0.712479, 0.208573, 0.835198, -0.269812, -0.761098, 0.0339869, -0.483147, -89.7598, 9.13129, -122.712)
 
-[node name="PropRockMedium!1748230955_948" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230955_948" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.633548, 0.29343, 0.685704, 0.17653, 0.933123, -0.236205, -0.724658, -0.0292251, -0.657032, -88.9454, 8.9653, -126.914)
 
-[node name="PropRockSmall!1748230957_965" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230957_965" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.228868, 0.252425, 0.850993, 0.11909, 0.862147, -0.287763, -0.879616, 0.182404, 0.182461, -86.6745, 9.00475, -130.348)
 
-[node name="PropRockSmall!1748230959_98" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230959_98" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-1.07861, -0.0287696, -0.116453, -0.041128, 1.07841, 0.114513, 0.112683, 0.118224, -1.0729, -84.3565, 8.96386, -129.359)
 
-[node name="PropRockSmall!1748230961_98" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230961_98" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.341521, 0.155436, 0.843625, 0.21937, 0.893657, -0.0758481, -0.829301, 0.172382, -0.367484, -84.0719, 8.48721, -124.392)
 
-[node name="PropRockSmall!1748230963_997" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230963_997" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.452781, -0.0204612, -0.836523, 0.00846471, 0.951199, -0.0186845, 0.83673, 0.00144947, 0.452858, -84.562, 8.49229, -125.285)
 
-[node name="PropRockMedium!1748230966_013" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230966_013" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-1.01811, -0.0691078, 0.102281, -0.0699289, 1.02317, -0.00475624, -0.101721, -0.0116957, -1.02045, -85.8943, 8.49891, -122.577)
 
-[node name="PropRockMedium!1748230968_03" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230968_03" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.0275583, -0.0349598, -0.91432, -0.0866684, 0.910522, -0.0374268, 0.910874, 0.0876926, 0.0241015, -86.4568, 8.50287, -122.811)
 
-[node name="PropRockSmall!1748230970_047" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230970_047" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.656877, -0.0863014, 0.717477, -0.123745, 0.968703, 0.00322683, -0.711975, -0.088743, -0.662514, -86.1665, 8.50126, -125.75)
 
-[node name="PropRockSmall!1748230972_064" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230972_064" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.512649, 0.0522677, 0.875547, 0.0841231, 1.01238, -0.0111809, -0.873062, 0.0668565, -0.515186, -85.7145, 8.49699, -125.038)
 
-[node name="PropRockSmall!1748230974_08" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230974_08" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(1.01671, -0.00144908, -0.188759, 0.00506484, 1.0339, 0.0193437, 0.188696, -0.0199432, 1.01653, -86.2167, 8.49943, -125.017)
 
-[node name="PropRockSmall!1748230976_096" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230976_096" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.529527, -0.0316785, -0.74775, 0.0408263, 0.915843, -0.00988823, 0.747307, -0.0275868, 0.530382, -84.6384, 8.48694, -122.721)
 
-[node name="PropRockMedium!1748230978_113" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230978_113" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-1.08065, 0.142922, -0.145422, 0.122815, 1.08234, 0.151082, 0.16276, 0.132222, -1.07954, -87.6689, 8.61845, -126.502)
 
-[node name="PropRockMedium!1748230980_13" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230980_13" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.472613, -0.23743, 0.925276, -0.0176756, 1.03432, 0.256384, -0.955089, 0.098347, -0.462605, -84.6882, 8.68202, -127.925)
 
-[node name="PropRockMedium!1748230982_147" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230982_147" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.530383, -0.196468, 0.645593, -0.061349, 0.831766, 0.202723, -0.672031, 0.079126, -0.528023, -84.0294, 8.51019, -126.158)
 
-[node name="PropRockSmall!1748230984_163" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230984_163" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.547282, 0.316179, -0.768947, 0.0834928, 0.936834, 0.325788, 0.82721, 0.114627, -0.541617, -85.7753, 8.76933, -129.788)
 
-[node name="PropRockMedium!1748230986_18" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230986_18" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.580954, 0.0595045, -0.861005, -0.0515738, 1.03365, 0.106235, 0.861516, 0.102005, -0.57425, -85.8446, 8.91106, -131.489)
 
-[node name="PropRockSmall!1748230988_18" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230988_18" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.390008, -0.0784444, 0.818877, -0.057345, 0.906635, 0.0595393, -0.820625, -0.026074, -0.393338, -85.3317, 8.92342, -130.918)
 
-[node name="PropRockSmall!1748230990_197" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230990_197" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.620905, 0.343263, -0.589349, -0.363543, 0.840905, 0.106772, 0.577059, 0.160419, 0.701393, -86.1477, 8.89218, -130.479)
 
-[node name="PropRockSmall!1748230992_213" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230992_213" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.378227, 0.0793692, 1.05266, 0.136065, 1.10519, -0.132219, -1.04684, 0.172326, 0.363143, -85.289, 8.49303, -124.253)
 
-[node name="PropRockSmall!1748230994_214" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230994_214" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.803709, -0.0986226, 0.262328, -0.0972989, 0.845361, 0.0197147, -0.262822, -0.0113718, -0.809497, -85.272, 8.49187, -123.5)
 
-[node name="PropRockMedium!1748230996_213" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748230996_213" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-1.00629, 0.212224, -0.00633332, 0.2123, 1.00616, -0.0165263, 0.00278582, -0.0174777, -1.02829, -87.2139, 8.50913, -123.836)
 
-[node name="PropRockSmall!1748230998_229" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748230998_229" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.677446, 0.0329318, -0.7857, 0.236732, 0.997475, -0.162307, 0.749911, -0.285134, -0.658539, -86.6374, 8.5385, -122.334)
 
-[node name="PropRockSmall!1748231000_246" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231000_246" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.479273, -0.111657, 0.970482, 0.0330918, 1.08222, 0.108171, -0.976324, -0.0181308, 0.480072, -83.3618, 8.63087, -122.178)
 
-[node name="PropRockSmall!1748231015_579" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231015_579" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.952402, 0.355577, -0.384512, -0.352348, 1.02543, 0.0755273, 0.387473, 0.0584688, 1.0138, -93.8518, 11.9111, -122.593)
 
-[node name="PropRockMedium!1748231017_577" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231017_577" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.298969, 0.1316, -1.0156, 0.144271, 1.05285, 0.0939573, 1.01387, -0.111011, -0.312847, -95.5937, 12.0425, -119.974)
 
-[node name="PropRockMedium!1748231019_593" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231019_593" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.792181, 0.250321, 0.260736, 0.240652, 0.83394, -0.0694702, -0.269687, 0.00885854, -0.82788, -93.3539, 11.7651, -119.638)
 
-[node name="PropRockSmall!1748231021_611" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231021_611" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.607551, -0.0766061, -0.842376, -0.214066, 1.01732, 0.0618764, 0.818316, 0.209247, -0.609228, -96.8489, 12.2155, -127.107)
 
-[node name="PropRockSmall!1748231023_61" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231023_61" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.434787, 0.180997, -1.027, 0.0595334, 1.11518, 0.171335, 1.04113, 0.0118188, -0.438685, -98.528, 12.317, -122.297)
 
-[node name="PropRockMedium!1748231025_61" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231025_61" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.0232892, 0.227449, 0.98584, -0.106228, 0.9812, -0.223869, -1.00615, -0.0983293, 0.0464551, -99.132, 12.4065, -124.939)
 
-[node name="PropRockSmall!1748231027_61" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231027_61" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-0.918572, 0.364693, 0.423465, 0.338412, 1.01135, -0.136911, -0.444749, 0.0163157, -0.97879, -97.8825, 12.0767, -123.46)
 
-[node name="PropRockMedium!1748231029_626" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231029_626" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.748425, -0.143263, -0.458936, -0.136392, 0.877514, -0.0515014, 0.461024, 0.0270367, -0.76027, -95.7211, 12.0227, -121.406)
 
-[node name="PropRockMedium!1748231031_627" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231031_627" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(-0.659239, 0.0939287, 0.694313, 0.0984181, 0.956301, -0.0359248, -0.69369, 0.0464125, -0.664927, -94.3121, 12.0069, -126.681)
 
-[node name="PropRockSmall!1748231033_626" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231033_626" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.0271281, 0.172537, 0.851301, -0.109091, 0.845649, -0.167915, -0.861732, -0.101624, 0.048057, -93.2156, 11.7016, -128.978)
 
-[node name="PropRockMedium!1748231035_643" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231035_643" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.827084, 0.242336, -0.49753, -0.225536, 0.964601, 0.0949108, 0.505368, 0.0338756, 0.856613, -92.4221, 11.5225, -127.868)
 
-[node name="PropRockMedium!1748231037_659" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+[node name="PropRockMedium!1748231037_659" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
 transform = Transform3D(0.521006, 0.131487, -0.719999, -0.0105259, 0.885045, 0.154011, 0.731831, -0.0808788, 0.514797, -94.4475, 11.9878, -129.288)
 
-[node name="PropRockSmall!1748231039_675" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231039_675" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.0153697, -0.0009479, 1.09106, -0.0956182, 1.08697, 0.00229131, -1.08687, -0.0956409, 0.0152275, -94.971, 12.0753, -128.827)
 
-[node name="PropRockSmall!1748231041_693" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231041_693" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.405146, 0.338076, -0.960679, -0.184191, 1.04118, 0.288726, 1.00164, 0.0547166, 0.441674, -93.4397, 11.7983, -125.647)
 
-[node name="PropRockSmall!1748231043_708" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231043_708" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(0.735693, -0.0295357, 0.834749, 0.053092, 1.11178, -0.00745422, -0.833582, 0.0447434, 0.736248, -94.2759, 12.0091, -125.369)
 
-[node name="PropRockSmall!1748231055_276" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+[node name="PropRockSmall!1748231055_276" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
 transform = Transform3D(-1.0678, -0.252198, 0.288724, -0.261075, 1.10408, -0.00113995, -0.280722, -0.0675133, -1.09718, -82.795, 8.8985, -119.604)
+
+[node name="PropRockSmall!1748280561_496" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(1.14414, -0.0662846, 0.0330823, 0.0740076, 1.04557, -0.464598, -0.00330921, 0.465763, 1.04766, -85.7108, 9.51917, -134.697)
+
+[node name="PropRockSmall!1748280563_497" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-1.02514, -0.0425488, 0.187524, 0.0362507, 0.956159, 0.415121, -0.188843, 0.414523, -0.938291, -85.3825, 9.78174, -135.414)
+
+[node name="PropRockMedium!1748280565_499" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.00730501, 0.0483447, 0.913817, 0.101078, 0.908297, -0.0472447, -0.909496, 0.100556, -0.0125903, -86.1337, 10.6455, -138.954)
+
+[node name="PropRockSmall!1748280567_499" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.581541, -0.0440351, -0.728408, -0.0134918, 0.930609, -0.0670304, 0.729613, 0.0523069, 0.579341, -85.5843, 11.1904, -141.875)
+
+[node name="PropRockSmall!1748280569_498" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.290644, 0.0184916, 1.08371, 0.139019, 1.11209, -0.0562602, -1.07491, 0.148828, 0.285746, -84.8123, 11.0983, -141.683)
+
+[node name="PropRockSmall!1748280571_516" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.594268, -0.0342186, -0.761542, 0.0222851, 0.96597, -0.0260141, 0.761984, -0.00156396, 0.594684, -85.1878, 11.0658, -141.369)
+
+[node name="PropRockMedium!1748280573_517" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.481894, -0.0697782, 0.925842, -0.0343519, 1.04106, 0.096342, -0.927832, -0.0747853, 0.477293, -78.0016, 12.3329, -141.399)
+
+[node name="PropRockMedium!1748280575_532" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.725354, -0.266252, 0.467692, -0.0499157, 0.814818, 0.386451, -0.53585, 0.28451, -0.669091, -82.1035, 11.6331, -142.07)
+
+[node name="PropRockSmall!1748280577_549" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.966358, -0.37796, 0.194578, -0.377978, 0.985078, 0.0362712, -0.194542, -0.0364633, -1.03701, -82.475, 11.4785, -141.302)
+
+[node name="PropRockSmall!1748280579_566" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.762016, -0.0824772, 0.567697, 0.0586447, 0.950154, 0.0593236, -0.570652, -0.0124901, 0.764168, -74.8415, 12.7369, -141.666)
+
+[node name="PropRockSmall!1748280581_582" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.457288, 0.00842728, -0.933109, -0.00904907, 1.03912, 0.00495003, 0.933104, 0.00594722, 0.457339, -74.5146, 12.7185, -142.606)
+
+[node name="PropRockSmall!1748280583_598" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.0561893, -0.10631, 1.11315, 0.0710611, 1.11264, 0.102674, -1.11595, 0.0654973, 0.0625861, -73.3556, 12.8049, -142.871)
+
+[node name="PropRockSmall!1748280585_614" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.500635, 0.0560492, -0.882197, -0.36833, 0.908423, 0.266737, 0.803584, 0.451303, -0.42735, -74.4049, 14.2502, -147.326)
+
+[node name="PropRockMedium!1748280587_631" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.575841, -0.0804614, -0.813245, -0.151472, 0.967113, -0.202939, 0.803056, 0.240112, 0.544869, -72.8569, 14.6767, -148.509)
+
+[node name="PropRockSmall!1748280589_631" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.859505, 0.0258631, -0.166584, -0.0161477, 0.848902, 0.215112, 0.167805, 0.214161, -0.832553, -72.8209, 13.6792, -145.838)
+
+[node name="PropRockMedium!1748280591_631" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.0763657, 0.0702101, -0.89584, -0.157691, 0.88407, 0.0827299, 0.884643, 0.163649, -0.0625854, -74.2834, 16.4369, -153.19)
+
+[node name="PropRockSmall!1748280593_647" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.929604, 0.00969879, -0.0202173, 0.00959658, 0.929812, 0.00479991, 0.020266, 0.00458986, -0.929642, -72.8726, 16.7402, -154.263)
+
+[node name="PropRockSmall!1748280595_664" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.837649, -0.0964692, 0.576985, 0.126514, 1.01374, -0.0141767, -0.57115, 0.0830691, 0.843066, -73.4205, 16.7562, -154.836)
+
+[node name="PropRockSmall!1748280597_68" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.518085, -0.0518026, 0.959055, -0.00686899, 1.08986, 0.0551572, -0.960429, 0.0201492, -0.517738, -74.2722, 16.9995, -157.954)
+
+[node name="PropRockSmall!1748280599_697" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.466876, -0.0549986, 0.953306, 0.035531, 1.05942, 0.0785215, -0.95423, 0.0663568, -0.4635, -72.8015, 16.9668, -157.096)
+
+[node name="PropRockMedium!1748280607_529" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.584942, -0.0460889, 0.86556, 0.0569882, 1.044, 0.0170781, -0.864911, 0.0376181, 0.586506, -91.8077, 16.9995, -156.85)
+
+[node name="PropRockSmall!1748280609_529" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.411279, 0.11191, 1.0323, 0.0633295, 1.11096, -0.095207, -1.03641, 0.0234755, -0.415464, -93.3295, 16.9995, -158.841)
+
+[node name="PropRockMedium!1748280611_546" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.921291, -0.112979, 0.65031, 0.138644, 1.12482, -0.00100036, -0.645326, 0.0803674, 0.928192, -92.868, 16.9995, -159.414)
+
+[node name="PropRockSmall!1748280613_562" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-1.10691, -0.00689419, 0.0238687, -0.00841515, 1.10487, -0.071124, -0.0233758, -0.0712875, -1.10465, -89.3576, 16.9995, -160.445)
+
+[node name="PropRockMedium!1748280615_579" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.958464, -0.0980766, -0.362973, -0.11408, 1.02293, 0.0248404, 0.358265, 0.0633434, -0.963149, -90.9264, 16.9995, -165.639)
+
+[node name="PropRockSmall!1748280617_595" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.0335872, 0.0316632, -0.913164, 0.0460249, 0.912679, 0.0299536, 0.912553, -0.0448659, -0.0351204, -90.9176, 16.9995, -164.482)
+
+[node name="PropRockSmall!1748280621_613" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.171521, 0.124195, -1.01579, -0.0845428, 1.02816, 0.111431, 1.01986, 0.0643438, 0.180075, -91.5639, 16.9995, -163.437)
+
+[node name="PropRockMedium!1748280639_647" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.510792, 0.0768936, 0.709556, -0.0139212, 0.871314, -0.104445, -0.713575, -0.0720407, -0.505878, -89.5307, 16.9995, -163.212)
+
+[node name="PropRockSmall!1748280641_664" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.496228, -0.101648, 0.870763, 0.0491707, 1.00223, 0.0889739, -0.875296, -0.00132555, 0.498657, -84.376, 16.9995, -162.947)
+
+[node name="PropRockSmall!1748280643_68" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.352531, 0.0152181, -0.904378, -0.130623, 0.959609, 0.0670649, 0.895024, 0.146043, -0.346428, -85.3101, 16.9995, -163.382)
+
+[node name="PropRockSmall!1748280645_696" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(1.01041, 0.00510482, 0.165064, -0.017278, 1.02098, 0.0741888, -0.164237, -0.0760029, 1.0077, -84.527, 16.9995, -164.319)
+
+[node name="PropRockSmall!1748280647_713" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.211455, 0.0443248, -0.840583, 0.113723, 0.85725, 0.0738116, 0.834033, -0.128127, 0.203051, -87.6613, 16.9995, -165.101)
+
+[node name="PropRockSmall!1748280649_728" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.5208, 0.0773768, 1.01575, 0.0390229, 1.14147, -0.0669461, -1.01794, 0.00417087, -0.522244, -88.658, 16.9995, -167.724)
+
+[node name="PropRockMedium!1748280651_745" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.327721, 0.0537047, 0.951108, 0.000156165, 1.00581, -0.0568475, -0.952623, 0.0186404, 0.327191, -88.215, 16.9995, -167.319)
+
+[node name="PropRockMedium!1748280653_761" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.717475, 0.0050476, -0.774519, -0.118816, 1.04398, -0.103262, 0.765367, 0.157337, 0.710024, -90.636, 16.9995, -166.338)
+
+[node name="PropRockSmall!1748280669_862" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.000378003, -0.0928525, -1.00643, 0.0567151, 1.00485, -0.0926851, 1.00911, -0.0564406, 0.00558616, -73.9111, 16.9995, -160.752)
+
+[node name="PropRockMedium!1748280671_879" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(1.01103, 0.0609016, 0.457909, -0.0516776, 1.10985, -0.0335096, -0.459042, 0.00919023, 1.01231, -72.87, 16.9995, -160.755)
+
+[node name="PropRockMedium!1748280673_895" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.45479, 0.144875, 0.74908, 0.0866381, 0.87623, -0.116866, -0.758026, 0.013228, -0.462779, -74.036, 16.9995, -162.461)
+
+[node name="PropRockSmall!1748280675_912" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.144292, -0.0648194, -0.850624, 0.0615986, 0.859662, -0.0759571, 0.850864, -0.0732278, -0.138752, -72.7644, 16.9995, -167.427)
+
+[node name="PropRockSmall!1748280677_929" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.435762, -0.0151901, -0.786971, -0.0939538, 0.894095, 0.0347663, 0.78149, 0.0990216, -0.434638, -74.513, 16.9995, -168.71)
+
+[node name="PropRockMedium!1748280679_928" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-1.0101, 0.0879982, 0.088823, 0.0871182, 1.01398, -0.01385, -0.0896862, -0.00614244, -1.01383, -72.2403, 16.9833, -170.212)
+
+[node name="PropRockSmall!1748280681_945" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.277497, 0.0163615, 0.929211, -0.105202, 0.962963, -0.048373, -0.923381, -0.114628, -0.273738, -72.5331, 16.9995, -168.939)
+
+[node name="PropRockMedium!1748280683_962" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.706768, -0.0142918, 0.810523, -0.145253, 1.06015, -0.107965, -0.797529, -0.180418, -0.698619, -76.0368, 16.9942, -170.843)
+
+[node name="PropRockSmall!1748280685_978" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.145675, 0.0484314, -1.04555, 0.196614, 1.0381, 0.0206923, 1.02804, -0.191676, -0.152114, -76.6858, 16.977, -172.084)
+
+[node name="PropRockSmall!1748280687_995" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.128311, 0.0622403, 1.09704, 0.150851, 1.09304, -0.079657, -1.0884, 0.158832, 0.118289, -79.5185, 16.9995, -173.784)
+
+[node name="PropRockMedium!1748280690_011" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.330589, 0.0136877, 0.830968, -0.0102112, 0.894162, -0.0187911, -0.831018, -0.0164323, -0.330338, -79.8966, 16.984, -175.082)
+
+[node name="PropRockSmall!1748280692_028" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.88128, -0.00910113, -0.351851, 0.0062306, 0.948903, -0.00893898, 0.351913, 0.00599126, 0.881282, -79.1363, 16.961, -175.097)
+
+[node name="PropRockSmall!1748280694_028" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.149926, -0.056258, -0.999248, 0.15697, 0.999214, -0.0327044, 0.988444, -0.150147, 0.156759, -67.9717, 16.994, -173.659)
+
+[node name="PropRockMedium!1748280696_044" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.950868, -0.0629562, 0.562046, 0.0355152, 1.10395, 0.0635717, -0.564445, -0.0365952, 0.950828, -68.4547, 16.9995, -172.521)
+
+[node name="PropRockSmall!1748280698_045" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.871376, 0.0351732, 0.456263, 0.0705909, 0.979904, 0.0592746, -0.452139, 0.0852021, -0.870068, -70.2927, 16.909, -173.927)
+
+[node name="PropRockMedium!1748280700_061" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.152776, -0.002222, -1.05903, -0.0653931, 1.06797, 0.00719289, 1.05701, 0.0657499, -0.152623, -69.462, 16.9056, -175.125)
+
+[node name="PropRockSmall!1748280702_077" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.831395, -0.000398884, -0.528602, 0.0884863, 0.971202, -0.139906, 0.521143, -0.165539, -0.819539, -74.867, 16.8238, -174.357)
+
+[node name="PropRockMedium!1748280704_078" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(1.09251, 0.100989, -0.154054, -0.0742262, 1.08938, 0.187746, 0.168589, -0.174812, 1.08098, -73.8959, 16.5811, -175.549)
+
+[node name="PropRockSmall!1748280706_094" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.680637, -0.109387, -0.849378, 0.215452, 1.07194, 0.0345993, 0.828848, -0.188815, 0.688502, -71.3071, 16.6582, -175.903)
+
+[node name="PropRockSmall!1748280708_094" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.261811, -0.168155, 1.03158, -0.0144463, 1.06393, 0.169762, -1.0451, 0.0274184, -0.260772, -70.2983, 16.3925, -180.876)
+
+[node name="PropRockSmall!1748280710_112" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(1.06025, 0.199738, -0.248645, -0.205745, 1.08789, -0.00341327, 0.243697, 0.0494737, 1.07889, -70.5553, 16.4109, -178.936)
+
+[node name="PropRockSmall!1748280712_111" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.970438, 0.0353665, -0.137455, -0.0357752, 0.980109, -0.000397538, 0.137349, 0.00540728, 0.971082, -75.24, 16.3165, -180.178)
+
+[node name="PropRockMedium!1748280714_128" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.859819, -0.208262, -0.627927, 0.201437, 1.06324, -0.0768128, 0.63015, -0.055714, 0.881341, -78.3943, 16.4128, -181.101)
+
+[node name="PropRockSmall!1748280716_127" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.918739, 0.200672, 0.0696789, 0.191232, 0.915995, -0.11657, -0.0924922, -0.0994435, -0.933146, -78.1437, 16.6841, -177.805)
+
+[node name="PropRockMedium!1748280718_145" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.851324, -0.306081, 0.540485, -0.364183, 0.988811, -0.0136567, -0.50317, -0.197813, -0.904573, -63.9031, 16.8439, -183.179)
+
+[node name="PropRockSmall!1748280720_145" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.194194, -0.0921771, 0.825597, 0.121925, 0.841836, 0.0653114, -0.821731, 0.103124, 0.204798, -65.0631, 16.399, -185.84)
+
+[node name="PropRockMedium!1748280722_161" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.0381436, -0.0183486, -1.09359, 0.2435, 1.06664, -0.0263897, 1.06629, -0.244237, -0.0330936, -68.4112, 16.3586, -182.786)
+
+[node name="PropRockMedium!1748280724_161" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.82114, -0.076092, 0.208757, 0.0678426, 0.846928, 0.0418486, -0.211581, -0.0237471, 0.823596, -65.386, 16.3929, -185.077)
+
+[node name="PropRockMedium!1748280726_178" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.429047, -0.0215228, 0.970161, -0.0375862, 1.05959, 0.040129, -0.969672, -0.0505948, 0.427708, -68.7397, 16.2532, -184.46)
+
+[node name="PropRockSmall!1748280728_178" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.796417, -0.266466, 0.587368, 0.281613, 0.983286, 0.0642368, -0.580258, 0.111483, 0.837351, -63.6123, 16.8246, -186.9)
+
+[node name="PropRockSmall!1748280730_194" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.829478, 0.0565661, 0.229312, -0.0659524, 0.859513, 0.0265437, -0.226791, -0.0430647, 0.830981, -68.8983, 16.2842, -187.539)
+
+[node name="PropRockSmall!1748280732_194" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.84266, 0.299892, 0.0990966, 0.30937, 0.840577, 0.0869064, -0.0636019, 0.115445, -0.890202, -68.8707, 16.3606, -184.954)
+
+[node name="PropRockSmall!1748280734_211" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.164886, -0.020805, -0.919179, -0.0160665, 0.933766, -0.0182531, 0.919274, 0.012588, -0.165188, -68.2509, 16.3803, -190.242)
+
+[node name="PropRockMedium!1748280736_21" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.181041, -0.0382162, 1.00848, 0.171648, 1.01081, 0.00749053, -0.994495, 0.167508, 0.184879, -73.9361, 16.3769, -191.111)
+
+[node name="PropRockMedium!1748280738_228" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.826468, 0.0599366, -0.591097, 0.156621, 0.998825, -0.117707, 0.573113, -0.186528, -0.820236, -71.5302, 16.4559, -189.302)
+
+[node name="PropRockSmall!1748280740_227" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.47124, 0.028571, 0.789211, 0.0252609, 0.918022, -0.0483175, -0.789324, 0.046437, 0.469626, -72.3149, 16.6441, -192.999)
+
+[node name="PropRockMedium!1748280742_243" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.471603, -0.00799778, 0.927833, 0.231691, 1.00885, -0.109069, -0.898475, 0.255955, 0.458887, -72.758, 16.9194, -193.903)
+
+[node name="PropRockMedium!1748280744_243" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.013597, 0.0124847, 1.04614, 0.161306, 1.03369, -0.0144327, -1.0337, 0.161469, 0.0115084, -76.0338, 17.0007, -194.134)
+
+[node name="PropRockSmall!1748280746_259" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.706862, -0.00697538, 0.681743, 0.22225, 0.926025, 0.239914, -0.644536, 0.326964, -0.664939, -76.6782, 16.8163, -193.481)
+
+[node name="PropRockSmall!1748280748_259" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-1.12362, 0.0838171, -0.190897, 0.0969681, 1.13642, -0.0717908, 0.184564, -0.0867837, -1.12446, -79.2546, 16.3085, -186.434)
+
+[node name="PropRockSmall!1748280750_276" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-1.03859, -0.102823, -0.0612892, -0.102329, 1.04038, -0.0113805, 0.0621106, -0.00530675, -1.0436, -76.835, 16.3444, -189.213)
+
+[node name="PropRockMedium!1748280752_276" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.76133, 0.0439107, -0.693776, -0.0301684, 1.03002, 0.0320864, 0.69451, -0.00339313, 0.76192, -77.1314, 16.4074, -191.379)
+
+[node name="PropRockSmall!1748280754_292" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.195127, 0.27534, -1.01245, 0.0725875, 1.03089, 0.266364, 1.04671, -0.0201614, -0.207212, -84.1266, 16.9196, -185.71)
+
+[node name="PropRockMedium!1748280756_309" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.736019, 0.217204, -0.39127, 0.227788, 0.830097, 0.0323162, 0.385204, -0.0758557, -0.766718, -81.3421, 16.4331, -183.88)
+
+[node name="PropRockSmall!1748280758_325" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.162376, 0.161952, -0.939723, 0.0688477, 0.948771, 0.175408, 0.951088, -0.0963295, 0.147739, -80.5286, 16.3897, -183.922)
+
+[node name="PropRockSmall!1748280760_327" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.594777, -0.0456769, 0.734332, 0.117351, 0.938069, -0.0366996, -0.726333, 0.114157, 0.595399, -79.0138, 16.2946, -185.255)
+
+[node name="PropRockMedium!1748280762_343" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.895561, -0.0847815, -0.2443, 0.0759244, 0.928021, -0.0437331, 0.247196, 0.0221181, 0.898502, -77.1269, 16.3774, -190.213)
+
+[node name="PropRockSmall!1748280775_409" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.704441, 0.120502, -0.716047, -0.170545, 0.997194, 3.5953e-05, 0.705803, 0.120684, 0.714673, -81.9334, 17.5849, -176.187)
+
+[node name="PropRockSmall!1748280777_425" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.492966, 0.131281, 0.938245, 0.117215, 1.05799, -0.0864492, -0.940106, 0.0630731, -0.502769, -82.6471, 18.1027, -177.688)
+
+[node name="PropRockMedium!1748280779_426" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.522779, 0.284152, 0.891309, 0.0910982, 1.00072, -0.372464, -0.931061, 0.257461, 0.464015, -85.7798, 19.1455, -179.11)
+
+[node name="PropRockSmall!1748280781_442" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.828334, 0.214849, 0.00381865, 0.212013, 0.814665, 0.153894, 0.0350018, 0.149909, -0.841792, -85.5704, 19.3754, -180.266)
+
+[node name="PropRockSmall!1748280783_441" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.550804, 0.21353, -0.809831, 0.00435255, 0.969989, 0.252799, 0.837498, 0.135393, -0.533922, -86.629, 20.0558, -182.077)
+
+[node name="PropRockSmall!1748280785_458" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.0807461, -0.121418, -0.979593, 0.0646596, 0.981405, -0.116313, 0.984969, -0.054472, 0.0879409, -90.6477, 20.9997, -185.081)
+
+[node name="PropRockMedium!1748280787_459" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(1.03604, -0.00514239, 0.0356033, 0.00468775, 1.03656, 0.013306, -0.035666, -0.0131369, 1.03596, -90.7569, 20.9997, -186.21)
+
+[node name="PropRockSmall!1748280789_475" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.599841, -0.0915143, 0.610728, -0.065587, 0.856034, 0.0638542, -0.614054, -0.00203675, -0.603413, -88.9473, 20.9997, -185.111)
+
+[node name="PropRockSmall!1748280791_492" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.982511, -0.209737, 0.0324157, 0.210917, 0.947957, -0.259346, 0.0235441, 0.260301, 0.970597, -87.0954, 21.8544, -188.867)
+
+[node name="PropRockSmall!1748280793_491" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.599654, -0.239596, 0.708075, 0.0696724, 0.885886, 0.358767, -0.74426, 0.275974, -0.536915, -86.3107, 22.5495, -191.12)
+
+[node name="PropRockMedium!1748280795_509" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(1.04545, -0.272473, 0.178775, 0.308965, 1.01977, -0.252533, -0.103648, 0.291531, 1.05045, -84.1337, 23.2188, -191.877)
+
+[node name="PropRockMedium!1748280797_508" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.983766, -0.280485, 0.427242, -0.201663, 1.06458, 0.234547, -0.469617, 0.130417, -0.995718, -84.1018, 23.3901, -192.52)
+
+[node name="PropRockMedium!1748280799_525" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.71645, -0.149372, -0.643256, -0.227754, 0.946771, 0.0338174, 0.619853, 0.175224, -0.731074, -82.9143, 23.7967, -193.254)
+
+[node name="PropRockSmall!1748280801_541" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.744752, -0.271109, 0.672399, -0.137571, 0.999291, 0.250536, -0.711825, 0.0905213, -0.751922, -81.5838, 24.6585, -195.534)
+
+[node name="PropRockSmall!1748280803_541" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.293641, 0.0217107, 1.01851, 0.0659809, 1.05815, -0.00353319, -1.0166, 0.0624068, -0.294421, -79.0633, 24.9999, -196.668)
+
+[node name="PropRockSmall!1748280805_557" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.499672, -0.0431233, -0.695558, 0.0350494, 0.856344, -0.0279131, 0.696011, -0.0121647, 0.500752, -78.8919, 24.9999, -197.381)
+
+[node name="PropRockSmall!1748280807_558" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-1.09725, -0.124619, 0.0857508, -0.132346, 1.09493, -0.102252, -0.0732633, -0.11154, -1.09956, -79.8616, 24.9999, -197.634)
+
+[node name="PropRockSmall!1748280809_574" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.291549, 0.100824, 0.882165, 0.00793951, 0.928763, -0.103526, -0.887873, -0.0248024, -0.290601, -77.0879, 24.9999, -199.9)
+
+[node name="PropRockSmall!1748280811_574" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.497429, -0.00386212, 0.712176, 0.0611606, 0.865713, -0.0380238, -0.709555, 0.0719132, 0.495989, -75.4971, 24.9999, -199.037)
+
+[node name="PropRockMedium!1748280813_59" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.43594, 0.0912869, 0.983153, -0.073665, 1.07473, -0.0671257, -0.98463, -0.0399887, 0.440308, -73.9922, 24.9999, -201.875)
+
+[node name="PropRockSmall!1748280815_591" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.552387, -0.0372301, -0.920992, 0.0859097, 1.06696, -0.0946571, 0.917732, -0.122288, -0.545489, -73.5831, 24.9999, -199.726)
+
+[node name="PropRockMedium!1748280817_608" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.449096, 0.0239069, 0.930478, 0.00476874, 1.03305, -0.0288439, -0.930773, 0.0168278, 0.448806, -73.0725, 24.9999, -200.806)
+
+[node name="PropRockSmall!1748280819_624" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.0388814, 0.110434, 0.890401, 0.0497219, 0.890133, -0.10823, -0.895845, 0.0446118, -0.0446522, -74.4682, 24.9999, -200.758)
+
+[node name="PropRockSmall!1748280821_623" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.813274, 0.0685731, 0.334292, -0.0321155, 0.875524, -0.101464, -0.339739, 0.0813885, 0.809828, -73.3546, 24.9999, -204.791)
+
+[node name="PropRockSmall!1748280823_641" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.683498, -0.0297309, 0.557077, 0.0440548, 0.875382, 0.100771, -0.556128, 0.105885, -0.676682, -74.1051, 24.9999, -208.087)
+
+[node name="PropRockSmall!1748280825_64" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.518292, 0.151734, 0.896477, 0.133703, 1.0334, -0.0976096, -0.899343, 0.0661888, -0.531152, -73.4096, 24.9999, -208.805)
+
+[node name="PropRockSmall!1748280827_657" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.712351, 0.0513081, 0.511229, -0.0346923, 0.87673, -0.0396502, -0.512624, 0.0119652, 0.713095, -74.3138, 24.9999, -205.311)
+
+[node name="PropRockSmall!1748280829_674" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.392217, 0.01994, 0.927107, -0.0280071, 1.00591, -0.0334834, -0.926899, -0.0388321, -0.391293, -69.2828, 24.9999, -200.481)
+
+[node name="PropRockMedium!1748280831_674" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.897273, 0.0542017, -0.324358, 0.0429716, 0.953811, 0.040514, 0.326036, 0.0234544, -0.897995, -71.2755, 24.9999, -199.102)
+
+[node name="PropRockSmall!1748280833_69" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.497094, -0.0154404, 0.72767, -0.0537233, 0.878008, 0.0553304, -0.725849, -0.0755595, 0.494246, -68.687, 24.9999, -197.691)
+
+[node name="PropRockSmall!1748280835_707" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.91432, -0.0229151, 0.478052, -0.0468317, 1.03016, -0.0401902, -0.476304, -0.0573006, -0.913724, -66.5066, 24.9999, -197.007)
+
+[node name="PropRockSmall!1748280837_724" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.549402, 0.0241893, -0.861439, -0.0961628, 1.01351, 0.0897894, 0.856396, 0.129322, -0.542554, -67.743, 24.9999, -197.111)
+
+[node name="PropRockSmall!1748280857_14" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.71029, 0.20158, 0.661292, -0.0385101, 0.958181, -0.250717, -0.69026, 0.153972, 0.694469, -65.2778, 24.3934, -194.625)
+
+[node name="PropRockMedium!1748280859_14" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.672038, 0.292621, 0.670544, 0.412142, 0.903704, 0.0186887, -0.60448, 0.290831, -0.732743, -64.6639, 24.2897, -194.762)
+
+[node name="PropRockMedium!1748280861_157" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.312201, 0.159159, -0.923622, -0.246593, 0.953167, 0.0808971, 0.904213, 0.20499, 0.340964, -64.2168, 24.0299, -194.04)
+
+[node name="PropRockSmall!1748280863_155" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.216306, 0.195258, 0.888339, 0.0737112, 0.906348, -0.217164, -0.906553, 0.120284, 0.194303, -61.5591, 22.9651, -191.993)
+
+[node name="PropRockSmall!1748280865_173" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(1.06541, 0.154917, 0.025847, -0.145498, 1.04027, -0.237554, -0.0591396, 0.231522, 1.05008, -61.8099, 22.6522, -190.464)
+
+[node name="PropRockSmall!1748280867_189" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.802203, 0.232205, 0.350365, 0.316834, 0.830121, 0.175267, -0.276207, 0.277819, -0.816535, -59.6635, 21.9861, -189.647)
+
+[node name="PropRockSmall!1748280869_189" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.990385, 0.145744, -0.365298, 0.0384174, 1.02087, 0.303144, 0.391418, 0.268572, -0.954048, -58.088, 21.1419, -187.563)
+
+[node name="PropRockMedium!1748280871_206" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(-0.815631, 0.00204315, -0.530269, 0.0396187, 0.970361, -0.0572004, 0.528791, -0.0695511, -0.813625, -56.9692, 20.9997, -186.749)
+
+[node name="PropRockSmall!1748280873_205" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.649012, -0.0457257, 0.84946, -0.0929717, 1.05824, 0.127997, -0.845594, -0.151447, 0.637907, -56.9703, 20.9997, -185.198)
+
+[node name="PropRockSmall!1748280875_222" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.0171943, -0.178116, -0.872972, -0.143896, 0.862226, -0.173089, 0.87926, 0.137625, -0.0453984, -57.6559, 20.8748, -183.131)
+
+[node name="PropRockMedium!1748280877_238" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.967201, 0.0119768, -0.0656296, -0.00771662, 0.96743, 0.0628256, 0.0662657, -0.0621543, 0.965232, -56.0339, 20.9997, -185.356)
+
+[node name="PropRockSmall!1748280879_255" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.300706, -0.241587, -0.946283, -0.0886828, 0.979277, -0.278192, 0.9726, 0.163985, 0.267204, -59.7286, 20.1887, -182.213)
+
+[node name="PropRockSmall!1748280881_289" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.705848, -0.107046, 0.549482, 0.157543, 0.886516, -0.0296702, -0.537187, 0.119337, 0.713302, -60.0026, 19.9105, -181.292)
+
+[node name="PropRockMedium!1748280883_288" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("142_l4g06")]
+transform = Transform3D(0.835805, -0.192315, 0.292064, 0.237229, 0.867771, -0.107483, -0.256921, 0.175628, 0.850884, -62.3518, 18.7226, -178.439)
+
+[node name="PropRockSmall!1748280885_304" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(0.775531, -0.168616, -0.44043, 0.025147, 0.861248, -0.285444, 0.470933, 0.231688, 0.740541, -63.767, 18.344, -178.128)
+
+[node name="PropRockSmall!1748280887_305" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Rocks" instance=ExtResource("141_3j8rl")]
+transform = Transform3D(-0.962604, -0.341155, -0.085603, -0.351694, 0.937181, 0.219828, 0.00510316, 0.235852, -0.997331, -64.7592, 17.5297, -175.621)
 
 [node name="Plants" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props"]
 
@@ -6255,6 +6672,357 @@ transform = Transform3D(-0.172938, -0.0730065, -0.997222, -0.0267139, 1.012, -0.
 [node name="PropFern2!1748212163_762" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
 transform = Transform3D(-0.00917846, 0.0404601, -1.01878, -0.0566234, 1.01723, 0.0409086, 1.01801, 0.0569447, -0.00691001, -40.871, 3.9997, -77.786)
 
+[node name="PropFern2!1748271769_243" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.920517, 0.048997, 0.318418, -0.0388178, 0.973766, -0.0376207, -0.319818, 0.0228351, 0.921052, -56.8965, 6.9995, -113.874)
+
+[node name="PropFern2!1748271771_239" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.468664, 0.0292891, 0.882454, -0.042381, 0.998659, -0.0106378, -0.881922, -0.0324263, 0.469458, -57.3317, 6.9995, -115.444)
+
+[node name="PropFern1!1748271773_239" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.356768, 0.0422442, 0.946974, -0.0743769, 1.00995, -0.0170325, -0.944994, -0.063541, 0.358856, -59.8054, 6.9995, -115.77)
+
+[node name="PropFern2!1748271775_256" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.648595, -0.0305589, 0.777384, -0.0243993, 1.0124, 0.0194404, -0.777602, -0.00627775, -0.649023, -64.9518, 6.9995, -115.198)
+
+[node name="PropFern1!1748271777_272" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.89387, 0.032284, -0.471231, -0.0279241, 1.01048, 0.0162589, 0.47151, -0.00135973, 0.894305, -69.5293, 6.9995, -114.804)
+
+[node name="PropFern2!1748271779_274" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.589232, -0.0885491, -0.772235, -0.0391949, 0.971191, -0.081456, 0.776307, -0.0181762, -0.590254, -68.6493, 6.9995, -115.722)
+
+[node name="PropFern2!1748271781_288" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.426906, 0.015264, -0.931428, 0.0698245, 1.02117, 0.0487377, 0.928933, -0.0837725, 0.424389, -65.9998, 6.9995, -113.22)
+
+[node name="PropFern1!1748271783_288" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.850662, -0.0605534, 0.464251, 0.0416808, 0.968806, 0.0499907, -0.466324, -0.0238672, 0.851348, -69.3605, 6.9995, -102.47)
+
+[node name="PropFern2!1748271787_323" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.683343, 0.0270606, 0.779293, -0.0668669, 1.03441, 0.0227145, -0.77689, -0.0652293, 0.683501, -56.8069, 6.9995, -102.456)
+
+[node name="PropFern1!1748271847_653" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.690208, 0.0953498, 0.67364, 0.053399, 0.964226, -0.0817683, -0.678256, -0.0211167, -0.691949, -73.2574, 6.9995, -99.7222)
+
+[node name="PropFern1!1748271849_653" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.0699997, 0.0390836, -1.01079, -0.0338101, 1.01273, 0.0368173, 1.01098, 0.0311626, 0.0712178, -72.6848, 6.9995, -87.9739)
+
+[node name="PropFern2!1748271851_669" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.0333286, -0.0653895, 1.01688, 0.0535014, 1.01591, 0.0670805, -1.01757, 0.0555555, -0.029779, -71.2234, 6.9995, -88.662)
+
+[node name="PropFern1!1748271853_685" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.0807913, -0.0347583, -1.03577, -0.0649247, 1.0367, -0.0398538, 1.03432, 0.0677894, 0.0784031, -56.9952, 6.9995, -100.879)
+
+[node name="PropFern1!1748271855_703" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.98668, -0.00136379, 0.32545, -0.00506423, 1.0389, -0.0109999, -0.325414, -0.0120327, -0.986619, -63.8284, 6.9995, -96.1268)
+
+[node name="PropFern1!1748271874_302" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.142876, -0.0280718, 1.02437, 0.0382633, 1.03341, 0.0336564, -1.02404, 0.0425301, -0.141665, -75.2878, 11.9995, -95.9043)
+
+[node name="PropFern2!1748271876_301" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.83081, 0.0425091, 0.611044, -0.0548507, 1.03073, 0.0028722, -0.610059, -0.0347826, 0.831892, -77.9716, 11.9995, -88.0283)
+
+[node name="PropFern1!1748271878_302" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.143635, -0.0742266, -0.969327, 0.0438773, 0.978356, -0.0814197, 0.971174, -0.0551797, -0.139683, -75.7277, 11.9995, -89.0892)
+
+[node name="PropFern2!1748271880_318" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.274886, 0.0762613, 0.970043, -0.0305409, 1.00684, -0.0878084, -0.972557, -0.053172, -0.271418, -81.2147, 11.9995, -98.9299)
+
+[node name="PropFern1!1748271882_317" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.782436, -0.0413795, -0.578887, -0.0843178, 0.969497, 0.0446649, 0.574206, 0.0859777, -0.782255, -82.799, 11.9995, -90.7196)
+
+[node name="PropFern1!1748271884_335" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.768829, 0.0134579, -0.60726, 0.00430237, 0.979433, 0.0271529, 0.607394, -0.0239724, 0.768467, -84.7316, 11.9995, -98.1326)
+
+[node name="PropFern2!1748271886_353" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.679025, -0.0213305, -0.757989, -0.0719966, 1.01469, 0.035942, 0.754863, 0.0775909, -0.678409, -77.5937, 11.9995, -98.5705)
+
+[node name="PropFern2!1748271914_218" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-1.03799, -0.0536953, -0.0227384, -0.0550834, 1.03592, 0.0682537, 0.0191322, 0.069351, -1.03714, -70.6529, 11.9995, -128.905)
+
+[node name="PropFern2!1748271916_217" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.843916, -0.0881563, 0.435736, -0.0813516, 0.949746, 0.0345901, -0.437058, -0.00655943, -0.847803, -73.5716, 11.9995, -127.699)
+
+[node name="PropFern2!1748271918_218" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.758549, 0.0218764, -0.69642, -0.023343, 1.0281, 0.0577209, 0.696372, 0.0582925, -0.756666, -70.7921, 11.9995, -124.671)
+
+[node name="PropFern2!1748271920_235" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.976534, -0.0763717, 0.21202, 0.0862563, 0.997762, -0.0378806, -0.208195, 0.0551584, 0.978783, -76.6449, 11.9995, -120.895)
+
+[node name="PropFern1!1748271922_234" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.496449, 0.0654554, 0.909811, 0.0154389, 1.03629, -0.0661302, -0.912032, -0.0180873, -0.49636, -70.9721, 11.9995, -120.388)
+
+[node name="PropFern2!1748271924_235" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.98733, -0.00319279, -0.306494, 0.02915, 1.03005, 0.0831729, 0.305121, -0.0880753, 0.983826, -71.5816, 11.9995, -119)
+
+[node name="PropFern2!1748271943_532" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.470755, -0.0898066, -0.922613, 0.0591614, 1.03557, -0.0706151, 0.925083, -0.0205266, 0.474014, -80.1515, 11.9995, -112.39)
+
+[node name="PropFern2!1748271945_532" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.0844486, -0.0450528, 1.03182, -0.0402822, 1.03462, 0.0418782, -1.03201, -0.0366971, -0.0860671, -73.538, 11.9995, -103.749)
+
+[node name="PropFern1!1748271947_549" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.717902, 0.0626545, 0.624134, 0.0114553, 0.949721, -0.0821626, -0.627166, -0.0543722, -0.715932, -77.1274, 11.9995, -101.367)
+
+[node name="PropFern2!1748271949_548" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.184952, -0.0293997, -0.983787, -0.00489171, 1.00102, -0.0289951, 0.984214, -0.000549504, -0.185016, -87.2609, 11.9995, -101.256)
+
+[node name="PropFern1!1748271951_549" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(1.01822, 0.0624504, 0.0705318, -0.06846, 1.01644, 0.0883287, -0.0647149, -0.0926751, 1.0163, -90.1181, 11.9995, -110.204)
+
+[node name="PropFern2!1748271953_565" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.993856, 0.0293275, 0.202061, 0.0379987, 1.01312, 0.0398542, -0.200611, 0.0466063, -0.99349, -88.7411, 11.9995, -111.215)
+
+[node name="PropFern1!1748271955_564" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.530296, 0.0104335, -0.867552, -0.00286226, 1.01679, 0.0104787, 0.86761, -0.00302273, 0.530295, -90.4859, 11.9995, -101.166)
+
+[node name="PropFern2!1748271957_565" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.730991, 0.0454739, -0.733943, 0.0600787, 1.03511, 0.00429689, 0.732892, -0.0394973, -0.732391, -90.1677, 11.9995, -105.242)
+
+[node name="PropFern2!1748272030_611" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.916227, 0.0347417, -0.42787, 0.010646, 1.01002, 0.059213, 0.429146, 0.0491176, -0.914971, -65.712, 16.9995, -156.646)
+
+[node name="PropFern2!1748272032_612" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.639064, 0.0735555, -0.72728, 0.0391124, 0.968082, 0.0635414, 0.729943, 0.0125252, -0.640137, -69.206, 16.9995, -149.932)
+
+[node name="PropFern1!1748272034_628" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.163469, 0.0283594, 0.9644, -0.0127065, 0.978123, -0.0266092, -0.964733, -0.00807744, 0.163763, -65.1721, 16.9995, -151.656)
+
+[node name="PropFern2!1748272036_643" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.776115, -0.117332, 0.651544, -0.0787276, 1.0132, 0.0886796, -0.657327, 0.0171855, -0.779909, -66.1769, 16.9995, -150.937)
+
+[node name="PropFern1!1748272038_644" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.589154, -0.0690277, -0.744765, -0.0489189, 0.949588, -0.0493137, 0.746355, 0.00775077, -0.591131, -60.9916, 16.9995, -152.429)
+
+[node name="PropFern2!1748272040_644" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-1.04337, -0.0617612, 0.0889352, -0.0682687, 1.04399, -0.075912, -0.0840435, -0.0812946, -1.04243, -69.6696, 16.9995, -156.695)
+
+[node name="PropFern1!1748272047_559" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.966331, 0.00893627, -0.273224, 0.00780675, 1.00421, 0.00523379, 0.273259, 0.00291219, -0.966358, -81.7182, 16.9995, -156.895)
+
+[node name="PropFern1!1748272049_56" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.341906, 0.0278437, 0.972528, 0.0336077, 1.02988, -0.041301, -0.972345, 0.0453869, 0.340543, -79.7631, 16.9995, -152.291)
+
+[node name="PropFern1!1748272051_56" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.01654, 0.0616153, 1.03046, -0.00712533, 1.03057, -0.0615078, -1.03227, -0.00612633, 0.0169355, -86.1158, 16.9995, -154.856)
+
+[node name="PropFern1!1748272053_56" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.598564, -0.0271875, -0.812108, 0.0820387, 1.00553, 0.0268039, 0.808411, -0.0819124, 0.598581, -88.3578, 16.9995, -151.33)
+
+[node name="PropFern2!1748272055_576" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.668938, 0.0526992, 0.741526, -0.0526098, 0.998397, -0.0234948, -0.741532, -0.0232937, 0.670599, -93.5899, 16.9995, -151.907)
+
+[node name="PropFern1!1748272057_592" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.879718, -0.0804144, -0.385694, -0.0528288, 0.959178, -0.079486, 0.39043, -0.0514045, -0.879803, -91.2312, 16.9995, -149.53)
+
+[node name="PropFern1!1748272059_609" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.807525, 0.0487504, 0.614815, 0.0657718, 1.01396, 0.00598805, -0.613228, 0.0445554, -0.808973, -89.0906, 16.9995, -149.292)
+
+[node name="PropFern2!1748275521_844" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.972549, 0.0419732, 0.212389, 0.0288823, 0.993867, -0.0641572, -0.214562, -0.0564676, -0.971337, -75.9692, 16.9995, -160.929)
+
+[node name="PropFern2!1748275523_842" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.279364, -0.0275653, -0.942405, 0.0587217, 0.981507, -0.0113017, 0.940978, -0.0530671, 0.280493, -76.8038, 16.9995, -167.754)
+
+[node name="PropFern1!1748275525_859" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.422425, -0.0101716, -0.88347, -0.0438434, 0.978289, 0.00970016, 0.88244, 0.0437364, -0.422436, -75.7552, 16.9995, -166.06)
+
+[node name="PropFern2!1748275527_859" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.595582, 0.0488374, 0.862635, -0.00979491, 1.04727, -0.0660532, -0.86396, -0.0455399, -0.59392, -70.4128, 16.9995, -166.996)
+
+[node name="PropFern1!1748275529_875" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.857079, 0.0329727, 0.430617, -0.0235475, 0.959084, -0.02657, -0.431235, 0.0131625, 0.857301, -70.9186, 16.9995, -163.082)
+
+[node name="PropFern1!1748275531_892" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.860154, -0.0253425, 0.595032, 0.00443133, 1.04497, 0.0509111, -0.595555, 0.0443772, -0.85902, -69.5306, 23.9995, -166.25)
+
+[node name="PropFern1!1748275533_891" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.875403, -0.0184352, 0.465832, 0.0489699, 0.98918, -0.0528788, -0.463618, 0.0696733, 0.873999, -77.9573, 23.9995, -167.62)
+
+[node name="PropFern1!1748275535_909" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.296034, -0.00592088, -0.932662, 0.00947254, 0.978445, -0.00921818, 0.932633, -0.0118172, -0.29595, -66.3865, 23.9995, -170.691)
+
+[node name="PropFern2!1748275537_906" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.268383, 0.00136262, -0.928458, -0.0188747, 0.966262, 0.00687407, 0.928267, 0.0200412, -0.268298, -84.6812, 23.9995, -174.619)
+
+[node name="PropFern1!1748275539_921" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.695304, -0.0648197, -0.663567, -0.0418135, 0.961102, -0.0500706, 0.665413, -0.00733743, -0.696522, -87.9289, 23.9995, -177.471)
+
+[node name="PropFern1!1748275541_939" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.551783, -0.0551877, -0.80921, -0.0558446, 0.978974, -0.0286863, 0.809165, 0.0299305, -0.553794, -86.9742, 23.9995, -175.746)
+
+[node name="PropFern1!1748275543_957" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.928824, 0.0221354, 0.307452, -0.00271425, 0.97666, -0.0621159, -0.308236, 0.0581015, 0.927009, -60.1578, 23.9995, -176.202)
+
+[node name="PropFern1!1748275545_975" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.869997, 0.0676502, -0.481644, 0.070341, 0.994156, 0.0125786, 0.481258, -0.0230114, -0.872533, -60.3666, 23.9995, -174.548)
+
+[node name="PropFern2!1748275547_974" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.98415, 0.0723822, -0.0698687, 0.0748708, 0.985881, -0.0332607, 0.0671952, -0.0383761, -0.986248, -64.761, 23.9995, -171.485)
+
+[node name="PropFern1!1748280257_941" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.681884, 0.040269, -0.697531, 0.0202594, 0.973115, 0.0759836, 0.698398, -0.0675453, 0.678833, -93.7892, 28.9995, -186.197)
+
+[node name="PropFern1!1748280259_942" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.985568, 0.0514736, -0.0598823, 0.0508433, 0.987347, 0.0119022, 0.0604184, 0.00878485, -0.98684, -86.7351, 28.9995, -194.312)
+
+[node name="PropFern2!1748280261_943" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.405633, -0.0916968, -0.951446, -0.0443109, 1.03427, -0.0807875, 0.954827, 0.00904251, -0.407945, -84.4921, 28.9995, -197.3)
+
+[node name="PropFern2!1748280263_959" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-1.02923, 0.0402737, -0.188484, 0.0445475, 1.04599, -0.0197575, 0.187519, -0.0274385, -1.02983, -80.7292, 28.9995, -204.731)
+
+[node name="PropFern1!1748280265_976" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.190931, 0.0209828, -0.952427, -0.0732358, 0.968169, 0.0360111, 0.949839, 0.078867, -0.188675, -81.2903, 28.9995, -203.786)
+
+[node name="PropFern1!1748280267_992" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.724949, -0.0277574, -0.695932, 0.0624496, 1.00305, 0.0250464, 0.69368, -0.0612928, 0.725048, -78.5594, 30.9996, -210.024)
+
+[node name="PropFern2!1748280269_992" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.262848, 0.0665945, 0.987041, -0.0496953, 1.01911, -0.0819918, -0.988036, -0.0689743, -0.258459, -80.4676, 30.9996, -208.232)
+
+[node name="PropFern2!1748280271_993" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.0467108, 0.0134161, -0.966069, -0.0379476, 0.966476, 0.0115869, 0.965416, 0.0373401, 0.0471978, -66.6838, 30.9996, -208.271)
+
+[node name="PropFern2!1748280274_008" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-1.00211, -0.0165201, 0.0662412, -0.0169584, 1.00427, -0.00609167, -0.0661304, -0.00719597, -1.00222, -70.1338, 30.9996, -210.563)
+
+[node name="PropFern1!1748280276_027" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.974978, -0.0599477, 0.167071, -0.0628129, 0.988942, -0.0117101, -0.166015, -0.0221101, -0.976749, -68.4122, 30.9996, -210.501)
+
+[node name="PropFern1!1748280278_026" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.42768, 0.0363023, 0.888053, -0.0743907, 0.983521, -0.00437885, -0.885676, -0.0650791, 0.429196, -64.9537, 30.9996, -210.406)
+
+[node name="PropFern2!1748280287_275" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.0302388, 0.015414, -0.965774, -0.0799844, 0.962968, 0.0128649, 0.962579, 0.0795325, 0.0314082, -82.5364, 28.9995, -198.917)
+
+[node name="PropFern2!1748280300_208" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-1.03904, -0.0595823, 0.0195424, -0.0594124, 1.03919, 0.00949491, -0.0200532, 0.00836226, -1.0407, -52.9824, 28.9995, -186.482)
+
+[node name="PropFern1!1748280302_208" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.646717, -0.00156881, -0.78525, 0.0770291, 1.0125, 0.061417, 0.781464, -0.0985042, 0.643796, -51.5751, 28.9995, -185.639)
+
+[node name="PropFern1!1748280304_224" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.255018, 0.00584094, -0.945899, 0.0144504, 0.979533, 0.00994451, 0.945806, -0.0165406, 0.254891, -53.3141, 28.9995, -184.172)
+
+[node name="PropFern2!1748280306_225" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.892934, -0.0597103, 0.482515, 0.0834851, 1.01287, -0.0291558, -0.478974, 0.0652265, 0.894453, -56.6727, 28.9995, -190.926)
+
+[node name="PropFern2!1748280308_241" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.992975, 0.0342305, 0.294178, -0.0206718, 1.03476, -0.0506278, -0.295441, 0.0426471, 0.992274, -59.3258, 28.9995, -195.213)
+
+[node name="PropFern2!1748280310_257" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.57837, -0.0783066, 0.866112, 0.00508626, 1.04046, 0.0906727, -0.86963, -0.0459944, 0.576561, -60.799, 28.9995, -195.27)
+
+[node name="PropFern1!1748280312_274" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.302276, 0.0314172, 0.970364, -0.0643807, 1.01342, -0.0528665, -0.968735, -0.0771537, -0.299271, -64.1245, 28.9995, -201.308)
+
+[node name="PropFern1!1748280314_29" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.761456, 0.0275736, 0.590872, -0.0745651, 0.959955, 0.0512947, -0.586797, -0.0862021, 0.760226, -64.7522, 28.9995, -199.327)
+
+[node name="PropFern2!1748280316_291" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.0396375, -0.0570765, -0.997537, 0.0126101, 0.998271, -0.0566174, 0.999089, -0.0103353, 0.0402906, -65.4818, 28.9995, -203.33)
+
+[node name="PropFern1!1748280318_291" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.236182, 0.065309, -0.982401, -0.062929, 1.0072, 0.0820869, 0.982556, 0.0802062, -0.230887, -66.5319, 28.9995, -205.965)
+
+[node name="PropFern2!1748280327_724" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.621186, -0.0224914, -0.726653, -0.0443167, 0.955181, 0.00831978, 0.725649, 0.039081, -0.621538, -71.292, 24.9999, -196.734)
+
+[node name="PropFern2!1748280329_74" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.986688, 0.0140822, 0.292633, 0.0309, 1.02734, 0.0547492, -0.291338, 0.0612697, -0.985268, -76.425, 24.9999, -196.696)
+
+[node name="PropFern2!1748280331_74" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.838539, -0.0699946, 0.493984, -0.064886, 0.973184, 0.0277503, -0.494681, -0.00900133, -0.840998, -75.0872, 24.9999, -197.13)
+
+[node name="PropFern1!1748280333_754" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.0644366, -0.0868276, -0.961305, 0.0783617, 0.960735, -0.0815235, 0.962032, -0.0724404, 0.0710283, -79.3974, 24.9999, -202.341)
+
+[node name="PropFern1!1748280335_771" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.832591, 0.0540349, 0.482743, -0.0500219, 0.962396, -0.0214507, -0.483176, -0.0065234, 0.834066, -79.0809, 24.9999, -204.912)
+
+[node name="PropFern1!1748280337_787" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.984696, -0.0696441, -0.0478244, 0.0653343, 0.982442, -0.0854566, 0.0535622, 0.0819823, 0.98345, -76.3544, 24.9999, -207.848)
+
+[node name="PropFern1!1748280339_805" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.994135, -0.0137051, -0.245271, 0.00313877, 1.02165, -0.0698093, 0.245633, -0.0685227, -0.991776, -70.6709, 24.9999, -208.04)
+
+[node name="PropFern1!1748280341_805" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.0534272, 0.0616694, -0.970432, -0.0846315, 0.968503, 0.0568874, 0.9687, 0.081213, 0.0584928, -70.4009, 24.9999, -206.095)
+
+[node name="PropFern1!1748280343_804" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.866655, 0.0164427, 0.433674, 0.00174977, 0.968409, -0.0402137, -0.433982, 0.0367403, 0.865878, -67.034, 24.9999, -201.326)
+
+[node name="PropFern1!1748280345_805" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.309403, 0.0493919, -0.995036, -0.0898811, 1.03628, 0.0793876, 0.992198, 0.109277, -0.303096, -66.4714, 24.9999, -199.569)
+
+[node name="PropFern2!1748280361_789" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.958098, 0.0518014, 0.195004, 0.0694623, 0.973131, 0.082778, -0.189434, 0.0948358, -0.95592, -54.4058, 20.9997, -185.809)
+
+[node name="PropFern2!1748280363_787" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.954987, 0.0133766, -0.418336, 0.0161486, 1.0402, 0.0701252, 0.418239, -0.0707063, 0.952503, -54.9381, 20.9997, -183.853)
+
+[node name="PropFern2!1748280365_788" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.0543121, -0.152692, 0.957526, 0.218655, 0.932396, 0.161087, -0.944649, 0.224597, -0.0177662, -60.1484, 20.7886, -184.75)
+
+[node name="PropFern2!1748280374_288" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.913237, -0.160801, -0.319221, -0.203296, 0.954059, 0.10101, 0.293989, 0.160236, -0.921768, -83.7617, 24.1497, -195.492)
+
+[node name="PropFern2!1748280376_288" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.475869, -0.163711, -0.908855, -0.222046, 1.01271, -0.0661579, 0.89639, 0.163951, -0.498874, -86.0245, 23.2568, -193.763)
+
+[node name="PropFern2!1748280378_305" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.251224, -0.201797, 0.909726, 0.332205, 0.899694, 0.107832, -0.870611, 0.285072, 0.303657, -85.0079, 22.2708, -188.786)
+
+[node name="PropFern2!1748280380_306" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.176078, 0.19903, 0.974343, 0.0631739, 0.98526, -0.212676, -0.992455, 0.0980272, 0.159327, -90.6795, 20.9905, -182.283)
+
+[node name="PropFern1!1748280382_321" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.19612, -0.0463126, 1.00278, -0.0770245, 1.01942, 0.0320169, -1.00089, -0.0693759, -0.198954, -92.1009, 20.9997, -187.062)
+
+[node name="PropFern2!1748280386_322" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.964987, 0.294037, 0.119279, -0.244412, 0.932298, -0.320888, -0.202356, 0.276132, 0.956394, -87.3041, 19.5087, -179.347)
+
+[node name="PropFern1!1748280388_338" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.592548, 0.145408, 0.791849, 0.222109, 0.97457, -0.0127554, -0.773845, 0.168379, -0.609995, -86.82, 19.1405, -178.224)
+
+[node name="PropFern2!1748280405_003" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.597057, -0.208408, 0.740828, 0.114937, 0.902972, 0.346654, -0.760953, 0.299909, -0.528907, -61.0226, 18.8673, -177.882)
+
+[node name="PropFern1!1748280407_019" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.507156, -0.272134, 0.872352, 0.117117, 0.970111, 0.370717, -0.906277, 0.277653, -0.440264, -61.518, 18.521, -176.806)
+
+[node name="PropFern2!1748280409_036" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.546776, 0.0840317, -0.831717, -0.0699206, 0.994944, 0.0545569, 0.833022, 0.0283552, 0.550499, -68.3319, 16.9995, -171.476)
+
+[node name="PropFern1!1748280411_036" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.856526, -0.0674647, 0.484316, -0.103538, 0.979722, -0.0466349, -0.477906, -0.0913421, -0.857912, -67.7311, 16.9166, -177.804)
+
+[node name="PropFern2!1748280413_052" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.939892, 0.181682, -0.356923, 0.220068, 0.995005, -0.0730288, 0.334623, -0.144065, -0.9545, -80.9845, 16.8541, -179.833)
+
+[node name="PropFern1!1748280415_069" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.97419, 0.223787, 0.104781, 0.238525, 0.962955, 0.161025, -0.064539, 0.180949, -0.986507, -81.7605, 16.9618, -190.01)
+
+[node name="PropFern2!1748280417_086" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.9292, 0.361982, 0.136734, -0.375083, 0.929998, 0.0869188, -0.0950765, -0.131192, 0.993422, -83.7967, 17.0202, -183.328)
+
+[node name="PropFern2!1748280419_087" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.382309, -0.23378, 0.916517, 0.279046, 0.97243, 0.131643, -0.903764, 0.201354, 0.42835, -66.9236, 17.0511, -192.011)
+
+[node name="PropFern2!1748280421_087" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.117471, -0.00777938, 1.03437, 0.235172, 1.01356, 0.0343308, -1.00731, 0.237537, -0.112612, -70.221, 17.0961, -194.368)
+
+[node name="PropFern2!1748280423_088" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(-0.955687, 0.000600653, 0.135586, 0.0452153, 0.911407, 0.314666, -0.127826, 0.317897, -0.902399, -71.7191, 17.1024, -194.43)
+
+[node name="PropFern2!1748280425_088" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
+transform = Transform3D(0.855473, -0.382486, -0.401507, 0.26158, 0.929208, -0.327852, 0.488958, 0.17209, 0.877863, -61.8771, 17.2444, -185.806)
+
+[node name="PropFern1!1748280427_087" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(-0.955977, -0.3607, -0.134262, -0.334287, 0.956324, -0.188999, 0.190744, -0.131772, -1.00413, -63.1967, 16.9466, -183.906)
+
+[node name="PropFern1!1748280429_087" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
+transform = Transform3D(0.868641, -0.207454, -0.401054, 0.245626, 0.946731, 0.0422833, 0.378879, -0.138141, 0.892069, -65.6458, 16.9062, -180.327)
+
 [node name="Dandelions" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants"]
 
 [node name="ToolPropPainterDandelion" type="Node" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions"]
@@ -6572,6 +7340,171 @@ transform = Transform3D(0.406361, -0.0217058, -0.786375, 0.0645887, 0.883026, 0.
 
 [node name="PropDandelion2!1748212224_877" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
 transform = Transform3D(0.948108, -0.0595161, -0.152636, 0.0582379, 0.96031, -0.0126973, 0.153128, 0.00327311, 0.949889, -46.1276, 3.9997, -99.6549)
+
+[node name="PropDandelion2!1748271810_353" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.502353, 0.0738251, 0.871036, -0.021721, 1.00536, -0.0726831, -0.873889, 0.0174494, 0.50252, -68.7921, 6.9995, -105.401)
+
+[node name="PropDandelion1!1748271812_369" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.625332, 0.01101, 0.671377, -0.0728773, 0.913126, 0.0529047, -0.667501, -0.08938, 0.623188, -62.6128, 6.9995, -102.337)
+
+[node name="PropDandelion2!1748271814_386" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.544789, 0.0441376, -0.746543, 0.0799558, 0.921771, -0.00385014, 0.74356, -0.0667804, -0.546561, -58.622, 6.9995, -102.289)
+
+[node name="PropDandelion1!1748271816_404" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.414305, -0.0285728, 0.904799, -0.0825136, 0.989723, 0.0690373, -0.901482, -0.103722, 0.40951, -57.4984, 6.9995, -112.049)
+
+[node name="PropDandelion1!1748271818_405" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.14118, -0.0281977, -1.0029, 0.00754342, 1.01272, -0.0295358, 1.00327, -0.0115825, -0.140907, -67.6156, 6.9995, -115.157)
+
+[node name="PropDandelion1!1748271861_985" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.207788, 0.0145256, 0.907488, 0.0193939, 0.930684, -0.0193375, -0.907398, 0.0232178, 0.207395, -71.7245, 6.9995, -92.5802)
+
+[node name="PropDandelion2!1748271864_002" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-1.08551, 0.016776, 0.033766, 0.0194505, 1.08246, 0.0874942, -0.0322995, 0.0880462, -1.08211, -68.0416, 6.9995, -100.229)
+
+[node name="PropDandelion2!1748271894_767" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(1.00651, 0.0589212, -0.311325, -0.0799941, 1.05046, -0.0598087, 0.306588, 0.08065, 1.00645, -79.6166, 11.9995, -87.7924)
+
+[node name="PropDandelion1!1748271896_767" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.445457, 0.0563558, -0.946181, 0.0401671, 1.04564, 0.0433695, 0.947007, -0.017842, -0.446909, -77.3839, 11.9995, -97.2494)
+
+[node name="PropDandelion2!1748271898_783" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.853294, -0.0223306, -0.272517, -0.0441636, 0.89257, 0.0651443, 0.26984, 0.0754688, -0.851097, -83.8122, 11.9995, -97.5587)
+
+[node name="PropDandelion2!1748271963_766" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.00294431, 0.0321254, -0.939125, 0.00217455, 0.939127, 0.0321322, 0.939672, -0.00227395, 0.00286824, -74.2685, 11.9995, -111.105)
+
+[node name="PropDandelion1!1748271965_765" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.830664, 0.0687903, -0.413113, 0.0538941, 0.92756, 0.0460874, 0.415319, 0.0172196, -0.832232, -75.1554, 11.9995, -122.284)
+
+[node name="PropDandelion1!1748271967_767" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.77158, -0.0768064, 0.575301, -0.041834, 0.961887, 0.0723113, -0.578896, 0.0328602, -0.772014, -71.8398, 11.9995, -125.704)
+
+[node name="PropDandelion1!1748271969_767" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.860259, -0.0514054, 0.124551, 0.0603912, 0.866614, -0.059441, -0.120451, 0.0673633, 0.859741, -76.0683, 11.9995, -125.079)
+
+[node name="PropDandelion2!1748271971_766" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.00822752, -0.0151844, 0.970929, -0.076734, 0.967917, 0.0157876, -0.968011, -0.0768557, 0.00700084, -73.0954, 11.9995, -119.186)
+
+[node name="PropDandelion2!1748271973_767" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.774766, -0.0344662, 0.364214, 0.0577501, 0.853814, -0.0420497, -0.361255, 0.0625726, 0.774391, -72.7939, 11.9995, -112.409)
+
+[node name="PropDandelion2!1748271975_767" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-1.02545, 0.0255142, -0.159335, 0.0238932, 1.03772, 0.012397, 0.159586, 0.00857896, -1.0257, -81.5935, 11.9995, -101.597)
+
+[node name="PropDandelion1!1748271977_783" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.132197, -0.0162258, 1.00454, -0.0324503, 1.01274, 0.0120878, -1.00415, -0.0305918, -0.132639, -88.0465, 11.9995, -110.007)
+
+[node name="PropDandelion2!1748271979_799" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(1.03333, -0.0383854, -0.260264, 0.0598514, 1.06152, 0.081069, 0.256181, -0.0931716, 1.03086, -86.2864, 11.9995, -101.228)
+
+[node name="PropDandelion1!1748271981_815" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.309206, -0.0405266, 0.90397, 0.00532728, 0.955354, 0.0410081, -0.904862, -0.00822406, 0.309143, -82.0017, 11.9995, -111.481)
+
+[node name="PropDandelion1!1748272066_093" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.76969, 0.0701919, -0.457492, -0.0367398, 0.894212, 0.0753854, 0.461385, -0.0458897, 0.769198, -90.6135, 16.9995, -148.379)
+
+[node name="PropDandelion1!1748272068_095" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.857688, 0.0417768, 0.68117, -0.0842391, 1.09213, 0.0390875, -0.677231, -0.0829382, 0.857814, -89.8867, 16.9995, -153.911)
+
+[node name="PropDandelion2!1748272070_096" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(1.09742, 0.081481, -0.282018, -0.0902488, 1.13216, -0.0240823, 0.279336, 0.045669, 1.10018, -85.4331, 16.9995, -151.801)
+
+[node name="PropDandelion2!1748272072_096" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.823141, -0.0351916, -0.3624, 0.0433061, 0.898964, 0.011068, 0.36152, -0.0275584, 0.823819, -84.23, 16.9995, -155.175)
+
+[node name="PropDandelion2!1748272074_096" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.653691, 0.0426743, -0.935725, -0.0321817, 1.13936, 0.074443, 0.936144, 0.0689661, -0.650839, -78.9874, 16.9995, -153.805)
+
+[node name="PropDandelion2!1748272076_113" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.988275, -0.0773302, -0.33016, 0.066412, 1.04174, -0.045204, 0.332528, 0.0217714, 0.990265, -77.9533, 16.9995, -156.87)
+
+[node name="PropDandelion2!1748272080_462" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.868399, -0.0146094, -0.707701, 0.0160248, 1.11941, -0.0427721, 0.70767, -0.0432759, -0.867468, -68.4991, 16.9995, -150.541)
+
+[node name="PropDandelion2!1748272082_463" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.468483, 0.0991584, -0.82532, 0.0571594, 0.948968, 0.0815684, 0.829288, -0.00939174, -0.471863, -66.9101, 16.9995, -155.872)
+
+[node name="PropDandelion1!1748280439_154" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.126972, -0.0621057, 0.942611, -0.0502004, 0.949301, 0.0693086, -0.94332, -0.0588781, 0.123188, -75.9573, 16.9995, -167.48)
+
+[node name="PropDandelion2!1748280441_153" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.19441, -0.0181516, -1.13215, 0.0319539, 1.14835, -0.0129243, 1.13184, -0.029302, 0.194828, -71.4858, 16.9995, -161.196)
+
+[node name="PropDandelion1!1748280443_169" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.820772, 0.0711039, -0.531705, 0.0215449, 0.975461, 0.0971885, 0.536005, 0.0696708, -0.818094, -77.595, 16.9269, -175.502)
+
+[node name="PropDandelion2!1748280445_186" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.800877, -0.0499429, -0.722024, 0.0356698, 1.07829, -0.0350211, 0.72287, 0.00212438, 0.801668, -67.9758, 16.9982, -176.438)
+
+[node name="PropDandelion2!1748280447_202" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.264624, 0.21376, -1.04075, -0.343744, 1.03208, 0.124579, 1.00533, 0.296625, 0.316543, -79.4005, 16.8942, -192.415)
+
+[node name="PropDandelion1!1748280449_219" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.517523, 0.234693, -0.644907, -0.0200937, 0.812557, 0.279579, 0.68599, -0.153255, 0.494719, -82.7913, 16.8985, -182.281)
+
+[node name="PropDandelion2!1748280451_236" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.00778134, -0.285072, -1.04605, -0.252677, 1.01679, -0.278979, 1.05434, 0.245782, -0.0591381, -63.8375, 16.9191, -187.86)
+
+[node name="PropDandelion2!1748280497_967" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.749657, 0.200495, -0.500706, 0.0604856, 0.883185, 0.26309, 0.535954, 0.180767, -0.730047, -82.7525, 18.5368, -179.507)
+
+[node name="PropDandelion2!1748280499_983" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-1.00654, -0.0800082, 0.470305, -0.0607807, 1.11066, 0.0588622, -0.473174, 0.0275272, -1.008, -92.3724, 20.9997, -185.685)
+
+[node name="PropDandelion2!1748280502_001" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.592967, 0.0389596, -0.625403, -0.0140076, 0.859995, 0.0668546, 0.626459, 0.0561062, -0.590473, -77.2856, 24.9999, -196.256)
+
+[node name="PropDandelion1!1748280504" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.6818, 0.0511179, -0.896649, -0.0137852, 1.12503, 0.0746198, 0.897999, 0.0560813, -0.67963, -70.3795, 24.9999, -196.29)
+
+[node name="PropDandelion1!1748280506_016" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.274588, 0.021449, 0.839521, -0.00787875, 0.883153, -0.0251407, -0.839758, -0.0152994, -0.274274, -68.7643, 24.9999, -206.616)
+
+[node name="PropDandelion1!1748280508_016" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(1.0406, -0.0768997, 0.161551, 0.0902611, 1.04879, -0.0821666, -0.154483, 0.0947885, 1.0402, -69.6304, 24.9999, -202.699)
+
+[node name="PropDandelion2!1748280510_033" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.721055, -0.059801, -0.494151, 0.0577401, 0.874005, -0.0215168, 0.494396, -0.0148573, 0.723211, -77.1083, 24.9999, -202.383)
+
+[node name="PropDandelion1!1748280512_05" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.645765, -0.0377574, -0.625842, -0.0324657, 0.89924, -0.0207525, 0.626139, 0.00768516, -0.646535, -76.2948, 24.9999, -203.782)
+
+[node name="PropDandelion1!1748280514_067" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-1.01153, -0.0610089, -0.130232, -0.0538994, 1.0186, -0.0585321, 0.133332, -0.051079, -1.01168, -67.6259, 30.9996, -208.533)
+
+[node name="PropDandelion1!1748280516_066" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.196317, -0.00580917, 1.00692, -0.0191439, 1.02571, 0.00218516, -1.00675, -0.0183716, -0.196391, -79.1599, 30.9996, -209.014)
+
+[node name="PropDandelion2!1748280518_068" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.559796, 0.0959435, 0.883982, -0.0622161, 1.04625, -0.0741555, -0.886994, -0.0128351, 0.563096, -81.4573, 28.9995, -200.896)
+
+[node name="PropDandelion1!1748280520_067" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-1.00011, -0.098599, -0.375064, -0.0926607, 1.06813, -0.0337147, 0.376575, 0.000965196, -1.00439, -89.3848, 28.9995, -192.197)
+
+[node name="PropDandelion2!1748280522_068" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.640122, 0.00229647, 0.757381, -0.0587532, 0.988817, 0.0466587, -0.755103, -0.0749914, 0.638423, -83.8956, 23.9995, -173.373)
+
+[node name="PropDandelion1!1748280524_068" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(0.961865, -0.0829081, -0.131829, 0.074459, 0.969276, -0.0663083, 0.136779, 0.0553821, 0.963152, -60.3662, 23.9995, -175.678)
+
+[node name="PropDandelion1!1748280526_084" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("145_wir77")]
+transform = Transform3D(-0.339903, -0.077381, -0.816156, -0.061351, 0.883448, -0.0582103, 0.817518, 0.0341258, -0.343705, -54.0147, 28.9995, -187.627)
+
+[node name="PropDandelion2!1748280528_1" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.944806, -0.00615753, -0.172824, -0.0135658, 0.959574, 0.0399737, 0.172401, 0.0417613, -0.94398, -63.6432, 28.9995, -197.861)
+
+[node name="PropDandelion2!1748280530_116" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.526864, -0.0553143, -0.905447, 0.0744955, 1.04619, -0.0205645, 0.904071, -0.0539705, 0.52936, -65.3099, 28.9995, -200.47)
+
+[node name="PropDandelion2!1748280532_117" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.4187, 0.00607019, 0.999159, 0.0774824, 1.07988, -0.0390298, -0.996168, 0.0865448, 0.416921, -64.6199, 23.9995, -172.627)
+
+[node name="PropDandelion2!1748280534_131" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(0.1739, 0.0426245, -1.05022, 0.059827, 1.06237, 0.0530241, 1.04938, -0.0676312, 0.171016, -80.7829, 23.9995, -170.846)
+
+[node name="PropDandelion2!1748280536_15" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Dandelions" instance=ExtResource("146_s1fnf")]
+transform = Transform3D(-0.314148, -0.0689351, 0.925405, 0.00709626, 0.976788, 0.0751717, -0.927942, 0.0308073, -0.312715, -69.0776, 23.9995, -167.666)
 
 [node name="Mushrooms" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants"]
 
