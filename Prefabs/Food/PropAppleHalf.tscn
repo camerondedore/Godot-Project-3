@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://comtjem63khj0"]
+
+[ext_resource type="PackedScene" uid="uid://cu6ii8tuqclkc" path="res://Prefabs/Food/PropApple.tscn" id="1_qnqd6"]
+[ext_resource type="ArrayMesh" uid="uid://6o0q6wlte1y5" path="res://Models/prop-apple-half.res" id="2_5hmux"]
+
+[node name="PropAppleHalf" instance=ExtResource("1_qnqd6")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_5hmux")
