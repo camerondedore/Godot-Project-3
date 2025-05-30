@@ -13,8 +13,8 @@
 [ext_resource type="ArrayMesh" uid="uid://dsgx8g1h22rjd" path="res://Models/level-3-tree-wall.res" id="8_owjnh"]
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="9_4sena"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="10_h3kwj"]
-[ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="11_6sn6x"]
 [ext_resource type="Material" uid="uid://bqwjfubcy2oia" path="res://Materials/Background/BlackberryBushWall.tres" id="11_647dg"]
+[ext_resource type="Material" uid="uid://dueh1b1xt2rk3" path="res://Materials/Terrain/WallWorldUvDefault.tres" id="11_s1fnf"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="12_nnhdt"]
 [ext_resource type="PackedScene" uid="uid://dfs02jpayr7eu" path="res://Prefabs/Trees/PropTreeWallSmall.tscn" id="13_jeel1"]
 [ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Fabrications/PropPicketAbatisWall.tscn" id="13_u5nrh"]
@@ -414,7 +414,7 @@ navigation_mesh = SubResource("NavigationMesh_8ftbp")
 [node name="GroundMesh" type="MeshInstance3D" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/Ground"]
 mesh = ExtResource("6_tpni4")
 surface_material_override/0 = ExtResource("7_x4y6t")
-surface_material_override/1 = ExtResource("11_6sn6x")
+surface_material_override/1 = ExtResource("11_s1fnf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/Ground"]
 shape = SubResource("ConcavePolygonShape3D_087pg")
@@ -3128,7 +3128,7 @@ transform = Transform3D(0.503326, 0.0102362, -0.759677, 0.0348491, 0.909992, 0.0
 [node name="PropBgTreeFir1!1748488780_758" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir1" instance=ExtResource("59_c3v41")]
 transform = Transform3D(0.700273, -0.0203002, -0.817112, 0.0190078, 1.0761, -0.0104446, 0.817143, -0.0076347, 0.700489, -30.9021, 1.9996, -19.5008)
 
-[node name="PropBgTreeFir1!1748489208_891" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir1" instance=ExtResource("59_c3v41")]
+[node name="PropBgTreeFir1!1748489208_891" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir1" instance=ExtResource("59_c3v41")]
 transform = Transform3D(-0.397369, 0.0338304, -1.02156, 0.0270979, 1.096, 0.0257552, 1.02176, -0.0159102, -0.397974, -42.2766, -0.000499725, 3.78217)
 
 [node name="Fir2" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees"]
@@ -3642,10 +3642,10 @@ transform = Transform3D(-0.621777, 0.0342831, 0.816702, 0.0208607, 1.02645, -0.0
 [node name="PropBgTreeFir2!1748488798_191" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
 transform = Transform3D(1.02246, 0.0108732, -0.38631, 0.00636199, 1.09201, 0.0475744, 0.38641, -0.0467501, 1.02141, -32.1295, 1.9996, -17.1502)
 
-[node name="PropBgTreeFir2!1748489174_142" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
+[node name="PropBgTreeFir2!1748489174_142" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
 transform = Transform3D(0.936079, 0.00707767, -0.351478, -0.00710136, 0.999889, 0.00122183, 0.351477, 0.00135235, 0.936105, -76.4826, 4.30056, -75.0732)
 
-[node name="PropBgTreeFir2!1748489176_158" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
+[node name="PropBgTreeFir2!1748489176_158" parent="Map/Lighting/OccluderInstance3D/Props/Trees/Fir2" instance=ExtResource("60_ebbv2")]
 transform = Transform3D(-0.984498, -0.0435072, 0.236713, -0.0441895, 1.01252, 0.00231321, -0.236586, -0.00807395, -0.985456, -74.3214, 3.9997, -72.4778)
 
 [node name="Oaks" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Trees"]
