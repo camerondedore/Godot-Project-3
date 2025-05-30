@@ -14,7 +14,7 @@
 [ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="9_4sena"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="10_h3kwj"]
 [ext_resource type="Material" uid="uid://bqwjfubcy2oia" path="res://Materials/Background/BlackberryBushWall.tres" id="11_647dg"]
-[ext_resource type="Material" uid="uid://dueh1b1xt2rk3" path="res://Materials/Terrain/WallWorldUvDefault.tres" id="11_s1fnf"]
+[ext_resource type="Material" uid="uid://dueh1b1xt2rk3" path="res://Materials/Terrain/TerrainWallDefault.tres" id="11_s1fnf"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="12_nnhdt"]
 [ext_resource type="PackedScene" uid="uid://dfs02jpayr7eu" path="res://Prefabs/Trees/PropTreeWallSmall.tscn" id="13_jeel1"]
 [ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Fabrications/PropPicketAbatisWall.tscn" id="13_u5nrh"]
