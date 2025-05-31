@@ -9958,6 +9958,744 @@ maxRotation = 5.0
 sizeVariation = 0.5
 uniformSize = true
 
+[node name="PropMushroom!1748707613_287" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.560665, 0.101625, 0.664292, -0.067474, 0.869265, -0.0760346, -0.668625, -0.00250518, 0.564705, 6.92775, -0.000499725, 9.9493)
+
+[node name="PropMushroom!1748707615_283" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.882604, 0.0142083, 0.456222, -0.0166745, 0.993504, 0.00131735, -0.456138, -0.00882607, 0.882717, 8.61849, -0.000499964, 8.63575)
+
+[node name="PropMushroom!1748707617_3" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.350971, -0.0570336, 0.916177, -0.0261393, 0.981083, 0.0510605, -0.917579, -0.00613325, -0.35189, 8.39414, -0.000500202, 4.74926)
+
+[node name="PropMushroom!1748707629_401" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.812807, -0.00228407, -0.308945, 0.0027164, 0.869435, -0.0135745, 0.308942, -0.0136539, -0.812697, 26.5374, 1.9996, -21.2752)
+
+[node name="PropMushroom!1748707631_4" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.557773, -0.0527899, 0.661485, 0.000444147, 0.86415, 0.0685891, -0.663588, -0.0437937, 0.556051, 22.7624, 1.9996, -21.3826)
+
+[node name="PropMushroom!1748707633_417" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.938649, -0.0186406, -0.486949, 0.0212167, 1.05739, 0.000420214, 0.486843, -0.0101417, 0.938834, 20.2537, 1.9996, -20.8837)
+
+[node name="PropMushroom!1748707681_312" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.757974, -0.10071, 0.710572, -0.0785834, 1.03893, 0.0634232, -0.713358, -0.00743995, -0.762, 12.4423, 1.9996, -22.6333)
+
+[node name="PropMushroom!1748707683_328" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.822162, -0.0470468, -0.378743, 0.0671469, 0.903314, 0.033552, 0.3757, -0.0584896, 0.822824, 13.0489, 1.9996, -24.6389)
+
+[node name="PropMushroom!1748707685_344" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.142707, -0.0838389, -0.980675, -0.0545236, 0.990081, -0.0767088, 0.982741, 0.0427564, -0.146662, 12.9447, 1.9996, -32.5239)
+
+[node name="PropMushroom!1748707687_344" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.354173, 0.0204793, 0.786768, 0.0530338, 0.86018, -0.046264, -0.785246, 0.0673316, 0.351735, 17.0329, 1.9996, -29.4484)
+
+[node name="PropMushroom!1748707689_361" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.964109, 0.0319547, 0.475752, 0.0177192, 1.07482, -0.0362841, -0.476495, -0.0246862, -0.963956, 18.8555, 1.9996, -27.9993)
+
+[node name="PropMushroom!1748707691_377" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.140822, -0.062191, 0.860717, 0.0149557, 0.871795, 0.0654384, -0.862831, 0.0252612, -0.139342, 20.0076, 1.9996, -29.7969)
+
+[node name="PropMushroom!1748707852_656" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.899678, 0.024667, -0.338966, -0.0307686, 0.961167, -0.0117202, 0.338466, 0.0218085, 0.89994, 14.0139, 1.9996, -8.86407)
+
+[node name="PropMushroom!1748707854_672" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.318381, 0.0652651, 1.10749, -0.00660626, 1.15229, -0.0660057, -1.1094, 0.0118685, 0.318228, 11.8494, 1.9996, -8.77691)
+
+[node name="PropMushroom!1748707856_69" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.15688, 0.111477, -0.405643, 0.101744, 1.22589, 0.0467249, 0.408193, 0.0103845, -1.16129, 15.1284, 1.9996, -12.1195)
+
+[node name="PropMushroom!1748707858_688" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.843799, -0.0291482, -0.711208, -0.0470647, 1.10288, 0.0106387, 0.710247, 0.0384533, -0.844235, 1.42662, 1.9996, -9.16998)
+
+[node name="PropMushroom!1748707860_705" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.809116, -0.0512509, 0.128728, -0.0515441, 0.819271, 0.00220019, -0.128611, -0.00591426, -0.810735, 2.82497, 1.9996, -10.0702)
+
+[node name="PropMushroom!1748707862_722" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.779536, 0.00264345, -0.239894, -0.0131336, 0.813875, 0.0516459, 0.239549, 0.0532241, -0.777828, 5.12762, 1.9996, -8.51206)
+
+[node name="PropMushroom!1748707866_722" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.17178, -0.0466451, 0.190172, -0.0334187, 1.18453, 0.0846265, -0.192936, 0.0781197, -1.16965, -5.59949, 1.9996, -7.93602)
+
+[node name="PropMushroom!1748707882_721" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0407708, 0.0273638, 0.939196, -0.0089278, 0.940026, -0.0277755, -0.939552, -0.0101197, -0.0404915, -6.80536, 1.9996, -16.0908)
+
+[node name="PropMushroom!1748707884_722" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0357752, 0.0388064, -1.00965, -0.0675983, 1.00793, 0.0411355, 1.00813, 0.0689617, -0.0330708, -7.95384, 1.9996, -8.81127)
+
+[node name="PropMushroom!1748707886_738" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.867439, 0.0853964, 0.483997, 0.0600287, 0.992886, -0.067599, -0.487793, -0.0296735, -0.869007, -14.9581, 1.9996, -8.18983)
+
+[node name="PropMushroom!1748707888_738" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.907129, -0.0210859, 0.0514053, -0.0186345, 0.907599, 0.0434506, -0.0523438, 0.0423153, -0.906333, -15.1614, 1.9996, -6.20799)
+
+[node name="PropMushroom!1748707890_755" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.483491, 0.0166443, -0.982416, -0.00851293, 1.09494, 0.0143612, 0.98252, 0.00129646, 0.483565, -11.316, 1.9996, -10.1546)
+
+[node name="PropMushroom!1748707897_374" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.212259, 0.0698267, -1.01137, 0.012962, 1.03303, 0.0740425, 1.01369, -0.0278304, 0.210826, -8.90653, 1.9996, -18.9204)
+
+[node name="PropMushroom!1748707907_536" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.172313, -0.0746334, -1.00621, -0.0244854, 1.02078, -0.0715214, 1.00867, 0.0120296, -0.173628, -17.1014, 1.9996, -29.9037)
+
+[node name="PropMushroom!1748707909_553" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.0138, 0.116126, -0.46924, -0.0884346, 1.11641, 0.0852217, 0.475237, -0.0399776, 1.01686, -17.6923, 1.9996, -30.9761)
+
+[node name="PropMushroom!1748707911_569" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.1355, -0.0195374, 0.012705, 0.0192296, 1.13525, 0.0271264, -0.0131662, -0.0269056, 1.13534, -19.5849, 1.9996, -28.087)
+
+[node name="PropMushroom!1748707913_569" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.691168, 0.0492859, 0.705975, -0.00198153, 0.986673, -0.0708221, -0.707691, -0.0508979, -0.689294, -20.56, 1.9996, -24.9585)
+
+[node name="PropMushroom!1748707915_57" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.522034, -0.0271537, -0.977325, 0.0254227, 1.10792, -0.0172026, 0.977371, -0.014315, 0.522456, -19.6031, 1.9996, -22.8033)
+
+[node name="PropMushroom!1748707917_569" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.370867, 0.00566037, 1.07064, -0.0889152, 1.12898, -0.0367687, -1.06696, -0.0960511, -0.369084, -21.5364, 1.9996, -21.3063)
+
+[node name="PropMushroom!1748707919_586" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.0903, 0.0916076, -0.0452686, 0.0889903, 1.08971, 0.0618303, 0.0502188, 0.0578818, -1.0924, -25.8098, 1.9996, -13.6777)
+
+[node name="PropMushroom!1748707921_586" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.02284, 0.043268, 0.269601, -0.0297339, 1.05672, -0.0567837, -0.271428, 0.0472903, 1.02218, -24.6465, 1.9996, -9.01762)
+
+[node name="PropMushroom!1748707923_586" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0338058, -0.00636978, -0.895395, 0.0676689, 0.893453, -0.00891081, 0.892857, -0.0679552, -0.0332266, -15.9047, 1.9996, -6.88561)
+
+[node name="PropMushroom!1748707925_587" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.904278, 0.0344736, 0.312465, -0.0265584, 0.956564, -0.0286752, -0.313237, 0.018417, 0.90448, -25.7647, 1.9996, -2.05157)
+
+[node name="PropMushroom!1748707927_587" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.708897, 0.00982872, -0.29344, 0.0272676, 0.765753, -0.0402248, 0.292336, -0.0475915, -0.707823, -15.8415, -0.000500679, 10.227)
+
+[node name="PropMushroom!1748707929_602" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.1397, -0.0629729, 0.138686, 0.0652738, 1.14788, -0.0151949, -0.137618, 0.0229338, 1.14134, -26.0491, -0.000500202, 7.7687)
+
+[node name="PropMushroom!1748707931_619" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.864154, -0.0626347, -0.786886, -0.0466999, 1.16874, -0.041744, 0.787993, 0.000576055, -0.865415, -25.2059, -0.000500679, 18.3031)
+
+[node name="PropMushroom!1748707933_619" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.546617, 0.0154238, 0.906317, -0.0336323, 1.05728, -0.0382772, -0.905824, -0.0485632, -0.545494, -16.2233, -0.000500202, 17.2364)
+
+[node name="PropMushroom!1748707935_62" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.858086, -0.0907832, 0.526183, 0.0728802, 1.00653, 0.0548072, -0.52896, -0.00858945, 0.861133, -17.9897, -0.000500202, 15.9621)
+
+[node name="PropMushroom!1748707937_636" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.784284, -0.0243898, 0.627523, 0.0335202, 1.00091, 0.0807963, -0.627101, 0.0840047, -0.780492, -15.3038, -0.000499725, 13.1873)
+
+[node name="PropMushroom!1748708741_427" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.640969, 0.00334642, -0.572928, -0.0269735, 0.858917, -0.02516, 0.572302, 0.0367341, 0.640484, -24.1704, -0.000499725, 26.5279)
+
+[node name="PropMushroom!1748708743_427" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.909679, 0.00368588, 0.182492, -0.00909646, 0.925553, -0.0640374, -0.182303, -0.0645752, -0.907429, -14.9746, -0.000500679, 26.9746)
+
+[node name="PropMushroom!1748708750_778" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0672273, -0.0899442, 1.0882, -0.0170999, 1.09004, 0.0911527, -1.09177, -0.0226111, 0.0655794, -29.1682, -0.000499725, 10.4497)
+
+[node name="PropMushroom!1748708752_779" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.460674, -0.0537229, 1.12897, 0.0400116, 1.21915, 0.0416878, -1.12954, 0.0212756, 0.461919, -28.4645, -0.000500202, 17.0411)
+
+[node name="PropMushroom!1748708754_78" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.477415, -0.00379539, -0.660875, -0.0494194, 0.812787, -0.0403684, 0.659035, 0.0636984, 0.47572, -28.9845, -0.000500202, 12.1373)
+
+[node name="PropMushroom!1748708756_795" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.512913, -0.0381551, -0.663637, 0.0308918, 0.835955, -0.071938, 0.664015, -0.0683635, -0.509274, -39.356, -2, 11.2742)
+
+[node name="PropMushroom!1748708758_812" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.700386, 0.00347346, -0.292236, 0.00458601, 0.758639, 0.020008, 0.292221, -0.0202309, 0.700108, -40.8147, -2, 11.6091)
+
+[node name="PropMushroom!1748708760_826" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.693621, 0.0225379, 0.734406, -0.0284298, 1.00838, -0.0577966, -0.734202, -0.0603386, -0.691576, -41.0589, -2, 15.4321)
+
+[node name="PropMushroom!1748708762_842" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.989278, -0.0191461, -0.213081, 0.0287322, 1.01084, 0.0425679, 0.212001, -0.0476549, 0.988547, -43.1709, -0.000499725, 15.7425)
+
+[node name="PropMushroom!1748708764_859" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.109375, 0.0948619, 1.19912, 0.082546, 1.20063, -0.102511, -1.20003, 0.0912338, 0.102241, -42.4261, -0.000499725, 11.9087)
+
+[node name="PropMushroom!1748708766_875" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.840486, 0.0220528, -0.45363, 0.0165249, 0.95507, 0.0158125, 0.453865, 0.00606481, -0.840626, -42.1462, -0.000500679, 10.3151)
+
+[node name="PropMushroom!1748708768_892" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.32158, -0.0349669, -1.1249, -0.0942447, 1.16665, -0.0093225, 1.12149, 0.088013, -0.323341, -38.8863, -0.000501156, 9.7477)
+
+[node name="PropMushroom!1748708786_339" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.747477, 0.0490126, 0.536075, -0.0284479, 0.91963, -0.0444141, -0.537559, 0.0194849, 0.747764, 33.4563, 1.9996, -73.9416)
+
+[node name="PropMushroom!1748708788_338" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.56815, -0.00897872, 0.525, -0.0173497, 0.773413, -0.00554857, -0.52479, -0.0158488, -0.568193, 35.0684, 1.9996, -64.0925)
+
+[node name="PropMushroom!1748708790_338" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.244288, 0.0546344, -0.85889, -0.0203696, 0.892937, 0.0510066, 0.860385, 0.00562803, 0.245071, 34.6516, 1.9996, -66.5174)
+
+[node name="PropMushroom!1748708792_337" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.732464, 0.0360314, -0.538144, 0.00340951, 0.907875, 0.0561462, 0.539338, 0.0431943, -0.731197, 45.2537, 1.9996, -63.8659)
+
+[node name="PropMushroom!1748708802_439" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.126671, -0.0177753, -1.17614, 0.0241194, 1.18265, -0.0204714, 1.17603, -0.0261699, -0.126263, 9.13137, 5.9998, -87.158)
+
+[node name="PropMushroom!1748708804_439" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.466396, 0.0447128, 0.703381, 0.00193883, 0.84352, -0.0523356, -0.704798, -0.027268, -0.465602, 8.04555, 5.9998, -88.4149)
+
+[node name="PropMushroom!1748708811_474" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.52984, -0.0107771, -0.628991, -0.0059799, 0.82241, -0.00905389, 0.629055, -0.00125938, -0.529873, 11.7491, 3.9997, -105.481)
+
+[node name="PropMushroom!1748708813_473" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.877364, 0.0419397, -0.619795, 0.0630014, 1.07305, -0.0165731, 0.618009, -0.0498488, -0.87821, 9.66123, 3.9997, -106.674)
+
+[node name="PropMushroom!1748708815_49" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.544496, 0.0274681, -1.01244, 0.0310218, 1.14848, 0.0478428, 1.01233, -0.0499679, 0.543085, 16.7179, 3.9997, -99.9525)
+
+[node name="PropMushroom!1748708817_506" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.70323, -0.00229626, 0.44652, 0.0245743, 0.831545, 0.0429786, -0.44585, 0.0494548, -0.701919, 18.7267, 5.9998, -102.829)
+
+[node name="PropMushroom!1748708819_523" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.668807, 0.0416899, 0.355824, 0.0203026, 0.756762, -0.0505048, -0.357682, -0.0349983, -0.668199, 17.6704, 5.9998, -101.807)
+
+[node name="PropMushroom!1748708821_523" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.818086, -0.121228, -0.767944, -0.0807286, 1.122, -0.0911195, 0.773251, -0.0111189, -0.821984, 11.2132, 5.9998, -108.138)
+
+[node name="PropMushroom!1748708829_39" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.464712, -0.0253726, 0.778257, 0.0488649, 0.903581, 0.0586366, -0.777135, 0.071988, -0.461696, 24.5788, 10.9998, -100.622)
+
+[node name="PropMushroom!1748708831_39" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.703912, 0.0164798, 0.600416, -0.0370363, 0.924428, 0.0180472, -0.5995, -0.0377598, 0.703874, 23.0338, 10.9998, -99.9196)
+
+[node name="PropMushroom!1748708833_405" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.0411, -0.0163611, -0.450814, 0.0192532, 1.13124, -0.0855178, 0.4507, -0.0861179, -1.03771, 19.9593, 10.9998, -103.683)
+
+[node name="PropMushroom!1748708835_406" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.139821, -0.0230844, 1.17108, 0.0317445, 1.17889, 0.0270283, -1.17088, 0.0347183, -0.139112, 21.6683, 10.9998, -93.4125)
+
+[node name="PropMushroom!1748708850_021" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.976463, -0.048165, -0.674374, 0.0595841, 1.18618, 0.00155576, 0.673461, -0.0351114, 0.977649, -13.4725, 5.9998, -109.858)
+
+[node name="PropMushroom!1748708857_537" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.69708, -0.0419455, -0.413961, -0.0685474, 0.80822, 0.0335341, 0.410395, 0.0637484, -0.697535, -9.83868, 5.9998, -86.9502)
+
+[node name="PropMushroom!1748708859_554" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.332124, 0.0297551, -1.1301, 0.0272317, 1.17731, 0.0390012, 1.13017, -0.0371118, 0.331166, -12.8659, 5.9998, -86.6249)
+
+[node name="PropMushroom!1748708861_553" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.783883, 0.0517656, 0.248484, -0.0431441, 0.82207, -0.0351532, -0.250125, 0.0204325, 0.784804, -13.5563, 5.9998, -87.3077)
+
+[node name="PropMushroom!1748708868_055" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.464999, 0.0191636, 0.965133, -0.0667674, 1.06807, -0.0533759, -0.963012, -0.0833044, -0.462323, -17.6575, 5.9998, -71.3044)
+
+[node name="PropMushroom!1748708878_087" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.687474, -0.0499286, -0.422526, 0.0316679, 0.806672, -0.0437965, 0.424285, 0.0206912, 0.687892, -46.7292, 3.9997, -77.2699)
+
+[node name="PropMushroom!1748708880_103" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.08904, -0.100192, 0.320582, -0.0989108, 1.1352, 0.0187809, -0.32098, -0.00987661, -1.09348, -44.3451, 3.9997, -76.9369)
+
+[node name="PropMushroom!1748708882_119" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.18813, -0.0138114, -0.260476, -0.0254349, 1.21506, 0.0515907, 0.259599, 0.0558371, -1.18709, -46.7213, 3.9997, -78.0918)
+
+[node name="PropMushroom!1748708890_12" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.73685, 0.0175113, -0.276446, 0.00255207, 0.785159, 0.0565376, 0.276989, -0.0538179, 0.734886, -35.9072, 3.9997, -91.3813)
+
+[node name="PropMushroom!1748708892_12" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.189407, 0.0677407, -1.05404, -0.0898407, 1.06801, 0.0524943, 1.05239, 0.0789822, 0.194186, -37.2543, 3.9997, -91.4055)
+
+[node name="PropMushroom!1748708894_137" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0639736, 0.0302565, -1.0736, -0.0596127, 1.07395, 0.0267141, 1.07237, 0.0578953, 0.0655319, -36.4008, 3.9997, -95.074)
+
+[node name="PropMushroom!1748708896_136" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.05884, 0.0740551, -0.0472067, -0.0698726, 1.05636, 0.0899154, 0.0532019, -0.0865032, 1.05761, -36.1472, 3.9997, -100.11)
+
+[node name="PropMushroom!1748708903_586" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.282645, -0.0297779, -0.972679, 0.0200672, 1.01248, -0.0368276, 0.972928, -0.0295338, -0.281813, -55.7101, 3.9997, -91.2697)
+
+[node name="PropMushroom!1748708905_586" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.05464, 0.0408034, -0.100337, 0.0403646, 1.0594, 0.00654726, 0.100514, 0.00269285, -1.05541, -53.7265, 3.9997, -92.5449)
+
+[node name="PropMushroom!1748708910_918" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.09151, 0.0749669, 0.372847, -0.0541195, 1.15227, -0.0732482, -0.376439, 0.0517125, 1.09163, -67.6196, 3.9997, -77.2529)
+
+[node name="PropMushroom!1748708912_935" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.99081, 0.049284, 0.524522, 0.0424052, 1.12108, -0.0252341, -0.525123, -0.00245924, -0.991714, -64.8531, 3.9997, -74.7585)
+
+[node name="PropMushroom!1748708914_936" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.299827, 0.0324813, 0.956399, -0.0466007, 1.00155, -0.0194056, -0.955815, -0.0386415, 0.300956, -65.1931, 3.9997, -76.2623)
+
+[node name="PropMushroom!1748708916_937" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.05776, 0.0320808, 0.223139, -0.0169023, 1.07878, -0.0749733, -0.224799, 0.0698391, 1.05558, -54.7897, 3.9997, -75.5952)
+
+[node name="PropMushroom!1748708918_937" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.862777, -0.0105565, -0.0319869, -0.0122431, 0.862137, 0.0457049, 0.03138, 0.0461236, -0.86163, -60.071, 3.9997, -75.0944)
+
+[node name="PropMushroom!1748708920_953" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.940344, -0.0156686, -0.312831, 0.0312434, 0.989653, 0.0443468, 0.311661, -0.0519353, 0.939428, -59.0692, 3.9997, -74.3938)
+
+[node name="PropMushroom!1748708928_968" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.278347, -0.0144878, 0.717487, 0.00698513, 0.769585, 0.0128299, -0.7176, 0.00187154, 0.278428, -54.7913, 4.65363, -114.739)
+
+[node name="PropMushroom!1748708930_969" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.587147, -0.0439363, -0.960263, 0.0342572, 1.12355, -0.0723538, 0.960657, -0.0669196, -0.584326, -48.2865, 3.9997, -114.026)
+
+[node name="PropMushroom!1748708932_968" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.697717, 0.00482633, -0.758201, -0.0245117, 1.02969, 0.0291108, 0.75782, 0.0377487, -0.697126, -47.6434, 3.9997, -113.687)
+
+[node name="PropMushroom!1748708934_985" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.801928, -0.0571405, 0.20234, 0.0686035, 0.825276, -0.0388379, -0.198746, 0.0543121, 0.803023, -43.6587, 3.9997, -114.512)
+
+[node name="PropMushroom!1748708937_003" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.557832, -0.108681, -0.916457, 0.0559623, 1.07288, -0.0931675, 0.921181, 0.000634993, 0.560632, -38.0804, 3.9997, -114.997)
+
+[node name="PropMushroom!1748708939_002" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.769964, -0.124277, 0.887111, -0.0817136, 1.17465, 0.093636, -0.892039, -0.000332393, -0.774288, -31.7891, 3.9997, -114.715)
+
+[node name="PropMushroom!1748708941_019" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.832022, 0.0543985, -0.0566626, -0.053254, 0.833818, 0.0185288, 0.0577395, -0.0148361, 0.833593, -32.3951, 3.9997, -113.832)
+
+[node name="PropMushroom!1748708943_035" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0851249, 0.0622052, 0.796027, -0.0239729, 0.799978, -0.0650776, -0.798094, -0.0306643, -0.0829497, -29.018, 3.9997, -109.997)
+
+[node name="PropMushroom!1748708953_218" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.747257, -0.0257933, -0.41912, 0.061307, 0.853073, 0.056806, 0.415413, -0.0794995, 0.74554, -57.9767, 6.9995, -114.924)
+
+[node name="PropMushroom!1748708955_217" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.91966, 0.0696245, -0.617473, 0.0369168, 1.10709, 0.0698488, 0.620289, 0.0373383, -0.919643, -66.3635, 6.9995, -115.89)
+
+[node name="PropMushroom!1748708957_235" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.606921, -0.0256358, -0.551325, 0.0461827, 0.818947, 0.01276, 0.549985, -0.0404779, 0.607328, -66.8395, 6.9995, -114.99)
+
+[node name="PropMushroom!1748708964_385" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0230871, 0.0291024, -1.14359, -0.0734082, 1.14143, 0.0305294, 1.1416, 0.0739855, -0.0211641, -72.24, 6.9995, -98.1566)
+
+[node name="PropMushroom!1748708966_385" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.170721, -0.0374185, -0.798504, -0.0152504, 0.816515, -0.035002, 0.799235, 0.00758733, -0.171232, -73.0928, 6.9995, -98.756)
+
+[node name="PropMushroom!1748708968_402" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.29163, -0.00342156, -0.920821, -0.00532273, 0.965875, -0.00527471, 0.920812, 0.00666686, 0.291602, -72.086, 6.9995, -100.168)
+
+[node name="PropMushroom!1748708979_682" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.774629, -0.0655332, 0.501938, 0.0408639, 0.922671, 0.0574, -0.504545, -0.0258847, 0.775274, -83.3568, 11.9995, -98.8038)
+
+[node name="PropMushroom!1748708981_683" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.142146, -0.00219675, 0.739427, 0.02356, 0.75257, 0.00676493, -0.739055, 0.0244133, -0.142002, -82.2104, 11.9995, -98.4393)
+
+[node name="PropMushroom!1748708983_698" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.20924, 0.0896089, 0.0757592, 0.090052, 1.21157, 0.00431563, -0.075232, 0.00991087, -1.21255, -85.924, 11.9995, -92.9869)
+
+[node name="PropMushroom!1748708991_85" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.692818, 0.00377314, 0.3642, -0.0354371, 0.779664, 0.0593348, -0.362491, -0.0690085, 0.690283, -71.7943, 11.9995, -128.487)
+
+[node name="PropMushroom!1748708993_849" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.09342, -0.0665175, -0.865757, -0.023967, 0.870224, -0.0694468, 0.867978, 0.0311882, 0.0912634, -74.2136, 11.9995, -126.767)
+
+[node name="PropMushroom!1748708995_849" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.242919, -0.0466205, 0.87466, 0.0201239, 0.907137, 0.0539406, -0.87567, 0.03378, -0.241399, -75.1012, 11.9995, -126.51)
+
+[node name="PropMushroom!1748708997_866" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.975029, 0.0334772, -0.255179, 0.0357751, 1.00778, -0.00448375, 0.254867, -0.0133881, -0.975593, -70.4102, 11.9995, -126.137)
+
+[node name="PropMushroom!1748709003_698" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.326109, 0.0406936, 1.20151, -0.0539343, 1.24417, -0.0274999, -1.20099, -0.0448239, 0.327485, -90.3743, 11.9995, -109.319)
+
+[node name="PropMushroom!1748709005_698" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.212163, -0.00207795, 0.957348, 0.0489947, 0.979314, -0.00873234, -0.956096, 0.0497234, 0.211993, -89.6684, 11.9995, -111.219)
+
+[node name="PropMushroom!1748709007_716" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.542677, 0.0200405, 0.950434, 0.0911473, 1.08825, -0.0749896, -0.946265, 0.116317, 0.537845, -89.1782, 11.9995, -110.633)
+
+[node name="PropMushroom!1748709018_165" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.346188, 0.0126734, -0.736024, -0.0250194, 0.81268, 0.0257611, 0.735707, 0.0336004, -0.345461, -88.6587, 9.21024, -129.096)
+
+[node name="PropMushroom!1748709020_165" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.858553, -0.0891385, -0.746699, -0.0714256, 1.13782, -0.0537042, 0.748601, 0.00633083, -0.861496, -90.2968, 9.28632, -125.834)
+
+[node name="PropMushroom!1748709022_182" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.01811, 0.0548023, 0.417136, -0.0751617, 1.09835, 0.0391498, -0.413952, -0.0646428, 1.01883, -90.1183, 9.23611, -125.041)
+
+[node name="PropMushroom!1748709024_199" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0132467, 0.0336302, 1.09494, -0.0269135, 1.09467, -0.0339478, -1.09512, -0.0273094, -0.0124101, -92.0313, 11.4538, -129.071)
+
+[node name="PropMushroom!1748709026_214" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.19485, -0.0513687, 0.206388, 0.0580829, 1.21175, -0.0346657, -0.2046, 0.0440067, 1.19546, -92.1434, 11.5098, -120.316)
+
+[node name="PropMushroom!1748709028_232" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.0763, 0.0176839, -0.142064, 0.0131133, 1.08511, 0.0357246, 0.142558, 0.033697, -1.07585, -93.8279, 11.8602, -119.402)
+
+[node name="PropMushroom!1748709034_883" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.788885, 0.00578024, -0.592557, -0.0530729, 0.983337, -0.0610649, 0.590204, 0.0806984, 0.786539, -81.9664, 9.11222, -128.25)
+
+[node name="PropMushroom!1748709046_349" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.407929, 0.0126361, -0.666906, 0.00432666, 0.781769, 0.012166, 0.667012, 0.00265692, -0.407943, -64.3197, 16.9995, -155.959)
+
+[node name="PropMushroom!1748709048_349" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0326757, 0.0775245, 1.17026, -0.092798, 1.16721, -0.0747317, -1.16915, -0.0904779, 0.0386384, -65.233, 16.9995, -155.843)
+
+[node name="PropMushroom!1748709050_365" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.850558, -0.0501956, -0.0334278, 0.0515279, 0.850453, 0.0340571, 0.0313352, -0.0359918, 0.851357, -66.609, 16.9995, -157.004)
+
+[node name="PropMushroom!1748709052_365" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.560035, -0.0418065, 0.880257, 0.0380856, 1.04085, 0.0736642, -0.880425, 0.071618, -0.556741, -65.2474, 16.9995, -153.226)
+
+[node name="PropMushroom!1748709059_847" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.117867, 0.0204777, -1.02149, 0.0710653, 1.02561, 0.0287604, 1.01922, -0.073879, 0.116124, -94.2471, 16.9995, -153.138)
+
+[node name="PropMushroom!1748709061_848" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.961384, 0.0897334, -0.67022, -0.0728636, 1.17194, 0.0523896, 0.672263, -0.00130338, 0.964141, -94.8926, 16.9995, -152.354)
+
+[node name="PropMushroom!1748709063_848" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.719344, 0.0175363, 0.422278, 0.0398267, 0.8327, 0.0332639, -0.420762, 0.0488378, -0.718789, -93.176, 16.9995, -150.864)
+
+[node name="PropMushroom!1748709065_865" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.459827, 0.046934, -0.788295, -0.00344482, 0.912307, 0.0523081, 0.789683, -0.0233496, 0.459246, -89.9555, 16.9995, -148.675)
+
+[node name="PropMushroom!1748709072_964" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.709097, 0.0404278, -0.586929, -0.0435979, 0.920284, 0.0107167, 0.586702, 0.0195247, 0.710167, -86.5751, 16.9995, -166.357)
+
+[node name="PropMushroom!1748709074_964" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.180574, -0.0128591, -0.907355, -0.0455963, 0.923848, -0.0221671, 0.9063, 0.0490412, 0.179669, -87.3298, 16.9995, -166.213)
+
+[node name="PropMushroom!1748709076_98" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.17208, 0.082054, 0.0407563, -0.0802091, 1.17175, -0.0523845, -0.0442769, 0.0494446, 1.17378, -89.9651, 16.9995, -166.793)
+
+[node name="PropMushroom!1748709078_997" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.271453, 0.0167873, 1.08421, -0.0846755, 1.11393, -0.0384476, -1.08103, -0.0914677, -0.269241, -91.8086, 16.9995, -163.177)
+
+[node name="PropMushroom!1748709081_014" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.274577, 0.0520497, -1.03936, -0.00443571, 1.07498, 0.0526616, 1.04066, -0.00915125, 0.27446, -92.0511, 16.9995, -162.571)
+
+[node name="PropMushroom!1748709083_03" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.610798, -0.0461848, -0.921188, -0.0203268, 1.10392, -0.0688242, 0.922121, 0.0549264, 0.608663, -90.5761, 16.9995, -159.5)
+
+[node name="PropMushroom!1748709724_573" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.814759, -0.0573156, -0.879801, 0.0867944, 1.19734, 0.0023757, 0.877383, -0.0652214, 0.816769, -78.5173, 24.9999, -205.741)
+
+[node name="PropMushroom!1748709726_572" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.982017, 0.00505478, 0.485934, 0.00148107, 1.09565, -0.00840406, -0.485958, -0.00687539, -0.981994, -79.7704, 24.9999, -204.038)
+
+[node name="PropMushroom!1748709728_573" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.815699, 0.00740855, 0.941651, 0.0590881, 1.24375, 0.0413993, -0.939824, 0.0717664, -0.814682, -79.2652, 24.9999, -203.294)
+
+[node name="PropMushroom!1748709734_557" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.350262, 0.0518947, 0.699778, 0.0506078, 0.781945, -0.0326572, -0.699873, 0.030571, -0.352576, -82.8102, 28.9995, -200.459)
+
+[node name="PropMushroom!1748709739_858" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.103272, -0.0277369, 1.07878, -0.0863987, 1.08002, 0.0360397, -1.07567, -0.0894106, 0.100676, -60.0208, 28.9995, -194.287)
+
+[node name="PropMushroom!1748709741_858" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.505357, 0.0389052, 0.590685, 0.012002, 0.777168, -0.0409195, -0.591843, -0.0174597, -0.505198, -58.7262, 28.9995, -193.45)
+
+[node name="PropMushroom!1748709743_858" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.263933, -0.0489419, 0.705834, -0.0234024, 0.752329, 0.0609167, -0.707141, -0.0431649, 0.261429, -60.5105, 28.9995, -196.652)
+
+[node name="PropMushroom!1748709760_555" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.895887, -0.013599, -0.727845, -0.0292844, 1.1539, 0.014486, 0.727383, 0.0297066, -0.895873, -79.8373, 30.9996, -230.964)
+
+[node name="PropMushroom!1748709762_555" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.414923, 0.0119313, 0.670432, -0.0648106, 0.784003, -0.054063, -0.667399, -0.0835516, -0.411559, -80.4596, 30.9996, -228.301)
+
+[node name="PropMushroom!1748709764_572" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.907728, 0.0545365, -0.315865, 0.060032, 0.960764, -0.00663569, 0.314867, -0.0259545, -0.909341, -79.0256, 30.9996, -229.1)
+
+[node name="PropMushroom!1748709766_589" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.748512, 0.0224503, -0.630849, 0.0570173, 0.97694, -0.0328851, 0.628668, -0.061874, -0.748126, -81.784, 30.9996, -235.511)
+
+[node name="PropMushroom!1748709772_955" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.573163, -0.0695687, 1.09765, -0.0561339, 1.2343, 0.10754, -1.09842, -0.0993788, 0.567266, -80.6653, 34.9998, -243.238)
+
+[node name="PropMushroom!1748709774_97" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.341224, 0.00782327, -0.74719, 0.0155207, 0.821307, 0.00151133, 0.747069, -0.0134898, -0.341311, -82.5539, 34.9998, -242.578)
+
+[node name="PropMushroom!1748709776_97" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.212997, 0.0398356, -0.769776, 0.0221945, 0.797976, 0.0474362, 0.770486, -0.0339987, 0.211434, -80.2528, 34.9998, -244.494)
+
+[node name="PropMushroom!1748709782_622" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.221526, -0.0700669, 0.911153, 0.00708484, 0.937645, 0.0703816, -0.913815, -0.00971591, 0.221426, -77.5744, 30.9996, -240.895)
+
+[node name="PropMushroom!1748709784_639" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.567863, 0.0107978, -1.04368, 0.0214141, 1.18778, 0.02394, 1.04351, -0.0302505, 0.567461, -78.6199, 30.9996, -241.386)
+
+[node name="PropMushroom!1748709786_64" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.907706, 0.0175309, -0.141461, -0.0217525, 0.918211, -0.0257868, 0.140874, 0.0288236, 0.90751, -77.1828, 30.9996, -244.117)
+
+[node name="PropMushroom!1748709797_139" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.745028, -0.0293532, 0.463041, -0.0217935, 0.877176, 0.0205405, -0.463458, 0.00593833, -0.745323, -67.4813, 30.9996, -236.265)
+
+[node name="PropMushroom!1748709805_353" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0815852, -0.0121288, -0.97007, -0.0342516, 0.972851, -0.0150442, 0.969541, 0.0353891, 0.0810982, -65.5175, 34.9998, -255.538)
+
+[node name="PropMushroom!1748709807_369" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.864, 0.0287968, 0.58041, 0.00450973, 1.03961, -0.0582929, -0.581106, 0.0508837, 0.862512, -66.0927, 34.9998, -257.663)
+
+[node name="PropMushroom!1748709809_386" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.585735, -0.0415706, -0.539352, 0.00731034, 0.795495, -0.0533738, 0.540902, 0.034265, 0.584778, -72.4192, 34.9998, -256.001)
+
+[node name="PropMushroom!1748709818_236" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.403208, 0.0147293, 0.732667, -0.0563445, 0.83315, -0.0477574, -0.730646, -0.0723776, -0.400641, -61.1627, 28.9995, -237.995)
+
+[node name="PropMushroom!1748709826_92" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.0106, 0.0193557, 0.523331, 0.0602493, 1.1342, 0.0743985, -0.520212, 0.0937575, -1.00805, -32.0293, 27, -234.433)
+
+[node name="PropMushroom!1748709828_919" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.11617, -0.0199077, 0.17514, 0.022006, 1.12972, -0.0118312, -0.174889, 0.0150971, 1.11628, -32.1065, 27, -237.175)
+
+[node name="PropMushroom!1748709830_938" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.577911, 0.0350797, -0.730844, 0.0261603, 0.929728, 0.0653121, 0.731217, -0.0609872, 0.575279, -29.5873, 27, -234.858)
+
+[node name="PropMushroom!1748709832_939" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.79219, 0.0726322, 0.406612, 0.0448606, 0.889412, -0.0714731, -0.410605, -0.0429586, -0.792296, -29.8449, 27, -229.87)
+
+[node name="PropMushroom!1748709834_939" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.680014, -0.0340451, -0.750256, 0.0579086, 1.01147, 0.00658863, 0.748793, -0.0473048, 0.680834, -28.8874, 27, -231)
+
+[node name="PropMushroom!1748709836_955" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.918896, 0.0351997, -0.605612, 0.091055, 1.09477, -0.0745269, 0.599762, -0.112278, -0.916545, -28.4646, 27, -227.466)
+
+[node name="PropMushroom!1748709838_955" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.442208, 0.108961, -0.884407, -0.0728602, 0.988435, 0.0853467, 0.88811, 0.0268371, 0.447366, -26.8958, 30.9996, -232.026)
+
+[node name="PropMushroom!1748709840_971" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.735199, -0.0777832, 0.498779, -0.044393, 0.887721, 0.0730023, -0.502852, 0.0353533, -0.735689, -26.4776, 30.9996, -235.533)
+
+[node name="PropMushroom!1748709842_987" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0954714, 0.054689, -0.838664, 0.0359445, 0.84302, 0.0590648, 0.839677, -0.0423058, 0.0928279, -27.1283, 30.9996, -235.902)
+
+[node name="PropMushroom!1748709849_905" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.859517, -0.0107184, 0.146287, -0.0144198, 0.871574, -0.0208646, -0.145969, -0.0229865, -0.859331, -43.149, 27, -227.443)
+
+[node name="PropMushroom!1748709851_921" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.400417, 0.061287, -1.07133, 0.0159611, 1.14302, 0.0713536, 1.07297, -0.0398748, 0.398747, -40.0557, 27, -228.523)
+
+[node name="PropMushroom!1748709853_921" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.117715, 0.0716444, 0.941434, 0.0619392, 0.947265, -0.0643434, -0.942122, 0.0533256, -0.121859, -39.9002, 27, -229.499)
+
+[node name="PropMushroom!1748709866_669" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.460498, -0.0561563, 1.00358, -0.0693761, 1.09948, 0.0933559, -1.00276, -0.101857, 0.454419, -38.3725, 27, -222.437)
+
+[node name="PropMushroom!1748709868_669" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.490026, 0.020192, 0.637456, -0.0286459, 0.802379, -0.0474367, -0.637133, -0.0516053, -0.488142, -38.0309, 27, -223.06)
+
+[node name="PropMushroom!1748709878_435" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.11486, -0.0304665, -0.464065, -0.0157456, 1.20716, -0.0414247, 0.464798, -0.0321827, -1.11451, -25.0981, 30.9996, -212.576)
+
+[node name="PropMushroom!1748709880_437" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.02556, -0.0552739, 0.46817, 0.0430397, 1.12723, 0.0388037, -0.469452, -0.0174051, 1.02631, -24.045, 30.9996, -212.206)
+
+[node name="PropMushroom!1748709882_436" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.146825, 0.0236736, 1.03877, -0.0565777, 1.04772, -0.0158805, -1.0375, -0.0537846, 0.147871, -18.2549, 30.9996, -213.519)
+
+[node name="PropMushroom!1748709884_452" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.626573, -0.0688755, -1.0057, -0.0986917, 1.18264, -0.0195063, 1.00321, 0.0733262, -0.630045, -12.1952, 30.9996, -212.032)
+
+[node name="PropMushroom!1748709886_47" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.738779, -0.0173098, 0.693946, -0.0367521, 1.01102, 0.0643454, -0.693188, -0.0720515, 0.736175, -13.1468, 30.9996, -212.419)
+
+[node name="PropMushroom!1748709906_334" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.529502, 0.0384499, 0.673201, -0.050723, 0.855802, -0.00898333, -0.672388, -0.0342802, 0.53082, -31.0197, 15.9997, -204.28)
+
+[node name="PropMushroom!1748709908_35" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.329091, -0.0945861, 0.959937, -0.0471561, 1.01463, 0.0838091, -0.963432, -0.0173533, -0.331999, -26.6251, 15.9997, -205.984)
+
+[node name="PropMushroom!1748709910_368" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.771935, 0.124298, 0.840267, 0.0894051, 1.141, -0.0866493, -0.844692, 0.00717611, -0.777062, -26.1358, 15.9997, -205.659)
+
+[node name="PropMushroom!1748709912_384" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.485801, 0.00530288, 0.59638, -0.0387842, 0.767281, -0.0384154, -0.595141, -0.0543308, -0.484309, -17.9763, 15.9997, -205.052)
+
+[node name="PropMushroom!1748709914_4" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.391151, -0.0326191, -0.848926, -0.0654237, 0.930653, -0.0659039, 0.84703, 0.0869459, 0.386936, -14.8935, 15.9997, -205.591)
+
+[node name="PropMushroom!1748709916_417" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.00871885, 0.0520132, -0.853875, -0.0121864, 0.853841, 0.0518866, 0.855371, 0.0116345, 0.00944283, -15.0621, 15.9997, -204.242)
+
+[node name="PropMushroom!1748709929_1" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.692188, -0.00483465, 0.754343, -0.0656447, 1.01952, 0.06677, -0.751497, -0.0935098, 0.688977, -5.32615, 27, -212.53)
+
+[node name="PropMushroom!1748709931_117" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.268268, 0.0583761, 1.09515, 0.0960159, 1.12436, -0.036413, -1.09249, 0.0844819, -0.27212, -3.98779, 27, -210.956)
+
+[node name="PropMushroom!1748709933_117" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.431711, 0.00748465, -1.02309, -0.0718433, 1.10748, 0.0384175, 1.02059, 0.0811255, -0.430063, -4.90579, 27, -210.653)
+
+[node name="PropMushroom!1748709949_716" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.657364, 0.0994756, 0.848131, 0.0506123, 1.07298, -0.0866193, -0.852444, -0.0130046, -0.659181, 9.47984, 12.9999, -214.225)
+
+[node name="PropMushroom!1748709951_733" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.928888, -0.0655192, 0.328859, -0.0814592, 0.983602, -0.0341229, -0.325277, -0.0592217, -0.93057, 8.07396, 12.9999, -214.913)
+
+[node name="PropMushroom!1748709953_732" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.954065, 0.0335413, 0.176745, -0.0323562, 0.970293, -0.00947629, -0.176966, 0.00342185, 0.954608, 9.12123, 12.9999, -210.134)
+
+[node name="PropMushroom!1748709955_749" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.08829, 0.0472537, 0.223129, 0.0631156, 1.10772, 0.0732499, -0.219171, 0.0843576, -1.08685, 9.75916, 12.9999, -216.221)
+
+[node name="PropMushroom!1748709957_765" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.405523, -0.0319372, 1.00536, -0.0048995, 1.08404, 0.0324603, -1.00586, 0.00759553, -0.405482, 7.22367, 12.9999, -215.983)
+
+[node name="PropMushroom!1748709962_931" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.477402, -0.0195482, 0.659072, -0.0103862, 0.81381, 0.0166145, -0.65928, 0.00133479, -0.477513, 2.19091, 12.9999, -223.21)
+
+[node name="PropMushroom!1748709964_948" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.551162, -0.0319365, 0.791955, 0.0514998, 0.961132, 0.0746, -0.790924, 0.0848378, -0.547023, 1.33899, 12.9999, -222.069)
+
+[node name="PropMushroom!1748709966_965" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.458164, -0.0247497, -0.655614, 0.00492708, 0.799761, -0.0267481, 0.656062, 0.0112778, 0.458052, 4.60772, 12.9999, -223.694)
+
+[node name="PropMushroom!1748709981_067" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.400589, -0.0653448, 0.82214, 0.0543765, 0.914094, 0.0461584, -0.822938, 0.0285913, 0.40325, 9.01339, 12.9999, -192.012)
+
+[node name="PropMushroom!1748709987_549" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0877298, 0.0532051, -0.953517, -0.00774167, 0.95754, 0.0527173, 0.954969, 0.00287475, 0.0880238, -1.16199, 18.9996, -187.378)
+
+[node name="PropMushroom!1748709989_549" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0327403, -0.0505933, -0.877394, -0.011964, 0.877947, -0.0501787, 0.87877, 0.0100679, -0.0333722, -2.12791, 18.9996, -187.251)
+
+[node name="PropMushroom!1748709999_932" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.304866, 0.0422771, 0.967222, -0.0756849, 1.0099, -0.0679982, -0.965182, -0.0925452, -0.300178, 20.7123, 12.9999, -188.22)
+
+[node name="PropMushroom!1748710001_948" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(1.07148, -0.0242276, 0.0624564, 0.0205076, 1.07148, 0.0638173, -0.0637747, -0.0624999, 1.06986, 18.8642, 12.9999, -189.564)
+
+[node name="PropMushroom!1748710003_965" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.689644, 0.0440272, 1.0403, 0.045779, 1.24531, -0.0830512, -1.04023, 0.083993, 0.686039, 18.4447, 12.9999, -190.47)
+
+[node name="PropMushroom!1748710011_732" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0892302, -0.0567287, -1.05803, 0.0352945, 1.06103, -0.059866, 1.05896, -0.0401434, -0.0871564, 42.2226, 9.9994, -186.274)
+
+[node name="PropMushroom!1748710013_731" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.7196, 0.104871, 0.950745, -0.0653977, 1.19236, -0.0820243, -0.954273, -0.00263318, 0.722561, 42.7143, 9.9994, -187.881)
+
+[node name="PropMushroom!1748710015_748" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.838605, -0.0155786, 0.240959, 0.029558, 0.870931, -0.0465626, -0.239646, 0.0529062, 0.837457, 42.2559, 9.9994, -190.285)
+
+[node name="PropMushroom!1748710017_765" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.727452, -0.0288688, 0.515675, -0.0764497, 0.886967, -0.0581914, -0.510793, -0.0916373, -0.725696, 40.1609, 9.9994, -189.507)
+
+[node name="PropMushroom!1748710019_781" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.221276, -0.0330318, -0.848336, 0.0107161, 0.876716, -0.0313417, 0.848911, -0.00245706, 0.221522, 38.7099, 9.9994, -191.508)
+
+[node name="PropMushroom!1748710021_798" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.956942, 0.0330991, -0.261426, 0.020424, 0.991054, 0.0507156, 0.262721, 0.0435162, -0.956171, 37.1744, 9.9994, -188.973)
+
+[node name="PropMushroom!1748710023_815" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.821312, 0.00128461, -0.0341441, 0.000831301, 0.821949, 0.0109281, 0.0341582, 0.0108841, -0.82124, 39.0741, 9.9994, -190.436)
+
+[node name="PropMushroom!1748710031_416" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.586645, 0.0591372, -0.793487, 0.00409916, 0.985599, 0.0764856, 0.795677, -0.048679, 0.584637, 39.6402, 9.9994, -163.215)
+
+[node name="PropMushroom!1748710033_415" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.776948, 0.0548528, 0.0908028, 0.0579838, 0.781644, 0.0239536, -0.0888361, 0.0304477, -0.778514, 40.3389, 9.9994, -161.173)
+
+[node name="PropMushroom!1748710035_432" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.552434, -0.0535622, 1.08922, 0.0717278, 1.22015, 0.0236214, -1.08818, 0.0532347, 0.554521, 43.4827, 9.9994, -160.125)
+
+[node name="PropMushroom!1748710040_23" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.944329, 0.0498044, -0.426369, -0.0518371, 1.036, 0.00620652, 0.426127, 0.0156565, 0.945621, 56.0445, 9.9994, -170.534)
+
+[node name="PropMushroom!1748710042_246" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.800672, 0.0512064, -0.366214, 0.0717289, 0.878356, -0.0340073, 0.362753, -0.0606584, -0.801587, 55.6633, 9.9994, -169.806)
+
+[node name="PropMushroom!1748710044_263" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.260054, -0.0137454, -0.757998, -0.0439177, 0.80028, 0.000555174, 0.756849, 0.0417149, -0.260416, 58.5059, 9.9994, -170.859)
+
+[node name="PropMushroom!1748710052_146" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.75663, -0.106098, 0.947347, -0.0733486, 1.21238, 0.0771985, -0.950443, -0.00910058, -0.760123, 64.5887, 9.9994, -169.142)
+
+[node name="PropMushroom!1748710054_162" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.644205, -0.0651711, -1.06085, 0.0375152, 1.23833, -0.0988558, 1.06218, -0.0832622, -0.639902, 61.116, 9.9994, -169.951)
+
+[node name="PropMushroom!1748710056_179" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.512715, 0.0156875, -0.810052, 0.0415699, 0.957872, -0.00776115, 0.809137, -0.0392708, -0.512896, 63.9867, 9.9994, -168.261)
+
+[node name="PropMushroom!1748710070_078" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0809416, 0.0457306, 1.18636, 0.00923674, 1.18906, -0.0464646, -1.18721, 0.0123689, 0.0805224, 71.0464, 9.9994, -161.295)
+
+[node name="PropMushroom!1748710077_546" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-1.24156, -0.0661894, 0.101992, -0.0657713, 1.24574, 0.00780296, -0.102262, 0.00238853, -1.24329, 57.9621, 11.9995, -184.394)
+
+[node name="PropMushroom!1748710079_546" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.938609, 0.0369885, -0.751387, 0.0956148, 1.19755, -0.060487, 0.746196, -0.106924, -0.937388, 56.2863, 11.9995, -183.524)
+
+[node name="PropMushroom!1748710081_563" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.058152, -0.0779523, 1.19553, -0.0951707, 1.19346, 0.0731878, -1.19428, -0.0913092, -0.0640449, 60.742, 11.9995, -184.457)
+
+[node name="PropMushroom!1748710090_445" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.814362, 0.0621026, -0.861282, 0.0857033, 1.18384, 0.00432643, 0.859254, -0.0592202, -0.816715, 59.9024, 9.9994, -191.292)
+
+[node name="PropMushroom!1748710092_446" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.714097, 0.066842, 0.394403, 0.0673588, 0.81557, -0.0162615, -0.394315, 0.01827, -0.717035, 58.8319, 9.9994, -189.578)
+
+[node name="PropMushroom!1748710094_462" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.895276, 0.0278298, -0.501419, 0.0148355, 1.02302, 0.0832681, 0.501972, -0.0798697, 0.89183, 59.601, 9.9994, -202.535)
+
+[node name="PropMushroom!1748710096_479" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.36238, 0.0539718, -1.18114, -0.0982849, 1.22972, 0.0863458, 1.17828, 0.119175, -0.356057, 59.2916, 9.9994, -205.423)
+
+[node name="PropMushroom!1748710098_48" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.0725955, 0.0451729, 0.753891, 0.00249321, 0.757347, -0.0456201, -0.755239, 0.0068423, 0.0723153, 60.6129, 9.9994, -205.945)
+
+[node name="PropMushroom!1748710100_478" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.378169, 0.0771023, 0.969516, -0.0479675, 1.04044, -0.0640325, -0.971393, -0.0213608, 0.3806, 70.0857, 9.9994, -206.797)
+
+[node name="PropMushroom!1748710102_496" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.517517, -0.00957357, -0.724255, -0.0337427, 0.889477, 0.0123533, 0.723532, 0.0346341, -0.517458, 70.2753, 9.9994, -205.799)
+
+[node name="PropMushroom!1748710104_512" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.993566, 0.0871643, 0.45983, 0.0896944, 1.09452, -0.0136705, -0.459343, 0.0251864, -0.997288, 67.8756, 9.9994, -208.997)
+
+[node name="PropMushroom!1748710106_512" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.211392, 0.0180642, 0.880783, -0.0787444, 0.902547, 0.00038843, -0.877442, -0.0766454, 0.212162, 72.7418, 9.9994, -207.474)
+
+[node name="PropMushroom!1748710108_528" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.490191, -0.00264636, 0.910749, -0.046556, 1.03301, -0.0220562, -0.909562, -0.0514484, -0.489702, 83.0556, 9.9994, -207.958)
+
+[node name="PropMushroom!1748710110_545" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.17015, 0.000775062, -0.94269, -0.0489619, 0.956622, 0.00962384, 0.941418, 0.0498927, -0.169879, 86.5273, 9.9994, -205.216)
+
+[node name="PropMushroom!1748710112_561" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.193925, 0.0542701, -0.820267, 0.0114009, 0.842523, 0.058438, 0.821981, -0.0244895, 0.19271, 85.2751, 9.9994, -205.383)
+
+[node name="PropMushroom!1748710114_579" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.535885, -0.000394711, -1.12919, -0.0519726, 1.24856, -0.0251013, 1.12799, 0.0577154, 0.535297, 82.9316, 9.9994, -204.598)
+
+[node name="PropMushroom!1748710116_595" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.655666, -0.0486638, -0.606072, -0.0597001, 0.892175, -0.00705066, 0.605084, 0.0352939, -0.657432, 86.7708, 9.9994, -201.628)
+
+[node name="PropMushroom!1748710121_528" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.782121, -0.0192701, 0.234874, -0.0126038, 0.816373, 0.0250087, -0.235326, 0.0203214, -0.781958, 85.7514, 9.9994, -197.293)
+
+[node name="PropMushroom!1748710123_544" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.393721, -0.0418625, -0.836213, 0.0205952, 0.923293, -0.0559189, 0.837007, -0.0424101, -0.391972, 86.792, 9.9994, -195.78)
+
+[node name="PropMushroom!1748710125_561" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.981883, 0.0319207, -0.52345, 0.0839469, 1.10633, -0.0900014, 0.51766, -0.118863, -0.97827, 83.6932, 9.9994, -196.72)
+
+[node name="PropMushroom!1748710130_879" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.173225, -0.00779939, -1.15272, -0.000722806, 1.16567, -0.00777834, 1.15275, -0.000441115, -0.173226, 85.922, 9.9994, -190.48)
+
+[node name="PropMushroom!1748710132_878" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.335877, 0.024186, -1.12525, 0.06012, 1.17223, 0.0431408, 1.12391, -0.0699327, 0.333972, 86.7091, 9.9994, -191.154)
+
+[node name="PropMushroom!1748710134_878" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.967232, -0.0858226, 0.710943, 0.0451243, 1.19973, 0.0834357, -0.714682, -0.0404005, 0.967441, 83.1906, 9.9994, -192.165)
+
+[node name="PropMushroom!1748710142_81" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.788499, -0.0222013, -0.0733148, 0.0193794, 0.791359, -0.0312152, 0.0741107, 0.0292754, 0.788194, 73.7258, 9.9994, -221.154)
+
+[node name="PropMushroom!1748710144_811" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.321276, -0.0495271, -0.742595, -0.0146335, 0.809095, -0.0476313, 0.7441, -0.0054724, -0.321563, 73.7246, 9.9994, -219.823)
+
+[node name="PropMushroom!1748710151_193" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0487052, -0.0252815, -0.762816, 0.0041681, 0.764347, -0.0255984, 0.763223, -0.00578758, -0.0485394, 75.4802, 9.9994, -239.968)
+
+[node name="PropMushroom!1748710153_21" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.840833, -0.0879991, 0.734692, 0.0833816, 1.11629, 0.0382777, -0.73523, 0.0259583, 0.844558, 74.6451, 9.9994, -240.272)
+
+[node name="PropMushroom!1748710155_226" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(0.027064, -0.0735703, 1.09217, 0.0568645, 1.09113, 0.0720906, -1.09317, 0.0549367, 0.0307893, 79.2387, 9.9994, -243.461)
+
+[node name="PropMushroom!1748710165_276" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.0474801, 0.0116079, 0.851018, -0.0738132, 0.849074, -0.0156996, -0.847891, -0.0745662, -0.0462885, 87.9562, 15.9997, -175.293)
+
+[node name="PropMushroom!1748710167_293" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.177801, -0.0682261, 1.22914, 0.0165623, 1.24165, 0.0713163, -1.23092, 0.0265616, -0.176584, 87.0628, 15.9997, -176.17)
+
+[node name="PropMushroom!1748710169_309" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Mushrooms" instance=ExtResource("147_1egww")]
+transform = Transform3D(-0.970027, -0.0428016, -0.623694, -0.0634534, 1.15211, 0.0196237, 0.621933, 0.0507882, -0.970773, 87.9716, 15.9997, -177.034)
+
 [node name="Tulips" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants"]
 
 [node name="ToolPropPainterTulip" type="Node" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Tulips"]
