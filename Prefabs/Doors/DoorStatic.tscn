@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddhttg1saiw7s"]
+
+[ext_resource type="ArrayMesh" uid="uid://dwvqdac681p71" path="res://Models/prop-door-1.res" id="1_626n4"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_vy00v"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_v4cld"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_hbuso"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_albkt"]
+size = Vector3(1.5, 2.5, 0.1)
+
+[node name="DoorStatic" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_626n4")
+surface_material_override/0 = ExtResource("2_vy00v")
+surface_material_override/1 = ExtResource("3_v4cld")
+surface_material_override/2 = ExtResource("4_hbuso")
+
+[node name="DoorCollider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_albkt")
