@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2bx4iwyt3my"]
+
+[ext_resource type="ArrayMesh" uid="uid://dm6fxqs41qnw2" path="res://Models/prop-bookshelf.res" id="1_hy6x0"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_vdbyi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hy6x0"]
+size = Vector3(1.8, 1.5, 0.5)
+
+[node name="PropBookshelf" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_hy6x0")
+surface_material_override/0 = ExtResource("2_vdbyi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("BoxShape3D_hy6x0")

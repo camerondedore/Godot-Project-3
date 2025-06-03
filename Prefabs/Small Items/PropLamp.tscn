@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqbpyxlt7m4ad"]
+[gd_scene load_steps=3 format=3 uid="uid://bqbpyxlt7m4ad"]
 
 [ext_resource type="ArrayMesh" uid="uid://bs4rq4owiknf6" path="res://Models/prop-lamp.res" id="1_snh1d"]
 [ext_resource type="Material" uid="uid://clp6kygf4fv83" path="res://Materials/Props/PropLamp.tres" id="2_kr5kw"]
-[ext_resource type="PackedScene" uid="uid://dny2auormn3lo" path="res://Prefabs/FX/FxFlame.tscn" id="3_ifml6"]
 
 [node name="PropLamp" type="Node3D"]
 
@@ -11,6 +10,3 @@ layers = 2
 gi_mode = 2
 mesh = ExtResource("1_snh1d")
 surface_material_override/0 = ExtResource("2_kr5kw")
-
-[node name="FxFlame" parent="." instance=ExtResource("3_ifml6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0191807, 0.279866, -0.023905)

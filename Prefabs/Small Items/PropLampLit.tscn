@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0spc3j7nrggg"]
+
+[ext_resource type="PackedScene" uid="uid://bqbpyxlt7m4ad" path="res://Prefabs/Small Items/PropLamp.tscn" id="1_lt6km"]
+[ext_resource type="PackedScene" uid="uid://dny2auormn3lo" path="res://Prefabs/FX/FxFlame.tscn" id="2_na2yr"]
+
+[node name="PropLampLit" instance=ExtResource("1_lt6km")]
+
+[node name="FxFlame" parent="." index="1" instance=ExtResource("2_na2yr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0191807, 0.279866, -0.023905)
