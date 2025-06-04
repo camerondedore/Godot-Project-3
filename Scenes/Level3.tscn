@@ -1586,7 +1586,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 78, 12
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 79.75, 12, -177.45)
 
 [node name="BlackBerrybushSquareLarge" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("30_uu4up")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -12.5, 2.5, -6)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -12.5, 2, -6)
 
 [node name="PropBlackberryBush13" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("27_53b5y")]
 transform = Transform3D(0.879075, 0, 0.476683, 0, 1, 0, -0.476683, 0, 0.879075, 17.4102, 6, -104.83)
@@ -7035,7 +7035,7 @@ transform = Transform3D(-0.883459, -0.0375543, 0.45546, -0.0234678, 0.993719, 0.
 transform = Transform3D(-0.0543506, 0.01629, 1.01834, 0.0688519, 1.01752, -0.012602, -1.01614, 0.0680737, -0.0553221, 10.9109, 1.9996, -31.2339)
 
 [node name="PropFern2!1748012092_842" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("144_hart6")]
-transform = Transform3D(-0.54458, -0.00425015, 0.89159, 0.0445152, 1.04331, 0.0321632, -0.890488, 0.0547541, -0.543646, -12.3075, 1.9996, -8.29437)
+transform = Transform3D(-0.54458, -0.00425015, 0.89159, 0.0445152, 1.04331, 0.0321632, -0.890488, 0.0547541, -0.543646, -11.9821, 1.9996, -8.92705)
 
 [node name="PropFern1!1748012094_858" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ferns" instance=ExtResource("143_uh4c6")]
 transform = Transform3D(-0.398773, -0.0346555, 0.886029, 0.039777, 0.969829, 0.0558355, -0.885813, 0.0591507, -0.396363, -14.9866, 1.9996, -10.1118)

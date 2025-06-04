@@ -12,24 +12,30 @@
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="8_th5xi"]
 [ext_resource type="Script" uid="uid://dbny7egg4na1b" path="res://C#/Common/RigidbodySpawnerMultiple.cs" id="9_cku3p"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a1nr0"]
-size = Vector3(2, 1.2, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yt0y0"]
-size = Vector3(0.1, 1.2, 0.8)
+[sub_resource type="BoxShape3D" id="BoxShape3D_fudub"]
+size = Vector3(2.1, 0.8, 1.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3ejo"]
-size = Vector3(1.8, 1.2, 0.8)
+size = Vector3(2, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yt0y0"]
+size = Vector3(2, 1, 0.2)
 
 [node name="PropChest" type="StaticBody3D"]
-collision_layer = 16
+collision_layer = 64
+collision_mask = 0
 script = ExtResource("1_pnrr2")
 openSound = ExtResource("2_fo8lm")
+
+[node name="ArrowTargetCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_fudub")
 
 [node name="prop-chest" parent="." instance=ExtResource("1_oxeqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Skeleton3D" parent="prop-chest/prop-chest-armature" index="0"]
+bones/1/rotation = Quaternion(-0.707107, -8.42937e-08, -8.42937e-08, 0.707107)
 bones/3/rotation = Quaternion(-0.707107, 2.00972e-14, 0.707107, -3.37311e-07)
 bones/4/rotation = Quaternion(0.707106, 2.37169e-20, 0.707107, 3.37311e-07)
 
@@ -40,34 +46,39 @@ surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
 surface_material_override/2 = ExtResource("6_fqhwf")
 
-[node name="ColliderBack" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.45)
-shape = SubResource("BoxShape3D_a1nr0")
+[node name="BaseBoneAttachment" type="BoneAttachment3D" parent="prop-chest/prop-chest-armature/Skeleton3D" index="1"]
+transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 0, 0, 0)
+bone_name = "Base"
+bone_idx = 0
 
-[node name="ColliderFront" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.45)
-shape = SubResource("BoxShape3D_a1nr0")
+[node name="ChestCollision" type="AnimatableBody3D" parent="prop-chest/prop-chest-armature/Skeleton3D/BaseBoneAttachment"]
+collision_layer = 16
+sync_to_physics = false
 
-[node name="ColliderRight" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95, 0.6, 0)
-shape = SubResource("BoxShape3D_yt0y0")
-
-[node name="ColliderLeft" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.6, 0)
-shape = SubResource("BoxShape3D_yt0y0")
-
-[node name="InvisibleWall" type="StaticBody3D" parent="."]
-collision_layer = 2048
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prop-chest/prop-chest-armature/Skeleton3D/BaseBoneAttachment/ChestCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_h3ejo")
+debug_color = Color(0.63, 0.525, 0, 1)
+
+[node name="LidBoneAttachment" type="BoneAttachment3D" parent="prop-chest/prop-chest-armature/Skeleton3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.39061, 0.527695)
+bone_name = "lid"
+bone_idx = 1
+
+[node name="LidCollision" type="AnimatableBody3D" parent="prop-chest/prop-chest-armature/Skeleton3D/LidBoneAttachment"]
+collision_layer = 16
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prop-chest/prop-chest-armature/Skeleton3D/LidBoneAttachment/LidCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 0.1)
+shape = SubResource("BoxShape3D_yt0y0")
+debug_color = Color(0.63, 0.525, 0, 1)
 
 [node name="FxLock" parent="." instance=ExtResource("3_2i7no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688, -0.5491)
 
 [node name="PickupSpawnerMultiple" type="Node3D" parent="." node_paths=PackedStringArray("audio")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.851788, -0.00405507)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10179, -0.104055)
 script = ExtResource("9_cku3p")
 prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
 audio = NodePath("../Audio")
