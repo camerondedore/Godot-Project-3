@@ -14,7 +14,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 	[Export]
 	bool open;
 
-	CollisionShape3D portcullisCollider;
+	//CollisionShape3D portcullisCollider;
 	Blocker blocker;
 	AudioTools3d audio;
 	Decal decal;
@@ -29,7 +29,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 	public override void _Ready()
 	{
 		// get nodes
-		portcullisCollider = (CollisionShape3D) GetNode("PortcullisCollider");
+		//portcullisCollider = (CollisionShape3D) GetNode("PortcullisCollider");
 		blocker = (Blocker) GetNode("Blocker");
 		audio = (AudioTools3d) GetNode("Audio");
 		decal = (Decal) GetNode("Decal");
@@ -40,7 +40,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 		if(open == true)
 		{
 			GlobalPosition = openPosition;
-			portcullisCollider.Disabled = true;
+			//portcullisCollider.Disabled = true;
 			blocker.Activate();
 		}
 
@@ -108,7 +108,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
 	void Closed()
 	{
-		portcullisCollider.Disabled = false;
+		//portcullisCollider.Disabled = false;
 		blocker.Deactivate();
 		audio.PlaySound(openSound, 0.15f);
 	}
@@ -117,7 +117,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
 	void Opened()
 	{
-		portcullisCollider.Disabled = true;
+		//portcullisCollider.Disabled = true;
 		blocker.Activate();
 		audio.PlaySound(openSound, 0.15f);
 	}
