@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=242 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -188,10 +188,8 @@
 [ext_resource type="AudioStream" uid="uid://4tiabpvxevap" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-2.wav" id="119_ydhld"]
 [ext_resource type="AudioStream" uid="uid://6yni8hv4ri07" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-3.wav" id="120_er8c0"]
 [ext_resource type="AudioStream" uid="uid://4y3v155lqdas" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-4.wav" id="121_6xxti"]
-[ext_resource type="AudioStream" uid="uid://bybfiv10183im" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-6.wav" id="122_pk243"]
 [ext_resource type="AudioStream" uid="uid://bh0alrg1qpno6" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-5.wav" id="122_sdth6"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="123_de4ge"]
-[ext_resource type="AudioStream" uid="uid://dqhrntnuf18yi" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-7.wav" id="124_050ex"]
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="125_iv8q0"]
 [ext_resource type="PackedScene" uid="uid://crwm2pivlof4s" path="res://Prefabs/FX/DecalRug.tscn" id="125_k4r5j"]
 [ext_resource type="AudioStream" uid="uid://dx7jme7p5tmx4" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-9.wav" id="126_76qtq"]
@@ -330,7 +328,7 @@ script = ExtResource("3_8tlgx")
 
 [node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
-stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic2"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio0"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn")]
+stageNodes = [NodePath("../../Npcs/NpcLumsden"), NodePath("../../Map/Cinematics/Cinematic1"), NodePath("../../Map/Cinematics/Cinematic2"), NodePath("../../Map/Cinematics/Cinematic3"), NodePath("../../Map/Lighting/DirectionalLight0"), NodePath("../../WorldEnvironment0"), NodePath("../../Map/Lighting/AmbientLight"), NodePath("../../Map/Fx/Lightshafts/FxLightShaft"), NodePath("../../Map/Audio/LevelRandomAudio0"), NodePath("../../Map/Level2ChangeTriggerArea"), NodePath("../../Npcs/NpcMobileWynn"), NodePath("../../Map/Pickups/PickupCandiedNut5"), NodePath("../../Map/Pickups/PickupCandiedNut6"), NodePath("../../Map/Pickups/PickupCandiedNut7")]
 stageExclusionNodes = [NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall3"), NodePath("../../Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/PropPicketBattlements3")]
 
 [node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
@@ -402,7 +400,6 @@ script = ExtResource("8_7o44d")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("4_s034b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3, 13, 92)
-speed = 20.0
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -2810,6 +2807,15 @@ collision_mask = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, 1, -24)
 collision_mask = 1
 
+[node name="PickupCandiedNut5" parent="Map/Pickups" instance=ExtResource("42_0hot2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1, 21.5)
+
+[node name="PickupCandiedNut6" parent="Map/Pickups" instance=ExtResource("42_0hot2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 1, 28)
+
+[node name="PickupCandiedNut7" parent="Map/Pickups" instance=ExtResource("42_0hot2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 1, 35.5)
+
 [node name="JumpNets" type="Node3D" parent="Map"]
 
 [node name="JumpNetTarget" parent="Map/JumpNets" node_paths=PackedStringArray("jumpPadTarget") instance=ExtResource("61_20rfl")]
@@ -3291,37 +3297,27 @@ linkedObjects = [NodePath("../../HubControl/Stage0")]
 [node name="Dialogue1" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
 dialogueAudio = ExtResource("118_kf60n")
-dialogueText = "Ah, a new face.  Hmmmm.  You must be a ranger!"
+dialogueText = "Hmmm...  Oh, hello!  I'm Lumsden, the gaffer of this hamlet.  You look like a ranger.  I met some up North before coming here."
 
 [node name="Dialogue2" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
 dialogueAudio = ExtResource("119_ydhld")
-dialogueText = "I met one of you a while back.  Well we could certainly use your help.  Those rats have pitched a siege on our hamlet.  What brought them here, I don't know."
+dialogueText = "It'd be most fortunate if we could enlist your help.  The rats moved into the surrounding forest and have been moving closer and closer to us."
 
 [node name="Dialogue3" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
 dialogueAudio = ExtResource("120_er8c0")
-dialogueText = "We've posted pickets on the main road and started constructing some defenses, but we don't have the means to take action outside of here."
+dialogueText = "We've posted pickets on the main road and built some munitions, but we don't have the means to take action outside of here."
 
 [node name="Dialogue4" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
 dialogueAudio = ExtResource("121_6xxti")
-dialogueText = "I need you to reconnoiter the old abandoned area; maybe see what mischief you can cause to the rats."
+dialogueText = "The rats have found their way into an isolated area of homes and we've had to abandon it.  I need you to block their paths in by closing two gates."
 
 [node name="Dialogue5" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
 dialogueAudio = ExtResource("122_sdth6")
-dialogueText = "There are some discrete paths that lead out of here that the rats don't know about."
-
-[node name="Dialogue6" type="Node" parent="Npcs/NpcLumsden"]
-script = ExtResource("117_d580p")
-dialogueAudio = ExtResource("122_pk243")
-dialogueText = "Wynn, the jackrabbit that brought you here, knows them very well."
-
-[node name="Dialogue7" type="Node" parent="Npcs/NpcLumsden"]
-script = ExtResource("117_d580p")
-dialogueAudio = ExtResource("124_050ex")
-dialogueText = "She will meet you at the gate to the abandoned area.  Cross the bridge and head Northwest."
+dialogueText = "Wynn, the jackrabbit you've met, can tell you how to get there. She will meet you at the gate to the abandoned area.  Cross the bridge and head Northwest."
 
 [node name="DialogueRepeating1" type="Node" parent="Npcs/NpcLumsden"]
 script = ExtResource("117_d580p")
