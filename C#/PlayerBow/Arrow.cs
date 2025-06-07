@@ -33,35 +33,28 @@ namespace PlayerBow
                 if(hitTarget.GetArrowType() == arrowType)
                 {
                     // hit the target
-                    hitTarget.Hit(velocity);
+                    var hitSuccessful = hitTarget.Hit(velocity);
 
-                    // spawn hit fx
-                    SpawnPrefab(hitFx, point, normal, upVector);
-                }
+                    if(hitSuccessful == true)
+                    {
+                        // spawn hit fx
+                        SpawnPrefab(hitFx, point, normal, upVector);
 
-                // detach trail
-                trailFx.DetachTrail();
+                        // detach trail
+                        trailFx.DetachTrail();
 
-                // destroy arrow
-                QueueFree();
+                        // destroy arrow
+                        QueueFree();
+                    }
+                    else
+                    {
+                        DisableArrow(point, upVector);
+                    }
+                }                
             }
             else if(hitObject is StaticBody3D)
             {
-                // set arrow position
-                var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
-                LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
-
-                // turn off trail fx
-                if(trailFx != null)
-                {
-                    trailFx.Emitting = false;
-                }
-
-                // spawn miss fx
-                SpawnPrefab(missFx, point, -Basis.Z, upVector);
-                
-                // disable script
-                SetScript(new Variant());
+                DisableArrow(point, upVector);
             }  
             else
             {
@@ -85,6 +78,27 @@ namespace PlayerBow
             
             // destroy arrow
             QueueFree();
+        }
+
+
+
+        void DisableArrow(Vector3 point, Vector3 upVector)
+        {
+            // set arrow position
+            var arrowNormalSpread = new Vector3(GD.Randf() - 0.5f, GD.Randf() - 0.5f, GD.Randf() - 0.5f) * 0.2f;
+            LookAtFromPosition(point, point + -Basis.Z + arrowNormalSpread, upVector);
+
+            // turn off trail fx
+            if(trailFx != null)
+            {
+                trailFx.Emitting = false;
+            }
+
+            // spawn miss fx
+            SpawnPrefab(missFx, point, -Basis.Z, upVector);
+            
+            // disable script
+            SetScript(new Variant());
         }
 
 

@@ -121,6 +121,7 @@ player-tab={
 3d_physics/layer_13="Water"
 3d_physics/layer_14="Mob Vision Blocker"
 3d_physics/layer_15="Small Props No Nav"
+3d_physics/layer_16="Bow Aimer Only"
 
 [rendering]
 

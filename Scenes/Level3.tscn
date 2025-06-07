@@ -91,7 +91,7 @@
 [ext_resource type="PackedScene" uid="uid://blu2b24uq2b15" path="res://Prefabs/Torches/PropTorch.tscn" id="58_38tg3"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="59_8kjuj"]
 [ext_resource type="PackedScene" uid="uid://dqfhr2xe3nv7h" path="res://Prefabs/Trees/PropBgTreeFir1.tscn" id="59_c3v41"]
-[ext_resource type="PackedScene" uid="uid://dtj5qc70uiow3" path="res://Prefabs/Small Items/PropArcheryTarget.tscn" id="59_hart6"]
+[ext_resource type="PackedScene" uid="uid://dtj5qc70uiow3" path="res://Prefabs/Player Bow Targets/PropArcheryTarget.tscn" id="59_hart6"]
 [ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="59_w44n8"]
 [ext_resource type="PackedScene" uid="uid://xrjt7goiur8h" path="res://Prefabs/Trees/PropBgTreeFir2.tscn" id="60_ebbv2"]
 [ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="60_qsjda"]

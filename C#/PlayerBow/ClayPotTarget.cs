@@ -54,7 +54,7 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         // create fx
         var newFx = breakFx.Instantiate() as Node3D;
@@ -78,5 +78,7 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
 
         // destroy
         QueueFree();
+
+        return true;
     }
 }

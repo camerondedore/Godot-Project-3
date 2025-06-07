@@ -111,7 +111,7 @@ public partial class Door : AnimatableBody3D, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         locked = false;
 
@@ -131,5 +131,7 @@ public partial class Door : AnimatableBody3D, IBowTarget
             // save to pickups taken
             WorldData.data.ActivateObject(this);
         }
+
+        return true;
     }
 }

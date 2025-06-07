@@ -55,7 +55,7 @@ public partial class NetTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         // attach net
         jumpPad.AttachMesh(jumpPadTarget, horizontalSpeed);
@@ -65,5 +65,7 @@ public partial class NetTarget : StaticBody3D, IBowTarget
         
         // disable script
         SetScript(new Variant());
+
+        return true;
     }
 }

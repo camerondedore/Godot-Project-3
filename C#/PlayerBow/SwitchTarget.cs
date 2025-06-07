@@ -52,7 +52,7 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         // move mesh
         switchMesh.Position += meshHitOffset;
@@ -70,6 +70,8 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
         
         // disable script
         SetScript(new Variant());
+
+        return true;
     }
 
 

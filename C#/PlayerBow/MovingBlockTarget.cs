@@ -93,7 +93,7 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         currentTarget = null;
 
@@ -105,7 +105,7 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
         if(absUnitY > Mathf.Abs(unitDir.X) && absUnitY > Mathf.Abs(unitDir.Z))
         {
             // arrow hit from too low or too high
-            return;
+            return true;
         }
 
 
@@ -188,6 +188,8 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
             // play audio
             hitAudio.PlaySound(hitFailSound, 0.1f);
         }
+
+        return true;
     }
 
 

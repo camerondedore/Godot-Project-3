@@ -59,7 +59,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         // flip visual nodes to show cut
         uncutMesh.Visible = false;
@@ -84,6 +84,8 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
 
         // disable script
         SetScript(new Variant());
+
+        return true;
     }
 
 

@@ -52,7 +52,7 @@ public partial class TorchTarget : Torch, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         LightTorch();
 
@@ -64,6 +64,8 @@ public partial class TorchTarget : Torch, IBowTarget
 
         // disable arrows
         arrowType = "blank";
+
+        return true;
     }
 
 

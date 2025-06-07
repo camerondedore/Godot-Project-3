@@ -160,7 +160,7 @@ namespace PlayerBow
     public interface IBowTarget
     {
         string GetArrowType();
-        void Hit(Vector3 direction);
+        bool Hit(Vector3 direction);
         Vector3 GetTargetGlobalPosition();
     }
 }

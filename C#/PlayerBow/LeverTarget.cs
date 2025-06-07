@@ -94,7 +94,7 @@ public partial class LeverTarget : Node3D, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         var unitDir = dir.Normalized();
 
@@ -111,7 +111,7 @@ public partial class LeverTarget : Node3D, IBowTarget
                 // audio
                 audio.PlaySound(hitSuccessSound, 0.1f);
 
-                return;
+                return true;
             }
         }
         else
@@ -127,13 +127,13 @@ public partial class LeverTarget : Node3D, IBowTarget
                 // audio
                 audio.PlaySound(hitSuccessSound, 0.1f);
 
-                return;
+                return true;
             }
         }
 
         // failed to activate lever
         audio.PlaySound(hitFailSound, 0.1f);
-        return;
+        return true;
     }
 
 

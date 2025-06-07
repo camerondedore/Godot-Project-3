@@ -82,7 +82,7 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget, IWatchable
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         // play fx
         //switchDustFx.Restart();
@@ -119,6 +119,8 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget, IWatchable
         }
 
         hitPoints--;
+
+        return true;
     }
 
 

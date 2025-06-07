@@ -24,7 +24,7 @@ meshes/generate_lods=false
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
-meshes/force_disable_compression=false
+meshes/force_disable_compression=true
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
@@ -39,80 +39,8 @@ _subresources={
 "generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/level-1-intro.res"
-},
-"level-1-intro_level-1-intro-1": {
-"generate/lightmap_uv": 1,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-intro-1.res"
-},
-"level-1-intro_level-1-intro-2": {
-"generate/lightmap_uv": 1,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-intro-2.res"
-},
-"level-1-intro_level-1-intro-3": {
-"generate/lightmap_uv": 1,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-intro-3.res"
-},
-"level-1-intro_level-1-intro-4": {
-"generate/lightmap_uv": 1,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-intro-4.res"
-},
-"level-1-intro_level-1-intro-5": {
-"generate/lightmap_uv": 1,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-intro-5.res"
-},
-"level-1-intro_level-1-intro-6": {
-"generate/lightmap_uv": 1,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-intro-6.res"
-},
-"level-1-intro_level-1-tree-wall": {
-"generate/lightmap_uv": 0,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": "res://Models/level-1-tree-wall.res"
 }
 }
 }

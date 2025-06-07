@@ -82,7 +82,7 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
 
 
 
-    public void Hit(Vector3 dir)
+    public bool Hit(Vector3 dir)
     {
         onCooldown = true;
         lastHitTime = EngineTime.timePassed;
@@ -129,7 +129,7 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         {
             // Z
             animation.Play("tree-target-hit-z");
-            return;
+            return true;
         }
 
         var angleToX = Mathf.FloorToInt(Mathf.RadToDeg(Basis.X.AngleTo(dir)));
@@ -138,7 +138,7 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         {
             // X
             animation.Play("tree-target-hit-x");
-            return;
+            return true;
         }
 
         var angleToZNeg = Mathf.FloorToInt(Mathf.RadToDeg(Basis.Z.AngleTo(-dir)));
@@ -147,11 +147,11 @@ public partial class OakTreeTarget : StaticBody3D, IBowTarget
         {
             // -Z
             animation.Play("tree-target-hit-z-neg");
-            return;
+            return true;
         }
 
         // -X
         animation.Play("tree-target-hit-x-neg");
-        return;      
+        return true;      
     }
 }

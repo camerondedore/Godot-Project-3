@@ -293,7 +293,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
 
 
 
-    public override void Hit(Vector3 dir)
+    public override bool Hit(Vector3 dir)
     {
         if(hasShield == true)
         {
@@ -306,6 +306,8 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
             // take damage from arrow
             health.Damage(damageFromArrow);
         }
+
+        return true;
     }
 
 

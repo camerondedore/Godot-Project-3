@@ -24,7 +24,7 @@ meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
-meshes/force_disable_compression=false
+meshes/force_disable_compression=true
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
@@ -39,7 +39,6 @@ _subresources={
 "generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
 "save_to_file/path": "res://Models/level-2.res"
 }
