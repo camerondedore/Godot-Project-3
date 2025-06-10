@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cri67m22k7bhr"]
+
+[ext_resource type="ArrayMesh" uid="uid://c4yv6iy4gsqaf" path="res://Models/prop-dummy-vole.res" id="1_u1be7"]
+[ext_resource type="Material" uid="uid://dh8tt615bqcbk" path="res://Materials/Props/PropDummyVole.tres" id="2_xxs8h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xxs8h"]
+radius = 0.4
+height = 1.7
+
+[node name="PropDummyVole" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_u1be7")
+surface_material_override/0 = ExtResource("2_xxs8h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+shape = SubResource("CapsuleShape3D_xxs8h")
