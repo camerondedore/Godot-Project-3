@@ -106,6 +106,7 @@ player-tab={
 3d_render/layer_2="Dynamic"
 3d_render/layer_3="Skybox"
 3d_render/layer_4="Water"
+3d_render/layer_5="Sign"
 3d_physics/layer_1="Default"
 3d_physics/layer_2="Characters"
 3d_physics/layer_3="Pickups"
