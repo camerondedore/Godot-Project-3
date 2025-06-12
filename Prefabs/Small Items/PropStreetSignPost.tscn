@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddbdjuxycbft0"]
+
+[ext_resource type="ArrayMesh" uid="uid://cayfyl6yps7pk" path="res://Models/prop-street-sign-post.res" id="1_7elmf"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_vqmq2"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_fswm6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c2uie"]
+size = Vector3(0.2, 2.5, 0.2)
+
+[node name="PropStreetSignPost" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="PostMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_7elmf")
+surface_material_override/0 = ExtResource("2_vqmq2")
+surface_material_override/1 = ExtResource("3_fswm6")
+
+[node name="PostCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_c2uie")

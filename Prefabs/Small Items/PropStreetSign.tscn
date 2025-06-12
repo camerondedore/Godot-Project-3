@@ -1,13 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhvlvsli6qevf"]
+[gd_scene load_steps=5 format=3 uid="uid://dhvlvsli6qevf"]
 
-[ext_resource type="ArrayMesh" uid="uid://cayfyl6yps7pk" path="res://Models/prop-street-sign-post.res" id="1_c2uie"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_5jjps"]
-[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_kj8fj"]
 [ext_resource type="ArrayMesh" uid="uid://byr6ddc2rr1pd" path="res://Models/prop-street-sign.res" id="4_diq3e"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="5_8fchc"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_c2uie"]
-size = Vector3(0.2, 2.5, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5jjps"]
 size = Vector3(0.8, 0.3, 0.05)
@@ -15,26 +10,13 @@ size = Vector3(0.8, 0.3, 0.05)
 [node name="PropStreetSign" type="StaticBody3D"]
 collision_layer = 16
 
-[node name="PostMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-layers = 2
-gi_mode = 2
-mesh = ExtResource("1_c2uie")
-surface_material_override/0 = ExtResource("2_5jjps")
-surface_material_override/1 = ExtResource("3_kj8fj")
-
 [node name="SignMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3, 0)
 layers = 16
 gi_mode = 2
 mesh = ExtResource("4_diq3e")
 surface_material_override/0 = ExtResource("2_5jjps")
 surface_material_override/1 = ExtResource("5_8fchc")
 
-[node name="PostCollider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-shape = SubResource("BoxShape3D_c2uie")
-
 [node name="SignCollider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 shape = SubResource("BoxShape3D_5jjps")
