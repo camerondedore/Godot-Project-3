@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://d27rgxvexi54w"]
+
+[ext_resource type="PackedScene" uid="uid://6iap482nryxo" path="res://Prefabs/Doors/PortcullisFrame.tscn" id="1_e6syk"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_ssgvt"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_1md0u"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="4_8cwd3"]
+
+[node name="PortcullisFrameOld" instance=ExtResource("1_e6syk")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ssgvt")
+surface_material_override/1 = ExtResource("3_1md0u")
+surface_material_override/2 = ExtResource("4_8cwd3")

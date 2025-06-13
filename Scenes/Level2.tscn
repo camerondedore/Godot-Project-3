@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=210 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -81,7 +81,9 @@
 [ext_resource type="PackedScene" uid="uid://dmekunwibavp7" path="res://Prefabs/Houses/PropTreeHouse1Curtained.tscn" id="41_bl4u2"]
 [ext_resource type="PackedScene" uid="uid://cv3ogl3f1lqaw" path="res://Prefabs/Furniture/PropBed.tscn" id="41_it36w"]
 [ext_resource type="PackedScene" uid="uid://dco0xhd7pjvcy" path="res://Prefabs/Furniture/PropBench.tscn" id="42_3mf5l"]
+[ext_resource type="PackedScene" uid="uid://d27rgxvexi54w" path="res://Prefabs/Doors/PortcullisFrameOld.tscn" id="42_6pt12"]
 [ext_resource type="PackedScene" uid="uid://blu2b24uq2b15" path="res://Prefabs/Torches/PropTorch.tscn" id="43_aw6ra"]
+[ext_resource type="PackedScene" uid="uid://b022sbupev76t" path="res://Prefabs/Doors/PortcullisOld.tscn" id="43_blqcu"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="43_cnt72"]
 [ext_resource type="PackedScene" uid="uid://dw5aibdac1ld2" path="res://Prefabs/Torches/PropStreetLight.tscn" id="45_pp87c"]
 [ext_resource type="PackedScene" uid="uid://b6wf4pel1e6cw" path="res://Prefabs/Lumber/PropFirewood1.tscn" id="45_wbcto"]
@@ -1972,10 +1974,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 4, -86.1)
 [node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame2" instance=ExtResource("12_k0kga")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 
-[node name="PortcullisFrame10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("11_wwcwr")]
+[node name="PortcullisFrameOld" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("42_6pt12")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -74.45, 4, -115.5)
 
-[node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame10" instance=ExtResource("12_k0kga")]
+[node name="PortcullisOld" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld" instance=ExtResource("43_blqcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 speed = 0.25
 open = true
@@ -2016,10 +2018,10 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 91.039
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 speed = 0.2
 
-[node name="PortcullisFrame13" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("11_wwcwr")]
+[node name="PortcullisFrameOld2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("42_6pt12")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 102.59, -1, -182.02)
 
-[node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame13" instance=ExtResource("12_k0kga")]
+[node name="PortcullisOld" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld2" instance=ExtResource("43_blqcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 speed = 0.08
 open = true
@@ -2714,7 +2716,7 @@ linkedObjects = [NodePath("../../Doors/PortcullisFrame3/Portcullis"), NodePath("
 
 [node name="PropLever2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("58_tw5do")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 115.5, -0.25, -182)
-linkedObjects = [NodePath("../../Doors/PortcullisFrame12/Portcullis"), NodePath("../../Doors/PortcullisFrame13/Portcullis")]
+linkedObjects = [NodePath("../../Doors/PortcullisFrame12/Portcullis"), NodePath("../../Doors/PortcullisFrameOld2/PortcullisOld")]
 
 [node name="InvisibleWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
@@ -11257,7 +11259,7 @@ transform = Transform3D(0.707106, 0, -0.707106, 0, 1, 0, 0.707106, 0, 0.707106, 
 
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox7" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_kbqki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.300003)
-linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame10/Portcullis"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame11/Portcullis"), NodePath("../../../Cinematics/Cinematic2/TriggerSwitch")]
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld/PortcullisOld"), NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame11/Portcullis"), NodePath("../../../Cinematics/Cinematic2/TriggerSwitch")]
 
 [node name="PropSwitchWallbox2" parent="Map/Switches" instance=ExtResource("82_xvep4")]
 transform = Transform3D(-0.980358, 0.00520892, 0.197157, -0.0213843, 0.990951, -0.132514, -0.196063, -0.134127, -0.971375, 31.6617, 10.8011, -133.381)
