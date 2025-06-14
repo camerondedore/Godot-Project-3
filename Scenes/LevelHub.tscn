@@ -123,7 +123,7 @@
 [ext_resource type="PackedScene" uid="uid://cfhkbxoenwciy" path="res://Prefabs/Fabrications/PropTentMedium.tscn" id="63_8gxqc"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorchTarget.tscn" id="64_ywcrg"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="65_fx7bf"]
-[ext_resource type="Animation" uid="uid://j01xjnracg0m" path="res://Animation/Cinematics/lhc1.res" id="65_yf3nw"]
+[ext_resource type="Animation" path="res://Animation/Cinematics/lhc1.res" id="65_yf3nw"]
 [ext_resource type="Animation" uid="uid://c2r15hubmduxr" path="res://Animation/Cinematics/lhc2.res" id="66_f3xeq"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="67_5ah10"]
 [ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Fabrications/PropPicketAbatisWall.tscn" id="67_7om54"]
