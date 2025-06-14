@@ -934,6 +934,9 @@ transform = Transform3D(-0.0726334, -0.023963, -0.899318, -0.0319352, 0.901745, 
 [node name="PropTreeOak4!1746889617_521" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Oaks" instance=ExtResource("22_g757b")]
 transform = Transform3D(0.833073, -0.0203747, -0.512803, 0.0334494, 0.97777, 0.0154913, 0.512117, -0.0307199, 0.833178, -5.79437, 27, -212.819)
 
+[node name="PropTreeOak3!1749868114_818" type="StaticBody3D" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Oaks" instance=ExtResource("21_05g01")]
+transform = Transform3D(0.0596196, 0.0291933, 1.02942, 0.0450234, 1.03008, -0.0318197, -1.02885, 0.0467691, 0.0582602, -74.5321, 11.5705, -102.143)
+
 [node name="PropTreeOakTarget" parent="Map/Lighting/OccluderInstance3D/NavigationRegion3D/NavProps/Trees" instance=ExtResource("23_2jdlh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5, 17, -185.5)
 
@@ -11551,7 +11554,7 @@ displayTime = 3.5
 script = ExtResource("82_tmun0")
 targetCharacter = NodePath("../CinematicCharacterWynn")
 audioClip = ExtResource("84_a82my")
-dialogueText = "There's a mortal and pestle near you.  You can use that to combine dock leaves and sanicle to make your own bandages."
+dialogueText = "There's a mortar and pestle near you.  You can use that to combine dock leaves and sanicle to make your own bandages."
 displayTime = 6.4
 
 [node name="Cinematic3" type="Node3D" parent="Map/Cinematics"]
