@@ -1,4 +1,4 @@
-[gd_scene load_steps=230 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=231 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/Level3Environment.tres" id="2_36bgp"]
@@ -207,6 +207,7 @@
 [ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="149_i41f3"]
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="150_aro2w"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="151_260ct"]
+[ext_resource type="PackedScene" uid="uid://degy5442rwxcl" path="res://Prefabs/Plants/PropIvy.tscn" id="156_aro2w"]
 [ext_resource type="Animation" uid="uid://yvb7rbcrftum" path="res://Animation/Cinematics/l3c4.res" id="188_oac5w"]
 [ext_resource type="Animation" uid="uid://vee4qekv0ydn" path="res://Animation/Cinematics/l3c6.res" id="190_i41f3"]
 
@@ -10649,6 +10650,11 @@ maxRotation = 5.0
 sizeVariation = 0.15
 uniformSize = true
 useHitNormal = true
+
+[node name="Ivy" type="Node3D" parent="Map/Lighting/OccluderInstance3D/Props/Plants"]
+
+[node name="PropIvy" parent="Map/Lighting/OccluderInstance3D/Props/Plants/Ivy" instance=ExtResource("156_aro2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.3515, 16.86, -119.051)
 
 [node name="WaterArea" type="Area3D" parent="Map/Lighting/OccluderInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.75, 8.9, -125.25)

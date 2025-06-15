@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://degy5442rwxcl"]
+
+[ext_resource type="ArrayMesh" uid="uid://cku78nki501hv" path="res://Models/prop-ivy.res" id="1_408kn"]
+[ext_resource type="Material" uid="uid://ldgayp04mjgy" path="res://Materials/Plants/LeavesIvy.tres" id="2_2jggp"]
+
+[node name="PropIvy" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+cast_shadow = 0
+gi_mode = 2
+mesh = ExtResource("1_408kn")
+surface_material_override/0 = ExtResource("2_2jggp")
