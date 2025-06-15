@@ -89,7 +89,7 @@
 [ext_resource type="PackedScene" uid="uid://bwf3pgemn8xm0" path="res://Prefabs/Food/PropBread2.tscn" id="76_r3gdv"]
 [ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="77_g1u30"]
 [ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="78_gafcq"]
-[ext_resource type="PackedScene" uid="uid://degy5442rwxcl" path="res://Prefabs/Plants/PropIvy.tscn" id="79_l7oc5"]
+[ext_resource type="PackedScene" uid="uid://degy5442rwxcl" path="res://Prefabs/Plants/PropIvyHanging.tscn" id="79_l7oc5"]
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="79_u8w11"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="80_ponqo"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="82_aaxjn"]
@@ -4211,100 +4211,100 @@ transform = Transform3D(0.80979, 0.0683216, -0.618647, -0.0238169, 1.01783, 0.08
 
 [node name="Ivy" type="Node3D" parent="Map/Props/Plants"]
 
-[node name="PropIvy" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.984168, 0, -0.177239, 0, 1, 0, 0.177239, 0, -0.984168, -17.3185, 7.88581, -44.3675)
 
-[node name="PropIvy2" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging2" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.248893, 0, 0.968531, 0, 1, 0, -0.968531, 0, -0.248893, -43.0098, 7.88581, -43.3397)
 
-[node name="PropIvy3" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging3" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.998444, 0, 0.0557692, 0, 1, 0, -0.0557692, 0, 0.998444, -40.2552, 7.88581, -57.8528)
 
-[node name="PropIvy4" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging4" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.999876, 0, 0.0157248, 0, 1, 0, -0.0157248, 0, -0.999876, -44.2746, 7.88581, -76.7635)
 
-[node name="PropIvy5" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging5" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.999599, 0, 0.0283229, 0, 1, 0, -0.0283229, 0, -0.999599, -52.2639, 7.88581, -77.1715)
 
-[node name="PropIvy6" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging6" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.971949, 0, -0.235193, 0, 1, 0, 0.235193, 0, -0.971949, -29.7687, 7.88581, -104.036)
 
-[node name="PropIvy7" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging7" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.69769, 0, -0.716399, 0, 1, 0, 0.716399, 0, 0.69769, -47.3156, 7.88581, -95.8591)
 
-[node name="PropIvy8" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging8" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.935912, 0, -0.352234, 0, 1, 0, 0.352234, 0, -0.935912, -50.814, 7.88581, -125.943)
 
-[node name="PropIvy9" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging9" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.18925, 0, 0.981929, 0, 1, 0, -0.981929, 0, -0.18925, -44.3653, 7.88581, -119.768)
 
-[node name="PropIvy10" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging10" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.640069, 0, 0.768317, 0, 1, 0, -0.768317, 0, -0.640069, -41.3172, 7.88581, -105.444)
 
-[node name="PropIvy11" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging11" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -52.9095, 7.92133, -171.608)
 
-[node name="PropIvy12" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging12" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.999115, 0, 0.0420674, 0, 1, 0, -0.0420674, 0, -0.999115, -41.7183, 7.92133, -171.589)
 
-[node name="PropIvy13" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging13" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.179008, 0, -0.983848, 0, 1, 0, 0.983848, 0, -0.179008, -24.2368, 7.92133, -174.445)
 
-[node name="PropIvy14" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging14" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.997931, 0, 0.0642884, 0, 1, 0, -0.0642884, 0, -0.997931, -21.2107, 7.92133, -176.709)
 
-[node name="PropIvy15" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging15" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.00816814, 0, -0.999967, 0, 1, 0, 0.999967, 0, 0.00816814, 15.2309, 7.92133, -180.213)
 
-[node name="PropIvy16" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging16" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.000296736, 0, 1, 0, 1, 0, -1, 0, 0.000296736, 24.6043, 7.92133, -187.199)
 
-[node name="PropIvy17" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging17" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.99992, 0, -0.0126184, 0, 1, 0, 0.0126184, 0, -0.99992, 16.5196, 7.92133, -198.072)
 
-[node name="PropIvy18" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging18" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.999826, 0, 0.0186739, 0, 1, 0, -0.0186739, 0, 0.999826, -1.34373, 7.92133, -187.611)
 
-[node name="PropIvy19" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging19" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.99981, 0, -0.0195116, 0, 1, 0, 0.0195116, 0, 0.99981, -33.0588, 7.92133, -188.888)
 
-[node name="PropIvy20" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging20" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.998806, 0, -0.0488498, 0, 1, 0, 0.0488498, 0, 0.998806, -46.0896, 7.92133, -211.61)
 
-[node name="PropIvy21" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging21" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.995671, 0, -0.0929441, 0, 1, 0, 0.0929441, 0, 0.995671, -49.9889, 7.92133, -212.003)
 
-[node name="PropIvy22" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging22" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.998047, 0, 0.0624769, 0, 1, 0, -0.0624769, 0, -0.998047, -47.6525, 7.92133, -219.271)
 
-[node name="PropIvy23" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging23" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.999936, 0, -0.011327, 0, 1, 0, 0.011327, 0, -0.999936, -19.7187, 7.92133, -219.102)
 
-[node name="PropIvy24" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging24" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.0780416, 0, 0.99695, 0, 1, 0, -0.99695, 0, -0.0780416, 2.26801, 7.92133, -206.655)
 
-[node name="PropIvy25" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging25" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.984959, 0, -0.172789, 0, 1, 0, 0.172789, 0, 0.984959, -75.5971, 15.853, -196.432)
 
-[node name="PropIvy26" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging26" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.0451189, 0, -0.998982, 0, 1, 0, 0.998982, 0, 0.0451189, -79.7699, 15.853, -202.005)
 
-[node name="PropIvy27" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging27" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.138188, 0, -0.990406, 0, 1, 0, 0.990406, 0, 0.138188, -80.3475, 15.853, -228.745)
 
-[node name="PropIvy28" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging28" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.0512554, 0, 0.998686, 0, 1, 0, -0.998686, 0, 0.0512554, -68.7937, 15.853, -216.159)
 
-[node name="PropIvy29" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging29" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.138879, 0, 0.990309, 0, 1, 0, -0.990309, 0, 0.138879, -62.1621, 15.853, -236.164)
 
-[node name="PropIvy30" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging30" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.982519, 0, 0.186164, 0, 1, 0, -0.186164, 0, 0.982519, -45.7812, 15.853, -266.049)
 
-[node name="PropIvy31" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging31" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(-0.980515, 0, 0.196443, 0, 1, 0, -0.196443, 0, -0.980515, -40.6472, 15.853, -272.625)
 
-[node name="PropIvy32" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
+[node name="PropIvyHanging32" parent="Map/Props/Plants/Ivy" instance=ExtResource("79_l7oc5")]
 transform = Transform3D(0.159192, 0, 0.987248, 0, 1, 0, -0.987248, 0, 0.159192, -25.6021, 15.853, -273.578)
 
 [node name="Rocks" type="Node3D" parent="Map/Props"]

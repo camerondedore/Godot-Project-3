@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://gk2vk80xah23"]
 
 [ext_resource type="Shader" uid="uid://c36yo85m66ch5" path="res://Shaders/VertexWind.gdshader" id="1_wag3x"]
-[ext_resource type="Texture2D" uid="uid://bcx3wcq14am53" path="res://Textures/leaves-ivy.png" id="2_wlrd6"]
+[ext_resource type="Texture2D" uid="uid://bcx3wcq14am53" path="res://Textures/leaves-ivy-hanging.png" id="2_wlrd6"]
 
 [resource]
 render_priority = 0

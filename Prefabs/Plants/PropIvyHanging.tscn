@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://degy5442rwxcl"]
 
 [ext_resource type="ArrayMesh" uid="uid://cku78nki501hv" path="res://Models/prop-ivy.res" id="1_408kn"]
-[ext_resource type="Material" uid="uid://gk2vk80xah23" path="res://Materials/Plants/LeavesIvyWind.tres" id="2_2jggp"]
+[ext_resource type="Material" uid="uid://gk2vk80xah23" path="res://Materials/Plants/LeavesIvyHangingWind.tres" id="2_2jggp"]
 
-[node name="PropIvy" type="Node3D"]
+[node name="PropIvyHanging" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
