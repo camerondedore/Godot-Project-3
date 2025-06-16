@@ -1,4 +1,4 @@
-[gd_scene load_steps=244 format=3 uid="uid://dvorxoit80r4j"]
+[gd_scene load_steps=245 format=3 uid="uid://dvorxoit80r4j"]
 
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="1_t2fdd"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_vfw7t"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="5_k6lpv"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="5_rinr5"]
 [ext_resource type="ArrayMesh" uid="uid://cmkybwpxvuovo" path="res://Models/level-hub.res" id="6_6j6jj"]
+[ext_resource type="Environment" uid="uid://c1koe77yi8evg" path="res://Environments/LevelHub3Environment.tres" id="6_k63lq"]
 [ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="7_nlmtm"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
 [ext_resource type="ArrayOccluder3D" uid="uid://dpwxwkgm4hvfi" path="res://Scenes/Occlusion/LevelHub.occ" id="7_uqg3o"]
@@ -325,6 +326,11 @@ environment = ExtResource("5_fikle")
 script = ExtResource("3_hlp5u")
 postProcessing = ExtResource("5_fikle")
 
+[node name="WorldEnvironment3" type="WorldEnvironment" parent="."]
+environment = ExtResource("6_k63lq")
+script = ExtResource("3_hlp5u")
+postProcessing = ExtResource("6_k63lq")
+
 [node name="HubControl" type="Node" parent="."]
 script = ExtResource("3_8tlgx")
 
@@ -386,7 +392,7 @@ setNodes = [NodePath("../../../Npcs/NpcLumsden2")]
 [node name="Stage3" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
 script = ExtResource("4_hh5wq")
 hubStage = 3
-stageNodes = [NodePath("../../Map/Audio/LevelRandomAudio3")]
+stageNodes = [NodePath("../../Map/Lighting/DirectionalLight3"), NodePath("../../WorldEnvironment3"), NodePath("../../Map/Audio/LevelRandomAudio3")]
 stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage3" node_paths=PackedStringArray("setNodes")]
@@ -430,6 +436,7 @@ transform = Transform3D(-1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, -1, 50.5, 
 transform = Transform3D(-0.938159, 0.133881, -0.319271, 0, 0.922201, 0.386711, 0.346205, 0.362796, -0.86517, 46.8348, 8.31995, -73.1411)
 
 [node name="Lighting" type="Node3D" parent="Map"]
+metadata/_edit_group_ = true
 
 [node name="DirectionalLight0" type="DirectionalLight3D" parent="Map/Lighting"]
 transform = Transform3D(-0.80353, -0.158716, 0.573716, 0.463918, 0.436937, 0.770627, -0.372988, 0.885379, -0.277461, 0, 0, 0)
@@ -456,6 +463,15 @@ light_energy = 1.8
 light_indirect_energy = 2.0
 shadow_enabled = true
 shadow_opacity = 0.6
+directional_shadow_blend_splits = true
+script = ExtResource("5_k6lpv")
+
+[node name="DirectionalLight3" type="DirectionalLight3D" parent="Map/Lighting"]
+transform = Transform3D(-0.718543, -0.151741, 0.678728, 0.49081, 0.580795, 0.649448, -0.49275, 0.799782, -0.34285, 0, 0, 0)
+visible = false
+light_indirect_energy = 2.0
+shadow_enabled = true
+shadow_opacity = 0.9
 directional_shadow_blend_splits = true
 script = ExtResource("5_k6lpv")
 
