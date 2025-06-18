@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://jvoyv7glevo8"]
+
+[ext_resource type="ArrayMesh" uid="uid://bxgs5krvmxxow" path="res://Models/prop-sign.res" id="1_ll5h6"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_5y2bd"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_a7m5w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wxuc3"]
+size = Vector3(1, 1.5, 0.125)
+
+[node name="PropSign" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 16
+gi_mode = 2
+mesh = ExtResource("1_ll5h6")
+surface_material_override/0 = ExtResource("2_5y2bd")
+surface_material_override/1 = ExtResource("3_a7m5w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, -0.024665)
+shape = SubResource("BoxShape3D_wxuc3")
