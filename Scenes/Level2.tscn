@@ -1,4 +1,4 @@
-[gd_scene load_steps=212 format=3 uid="uid://dvrx58x6wafe1"]
+[gd_scene load_steps=213 format=3 uid="uid://dvrx58x6wafe1"]
 
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
@@ -174,6 +174,7 @@
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="96_djqcu"]
 [ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="98_eiudq"]
 [ext_resource type="PackedScene" uid="uid://jvoyv7glevo8" path="res://Prefabs/Small Items/PropSign.tscn" id="99_ot2kc"]
+[ext_resource type="Texture2D" uid="uid://bdem8exlm1ml3" path="res://Textures/fx-rat-warning.png" id="100_gljei"]
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/DecalWoodChips.tscn" id="104_g3gg3"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="110_t127k"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="111_6aopb"]
@@ -2713,8 +2714,24 @@ transform = Transform3D(-0.285488, 0, -0.958382, 0, 1, 0, 0.958382, 0, -0.285488
 [node name="PropSign" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("99_ot2kc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -72.0911, 4, -113.485)
 
+[node name="DecalRatWarning" type="Decal" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items/PropSign"]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, 1.45045e-08, 1.16591, -0.1)
+size = Vector3(0.7, 0.1, 0.7)
+texture_albedo = ExtResource("100_gljei")
+upper_fade = 0.00149363
+lower_fade = 0.00437359
+cull_mask = 16
+
 [node name="PropSign2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items" instance=ExtResource("99_ot2kc")]
 transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 99, -1, -183.5)
+
+[node name="DecalRatWarning" type="Decal" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Small Items/PropSign2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 8.74228e-08, -4.37114e-08, -1, -3.82137e-15, -1, 4.37114e-08, 1.45045e-08, 1.16591, -0.1)
+size = Vector3(0.7, 0.1, 0.7)
+texture_albedo = ExtResource("100_gljei")
+upper_fade = 0.00149363
+lower_fade = 0.00437359
+cull_mask = 16
 
 [node name="Switches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
