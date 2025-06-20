@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://5r7sc1g73u61"]
+
+[ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_1ktle"]
+[ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="3_rgu2x"]
+[ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="4_6lrky"]
+[ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="5_xgp81"]
+
+[node name="Level4" type="Node3D"]
+
+[node name="GlobalCamera" parent="." instance=ExtResource("1_glqn7")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="LevelChange" parent="." instance=ExtResource("2_1ktle")]
+
+[node name="SpawnedObjectLoader" type="Node" parent="."]
+script = ExtResource("3_rgu2x")
+
+[node name="DialogueUi" parent="." instance=ExtResource("4_6lrky")]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("5_xgp81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Lighting" type="Node3D" parent="Map"]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
+
+[node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+
+[node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+
+[node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
+
+[node name="Cinematics" type="Node3D" parent="Map"]
+
+[node name="CinematicsLevel4" type="AnimationPlayer" parent="Map/Cinematics"]
+
+[node name="Enemies" type="Node3D" parent="."]
