@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://pb43s4cr3c7g"]
+[gd_scene load_steps=7 format=3 uid="uid://pb43s4cr3c7g"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_2cecp"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_foh2a"]
+[ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_ltj1c"]
 [ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="3_tgvs8"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="4_2k1lg"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="5_cww2u"]
@@ -11,6 +12,7 @@
 [node name="GlobalCamera" parent="." instance=ExtResource("1_2cecp")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+script = ExtResource("2_ltj1c")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_foh2a")]
 
