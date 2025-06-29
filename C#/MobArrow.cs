@@ -8,11 +8,20 @@ public partial class MobArrow : Projectile
         hitFx,
         missFx;
     [Export]
-    ArrowTrail trailFx;
-    [Export]
-    AudioStreamPlayer3D whistleAudio;
-    [Export]
     float damage = 5;
+
+    ArrowTrail trailFx;
+    AudioStreamPlayer3D whistleAudio;
+
+
+
+    public override void _Ready()
+    {
+        base._Ready();
+
+        trailFx = (ArrowTrail) GetNode("FxArrowTrailEnemy");
+        whistleAudio = (AudioStreamPlayer3D) GetNode("WhistleAudio");
+    }
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dpixs7ufqf8p0"]
+[gd_scene load_steps=13 format=3 uid="uid://dpixs7ufqf8p0"]
 
 [ext_resource type="Script" uid="uid://ixs70qy5wxj1" path="res://C#/MobArrow.cs" id="1_msana"]
 [ext_resource type="PackedScene" uid="uid://dkql0j4oe33cn" path="res://Prefabs/FX/FxArrowHitEnemy.tscn" id="2_30351"]
@@ -8,10 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://ci1lbtanc0g30" path="res://Prefabs/FX/FxArrowMiss.tscn" id="3_ukgsk"]
 [ext_resource type="ArrayMesh" uid="uid://bk0solhvwwfie" path="res://Models/arrow-enemy.res" id="4_l5ybc"]
 [ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="7_1d1md"]
+[ext_resource type="Script" uid="uid://dsl4k8mk018my" path="res://C#/RayCastWaterDetector.cs" id="7_oxmjn"]
+[ext_resource type="PackedScene" uid="uid://bk3yuraluw3l2" path="res://Prefabs/FX/FxSplash.tscn" id="8_kpci0"]
 [ext_resource type="AudioStream" uid="uid://cp5vapmt543af" path="res://Audio/arrow-whistle.wav" id="8_plcwg"]
 [ext_resource type="PackedScene" uid="uid://bnwbiksj5u6vd" path="res://Prefabs/FX/FxArrowTrailEnemy.tscn" id="9_6ir5r"]
 
-[node name="MobArrow" type="RayCast3D" node_paths=PackedStringArray("trailFx", "whistleAudio")]
+[node name="MobArrow" type="RayCast3D"]
 enabled = false
 exclude_parent = false
 target_position = Vector3(0, 0, -1)
@@ -20,8 +22,6 @@ script = ExtResource("1_msana")
 hitBloodFx = ExtResource("2_yyqqu")
 hitFx = ExtResource("2_30351")
 missFx = ExtResource("3_ukgsk")
-trailFx = NodePath("FxArrowTrailEnemy")
-whistleAudio = NodePath("AudioStreamPlayer3D")
 speed = 19.0
 speedVariation = 0.0
 rangeSqr = 1600.0
@@ -32,12 +32,20 @@ gi_mode = 2
 mesh = ExtResource("4_l5ybc")
 surface_material_override/0 = ExtResource("2_i0ho1")
 
+[node name="WaterDetector" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)
+collision_mask = 4096
+debug_shape_custom_color = Color(0.139294, 0.267282, 1, 1)
+debug_shape_thickness = 1
+script = ExtResource("7_oxmjn")
+splashFx = ExtResource("8_kpci0")
+
 [node name="NodeLimiter" type="Node" parent="."]
 script = ExtResource("3_rxlq1")
 queueName = "mob arrow"
 queueLimit = 40
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="WhistleAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 1.0
 max_distance = 5.0
 attenuation_filter_cutoff_hz = 20500.0

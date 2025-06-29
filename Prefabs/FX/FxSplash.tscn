@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk3yuraluw3l2"]
+
+[ext_resource type="Material" uid="uid://dxuigwyapk2a7" path="res://Materials/Fx/FxWaterSplashDroplet.tres" id="1_cpujb"]
+[ext_resource type="Material" uid="uid://b8lcfbbxprfl5" path="res://Particles/FxSplashDroplets.tres" id="2_cpujb"]
+[ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="3_cpujb"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="4_ujoix"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="5_nbb3g"]
+[ext_resource type="AudioStream" uid="uid://dpreogrhjkmam" path="res://Audio/water-splash-small.wav" id="6_nbb3g"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_g3txk"]
+
+[node name="FxSplash" type="GPUParticles3D"]
+process_mode = 1
+layers = 2
+material_override = ExtResource("1_cpujb")
+cast_shadow = 0
+gi_mode = 2
+emitting = false
+amount = 15
+one_shot = true
+explosiveness = 0.95
+randomness = 0.5
+visibility_aabb = AABB(-2.22153, -1.15517, -2.18329, 4.55111, 2.87137, 4.68779)
+process_material = ExtResource("2_cpujb")
+draw_pass_1 = SubResource("QuadMesh_g3txk")
+script = ExtResource("3_cpujb")
+restartOnReady = true
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("4_ujoix")
+lifeTime = 3.0
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 2.0
+max_distance = 30.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("5_nbb3g")
+sounds = Array[AudioStream]([ExtResource("6_nbb3g")])
+destroyOnFinished = false
