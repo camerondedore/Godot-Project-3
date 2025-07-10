@@ -26,6 +26,7 @@ public partial class CharacterWaterSplash : Area3D
         audioVolumeMax,
         minPitch = 0.5f,
         maxPitch = 1.25f;
+    int waterAreasCount = 0;
     bool isPlaying;
 
 
@@ -96,24 +97,41 @@ public partial class CharacterWaterSplash : Area3D
 
     public void Splash(Node3D water)
     {
-        waterNode = water;
+        if(waterAreasCount == 0)
+        {
+            // play enter sound
+            splashAudio.PlaySound(waterEnterSound, 0.1f);
+        }
 
-        movementAudio.UnitSize = audioVolumeMax;
-        characterFeetAudio.InWater();
-        splashAudio.PlaySound(waterEnterSound, 0.1f);
+        waterAreasCount += 1;
+
+        if(waterAreasCount > 0)
+        {
+            waterNode = water;
+
+            movementAudio.UnitSize = audioVolumeMax;
+            characterFeetAudio.InWater();
+        }
     }
 
 
 
     public void StopSplash(Node3D water)
     {
-        waterNode = null;
+        waterAreasCount -= 1;
+        
+        if(waterAreasCount == 0)
+        {
+            waterNode = null;
 
-        waterSplashFx.StopParticles();
-        audioTargetVolume = 0;
-        characterFeetAudio.OutOfWater();
-        splashAudio.PlaySound(waterExitSound, 0.1f);
-        isPlaying = false;
+            waterSplashFx.StopParticles();
+            audioTargetVolume = 0;
+            characterFeetAudio.OutOfWater();
+            isPlaying = false;
+
+            // play exit sound
+            splashAudio.PlaySound(waterExitSound, 0.1f);
+        }
     }
 
 
