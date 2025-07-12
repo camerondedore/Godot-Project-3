@@ -14,7 +14,10 @@ public partial class Door : AnimatableBody3D, IBowTarget
     [Export]
     Vector3 targetOffset = new Vector3(-1.3f, -0.2f, 0);
     [Export]
-    bool saveToWorldData = false;
+    bool saveToWorldData = false,
+        arrowActivatable = true;
+    [Export]
+    Node[] linkedObjects;
     
     string arrowType = "pick";
     CollisionShape3D doorCollider;
@@ -82,7 +85,13 @@ public partial class Door : AnimatableBody3D, IBowTarget
 
     public string GetArrowType()
     {
-        if(locked == true)
+        if(arrowActivatable == false)
+        {
+            // door doesn't open for arrow
+            // return bad arrow type
+            return "blank";
+        }
+        else if(locked == true)
         {
             return arrowType;
         }
@@ -132,6 +141,26 @@ public partial class Door : AnimatableBody3D, IBowTarget
             WorldData.data.ActivateObject(this);
         }
 
+        // activate linked nodes
+        ActivateLinkedNodes();
+
         return true;
+    }
+
+
+
+    void ActivateLinkedNodes()
+    {
+        if(linkedObjects.Length > 0)
+        {
+            // activate linked objects
+            foreach(IActivatable i in linkedObjects)
+            {
+                if(IsInstanceValid((Node)i) == true)
+                {
+                    i.Activate();
+                }
+            }
+        }
     }
 }
