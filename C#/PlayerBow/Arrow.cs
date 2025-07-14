@@ -50,7 +50,18 @@ namespace PlayerBow
                     {
                         DisableArrow(point, upVector);
                     }
-                }                
+                }       
+                else
+                {
+                    // hit object is not a target or static
+                    trailFx.DetachTrail();
+
+                    // spawn miss fx
+                    SpawnPrefab(missFx, point, -Basis.Z, upVector);
+
+                    // destroy arrow
+                    QueueFree();
+                }         
             }
             else if(hitObject is StaticBody3D)
             {
