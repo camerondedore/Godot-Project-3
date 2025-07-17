@@ -772,7 +772,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -27.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, -23.5)
 
 [node name="PropBlackberryBush25" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("20_7tujh")]
-transform = Transform3D(-1.31134e-07, 4.37114e-08, -1, 4.37114e-08, 1, 4.37114e-08, 1, -4.37114e-08, -1.31134e-07, 41.0023, 0, -114.751)
+transform = Transform3D(-1.31134e-07, 4.37114e-08, -1, 4.37114e-08, 1, 4.37114e-08, 1, -4.37114e-08, -1.31134e-07, 41, 0, -115)
+
+[node name="PropBlackberryBush26" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("20_7tujh")]
+transform = Transform3D(-1, 8.74228e-08, 1.78814e-07, 8.74228e-08, 1, 9.3125e-16, -1.78814e-07, 1.58529e-14, -1, 39.25, 0, -115.75)
+
+[node name="PropBlackberryBush27" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("20_7tujh")]
+transform = Transform3D(-1, 8.74228e-08, 1.78814e-07, 8.74228e-08, 1, 9.3125e-16, -1.78814e-07, 1.58529e-14, -1, 35.75, 0, -115.75)
 
 [node name="PropBlackberryBushOld7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("21_2q3xy")]
 transform = Transform3D(1, 3.09086e-08, -1.06581e-14, -3.09086e-08, 1, -1.28028e-08, 1.06581e-14, 1.28027e-08, 1, 32.4993, 0, -128.001)
@@ -949,10 +955,59 @@ linkedObjects = [NodePath("../../../../../../Cinematics/Cinematic2/Trigger")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31, 0, -57)
 linkedObjects = [NodePath("../../MovingPlatforms/PropPlatform4mSmallMoving")]
 
+[node name="PropLever2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Switches" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("35_3jyny")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41, 0, -118)
+linkedObjects = [NodePath("../../MovingPlatforms/PropPlatform4mSmallMoving2"), NodePath("../../MovingPlatforms/PropPlatform4mSmallMoving9")]
+
 [node name="MovingPlatforms" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="PropPlatform4mSmallMoving" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.5, -6.95, -48.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, -6.95, -122.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -6.95, -122.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -6.95, -122.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, -6.95, -129.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -6.95, -129.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -6.95, -129.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving8" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, -6.95, -136.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -6.95, -136.5)
+openOffset = Vector3(0, 3.25, 0)
+open = false
+
+[node name="PropPlatform4mSmallMoving10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lvudf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63, -6.95, -136.5)
 openOffset = Vector3(0, 3.25, 0)
 open = false
 
@@ -1682,17 +1737,14 @@ isMovingRat = false
 [node name="MobShieldRat" parent="Enemies" instance=ExtResource("77_vka4t")]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 32.9659, 1, -102.759)
 
-[node name="MobBlackRat3" parent="Enemies" instance=ExtResource("42_wpydg")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 39.7161, 1, -119.284)
-
 [node name="MobBlackRat4" parent="Enemies" instance=ExtResource("42_wpydg")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 40.2161, 1, -121.784)
 
 [node name="MobBrownRat3" parent="Enemies" instance=ExtResource("46_ylak1")]
-transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 31.7271, 0.85, -118.618)
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, 37.8767, 0.85, -120.751)
 
 [node name="MobShieldRat2" parent="Enemies" instance=ExtResource("77_vka4t")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 33.9053, 1, -117.683)
+transform = Transform3D(0.707106, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707106, 39.2557, 1, -119.05)
 
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage3"]
 [editable path="Map/Blocks/BlockTarget"]
