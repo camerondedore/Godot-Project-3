@@ -21,6 +21,7 @@ size = Vector3(0.75, 0.3, 1.125)
 [node name="PropLever" type="AnimatableBody3D" node_paths=PackedStringArray("linkedObjects")]
 collision_layer = 16
 collision_mask = 0
+sync_to_physics = false
 script = ExtResource("1_aia7k")
 linkedObjects = []
 hitSuccessSound = ExtResource("2_uv3nt")
