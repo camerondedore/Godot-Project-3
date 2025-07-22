@@ -490,6 +490,9 @@ transform = Transform3D(1, 8.74228e-08, -1.56969e-07, -8.74228e-08, 1, -9.20564e
 [node name="PropTreeWallSmall67" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("15_4uhwj")]
 transform = Transform3D(1.13258e-07, 1.91069e-14, 1, -8.74228e-08, 1, -9.20564e-15, -1, -8.74228e-08, 1.13258e-07, 81.5, 0, -120)
 
+[node name="PropTreeWallSmall69" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("15_4uhwj")]
+transform = Transform3D(0.707107, 2.13163e-14, -0.707107, 6.18172e-08, 1, 6.18173e-08, 0.707107, -8.74228e-08, 0.707107, 87.1464, 3.09086e-08, -119.646)
+
 [node name="PropTreeWallSmall68" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("15_4uhwj")]
 transform = Transform3D(-2.0068e-07, -2.67497e-14, -1, -8.74228e-08, 1, -9.20564e-15, 1, 8.74228e-08, -2.0068e-07, 81.5, 0, -128)
 
@@ -1384,6 +1387,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6183, 1, -90.7625)
 
 [node name="PickupCandiedNut13" parent="Map/Pickups" instance=ExtResource("26_33ipg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6183, 1, -104.656)
+
+[node name="PickupCandiedNut18" parent="Map/Pickups" instance=ExtResource("26_33ipg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -2, -148)
+
+[node name="PickupCandiedNut19" parent="Map/Pickups" instance=ExtResource("26_33ipg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, -2, -148)
+
+[node name="PickupSanicle2" parent="Map/Pickups" instance=ExtResource("63_p8dcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, -2, -149)
 
 [node name="Containers" type="Node3D" parent="Map"]
 

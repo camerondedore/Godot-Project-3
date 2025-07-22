@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://jkhc0bl8ueel" path="res://Textures/fx-water-ripple.png" id="1_dc646"]
 
 [resource]
-blend_mode = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 shading_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_dc646")
