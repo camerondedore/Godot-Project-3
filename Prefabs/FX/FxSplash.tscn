@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk3yuraluw3l2"]
+[gd_scene load_steps=9 format=3 uid="uid://bk3yuraluw3l2"]
 
 [ext_resource type="Material" uid="uid://dxuigwyapk2a7" path="res://Materials/Fx/FxWaterSplashDroplet.tres" id="1_cpujb"]
 [ext_resource type="Material" uid="uid://b8lcfbbxprfl5" path="res://Particles/FxSplashDroplets.tres" id="2_cpujb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="4_ujoix"]
 [ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="5_nbb3g"]
 [ext_resource type="AudioStream" uid="uid://dpreogrhjkmam" path="res://Audio/water-splash-small.wav" id="6_nbb3g"]
+[ext_resource type="PackedScene" uid="uid://bxge4kmt0o5v6" path="res://Prefabs/FX/FxWaterRipples.tscn" id="7_4xkqd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_g3txk"]
 
@@ -37,3 +38,5 @@ attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_nbb3g")
 sounds = Array[AudioStream]([ExtResource("6_nbb3g")])
 destroyOnFinished = false
+
+[node name="FxWaterRipples" parent="." instance=ExtResource("7_4xkqd")]

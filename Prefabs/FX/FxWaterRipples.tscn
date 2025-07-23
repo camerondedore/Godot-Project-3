@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxge4kmt0o5v6"]
+[gd_scene load_steps=5 format=3 uid="uid://bxge4kmt0o5v6"]
 
 [ext_resource type="Material" uid="uid://di1qfr4rger5s" path="res://Materials/Fx/FxWaterSplashRipple.tres" id="1_kpcth"]
 [ext_resource type="Material" uid="uid://ch8d04kh61mg7" path="res://Particles/FxWaterRipples.tres" id="2_mt5cg"]
 [ext_resource type="Script" uid="uid://cg0uuqkpfcnxe" path="res://C#/Common/ParticleFx.cs" id="3_huxd8"]
-[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="4_fkivs"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3ix4r"]
 size = Vector2(1, 1)
@@ -25,7 +24,3 @@ process_material = ExtResource("2_mt5cg")
 draw_pass_1 = SubResource("PlaneMesh_3ix4r")
 script = ExtResource("3_huxd8")
 restartOnReady = true
-
-[node name="AutoDestroy" type="Node" parent="."]
-script = ExtResource("4_fkivs")
-lifeTime = 3.0
