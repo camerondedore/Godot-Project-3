@@ -8,7 +8,7 @@ public partial class Projectile : RayCast3D
 	[Export]
 	public float speed = 30,
 		speedVariation = 3f,
-		rangeSqr = 1000,
+		range = 100,
 		gravityInfluence = 1;
 
 	protected Vector3 velocity;
@@ -51,7 +51,7 @@ public partial class Projectile : RayCast3D
 			// move the projectile
 			GlobalPosition = rayEnd;
 
-			distanceTraveled += velocity.LengthSquared() * ((float) (delta * delta));
+			distanceTraveled += velocity.Length() * ((float) delta);
 		}
 		else
 		{
@@ -79,7 +79,7 @@ public partial class Projectile : RayCast3D
 
 
 		// destroy at max range
-		if(distanceTraveled > rangeSqr)
+		if(distanceTraveled > range)
 		{
 			OutOfRange();
 		}
