@@ -24,7 +24,7 @@ public partial class Blocker : StaticBody3D, IActivatable
     public void Activate()
     {        
         navLink.Enabled = true;
-        collider.Disabled = true;
+        collider.SetDeferred("disabled", true);
 
     }
 
@@ -33,6 +33,6 @@ public partial class Blocker : StaticBody3D, IActivatable
     public void Deactivate()
     {
         navLink.Enabled = false;
-        collider.Disabled = false;
+        collider.SetDeferred("disabled", false);
     }
 }

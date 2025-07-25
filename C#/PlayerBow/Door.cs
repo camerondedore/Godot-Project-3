@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class Door : AnimatableBody3D, IBowTarget
+public partial class Door : AnimatableBody3D, IBowTarget, IActivatable
 {
 
     [Export]
@@ -123,8 +123,8 @@ public partial class Door : AnimatableBody3D, IBowTarget
     public bool Hit(Vector3 dir)
     {
         locked = false;
-
-        doorCollider.Disabled = true;
+        
+        doorCollider.SetDeferred("disabled", true);
 
         // play audio
         audio.PlaySound(openSound, 0.15f);
@@ -162,5 +162,19 @@ public partial class Door : AnimatableBody3D, IBowTarget
                 }
             }
         }
+    }
+
+
+
+    public void Activate()
+    {
+        Hit(Vector3.Zero);
+    }
+
+
+
+    public void Deactivate()
+    {
+        // do nothing
     }
 }
