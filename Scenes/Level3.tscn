@@ -39,7 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="23_p2gd7"]
 [ext_resource type="PackedScene" uid="uid://b6tr6onc6gvr" path="res://Prefabs/Small Items/BlockTarget.tscn" id="23_s5lbk"]
 [ext_resource type="PackedScene" uid="uid://c2lrd4688wt65" path="res://Prefabs/Doors/PropDoorSpikes.tscn" id="24_ceena"]
-[ext_resource type="PackedScene" uid="uid://t38jhtnggb6y" path="res://Prefabs/FX/FxDirtScrapeDecal.tscn" id="24_p1lpb"]
+[ext_resource type="PackedScene" uid="uid://t38jhtnggb6y" path="res://Prefabs/FX/DecalDirtScrape.tscn" id="24_p1lpb"]
 [ext_resource type="PackedScene" uid="uid://dbrsjfa3ftvsh" path="res://Prefabs/Fabrications/PropWoodStairs.tscn" id="25_wneae"]
 [ext_resource type="PackedScene" uid="uid://btdbdi27r78tb" path="res://Prefabs/Small Items/PropWheelBarrow.tscn" id="26_pg7hr"]
 [ext_resource type="PackedScene" uid="uid://77mhee3d46dt" path="res://Prefabs/Plants/PropBlackberryBush.tscn" id="27_53b5y"]
@@ -10765,7 +10765,7 @@ max_distance = 50.0
 size = Vector3(14.5, 9.5, 17)
 box_projection = true
 enable_shadows = true
-cull_mask = 1048567
+cull_mask = 1048471
 reflection_mask = 1048568
 
 [node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea"]
@@ -10801,6 +10801,7 @@ max_distance = 50.0
 size = Vector3(35, 20, 30)
 box_projection = true
 enable_shadows = true
+cull_mask = 1048471
 
 [node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea2"]
 collision_layer = 4096

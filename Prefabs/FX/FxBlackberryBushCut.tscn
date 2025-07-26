@@ -15,7 +15,7 @@
 [node name="FxBlackberryBushCut" type="Node3D"]
 
 [node name="FxBlackberryBushCut1" type="GPUParticles3D" parent="."]
-layers = 2
+layers = 64
 material_override = ExtResource("1_0na1p")
 gi_mode = 2
 emitting = false
@@ -30,7 +30,7 @@ restartOnReady = true
 playChildren = true
 
 [node name="FxBlackberryBushCut2" type="GPUParticles3D" parent="FxBlackberryBushCut1"]
-layers = 2
+layers = 64
 material_override = ExtResource("3_uq3o2")
 gi_mode = 2
 emitting = false
@@ -42,7 +42,7 @@ process_material = ExtResource("2_ef6l4")
 draw_pass_1 = SubResource("QuadMesh_7rv8h")
 
 [node name="FxBlackberryBushCut3" type="GPUParticles3D" parent="FxBlackberryBushCut1"]
-layers = 2
+layers = 64
 material_override = ExtResource("4_2elc6")
 gi_mode = 2
 emitting = false

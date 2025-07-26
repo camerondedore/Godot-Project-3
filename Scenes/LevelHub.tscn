@@ -501,6 +501,7 @@ blend_distance = 1.08
 size = Vector3(24.7882, 17.4152, 30.7628)
 box_projection = true
 interior = true
+cull_mask = 1048479
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("7_uqg3o")
@@ -2566,7 +2567,7 @@ max_distance = 100.0
 size = Vector3(50.6063, 20, 45.2925)
 box_projection = true
 enable_shadows = true
-cull_mask = 1048567
+cull_mask = 1048479
 reflection_mask = 1048568
 
 [node name="ReflectionProbe2" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
@@ -2576,7 +2577,7 @@ max_distance = 100.0
 size = Vector3(55.3857, 20, 35.8687)
 box_projection = true
 enable_shadows = true
-cull_mask = 1048567
+cull_mask = 1048479
 reflection_mask = 1048568
 
 [node name="ReflectionProbe3" type="ReflectionProbe" parent="Map/OccluderInstance3D/WaterArea"]
@@ -2586,7 +2587,7 @@ max_distance = 100.0
 size = Vector3(37.8691, 20, 60.5232)
 box_projection = true
 enable_shadows = true
-cull_mask = 1048567
+cull_mask = 1048479
 reflection_mask = 1048568
 
 [node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea"]
@@ -2622,7 +2623,7 @@ max_distance = 100.0
 size = Vector3(10, 8, 30)
 box_projection = true
 enable_shadows = true
-cull_mask = 1048567
+cull_mask = 1048479
 reflection_mask = 1048568
 
 [node name="CameraBlocker" type="StaticBody3D" parent="Map/OccluderInstance3D/WaterArea2"]

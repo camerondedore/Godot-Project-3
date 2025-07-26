@@ -32,7 +32,7 @@ turbulence_noise_scale = 0.1
 [sub_resource type="QuadMesh" id="QuadMesh_vp645"]
 
 [node name="FxSteam" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_mqpab")
 cast_shadow = 0
 gi_mode = 2

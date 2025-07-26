@@ -46,7 +46,7 @@ color_ramp = SubResource("GradientTexture1D_7ftbq")
 [sub_resource type="QuadMesh" id="QuadMesh_lppc0"]
 
 [node name="FxCiderPickup" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_qmukl")
 cast_shadow = 0
 emitting = false
@@ -60,7 +60,7 @@ script = ExtResource("3_idn40")
 playChildren = true
 
 [node name="FxBubbles" type="GPUParticles3D" parent="."]
-layers = 2
+layers = 64
 material_override = ExtResource("4_myc0q")
 gi_mode = 2
 emitting = false

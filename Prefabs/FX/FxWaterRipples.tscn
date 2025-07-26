@@ -9,7 +9,7 @@ size = Vector2(1, 1)
 
 [node name="FxWaterRipples" type="GPUParticles3D"]
 process_mode = 1
-layers = 2
+layers = 64
 material_override = ExtResource("1_kpcth")
 cast_shadow = 0
 gi_mode = 2

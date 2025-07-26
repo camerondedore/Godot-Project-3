@@ -4,4 +4,5 @@
 [ext_resource type="Material" uid="uid://d27rh7eb06bu1" path="res://Materials/Fx/FxArrowTrailNet.tres" id="2_6h35b"]
 
 [node name="FxArrowPickupNet" instance=ExtResource("1_2kxpr")]
+layers = 64
 material_override = ExtResource("2_6h35b")

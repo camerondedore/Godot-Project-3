@@ -28,7 +28,7 @@ alpha_curve = SubResource("CurveTexture_c4em8")
 [sub_resource type="QuadMesh" id="QuadMesh_gcjxm"]
 
 [node name="FxPickupGhost" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_tvoe2")
 gi_mode = 2
 emitting = false

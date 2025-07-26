@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8q0h7mux6s82" path="res://Textures/fx-dirt-patch-scrape.png" id="1_v3xq4"]
 
-[node name="FxDirtScrapeDecal" type="Decal"]
+[node name="DecalDirtScrape" type="Decal"]
 size = Vector3(3, 0.1, 9)
 texture_albedo = ExtResource("1_v3xq4")
 distance_fade_enabled = true

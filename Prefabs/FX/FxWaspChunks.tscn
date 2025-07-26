@@ -18,7 +18,7 @@ scale_max = 0.3
 [sub_resource type="QuadMesh" id="QuadMesh_vqp11"]
 
 [node name="FxWaspChunks" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_iongg")
 gi_mode = 2
 emitting = false

@@ -39,7 +39,7 @@ color_ramp = SubResource("GradientTexture1D_gp4yu")
 [sub_resource type="QuadMesh" id="QuadMesh_vxchp"]
 
 [node name="FxBloodSplash" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_8qji5")
 cast_shadow = 0
 gi_mode = 2

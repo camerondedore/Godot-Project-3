@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://565phnp5c2il" path="res://Prefabs/Trees/PropTreeFir2.tscn" id="17_3sma5"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="17_kbqki"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="18_6qjr4"]
-[ext_resource type="PackedScene" uid="uid://t38jhtnggb6y" path="res://Prefabs/FX/FxDirtScrapeDecal.tscn" id="19_cymv7"]
+[ext_resource type="PackedScene" uid="uid://t38jhtnggb6y" path="res://Prefabs/FX/DecalDirtScrape.tscn" id="19_cymv7"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="19_l8ddt"]
 [ext_resource type="PackedScene" uid="uid://b4gpa2vaq1o5l" path="res://Prefabs/Trees/PropTreeOak3.tscn" id="20_3stg4"]
 [ext_resource type="PackedScene" uid="uid://c2lrd4688wt65" path="res://Prefabs/Doors/PropDoorSpikes.tscn" id="20_ctjqp"]

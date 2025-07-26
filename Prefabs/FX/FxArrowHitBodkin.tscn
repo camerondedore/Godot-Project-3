@@ -16,3 +16,4 @@ sounds = Array[AudioStream]([ExtResource("3_dsqwc")])
 destroyOnFinished = false
 
 [node name="FxBloodSplash" parent="." index="3" instance=ExtResource("4_e6m4v")]
+layers = 64

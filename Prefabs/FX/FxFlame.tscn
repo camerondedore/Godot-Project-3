@@ -40,7 +40,7 @@ color_ramp = SubResource("GradientTexture1D_rjic1")
 [sub_resource type="QuadMesh" id="QuadMesh_a71rx"]
 
 [node name="FxFlame" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_kvd1j")
 gi_mode = 2
 amount = 3

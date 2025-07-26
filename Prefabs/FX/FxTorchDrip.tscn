@@ -45,7 +45,7 @@ color_ramp = SubResource("GradientTexture1D_pvtqr")
 [sub_resource type="QuadMesh" id="QuadMesh_nvosf"]
 
 [node name="FxTorchDrip" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_fg140")
 gi_mode = 2
 amount = 2

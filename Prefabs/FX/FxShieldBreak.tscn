@@ -33,7 +33,7 @@ scale_curve = SubResource("CurveTexture_eu25c")
 [sub_resource type="QuadMesh" id="QuadMesh_dcdvy"]
 
 [node name="FxShieldBreak" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_a4gem")
 gi_mode = 2
 emitting = false

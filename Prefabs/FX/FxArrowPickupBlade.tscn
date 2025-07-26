@@ -4,5 +4,5 @@
 [ext_resource type="Material" uid="uid://dtigdk3mdd07x" path="res://Materials/Fx/FxArrowTrailBlade.tres" id="2_3y37k"]
 
 [node name="FxArrowPickupBlade" instance=ExtResource("1_rdakx")]
+layers = 64
 material_override = ExtResource("2_3y37k")
-gi_mode = 2

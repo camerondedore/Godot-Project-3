@@ -8,7 +8,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_8cq86"]
 
 [node name="FxArrowTrailPick" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
-layers = 2
+layers = 64
 material_override = ExtResource("1_4ry1s")
 gi_mode = 2
 amount = 16

@@ -53,7 +53,7 @@ scale_max = 0.2
 [sub_resource type="QuadMesh" id="QuadMesh_px3mg"]
 
 [node name="FxDust" type="GPUParticles3D"]
-layers = 2
+layers = 64
 material_override = ExtResource("1_dbchy")
 gi_mode = 2
 emitting = false
@@ -73,7 +73,7 @@ script = ExtResource("2_dgipw")
 lifeTime = 5.0
 
 [node name="FxChunks" type="GPUParticles3D" parent="."]
-layers = 2
+layers = 64
 material_override = ExtResource("4_njdnm")
 cast_shadow = 0
 gi_mode = 2

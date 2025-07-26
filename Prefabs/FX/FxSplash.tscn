@@ -12,7 +12,7 @@
 
 [node name="FxSplash" type="GPUParticles3D"]
 process_mode = 1
-layers = 2
+layers = 64
 material_override = ExtResource("1_cpujb")
 cast_shadow = 0
 gi_mode = 2
@@ -40,3 +40,4 @@ sounds = Array[AudioStream]([ExtResource("6_nbb3g")])
 destroyOnFinished = false
 
 [node name="FxWaterRipples" parent="." instance=ExtResource("7_4xkqd")]
+layers = 64

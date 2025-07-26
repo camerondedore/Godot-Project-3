@@ -4,4 +4,5 @@
 [ext_resource type="Material" uid="uid://ct602q526s03m" path="res://Materials/Fx/FxArrowTrailFire.tres" id="2_cmbgt"]
 
 [node name="FxArrowPickupFire" instance=ExtResource("1_shoda")]
+layers = 64
 material_override = ExtResource("2_cmbgt")

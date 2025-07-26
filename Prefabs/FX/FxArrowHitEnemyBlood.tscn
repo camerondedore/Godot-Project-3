@@ -6,3 +6,4 @@
 [node name="FxArrowHitEnemyBlood" instance=ExtResource("1_3xbpn")]
 
 [node name="FxBloodSpray" parent="." index="3" instance=ExtResource("2_idrwk")]
+layers = 64

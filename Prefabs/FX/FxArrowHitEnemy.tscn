@@ -20,5 +20,4 @@ sounds = Array[AudioStream]([ExtResource("6_mj5ce")])
 destroyOnFinished = false
 
 [node name="FxEnemyHit" parent="." instance=ExtResource("5_g70s6")]
-layers = 2
-gi_mode = 2
+layers = 64

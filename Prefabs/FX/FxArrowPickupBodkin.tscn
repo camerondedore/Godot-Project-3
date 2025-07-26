@@ -4,4 +4,5 @@
 [ext_resource type="Material" uid="uid://d0c2in3436idg" path="res://Materials/Fx/FxArrowTrailBodkin.tres" id="2_xuplt"]
 
 [node name="FxArrowPickupBodkin" instance=ExtResource("1_81wce")]
+layers = 64
 material_override = ExtResource("2_xuplt")

@@ -57,7 +57,7 @@ contact_monitor = true
 max_contacts_reported = 1
 
 [node name="PickupMesh" type="MeshInstance3D" parent="."]
-layers = 2
+layers = 32
 gi_mode = 2
 mesh = SubResource("SphereMesh_iax83")
 

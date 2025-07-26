@@ -8,7 +8,7 @@
 [sub_resource type="QuadMesh" id="QuadMesh_lpeh4"]
 
 [node name="FxArrowTrailFire" type="GPUParticles3D" node_paths=PackedStringArray("destroyer")]
-layers = 2
+layers = 64
 material_override = ExtResource("1_jfqnd")
 gi_mode = 2
 amount = 20

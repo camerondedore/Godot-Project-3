@@ -51,14 +51,14 @@ surface_material_override/0 = ExtResource("4_arunp")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
 transform = Transform3D(0.982658, 0.124581, 0.137341, 0, 0.740676, -0.671863, -0.185427, 0.660211, 0.727831, -0.0461753, 0.0456002, -0.0714725)
-layers = 2
+layers = 32
 gi_mode = 2
 mesh = ExtResource("3_svxow")
 surface_material_override/0 = ExtResource("4_arunp")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(0.96409, -0.216741, -0.153472, -0.0144896, 0.534096, -0.845299, 0.26518, 0.817168, 0.511777, 0.0374355, 0.130356, -0.12598)
-layers = 2
+layers = 32
 gi_mode = 2
 mesh = ExtResource("3_svxow")
 surface_material_override/0 = ExtResource("4_arunp")
