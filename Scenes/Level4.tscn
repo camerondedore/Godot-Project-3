@@ -85,7 +85,7 @@
 [ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="61_58iox"]
 [ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="62_58iox"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="62_hfcx0"]
-[ext_resource type="PackedScene" uid="uid://cretsril7ivwi" path="res://Prefabs/Player Bow Targets/PropBlock5m.tscn" id="62_p8dcn"]
+[ext_resource type="PackedScene" uid="uid://crx0cpy0xirwc" path="res://Prefabs/Player Bow Targets/PropBlock5mSquare.tscn" id="62_p8dcn"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="63_p8dcn"]
 [ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="65_f2rqb"]
 [ext_resource type="PackedScene" uid="uid://bl3tppj3wcnmy" path="res://Prefabs/Player Bow Targets/PropClayCauldron.tscn" id="67_hfcx0"]
@@ -1984,12 +1984,12 @@ visible = false
 transform = Transform3D(-4.37112e-08, 0, 1, 0, 1, 0, -1, 0, -4.37112e-08, 174, -1, -127.7)
 size = Vector3(3, 0.1, 13)
 
-[node name="PropBlock5m" parent="Map/Blocks" node_paths=PackedStringArray("targetPoints") instance=ExtResource("62_p8dcn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186, 1.5, -138.25)
+[node name="PropBlock5mSquare" parent="Map/Blocks" node_paths=PackedStringArray("targetPoints") instance=ExtResource("62_p8dcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.5, 1.5, -138.25)
 targetPoints = [NodePath("../BlockTarget17"), NodePath("../BlockTarget18")]
 
 [node name="BlockTarget17" parent="Map/Blocks" instance=ExtResource("47_58emb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186, -1, -138.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.5, -1, -138.25)
 
 [node name="PropBlockStop" parent="Map/Blocks/BlockTarget17" index="0"]
 visible = false
@@ -1998,7 +1998,7 @@ visible = false
 visible = false
 
 [node name="BlockTarget18" parent="Map/Blocks" instance=ExtResource("47_58emb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186, -1, -141.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.5, -1, -140.75)
 
 [node name="PropBlockStop" parent="Map/Blocks/BlockTarget18" index="0"]
 visible = false
@@ -2007,8 +2007,34 @@ visible = false
 visible = false
 
 [node name="FxDirtScrapeDecal12" parent="Map/Blocks" instance=ExtResource("48_avyc0")]
-transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, 186, -1, -140)
-size = Vector3(3, 0.1, 6.5)
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, 186.5, -1, -139.5)
+size = Vector3(3, 0.1, 4.5)
+
+[node name="PropBlock5mSquare2" parent="Map/Blocks" node_paths=PackedStringArray("targetPoints") instance=ExtResource("62_p8dcn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 186.5, 1.5, -145.25)
+targetPoints = [NodePath("../BlockTarget19"), NodePath("../BlockTarget20")]
+
+[node name="BlockTarget19" parent="Map/Blocks" instance=ExtResource("47_58emb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.5, -1, -145.25)
+
+[node name="PropBlockStop" parent="Map/Blocks/BlockTarget19" index="0"]
+visible = false
+
+[node name="PropBlockStop2" parent="Map/Blocks/BlockTarget19" index="1"]
+visible = false
+
+[node name="BlockTarget20" parent="Map/Blocks" instance=ExtResource("47_58emb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 186.5, -1, -147.75)
+
+[node name="PropBlockStop" parent="Map/Blocks/BlockTarget20" index="0"]
+visible = false
+
+[node name="PropBlockStop4" parent="Map/Blocks/BlockTarget20" index="3"]
+visible = false
+
+[node name="FxDirtScrapeDecal13" parent="Map/Blocks" instance=ExtResource("48_avyc0")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, 186.5, -1, -146.5)
+size = Vector3(3, 0.1, 4.5)
 
 [node name="Pickups" type="Node3D" parent="Map"]
 
@@ -2664,5 +2690,7 @@ transform = Transform3D(5.96046e-08, 3.2398e-08, 1, 4.2222e-08, 1, -3.2398e-08, 
 [editable path="Map/Blocks/BlockTarget16"]
 [editable path="Map/Blocks/BlockTarget17"]
 [editable path="Map/Blocks/BlockTarget18"]
+[editable path="Map/Blocks/BlockTarget19"]
+[editable path="Map/Blocks/BlockTarget20"]
 [editable path="Map/SecretAreas/SecretArea"]
 [editable path="Map/SecretAreas/SecretArea2"]
