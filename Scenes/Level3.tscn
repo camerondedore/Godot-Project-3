@@ -327,9 +327,11 @@ omni_range = 10.0
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("8_avvxw")
 bake_mask = 4293918721
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
 navigation_mesh = SubResource("NavigationMesh_8ftbp")
+metadata/_edit_lock_ = true
 
 [node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 

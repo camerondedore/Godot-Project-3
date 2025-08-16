@@ -307,9 +307,11 @@ script = ExtResource("5_b0p0a")
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("6_l1egs")
 bake_mask = 4293918721
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
 navigation_mesh = SubResource("NavigationMesh_i3bc3")
+metadata/_edit_lock_ = true
 
 [node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
