@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://gyduf2tcoh5l"]
+
+[ext_resource type="ArrayMesh" uid="uid://bh25td4q8t3t1" path="res://Models/prop-trout-skeleton.res" id="1_d4khi"]
+[ext_resource type="Material" uid="uid://c5rs5vp7fxhmt" path="res://Materials/Bone.tres" id="2_gf23f"]
+
+[node name="PropTroutSkeleton" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+cast_shadow = 0
+gi_mode = 2
+mesh = ExtResource("1_d4khi")
+surface_material_override/0 = ExtResource("2_gf23f")

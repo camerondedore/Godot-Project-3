@@ -1,4 +1,4 @@
-[gd_scene load_steps=164 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=165 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_1ktle"]
@@ -110,6 +110,7 @@
 [ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="70_ri1yp"]
 [ext_resource type="PackedScene" uid="uid://ctfu1vil7krh2" path="res://Prefabs/Small Items/PropFishingPole.tscn" id="71_u3kna"]
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="77_vka4t"]
+[ext_resource type="PackedScene" uid="uid://gyduf2tcoh5l" path="res://Prefabs/Small Items/PropTroutSkeleton.tscn" id="77_xgahu"]
 [ext_resource type="PackedScene" uid="uid://bawlxo6vs8yl7" path="res://Prefabs/Player Bow Targets/PropSpiderwebStretched.tscn" id="79_4wsoj"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_2brj3"]
@@ -2610,8 +2611,17 @@ transform = Transform3D(1.07293, 0.0205851, -0.219899, -0.00999073, 1.09407, 0.0
 
 [node name="SmallItems" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
-[node name="PropFishingPole" parent="Map/OccluderInstance3D/Props" instance=ExtResource("71_u3kna")]
+[node name="PropFishingPole" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("71_u3kna")]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 205.462, -1.5, -126.122)
+
+[node name="PropTroutSkeleton" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("77_xgahu")]
+transform = Transform3D(-5.26277e-08, 0.833025, 0.869277, -1.20398, -3.64127e-08, -3.79973e-08, 0, -0.869277, 0.833025, 302.795, -7.99019, -102.542)
+
+[node name="PropTroutSkeleton2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("77_xgahu")]
+transform = Transform3D(-0.0163145, 0.115382, 1.19833, -1.1768, 0.251193, -0.0402076, -0.253866, -1.17182, 0.109373, 295.791, -7.97645, -68.4855)
+
+[node name="PropTroutSkeleton3" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("77_xgahu")]
+transform = Transform3D(-0.38438, -0.751444, -0.858579, 1.14098, -0.253152, -0.289244, -3.06195e-08, -0.905991, 0.792939, 307.409, -8.1287, -58.1062)
 
 [node name="Spikes" type="Node3D" parent="Map"]
 
