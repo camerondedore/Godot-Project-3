@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class Door : AnimatableBody3D, IBowTarget, IActivatable
+public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchable
 {
 
     [Export]
@@ -176,5 +176,12 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable
     public void Deactivate()
     {
         // do nothing
+    }
+
+
+
+    public bool IsAlive()
+    {
+        return locked == true;
     }
 }

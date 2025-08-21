@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Portcullis : AnimatableBody3D, IActivatable
+public partial class Portcullis : AnimatableBody3D, IActivatable, IWatchable
 {
 
 	[Export]
@@ -13,6 +13,8 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 	float speed = 1;
 	[Export]
 	bool open;
+
+	public bool lockedOpen = false;
 
 	//CollisionShape3D portcullisCollider;
 	Blocker blocker;
@@ -75,6 +77,11 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 
 	public void Activate()
 	{
+		if(lockedOpen == true && open == true)
+		{
+			return;
+		}
+
 		if(open == false)
 		{
 			// target closed position
@@ -120,5 +127,12 @@ public partial class Portcullis : AnimatableBody3D, IActivatable
 		//portcullisCollider.Disabled = true;
 		blocker.Activate();
 		audio.PlaySound(openSound, 0.15f);
+	}
+
+
+
+	public bool IsAlive()
+	{
+		return open == true;
 	}
 }
