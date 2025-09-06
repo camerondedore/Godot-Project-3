@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://c4nr08m83rcws"]
+
+[ext_resource type="Material" uid="uid://dxuigwyapk2a7" path="res://Materials/Fx/FxWaterSplashDroplet.tres" id="1_sf3df"]
+[ext_resource type="Script" uid="uid://cp4jxe16mfbb0" path="res://C#/Common/ParticleTools.cs" id="2_iaf75"]
+[ext_resource type="AudioStream" uid="uid://cd4v5i3awb8rd" path="res://Audio/water-trickle.wav" id="3_0pwr0"]
+[ext_resource type="Script" uid="uid://c1xlcvo6jwhbs" path="res://C#/Common/AudioFx.cs" id="4_0pwr0"]
+
+[sub_resource type="Curve" id="Curve_fi014"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.611111, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.29569, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_daa1k"]
+curve = SubResource("Curve_fi014")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iaf75"]
+lifetime_randomness = 0.3
+angle_max = 359.0
+direction = Vector3(0, 0, -1)
+spread = 5.0
+initial_velocity_min = 1.5
+initial_velocity_max = 2.0
+scale_min = 0.07
+scale_max = 0.07
+scale_curve = SubResource("CurveTexture_daa1k")
+
+[sub_resource type="QuadMesh" id="QuadMesh_khpqa"]
+
+[sub_resource type="Curve" id="Curve_khpqa"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.611111, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -6.29569, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_0pwr0"]
+curve = SubResource("Curve_khpqa")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_akubs"]
+lifetime_randomness = 0.3
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.1
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_max = 359.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 4.0
+scale_min = 0.07
+scale_max = 0.07
+scale_curve = SubResource("CurveTexture_0pwr0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g3txk"]
+
+[node name="FxWaterDamDrip" type="GPUParticles3D"]
+layers = 2
+material_override = ExtResource("1_sf3df")
+gi_mode = 2
+amount = 5
+lifetime = 0.5
+randomness = 1.0
+visibility_aabb = AABB(-1.05338, -2.20324, -1.82554, 2.11492, 3.20295, 2.81126)
+process_material = SubResource("ParticleProcessMaterial_iaf75")
+draw_pass_1 = SubResource("QuadMesh_khpqa")
+
+[node name="FxWaterSplash" type="GPUParticles3D" parent="."]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -0.65)
+layers = 64
+material_override = ExtResource("1_sf3df")
+cast_shadow = 0
+gi_mode = 2
+amount = 3
+lifetime = 0.5
+randomness = 1.0
+visibility_aabb = AABB(-1.59016, -0.979162, -1.87624, 3.13493, 2.43974, 3.39459)
+process_material = SubResource("ParticleProcessMaterial_akubs")
+draw_pass_1 = SubResource("QuadMesh_g3txk")
+script = ExtResource("2_iaf75")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, -0.55)
+stream = ExtResource("3_0pwr0")
+unit_size = 1.0
+max_distance = 20.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("4_0pwr0")
+sounds = Array[AudioStream]([ExtResource("3_0pwr0")])
+destroyOnFinished = false
