@@ -435,6 +435,12 @@ transform = Transform3D(-1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, -1, 50.5, 
 [node name="Level3LoadCameraPoint" type="Node3D" parent="Map"]
 transform = Transform3D(-0.938159, 0.133881, -0.319271, 0, 0.922201, 0.386711, 0.346205, 0.362796, -0.86517, 46.8348, 8.31995, -73.1411)
 
+[node name="Level4LoadPoint" type="Node3D" parent="Map"]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -13, 1, -39)
+
+[node name="Level4LoadCameraPoint" type="Node3D" parent="Map"]
+transform = Transform3D(-0.931994, 0.169916, -0.320181, 0, 0.883322, 0.468766, 0.362474, 0.436887, -0.82325, -13.4287, 4.18561, -43.8499)
+
 [node name="Lighting" type="Node3D" parent="Map"]
 metadata/_edit_group_ = true
 
