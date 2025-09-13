@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://ce7lqyeoqu6ak"]
+[gd_scene load_steps=167 format=3 uid="uid://ce7lqyeoqu6ak"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_xaltl"]
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="2_0djau"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bie4ja2vf2s1o" path="res://C#/HubStage.cs" id="8_slxs3"]
 [ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="9_uto8g"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="10_r0px0"]
-[ext_resource type="ArrayOccluder3D" uid="uid://b3mq21g81rrov" path="res://Scenes/Occlusion/LevelHub1.occ" id="11_tdijt"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bq8xup4qo0vbm" path="res://Scenes/Occlusion/LevelHub2.occ" id="11_tdijt"]
 [ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="11_y8s2w"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="12_s2sj0"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="13_yfrem"]
@@ -144,18 +144,12 @@
 [ext_resource type="PackedScene" uid="uid://dh2pgw57n3v31" path="res://Prefabs/Pickups/PickupArrowsNet.tscn" id="159_b50rb"]
 [ext_resource type="PackedScene" uid="uid://cd4rwhkdqdprp" path="res://Prefabs/Pickups/PickupArrowsBlade.tscn" id="160_ra6yx"]
 [ext_resource type="PackedScene" uid="uid://d0f8vu33h2mb6" path="res://Prefabs/Pickups/PickupArrowsFire.tscn" id="161_83c01"]
-[ext_resource type="PackedScene" uid="uid://d0dc6sq2fwhm4" path="res://Prefabs/Pickups/PickupNettleBroth.tscn" id="162_6rmkc"]
 [ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/Player Bow Targets/JumpNetTarget.tscn" id="163_hfiwb"]
 [ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="164_5brxw"]
 [ext_resource type="PackedScene" uid="uid://cv1j0t3q5rsfn" path="res://Prefabs/Small Items/PropSwitchWallbox.tscn" id="165_souph"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="166_uncw1"]
 [ext_resource type="Script" uid="uid://bh7ydeskbx4yi" path="res://C#/FishSchool.cs" id="167_m7ei2"]
 [ext_resource type="PackedScene" uid="uid://brgstclbdpf0g" path="res://Prefabs/PropTrout.tscn" id="168_8u3wl"]
-[ext_resource type="Animation" uid="uid://j01xjnracg0m" path="res://Animation/Cinematics/lhc1.res" id="169_rjot5"]
-[ext_resource type="Animation" uid="uid://c2r15hubmduxr" path="res://Animation/Cinematics/lhc2.res" id="170_sodme"]
-[ext_resource type="Animation" uid="uid://bjckj2ki8u4iu" path="res://Animation/Cinematics/lhc3.res" id="171_npr1d"]
-[ext_resource type="Animation" uid="uid://dkgvlpehrvvwd" path="res://Animation/Cinematics/lhc4.res" id="172_dmrlb"]
-[ext_resource type="Animation" uid="uid://dqf1c2r36a2vw" path="res://Animation/Cinematics/lhc5.res" id="173_3721o"]
 [ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="174_ip6cp"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="202_hxaot"]
 
@@ -214,15 +208,6 @@ _data = {
 }
 point_count = 7
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jsxfe"]
-_data = {
-&"lhc1": ExtResource("169_rjot5"),
-&"lhc2": ExtResource("170_sodme"),
-&"lhc3": ExtResource("171_npr1d"),
-&"lhc4": ExtResource("172_dmrlb"),
-&"lhc5": ExtResource("173_3721o")
-}
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_0unnw"]
 size = Vector3(9, 5, 1)
 
@@ -231,7 +216,7 @@ size = Vector3(9, 5, 1)
 [node name="GlobalCamera" parent="." instance=ExtResource("1_xaltl")]
 transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0.450541, -0.398983, 0.79864, -21.7, 17.1, 96.3)
 
-[node name="WorldEnvironment0" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_0djau")
 script = ExtResource("3_ywo36")
 postProcessing = ExtResource("2_0djau")
@@ -245,7 +230,7 @@ stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("9_uto8g")
-setNodes = [NodePath("")]
+setNodes = [null]
 
 [node name="LevelChange" parent="." instance=ExtResource("10_r0px0")]
 
@@ -1918,9 +1903,6 @@ transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, 
 [node name="PropTreeHouse1Wynn" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("93_ss8xk")]
 transform = Transform3D(-0.0873468, 0, 0.996178, 0, 1, 0, -0.996178, 0, -0.0873468, -17.1283, 8.34469e-07, 17.8361)
 
-[node name="PropTreeHouse1WynnCurtained" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("94_8oxil")]
-transform = Transform3D(-0.0873468, 0, 0.996178, 0, 1, 0, -0.996178, 0, -0.0873468, -17.1283, 8.34469e-07, 17.8361)
-
 [node name="PropTreeHouse1Curtained" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Houses" instance=ExtResource("94_8oxil")]
 transform = Transform3D(0.85615, 0, -0.516728, 0, 1, 0, 0.516728, 0, 0.85615, -36.542, -4.76837e-06, 33.0172)
 
@@ -2505,10 +2487,6 @@ collision_mask = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.6301, 0.999999, 31.0202)
 collision_mask = 1
 
-[node name="PickupNettleBroth3" parent="Map/Pickups" instance=ExtResource("162_6rmkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7355, 0.761899, 25.3493)
-collision_mask = 1
-
 [node name="JumpNets" type="Node3D" parent="Map"]
 
 [node name="JumpNetTarget" parent="Map/JumpNets" node_paths=PackedStringArray("jumpPadTarget") instance=ExtResource("163_hfiwb")]
@@ -2550,7 +2528,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.8, 3, 49)
 
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("166_uncw1")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 0, -0.299999)
-linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), NodePath("")]
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), null]
 
 [node name="Fish" type="Node3D" parent="Map"]
 
@@ -2624,9 +2602,6 @@ target = NodePath("../Target4")
 [node name="Cinematics" type="Node3D" parent="Map"]
 
 [node name="CinematicsHub" type="AnimationPlayer" parent="Map/Cinematics"]
-libraries = {
-&"": SubResource("AnimationLibrary_jsxfe")
-}
 script = ExtResource("174_ip6cp")
 
 [node name="LevelChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
