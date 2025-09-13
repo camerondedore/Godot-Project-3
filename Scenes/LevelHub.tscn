@@ -15,7 +15,6 @@
 [ext_resource type="Environment" uid="uid://c1koe77yi8evg" path="res://Environments/LevelHub3Environment.tres" id="6_k63lq"]
 [ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="7_nlmtm"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="7_u5rl6"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dpwxwkgm4hvfi" path="res://Scenes/Occlusion/LevelHub.occ" id="7_uqg3o"]
 [ext_resource type="ArrayMesh" uid="uid://c17yp7e6wr0s7" path="res://Models/level-hub-tree-walls.res" id="8_4d0ss"]
 [ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="8_7o44d"]
 [ext_resource type="Material" uid="uid://eudc0sie8eyd" path="res://Materials/Terrain/DirtWallWorldUv.tres" id="8_wqm4a"]
@@ -28,6 +27,7 @@
 [ext_resource type="Script" uid="uid://bsd6kqk6kcwxx" path="res://addons/PropPainter/ToolPropPainter.cs" id="14_k44qo"]
 [ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Food/PropCookingSpit.tscn" id="15_2ns3d"]
 [ext_resource type="PackedScene" uid="uid://cam1sxltrw2vj" path="res://Prefabs/Trees/PropTreeFir1.tscn" id="15_agjmb"]
+[ext_resource type="ArrayOccluder3D" uid="uid://b3mq21g81rrov" path="res://Scenes/Occlusion/LevelHub1.occ" id="15_k63lq"]
 [ext_resource type="PackedScene" uid="uid://chkb2087omjcv" path="res://Prefabs/Food/PropPot1.tscn" id="16_ojyj8"]
 [ext_resource type="PackedScene" uid="uid://565phnp5c2il" path="res://Prefabs/Trees/PropTreeFir2.tscn" id="16_p1fwi"]
 [ext_resource type="PackedScene" uid="uid://d2ii8qhujvfub" path="res://Prefabs/Trees/PropTreeOak1.tscn" id="17_fbvor"]
@@ -124,7 +124,7 @@
 [ext_resource type="PackedScene" uid="uid://cfhkbxoenwciy" path="res://Prefabs/Fabrications/PropTentMedium.tscn" id="63_8gxqc"]
 [ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorchTarget.tscn" id="64_ywcrg"]
 [ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="65_fx7bf"]
-[ext_resource type="Animation" path="res://Animation/Cinematics/lhc1.res" id="65_yf3nw"]
+[ext_resource type="Animation" uid="uid://j01xjnracg0m" path="res://Animation/Cinematics/lhc1.res" id="65_yf3nw"]
 [ext_resource type="Animation" uid="uid://c2r15hubmduxr" path="res://Animation/Cinematics/lhc2.res" id="66_f3xeq"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="67_5ah10"]
 [ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Fabrications/PropPicketAbatisWall.tscn" id="67_7om54"]
@@ -510,7 +510,7 @@ interior = true
 cull_mask = 1048479
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
-occluder = ExtResource("7_uqg3o")
+occluder = ExtResource("15_k63lq")
 bake_mask = 4293918721
 metadata/_edit_lock_ = true
 
