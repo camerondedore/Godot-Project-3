@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwncj0ibk101x"]
+[gd_scene load_steps=32 format=3 uid="uid://dwncj0ibk101x"]
 
 [ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_ffqa3"]
 [ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/LevelHub2Environment.tres" id="2_0vfnr"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cvm3pev2fv15o" path="res://Prefabs/Characters/CinematicCharacterLumsden.tscn" id="5_f2sa0"]
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="6_2mpu3"]
 [ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="6_qrm87"]
+[ext_resource type="Animation" uid="uid://dqf1c2r36a2vw" path="res://Animation/Cinematics/lhc5.res" id="7_2x7xb"]
 [ext_resource type="AudioStream" uid="uid://dx7jme7p5tmx4" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-9.wav" id="7_5f4cw"]
 [ext_resource type="Script" uid="uid://deoaa3om66g6o" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="7_58x5x"]
 [ext_resource type="Script" uid="uid://bk2oontuca4uj" path="res://C#/CinematicCharacter/CinematicCharacterAudioAction.cs" id="8_2x7xb"]
@@ -36,6 +37,9 @@ agent_height = 2.0
 agent_max_slope = 30.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0vfnr"]
+_data = {
+&"lhc5": ExtResource("7_2x7xb")
+}
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_753xt"]
 height = 5.0
@@ -54,7 +58,7 @@ environment = ExtResource("2_0vfnr")
 postProcessing = ExtResource("2_0vfnr")
 
 [node name="Set0" parent="HubControl/Stage0" index="0" node_paths=PackedStringArray("setNodes")]
-setNodes = [NodePath("../../../Map/Cinematics/Cinematic5/Trigger")]
+setNodes = [NodePath("../../../Map/Cinematics/Cinematic5/Trigger"), NodePath("../../../Map/Cinematics/Cinematic5/CinematicCharacterLumsden")]
 
 [node name="Set1" type="Node" parent="HubControl/Stage0" index="1" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("3_f2sa0")

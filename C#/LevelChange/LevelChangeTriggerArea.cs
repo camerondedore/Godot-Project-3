@@ -28,14 +28,15 @@ namespace LevelChange
         {
             if(nextLevel.Contains("LevelHub"))
             {
-                // get hub stage
-                string[] splitNextLevel = nextLevel.Split("-");
-                int hubStage = int.Parse(splitNextLevel[1]);
+                // // get hub stage
+                // string[] splitNextLevel = nextLevel.Split("-");
+                // int hubStage = int.Parse(splitNextLevel[1]);
 
-                // update world data hub stage
-                WorldData.data.SetHubStage(hubStage);
+                // // update world data hub stage
+                // WorldData.data.SetHubStage(hubStage);
 
-                nextLevel = splitNextLevel[0];
+                // nextLevel = splitNextLevel[0];
+                WorldData.data.SetHubSet(0);
             }
 
             // change to end state

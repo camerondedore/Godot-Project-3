@@ -853,7 +853,7 @@ script = ExtResource("3_rgu2x")
 [node name="DialogueUi" parent="." instance=ExtResource("4_6lrky")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("5_xgp81")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.5, -2, -87)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 376, -2, -80)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -4855,11 +4855,7 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("118_0h6kc")
 levelChange = NodePath("../../LevelChange")
-nextLevel = "LevelHub-4"
-nextCheckpointPosition = Vector3(-13, 1, -39)
-nextCheckpointEulerRotation = Vector3(0, -150, 0)
-nextCameraPosition = Vector3(-13.4287, 4.18561, -43.8499)
-nextCameraEulerRotation = Vector3(-28, -158.7, 0)
+nextLevel = "LevelHub4"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
 shape = SubResource("BoxShape3D_y1atb")

@@ -12228,11 +12228,7 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("110_t127k")
 levelChange = NodePath("../../LevelChange")
-nextLevel = "LevelHub-1"
-nextCheckpointPosition = Vector3(78, 5, 45)
-nextCheckpointEulerRotation = Vector3(0, 90, 0)
-nextCameraPosition = Vector3(81.3013, 8.05686, 43.1107)
-nextCameraEulerRotation = Vector3(-27.3, 111.5, 0)
+nextLevel = "LevelHub2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080719, 0, 0)

@@ -25,13 +25,5 @@ occluder = ExtResource("2_bfdsb")
 [node name="NavigationRegion3D" parent="Map/OccluderInstance3D" index="0"]
 navigation_mesh = SubResource("NavigationMesh_g6ewm")
 
-[node name="Door" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750027, -2.25, -0.0499916)
-startOpen = true
-
-[node name="Door" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame2" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.750027, -2.25, -0.0499916)
-startOpen = true
-
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" index="1" node_paths=PackedStringArray("linkedObjects")]
 linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), null]

@@ -286,9 +286,10 @@ saveToWorldData = true
 transform = Transform3D(-0.980787, -0.0212385, 0.193925, 0, 0.994056, 0.108868, -0.195084, 0.106777, -0.974957, 70.8949, 2.96744, 45.8049)
 script = ExtResource("4_pir38")
 
-[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic3" index="2"]
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic3" index="2" node_paths=PackedStringArray("lookTarget")]
 transform = Transform3D(-0.980787, -0.0212385, 0.193925, 0, 0.994056, 0.108868, -0.195084, 0.106777, -0.974957, 70.8949, 2.96744, 45.8049)
 script = ExtResource("19_511o7")
+lookTarget = NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis")
 lookSpeed = 0.5
 
 [node name="NpcLumsden" parent="Npcs" index="0" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("17_rxdae")]

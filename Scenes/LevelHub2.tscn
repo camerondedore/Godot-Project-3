@@ -69,6 +69,7 @@ setNodes = [NodePath("../../../Map/Cinematics/Cinematic4/Trigger")]
 
 [node name="Set1" type="Node" parent="HubControl/Stage0" index="1" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("3_8t4oi")
+hubSet = 1
 setNodes = [NodePath("../../../Map/LevelChangeTriggerArea")]
 
 [node name="PlayerCharacter" parent="." index="6"]

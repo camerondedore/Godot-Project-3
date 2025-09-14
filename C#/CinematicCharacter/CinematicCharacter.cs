@@ -3,7 +3,7 @@ using System;
 
 namespace CinematicCharacter;
 
-public partial class CinematicCharacter : CharacterBody3D
+public partial class CinematicCharacter : CharacterBody3D, IActivatable
 {
 
 public StateMachine machine = new StateMachine();
@@ -136,9 +136,7 @@ public StateMachine machine = new StateMachine();
     {
         if(Visible == false)
         {
-            // enable
-            Visible = true;
-            ProcessMode = ProcessModeEnum.Inherit;
+            ShowCharacter();
         }
 
         // check target against old target
@@ -226,5 +224,28 @@ public StateMachine machine = new StateMachine();
         // disable
         Visible = false;
         ProcessMode = ProcessModeEnum.Disabled;
+    }
+
+
+
+    public void ShowCharacter()
+    {
+        // enable
+        Visible = true;
+        ProcessMode = ProcessModeEnum.Inherit;
+    }
+
+
+
+    public void Activate()
+    {
+        ShowCharacter();
+    }
+
+
+
+    public void Deactivate()
+    {
+        HideCharacter();
     }
 }
