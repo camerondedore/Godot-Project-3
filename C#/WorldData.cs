@@ -311,21 +311,6 @@ public partial class WorldData : Node
 
 
 
-    public void SetHubStage(int newStage)
-    {
-        currentData.HubStage = newStage;
-        currentData.HubSet = 0;
-    }
-
-
-
-    public int GetHubStage()
-    {
-        return currentData.HubStage;
-    }
-
-
-
     public void SetHubSet(int newSet)
     {
         currentData.HubSet = newSet;
@@ -400,11 +385,6 @@ public partial class WorldData : Node
         {
             get; set;
         } = "0,0,0";
-
-        public int HubStage
-        {
-            get; set;
-        } = 0;
 
         public int HubSet
         {
