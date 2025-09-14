@@ -124,7 +124,7 @@ linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavPro
 
 [node name="CinematicsHub" parent="Map/Cinematics" index="0"]
 libraries = {
-&"Hub1": SubResource("AnimationLibrary_5hgqg")
+&"hub1": SubResource("AnimationLibrary_5hgqg")
 }
 
 [node name="Cinematic1" type="Node3D" parent="Map/Cinematics" index="1"]
@@ -136,7 +136,7 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("2_fwvkv")
 cinematic = NodePath("../../CinematicsHub")
-cinematicAnimationName = "lhc1"
+cinematicAnimationName = "hub1/lhc1"
 monitoringAtStart = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic1/Trigger" index="0"]
@@ -195,7 +195,7 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("2_fwvkv")
 cinematic = NodePath("../../CinematicsHub")
-cinematicAnimationName = "lhc2"
+cinematicAnimationName = "hub1/lhc2"
 monitoringAtStart = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic2/Trigger" index="0"]
@@ -278,7 +278,7 @@ displayTime = 4.9
 script = ExtResource("18_p8xxl")
 cinematic = NodePath("../../CinematicsHub")
 playerCharacter = NodePath("../../../../PlayerCharacter")
-cinematicAnimationName = "lhc3"
+cinematicAnimationName = "hub1/lhc3"
 saveToWorldData = true
 
 [node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic3" index="1"]
