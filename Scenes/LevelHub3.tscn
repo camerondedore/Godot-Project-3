@@ -1,12 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwncj0ibk101x"]
+[gd_scene load_steps=31 format=3 uid="uid://dwncj0ibk101x"]
 
 [ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_ffqa3"]
 [ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/LevelHub2Environment.tres" id="2_0vfnr"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="3_3qda0"]
 [ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="3_f2sa0"]
+[ext_resource type="ArrayOccluder3D" uid="uid://d11q5hod27x5q" path="res://Scenes/Occlusion/LevelHub4.occ" id="4_58x5x"]
 [ext_resource type="PackedScene" uid="uid://b0hvuo4osb3sc" path="res://Prefabs/Characters/NpcLumsden.tscn" id="4_j86ot"]
 [ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="4_mbwfp"]
-[ext_resource type="ArrayOccluder3D" uid="uid://c0qgbtbsb1q6v" path="res://Scenes/Occlusion/LevelHub3.occ" id="4_qrm87"]
+[ext_resource type="PackedScene" uid="uid://cx2imdy5qfts3" path="res://Prefabs/Fabrications/PropPicketAbatisWall.tscn" id="5_2x7xb"]
 [ext_resource type="Script" uid="uid://dnb48ygak3efu" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="5_efpiv"]
 [ext_resource type="PackedScene" uid="uid://cvm3pev2fv15o" path="res://Prefabs/Characters/CinematicCharacterLumsden.tscn" id="5_f2sa0"]
 [ext_resource type="AudioStream" uid="uid://dgk8gs3c7buuw" path="res://Audio/Dialogue/npc-lumsden-dialogue-lh-8.wav" id="6_2mpu3"]
@@ -69,13 +70,16 @@ light_energy = 1.8
 shadow_opacity = 0.6
 
 [node name="OccluderInstance3D" parent="Map" index="1"]
-occluder = ExtResource("4_qrm87")
+occluder = ExtResource("4_58x5x")
 
 [node name="NavigationRegion3D" parent="Map/OccluderInstance3D" index="0"]
 navigation_mesh = SubResource("NavigationMesh_58x5x")
 
-[node name="PropPicketWallLevel3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" index="21"]
+[node name="PropPicketWallLevel3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" index="20"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5, -12, -71.85)
+
+[node name="PropPicketAbatisWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" index="21" instance=ExtResource("5_2x7xb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5, 0, -70.15)
 
 [node name="InvisibleWallLevel3" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls" index="3"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 50.4, -7.11914, -71.9)
