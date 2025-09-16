@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://dbny7egg4na1b" path="res://C#/Common/RigidbodySpawnerMultiple.cs" id="9_cku3p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fudub"]
-size = Vector3(2.1, 0.8, 1.1)
+size = Vector3(2.1, 1.05, 1.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3ejo"]
 size = Vector3(2, 1, 1)
@@ -28,7 +28,7 @@ script = ExtResource("1_pnrr2")
 openSound = ExtResource("2_fo8lm")
 
 [node name="ArrowTargetCollider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
 shape = SubResource("BoxShape3D_fudub")
 
 [node name="prop-chest" parent="." instance=ExtResource("1_oxeqv")]
