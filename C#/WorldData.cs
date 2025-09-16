@@ -174,7 +174,14 @@ public partial class WorldData : Node
         cleanPosition.Y = ((float)Math.Round(cleanPosition.Y, 3));
         cleanPosition.Z = ((float)Math.Round(cleanPosition.Z, 3));
 
-        var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.SceneFilePath}={cleanPosition}";
+        string sceneName = GetTree().CurrentScene.Name;
+
+        if(sceneName.Contains("LevelHub"))
+        {
+            sceneName = "LevelHub";
+        }
+
+        var dataString = $"{sceneName}={objectToUse.SceneFilePath}={cleanPosition}";
         return dataString;
     }
 
@@ -182,8 +189,16 @@ public partial class WorldData : Node
 
     string GetSpawnedObjectDataString(Node objectToUse)
     {
+        string sceneName = GetTree().CurrentScene.Name;
+
+        if(sceneName.Contains("LevelHub"))
+        {
+            sceneName = "LevelHub";
+        }
+        
         // use to get string without position
-        var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.SceneFilePath}";
+        //var dataString = $"{GetTree().CurrentScene.Name}={objectToUse.SceneFilePath}";
+        var dataString = $"{sceneName}={objectToUse.SceneFilePath}";
         return dataString;
     }
 

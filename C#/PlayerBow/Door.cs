@@ -151,7 +151,7 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchab
 
     void ActivateLinkedNodes()
     {
-        if(linkedObjects.Length > 0)
+        if(linkedObjects != null && linkedObjects.Length > 0)
         {
             // activate linked objects
             foreach(IActivatable i in linkedObjects)
