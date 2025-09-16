@@ -297,7 +297,10 @@ namespace PlayerCharacterComplex
 
 		public void SetToIdle()
 		{
-			machine.SetState(superStateIdle);
+			if(health.hitPoints > 0)
+			{
+				machine.SetState(superStateIdle);
+			}
 		}
 	}
 }
