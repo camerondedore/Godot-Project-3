@@ -641,7 +641,10 @@ transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 5.54581, 0, -62.2819)
 
 [node name="PropTreeWallSmall24" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("22_u0ng3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -54)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -54)
+
+[node name="PropTreeWallSmall26" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("22_u0ng3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, -55)
 
 [node name="PropTreeWallSmall4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" instance=ExtResource("22_u0ng3")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 22.428, 0, -56.7713)
