@@ -36,72 +36,58 @@ _subresources={
 "meshes": {
 "arrows_arrow-blade": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-blade.res"
 },
 "arrows_arrow-bodkin": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-bodkin.res"
 },
 "arrows_arrow-enemy": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-enemy.res"
 },
 "arrows_arrow-fire": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-fire.res"
 },
 "arrows_arrow-net": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-net.res"
 },
 "arrows_arrow-pick": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-pick.res"
 },
 "arrows_arrow-weighted": {
 "generate/lightmap_uv": 0,
-"generate/lods": 0,
+"generate/lods": 2,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
 "save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
 "save_to_file/path": "res://Models/arrow-weighted.res"
 }
 }
