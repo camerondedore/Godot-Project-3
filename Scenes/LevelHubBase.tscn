@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://ce7lqyeoqu6ak"]
+[gd_scene load_steps=164 format=3 uid="uid://ce7lqyeoqu6ak"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_xaltl"]
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/LevelHub0Environment.tres" id="2_0djau"]
@@ -140,7 +140,6 @@
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="157_f3wjm"]
 [ext_resource type="Script" uid="uid://dp7ot8li6s4md" path="res://C#/SecretAreas.cs" id="158_f7v35"]
 [ext_resource type="PackedScene" uid="uid://dh2pgw57n3v31" path="res://Prefabs/Pickups/PickupArrowsNet.tscn" id="159_b50rb"]
-[ext_resource type="PackedScene" uid="uid://cd4rwhkdqdprp" path="res://Prefabs/Pickups/PickupArrowsBlade.tscn" id="160_ra6yx"]
 [ext_resource type="PackedScene" uid="uid://d0f8vu33h2mb6" path="res://Prefabs/Pickups/PickupArrowsFire.tscn" id="161_83c01"]
 [ext_resource type="PackedScene" uid="uid://q8xtek0bikgv" path="res://Prefabs/Player Bow Targets/JumpNetTarget.tscn" id="163_hfiwb"]
 [ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="164_5brxw"]
@@ -1348,6 +1347,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1646, 0, -32.8503)
 [node name="PropBlackberryBush4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -13.6646, 0, -32.8503)
 
+[node name="PropBlackberryBush5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -17.5788, 0, -29.7645)
+
+[node name="PropBlackberryBush6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -15.1039, 0, -27.2896)
+
+[node name="PropBlackberryBush11" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -12.6291, 0, -24.8148)
+
+[node name="PropBlackberryBush7" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -8.03287, 0, -17.3901)
+
+[node name="PropBlackberryBush10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -5.558, 0, -14.9153)
+
+[node name="PropBlackberryBush12" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -3.08313, 0, -12.4404)
+
 [node name="PropBlackberryBush2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/BlackberryBushes" instance=ExtResource("35_i7sxo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76456, 0, -32.8503)
 
@@ -2487,10 +2504,6 @@ collision_mask = 1
 
 [node name="PickupArrowsNet" parent="Map/Pickups" instance=ExtResource("159_b50rb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5432, 1, -40.9299)
-collision_mask = 1
-
-[node name="PickupArrowsBlade" parent="Map/Pickups" instance=ExtResource("160_ra6yx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.00863, 1, -27.358)
 collision_mask = 1
 
 [node name="PickupArrowsFire" parent="Map/Pickups" instance=ExtResource("161_83c01")]
