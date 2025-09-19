@@ -107,17 +107,17 @@ transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 73.4, -8
 [node name="FxLightShaft" parent="Map/Fx/Lightshafts" index="0" instance=ExtResource("3_w35st")]
 transform = Transform3D(-1.20109, 1.15161, 0.247777, 0.695849, 1.54102, -0.655737, -0.568492, -0.546826, -1.32613, -61.0568, 8.5, 12.2481)
 
-[node name="PickupNettleBroth4" parent="Map/Pickups" index="4" instance=ExtResource("4_oelh6")]
+[node name="PickupNettleBroth4" parent="Map/Pickups" index="3" instance=ExtResource("4_oelh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7355, 0.761899, 25.3493)
 collision_mask = 1
 
-[node name="PickupCandiedNut2" parent="Map/Pickups" index="5" instance=ExtResource("3_511o7")]
+[node name="PickupCandiedNut2" parent="Map/Pickups" index="4" instance=ExtResource("3_511o7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1, 21.5)
 
-[node name="PickupCandiedNut3" parent="Map/Pickups" index="6" instance=ExtResource("3_511o7")]
+[node name="PickupCandiedNut3" parent="Map/Pickups" index="5" instance=ExtResource("3_511o7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 1, 28)
 
-[node name="PickupCandiedNut4" parent="Map/Pickups" index="7" instance=ExtResource("3_511o7")]
+[node name="PickupCandiedNut4" parent="Map/Pickups" index="6" instance=ExtResource("3_511o7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5, 1, 35.5)
 
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" index="1" node_paths=PackedStringArray("linkedObjects")]

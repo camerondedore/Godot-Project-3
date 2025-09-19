@@ -88,15 +88,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5, 0, -70.15)
 [node name="InvisibleWallLevel3" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls" index="3"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 50.4, -7.11914, -71.9)
 
-[node name="PickupCandiedNut2" parent="Map/Pickups" index="4" instance=ExtResource("3_3qda0")]
+[node name="PickupCandiedNut2" parent="Map/Pickups" index="3" instance=ExtResource("3_3qda0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1, -21)
 collision_mask = 1
 
-[node name="PickupCandiedNut3" parent="Map/Pickups" index="5" instance=ExtResource("3_3qda0")]
+[node name="PickupCandiedNut3" parent="Map/Pickups" index="4" instance=ExtResource("3_3qda0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.75, 1, -21.9)
 collision_mask = 1
 
-[node name="PickupCandiedNut4" parent="Map/Pickups" index="6" instance=ExtResource("3_3qda0")]
+[node name="PickupCandiedNut4" parent="Map/Pickups" index="5" instance=ExtResource("3_3qda0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.5, 1, -24)
 collision_mask = 1
 

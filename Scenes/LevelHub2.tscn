@@ -164,11 +164,11 @@ transform = Transform3D(-0.122857, 0, -0.992425, 0, 1, 0, 0.992425, 0, -0.122857
 [node name="LevelRandomAudio0" parent="Map/Audio" index="1"]
 sounds = Array[AudioStream]([ExtResource("5_7mkx5"), ExtResource("6_xllml"), ExtResource("7_pcx07"), ExtResource("8_eg756"), ExtResource("9_ilhim"), ExtResource("10_35ej7"), ExtResource("11_gc0ra"), ExtResource("12_ujaft"), ExtResource("13_u04pr"), ExtResource("14_8t4oi")])
 
-[node name="PickupNettleBroth" parent="Map/Pickups" index="4" instance=ExtResource("3_5cits")]
+[node name="PickupNettleBroth" parent="Map/Pickups" index="3" instance=ExtResource("3_5cits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 10.3925)
 collision_mask = 1
 
-[node name="PickupNettleBroth2" parent="Map/Pickups" index="5" instance=ExtResource("3_5cits")]
+[node name="PickupNettleBroth2" parent="Map/Pickups" index="4" instance=ExtResource("3_5cits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 11.6925)
 collision_mask = 1
 
