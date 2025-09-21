@@ -1,13 +1,13 @@
 using Godot;
 using System;
 
-public partial class GameSettingsEnvironmentLoader : Node
+public partial class GameSettingsEnvironmentLoader : WorldEnvironment
 {
 
     // PLACE AFTER SETTINGS NODE
 
-    [Export]
-    Godot.Environment postProcessing;
+    //[Export]
+    //Godot.Environment postProcessing;
 
 
 
@@ -25,13 +25,13 @@ public partial class GameSettingsEnvironmentLoader : Node
 
     void UpdateBloom(bool value)
     {
-        postProcessing.GlowEnabled = value;
+        Environment.GlowEnabled = value;
     }
 
 
 
     void UpdateSsao(bool value)
     {
-        postProcessing.SsaoEnabled = value;
+        Environment.SsaoEnabled = value;
     }
 }
