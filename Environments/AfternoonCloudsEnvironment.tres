@@ -1,9 +1,9 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://d1514o5nrewn5"]
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://c1koe77yi8evg"]
 
-[ext_resource type="Material" uid="uid://rulj6q5cu48t" path="res://Materials/SkyboxLevel1.tres" id="1_osa4l"]
+[ext_resource type="Material" uid="uid://cacav6jltt0d7" path="res://Materials/Skys/SkyboxAfternoonClouds.tres" id="1_2tnrj"]
 
 [sub_resource type="Sky" id="Sky_dgcc7"]
-sky_material = ExtResource("1_osa4l")
+sky_material = ExtResource("1_2tnrj")
 
 [resource]
 background_mode = 2
@@ -21,9 +21,9 @@ glow_levels/5 = 0.0
 glow_blend_mode = 0
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.537255, 0.74902, 1, 1)
+fog_light_color = Color(0.529412, 0.741176, 0.984314, 1)
 fog_sun_scatter = 0.25
 fog_density = 1.0
 fog_sky_affect = 0.0
 fog_depth_begin = 30.0
-fog_depth_end = 400.0
+fog_depth_end = 600.0

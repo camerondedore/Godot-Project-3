@@ -1,6 +1,6 @@
 [gd_scene load_steps=213 format=3 uid="uid://dvrx58x6wafe1"]
 
-[ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/Level2Environment.tres" id="1_f2fj7"]
+[ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/DuskEnvironment.tres" id="1_f2fj7"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="2_v7b00"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_14mon"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="3_oakbt"]

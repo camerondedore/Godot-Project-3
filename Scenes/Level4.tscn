@@ -1,8 +1,8 @@
 [gd_scene load_steps=175 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
+[ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_1ktle"]
-[ext_resource type="Environment" uid="uid://isvij45317b3" path="res://Environments/Level4Environment.tres" id="2_8f1kp"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_ra572"]
 [ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="3_rgu2x"]
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="4_6lrky"]
@@ -841,9 +841,9 @@ size = Vector3(9, 5, 1)
 transform = Transform3D(0.863834, 0.134628, -0.485456, 0, 0.963631, 0.267237, 0.503778, -0.230849, 0.832417, -2.57637, 4.41143, 3.04386)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("2_8f1kp")
+environment = ExtResource("2_0h6kc")
 script = ExtResource("3_ra572")
-postProcessing = ExtResource("2_8f1kp")
+postProcessing = ExtResource("2_0h6kc")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_1ktle")]
 

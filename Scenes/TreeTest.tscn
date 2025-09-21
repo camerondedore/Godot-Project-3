@@ -1,6 +1,6 @@
 [gd_scene load_steps=152 format=4 uid="uid://dkg53gsq4b3cn"]
 
-[ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/Level1Environment.tres" id="1_2ajl2"]
+[ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="1_2ajl2"]
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_4qapr"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="1_60cnr"]
 [ext_resource type="PackedScene" uid="uid://gsb5ckq8e2no" path="res://Prefabs/Trees/PropTreeOak2.tscn" id="3_ddp4i"]

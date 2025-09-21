@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://xcgvn8cbhpgt"]
+
+[ext_resource type="Texture2D" uid="uid://cpiuqchyxo3ul" path="res://Textures/Skybox/skybox-morning.png" id="1_crmqt"]
+
+[resource]
+panorama = ExtResource("1_crmqt")

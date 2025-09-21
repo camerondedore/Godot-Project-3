@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ecfnnnwot5c1"
-path.bptc="res://.godot/imported/skybox-level-1.png-ed594af5274226bd3643643abfa670b9.bptc.ctex"
+uid="uid://s74ftmtv3s5r"
+path.bptc="res://.godot/imported/skybox-midnight.png-f709dd229b6e565b031aa63e426b6662.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Textures/skybox-level-1.png"
-dest_files=["res://.godot/imported/skybox-level-1.png-ed594af5274226bd3643643abfa670b9.bptc.ctex"]
+source_file="res://Textures/Skybox/skybox-midnight.png"
+dest_files=["res://.godot/imported/skybox-midnight.png-f709dd229b6e565b031aa63e426b6662.bptc.ctex"]
 
 [params]
 

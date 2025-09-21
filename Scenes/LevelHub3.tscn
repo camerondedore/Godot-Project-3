@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://dwncj0ibk101x"]
 
 [ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_ffqa3"]
-[ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/LevelHub2Environment.tres" id="2_0vfnr"]
+[ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/DawnEnvironment.tres" id="2_0vfnr"]
 [ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="3_3qda0"]
 [ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="3_f2sa0"]
 [ext_resource type="ArrayOccluder3D" uid="uid://d11q5hod27x5q" path="res://Scenes/Occlusion/LevelHub4.occ" id="4_58x5x"]
@@ -102,6 +102,12 @@ collision_mask = 1
 
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" index="1" node_paths=PackedStringArray("linkedObjects")]
 linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), null]
+
+[node name="FishSchool1" parent="Map/Fish/FishSchoolPath1" index="0"]
+transform = Transform3D(0.785182, 0, 0.619239, 0, 0.999991, 0, -0.619239, 0, 0.785182, 6.2505, 0, -2.9841)
+
+[node name="FishSchool2" parent="Map/Fish/FishSchoolPath2" index="0"]
+transform = Transform3D(0.103799, 0, -0.99458, 0, 0.999991, 0, 0.99458, 0, 0.103799, -6.95197, 0, -28.0066)
 
 [node name="CinematicsHub" parent="Map/Cinematics" index="0"]
 libraries = {
