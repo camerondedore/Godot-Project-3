@@ -1,4 +1,4 @@
-[gd_scene load_steps=165 format=3 uid="uid://ce7lqyeoqu6ak"]
+[gd_scene load_steps=170 format=3 uid="uid://ce7lqyeoqu6ak"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_xaltl"]
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/AfternoonEnvironment.tres" id="2_0djau"]
@@ -138,6 +138,10 @@
 [ext_resource type="AudioStream" uid="uid://dcqvje631k6qq" path="res://Audio/ambience-bird-5.wav" id="144_bvplo"]
 [ext_resource type="AudioStream" uid="uid://dml818uriixut" path="res://Audio/ambience-bird-6.wav" id="145_qkep6"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="146_qg0p4"]
+[ext_resource type="PackedScene" uid="uid://dnv8uatflbgos" path="res://Prefabs/Characters/NpcMerchantDockLeaves.tscn" id="151_otwk4"]
+[ext_resource type="PackedScene" uid="uid://dh256u0ww3ecb" path="res://Prefabs/Characters/NpcMerchantSanicle.tscn" id="152_vlgk3"]
+[ext_resource type="PackedScene" uid="uid://ckeh8r5mo6md" path="res://Prefabs/Characters/NpcMerchantCider.tscn" id="153_mjmd2"]
+[ext_resource type="PackedScene" uid="uid://bdf4ui754u1f" path="res://Prefabs/Characters/NpcMerchantArmor.tscn" id="154_dy8as"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="157_f3wjm"]
 [ext_resource type="Script" uid="uid://dp7ot8li6s4md" path="res://C#/SecretAreas.cs" id="158_f7v35"]
 [ext_resource type="PackedScene" uid="uid://dh2pgw57n3v31" path="res://Prefabs/Pickups/PickupArrowsNet.tscn" id="159_b50rb"]
@@ -178,6 +182,9 @@ size = Vector3(12, 10, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhqk4"]
 size = Vector3(20, 10, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bqh36"]
+size = Vector3(8, 10, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_fxjfu"]
 size = Vector2(70, 130)
 
@@ -215,14 +222,11 @@ transform = Transform3D(0.892756, -0.201352, 0.403044, 0, 0.894578, 0.446912, -0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_0djau")
 script = ExtResource("3_ywo36")
-postProcessing = ExtResource("2_0djau")
 
 [node name="HubControl" type="Node" parent="."]
 
-[node name="Stage0" type="Node" parent="HubControl" node_paths=PackedStringArray("stageNodes", "stageExclusionNodes")]
+[node name="Stage0" type="Node" parent="HubControl"]
 script = ExtResource("8_slxs3")
-stageNodes = []
-stageExclusionNodes = []
 
 [node name="Set0" type="Node" parent="HubControl/Stage0" node_paths=PackedStringArray("setNodes")]
 script = ExtResource("9_uto8g")
@@ -1769,6 +1773,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 73.263
 [node name="PropPicketWallLevel3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("69_2tiex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.5, 0, -71.85)
 
+[node name="PropPicketWallLevel4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" instance=ExtResource("69_2tiex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1, 0, -53.85)
+
 [node name="Lumber" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="Stumps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber"]
@@ -2058,6 +2065,14 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel3"]
 shape = SubResource("BoxShape3D_lhqk4")
+
+[node name="InvisibleWallLevel4" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
+transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -7.2, 4.88086, -53.9)
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel4"]
+shape = SubResource("BoxShape3D_bqh36")
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
 
@@ -2706,3 +2721,15 @@ nextLevel = "Level2"
 shape = SubResource("BoxShape3D_0unnw")
 
 [node name="Npcs" type="Node3D" parent="."]
+
+[node name="NpcMerchantDockLeaves" parent="Npcs" instance=ExtResource("151_otwk4")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -26.5, 1, -30.5)
+
+[node name="NpcMerchantSanicle" parent="Npcs" instance=ExtResource("152_vlgk3")]
+transform = Transform3D(0.610269, 0, -0.792193, 0, 1, 0, 0.792193, 0, 0.610269, 24.8572, 1, 18.0758)
+
+[node name="NpcMerchantCider" parent="Npcs" instance=ExtResource("153_mjmd2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -61.5, 1, -3)
+
+[node name="NpcMerchantArmor" parent="Npcs" instance=ExtResource("154_dy8as")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 55.8644, 1, -25.351)

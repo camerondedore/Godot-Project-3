@@ -292,7 +292,6 @@ transform = Transform3D(0.95372, -0.175488, 0.244177, 0, 0.812037, 0.583606, -0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_36bgp")
 script = ExtResource("3_260ct")
-postProcessing = ExtResource("2_36bgp")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_yw0ns")]
 
@@ -11880,10 +11879,6 @@ monitorable = false
 script = ExtResource("127_fg2b4")
 levelChange = NodePath("../../LevelChange")
 nextLevel = "LevelHub4"
-nextCheckpointPosition = Vector3(50.5, 1, -66)
-nextCheckpointEulerRotation = Vector3(0, -180, 0)
-nextCameraPosition = Vector3(46.8348, 8.31995, -73.1411)
-nextCameraEulerRotation = Vector3(-22.8, -159.7, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.080719, 0, 0)

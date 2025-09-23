@@ -843,7 +843,6 @@ transform = Transform3D(0.863834, 0.134628, -0.485456, 0, 0.963631, 0.267237, 0.
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_0h6kc")
 script = ExtResource("3_ra572")
-postProcessing = ExtResource("2_0h6kc")
 
 [node name="LevelChange" parent="." instance=ExtResource("2_1ktle")]
 

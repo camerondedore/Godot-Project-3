@@ -5,17 +5,17 @@ using System.Collections.Generic;
 public partial class HubStage : Node, IActivatable
 {
 
-    [Export]
-    public int hubStage;
-    [Export]
-    public Node[] stageNodes,
-        stageExclusionNodes;
+    // [Export]
+    // public int hubStage;
+    // [Export]
+    // public Node[] stageNodes,
+    //     stageExclusionNodes;
 
-    [Export]
-    Node3D stageTochesContainer;
+    // [Export]
+    // Node3D stageTochesContainer;
 
     List<HubSet> hubSets = new List<HubSet>();
-    List<Torch> stageLights = new List<Torch>();
+    // List<Torch> stageLights = new List<Torch>();
 
 
 
@@ -30,17 +30,17 @@ public partial class HubStage : Node, IActivatable
             hubSets.Add(stageChild);
         }
 
-        if(stageTochesContainer != null)
-        {
-            // get child stage lights
-            var stageLightNodes = stageTochesContainer.GetChildren();
+        // if(stageTochesContainer != null)
+        // {
+        //     // get child stage lights
+        //     var stageLightNodes = stageTochesContainer.GetChildren();
 
-            foreach(Torch stageLight in stageLightNodes)
-            {
-                // fill stage lights list
-                stageLights.Add(stageLight);
-            }
-        }
+        //     foreach(Torch stageLight in stageLightNodes)
+        //     {
+        //         // fill stage lights list
+        //         stageLights.Add(stageLight);
+        //     }
+        // }
 
     }
 
@@ -54,23 +54,23 @@ public partial class HubStage : Node, IActivatable
 
 
 
-    public void TurnOnStageTorches()
-    {
-        foreach(Torch light in stageLights)
-        {
-            light.lit = true;
-        }
-    }
+    // public void TurnOnStageTorches()
+    // {
+    //     foreach(Torch light in stageLights)
+    //     {
+    //         light.lit = true;
+    //     }
+    // }
 
 
 
-    public void TurnOffStageTorches()
-    {
-        foreach(Torch light in stageLights)
-        {
-            light.lit = false;
-        }
-    }
+    // public void TurnOffStageTorches()
+    // {
+    //     foreach(Torch light in stageLights)
+    //     {
+    //         light.lit = false;
+    //     }
+    // }
 
 
 
