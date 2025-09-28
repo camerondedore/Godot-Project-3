@@ -36,6 +36,11 @@ public partial class MainMenu : Node
         {
             continueButton.Disabled = true;
         }
+        else
+        {
+            // set continue button text
+            continueButton.Text = $"Continue: {WorldData.data.currentData.SavedScene}";
+        }
     }
 
 

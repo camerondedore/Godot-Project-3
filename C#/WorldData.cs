@@ -38,14 +38,24 @@ public partial class WorldData : Node
 		if(System.IO.File.Exists(filePath)) 
 		{
             System.IO.FileStream file = System.IO.File.Open(filePath, System.IO.FileMode.Open);
-            currentData = JsonSerializer.Deserialize<Data>(file);
+
+            try
+            {
+                currentData = JsonSerializer.Deserialize<Data>(file);
+            }
+            catch
+            {
+                // bad data
+			    ClearData();
+            }
+
+
             file.Close();			
 		}
 		else
 		{
 			// no data exists
-			currentData = new Data(){};
-            SaveData();
+			ClearData();
 		}
 	}
 
