@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bhvlnxieq2533"]
+
+[ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_f5r1j"]
+[ext_resource type="Texture2D" uid="uid://dgo1we82flfo" path="res://Textures/character-beaver-diffuse.png" id="2_a62ky"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f5r1j")
+shader_parameter/albedo = ExtResource("2_a62ky")
+shader_parameter/metallicPower = 0.0
+shader_parameter/roughnessPower = 1.0
+shader_parameter/rimPower = 0.025
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(0.76, 0.9, 1, 1)
+shader_parameter/rimMinHeight = -0.9
+shader_parameter/rimHeightSlope = 2.0
