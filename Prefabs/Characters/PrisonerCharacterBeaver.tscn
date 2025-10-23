@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbe7e8to4lowt"]
+
+[ext_resource type="PackedScene" uid="uid://dguv2wq544ne3" path="res://Models/character-base-beaver.glb" id="1_2o1fo"]
+[ext_resource type="Material" uid="uid://bhvlnxieq2533" path="res://Materials/Characters/CharacterBeaver.tres" id="2_evs1a"]
+[ext_resource type="Material" uid="uid://dar4ecvixt71k" path="res://Materials/Characters/EyeRat.tres" id="3_kq4jg"]
+[ext_resource type="PackedScene" uid="uid://dabnky0qnlvgu" path="res://Prefabs/CharacterFootsteps.tscn" id="4_b0vh4"]
+[ext_resource type="PackedScene" uid="uid://cq0tn2qmf50ap" path="res://Prefabs/CharacterWaterArea.tscn" id="5_j2708"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="6_awxb8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_romt6"]
+radius = 0.4
+height = 1.7
+
+[node name="PrisonerCharacterBeaver" type="CharacterBody3D"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15, 0)
+shape = SubResource("CapsuleShape3D_romt6")
+
+[node name="NavAgent" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.25
+path_height_offset = -0.5
+
+[node name="character-base-beaver" parent="." instance=ExtResource("1_2o1fo")]
+
+[node name="Skeleton3D" parent="character-base-beaver/character-armature" index="0"]
+bones/0/position = Vector3(-9.44203e-16, -0.16437, 0.170368)
+bones/0/rotation = Quaternion(0.99939, -4.16341e-09, 1.19137e-07, -0.0349251)
+bones/1/rotation = Quaternion(0.992009, -3.37508e-14, 2.36513e-07, 0.126169)
+bones/2/rotation = Quaternion(-0.175159, 5.44564e-14, -4.17611e-08, 0.98454)
+bones/3/rotation = Quaternion(-0.0812638, 5.9508e-14, -1.93748e-08, 0.996693)
+bones/4/rotation = Quaternion(-0.440383, 1.03917e-13, -1.04995e-07, 0.89781)
+bones/5/position = Vector3(1.19834e-08, 0.156816, -0.050262)
+bones/5/rotation = Quaternion(-0.0991633, -1.57963e-14, -2.36424e-08, 0.995071)
+bones/6/rotation = Quaternion(0.0196203, -1.19186e-07, 2.33895e-09, 0.999808)
+bones/7/rotation = Quaternion(0.842361, 0.197049, -0.158241, 0.475982)
+bones/8/position = Vector3(0.0489066, 0.324318, -0.0829993)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.0196203, -1.19186e-07, 2.33895e-09, 0.999808)
+bones/13/rotation = Quaternion(0.842362, -0.197049, 0.158241, 0.475982)
+bones/14/position = Vector3(-0.0489066, 0.324318, -0.0829993)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(-0.663457, -0.278397, -0.273544, 0.638353)
+bones/18/rotation = Quaternion(-0.389232, -0.447278, 0.26014, 0.762081)
+bones/19/rotation = Quaternion(0.311774, 0.0348858, 0.0679282, 0.947083)
+bones/20/rotation = Quaternion(-0.140317, 0.54451, -0.0217834, 0.826647)
+bones/21/rotation = Quaternion(-0.159706, -0.0312509, 0.0013824, 0.986669)
+bones/22/rotation = Quaternion(-0.152754, -0.0251171, 0.00177514, 0.987943)
+bones/23/rotation = Quaternion(-0.190626, -0.0185533, -0.0106695, 0.981429)
+bones/24/rotation = Quaternion(-0.0465052, -0.0280356, -0.00290314, 0.99852)
+bones/25/rotation = Quaternion(-0.663457, 0.278397, 0.273543, 0.638353)
+bones/26/rotation = Quaternion(-0.389232, 0.447278, -0.26014, 0.762081)
+bones/27/rotation = Quaternion(0.311775, -0.0348858, -0.0679283, 0.947083)
+bones/28/rotation = Quaternion(-0.140317, -0.54451, 0.0217835, 0.826647)
+bones/29/rotation = Quaternion(-0.159706, 0.0312509, -0.00138244, 0.986669)
+bones/30/rotation = Quaternion(-0.152754, 0.0251169, -0.00177517, 0.987943)
+bones/31/rotation = Quaternion(-0.190626, 0.0185534, 0.0106694, 0.981429)
+bones/32/rotation = Quaternion(-0.0465052, 0.0280355, 0.00290309, 0.99852)
+bones/33/rotation = Quaternion(-0.304578, 0.00790197, 0.00198898, 0.952453)
+bones/34/rotation = Quaternion(-0.162548, 4.50036e-05, 8.77724e-05, 0.986701)
+bones/35/rotation = Quaternion(-0.181867, 1.91687e-05, 6.55237e-05, 0.983323)
+bones/36/rotation = Quaternion(-0.177078, 6.56602e-06, 3.38514e-05, 0.984197)
+bones/37/rotation = Quaternion(0.338737, 0.0950339, -0.0592165, 0.934195)
+bones/38/rotation = Quaternion(-0.708218, -0.0213292, -0.0202379, 0.705381)
+bones/39/rotation = Quaternion(0.75366, -0.0248601, 0.00648729, 0.656762)
+bones/40/rotation = Quaternion(0.329729, 0.05065, -0.0154525, 0.94259)
+bones/41/rotation = Quaternion(0.303087, -0.0888388, 0.0525542, 0.947356)
+bones/42/rotation = Quaternion(-0.718585, 0.0213519, 0.0203173, 0.694814)
+bones/43/rotation = Quaternion(0.762408, 0.0247759, -0.00682427, 0.646586)
+bones/44/rotation = Quaternion(0.367669, -0.0283858, -0.0327021, 0.928948)
+bones/45/position = Vector3(0.258386, -0.954628, 0.0271694)
+bones/45/rotation = Quaternion(-0.702959, -0.0584569, -0.0764804, 0.704686)
+bones/46/position = Vector3(0.297159, -0.620643, -0.342247)
+bones/47/position = Vector3(0.315619, 0.063195, -0.217504)
+bones/47/rotation = Quaternion(-0.9288, 0.0354128, -0.362429, 0.0687128)
+bones/48/position = Vector3(0.377632, 0.20538, -0.050448)
+bones/48/rotation = Quaternion(0.0407278, 0.704659, 0.705933, -0.0587902)
+bones/49/position = Vector3(-0.245702, -0.954628, 0.0784591)
+bones/49/rotation = Quaternion(-0.706324, 0.0151749, 0.0332704, 0.706944)
+bones/50/position = Vector3(-0.285446, -0.616702, -0.341223)
+bones/51/position = Vector3(-0.315619, 0.063195, -0.217504)
+bones/51/rotation = Quaternion(0.9288, 0.0354128, -0.362429, -0.0687127)
+bones/52/position = Vector3(-0.377632, 0.20538, -0.050448)
+
+[node name="character-base-beaver" parent="character-base-beaver/character-armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_evs1a")
+surface_material_override/1 = ExtResource("3_kq4jg")
+
+[node name="CharacterFootsteps" parent="." instance=ExtResource("4_b0vh4")]
+
+[node name="CharacterWaterArea" parent="." node_paths=PackedStringArray("characterFeetAudioNode") instance=ExtResource("5_j2708")]
+characterFeetAudioNode = NodePath("../CharacterFootsteps")
+
+[node name="VoiceAudio" type="AudioStreamPlayer3D" parent="."]
+unit_size = 20.0
+max_distance = 50.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("6_awxb8")
+
+[editable path="character-base-beaver"]
