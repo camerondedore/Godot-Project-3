@@ -1,31 +1,32 @@
 using Godot;
 using System;
 
-namespace CinematicCharacter;
+namespace PrisonerCharacter;
 
-public partial class CinematicCharacter : CharacterBody3D, IActivatable
+public partial class PrisonerCharacter : CharacterBody3D, IActivatable
 {
 
     public StateMachine machine = new StateMachine();
     public State stateIdle,
+        stateImprisoned,
         stateMove;
 
     [Export]
     public AnimationPlayer animation;
     [Export]
-    public string idleAnimationName = "wynn-idle",
-        walkAnimationName = "wynn-run";
+    public string idleAnimationName = "beaver-idle",
+        idleScaredAnimationName = "beaver-idle-scared",
+        walkAnimationName = "beaver-walk",
+        runAnimationName = "beaver-run";
+   
     [Export]
-    public float speed = 5,
+    public float speed = 4,
         acceleration = 10,
         lookSpeed = 5f;
-    [Export]
-    bool hideOnStart = true;
 
     public NavigationAgent3D navAgent;
     public AudioTools3d voiceAudio;
-    public Node3D targetNode;
-    public string nextAnimationName;
+    public Node3D escapeTargetNode;
 
 
 
@@ -36,17 +37,11 @@ public partial class CinematicCharacter : CharacterBody3D, IActivatable
         voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
 
         // initialize states
-        stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
-        stateMove = new CinematicCharacterStateMove(){blackboard = this};
+        //stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
+        //stateMove = new CinematicCharacterStateMove(){blackboard = this};
 
         // set first state in machine
         machine.SetState(stateIdle);
-
-        if(hideOnStart == true)
-        {
-            // disable
-            HideCharacter();
-        }
     }
 
 
@@ -99,10 +94,10 @@ public partial class CinematicCharacter : CharacterBody3D, IActivatable
             }    
         }
         else
-        {
+        {                
             // falling
             // apply gravity
-            Velocity += EngineGravity.vector * ((float) delta);
+            Velocity += EngineGravity.vector * ((float) delta);                
             MoveAndSlide();
         }
     }
@@ -174,41 +169,8 @@ public partial class CinematicCharacter : CharacterBody3D, IActivatable
                 // restart idle state
                 machine.CurrentState.StartState();
             }
-        }
+        }            
     }
-
-
-
-    public void SetTargetAnimation(string nextAnimation)
-    {
-        nextAnimationName = nextAnimation;
-    }
-
-
-
-    // public void SetState(string nextAnimation)
-    // {
-    //     if(Visible == false)
-    //     {
-    //         // enable
-    //         Visible = true;
-    //         ProcessMode = ProcessModeEnum.Inherit;
-    //     }
-
-    //     // set next idle animation
-    //     nextAnimationName = nextAnimation;
-
-    //     if(machine.CurrentState != stateIdle)
-    //     {
-    //         // change to idle state
-    //         machine.SetState(stateIdle);
-    //     }
-    //     else
-    //     {
-    //         // restart idle state
-    //         machine.CurrentState.StartState();
-    //     }
-    // }
 
 
 
@@ -219,33 +181,15 @@ public partial class CinematicCharacter : CharacterBody3D, IActivatable
 
 
 
-    public void HideCharacter()
-    {
-        // disable
-        Visible = false;
-        ProcessMode = ProcessModeEnum.Disabled;
-    }
-
-
-
-    public void ShowCharacter()
-    {
-        // enable
-        Visible = true;
-        ProcessMode = ProcessModeEnum.Inherit;
-    }
-
-
-
     public void Activate()
     {
-        ShowCharacter();
+        
     }
 
 
 
     public void Deactivate()
     {
-        HideCharacter();
+        
     }
 }
