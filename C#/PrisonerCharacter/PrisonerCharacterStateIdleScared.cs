@@ -33,6 +33,12 @@ public partial class PrisonerCharacterStateIdleScared : PrisonerCharacterState
 
     public override State Transition()
     {
-        return base.Transition();
+        if(blackboard.IsPlayerCharacterClose() == true)
+        {
+            // idle
+            return blackboard.stateIdle;
+        }
+        
+        return this;
     }
 }

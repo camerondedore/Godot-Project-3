@@ -33,6 +33,6 @@ public partial class PrisonerCharacterStateFlee : PrisonerCharacterState
 
     public override State Transition()
     {
-        return base.Transition();
+        return this;
     }
 }

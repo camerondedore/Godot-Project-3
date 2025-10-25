@@ -15,6 +15,8 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
     [Export]
     Node3D playerCharacter;
     [Export]
+    Node3D freedTargetNode;
+    [Export]
     public AnimationPlayer animation;
     [Export]
     public string idleAnimationName = "beaver-idle",
@@ -31,6 +33,8 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
     public AudioTools3d voiceAudio;
     public Node3D escapeTargetNode;
 
+    float playerCharacterCloseDistanceSqr = 36f;
+
 
 
     public override void _Ready()
@@ -44,6 +48,10 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         stateIdle = new PrisonerCharacterStateIdle(){blackboard = this};
         stateFreed = new PrisonerCharacterStateFreed(){blackboard = this};
         stateFlee = new PrisonerCharacterStateFlee(){blackboard = this};
+
+        // set animation blends
+        animation.SetBlendTime(idleScaredAnimationName, idleAnimationName, 0.2f);
+        animation.SetBlendTime(idleAnimationName, idleScaredAnimationName, 0.2f);
 
         // set first state in machine
         machine.SetState(stateIdleScared);
@@ -176,6 +184,13 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
     //         }
     //     }            
     // }
+
+
+
+    public bool IsPlayerCharacterClose()
+    {
+        return GlobalPosition.DistanceSquaredTo(playerCharacter.GlobalPosition) < playerCharacterCloseDistanceSqr;
+    }
 
 
 
