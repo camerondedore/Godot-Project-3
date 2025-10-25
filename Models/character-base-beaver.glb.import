@@ -3633,9 +3633,9 @@ _subresources={
 "slices/amount": 0
 },
 "beaver-run": {
-"save_to_file/enabled": false,
+"save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "",
+"save_to_file/path": "res://Animation/NpcBeaverRun.res",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,
@@ -7231,9 +7231,9 @@ _subresources={
 "slices/amount": 0
 },
 "beaver-walk": {
-"save_to_file/enabled": false,
+"save_to_file/enabled": true,
 "save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "",
+"save_to_file/path": "res://Animation/NpcBeaverWalk.res",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

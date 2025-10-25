@@ -7,10 +7,13 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
 {
 
     public StateMachine machine = new StateMachine();
-    public State stateIdle,
-        stateImprisoned,
-        stateMove;
+    public State stateIdleScared,
+        stateIdle,
+        stateFreed,
+        stateFlee;
 
+    [Export]
+    Node3D playerCharacter;
     [Export]
     public AnimationPlayer animation;
     [Export]
@@ -37,11 +40,13 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
 
         // initialize states
-        //stateIdle = new CinematicCharacterStateIdle(){blackboard = this};
-        //stateMove = new CinematicCharacterStateMove(){blackboard = this};
+        stateIdleScared = new PrisonerCharacterStateIdleScared(){blackboard = this};
+        stateIdle = new PrisonerCharacterStateIdle(){blackboard = this};
+        stateFreed = new PrisonerCharacterStateFreed(){blackboard = this};
+        stateFlee = new PrisonerCharacterStateFlee(){blackboard = this};
 
         // set first state in machine
-        machine.SetState(stateIdle);
+        machine.SetState(stateIdleScared);
     }
 
 
@@ -104,73 +109,73 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
 
 
 
-    public void LookWithTargetNode(double delta)
-    {
-        if(targetNode == null)
-        {
-            return;
-        }
+    // public void LookWithTargetNode(double delta)
+    // {
+    //     if(targetNode == null)
+    //     {
+    //         return;
+    //     }
 
-        // get direction and flatten
-        var lookTarget = GlobalPosition + -targetNode.Basis.Z;
-        lookTarget.Y = GlobalPosition.Y;
+    //     // get direction and flatten
+    //     var lookTarget = GlobalPosition + -targetNode.Basis.Z;
+    //     lookTarget.Y = GlobalPosition.Y;
 
-        if(lookTarget.LengthSquared() > 0.1f)
-        {
-            var smoothLookTarget = GlobalPosition + -Basis.Z;
-            smoothLookTarget = smoothLookTarget.Lerp(lookTarget, lookSpeed * ((float) delta));
+    //     if(lookTarget.LengthSquared() > 0.1f)
+    //     {
+    //         var smoothLookTarget = GlobalPosition + -Basis.Z;
+    //         smoothLookTarget = smoothLookTarget.Lerp(lookTarget, lookSpeed * ((float) delta));
 
-            // apply look
-            LookAt(smoothLookTarget);
-        }
-    }
+    //         // apply look
+    //         LookAt(smoothLookTarget);
+    //     }
+    // }
 
 
 
-    public void SetTargetNode(Node3D newTarget)
-    {
-        if(Visible == false)
-        {
-            ShowCharacter();
-        }
+    // public void SetTargetNode(Node3D newTarget)
+    // {
+    //     if(Visible == false)
+    //     {
+    //         ShowCharacter();
+    //     }
 
-        // check target against old target
-        var targetTransformChanged = true;
+    //     // check target against old target
+    //     var targetTransformChanged = true;
         
-        if(targetNode != null)
-        {
-            targetTransformChanged = (targetNode.GlobalPosition - newTarget.GlobalPosition).LengthSquared() > 0.01f;
-        }
+    //     if(targetNode != null)
+    //     {
+    //         targetTransformChanged = (targetNode.GlobalPosition - newTarget.GlobalPosition).LengthSquared() > 0.01f;
+    //     }
 
-        targetNode = newTarget;
+    //     targetNode = newTarget;
 
-        if(targetTransformChanged == true)
-        {
-            if(machine.CurrentState != stateMove)
-            {
-                // change to move state
-                machine.SetState(stateMove);
-            }
-            else
-            {
-                // restart move state
-                stateMove.StartState();
-            }
-        }
-        else
-        {
-            if(machine.CurrentState != stateIdle)
-            {
-                // change to idle state
-                machine.SetState(stateIdle);
-            }
-            else
-            {
-                // restart idle state
-                machine.CurrentState.StartState();
-            }
-        }            
-    }
+    //     if(targetTransformChanged == true)
+    //     {
+    //         if(machine.CurrentState != stateMove)
+    //         {
+    //             // change to move state
+    //             machine.SetState(stateMove);
+    //         }
+    //         else
+    //         {
+    //             // restart move state
+    //             stateMove.StartState();
+    //         }
+    //     }
+    //     else
+    //     {
+    //         if(machine.CurrentState != stateIdle)
+    //         {
+    //             // change to idle state
+    //             machine.SetState(stateIdle);
+    //         }
+    //         else
+    //         {
+    //             // restart idle state
+    //             machine.CurrentState.StartState();
+    //         }
+    //     }            
+    // }
 
 
 

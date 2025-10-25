@@ -174,6 +174,12 @@ collision_mask = 1
 [node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" index="1" node_paths=PackedStringArray("linkedObjects")]
 linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), null]
 
+[node name="FishSchool1" parent="Map/Fish/FishSchoolPath1" index="0"]
+transform = Transform3D(0.785182, 0, 0.619239, 0, 0.999991, 0, -0.619239, 0, 0.785182, 6.2505, 0, -2.9841)
+
+[node name="FishSchool2" parent="Map/Fish/FishSchoolPath2" index="0"]
+transform = Transform3D(0.103799, 0, -0.99458, 0, 0.999991, 0, 0.99458, 0, 0.103799, -6.95197, 0, -28.0066)
+
 [node name="CinematicsHub" parent="Map/Cinematics" index="0"]
 libraries = {
 &"hub2": SubResource("AnimationLibrary_eg756")
