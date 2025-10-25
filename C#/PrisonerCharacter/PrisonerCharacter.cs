@@ -10,19 +10,22 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
     public State stateIdleScared,
         stateIdle,
         stateFreed,
+        stateWave,
         stateFlee;
 
     [Export]
     Node3D playerCharacter;
     [Export]
-    Node3D freedTargetNode;
+    Node3D freedTargetNode,
+        fleeTargetNode;
     [Export]
     public AnimationPlayer animation;
     [Export]
     public string idleAnimationName = "beaver-idle",
         idleScaredAnimationName = "beaver-idle-scared",
         walkAnimationName = "beaver-walk",
-        runAnimationName = "beaver-run";
+        runAnimationName = "beaver-run",
+        waveAnimationName = "beaver-wave";
    
     [Export]
     public float speed = 4,
@@ -33,7 +36,8 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
     public AudioTools3d voiceAudio;
     public Node3D escapeTargetNode;
 
-    float playerCharacterCloseDistanceSqr = 36f;
+    float playerCharacterCloseDistanceSqr = 36f,
+        waveAnimTime = 1.13f;
 
 
 
@@ -47,6 +51,7 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         stateIdleScared = new PrisonerCharacterStateIdleScared(){blackboard = this};
         stateIdle = new PrisonerCharacterStateIdle(){blackboard = this};
         stateFreed = new PrisonerCharacterStateFreed(){blackboard = this};
+        stateWave = new PrisonerCharacterStateWave(){blackboard = this};
         stateFlee = new PrisonerCharacterStateFlee(){blackboard = this};
 
         // set animation blends
@@ -203,13 +208,15 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
 
     public void Activate()
     {
-        
+        // set freed state
+        machine.SetState(stateFreed);
     }
 
 
 
     public void Deactivate()
     {
-        
+        // remove prisoner
+        QueueFree();
     }
 }

@@ -3194,6 +3194,9 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 [node name="PropCage10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers" instance=ExtResource("34_erymh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -1.5)
 
+[node name="Door" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage10" index="6" node_paths=PackedStringArray("linkedObjects")]
+linkedObjects = [NodePath("../../../../../../../Npcs/PrisonerCharacterBeaver")]
+
 [node name="Food" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="PropCookingSpit" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Food" instance=ExtResource("50_55kl8")]
@@ -5127,19 +5130,24 @@ transform = Transform3D(0.509011, 0, -0.86076, 0, 1, 0, 0.86076, 0, 0.509011, 26
 
 [node name="Npcs" type="Node3D" parent="."]
 
-[node name="PrisonerCharacterBeaver" parent="Npcs" node_paths=PackedStringArray("playerCharacter", "freedTargetNode") instance=ExtResource("121_s4j0c")]
+[node name="PrisonerCharacterBeaver" parent="Npcs" node_paths=PackedStringArray("playerCharacter", "freedTargetNode", "fleeTargetNode") instance=ExtResource("121_s4j0c")]
 transform = Transform3D(1, 0, -1.78814e-07, 0, 1, 0, 1.78814e-07, 0, 1, -7.5, 1.2, -1.9)
 playerCharacter = NodePath("../../PlayerCharacter")
-freedTargetNode = NodePath("../PrisonerTarget1")
+freedTargetNode = NodePath("../PrisonerFreedTarget1")
+fleeTargetNode = NodePath("../PrisonerFleeTarget1")
 
-[node name="PrisonerTarget1" type="Node3D" parent="Npcs"]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 2.5, 1, 2)
+[node name="PrisonerFreedTarget1" type="Node3D" parent="Npcs"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -6.93894, 1, -4.82944)
+
+[node name="PrisonerFleeTarget1" type="Node3D" parent="Npcs"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 2.84859, 1, 1.75381)
 
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage3"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage4"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage6"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage7"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage8"]
+[editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropCage10"]
 [editable path="Map/Blocks/BlockTarget"]
 [editable path="Map/Blocks/BlockTarget2"]
 [editable path="Map/Blocks/BlockTarget3"]
