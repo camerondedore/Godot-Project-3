@@ -3,7 +3,7 @@ using System;
 
 namespace PrisonerCharacter;
 
-public partial class PrisonerCharacterStateWave : PrisonerCharacterState
+public partial class PrisonerCharacterStateFreedStatic : PrisonerCharacterState
 {
 
     double startTime;
@@ -22,7 +22,7 @@ public partial class PrisonerCharacterStateWave : PrisonerCharacterState
         startTime = EngineTime.timePassed;
 
         // animation
-        blackboard.animation.Play(blackboard.waveAnimationName);
+        blackboard.animation.Play(blackboard.idleAnimationName);
     }
 
 
@@ -36,10 +36,10 @@ public partial class PrisonerCharacterStateWave : PrisonerCharacterState
 
     public override State Transition()
     {
-        if(EngineTime.timePassed > startTime + blackboard.waveAnimTime)
+        if(EngineTime.timePassed > startTime + blackboard.freedStaticTime)
         {
-            // flee
-            return blackboard.stateFlee;
+            // freed move
+            return blackboard.stateFreedMove;
         }
 
         return this;

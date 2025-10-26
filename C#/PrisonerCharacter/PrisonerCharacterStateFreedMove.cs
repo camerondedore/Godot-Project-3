@@ -3,7 +3,7 @@ using System;
 
 namespace PrisonerCharacter;
 
-public partial class PrisonerCharacterStateFlee : PrisonerCharacterState
+public partial class PrisonerCharacterStateFreedMove : PrisonerCharacterState
 {
 
 
@@ -14,11 +14,6 @@ public partial class PrisonerCharacterStateFlee : PrisonerCharacterState
     {
         // move
         blackboard.MoveToTargetNode(delta);
-
-        if(blackboard.navAgent.IsNavigationFinished() == true)
-        {
-            blackboard.Deactivate();
-        }
     }
 
 
@@ -26,7 +21,7 @@ public partial class PrisonerCharacterStateFlee : PrisonerCharacterState
     public override void StartState()
     {
         // set move target
-        blackboard.navAgent.TargetPosition = blackboard.fleeTargetNode.GlobalPosition;
+        blackboard.navAgent.TargetPosition = blackboard.freedTargetNode.GlobalPosition;
 
         // animation
         blackboard.animation.Play(blackboard.runAnimationName);
@@ -43,6 +38,12 @@ public partial class PrisonerCharacterStateFlee : PrisonerCharacterState
 
     public override State Transition()
     {
+        if(blackboard.navAgent.IsNavigationFinished() == true)
+        {
+            // wave
+            return blackboard.stateWave;
+        }
+
         return this;
     }
 }

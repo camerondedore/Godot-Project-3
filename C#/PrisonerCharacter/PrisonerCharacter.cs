@@ -7,16 +7,16 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
 {
 
     public StateMachine machine = new StateMachine();
-    public State stateIdleScared,
-        stateIdle,
-        stateFreed,
+    public State stateIdle,
+        stateFreedStatic,
+        stateFreedMove,
         stateWave,
         stateFlee;
 
     [Export]
     Node3D playerCharacter;
     [Export]
-    Node3D freedTargetNode,
+    public Node3D freedTargetNode,
         fleeTargetNode;
     [Export]
     public AnimationPlayer animation;
@@ -28,16 +28,16 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         waveAnimationName = "beaver-wave";
    
     [Export]
-    public float speed = 4,
+    public float runSpeed = 4f,
+        //walkSpeed = 2f,
         acceleration = 10,
-        lookSpeed = 5f;
+        lookSpeed = 5f,
+        freedStaticTime = 0.75f,
+        waveAnimTime = 1.13f;
 
     public NavigationAgent3D navAgent;
     public AudioTools3d voiceAudio;
     public Node3D escapeTargetNode;
-
-    float playerCharacterCloseDistanceSqr = 36f,
-        waveAnimTime = 1.13f;
 
 
 
@@ -48,9 +48,9 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         voiceAudio = (AudioTools3d) GetNode("VoiceAudio");
 
         // initialize states
-        stateIdleScared = new PrisonerCharacterStateIdleScared(){blackboard = this};
         stateIdle = new PrisonerCharacterStateIdle(){blackboard = this};
-        stateFreed = new PrisonerCharacterStateFreed(){blackboard = this};
+        stateFreedStatic = new PrisonerCharacterStateFreedStatic(){blackboard = this};
+        stateFreedMove = new PrisonerCharacterStateFreedMove(){blackboard = this};
         stateWave = new PrisonerCharacterStateWave(){blackboard = this};
         stateFlee = new PrisonerCharacterStateFlee(){blackboard = this};
 
@@ -59,7 +59,7 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         animation.SetBlendTime(idleAnimationName, idleScaredAnimationName, 0.2f);
 
         // set first state in machine
-        machine.SetState(stateIdleScared);
+        machine.SetState(stateIdle);
     }
 
 
@@ -85,7 +85,7 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
             var newVelocity = navAgent.GetNextPathPosition() - GlobalPosition;
             newVelocity = newVelocity.Normalized();
             newVelocity.Y = 0;
-            newVelocity *= speed;
+            newVelocity *= runSpeed;
             
             if(newVelocity.X == 0 && newVelocity.Z == 0)
             {
@@ -192,10 +192,17 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
 
 
 
-    public bool IsPlayerCharacterClose()
-    {
-        return GlobalPosition.DistanceSquaredTo(playerCharacter.GlobalPosition) < playerCharacterCloseDistanceSqr;
-    }
+    // public bool IsPlayerCharacterClose()
+    // {
+    //     return GlobalPosition.DistanceSquaredTo(playerCharacter.GlobalPosition) < playerCharacterCloseDistanceSqr;
+    // }
+
+
+
+    // public bool IsPlayerCharacterFar()
+    // {
+    //     return GlobalPosition.DistanceSquaredTo(playerCharacter.GlobalPosition) > playerCharacterFarDistanceSqr;
+    // }
 
 
 
@@ -209,7 +216,7 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
     public void Activate()
     {
         // set freed state
-        machine.SetState(stateFreed);
+        machine.SetState(stateFreedStatic);
     }
 
 

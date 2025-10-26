@@ -19,7 +19,8 @@ public partial class PrisonerCharacterStateIdle : PrisonerCharacterState
 
     public override void StartState()
     {
-        blackboard.animation.Play(blackboard.idleAnimationName);
+        // animation
+        blackboard.animation.Play(blackboard.idleScaredAnimationName);
     }
 
 
@@ -32,13 +33,7 @@ public partial class PrisonerCharacterStateIdle : PrisonerCharacterState
 
 
     public override State Transition()
-    {
-        if(blackboard.IsPlayerCharacterClose() == false)
-        {
-            // idle scared
-            return blackboard.stateIdleScared;
-        }
-
+    {       
         return this;
     }
 }
