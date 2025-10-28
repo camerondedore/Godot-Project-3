@@ -3,7 +3,7 @@ using System;
 using PlayerBow;
 using CinematicSimple;
 
-public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
+public partial class Mob : CharacterBody3D, IBowTarget, IWatchable, IActivatable
 {
 
     public MobDetection detection;
@@ -201,5 +201,20 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable
     public float GetMaxStuckSpeedSqr()
     {
         return Mathf.Pow(speed * 0.8f, 2f);
+    }
+
+
+
+    public void Activate()
+    {
+        // aggro mob
+        AllyHurt();
+    }
+
+
+
+    public void Deactivate()
+    {
+        isAggro = false;
     }
 }

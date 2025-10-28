@@ -12,13 +12,13 @@
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="10_ux41y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgnxb"]
-size = Vector3(0.2, 2.5, 3)
+size = Vector3(0.15, 2.5, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e2d4e"]
-size = Vector3(1.6, 2.5, 0.2)
+size = Vector3(1.65, 2.5, 0.15)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxrhn"]
-size = Vector3(1.6, 0.2, 2.8)
+size = Vector3(1.65, 0.2, 2.9)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yx814"]
 points = PackedVector3Array(0.8, 0.1, 1.4, -0.8, 0.1, 1.4, -0.8, -0.1, 1.4, 0.8, -0.1, 1.4, 0.8, 0.1, -0.8, -0.8, 0.1, -0.8, -0.8, -0.1, -1.4, 0.8, -0.1, -1.4)
@@ -51,7 +51,7 @@ shape = SubResource("BoxShape3D_vgnxb")
 debug_color = Color(1, 1, 1, 1)
 
 [node name="CageCollider3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 1.25, 1.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 1.25, 1.425)
 shape = SubResource("BoxShape3D_e2d4e")
 debug_color = Color(1, 1, 1, 1)
 
@@ -65,13 +65,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.1, -0.1)
 shape = SubResource("ConvexPolygonShape3D_yx814")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="Door" type="AnimatableBody3D" parent="."]
+[node name="Door" type="AnimatableBody3D" parent="." node_paths=PackedStringArray("linkedObjects")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.774, 1.153, -1.482)
 collision_layer = 16
 script = ExtResource("5_erisd")
 openAngle = Vector3(0, 95, 0)
 openSound = ExtResource("6_gxs78")
 targetOffset = Vector3(1.437, -0.165, -0.01)
+linkedObjects = []
+metadata/_edit_group_ = true
 
 [node name="DoorMesh" type="MeshInstance3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.774, 0.002, 0.082)

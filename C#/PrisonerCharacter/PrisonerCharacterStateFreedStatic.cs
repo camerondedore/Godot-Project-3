@@ -38,8 +38,16 @@ public partial class PrisonerCharacterStateFreedStatic : PrisonerCharacterState
     {
         if(EngineTime.timePassed > startTime + blackboard.freedStaticTime)
         {
-            // freed move
-            return blackboard.stateFreedMove;
+            if(blackboard.waveWhenFreed == true)
+            {
+                // freed move
+                return blackboard.stateFreedMove;
+            }
+            else
+            {
+                // flee
+                return blackboard.stateFlee;
+            }
         }
 
         return this;

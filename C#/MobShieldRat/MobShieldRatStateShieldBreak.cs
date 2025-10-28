@@ -45,6 +45,10 @@ public partial class MobShieldRatStateShieldBreak : MobShieldRatState
             lookTarget.Y = blackboard.GlobalPosition.Y;
             blackboard.LookAt(lookTarget);
         }
+
+        // aggro
+        blackboard.AggroAllies();
+        blackboard.isAggro = true;
     }
 
 

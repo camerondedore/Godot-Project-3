@@ -34,6 +34,8 @@ public partial class PrisonerCharacter : CharacterBody3D, IActivatable
         lookSpeed = 5f,
         freedStaticTime = 0.75f,
         waveAnimTime = 1.13f;
+    [Export]
+    public bool waveWhenFreed = true;
 
     public NavigationAgent3D navAgent;
     public AudioTools3d voiceAudio;
