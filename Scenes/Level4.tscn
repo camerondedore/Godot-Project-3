@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=179 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -118,6 +118,7 @@
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="77_vka4t"]
 [ext_resource type="PackedScene" uid="uid://gyduf2tcoh5l" path="res://Prefabs/Small Items/PropTroutSkeleton.tscn" id="77_xgahu"]
 [ext_resource type="PackedScene" uid="uid://bawlxo6vs8yl7" path="res://Prefabs/Player Bow Targets/PropSpiderwebStretched.tscn" id="79_4wsoj"]
+[ext_resource type="PackedScene" uid="uid://bmmjc0ruv3ebe" path="res://Prefabs/Small Items/PropOar.tscn" id="84_s4c4r"]
 [ext_resource type="Animation" uid="uid://h2lik4ydbdns" path="res://Animation/Cinematics/l4c1.res" id="100_gu414"]
 [ext_resource type="Animation" uid="uid://b8tv0yrsqa38p" path="res://Animation/Cinematics/l4c2.res" id="101_se4y8"]
 [ext_resource type="Animation" uid="uid://el1rwt6s48ih" path="res://Animation/Cinematics/l4c3.res" id="102_s4c4r"]
@@ -2896,6 +2897,18 @@ transform = Transform3D(-0.38438, -0.751444, -0.858579, 1.14098, -0.253152, -0.2
 
 [node name="PropTroutSkeleton4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("77_xgahu")]
 transform = Transform3D(0.388123, -0.779067, 0.831859, 1.13971, 0.265307, -0.283285, -2.98023e-08, 0.878772, 0.823002, 293.718, -7.8882, -58.9325)
+
+[node name="PropOar" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_s4c4r")]
+transform = Transform3D(0.7227, -0.420467, 0.548554, -0.096597, 0.724434, 0.682542, -0.684378, -0.546262, 0.482933, 14.9821, 0.0777694, -53.7993)
+
+[node name="PropOar2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_s4c4r")]
+transform = Transform3D(0.970711, -0.182598, 0.156132, -0.232978, -0.874119, 0.426189, 0.0586571, -0.450081, -0.891059, 15.8458, 0.160139, -51.6161)
+
+[node name="PropOar3" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_s4c4r")]
+transform = Transform3D(0.796937, -0.180854, 0.576354, 0.251807, 0.966739, -0.0448265, -0.549077, 0.180854, 0.81597, 306.173, -7.4826, -68.3132)
+
+[node name="PropOar4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_s4c4r")]
+transform = Transform3D(-0.688924, 0.180854, 0.701909, -0.255759, -0.966739, -0.00193732, 0.678212, -0.180854, 0.712264, 306.283, -7.55535, -67.8142)
 
 [node name="Spikes" type="Node3D" parent="Map"]
 

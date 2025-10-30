@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmmjc0ruv3ebe"]
+
+[ext_resource type="ArrayMesh" uid="uid://kuck6qxgnbh0" path="res://Models/prop-oar.res" id="1_xndrn"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_xshnu"]
+
+[node name="PropOar" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+mesh = ExtResource("1_xndrn")
+surface_material_override/0 = ExtResource("2_xshnu")
