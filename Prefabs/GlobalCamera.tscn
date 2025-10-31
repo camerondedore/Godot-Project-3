@@ -297,6 +297,7 @@ layout_mode = 2
 selected = 0
 item_count = 4
 popup/item_0/text = "Disabled"
+popup/item_0/id = 0
 popup/item_1/text = "Enabled"
 popup/item_1/id = 1
 popup/item_2/text = "Adaptive"
@@ -339,6 +340,7 @@ script = ExtResource("13_82w01")
 [node name="LodManager" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("8_ugcwb")
+objectsPerTick = 20
 
 [node name="VsyncLoader" type="Node" parent="."]
 script = ExtResource("16_f50a2")
