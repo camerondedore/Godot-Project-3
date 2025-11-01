@@ -2933,8 +2933,68 @@ transform = Transform3D(-0.610477, 0, -0.792034, 0, 1, 0, 0.792034, 0, -0.610477
 [node name="PropCattail6" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304.876, -9, -52.9415)
 
+[node name="PropCattail24" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 296.646, -9, -52.9415)
+
+[node name="PropCattail27" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.0962016, 0, 0.842781, 0, 0.848254, 0, -0.842781, 0, -0.0962016, 297.722, -9, -52.9415)
+
+[node name="PropCattail25" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.119698, 0, 1.33435, 0, 1.33971, 0, -1.33435, 0, -0.119698, 297.028, -9, -47.2545)
+
+[node name="PropCattail26" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-1.09875, 0, 0.76653, 0, 1.33971, 0, -0.76653, 0, -1.09875, 296.076, -8.85102, -45.0591)
+
 [node name="PropCattail7" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
 transform = Transform3D(-0.305118, 0, -0.810208, 0, 0.865756, 0, 0.810208, 0, -0.305118, 304.573, -9, -54.5248)
+
+[node name="PropCattail8" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.0425732, 0, -0.999093, 0, 1, 0, 0.999093, 0, 0.0425732, -32.8323, -0.999996, -120.168)
+
+[node name="PropCattail15" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.635229, 0, -0.772323, 0, 1, 0, 0.772323, 0, 0.635229, -11.8446, -0.999996, -117.66)
+
+[node name="PropCattail16" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.281772, 0, -0.959481, 0, 1, 0, 0.959481, 0, -0.281772, -10.2126, -0.999996, -120.536)
+
+[node name="PropCattail17" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.816984, 0, -0.57666, 0, 1, 0, 0.57666, 0, 0.816984, -8.55588, -0.999996, -120.01)
+
+[node name="PropCattail18" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.944451, 0, -0.328652, 0, 1, 0, 0.328652, 0, -0.944451, -5.25685, -0.999996, -117.265)
+
+[node name="PropCattail19" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.297539, 0, -0.786916, 0, 0.841289, 0, 0.786916, 0, 0.297539, -3.61226, -0.999996, -117.672)
+
+[node name="PropCattail9" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.862663, 0, 0.505778, 0, 1, 0, -0.505778, 0, 0.862663, -33.9021, -0.999996, -117.94)
+
+[node name="PropCattail10" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.201283, 0, 0.979533, 0, 1, 0, -0.979533, 0, -0.201283, -35.0102, -0.999996, -119.664)
+
+[node name="PropCattail11" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.690933, 0, 0.722919, 0, 1, 0, -0.722919, 0, -0.690933, -36.5096, -0.999996, -118.657)
+
+[node name="PropCattail12" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.75734, 0, -0.389002, 0, 0.851403, 0, 0.389002, 0, -0.75734, -37.7554, -0.999996, -117.761)
+
+[node name="PropCattail13" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.475963, 0, 0.705936, 0, 0.851403, 0, -0.705936, 0, -0.475963, -37.036, -0.999996, -120.226)
+
+[node name="PropCattail14" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.43584, 0, 0.731389, 0, 0.851403, 0, -0.731389, 0, 0.43584, -32.8246, -0.999996, -118.961)
+
+[node name="PropCattail20" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(1.18115, 0, 0, 0, 1.18115, 0, 0, 0, 1.18115, 68.2358, -3, -117.305)
+
+[node name="PropCattail21" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.0635569, 0, 0.997978, 0, 1, 0, -0.997978, 0, 0.0635569, 68.3872, -3, -119.021)
+
+[node name="PropCattail22" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.529101, 0, 0.653595, 0, 0.840912, 0, -0.653595, 0, -0.529101, 66.7127, -3, -117.058)
+
+[node name="PropCattail23" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.641062, 0, -0.544218, 0, 0.840912, 0, 0.544218, 0, -0.641062, 67.3299, -3, -119.585)
 
 [node name="Spikes" type="Node3D" parent="Map"]
 

@@ -1,20 +1,20 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bn131u1uhy5so"]
 
-[ext_resource type="Shader" uid="uid://bf5x17w6n85b1" path="res://Shaders/VisualVegetationLeaves.tres" id="1_q6irn"]
+[ext_resource type="Shader" uid="uid://5efv8i4fm5d0" path="res://Shaders/VegetationLeaves.gdshader" id="1_r307g"]
 [ext_resource type="Texture2D" uid="uid://dkfe1ge8ieefw" path="res://Textures/prop-cattail-diffuse.png" id="2_r307g"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_q6irn")
-shader_parameter/Wind_Amplitude = 0.05
-shader_parameter/Wind_Speed = 0.1
-shader_parameter/Wind_Turbulance = 2.0
-shader_parameter/Wind_Min_Height = -0.35
-shader_parameter/Wind_Slope = 1.0
-shader_parameter/Y_Multiplier = 0.15
-shader_parameter/Albedo = ExtResource("2_r307g")
-shader_parameter/Metallic = 0.1
-shader_parameter/Roughness = 0.8
-shader_parameter/Specular = 0.25
-shader_parameter/Backlight_Strength = 0.3
-shader_parameter/Alpha_Scissor = 0.0
+shader = ExtResource("1_r307g")
+shader_parameter/windAmplitude = 0.05
+shader_parameter/windSpeed = 0.1
+shader_parameter/windTurbulance = 2.0
+shader_parameter/windMinHeight = -0.35
+shader_parameter/windSlope = 1.0
+shader_parameter/yMultiplier = 0.15
+shader_parameter/albedo = ExtResource("2_r307g")
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.8
+shader_parameter/specular = 0.25
+shader_parameter/backlightStrength = 0.3
+shader_parameter/alphaScissor = 0.0
