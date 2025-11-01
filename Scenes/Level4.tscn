@@ -1,4 +1,4 @@
-[gd_scene load_steps=179 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=180 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -119,6 +119,7 @@
 [ext_resource type="PackedScene" uid="uid://gyduf2tcoh5l" path="res://Prefabs/Small Items/PropTroutSkeleton.tscn" id="77_xgahu"]
 [ext_resource type="PackedScene" uid="uid://bawlxo6vs8yl7" path="res://Prefabs/Player Bow Targets/PropSpiderwebStretched.tscn" id="79_4wsoj"]
 [ext_resource type="PackedScene" uid="uid://bmmjc0ruv3ebe" path="res://Prefabs/Small Items/PropOar.tscn" id="84_s4c4r"]
+[ext_resource type="PackedScene" uid="uid://b8fpsfn3g5np1" path="res://Prefabs/Plants/PropCattail.tscn" id="85_ubp24"]
 [ext_resource type="Animation" uid="uid://h2lik4ydbdns" path="res://Animation/Cinematics/l4c1.res" id="100_gu414"]
 [ext_resource type="Animation" uid="uid://b8tv0yrsqa38p" path="res://Animation/Cinematics/l4c2.res" id="101_se4y8"]
 [ext_resource type="Animation" uid="uid://el1rwt6s48ih" path="res://Animation/Cinematics/l4c3.res" id="102_s4c4r"]
@@ -2909,6 +2910,31 @@ transform = Transform3D(0.796937, -0.180854, 0.576354, 0.251807, 0.966739, -0.04
 
 [node name="PropOar4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_s4c4r")]
 transform = Transform3D(-0.688924, 0.180854, 0.701909, -0.255759, -0.966739, -0.00193732, 0.678212, -0.180854, 0.712264, 306.283, -7.55535, -67.8142)
+
+[node name="Plants" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="Cattails" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
+
+[node name="PropCattail" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.906624, 0, 0, 0, 0.906624, 0, 0, 0, 0.906624, 13.3473, -1, -55.3659)
+
+[node name="PropCattail2" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.0425732, 0, -0.999093, 0, 1, 0, 0.999093, 0, 0.0425732, 14.3179, -1, -48.6618)
+
+[node name="PropCattail5" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.844144, 0, -0.355435, 0, 0.915922, 0, 0.355435, 0, 0.844144, 14.7288, -0.956981, -46.9984)
+
+[node name="PropCattail3" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.5711, 0, 0.82088, 0, 1, 0, -0.82088, 0, -0.5711, 14.6808, -0.92056, -56.5349)
+
+[node name="PropCattail4" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.610477, 0, -0.792034, 0, 1, 0, 0.792034, 0, -0.610477, 15.2301, -0.850916, -54.8877)
+
+[node name="PropCattail6" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 304.876, -9, -52.9415)
+
+[node name="PropCattail7" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.305118, 0, -0.810208, 0, 0.865756, 0, 0.810208, 0, -0.305118, 304.573, -9, -54.5248)
 
 [node name="Spikes" type="Node3D" parent="Map"]
 

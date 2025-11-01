@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8fpsfn3g5np1"]
+
+[ext_resource type="ArrayMesh" uid="uid://dy0vc3eeefx7w" path="res://Models/prop-cattail.res" id="1_6058d"]
+[ext_resource type="Material" uid="uid://bn131u1uhy5so" path="res://Materials/Plants/PropCattailWind.tres" id="2_rft8n"]
+
+[node name="PropCattail" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("1_6058d")
+surface_material_override/0 = ExtResource("2_rft8n")
