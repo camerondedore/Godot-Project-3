@@ -15,7 +15,7 @@ quitButton = NodePath("Container/Buttons/QuitButton")
 newGameYesButton = NodePath("NewGamePopUpContainer/Buttons/YesButton")
 newGameNoButton = NodePath("NewGamePopUpContainer/Buttons/NoButton")
 newGamePopUp = NodePath("NewGamePopUpContainer")
-firstLevel = "Level1Intro"
+firstLevel = "Level1"
 
 [node name="WorldData" type="Node" parent="."]
 script = ExtResource("1_5q6nv")

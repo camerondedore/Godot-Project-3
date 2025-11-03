@@ -70,6 +70,7 @@ namespace PlayerCharacterComplex
 			lookSpeed = 5,
 			acceleration = 5,
 			jumpHeight = 2.1f,
+			gravityMultiplier = 2f,
 			ledgeGrabJumpHeight = 3,
 			startDelay = 1f,
 			fireTime = 0.5f,

@@ -22,7 +22,7 @@ namespace PlayerCharacterComplex
 
 
             // apply gravity
-            vel += EngineGravity.vector * ((float) delta);
+            vel += EngineGravity.vector * ((float) delta) * blackboard.gravityMultiplier;
 
 
             // apply velocity
@@ -43,7 +43,7 @@ namespace PlayerCharacterComplex
             var vel = blackboard.Velocity;
 
             // set vertical speed; v = (-2hg)>(1/2)
-            vel.Y = Mathf.Sqrt((-2 * blackboard.ledgeGrabJumpHeight * -EngineGravity.magnitude));
+            vel.Y = Mathf.Sqrt((-2 * blackboard.ledgeGrabJumpHeight * -EngineGravity.magnitude * blackboard.gravityMultiplier));
 
             blackboard.Velocity = vel;
 

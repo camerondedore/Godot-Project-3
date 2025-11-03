@@ -7,7 +7,7 @@
 render_priority = 0
 shader = ExtResource("1_r307g")
 shader_parameter/windAmplitude = 0.05
-shader_parameter/windSpeed = 0.1
+shader_parameter/windSpeed = 0.5
 shader_parameter/windTurbulance = 2.0
 shader_parameter/windMinHeight = -0.35
 shader_parameter/windSlope = 1.0
