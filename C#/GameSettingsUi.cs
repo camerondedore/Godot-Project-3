@@ -16,7 +16,8 @@ public partial class GameSettingsUi : Control
         sunShadowDistanceSlider,
         lodMultiplierSlider;
     [Export]
-    SpinBox mouseSensitivitySpinBox;
+    SpinBox mouseSensitivitySpinBox,
+        maxFpsSpinBox;
     [Export]
     OptionButton vsyncOptionButton;
 
@@ -28,7 +29,8 @@ public partial class GameSettingsUi : Control
     public event Action<double> LodMultiplierChanged;
     public event Action<bool> ShowFpsChanged;
     public event Action<double> MouseSensitivityChanged;
-    public event Action<int> VsyncChangedChanged;
+    public event Action<int> VsyncChanged;
+    public event Action<double> MaxFpsChanged;
 
 
 
@@ -46,6 +48,7 @@ public partial class GameSettingsUi : Control
         fpsCheckBox.ButtonPressed = GameSettings.settings.currentSettings.ShowFps;
         mouseSensitivitySpinBox.Value = GameSettings.settings.currentSettings.MouseSensitivity;
         vsyncOptionButton.Selected = GameSettings.settings.currentSettings.Vsync;
+        maxFpsSpinBox.Value = GameSettings.settings.currentSettings.MaxFps;
 
         // set up events on UI
         bloomCheckBox.Toggled += BloomCheckBoxToggle;
@@ -57,6 +60,7 @@ public partial class GameSettingsUi : Control
         fpsCheckBox.Toggled += FpsCheckBoxToggle;
         mouseSensitivitySpinBox.ValueChanged += MouseSensitivityValueChanged;
         vsyncOptionButton.ItemSelected += VsyncOptionsButtonItemSelected;
+        maxFpsSpinBox.ValueChanged += MaxFpsValueChanged;
     }
 
 
@@ -130,7 +134,15 @@ public partial class GameSettingsUi : Control
 
     void VsyncOptionsButtonItemSelected(long index)
     {
-        VsyncChangedChanged(((int)index));
+        VsyncChanged(((int)index));
         GameSettings.settings.UpdateVsync(((int)index));
+    }
+
+
+
+    void MaxFpsValueChanged(double value)
+    {
+        MaxFpsChanged(value);
+        GameSettings.settings.UpdateMaxFps(value);
     }
 }

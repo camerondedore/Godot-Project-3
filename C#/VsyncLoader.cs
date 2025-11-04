@@ -10,10 +10,12 @@ public partial class VsyncLoader : Node
 
     public override void _Ready()
     {
-        GameSettingsUi.gamesSettingsUi.VsyncChangedChanged += UpdateVsync;
+        GameSettingsUi.gamesSettingsUi.VsyncChanged += UpdateVsync;
+        GameSettingsUi.gamesSettingsUi.MaxFpsChanged += UpdateMaxFps;
 
         // load settings
         UpdateVsync(GameSettings.settings.currentSettings.Vsync);
+        UpdateMaxFps(GameSettings.settings.currentSettings.MaxFps);
     }
 
 
@@ -35,5 +37,12 @@ public partial class VsyncLoader : Node
                 DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Mailbox);
                 break;
         }
+    }
+
+
+
+    void UpdateMaxFps(double value)
+    {
+        Engine.MaxFps = Mathf.RoundToInt(value);
     }
 }

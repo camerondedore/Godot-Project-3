@@ -133,6 +133,15 @@ public partial class GameSettings : Node
 
 
 
+    public void UpdateMaxFps(double newMaxFps)
+    {
+        currentSettings.MaxFps = newMaxFps;
+
+        SaveSettings();
+    }
+
+
+
     [System.Serializable]
     public class Settings
     {
@@ -181,5 +190,10 @@ public partial class GameSettings : Node
         {
             get; set;
         } = 0;
+
+        public double MaxFps
+        {
+            get; set;
+        } = 120;
     }
 }

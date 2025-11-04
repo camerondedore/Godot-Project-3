@@ -157,7 +157,7 @@ layout_mode = 2
 layout_mode = 2
 text = "Quit To Desktop"
 
-[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "lodMultiplierSlider", "mouseSensitivitySpinBox", "vsyncOptionButton")]
+[node name="Settings" type="Control" parent="PauseMenuCanvas/PauseMenu" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "lodMultiplierSlider", "mouseSensitivitySpinBox", "maxFpsSpinBox", "vsyncOptionButton")]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -177,6 +177,7 @@ sunShadowQualitySlider = NodePath("VBoxContainer/SunShadowQualitySlider")
 sunShadowDistanceSlider = NodePath("VBoxContainer/SunShadowDistanceSlider")
 lodMultiplierSlider = NodePath("VBoxContainer/LodMultiplierSlider")
 mouseSensitivitySpinBox = NodePath("VBoxContainer/MouseSensitivitySpinBox")
+maxFpsSpinBox = NodePath("VBoxContainer/MaxFpsSpinBox")
 vsyncOptionButton = NodePath("VBoxContainer/VsyncOptionButton")
 
 [node name="Background" type="ColorRect" parent="PauseMenuCanvas/PauseMenu/Settings"]
@@ -187,9 +188,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -200.0
-offset_top = -300.0
+offset_top = -336.0
 offset_right = 200.0
-offset_bottom = 300.0
+offset_bottom = 336.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.25098)
@@ -304,6 +305,18 @@ popup/item_2/text = "Adaptive"
 popup/item_2/id = 2
 popup/item_3/text = "Mailbox"
 popup/item_3/id = 3
+
+[node name="MaxFpsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Maximum FPS"
+
+[node name="MaxFpsSpinBox" type="SpinBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+layout_mode = 2
+min_value = 24.0
+max_value = 480.0
+value = 120.0
+rounded = true
 
 [node name="Spacer" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
 layout_mode = 2
