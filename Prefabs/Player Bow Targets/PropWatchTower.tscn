@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bmpydh6hgb54y"]
+[gd_scene load_steps=54 format=3 uid="uid://bmpydh6hgb54y"]
 
 [ext_resource type="ArrayMesh" uid="uid://gavumcohof61" path="res://Models/prop-watch-tower.res" id="1_37em4"]
 [ext_resource type="Script" uid="uid://cvq860d5pst1q" path="res://C#/PlayerBow/WatchTowerTarget.cs" id="1_o76x5"]
@@ -29,6 +29,7 @@
 [ext_resource type="ArrayMesh" uid="uid://b8lubvhxgwlam" path="res://Models/prop-watch-tower-ladder.res" id="20_nfnnu"]
 [ext_resource type="ArrayMesh" uid="uid://w7cjobx8kkqx" path="res://Models/prop-watch-tower-ladder-step.res" id="21_3vqo4"]
 [ext_resource type="Script" uid="uid://bmtun66lcr0k1" path="res://C#/MeshActivable.cs" id="21_ibf7r"]
+[ext_resource type="Texture2D" uid="uid://coc5tky0b3fol" path="res://Textures/fx-painted-cross.png" id="30_2e486"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0v20a"]
 size = Vector3(3.3, 3.3, 3)
@@ -1908,3 +1909,24 @@ attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("11_k1egh")
 hitSounds = Array[AudioStream]([ExtResource("12_2xryf"), ExtResource("2_0b4li"), ExtResource("13_04b65"), ExtResource("14_i6rbm")])
 minimumSpeedSqr = 1.0
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 6.55, -1.55996)
+layers = 2
+size = Vector3(0.75, 0.3, 0.75)
+texture_albedo = ExtResource("30_2e486")
+cull_mask = 2
+
+[node name="Decal2" type="Decal" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 3.55271e-15, 1.5, 6.55, -0.00995572)
+layers = 2
+size = Vector3(0.75, 0.3, 0.75)
+texture_albedo = ExtResource("30_2e486")
+cull_mask = 2
+
+[node name="Decal3" type="Decal" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, -8.74228e-08, 4.37114e-08, 1, 1, 4.37114e-08, 8.74228e-08, -1.5, 6.55, -0.00995572)
+layers = 2
+size = Vector3(0.75, 0.3, 0.75)
+texture_albedo = ExtResource("30_2e486")
+cull_mask = 2
