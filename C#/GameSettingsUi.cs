@@ -19,7 +19,8 @@ public partial class GameSettingsUi : Control
     SpinBox mouseSensitivitySpinBox,
         maxFpsSpinBox;
     [Export]
-    OptionButton vsyncOptionButton;
+    OptionButton vsyncOptionButton,
+        windowModeOptionButton;
 
     public event Action<bool> SsaoChanged;
     public event Action<bool> BloomChanged;
@@ -31,6 +32,7 @@ public partial class GameSettingsUi : Control
     public event Action<double> MouseSensitivityChanged;
     public event Action<int> VsyncChanged;
     public event Action<double> MaxFpsChanged;
+    public event Action<int> WindowModeChanged;
 
 
 
@@ -49,6 +51,7 @@ public partial class GameSettingsUi : Control
         mouseSensitivitySpinBox.Value = GameSettings.settings.currentSettings.MouseSensitivity;
         vsyncOptionButton.Selected = GameSettings.settings.currentSettings.Vsync;
         maxFpsSpinBox.Value = GameSettings.settings.currentSettings.MaxFps;
+        windowModeOptionButton.Selected = GameSettings.settings.currentSettings.WindowMode;
 
         // set up events on UI
         bloomCheckBox.Toggled += BloomCheckBoxToggle;
@@ -61,6 +64,7 @@ public partial class GameSettingsUi : Control
         mouseSensitivitySpinBox.ValueChanged += MouseSensitivityValueChanged;
         vsyncOptionButton.ItemSelected += VsyncOptionsButtonItemSelected;
         maxFpsSpinBox.ValueChanged += MaxFpsValueChanged;
+        windowModeOptionButton.ItemSelected += WindowModeOptionsButtonItemSelected;
     }
 
 
@@ -144,5 +148,13 @@ public partial class GameSettingsUi : Control
     {
         MaxFpsChanged(value);
         GameSettings.settings.UpdateMaxFps(value);
+    }
+
+
+
+    void WindowModeOptionsButtonItemSelected(long index)
+    {
+        WindowModeChanged(((int)index));
+        GameSettings.settings.UpdateWindowMode(((int)index));
     }
 }

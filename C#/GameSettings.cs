@@ -38,7 +38,7 @@ public partial class GameSettings : Node
 		{
             System.IO.FileStream file = System.IO.File.Open(filePath, System.IO.FileMode.Open);
             currentSettings = JsonSerializer.Deserialize<Settings>(file);
-            file.Close();			
+            file.Close();		
 		}
 		else
 		{
@@ -142,6 +142,15 @@ public partial class GameSettings : Node
 
 
 
+    public void UpdateWindowMode(int newWindowMode)
+    {
+        currentSettings.WindowMode = newWindowMode;
+
+        SaveSettings();
+    }
+
+
+
     [System.Serializable]
     public class Settings
     {
@@ -195,5 +204,10 @@ public partial class GameSettings : Node
         {
             get; set;
         } = 120;
+
+        public int WindowMode
+        {
+            get; set;
+        } = 4;
     }
 }
