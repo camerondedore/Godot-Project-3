@@ -56,7 +56,7 @@ lastCheckpointButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/LastCheckpo
 settingsButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/SettingsButton")
 quitMenuButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitToMenuButton")
 quitButton = NodePath("PauseMenu/MenuButtons/VBoxContainer/QuitButton")
-settingsBackButton = NodePath("PauseMenu/Settings/VBoxContainer/BackButton")
+settingsBackButton = NodePath("PauseMenu/Settings/BackButton")
 menuButtonsContainer = NodePath("PauseMenu/MenuButtons")
 settingsContainer = NodePath("PauseMenu/Settings")
 menuLevel = "MainMenu"
@@ -169,17 +169,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("12_04fn0")
-bloomCheckBox = NodePath("VBoxContainer/BloomCheckBox")
-ssaoCheckBox = NodePath("VBoxContainer/SsaoCheckBox")
-sunShadowBlendSplitsCheckBock = NodePath("VBoxContainer/SunShadowSplitsCheckBox")
-fpsCheckBox = NodePath("VBoxContainer/FpsCheckBox")
-sunShadowQualitySlider = NodePath("VBoxContainer/SunShadowQualitySlider")
-sunShadowDistanceSlider = NodePath("VBoxContainer/SunShadowDistanceSlider")
-lodMultiplierSlider = NodePath("VBoxContainer/LodMultiplierSlider")
-mouseSensitivitySpinBox = NodePath("VBoxContainer/MouseSensitivitySpinBox")
-maxFpsSpinBox = NodePath("VBoxContainer/MaxFpsSpinBox")
-vsyncOptionButton = NodePath("VBoxContainer/VsyncOptionButton")
-windowModeOptionButton = NodePath("VBoxContainer/WindowModeOptionButton")
+bloomCheckBox = NodePath("HBoxContainer/VBoxContainer/BloomCheckBox")
+ssaoCheckBox = NodePath("HBoxContainer/VBoxContainer/SsaoCheckBox")
+sunShadowBlendSplitsCheckBock = NodePath("HBoxContainer/VBoxContainer1/SunShadowSplitsCheckBox")
+fpsCheckBox = NodePath("HBoxContainer/VBoxContainer2/FpsCheckBox")
+sunShadowQualitySlider = NodePath("HBoxContainer/VBoxContainer1/SunShadowQualitySlider")
+sunShadowDistanceSlider = NodePath("HBoxContainer/VBoxContainer1/SunShadowDistanceSlider")
+lodMultiplierSlider = NodePath("HBoxContainer/VBoxContainer/LodMultiplierSlider")
+mouseSensitivitySpinBox = NodePath("HBoxContainer/VBoxContainer/MouseSensitivitySpinBox")
+maxFpsSpinBox = NodePath("HBoxContainer/VBoxContainer2/MaxFpsSpinBox")
+vsyncOptionButton = NodePath("HBoxContainer/VBoxContainer2/VsyncOptionButton")
+windowModeOptionButton = NodePath("HBoxContainer/VBoxContainer2/WindowModeOptionButton")
 
 [node name="Background" type="ColorRect" parent="PauseMenuCanvas/PauseMenu/Settings"]
 layout_mode = 1
@@ -188,77 +188,76 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -340.0
-offset_right = 200.0
-offset_bottom = 340.0
+offset_left = -420.0
+offset_top = -200.0
+offset_right = 420.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.25098)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
+[node name="SettingsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings"]
+layout_mode = 2
+offset_left = -156.0
+offset_top = -190.0
+offset_right = 156.0
+offset_bottom = -167.0
+theme = ExtResource("14_ykato")
+text = "Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="BackButton" type="Button" parent="PauseMenuCanvas/PauseMenu/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.5
-offset_top = -236.0
-offset_right = 155.5
-offset_bottom = 236.0
+offset_left = -156.0
+offset_top = 150.0
+offset_right = 156.0
+offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Return to Menu"
 
-[node name="SettingsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.5
+offset_top = -125.5
+offset_right = 319.5
+offset_bottom = 125.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer"]
+layout_mode = 2
+
+[node name="MouseSensitivityLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
-text = "Settings"
-horizontal_alignment = 1
-uppercase = true
+text = "Mouse Sensitivity"
 
-[node name="BloomCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="MouseSensitivitySpinBox" type="SpinBox" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("14_ykato")
-text = "Bloom"
+min_value = 0.2
+max_value = 15.0
+step = 0.2
+value = 5.0
 
-[node name="SsaoCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("14_ykato")
-text = "SSAO"
-
-[node name="SunShadowsQualityLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("14_ykato")
-text = "Sun Shadow Quality"
-
-[node name="SunShadowQualitySlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("14_ykato")
-max_value = 3.0
-value = 3.0
-rounded = true
-tick_count = 4
-
-[node name="SunShadowDistanceLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("14_ykato")
-text = "Sun Shadow Distance"
-
-[node name="SunShadowDistanceSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("14_ykato")
-min_value = 10.0
-max_value = 120.0
-value = 65.0
-rounded = true
-
-[node name="LodMultiplierLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="LodMultiplierLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Level of Detail Distance"
 
-[node name="LodMultiplierSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="LodMultiplierSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 min_value = 0.25
@@ -266,34 +265,91 @@ max_value = 2.0
 step = 0.01
 value = 1.0
 
-[node name="SunShadowSplitsCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="Spacer4" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PostProcessingGroupLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = " * Post Processing *"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="BloomCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Bloom"
+
+[node name="SsaoCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "SSAO"
+
+[node name="Spacer5" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer"]
+layout_mode = 2
+text = "          "
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer"]
+layout_mode = 2
+
+[node name="ShadowsGroupLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "* Shadows *"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SunShadowsQualityLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Sun Shadow Quality"
+
+[node name="SunShadowQualitySlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+max_value = 3.0
+value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="SunShadowDistanceLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Sun Shadow Distance"
+
+[node name="SunShadowDistanceSlider" type="HSlider" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+min_value = 10.0
+max_value = 120.0
+value = 65.0
+rounded = true
+
+[node name="SunShadowSplitsCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer1"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Blend Sun Shadow Splits"
 
-[node name="FpsCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="Spacer6" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer"]
+layout_mode = 2
+text = "          "
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer"]
+layout_mode = 2
+
+[node name="WindowGroupLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
-text = "Show FPS"
+text = "* Window *"
+horizontal_alignment = 1
+uppercase = true
 
-[node name="MouseSensitivityLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("14_ykato")
-text = "Mouse Sensitivity"
-
-[node name="MouseSensitivitySpinBox" type="SpinBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-min_value = 0.2
-max_value = 15.0
-step = 0.2
-value = 5.0
-
-[node name="VsyncLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="VsyncLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Vsync"
 
-[node name="VsyncOptionButton" type="OptionButton" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="VsyncOptionButton" type="OptionButton" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 selected = 0
 item_count = 4
@@ -306,24 +362,29 @@ popup/item_2/id = 2
 popup/item_3/text = "Mailbox"
 popup/item_3/id = 3
 
-[node name="MaxFpsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="MaxFpsLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Maximum FPS"
 
-[node name="MaxFpsSpinBox" type="SpinBox" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="MaxFpsSpinBox" type="SpinBox" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 min_value = 24.0
 max_value = 480.0
 value = 120.0
 rounded = true
 
-[node name="WindowModeLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="FpsCheckBox" type="CheckBox" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("14_ykato")
+text = "Show FPS"
+
+[node name="WindowModeLabel" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("14_ykato")
 text = "Window Mode"
 
-[node name="WindowModeOptionButton" type="OptionButton" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
+[node name="WindowModeOptionButton" type="OptionButton" parent="PauseMenuCanvas/PauseMenu/Settings/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 selected = 0
 item_count = 3
@@ -333,13 +394,6 @@ popup/item_1/text = "Fullscreen"
 popup/item_1/id = 3
 popup/item_2/text = "Exclusive Fullscreen"
 popup/item_2/id = 4
-
-[node name="Spacer" type="Label" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-
-[node name="BackButton" type="Button" parent="PauseMenuCanvas/PauseMenu/Settings/VBoxContainer"]
-layout_mode = 2
-text = "Return to Menu"
 
 [node name="OverlayCanvas" type="CanvasLayer" parent="."]
 layer = 101
