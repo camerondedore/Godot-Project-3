@@ -1,24 +1,37 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1lcmox5msosd"]
+[gd_scene load_steps=11 format=3 uid="uid://d1lcmox5msosd"]
 
 [ext_resource type="Script" uid="uid://d33rhofybo2ew" path="res://C#/WorldData.cs" id="1_5q6nv"]
 [ext_resource type="Script" uid="uid://rrwvgktgblvj" path="res://C#/Menus/MainMenu.cs" id="1_xp0it"]
 [ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="2_y0h3u"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="3_468ow"]
+[ext_resource type="Script" uid="uid://7hlgo30tci7t" path="res://C#/GameSettings.cs" id="3_koqhg"]
 [ext_resource type="Script" uid="uid://dhl5e0j7i7qdn" path="res://C#/PlayerStatistics.cs" id="3_nonmj"]
 [ext_resource type="Script" uid="uid://c2l115cxmslwp" path="res://C#/PlayerInventory.cs" id="4_1gkrp"]
+[ext_resource type="Script" uid="uid://c43osx2bwmma" path="res://C#/ScreenSettingsLoader.cs" id="4_cmrfp"]
+[ext_resource type="PackedScene" uid="uid://bwauhvxocebsb" path="res://Prefabs/UI/MenuSettings.tscn" id="7_xim88"]
+[ext_resource type="PackedScene" uid="uid://c2wr85xr6wiga" path="res://Prefabs/UI/FpsOverlayCanvas.tscn" id="10_loo7a"]
 
-[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("continueButton", "newGamePopUpButton", "quitButton", "newGameYesButton", "newGameNoButton", "newGamePopUp")]
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("continueButton", "newGamePopUpButton", "quitButton", "newGameYesButton", "newGameNoButton", "controlsButton", "controlsBackButton", "settingsButton", "settingsBackButton", "newGamePopUp", "controlsPopUp", "settingsPopUp")]
 script = ExtResource("1_xp0it")
 continueButton = NodePath("Container/Buttons/ContinueButton")
 newGamePopUpButton = NodePath("Container/Buttons/NewGameButton")
 quitButton = NodePath("Container/Buttons/QuitButton")
 newGameYesButton = NodePath("NewGamePopUpContainer/Buttons/YesButton")
 newGameNoButton = NodePath("NewGamePopUpContainer/Buttons/NoButton")
+controlsButton = NodePath("Container/Buttons/ControlsButton")
+controlsBackButton = NodePath("ControlsPopupContainer/BackButton")
+settingsButton = NodePath("Container/Buttons/SettingsButton")
+settingsBackButton = NodePath("MenuSettings/BackButton")
 newGamePopUp = NodePath("NewGamePopUpContainer")
+controlsPopUp = NodePath("ControlsPopupContainer")
+settingsPopUp = NodePath("MenuSettings")
 firstLevel = "Level1"
 
 [node name="WorldData" type="Node" parent="."]
 script = ExtResource("1_5q6nv")
+
+[node name="GameSettings" type="Node" parent="."]
+script = ExtResource("3_koqhg")
 
 [node name="Statistics" type="Node" parent="."]
 script = ExtResource("3_nonmj")
@@ -63,69 +76,19 @@ text = "Claw for Claw"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="ControlsLabel" type="Label" parent="Container"]
+[node name="Buttons" type="VBoxContainer" parent="Container"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = -115.5
-offset_bottom = 115.5
+offset_left = -112.5
+offset_top = -167.0
+offset_right = 112.5
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_468ow")
-text = "movement -
-camera look / aim - 
-draw bow - 
-fire bow - 
-jump - 
-launch off ledge -
-use ranger bandage - 
-show hud - 
-pause - "
-uppercase = true
-
-[node name="Controls" type="Label" parent="Container"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1.0
-offset_top = -115.5
-offset_right = 237.0
-offset_bottom = 115.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("3_468ow")
-text = "W, A, S, D
-mouse movement
-hold left mouse button
-release left mouse button
-spacebar
-spacebar
-h
-tab
-escape"
-horizontal_alignment = 2
-uppercase = true
-
-[node name="Buttons" type="HBoxContainer" parent="Container"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -210.0
-offset_top = -120.0
-offset_right = 210.0
-offset_bottom = -75.0
-grow_horizontal = 2
-grow_vertical = 0
 alignment = 1
 
 [node name="ContinueButton" type="Button" parent="Container/Buttons"]
@@ -136,7 +99,7 @@ text = "Continue"
 [node name="EmptySpot" type="Label" parent="Container/Buttons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "blank"
+text = "     "
 
 [node name="NewGameButton" type="Button" parent="Container/Buttons"]
 layout_mode = 2
@@ -146,7 +109,27 @@ text = "New Game"
 [node name="EmptySpot2" type="Label" parent="Container/Buttons"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "blank"
+text = "     "
+
+[node name="ControlsButton" type="Button" parent="Container/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "Controls"
+
+[node name="EmptySpot3" type="Label" parent="Container/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "     "
+
+[node name="SettingsButton" type="Button" parent="Container/Buttons"]
+layout_mode = 2
+theme = ExtResource("3_468ow")
+text = "Settings"
+
+[node name="EmptySpot4" type="Label" parent="Container/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "     "
 
 [node name="QuitButton" type="Button" parent="Container/Buttons"]
 layout_mode = 2
@@ -220,3 +203,114 @@ text = "blank"
 layout_mode = 2
 theme = ExtResource("3_468ow")
 text = "  No  "
+
+[node name="ControlsPopupContainer" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ControlsPopupContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ControlsLabel" type="Label" parent="ControlsPopupContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = -115.5
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_468ow")
+text = "movement -
+camera look / aim - 
+draw bow - 
+fire bow - 
+jump - 
+launch off ledge -
+use ranger bandage - 
+show hud - 
+pause - "
+uppercase = true
+
+[node name="Controls" type="Label" parent="ControlsPopupContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -115.5
+offset_right = 237.0
+offset_bottom = 115.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_468ow")
+text = "W, A, S, D
+mouse movement
+hold left mouse button
+release left mouse button
+spacebar
+spacebar
+h
+tab
+escape"
+horizontal_alignment = 2
+uppercase = true
+
+[node name="BackButton" type="Button" parent="ControlsPopupContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = 150.0
+offset_right = 156.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return to Menu"
+
+[node name="MenuSettings" parent="." instance=ExtResource("7_xim88")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Background" parent="MenuSettings" index="0"]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+color = Color(0, 0, 0, 1)
+
+[node name="ScreenSettingsLoader" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("4_cmrfp")
+
+[node name="FpsOverlayCanvas" parent="." instance=ExtResource("10_loo7a")]
+
+[editable path="MenuSettings"]

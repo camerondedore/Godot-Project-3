@@ -71,7 +71,11 @@ public partial class GameSettingsUi : Control
 
     void BloomCheckBoxToggle(bool value)
     {
-        BloomChanged(value);
+        if(BloomChanged != null)
+        {
+            BloomChanged(value);
+        }
+
         GameSettings.settings.UpdateBloom(value);
     }
 
@@ -79,7 +83,11 @@ public partial class GameSettingsUi : Control
 
     void SsaoCheckBoxToggle(bool value)
     {
-        SsaoChanged(value);
+        if(SsaoChanged != null)
+        {
+            SsaoChanged(value);
+        }
+
         GameSettings.settings.UpdateSsao(value);
     }
 
@@ -88,7 +96,12 @@ public partial class GameSettingsUi : Control
     void sunShadowQualitySliderDragEnd(bool changed)
     {
         var newValue = Mathf.RoundToInt(sunShadowQualitySlider.Value);
-        SunShadowQualityChanged(newValue);
+
+        if(SunShadowQualityChanged != null)
+        {
+            SunShadowQualityChanged(newValue);
+        }
+
         GameSettings.settings.UpdateSunShadows(newValue);
     }
 
@@ -97,7 +110,12 @@ public partial class GameSettingsUi : Control
     void SunShadowDistanceSliderDragEnd(bool changed)
     {
         var newValue = Mathf.RoundToInt(sunShadowDistanceSlider.Value);
-        SunShadowDistanceChanged(newValue);
+
+        if(SunShadowDistanceChanged != null)
+        {
+            SunShadowDistanceChanged(newValue);
+        }
+
         GameSettings.settings.UpdateSunShadowDistance(newValue);
     }
 
@@ -105,7 +123,11 @@ public partial class GameSettingsUi : Control
 
     void SunShadowBlendSplitsCheckBoxToggle(bool value)
     {
-        SunShadowBlendSplitsChanged(value);
+        if(SunShadowBlendSplitsChanged != null)
+        {
+            SunShadowBlendSplitsChanged(value);
+        }
+
         GameSettings.settings.UpdateSunShadowBlendSplits(value);
     }
 
@@ -114,7 +136,12 @@ public partial class GameSettingsUi : Control
     void LodMultiplierSliderDragEnd(bool changed)
     {
         var newValue = lodMultiplierSlider.Value;
-        LodMultiplierChanged(newValue);
+
+        if(LodMultiplierChanged != null)
+        {
+            LodMultiplierChanged(newValue);
+        }
+
         GameSettings.settings.UpdateLodMultiplier(newValue);
     }
 
@@ -122,7 +149,11 @@ public partial class GameSettingsUi : Control
 
     void FpsCheckBoxToggle(bool value)
     {
-        ShowFpsChanged(value);
+        if(ShowFpsChanged != null)
+        {
+            ShowFpsChanged(value);
+        }
+
         GameSettings.settings.UpdateShowFps(value);
     }
 
@@ -130,7 +161,11 @@ public partial class GameSettingsUi : Control
 
     void MouseSensitivityValueChanged(double value)
     {
-        MouseSensitivityChanged(value);
+        if(MouseSensitivityChanged != null)
+        {
+            MouseSensitivityChanged(value);
+        }
+            
         GameSettings.settings.UpdateMouseSensitivity(value);
     }
 
@@ -138,7 +173,11 @@ public partial class GameSettingsUi : Control
 
     void VsyncOptionsButtonItemSelected(long index)
     {
-        VsyncChanged(((int)index));
+        if(VsyncChanged != null)
+        {
+            VsyncChanged(((int)index));
+        }
+            
         GameSettings.settings.UpdateVsync(((int)index));
     }
 
@@ -146,7 +185,11 @@ public partial class GameSettingsUi : Control
 
     void MaxFpsValueChanged(double value)
     {
-        MaxFpsChanged(value);
+        if(MaxFpsChanged != null)
+        {
+            MaxFpsChanged(value);
+        }
+            
         GameSettings.settings.UpdateMaxFps(value);
     }
 
@@ -154,7 +197,11 @@ public partial class GameSettingsUi : Control
 
     void WindowModeOptionsButtonItemSelected(long index)
     {
-        WindowModeChanged(((int)index));
+        if(WindowModeChanged != null)
+        {
+            WindowModeChanged(((int)index));
+        }
+
         GameSettings.settings.UpdateWindowMode(((int)index));
     }
 }

@@ -10,9 +10,15 @@ public partial class MainMenu : Node
         newGamePopUpButton,
         quitButton,
         newGameYesButton,
-        newGameNoButton;
+        newGameNoButton,
+        controlsButton,
+        controlsBackButton,
+        settingsButton,
+        settingsBackButton;
     [Export]
-    Control newGamePopUp;
+    Control newGamePopUp,
+        controlsPopUp,
+        settingsPopUp;
     [Export]
     string firstLevel;
 
@@ -30,6 +36,10 @@ public partial class MainMenu : Node
         quitButton.Pressed += Quit;
         newGameYesButton.Pressed += NewGame;
         newGameNoButton.Pressed += NewGameCancel;
+        controlsButton.Pressed += ViewControls;
+        controlsBackButton.Pressed += CloseControls;
+        settingsButton.Pressed += ViewSettings;
+        settingsBackButton.Pressed += CloseSettings;
 
         // check save file
         if(WorldData.data.GetSavedScene() == "")
@@ -80,6 +90,34 @@ public partial class MainMenu : Node
         quitButton.Disabled = true;
 
         levelChange.LoadLevel(WorldData.data.currentData.SavedScene);
+    }
+
+
+
+    void ViewControls()
+    {
+        controlsPopUp.Visible = true;
+    }
+
+
+
+    void CloseControls()
+    {
+        controlsPopUp.Visible = false;
+    }
+
+
+
+    void ViewSettings()
+    {
+        settingsPopUp.Visible = true;
+    }
+
+
+
+    void CloseSettings()
+    {
+        settingsPopUp.Visible = false;
     }
 
 

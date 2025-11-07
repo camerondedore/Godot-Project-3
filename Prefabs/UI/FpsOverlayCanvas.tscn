@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2wr85xr6wiga"]
+
+[ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="1_1wd5u"]
+[ext_resource type="Script" uid="uid://7wxf0l2nmswt" path="res://C#/FpsCounterUi.cs" id="2_ur2yu"]
+
+[node name="FpsOverlayCanvas" type="CanvasLayer"]
+layer = 101
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="FpsCounter" type="Label" parent="Overlay"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 10.0
+offset_right = -10.0
+grow_horizontal = 0
+theme = ExtResource("1_1wd5u")
+text = "100"
+script = ExtResource("2_ur2yu")
