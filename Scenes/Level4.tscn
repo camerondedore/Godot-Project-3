@@ -1,4 +1,4 @@
-[gd_scene load_steps=199 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=204 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -80,9 +80,11 @@
 [ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Food/PropCookingSpit.tscn" id="50_55kl8"]
 [ext_resource type="Script" uid="uid://b33odia6fga72" path="res://C#/LevelRandomAudio.cs" id="50_bn65q"]
 [ext_resource type="PackedScene" uid="uid://c6yg2qgbfd0pp" path="res://Prefabs/Small Items/PropBoat.tscn" id="50_se4y8"]
+[ext_resource type="PackedScene" uid="uid://dxrqw1fx5hdum" path="res://Prefabs/Small Items/PropFabricRoll.tscn" id="51_6vav8"]
 [ext_resource type="PackedScene" uid="uid://bku16yldk1wjl" path="res://Prefabs/Food/PropPotHanging1.tscn" id="51_djc1y"]
 [ext_resource type="AudioStream" uid="uid://cq0s8hy3dgs2s" path="res://Audio/ambience-bird-1.wav" id="51_xwbum"]
 [ext_resource type="PackedScene" uid="uid://bhgoifnu2kwve" path="res://Prefabs/Food/PropPot2.tscn" id="52_etwjg"]
+[ext_resource type="PackedScene" uid="uid://vaoqrqeyh0c5" path="res://Prefabs/Small Items/PropWoodAx.tscn" id="52_m2vmp"]
 [ext_resource type="PackedScene" uid="uid://dqhdlhgxo8ft2" path="res://Prefabs/Lumber/PropLogHollow.tscn" id="52_pjn5g"]
 [ext_resource type="AudioStream" uid="uid://cu35fufy5csmp" path="res://Audio/ambience-bird-2.wav" id="52_soqon"]
 [ext_resource type="AudioStream" uid="uid://cj02wgho4k2pf" path="res://Audio/ambience-bird-3.wav" id="53_2t68s"]
@@ -100,7 +102,10 @@
 [ext_resource type="PackedScene" uid="uid://boho7pu4wvclm" path="res://Prefabs/Player Bow Targets/PropLockbox.tscn" id="57_u3kna"]
 [ext_resource type="PackedScene" uid="uid://l5npymrpo4s1" path="res://Prefabs/Player Bow Targets/PropSwitch.tscn" id="58_4wsoj"]
 [ext_resource type="PackedScene" uid="uid://dq4c06ulfpih7" path="res://Prefabs/Player Bow Targets/SpikeTrap.tscn" id="58_bn65q"]
+[ext_resource type="PackedScene" uid="uid://bkk7hfsekt3di" path="res://Prefabs/Lumber/PropAbatis2.tscn" id="58_rhvlc"]
+[ext_resource type="PackedScene" uid="uid://vxr2ttl1f0su" path="res://Prefabs/Lumber/PropAbatis3.tscn" id="59_2yxhg"]
 [ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="59_djwtg"]
+[ext_resource type="PackedScene" uid="uid://r41mrweymrwp" path="res://Prefabs/Lumber/PropAbatis1.tscn" id="60_6vav8"]
 [ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="60_dvbic"]
 [ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="61_58iox"]
 [ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="62_58iox"]
@@ -2599,6 +2604,18 @@ transform = Transform3D(0.371141, -0.240333, -0.896936, -8.88178e-16, 0.965926, 
 [node name="PropBoat2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("50_se4y8")]
 transform = Transform3D(-0.687141, -0.166846, -0.707107, -0.235956, 0.971764, 0, 0.687141, 0.166846, -0.707107, 306.526, -7.63023, -68.5584)
 
+[node name="PropBucket2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("46_pjn5g")]
+transform = Transform3D(0.922686, 0, -0.385552, 0, 1, 0, 0.385552, 0, 0.922686, -12.084, 0.25, -32.7245)
+
+[node name="PropFabricRoll" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("51_6vav8")]
+transform = Transform3D(0.282576, 0, 0.959245, 0, 1, 0, -0.959245, 0, 0.282576, -12.628, 0.222292, -31.8837)
+
+[node name="PropFabricRoll2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("51_6vav8")]
+transform = Transform3D(-0.0340084, -0.634569, -0.772118, 0.0279229, -0.772866, 0.633954, -0.999031, 0, 0.044003, -12.0599, 0.222292, -31.5376)
+
+[node name="PropWoodAx" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("52_m2vmp")]
+transform = Transform3D(0.473339, 0.866026, -0.161092, -0.819847, 0.5, 0.279019, 0.322183, 0, 0.946677, -12.897, 0.330637, -32)
+
 [node name="Lumber" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
 [node name="Stumps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber"]
@@ -3699,6 +3716,17 @@ transform = Transform3D(0.405828, 0, -0.91395, 0, 1, 0, 0.91395, 0, 0.405828, 85
 
 [node name="PropBlackberryBushBg11" parent="Map/OccluderInstance3D/Props/BlackberryBushes" instance=ExtResource("92_q4d6v")]
 transform = Transform3D(0.0348472, 0, 0.999393, 0, 1, 0, -0.999393, 0, 0.0348472, 86.6184, -9.53674e-07, 8.40437)
+
+[node name="Lumber" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="PropAbatis2" parent="Map/OccluderInstance3D/Props/Lumber" instance=ExtResource("58_rhvlc")]
+transform = Transform3D(-0.407089, -1.10696, -0.922297, -0.446993, 1.00814, -1.0127, 1.36974, 0, -0.604586, 41.2409, 0, -51.8807)
+
+[node name="PropAbatis3" parent="Map/OccluderInstance3D/Props/Lumber" instance=ExtResource("59_2yxhg")]
+transform = Transform3D(1.006, 0.673, -0.424715, -0.713231, 1.06614, 1.19234e-08, 0.353006, 0.236156, 1.21036, 26.5359, -9.53674e-07, -47.2341)
+
+[node name="PropAbatis1" parent="Map/OccluderInstance3D/Props/Lumber" instance=ExtResource("60_6vav8")]
+transform = Transform3D(1.07643, 0.761554, -0.232626, -0.778622, 1.08857, -0.0392288, 0.166814, 0.166814, 1.318, 26.341, 2.38419e-07, -53.5965)
 
 [node name="Spikes" type="Node3D" parent="Map"]
 

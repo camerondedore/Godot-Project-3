@@ -1,18 +1,42 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dy3cdwteg2jaw"]
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://dy3cdwteg2jaw"]
 
 [ext_resource type="Shader" uid="uid://rpyjj4w3qj0r" path="res://Shaders/WaterFoam.gdshader" id="1_ykkir"]
 [ext_resource type="Texture2D" uid="uid://isnqkby68tnd" path="res://Textures/Water/water-foam-1.png" id="2_whatn"]
 [ext_resource type="Texture2D" uid="uid://cgofkdbur5wl5" path="res://Textures/Water/water-foam-2.png" id="3_fnl0c"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_07xid"]
+noise_type = 2
+fractal_octaves = 1
+cellular_return_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xv7bj"]
+noise = SubResource("FastNoiseLite_07xid")
+
+[sub_resource type="Gradient" id="Gradient_072xb"]
+offsets = PackedFloat32Array(0, 0.185874)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qj03p"]
+noise_type = 2
+fractal_octaves = 1
+cellular_return_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cganu"]
+color_ramp = SubResource("Gradient_072xb")
+noise = SubResource("FastNoiseLite_qj03p")
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_ykkir")
 shader_parameter/foamTexture1 = ExtResource("2_whatn")
 shader_parameter/foamTexture2 = ExtResource("3_fnl0c")
+shader_parameter/stochasticNoise = SubResource("NoiseTexture2D_xv7bj")
+shader_parameter/stochasticNoiseSmooth = SubResource("NoiseTexture2D_cganu")
 shader_parameter/foamColor = Color(0.870588, 0.933333, 1, 1)
 shader_parameter/uvScale = 2.0
 shader_parameter/foamEdgeDistance = 0.07
 shader_parameter/foamTextureEdgeDistance = 0.7
+shader_parameter/stochasticScale = 0.1
+shader_parameter/stochasticMagnitude = 0.75
 shader_parameter/warpTimeScale = 1.0
 shader_parameter/warpSize = 0.025
 shader_parameter/warp2Offset = 0.3
