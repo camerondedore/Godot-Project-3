@@ -15,8 +15,7 @@
 radius = 0.27
 height = 0.9
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tgqgq"]
-size = Vector3(0.75, 0.3, 1.125)
+[sub_resource type="SphereShape3D" id="SphereShape3D_fqygv"]
 
 [node name="PropLever" type="AnimatableBody3D" node_paths=PackedStringArray("linkedObjects")]
 collision_layer = 16
@@ -46,8 +45,7 @@ surface_material_override/0 = ExtResource("2_rxj3c")
 surface_material_override/1 = ExtResource("3_6vjvo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LeverBase"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
-shape = SubResource("BoxShape3D_tgqgq")
+shape = SubResource("SphereShape3D_fqygv")
 
 [node name="LeverArm" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0)
