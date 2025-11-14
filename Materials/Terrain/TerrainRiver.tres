@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://dw40xa58buwiv"]
+
+[ext_resource type="Shader" uid="uid://bpothghgrdx1g" path="res://Shaders/Terrain4x.gdshader" id="1_cnrtp"]
+[ext_resource type="Texture2D" uid="uid://duk3tcrglkyut" path="res://Textures/grass-medium.png" id="3_jd1jw"]
+[ext_resource type="Texture2D" uid="uid://d30esal0h6rdr" path="res://Textures/grass.png" id="4_vfdqy"]
+[ext_resource type="Texture2D" uid="uid://doivq01svcq0v" path="res://Textures/dirt-dark.png" id="5_5h5dh"]
+[ext_resource type="Texture2D" uid="uid://dqgneck05buse" path="res://Textures/dirt.png" id="5_fpogn"]
+[ext_resource type="Texture2D" uid="uid://7aiq7wmjkrb8" path="res://Textures/grass-medium-height.png" id="7_68tp1"]
+[ext_resource type="Texture2D" uid="uid://fcxnfq0doajg" path="res://Textures/grass-height.png" id="8_tygsw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_cnrtp")
+shader_parameter/albedoDefault = ExtResource("5_5h5dh")
+shader_parameter/albedo1 = ExtResource("5_fpogn")
+shader_parameter/albedo2 = ExtResource("3_jd1jw")
+shader_parameter/albedo3 = ExtResource("4_vfdqy")
+shader_parameter/height2 = ExtResource("7_68tp1")
+shader_parameter/height3 = ExtResource("8_tygsw")
+shader_parameter/uvScale = 0.166
+shader_parameter/blendingHighSharpness = 0.3
+shader_parameter/blendingLowSharpness = 0.7
