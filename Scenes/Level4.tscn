@@ -1,4 +1,4 @@
-[gd_scene load_steps=213 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=214 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -137,6 +137,7 @@
 [ext_resource type="PackedScene" uid="uid://c1pblv32eue8" path="res://Prefabs/Fabrications/PropBgFence2.tscn" id="89_spcr2"]
 [ext_resource type="PackedScene" uid="uid://6277v0fp047v" path="res://Prefabs/Fabrications/PropBgFenceEnd.tscn" id="90_6t2nr"]
 [ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="91_kaitc"]
+[ext_resource type="PackedScene" uid="uid://fxlokuivtcc7" path="res://Prefabs/Small Items/PropPickaxe.tscn" id="92_h75ce"]
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="92_q4d6v"]
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="92_rhvlc"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="93_2yxhg"]
@@ -3753,6 +3754,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.6
 [node name="PropTroutSkeleton5" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("77_xgahu")]
 transform = Transform3D(-4.05996e-08, -0.92881, 0.370557, 1, -4.37114e-08, 0, 1.61976e-08, 0.370557, 0.92881, 10.2555, -4.76837e-07, -4.79851)
 
+[node name="PropPickaxe" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("92_h75ce")]
+transform = Transform3D(0.689533, 0.38573, -0.61299, 0.48821, -0.872726, -4.47035e-08, -0.534972, -0.299268, -0.790091, -42.8838, 0.671719, -117.818)
+
 [node name="Rocks" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
 [node name="ToolPropPainterRocks" type="Node" parent="Map/OccluderInstance3D/Props/Rocks"]
@@ -6093,6 +6097,18 @@ skeleton = NodePath("")
 
 [node name="FxFloatingLeaves7" parent="Map/FX" instance=ExtResource("130_yvpua")]
 transform = Transform3D(0.966957, -0.254939, -1.11438e-08, -2.77544e-17, -4.37114e-08, 1, -0.254939, -0.966957, -4.2267e-08, 30.6822, -2.09, -44.4868)
+skeleton = NodePath("")
+
+[node name="FxFloatingLeaves9" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(-0.00938982, 0.999956, 4.37095e-08, 0, -4.37114e-08, 1, 0.999956, 0.00938982, 4.1044e-10, -12.836, -0.090001, -120.529)
+skeleton = NodePath("")
+
+[node name="FxFloatingLeaves10" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(-0.65928, -0.751897, -3.28665e-08, -2.77544e-17, -4.37114e-08, 1, -0.751897, 0.65928, 2.88181e-08, -9.72455, -0.09, -117.977)
+skeleton = NodePath("")
+
+[node name="FxFloatingLeaves11" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(0.550874, -0.834588, -3.6481e-08, -2.77544e-17, -4.37114e-08, 1, -0.834588, -0.550874, -2.40795e-08, -7.29319, -0.0899991, -119.93)
 skeleton = NodePath("")
 
 [node name="JumpNets" type="Node3D" parent="Map"]

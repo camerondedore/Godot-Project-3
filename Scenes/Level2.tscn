@@ -11227,10 +11227,10 @@ transform = Transform3D(-0.064725, 0.748835, 0.659588, -0.997901, -0.0472459, -0
 transform = Transform3D(0.755179, 0, -0.655519, 0, 1, 0, 0.655519, 0, 0.755179, 85.9652, 5.13693, -139.683)
 
 [node name="PropHoe" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_l1qvq")]
-transform = Transform3D(-1, 2.26267e-08, 8.44439e-08, 0, 0.965926, -0.258819, -8.74228e-08, -0.258819, -0.965926, 59.4258, 9.84278, -115.213)
+transform = Transform3D(-1, 2.26267e-08, 8.44439e-08, 0, 0.965926, -0.258819, -8.74228e-08, -0.258819, -0.965926, 59.4258, 9.98774, -115.252)
 
 [node name="PropHoe3" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_l1qvq")]
-transform = Transform3D(0.0413353, 0.258597, 0.9651, 1.42217e-08, 0.965926, -0.258819, -0.999146, 0.0106985, 0.0399262, 74.719, 9.84948, -93.9987)
+transform = Transform3D(0.0413353, 0.258597, 0.9651, 1.42217e-08, 0.965926, -0.258819, -0.999146, 0.0106985, 0.0399262, 74.767, 10.0356, -94.0345)
 
 [node name="PropHoe2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("84_l1qvq")]
 transform = Transform3D(0.111018, 0.96725, -0.228259, -0.879344, -0.011414, -0.47605, -0.463065, 0.253568, 0.849279, 65.3851, 9.56509, -109.431)

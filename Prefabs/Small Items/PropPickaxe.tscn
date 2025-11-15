@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://fxlokuivtcc7"]
+
+[ext_resource type="ArrayMesh" uid="uid://cf0nwbtbjxkpl" path="res://Models/prop-pickaxe.res" id="1_pcwjt"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_656rf"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_83v3d"]
+
+[node name="PropPickaxe" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_pcwjt")
+surface_material_override/0 = ExtResource("2_656rf")
+surface_material_override/1 = ExtResource("3_83v3d")
