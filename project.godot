@@ -127,4 +127,5 @@ player-tab={
 
 [rendering]
 
+reflections/reflection_atlas/reflection_size=128
 occlusion_culling/use_occlusion_culling=true
