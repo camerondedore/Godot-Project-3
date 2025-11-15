@@ -8,6 +8,8 @@ public partial class MobArrow : Projectile
         hitFx,
         missFx;
     [Export]
+    RayCastWaterDetector waterDetector;
+    [Export]
     float damage = 5;
 
     ArrowTrail trailFx;
@@ -27,6 +29,12 @@ public partial class MobArrow : Projectile
 
     public override void Hit(Node3D hitObject, Vector3 point, Vector3 normal)
     {
+        if(IsInstanceValid(waterDetector) == true)
+        {
+            // turn off water detector
+            waterDetector.Enabled = false;
+        }
+
         // get up vector
         var upVector = Vector3.Up;
 

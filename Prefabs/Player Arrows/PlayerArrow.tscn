@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvnogtbjot0oy"]
+[gd_scene load_steps=9 format=3 uid="uid://bvnogtbjot0oy"]
 
 [ext_resource type="Script" uid="uid://dt8xjeg0jpdmq" path="res://C#/PlayerBow/Arrow.cs" id="1_w1ybd"]
 [ext_resource type="PackedScene" uid="uid://nid7jl2fqayy" path="res://Prefabs/FX/FxArrowHit.tscn" id="2_1gik3"]
@@ -8,9 +8,8 @@
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="5_pj2yf"]
 [ext_resource type="Script" uid="uid://dsl4k8mk018my" path="res://C#/RayCastWaterDetector.cs" id="7_lkdnu"]
 [ext_resource type="PackedScene" uid="uid://bk3yuraluw3l2" path="res://Prefabs/FX/FxSplash.tscn" id="8_r7ab4"]
-[ext_resource type="PackedScene" uid="uid://bxge4kmt0o5v6" path="res://Prefabs/FX/FxWaterRipples.tscn" id="9_r7ab4"]
 
-[node name="PlayerArrow" type="RayCast3D"]
+[node name="PlayerArrow" type="RayCast3D" node_paths=PackedStringArray("waterDetector")]
 enabled = false
 exclude_parent = false
 target_position = Vector3(0, 0, -1)
@@ -18,9 +17,9 @@ collision_mask = 16979
 script = ExtResource("1_w1ybd")
 hitFx = ExtResource("2_1gik3")
 missFx = ExtResource("3_rvj48")
+waterDetector = NodePath("WaterDetector")
 speed = 20.0
 speedVariation = 0.0
-rangeSqr = 900.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
@@ -34,10 +33,10 @@ queueName = "player arrow"
 queueLimit = 30
 
 [node name="WaterDetector" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
+target_position = Vector3(0, 0, -0.5)
 collision_mask = 4096
 debug_shape_custom_color = Color(0.139294, 0.267282, 1, 1)
 debug_shape_thickness = 1
 script = ExtResource("7_lkdnu")
 splashFx = ExtResource("8_r7ab4")
-rippleFx = ExtResource("9_r7ab4")

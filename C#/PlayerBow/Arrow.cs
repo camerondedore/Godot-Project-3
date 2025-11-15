@@ -13,11 +13,19 @@ namespace PlayerBow
             missFx;
         [Export]
         ArrowTrail trailFx;
+        [Export]
+        RayCastWaterDetector waterDetector;
 
 
 
         public override void Hit(Node3D hitObject, Vector3 point, Vector3 normal)
         {
+            if(IsInstanceValid(waterDetector) == true)
+            {
+                // turn off water detector
+                waterDetector.Enabled = false;
+            }
+
             // get up vector
             var upVector = Vector3.Up;
 
