@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://df8nr14yn25aj"]
+
+[ext_resource type="Shader" uid="uid://c4cl02ijugj6r" path="res://Shaders/FxFloatingLeaves.gdshader" id="1_t0khk"]
+[ext_resource type="Texture2D" uid="uid://c4vgf78h23cpg" path="res://Textures/fx-leaves-oak-floating.png" id="2_vlwp2"]
+[ext_resource type="Texture2D" uid="uid://ccabdxg22h750" path="res://Textures/fx-leaves-oak-floating-normal.png" id="3_nucdf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_t0khk")
+shader_parameter/albedo = ExtResource("2_vlwp2")
+shader_parameter/wetColor = Color(0.77, 0.637303, 0.4081, 1)
+shader_parameter/normal = ExtResource("3_nucdf")
+shader_parameter/normalStrength = 0.1
+shader_parameter/roughness = 0.05
+shader_parameter/specular = 0.2
+shader_parameter/metallic = 0.0
+shader_parameter/alphaCuttoff = 0.65
+shader_parameter/waveMagnitude = 0.005
+shader_parameter/waveFrequency = 3.3
+shader_parameter/waveSpeed = 1.5

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cndb2xv6jpm2n"]
+
+[ext_resource type="Material" uid="uid://df8nr14yn25aj" path="res://Materials/Fx/FxFloatingLeaves.tres" id="1_avvxq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_k5xf4"]
+size = Vector2(3.5, 3.5)
+
+[node name="FxFloatingLeaves" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+layers = 2
+gi_mode = 2
+mesh = SubResource("QuadMesh_k5xf4")
+surface_material_override/0 = ExtResource("1_avvxq")

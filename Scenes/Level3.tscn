@@ -1,4 +1,4 @@
-[gd_scene load_steps=232 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=233 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/NoonEnvironment.tres" id="2_36bgp"]
@@ -209,6 +209,7 @@
 [ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="150_aro2w"]
 [ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="151_260ct"]
 [ext_resource type="PackedScene" uid="uid://degy5442rwxcl" path="res://Prefabs/Plants/PropIvyHanging.tscn" id="156_aro2w"]
+[ext_resource type="PackedScene" uid="uid://cndb2xv6jpm2n" path="res://Prefabs/FX/FxFloatingLeaves.tscn" id="178_tkh8u"]
 [ext_resource type="Animation" uid="uid://yvb7rbcrftum" path="res://Animation/Cinematics/l3c4.res" id="188_oac5w"]
 [ext_resource type="Animation" uid="uid://vee4qekv0ydn" path="res://Animation/Cinematics/l3c6.res" id="190_i41f3"]
 
@@ -11405,6 +11406,15 @@ transform = Transform3D(-0.0295267, 0, 0.999564, 0, 1, 0, -0.999564, 0, -0.02952
 
 [node name="DecalFlowersDaisyMedium12" parent="Map/FX" instance=ExtResource("104_b6ejq")]
 transform = Transform3D(0.874323, 0, 0.485344, 0, 1, 0, -0.485344, 0, 0.874323, -56.3767, 29, -239.39)
+
+[node name="FxFloatingLeaves" parent="Map/FX" instance=ExtResource("178_tkh8u")]
+transform = Transform3D(0.648798, -0.760961, -3.32627e-08, 0, -4.37114e-08, 1, -0.760961, -0.648798, -2.83598e-08, -86.169, 8.95, -125.413)
+
+[node name="FxFloatingLeaves2" parent="Map/FX" instance=ExtResource("178_tkh8u")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -78.4166, 16.85, -189.577)
+
+[node name="FxFloatingLeaves3" parent="Map/FX" instance=ExtResource("178_tkh8u")]
+transform = Transform3D(-0.325601, -0.945507, -4.13294e-08, 0, -4.37114e-08, 1, -0.945507, 0.325601, 1.42325e-08, -65.5208, 16.8645, -184.768)
 
 [node name="Audio" type="Node3D" parent="Map"]
 
