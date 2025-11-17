@@ -10,17 +10,21 @@ public partial class GameSettingsUi : Control
     CheckBox bloomCheckBox,
         ssaoCheckBox,
         sunShadowBlendSplitsCheckBock,
-        fpsCheckBox;
+        fpsCheckBox,
+        taaCheckbox,
+        fxaaCheckbox;
     [Export]
     Slider sunShadowQualitySlider,
         sunShadowDistanceSlider,
         lodMultiplierSlider;
     [Export]
     SpinBox mouseSensitivitySpinBox,
-        maxFpsSpinBox;
+        maxFpsSpinBox,
+        ssaaSpinBox;
     [Export]
     OptionButton vsyncOptionButton,
-        windowModeOptionButton;
+        windowModeOptionButton,
+        msaaOptionButton;
 
     public event Action<bool> SsaoChanged;
     public event Action<bool> BloomChanged;
@@ -33,6 +37,10 @@ public partial class GameSettingsUi : Control
     public event Action<int> VsyncChanged;
     public event Action<double> MaxFpsChanged;
     public event Action<int> WindowModeChanged;
+    public event Action<bool> TaaChanged;
+    public event Action<bool> FxaaChanged;
+    public event Action<int> MsaaChanged;
+    public event Action<double> SsaaChanged;
 
 
 
@@ -52,6 +60,10 @@ public partial class GameSettingsUi : Control
         vsyncOptionButton.Selected = GameSettings.settings.currentSettings.Vsync;
         maxFpsSpinBox.Value = GameSettings.settings.currentSettings.MaxFps;
         windowModeOptionButton.Selected = GameSettings.settings.currentSettings.WindowMode;
+        taaCheckbox.ButtonPressed = GameSettings.settings.currentSettings.Taa;
+        fxaaCheckbox.ButtonPressed = GameSettings.settings.currentSettings.Fxaa;
+        msaaOptionButton.Selected = GameSettings.settings.currentSettings.Msaa;
+        ssaaSpinBox.Value = GameSettings.settings.currentSettings.SsaaScaling;
 
         // set up events on UI
         bloomCheckBox.Toggled += BloomCheckBoxToggle;
@@ -65,6 +77,10 @@ public partial class GameSettingsUi : Control
         vsyncOptionButton.ItemSelected += VsyncOptionsButtonItemSelected;
         maxFpsSpinBox.ValueChanged += MaxFpsValueChanged;
         windowModeOptionButton.ItemSelected += WindowModeOptionsButtonItemSelected;
+        taaCheckbox.Toggled += TaaCheckBoxToggle;
+        fxaaCheckbox.Toggled += FxaaCheckBoxToggle;
+        msaaOptionButton.ItemSelected += MsaaButtonItemSelected;
+        ssaaSpinBox.ValueChanged += SsaaValueChanged;
     }
 
 
@@ -203,5 +219,53 @@ public partial class GameSettingsUi : Control
         }
 
         GameSettings.settings.UpdateWindowMode(((int)index));
+    }
+
+
+
+    void TaaCheckBoxToggle(bool value)
+    {
+        if(TaaChanged != null)
+        {
+            TaaChanged(value);
+        }
+
+        GameSettings.settings.UpdateTaa(value);
+    }
+
+
+
+    void FxaaCheckBoxToggle(bool value)
+    {
+        if(FxaaChanged != null)
+        {
+            FxaaChanged(value);
+        }
+
+        GameSettings.settings.UpdateFxaa(value);
+    }
+
+
+
+    void MsaaButtonItemSelected(long index)
+    {
+        if(MsaaChanged != null)
+        {
+            MsaaChanged(((int)index));
+        }
+
+        GameSettings.settings.UpdateMsaa(((int)index));
+    }
+
+
+
+    void SsaaValueChanged(double value)
+    {
+        if(SsaaChanged != null)
+        {
+            SsaaChanged(value);
+        }
+            
+        GameSettings.settings.UpdateSsaaScaling(value);
     }
 }

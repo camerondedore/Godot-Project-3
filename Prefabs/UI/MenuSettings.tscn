@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://brb4bltcenfll" path="res://C#/GameSettingsUi.cs" id="1_c2m7o"]
 [ext_resource type="Theme" uid="uid://dwdr2qmyewjs7" path="res://UI/PlayerHudTheme.tres" id="2_x8fhp"]
 
-[node name="MenuSettings" type="Control" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "lodMultiplierSlider", "mouseSensitivitySpinBox", "maxFpsSpinBox", "vsyncOptionButton", "windowModeOptionButton")]
+[node name="MenuSettings" type="Control" node_paths=PackedStringArray("bloomCheckBox", "ssaoCheckBox", "sunShadowBlendSplitsCheckBock", "fpsCheckBox", "taaCheckbox", "fxaaCheckbox", "sunShadowQualitySlider", "sunShadowDistanceSlider", "lodMultiplierSlider", "mouseSensitivitySpinBox", "maxFpsSpinBox", "ssaaSpinBox", "vsyncOptionButton", "windowModeOptionButton", "msaaOptionButton")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -13,17 +13,21 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c2m7o")
-bloomCheckBox = NodePath("HBoxContainer/VBoxContainer/BloomCheckBox")
-ssaoCheckBox = NodePath("HBoxContainer/VBoxContainer/SsaoCheckBox")
+bloomCheckBox = NodePath("HBoxContainer/VBoxContainer1/BloomCheckBox")
+ssaoCheckBox = NodePath("HBoxContainer/VBoxContainer1/SsaoCheckBox")
 sunShadowBlendSplitsCheckBock = NodePath("HBoxContainer/VBoxContainer1/SunShadowSplitsCheckBox")
 fpsCheckBox = NodePath("HBoxContainer/VBoxContainer2/FpsCheckBox")
-sunShadowQualitySlider = NodePath("HBoxContainer/VBoxContainer1/SunShadowQualitySlider")
-sunShadowDistanceSlider = NodePath("HBoxContainer/VBoxContainer1/SunShadowDistanceSlider")
-lodMultiplierSlider = NodePath("HBoxContainer/VBoxContainer/LodMultiplierSlider")
-mouseSensitivitySpinBox = NodePath("HBoxContainer/VBoxContainer/MouseSensitivitySpinBox")
-maxFpsSpinBox = NodePath("HBoxContainer/VBoxContainer2/MaxFpsSpinBox")
-vsyncOptionButton = NodePath("HBoxContainer/VBoxContainer2/VsyncOptionButton")
-windowModeOptionButton = NodePath("HBoxContainer/VBoxContainer2/WindowModeOptionButton")
+taaCheckbox = NodePath("HBoxContainer/VBoxContainer2/TaaCheckBox")
+fxaaCheckbox = NodePath("HBoxContainer/VBoxContainer2/FxaaCheckBox")
+sunShadowQualitySlider = NodePath("HBoxContainer/VBoxContainer1/SunShadowsQualityContainer/SunShadowQualitySlider")
+sunShadowDistanceSlider = NodePath("HBoxContainer/VBoxContainer1/SunShadowDistanceContainer/SunShadowDistanceSlider")
+lodMultiplierSlider = NodePath("HBoxContainer/VBoxContainer1/LodMultiplierContainer/LodMultiplierSlider")
+mouseSensitivitySpinBox = NodePath("HBoxContainer/VBoxContainer1/MouseSensitivityContainer/MouseSensitivitySpinBox")
+maxFpsSpinBox = NodePath("HBoxContainer/VBoxContainer2/MaxFpsContainer/MaxFpsSpinBox")
+ssaaSpinBox = NodePath("HBoxContainer/VBoxContainer2/SsaaContainer/SsaaSpinBox")
+vsyncOptionButton = NodePath("HBoxContainer/VBoxContainer2/VsyncContainer/VsyncOptionButton")
+windowModeOptionButton = NodePath("HBoxContainer/VBoxContainer2/WindowModeContainer/WindowModeOptionButton")
+msaaOptionButton = NodePath("HBoxContainer/VBoxContainer2/MsaaContainer/MsaaOptionButton")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -32,10 +36,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -200.0
-offset_right = 420.0
-offset_bottom = 200.0
+offset_left = -384.0
+offset_top = -274.0
+offset_right = 384.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.25098)
@@ -48,9 +52,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -156.0
-offset_top = -185.0
+offset_top = -262.0
 offset_right = 156.0
-offset_bottom = -162.0
+offset_bottom = -239.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_x8fhp")
@@ -66,9 +70,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -156.0
-offset_top = 150.0
+offset_top = 230.0
 offset_right = 156.0
-offset_bottom = 181.0
+offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Return to Menu"
@@ -80,128 +84,39 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.5
-offset_top = -125.5
-offset_right = 319.5
-offset_bottom = 125.5
+offset_left = -354.0
+offset_top = -224.0
+offset_right = 355.0
+offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="MouseSensitivityLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "Mouse Sensitivity"
-
-[node name="MouseSensitivitySpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-min_value = 0.2
-max_value = 15.0
-step = 0.2
-value = 5.0
-
-[node name="LodMultiplierLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "Level of Detail Distance"
-
-[node name="LodMultiplierSlider" type="HSlider" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-min_value = 0.25
-max_value = 2.0
-step = 0.01
-value = 1.0
-
-[node name="Spacer4" type="Label" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="PostProcessingGroupLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = " * Post Processing *"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="BloomCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "Bloom"
-
-[node name="SsaoCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "SSAO"
-
-[node name="Spacer5" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = "          "
-
-[node name="VBoxContainer1" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="ShadowsGroupLabel" type="Label" parent="HBoxContainer/VBoxContainer1"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "* Shadows *"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="SunShadowsQualityLabel" type="Label" parent="HBoxContainer/VBoxContainer1"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "Sun Shadow Quality"
-
-[node name="SunShadowQualitySlider" type="HSlider" parent="HBoxContainer/VBoxContainer1"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-max_value = 3.0
-value = 3.0
-rounded = true
-tick_count = 4
-
-[node name="SunShadowDistanceLabel" type="Label" parent="HBoxContainer/VBoxContainer1"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "Sun Shadow Distance"
-
-[node name="SunShadowDistanceSlider" type="HSlider" parent="HBoxContainer/VBoxContainer1"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-min_value = 10.0
-max_value = 120.0
-value = 65.0
-rounded = true
-
-[node name="SunShadowSplitsCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer1"]
-layout_mode = 2
-theme = ExtResource("2_x8fhp")
-text = "Blend Sun Shadow Splits"
-
-[node name="Spacer6" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = "          "
-
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 
 [node name="WindowGroupLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("2_x8fhp")
 text = "* Window *"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="VsyncLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="VsyncContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+
+[node name="VsyncLabel" type="Label" parent="HBoxContainer/VBoxContainer2/VsyncContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("2_x8fhp")
 text = "Vsync"
 
-[node name="VsyncOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2"]
+[node name="VsyncOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2/VsyncContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 selected = 0
 item_count = 4
 popup/item_0/text = "Disabled"
@@ -213,13 +128,19 @@ popup/item_2/id = 2
 popup/item_3/text = "Mailbox"
 popup/item_3/id = 3
 
-[node name="MaxFpsLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="MaxFpsContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+
+[node name="MaxFpsLabel" type="Label" parent="HBoxContainer/VBoxContainer2/MaxFpsContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("2_x8fhp")
 text = "Maximum FPS"
 
-[node name="MaxFpsSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer2"]
+[node name="MaxFpsSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer2/MaxFpsContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 min_value = 24.0
 max_value = 480.0
 value = 120.0
@@ -227,21 +148,225 @@ rounded = true
 
 [node name="FpsCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 theme = ExtResource("2_x8fhp")
 text = "Show FPS"
 
-[node name="WindowModeLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="WindowModeContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+
+[node name="WindowModeLabel" type="Label" parent="HBoxContainer/VBoxContainer2/WindowModeContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("2_x8fhp")
 text = "Window Mode"
 
-[node name="WindowModeOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2"]
+[node name="WindowModeOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2/WindowModeContainer"]
 layout_mode = 2
-selected = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+selected = 2
 item_count = 3
 popup/item_0/text = "Windowed"
 popup/item_0/id = 0
 popup/item_1/text = "Fullscreen"
-popup/item_1/id = 3
+popup/item_1/id = 0
 popup/item_2/text = "Exclusive Fullscreen"
-popup/item_2/id = 4
+popup/item_2/id = 0
+
+[node name="Spacer5" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "          "
+
+[node name="AntialiasingGroupLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_x8fhp")
+text = "* Antialiasing *"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="TaaCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_x8fhp")
+text = "TAA"
+
+[node name="FxaaCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_x8fhp")
+text = "FXAA"
+
+[node name="MsaaContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="MsaaLabel" type="Label" parent="HBoxContainer/VBoxContainer2/MsaaContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "MSAA"
+
+[node name="MsaaOptionButton" type="OptionButton" parent="HBoxContainer/VBoxContainer2/MsaaContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+selected = 0
+item_count = 4
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "2x"
+popup/item_1/id = 1
+popup/item_2/text = "4x"
+popup/item_2/id = 2
+popup/item_3/text = "8x"
+popup/item_3/id = 3
+
+[node name="SsaaContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="SsaaLabel" type="Label" parent="HBoxContainer/VBoxContainer2/SsaaContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "SSAA Scaling"
+
+[node name="SsaaSpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer2/SsaaContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+min_value = 1.0
+max_value = 4.0
+step = 0.1
+value = 1.0
+
+[node name="Spacer5" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "          "
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MouseSensitivityContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="MouseSensitivityLabel" type="Label" parent="HBoxContainer/VBoxContainer1/MouseSensitivityContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "Mouse Sensitivity"
+
+[node name="MouseSensitivitySpinBox" type="SpinBox" parent="HBoxContainer/VBoxContainer1/MouseSensitivityContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+min_value = 0.2
+max_value = 15.0
+step = 0.2
+value = 5.0
+
+[node name="LodMultiplierContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="LodMultiplierLabel" type="Label" parent="HBoxContainer/VBoxContainer1/LodMultiplierContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "LoD Distance"
+
+[node name="LodMultiplierSlider" type="HSlider" parent="HBoxContainer/VBoxContainer1/LodMultiplierContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_x8fhp")
+min_value = 0.25
+max_value = 2.0
+step = 0.01
+value = 1.0
+
+[node name="Spacer5" type="Label" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="ShadowsGroupLabel" type="Label" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("2_x8fhp")
+text = "* Shadows *"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SunShadowsQualityContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="SunShadowsQualityLabel" type="Label" parent="HBoxContainer/VBoxContainer1/SunShadowsQualityContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "Shadow Quality"
+
+[node name="SunShadowQualitySlider" type="HSlider" parent="HBoxContainer/VBoxContainer1/SunShadowsQualityContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_x8fhp")
+max_value = 3.0
+value = 3.0
+rounded = true
+tick_count = 4
+
+[node name="SunShadowDistanceContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="SunShadowDistanceLabel" type="Label" parent="HBoxContainer/VBoxContainer1/SunShadowDistanceContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "Shadow Distance"
+
+[node name="SunShadowDistanceSlider" type="HSlider" parent="HBoxContainer/VBoxContainer1/SunShadowDistanceContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("2_x8fhp")
+min_value = 10.0
+max_value = 120.0
+value = 65.0
+rounded = true
+
+[node name="SunShadowSplitsCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "Blend Sun Shadow Splits"
+
+[node name="Spacer4" type="Label" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+
+[node name="PostProcessingGroupLabel" type="Label" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+theme = ExtResource("2_x8fhp")
+text = " * Post Processing *"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="BloomCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "Bloom"
+
+[node name="SsaoCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_x8fhp")
+text = "SSAO"
+
+[node name="Spacer6" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "          "

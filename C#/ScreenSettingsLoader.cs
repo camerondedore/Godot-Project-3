@@ -13,11 +13,19 @@ public partial class ScreenSettingsLoader : Node
         GameSettingsUi.gamesSettingsUi.VsyncChanged += UpdateVsync;
         GameSettingsUi.gamesSettingsUi.MaxFpsChanged += UpdateMaxFps;
         GameSettingsUi.gamesSettingsUi.WindowModeChanged += UpdateWindowMode;
+        GameSettingsUi.gamesSettingsUi.TaaChanged += UpdateTaa;
+        GameSettingsUi.gamesSettingsUi.FxaaChanged += UpdateFxaa;
+        GameSettingsUi.gamesSettingsUi.MsaaChanged += UpdateMsaa;
+        GameSettingsUi.gamesSettingsUi.SsaaChanged += UpdateSsaaScaling;
 
         // load settings
         UpdateVsync(GameSettings.settings.currentSettings.Vsync);
         UpdateMaxFps(GameSettings.settings.currentSettings.MaxFps);
         UpdateWindowMode(GameSettings.settings.currentSettings.WindowMode);
+        UpdateTaa(GameSettings.settings.currentSettings.Taa);
+        UpdateFxaa(GameSettings.settings.currentSettings.Fxaa);
+        UpdateMsaa(GameSettings.settings.currentSettings.Msaa);
+        UpdateSsaaScaling(GameSettings.settings.currentSettings.SsaaScaling);
     }
 
 
@@ -66,4 +74,54 @@ public partial class ScreenSettingsLoader : Node
         }
         
     }
+
+
+
+    void UpdateTaa(bool value)
+    {
+        GetViewport().UseTaa = value;
+    }
+
+
+
+    void UpdateFxaa(bool value)
+    {
+        if(value == true)
+        {
+            GetViewport().ScreenSpaceAA = Viewport.ScreenSpaceAAEnum.Fxaa;
+        }
+        else
+        {
+            GetViewport().ScreenSpaceAA = Viewport.ScreenSpaceAAEnum.Disabled;
+        }
+    }
+
+
+
+    void UpdateMsaa(int value)
+    {
+        switch(value)
+        {
+            case 0:
+                GetViewport().Msaa3D = Viewport.Msaa.Disabled;
+                break;
+            case 1:
+                GetViewport().Msaa3D = Viewport.Msaa.Msaa2X;
+                break;
+            case 2:
+                GetViewport().Msaa3D = Viewport.Msaa.Msaa4X;
+                break;
+            case 3:
+                GetViewport().Msaa3D = Viewport.Msaa.Msaa8X;
+                break;
+        }
+    }
+
+
+
+    void UpdateSsaaScaling(double value)
+    {
+        GetViewport().Scaling3DScale = Mathf.Clamp(((float)value), 1.0f, 4.0f);
+    }
+
 }

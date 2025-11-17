@@ -151,6 +151,42 @@ public partial class GameSettings : Node
 
 
 
+    public void UpdateTaa(bool newTaa)
+    {
+        currentSettings.Taa = newTaa;
+
+        SaveSettings();
+    }
+
+
+
+    public void UpdateFxaa(bool newFxaa)
+    {
+        currentSettings.Fxaa = newFxaa;
+
+        SaveSettings();
+    }
+
+
+
+    public void UpdateMsaa(int newMsaa)
+    {
+        currentSettings.Msaa = newMsaa;
+
+        SaveSettings();
+    }
+
+
+
+    public void UpdateSsaaScaling(double newSaaScaling)
+    {
+        currentSettings.SsaaScaling = newSaaScaling;
+
+        SaveSettings();
+    }
+
+
+
     [System.Serializable]
     public class Settings
     {
@@ -208,6 +244,26 @@ public partial class GameSettings : Node
         public int WindowMode
         {
             get; set;
-        } = 4;
+        } = 2;
+
+        public bool Taa
+        {
+            get; set;
+        } = false;
+
+        public bool Fxaa
+        {
+            get; set;
+        } = false;
+
+        public int Msaa
+        {
+            get; set;
+        } = 0;
+
+        public double SsaaScaling
+        {
+            get; set;
+        } = 1.0;
     }
 }
