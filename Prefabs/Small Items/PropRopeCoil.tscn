@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3s7dteg2e3u2"]
+
+[ext_resource type="ArrayMesh" uid="uid://cxvfv3qrsu0jx" path="res://Models/prop-rope-coil.res" id="1_682cn"]
+[ext_resource type="Material" uid="uid://jqraxvi0r28x" path="res://Materials/Rope.tres" id="2_0k4ce"]
+
+[node name="PropRopeCoil" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_682cn")
+surface_material_override/0 = ExtResource("2_0k4ce")

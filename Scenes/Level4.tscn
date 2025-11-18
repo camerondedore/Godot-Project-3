@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=215 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -141,6 +141,7 @@
 [ext_resource type="PackedScene" uid="uid://c7ytuc8otu665" path="res://Prefabs/Plants/PropBlackberryBushBg.tscn" id="92_q4d6v"]
 [ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="92_rhvlc"]
 [ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="93_2yxhg"]
+[ext_resource type="PackedScene" uid="uid://b3s7dteg2e3u2" path="res://Prefabs/Small Items/PropRopeCoil.tscn" id="93_25yf4"]
 [ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="94_6vav8"]
 [ext_resource type="PackedScene" uid="uid://btd0dajjds3g0" path="res://Prefabs/Plants/PropMushroom.tscn" id="95_m2vmp"]
 [ext_resource type="PackedScene" uid="uid://q5ovbwr3uy8l" path="res://Prefabs/Plants/PropTulip1.tscn" id="96_cmkmb"]
@@ -3756,6 +3757,9 @@ transform = Transform3D(-4.05996e-08, -0.92881, 0.370557, 1, -4.37114e-08, 0, 1.
 
 [node name="PropPickaxe" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("92_h75ce")]
 transform = Transform3D(0.689533, 0.38573, -0.61299, 0.48821, -0.872726, -4.47035e-08, -0.534972, -0.299268, -0.790091, -42.8838, 0.671719, -117.818)
+
+[node name="PropRopeCoil" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("93_25yf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.5, 0, -31)
 
 [node name="Rocks" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

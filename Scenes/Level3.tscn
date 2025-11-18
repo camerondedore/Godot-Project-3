@@ -1,4 +1,4 @@
-[gd_scene load_steps=233 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=234 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/NoonEnvironment.tres" id="2_36bgp"]
@@ -191,6 +191,7 @@
 [ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="121_2vvni"]
 [ext_resource type="Script" uid="uid://dl3wj7r2626ye" path="res://C#/Common/TriggerDead.cs" id="121_igisw"]
 [ext_resource type="PackedScene" uid="uid://0dl6mcdd5sim" path="res://Prefabs/Food/PropKitchenKnife1.tscn" id="121_ra1ms"]
+[ext_resource type="PackedScene" uid="uid://b3s7dteg2e3u2" path="res://Prefabs/Small Items/PropRopeCoil.tscn" id="121_t2l07"]
 [ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="122_7625h"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="127_fg2b4"]
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="131_cw7uk"]
@@ -4055,6 +4056,12 @@ transform = Transform3D(0.551374, 0.362759, 0.751261, -0.244949, 0.931217, -0.26
 
 [node name="PropRatRibcage" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("117_087pg")]
 transform = Transform3D(0.285202, 0.379427, -0.880168, -0.867638, 0.492404, -0.0688735, 0.407266, 0.783309, 0.46964, -86.3392, 16.9314, -160.615)
+
+[node name="PropRopeCoil" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("121_t2l07")]
+transform = Transform3D(-0.0801989, 0, -0.996779, 0, 1, 0, 0.996779, 0, -0.0801989, -78, 12, -95)
+
+[node name="PropRopeCoil2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("121_t2l07")]
+transform = Transform3D(0.363268, 0, 0.931685, 0, 1, 0, -0.931685, 0, 0.363268, -15.8334, 6, -100.061)
 
 [node name="Firewood" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
