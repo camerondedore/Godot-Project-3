@@ -10,11 +10,13 @@ public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatabl
 	AudioStream openingSound,
 		openSound;
 	[Export]
-	float speed = 1;
+	float speed = 1f,
+		maxOffset = 3.8f;
 	[Export]
-	bool open;
+	bool open; // if true on start, will make platform start open
 
 	AudioTools3d audio;
+	Node3D baseNode;
 	Vector3 closedPosition,
 		openPosition,
 		startPostition,
@@ -27,9 +29,15 @@ public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatabl
 	{
 		// get nodes
 		audio = (AudioTools3d) GetNode("Audio");
+		baseNode = (Node3D) GetNode("Base");
 		
 		closedPosition = GlobalPosition;
 		openPosition = GlobalPosition + openOffset;
+
+		baseNode.TopLevel = true;
+
+		// move baseNode
+		baseNode.GlobalPosition = baseNode.GlobalPosition + Vector3.Up * maxOffset;
 
 		if(open == true)
 		{
