@@ -36,7 +36,8 @@ public partial class MobBrownRatStateCooldown: MobBrownRatState
 
         // animation
         blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
-        //blackboard.animStateMachinePlayback.Next();
+        // randomize animation cursor
+        blackboard.animation.Advance(GD.Randf() * blackboard.idleAnimationTime * 0.9);
     }
 
 

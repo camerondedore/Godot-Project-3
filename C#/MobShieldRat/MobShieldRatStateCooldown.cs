@@ -39,11 +39,15 @@ public partial class MobShieldRatStateCooldown : MobShieldRatState
         {
             // play shield animation
             blackboard.animation.Play("shield-rat-patrol-wait-shield");
+            // randomize animation cursor
+            blackboard.animation.Advance(GD.Randf() * blackboard.idleAnimationTime * 0.9);
         }
         else
         {
             // play animation without shield
             blackboard.animation.Play("shield-rat-patrol-wait");
+            // randomize animation cursor
+            blackboard.animation.Advance(GD.Randf() * blackboard.idleAnimationTime * 0.9);
         }
 
         // clear head look target

@@ -41,9 +41,10 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
     public Vector3 startPosition,
         dirToNextPathPoint,
         avoidanceDir;
-    public double aimTime = 0.5f,
-        fireTime = 1.2f,
-        reactTime = 0.4f;
+    public double aimTime = 0.5,
+        fireTime = 1.2,
+        reactTime = 0.4,
+        idleAnimationTime = 4.0;
     public float moveRecalculatePathRange = 3,
         attackRangeMinSqr = 225,
         attackRangeMaxSqr = 400,

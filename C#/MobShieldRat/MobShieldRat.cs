@@ -45,7 +45,8 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
     public double swingTime = 0.7,
         attackDamageTime = 0.3,
         reactTime = 0.4,
-        shieldBreakTime = 0.66;
+        shieldBreakTime = 0.66,
+        idleAnimationTime = 3.66;
     public float moveRecalculatePathRange = 0.5f,
         attackRangeSqr = 3.1f,
         damageRangeSqr = 5.1f,

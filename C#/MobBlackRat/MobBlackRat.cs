@@ -44,7 +44,8 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
         avoidanceDir;
     public double swingTime = 0.5,
         attackDamageTime = 0.3,
-        reactTime = 0.4;
+        reactTime = 0.4,
+        idleAnimationTime = 4.0;
     public float moveRecalculatePathRange = 0.5f,
         attackRangeSqr = 3.1f,
         damageRangeSqr = 5.1f,
