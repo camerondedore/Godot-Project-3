@@ -45,7 +45,7 @@ surface_material_override/0 = ExtResource("2_la8rg")
 surface_material_override/1 = ExtResource("3_swrd1")
 
 [node name="LogMesh3" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 8.74152e-08, 1.15044e-09, 0, -0.0131594, 0.999913, 8.74228e-08, 0.999913, 0.0131594, -0.518169, 0.250988, 0)
+transform = Transform3D(0.916412, 0.0052668, -0.400202, -0.400132, -0.0108908, -0.916393, -0.00918498, 0.999927, -0.00787303, -0.518169, 0.250988, 0)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("5_admk7")
