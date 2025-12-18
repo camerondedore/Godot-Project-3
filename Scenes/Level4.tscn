@@ -1,4 +1,4 @@
-[gd_scene load_steps=287 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=288 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -220,6 +220,7 @@
 [ext_resource type="PackedScene" uid="uid://bvo5ku6no5bnj" path="res://Prefabs/Small Items/PropLantern.tscn" id="132_2o1ig"]
 [ext_resource type="PackedScene" uid="uid://b1e6hhtb3arh8" path="res://Prefabs/Small Items/PropBungMallet.tscn" id="133_j3prv"]
 [ext_resource type="PackedScene" uid="uid://cennawrc312vk" path="res://Prefabs/Small Items/PropMortarPestle.tscn" id="133_y6n6b"]
+[ext_resource type="PackedScene" uid="uid://bcjphv6mrcddg" path="res://Prefabs/Small Items/PropSaw.tscn" id="134_pemw7"]
 [ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="136_sw6ju"]
 [ext_resource type="PackedScene" uid="uid://bwf3pgemn8xm0" path="res://Prefabs/Food/PropBread2.tscn" id="137_tm3n4"]
 [ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="143_hmis0"]
@@ -6426,6 +6427,12 @@ transform = Transform3D(0.181909, 0, -0.983315, 0, 1, 0, 0.983315, 0, 0.181909, 
 
 [node name="PropFishingPole2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("71_u3kna")]
 transform = Transform3D(1, 0, 0, 0, 0.965249, 0.26133, 0, -0.26133, 0.965249, 303.379, -2.51937, -125.398)
+
+[node name="PropSaw" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("134_pemw7")]
+transform = Transform3D(0.642392, 0.113317, -0.757952, -0.746428, -0.131669, -0.65231, -0.173717, 0.984796, -4.30468e-08, 296.361, -6.81579, -87.2659)
+
+[node name="PropSaw2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("134_pemw7")]
+transform = Transform3D(0.569466, -0.822015, 3.59314e-08, 8.37539e-16, -4.37114e-08, -1, 0.822015, 0.569466, -2.48922e-08, 247.853, -2.97971, -82.5072)
 
 [node name="Weapons" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

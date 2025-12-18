@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcjphv6mrcddg"]
+
+[ext_resource type="ArrayMesh" uid="uid://xyyvfx7w04xn" path="res://Models/prop-saw.res" id="1_woci7"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_so7qx"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="3_4otkn"]
+
+[node name="PropSaw" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_woci7")
+surface_material_override/0 = ExtResource("2_so7qx")
+surface_material_override/1 = ExtResource("3_4otkn")

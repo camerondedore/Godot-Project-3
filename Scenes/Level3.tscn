@@ -1,4 +1,4 @@
-[gd_scene load_steps=234 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=235 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/NoonEnvironment.tres" id="2_36bgp"]
@@ -193,6 +193,7 @@
 [ext_resource type="PackedScene" uid="uid://0dl6mcdd5sim" path="res://Prefabs/Food/PropKitchenKnife1.tscn" id="121_ra1ms"]
 [ext_resource type="PackedScene" uid="uid://b3s7dteg2e3u2" path="res://Prefabs/Small Items/PropRopeCoil.tscn" id="121_t2l07"]
 [ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="122_7625h"]
+[ext_resource type="PackedScene" uid="uid://bcjphv6mrcddg" path="res://Prefabs/Small Items/PropSaw.tscn" id="122_vb4lq"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="127_fg2b4"]
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="131_cw7uk"]
 [ext_resource type="PackedScene" uid="uid://bawlxo6vs8yl7" path="res://Prefabs/Player Bow Targets/PropSpiderwebStretched.tscn" id="132_o8ssd"]
@@ -4062,6 +4063,9 @@ transform = Transform3D(-0.0801989, 0, -0.996779, 0, 1, 0, 0.996779, 0, -0.08019
 
 [node name="PropRopeCoil2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("121_t2l07")]
 transform = Transform3D(0.363268, 0, 0.931685, 0, 1, 0, -0.931685, 0, 0.363268, -15.8334, 6, -100.061)
+
+[node name="PropSaw" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("122_vb4lq")]
+transform = Transform3D(0.803078, 0.595875, -2.60465e-08, 0, -4.37114e-08, -1, -0.595875, 0.803078, -3.51036e-08, -15.3661, 6.03856, -97.0351)
 
 [node name="Firewood" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
