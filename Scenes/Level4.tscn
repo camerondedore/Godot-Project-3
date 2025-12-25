@@ -1,4 +1,4 @@
-[gd_scene load_steps=290 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=291 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -258,6 +258,9 @@ size = Vector3(25, 10, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2o1ig"]
 size = Vector3(4, 4, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c0ki"]
+size = Vector3(5, 4, 2.5)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mdpuq"]
 size = Vector2(65, 30)
@@ -4185,6 +4188,15 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall8"]
 shape = SubResource("BoxShape3D_2o1ig")
+debug_color = Color(0.6, 1, 0, 1)
+
+[node name="InvisibleWall9" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.5, 4.3, -113.3)
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall9"]
+shape = SubResource("BoxShape3D_4c0ki")
 debug_color = Color(0.6, 1, 0, 1)
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
@@ -9365,6 +9377,30 @@ transform = Transform3D(-0.270055, 0, -1.44303, 0, 1.46808, 0, 1.44303, 0, -0.27
 
 [node name="PropCattail67" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
 transform = Transform3D(-1.28614, 0, -0.707881, 0, 1.46808, 0, 0.707881, 0, -1.28614, 308.773, -8, -138.761)
+
+[node name="PropCattail68" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(1.45114, 0, 0, 0, 1.45114, 0, 0, 0, 1.45114, 392.016, -5, -74.8335)
+
+[node name="PropCattail69" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-0.72557, 0, 1.25672, 0, 1.45114, 0, -1.25672, 0, -0.72557, 394.667, -5, -75.7828)
+
+[node name="PropCattail70" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(1.39631, 0, 0.395141, 0, 1.45114, 0, -0.395141, 0, 1.39631, 395.707, -5, -69.7667)
+
+[node name="PropCattail71" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.455503, 0, 1.3778, 0, 1.45114, 0, -1.3778, 0, 0.455503, 395.284, -5, -84.4817)
+
+[node name="PropCattail72" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(1.41029, 0, 0.341889, 0, 1.45114, 0, -0.341889, 0, 1.41029, 392.727, -5, -89.4184)
+
+[node name="PropCattail73" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(0.600049, 0, -1.32127, 0, 1.45114, 0, 1.32127, 0, 0.600049, 395.317, -5, -92.329)
+
+[node name="PropCattail74" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-1.19365, 0, -0.82523, 0, 1.45114, 0, 0.82523, 0, -1.19365, 395.431, -5, -100.196)
+
+[node name="PropCattail75" parent="Map/OccluderInstance3D/Props/Plants/Cattails" instance=ExtResource("85_ubp24")]
+transform = Transform3D(-1.296, 0, 0.65284, 0, 1.45114, 0, -0.65284, 0, -1.296, 393.876, -5, -63.4111)
 
 [node name="Ivy" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
 
@@ -16279,6 +16315,18 @@ transform = Transform3D(0.0519348, 0.99865, 4.36524e-08, 3.70581e-15, -4.37114e-
 
 [node name="FxFloatingLeaves25" parent="Map/FX" instance=ExtResource("130_yvpua")]
 transform = Transform3D(0.750757, 0.660579, 2.88748e-08, 3.5213e-15, -4.37114e-08, 1, 0.660579, -0.750757, -3.28166e-08, 292.544, -7.09, -144.472)
+
+[node name="FxFloatingLeaves26" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(-0.140314, 0.990107, 4.32789e-08, 5.86815e-15, -4.37114e-08, 1, 0.990107, 0.140314, 6.13332e-09, 392.458, -4.09, -84.1978)
+
+[node name="FxFloatingLeaves27" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(0.651636, -0.758532, -3.31565e-08, 6.30784e-15, -4.37114e-08, 1, -0.758532, -0.651636, -2.84839e-08, 393.756, -4.09, -86.7711)
+
+[node name="FxFloatingLeaves28" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(0.990478, 0.13767, 6.01774e-09, 6.30784e-15, -4.37114e-08, 1, 0.13767, -0.990478, -4.32951e-08, 394.828, -4.09, -73.1918)
+
+[node name="FxFloatingLeaves29" parent="Map/FX" instance=ExtResource("130_yvpua")]
+transform = Transform3D(0.384263, 0.923224, 4.03554e-08, 5.86798e-15, -4.37114e-08, 1, 0.923224, -0.384263, -1.67966e-08, 392.428, -4.09, -66.3465)
 
 [node name="JumpNets" type="Node3D" parent="Map"]
 
