@@ -2041,6 +2041,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall"]
 shape = SubResource("BoxShape3D_qo1c8")
+debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="InvisibleWall2" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 31.5, 4.88086, -40.4)
@@ -2049,6 +2050,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall2"]
 shape = SubResource("BoxShape3D_qo1c8")
+debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="InvisibleWallLevel2" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 73.4, 4.88086, 83.2)
@@ -2057,6 +2059,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel2"]
 shape = SubResource("BoxShape3D_tdijt")
+debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="InvisibleWallLevel3" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 50.4, 4.88086, -71.9)
@@ -2065,6 +2068,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel3"]
 shape = SubResource("BoxShape3D_lhqk4")
+debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="InvisibleWallLevel4" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -7.2, 4.88086, -53.9)
@@ -2073,6 +2077,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel4"]
 shape = SubResource("BoxShape3D_bqh36")
+debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
 
