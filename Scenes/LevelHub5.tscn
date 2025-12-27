@@ -397,23 +397,8 @@ transform = Transform3D(0.283714, -0.94032, -0.187895, 2.98023e-08, 0.195946, -0
 [node name="PropTable3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Furniture" index="13" instance=ExtResource("15_teuf8")]
 transform = Transform3D(0.923873, -0.377615, 0.0621753, 0, 0.162465, 0.986714, -0.3827, -0.911599, 0.150097, 34.9586, 0.59315, -26.0024)
 
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall" index="0"]
-debug_color = Color(0.68, 0.396667, 0, 1)
-
 [node name="InvisibleWall2" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls" index="1"]
 transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 31.5, -13.1191, -40.4)
-
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWall2" index="0"]
-debug_color = Color(0.68, 0.396667, 0, 1)
-
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel2" index="0"]
-debug_color = Color(0.68, 0.396667, 0, 1)
-
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel3" index="0"]
-debug_color = Color(0.68, 0.396667, 0, 1)
-
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/InvisibleWalls/InvisibleWallLevel4" index="0"]
-debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="WeaponSpear4" parent="Map/OccluderInstance3D/Props/Weapons" index="12" instance=ExtResource("16_w3l4h")]
 transform = Transform3D(-0.139677, 0.885061, 0.444025, -0.953916, 3.53764e-08, -0.300073, -0.265583, -0.465475, 0.844274, 26.184, 0.0306305, -32.051)
