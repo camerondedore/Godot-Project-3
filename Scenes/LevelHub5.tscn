@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://mvabef7jyutn"]
+[gd_scene load_steps=29 format=3 uid="uid://mvabef7jyutn"]
 
 [ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_5w6e3"]
 [ext_resource type="Environment" uid="uid://cb100k1gvpgrg" path="res://Environments/DuskEnvironment.tres" id="2_qcvom"]
@@ -36,6 +36,9 @@ agent_max_slope = 30.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w2tq5"]
 size = Vector3(2.3, 2.05, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_55vkk"]
+size = Vector3(12, 5, 1)
 
 [node name="LevelHub5" instance=ExtResource("1_5w6e3")]
 
@@ -443,6 +446,13 @@ transform = Transform3D(0.785182, 0, 0.619239, 0, 0.999991, 0, -0.619239, 0, 0.7
 
 [node name="FishSchool2" parent="Map/Fish/FishSchoolPath2" index="0"]
 transform = Transform3D(0.103799, 0, -0.99458, 0, 0.999991, 0, 0.99458, 0, 0.103799, -6.95197, 0, -28.0066)
+
+[node name="LevelChangeTriggerArea" parent="Map" index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.5, 2.5, -46)
+nextLevel = "Level5"
+
+[node name="CollisionShape3D" parent="Map/LevelChangeTriggerArea" index="0"]
+shape = SubResource("BoxShape3D_55vkk")
 
 [node name="NpcVoleGuard" parent="Npcs" index="4" instance=ExtResource("20_1hxor")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 35, 0.9, -25)
