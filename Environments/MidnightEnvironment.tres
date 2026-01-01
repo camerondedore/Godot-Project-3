@@ -22,7 +22,6 @@ glow_levels/3 = 0.25
 glow_levels/4 = 0.1
 glow_levels/5 = 0.0
 glow_blend_mode = 0
-fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.054902, 0.0745098, 0.129412, 1)
 fog_light_energy = 0.5
