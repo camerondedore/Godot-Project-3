@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgapy1clrba3s"]
+[gd_scene load_steps=18 format=3 uid="uid://bgapy1clrba3s"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_to3se"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_213sf"]
@@ -8,10 +8,29 @@
 [ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="5_xnl3v"]
 [ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="6_2xldr"]
 [ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="8_4kscp"]
+[ext_resource type="ArrayMesh" uid="uid://bisaepta1i4v8" path="res://Models/level-5.res" id="9_0hflc"]
+[ext_resource type="ArrayOccluder3D" uid="uid://btehre3ntfee4" path="res://Scenes/Occlusion/Level5.occ" id="9_7x805"]
+[ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="10_7x805"]
+[ext_resource type="ArrayMesh" uid="uid://dnpiaeiy6e787" path="res://Models/level-5-tree-wall.res" id="11_bmpu8"]
+[ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="12_c4srv"]
+[ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="13_040y1"]
+[ext_resource type="Material" uid="uid://bqwjfubcy2oia" path="res://Materials/Background/BlackberryBushWall.tres" id="14_u7l1f"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_7dtqy"]
+vertices = PackedVector3Array(-3, 0.5, -3, -3, 0.5, 3, 3, 0.5, 3, 3, 0.5, -3)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 4278192145
+agent_height = 2.0
+agent_max_slope = 30.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fi0mo"]
+data = PackedVector3Array(3.4999, 0, -0.0001, -0.0001, 0, -3.5, 3.5, 0, -3.5, 3.4999, 0, -0.0001, -0.0001, 0, -0.0001, -0.0001, 0, -3.5, -0.0001, 0, -0.0001, -3.5, 0, -3.5, -0.0001, 0, -3.5, 3.4999, 0, 3.5, -0.0001, 0, -0.0001, 3.4999, 0, -0.0001, -0.0001, 0, -0.0001, -3.5, 0, -0.0001, -3.5, 0, -3.5, 3.4999, 0, 3.5, -0.0001, 0, 3.5, -0.0001, 0, -0.0001, -0.0001, 0, 3.5, -3.5, 0, -0.0001, -0.0001, 0, -0.0001, -0.0001, 0, 3.5, -3.5, 0, 3.5, -3.5, 0, -0.0001)
 
 [node name="LevelTemplate" type="Node3D"]
 
 [node name="GlobalCamera" parent="." instance=ExtResource("1_to3se")]
+transform = Transform3D(0.459457, 0.11366, 0.880898, 0, 0.991779, -0.127966, -0.8882, 0.058795, 0.455679, 4.2512, 2.82332, 3.93628)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("2_rbgxu")
@@ -41,16 +60,28 @@ directional_shadow_blend_splits = true
 script = ExtResource("8_4kscp")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
+occluder = ExtResource("9_7x805")
+bake_mask = 4293918721
 metadata/_edit_lock_ = true
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
+navigation_mesh = SubResource("NavigationMesh_7dtqy")
 metadata/_edit_lock_ = true
 
 [node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
 [node name="GroundMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+mesh = ExtResource("9_0hflc")
+surface_material_override/0 = ExtResource("10_7x805")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+shape = SubResource("ConcavePolygonShape3D_fi0mo")
 
 [node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+mesh = ExtResource("11_bmpu8")
+surface_material_override/0 = ExtResource("12_c4srv")
+surface_material_override/1 = ExtResource("13_040y1")
+surface_material_override/2 = ExtResource("14_u7l1f")
 
 [node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
