@@ -1,9 +1,9 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dooskg4otcsks"]
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://d24gf5qbf6hvl"]
 
-[ext_resource type="Material" uid="uid://clg2083mvg0hb" path="res://Materials/Skys/SkyboxMidnight.tres" id="1_le68g"]
+[ext_resource type="Material" uid="uid://uoyg5iuwvi4q" path="res://Materials/Skys/SkyboxNight2.tres" id="1_vaa86"]
 
 [sub_resource type="Sky" id="Sky_dgcc7"]
-sky_material = ExtResource("1_le68g")
+sky_material = ExtResource("1_vaa86")
 
 [resource]
 background_mode = 2

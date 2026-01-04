@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_ocqam"]
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/AfternoonEnvironment.tres" id="2_qu12i"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_xpg7x"]
-[ext_resource type="Environment" uid="uid://dooskg4otcsks" path="res://Environments/MidnightEnvironment.tres" id="4_m6gf6"]
+[ext_resource type="Environment" uid="uid://dooskg4otcsks" path="res://Environments/Night1Environment.tres" id="4_m6gf6"]
 [ext_resource type="Environment" uid="uid://c6tojc0ben8yf" path="res://Environments/DawnEnvironment.tres" id="5_jmhfr"]
 [ext_resource type="Environment" uid="uid://c1koe77yi8evg" path="res://Environments/AfternoonCloudsEnvironment.tres" id="6_k7iy3"]
 [ext_resource type="Script" uid="uid://clqt84p2g2lla" path="res://C#/HubControl.cs" id="7_y14ba"]

@@ -1,0 +1,33 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://dooskg4otcsks"]
+
+[ext_resource type="Material" uid="uid://clg2083mvg0hb" path="res://Materials/Skys/SkyboxNight1.tres" id="1_le68g"]
+
+[sub_resource type="Sky" id="Sky_dgcc7"]
+sky_material = ExtResource("1_le68g")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_dgcc7")
+sky_rotation = Vector3(0, -1.5708, 0)
+ambient_light_source = 3
+ambient_light_color = Color(0.2385, 0.277275, 0.45, 1)
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.8
+ssao_enabled = true
+ssao_radius = 0.5
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 0.5
+glow_levels/3 = 0.25
+glow_levels/4 = 0.1
+glow_levels/5 = 0.0
+glow_blend_mode = 0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.054902, 0.0745098, 0.129412, 1)
+fog_light_energy = 0.5
+fog_sun_scatter = 0.01
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_begin = 20.0
+fog_depth_end = 200.0

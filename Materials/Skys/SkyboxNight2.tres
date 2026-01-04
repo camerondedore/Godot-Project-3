@@ -1,0 +1,7 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://uoyg5iuwvi4q"]
+
+[ext_resource type="Texture2D" uid="uid://ccn1w57oux5df" path="res://Textures/Skybox/skybox-night-2.png" id="1_mq72c"]
+
+[resource]
+panorama = ExtResource("1_mq72c")
+energy_multiplier = 1.25
