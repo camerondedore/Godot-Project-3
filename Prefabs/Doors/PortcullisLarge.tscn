@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdv4a7ygvb7mp"]
+
+[ext_resource type="PackedScene" uid="uid://bol8q2ml644te" path="res://Prefabs/Doors/Portcullis.tscn" id="1_itux1"]
+[ext_resource type="ArrayMesh" uid="uid://d4mu30px0s4np" path="res://Models/prop-portcullis-large.res" id="2_rncv5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ahj11"]
+size = Vector3(4, 5, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ev7j2"]
+size = Vector3(4, 5, 0.3)
+
+[node name="PortcullisLarge" instance=ExtResource("1_itux1")]
+openOffset = Vector3(3.7, 0, 0)
+speed = 0.4
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_rncv5")
+
+[node name="PortcullisCollider" parent="." index="1"]
+shape = SubResource("BoxShape3D_ahj11")
+
+[node name="NavLink" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
+
+[node name="Collider" parent="Blocker" index="0"]
+shape = SubResource("BoxShape3D_ev7j2")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://crdf27drhrvs5"]
+
+[ext_resource type="PackedScene" uid="uid://hi74x4g7ntey" path="res://Prefabs/Doors/PortcullisFrameLarge.tscn" id="1_g76kg"]
+[ext_resource type="Material" uid="uid://bxsuh5hkrmblo" path="res://Materials/Trees/BarkOakOld.tres" id="2_m2mew"]
+[ext_resource type="Material" uid="uid://bxdgc8hs67pqf" path="res://Materials/Trees/BarkEndsOld1.tres" id="3_b43u6"]
+[ext_resource type="Material" uid="uid://jp4py6t533b1" path="res://Materials/WoodOld.tres" id="4_0o4bt"]
+[ext_resource type="Shader" uid="uid://06nmgyyqqbf0" path="res://Shaders/FxBlackHole.gdshader" id="5_dj5e7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_850sh"]
+resource_local_to_scene = true
+render_priority = -1
+shader = ExtResource("5_dj5e7")
+shader_parameter/depthColor = Color(0, 0, 0, 1)
+shader_parameter/depthDistance = -1.0
+shader_parameter/depthFade = 1.0
+
+[node name="PortcullisFrameLargeOld" instance=ExtResource("1_g76kg")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_m2mew")
+surface_material_override/1 = ExtResource("3_b43u6")
+surface_material_override/2 = ExtResource("4_0o4bt")
+surface_material_override/3 = SubResource("ShaderMaterial_850sh")

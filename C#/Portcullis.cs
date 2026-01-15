@@ -37,7 +37,7 @@ public partial class Portcullis : AnimatableBody3D, IActivatable, IWatchable
 		decal = (Decal) GetNode("Decal");
 		
 		closedPosition = GlobalPosition;
-		openPosition = GlobalPosition + openOffset;
+		openPosition = ToGlobal(openOffset);
 
 		if(open == true)
 		{

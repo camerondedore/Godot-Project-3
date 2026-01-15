@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://hi74x4g7ntey"]
+
+[ext_resource type="PackedScene" uid="uid://6iap482nryxo" path="res://Prefabs/Doors/PortcullisFrame.tscn" id="1_4h7dy"]
+[ext_resource type="ArrayMesh" uid="uid://c4cj6j2eggihj" path="res://Models/prop-portcullis-frame-large.res" id="2_qat6e"]
+[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="3_qat6e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vvcy6"]
+size = Vector3(1.8, 5.3, 1.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4plan"]
+size = Vector3(6.1, 1.7, 1.5)
+
+[node name="PortcullisFrameLarge" instance=ExtResource("1_4h7dy")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_qat6e")
+surface_material_override/3 = ExtResource("3_qat6e")
+
+[node name="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15, 2.65, 0)
+shape = SubResource("BoxShape3D_vvcy6")
+
+[node name="CollisionShape3D2" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15, 2.65, 0)
+shape = SubResource("BoxShape3D_vvcy6")
+
+[node name="CollisionShape3D3" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.125, 0)
+shape = SubResource("BoxShape3D_4plan")
