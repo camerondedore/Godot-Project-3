@@ -21,11 +21,11 @@ public partial class MobShieldRatStateMove : MobShieldRatState
         {
 
             // get distance to enemy
-            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+            var distanceToEnemy = blackboard.GetDistanceToEnemy();
             var distanceSqrFromDestinationToEnemy = blackboard.navAgent.TargetPosition.DistanceSquaredTo(blackboard.enemy.GlobalPosition);
 
             // get if enemy is close and in LOS
-            var isCloseToEnemy = distanceToEnemySqr < blackboard.attackRangeSqr * 1.5f && blackboard.eyes.HasLosToTarget(blackboard.enemy);
+            var isCloseToEnemy = distanceToEnemy < blackboard.attackRange * 1.5f && blackboard.eyes.HasLosToTarget(blackboard.enemy);
 
             // get if enemy is far away from rat's destination
             var isEnemyFarFromDestination = distanceSqrFromDestinationToEnemy > blackboard.moveRecalculatePathRange;

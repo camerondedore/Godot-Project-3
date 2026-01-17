@@ -15457,6 +15457,7 @@ storedItem = ExtResource("63_p8dcn")
 
 [node name="PropSpiderwebStretched" parent="Map/Containers" instance=ExtResource("79_4wsoj")]
 transform = Transform3D(1.54111, 0, 0.482571, 0, 1.61489, 0, -0.482571, 0, 1.54111, 85.5618, 3.82507, -132.258)
+collision_layer = 16384
 storedItem = ExtResource("26_33ipg")
 
 [node name="PropSpiderweb1" parent="Map/Containers" instance=ExtResource("43_j654p")]
@@ -15465,6 +15466,7 @@ storedItem = ExtResource("26_33ipg")
 
 [node name="PropSpiderwebStretched2" parent="Map/Containers" instance=ExtResource("79_4wsoj")]
 transform = Transform3D(-7.44229e-08, -0.111296, 1.69896, 0, 1.69896, 0.111296, -1.7026, 4.8649e-09, -7.42637e-08, 29.3157, 3.87489, -138.443)
+collision_layer = 16384
 storedItem = ExtResource("26_33ipg")
 
 [node name="PropClayCauldron" parent="Map/Containers" instance=ExtResource("67_hfcx0")]

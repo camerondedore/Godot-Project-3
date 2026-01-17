@@ -45,6 +45,20 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable, IActivatable
 
 
 
+    public float GetDistanceToEnemy()
+    {
+        if(IsEnemyValid())
+        {
+            return GlobalPosition.DistanceTo(enemy.GlobalPosition);
+        }
+        else 
+        {
+            return float.PositiveInfinity;
+        }
+    }
+
+
+
     public float GetDistanceSqrToEnemy()
     {
         if(IsEnemyValid())

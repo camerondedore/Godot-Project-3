@@ -47,8 +47,10 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
         reactTime = 0.4,
         idleAnimationTime = 4.0;
     public float moveRecalculatePathRange = 0.5f,
-        attackRangeSqr = 3.1f,
-        damageRangeSqr = 5.1f,
+        attackRange = 1.75f,
+        attackRangeUp = 2.25f,
+        damageRange = 2.25f,
+        damageRangeUp = 2.75f,
         attackAngle = 45,
         damage = 10,
         PatrolRange = 10,
@@ -261,13 +263,15 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
 
     public bool CanAttackEnemy()
     {
-        var distanceToEnemySqr = GetDistanceSqrToEnemy();
+        var distanceToEnemy = GetDistanceToEnemy();
 
-        var isCloseToEnemy = distanceToEnemySqr < attackRangeSqr;
+        var isCloseToEnemy = distanceToEnemy < attackRange;
         var isNotAboveEnemy = (enemy.GlobalPosition.Y - GlobalPosition.Y) > -0.75f;
+        
+        var isBelowEnemy = distanceToEnemy < attackRangeUp && GetUpAngleToEnemy() < attackAngle;
 
-        // check if enemy is close enough
-        if(isCloseToEnemy && isNotAboveEnemy)
+        // check if enemy is close enough or if enemy is above
+        if((isCloseToEnemy && isNotAboveEnemy) || isBelowEnemy)
         {
             return true;
         }
@@ -280,13 +284,13 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
     public bool CanDamageEnemy()
     {
         // get distance to enemy
-        var distanceToEnemySqr = GetDistanceSqrToEnemy();
+        var distanceToEnemy = GetDistanceToEnemy();
         var angleForwardToEnemy = GetForwardToEnemyAngle();
         var angleUpToEnemy = GetUpAngleToEnemy();
 
-        var enemyInFront = distanceToEnemySqr < damageRangeSqr && angleForwardToEnemy < attackAngle;
-        var enemyAbove = distanceToEnemySqr < damageRangeSqr * 2f && angleUpToEnemy < attackAngle;
-        var enemyClose = distanceToEnemySqr < 0.3f;
+        var enemyInFront = distanceToEnemy < damageRange && angleForwardToEnemy < attackAngle;
+        var enemyAbove = distanceToEnemy < damageRangeUp && angleUpToEnemy < attackAngle;
+        var enemyClose = distanceToEnemy < 0.8f;
 
         if(enemyInFront || enemyAbove || enemyClose)
         {
