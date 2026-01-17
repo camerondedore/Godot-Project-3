@@ -62,6 +62,6 @@ amount = 15
 lifetime = 10.0
 preprocess = 5.0
 randomness = 1.0
-visibility_aabb = AABB(-3.79438, -2.78803, -2.73037, 7.27004, 5.3235, 5.7078)
+visibility_aabb = AABB(-3.5, -3.5, -3.5, 7, 7, 7)
 process_material = SubResource("ParticleProcessMaterial_wpeds")
 draw_pass_1 = SubResource("QuadMesh_infpe")

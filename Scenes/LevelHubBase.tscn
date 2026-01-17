@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=3 uid="uid://ce7lqyeoqu6ak"]
+[gd_scene load_steps=179 format=3 uid="uid://ce7lqyeoqu6ak"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_xaltl"]
 [ext_resource type="Environment" uid="uid://cl1532so5d67w" path="res://Environments/AfternoonEnvironment.tres" id="2_0djau"]
@@ -117,15 +117,24 @@
 [ext_resource type="PackedScene" uid="uid://b56cc0mnlnk7r" path="res://Prefabs/Lumber/PropFirewood2.tscn" id="123_yfkee"]
 [ext_resource type="PackedScene" uid="uid://6w4vqdekblvw" path="res://Prefabs/Lumber/PropFirewood3.tscn" id="124_5nis3"]
 [ext_resource type="PackedScene" uid="uid://m7nbr4sdgca3" path="res://Prefabs/Lumber/PropFirewood4.tscn" id="125_t1gtj"]
+[ext_resource type="PackedScene" uid="uid://bbage8fj6ncrj" path="res://Prefabs/Plants/PropFern1.tscn" id="126_mjmd2"]
 [ext_resource type="PackedScene" uid="uid://4u1y35xju8ln" path="res://Prefabs/Lumber/PropFirewood5.tscn" id="126_obv86"]
+[ext_resource type="PackedScene" uid="uid://ewttxbpcubd5" path="res://Prefabs/Plants/PropFern2.tscn" id="127_dy8as"]
 [ext_resource type="PackedScene" uid="uid://ugpcyorjm0gc" path="res://Prefabs/Food/PropBowl.tscn" id="127_xq85h"]
+[ext_resource type="PackedScene" uid="uid://dqfpswbl7lof" path="res://Prefabs/Plants/PropDandelion1.tscn" id="128_unvnn"]
 [ext_resource type="PackedScene" uid="uid://cjih08blgkk5m" path="res://Prefabs/Food/PropTankard.tscn" id="128_vgdyw"]
+[ext_resource type="PackedScene" uid="uid://dkxfmtnxwys07" path="res://Prefabs/Plants/PropDandelion2.tscn" id="129_oqigl"]
 [ext_resource type="PackedScene" uid="uid://btd348osaw7pt" path="res://Prefabs/Food/PropClayPot.tscn" id="129_vkibb"]
 [ext_resource type="PackedScene" uid="uid://oynb1mxrapsi" path="res://Prefabs/Food/PropCarrotTrimmed.tscn" id="130_7b2ik"]
+[ext_resource type="PackedScene" uid="uid://btd0dajjds3g0" path="res://Prefabs/Plants/PropMushroom.tscn" id="130_d4hoq"]
+[ext_resource type="PackedScene" uid="uid://q5ovbwr3uy8l" path="res://Prefabs/Plants/PropTulip1.tscn" id="131_iv327"]
 [ext_resource type="PackedScene" uid="uid://b1ubnvd3e1ahh" path="res://Prefabs/Food/PropOvenPeel.tscn" id="131_onv61"]
+[ext_resource type="PackedScene" uid="uid://cmoyc7ao6lj4r" path="res://Prefabs/Plants/PropTulip2.tscn" id="132_pvr4c"]
 [ext_resource type="PackedScene" uid="uid://0dl6mcdd5sim" path="res://Prefabs/Food/PropKitchenKnife1.tscn" id="132_yyqbu"]
+[ext_resource type="PackedScene" uid="uid://buax3c77576ra" path="res://Prefabs/Plants/PropTulip3.tscn" id="133_hpity"]
 [ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="133_jhslf"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/WaterWithFoam.tres" id="134_3nnam"]
+[ext_resource type="PackedScene" uid="uid://c7l80l3krwm66" path="res://Prefabs/Plants/PropTulip4.tscn" id="134_tm3g5"]
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/DecalWoodChips.tscn" id="136_fjiev"]
 [ext_resource type="PackedScene" uid="uid://crwm2pivlof4s" path="res://Prefabs/FX/DecalRug.tscn" id="137_bwgk7"]
 [ext_resource type="AudioStream" uid="uid://bmwtt2gn6wlqx" path="res://Audio/ambience-level-1.wav" id="138_w1ioo"]
@@ -704,7 +713,6 @@ transform = Transform3D(-3.49691e-07, 0, 1, 0, 1, 0, -1, 0, -3.49691e-07, 48.5, 
 
 [node name="ToolPropPainterFir1" type="Node" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir1"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("25_8nipq")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -831,7 +839,6 @@ transform = Transform3D(-0.809405, -0.0475907, 0.57292, -0.0290543, 0.991508, 0.
 
 [node name="ToolPropPainterFir2" type="Node" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Fir2"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("26_qg0eb")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -1099,7 +1106,6 @@ transform = Transform3D(0.579485, 0.00803014, -0.698651, -0.00873531, 0.907686, 
 
 [node name="ToolPropPainterOak" type="Node" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Oaks"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("27_chmim"), ExtResource("28_kgxsy"), ExtResource("29_xqcd5"), ExtResource("30_f487f")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -1346,7 +1352,6 @@ transform = Transform3D(-0.354701, 0.0219376, 0.974546, 0.0460819, 1.03628, -0.0
 
 [node name="ToolPropPainterApple" type="Node" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Trees/Apple"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("31_mgyfj"), ExtResource("32_rs5lb"), ExtResource("33_8yoge")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -2085,7 +2090,6 @@ debug_color = Color(0.68, 0.396667, 0, 1)
 
 [node name="ToolPropPainterFir1" type="Node" parent="Map/OccluderInstance3D/Props/Fir1"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("102_0yklk")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -2158,7 +2162,6 @@ transform = Transform3D(1.05154, 0.0140993, -0.214006, -0.0179996, 1.07289, -0.0
 
 [node name="ToolPropPainterFir2" type="Node" parent="Map/OccluderInstance3D/Props/Fir2"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("103_put1s")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -2210,7 +2213,6 @@ transform = Transform3D(-0.949213, -0.0296223, 0.542802, -0.017312, 1.09332, 0.0
 
 [node name="ToolPropPainterOak" type="Node" parent="Map/OccluderInstance3D/Props/Oaks"]
 script = ExtResource("24_evwkp")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("104_mkx34"), ExtResource("105_2h02a"), ExtResource("106_u4br0"), ExtResource("107_34hsl")]
 positionSpread = 0.0
 maxRotation = 3.0
@@ -2384,6 +2386,50 @@ transform = Transform3D(0.733362, 6.41126e-08, -0.679838, 8.74228e-08, -1, 0, -0
 
 [node name="PropKitchenKnife2" parent="Map/OccluderInstance3D/Props/Food" instance=ExtResource("133_jhslf")]
 transform = Transform3D(0.292889, 0, -0.956146, 0, 1, 0, 0.956146, 0, 0.292889, -62.1206, 1.04041, 11.951)
+
+[node name="Plants" type="Node3D" parent="Map/OccluderInstance3D/Props"]
+
+[node name="Ferns" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
+
+[node name="ToolPropPainterFerns" type="Node" parent="Map/OccluderInstance3D/Props/Plants/Ferns"]
+script = ExtResource("24_evwkp")
+propsToPaint = [ExtResource("126_mjmd2"), ExtResource("127_dy8as")]
+positionSpread = 0.0
+maxRotation = 5.0
+sizeVariation = 0.1
+uniformSize = true
+useHitNormal = true
+
+[node name="Dandelions" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
+
+[node name="ToolPropPainterDandelion" type="Node" parent="Map/OccluderInstance3D/Props/Plants/Dandelions"]
+script = ExtResource("24_evwkp")
+propsToPaint = [ExtResource("128_unvnn"), ExtResource("129_oqigl")]
+positionSpread = 0.0
+maxRotation = 5.0
+sizeVariation = 0.3
+uniformSize = true
+useHitNormal = true
+
+[node name="Mushrooms" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
+
+[node name="ToolPropPainterMushrooms" type="Node" parent="Map/OccluderInstance3D/Props/Plants/Mushrooms"]
+script = ExtResource("24_evwkp")
+propsToPaint = [ExtResource("130_d4hoq")]
+positionSpread = 0.0
+maxRotation = 5.0
+sizeVariation = 0.5
+uniformSize = true
+
+[node name="Tulips" type="Node3D" parent="Map/OccluderInstance3D/Props/Plants"]
+
+[node name="ToolPropPainterTulip" type="Node" parent="Map/OccluderInstance3D/Props/Plants/Tulips"]
+script = ExtResource("24_evwkp")
+propsToPaint = [ExtResource("131_iv327"), ExtResource("132_pvr4c"), ExtResource("133_hpity"), ExtResource("134_tm3g5")]
+positionSpread = 0.0
+maxRotation = 5.0
+sizeVariation = 0.15
+uniformSize = true
 
 [node name="WaterArea" type="Area3D" parent="Map/OccluderInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.779, -0.1, -30.0802)
