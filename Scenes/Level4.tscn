@@ -3492,7 +3492,6 @@ transform = Transform3D(0.834088, 0, 0.551631, 0, 1, 0, -0.551631, 0, 0.834088, 
 
 [node name="ToolPropPainterStumps" type="Node" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber/Stumps"]
 script = ExtResource("20_qx60b")
-toolSpeed = 2.0
 propsToPaint = [ExtResource("31_2t68s"), ExtResource("32_ya4iq"), ExtResource("33_rsqj3"), ExtResource("34_meobk")]
 positionSpread = 0.0
 maxRotation = 0.0
