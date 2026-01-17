@@ -10,7 +10,7 @@ public partial class ToolPropPainter : Node
 	[Export]
 	bool toolActive = false;
 	[Export]
-	float toolSpeed = 1;
+	float toolSpeed = 0.5f;
 	[Export]
 	PackedScene[] propsToPaint;
 	[Export]
@@ -41,6 +41,9 @@ public partial class ToolPropPainter : Node
 
 			// convert mask to decimal
 			maskAsDecimal = Convert.ToUInt32(maskAsBinary, 2);
+
+			// load input mapping from project
+			//InputMap.LoadFromProjectSettings();
 		}
 	}
 
@@ -50,43 +53,47 @@ public partial class ToolPropPainter : Node
 	{	
 		if (Engine.IsEditorHint() && toolActive && editorCamera != null)
 		{
-			// get mouse 2d position in editor camera's viewport
-			var cursor2dPosition = editorCamera.GetViewport().GetMousePosition();
-
-			// cast ray
-			var spaceState = editorCamera.GetWorld3D().DirectSpaceState;
-			
-			var rayStart = editorCamera.ProjectRayOrigin(cursor2dPosition);
-			var rayEnd = rayStart + editorCamera.ProjectRayNormal(cursor2dPosition) * 200;
-			//var rayEnd = rayStart + editorCamera.Basis.Z * -100;
-
-			var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
-
-			var rayResult = spaceState.IntersectRay(rayParams);
-
-			// debug ray
-			//((Node3D) GetChild(0)).Position = rayEnd;
-
-			// check for a hit point
-			if(!rayResult.ContainsKey("position"))
+			//if(Input.IsActionJustPressed("player-jump") == true)
+			if(Input.IsKeyPressed(Key.Space) == true)
 			{
-				return;
-			}
+				// get mouse 2d position in editor camera's viewport
+				var cursor2dPosition = editorCamera.GetViewport().GetMousePosition();
 
-			// get ray hit point
-			rayHitPoint = (Vector3) rayResult["position"];
-			rayHitNormal = (Vector3) rayResult["normal"];
+				// cast ray
+				var spaceState = editorCamera.GetWorld3D().DirectSpaceState;
+				
+				var rayStart = editorCamera.ProjectRayOrigin(cursor2dPosition);
+				var rayEnd = rayStart + editorCamera.ProjectRayNormal(cursor2dPosition) * 200;
+				//var rayEnd = rayStart + editorCamera.Basis.Z * -100;
 
-			// debug ray
-			//((Node3D) GetChild(0)).GlobalPosition = rayHitPoint;
+				var rayParams = new PhysicsRayQueryParameters3D(){From = rayStart, To = rayEnd, CollisionMask = maskAsDecimal};
 
-			// check for trigger
-			if(timer <= 0 && propsToPaint.Length > 0)
-			{
-				// paint prop into scene
-				PaintProp(rayHitPoint, rayHitNormal);
+				var rayResult = spaceState.IntersectRay(rayParams);
 
-				timer = toolSpeed;
+				// debug ray
+				//((Node3D) GetChild(0)).Position = rayEnd;
+
+				// check for a hit point
+				if(!rayResult.ContainsKey("position"))
+				{
+					return;
+				}
+
+				// get ray hit point
+				rayHitPoint = (Vector3) rayResult["position"];
+				rayHitNormal = (Vector3) rayResult["normal"];
+
+				// debug ray
+				//((Node3D) GetChild(0)).GlobalPosition = rayHitPoint;
+
+				// check for trigger
+				if(timer <= 0 && propsToPaint.Length > 0)
+				{
+					// paint prop into scene
+					PaintProp(rayHitPoint, rayHitNormal);
+
+					timer = toolSpeed;
+				}
 			}
 
 			timer -= delta;
