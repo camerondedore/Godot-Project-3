@@ -200,5 +200,12 @@ namespace PlayerBow
 
             return true;
         }
+
+
+
+        public bool TargetIsInFrontOfBow(Vector3 target)
+        {
+            return ToLocal(target).Z < 0.25f;
+        }
     }
 }

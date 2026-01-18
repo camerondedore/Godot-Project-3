@@ -104,23 +104,26 @@ namespace PlayerBow
 
         public bool HasValidTarget()
         {
+            string arrowType = "";
+
             if(HasRayTarget())
             {
-                var arrowType = ((IBowTarget) rayCast.GetCollider()).GetArrowType();
-                var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
-                var canHit = target != null && bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
-                return hasArrow && canHit;
+                arrowType = ((IBowTarget) rayCast.GetCollider()).GetArrowType();
             }
-
-            if(HasShapeTarget())
+            else if(HasShapeTarget())
             {
-                var arrowType = ((IBowTarget) shapeCast.GetCollider(0)).GetArrowType();
-                var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
-                var canHit = target != null && bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
-                return hasArrow && canHit;
+                arrowType = ((IBowTarget) shapeCast.GetCollider(0)).GetArrowType();
+            }
+            else
+            {
+                return false;
             }
 
-            return false;
+            var hasArrow = PlayerInventory.inventory.CheckInventoryForArrowType(arrowType);
+            var canHit = target != null && bow.ArrowCanHitTarget(bow.GlobalPosition, target.GetTargetGlobalPosition(), arrowType);
+            var targetInFront = bow.TargetIsInFrontOfBow(target.GetTargetGlobalPosition());
+
+            return hasArrow && canHit && targetInFront;            
         }
 
 

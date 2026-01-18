@@ -1078,7 +1078,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 5, -24.5)
 
 [node name="PropSpiderwebStretched" parent="Map/Containers" instance=ExtResource("87_c415x")]
 transform = Transform3D(-0.287303, -1.43711, -0.272129, 0.497624, -0.356826, 1.35902, -1.37539, 0.171094, 0.548543, 85.7062, 2.90072, -42.8487)
-collision_layer = 16384
 storedItem = ExtResource("21_fi0mo")
 
 [node name="Enemies" type="Node3D" parent="."]
