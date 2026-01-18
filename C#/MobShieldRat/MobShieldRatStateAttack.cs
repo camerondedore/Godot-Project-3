@@ -105,6 +105,9 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
         }
         else
         {
+            // if calling trying to play the same animation as what's already playing, need to stop the the one playing first
+            blackboard.animation.Stop();
+
             // play animation without shield
             blackboard.animation.Play("shield-rat-attack-1");
         }

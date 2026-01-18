@@ -42,7 +42,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         dirToNextPathPoint,
         avoidanceDir,
         arrowHitDirection;
-    public double swingTime = 0.7,
+    public double swingTime = 0.68,
         attackDamageTime = 0.3,
         reactTime = 0.4,
         shieldBreakTime = 0.66,
