@@ -12,6 +12,8 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
         hitFailSound;
     [Export]
     float speed = 5f;
+    [Export]
+    bool arrowActivatable = true;
 
     string arrowType = "weighted";
     AudioTools3d hitAudio,
@@ -31,6 +33,18 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
         // get nodes
         hitAudio = (AudioTools3d) GetNode("HitAudio");
         slideAudio = (AudioTools3d) GetNode("SlideAudio");
+
+        // disable decals if not arrow activatable
+        if(arrowActivatable == false)
+        {
+            foreach(Node3D child in GetChildren())
+            {
+                if(child.Name.ToString().Contains("Decal"))
+                {
+                    child.Visible = false;
+                }
+            }
+        }
     }
 
 
@@ -65,7 +79,13 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
 
     public string GetArrowType()
     {
-        if(moveCursor >= 1)
+        if(arrowActivatable == false)
+        {
+            // block doesn't move for arrow
+            // return bad arrow type
+            return "blank";
+        }
+        else if(moveCursor >= 1)
         {
             return arrowType;
         }
