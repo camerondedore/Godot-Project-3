@@ -65,6 +65,9 @@ public partial class MobBrownRatStateIdle : MobBrownRatState
         lastAnimationTime = EngineTime.timePassed;
         lastAnimation = (int) (1 + GD.Randi() % animationCount);
         timeBetweenAnimations = GD.Randf() * 20 + 4;
+
+        // start position
+        blackboard.startPosition = blackboard.GlobalPosition;
     }
 
 

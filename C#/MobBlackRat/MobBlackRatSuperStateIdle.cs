@@ -28,6 +28,9 @@ public partial class MobBlackRatSuperStateIdle : MobBlackRatSuperState
         // set substate
         SetState(blackboard.subStateIdle);
 
+        // start position
+        blackboard.startPosition = blackboard.GlobalPosition;
+
         base.StartState();
     }
 

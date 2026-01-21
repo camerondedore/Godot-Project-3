@@ -34,11 +34,11 @@ public partial class MobBlackRatStateStart : MobBlackRatState
 
 
 
-    public override void EndState()
-    {
-        // start position
-        blackboard.startPosition = blackboard.GlobalPosition;
-    }
+    // public override void EndState()
+    // {
+    //     // start position
+    //     blackboard.startPosition = blackboard.GlobalPosition;
+    // }
 
 
 

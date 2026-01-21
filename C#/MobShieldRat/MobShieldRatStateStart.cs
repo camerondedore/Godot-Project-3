@@ -33,11 +33,11 @@ public partial class MobShieldRatStateStart : MobShieldRatState
 
 
 
-    public override void EndState()
-    {
-        // start position
-        blackboard.startPosition = blackboard.GlobalPosition;
-    }
+    // public override void EndState()
+    // {
+    //     // start position
+    //     blackboard.startPosition = blackboard.GlobalPosition;
+    // }
 
 
 
