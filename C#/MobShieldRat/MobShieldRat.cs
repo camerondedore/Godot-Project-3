@@ -223,6 +223,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
             if(safeVel.X != 0 || safeVel.Z != 0)
             {
                 // clamp safe velocity
+                safeVel.Y = 0;
                 safeVel = safeVel.LimitLength(speed);
 
                 // move using obstacle avoidance

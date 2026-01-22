@@ -6,8 +6,7 @@ namespace MobBrownRat;
 public partial class MobBrownRatStateMove : MobBrownRatState
 {
 
-    Vector3 lastPosition;
-    double lastMovementTime;
+
 
 
 
@@ -26,13 +25,6 @@ public partial class MobBrownRatStateMove : MobBrownRatState
                 // set move target
                 blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
             }
-
-            // check if rat is moving
-            if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.IsAvoidanceDirectionFarFromPath() == false)
-            {
-                lastPosition = blackboard.GlobalPosition;
-                lastMovementTime = EngineTime.timePassed;
-            }
         }
 
 
@@ -44,8 +36,6 @@ public partial class MobBrownRatStateMove : MobBrownRatState
     public override void StartState()
     {            
         blackboard.moving = true;
-
-        lastMovementTime = EngineTime.timePassed;
 
         // set move target
         blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -78,6 +68,13 @@ public partial class MobBrownRatStateMove : MobBrownRatState
             return blackboard.stateCooldown;
         }
 
+        // check if falling
+        if(blackboard.IsOnFloor() == false)
+        {
+            // fall
+            return blackboard.stateFall;
+        }
+
         // get distance to enemy
         var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
 
@@ -86,15 +83,6 @@ public partial class MobBrownRatStateMove : MobBrownRatState
         {
             // attack
             return blackboard.stateAttack;
-        }
-
-        if(EngineTime.timePassed > lastMovementTime + 1.5)
-        {
-            GD.Print(EngineTime.timePassed +  ", brown rat stuck");
-
-            // rat is stuck
-            // react
-            return blackboard.stateReact;
         }
 
         // if at end of path

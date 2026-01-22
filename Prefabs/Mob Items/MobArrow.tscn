@@ -23,6 +23,7 @@ hitBloodFx = ExtResource("2_yyqqu")
 hitFx = ExtResource("2_30351")
 missFx = ExtResource("3_ukgsk")
 waterDetector = NodePath("WaterDetector")
+damage = 7.5
 speed = 19.0
 speedVariation = 0.0
 

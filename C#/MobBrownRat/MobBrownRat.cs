@@ -14,6 +14,7 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
         stateIdle,
         stateReact,
         stateMove,
+        stateFall,
         stateWatch,
         statePatrol,
         statePatrolWait,
@@ -95,6 +96,7 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
         stateIdle = new MobBrownRatStateIdle(){blackboard = this};
         stateReact = new MobBrownRatStateReact(){blackboard = this};
         stateMove = new MobBrownRatStateMove(){blackboard = this};
+        stateFall = new MobBrownRatStateFall(){blackboard = this};
         stateWatch = new MobBrownRatStateWatch(){blackboard = this};
         statePatrol = new MobBrownRatStatePatrol(){blackboard = this};
         statePatrolWait = new MobBrownRatStatePatrolWait(){blackboard = this};
@@ -219,6 +221,7 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
             if(safeVel.X != 0 || safeVel.Z != 0)
             {
                 // clamp safe velocity
+                safeVel.Y = 0;
                 safeVel = safeVel.LimitLength(speed);
                 
                 // move using obstacle avoidance

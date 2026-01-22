@@ -224,6 +224,7 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
             if(safeVel.X != 0 || safeVel.Z != 0)
             {
                 // clamp safe velocity
+                safeVel.Y = 0;
                 safeVel = safeVel.LimitLength(speed);
 
                 avoidanceDir = safeVel.Normalized();

@@ -6,8 +6,7 @@ namespace MobBlackRat
     public partial class MobBlackRatStateMove : MobBlackRatState
     {
 
-        Vector3 lastPosition;
-        double lastMovementTime;
+
 
 
 
@@ -35,13 +34,6 @@ namespace MobBlackRat
                     // set move target
                     blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
                 }
-
-                // check if rat is moving or if rat is straying far from path
-                if(blackboard.GlobalPosition.DistanceSquaredTo(lastPosition) > 0.44f && blackboard.IsAvoidanceDirectionFarFromPath() == false)
-                {
-                    lastPosition = blackboard.GlobalPosition;
-                    lastMovementTime = EngineTime.timePassed;
-                }
             }
             
 
@@ -53,8 +45,6 @@ namespace MobBlackRat
         public override void StartState()
         {
             blackboard.moving = true;
-
-            lastMovementTime = EngineTime.timePassed;
 
             // set move target
             blackboard.navAgent.TargetPosition = blackboard.enemy.GlobalPosition;
@@ -88,15 +78,6 @@ namespace MobBlackRat
             {
                 // attack
                 return blackboard.stateAttack;
-            }
-
-            if(EngineTime.timePassed > lastMovementTime + 1.5)
-            {
-                GD.Print(EngineTime.timePassed +  ", black rat stuck");
-
-                // rat is stuck
-                // react
-                return blackboard.stateReact;
             }
 
             // if at end of path
