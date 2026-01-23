@@ -16,6 +16,7 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
         subStateIdleAnimation,
         stateReact,
         stateMove,
+        stateFall,
         stateWatch,
         statePatrol,
         statePatrolWait,
@@ -91,6 +92,7 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
         subStateIdleAnimation = new MobBlackRatSubStateIdleAnimation(){blackboard = this};
         stateReact = new MobBlackRatStateReact(){blackboard = this};
         stateMove = new MobBlackRatStateMove(){blackboard = this};
+        stateFall = new MobBlackRatStateFall(){blackboard = this};
         stateWatch = new MobBlackRatStateWatch(){blackboard = this};
         statePatrol = new MobBlackRatStatePatrol(){blackboard = this};
         statePatrolWait = new MobBlackRatStatePatrolWait(){blackboard = this};

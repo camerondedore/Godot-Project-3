@@ -81,6 +81,13 @@ public partial class MobBrownRatStateIdle : MobBrownRatState
 
     public override State Transition()
     {
+        // check if falling
+        if(blackboard.IsOnFloor() == false)
+        {
+            // fall
+            return blackboard.stateFall;
+        }
+        
         // check for enemy
         if(blackboard.IsEnemyValid())
         {

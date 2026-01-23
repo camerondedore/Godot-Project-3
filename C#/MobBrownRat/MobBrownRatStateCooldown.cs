@@ -51,6 +51,13 @@ public partial class MobBrownRatStateCooldown: MobBrownRatState
 
     public override State Transition()
     {
+        // check if falling
+        if(blackboard.IsOnFloor() == false)
+        {
+            // fall
+            return blackboard.stateFall;
+        }
+        
         if(blackboard.IsEnemyValid() && blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
         {
             if(blackboard.isMovingRat == true)
