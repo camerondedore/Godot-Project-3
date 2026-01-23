@@ -173,11 +173,11 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
             Velocity = newVelocity;
             MoveAndSlide();
 
-            // get direction to next path point and flatten
+            // get direction to look in
             var forward = GlobalPosition + -Basis.Z;
             var lookDirection = GlobalPosition + Velocity.Normalized();
             lookDirection.Y = GlobalPosition.Y;
-            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)GetPhysicsProcessDeltaTime()));
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
 
             // look in direction of movement
             LookAt(lookTarget, Vector3.Up);
@@ -194,6 +194,12 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
             // apply gravity
             Velocity += EngineGravity.vector * ((float) delta);                
             MoveAndSlide();
+
+            // get direction to look in
+            var forward = GlobalPosition + -Basis.Z;
+            var lookDirection = GlobalPosition + Velocity.Normalized();
+            lookDirection.Y = GlobalPosition.Y;
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
         }
 
 

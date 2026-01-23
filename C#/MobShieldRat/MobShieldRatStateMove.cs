@@ -83,6 +83,13 @@ public partial class MobShieldRatStateMove : MobShieldRatState
             return blackboard.stateCooldown;
         }
 
+        // check if falling
+        if(blackboard.IsOnFloor() == false)
+        {
+            // fall
+            return blackboard.stateFall;
+        }
+
         if(blackboard.CanAttackEnemy() == true)
         {
             // attack

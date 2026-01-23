@@ -13,6 +13,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
             subStateIdleAnimation,
             stateReact,
             stateMove,
+            stateFall,
             stateWatch,
             statePatrol,
             statePatrolWait,
@@ -95,6 +96,7 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         subStateIdleAnimation = new MobShieldRatSubStateIdleAnimation(){blackboard = this};
         stateReact = new MobShieldRatStateReact(){blackboard = this};
         stateMove = new MobShieldRatStateMove(){blackboard = this};
+        stateFall = new MobShieldRatStateFall(){blackboard = this};
         stateWatch = new MobShieldRatStateWatch(){blackboard = this};
         statePatrol = new MobShieldRatStatePatrol(){blackboard = this};
         statePatrolWait = new MobShieldRatStatePatrolWait(){blackboard = this};
@@ -164,11 +166,11 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
             Velocity = newVelocity;
             MoveAndSlide();
 
-            // get direction to next path point and flatten
+            // get direction to look in
             var forward = GlobalPosition + -Basis.Z;
             var lookDirection = GlobalPosition + Velocity.Normalized();
             lookDirection.Y = GlobalPosition.Y;
-            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)GetPhysicsProcessDeltaTime()));
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
 
             // look in direction of movement
             LookAt(lookTarget, Vector3.Up);
@@ -196,6 +198,15 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
 
             // reset animation play speed
             animation.SpeedScale = 1;
+
+            // get direction to look in
+            var forward = GlobalPosition + -Basis.Z;
+            var lookDirection = GlobalPosition + Velocity.Normalized();
+            lookDirection.Y = GlobalPosition.Y;
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
+
+            // look in direction of movement
+            LookAt(lookTarget, Vector3.Up);
         }
 
 

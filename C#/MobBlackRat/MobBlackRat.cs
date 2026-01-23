@@ -171,7 +171,7 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
             var forward = GlobalPosition + -Basis.Z;
             var lookDirection = GlobalPosition + Velocity.Normalized();
             lookDirection.Y = GlobalPosition.Y;
-            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)GetPhysicsProcessDeltaTime()));
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
 
             // look in direction of movement
             LookAt(lookTarget, Vector3.Up);
@@ -199,6 +199,12 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
 
             // reset animation play speed
             animation.SpeedScale = 1;
+
+            // get direction to look in
+            var forward = GlobalPosition + -Basis.Z;
+            var lookDirection = GlobalPosition + Velocity.Normalized();
+            lookDirection.Y = GlobalPosition.Y;
+            var lookTarget = forward.Lerp(lookDirection, lookSpeed * ((float)delta));
         }
 
 
