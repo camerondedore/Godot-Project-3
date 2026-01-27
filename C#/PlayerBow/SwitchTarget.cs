@@ -9,6 +9,8 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
     Node[] linkedObjects;
     [Export]
     AudioStream hitSound;
+    [Export]
+    bool saveToWorldData = false;
     
     string arrowType = "weighted";
     Vector3 targetOffset = new Vector3(0, 0, -0.15f), 
@@ -27,6 +29,29 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
         audio = (AudioTools3d) GetNode("Audio");
         switchCollider = (CollisionShape3D) GetNode("SwitchCollider");
         switchMesh = (Node3D) GetNode("SwitchMesh");
+
+        // check saved data
+        var wasActivated = WorldData.data.CheckActivatedObjects(this);
+
+        if(wasActivated)
+        {
+             // move mesh
+            switchMesh.Position += meshHitOffset;
+
+            // disable collider
+            switchCollider.Disabled = true;
+
+            // play fx
+            switchDustFx.Restart();
+
+            // audio
+            audio.PlaySound(hitSound, 0.1f);
+
+            ActivateLinkedNodes();
+            
+            // disable script
+            SetScript(new Variant());
+        }
     }
 
 
@@ -67,6 +92,12 @@ public partial class SwitchTarget : StaticBody3D, IBowTarget
         audio.PlaySound(hitSound, 0.1f);
 
         ActivateLinkedNodes();
+
+        // if(saveToWorldData == true)
+        // {            
+        //     // save to pickups taken
+        //     WorldData.data.ActivateObject(this);
+        // }
         
         // disable script
         SetScript(new Variant());

@@ -125,6 +125,10 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
         if(absUnitY > Mathf.Abs(unitDir.X) && absUnitY > Mathf.Abs(unitDir.Z))
         {
             // arrow hit from too low or too high
+            
+            // play audio
+            hitAudio.PlaySound(hitFailSound, 0.1f);
+
             return true;
         }
 
