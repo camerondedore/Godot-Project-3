@@ -13,7 +13,8 @@ public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatabl
 	float speed = 1f,
 		maxOffset = 3.8f;
 	[Export]
-	bool open; // if true on start, will make platform start open
+	bool open, // if true on start, will make platform start open
+		saveToWorldData = false;
 
 	AudioTools3d audio;
 	Node3D baseNode;
@@ -22,6 +23,7 @@ public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatabl
 		startPostition,
 		endPosition;
 	float openCursor = 1;
+	bool startedOpen;
 
 
 
@@ -36,10 +38,30 @@ public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatabl
 
 		baseNode.TopLevel = true;
 
+		startedOpen = open;
+
 		// move baseNode
 		baseNode.GlobalPosition = baseNode.GlobalPosition + Vector3.Up * maxOffset;
 
-		if(open == true)
+		// check saved data
+        var wasActivated = WorldData.data.CheckActivatedObjects(this, closedPosition);
+
+        if(wasActivated)
+        {
+			if(open == true)
+			{
+				// close the platform
+				GlobalPosition = closedPosition;
+				open = false;
+			}
+			else
+			{
+				// open the platform
+				GlobalPosition = openPosition;
+				open = true;
+			}
+		}
+		else if(open == true)
 		{
 			GlobalPosition = openPosition;
 		}
@@ -91,7 +113,23 @@ public partial class MovingPlatform : AnimatableBody3D, IActivatable, IAnimatabl
 		openCursor = 1f - openCursor;
 
 		// play looping audio
-		audio.PlayLoopingSound(openingSound, 0.1f);        
+		audio.PlayLoopingSound(openingSound, 0.1f);     
+		
+		if(saveToWorldData == true)
+        {
+			if(open != startedOpen)
+			{
+				// current state is different from start state
+				// save to activated objects
+				WorldData.data.ActivateObject(this, closedPosition);
+			}
+			else
+			{
+				// current state is the same as start state
+				// remove from activated objects
+				WorldData.data.DeactivateObject(this, closedPosition);
+			}
+        }
 	}
 
 

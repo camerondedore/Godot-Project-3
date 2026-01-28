@@ -82,6 +82,20 @@ public partial class WorldData : Node
 
 
 
+        public bool CheckActivatedObjects(Node3D objectToCheck, Vector3 manualPosition)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToCheck.Name, manualPosition);
+
+        // check list of activated objects
+        var isActivated = currentData.ActivatedObjects.Contains(dataString);
+
+        return isActivated;
+    }
+
+
+
+
     public bool CheckActivatedObjects(Node objectToCheck)
     {
         // get data string
@@ -119,6 +133,17 @@ public partial class WorldData : Node
 
 
 
+    public void ActivateObject(Node3D objectToActivate, Vector3 manualPosition)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToActivate.Name, manualPosition);
+
+        // add to list of activated objects
+        currentData.ActivatedObjects.Add(dataString);
+    }
+
+
+
     public void ActivateObject(Node objectToActivate)
     {
         // get data string
@@ -126,6 +151,39 @@ public partial class WorldData : Node
 
         // add to list of activated objects
         currentData.ActivatedObjects.Add(dataString);
+    }
+
+
+
+    public void DeactivateObject(Node3D objectToActivate)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToActivate);
+
+        // add to list of activated objects
+        currentData.ActivatedObjects.Remove(dataString);
+    }
+
+
+
+    public void DeactivateObject(Node3D objectToActivate, Vector3 manualPosition)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToActivate.Name, manualPosition);
+
+        // add to list of activated objects
+        currentData.ActivatedObjects.Remove(dataString);
+    }
+
+
+
+    public void DectivateObject(Node objectToActivate)
+    {
+        // get data string
+        var dataString = GetObjectDataString(objectToActivate);
+
+        // add to list of activated objects
+        currentData.ActivatedObjects.Remove(dataString);
     }
 
 
@@ -230,6 +288,27 @@ public partial class WorldData : Node
         }
 
         var dataString = $"{sceneName}={objectToUse.Name}={cleanPosition}";
+        return dataString;
+    }
+
+
+
+    string GetObjectDataString(string objectName, Vector3 manualPosition)
+    {
+        // clean floats in position vector
+        var cleanPosition = manualPosition;
+        cleanPosition.X = ((float)Math.Round(cleanPosition.X, 3));
+        cleanPosition.Y = ((float)Math.Round(cleanPosition.Y, 3));
+        cleanPosition.Z = ((float)Math.Round(cleanPosition.Z, 3));
+
+        string sceneName = GetTree().CurrentScene.Name;
+
+        if(sceneName.Contains("LevelHub"))
+        {
+            sceneName = "LevelHub";
+        }
+
+        var dataString = $"{sceneName}={objectName}={cleanPosition}";
         return dataString;
     }
 
