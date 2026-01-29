@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uuvo20va0v0b"
-path="res://.godot/imported/prop-fern-1.glb-40f417816ae51d3e0a5e34d3a6275471.scn"
+uid="uid://v55vy5yxntjg"
+path="res://.godot/imported/prop-blackberry-bush-bg.glb-264e9ea66f8ed21f19618c9fcc4868f5.scn"
 
 [deps]
 
-source_file="res://Models/prop-fern-1.glb"
-dest_files=["res://.godot/imported/prop-fern-1.glb-40f417816ae51d3e0a5e34d3a6275471.scn"]
+source_file="res://Models/prop-blackberry-bush-bg.glb"
+dest_files=["res://.godot/imported/prop-blackberry-bush-bg.glb-264e9ea66f8ed21f19618c9fcc4868f5.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -34,23 +34,15 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "meshes": {
-"prop-fern-1_prop-fern-1": {
+"prop-blackberry-bush-bg_prop-blackberry-bush-bg": {
 "generate/lightmap_uv": 0,
-"generate/lods": 2,
+"generate/lods": 0,
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": true,
-"save_to_file/path": "res://Models/prop-fern-1.res"
-},
-"prop-fern-1_prop-fern-1-lod": {
-"generate/lightmap_uv": 0,
-"generate/lods": 2,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://Models/prop-fern-1-lod.res"
+"save_to_file/path": "res://Models/prop-blackberry-bush-bg.res"
 }
 }
 }
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1

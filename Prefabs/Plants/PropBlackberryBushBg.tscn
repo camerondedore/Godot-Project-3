@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7ytuc8otu665"]
 
-[ext_resource type="ArrayMesh" uid="uid://b2mtcgf76ej33" path="res://Models/prop-blackberry-bush-bg.res" id="1_uvdjb"]
+[ext_resource type="ArrayMesh" uid="uid://dbfum2qffw3x4" path="res://Models/prop-blackberry-bush-bg.res" id="1_uvdjb"]
 [ext_resource type="Material" uid="uid://codff4qekx6g0" path="res://Materials/Plants/LeavesBlackberryWind.tres" id="2_yeflk"]
 
 [node name="PropBlackberryBushBg" type="Node3D"]
