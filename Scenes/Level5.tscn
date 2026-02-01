@@ -1,4 +1,4 @@
-[gd_scene load_steps=135 format=3 uid="uid://bgapy1clrba3s"]
+[gd_scene load_steps=140 format=3 uid="uid://bgapy1clrba3s"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_to3se"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_213sf"]
@@ -125,6 +125,9 @@
 [ext_resource type="Script" uid="uid://dg2remqmickpr" path="res://C#/Common/TriggerArea.cs" id="105_16fx5"]
 [ext_resource type="PackedScene" uid="uid://xigtowfv4scj" path="res://Prefabs/SecretArea.tscn" id="106_nic2v"]
 [ext_resource type="PackedScene" uid="uid://bl3tppj3wcnmy" path="res://Prefabs/Player Bow Targets/PropClayCauldron.tscn" id="112_7dc76"]
+[ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="113_b73k6"]
+[ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="114_q8iwm"]
+[ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="115_bwvhq"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="120_voi43"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7dtqy"]
@@ -140,6 +143,113 @@ data = PackedVector3Array(3.4973, -0.0001, 0, -0.0011, -0.0001, -3.5009, 3.4973,
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iccr2"]
 size = Vector3(2, 2, 1)
+
+[sub_resource type="Animation" id="Animation_b73k6"]
+resource_name = "l5c2"
+length = 8.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinematicsLevel5")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(7.66667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EndCinematic"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cinematic2/CameraControl1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cinematic2/CameraControl2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.66667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cinematic2/CameraControl3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.16667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cinematic2/RatSpawn1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(6.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cinematic2/RatSpawn2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7.43333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Cinematic2/BlockActivator")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.53333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Activate"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q8iwm"]
+_data = {
+&"l5c2": SubResource("Animation_b73k6")
+}
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lwo1j"]
 radius = 4.0
@@ -173,7 +283,7 @@ script = ExtResource("4_4kscp")
 [node name="DialogueUi" parent="." instance=ExtResource("5_xnl3v")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("6_2xldr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 4, -45.5)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -1196,7 +1306,7 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 110.2, 6
 
 [node name="PropSwitch" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Switches/PropSwitchWallbox2" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("32_r5qsn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
-linkedObjects = [NodePath("../../../MovingPlatforms/PropPlatform4mSmallMoving"), NodePath("../../../../../../TriggerAreas/RatSpawn1"), NodePath("../../../../../../Blocks/BlockActivator"), NodePath("../../../../../../TriggerAreas/RatSpawn2")]
+linkedObjects = [NodePath("../../../MovingPlatforms/PropPlatform4mSmallMoving"), NodePath("../../../../../../Cinematics/Cinematic2/Trigger")]
 saveToWorldData = true
 
 [node name="PropSwitchWallbox3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Switches" instance=ExtResource("31_qx7hi")]
@@ -1438,6 +1548,7 @@ transform = Transform3D(0.986748, -0.114734, -0.114734, -1.49012e-08, 0.707107, 
 [node name="PropPlatform4mSmallMoving" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_lm2u0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.5, -0.8, -7)
 openOffset = Vector3(0, 1.3, 0)
+speed = 0.25
 open = false
 saveToWorldData = true
 
@@ -1717,11 +1828,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.45, 5.5, -42.5)
 targetPoints = [NodePath("../BlockTargetInvisible"), NodePath("../BlockTargetInvisible2")]
 arrowActivatable = false
 
-[node name="BlockActivator" type="Node" parent="Map/Blocks" node_paths=PackedStringArray("block")]
-script = ExtResource("96_cqiha")
-block = NodePath("../PropBlock5mSquare")
-moveVector = Vector3(-1, 0, 0)
-
 [node name="BlockTargetInvisible" type="Node3D" parent="Map/Blocks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.45, 3, -42.5)
 
@@ -1757,8 +1863,51 @@ visible = false
 [node name="Cinematics" type="Node3D" parent="Map"]
 
 [node name="CinematicsLevel5" type="AnimationPlayer" parent="Map/Cinematics"]
+libraries = {
+&"": SubResource("AnimationLibrary_q8iwm")
+}
+script = ExtResource("113_b73k6")
 
-[node name="Cinematic1" type="Node3D" parent="Map/Cinematics"]
+[node name="Cinematic2" type="Node3D" parent="Map/Cinematics"]
+
+[node name="Trigger" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("cinematic", "playerCharacter")]
+script = ExtResource("114_q8iwm")
+cinematic = NodePath("../../CinematicsLevel5")
+playerCharacter = NodePath("../../../../PlayerCharacter")
+cinematicAnimationName = "l5c2"
+
+[node name="BlockActivator" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("block")]
+script = ExtResource("96_cqiha")
+block = NodePath("../../../Blocks/PropBlock5mSquare")
+moveVector = Vector3(-1, 0, 0)
+
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic2"]
+transform = Transform3D(-0.894936, 0.212905, -0.392122, 0, 0.878817, 0.477158, 0.446193, 0.427026, -0.786485, 107.63, 10.5798, -46.7776)
+script = ExtResource("115_bwvhq")
+
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic2"]
+transform = Transform3D(0.446191, 0.371124, -0.814359, 0, 0.909961, 0.414692, 0.894938, -0.185032, 0.406016, 74.6153, 11.038, -3.61432)
+script = ExtResource("115_bwvhq")
+moveTime = 0.0
+
+[node name="CameraControl3" type="Node3D" parent="Map/Cinematics/Cinematic2"]
+transform = Transform3D(-0.894936, 0.212905, -0.392122, 0, 0.878817, 0.477158, 0.446193, 0.427026, -0.786485, 107.63, 10.5798, -46.7776)
+script = ExtResource("115_bwvhq")
+moveTime = 0.0
+
+[node name="RatSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("mobTarget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 10, -26.05)
+script = ExtResource("95_820t8")
+mob = ExtResource("61_egdxr")
+mobTarget = NodePath("../SpawnTarget1")
+
+[node name="SpawnTarget1" type="Node3D" parent="Map/Cinematics/Cinematic2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 10, -34.05)
+
+[node name="RatSpawn2" type="Node3D" parent="Map/Cinematics/Cinematic2"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 122, 4, -42.55)
+script = ExtResource("95_820t8")
+mob = ExtResource("69_j1wol")
 
 [node name="SecretAreas" type="Node3D" parent="Map"]
 
@@ -1770,20 +1919,6 @@ shape = SubResource("SphereShape3D_lwo1j")
 debug_color = Color(0.71, 0.497, 0, 1)
 
 [node name="TriggerAreas" type="Node3D" parent="Map"]
-
-[node name="RatSpawn1" type="Node3D" parent="Map/TriggerAreas" node_paths=PackedStringArray("mobTarget")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 10, -26.05)
-script = ExtResource("95_820t8")
-mob = ExtResource("61_egdxr")
-mobTarget = NodePath("../SpawnTarget1")
-
-[node name="SpawnTarget1" type="Node3D" parent="Map/TriggerAreas"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111, 10, -34.05)
-
-[node name="RatSpawn2" type="Node3D" parent="Map/TriggerAreas"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 122, 4, -42.55)
-script = ExtResource("95_820t8")
-mob = ExtResource("69_j1wol")
 
 [node name="RatSpawn3" type="Node3D" parent="Map/TriggerAreas" node_paths=PackedStringArray("mobTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122.5, 10, -17.55)
