@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://bgapy1clrba3s"]
+[gd_scene load_steps=146 format=3 uid="uid://bgapy1clrba3s"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_to3se"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_213sf"]
@@ -128,6 +128,7 @@
 [ext_resource type="Script" uid="uid://b6dy56je2vbfw" path="res://C#/CinematicSimple/CinematicSimpleControl.cs" id="113_b73k6"]
 [ext_resource type="Script" uid="uid://bg4xkxeuc3xl8" path="res://C#/CinematicSimple/CinematicSimpleTriggerActivatable.cs" id="114_q8iwm"]
 [ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="115_bwvhq"]
+[ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="119_q8iwm"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="120_voi43"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7dtqy"]
@@ -306,11 +307,139 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_bwvhq"]
+resource_name = "l5c4"
+length = 7.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinematicsLevel5")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EndCinematic"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cinematic4/CameraControl1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cinematic4/CameraControl2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cinematic4/CameraControl3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_yuy8w"]
+resource_name = "l5c1"
+length = 12.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CinematicsLevel5")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(12),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"EndCinematic"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cinematic1/CameraControl1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cinematic1/CameraControl2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cinematic1/CameraControl3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(9.06667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"PlayCinematicAction"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q8iwm"]
 _data = {
+&"l5c1": SubResource("Animation_yuy8w"),
 &"l5c2": SubResource("Animation_b73k6"),
-&"l5c3": SubResource("Animation_q8iwm")
+&"l5c3": SubResource("Animation_q8iwm"),
+&"l5c4": SubResource("Animation_bwvhq")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2xh3g"]
+size = Vector3(18, 5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuy8w"]
+size = Vector3(10, 5, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lwo1j"]
 radius = 4.0
@@ -344,7 +473,7 @@ script = ExtResource("4_4kscp")
 [node name="DialogueUi" parent="." instance=ExtResource("5_xnl3v")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("6_2xldr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 4, -45.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -1273,6 +1402,9 @@ transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 59.3107, 5
 [node name="PropTorchLitStatic5" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("17_u7l1f")]
 transform = Transform3D(0.877682, -0.155639, -0.453267, 2.00751e-07, 0.945797, -0.324759, 0.479243, 0.285035, 0.830109, 80.4888, 9.50028, -7.9681)
 
+[node name="PropTorchLitStatic19" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("17_u7l1f")]
+transform = Transform3D(0.690074, 0.23504, 0.68451, 1.87672e-07, 0.945797, -0.324759, -0.723738, 0.224108, 0.65267, 91.1608, 9.50028, -11.9073)
+
 [node name="PropTorchLitStatic6" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("17_u7l1f")]
 transform = Transform3D(1, -2.08616e-07, 0, 2.08616e-07, 1, 0, 0, 0, 1, 118.111, 9.22674, -1.58521)
 
@@ -1930,6 +2062,35 @@ libraries = {
 }
 script = ExtResource("113_b73k6")
 
+[node name="Cinematic1" type="Node3D" parent="Map/Cinematics"]
+
+[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic1" node_paths=PackedStringArray("cinematic")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.5, 10.5, -16.7)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("119_q8iwm")
+cinematic = NodePath("../../CinematicsLevel5")
+cinematicAnimationName = "l5c1"
+saveToWorldData = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic1/Trigger"]
+shape = SubResource("BoxShape3D_2xh3g")
+
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic1"]
+transform = Transform3D(-0.143516, 0.467724, -0.872144, 0, 0.881267, 0.472617, 0.989647, 0.0678282, -0.126476, 39.1539, 15.4383, -17.2267)
+script = ExtResource("115_bwvhq")
+moveTime = 2.0
+
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic1"]
+transform = Transform3D(-0.0262004, 0.287333, -0.957472, 0, 0.957801, 0.287432, 0.999656, 0.00753085, -0.0250948, 75.6779, 13.4856, -10.5001)
+script = ExtResource("115_bwvhq")
+moveTime = 5.0
+
+[node name="CameraControl3" type="Node3D" parent="Map/Cinematics/Cinematic1"]
+transform = Transform3D(-0.0915267, 0.256965, -0.962076, 0, 0.966131, 0.258048, 0.995802, 0.0236183, -0.0884269, 47.1392, 15.2383, -14.0578)
+script = ExtResource("115_bwvhq")
+moveTime = 2.5
+
 [node name="Cinematic2" type="Node3D" parent="Map/Cinematics"]
 
 [node name="Trigger" type="Node" parent="Map/Cinematics/Cinematic2" node_paths=PackedStringArray("cinematic", "playerCharacter")]
@@ -1993,6 +2154,34 @@ moveTime = 0.0
 transform = Transform3D(-0.972366, -0.110499, 0.20565, 0, 0.880891, 0.473318, -0.233457, 0.460239, -0.856549, 132.173, 12.1258, 1.10432)
 script = ExtResource("115_bwvhq")
 moveTime = 0.0
+
+[node name="Cinematic4" type="Node3D" parent="Map/Cinematics"]
+
+[node name="Trigger" type="Area3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("cinematic")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 93, 11.5, -10.5)
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("119_q8iwm")
+cinematic = NodePath("../../CinematicsLevel5")
+cinematicAnimationName = "l5c4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Cinematics/Cinematic4/Trigger"]
+shape = SubResource("BoxShape3D_yuy8w")
+
+[node name="CameraControl1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
+transform = Transform3D(-1.36415e-05, 0.687775, -0.725922, 0, 0.725923, 0.687775, 0.999999, 9.38229e-06, -9.90268e-06, 98.3038, 15.0159, -10.446)
+script = ExtResource("115_bwvhq")
+moveTime = 2.0
+
+[node name="CameraControl2" type="Node3D" parent="Map/Cinematics/Cinematic4"]
+transform = Transform3D(-0.58426, 0.319766, -0.745915, 0, 0.919105, 0.394011, 0.811566, 0.230205, -0.536997, 105.457, 7.34064, -12.2376)
+script = ExtResource("115_bwvhq")
+moveTime = 1.5
+
+[node name="CameraControl3" type="Node3D" parent="Map/Cinematics/Cinematic4"]
+transform = Transform3D(-1.36415e-05, 0.687775, -0.725922, 0, 0.725923, 0.687775, 0.999999, 9.38229e-06, -9.90268e-06, 98.3038, 15.0159, -10.446)
+script = ExtResource("115_bwvhq")
+moveTime = 1.5
 
 [node name="SecretAreas" type="Node3D" parent="Map"]
 
