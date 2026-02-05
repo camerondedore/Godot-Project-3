@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="4_m4xsu"]
 [ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="4_xfsdn"]
 [ext_resource type="Script" uid="uid://dp7ot8li6s4md" path="res://C#/SecretAreas.cs" id="5_2agpa"]
-[ext_resource type="ArrayOccluder3D" uid="uid://crn5tc6fjoafm" path="res://Scenes/Occlusion/Level1Intro.occ" id="6_supt6"]
+[ext_resource type="ArrayOccluder3D" uid="uid://crn5tc6fjoafm" path="res://Scenes/Occlusion/Level1.occ" id="6_supt6"]
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="8_upf4p"]
 [ext_resource type="ArrayMesh" uid="uid://csnpnq41xfu" path="res://Models/level-1-tree-wall.res" id="11_glw4y"]
 [ext_resource type="PackedScene" uid="uid://b71k8ok3eu1ci" path="res://Prefabs/Fabrications/PropPlatform4m.tscn" id="11_q3dqd"]
