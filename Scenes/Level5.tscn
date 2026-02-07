@@ -478,7 +478,7 @@ script = ExtResource("4_4kscp")
 [node name="DialogueUi" parent="." instance=ExtResource("5_xnl3v")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("6_2xldr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 142.5, 3, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Map" type="Node3D" parent="."]
 

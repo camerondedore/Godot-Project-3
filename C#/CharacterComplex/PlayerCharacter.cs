@@ -61,21 +61,19 @@ namespace PlayerCharacterComplex
 		[Export]
 		public PlayerCharacterLedgeDetector ledgeDetector;
 		[Export]
-		public Vector3 ledgeGrabOffset;
-		[Export]
     	public MeshInstance3D bowMesh;
-		[Export]
+
+		public Vector3 ledgeGrabOffset = new Vector3(0.0f, -1.2f, 0.3f);
 		public float speed = 5,
 			aimSpeed = 2,
-			lookSpeed = 5,
-			acceleration = 5,
+			lookSpeed = 15,
+			acceleration = 10,
 			jumpHeight = 2.1f,
 			gravityMultiplier = 2f,
 			ledgeGrabJumpHeight = 3,
 			startDelay = 1f,
 			fireTime = 0.5f,
 			drawTime = 0.5f;
-
 		public AnimationNodeStateMachinePlayback animStateMachinePlayback;
 		public Disconnector jumpDisconnector = new Disconnector();
 		public BandageStation currentStation;
