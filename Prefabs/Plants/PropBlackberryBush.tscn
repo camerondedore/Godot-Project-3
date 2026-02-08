@@ -33,8 +33,8 @@ shape = SubResource("BoxShape3D_khcq5")
 debug_color = Color(1, 1, 1, 1)
 
 [node name="ShadowDecal" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112, 0, 0.011)
-size = Vector3(5.672, 1, 3.878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0160246, 0, 0.114909)
+size = Vector3(5.89398, 1, 3.7845)
 texture_albedo = ExtResource("3_5plxe")
 upper_fade = 0.5
 lower_fade = 0.5

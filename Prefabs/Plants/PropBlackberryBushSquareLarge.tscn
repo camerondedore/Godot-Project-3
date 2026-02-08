@@ -59,8 +59,8 @@ shape = SubResource("ConvexPolygonShape3D_bp165")
 debug_color = Color(1, 1, 1, 1)
 
 [node name="ShadowDecal" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155418, 0, 0.0142556)
-size = Vector3(6.20171, 1, 6.22645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0147557, 0, 0.0494376)
+size = Vector3(6.25605, 1, 6.26622)
 texture_albedo = ExtResource("3_01ya0")
 distance_fade_enabled = true
 distance_fade_begin = 20.0

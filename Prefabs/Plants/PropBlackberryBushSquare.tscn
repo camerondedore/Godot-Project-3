@@ -35,8 +35,8 @@ shape = SubResource("BoxShape3D_yubvx")
 debug_color = Color(1, 1, 1, 1)
 
 [node name="ShadowDecal" type="Decal" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108, 0, 0.011)
-size = Vector3(6.153, 1, 5.213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0208819, 0, 0.0022858)
+size = Vector3(5.95646, 1, 5.13003)
 texture_albedo = ExtResource("3_smbhv")
 distance_fade_enabled = true
 distance_fade_begin = 20.0
