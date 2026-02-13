@@ -10,6 +10,23 @@ namespace PlayerCharacterComplex
 
 
 
+        public override void RunState(double delta)
+        {
+            // smooth velocity
+            var vel = Vector3.Zero;
+            vel.X = Mathf.Lerp(blackboard.Velocity.X, 0, ((float) delta) * blackboard.acceleration);
+            vel.Z = Mathf.Lerp(blackboard.Velocity.Z, 0, ((float) delta) * blackboard.acceleration);
+
+            // set velocity
+            blackboard.Velocity = vel;
+
+            blackboard.MoveAndSlide();
+            
+            base.RunState(delta);
+        }
+
+
+
         public override void StartState()
         {
             // disable camera spring arm

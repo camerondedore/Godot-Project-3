@@ -2,7 +2,7 @@ using Godot;
 using System;
 using PlayerBow;
 
-public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatableBody
+public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatableBody, IActivatable
 {
 
     [Export]
@@ -37,13 +37,7 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
         // disable decals if not arrow activatable
         if(arrowActivatable == false)
         {
-            foreach(Node3D child in GetChildren())
-            {
-                if(child.Name.ToString().Contains("Decal"))
-                {
-                    child.Visible = false;
-                }
-            }
+            SetDecalVisiblity(false);
         }
     }
 
@@ -221,5 +215,36 @@ public partial class MovingBlockTarget : AnimatableBody3D, IBowTarget, IAnimatab
     public bool IsMoving()
     {
         return moveCursor < 1f;
+    }
+
+
+
+    void SetDecalVisiblity(bool isVisible)
+    {
+        foreach(Node3D child in GetChildren())
+        {
+            if(child.Name.ToString().Contains("Decal"))
+            {
+                child.Visible = isVisible;
+            }
+        }
+    }
+
+
+
+    public void Activate()
+    {
+        arrowActivatable = true;
+
+        SetDecalVisiblity(true);
+    }
+
+
+
+    public void Deactivate()
+    {
+        arrowActivatable = false;
+
+        SetDecalVisiblity(false);
     }
 }
