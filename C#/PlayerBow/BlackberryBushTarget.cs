@@ -18,6 +18,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
         invisibleWallCollider1,
         invisibleWallCollider2;
     NavigationLink3D navLink;
+    GpuParticles3D fxLeaves;
 
 
 
@@ -31,6 +32,7 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
         invisibleWallCollider1 = (CollisionShape3D) GetNode("InvisibleWall/Collider1");
         invisibleWallCollider2 = (CollisionShape3D) GetNode("InvisibleWall/Collider2");
         navLink = (NavigationLink3D) GetNode("NavLink");
+        fxLeaves = (GpuParticles3D) GetNode("FxLeaves");
 
         navLink.Enabled = false;
     }
@@ -74,6 +76,9 @@ public partial class BlackberryBushTarget : StaticBody3D, IBowTarget, CinematicS
 
         // create fx
         var newFx = cutFx.Instantiate() as Node3D;
+
+        // disable fx
+        fxLeaves.Emitting = false;
 
         // set transform
         var spawnPosition = GlobalPosition + targetOffset;

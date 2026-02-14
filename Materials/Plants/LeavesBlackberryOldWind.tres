@@ -16,5 +16,5 @@ shader_parameter/albedo = ExtResource("2_xldau")
 shader_parameter/metallic = 0.1
 shader_parameter/roughness = 1.0
 shader_parameter/specular = 0.25
-shader_parameter/backlightStrength = 0.3
+shader_parameter/backlightStrength = 0.4
 shader_parameter/alphaScissor = 0.5
