@@ -6,6 +6,9 @@ public partial class Torch : StaticBody3D, IActivatable
 {
 
     [Export]
+    public Material unlitMaterial,
+        litMaterial;
+    [Export]
     public AudioStream lightSound,
         extinguishSound,
         burnSound;
@@ -17,6 +20,7 @@ public partial class Torch : StaticBody3D, IActivatable
     protected AudioTools3d audio;
     protected Light3D light;
     protected Area3D damageArea;
+    protected MeshInstance3D torchMeshNode;
 
 
 
@@ -27,6 +31,7 @@ public partial class Torch : StaticBody3D, IActivatable
         audio = (AudioTools3d) GetNode("Audio");
         light = (Light3D) GetNode("Light");
         damageArea = (Area3D) GetNode("DamageArea");
+        torchMeshNode = (MeshInstance3D) GetNode("TorchMesh");
 
         // check if torch is lit or not at start
         if(lit == false)
@@ -35,6 +40,7 @@ public partial class Torch : StaticBody3D, IActivatable
             audio.Stop();
             light.Visible = false;
             damageArea.SetDeferred("monitoring", false);
+            torchMeshNode.MaterialOverride = unlitMaterial;
         }
         else if(useLight == false)
         {
@@ -88,6 +94,8 @@ public partial class Torch : StaticBody3D, IActivatable
         }
 
         audio.Finished += LightSoundFinished;
+
+        torchMeshNode.MaterialOverride = litMaterial;
     }
 
 
@@ -104,6 +112,8 @@ public partial class Torch : StaticBody3D, IActivatable
         {   
             light.Visible = false;
         }
+
+        torchMeshNode.MaterialOverride = unlitMaterial;
     }
 
 
