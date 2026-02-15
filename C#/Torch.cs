@@ -40,7 +40,7 @@ public partial class Torch : StaticBody3D, IActivatable
             audio.Stop();
             light.Visible = false;
             damageArea.SetDeferred("monitoring", false);
-            torchMeshNode.MaterialOverride = unlitMaterial;
+            torchMeshNode.SetSurfaceOverrideMaterial(0, unlitMaterial);
         }
         else if(useLight == false)
         {
@@ -95,7 +95,7 @@ public partial class Torch : StaticBody3D, IActivatable
 
         audio.Finished += LightSoundFinished;
 
-        torchMeshNode.MaterialOverride = litMaterial;
+        torchMeshNode.SetSurfaceOverrideMaterial(0, litMaterial);
     }
 
 
@@ -113,7 +113,7 @@ public partial class Torch : StaticBody3D, IActivatable
             light.Visible = false;
         }
 
-        torchMeshNode.MaterialOverride = unlitMaterial;
+        torchMeshNode.SetSurfaceOverrideMaterial(0, unlitMaterial);
     }
 
 

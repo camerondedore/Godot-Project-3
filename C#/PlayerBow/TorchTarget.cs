@@ -78,7 +78,7 @@ public partial class TorchTarget : Torch, IBowTarget
         audio.PlaySound(burnSound, 0.1f);
         light.Visible = true;
         damageArea.SetDeferred("monitoring", true);
-        torchMeshNode.MaterialOverride = litMaterial;
+        torchMeshNode.SetSurfaceOverrideMaterial(0, litMaterial);
     }
 
 
@@ -91,6 +91,6 @@ public partial class TorchTarget : Torch, IBowTarget
         audio.PlaySound(extinguishSound, 0.1f);
         light.Visible = false;
         damageArea.SetDeferred("monitoring", false);
-        torchMeshNode.MaterialOverride = unlitMaterial;
+        torchMeshNode.SetSurfaceOverrideMaterial(0, unlitMaterial);
     }
 }
