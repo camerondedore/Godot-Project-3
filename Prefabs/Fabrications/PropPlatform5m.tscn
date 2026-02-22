@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://0aylyohlxbgq"]
+
+[ext_resource type="PackedScene" uid="uid://b77qh7ya7mcrk" path="res://Prefabs/Fabrications/PropPlatformLogs.tscn" id="1_thfil"]
+[ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="2_hum35"]
+[ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Lumber/PropBoardPost2.tscn" id="3_s38y2"]
+[ext_resource type="PackedScene" uid="uid://8x2u1js755re" path="res://Prefabs/Lumber/PropBoard1.tscn" id="4_5v0mn"]
+[ext_resource type="PackedScene" uid="uid://byyhb3n7dtwht" path="res://Prefabs/Lumber/PropBoard2.tscn" id="5_1csp3"]
+[ext_resource type="PackedScene" uid="uid://byfxqpcowymc0" path="res://Prefabs/Lumber/PropBoard3.tscn" id="6_22iye"]
+[ext_resource type="PackedScene" uid="uid://c5l8sqkkxfwt4" path="res://Prefabs/Lumber/PropBoardShort.tscn" id="7_ogf5e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoqet"]
+size = Vector3(3.7, 2, 3)
+
+[node name="PropPlatform5m" type="Node3D"]
+
+[node name="InvisibleWall" type="StaticBody3D" parent="."]
+collision_layer = 2048
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InvisibleWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.57534, 0)
+shape = SubResource("BoxShape3D_eoqet")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="PropPlatformLogs" parent="." instance=ExtResource("1_thfil")]
+transform = Transform3D(1.16, 0, 0, 0, 1.16, 0, 0, 0, 1.16, -1.37, 4.75, 0)
+
+[node name="PropPlatformLogs3" parent="." instance=ExtResource("1_thfil")]
+transform = Transform3D(-1.16, -1.0141e-07, 0, 1.0141e-07, -1.16, 0, 0, 0, 1.16, 1.345, 4.75, 0)
+
+[node name="PropPlatformLogs2" parent="." instance=ExtResource("1_thfil")]
+transform = Transform3D(1.16, -1.75155e-07, 1.75155e-07, -1.75155e-07, -1.16, -8.86558e-15, 1.75155e-07, -1.75821e-14, -1.16, -0.00999999, 4.75, 0)
+
+[node name="PropBoardPost1" parent="." instance=ExtResource("2_hum35")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, -1.5, 2.2, 1.2)
+
+[node name="PropBoardPost2" parent="." instance=ExtResource("3_s38y2")]
+transform = Transform3D(1.35, 0, 0, 0, 1.35, 0, 0, 0, 1.35, 1.5, 2.2, 1.2)
+
+[node name="PropBoardPost3" parent="." instance=ExtResource("2_hum35")]
+transform = Transform3D(-1.35, -2.03844e-07, -1.18021e-07, 2.03844e-07, -1.35, 1.18021e-07, -1.18021e-07, 1.18021e-07, 1.35, 1.5, 2.2, -1.2)
+
+[node name="PropBoardPost4" parent="." instance=ExtResource("3_s38y2")]
+transform = Transform3D(-1.35, -1.18021e-07, -1.18021e-07, 1.18021e-07, -1.35, 1.18021e-07, -1.18021e-07, 1.18021e-07, 1.35, -1.5, 2.2, -1.2)
+
+[node name="PropBoardPost5" parent="." instance=ExtResource("2_hum35")]
+transform = Transform3D(-1.35, 0, 1.18021e-07, 0, 1.35, 0, -1.18021e-07, 0, -1.35, 2.50343e-07, 2.2, -1.2)
+
+[node name="PropBoardPost6" parent="." instance=ExtResource("3_s38y2")]
+transform = Transform3D(1.35, 1.18021e-07, 2.36042e-07, 1.18021e-07, -1.35, 1.18021e-07, 2.36042e-07, -1.18021e-07, -1.35, -1.19249e-08, 2.2, 1.2)
+
+[node name="PropBoard1" parent="." instance=ExtResource("4_5v0mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.20086, 1.43545)
+
+[node name="PropBoard2" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-4.37114e-08, 0, 1, -0.5, 0.866026, -2.18557e-08, -0.866026, -0.5, -3.78551e-08, 1.75675, 3.68036, 0)
+
+[node name="PropBoard12" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-3.72529e-08, 1.04308e-07, -1, 0.5, -0.866026, -1.00001e-07, -0.866026, -0.5, 0, 1.75675, 1.93036, 0)
+
+[node name="PropBoard13" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, -0.5, -0.866026, 9.75661e-08, -0.866026, 0.5, -5.85619e-09, 1.25675, 3.68036, 0)
+
+[node name="PropBoard14" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-3.72529e-08, -1.68853e-08, 1, 0.5, 0.866026, 1.15429e-08, -0.866026, 0.5, -2.16321e-08, 1.25675, 1.93036, 0)
+
+[node name="PropBoard4" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-1.81058e-08, 6.18172e-08, -1, 0.5, -0.866026, -6.25883e-08, -0.866026, -0.5, -1.52285e-08, -1.762, 3.68036, 0)
+
+[node name="PropBoard11" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-2.56056e-08, -1.37528e-07, 1, -0.5, 0.866026, 1.063e-07, -0.866026, -0.5, -9.09388e-08, -1.762, 1.93036, 0)
+
+[node name="PropBoard15" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-1.81058e-08, 2.56056e-08, 1, 0.5, 0.866026, -1.31222e-08, -0.866026, 0.5, -2.84828e-08, -1.262, 3.68036, 0)
+
+[node name="PropBoard16" parent="." instance=ExtResource("5_1csp3")]
+transform = Transform3D(-2.56056e-08, 5.01047e-08, -1, -0.5, -0.866026, -3.05892e-08, -0.866026, 0.5, 4.72276e-08, -1.262, 1.93036, 0)
+
+[node name="PropBoard3" parent="." instance=ExtResource("6_22iye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22906, 0.96378)
+
+[node name="PropBoard7" parent="." instance=ExtResource("4_5v0mn")]
+transform = Transform3D(-1, 8.74227e-08, 0, 8.74227e-08, 1, 8.74228e-08, 7.64274e-15, 8.74227e-08, -1, -1.23267e-09, 3.70086, 0.96378)
+
+[node name="PropBoard8" parent="." instance=ExtResource("6_22iye")]
+transform = Transform3D(-1, 8.74227e-08, 0, 8.74227e-08, 1, 8.74228e-08, 7.64274e-15, 8.74227e-08, -1, 1.23265e-09, 3.72906, 1.43545)
+
+[node name="PropBoard5" parent="." instance=ExtResource("4_5v0mn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.94459e-08, 2.20086, -1.43821)
+
+[node name="PropBoard6" parent="." instance=ExtResource("6_22iye")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74227e-08, 0, -1, -1.94459e-08, 2.22906, -0.96808)
+
+[node name="PropBoard9" parent="." instance=ExtResource("4_5v0mn")]
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, 8.74227e-08, 1, -8.74228e-08, 8.74228e-08, 8.74228e-08, 1, -1.82132e-08, 3.70086, -0.96808)
+
+[node name="PropBoard10" parent="." instance=ExtResource("6_22iye")]
+transform = Transform3D(1, -8.74227e-08, -8.74228e-08, 8.74227e-08, 1, -8.74228e-08, 8.74227e-08, 8.74227e-08, 1, 1.82133e-08, 3.72906, -1.43821)
+
+[node name="PropBoardShort" parent="." instance=ExtResource("7_ogf5e")]
+transform = Transform3D(-1.5, -2.26494e-07, 9.90035e-15, 0, -6.55671e-08, -1.5, 2.26494e-07, -1.5, 6.55671e-08, 1.05847e-08, 4.45776, -0.769548)
+
+[node name="PropBoardShort2" parent="." instance=ExtResource("7_ogf5e")]
+transform = Transform3D(1.5, 6.55671e-08, 2.86603e-15, 0, -6.55671e-08, 1.5, 6.55671e-08, -1.5, -6.55671e-08, 3.06413e-09, 4.45776, 0.773455)
