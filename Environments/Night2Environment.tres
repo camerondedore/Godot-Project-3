@@ -29,4 +29,4 @@ fog_sun_scatter = 0.01
 fog_density = 1.0
 fog_sky_affect = 0.0
 fog_depth_begin = 20.0
-fog_depth_end = 200.0
+fog_depth_end = 150.0
