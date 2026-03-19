@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bo7lbt2bfhvp1"]
+
+[ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_sy11k"]
+[ext_resource type="Texture2D" uid="uid://freukav1mv1r" path="res://Textures/character-champion-rat-diffuse.png" id="2_sy11k"]
+[ext_resource type="Texture2D" uid="uid://cplyvlcmyd4oo" path="res://Textures/character-champion-rat-metallic.png" id="3_42okh"]
+[ext_resource type="Texture2D" uid="uid://uangoa5n4y1l" path="res://Textures/character-champion-rat-roughness.png" id="4_8mffk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_sy11k")
+shader_parameter/albedo = ExtResource("2_sy11k")
+shader_parameter/metallic = ExtResource("3_42okh")
+shader_parameter/metallicPower = 1.0
+shader_parameter/roughness = ExtResource("4_8mffk")
+shader_parameter/roughnessPower = 1.0
+shader_parameter/rimPower = 0.04
+shader_parameter/rimPowerAlbedo = 0.15
+shader_parameter/rimSharpness = 0.1
+shader_parameter/rimDistance = 0.75
+shader_parameter/rimColor = Color(1, 0, 0, 1)
+shader_parameter/rimMinHeight = -1.0
+shader_parameter/rimHeightSlope = 2.0
