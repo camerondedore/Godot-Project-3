@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bbpsf7fp0vdgv"]
+[gd_scene load_steps=44 format=3 uid="uid://bbpsf7fp0vdgv"]
 
 [ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_0x7mu"]
 [ext_resource type="Environment" uid="uid://dooskg4otcsks" path="res://Environments/Night1Environment.tres" id="2_mko5b"]
@@ -29,6 +29,9 @@
 [ext_resource type="AudioStream" uid="uid://dmwt5lgd2fkoo" path="res://Audio/ambience-owl-4.wav" id="13_u04pr"]
 [ext_resource type="AudioStream" uid="uid://cmwqqwocs3etg" path="res://Audio/ambience-owl-5.wav" id="14_8t4oi"]
 [ext_resource type="Animation" uid="uid://dkgvlpehrvvwd" path="res://Animation/Cinematics/lhc4.res" id="16_pcx07"]
+[ext_resource type="AudioStream" uid="uid://buond3vfxrpyd" path="res://Audio/ambience-frog-1.wav" id="19_ie1re"]
+[ext_resource type="AudioStream" uid="uid://b7v3f0fmgp7cf" path="res://Audio/ambience-frog-2.wav" id="20_7kvb6"]
+[ext_resource type="AudioStream" uid="uid://b3f7u875a1e2v" path="res://Audio/ambience-frog-3.wav" id="21_2gvti"]
 [ext_resource type="PackedScene" uid="uid://bhcqps24bo24o" path="res://Prefabs/Characters/NpcMobileVoleGuard.tscn" id="27_8t4oi"]
 [ext_resource type="Script" uid="uid://dnb48ygak3efu" path="res://C#/NpcDialogue/NpcDialogueLine.cs" id="28_52bj5"]
 [ext_resource type="AudioStream" uid="uid://c7mwo6jpe7vjx" path="res://Audio/Dialogue/npc-vole-guard-dialogue-lh-4.wav" id="29_ofovo"]
@@ -171,7 +174,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58079, 2.5, -22.6236)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.2854, 2.5, 28.7504)
 
 [node name="LevelRandomAudio0" parent="Map/Audio" index="1"]
-sounds = Array[AudioStream]([ExtResource("5_7mkx5"), ExtResource("6_xllml"), ExtResource("7_pcx07"), ExtResource("8_eg756"), ExtResource("9_ilhim"), ExtResource("10_35ej7"), ExtResource("11_gc0ra"), ExtResource("12_ujaft"), ExtResource("13_u04pr"), ExtResource("14_8t4oi")])
+sounds = Array[AudioStream]([ExtResource("5_7mkx5"), ExtResource("6_xllml"), ExtResource("7_pcx07"), ExtResource("8_eg756"), ExtResource("9_ilhim"), ExtResource("10_35ej7"), ExtResource("11_gc0ra"), ExtResource("12_ujaft"), ExtResource("13_u04pr"), ExtResource("14_8t4oi"), ExtResource("19_ie1re"), ExtResource("20_7kvb6"), ExtResource("21_2gvti")])
+timeRange = Vector2(4, 8)
 
 [node name="PickupNettleBroth" parent="Map/Pickups" index="5" instance=ExtResource("3_5cits")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.9361, 1.2, 10.3925)
