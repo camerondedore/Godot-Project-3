@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections;
+using System.Linq;
 
 public partial class CharacterFootsteps : AudioTools3d, CharacterWaterSplash.IWaterReactor
 {
@@ -16,6 +18,8 @@ public partial class CharacterFootsteps : AudioTools3d, CharacterWaterSplash.IWa
     RayCast3D floorRay;
 
     public bool footstepsEnabled = true;
+
+    string[] terrainKeywords = ["ground", "terrain"];
 
 
 
@@ -87,8 +91,9 @@ public partial class CharacterFootsteps : AudioTools3d, CharacterWaterSplash.IWa
         // get floor
         floorRay.ForceRaycastUpdate();
         var hitCollider = floorRay.GetCollider();
+        var hitColliderName = ((Node) hitCollider).Name.ToString();
 
-        if(hitCollider is StaticBody3D hitBody)
+        if(hitCollider is StaticBody3D hitBody && terrainKeywords.Contains(hitColliderName, StringComparer.OrdinalIgnoreCase))
         {
             // get collision shape
             var hitShapeId = (uint) floorRay.GetColliderShape();
