@@ -277,13 +277,4 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
         machine.SetState(stateStart);
         machine.CurrentState.StartState();
     }
-
-
-
-    public bool IsAvoidanceDirectionFarFromPath()
-    {
-        var angle = Mathf.RadToDeg(avoidanceDir.AngleTo(dirToNextPathPoint));
-
-        return angle > 50;
-    }
 }

@@ -326,13 +326,4 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
 
         return true;
     }
-
-
-
-    public bool IsAvoidanceDirectionFarFromPath()
-    {
-        var angle = Mathf.RadToDeg(avoidanceDir.AngleTo(dirToNextPathPoint));
-
-        return angle > 50;
-    }
 }

@@ -308,13 +308,4 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
 
         return false;
     }
-
-
-
-    public bool IsAvoidanceDirectionFarFromPath()
-    {
-        var angle = Mathf.RadToDeg(avoidanceDir.AngleTo(dirToNextPathPoint));
-
-        return angle > 50;
-    }
 }
