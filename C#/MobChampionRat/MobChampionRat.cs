@@ -70,7 +70,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         navAgent.VelocityComputed += SafeMove;
 
         // initialize states
-        //stateStart = new MobChampionRatStateStart(){blackboard = this};
+        stateStart = new MobChampionRatStateStart(){blackboard = this};
         //stateDie = new MobChampionRatStateDie(){blackboard = this};
 
         // change mob values
