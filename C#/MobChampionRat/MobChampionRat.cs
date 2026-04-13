@@ -9,6 +9,9 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
     public StateMachineQueue machine = new StateMachineQueue();
     public SuperState superStateIdle;
     public State stateStart,
+        stateIdle,
+        stateFall,
+        stateReact,
         stateDie;
 
     [Export]
@@ -71,6 +74,9 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
         // initialize states
         stateStart = new MobChampionRatStateStart(){blackboard = this};
+        stateIdle = new MobChampionRatStateIdle(){blackboard = this};
+        stateFall = new MobChampionRatStateFall(){blackboard = this};
+        stateReact = new MobChampionRatStateReact(){blackboard = this};
         //stateDie = new MobChampionRatStateDie(){blackboard = this};
 
         // change mob values
