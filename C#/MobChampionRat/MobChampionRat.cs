@@ -12,6 +12,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateIdle,
         stateFall,
         stateReact,
+        stateMove,
         stateDie;
 
     [Export]
@@ -77,6 +78,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateIdle = new MobChampionRatStateIdle(){blackboard = this};
         stateFall = new MobChampionRatStateFall(){blackboard = this};
         stateReact = new MobChampionRatStateReact(){blackboard = this};
+        stateMove = new MobChampionRatStateMove(){blackboard = this};
         //stateDie = new MobChampionRatStateDie(){blackboard = this};
 
         // change mob values
@@ -238,5 +240,66 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
         machine.SetState(stateStart);
         machine.CurrentState.StartState();
+    }
+
+
+
+    public bool CanAttackEnemy()
+    {
+         var distanceToEnemy = GetDistanceToEnemy();
+
+        var isCloseToEnemy = distanceToEnemy < attackRange;
+        var isNotAboveEnemy = (enemy.GlobalPosition.Y - GlobalPosition.Y) > -0.75f;
+        
+        var isBelowEnemy = distanceToEnemy < attackRangeUp && GetUpAngleToEnemy() < attackAngle;
+
+        // check if enemy is close enough or if enemy is above
+        if((isCloseToEnemy && isNotAboveEnemy) || isBelowEnemy)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+
+    public bool CanDamageEnemy()
+    {
+        // get distance to enemy
+        var distanceToEnemy = GetDistanceToEnemy();
+        var angleForwardToEnemy = GetForwardToEnemyAngle();
+        var angleUpToEnemy = GetUpAngleToEnemy();
+
+        var enemyInFront = distanceToEnemy < damageRange && angleForwardToEnemy < attackAngle;
+        var enemyAbove = distanceToEnemy < damageRangeUp && angleUpToEnemy < attackAngle;
+        var enemyClose = distanceToEnemy < 0.8f;
+
+        if(enemyInFront || enemyAbove || enemyClose)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+
+    public override bool Hit(Vector3 dir)
+    {
+        // check if rat is in vulnerable state
+        // if(hasShield == true)
+        // {
+        //     // break shield
+        //     machine.SetState(stateShieldBreak);
+        //     arrowHitDirection = dir;
+        // }
+        // else
+        // {
+        //     // take damage from arrow
+        //     health.Damage(damageFromArrow);
+        // }
+
+        return true;
     }
 }
