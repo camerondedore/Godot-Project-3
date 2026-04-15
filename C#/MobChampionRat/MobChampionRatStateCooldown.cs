@@ -1,0 +1,95 @@
+using Godot;
+using System;
+
+namespace MobChampionRat;
+
+public partial class MobChampionRatStateCooldown : MobChampionRatState
+{
+
+    Vector3 startPosition;
+    double startTime;
+
+
+
+    public override void RunState(double delta)
+    {
+        // look for enemy
+        blackboard.LookForEnemy();
+    }
+    
+    
+    
+    public override void StartState()
+    {
+        startTime = EngineTime.timePassed;
+
+        startPosition = blackboard.GlobalPosition;
+
+        // stop looking at enemy
+        blackboard.lookAtTarget = false;
+
+        // stop moving
+        blackboard.moving = false;
+        
+        // clear enemy
+        blackboard.enemy = null;
+
+        // play shield animation
+        blackboard.animation.Play("champion-rat-idle-aggro");
+        // randomize animation cursor
+        blackboard.animation.Advance(GD.Randf() * blackboard.idleAnimationTime * 0.9);
+
+        // clear head look target
+        blackboard.headControl.ClearTarget();
+    }
+
+
+
+    public override void EndState()
+    {
+        
+    }
+
+
+
+    public override State Transition()
+    {
+        // check if falling
+        if(blackboard.IsOnFloor() == false)
+        {
+            // fall
+            return blackboard.stateFall;
+        }
+        
+        if(blackboard.IsEnemyValid())
+        {
+            if(blackboard.eyes.HasLosToTarget(blackboard.enemy) == true)
+            {
+                // react
+                return blackboard.stateReact;                                
+            }
+
+
+            // get distance to enemy
+            var distanceToEnemySqr = blackboard.GetDistanceSqrToEnemy();
+
+            if(distanceToEnemySqr < 2f)
+            {
+                // react
+                return blackboard.stateReact;
+            }
+        }
+
+        var isTimeUp = EngineTime.timePassed > startTime + 5;
+        var isdistanceTraveled = startPosition.DistanceSquaredTo(blackboard.GlobalPosition) > 100;
+
+        // check for 5 seconds passing or 10 meters from start
+        if(isTimeUp || isdistanceTraveled)
+        {
+            // retreat
+            return blackboard.stateRetreat;
+        }
+
+        return this;
+    }
+}

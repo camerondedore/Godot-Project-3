@@ -45,7 +45,6 @@ public partial class MobShieldRatStateWatch : MobShieldRatState
         {
             // play shield animation
             blackboard.animation.Play("shield-rat-patrol-wait-shield");
-            
         }
         else
         {

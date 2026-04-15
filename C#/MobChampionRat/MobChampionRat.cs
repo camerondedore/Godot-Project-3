@@ -13,6 +13,9 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateFall,
         stateReact,
         stateMove,
+        stateCooldown,
+        stateRetreat,
+        stateWatch,
         stateDie;
 
     [Export]
@@ -34,8 +37,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         arrowHitDirection;
     public double swingTime = 1.833,
         attackDamageTime = 0.44,
-        reactTime = 0.4,
-        idleAnimationTime = 3.66;
+        reactTime = 0.56,
+        idleAnimationTime = 3.33;
     public float moveRecalculatePathRange = 0.5f,
         attackRange = 2.75f,
         attackRangeUp = 3.5f,
@@ -79,6 +82,9 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateFall = new MobChampionRatStateFall(){blackboard = this};
         stateReact = new MobChampionRatStateReact(){blackboard = this};
         stateMove = new MobChampionRatStateMove(){blackboard = this};
+        stateCooldown = new MobChampionRatStateCooldown(){blackboard = this};
+        stateRetreat = new MobChampionRatStateRetreat(){blackboard = this};
+        stateWatch = new MobChampionRatStateWatch(){blackboard = this};
         //stateDie = new MobChampionRatStateDie(){blackboard = this};
 
         // change mob values

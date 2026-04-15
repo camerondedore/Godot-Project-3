@@ -26,7 +26,7 @@ public partial class MobShieldRatStateCooldown : MobShieldRatState
 
         startPosition = blackboard.GlobalPosition;
 
-        // setop looking at enemy
+        // stop looking at enemy
         blackboard.lookAtTarget = false;
 
         // stop moving
