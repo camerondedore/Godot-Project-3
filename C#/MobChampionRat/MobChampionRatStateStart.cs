@@ -20,6 +20,9 @@ public partial class MobChampionRatStateStart : MobChampionRatState
 
     public override void StartState()
     {
+        // make rat protected against attack
+        blackboard.vulnerable = false;
+        
         if(blackboard.startTarget != null)
         {
             // get start target position

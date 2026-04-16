@@ -13,9 +13,13 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateFall,
         stateReact,
         stateMove,
+        stateAttack,
+        stateHurt,
         stateCooldown,
         stateRetreat,
         stateWatch,
+        statePatrol,
+        statePatrolWait,
         stateDie;
 
     [Export]
@@ -38,7 +42,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
     public double swingTime = 1.833,
         attackDamageTime = 0.44,
         reactTime = 0.56,
-        idleAnimationTime = 3.33;
+        idleAnimationTime = 3.33,
+        hurtAnimationTime = 1.06;
     public float moveRecalculatePathRange = 0.5f,
         attackRange = 2.75f,
         attackRangeUp = 3.5f,
@@ -50,7 +55,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         lookSpeed = 15f,
         acceleration = 4;
     public bool lookAtTarget = false,
-        moving;
+        moving,
+        vulnerable = false;
 
     bool delay = false,
         isOnNavmesh;
@@ -82,9 +88,12 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateFall = new MobChampionRatStateFall(){blackboard = this};
         stateReact = new MobChampionRatStateReact(){blackboard = this};
         stateMove = new MobChampionRatStateMove(){blackboard = this};
+        stateAttack = new MobChampionRatStateAttack(){blackboard = this};
         stateCooldown = new MobChampionRatStateCooldown(){blackboard = this};
         stateRetreat = new MobChampionRatStateRetreat(){blackboard = this};
         stateWatch = new MobChampionRatStateWatch(){blackboard = this};
+        statePatrol = new MobChampionRatStatePatrol(){blackboard = this};
+        statePatrolWait = new MobChampionRatStatePatrolWait(){blackboard = this};
         //stateDie = new MobChampionRatStateDie(){blackboard = this};
 
         // change mob values
@@ -293,7 +302,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
     public override bool Hit(Vector3 dir)
     {
-        // check if rat is in vulnerable state
+        // check if rat is in vulnerable state or if hitting rat's back
+
         // if(hasShield == true)
         // {
         //     // break shield
