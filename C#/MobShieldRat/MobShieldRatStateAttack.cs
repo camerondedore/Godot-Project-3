@@ -87,11 +87,12 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
         // look at enemy
         blackboard.lookAtTarget = true;
 
-
+        // if calling trying to play the same animation as what's already playing, need to stop the the one playing first
+        blackboard.animation.Stop();
 
         // animation
         if(blackboard.hasShield == true)
-        {            
+        {
             if(axeSwingCount < 2)
             {
                 // play axe animation with shield
@@ -105,9 +106,6 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
         }
         else
         {
-            // if calling trying to play the same animation as what's already playing, need to stop the the one playing first
-            blackboard.animation.Stop();
-
             // play animation without shield
             blackboard.animation.Play("shield-rat-attack-1");
         }
@@ -130,21 +128,19 @@ public partial class MobShieldRatStateAttack : MobShieldRatState
 
     public override State Transition()
     {
-        // check for no enemy
-        if(blackboard.IsEnemyValid() == false)
-        {
-            // reset brown rat aggro
-            blackboard.isAggro = false;
-
-            // cool down
-            return blackboard.stateCooldown;
-        }
-
-
         // check if attack is over
         if(EngineTime.timePassed > startTime + blackboard.swingTime)
         {
-            if(blackboard.CanAttackEnemy() == true)
+            // check for no enemy
+            if(blackboard.IsEnemyValid() == false)
+            {
+                // reset brown rat aggro
+                blackboard.isAggro = false;
+
+                // cool down
+                return blackboard.stateCooldown;
+            }
+            else if(blackboard.CanAttackEnemy() == true)
             {
                 // attack
                 EndState();

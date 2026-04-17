@@ -113,8 +113,10 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable, IActivatable
         // alert nearby allies that this mob spotted an enemy
         foreach(MobFaction ally in allies)
         {
-            var allyBase = (Mob) ally.Owner;
-            allyBase.AllySpottedEnemy(enemy);
+            if(ally.Owner is Mob allyBase)
+            {
+                allyBase.AllySpottedEnemy(enemy);
+            }
         }
     }
 
@@ -161,8 +163,10 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable, IActivatable
         // alert nearby allies that this mob died
         foreach(MobFaction ally in allies)
         {
-            var allyBase = (Mob) ally.Owner;
-            allyBase.AllyHurt();
+            if(ally.Owner is Mob allyBase)
+            {
+                allyBase.AllyHurt();
+            }
         }
     }
 

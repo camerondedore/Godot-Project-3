@@ -53,7 +53,7 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
         damageRange = 2.25f,
         damageRangeUp = 2.75f,
         attackAngle = 45,
-        damage = 10,
+        damage = 15,
         PatrolRange = 10,
         lookSpeed = 15f,
         acceleration = 4;

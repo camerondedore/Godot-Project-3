@@ -88,21 +88,19 @@ public partial class MobBlackRatStateAttack : MobBlackRatState
 
     public override State Transition()
     {
-        // check for no enemy
-        if(blackboard.IsEnemyValid() == false)
-        {
-            // reset brown rat aggro
-            blackboard.isAggro = false;
-
-            // cool down
-            return blackboard.stateCooldown;
-        }
-
-
         // check if attack is over
         if(EngineTime.timePassed > startTime + blackboard.swingTime)
         {
-            if(blackboard.CanAttackEnemy() == true)
+            // check for no enemy
+            if(blackboard.IsEnemyValid() == false)
+            {
+                // reset brown rat aggro
+                blackboard.isAggro = false;
+
+                // cool down
+                return blackboard.stateCooldown;
+            }
+            else if(blackboard.CanAttackEnemy() == true)
             {
                 // attack
                 StartState();

@@ -50,6 +50,9 @@ public partial class MobChampionRatStateAttack : MobChampionRatState
             {
                 // stop looking at enemy
                 blackboard.lookAtTarget = false;
+
+                // clear head look target
+                blackboard.headControl.ClearTarget();
             }
 
             // check for vulnerable timing
@@ -78,8 +81,14 @@ public partial class MobChampionRatStateAttack : MobChampionRatState
         // make rat protected against attack
         blackboard.vulnerable = false;
 
+        // if calling trying to play the same animation as what's already playing, need to stop the the one playing first
+        blackboard.animation.Stop();
+
         // animation
         blackboard.animation.Play("champion-rat-attack");
+
+        // set head look target
+        blackboard.headControl.SetTarget(blackboard.enemy);
     }
 
 
@@ -88,27 +97,32 @@ public partial class MobChampionRatStateAttack : MobChampionRatState
     {
         // make rat protected against attack
         blackboard.vulnerable = false;
+
+        // check for no enemy
+        if(blackboard.IsEnemyValid() == true)
+        {
+            // set head look target
+            blackboard.headControl.SetTarget(blackboard.enemy);
+        }
     }
 
 
 
     public override State Transition()
     {
-        // check for no enemy
-        if(blackboard.IsEnemyValid() == false)
-        {
-            // reset brown rat aggro
-            blackboard.isAggro = false;
-
-            // cool down
-            return blackboard.stateCooldown;
-        }
-
-
         // check if attack is over
         if(EngineTime.timePassed > startTime + blackboard.swingTime)
         {
-            if(blackboard.CanAttackEnemy() == true)
+            // check for no enemy
+            if(blackboard.IsEnemyValid() == false)
+            {
+                // reset brown rat aggro
+                blackboard.isAggro = false;
+
+                // cool down
+                return blackboard.stateCooldown;
+            }
+            else if(blackboard.CanAttackEnemy() == true)
             {
                 // attack
                 StartState();

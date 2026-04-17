@@ -28,6 +28,17 @@ public partial class MobChampionRatStateDeflect : MobChampionRatState
 
         // animation
         blackboard.animation.Play("champion-rat-deflect");
+
+        // clear head look target
+        blackboard.headControl.ClearTarget();
+    }
+
+
+
+    public override void EndState()
+    {
+        // set head look target
+        blackboard.headControl.SetTarget(blackboard.enemy);
     }
 
 

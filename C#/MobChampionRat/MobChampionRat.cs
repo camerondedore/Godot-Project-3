@@ -41,7 +41,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         dirToNextPathPoint,
         avoidanceDir,
         arrowHitDirection;
-    public double swingTime = 1.9,
+    public double swingTime = 1.833,
         attackDamageTime = 0.44,
         attackLookStopTime = 0.3,
         attackVulnerableTime = 0.5,
@@ -52,13 +52,13 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
     public float moveRecalculatePathRange = 0.5f,
         attackRange = 2.75f,
         attackRangeUp = 3.5f,
-        damageRange = 3.0f,
-        damageRangeUp = 3.5f,
+        damageRange = 4f,
+        damageRangeUp = 3.65f,
         attackAngle = 30,
-        damage = 25,
+        damage = 30,
         PatrolRange = 10,
         lookSpeed = 15f,
-        acceleration = 4;
+        acceleration = 6;
     public bool lookAtTarget = false,
         moving,
         vulnerable = false;
