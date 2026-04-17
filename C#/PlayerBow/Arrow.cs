@@ -56,7 +56,13 @@ namespace PlayerBow
                     }
                     else
                     {
-                        DisableArrow(point, upVector);
+                        //DisableArrow(point, upVector);
+
+                        // detach trail
+                        trailFx.DetachTrail();
+
+                        // destroy arrow
+                        QueueFree();
                     }
                 }       
                 else

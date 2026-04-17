@@ -12,9 +12,19 @@ public partial class MobChampionRatStateHurt : MobChampionRatState
 
     public override void StartState()
     {
+        startTime = EngineTime.timePassed;
+
         // freeze rat
         blackboard.lookAtTarget = false;
         blackboard.moving = false;
+
+        // make rat protected against attack
+        blackboard.vulnerable = false;
+
+        // turn rat towards arrow
+        var lookTarget = blackboard.GlobalPosition - blackboard.arrowHitDirection;
+        lookTarget.Y = blackboard.GlobalPosition.Y;
+        blackboard.LookAt(lookTarget);
 
         // animation
         blackboard.animation.Play("champion-rat-hurt");
@@ -26,8 +36,8 @@ public partial class MobChampionRatStateHurt : MobChampionRatState
     {
         if(EngineTime.timePassed > startTime + blackboard.hurtAnimationTime)
         {
-            // react
-            return blackboard.stateReact;
+            // move
+            return blackboard.stateMove;
         }
 
         return this;

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 namespace MobChampionRat;
 
@@ -7,7 +8,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 {
 
     public StateMachineQueue machine = new StateMachineQueue();
-    public SuperState superStateIdle;
+    //public SuperState superStateIdle;
     public State stateStart,
         stateIdle,
         stateFall,
@@ -15,6 +16,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateMove,
         stateAttack,
         stateHurt,
+        stateDeflect,
         stateCooldown,
         stateRetreat,
         stateWatch,
@@ -39,18 +41,21 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         dirToNextPathPoint,
         avoidanceDir,
         arrowHitDirection;
-    public double swingTime = 1.833,
+    public double swingTime = 1.9,
         attackDamageTime = 0.44,
+        attackLookStopTime = 0.3,
+        attackVulnerableTime = 0.5,
         reactTime = 0.56,
         idleAnimationTime = 3.33,
-        hurtAnimationTime = 1.06;
+        hurtAnimationTime = 1.1,
+        deflectAnimationTime = 0.6;
     public float moveRecalculatePathRange = 0.5f,
         attackRange = 2.75f,
         attackRangeUp = 3.5f,
         damageRange = 3.0f,
         damageRangeUp = 3.5f,
-        attackAngle = 45,
-        damage = 10,
+        attackAngle = 30,
+        damage = 25,
         PatrolRange = 10,
         lookSpeed = 15f,
         acceleration = 4;
@@ -72,7 +77,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         health = (Health) GetNode("Health");
         myFaction1 = (MobFaction) GetNode("Faction1");
         myFaction2 = (MobFaction) GetNode("Faction2");
-        animation = (AnimationPlayer) GetNode("character-shield-rat/AnimationPlayer");
+        animation = (AnimationPlayer) GetNode("character-champion-rat/AnimationPlayer");
         audio = (MobChampionRatAudio) GetNode("RatAudio");
         poleaxeHitFx = (ParticleFx) GetNode("FxEnemyHit");
         poleaxeHitBloodFx = (ParticleFx) GetNode("FxBloodSlash");
@@ -89,6 +94,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateReact = new MobChampionRatStateReact(){blackboard = this};
         stateMove = new MobChampionRatStateMove(){blackboard = this};
         stateAttack = new MobChampionRatStateAttack(){blackboard = this};
+        stateHurt = new MobChampionRatStateHurt(){blackboard = this};
+        stateDeflect = new MobChampionRatStateDeflect(){blackboard = this};
         stateCooldown = new MobChampionRatStateCooldown(){blackboard = this};
         stateRetreat = new MobChampionRatStateRetreat(){blackboard = this};
         stateWatch = new MobChampionRatStateWatch(){blackboard = this};
@@ -98,6 +105,15 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
         // change mob values
         arrowType = "bodkin";
+
+        // add animation blends
+        animation.SetBlendTime("champion-rat-run", "champion-rat-deflect", 0.0);
+        animation.SetBlendTime("champion-rat-idle", "champion-rat-deflect", 0.0);
+        animation.SetBlendTime("champion-rat-idle-aggro", "champion-rat-deflect", 0.0);
+        animation.SetBlendTime("champion-rat-run", "champion-rat-hurt", 0.0);
+        animation.SetBlendTime("champion-rat-idle", "champion-rat-hurt", 0.0);
+        animation.SetBlendTime("champion-rat-idle-aggro", "champion-rat-hurt", 0.0);
+        animation.SetBlendTime("champion-rat-attack", "champion-rat-hurt", 0.0);
 
         // set first state in machine
         machine.SetState(stateStart);
@@ -304,18 +320,21 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
     {
         // check if rat is in vulnerable state or if hitting rat's back
 
-        // if(hasShield == true)
-        // {
-        //     // break shield
-        //     machine.SetState(stateShieldBreak);
-        //     arrowHitDirection = dir;
-        // }
-        // else
-        // {
-        //     // take damage from arrow
-        //     health.Damage(damageFromArrow);
-        // }
+        arrowHitDirection = dir;
 
-        return true;
+        if(vulnerable == true)
+        {
+            // take damage from arrow
+            health.Damage(damageFromArrow);
+            machine.SetState(stateHurt);
+            return true;
+        }
+        else
+        {
+            // deflect arrow
+            machine.SetState(stateDeflect);
+            return false;
+        }
+
     }
 }

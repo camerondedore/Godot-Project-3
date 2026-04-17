@@ -124,7 +124,7 @@ bones/61/rotation = Quaternion(0.907354, 0.0314363, -0.411685, -0.0789648)
 bones/62/position = Vector3(-0.340017, 0.26845, -0.0867287)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.526587, -0.81695, -0.235157, 0.174374, -0.166937, 0.970425, -0.832045, -0.552019, 0.0545482, 0.297965, -0.185951, -0.290953)
+transform = Transform3D(0.526587, -0.81695, -0.235157, 0.174374, -0.166937, 0.970426, -0.832045, -0.552019, 0.0545479, 0.297965, -0.185951, -0.290953)
 
 [node name="weapon-sword" parent="character-black-rat/character-armature/Skeleton3D/weapon-sword" index="0"]
 layers = 2

@@ -44,6 +44,20 @@ public partial class MobChampionRatStateAttack : MobChampionRatState
 
                 damageOutputted = true;
             }
+
+            // check for look timing
+            if(blackboard.lookAtTarget == true && EngineTime.timePassed > startTime + blackboard.attackLookStopTime)
+            {
+                // stop looking at enemy
+                blackboard.lookAtTarget = false;
+            }
+
+            // check for vulnerable timing
+            if(blackboard.vulnerable == false && EngineTime.timePassed > startTime + blackboard.attackVulnerableTime)
+            {
+                // make rat vulnerable to attack
+                blackboard.vulnerable = true;
+            }
         }
     }
     
@@ -58,11 +72,11 @@ public partial class MobChampionRatStateAttack : MobChampionRatState
         // stop moving
         blackboard.moving = false;
 
-        // don't look at enemy
-        blackboard.lookAtTarget = false;
+        // start looking at enemy
+        blackboard.lookAtTarget = true;
 
-        // make rat vulnerable to attack
-        blackboard.vulnerable = true;
+        // make rat protected against attack
+        blackboard.vulnerable = false;
 
         // animation
         blackboard.animation.Play("champion-rat-attack");
