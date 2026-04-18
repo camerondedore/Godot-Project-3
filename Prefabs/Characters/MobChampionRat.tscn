@@ -187,6 +187,7 @@ MobPriority = 0.9
 
 [node name="FxEnemyHit" parent="." instance=ExtResource("11_3bhmj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0, -2.45)
+restartOnReady = false
 
 [node name="FxBloodSlash" parent="." instance=ExtResource("12_3eta2")]
 transform = Transform3D(-0.258819, 0.965926, 2.98023e-08, -2.98023e-08, -4.37114e-08, 1, 0.965926, 0.258819, 0, 0.15, 0, -2.45)

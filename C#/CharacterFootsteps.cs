@@ -90,6 +90,12 @@ public partial class CharacterFootsteps : AudioTools3d, CharacterWaterSplash.IWa
     {
         // get floor
         floorRay.ForceRaycastUpdate();
+
+        if(floorRay.GetCollider() == null)
+        {
+            return false;
+        }
+
         var hitCollider = floorRay.GetCollider();
         var hitColliderName = ((Node) hitCollider).Name.ToString();
 
