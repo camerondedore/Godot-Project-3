@@ -101,7 +101,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         stateWatch = new MobChampionRatStateWatch(){blackboard = this};
         statePatrol = new MobChampionRatStatePatrol(){blackboard = this};
         statePatrolWait = new MobChampionRatStatePatrolWait(){blackboard = this};
-        //stateDie = new MobChampionRatStateDie(){blackboard = this};
+        stateDie = new MobChampionRatStateDie(){blackboard = this};
 
         // change mob values
         arrowType = "bodkin";
@@ -318,15 +318,20 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
     public override bool Hit(Vector3 dir)
     {
-        // check if rat is in vulnerable state or if hitting rat's back
-
         arrowHitDirection = dir;
 
+        // check if rat is in vulnerable state
         if(vulnerable == true)
         {
             // take damage from arrow
             health.Damage(damageFromArrow);
-            machine.SetState(stateHurt);
+
+            // check health befroe going to hurt state
+            if(health.dead != true)
+            {
+                machine.SetState(stateHurt);
+            }
+            
             return true;
         }
         else

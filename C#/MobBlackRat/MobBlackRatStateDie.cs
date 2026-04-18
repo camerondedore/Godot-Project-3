@@ -8,13 +8,6 @@ public partial class MobBlackRatStateDie : MobBlackRatState
 
 
 
-
-
-    public override void RunState(double delta)
-    {
-
-    }
-    
     
     
     public override void StartState()
@@ -28,6 +21,7 @@ public partial class MobBlackRatStateDie : MobBlackRatState
         blackboard.animation.SpeedScale = 1;
 
         // animation
+        blackboard.animation.Stop();
         blackboard.animation.Play("black-rat-die");
 
         // clear head look target
@@ -40,13 +34,6 @@ public partial class MobBlackRatStateDie : MobBlackRatState
         // disable mob
         blackboard.machine.Disable();
         blackboard.ProcessMode = Node.ProcessModeEnum.Disabled;
-    }
-
-
-
-    public override void EndState()
-    {
-        
     }
 
 

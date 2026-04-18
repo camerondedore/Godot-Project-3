@@ -29,6 +29,7 @@ public partial class MobShieldRatStateDie : MobShieldRatState
         blackboard.animation.SpeedScale = 1;
 
         // animation
+        blackboard.animation.Stop();
         blackboard.animation.Play("shield-rat-die");
 
         // clear head look target

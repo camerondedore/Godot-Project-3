@@ -13,6 +13,12 @@ public partial class MobChampionRatHealth : Health
 
     public override void Damage(float dmg)
     {
+        if(rat.vulnerable == false)
+        {
+            // block damage when invulnerable
+            return;
+        }
+
         // apply damage
         hitPoints = Mathf.Clamp(hitPoints - dmg, 0, maxHitPoints);
 
@@ -26,8 +32,6 @@ public partial class MobChampionRatHealth : Health
         // aggro rat
         rat.isAggro = true;
         rat.AggroAllies();
-
-        // set rat to hurt state
     }
 
 
