@@ -124,7 +124,6 @@
 [ext_resource type="PackedScene" uid="uid://da8lagd5i8ws0" path="res://Prefabs/Small Items/PropWaspHive.tscn" id="68_u0hg2"]
 [ext_resource type="PackedScene" uid="uid://dkw1hfkd0uses" path="res://Prefabs/Characters/MobBlackRat.tscn" id="69_j1wol"]
 [ext_resource type="PackedScene" uid="uid://dxrqw1fx5hdum" path="res://Prefabs/Small Items/PropFabricRoll.tscn" id="69_voi43"]
-[ext_resource type="Script" uid="uid://dl3wj7r2626ye" path="res://C#/Common/TriggerDead.cs" id="70_2cq0o"]
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="70_ujqva"]
 [ext_resource type="PackedScene" uid="uid://ddbdjuxycbft0" path="res://Prefabs/Small Items/PropStreetSignPost.tscn" id="71_232dk"]
 [ext_resource type="PackedScene" uid="uid://fxlokuivtcc7" path="res://Prefabs/Small Items/PropPickaxe.tscn" id="71_i25o1"]
@@ -168,6 +167,7 @@
 [ext_resource type="AudioStream" uid="uid://buond3vfxrpyd" path="res://Audio/ambience-frog-1.wav" id="136_gaiow"]
 [ext_resource type="AudioStream" uid="uid://b7v3f0fmgp7cf" path="res://Audio/ambience-frog-2.wav" id="137_kftfh"]
 [ext_resource type="AudioStream" uid="uid://b3f7u875a1e2v" path="res://Audio/ambience-frog-3.wav" id="138_vec1c"]
+[ext_resource type="Script" uid="uid://bj17e2curnud8" path="res://C#/Common/TriggerHealth.cs" id="162_kftfh"]
 [ext_resource type="PackedScene" uid="uid://dspck6geca6os" path="res://Prefabs/Characters/MobChampionRat.tscn" id="169_kftfh"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_7dtqy"]
@@ -479,7 +479,7 @@ tracks/3/keys = {
 tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Cinematic4/RatSpawn1")
+tracks/4/path = NodePath("Cinematic4/RatSpawn2")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -493,52 +493,10 @@ tracks/4/keys = {
 tracks/5/type = "method"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Cinematic4/RatSpawn2")
+tracks/5/path = NodePath("Cinematic4/RatSpawn1")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(5.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"PlayCinematicAction"
-}]
-}
-tracks/6/type = "method"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Cinematic4/RatSpawn3")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"PlayCinematicAction"
-}]
-}
-tracks/7/type = "method"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Cinematic4/RatSpawn4")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(6),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"PlayCinematicAction"
-}]
-}
-tracks/8/type = "method"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Cinematic4/RatSpawn5")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -546,13 +504,13 @@ tracks/8/keys = {
 "method": &"Spawn"
 }]
 }
-tracks/9/type = "method"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld2/PortcullisOld")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld2/PortcullisOld")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -8219,51 +8177,24 @@ transform = Transform3D(-1.36415e-05, 0.687775, -0.725922, 0, 0.725923, 0.687775
 script = ExtResource("115_bwvhq")
 moveTime = 1.5
 
-[node name="RatSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("mobTarget")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.732, 10, -17.8518)
+[node name="RatSpawn1" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 110, 5, -19)
 script = ExtResource("95_820t8")
-mob = ExtResource("61_egdxr")
+mob = ExtResource("169_kftfh")
 mobTarget = NodePath("../SpawnTarget1")
+mobWatcher = NodePath("../../../TriggerAreas/TriggerHealth")
+
+[node name="SpawnTarget1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 109, 5, -10)
 
 [node name="RatSpawn2" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("mobTarget")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.732, 10, -17.8518)
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.832, 10, -2.9518)
 script = ExtResource("95_820t8")
 mob = ExtResource("61_egdxr")
 mobTarget = NodePath("../SpawnTarget2")
 
-[node name="RatSpawn3" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("mobTarget")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.732, 10, -3.35183)
-script = ExtResource("95_820t8")
-mob = ExtResource("61_egdxr")
-mobTarget = NodePath("../SpawnTarget3")
-
-[node name="RatSpawn4" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("mobTarget")]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.732, 10, -3.35183)
-script = ExtResource("95_820t8")
-mob = ExtResource("61_egdxr")
-mobTarget = NodePath("../SpawnTarget4")
-
-[node name="RatSpawn5" type="Node3D" parent="Map/Cinematics/Cinematic4" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 110, 5, -19)
-script = ExtResource("95_820t8")
-mob = ExtResource("169_kftfh")
-mobTarget = NodePath("../SpawnTarget5")
-mobWatcher = NodePath("../../../TriggerAreas/TriggerDead")
-
-[node name="SpawnTarget1" type="Node3D" parent="Map/Cinematics/Cinematic4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.135, 10, -23.7723)
-
 [node name="SpawnTarget2" type="Node3D" parent="Map/Cinematics/Cinematic4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.716, 10, -22.122)
-
-[node name="SpawnTarget3" type="Node3D" parent="Map/Cinematics/Cinematic4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.293, 10, 2.66196)
-
-[node name="SpawnTarget4" type="Node3D" parent="Map/Cinematics/Cinematic4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.348, 10, 0.0632401)
-
-[node name="SpawnTarget5" type="Node3D" parent="Map/Cinematics/Cinematic4"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 109, 5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.685, 10.15, 0.8277)
 
 [node name="SecretAreas" type="Node3D" parent="Map"]
 
@@ -8354,10 +8285,37 @@ transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, 
 script = ExtResource("95_820t8")
 mob = ExtResource("70_ujqva")
 
-[node name="TriggerDead" type="Timer" parent="Map/TriggerAreas" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
-script = ExtResource("70_2cq0o")
-watchedNodes = []
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld3/PortcullisOld")]
+[node name="TriggerHealth" type="Timer" parent="Map/TriggerAreas" node_paths=PackedStringArray("linkedObjects")]
+script = ExtResource("162_kftfh")
+healthTriggers = PackedFloat32Array(0, 150, 100, 50)
+linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld3/PortcullisOld"), NodePath("../RatSpawn9"), NodePath("../RatSpawn10"), NodePath("../RatSpawn11")]
+
+[node name="RatSpawn9" type="Node3D" parent="Map/TriggerAreas" node_paths=PackedStringArray("mobTarget")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.732, 10, -17.8518)
+script = ExtResource("95_820t8")
+mob = ExtResource("61_egdxr")
+mobTarget = NodePath("../SpawnTarget5")
+
+[node name="RatSpawn10" type="Node3D" parent="Map/TriggerAreas" node_paths=PackedStringArray("mobTarget")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.732, 10, -3.35183)
+script = ExtResource("95_820t8")
+mob = ExtResource("61_egdxr")
+mobTarget = NodePath("../SpawnTarget6")
+
+[node name="RatSpawn11" type="Node3D" parent="Map/TriggerAreas" node_paths=PackedStringArray("mobTarget")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 121.882, 10, -17.9825)
+script = ExtResource("95_820t8")
+mob = ExtResource("61_egdxr")
+mobTarget = NodePath("../SpawnTarget7")
+
+[node name="SpawnTarget5" type="Node3D" parent="Map/TriggerAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.766, 10, -22.772)
+
+[node name="SpawnTarget6" type="Node3D" parent="Map/TriggerAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.093, 10, -0.38804)
+
+[node name="SpawnTarget7" type="Node3D" parent="Map/TriggerAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.859, 10, -21.4014)
 
 [node name="Checkpoints" type="Node3D" parent="Map"]
 
@@ -8516,12 +8474,6 @@ transform = Transform3D(0.566334, 0, 0.824176, 0, 1, 0, -0.824176, 0, 0.566334, 
 
 [node name="MobWasp4" parent="Enemies" instance=ExtResource("96_pcxwi")]
 transform = Transform3D(0.377615, 0, -0.925963, 0, 1, 0, 0.925963, 0, 0.377615, 107.246, 5.2, 30.4569)
-
-[node name="MobBlackRat2" parent="Enemies" instance=ExtResource("69_j1wol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.028, 5.00105, -8.51033)
-
-[node name="MobBlackRat3" parent="Enemies" instance=ExtResource("69_j1wol")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.822, 5.00105, -12.7975)
 
 [editable path="Map/Blocks/BlockTarget"]
 [editable path="Map/Blocks/BlockTarget2"]

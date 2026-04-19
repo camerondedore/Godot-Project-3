@@ -36,8 +36,8 @@ script = ExtResource("1_xftt3")
 [node name="Health" type="Node" parent="." node_paths=PackedStringArray("rat")]
 script = ExtResource("1_ajthl")
 rat = NodePath("..")
-hitPoints = 150.0
-maxHitPoints = 150.0
+hitPoints = 200.0
+maxHitPoints = 200.0
 hasBlood = false
 
 [node name="RatCollider" type="CollisionShape3D" parent="."]

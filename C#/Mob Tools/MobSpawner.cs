@@ -10,7 +10,7 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
     [Export]
     Node3D mobTarget;
     [Export]
-    TriggerDead mobWatcher; // optional
+    Node mobWatcher; // optional
 
 
 
@@ -28,10 +28,10 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
         // assign start target
         ((iMobSpawnable) newMob).SetTarget(mobTarget);
 
-        if(mobWatcher != null && newMob is IWatchable watchableMob)
+        if(mobWatcher is IWatcher watcher && newMob is IWatchable watchableMob)
         {
             // add new mob to watcher
-            mobWatcher.AddWatchable(watchableMob);
+            watcher.AddWatchable(watchableMob);
         }
     }
 

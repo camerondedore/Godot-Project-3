@@ -146,4 +146,11 @@ public partial class WatchTowerTarget : StaticBody3D, IBowTarget, IWatchable
     {
         return hitPoints > 0;
     }
+
+
+
+    public float GetHitPoints()
+    {
+        return hitPoints;
+    }
 }

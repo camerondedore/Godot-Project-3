@@ -184,4 +184,11 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchab
     {
         return locked == true;
     }
+
+
+
+    public float GetHitPoints()
+    {
+        return locked == true ? 100f : 0f;
+    }
 }

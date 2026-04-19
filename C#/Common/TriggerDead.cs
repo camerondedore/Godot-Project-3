@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class TriggerDead : Timer
+public partial class TriggerDead : Timer, IWatcher
 {
 
     [Export]

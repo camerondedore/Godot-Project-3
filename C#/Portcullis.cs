@@ -175,4 +175,11 @@ public partial class Portcullis : AnimatableBody3D, IActivatable, IWatchable
 	{
 		return open == true;
 	}
+
+
+
+	public float GetHitPoints()
+    {
+        return open == true ? 100f : 0f;
+    }
 }

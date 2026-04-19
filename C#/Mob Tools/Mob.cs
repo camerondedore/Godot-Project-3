@@ -208,6 +208,13 @@ public partial class Mob : CharacterBody3D, IBowTarget, IWatchable, IActivatable
 
 
 
+    public float GetHitPoints()
+    {
+        return health.hitPoints;
+    }
+
+
+
     public bool IsOnNavmesh(NavigationAgent3D navAgent)
     {
         var positionForNavCheck = GlobalPosition + Vector3.Down * (characterHeight * 0.5f - 0.25f);
