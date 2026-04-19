@@ -38,6 +38,10 @@ public partial class MobBrownRatStateReact : MobBrownRatState
             blackboard.animStateMachinePlayback.Travel("brown-rat-react");
             //blackboard.animStateMachinePlayback.Next();
         }
+        else
+        {
+            blackboard.animStateMachinePlayback.Travel("brown-rat-patrol-wait");
+        }
     }
 
 

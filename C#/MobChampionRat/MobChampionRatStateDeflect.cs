@@ -31,14 +31,21 @@ public partial class MobChampionRatStateDeflect : MobChampionRatState
 
         // clear head look target
         blackboard.headControl.ClearTarget();
+
+        // aggro rat
+        blackboard.AggroAllies();
+        blackboard.isAggro = true;
     }
 
 
 
     public override void EndState()
     {
-        // set head look target
-        blackboard.headControl.SetTarget(blackboard.enemy);
+        if(blackboard.IsEnemyValid() == true)
+        {
+            // set head look target
+            blackboard.headControl.SetTarget(blackboard.enemy);
+        }
     }
 
 
@@ -47,8 +54,16 @@ public partial class MobChampionRatStateDeflect : MobChampionRatState
     {
         if(EngineTime.timePassed > startTime + blackboard.deflectAnimationTime)
         {
-            // move
-            return blackboard.stateMove;
+            if(blackboard.IsEnemyValid() == true)
+            {
+                // move
+                return blackboard.stateMove;
+            }
+            else
+            {
+                // react
+                return blackboard.stateReact;
+            }
         }
 
         return this;

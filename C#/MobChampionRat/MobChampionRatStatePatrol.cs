@@ -28,7 +28,7 @@ public partial class MobChampionRatStatePatrol : MobChampionRatState
         startPosition = blackboard.GlobalPosition;
 
         // get patrol target position
-        var newPatrolPosition = blackboard.GlobalPosition + new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * blackboard.PatrolRange;
+        var newPatrolPosition = blackboard.startPosition + new Vector3(GD.Randf() - 0.5f, 0, GD.Randf() - 0.5f) * blackboard.PatrolRange;
 
         // set patrol target position
         blackboard.navAgent.TargetPosition = newPatrolPosition;

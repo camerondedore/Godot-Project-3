@@ -39,6 +39,10 @@ public partial class MobBlackRatStateReact : MobBlackRatState
             //blackboard.animStateMachinePlayback.Next();
             blackboard.animation.Play("black-rat-react");
         }
+        else
+        {
+            blackboard.animation.Play("black-rat-patrol-wait");
+        }
 
         if(blackboard.IsEnemyValid())
         {

@@ -34,8 +34,13 @@ public partial class MobChampionRatStateReact : MobChampionRatState
 
         if(previousLookAtTarget == false)
         {
-            // play animation
+            // play react animation
             blackboard.animation.Play("champion-rat-react");
+        }
+        else
+        {
+            // play idle aggro animation
+            blackboard.animation.Play("champion-rat-idle-aggro");
         }
 
         if(blackboard.IsEnemyValid())

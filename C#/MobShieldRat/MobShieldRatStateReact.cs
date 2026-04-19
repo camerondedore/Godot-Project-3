@@ -46,6 +46,19 @@ public partial class MobShieldRatStateReact : MobShieldRatState
                 blackboard.animation.Play("shield-rat-react");
             }
         }
+        else
+        {
+            if(blackboard.hasShield == true)
+            {
+                // play shield animation
+                blackboard.animation.Play("shield-rat-patrol-wait-shield");
+            }
+            else
+            {
+                // play animation without shield
+                blackboard.animation.Play("shield-rat-patrol-wait");
+            }
+        }
 
         if(blackboard.IsEnemyValid())
         {
