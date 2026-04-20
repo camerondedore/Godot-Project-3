@@ -22,7 +22,7 @@ public partial class MobChampionRatStateDie : MobChampionRatState
 
         // animation
         blackboard.animation.Stop();
-        blackboard.animation.Play("champion-rat-react");
+        blackboard.animation.Play("champion-rat-die");
 
         // clear head look target
         blackboard.headControl.ClearTarget();

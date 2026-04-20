@@ -110,7 +110,7 @@ bones/48/position = Vector3(-0.310306, -0.454498, -0.352102)
 bones/49/position = Vector3(-0.508029, 0.329185, 0.117746)
 
 [node name="weapon-poleaxe" parent="character-champion-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.979133, 3.64755e-09, -0.203222, -3.72529e-09, 1, 0, 0.203222, 7.57061e-10, 0.979133, 0.42103, 0.1, -0.687598)
+transform = Transform3D(0.979133, 5.47133e-09, -0.203222, -5.58794e-09, 1, 0, 0.203222, 1.13559e-09, 0.979133, 0.42103, 0.1, -0.687598)
 
 [node name="weapon-poleaxe" parent="character-champion-rat/character-armature/Skeleton3D/weapon-poleaxe" index="0"]
 surface_material_override/0 = ExtResource("2_yw63g")
