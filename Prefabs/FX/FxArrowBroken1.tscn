@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgloxjj0do21v"]
+
+[ext_resource type="ArrayMesh" uid="uid://vj35sbwf4owp" path="res://Models/fx-arrow-broken-1.res" id="1_fld3q"]
+[ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="2_dxftf"]
+[ext_resource type="Script" uid="uid://bwbbtnfgvl2ck" path="res://C#/Common/AutoDestroy.cs" id="3_dxftf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxftf"]
+size = Vector3(0.07, 0.07, 0.6)
+
+[node name="FxArrowBroken1" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 17
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_fld3q")
+surface_material_override/0 = ExtResource("2_dxftf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dxftf")
+
+[node name="AutoDestroy" type="Node" parent="."]
+script = ExtResource("3_dxftf")
+lifeTime = 15.0

@@ -29,6 +29,10 @@ public partial class MobChampionRatStateDeflect : MobChampionRatState
         // animation
         blackboard.animation.Play("champion-rat-deflect");
 
+        // fx
+        blackboard.brokenArrowSpawnerFx1.Spawn();
+        blackboard.brokenArrowSpawnerFx2.Spawn();
+
         // clear head look target
         blackboard.headControl.ClearTarget();
 

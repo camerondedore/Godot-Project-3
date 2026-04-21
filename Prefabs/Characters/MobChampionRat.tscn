@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dspck6geca6os"]
+[gd_scene load_steps=27 format=3 uid="uid://dspck6geca6os"]
 
 [ext_resource type="Script" uid="uid://cn3oidyjy1rv1" path="res://C#/MobChampionRat/MobChampionRatHealth.cs" id="1_ajthl"]
 [ext_resource type="PackedScene" uid="uid://cfqicg2dl68yn" path="res://Models/character-champion-rat.glb" id="1_u07jg"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://myloy3htblvq" path="res://Prefabs/FX/FxBloodSlash.tscn" id="12_3eta2"]
 [ext_resource type="AudioStream" uid="uid://dmb5idc74qwjp" path="res://Audio/melee-swing-4.wav" id="12_pcgor"]
 [ext_resource type="AudioStream" uid="uid://dfoff2giqmbmh" path="res://Audio/melee-swing-5.wav" id="13_lweiu"]
+[ext_resource type="Script" uid="uid://dsdsnbs15g3di" path="res://C#/Common/RigidbodySpawner.cs" id="23_yy56b"]
+[ext_resource type="PackedScene" uid="uid://cgloxjj0do21v" path="res://Prefabs/FX/FxArrowBroken1.tscn" id="24_pcgor"]
+[ext_resource type="PackedScene" uid="uid://dp2ip4iiv7esx" path="res://Prefabs/FX/FxArrowBroken2.tscn" id="25_lweiu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u07jg"]
 radius = 0.45
@@ -110,7 +113,7 @@ bones/48/position = Vector3(-0.310306, -0.454498, -0.352102)
 bones/49/position = Vector3(-0.508029, 0.329185, 0.117746)
 
 [node name="weapon-poleaxe" parent="character-champion-rat/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.979133, 5.47133e-09, -0.203222, -5.58794e-09, 1, 0, 0.203222, 1.13559e-09, 0.979133, 0.42103, 0.1, -0.687598)
+transform = Transform3D(0.979133, 0, -0.203222, 0, 1, 0, 0.203222, 0, 0.979133, 0.42103, 0.1, -0.687598)
 
 [node name="weapon-poleaxe" parent="character-champion-rat/character-armature/Skeleton3D/weapon-poleaxe" index="0"]
 surface_material_override/0 = ExtResource("2_yw63g")
@@ -191,5 +194,21 @@ restartOnReady = false
 
 [node name="FxBloodSlash" parent="." instance=ExtResource("12_3eta2")]
 transform = Transform3D(-0.258819, 0.965926, 2.98023e-08, -2.98023e-08, -4.37114e-08, 1, 0.965926, 0.258819, 0, 0.15, 0, -2.45)
+
+[node name="FxArrowBrokenSpawner1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0.25, -0.7)
+script = ExtResource("23_yy56b")
+prefab = ExtResource("24_pcgor")
+velocity = Vector3(4, 4, -1)
+spread = 1.5
+angularSpeed = 10.0
+
+[node name="FxArrowBrokenSpawner2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.25, -0.7)
+script = ExtResource("23_yy56b")
+prefab = ExtResource("25_lweiu")
+velocity = Vector3(-4, 4, -1)
+spread = 1.5
+angularSpeed = 10.0
 
 [editable path="character-champion-rat"]
