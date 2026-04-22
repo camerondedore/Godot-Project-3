@@ -38,6 +38,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
     public BoneLookAtControl headControl;
     public RigidbodySpawner brokenArrowSpawnerFx1,
         brokenArrowSpawnerFx2;
+    public GpuParticles3D arrowSparks1,
+        arrowSparks2;
 
     public Vector3 startPosition,
         dirToNextPathPoint,
@@ -87,6 +89,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         headControl = (BoneLookAtControl) GetNode("character-champion-rat/character-armature/Skeleton3D/HeadLookAt");
         brokenArrowSpawnerFx1 = (RigidbodySpawner) GetNode("FxArrowBrokenSpawner1");
         brokenArrowSpawnerFx2 = (RigidbodySpawner) GetNode("FxArrowBrokenSpawner2");
+        arrowSparks1 = (GpuParticles3D) GetNode("FxSparksImpact");
+        arrowSparks2 = (GpuParticles3D) GetNode("FxSparksImpact2");
 
         // set nav agent event
         navAgent.VelocityComputed += SafeMove;

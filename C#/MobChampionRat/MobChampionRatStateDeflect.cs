@@ -32,6 +32,8 @@ public partial class MobChampionRatStateDeflect : MobChampionRatState
         // fx
         blackboard.brokenArrowSpawnerFx1.Spawn();
         blackboard.brokenArrowSpawnerFx2.Spawn();
+        blackboard.arrowSparks1.Restart();
+        blackboard.arrowSparks2.Restart();
 
         // clear head look target
         blackboard.headControl.ClearTarget();

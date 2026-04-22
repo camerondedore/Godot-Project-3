@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dspck6geca6os"]
+[gd_scene load_steps=28 format=3 uid="uid://dspck6geca6os"]
 
 [ext_resource type="Script" uid="uid://cn3oidyjy1rv1" path="res://C#/MobChampionRat/MobChampionRatHealth.cs" id="1_ajthl"]
 [ext_resource type="PackedScene" uid="uid://cfqicg2dl68yn" path="res://Models/character-champion-rat.glb" id="1_u07jg"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://dsdsnbs15g3di" path="res://C#/Common/RigidbodySpawner.cs" id="23_yy56b"]
 [ext_resource type="PackedScene" uid="uid://cgloxjj0do21v" path="res://Prefabs/FX/FxArrowBroken1.tscn" id="24_pcgor"]
 [ext_resource type="PackedScene" uid="uid://dp2ip4iiv7esx" path="res://Prefabs/FX/FxArrowBroken2.tscn" id="25_lweiu"]
+[ext_resource type="PackedScene" uid="uid://b7sm668t0euu5" path="res://Prefabs/FX/FxSparksImpact.tscn" id="26_pcgor"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u07jg"]
 radius = 0.45
@@ -210,5 +211,11 @@ prefab = ExtResource("25_lweiu")
 velocity = Vector3(-4, 4, -1)
 spread = 1.5
 angularSpeed = 10.0
+
+[node name="FxSparksImpact" parent="." instance=ExtResource("26_pcgor")]
+transform = Transform3D(0.422618, -0.157379, -0.892539, 7.45058e-09, 0.984808, -0.173648, 0.906308, 0.0733869, 0.416198, 0.05, 0.2, -0.685)
+
+[node name="FxSparksImpact2" parent="." instance=ExtResource("26_pcgor")]
+transform = Transform3D(0.34202, 0.163176, 0.925416, 2.98023e-08, 0.984808, -0.173648, -0.939692, 0.0593912, 0.336824, 0.05, 0.2, -0.685)
 
 [editable path="character-champion-rat"]
