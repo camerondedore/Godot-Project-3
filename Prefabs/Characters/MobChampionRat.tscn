@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dspck6geca6os"]
+[gd_scene load_steps=24 format=3 uid="uid://dspck6geca6os"]
 
 [ext_resource type="Script" uid="uid://cn3oidyjy1rv1" path="res://C#/MobChampionRat/MobChampionRatHealth.cs" id="1_ajthl"]
 [ext_resource type="PackedScene" uid="uid://cfqicg2dl68yn" path="res://Models/character-champion-rat.glb" id="1_u07jg"]
@@ -14,14 +14,10 @@
 [ext_resource type="Script" uid="uid://cq27b0vomatsf" path="res://C#/BoneLookAtControl.cs" id="8_gontn"]
 [ext_resource type="AudioStream" uid="uid://dgnnqdkgg653e" path="res://Audio/melee-hit-2.wav" id="8_usyn1"]
 [ext_resource type="Script" uid="uid://1vff8etgep15" path="res://C#/Mob Tools/MobEyes.cs" id="9_fgq5c"]
-[ext_resource type="AudioStream" uid="uid://cmhkmrb8ou7x8" path="res://Audio/melee-swing-1.wav" id="9_gontn"]
 [ext_resource type="Script" uid="uid://i55lxywq03xt" path="res://C#/Mob Tools/MobFaction.cs" id="10_3bhmj"]
-[ext_resource type="AudioStream" uid="uid://cym0cmomxa2op" path="res://Audio/melee-swing-2.wav" id="10_bcpsf"]
 [ext_resource type="PackedScene" uid="uid://dqqxr6lpg1jk6" path="res://Prefabs/FX/FxEnemyHit.tscn" id="11_3bhmj"]
-[ext_resource type="AudioStream" uid="uid://bj84b8rv1djd0" path="res://Audio/melee-swing-3.wav" id="11_yy56b"]
+[ext_resource type="AudioStream" uid="uid://dronpvp4s3ynr" path="res://Audio/melee-swing-heavy-1.wav" id="11_usyn1"]
 [ext_resource type="PackedScene" uid="uid://myloy3htblvq" path="res://Prefabs/FX/FxBloodSlash.tscn" id="12_3eta2"]
-[ext_resource type="AudioStream" uid="uid://dmb5idc74qwjp" path="res://Audio/melee-swing-4.wav" id="12_pcgor"]
-[ext_resource type="AudioStream" uid="uid://dfoff2giqmbmh" path="res://Audio/melee-swing-5.wav" id="13_lweiu"]
 [ext_resource type="Script" uid="uid://dsdsnbs15g3di" path="res://C#/Common/RigidbodySpawner.cs" id="23_yy56b"]
 [ext_resource type="PackedScene" uid="uid://cgloxjj0do21v" path="res://Prefabs/FX/FxArrowBroken1.tscn" id="24_pcgor"]
 [ext_resource type="PackedScene" uid="uid://dp2ip4iiv7esx" path="res://Prefabs/FX/FxArrowBroken2.tscn" id="25_lweiu"]
@@ -147,16 +143,15 @@ script = ExtResource("8_gontn")
 
 [node name="AnimationPlayer" parent="character-champion-rat" index="1"]
 process_mode = 1
-playback_default_blend_time = 0.1
+playback_default_blend_time = 0.15
 
 [node name="RatAudio" type="AudioStreamPlayer3D" parent="."]
-unit_size = 2.0
 max_distance = 30.0
 max_polyphony = 2
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("7_xftt3")
 poleaxeHitSound = ExtResource("8_usyn1")
-poleaxeSwingSounds = Array[AudioStream]([ExtResource("9_gontn"), ExtResource("10_bcpsf"), ExtResource("11_yy56b"), ExtResource("12_pcgor"), ExtResource("13_lweiu")])
+poleaxeSwingSounds = Array[AudioStream]([ExtResource("11_usyn1")])
 
 [node name="CharacterFootsteps" parent="." instance=ExtResource("6_7ehjv")]
 
