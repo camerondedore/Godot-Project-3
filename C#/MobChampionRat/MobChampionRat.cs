@@ -40,6 +40,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         brokenArrowSpawnerFx2;
     public GpuParticles3D arrowSparks1,
         arrowSparks2;
+    public Spawner dustFxSpawner;
 
     public Vector3 startPosition,
         dirToNextPathPoint,
@@ -91,6 +92,7 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         brokenArrowSpawnerFx2 = (RigidbodySpawner) GetNode("FxArrowBrokenSpawner2");
         arrowSparks1 = (GpuParticles3D) GetNode("FxSparksImpact");
         arrowSparks2 = (GpuParticles3D) GetNode("FxSparksImpact2");
+        dustFxSpawner = (Spawner) GetNode("DustFxSpawner");
 
         // set nav agent event
         navAgent.VelocityComputed += SafeMove;
@@ -340,5 +342,13 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
             return false;
         }
 
+    }
+
+
+
+    public void SpawnDustImpactFx()
+    {
+        // called by animation
+        dustFxSpawner.Spawn();
     }
 }
