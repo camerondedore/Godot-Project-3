@@ -114,15 +114,6 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
         // change mob values
         arrowType = "bodkin";
 
-        // add animation blends
-        animation.SetBlendTime("champion-rat-run", "champion-rat-deflect", 0.0);
-        animation.SetBlendTime("champion-rat-idle", "champion-rat-deflect", 0.0);
-        animation.SetBlendTime("champion-rat-idle-aggro", "champion-rat-deflect", 0.0);
-        animation.SetBlendTime("champion-rat-run", "champion-rat-hurt", 0.0);
-        animation.SetBlendTime("champion-rat-idle", "champion-rat-hurt", 0.0);
-        animation.SetBlendTime("champion-rat-idle-aggro", "champion-rat-hurt", 0.0);
-        animation.SetBlendTime("champion-rat-attack", "champion-rat-hurt", 0.0);
-
         // set first state in machine
         machine.SetState(stateStart);
     }

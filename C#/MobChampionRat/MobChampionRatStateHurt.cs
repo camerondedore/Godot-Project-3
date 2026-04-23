@@ -27,7 +27,7 @@ public partial class MobChampionRatStateHurt : MobChampionRatState
         blackboard.LookAt(lookTarget);
 
         // animation
-        blackboard.animation.Play("champion-rat-hurt");
+        blackboard.animation.Play("champion-rat-hurt", 0.0);
 
         // clear head look target
         blackboard.headControl.ClearTarget();

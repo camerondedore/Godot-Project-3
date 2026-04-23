@@ -5,7 +5,8 @@ public partial class MobChampionRatAudio : AudioTools3d
 {
 
     [Export]
-    AudioStream poleaxeHitSound;
+    AudioStream poleaxeHitSound,
+        arrowDeflectSound;
     [Export]
     AudioStream[] poleaxeSwingSounds;
 
@@ -22,6 +23,13 @@ public partial class MobChampionRatAudio : AudioTools3d
     {
         // method called from animation
         PlayRandomSound(poleaxeSwingSounds, 0.1f);
+    }
+
+
+
+    public void PlayArrowDeflectSound()
+    {
+        PlaySound(arrowDeflectSound, 0.1f);
     }
 
 }
