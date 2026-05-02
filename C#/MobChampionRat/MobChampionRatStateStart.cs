@@ -49,16 +49,14 @@ public partial class MobChampionRatStateStart : MobChampionRatState
         if(blackboard.startTarget == null)
         {
             // idle
-            //return blackboard.superStateIdle;
-            return blackboard.stateIdle;
+            return blackboard.superStateIdle;
         }
 
         // navigation to starting target is done
         if(blackboard.navAgent.IsNavigationFinished())
         {
             // idle
-            //return blackboard.superStateIdle;
-            return blackboard.stateIdle;
+            return blackboard.superStateIdle;
         }
 
         return this;

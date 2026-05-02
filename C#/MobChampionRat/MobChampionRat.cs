@@ -8,9 +8,10 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 {
 
     public StateMachineQueue machine = new StateMachineQueue();
-    //public SuperState superStateIdle;
+    public SuperState superStateIdle;
     public State stateStart,
-        stateIdle,
+        subStateIdle,
+        subStateIdleAnimation,
         stateFall,
         stateReact,
         stateMove,
@@ -99,7 +100,9 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
         // initialize states
         stateStart = new MobChampionRatStateStart(){blackboard = this};
-        stateIdle = new MobChampionRatStateIdle(){blackboard = this};
+        superStateIdle = new MobChampionRatSuperStateIdle(){blackboard = this};
+        subStateIdle = new MobChampionRatSubStateIdle(){blackboard = this};
+        subStateIdleAnimation = new MobChampionRatSubStateIdleAnimation(){blackboard = this};
         stateFall = new MobChampionRatStateFall(){blackboard = this};
         stateReact = new MobChampionRatStateReact(){blackboard = this};
         stateMove = new MobChampionRatStateMove(){blackboard = this};

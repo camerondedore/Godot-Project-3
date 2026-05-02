@@ -51,8 +51,7 @@ public partial class MobChampionRatStateRetreat : MobChampionRatState
         if(blackboard.navAgent.IsNavigationFinished())
         {
             // idle
-            //return blackboard.superStateIdle;
-            return blackboard.stateIdle;
+            return blackboard.superStateIdle;
         }
 
         return this;

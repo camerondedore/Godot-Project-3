@@ -1,9 +1,10 @@
 using Godot;
+using MobChampionRat;
 using System;
 
 namespace MobChampionRat;
 
-public partial class MobChampionRatStateIdle : MobChampionRatState
+public partial class MobChampionRatSuperStateIdle : MobChampionRatSuperState
 {
 
 
@@ -17,19 +18,19 @@ public partial class MobChampionRatStateIdle : MobChampionRatState
 
         base.RunState(delta); 
     }
-
-
-
+    
+    
+    
     public override void StartState()
     {
         // stop moving
         blackboard.moving = false;
 
+        // set substate
+        SetState(blackboard.subStateIdle);
+
         // start position
         blackboard.startPosition = blackboard.GlobalPosition;
-
-        // play animation
-        blackboard.animation.Play("champion-rat-idle");
 
         base.StartState();
     }
