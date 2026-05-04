@@ -37,6 +37,9 @@ namespace PlayerBow
 
             if(hitObject is IBowTarget hitTarget)
             {
+                // detach trail
+                trailFx.DetachTrail();
+                
                 // check arrow type
                 if(hitTarget.GetArrowType() == arrowType)
                 {
@@ -48,28 +51,26 @@ namespace PlayerBow
                         // spawn hit fx
                         SpawnPrefab(hitFx, point, normal, upVector);
 
-                        // detach trail
-                        trailFx.DetachTrail();
-
                         // destroy arrow
                         QueueFree();
                     }
                     else
                     {
-                        //DisableArrow(point, upVector);
+                        if(hitObject is StaticBody3D)
+                        {
+                            // do not delete arrow if the hit wasn't successful AND target is static body
+                            DisableArrow(point, upVector);
+                        }
+                        else
+                        {
+                            // destroy arrow
+                            QueueFree();
+                        }
 
-                        // detach trail
-                        trailFx.DetachTrail();
-
-                        // destroy arrow
-                        QueueFree();
                     }
                 }       
                 else
                 {
-                    // hit object is not a target or static
-                    trailFx.DetachTrail();
-
                     // spawn miss fx
                     SpawnPrefab(missFx, point, -Basis.Z, upVector);
 

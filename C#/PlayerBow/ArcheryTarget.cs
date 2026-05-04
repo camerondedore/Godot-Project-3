@@ -3,7 +3,7 @@ using System;
 
 namespace PlayerBow
 {
-    public partial class ArcheryTarget : Node3D, IBowTarget
+    public partial class ArcheryTarget : StaticBody3D, IBowTarget
     {
 
         string arrowType = "bodkin";
