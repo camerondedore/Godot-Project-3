@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://cljqh78jfw004"]
+[gd_scene load_steps=24 format=3 uid="uid://cljqh78jfw004"]
 
 [ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_cyee8"]
 [ext_resource type="Script" uid="uid://c414yvux5wmix" path="res://C#/HubSet.cs" id="2_83ydy"]
 [ext_resource type="ArrayOccluder3D" uid="uid://d11q5hod27x5q" path="res://Scenes/Occlusion/LevelHub4.occ" id="2_bfdsb"]
 [ext_resource type="PackedScene" uid="uid://lxjx0gdmoth" path="res://Prefabs/Characters/CinematicCharacterWynn.tscn" id="3_i6s3y"]
 [ext_resource type="Script" uid="uid://di4aoe73rrmo" path="res://C#/CinematicSimple/CinematicSimpleTriggerArea.cs" id="3_n1p7n"]
-[ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="4_fs1sm"]
 [ext_resource type="Script" uid="uid://deoaa3om66g6o" path="res://C#/CinematicCharacter/CinematicCharacterAction.cs" id="4_n1p7n"]
 [ext_resource type="Animation" uid="uid://d1wuoo7unmp1g" path="res://Animation/Cinematics/lhc6.res" id="5_fxf0k"]
 [ext_resource type="Script" uid="uid://b2a7b4pw5s4ow" path="res://C#/CinematicSimple/CinematicSimpleCameraControl.cs" id="6_jwrjn"]
@@ -64,12 +63,6 @@ occluder = ExtResource("2_bfdsb")
 
 [node name="NavigationRegion3D" parent="Map/OccluderInstance3D" index="0"]
 navigation_mesh = SubResource("NavigationMesh_g6ewm")
-
-[node name="PropTreeWall89" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" index="84" instance=ExtResource("4_fs1sm")]
-transform = Transform3D(-7.45058e-07, -1.28027e-08, 1, 3.09086e-08, 1, 1.28028e-08, -1, 3.09086e-08, -7.45058e-07, -1.5, -1.15225e-07, -71)
-
-[node name="PropTreeWall95" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/TreeWalls" index="85" instance=ExtResource("4_fs1sm")]
-transform = Transform3D(-7.45058e-07, -1.28027e-08, 1, 3.09086e-08, 1, 1.28028e-08, -1, 3.09086e-08, -7.45058e-07, -13, -2.62457e-07, -71)
 
 [node name="PropPicketWallLevel4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" index="21"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.1, -8, -53.85)
