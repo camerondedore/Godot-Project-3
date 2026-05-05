@@ -28,7 +28,7 @@ turnRightAnimationName = "vole-guard-turn-right"
 turnLeftAnimationName = "vole-guard-turn-left"
 linkedObjects = []
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_g30xv")
 
 [node name="NavAgent" type="NavigationAgent3D" parent="."]
@@ -59,10 +59,8 @@ bones/9/position = Vector3(1.26871e-08, 0.132219, -0.0532134)
 bones/9/rotation = Quaternion(-0.0632832, -4.06655e-10, -1.50621e-08, 0.997996)
 bones/10/rotation = Quaternion(0.0258074, -0.0119894, 0.00849438, 0.999559)
 bones/12/position = Vector3(0.0671795, 0.333172, -0.0829992)
-bones/15/scale = Vector3(1, 1, 1)
 bones/16/rotation = Quaternion(0.0258074, -0.0119894, 0.00849438, 0.999559)
 bones/18/position = Vector3(-0.0671795, 0.333172, -0.0829992)
-bones/20/scale = Vector3(1, 1, 1)
 bones/21/rotation = Quaternion(-0.598945, -0.419491, -0.252383, 0.633716)
 bones/22/rotation = Quaternion(-0.351974, -0.220926, 0.377179, 0.827672)
 bones/23/rotation = Quaternion(0.522015, -0.00461637, 0.0355193, 0.852184)
@@ -109,7 +107,7 @@ bones/61/position = Vector3(-0.315886, -0.122773, -0.142357)
 bones/61/rotation = Quaternion(0.872946, -0.00985089, -0.483908, -0.0608346)
 
 [node name="weapon-spear" parent="character-vole-guard/character-armature/Skeleton3D" index="0"]
-transform = Transform3D(0.924496, -0.0465968, 0.378334, 0.0335205, 0.998593, 0.0410794, -0.379716, -0.0252958, 0.924757, 0.296265, -0.00109831, -0.437184)
+transform = Transform3D(0.924495, -0.0465968, 0.378334, 0.0335205, 0.998593, 0.0410794, -0.379716, -0.0252958, 0.924757, 0.296265, -0.00109801, -0.437184)
 
 [node name="weapon-spear" parent="character-vole-guard/character-armature/Skeleton3D/weapon-spear" index="0"]
 layers = 2

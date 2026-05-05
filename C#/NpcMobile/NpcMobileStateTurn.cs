@@ -20,6 +20,8 @@ public partial class NpcMobileStateTurn : NpcMobileState
     public override void StartState()
     {
         blackboard.isTurning = true;
+        blackboard.turnCursor = 0;
+        blackboard.turnStartForward = -blackboard.Basis.Z;
         
         // animation
         blackboard.animStateMachinePlayback.Travel(blackboard.turnAnimationTreeNodeName);
@@ -36,7 +38,7 @@ public partial class NpcMobileStateTurn : NpcMobileState
 
     public override State Transition()
     {
-        if(blackboard.IsAlignedWithTarget() == true)
+        if(blackboard.turnCursor >= 1f)
         {
             // animate
             return blackboard.stateAnimate;

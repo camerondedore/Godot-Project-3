@@ -24,7 +24,8 @@ public partial class NpcMobile : CharacterBody3D, IActivatable
     [Export]
     public float speed = 5f,
         acceleration = 10f,
-        lookSpeed = 7f;
+        lookSpeed = 7f,
+        turnSpeed = 1f;
     [Export]
     int dialogueSpeaker = 1;
     [Export]
@@ -36,6 +37,8 @@ public partial class NpcMobile : CharacterBody3D, IActivatable
     public NpcDialogue dialogue;
     public Area3D triggerArea;
     
+    public Vector3 turnStartForward;
+    public float turnCursor = 0;
     public int targetIndex = 0,
         dialogueIndex = 0;
     public bool bodyInTrigger,
@@ -140,11 +143,13 @@ public partial class NpcMobile : CharacterBody3D, IActivatable
                 if(isTurning == true)
                 {
                     // match target
+                    turnCursor += ((float)delta) * turnSpeed;
 
                     // smooth move
                     var targetPosition = GlobalPosition.MoveToward(GetTargetPosition(), speed * ((float)delta));
                     // smooth look
-                    var targetForward = (-Basis.Z).MoveToward(GetTargetForward(), lookSpeed * ((float)delta));
+                    //var targetForward = (-Basis.Z).MoveToward(GetTargetForward(), lookSpeed * ((float)delta));
+                    var targetForward = turnStartForward.Slerp(GetTargetForward(), turnCursor);
 
                     // apply
                     LookAtFromPosition(targetPosition, GetTargetPosition() + targetForward);
@@ -172,6 +177,7 @@ public partial class NpcMobile : CharacterBody3D, IActivatable
             if(safeVel.X != 0 || safeVel.Z != 0)
             {
                 // move using obstacle avoidance
+                safeVel.Y = 0;
                 Velocity = safeVel;
                 MoveAndSlide();
 

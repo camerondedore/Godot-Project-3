@@ -52,9 +52,13 @@ public partial class NpcSimple : CharacterBody3D, IActivatable
     {            
         // get nodes
         triggerArea = (Area3D) GetNode("TriggerArea");
-        cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
         dialogue = (NpcDialogue) GetNode("Dialogue");
         collider = (CollisionShape3D) GetNode("Collider");
+
+        if(GetNode("NpcCameraControl") != null)
+        {
+            cameraControl = (NpcCameraControl) GetNode("NpcCameraControl");
+        }
 
         initLookDirection = -Basis.Z;
 

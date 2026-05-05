@@ -23,8 +23,11 @@ public partial class NpcMobileStateAnimate : NpcMobileState
         startTime = EngineTime.timePassed;
         targetTime = blackboard.GetTargetAnimationTime();
 
-        // animation
-        blackboard.animStateMachinePlayback.Travel(blackboard.GetTargetAnimation());
+        if(targetTime > 0)
+        {
+            // animation
+            blackboard.animStateMachinePlayback.Travel(blackboard.GetTargetAnimation());
+        }
     }
 
 
