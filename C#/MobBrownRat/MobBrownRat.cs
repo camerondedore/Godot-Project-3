@@ -39,9 +39,7 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
     public AnimationTree animation;
     public CollisionShape3D collider;
     public AnimationNodeStateMachinePlayback animStateMachinePlayback;
-    public Vector3 startPosition,
-        dirToNextPathPoint,
-        avoidanceDir;
+    public Vector3 startPosition;
     public double aimTime = 0.5,
         fireTime = 1.2,
         reactTime = 0.4,

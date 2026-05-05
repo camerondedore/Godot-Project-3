@@ -41,8 +41,7 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
     public BoneLookAtControl headControl;
     
     public Vector3 startPosition,
-        dirToNextPathPoint,
-        avoidanceDir;
+        dirToNextPathPoint;
     public double swingTime = 0.5,
         attackDamageTime = 0.3,
         reactTime = 0.4,
@@ -234,8 +233,6 @@ public partial class MobBlackRat : Mob, MobSpawner.iMobSpawnable
                 // clamp safe velocity
                 safeVel.Y = 0;
                 safeVel = safeVel.LimitLength(speed);
-
-                avoidanceDir = safeVel.Normalized();
 
                 // move using obstacle avoidance
                 Velocity = safeVel;

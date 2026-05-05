@@ -40,8 +40,6 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
     public GpuParticles3D shieldBreakFx;
 
     public Vector3 startPosition,
-        dirToNextPathPoint,
-        avoidanceDir,
         arrowHitDirection;
     public double swingTime = 0.68,
         attackDamageTime = 0.3,

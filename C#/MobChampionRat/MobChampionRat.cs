@@ -44,8 +44,6 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
     public Spawner dustFxSpawner;
 
     public Vector3 startPosition,
-        dirToNextPathPoint,
-        avoidanceDir,
         arrowHitDirection;
     public double swingTime = 1.833,
         attackDamageTime = 0.44,
