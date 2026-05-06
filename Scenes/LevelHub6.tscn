@@ -138,6 +138,10 @@ transform = Transform3D(0.785182, 0, 0.619239, 0, 0.999991, 0, -0.619239, 0, 0.7
 [node name="FishSchool2" parent="Map/Fish/FishSchoolPath2" index="0"]
 transform = Transform3D(0.103799, 0, -0.99458, 0, 0.999991, 0, 0.99458, 0, 0.103799, -6.95197, 0, -28.0066)
 
+[node name="LevelChangeTriggerArea" parent="Map" index="12"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -96.2778, 6.9, -57.7678)
+nextLevel = "Level6"
+
 [node name="NpcVoleGuard" parent="Npcs" index="4" instance=ExtResource("9_nc6qr")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 32.5, 2.95, -39.2)
 armorColor = Color(0.358107, 0.464826, 0.243337, 1)
