@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://blf6sfmmf48l8"]
+
+[ext_resource type="ArrayMesh" uid="uid://day05dhk2e0hx" path="res://Models/prop-cot.res" id="1_ygrrd"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_44i2i"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_slgen"]
+[ext_resource type="Material" uid="uid://djnoygn8d4pqp" path="res://Materials/Cloth2.tres" id="4_hpkkl"]
+[ext_resource type="Material" uid="uid://jqraxvi0r28x" path="res://Materials/Rope.tres" id="5_bcjth"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygrrd"]
+size = Vector3(1.25, 0.75, 2.2)
+
+[node name="PropCot" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_ygrrd")
+surface_material_override/0 = ExtResource("2_44i2i")
+surface_material_override/1 = ExtResource("3_slgen")
+surface_material_override/2 = ExtResource("4_hpkkl")
+surface_material_override/3 = ExtResource("5_bcjth")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+shape = SubResource("BoxShape3D_ygrrd")
