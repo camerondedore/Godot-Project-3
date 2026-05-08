@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://hcxknpgeh8rh"]
+
+[ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_ds0xo"]
+[ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/NoonEnvironment.tres" id="2_1roct"]
+[ext_resource type="ArrayOccluder3D" uid="uid://cqe2mfjcaipi5" path="res://Scenes/Occlusion/Level6.occ" id="3_3qwh3"]
+[ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="3_d2hsu"]
+[ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="4_17dxn"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="4_sxy6w"]
+[ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="5_qok1m"]
+[ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="6_xgqih"]
+[ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="7_2fq2u"]
+[ext_resource type="Script" uid="uid://snw4ddtvx45s" path="res://C#/GameSettingsSunShadowsLoader.cs" id="8_nd4y6"]
+[ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="11_d2hsu"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_2rm0l"]
+vertices = PackedVector3Array(-9.5, 0.5, -9.5, -9.5, 0.5, 9.5, 9.5, 0.5, 9.5, 9.5, 0.5, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 4278192145
+agent_height = 2.0
+agent_max_slope = 30.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qmg86"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sx15a"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxy6w"]
+size = Vector3(9, 5, 1)
+
+[node name="Level6" type="Node3D"]
+
+[node name="GlobalCamera" parent="." instance=ExtResource("1_ds0xo")]
+transform = Transform3D(0.0217923, 0.267176, 0.963401, 0, 0.96363, -0.26724, -0.999763, 0.00582375, 0.0209997, 4.33931, 0.0679059, -1.20099)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_1roct")
+script = ExtResource("3_d2hsu")
+
+[node name="LevelChange" parent="." instance=ExtResource("4_sxy6w")]
+
+[node name="SpawnedObjectLoader" type="Node" parent="."]
+script = ExtResource("5_qok1m")
+
+[node name="DialogueUi" parent="." instance=ExtResource("6_xgqih")]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("7_2fq2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Lighting" type="Node3D" parent="Map"]
+
+[node name="DirectionalLight1" type="DirectionalLight3D" parent="Map/Lighting"]
+transform = Transform3D(-0.925089, -0.35592, -0.132403, -0.246976, 0.299041, 0.921725, -0.288467, 0.885379, -0.364543, 0, 0, 0)
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_blend_splits = true
+script = ExtResource("8_nd4y6")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
+occluder = ExtResource("3_3qwh3")
+bake_mask = 4293918721
+metadata/_edit_lock_ = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
+navigation_mesh = SubResource("NavigationMesh_2rm0l")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+mesh = SubResource("PlaneMesh_qmg86")
+surface_material_override/0 = ExtResource("4_17dxn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+shape = SubResource("ConcavePolygonShape3D_sx15a")
+
+[node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+
+[node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
+
+[node name="Cinematics" type="Node3D" parent="Map"]
+
+[node name="CinematicsLevel6" type="AnimationPlayer" parent="Map/Cinematics"]
+
+[node name="LevelChangeTriggerArea" type="Area3D" parent="Map" node_paths=PackedStringArray("levelChange")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 202, 10.5, -10.5)
+collision_layer = 128
+collision_mask = 128
+monitorable = false
+script = ExtResource("11_d2hsu")
+levelChange = NodePath("../../LevelChange")
+nextLevel = "LevelHub6"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
+shape = SubResource("BoxShape3D_sxy6w")
+
+[node name="Enemies" type="Node3D" parent="."]
