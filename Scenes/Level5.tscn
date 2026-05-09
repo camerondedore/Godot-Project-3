@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=3 uid="uid://bgapy1clrba3s"]
+[gd_scene load_steps=193 format=3 uid="uid://bgapy1clrba3s"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_to3se"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_213sf"]
@@ -13,9 +13,7 @@
 [ext_resource type="Material" uid="uid://cqujvd546wo3l" path="res://Materials/Terrain/TerrainDefault.tres" id="10_7x805"]
 [ext_resource type="ArrayMesh" uid="uid://dnpiaeiy6e787" path="res://Models/level-5-tree-wall.res" id="11_bmpu8"]
 [ext_resource type="Material" uid="uid://dueh1b1xt2rk3" path="res://Materials/Terrain/TerrainWallDefault.tres" id="12_040y1"]
-[ext_resource type="Material" uid="uid://bq5heptaunx06" path="res://Materials/Background/TreeWall.tres" id="12_c4srv"]
 [ext_resource type="Material" uid="uid://dy12385tkj3vj" path="res://Materials/Background/TreeWallSolid.tres" id="13_040y1"]
-[ext_resource type="Material" uid="uid://bqwjfubcy2oia" path="res://Materials/Background/BlackberryBushWall.tres" id="14_u7l1f"]
 [ext_resource type="PackedScene" uid="uid://k20f00pek08y" path="res://Prefabs/Trees/PropTreeWall.tscn" id="17_7dtqy"]
 [ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Torches/PropTorchLitStatic.tscn" id="17_u7l1f"]
 [ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="18_7dtqy"]
@@ -651,9 +649,7 @@ shape = SubResource("ConcavePolygonShape3D_kftfh")
 
 [node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
 mesh = ExtResource("11_bmpu8")
-surface_material_override/0 = ExtResource("12_c4srv")
-surface_material_override/1 = ExtResource("13_040y1")
-surface_material_override/2 = ExtResource("14_u7l1f")
+surface_material_override/0 = ExtResource("13_040y1")
 
 [node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 

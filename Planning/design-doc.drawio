@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36">
   <diagram name="Page-1" id="VGnpG6ZWJcaiQAcUuiWh">
-    <mxGraphModel dx="687" dy="636" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="4723" dy="2454" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -71,10 +71,7 @@
           <mxGeometry height="40" width="100" x="40" y="1240" as="geometry" />
         </mxCell>
         <mxCell id="flKtNtdEUSvzNa3BDP32-1" parent="1" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Story Events&lt;/font&gt;" vertex="1">
-          <mxGeometry height="40" width="100" x="1225" y="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="flKtNtdEUSvzNa3BDP32-2" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" value="&lt;ul&gt;&lt;li&gt;Level 1&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Wynn brings player back to hamlet&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Hub 0&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Lumsden tells player about rat seige&lt;/li&gt;&lt;li&gt;Lumsden sends player to abandonded area to block rats&lt;/li&gt;&lt;li&gt;Wynn gives player weighted arrow&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Level 2&lt;/li&gt;&lt;ul&gt;&lt;li&gt;player blocks rats from abandonded area&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Hub 1&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Wynn tells player to go to sleep and find Lumsden in the morning&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Hub 2&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Lumsden tells player about rat towers&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Level 3&lt;/li&gt;&lt;ul&gt;&lt;li&gt;player destroys rat towers&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Hub 3&lt;/li&gt;&lt;ul&gt;&lt;li&gt;hamlet was attacked&lt;/li&gt;&lt;li&gt;take main path to find boss camp&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Level 4&lt;/li&gt;&lt;ul&gt;&lt;li&gt;open way to central arena&lt;/li&gt;&lt;li&gt;boss fight&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" vertex="1">
-          <mxGeometry height="440" width="420" x="880" y="1640" as="geometry" />
+          <mxGeometry height="40" width="100" x="1225" y="1110" as="geometry" />
         </mxCell>
         <mxCell id="kkg7lZgBQ40nT7mrcYzT-1" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" value="&lt;ul&gt;&lt;li&gt;voices:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Wynn -&amp;gt; Lilly&lt;/li&gt;&lt;li&gt;Lumsden -&amp;gt; George&lt;/li&gt;&lt;li&gt;vole guard -&amp;gt; Daniel&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;mouth keys&lt;/li&gt;&lt;ul&gt;&lt;li&gt;a,e,i,o,u,closed,open,f&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" vertex="1">
           <mxGeometry height="360" width="280" x="1380" y="70" as="geometry" />
@@ -96,8 +93,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 1 - Main Path" vertex="1">
-          <mxGeometry height="60" width="130" x="920" y="1170" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 1 - Main Path&lt;div&gt;&lt;ul&gt;&lt;li&gt;player runs into rats&lt;/li&gt;&lt;li&gt;meet wynn&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="180" x="903" y="1180" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-6" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-5">
           <mxGeometry relative="1" as="geometry" />
@@ -107,8 +104,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub" vertex="1">
-          <mxGeometry height="60" width="70" x="1160" y="1170" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub&lt;div&gt;&lt;ul&gt;&lt;li&gt;meet Lumsden&lt;/li&gt;&lt;li&gt;weighted arrow&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="130" x="1208" y="1180" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-10" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-9">
           <mxGeometry relative="1" as="geometry" />
@@ -118,8 +115,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 2 - Abandonded Area" vertex="1">
-          <mxGeometry height="60" width="190" x="1390" y="1170" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 2 - Abandonded Area&lt;div&gt;&lt;ul&gt;&lt;li&gt;seal off rats&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="1463" y="1190" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-15" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-14">
           <mxGeometry relative="1" as="geometry" />
@@ -129,8 +126,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 3 - Rat Camp" vertex="1">
-          <mxGeometry height="60" width="150" x="1170" y="1290" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 3 - Rat Camp&lt;div&gt;&lt;ul&gt;&lt;li&gt;destroy 3 watch towers&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="150" x="1198" y="1315" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-12" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-8">
           <mxGeometry relative="1" as="geometry" />
@@ -140,8 +137,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub" vertex="1">
-          <mxGeometry height="60" width="75" x="1447.5" y="1290" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub&lt;div&gt;&lt;ul&gt;&lt;li&gt;Lumsden sends player to rat camp&lt;/li&gt;&lt;li&gt;pick arrow&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="152.5" x="1481.75" y="1315" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-18" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-17">
           <mxGeometry relative="1" as="geometry" />
@@ -151,8 +148,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub" vertex="1">
-          <mxGeometry height="60" width="75" x="982.5" y="1290" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub&lt;div&gt;&lt;ul&gt;&lt;li&gt;Wynn sends player to beaver settlement&lt;/li&gt;&lt;li&gt;bladed arrow&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="165" x="910.5" y="1315" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-20" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-19">
           <mxGeometry relative="1" as="geometry" />
@@ -162,8 +159,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 4 - Beaver Settlement" vertex="1">
-          <mxGeometry height="60" width="200" x="920" y="1410" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-17" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 4 - Beaver Settlement&lt;div&gt;&lt;ul&gt;&lt;li&gt;free beavers&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="200" x="893" y="1465" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-25" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-24">
           <mxGeometry relative="1" as="geometry" />
@@ -173,8 +170,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub" vertex="1">
-          <mxGeometry height="60" width="75" x="1240" y="1410" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub&lt;div&gt;&lt;ul&gt;&lt;li&gt;aftermath of attack&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="130" x="1208" y="1450" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-29" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-28">
           <mxGeometry relative="1" as="geometry" />
@@ -184,8 +181,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 5 - Rat Detachment" vertex="1">
-          <mxGeometry height="60" width="200" x="1430" y="1410" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 5 - Rat Detachment&lt;div&gt;&lt;ul&gt;&lt;li&gt;fight champion rat&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="1458" y="1480" as="geometry" />
         </mxCell>
         <mxCell id="hIzASz3x_sHFEHtOkKZq-32" edge="1" parent="1" source="hIzASz3x_sHFEHtOkKZq-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="hIzASz3x_sHFEHtOkKZq-31">
           <mxGeometry relative="1" as="geometry" />
@@ -195,11 +192,11 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub" vertex="1">
-          <mxGeometry height="60" width="75" x="1492.5" y="1530" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Hub&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="130" x="1493" y="1600" as="geometry" />
         </mxCell>
-        <mxCell id="hIzASz3x_sHFEHtOkKZq-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 6 - Cliffs" vertex="1">
-          <mxGeometry height="60" width="127.5" x="1252.5" y="1530" as="geometry" />
+        <mxCell id="hIzASz3x_sHFEHtOkKZq-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Level 6 - Cliffs&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="127.5" x="1210.5" y="1625" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
