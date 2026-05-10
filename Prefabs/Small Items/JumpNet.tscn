@@ -13,11 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://b71k8w50s0upu" path="res://Textures/fx-dirt-patch.png" id="10_merhe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0w8p"]
-size = Vector3(1.3, 0.2, 1.3)
+size = Vector3(1.3, 0.5, 1.3)
 
 [node name="JumpNet" type="Area3D"]
 collision_layer = 0
 collision_mask = 2
+priority = 10
 script = ExtResource("1_uhwkk")
 attachSound = ExtResource("2_6jivt")
 bounceSound = ExtResource("2_6r71d")
@@ -38,7 +39,7 @@ gi_mode = 2
 surface_material_override/0 = ExtResource("8_4bt27")
 
 [node name="JumpCollision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258, 0)
 shape = SubResource("BoxShape3D_k0w8p")
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]

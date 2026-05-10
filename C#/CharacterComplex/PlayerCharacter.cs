@@ -233,11 +233,17 @@ namespace PlayerCharacterComplex
 
 		public void JumpPadActivated(Vector3 jumpPadVelocity)
 		{
+			// check if player is dead
+			if(health.dead == true)
+			{
+				return;
+			}
+
 			// apply jump pad velocity
 			Velocity = jumpPadVelocity;
 
 			// go to jump pad state
-			if(machine.CurrentState != superStateJumpPad)
+			if(machine.CurrentState != superStateJumpPad && machine.CurrentState != stateDie)
 			{
 				machine.SetState(superStateJumpPad);
 			}

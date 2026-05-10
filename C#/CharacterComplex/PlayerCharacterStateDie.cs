@@ -14,6 +14,7 @@ namespace PlayerCharacterComplex
         {
             // set up velocity using input
             var vel = blackboard.Velocity;
+            vel = vel.Lerp(Vector3.Up * vel.Y, ((float) delta) * blackboard.acceleration);
 
             // apply gravity
             vel += EngineGravity.vector * ((float) delta);
@@ -44,6 +45,7 @@ namespace PlayerCharacterComplex
             blackboard.backBone.OverridePose = false;
 
             // animation
+            blackboard.animStateMachinePlayback.Next();
             blackboard.animStateMachinePlayback.Travel("character-die");
         }
 
