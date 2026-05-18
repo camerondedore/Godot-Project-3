@@ -1,18 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://j2j5y6l6vnri"]
+[gd_scene load_steps=11 format=3 uid="uid://j2j5y6l6vnri"]
 
+[ext_resource type="Script" uid="uid://2fl2d1n8wdw3" path="res://C#/WallPlatform.cs" id="1_6lfg0"]
 [ext_resource type="ArrayMesh" uid="uid://c80wqp81ns6fw" path="res://Models/prop-wall-platform.res" id="1_506ee"]
+[ext_resource type="AudioStream" uid="uid://dkq3inchc8mit" path="res://Audio/portcullis-opening.wav" id="2_ic6to"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_wjbuh"]
+[ext_resource type="AudioStream" uid="uid://dsjxwjjje2p6j" path="res://Audio/portcullis-open.wav" id="3_h0njw"]
 [ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_x48i5"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="4_gtufa"]
+[ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="8_ic6to"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_506ee"]
-points = PackedVector3Array(-0.75, 0, -1.2, 0.75, 0, -1.2, 0.75, 0, 1.2, -0.75, 0, 1.2, -0.75, 0.1, -1.2, 0.75, 0.1, -1.2, 0.75, 0.1, 1.1, -0.75, 0.1, 1.1)
+points = PackedVector3Array(-0.75, -0.2, -1.2, 0.75, -0.2, -1.2, 0.75, -0.2, 1.4, -0.75, -0.2, 1.4, -0.75, 0.1, -1.2, 0.75, 0.1, -1.2, 0.75, 0.1, 1.1, -0.75, 0.1, 1.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_506ee"]
 size = Vector3(0.9, 0.8, 0.9)
 
 [node name="PropWallPlatformMoving" type="AnimatableBody3D"]
 collision_layer = 16
+script = ExtResource("1_6lfg0")
+openingSound = ExtResource("2_ic6to")
+openSound = ExtResource("3_h0njw")
+speed = 0.5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
@@ -30,3 +38,11 @@ shape = SubResource("ConvexPolygonShape3D_506ee")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, -0.45)
 shape = SubResource("BoxShape3D_506ee")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("2_ic6to")
+unit_size = 5.0
+max_distance = 40.0
+attenuation_filter_cutoff_hz = 20500.0
+script = ExtResource("8_ic6to")

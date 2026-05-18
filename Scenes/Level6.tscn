@@ -282,6 +282,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 61.25,
 
 [node name="PropWallPlatformMoving2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/MovingPlatforms" instance=ExtResource("36_mr3n5")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 57.75, 6.9, -42)
+speed = 0.3
 
 [node name="Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
@@ -336,7 +337,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 57.7, 
 
 [node name="PropSwitch" parent="Map/OccluderInstance3D/Props/Switches/PropSwitchWallbox2" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("38_kark1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
-linkedObjects = [NodePath("../../../../NavigationRegion3D/NavProps/Doors/PortcullisFrameOld/PortcullisOld")]
+linkedObjects = [NodePath("../../../../NavigationRegion3D/NavProps/Doors/PortcullisFrameOld/PortcullisOld"), NodePath("../../../../NavigationRegion3D/NavProps/MovingPlatforms/PropWallPlatformMoving"), NodePath("../../../../NavigationRegion3D/NavProps/MovingPlatforms/PropWallPlatformMoving2")]
 
 [node name="Cinematics" type="Node3D" parent="Map"]
 
