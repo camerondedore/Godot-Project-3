@@ -337,7 +337,14 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 57.7, 
 
 [node name="PropSwitch" parent="Map/OccluderInstance3D/Props/Switches/PropSwitchWallbox2" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("38_kark1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
-linkedObjects = [NodePath("../../../../NavigationRegion3D/NavProps/Doors/PortcullisFrameOld/PortcullisOld"), NodePath("../../../../NavigationRegion3D/NavProps/MovingPlatforms/PropWallPlatformMoving"), NodePath("../../../../NavigationRegion3D/NavProps/MovingPlatforms/PropWallPlatformMoving2")]
+linkedObjects = [NodePath("../../../../NavigationRegion3D/NavProps/MovingPlatforms/PropWallPlatformMoving")]
+
+[node name="PropSwitchWallbox3" parent="Map/OccluderInstance3D/Props/Switches" instance=ExtResource("37_gp2fj")]
+transform = Transform3D(1, 0, 0, 0, 1, -1.06581e-14, 0, 1.06581e-14, 1, 68.2, 9.5, -41.95)
+
+[node name="PropSwitch" parent="Map/OccluderInstance3D/Props/Switches/PropSwitchWallbox3" node_paths=PackedStringArray("linkedObjects") instance=ExtResource("38_kark1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
+linkedObjects = [NodePath("../../../../NavigationRegion3D/NavProps/Doors/PortcullisFrameOld/PortcullisOld"), NodePath("../../../../NavigationRegion3D/NavProps/MovingPlatforms/PropWallPlatformMoving2")]
 
 [node name="Cinematics" type="Node3D" parent="Map"]
 
@@ -445,6 +452,14 @@ horizontalSpeed = 4.0
 
 [node name="Target4" type="Node3D" parent="Map/JumpNets"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2, 5.5, -50.5)
+
+[node name="JumpNetTarget5" parent="Map/JumpNets" node_paths=PackedStringArray("jumpPadTarget") instance=ExtResource("23_whw4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8, -2.5, -54.4)
+jumpPadTarget = NodePath("../Target5")
+horizontalSpeed = 4.0
+
+[node name="Target5" type="Node3D" parent="Map/JumpNets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8, 5, -54.4)
 
 [node name="MovingBlocks" type="Node3D" parent="Map"]
 

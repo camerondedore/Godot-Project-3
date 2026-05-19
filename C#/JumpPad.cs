@@ -16,6 +16,7 @@ public partial class JumpPad : Area3D
     AudioTools3d audio;
     GpuParticles3D jumpPadDustFx;
     MeshInstance3D netMesh;
+    bool isBoostPad = false;
 
 
 
@@ -26,6 +27,18 @@ public partial class JumpPad : Area3D
         audio = (AudioTools3d) GetNode("Audio");
         jumpPadDustFx = (GpuParticles3D) GetNode("FxJumpPadDust");
         netMesh = (MeshInstance3D) GetNode("prop-jump-net/armature-jump-net/Skeleton3D/prop-jump-net2");
+        
+        if(landingTarget != null)
+        {
+            // check if vertial jump pad
+            var targetDifference = landingTarget.GlobalPosition - GlobalPosition;
+            targetDifference.Y = 0;
+
+            if(targetDifference.LengthSquared() < 0.01f)
+            {
+                isBoostPad = true;
+            }
+        }
 
 
         // set up signal
@@ -45,7 +58,7 @@ public partial class JumpPad : Area3D
             var jumpPadVelocity = GetJumpPadVelocity(body);
             
             // activate jump pad behaviour on body
-            bodyJumpPadUser.JumpPadActivated(jumpPadVelocity);
+            bodyJumpPadUser.JumpPadActivated(jumpPadVelocity, !isBoostPad);
 
             // play audio
             audio.PlaySound(bounceSound, 0.05f);
@@ -62,24 +75,38 @@ public partial class JumpPad : Area3D
 
     public Vector3 GetJumpPadVelocity(Node3D jumper)
     {
-        // get vector to target
-        var vectorToTarget = landingTarget.GlobalPosition - jumper.GlobalPosition;
+        if(isBoostPad == false)
+        {
+            // get vector to target
+            var vectorToTarget = landingTarget.GlobalPosition - jumper.GlobalPosition;
 
-        // flatten vector to target
-        var horizontalVectorToTarget = vectorToTarget;
-        horizontalVectorToTarget.Y = 0;
+            // flatten vector to target
+            var horizontalVectorToTarget = vectorToTarget;
+            horizontalVectorToTarget.Y = 0;
 
-        // get time to target
-		var timeToTarget = Mathf.Clamp(horizontalVectorToTarget.Length() / horizontalSpeed, 1, 100);
+            // get time to target
+            var timeToTarget = Mathf.Clamp(horizontalVectorToTarget.Length() / horizontalSpeed, 1, 100);
 
-        // get horizontal velocity
-		var jumpVelocity = horizontalVectorToTarget.Normalized() * horizontalSpeed;
+            // get horizontal velocity
+            var jumpVelocity = horizontalVectorToTarget.Normalized() * horizontalSpeed;
 
-        // get vertical velocity
-		// vertical velocity = -0.5 * g * t + (B - A) / t
-		jumpVelocity.Y = 0.5f * EngineGravity.magnitude * timeToTarget + (landingTarget.GlobalPosition.Y - jumper.GlobalPosition.Y) / timeToTarget;
+            // get vertical velocity
+            // vertical velocity = -0.5 * g * t + (B - A) / t
+            jumpVelocity.Y = 0.5f * EngineGravity.magnitude * timeToTarget + (landingTarget.GlobalPosition.Y - jumper.GlobalPosition.Y) / timeToTarget;
 
-        return jumpVelocity;
+            return jumpVelocity;
+        }
+        else
+        {
+            // set vertical speed; v = (-2hg)^(1/2)
+            float boostHeight = landingTarget.GlobalPosition.Y - GlobalPosition.Y;
+            float boostSpeed = Mathf.Sqrt((-2 * boostHeight * -EngineGravity.magnitude));
+
+            // get vertical vector
+            var jumpVelocity = Vector3.Up * boostSpeed;
+
+            return jumpVelocity;
+        }
     }
 
 
@@ -95,6 +122,15 @@ public partial class JumpPad : Area3D
     {
         landingTarget = newLandingTarget;
         horizontalSpeed = newHorizontalSpeed;
+
+        // check if vertial jump pad
+        var targetDifference = landingTarget.GlobalPosition - GlobalPosition;
+        targetDifference.Y = 0;
+
+        if(targetDifference.LengthSquared() < 0.01f)
+        {
+            isBoostPad = true;
+        }
 
         // show jump net
         netMesh.Visible = true;
@@ -114,5 +150,5 @@ public partial class JumpPad : Area3D
 
 public interface IJumpPadUser
 {
-    void JumpPadActivated(Vector3 jumpVelocity);
+    void JumpPadActivated(Vector3 jumpVelocity, bool lockVector);
 }

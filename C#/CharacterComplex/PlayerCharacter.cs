@@ -79,6 +79,7 @@ namespace PlayerCharacterComplex
 		public BandageStation currentStation;
 		public float startHeight;
 		public int rangerBandagesToCraft;
+		public bool lockJumpPadVector;
 
 		//string debugText;
 		
@@ -231,7 +232,7 @@ namespace PlayerCharacterComplex
 
 
 
-		public void JumpPadActivated(Vector3 jumpPadVelocity)
+		public void JumpPadActivated(Vector3 jumpPadVelocity, bool lockVector)
 		{
 			// check if player is dead
 			if(health.dead == true)
@@ -240,7 +241,20 @@ namespace PlayerCharacterComplex
 			}
 
 			// apply jump pad velocity
-			Velocity = jumpPadVelocity;
+			if(lockVector)
+			{
+				Velocity = jumpPadVelocity;
+			}
+			else
+			{
+				// remove vertical speed from current velocity
+				var currentVelocity = Velocity;
+				currentVelocity.Y = 0;
+
+				Velocity = jumpPadVelocity + currentVelocity;
+			}
+
+			lockJumpPadVector = lockVector;
 
 			// go to jump pad state
 			if(machine.CurrentState != superStateJumpPad && machine.CurrentState != stateDie)

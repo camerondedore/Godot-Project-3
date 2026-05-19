@@ -6,7 +6,7 @@ namespace PlayerCharacterComplex
     public partial class PlayerCharacterSubStateJumpPadIdle : PlayerCharacterState
     {
 
-
+        bool falling = false;
 
 
 
@@ -18,7 +18,13 @@ namespace PlayerCharacterComplex
                 // look in direction of movement
                 blackboard.CharacterLook(delta);
             }
-            
+
+            // update animation
+            if(blackboard.Velocity.Y < 0 && falling == false)
+            {
+                blackboard.animStateMachinePlayback.Travel("character-fall");
+                falling = true;
+            }
         }
 
 
@@ -36,6 +42,8 @@ namespace PlayerCharacterComplex
                 // animation
                 blackboard.animStateMachinePlayback.Travel("character-jump");
             }
+
+            falling = false;
         }
 
 

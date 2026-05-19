@@ -17,19 +17,29 @@ namespace PlayerCharacterComplex
 
             var vel = blackboard.Velocity;
             
-            // check for input
-            if(moveDirection.LengthSquared() > 0)
+            if(blackboard.lockJumpPadVector == true)
             {
-                // set up velocity by adding input to jump pad velocity
-                vel.X = Mathf.Lerp(vel.X, initialVelocity.X + moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
-                vel.Z = Mathf.Lerp(vel.Z, initialVelocity.Z + moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
+                // check for input
+                if(moveDirection.LengthSquared() > 0)
+                {
+                    // set up velocity by adding input to jump pad velocity
+                    vel.X = Mathf.Lerp(vel.X, initialVelocity.X + moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
+                    vel.Z = Mathf.Lerp(vel.Z, initialVelocity.Z + moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
+                }
+                else if(vel != initialVelocity)
+                {
+                    // lerp back to jump pad velocity
+                    vel.X = Mathf.Lerp(vel.X, initialVelocity.X, ((float) delta) * blackboard.acceleration * 0.25f);
+                    vel.Z = Mathf.Lerp(vel.Z, initialVelocity.Z, ((float) delta) * blackboard.acceleration * 0.25f);
+                }		
             }
-            else if(vel != initialVelocity)
+            else
             {
-                // lerp back to jump pad velocity
-                vel.X = Mathf.Lerp(vel.X, initialVelocity.X, ((float) delta) * blackboard.acceleration * 0.25f);
-                vel.Z = Mathf.Lerp(vel.Z, initialVelocity.Z, ((float) delta) * blackboard.acceleration * 0.25f);
-            }		
+                // velocity not locked to jump pad velocity
+                // set up velocity using input
+                vel.X = Mathf.Lerp(vel.X, moveDirection.X * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
+                vel.Z = Mathf.Lerp(vel.Z, moveDirection.Z * blackboard.speed, ((float) delta) * blackboard.acceleration * 0.25f);
+            }
 
             // apply gravity
             vel += EngineGravity.vector * ((float) delta);
