@@ -83,6 +83,7 @@ bowMesh = NodePath("../BowMesh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CraftingArea"]
 shape = SubResource("SphereShape3D_75aye")
+debug_color = Color(0, 0.35, 1, 1)
 
 [node name="CharacterTarget" type="Node3D" parent="CraftingArea"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.6, -0.1)

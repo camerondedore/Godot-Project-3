@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="9_30sne"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a313i"]
-size = Vector3(0.75, 0.7, 0.563)
+size = Vector3(0.75, 0.6, 0.563)
 
 [node name="PropLockbox" type="StaticBody3D"]
 collision_layer = 16
@@ -35,14 +35,14 @@ surface_material_override/1 = ExtResource("2_s4b3k")
 surface_material_override/2 = ExtResource("6_noej3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("BoxShape3D_a313i")
 
 [node name="FxLock" parent="." instance=ExtResource("5_cpfrh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245565, -0.316)
 
 [node name="PickupSpawnerDelayed" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.569971, -0.123988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669971, -0.223988)
 script = ExtResource("6_03t3p")
 delayTime = 0.1
 prefab = ExtResource("7_rf4xg")
