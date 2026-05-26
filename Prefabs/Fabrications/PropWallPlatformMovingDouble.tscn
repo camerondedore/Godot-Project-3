@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbw1oduo1k15u"]
+
+[ext_resource type="PackedScene" uid="uid://j2j5y6l6vnri" path="res://Prefabs/Fabrications/PropWallPlatformMoving.tscn" id="1_86rh6"]
+[ext_resource type="ArrayMesh" uid="uid://c80wqp81ns6fw" path="res://Models/prop-wall-platform.res" id="2_1goxq"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="3_qh2rt"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="4_d88yh"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="5_0wonk"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4jnhi"]
+points = PackedVector3Array(-1.5, -0.2, -1.2, 1.5, -0.2, -1.2, 1.5, -0.2, 1.4, -1.5, -0.2, 1.4, -1.5, 0.1, -1.2, 1.5, 0.1, -1.2, 1.5, 0.1, 1.1, -1.5, 0.1, 1.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dnasc"]
+size = Vector3(2.5, 0.8, 0.9)
+
+[node name="PropWallPlatformMovingDouble" instance=ExtResource("1_86rh6")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0, -1)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, -1)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("2_1goxq")
+surface_material_override/0 = ExtResource("3_qh2rt")
+surface_material_override/1 = ExtResource("4_d88yh")
+surface_material_override/2 = ExtResource("5_0wonk")
+
+[node name="CollisionShape3D" parent="." index="2"]
+shape = SubResource("ConvexPolygonShape3D_4jnhi")
+
+[node name="CollisionShape3D2" parent="." index="3"]
+shape = SubResource("BoxShape3D_dnasc")
