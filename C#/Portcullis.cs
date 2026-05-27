@@ -41,6 +41,8 @@ public partial class Portcullis : AnimatableBody3D, IActivatable, IWatchable
 		closedPosition = GlobalPosition;
 		openPosition = ToGlobal(openOffset);
 
+		startedOpen = open;
+
 		if(open == true)
 		{
 			GlobalPosition = openPosition;
