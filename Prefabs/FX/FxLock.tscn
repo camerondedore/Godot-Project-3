@@ -1,14 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr1bprfu7i7wc"]
+[gd_scene load_steps=12 format=3 uid="uid://cr1bprfu7i7wc"]
 
 [ext_resource type="ArrayMesh" uid="uid://donqrer6ntmi5" path="res://Models/fx-lock.res" id="1_qpfjf"]
 [ext_resource type="Script" uid="uid://bj5pgnqqap06n" path="res://C#/FxLock.cs" id="1_skjfe"]
 [ext_resource type="PackedScene" uid="uid://daam6bhcq3c1k" path="res://Prefabs/FX/FxLockOpened.tscn" id="2_ajn81"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_ryckk"]
 [ext_resource type="Script" uid="uid://dsdsnbs15g3di" path="res://C#/Common/RigidbodySpawner.cs" id="4_rvvph"]
+[ext_resource type="Material" uid="uid://mo20soa0isog" path="res://Materials/Fx/FxSparkle.tres" id="6_y1j38"]
+[ext_resource type="Script" uid="uid://clrneo00oni0y" path="res://C#/Common/DelayedDestroy.cs" id="7_26x0y"]
 
-[node name="FxLock" type="Node3D" node_paths=PackedStringArray("lockSpawner")]
+[sub_resource type="Gradient" id="Gradient_26x0y"]
+offsets = PackedFloat32Array(0, 0.532075, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sgr7x"]
+gradient = SubResource("Gradient_26x0y")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xdn5k"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 0.1
+emission_ring_radius = 0.3
+emission_ring_inner_radius = 0.2
+emission_ring_cone_angle = 90.0
+angle_min = 1.07288e-05
+angle_max = 359.0
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+gravity = Vector3(0, -0.08, 0)
+scale_min = 0.15
+scale_max = 0.25
+color_ramp = SubResource("GradientTexture1D_sgr7x")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1dtr2"]
+
+[node name="FxLock" type="Node3D"]
 script = ExtResource("1_skjfe")
-lockSpawner = NodePath("LockSpawner")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
@@ -22,3 +48,18 @@ prefab = ExtResource("2_ajn81")
 velocity = Vector3(0, 3, -5.5)
 spread = 2.0
 angularSpeed = 5.0
+
+[node name="SparkleFx" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0859144)
+layers = 64
+material_override = ExtResource("6_y1j38")
+gi_mode = 2
+amount = 3
+lifetime = 2.5
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_xdn5k")
+draw_pass_1 = SubResource("QuadMesh_1dtr2")
+
+[node name="DelayedDestroyer" type="Node" parent="SparkleFx"]
+script = ExtResource("7_26x0y")
+delayTime = 4.0

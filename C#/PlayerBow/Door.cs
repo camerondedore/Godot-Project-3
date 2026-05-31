@@ -60,6 +60,11 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchab
             // disable script
             SetScript(new Variant());
         }
+
+        if(arrowActivatable == false)
+        {
+            lockFx.TurnOffLockFx();
+        }
     }
 
 
