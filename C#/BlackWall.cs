@@ -5,10 +5,9 @@ public partial class BlackWall : StaticBody3D
 {
 
     [Export]
-    MeshInstance3D mesh;
-    [Export]
     float fadeSpeed = 2;
 
+    MeshInstance3D mesh;
     Material blackWallMaterial;
     float depthDistance;
     bool isDissolving = false;
@@ -17,6 +16,9 @@ public partial class BlackWall : StaticBody3D
 
     public override void _Ready()
     {
+        // get node
+        mesh = (MeshInstance3D) GetNode("BlackWallMesh");
+
         // get material
         blackWallMaterial = mesh.GetSurfaceOverrideMaterial(0);
 

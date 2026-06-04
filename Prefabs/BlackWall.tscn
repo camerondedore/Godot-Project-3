@@ -4,19 +4,19 @@
 [ext_resource type="Material" uid="uid://bs6yjtymayl1v" path="res://Materials/Fx/FxBlackWall.tres" id="2_6eq53"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_p5a8i"]
+size = Vector2(5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ruem7"]
 size = Vector3(5, 5, 0.5)
 
-[node name="BlackWall" type="StaticBody3D" node_paths=PackedStringArray("mesh")]
+[node name="BlackWall" type="StaticBody3D"]
 collision_layer = 1024
 collision_mask = 2
 script = ExtResource("1_ykcgk")
-mesh = NodePath("BlackWallMesh")
 fadeSpeed = 1.0
 
 [node name="BlackWallMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(-5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 layers = 2
 cast_shadow = 0
 gi_mode = 0
