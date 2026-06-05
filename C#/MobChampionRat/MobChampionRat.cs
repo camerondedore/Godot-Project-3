@@ -27,6 +27,8 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
     [Export]
     public Node3D startTarget;
+    [Export]
+    public bool enemyCanInterruptStart = false;
 
     public NavigationAgent3D navAgent;
     public MobFaction myFaction1,
@@ -267,9 +269,10 @@ public partial class MobChampionRat : Mob, MobSpawner.iMobSpawnable
 
 
 
-    public void SetTarget(Node3D newTarget)
+    public void SetTarget(Node3D newTarget, bool enemyCanInterrupt)
     {
         startTarget = newTarget;
+        enemyCanInterruptStart = enemyCanInterrupt;
 
         machine.SetState(stateStart);
         machine.CurrentState.StartState();

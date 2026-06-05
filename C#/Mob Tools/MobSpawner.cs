@@ -10,6 +10,8 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
     [Export]
     Node3D mobTarget;
     [Export]
+    bool enemyCanInterrupt = false;
+    [Export]
     Node mobWatcher; // optional
 
 
@@ -26,7 +28,7 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
         newMob.Owner = GetTree().CurrentScene;
 
         // assign start target
-        ((iMobSpawnable) newMob).SetTarget(mobTarget);
+        ((iMobSpawnable) newMob).SetTarget(mobTarget, enemyCanInterrupt);
 
         if(mobWatcher is IWatcher watcher && newMob is IWatchable watchableMob)
         {
@@ -60,6 +62,6 @@ public partial class MobSpawner : Node3D, CinematicSimpleControl.iCinematicSimpl
 
     public interface iMobSpawnable
     {
-        void SetTarget(Node3D target);
+        void SetTarget(Node3D target, bool enemyCanInterrupt);
     }
 }

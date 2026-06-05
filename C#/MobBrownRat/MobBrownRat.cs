@@ -30,7 +30,8 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
     [Export]
     public Node3D startTarget;
     [Export]
-    public bool isMovingRat = true;
+    public bool isMovingRat = true,
+        enemyCanInterruptStart = false;
 
     public NavigationAgent3D navAgent;
     public MobBow bow;
@@ -268,9 +269,10 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
 
 
 
-    public void SetTarget(Node3D newTarget)
+    public void SetTarget(Node3D newTarget, bool enemyCanInterrupt)
     {
         startTarget = newTarget;
+        enemyCanInterruptStart = enemyCanInterrupt;
 
         machine.SetState(stateStart);
         machine.CurrentState.StartState();

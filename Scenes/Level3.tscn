@@ -320,12 +320,18 @@ script = ExtResource("7_ijvnw")
 
 [node name="AmbientLight" type="OmniLight3D" parent="Map/Lighting"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.8171, 18.0519, -161.559)
-light_energy = 0.65
+light_energy = 0.3
 light_indirect_energy = 2.0
 light_bake_mode = 1
 distance_fade_enabled = true
 distance_fade_begin = 10.0
-omni_range = 10.0
+omni_range = 7.0
+omni_attenuation = 0.2
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Map/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.8611, 19.8019, -163.731)
+blend_distance = 2.0
+size = Vector3(17, 8.5, 13)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
 occluder = ExtResource("8_avvxw")

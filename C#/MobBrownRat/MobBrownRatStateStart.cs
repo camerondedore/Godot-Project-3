@@ -12,7 +12,11 @@ public partial class MobBrownRatStateStart : MobBrownRatState
 
     public override void RunState(double delta)
     {
-        
+        if(blackboard.enemyCanInterruptStart == true)
+        {
+            // look for enemy
+            blackboard.LookForEnemy();
+        }
     }
     
     
@@ -48,6 +52,13 @@ public partial class MobBrownRatStateStart : MobBrownRatState
         {
             // idle
             return blackboard.stateIdle;
+        }
+
+        // see enemy
+        if(blackboard.enemyCanInterruptStart == true && blackboard.IsEnemyValid() == true)
+        {
+            // react
+            return blackboard.stateReact;
         }
 
         // navigation to starting target is done
