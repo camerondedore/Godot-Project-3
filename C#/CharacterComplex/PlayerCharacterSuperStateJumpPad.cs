@@ -87,6 +87,8 @@ namespace PlayerCharacterComplex
             //base.EndState();
 
             blackboard.backBone.OverridePose = false;
+
+            blackboard.startHeight = blackboard.GlobalPosition.Y;
         }
 
 
@@ -114,8 +116,8 @@ namespace PlayerCharacterComplex
                 }
 
                 // land
-                //return blackboard.stateLand;
-                return blackboard.stateMove;
+                return blackboard.stateLand;
+                //return blackboard.stateMove;
             }
 
             return this;
