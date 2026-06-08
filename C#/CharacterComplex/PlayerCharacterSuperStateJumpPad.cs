@@ -77,7 +77,7 @@ namespace PlayerCharacterComplex
             }
 
             // play sound
-           // blackboard.characterAudio.PlayJumpPadSound();
+            //blackboard.characterAudio.PlayJumpPadSound();
         }
 
 
@@ -102,8 +102,16 @@ namespace PlayerCharacterComplex
                 blackboard.bow.CancelDraw();
                 blackboard.crosshairAnimation.Play("crosshair-reset");
 
-                // fall
-                return blackboard.stateFall;
+                if(blackboard.Velocity.Y >= 0.0)
+                {
+                    // jump
+                    return blackboard.stateJump;
+                }
+                else
+                {
+                    // fall
+                    return blackboard.stateFall;
+                }
             }
 
 
