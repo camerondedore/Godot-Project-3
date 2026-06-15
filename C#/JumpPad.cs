@@ -100,7 +100,7 @@ public partial class JumpPad : Area3D
         {
             // set vertical speed; v = (-2hg)^(1/2)
             float boostHeight = landingTarget.GlobalPosition.Y - GlobalPosition.Y;
-            float boostSpeed = Mathf.Sqrt((-2 * boostHeight * -EngineGravity.magnitude));
+            float boostSpeed = Mathf.Sqrt(-2 * boostHeight * -EngineGravity.magnitude);
 
             // get vertical vector
             var jumpVelocity = Vector3.Up * boostSpeed;
