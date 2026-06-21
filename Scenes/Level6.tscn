@@ -1328,6 +1328,12 @@ metadata/_edit_group_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.75, 4.5, 1.75)
 metadata/_edit_group_ = true
 
+[node name="SpikeTrap6" parent="Map/SpikeTraps" instance=ExtResource("63_ntqpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.5, 3.5, 132)
+
+[node name="SpikeTrap7" parent="Map/SpikeTraps" instance=ExtResource("63_ntqpk")]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 66, 3.5, 133)
+
 [node name="BlackWalls" type="Node3D" parent="Map"]
 
 [node name="BlackWall" parent="Map/BlackWalls" instance=ExtResource("24_q0d8r")]
@@ -1769,6 +1775,15 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.5, 
 
 [node name="MobBrownRat6" parent="Enemies" instance=ExtResource("24_us3bw")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 42.4, 2.85, 82.75)
+
+[node name="MobWasp5" parent="Enemies" instance=ExtResource("74_ntqpk")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 65, 3.2, 118.5)
+
+[node name="MobWasp6" parent="Enemies" instance=ExtResource("74_ntqpk")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 50.5, 3.2, 120)
+
+[node name="MobWasp7" parent="Enemies" instance=ExtResource("74_ntqpk")]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 52.5, 3.2, 115.5)
 
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld2"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitStatic11"]
