@@ -40,12 +40,15 @@ namespace PlayerCharacterComplex
 
         public override void StartState()
         {
-            var vel = blackboard.Velocity;
+            if(blackboard.IsOnFloor())
+            {
+                var vel = blackboard.Velocity;
 
-            // set vertical speed; v = (-2hg)^(1/2)
-            vel.Y = Mathf.Sqrt((-2 * blackboard.jumpHeight * -EngineGravity.magnitude * blackboard.gravityMultiplier));
+                // set vertical speed; v = (-2hg)^(1/2)
+                vel.Y = Mathf.Sqrt((-2 * blackboard.jumpHeight * -EngineGravity.magnitude * blackboard.gravityMultiplier));
 
-            blackboard.Velocity = vel;
+                blackboard.Velocity = vel;
+            }
 
             // animation
             blackboard.animStateMachinePlayback.Travel("character-jump");
