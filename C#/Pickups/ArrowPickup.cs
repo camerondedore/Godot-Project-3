@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ArrowPickup : PickupRigidbody
+public partial class ArrowPickup : PickupRigidbody, IWatchable
 {
 
     [Export]
@@ -66,5 +66,19 @@ public partial class ArrowPickup : PickupRigidbody
     
 
         base.PickupAction(data);
+    }
+
+
+
+    public bool IsAlive()
+    {
+        return IsInstanceValid(this) == true;
+    }
+
+
+
+    public float GetHitPoints()
+    {
+        return IsInstanceValid(this) == true ? 100f : 0f;
     }
 }
