@@ -53,6 +53,11 @@ public partial class ToolPropPainter : Node
 	{	
 		if (Engine.IsEditorHint() && toolActive && editorCamera != null)
 		{
+			if(Input.IsKeyPressed(Key.Escape) == true)
+			{
+				toolActive = false;
+			}
+
 			//if(Input.IsActionJustPressed("player-jump") == true)
 			if(Input.IsKeyPressed(Key.Space) == true)
 			{
