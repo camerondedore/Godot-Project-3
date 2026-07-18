@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://f70sb0o4tyts"]
+
+[ext_resource type="ArrayMesh" uid="uid://cyxn6d5pisj4f" path="res://Models/prop-stool.res" id="1_lbbok"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_v6ljl"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_6kkls"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c0dj2"]
+height = 0.7
+radius = 0.28
+
+[node name="PropStool" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_lbbok")
+surface_material_override/0 = ExtResource("2_v6ljl")
+surface_material_override/1 = ExtResource("3_6kkls")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+shape = SubResource("CylinderShape3D_c0dj2")

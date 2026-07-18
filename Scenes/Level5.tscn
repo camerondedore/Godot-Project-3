@@ -1,4 +1,4 @@
-[gd_scene load_steps=193 format=3 uid="uid://bgapy1clrba3s"]
+[gd_scene load_steps=194 format=3 uid="uid://bgapy1clrba3s"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_to3se"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_213sf"]
@@ -92,6 +92,7 @@
 [ext_resource type="PackedScene" uid="uid://c2iy3v0jc0bd1" path="res://Prefabs/Food/PropCookingSpit.tscn" id="52_lo1on"]
 [ext_resource type="PackedScene" uid="uid://0aylyohlxbgq" path="res://Prefabs/Fabrications/PropPlatform5m.tscn" id="52_vyopg"]
 [ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="53_hdmhk"]
+[ext_resource type="PackedScene" uid="uid://f70sb0o4tyts" path="res://Prefabs/Furniture/PropStool.tscn" id="53_vvsr7"]
 [ext_resource type="PackedScene" uid="uid://ice2wgyny2h3" path="res://Prefabs/Furniture/PropTable.tscn" id="53_xbgyn"]
 [ext_resource type="PackedScene" uid="uid://cueqckjju13eo" path="res://Prefabs/Lumber/PropBoardPost2.tscn" id="54_16fx5"]
 [ext_resource type="PackedScene" uid="uid://bku16yldk1wjl" path="res://Prefabs/Food/PropPotHanging1.tscn" id="55_6cgwk"]
@@ -2300,6 +2301,9 @@ transform = Transform3D(0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 
 
 [node name="PropBench4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Furniture" instance=ExtResource("35_6ir8n")]
 transform = Transform3D(0.903365, 0, -0.428872, 0, 1, 0, 0.428872, 0, 0.903365, 121.127, 9.00623, 3.02286)
+
+[node name="PropStool" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Furniture" instance=ExtResource("53_vvsr7")]
+transform = Transform3D(0.967219, 0, -0.253944, 0, 1, 0, 0.253944, 0, 0.967219, 138.311, 3, 10.653)
 
 [node name="Food" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
