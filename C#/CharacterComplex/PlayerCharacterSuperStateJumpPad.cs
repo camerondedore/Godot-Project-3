@@ -95,8 +95,13 @@ namespace PlayerCharacterComplex
 
         public override State Transition()
         {
+            // check horizontal speed
+            Vector3 horizontalSpeed = blackboard.Velocity;
+            horizontalSpeed.Y = 0;
+            bool hardHit = horizontalSpeed.Length() > blackboard.aimSpeed * 1.25f;
+
             // hit something when using jump pad
-            if(blackboard.IsOnWall() && !blackboard.IsOnFloor())
+            if(hardHit == true && blackboard.IsOnWall() && !blackboard.IsOnFloor())
             {
                 // cancel bow draw
                 blackboard.bow.CancelDraw();
@@ -111,7 +116,7 @@ namespace PlayerCharacterComplex
                 {
                     // fall
                     return blackboard.stateFall;
-                }
+                }                
             }
 
 
