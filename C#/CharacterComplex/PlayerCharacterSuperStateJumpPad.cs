@@ -53,6 +53,14 @@ namespace PlayerCharacterComplex
             // camera follow
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
+
+            if(moveDirection.LengthSquared() > 0)
+            {
+                // keep ledge detector rays relative to move input
+                blackboard.ledgeDetector.LookAt(blackboard.GlobalPosition + moveDirection);
+            }
+
+
             base.RunState(delta);
         }
 
@@ -78,6 +86,8 @@ namespace PlayerCharacterComplex
 
             // play sound
             //blackboard.characterAudio.PlayJumpPadSound();
+
+            blackboard.ledgeDetector.TurnOn();
         }
 
 
@@ -89,12 +99,27 @@ namespace PlayerCharacterComplex
             blackboard.backBone.OverridePose = false;
 
             blackboard.startHeight = blackboard.GlobalPosition.Y;
+
+            blackboard.ledgeDetector.TurnOff();
         }
 
 
 
         public override State Transition()
         {
+            // check for ledge if falling with bow that isn't drawn
+            if(blackboard.bow.isDrawn == false && blackboard.Velocity.Y < 0 && blackboard.ledgeDetector.DetectingValidLedge())
+            {
+                // check that player input is pointing into ledge
+                var movingIntoLedge = blackboard.ledgeDetector.GetLedgeWallNormal().AngleTo(blackboard.GetMoveInput()) > 1.571f;
+
+                if(movingIntoLedge)
+                {
+                    // ledge grab
+                    return blackboard.stateLedgeGrab;
+                }
+            }
+
             // check horizontal speed
             Vector3 horizontalSpeed = blackboard.Velocity;
             horizontalSpeed.Y = 0;
