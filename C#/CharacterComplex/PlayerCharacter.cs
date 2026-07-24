@@ -32,37 +32,23 @@ namespace PlayerCharacterComplex
 			stateDie;
 
 		[Export]
+		public MobFaction[] myFactions;
+
 		public CameraController cameraController;
-		[Export]
 		public Node3D verticalSpringArmTarget;
-		[Export]
-        public AnimationTree animation;
-		[Export]
+		public AnimationTree animation;
 		public AnimationPlayer crosshairAnimation;
-		[Export]
 		public BoneAttachment3D backBone,
 			hipBone;
-		[Export]
 		public PlayerCharacterAudio characterAudio;
-		[Export]
 		public CharacterFootsteps characterFootsteps;
-		[Export]
 		public PlayerFx characterFx;
-		[Export]
 		public BowAimer bowAimer;
-		[Export]
 		public Bow bow;
-		[Export]
 		public PlayerHealth health;
-		[Export]
 		public PlayerHud hud;
-		[Export]
-		public MobFaction[] myFactions;
-		[Export]
 		public PlayerCharacterLedgeDetector ledgeDetector;
-		[Export]
     	public MeshInstance3D bowMesh;
-
 		public Vector3 ledgeGrabOffset = new Vector3(0.0f, -1.2f, 0.3f);
 		public float speed = 5,
 			aimSpeed = 2,
@@ -88,6 +74,23 @@ namespace PlayerCharacterComplex
 
 		public override void _Ready()
 		{
+			// get nodes
+			cameraController = (CameraController) GetNode("CameraController");
+			verticalSpringArmTarget = (Node3D) GetNode("SpringArmVertical/OffsetParent/VerticalSpringArmTarget");
+			animation = (AnimationTree) GetNode("AnimationTree");
+			crosshairAnimation = (AnimationPlayer) GetNode("HudCanvas/Hud/CrosshairControl/CrosshairAnimationPlayer");
+			backBone = (BoneAttachment3D) GetNode("character-player/character-armature/Skeleton3D/BackBoneOverride");
+			hipBone = (BoneAttachment3D) GetNode("character-player/character-armature/Skeleton3D/HipsBoneCopy");
+			characterAudio = (PlayerCharacterAudio) GetNode("CharacterAudio");
+			characterFootsteps = (CharacterFootsteps) GetNode("CharacterFootsteps");
+			characterFx = (PlayerFx) GetNode("Fx");
+			bowAimer = (BowAimer) GetNode("CameraController/SpringArmHorizontal/BowAimer");
+			bow = (Bow) GetNode("Bow");
+			hud = (PlayerHud) GetNode("HudCanvas");
+			health = (PlayerHealth) GetNode("Health");
+			ledgeDetector = (PlayerCharacterLedgeDetector) GetNode("LedgeDetector");
+			bowMesh = (MeshInstance3D) GetNode("character-player/character-armature/Skeleton3D/character-bow");
+
 			animStateMachinePlayback = (AnimationNodeStateMachinePlayback) animation.Get("parameters/playback");
 
 			// initialize super states
