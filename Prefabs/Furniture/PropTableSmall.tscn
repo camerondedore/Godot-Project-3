@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://5jd23ssnm6fk"]
+
+[ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_napqo"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_hs623"]
+[ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="3_g1ltj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_napqo"]
+size = Vector3(1.6, 0.1, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hs623"]
+size = Vector3(0.11, 0.8, 0.11)
+
+[node name="PropTableSmall" type="StaticBody3D"]
+collision_layer = 16
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_napqo")
+surface_material_override/0 = ExtResource("2_hs623")
+surface_material_override/1 = ExtResource("3_g1ltj")
+
+[node name="CollisionShapeTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("BoxShape3D_napqo")
+
+[node name="CollisionShapeLeg" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.4, 0.35)
+shape = SubResource("BoxShape3D_hs623")
+
+[node name="CollisionShapeLeg1" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.4, 0.35)
+shape = SubResource("BoxShape3D_hs623")
+
+[node name="CollisionShapeLeg2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.4, -0.37)
+shape = SubResource("BoxShape3D_hs623")
+
+[node name="CollisionShapeLeg3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.4, -0.37)
+shape = SubResource("BoxShape3D_hs623")

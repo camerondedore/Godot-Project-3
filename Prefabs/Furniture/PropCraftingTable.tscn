@@ -1,34 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfyoe1tbi03jj"]
+[gd_scene load_steps=11 format=3 uid="uid://bfyoe1tbi03jj"]
 
-[ext_resource type="ArrayMesh" uid="uid://34jcn4v674xi" path="res://Models/prop-crafting-table.res" id="1_y5gvo"]
-[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_j5u0j"]
+[ext_resource type="PackedScene" uid="uid://5jd23ssnm6fk" path="res://Prefabs/Furniture/PropTableSmall.tscn" id="1_30v5g"]
 [ext_resource type="Script" uid="uid://dqqg2ipwco80s" path="res://C#/BandageStation.cs" id="3_erttl"]
 [ext_resource type="ArrayMesh" uid="uid://kyvajoparlu5" path="res://Models/prop-crafting-table-bow.res" id="4_5gpt5"]
 [ext_resource type="PackedScene" uid="uid://cennawrc312vk" path="res://Prefabs/Small Items/PropMortarPestle.tscn" id="4_ev8f2"]
 [ext_resource type="PackedScene" uid="uid://bn1ffv7hxh6lu" path="res://Prefabs/FX/FxCrafting.tscn" id="5_8yyxa"]
-[ext_resource type="Material" uid="uid://ce260seld6sft" path="res://Materials/Cloth1.tres" id="5_188yf"]
 [ext_resource type="Material" uid="uid://6uq0jae4r4tr" path="res://Materials/Characters/CharacterPlayerGear.tres" id="5_kwka8"]
 [ext_resource type="Texture2D" uid="uid://dweu0on7f0seq" path="res://Textures/fx-herb-mess.png" id="6_7lknm"]
 [ext_resource type="AudioStream" uid="uid://x1j5a5wtihfd" path="res://Audio/crafting-with-leaves.wav" id="6_jbibn"]
 [ext_resource type="Material" uid="uid://cvllqbh5c6ke3" path="res://Materials/Arrows.tres" id="6_jgti4"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vvtkp"]
-size = Vector3(1.6, 0.1, 0.9)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fc7e7"]
-size = Vector3(0.11, 0.8, 0.11)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_75aye"]
 
-[node name="PropCraftingTable" type="StaticBody3D"]
+[node name="PropCraftingTable" type="Node3D"]
 
-[node name="TableMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-layers = 2
-gi_mode = 2
-mesh = ExtResource("1_y5gvo")
-surface_material_override/0 = ExtResource("2_j5u0j")
-surface_material_override/1 = ExtResource("5_188yf")
+[node name="PropTableSmall" parent="." instance=ExtResource("1_30v5g")]
 
 [node name="BowMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.66, 0.93, -0.11)
@@ -38,26 +24,6 @@ gi_mode = 2
 mesh = ExtResource("4_5gpt5")
 surface_material_override/0 = ExtResource("5_kwka8")
 surface_material_override/1 = ExtResource("6_jgti4")
-
-[node name="CollisionShapeTop" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
-shape = SubResource("BoxShape3D_vvtkp")
-
-[node name="CollisionShapeLeg" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.4, 0.35)
-shape = SubResource("BoxShape3D_fc7e7")
-
-[node name="CollisionShapeLeg1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.4, 0.35)
-shape = SubResource("BoxShape3D_fc7e7")
-
-[node name="CollisionShapeLeg2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 0.4, -0.37)
-shape = SubResource("BoxShape3D_fc7e7")
-
-[node name="CollisionShapeLeg3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55, 0.4, -0.37)
-shape = SubResource("BoxShape3D_fc7e7")
 
 [node name="PropMortarPestle" parent="." instance=ExtResource("4_ev8f2")]
 transform = Transform3D(0.720006, 0, -0.693968, 0, 1, 0, 0.693968, 0, 0.720006, 0, 1, 0)
@@ -90,6 +56,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.6
 
 [node name="Decal" type="Decal" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.90796, 0)
+layers = 2
 size = Vector3(0.8, 0.05, 0.9)
 texture_albedo = ExtResource("6_7lknm")
-cull_mask = 1
+cull_mask = 2
