@@ -12715,7 +12715,7 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("11_d2hsu")
 levelChange = NodePath("../../LevelChange")
-nextLevel = "LevelHub6"
+nextLevel = "LevelHub7"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea"]
 shape = SubResource("BoxShape3D_sxy6w")

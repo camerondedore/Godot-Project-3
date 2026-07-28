@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://clyp2a5r7voka"]
+
+[ext_resource type="PackedScene" uid="uid://ce7lqyeoqu6ak" path="res://Scenes/LevelHubBase.tscn" id="1_krnk6"]
+
+[node name="LevelHub7" instance=ExtResource("1_krnk6")]
+
+[node name="PlayerCharacter" parent="." index="6"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -93.8, 6, -55.5)
+
+[node name="PropSwitch" parent="Map/Switches/PropSwitchWallbox" index="1" node_paths=PackedStringArray("linkedObjects")]
+linkedObjects = [NodePath("../../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/Portcullis"), null]
+
+[node name="FishSchool1" parent="Map/Fish/FishSchoolPath1" index="0"]
+transform = Transform3D(0.785182, 0, 0.619239, 0, 0.999991, 0, -0.619239, 0, 0.785182, 6.2505, 0, -2.9841)
+
+[node name="FishSchool2" parent="Map/Fish/FishSchoolPath2" index="0"]
+transform = Transform3D(0.103799, 0, -0.99458, 0, 0.999991, 0, 0.99458, 0, 0.103799, -6.95197, 0, -28.0066)
+
+[node name="LevelChangeTriggerArea" parent="Map" index="12"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -71, 2.5, 31.5)
+nextLevel = "Level7"
