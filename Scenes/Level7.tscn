@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://mvs1wdyitbb4"]
+
+[ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_c145g"]
+[ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_2x6a7"]
+[ext_resource type="Environment" uid="uid://svmacqe5plcl" path="res://Environments/CavesEnvironment.tres" id="2_ie467"]
+[ext_resource type="PackedScene" uid="uid://oycdur3x5ghh" path="res://Prefabs/LevelChange.tscn" id="3_ru3pw"]
+[ext_resource type="Script" uid="uid://c0cqsjio1r1q2" path="res://C#/SpawnedObjectLoaders.cs" id="4_ie467"]
+[ext_resource type="PackedScene" uid="uid://bs7ws21ex6nl7" path="res://Prefabs/DialogueUi.tscn" id="5_hrrbo"]
+[ext_resource type="PackedScene" uid="uid://cth53i8qsxlqy" path="res://Prefabs/Characters/PlayerCharacter.tscn" id="6_tmtfn"]
+[ext_resource type="ArrayOccluder3D" uid="uid://o4pux3feux4r" path="res://Scenes/Occlusion/Level7.occ" id="8_hrrbo"]
+[ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Torches/PropTorchLitStatic.tscn" id="9_tmtfn"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_k843i"]
+geometry_parsed_geometry_type = 1
+geometry_collision_mask = 4278192145
+agent_height = 2.0
+agent_max_slope = 30.0
+
+[node name="Level7" type="Node3D"]
+
+[node name="GlobalCamera" parent="." instance=ExtResource("1_c145g")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_ie467")
+script = ExtResource("2_2x6a7")
+
+[node name="LevelChange" parent="." instance=ExtResource("3_ru3pw")]
+
+[node name="SpawnedObjectLoader" type="Node" parent="."]
+script = ExtResource("4_ie467")
+
+[node name="DialogueUi" parent="." instance=ExtResource("5_hrrbo")]
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("6_tmtfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Lighting" type="Node3D" parent="Map"]
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="Map"]
+occluder = ExtResource("8_hrrbo")
+bake_mask = 4293918721
+metadata/_edit_lock_ = true
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Map/OccluderInstance3D"]
+navigation_mesh = SubResource("NavigationMesh_k843i")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+
+[node name="TreeWall" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/Ground"]
+
+[node name="NavProps" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
+
+[node name="Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
+
+[node name="PropTorchLitStatic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps" instance=ExtResource("9_tmtfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2)
+
+[node name="Props" type="Node3D" parent="Map/OccluderInstance3D"]
+
+[node name="Cinematics" type="Node3D" parent="Map"]
+
+[node name="CinematicsLevel7" type="AnimationPlayer" parent="Map/Cinematics"]
+
+[node name="Enemies" type="Node3D" parent="."]
