@@ -14,5 +14,5 @@ shader_parameter/rimPowerAlbedo = 0.15
 shader_parameter/rimSharpness = 0.1
 shader_parameter/rimDistance = 0.75
 shader_parameter/rimColor = Color(1, 0, 0, 1)
-shader_parameter/rimMinHeight = -1.0
+shader_parameter/rimMinHeight = -0.9
 shader_parameter/rimHeightSlope = 2.0

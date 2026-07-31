@@ -1,5 +1,7 @@
 shader_type spatial;
 
+varying float localY;
+
 uniform sampler2D albedo : source_color;
 uniform sampler2D metallic : source_color;
 uniform float metallicPower : hint_range(0, 1) = 0;
@@ -15,7 +17,7 @@ uniform float rimHeightSlope = 1.0;
 
 void vertex()
 {
-
+	localY = VERTEX.y;
 }
 
 void fragment()
@@ -32,7 +34,7 @@ void fragment()
 	vec3 rimEffectColor = rimEffect * rimColor.rgb * rimPower;
 	vec3 rimEffectAlbedoColor = rimEffect * albedoColor.rgb * rimPowerAlbedo;
 
-	float rimEffectHeightMultiplier = clamp((VERTEX.y - rimMinHeight) / rimHeightSlope, 0.0, 1.0);
+	float rimEffectHeightMultiplier = clamp((localY - rimMinHeight) / rimHeightSlope, 0.0, 1.0);
 
 	vec3 combinedRimEffect = (rimEffectColor + rimEffectAlbedoColor) * rimEffectHeightMultiplier;
 
