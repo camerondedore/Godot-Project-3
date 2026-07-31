@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://dm18mtc3el11y"]
+
+[ext_resource type="Shader" uid="uid://c5aypfi44jhjw" path="res://Shaders/Terrain3x.gdshader" id="1_w6fds"]
+[ext_resource type="Texture2D" uid="uid://upw5cybsua5j" path="res://Textures/dirt-wall.png" id="2_ge30w"]
+[ext_resource type="Texture2D" uid="uid://dqeodbhhyy1j6" path="res://Textures/dirt-wall-moss.png" id="3_5uilq"]
+[ext_resource type="Texture2D" uid="uid://doivq01svcq0v" path="res://Textures/dirt-dark.png" id="4_ehhjp"]
+[ext_resource type="Texture2D" uid="uid://dhh4hd77wos6q" path="res://Textures/dirt-wall-height.png" id="5_qmico"]
+[ext_resource type="Texture2D" uid="uid://l6rqd4japugq" path="res://Textures/dirt-wall-moss-height.png" id="6_vsufq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_w6fds")
+shader_parameter/albedoDefault = ExtResource("4_ehhjp")
+shader_parameter/albedo1 = ExtResource("2_ge30w")
+shader_parameter/albedo2 = ExtResource("3_5uilq")
+shader_parameter/height1 = ExtResource("5_qmico")
+shader_parameter/height2 = ExtResource("6_vsufq")
+shader_parameter/uvScale = 0.166
+shader_parameter/blendingHighSharpness = 0.3
+shader_parameter/blendingLowSharpness = 0.7
