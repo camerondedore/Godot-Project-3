@@ -10,7 +10,8 @@ public partial class TorchTarget : Torch, IBowTarget
 
     string arrowType = "fire";
     Vector3 targetOffset = new Vector3(0, 0.5f, 0);
-    GpuParticles3D torchDripFx;
+    GpuParticles3D torchDripFx,
+        fxSparkle;
 
 
 
@@ -20,6 +21,7 @@ public partial class TorchTarget : Torch, IBowTarget
 
         // get nodes
         torchDripFx = (GpuParticles3D) GetNode("FxTorchDrip");
+        fxSparkle = (GpuParticles3D) GetNode("FxSparkle");
 
         if(lit == false)
         {
@@ -74,6 +76,7 @@ public partial class TorchTarget : Torch, IBowTarget
     {
         // light
         torchDripFx.Emitting = false;
+        fxSparkle.Emitting = false;
         torchFireFx.RestartParticles();
         audio.PlaySound(burnSound, 0.1f);
         light.Visible = true;
@@ -87,6 +90,7 @@ public partial class TorchTarget : Torch, IBowTarget
     {
         // extinguish
         torchDripFx.Emitting = true;
+        fxSparkle.Emitting = true;
         torchFireFx.StopParticles();
         audio.PlaySound(extinguishSound, 0.1f);
         light.Visible = false;

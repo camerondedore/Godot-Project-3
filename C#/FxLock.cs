@@ -5,14 +5,14 @@ public partial class FxLock : Node3D
 {
 
     RigidbodySpawner lockSpawner;
-    GpuParticles3D sparkleFx;
+    GpuParticles3D fxSparkle;
 
 
 
     public override void _Ready()
     {
         lockSpawner = (RigidbodySpawner) GetNode("LockSpawner");
-        sparkleFx = (GpuParticles3D) GetNode("SparkleFx");
+        fxSparkle = (GpuParticles3D) GetNode("SparkleFx");
     }
 
 
@@ -23,17 +23,17 @@ public partial class FxLock : Node3D
         lockSpawner.Spawn();
 
         // unparent fx and set destroy
-        sparkleFx.Emitting = false;
-        RemoveChild(sparkleFx);
-        var sparkleFxPosition = GlobalPosition;
+        fxSparkle.Emitting = false;
+        RemoveChild(fxSparkle);
+        var fxSparklePosition = GlobalPosition;
         var currentScene = GetTree().CurrentScene;
-        currentScene.AddChild(sparkleFx);
-        sparkleFx.Owner = currentScene;
-        sparkleFx.GlobalPosition = sparkleFxPosition;
+        currentScene.AddChild(fxSparkle);
+        fxSparkle.Owner = currentScene;
+        fxSparkle.GlobalPosition = fxSparklePosition;
         
-        var sparkleFxDestroyer = (DelayedDestroy) sparkleFx.GetNode("DelayedDestroyer");
-        sparkleFxDestroyer.Owner = sparkleFx;
-        sparkleFxDestroyer.StartDestroy();
+        var fxSparkleDestroyer = (DelayedDestroy) fxSparkle.GetNode("DelayedDestroyer");
+        fxSparkleDestroyer.Owner = fxSparkle;
+        fxSparkleDestroyer.StartDestroy();
 
         // destroy locked lock
         QueueFree();
@@ -43,6 +43,6 @@ public partial class FxLock : Node3D
 
     public void TurnOffLockFx()
     {
-        sparkleFx.Emitting = false;
+        fxSparkle.Emitting = false;
     }
 }
