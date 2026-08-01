@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c5x6r3il872vj" path="res://Prefabs/Torches/PropTorchLit.tscn" id="1_l7k0v"]
 
 [node name="PropTorchLitStatic" instance=ExtResource("1_l7k0v")]
+metadata/_edit_group_ = true
 
 [node name="Light" type="OmniLight3D" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

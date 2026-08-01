@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36">
   <diagram name="Page-1" id="VGnpG6ZWJcaiQAcUuiWh">
-    <mxGraphModel dx="3005" dy="1562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="827" dy="430" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -10,7 +10,7 @@
         <mxCell id="WffGR1eu-c3lRZ9H5UbW-6" edge="1" parent="1" source="WffGR1eu-c3lRZ9H5UbW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="WffGR1eu-c3lRZ9H5UbW-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="WffGR1eu-c3lRZ9H5UbW-2" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" value="&lt;ul&gt;&lt;li&gt;bodkin&lt;/li&gt;&lt;li&gt;weigted&lt;/li&gt;&lt;li&gt;pick&lt;/li&gt;&lt;li&gt;blade&lt;/li&gt;&lt;li&gt;net&lt;/li&gt;&lt;li&gt;fire&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+        <mxCell id="WffGR1eu-c3lRZ9H5UbW-2" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" value="&lt;ul&gt;&lt;li&gt;bodkin&lt;/li&gt;&lt;li&gt;weighted&lt;/li&gt;&lt;li&gt;pick&lt;/li&gt;&lt;li&gt;blade&lt;/li&gt;&lt;li&gt;net&lt;/li&gt;&lt;li&gt;fire&lt;/li&gt;&lt;/ul&gt;" vertex="1">
           <mxGeometry height="120" width="110" x="40" y="70" as="geometry" />
         </mxCell>
         <mxCell id="WffGR1eu-c3lRZ9H5UbW-3" parent="1" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Arrows&lt;/font&gt;" vertex="1">
@@ -19,7 +19,7 @@
         <mxCell id="WffGR1eu-c3lRZ9H5UbW-4" parent="1" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Targets&lt;/font&gt;" vertex="1">
           <mxGeometry height="40" width="100" x="260" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="WffGR1eu-c3lRZ9H5UbW-5" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" value="&lt;ul&gt;&lt;li&gt;brown rat, black rat, shield rat, champion rat, archery target&lt;/li&gt;&lt;li&gt;wasp, acorn tree, switch, lever, clay pot, moving blocks, shield rat, watch tower, archery target&lt;/li&gt;&lt;li&gt;lockbox, chest, door, cage&lt;/li&gt;&lt;li&gt;blackberry bush, spiderweb, spike trap&lt;/li&gt;&lt;li&gt;jump pad&lt;/li&gt;&lt;li&gt;torch, soup fire&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+        <mxCell id="WffGR1eu-c3lRZ9H5UbW-5" parent="1" style="text;html=1;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" value="&lt;ul&gt;&lt;li&gt;brown rat, black rat, shield rat, champion rat, archery target&lt;/li&gt;&lt;li&gt;wasp, acorn tree, switch, lever, clay pot, moving blocks, shield rat, watch tower&lt;/li&gt;&lt;li&gt;lockbox, chest, door, cage&lt;/li&gt;&lt;li&gt;blackberry bush, spiderweb, spike trap&lt;/li&gt;&lt;li&gt;jump pad&lt;/li&gt;&lt;li&gt;torch, soup fire&lt;/li&gt;&lt;/ul&gt;" vertex="1">
           <mxGeometry height="120" width="570" x="260" y="70" as="geometry" />
         </mxCell>
         <mxCell id="WffGR1eu-c3lRZ9H5UbW-7" parent="1" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=left;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Pickups&lt;/font&gt;" vertex="1">
