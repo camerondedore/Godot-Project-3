@@ -48,5 +48,15 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ltofc")
 draw_pass_1 = SubResource("QuadMesh_p84fm")
 
-[node name="Audio" parent="." index="5"]
+[node name="TargetLight" type="OmniLight3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+light_color = Color(1, 0.938167, 0.47, 1)
+light_energy = 0.5
+light_size = 0.25
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+omni_range = 0.75
+omni_attenuation = 0.4
+
+[node name="Audio" parent="." index="6"]
 autoplay = false
