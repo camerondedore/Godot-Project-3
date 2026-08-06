@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b666dsbfelyuo"]
+[gd_scene load_steps=10 format=3 uid="uid://b666dsbfelyuo"]
 
 [ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_vd8f7"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_t61xu"]
@@ -9,7 +9,10 @@
 [ext_resource type="ArrayMesh" uid="uid://b4i2xejugnjsl" path="res://Models/prop-board-post-2.res" id="7_netfx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_24tbj"]
-size = Vector3(6.7, 2.05, 3)
+size = Vector3(6.7, 1.4, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8ctw"]
+size = Vector3(0.3, 2.7, 0.3)
 
 [node name="PropWoodPlatform" type="StaticBody3D"]
 
@@ -225,7 +228,7 @@ surface_material_override/1 = ExtResource("3_dgqh7")
 [node name="Posts" type="Node3D" parent="."]
 
 [node name="Post1" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(4.37114e-08, -1, 4.37114e-08, -8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, -8.74228e-08, -1.5, 1.8, 1.2)
+transform = Transform3D(4.37114e-08, -1, 4.37114e-08, -8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, -8.74228e-08, -1.5, 1.75, 1.2)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_dne8u")
@@ -234,7 +237,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post2" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(4.37114e-08, -1, 4.37114e-08, -8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, -8.74228e-08, -1.5, 1.8, -0.9)
+transform = Transform3D(4.37114e-08, -1, 4.37114e-08, -8.74228e-08, -4.37114e-08, -1, 1, 4.37114e-08, -8.74228e-08, -1.5, 1.75, -0.9)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_netfx")
@@ -243,7 +246,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post3" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-1.31134e-07, 1, -4.37114e-08, 1, 1.31134e-07, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.5, 1.8, 0.9)
+transform = Transform3D(-1.31134e-07, 1, -4.37114e-08, 1, 1.31134e-07, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.5, 1.75, 0.9)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_dne8u")
@@ -252,7 +255,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post4" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(4.37114e-08, 1, -4.37114e-08, -1, 4.37114e-08, 1.31134e-07, 1.31134e-07, 4.37114e-08, 1, 1.5, 1.8, -1.2)
+transform = Transform3D(4.37114e-08, 1, -4.37114e-08, -1, 4.37114e-08, 1.31134e-07, 1.31134e-07, 4.37114e-08, 1, 1.5, 1.75, -1.2)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_netfx")
@@ -261,7 +264,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post5" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-1.74846e-07, -8.74228e-08, -1, 4.37114e-08, -1, 8.74228e-08, -1, -4.37114e-08, 1.74846e-07, -2.8, 0.2, 0.9)
+transform = Transform3D(-1.94707e-07, -9.99243e-08, -1, 1.50996e-07, -1.143, 8.74228e-08, -1, -1.72588e-07, 1.94707e-07, -2.8, -0.05, 0.9)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_dne8u")
@@ -270,7 +273,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post6" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(8.74228e-08, 8.74228e-08, 1, 4.37114e-08, -1, 8.74228e-08, 1, 4.37114e-08, -8.74228e-08, -2.8, 0.2, -1.2)
+transform = Transform3D(4.37114e-08, 9.99243e-08, 1, 1.50996e-07, -1.143, 8.74228e-08, 1, 1.72588e-07, -4.37114e-08, -2.8, -0.05, -1.2)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_netfx")
@@ -279,7 +282,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post7" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-8.74228e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -8.74228e-08, -1, 0.2, 0.9)
+transform = Transform3D(-4.37114e-08, -1.99849e-07, -1, -4.37114e-08, 1.143, -1.74846e-07, 1, 4.99621e-08, -4.37114e-08, -1, -0.05, 0.9)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_dne8u")
@@ -288,7 +291,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post8" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 4.37114e-08, -1.31134e-07, 4.37114e-08, -1, 8.74228e-08, -1.31134e-07, -8.74228e-08, -1, -1, 0.2, -1.2)
+transform = Transform3D(1, 1.72588e-07, -1.50996e-07, 1.50996e-07, -1.143, 8.74228e-08, -1.50996e-07, -9.99243e-08, -1, -1, -0.05, -1.2)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_netfx")
@@ -297,7 +300,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post9" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -1, 8.74228e-08, 4.37114e-08, 8.74228e-08, 1, 1, 0.2, 1.2)
+transform = Transform3D(-1, -1.72588e-07, 4.37114e-08, 1.50996e-07, -1.143, 8.74228e-08, 4.37114e-08, 9.99243e-08, 1, 1, -0.05, 1.2)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_dne8u")
@@ -306,7 +309,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post10" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 4.37114e-08, -1.31134e-07, 4.37114e-08, -1, 8.74228e-08, -1.31134e-07, -8.74228e-08, -1, 1, 0.2, -0.9)
+transform = Transform3D(1, 1.72588e-07, -1.50996e-07, 1.50996e-07, -1.143, 8.74228e-08, -1.50996e-07, -9.99243e-08, -1, 1, -0.05, -0.9)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_netfx")
@@ -315,7 +318,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post11" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(8.74228e-08, 8.74228e-08, 1, 4.37114e-08, -1, 8.74228e-08, 1, 4.37114e-08, -8.74228e-08, 2.8, 0.2, 1.2)
+transform = Transform3D(4.37114e-08, 9.99243e-08, 1, 1.50996e-07, -1.143, 8.74228e-08, 1, 1.72588e-07, -4.37114e-08, 2.8, -0.05, 1.2)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_dne8u")
@@ -324,7 +327,7 @@ surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
 [node name="Post12" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-8.74228e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -8.74228e-08, 2.8, 0.2, -0.9)
+transform = Transform3D(-4.37114e-08, -1.99849e-07, -1, -4.37114e-08, 1.143, -1.74846e-07, 1, 4.99621e-08, -4.37114e-08, 2.8, -0.05, -0.9)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_netfx")
@@ -332,7 +335,47 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_t61xu")
 surface_material_override/1 = ExtResource("3_dgqh7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.025, 4.84288e-08)
+[node name="ColliderPlatform" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 4.84288e-08)
 shape = SubResource("BoxShape3D_24tbj")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.7, -1.2)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, -0.7, -1.2)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.7, -0.9)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, -0.7, -0.9)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.7, 0.9)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, -0.7, 0.9)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.7, 1.2)
+shape = SubResource("BoxShape3D_l8ctw")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost8" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8, -0.7, 1.2)
+shape = SubResource("BoxShape3D_l8ctw")
 debug_color = Color(1, 1, 1, 1)

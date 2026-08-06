@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbrsjfa3ftvsh"]
+[gd_scene load_steps=10 format=3 uid="uid://dbrsjfa3ftvsh"]
 
 [ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_tieog"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_ac55e"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5sxov"]
 points = PackedVector3Array(1.5, 0, -2, -1.5, 0, -2, -1.5, 2.05, -2, 1.5, 2.05, -2, 1.5, 2.05, -1.4, -1.5, 2.05, -1.4, 1.5, 0, 2, -1.5, 0, 2, -1, 0, 2.3, 1, 0, 2.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80pk6"]
+size = Vector3(0.3, 2.05, 0.3)
 
 [node name="PropWoodStairs" type="StaticBody3D"]
 
@@ -243,7 +246,7 @@ surface_material_override/1 = ExtResource("3_mp7hq")
 [node name="Posts" type="Node3D" parent="."]
 
 [node name="Post7" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-4.37114e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -4.37114e-08, -1.25, -0.428319, -0.517369)
+transform = Transform3D(-4.37114e-08, -1.69775e-07, -1, -4.37114e-08, 0.971, -1.74846e-07, 1, 4.24438e-08, -4.37114e-08, -1.25, -0.378319, -0.517369)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_ps8jo")
@@ -252,7 +255,7 @@ surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
 [node name="Post8" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 1.50996e-07, -1.50996e-07, 1.50996e-07, -1, 8.74228e-08, -1.50996e-07, -8.74228e-08, -1, -1.25, 0.2, -1.75)
+transform = Transform3D(1, 1.72588e-07, -1.50996e-07, 1.50996e-07, -1.143, 8.74228e-08, -1.50996e-07, -9.99243e-08, -1, -1.25, -0.05, -1.75)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_yh0pu")
@@ -261,7 +264,7 @@ surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
 [node name="Post9" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-1, -1.50996e-07, 4.37114e-08, 1.50996e-07, -1, 8.74228e-08, 4.37114e-08, 8.74228e-08, 1, 1.25, -0.428319, -0.517369)
+transform = Transform3D(-1, -1.46617e-07, 4.37114e-08, 1.50996e-07, -0.971, 8.74228e-08, 4.37114e-08, 8.48875e-08, 1, 1.25, -0.378319, -0.517369)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_ps8jo")
@@ -270,7 +273,7 @@ surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
 [node name="Post10" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 1.50996e-07, -1.50996e-07, 1.50996e-07, -1, 8.74228e-08, -1.50996e-07, -8.74228e-08, -1, 1.25, 0.2, -1.75)
+transform = Transform3D(1, 1.72588e-07, -1.50996e-07, 1.50996e-07, -1.143, 8.74228e-08, -1.50996e-07, -9.99243e-08, -1, 1.25, -0.05, -1.75)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_yh0pu")
@@ -278,6 +281,26 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_ac55e")
 surface_material_override/1 = ExtResource("3_mp7hq")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="ColliderPlatform" type="CollisionShape3D" parent="."]
 shape = SubResource("ConvexPolygonShape3D_5sxov")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -1.025, -1.75)
+shape = SubResource("BoxShape3D_80pk6")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -1.025, -1.75)
+shape = SubResource("BoxShape3D_80pk6")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, -1.025, -0.523118)
+shape = SubResource("BoxShape3D_80pk6")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -1.025, -0.523118)
+shape = SubResource("BoxShape3D_80pk6")
 debug_color = Color(1, 1, 1, 1)

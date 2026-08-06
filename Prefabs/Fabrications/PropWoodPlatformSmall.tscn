@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0f6b2c266iwi"]
+[gd_scene load_steps=10 format=3 uid="uid://0f6b2c266iwi"]
 
 [ext_resource type="ArrayMesh" uid="uid://da4npj1ob7i6q" path="res://Models/prop-board-1.res" id="1_8wihv"]
 [ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_ahtth"]
@@ -9,7 +9,10 @@
 [ext_resource type="ArrayMesh" uid="uid://b4i2xejugnjsl" path="res://Models/prop-board-post-2.res" id="7_6jikl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yaqd0"]
-size = Vector3(3.35, 2.05, 3)
+size = Vector3(3.35, 1.4, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_puvbt"]
+size = Vector3(0.3, 2.7, 0.3)
 
 [node name="PropWoodPlatformSmall" type="StaticBody3D"]
 
@@ -153,7 +156,7 @@ surface_material_override/0 = ExtResource("2_ahtth")
 surface_material_override/1 = ExtResource("3_h3eud")
 
 [node name="Post9" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -1, 8.74228e-08, 4.37114e-08, 8.74228e-08, 1, -1.15, 0.2, 1.05)
+transform = Transform3D(-1, -1.72588e-07, 4.37114e-08, 1.50996e-07, -1.143, 8.74228e-08, 4.37114e-08, 9.99243e-08, 1, -1.15, -0.05, 1.05)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_27y40")
@@ -162,7 +165,7 @@ surface_material_override/0 = ExtResource("2_ahtth")
 surface_material_override/1 = ExtResource("3_h3eud")
 
 [node name="Post10" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(1, 4.37114e-08, -1.31134e-07, 4.37114e-08, -1, 8.74228e-08, -1.31134e-07, -8.74228e-08, -1, -1.15, 0.2, -1.05)
+transform = Transform3D(1, 1.72588e-07, -1.50996e-07, 1.50996e-07, -1.143, 8.74228e-08, -1.50996e-07, -9.99243e-08, -1, -1.15, -0.05, -1.05)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_6jikl")
@@ -171,7 +174,7 @@ surface_material_override/0 = ExtResource("2_ahtth")
 surface_material_override/1 = ExtResource("3_h3eud")
 
 [node name="Post11" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(8.74228e-08, 8.74228e-08, 1, 4.37114e-08, -1, 8.74228e-08, 1, 4.37114e-08, -8.74228e-08, 1.15, 0.2, 1.05)
+transform = Transform3D(4.37114e-08, 9.99243e-08, 1, 1.50996e-07, -1.143, 8.74228e-08, 1, 1.72588e-07, -4.37114e-08, 1.15, -0.05, 1.05)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("6_27y40")
@@ -180,7 +183,7 @@ surface_material_override/0 = ExtResource("2_ahtth")
 surface_material_override/1 = ExtResource("3_h3eud")
 
 [node name="Post12" type="MeshInstance3D" parent="Posts"]
-transform = Transform3D(-8.74228e-08, -1.74846e-07, -1, -4.37114e-08, 1, -1.74846e-07, 1, 4.37114e-08, -8.74228e-08, 1.15, 0.2, -1.05)
+transform = Transform3D(-4.37114e-08, -1.99849e-07, -1, -4.37114e-08, 1.143, -1.74846e-07, 1, 4.99621e-08, -4.37114e-08, 1.15, -0.05, -1.05)
 layers = 2
 gi_mode = 2
 mesh = ExtResource("7_6jikl")
@@ -188,7 +191,27 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("2_ahtth")
 surface_material_override/1 = ExtResource("3_h3eud")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.025, 4.84288e-08)
+[node name="ColliderPlatform" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 4.84288e-08)
 shape = SubResource("BoxShape3D_yaqd0")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15, -0.7, -1.05)
+shape = SubResource("BoxShape3D_puvbt")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, -0.7, -1.05)
+shape = SubResource("BoxShape3D_puvbt")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15, -0.7, 1.05)
+shape = SubResource("BoxShape3D_puvbt")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="ColliderPost4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15, -0.7, 1.05)
+shape = SubResource("BoxShape3D_puvbt")
 debug_color = Color(1, 1, 1, 1)
