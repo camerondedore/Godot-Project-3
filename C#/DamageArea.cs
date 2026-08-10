@@ -50,11 +50,17 @@ public partial class DamageArea : Area3D
             
             if(causedDamage)
             {
-                // play fx
-                hitFx.Restart();
+                if(hitFx != null)
+                {
+                    // play fx
+                    hitFx.Restart();
+                }
 
-                // play audio
-                audio.PlaySound(damageSound, 0.1f);
+                if(audio != null)
+                {
+                    // play audio
+                    audio.PlaySound(damageSound, 0.1f);
+                }
                 
                 lastDamageTime = EngineTime.timePassed;         
             }
@@ -75,11 +81,17 @@ public partial class DamageArea : Area3D
 
             if(didDamage)
             {
-                // play fx
-                hitFx.Restart();
+                if(hitFx != null)
+                {
+                    // play fx
+                    hitFx.Restart();
+                }
 
-                // play audio
-                audio.PlaySound(damageSound, 0.1f);
+                if(audio != null)
+                {
+                    // play audio
+                    audio.PlaySound(damageSound, 0.1f);
+                }
 
                 lastDamageTime = EngineTime.timePassed;
             }
