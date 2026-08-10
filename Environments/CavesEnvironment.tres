@@ -24,5 +24,5 @@ fog_light_energy = 0.05
 fog_sun_scatter = 0.01
 fog_density = 1.0
 fog_sky_affect = 0.0
-fog_depth_begin = 15.0
-fog_depth_end = 50.0
+fog_depth_begin = 5.0
+fog_depth_end = 40.0
