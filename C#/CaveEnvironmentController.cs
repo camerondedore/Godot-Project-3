@@ -5,7 +5,7 @@ public partial class CaveEnvironmentController : Node
 {
 
     [Export]
-    Node3D camera;
+    Node3D player;
     [Export]
     Light3D directionalLight;
     [Export]
@@ -40,10 +40,10 @@ public partial class CaveEnvironmentController : Node
 
     public override void _Process(double delta)
     {
-        float cameraHeight = camera.GlobalPosition.Y;
+        float playerHeight = player.GlobalPosition.Y;
 
         // calculate energy multiplier using camera height
-        float energyMultiplier = Mathf.Clamp((cameraHeight - startHeight) / (startHeight - endHeight) + 1, 0f, 1f);
+        float energyMultiplier = Mathf.Clamp((playerHeight - startHeight) / (startHeight - endHeight) + 1, 0f, 1f);
 
         // set environment and light energy
         environment.Environment.AmbientLightEnergy = ambientLightEnergy * energyMultiplier;
