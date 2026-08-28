@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://mvs1wdyitbb4"]
+[gd_scene load_steps=78 format=3 uid="uid://mvs1wdyitbb4"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_c145g"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_2x6a7"]
@@ -54,6 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://bl3tppj3wcnmy" path="res://Prefabs/Player Bow Targets/PropClayCauldron.tscn" id="42_jbd56"]
 [ext_resource type="AudioStream" uid="uid://dxnxfhrr70g8f" path="res://Audio/fall-damage.wav" id="42_m0xpk"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="43_gvx5d"]
+[ext_resource type="Script" uid="uid://qk4aeex65xi7" path="res://C#/Mob Tools/MobSpawnerDelayed.cs" id="47_ssnxs"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="49_jbd56"]
 [ext_resource type="PackedScene" uid="uid://crwm2pivlof4s" path="res://Prefabs/FX/DecalRug.tscn" id="51_a2wn0"]
 
@@ -377,7 +378,6 @@ disabled = true
 
 [node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame8" instance=ExtResource("13_1a1an")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.75, 0)
-speed = 0.35
 
 [node name="PortcullisFrame9" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("12_udhth")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -132.95, -72, 80.5)
@@ -387,7 +387,7 @@ disabled = true
 
 [node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame9" instance=ExtResource("13_1a1an")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.75, 0)
-speed = 0.35
+speed = 0.6
 
 [node name="PortcullisFrame10" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" instance=ExtResource("12_udhth")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -143.75, -72, 89.85)
@@ -397,7 +397,7 @@ disabled = true
 
 [node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame10" instance=ExtResource("13_1a1an")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.75, 0)
-speed = 0.35
+speed = 0.65
 
 [node name="Torches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
 
@@ -787,6 +787,14 @@ distance_fade_begin = 20.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.55, -72.4, 67.25)
 
 [node name="Light" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitStatic35" index="4"]
+distance_fade_begin = 20.0
+omni_range = 8.0
+
+[node name="PropTorchLitDynamic4" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" instance=ExtResource("19_wodec")]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, -146, -70.4, 93)
+lit = false
+
+[node name="Light" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic4" index="4"]
 distance_fade_begin = 20.0
 omni_range = 8.0
 
@@ -1321,7 +1329,7 @@ collision_layer = 0
 collision_mask = 128
 monitorable = false
 script = ExtResource("28_imhhv")
-linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame7/Portcullis")]
+linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame7/Portcullis"), NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame8/Portcullis"), NodePath("../RatSpawn19"), NodePath("../RatSpawn20")]
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Triggers/TriggerArea6"]
@@ -1333,6 +1341,96 @@ debug_color = Color(0.908401, 8.02821e-05, 0.710945, 1)
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 2.5, 0, 0)
 shape = SubResource("BoxShape3D_sd3m0")
 debug_color = Color(0.908401, 8.02821e-05, 0.710945, 1)
+
+[node name="RatSpawn19" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -158.75, -71, 83.3)
+script = ExtResource("47_ssnxs")
+delayTime = 2.0
+mob = ExtResource("14_5545o")
+mobTarget = NodePath("../SpawnTarget3")
+enemyCanInterrupt = true
+mobWatcher = NodePath("../TriggerDead3")
+
+[node name="SpawnTarget3" type="Node3D" parent="Map/Triggers"]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -150.75, -71, 83.8)
+
+[node name="RatSpawn20" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -157.25, -71, 81.8)
+script = ExtResource("47_ssnxs")
+delayTime = 2.0
+mob = ExtResource("14_5545o")
+mobTarget = NodePath("../SpawnTarget4")
+enemyCanInterrupt = true
+mobWatcher = NodePath("../TriggerDead3")
+
+[node name="SpawnTarget4" type="Node3D" parent="Map/Triggers"]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -150.75, -71, 80.3)
+
+[node name="TriggerDead3" type="Timer" parent="Map/Triggers" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
+script = ExtResource("32_sodma")
+watchedNodes = []
+linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame9/Portcullis"), NodePath("../RatSpawn21"), NodePath("../RatSpawn22")]
+metadata/_edit_group_ = true
+
+[node name="RatSpawn21" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(-1.80798e-07, 0, 1, 0, 1, 0, -1, 0, -1.80798e-07, -128.8, -71, 81.4)
+script = ExtResource("47_ssnxs")
+delayTime = 2.0
+mob = ExtResource("14_5545o")
+mobTarget = NodePath("../SpawnTarget5")
+enemyCanInterrupt = true
+mobWatcher = NodePath("../TriggerDead4")
+
+[node name="SpawnTarget5" type="Node3D" parent="Map/Triggers"]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -137.75, -71, 82.8)
+
+[node name="RatSpawn22" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(-3.55644e-07, 0, 1, 0, 1, 0, -1, 0, -3.55644e-07, -130.25, -71, 79.8)
+script = ExtResource("47_ssnxs")
+delayTime = 2.0
+mob = ExtResource("40_c2o81")
+mobTarget = NodePath("../SpawnTarget6")
+enemyCanInterrupt = true
+mobWatcher = NodePath("../TriggerDead4")
+
+[node name="SpawnTarget6" type="Node3D" parent="Map/Triggers"]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -138.75, -71, 77.8)
+
+[node name="TriggerDead4" type="Timer" parent="Map/Triggers" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
+script = ExtResource("32_sodma")
+watchedNodes = []
+linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrame10/Portcullis"), NodePath("../RatSpawn25"), NodePath("../RatSpawn26")]
+metadata/_edit_group_ = true
+
+[node name="RatSpawn25" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(1, 0, 1.37087e-07, 0, 1, 0, -1.37087e-07, 0, 1, -143.05, -71, 92.3)
+script = ExtResource("47_ssnxs")
+delayTime = 2.0
+mob = ExtResource("40_c2o81")
+mobTarget = NodePath("../SpawnTarget7")
+enemyCanInterrupt = true
+mobWatcher = NodePath("../TriggerDead5")
+
+[node name="SpawnTarget7" type="Node3D" parent="Map/Triggers"]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -141.75, -71, 85.8)
+
+[node name="RatSpawn26" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
+transform = Transform3D(1, 0, 3.11932e-07, 0, 1, 0, -3.11932e-07, 0, 1, -144.9, -71, 93.85)
+script = ExtResource("47_ssnxs")
+delayTime = 2.0
+mob = ExtResource("40_c2o81")
+mobTarget = NodePath("../SpawnTarget8")
+enemyCanInterrupt = true
+mobWatcher = NodePath("../TriggerDead5")
+
+[node name="SpawnTarget8" type="Node3D" parent="Map/Triggers"]
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -146.75, -71, 84.8)
+
+[node name="TriggerDead5" type="Timer" parent="Map/Triggers" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
+script = ExtResource("32_sodma")
+watchedNodes = []
+linkedObjects = [NodePath("../../OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic4")]
+metadata/_edit_group_ = true
 
 [node name="Checkpoints" type="Node3D" parent="Map"]
 
@@ -1578,6 +1676,12 @@ max_distance = 100.0
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
+[node name="BlackWall" parent="Map/Fx" instance=ExtResource("16_byucl")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -154, -70, 82.5)
+
+[node name="BlackWall1" parent="Map/Fx" instance=ExtResource("16_byucl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -133.5, -70, 80.5)
+
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="MobBlackRat" parent="Enemies" instance=ExtResource("14_5545o")]
@@ -1677,6 +1781,7 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchTarget21"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitStatic34"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitStatic35"]
+[editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitDynamic4"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropChest"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropChest/prop-chest"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Lumber/PropBoardPost1"]
