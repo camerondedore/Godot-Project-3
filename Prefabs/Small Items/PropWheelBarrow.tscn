@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btdbdi27r78tb"]
 
 [ext_resource type="ArrayMesh" uid="uid://cx76ktyohovms" path="res://Models/prop-wheel-barrow.res" id="1_oxl0t"]
-[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_0egwk"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_7uwa2"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_84tw6"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_asaco"]
@@ -13,7 +13,7 @@ points = PackedVector3Array(-0.062895, -0.30047, -1.43756, 0.544411, 0.584851, 0
 layers = 2
 gi_mode = 2
 mesh = ExtResource("1_oxl0t")
-surface_material_override/0 = ExtResource("2_0egwk")
+surface_material_override/0 = ExtResource("2_7uwa2")
 surface_material_override/1 = ExtResource("3_84tw6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

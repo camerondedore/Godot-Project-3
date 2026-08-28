@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://hcxknpgeh8rh"]
+[gd_scene load_steps=243 format=3 uid="uid://hcxknpgeh8rh"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_ds0xo"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/NoonEnvironment.tres" id="2_1roct"]
@@ -188,6 +188,7 @@
 [ext_resource type="ArrayMesh" uid="uid://fuy7vcsdgdk2" path="res://Models/prop-board-2.res" id="137_3roli"]
 [ext_resource type="PackedScene" uid="uid://26w725envbsu" path="res://Prefabs/FX/FxFruitFlies.tscn" id="137_atqlj"]
 [ext_resource type="ArrayMesh" uid="uid://chv3liu8yao5m" path="res://Models/prop-board-3.res" id="138_bndig"]
+[ext_resource type="PackedScene" uid="uid://dq3tpah3gunl7" path="res://Prefabs/Small Items/PropShovel.tscn" id="141_78p03"]
 [ext_resource type="PackedScene" uid="uid://8g8lhuemim72" path="res://Prefabs/FX/DecalWoodChips.tscn" id="144_0ea80"]
 [ext_resource type="PackedScene" uid="uid://6w4vqdekblvw" path="res://Prefabs/Lumber/PropFirewood3.tscn" id="146_itjrc"]
 [ext_resource type="PackedScene" uid="uid://m7nbr4sdgca3" path="res://Prefabs/Lumber/PropFirewood4.tscn" id="147_xddvg"]
@@ -11158,8 +11159,20 @@ transform = Transform3D(0.899543, 0.436833, -1.90946e-08, 0, -4.37114e-08, -1, -
 [node name="PropPickaxe5" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("90_bj23k")]
 transform = Transform3D(0.104175, 0.953948, 0.281303, -0.331286, 0.299973, -0.894576, -0.937762, 7.45058e-09, 0.347279, 83.9312, 11.2572, 123.708)
 
+[node name="PropPickaxe6" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("90_bj23k")]
+transform = Transform3D(0.106345, 0.012617, -0.994249, -0.437863, -0.897155, -0.0582184, -0.89273, 0.441536, -0.0898834, 83.5049, 11.6616, 123.85)
+
 [node name="PropLantern4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("104_783ar")]
 transform = Transform3D(0.694594, 0.681513, -0.230388, -0.314821, -4.47035e-08, -0.949151, -0.646859, 0.731806, 0.214555, 93.6916, 3.12053, 127.896)
+
+[node name="PropShovel" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("141_78p03")]
+transform = Transform3D(-4.2222e-08, 0.258819, 0.965926, 1.13133e-08, 0.965926, -0.258819, -1, 0, -4.37114e-08, -10.9267, -2.03077, -52.2692)
+
+[node name="PropShovel2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("141_78p03")]
+transform = Transform3D(-0.857598, -0.51432, 4.37114e-08, -3.74868e-08, -2.24816e-08, -1, 0.51432, -0.857598, 0, 21.8873, 1.24197, -50.516)
+
+[node name="PropShovel3" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("141_78p03")]
+transform = Transform3D(0.776361, -0.0988758, 0.622485, 0.235497, 0.961597, -0.14097, -0.584641, 0.256037, 0.769831, 56.4203, 2.87795, 99.858)
 
 [node name="Weapons" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=293 format=3 uid="uid://5r7sc1g73u61"]
+[gd_scene load_steps=294 format=3 uid="uid://5r7sc1g73u61"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_glqn7"]
 [ext_resource type="Environment" uid="uid://d1514o5nrewn5" path="res://Environments/NoonCloudsEnvironment.tres" id="2_0h6kc"]
@@ -225,6 +225,7 @@
 [ext_resource type="PackedScene" uid="uid://chuhkc4ro50nf" path="res://Prefabs/Small Items/PropHoe.tscn" id="135_2o1ig"]
 [ext_resource type="PackedScene" uid="uid://b2h87bnhr23vf" path="res://Prefabs/Food/PropBread1.tscn" id="136_sw6ju"]
 [ext_resource type="PackedScene" uid="uid://bwf3pgemn8xm0" path="res://Prefabs/Food/PropBread2.tscn" id="137_tm3n4"]
+[ext_resource type="PackedScene" uid="uid://dq3tpah3gunl7" path="res://Prefabs/Small Items/PropShovel.tscn" id="138_w7ojx"]
 [ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="143_hmis0"]
 [ext_resource type="PackedScene" uid="uid://c3pbmupq5u4kt" path="res://Prefabs/Food/PropCarrot.tscn" id="144_hvw3y"]
 [ext_resource type="PackedScene" uid="uid://dedr8itn6hww7" path="res://Prefabs/Food/PropRadish.tscn" id="145_vwqjn"]
@@ -6640,6 +6641,9 @@ transform = Transform3D(0.988518, 0.151106, 0, 0, 0, 1, 0.151106, -0.988518, 0, 
 
 [node name="PropRopeCoil4" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("93_25yf4")]
 transform = Transform3D(0.211069, 0, 0.977471, 0, 1, 0, -0.977471, 0, 0.211069, 294.903, -3.9, -124.381)
+
+[node name="PropShovel" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("138_w7ojx")]
+transform = Transform3D(0.686322, -0.136538, -0.714366, 0.0878014, 0.990591, -0.104979, 0.721978, 0.00932744, 0.691853, -42.0791, 0.775659, -117.719)
 
 [node name="Weapons" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 

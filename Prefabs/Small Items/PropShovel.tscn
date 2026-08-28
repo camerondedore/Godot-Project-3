@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq3tpah3gunl7"]
+
+[ext_resource type="ArrayMesh" uid="uid://ckmyjb87msvn6" path="res://Models/prop-shovel.res" id="1_kccvb"]
+[ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="2_kccvb"]
+[ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="3_d0tca"]
+
+[node name="PropShovel" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_kccvb")
+surface_material_override/0 = ExtResource("2_kccvb")
+surface_material_override/1 = ExtResource("3_d0tca")

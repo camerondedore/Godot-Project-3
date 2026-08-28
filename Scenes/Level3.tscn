@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://cn0qpc074pbsm"]
+[gd_scene load_steps=238 format=3 uid="uid://cn0qpc074pbsm"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_5civt"]
 [ext_resource type="Environment" uid="uid://fq7vb02cs3ak" path="res://Environments/NoonEnvironment.tres" id="2_36bgp"]
@@ -196,6 +196,7 @@
 [ext_resource type="PackedScene" uid="uid://b3s7dteg2e3u2" path="res://Prefabs/Small Items/PropRopeCoil.tscn" id="121_t2l07"]
 [ext_resource type="PackedScene" uid="uid://cssithjt8latf" path="res://Prefabs/Food/PropKitchenKnife2.tscn" id="122_7625h"]
 [ext_resource type="PackedScene" uid="uid://bcjphv6mrcddg" path="res://Prefabs/Small Items/PropSaw.tscn" id="122_vb4lq"]
+[ext_resource type="PackedScene" uid="uid://dq3tpah3gunl7" path="res://Prefabs/Small Items/PropShovel.tscn" id="126_t1ot7"]
 [ext_resource type="Script" uid="uid://cdp32wirroali" path="res://C#/LevelChange/LevelChangeTriggerArea.cs" id="127_fg2b4"]
 [ext_resource type="PackedScene" uid="uid://dxskuy6d1qj65" path="res://Prefabs/Characters/MobShieldRat.tscn" id="131_cw7uk"]
 [ext_resource type="PackedScene" uid="uid://bawlxo6vs8yl7" path="res://Prefabs/Player Bow Targets/PropSpiderwebStretched.tscn" id="132_o8ssd"]
@@ -4090,6 +4091,9 @@ transform = Transform3D(0.363268, 0, 0.931685, 0, 1, 0, -0.931685, 0, 0.363268, 
 [node name="PropSaw" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("122_vb4lq")]
 transform = Transform3D(0.803078, 0.595875, -2.60465e-08, 0, -4.37114e-08, -1, -0.595875, 0.803078, -3.51036e-08, -15.3661, 6.03856, -97.0351)
 
+[node name="PropShovel" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("126_t1ot7")]
+transform = Transform3D(0.852868, -0.173648, -0.492404, 0.150384, 0.984808, -0.0868241, 0.5, 0, 0.866025, -85.6411, 12.8882, -103.496)
+
 [node name="Firewood" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
 [node name="PropFirewood1" parent="Map/OccluderInstance3D/Props/Firewood" instance=ExtResource("44_3x6oe")]
@@ -4844,6 +4848,12 @@ transform = Transform3D(1.28343, 0, -0.140037, 0, 1.29105, 0, 0.140037, 0, 1.283
 
 [node name="PropRoots110" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
 transform = Transform3D(1.16179, 0, -0.56306, 0, 1.29105, 0, 0.56306, 0, 1.16179, 58.5969, 15.797, -178.524)
+
+[node name="PropRoots114" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -83.9858, 12.6054, -112.398)
+
+[node name="PropRoots115" parent="Map/OccluderInstance3D/Props/Roots" instance=ExtResource("87_b6ejq")]
+transform = Transform3D(0.996768, 0, -0.0803381, 0, 1, 0, 0.0803381, 0, 0.996768, -83.9858, 12.6076, -115.135)
 
 [node name="Food" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
@@ -11993,12 +12003,6 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 
 [node name="MobShieldRat3" parent="Enemies" instance=ExtResource("131_cw7uk")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 71.2075, 11, -170.092)
-
-[node name="PropRoots" parent="." instance=ExtResource("87_b6ejq")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -83.9858, 12.6054, -112.398)
-
-[node name="PropRoots2" parent="." instance=ExtResource("87_b6ejq")]
-transform = Transform3D(0.996768, 0, -0.0803381, 0, 1, 0, 0.0803381, 0, 0.996768, -83.9858, 12.6076, -115.135)
 
 [editable path="Map/Blocks/BlockTarget"]
 [editable path="Map/Blocks/BlockTarget2"]

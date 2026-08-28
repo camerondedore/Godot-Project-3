@@ -1,4 +1,4 @@
-[gd_scene load_steps=194 format=3 uid="uid://bgapy1clrba3s"]
+[gd_scene load_steps=195 format=3 uid="uid://bgapy1clrba3s"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_to3se"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_213sf"]
@@ -142,6 +142,7 @@
 [ext_resource type="PackedScene" uid="uid://cg47kjcdsfpvt" path="res://Prefabs/Small Items/PropRatSkull.tscn" id="98_x4n8v"]
 [ext_resource type="PackedScene" uid="uid://cnifv3almrlsh" path="res://Prefabs/Small Items/PropRatBone1.tscn" id="99_wi1qt"]
 [ext_resource type="PackedScene" uid="uid://wr86v8c4lglm" path="res://Prefabs/Small Items/PropRatRibcage.tscn" id="100_702r2"]
+[ext_resource type="PackedScene" uid="uid://dq3tpah3gunl7" path="res://Prefabs/Small Items/PropShovel.tscn" id="100_j81u5"]
 [ext_resource type="PackedScene" uid="uid://dq4c06ulfpih7" path="res://Prefabs/Player Bow Targets/SpikeTrap.tscn" id="102_cqiha"]
 [ext_resource type="PackedScene" uid="uid://b4xv8s7i3wq3t" path="res://Prefabs/Trees/PropRoots.tscn" id="102_skwc2"]
 [ext_resource type="Script" uid="uid://dg2remqmickpr" path="res://C#/Common/TriggerArea.cs" id="105_16fx5"]
@@ -3642,6 +3643,12 @@ transform = Transform3D(-0.443871, -0.227641, -0.866694, 0.570541, -0.817609, -0
 
 [node name="PropRatRibcage" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("100_702r2")]
 transform = Transform3D(-0.722173, -0.66736, -0.181927, 0.614094, -0.739615, 0.275423, -0.318362, 0.0871829, 0.943952, 100.202, 3.97915, -1.31103)
+
+[node name="PropShovel" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("100_j81u5")]
+transform = Transform3D(0.258819, 0.482963, 0.836516, 0, 0.866025, -0.5, -0.965926, 0.12941, 0.224144, 116.486, 5.84778, 32.8168)
+
+[node name="PropShovel2" parent="Map/OccluderInstance3D/Props/SmallItems" instance=ExtResource("100_j81u5")]
+transform = Transform3D(0.0491484, -0.00860253, 0.998755, 0.17241, 0.985025, 0, -0.983798, 0.172196, 0.0498957, 81.6094, 3.8944, -29.7631)
 
 [node name="Food" type="Node3D" parent="Map/OccluderInstance3D/Props"]
 
