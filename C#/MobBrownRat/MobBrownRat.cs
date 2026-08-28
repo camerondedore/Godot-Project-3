@@ -31,7 +31,8 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
     public Node3D startTarget;
     [Export]
     public bool isMovingRat = true,
-        enemyCanInterruptStart = false;
+        enemyCanInterruptStart = false,
+        inTheDark = false;
 
     public NavigationAgent3D navAgent;
     public MobBow bow;
@@ -45,7 +46,8 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
         fireTime = 1.2,
         reactTime = 0.4,
         idleAnimationTime = 4.0;
-    public float moveRecalculatePathRange = 3,
+    public float maxSightRangeInTheDarkSqr = 225,
+        moveRecalculatePathRange = 3,
         attackRangeMinSqr = 225,
         attackRangeMaxSqr = 400,
         fleeRangeSqr = 25,
@@ -251,6 +253,26 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
 
 
 
+    public override void LookForEnemy()
+    {
+        var lookRangeSqr = maxSightRangeSqr;
+
+        if(inTheDark == true)
+        {
+            lookRangeSqr = maxSightRangeInTheDarkSqr;
+        }
+
+        var newEnemy = detection.LookForEnemy(lookRangeSqr);
+
+        if(newEnemy != null)
+        {
+            // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
+            enemy = newEnemy;
+        }
+    }
+
+
+
     public float GetBowAngleToEnemy()
     {
         if(IsEnemyValid() == false)
@@ -269,10 +291,11 @@ public partial class MobBrownRat : Mob, MobSpawner.iMobSpawnable
 
 
 
-    public void SetTarget(Node3D newTarget, bool enemyCanInterrupt)
+    public void SetTarget(Node3D newTarget, bool enemyCanInterrupt, bool inTheDark)
     {
         startTarget = newTarget;
         enemyCanInterruptStart = enemyCanInterrupt;
+        this.inTheDark = inTheDark;
 
         machine.SetState(stateStart);
         machine.CurrentState.StartState();

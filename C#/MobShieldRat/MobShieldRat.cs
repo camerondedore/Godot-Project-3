@@ -26,7 +26,8 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
     [Export]
     public Node3D startTarget;
     [Export]
-    public bool enemyCanInterruptStart = false;
+    public bool enemyCanInterruptStart = false,
+        inTheDark = false;
 
     public NavigationAgent3D navAgent;
     public MobFaction myFaction1,
@@ -48,7 +49,8 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
         reactTime = 0.4,
         shieldBreakTime = 0.66,
         idleAnimationTime = 3.66;
-    public float moveRecalculatePathRange = 0.5f,
+    public float maxSightRangeInTheDarkSqr = 100,
+        moveRecalculatePathRange = 0.5f,
         attackRange = 1.75f,
         attackRangeUp = 2.25f,
         damageRange = 2.25f,
@@ -259,10 +261,31 @@ public partial class MobShieldRat : Mob, MobSpawner.iMobSpawnable
 
 
 
-    public void SetTarget(Node3D newTarget, bool enemyCanInterrupt)
+    public override void LookForEnemy()
+    {
+        var lookRangeSqr = maxSightRangeSqr;
+
+        if(inTheDark == true)
+        {
+            lookRangeSqr = maxSightRangeInTheDarkSqr;
+        }
+
+        var newEnemy = detection.LookForEnemy(lookRangeSqr);
+
+        if(newEnemy != null)
+        {
+            // looking for new enemy when enemy already is assigned, only replace if new enemy is closer than old enemy
+            enemy = newEnemy;
+        }
+    }
+
+
+
+    public void SetTarget(Node3D newTarget, bool enemyCanInterrupt, bool inTheDark)
     {
         startTarget = newTarget;
         enemyCanInterruptStart = enemyCanInterrupt;
+        this.inTheDark = inTheDark;
 
         machine.SetState(stateStart);
         machine.CurrentState.StartState();

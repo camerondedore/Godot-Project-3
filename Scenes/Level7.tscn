@@ -154,7 +154,7 @@ script = ExtResource("4_ie467")
 [node name="DialogueUi" parent="." instance=ExtResource("5_hrrbo")]
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("6_tmtfn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.75, -50, 8.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, -14, -27)
 
 [node name="Map" type="Node3D" parent="."]
 
@@ -1272,69 +1272,82 @@ debug_color = Color(0.908401, 8.02821e-05, 0.710945, 1)
 transform = Transform3D(0.69899, 0, 0.715131, 0, 1, 0, -0.715131, 0, 0.69899, -19.5471, -44, -46.5473)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn7" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(0.308021, 0, -0.951379, 0, 1, 0, 0.951379, 0, 0.308021, -25.1843, -45.55, -20.7241)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn8" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(0.888825, 0, -0.458246, 0, 1, 0, 0.458246, 0, 0.888825, -14.9037, -47.7, 1.79825)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn9" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.938649, 0, -0.344872, 0, 1, 0, 0.344872, 0, -0.938649, -28.9706, -48.05, 0.988001)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn10" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(0.0538175, 0, -0.99855, 0, 1, 0, 0.99855, 0, 0.0538175, -31.0953, -50.25, 19.4476)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn11" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.284869, 0, -0.958566, 0, 1, 0, 0.958566, 0, -0.284869, -49.6145, -51.4, 15.7243)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn12" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.10852, 0, -0.994094, 0, 1, 0, 0.994094, 0, -0.10852, -46.1267, -51.6, 23.8745)
 script = ExtResource("30_sodma")
 mob = ExtResource("28_l2ypi")
+inTheDark = true
 
 [node name="RatSpawn13" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(0.460711, 0, -0.88755, 0, 1, 0, 0.88755, 0, 0.460711, -70.4101, -53.25, 7.2401)
 script = ExtResource("30_sodma")
 mob = ExtResource("28_l2ypi")
+inTheDark = true
 
 [node name="RatSpawn14" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.31545, 0, -0.948942, 0, 1, 0, 0.948942, 0, -0.31545, -72.7852, -53.6, 19.6771)
 script = ExtResource("30_sodma")
 mob = ExtResource("28_l2ypi")
+inTheDark = true
 
 [node name="RatSpawn15" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -101, -54, 22)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn16" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.258819, 0, -0.965925, 0, 1, 0, 0.965925, 0, -0.258819, -99, -54, 20.5)
 script = ExtResource("30_sodma")
 mob = ExtResource("40_c2o81")
+inTheDark = true
 
 [node name="RatSpawn17" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.965925, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965925, -107.5, -54, 13.5)
 script = ExtResource("30_sodma")
 mob = ExtResource("14_5545o")
+inTheDark = true
 
 [node name="RatSpawn18" type="Node3D" parent="Map/Triggers"]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -125.5, -50.15, 0.5)
 script = ExtResource("30_sodma")
 mob = ExtResource("28_l2ypi")
+inTheDark = true
 
 [node name="TriggerArea6" type="Area3D" parent="Map/Triggers" node_paths=PackedStringArray("linkedObjects")]
-transform = Transform3D(-1, 0, -2.66236e-07, 0, 1, 0, 2.66236e-07, 0, -1, -143.75, -69.5, 75.8)
+transform = Transform3D(-1, 0, -2.66236e-07, 0, 1, 0, 2.66236e-07, 0, -1, -143.75, -69.5, 74.3)
 collision_layer = 0
 collision_mask = 128
 monitorable = false
@@ -1359,22 +1372,24 @@ delayTime = 2.0
 mob = ExtResource("14_5545o")
 mobTarget = NodePath("../SpawnTarget3")
 enemyCanInterrupt = true
+inTheDark = true
 mobWatcher = NodePath("../TriggerDead3")
 
 [node name="SpawnTarget3" type="Node3D" parent="Map/Triggers"]
-transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -150.75, -71, 83.8)
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -147.75, -71, 83.8)
 
 [node name="RatSpawn20" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
 transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -157.25, -71, 81.8)
 script = ExtResource("47_ssnxs")
-delayTime = 2.0
+delayTime = 3.0
 mob = ExtResource("14_5545o")
 mobTarget = NodePath("../SpawnTarget4")
 enemyCanInterrupt = true
+inTheDark = true
 mobWatcher = NodePath("../TriggerDead3")
 
 [node name="SpawnTarget4" type="Node3D" parent="Map/Triggers"]
-transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -150.75, -71, 80.3)
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -147.25, -71, 80.3)
 
 [node name="TriggerDead3" type="Timer" parent="Map/Triggers" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
 script = ExtResource("32_sodma")
@@ -1389,22 +1404,24 @@ delayTime = 2.0
 mob = ExtResource("14_5545o")
 mobTarget = NodePath("../SpawnTarget5")
 enemyCanInterrupt = true
+inTheDark = true
 mobWatcher = NodePath("../TriggerDead4")
 
 [node name="SpawnTarget5" type="Node3D" parent="Map/Triggers"]
-transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -137.75, -71, 82.8)
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -143.25, -71, 82.8)
 
 [node name="RatSpawn22" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
 transform = Transform3D(-3.55644e-07, 0, 1, 0, 1, 0, -1, 0, -3.55644e-07, -130.25, -71, 79.8)
 script = ExtResource("47_ssnxs")
-delayTime = 2.0
+delayTime = 3.0
 mob = ExtResource("40_c2o81")
 mobTarget = NodePath("../SpawnTarget6")
 enemyCanInterrupt = true
+inTheDark = true
 mobWatcher = NodePath("../TriggerDead4")
 
 [node name="SpawnTarget6" type="Node3D" parent="Map/Triggers"]
-transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -138.75, -71, 77.8)
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -143.25, -71, 77.8)
 
 [node name="TriggerDead4" type="Timer" parent="Map/Triggers" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
 script = ExtResource("32_sodma")
@@ -1419,22 +1436,24 @@ delayTime = 2.0
 mob = ExtResource("40_c2o81")
 mobTarget = NodePath("../SpawnTarget7")
 enemyCanInterrupt = true
+inTheDark = true
 mobWatcher = NodePath("../TriggerDead5")
 
 [node name="SpawnTarget7" type="Node3D" parent="Map/Triggers"]
-transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -141.75, -71, 85.8)
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -141.75, -71, 82.3)
 
 [node name="RatSpawn26" type="Node3D" parent="Map/Triggers" node_paths=PackedStringArray("mobTarget", "mobWatcher")]
 transform = Transform3D(1, 0, 3.11932e-07, 0, 1, 0, -3.11932e-07, 0, 1, -144.9, -71, 93.85)
 script = ExtResource("47_ssnxs")
-delayTime = 2.0
+delayTime = 3.0
 mob = ExtResource("40_c2o81")
 mobTarget = NodePath("../SpawnTarget8")
 enemyCanInterrupt = true
+inTheDark = true
 mobWatcher = NodePath("../TriggerDead5")
 
 [node name="SpawnTarget8" type="Node3D" parent="Map/Triggers"]
-transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -146.75, -71, 84.8)
+transform = Transform3D(2.68221e-07, 0, -1, 0, 1, 0, 1, 0, 2.68221e-07, -146.75, -71, 81.3)
 
 [node name="TriggerDead5" type="Timer" parent="Map/Triggers" node_paths=PackedStringArray("watchedNodes", "linkedObjects")]
 script = ExtResource("32_sodma")
