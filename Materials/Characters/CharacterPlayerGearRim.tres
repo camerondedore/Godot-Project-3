@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c45fueydbg6jv"]
 
 [ext_resource type="Shader" uid="uid://bxsv0qe6eqto3" path="res://Shaders/CharacterRimLight.gdshader" id="1_uymuv"]
-[ext_resource type="Texture2D" uid="uid://bss81jj68s58w" path="res://Textures/arrows-diffuse.png" id="2_tvgxu"]
+[ext_resource type="Texture2D" uid="uid://e08bctmo4dye" path="res://Textures/character-player-gear-diffuse.png" id="2_tvgxu"]
 
 [resource]
 render_priority = 0
