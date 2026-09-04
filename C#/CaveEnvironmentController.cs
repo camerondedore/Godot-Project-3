@@ -25,6 +25,9 @@ public partial class CaveEnvironmentController : Node
         ambientLightEnergy = environment.Environment.AmbientLightEnergy;
         fogLightEnergy = environment.Environment.FogLightEnergy;
         directionalLightEnergy = directionalLight.LightEnergy;
+        
+        // fog needs to affect sky in caves so the camera can cut the draw distance
+        environment.Environment.FogSkyAffect = 1.0f;
     }
 
 
