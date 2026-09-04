@@ -110,6 +110,9 @@ namespace PlayerCharacterComplex
 
         public void FallDamage(float dmg)
         {
+            // adjust dmg to account for health upgrades
+            dmg *= Mathf.Max(PlayerStatistics.statistics.currentStatistics.HitPointUpgrades, 1);
+
             // apply damage
             hitPoints = Mathf.Clamp(hitPoints - dmg, 0, PlayerStatistics.statistics.GetMaxHitPoints());
 
