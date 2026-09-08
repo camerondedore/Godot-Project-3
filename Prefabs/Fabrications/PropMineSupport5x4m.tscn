@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dx6mb34sqkhr4"]
+
+[ext_resource type="ArrayMesh" uid="uid://cgfsvvnutet6n" path="res://Models/prop-mine-support-5x4.res" id="1_2x516"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_2x516"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_0bl7d"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ctoh"]
+size = Vector3(0.52, 4.15, 0.52)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4j3tq"]
+size = Vector3(5, 0.62, 0.72)
+
+[node name="PropMineSupport5x4m" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_2x516")
+surface_material_override/0 = ExtResource("2_2x516")
+surface_material_override/1 = ExtResource("3_0bl7d")
+
+[node name="PostCollider1" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.99863, -0.052336, 0, 0.052336, 0.99863, 0, 0, 0, 1, 2.29383, 1.32318, 0)
+shape = SubResource("BoxShape3D_2ctoh")
+
+[node name="PostCollider2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999391, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, -2.27095, 1.323, 0)
+shape = SubResource("BoxShape3D_2ctoh")
+
+[node name="BeamCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.68695, 0)
+shape = SubResource("BoxShape3D_4j3tq")
