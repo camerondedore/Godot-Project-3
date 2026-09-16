@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class PlayerAudio : Node
+public partial class PlayerAudio : Node3D
 {
 
     [Export]
@@ -15,7 +15,7 @@ public partial class PlayerAudio : Node
         ciderPickupSound,
         arrowPickupSound;
 
-    List<AudioTools> audioPlayers = new List<AudioTools>();
+    List<AudioTools3d> audioPlayers = new List<AudioTools3d>();
     int audioPlayerIndex = 0;
 
 
@@ -23,7 +23,7 @@ public partial class PlayerAudio : Node
     public override void _Ready()
     {
         // get audiostream children
-        foreach(AudioTools child in GetChildren())
+        foreach(AudioTools3d child in GetChildren())
         {
             audioPlayers.Add(child);
         }
