@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3g84c8g7wrfp"]
+
+[ext_resource type="PackedScene" uid="uid://tp6wqf2iywtm" path="res://Prefabs/Small Items/PropBucket.tscn" id="1_lw6ud"]
+[ext_resource type="ArrayMesh" uid="uid://57ijxmk275m7" path="res://Models/prop-bucket-dirt.res" id="2_vdrnf"]
+[ext_resource type="Material" uid="uid://deevckim44us1" path="res://Materials/DirtWithClumps.tres" id="3_kusv7"]
+
+[node name="PropBucketDirt" instance=ExtResource("1_lw6ud")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_vdrnf")
+surface_material_override/3 = ExtResource("3_kusv7")
