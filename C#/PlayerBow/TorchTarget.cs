@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using PlayerBow;
+using System.Linq;
 
 public partial class TorchTarget : Torch, IBowTarget
 {
@@ -13,6 +14,8 @@ public partial class TorchTarget : Torch, IBowTarget
     GpuParticles3D torchDripFx,
         fxSparkle;
     OmniLight3D targetLight;
+    MobFaction.Faction ratFaction = MobFaction.Faction.Enemy;
+    float ratAlertRangeSqr = 100f;
 
 
 
@@ -68,6 +71,18 @@ public partial class TorchTarget : Torch, IBowTarget
 
         // disable arrows
         arrowType = "blank";
+
+        // get list of rats within range
+        var rats = MobFaction.mobs.Where(m => m.faction == ratFaction).Where(m => m.GlobalPosition.DistanceSquaredTo(this.GlobalPosition) < ratAlertRangeSqr).ToList();
+
+        // alert nearby rats that this torch was lit
+        foreach(MobFaction rat in rats)
+        {
+            if(rat.Owner is Mob ratBase)
+            {
+                ratBase.AllyHurt();
+            }
+        }
 
         return true;
     }
