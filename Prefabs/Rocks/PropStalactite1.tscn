@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b743h7ggg1chu"]
+
+[ext_resource type="ArrayMesh" uid="uid://dpa1cfxfp4mmw" path="res://Models/prop-stalactite-1.res" id="1_lqq5x"]
+[ext_resource type="Material" uid="uid://fh8ll86wy1qv" path="res://Materials/DirtDark.tres" id="2_018oj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mawty"]
+radius = 0.2
+
+[node name="PropStalactite1" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("1_lqq5x")
+surface_material_override/0 = ExtResource("2_018oj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+shape = SubResource("CapsuleShape3D_mawty")

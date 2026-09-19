@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://mvs1wdyitbb4"]
+[gd_scene load_steps=113 format=3 uid="uid://mvs1wdyitbb4"]
 
 [ext_resource type="PackedScene" uid="uid://bycycisv53o66" path="res://Prefabs/GlobalCamera.tscn" id="1_c145g"]
 [ext_resource type="Script" uid="uid://cx6ki6wl71712" path="res://C#/GameSettingsEnvironmentLoader.cs" id="2_2x6a7"]
@@ -65,8 +65,10 @@
 [ext_resource type="PackedScene" uid="uid://tp6wqf2iywtm" path="res://Prefabs/Small Items/PropBucket.tscn" id="45_txbqq"]
 [ext_resource type="Script" uid="uid://bsd6kqk6kcwxx" path="res://addons/PropPainter/ToolPropPainter.cs" id="46_26dyq"]
 [ext_resource type="Material" uid="uid://bg5ilcdct7q4j" path="res://Materials/WaterWithFoam.tres" id="47_0gvs2"]
+[ext_resource type="PackedScene" uid="uid://b743h7ggg1chu" path="res://Prefabs/Rocks/PropStalactite1.tscn" id="47_df88v"]
 [ext_resource type="PackedScene" uid="uid://bbryospgam6tg" path="res://Prefabs/Rocks/PropRockSmall.tscn" id="47_lmfq0"]
 [ext_resource type="Script" uid="uid://qk4aeex65xi7" path="res://C#/Mob Tools/MobSpawnerDelayed.cs" id="47_ssnxs"]
+[ext_resource type="PackedScene" uid="uid://d3a83ihhmup5a" path="res://Prefabs/Rocks/PropStalactite2.tscn" id="48_qumaq"]
 [ext_resource type="PackedScene" uid="uid://dmq1a7cy06lcd" path="res://Prefabs/Rocks/PropRockMedium.tscn" id="48_rlp1n"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="49_jbd56"]
 [ext_resource type="AudioStream" uid="uid://vnw3a0o6elvw" path="res://Audio/ambience-level-7.wav" id="50_xotju"]
@@ -1443,6 +1445,82 @@ transform = Transform3D(0.479167, 0, -0.877724, 0, 1, 0, 0.877724, 0, 0.479167, 
 
 [node name="PropBucket" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("45_txbqq")]
 transform = Transform3D(-0.691072, 0, 0.722786, 0, 1, 0, -0.722786, 0, -0.691072, -11.7247, -1.75, -53.5916)
+
+[node name="Stalactites" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps"]
+
+[node name="ToolPropPainter" type="Node" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites"]
+script = ExtResource("46_26dyq")
+toolSpeed = 0.2
+propsToPaint = [ExtResource("47_df88v"), ExtResource("48_qumaq")]
+sizeVariation = 0.5
+uniformSize = true
+metadata/_custom_type_script = "uid://bsd6kqk6kcwxx"
+
+[node name="PropStalactite2!1789779466_258" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-0.333149, -0.00527788, 0.920569, 0.0178148, 0.978775, 0.0120587, -0.920412, 0.0208548, -0.332973, 16.5452, 12.6236, -40.3047)
+
+[node name="PropStalactite1!1789779466_659" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(1.01315, -0.0124165, -0.321053, 0.00979146, 1.06278, -0.0102033, 0.321144, 0.00676834, 1.01317, 15.6281, 12.6681, -39.8319)
+
+[node name="PropStalactite2!1789779467_375" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-0.398244, 0.00749173, -0.838449, 0.0276133, 0.927828, -0.00482533, 0.838027, -0.0270121, -0.398285, 14.9563, 12.6681, -39.1361)
+
+[node name="PropStalactite2!1789779468_108" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-0.445004, 0.0253372, 0.620501, 0.00869191, 0.763541, -0.0249444, -0.620957, -0.00746995, -0.445026, 15.2643, 12.6681, -38.9698)
+
+[node name="PropStalactite1!1789779469_741" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(-0.540592, 0.00558, -0.898768, -0.0321443, 1.04802, 0.0258408, 0.898211, 0.040864, -0.540003, 16.2478, 12.5163, -40.5082)
+
+[node name="PropStalactite1!1789779470_242" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(1.05775, 0.00162005, -0.37815, -0.00248678, 1.12331, -0.0021435, 0.378145, 0.00285553, 1.05775, 16.9789, 12.3391, -41.303)
+
+[node name="PropStalactite2!1789779470_826" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(0.555878, -0.0383445, 1.03615, 0.0136906, 1.17583, 0.0361689, -1.03677, -0.00503197, 0.556024, 16.2957, 12.2473, -41.6397)
+
+[node name="PropStalactite1!1789779473_891" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(0.783939, 0.0176835, -0.314378, -0.0241144, 0.844373, -0.0126369, 0.31395, 0.0207, 0.784037, 13.6549, 12.4421, -36.259)
+
+[node name="PropStalactite1!1789779474_325" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(-0.809319, -0.00728796, 0.534797, -0.00860663, 0.970044, 0.000194708, -0.534777, -0.00458231, -0.809352, 14.1551, 12.5911, -36.6479)
+
+[node name="PropStalactite1!1789779474_808" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(0.940774, -0.0053916, -0.188522, 0.00318236, 0.959418, -0.0115579, 0.188572, 0.0107071, 0.940719, 13.3814, 12.4501, -37.0684)
+
+[node name="PropStalactite2!1789779476_942" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(0.830656, 0.00940373, -0.0669148, -0.00939635, 0.833347, 0.000469718, 0.0669158, 0.000286274, 0.830709, 13.4833, 12.4006, -35.8077)
+
+[node name="PropStalactite2!1789779478_208" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-0.311666, 0.00948301, 1.20612, -0.00815636, 1.24569, -0.0119018, -1.20613, -0.0108743, -0.311583, 14.0391, 12.5686, -37.5919)
+
+[node name="PropStalactite2!1789779481_725" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-0.524894, -0.0247258, -0.53738, -0.0150214, 0.751186, -0.019891, 0.537739, -0.00315118, -0.525099, 18.2991, 12.4629, -36.911)
+
+[node name="PropStalactite1!1789779482_225" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(-0.644004, 0.0285373, 0.69391, 0.0327578, 0.946531, -0.00852459, -0.693724, 0.0182034, -0.644579, 18.6414, 12.4147, -37.2177)
+
+[node name="PropStalactite2!1789779482_924" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-1.08124, -0.0214288, -0.118839, -0.0211081, 1.08775, -0.00409176, 0.118897, -0.0017608, -1.08144, 19.3492, 12.3407, -37.3248)
+
+[node name="PropStalactite2!1789779483_458" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(0.199509, -0.000672329, -0.930726, 0.00806203, 0.951834, 0.00104059, 0.930691, -0.00810106, 0.199507, 19.9015, 12.2468, -37.6045)
+
+[node name="PropStalactite2!1789779484_308" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(0.927849, -0.00311678, -0.0791544, 0.00432855, 0.931108, 0.014076, 0.0790974, -0.0143929, 0.927747, 20.3087, 12.1502, -37.8541)
+
+[node name="PropStalactite1!1789779485_457" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(0.725598, -0.0278379, -0.858185, 0.0210846, 1.12381, -0.0186273, 0.858378, -0.00407283, 0.725893, 19.1722, 12.3173, -37.5495)
+
+[node name="PropStalactite1!1789779490_608" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(0.583495, -0.0192276, 0.578097, 0.0164395, 0.821369, 0.0107259, -0.578183, 0.0039497, 0.583714, 19.7327, 12.0894, -34.1694)
+
+[node name="PropStalactite2!1789779491_408" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("48_qumaq")]
+transform = Transform3D(-1.00359, 0.0143862, 0.627512, 0.0348858, 1.18285, 0.0286757, -0.626706, 0.042806, -1.00328, 18.9861, 12.3219, -34.6591)
+
+[node name="PropStalactite1!1789779492_158" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(1.15811, -0.0295964, 0.118516, 0.0291709, 1.16415, 0.00566728, -0.118622, -0.00266724, 1.15847, 19.6535, 12.0465, -34.022)
+
+[node name="PropStalactite1!1789779496_907" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Stalactites" instance=ExtResource("47_df88v")]
+transform = Transform3D(-0.815737, 0.000181425, 0.0158182, 0.000116426, 0.815884, -0.0033536, -0.0158188, -0.00335072, -0.81573, 19.5345, 11.9152, -33.4416)
 
 [node name="InvisibleWalls" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D"]
 
