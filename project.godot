@@ -129,6 +129,10 @@ player-tab={
 3d_physics/layer_15="Small Props No Nav"
 3d_physics/layer_16="Bow Aimer Only"
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [rendering]
 
 reflections/reflection_atlas/reflection_size=128

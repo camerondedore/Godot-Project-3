@@ -1468,9 +1468,6 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 1.65, 0.25
 [node name="PropBucket2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("45_txbqq")]
 transform = Transform3D(0.777143, 0.149587, -0.611288, -0.163852, 0.985934, 0.0329575, 0.60762, 0.0745481, 0.790722, -5.24413, 0.303866, -10.6036)
 
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropBucket2" index="1"]
-transform = Transform3D(0.986572, -0.163326, 0, 0.163326, 0.986572, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="PropBucketDirt2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("44_shant")]
 transform = Transform3D(0.479167, 0, -0.877724, 0, 1, 0, 0.877724, 0, 0.479167, -5.12543, -1.75, -45.3378)
 
@@ -1488,9 +1485,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8797, 6.299, -13.146)
 
 [node name="PropBasket2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("47_cqyfi")]
 transform = Transform3D(0.972646, -0.232291, 0, 0.232291, 0.972646, 0, 0, 0, 1, 23.8456, 6.45223, -40.73)
-
-[node name="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropBasket2" index="1"]
-transform = Transform3D(0.972776, 0.231748, 0, -0.231748, 0.972776, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="PropBasket3" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems" instance=ExtResource("47_cqyfi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11969, -5.7, -49.6186)
@@ -3874,8 +3868,6 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches/PropTorchLitStatic44"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropChest"]
 [editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Containers/PropChest/prop-chest"]
-[editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropBucket2"]
-[editable path="Map/OccluderInstance3D/NavigationRegion3D/NavProps/SmallItems/PropBasket2"]
 [editable path="Map/SecretAreas/SecretArea"]
 [editable path="Map/SecretAreas/SecretArea2"]
 [editable path="Map/SecretAreas/SecretArea3"]
