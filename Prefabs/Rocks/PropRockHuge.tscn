@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyp6utgl3kbv7"]
+
+[ext_resource type="PackedScene" uid="uid://bbryospgam6tg" path="res://Prefabs/Rocks/PropRockSmall.tscn" id="1_ngaut"]
+[ext_resource type="ArrayMesh" uid="uid://0sqp3uxcktyc" path="res://Models/prop-rock-huge.res" id="2_8u5dd"]
+[ext_resource type="Material" uid="uid://dg4rok7s8af4l" path="res://Materials/Dirt.tres" id="3_8u5dd"]
+
+[node name="PropRockHuge" instance=ExtResource("1_ngaut")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+mesh = ExtResource("2_8u5dd")
+surface_material_override/0 = ExtResource("3_8u5dd")
