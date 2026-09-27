@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://yg3dgu87vi4m"]
+
+[ext_resource type="PackedScene" uid="uid://byyhb3n7dtwht" path="res://Prefabs/Lumber/PropBoard2.tscn" id="1_1ugrs"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_wg467"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_061kx"]
+
+[node name="PropBoardNew2" instance=ExtResource("1_1ugrs")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_wg467")
+surface_material_override/1 = ExtResource("3_061kx")
