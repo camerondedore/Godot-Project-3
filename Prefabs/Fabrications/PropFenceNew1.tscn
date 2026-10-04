@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3m2tlor6f0ig"]
+
+[ext_resource type="PackedScene" uid="uid://cwabel6rsndr7" path="res://Prefabs/Fabrications/PropFence1.tscn" id="1_trh75"]
+[ext_resource type="Material" uid="uid://341ls220bti0" path="res://Materials/Wood.tres" id="2_bnyds"]
+[ext_resource type="Material" uid="uid://c45cw440y4anc" path="res://Materials/Trees/BarkEnds1.tres" id="3_qrsjg"]
+
+[node name="PropFenceNew1" instance=ExtResource("1_trh75")]
+
+[node name="MeshInstance3D" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_bnyds")
+surface_material_override/1 = ExtResource("3_qrsjg")
