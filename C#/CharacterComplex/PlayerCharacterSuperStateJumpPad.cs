@@ -84,8 +84,8 @@ namespace PlayerCharacterComplex
                 subState.StartState();
             }
 
-            // play sound
-            //blackboard.characterAudio.PlayJumpPadSound();
+            // enable jump net sound
+            blackboard.characterJumpNetAudio.Activate(initialVelocity.Length());
 
             blackboard.ledgeDetector.TurnOn();
         }
@@ -101,6 +101,9 @@ namespace PlayerCharacterComplex
             blackboard.startHeight = blackboard.GlobalPosition.Y;
 
             blackboard.ledgeDetector.TurnOff();
+
+            // disable jump net sound
+            blackboard.characterJumpNetAudio.Deactivate();
         }
 
 

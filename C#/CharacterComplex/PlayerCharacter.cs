@@ -41,6 +41,7 @@ namespace PlayerCharacterComplex
 		public BoneAttachment3D backBone,
 			hipBone;
 		public PlayerCharacterAudio characterAudio;
+		public PlayerCharacterJumpNetAudio characterJumpNetAudio;
 		public CharacterFootsteps characterFootsteps;
 		public PlayerFx characterFx;
 		public BowAimer bowAimer;
@@ -82,6 +83,7 @@ namespace PlayerCharacterComplex
 			backBone = (BoneAttachment3D) GetNode("character-player/character-armature/Skeleton3D/BackBoneOverride");
 			hipBone = (BoneAttachment3D) GetNode("character-player/character-armature/Skeleton3D/HipsBoneCopy");
 			characterAudio = (PlayerCharacterAudio) GetNode("CharacterAudio");
+			characterJumpNetAudio = (PlayerCharacterJumpNetAudio) GetNode("CharacterJumpNetAudio");
 			characterFootsteps = (CharacterFootsteps) GetNode("CharacterFootsteps");
 			characterFx = (PlayerFx) GetNode("Fx");
 			bowAimer = (BowAimer) GetNode("CameraController/SpringArmHorizontal/BowAimer");
