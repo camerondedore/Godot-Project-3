@@ -8,7 +8,7 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchab
     [Export]
     Vector3 openAngle = new Vector3(0, -170, 0);
     [Export]
-    float speed = 2;
+    float speed = 0.66f;
     [Export]
     AudioStream openSound;
     [Export]
@@ -26,6 +26,7 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchab
     AudioTools3d audio;
     Vector3 startRotation,
         targetRotation;
+    float cursor = 0;
     bool locked = true;
 
 
@@ -73,10 +74,11 @@ public partial class Door : AnimatableBody3D, IBowTarget, IActivatable, IWatchab
     {
         if(locked == false)
         {
-            RotationDegrees = RotationDegrees.Lerp(targetRotation, speed * ((float) delta));
+            cursor += speed * ((float)delta);
+            RotationDegrees = SineInterpolator.QuarterInterpolate(startRotation, targetRotation, cursor);
 
             // check if door completed opening
-            if(RotationDegrees.DistanceSquaredTo(targetRotation) < 2)
+            if(cursor >= 1f)
             {
                 doorCollider.Disabled = false;
                 
