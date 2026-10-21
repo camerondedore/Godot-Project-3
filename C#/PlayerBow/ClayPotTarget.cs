@@ -6,12 +6,11 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
 {
 
     [Export]
-    PackedScene storedItem,
-        breakFx;
+    PackedScene breakFx;
 
     string arrowType = "weighted";
     GibsActivator gibs;
-    RigidbodySpawner pickupSpawner;
+    RigidbodyInitializer rigidbodyInitializer;
     Vector3 positionOffset = new Vector3(0, 0.6f, 0);
 
 
@@ -28,7 +27,7 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
         
         // get nodes
         gibs = (GibsActivator) GetNode("Gibs");
-        pickupSpawner = (RigidbodySpawner) GetNode("PickupSpawner");
+        rigidbodyInitializer = (RigidbodyInitializer) GetNode("RigidbodyInitializer");
     }
 
 
@@ -68,7 +67,7 @@ public partial class ClayPotTarget : StaticBody3D, IBowTarget
         newFx.Owner = GetTree().CurrentScene;
 
         // spawn pickup
-        pickupSpawner.Spawn(storedItem);
+        rigidbodyInitializer.InitializeRigidbody();
 
         // save to activated objects
         WorldData.data.ActivateObject(this);

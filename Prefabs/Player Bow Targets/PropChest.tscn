@@ -1,19 +1,26 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyncf5bghkkwb"]
+[gd_scene format=3 uid="uid://dyncf5bghkkwb"]
 
 [ext_resource type="PackedScene" uid="uid://b567kig0p2trd" path="res://Models/prop-chest.glb" id="1_oxeqv"]
 [ext_resource type="Script" uid="uid://btpqu2m6rbaq1" path="res://C#/PlayerBow/ChestTarget.cs" id="1_pnrr2"]
-[ext_resource type="PackedScene" uid="uid://jg8y61unu8ao" path="res://Prefabs/Pickups/PickupCandiedNut.tscn" id="2_8vv3q"]
 [ext_resource type="AudioStream" uid="uid://dutt7ugi03ht8" path="res://Audio/chest-open.wav" id="2_fo8lm"]
 [ext_resource type="Material" uid="uid://bvcpecrb2yf5w" path="res://Materials/Metal.tres" id="2_rme7f"]
 [ext_resource type="PackedScene" uid="uid://cr1bprfu7i7wc" path="res://Prefabs/FX/FxLock.tscn" id="3_2i7no"]
 [ext_resource type="Material" uid="uid://dnghbusj0u3co" path="res://Materials/WoodFine.tres" id="3_7xqmg"]
-[ext_resource type="Material" uid="uid://cq07eqpuruvwo" path="res://Materials/Fx/FxBlackHole.tres" id="6_fqhwf"]
+[ext_resource type="Shader" uid="uid://06nmgyyqqbf0" path="res://Shaders/FxBlackHole.gdshader" id="6_5busk"]
 [ext_resource type="AudioStream" uid="uid://buaupw1cosg2g" path="res://Audio/pickup-spawn.wav" id="8_f7gyv"]
 [ext_resource type="Script" uid="uid://cyrkj54ahryr4" path="res://C#/Common/AudioTools3d.cs" id="8_th5xi"]
-[ext_resource type="Script" uid="uid://dbny7egg4na1b" path="res://C#/Common/RigidbodySpawnerMultiple.cs" id="9_cku3p"]
+[ext_resource type="Script" uid="uid://b1hhgelrio5tx" path="res://C#/Common/RigidbodyInitializerMultiple.cs" id="8_yt0y0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fudub"]
 size = Vector3(2.1, 1.05, 1.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h3ejo"]
+resource_local_to_scene = true
+render_priority = -1
+shader = ExtResource("6_5busk")
+shader_parameter/depthColor = Color(0, 0, 0, 1)
+shader_parameter/depthDistance = -1.0
+shader_parameter/depthFade = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3ejo"]
 size = Vector3(2, 1, 1)
@@ -21,66 +28,65 @@ size = Vector3(2, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yt0y0"]
 size = Vector3(2, 1, 0.2)
 
-[node name="PropChest" type="StaticBody3D"]
+[node name="PropChest" type="StaticBody3D" unique_id=16257188]
 collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_pnrr2")
 openSound = ExtResource("2_fo8lm")
 
-[node name="ArrowTargetCollider" type="CollisionShape3D" parent="."]
+[node name="ArrowTargetCollider" type="CollisionShape3D" parent="." unique_id=769938126]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.725, 0)
 shape = SubResource("BoxShape3D_fudub")
 
-[node name="prop-chest" parent="." instance=ExtResource("1_oxeqv")]
+[node name="prop-chest" parent="." unique_id=1745019787 instance=ExtResource("1_oxeqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 
 [node name="Skeleton3D" parent="prop-chest/prop-chest-armature" index="0"]
-bones/1/rotation = Quaternion(-0.707107, -8.42937e-08, -8.42937e-08, 0.707107)
-bones/3/rotation = Quaternion(-0.707107, 2.00972e-14, 0.707107, -3.37311e-07)
-bones/4/rotation = Quaternion(0.707106, 2.37169e-20, 0.707107, 3.37311e-07)
+bones/1/rotation = Quaternion(-0.7071068, -8.42937e-08, -8.42937e-08, 0.7071068)
+bones/3/rotation = Quaternion(-0.7071066, 2.0097192e-14, 0.70710707, -3.3731092e-07)
+bones/4/rotation = Quaternion(0.70710635, 2.3716923e-20, 0.7071072, 3.373108e-07)
 
 [node name="prop-chest2" parent="prop-chest/prop-chest-armature/Skeleton3D" index="0"]
 layers = 2
 gi_mode = 2
 surface_material_override/0 = ExtResource("3_7xqmg")
 surface_material_override/1 = ExtResource("2_rme7f")
-surface_material_override/2 = ExtResource("6_fqhwf")
+surface_material_override/2 = SubResource("ShaderMaterial_h3ejo")
 
-[node name="BaseBoneAttachment" type="BoneAttachment3D" parent="prop-chest/prop-chest-armature/Skeleton3D" index="1"]
-transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, 0, 0, 0)
+[node name="BaseBoneAttachment" type="BoneAttachment3D" parent="prop-chest/prop-chest-armature/Skeleton3D" index="1" unique_id=1300230565]
+transform = Transform3D(1, 0, 2.3841858e-07, 0, 1, 0, -2.3841858e-07, 0, 1, 0, 0, 0)
 bone_name = "Base"
 bone_idx = 0
 
-[node name="ChestCollision" type="AnimatableBody3D" parent="prop-chest/prop-chest-armature/Skeleton3D/BaseBoneAttachment"]
+[node name="ChestCollision" type="AnimatableBody3D" parent="prop-chest/prop-chest-armature/Skeleton3D/BaseBoneAttachment" unique_id=712195148]
 collision_layer = 16
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="prop-chest/prop-chest-armature/Skeleton3D/BaseBoneAttachment/ChestCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prop-chest/prop-chest-armature/Skeleton3D/BaseBoneAttachment/ChestCollision" unique_id=1453096064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 shape = SubResource("BoxShape3D_h3ejo")
 debug_color = Color(0.63, 0.525, 0, 1)
 
-[node name="LidBoneAttachment" type="BoneAttachment3D" parent="prop-chest/prop-chest-armature/Skeleton3D" index="2"]
-transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.39061, 0.527695)
+[node name="LidBoneAttachment" type="BoneAttachment3D" parent="prop-chest/prop-chest-armature/Skeleton3D" index="2" unique_id=619165580]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.39061034, 0.5276948)
 bone_name = "lid"
 bone_idx = 1
 
-[node name="LidCollision" type="AnimatableBody3D" parent="prop-chest/prop-chest-armature/Skeleton3D/LidBoneAttachment"]
+[node name="LidCollision" type="AnimatableBody3D" parent="prop-chest/prop-chest-armature/Skeleton3D/LidBoneAttachment" unique_id=431289479]
 collision_layer = 16
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="prop-chest/prop-chest-armature/Skeleton3D/LidBoneAttachment/LidCollision"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prop-chest/prop-chest-armature/Skeleton3D/LidBoneAttachment/LidCollision" unique_id=40826207]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 0.1)
 shape = SubResource("BoxShape3D_yt0y0")
 debug_color = Color(0.63, 0.525, 0, 1)
 
-[node name="FxLock" parent="." instance=ExtResource("3_2i7no")]
+[node name="FxLock" parent="." unique_id=1181679091 instance=ExtResource("3_2i7no")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.688, -0.5491)
 
-[node name="PickupSpawnerMultiple" type="Node3D" parent="." node_paths=PackedStringArray("audio")]
+[node name="RigidbodyInitializer" type="Node3D" parent="." unique_id=952217075 node_paths=PackedStringArray("audio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10179, -0.104055)
-script = ExtResource("9_cku3p")
-prefabs = Array[PackedScene]([ExtResource("2_8vv3q")])
+script = ExtResource("8_yt0y0")
 audio = NodePath("../Audio")
 spawnSound = ExtResource("8_f7gyv")
 delayTime = 1.2
@@ -90,7 +96,7 @@ spread = 2.0
 angularSpeed = 0.0
 useAngularVelocity = false
 
-[node name="Audio" type="AudioStreamPlayer3D" parent="."]
+[node name="Audio" type="AudioStreamPlayer3D" parent="." unique_id=193461683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 unit_size = 5.0
 max_distance = 60.0

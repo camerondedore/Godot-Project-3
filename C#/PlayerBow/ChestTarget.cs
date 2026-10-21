@@ -6,14 +6,12 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 {
 
 	[Export]
-	PackedScene[] storedItems;
-	[Export]
 	AudioStream openSound;
 	
 	string arrowType = "pick";
 	Vector3 targetOffset = new Vector3(0, 0.7f, 0);
 	FxLock lockFx;
-	RigidbodySpawnerMultiple pickupSpawner;
+	RigidbodyInitializerMultiple rigidbodyInitializer;
 	AnimationPlayer animation;
 	AudioTools3d audio;
 
@@ -33,7 +31,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 			animation.Play("chest-idle");
 
 			// get nodes
-			pickupSpawner = (RigidbodySpawnerMultiple) GetNode("PickupSpawnerMultiple");
+			rigidbodyInitializer = (RigidbodyInitializerMultiple) GetNode("RigidbodyInitializer");
 			audio = (AudioTools3d) GetNode("Audio");
 		}
 		else
@@ -81,7 +79,7 @@ public partial class ChestTarget : StaticBody3D, IBowTarget
 		lockFx.Open();
 
 		// eject pickup
-		pickupSpawner.StartSpawn(storedItems);
+		rigidbodyInitializer.StartInitializing();
 
 		// save to activated objects
 		WorldData.data.ActivateObject(this);

@@ -11,18 +11,16 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
     PackedScene cutFx;
     [Export]
     Node[] pinnedObjects;
-    [Export]
-    PackedScene storedItem;
     
     string arrowType = "blade";
-    RigidbodySpawner pickupSpawner;
+    RigidbodyInitializer rigidbodyInitializer;
 
 
 
     public override void _Ready()
     {
         // get node
-        pickupSpawner = (RigidbodySpawner) GetNode("PickupSpawner");
+        rigidbodyInitializer = (RigidbodyInitializer) GetNode("RigidbodyInitializer");
 
         // check if web pins anything
         if(pinnedObjects.Length > 0)
@@ -84,12 +82,12 @@ public partial class SpiderwebTarget : StaticBody3D, IBowTarget
         }
         else
         {
-            // spawn pickup
-            pickupSpawner.Spawn(storedItem);
-
             // save to activated objects
             WorldData.data.ActivateObject(this);
         }
+
+        // spawn pickup
+        rigidbodyInitializer.InitializeRigidbody();
 
         // destroy
         QueueFree();
