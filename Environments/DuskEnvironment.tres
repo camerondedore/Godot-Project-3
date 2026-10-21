@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cb100k1gvpgrg"]
+[gd_resource type="Environment" format=3 uid="uid://cb100k1gvpgrg"]
 
 [ext_resource type="Material" uid="uid://cf5pc32a85jxy" path="res://Materials/Skys/SkyboxDusk.tres" id="1_tlg3u"]
 
@@ -19,8 +19,6 @@ glow_enabled = true
 glow_levels/1 = 1.0
 glow_levels/2 = 0.5
 glow_levels/3 = 0.25
-glow_levels/4 = 0.1
-glow_levels/5 = 0.0
 glow_blend_mode = 0
 fog_enabled = true
 fog_mode = 1

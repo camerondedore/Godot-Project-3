@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://d24gf5qbf6hvl"]
+[gd_resource type="Environment" format=3 uid="uid://d24gf5qbf6hvl"]
 
 [ext_resource type="Material" uid="uid://uoyg5iuwvi4q" path="res://Materials/Skys/SkyboxNight2.tres" id="1_vaa86"]
 
@@ -19,8 +19,6 @@ glow_enabled = true
 glow_levels/1 = 1.0
 glow_levels/2 = 0.5
 glow_levels/3 = 0.25
-glow_levels/4 = 0.1
-glow_levels/5 = 0.0
 glow_blend_mode = 0
 fog_mode = 1
 fog_light_color = Color(0.054902, 0.0745098, 0.129412, 1)

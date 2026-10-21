@@ -1,4 +1,4 @@
-[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cl1532so5d67w"]
+[gd_resource type="Environment" format=3 uid="uid://cl1532so5d67w"]
 
 [ext_resource type="Material" uid="uid://cc1bh1vrfvqtt" path="res://Materials/Skys/SkyboxAfternoon.tres" id="1_w5tc7"]
 
@@ -16,8 +16,6 @@ glow_enabled = true
 glow_levels/1 = 1.0
 glow_levels/2 = 0.5
 glow_levels/3 = 0.25
-glow_levels/4 = 0.1
-glow_levels/5 = 0.0
 glow_blend_mode = 0
 fog_enabled = true
 fog_mode = 1

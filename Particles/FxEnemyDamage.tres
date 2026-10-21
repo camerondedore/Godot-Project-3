@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" load_steps=5 format=3 uid="uid://bijrqeiotewi3"]
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://bijrqeiotewi3"]
 
 [sub_resource type="Gradient" id="Gradient_h563r"]
 offsets = PackedFloat32Array(0, 0.585366, 1)
