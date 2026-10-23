@@ -9128,6 +9128,7 @@ transform = Transform3D(-0.0187073, -0.428637, -0.903283, 0.0393849, 0.902424, -
 [node name="BlackHole" type="MeshInstance3D" parent="Map/Fx" unique_id=1653950781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, -62, -15.5)
 layers = 2
+cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_1kukr")
 surface_material_override/0 = ExtResource("40_cu141")
@@ -9158,6 +9159,7 @@ transform = Transform3D(0.993429, 0, -0.114452, 0, 1, 0, 0.114452, 0, 0.993429, 
 [node name="BlackHole2" type="MeshInstance3D" parent="Map/Fx" unique_id=2135672967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -70, -73.5)
 layers = 2
+cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_bmrrw")
 surface_material_override/0 = ExtResource("40_cu141")
@@ -9185,6 +9187,7 @@ script = ExtResource("43_gvx5d")
 [node name="BlackHole3" type="MeshInstance3D" parent="Map/Fx" unique_id=976033088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, -61, -73.5)
 layers = 2
+cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_sd3m0")
 surface_material_override/0 = ExtResource("40_cu141")
@@ -9213,6 +9216,7 @@ script = ExtResource("43_gvx5d")
 [node name="BlackHole4" type="MeshInstance3D" parent="Map/Fx" unique_id=1249932546]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.75, -92, 32.5)
 layers = 2
+cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("QuadMesh_ssnxs")
 surface_material_override/0 = ExtResource("40_cu141")
@@ -9265,7 +9269,7 @@ collision_mask = 128
 monitorable = false
 script = ExtResource("64_hkd63")
 levelChange = NodePath("../../LevelChange")
-nextLevel = "LevelHub7"
+nextLevel = "LevelHub8"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/LevelChangeTriggerArea" unique_id=1062347331]
 shape = SubResource("BoxShape3D_0gvs2")
