@@ -11396,18 +11396,21 @@ timeRange = Vector2(7, 10)
 [node name="AudioPlayer1" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio" unique_id=272233602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, -24.5)
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("166_o2r8h")
 
 [node name="AudioPlayer2" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio" unique_id=1760058459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, -24.5)
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("166_o2r8h")
 
 [node name="AudioPlayer3" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio" unique_id=225546409]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, -24.5)
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("166_o2r8h")
 

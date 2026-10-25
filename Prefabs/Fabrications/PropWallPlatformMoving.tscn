@@ -43,5 +43,6 @@ shape = SubResource("BoxShape3D_506ee")
 stream = ExtResource("2_ic6to")
 unit_size = 5.0
 max_distance = 40.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("8_ic6to")

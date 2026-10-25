@@ -29,6 +29,7 @@ stream = ExtResource("4_rvovm")
 unit_size = 1.0
 autoplay = true
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_153dm")
 
@@ -60,5 +61,6 @@ draw_pass_1 = SubResource("QuadMesh_apua7")
 [node name="DamageAudio" type="AudioStreamPlayer3D" parent="DamageArea" index="2"]
 unit_size = 5.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_153dm")

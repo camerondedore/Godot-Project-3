@@ -102,6 +102,7 @@ characterFeetAudioNode = NodePath("../CharacterFootsteps")
 [node name="VoiceAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 20.0
 max_distance = 50.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("6_awxb8")
 

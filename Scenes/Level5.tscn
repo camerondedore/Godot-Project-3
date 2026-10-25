@@ -7646,16 +7646,19 @@ timeRange = Vector2(4, 8)
 
 [node name="AudioPlayer1" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio0" unique_id=812325950]
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("45_duuta")
 
 [node name="AudioPlayer2" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio0" unique_id=133175823]
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("45_duuta")
 
 [node name="AudioPlayer3" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio0" unique_id=222978817]
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("45_duuta")
 

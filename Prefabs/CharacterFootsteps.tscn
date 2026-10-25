@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dabnky0qnlvgu"]
+[gd_scene format=3 uid="uid://dabnky0qnlvgu"]
 
 [ext_resource type="Script" uid="uid://5tnjt2v1kavc" path="res://C#/CharacterFootsteps.cs" id="1_bi0jt"]
 [ext_resource type="AudioStream" uid="uid://cpx1ghr2ba1fu" path="res://Audio/footstep-1.wav" id="2_aaiis"]
@@ -16,9 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://dql653kqq4njv" path="res://Audio/land.wav" id="14_gdt6s"]
 [ext_resource type="AudioStream" uid="uid://dlv0ati546kyl" path="res://Audio/land-terrain.wav" id="15_0ojyx"]
 
-[node name="CharacterFootsteps" type="AudioStreamPlayer3D" node_paths=PackedStringArray("floorRay")]
+[node name="CharacterFootsteps" type="AudioStreamPlayer3D" unique_id=755130666 node_paths=PackedStringArray("floorRay")]
 unit_size = 2.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("1_bi0jt")
 footsteps = Array[AudioStream]([ExtResource("2_aaiis"), ExtResource("3_q0xni"), ExtResource("4_mg380"), ExtResource("5_litk4"), ExtResource("6_i2wg7")])
@@ -29,7 +30,7 @@ land = ExtResource("14_gdt6s")
 terrainLand = ExtResource("15_0ojyx")
 floorRay = NodePath("FloorRay")
 
-[node name="FloorRay" type="RayCast3D" parent="."]
+[node name="FloorRay" type="RayCast3D" parent="." unique_id=556751009]
 enabled = false
 target_position = Vector3(0, -1.25, 0)
 collision_mask = 17

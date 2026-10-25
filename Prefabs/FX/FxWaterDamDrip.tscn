@@ -81,6 +81,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45, -0.55)
 stream = ExtResource("3_0pwr0")
 unit_size = 1.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("4_0pwr0")
 sounds = Array[AudioStream]([ExtResource("3_0pwr0")])

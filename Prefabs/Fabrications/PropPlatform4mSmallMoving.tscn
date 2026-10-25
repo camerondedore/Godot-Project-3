@@ -151,6 +151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 stream = ExtResource("2_r4177")
 unit_size = 5.0
 max_distance = 40.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("8_firyo")
 

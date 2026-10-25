@@ -38,6 +38,7 @@ surface_material_override/1 = ExtResource("4_x8bgh")
 [node name="HitAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 5.0
 max_distance = 30.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("7_i5drs")
 
@@ -45,6 +46,7 @@ script = ExtResource("7_i5drs")
 stream = ExtResource("8_6pyw7")
 unit_size = 5.0
 max_distance = 30.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("7_i5drs")
 

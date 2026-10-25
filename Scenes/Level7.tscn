@@ -8178,18 +8178,21 @@ timeRange = Vector2(4, 10)
 [node name="AudioPlayer1" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio" unique_id=67028103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, -24.5)
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
 [node name="AudioPlayer2" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio" unique_id=647730695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, -24.5)
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
 [node name="AudioPlayer3" type="AudioStreamPlayer3D" parent="Map/Audio/LevelRandomAudio" unique_id=510260243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.5, 0, -24.5)
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
@@ -8206,6 +8209,7 @@ shape = SubResource("SphereShape3D_o6b24")
 [node name="TestAudio" type="AudioStreamPlayer3D" parent="Map/Audio/Reverb" unique_id=1025561730]
 stream = ExtResource("59_xotju")
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 
 [node name="WaterArea" type="Area3D" parent="Map" unique_id=355738679]
@@ -9150,6 +9154,7 @@ shape = SubResource("CylinderShape3D_1kukr")
 
 [node name="DamageAudio" type="AudioStreamPlayer3D" parent="Map/Fx/BlackHole/DamageArea" unique_id=1290980428]
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
@@ -9181,6 +9186,7 @@ shape = SubResource("BoxShape3D_a2wn0")
 
 [node name="DamageAudio" type="AudioStreamPlayer3D" parent="Map/Fx/BlackHole2/DamageArea" unique_id=193993836]
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
@@ -9210,6 +9216,7 @@ shape = SubResource("BoxShape3D_ssnxs")
 [node name="DamageAudio" type="AudioStreamPlayer3D" parent="Map/Fx/BlackHole3/DamageArea" unique_id=42507636]
 unit_size = 20.0
 max_distance = 30.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 
@@ -9239,6 +9246,7 @@ shape = SubResource("BoxShape3D_m3eqo")
 [node name="DamageAudio" type="AudioStreamPlayer3D" parent="Map/Fx/BlackHole4/DamageArea" unique_id=556383402]
 unit_size = 50.0
 max_distance = 100.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("43_gvx5d")
 

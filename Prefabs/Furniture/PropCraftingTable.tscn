@@ -34,6 +34,7 @@ transform = Transform3D(0.720006, 0, -0.693968, 0, 1, 0, 0.693968, 0, 0.720006, 
 stream = ExtResource("6_jbibn")
 unit_size = 2.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 
 [node name="CraftingArea" type="Area3D" parent="." node_paths=PackedStringArray("userTarget", "craftingFx", "audio", "bowMesh")]

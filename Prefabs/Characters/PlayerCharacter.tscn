@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=3 uid="uid://cth53i8qsxlqy"]
+[gd_scene format=3 uid="uid://cth53i8qsxlqy"]
 
 [ext_resource type="Script" uid="uid://bxpv3jxvu8vmc" path="res://C#/CharacterComplex/PlayerCharacter.cs" id="1_atjmm"]
 [ext_resource type="PackedScene" uid="uid://tqm8basimanb" path="res://Models/character-player.glb" id="2_gi20v"]
@@ -387,17 +387,23 @@ animation = &"character-walk-left"
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ra4fn"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_u0fgd")
 blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_aibr3")
 blend_point_1/pos = Vector2(0, 1)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_vlimq")
 blend_point_2/pos = Vector2(1, 0)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_pgsm0")
 blend_point_3/pos = Vector2(0, -1)
+blend_point_3/name = &"3"
 blend_point_4/node = SubResource("AnimationNodeAnimation_86ep5")
 blend_point_4/pos = Vector2(-1, 0)
+blend_point_4/name = &"4"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_laaoj"]
 graph_offset = Vector2(-98, -59)
+nodes/output/position = Vector2(540, 67)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_3cpgm")
 nodes/Animation/position = Vector2(20, 40)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_vv7rq")
@@ -406,8 +412,7 @@ nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_6xxyr")
 nodes/TimeSeek/position = Vector2(216, 5)
 nodes/draw-2d-blend/node = SubResource("AnimationNodeBlendSpace2D_ra4fn")
 nodes/draw-2d-blend/position = Vector2(65, 166)
-nodes/output/position = Vector2(540, 67)
-node_connections = [&"Blend2", 0, &"TimeSeek", &"Blend2", 1, &"draw-2d-blend", &"TimeSeek", 0, &"Animation", &"output", 0, &"Blend2"]
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"TimeSeek", &"Blend2", 1, &"draw-2d-blend", &"TimeSeek", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jjqxs"]
 animation = &"character-fall"
@@ -437,14 +442,19 @@ animation = &"character-walk-forward"
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_mmami"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_whvxc")
 blend_point_0/pos = Vector2(0, 0)
+blend_point_0/name = &"0"
 blend_point_1/node = SubResource("AnimationNodeAnimation_xpwqp")
 blend_point_1/pos = Vector2(1, 0)
+blend_point_1/name = &"1"
 blend_point_2/node = SubResource("AnimationNodeAnimation_k76lk")
 blend_point_2/pos = Vector2(0, -1)
+blend_point_2/name = &"2"
 blend_point_3/node = SubResource("AnimationNodeAnimation_30rvg")
 blend_point_3/pos = Vector2(-1, 0)
+blend_point_3/name = &"3"
 blend_point_4/node = SubResource("AnimationNodeAnimation_8he4l")
 blend_point_4/pos = Vector2(0, 1)
+blend_point_4/name = &"4"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_wvyws"]
 graph_offset = Vector2(-175, -20)
@@ -454,7 +464,7 @@ nodes/Blend2/node = SubResource("AnimationNodeBlend2_3j7u2")
 nodes/Blend2/position = Vector2(140, 140)
 nodes/fire-2d-blend/node = SubResource("AnimationNodeBlendSpace2D_mmami")
 nodes/fire-2d-blend/position = Vector2(-80, 220)
-node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"fire-2d-blend", &"output", 0, &"Blend2"]
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"fire-2d-blend"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a8wxi"]
 animation = &"character-idle-look-l"
@@ -481,6 +491,7 @@ filters = ["character-armature/Skeleton3D:back-control", "character-armature/Ske
 [sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_tdmhh"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4wt1x"]
+nodes/output/position = Vector2(573, 100)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_m1txd")
 nodes/Animation/position = Vector2(60, 80)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_quetc")
@@ -489,8 +500,7 @@ nodes/Blend2/node = SubResource("AnimationNodeBlend2_8v8bc")
 nodes/Blend2/position = Vector2(410, 89)
 nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_tdmhh")
 nodes/TimeSeek/position = Vector2(252, 81)
-nodes/output/position = Vector2(573, 100)
-node_connections = [&"Blend2", 0, &"TimeSeek", &"Blend2", 1, &"Animation 2", &"TimeSeek", 0, &"Animation", &"output", 0, &"Blend2"]
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"TimeSeek", &"Blend2", 1, &"Animation 2", &"TimeSeek", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s1lfd"]
 animation = &"character-jump"
@@ -504,14 +514,14 @@ filters = ["character-armature/Skeleton3D:back-control", "character-armature/Ske
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_p23u5"]
 graph_offset = Vector2(-172, -15)
+nodes/output/position = Vector2(420, 160)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_5g67n")
 nodes/Animation/position = Vector2(20, 96)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_s1lfd")
 "nodes/Animation 2/position" = Vector2(0, 260)
 nodes/Blend2/node = SubResource("AnimationNodeBlend2_ea3k4")
 nodes/Blend2/position = Vector2(198, 149)
-nodes/output/position = Vector2(420, 160)
-node_connections = [&"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2", &"output", 0, &"Blend2"]
+node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"Animation", &"Blend2", 1, &"Animation 2"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h0dkf"]
 animation = &"character-jump-start"
@@ -531,12 +541,12 @@ animation = &"character-run"
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_uyma2"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cqkcp"]
+nodes/output/position = Vector2(360, 220)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_bh6ek")
 nodes/Animation/position = Vector2(20, 120)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_uyma2")
 nodes/TimeScale/position = Vector2(220, 160)
-nodes/output/position = Vector2(360, 220)
-node_connections = [&"TimeScale", 0, &"Animation", &"output", 0, &"TimeScale"]
+node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"Animation"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ov2ba"]
 advance_mode = 2
@@ -695,7 +705,7 @@ radius = 0.33
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3b7p"]
 height = 2.3
 
-[node name="PlayerCharacter" type="CharacterBody3D" node_paths=PackedStringArray("myFactions")]
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=1462785322 node_paths=PackedStringArray("myFactions")]
 process_mode = 1
 collision_layer = 162
 collision_mask = 19475
@@ -704,32 +714,32 @@ floor_max_angle = 0.610865
 script = ExtResource("1_atjmm")
 myFactions = [NodePath("Faction"), NodePath("Faction2")]
 
-[node name="CheckpointLoader" type="Node" parent="."]
+[node name="CheckpointLoader" type="Node" parent="." unique_id=445730253]
 script = ExtResource("17_bdij4")
 
-[node name="Statistics" type="Node" parent="."]
+[node name="Statistics" type="Node" parent="." unique_id=429586518]
 script = ExtResource("4_x6l2t")
 
-[node name="Inventory" type="Node" parent="."]
+[node name="Inventory" type="Node" parent="." unique_id=901575088]
 script = ExtResource("4_vgi6r")
 
-[node name="SecretAreas" type="Node" parent="."]
+[node name="SecretAreas" type="Node" parent="." unique_id=924163710]
 script = ExtResource("5_mxwwd")
 
-[node name="Health" type="Node" parent="." node_paths=PackedStringArray("playerCharacter", "playerAudio", "playerFx", "meshflasher")]
+[node name="Health" type="Node" parent="." unique_id=1962555244 node_paths=PackedStringArray("playerCharacter", "playerAudio", "playerFx", "meshflasher")]
 script = ExtResource("8_ltus6")
 playerCharacter = NodePath("..")
 playerAudio = NodePath("../PlayerAudio")
 playerFx = NodePath("../Fx")
 meshflasher = NodePath("../MeshFlasher")
 
-[node name="MeshFlasher" type="Node" parent="." node_paths=PackedStringArray("mesh")]
+[node name="MeshFlasher" type="Node" parent="." unique_id=1642747818 node_paths=PackedStringArray("mesh")]
 script = ExtResource("56_o6bh0")
 mesh = NodePath("../character-player/character-armature/Skeleton3D/character")
 flashColor = Color(1, 0, 0, 1)
 startColor = Color(1, 1, 1, 1)
 
-[node name="Fx" type="Node" parent="." node_paths=PackedStringArray("armorFx", "arrowBodkinFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx", "fallDamageFx", "bloodSplashFx", "ciderFx", "rangerBandageFx")]
+[node name="Fx" type="Node" parent="." unique_id=505458407 node_paths=PackedStringArray("armorFx", "arrowBodkinFx", "arrowWeightedFx", "arrowPickFx", "arrowFireFx", "arrowBladeFx", "arrowNetFx", "fallDamageFx", "bloodSplashFx", "ciderFx", "rangerBandageFx")]
 script = ExtResource("6_r2un4")
 armorFx = NodePath("../FxArmorPickup")
 arrowBodkinFx = NodePath("../FxArrowPickupBodkin")
@@ -743,7 +753,7 @@ bloodSplashFx = NodePath("../FxBloodSplash")
 ciderFx = NodePath("../FxCiderPickup")
 rangerBandageFx = NodePath("../FxRangerBandageHeal")
 
-[node name="PlayerAudio" type="Node3D" parent="."]
+[node name="PlayerAudio" type="Node3D" parent="." unique_id=1169875269]
 script = ExtResource("7_eessr")
 candiedNutPickupSounds = Array[AudioStream]([ExtResource("8_aqj41"), ExtResource("9_vai2d")])
 bandageHealSound = ExtResource("22_cdqx6")
@@ -753,38 +763,43 @@ armorPickupSound = ExtResource("12_i3sml")
 ciderPickupSound = ExtResource("14_1agc6")
 arrowPickupSound = ExtResource("19_fh3gi")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=1554037639]
+area_mask = 1
 script = ExtResource("20_4jbn7")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=27979975]
+area_mask = 1
 script = ExtResource("20_4jbn7")
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer3D" parent="PlayerAudio"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer3D" parent="PlayerAudio" unique_id=118613882]
+area_mask = 1
 script = ExtResource("20_4jbn7")
 
-[node name="CharacterAudio" type="AudioStreamPlayer3D" parent="."]
+[node name="CharacterAudio" type="AudioStreamPlayer3D" parent="." unique_id=755170994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.522829, -0.499066)
 unit_size = 2.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("46_hidfy")
 rangerBandageGatherSound = ExtResource("23_g4fk7")
 rangerBandageCraftSound = ExtResource("23_gbit2")
 fallDamageSound = ExtResource("37_howem")
 
-[node name="CharacterJumpNetAudio" type="AudioStreamPlayer3D" parent="."]
+[node name="CharacterJumpNetAudio" type="AudioStreamPlayer3D" parent="." unique_id=1503996785]
 stream = ExtResource("23_48vsr")
 unit_size = 2.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("23_f6baq")
 
-[node name="CharacterFootsteps" parent="." instance=ExtResource("21_644xy")]
+[node name="CharacterFootsteps" parent="." unique_id=1628004485 instance=ExtResource("21_644xy")]
 
-[node name="CharacterWaterArea" parent="." node_paths=PackedStringArray("characterFeetAudioNode") instance=ExtResource("87_ci7qi")]
+[node name="CharacterWaterArea" parent="." unique_id=1932414279 node_paths=PackedStringArray("characterFeetAudioNode") instance=ExtResource("87_ci7qi")]
 characterFeetAudioNode = NodePath("../CharacterFootsteps")
 
-[node name="HudCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsRect", "dockLeafRect", "sanicleRect", "rangerBandageRect", "secretAreasRect", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "secretAreaCounter", "arrowList", "bodkinArrow", "weightedArrow", "bladeArrow", "pickArrow", "netArrow", "fireArrow", "hitPointsDead", "hudPickups", "letterboxAnimation")]
+[node name="HudCanvas" type="CanvasLayer" parent="." unique_id=1276854755 node_paths=PackedStringArray("hitPointBarsContainer", "shieldsContainer", "candiedNutsRect", "dockLeafRect", "sanicleRect", "rangerBandageRect", "secretAreasRect", "candiedNutsCounter", "dockLeavesCounter", "sanicleCounter", "rangerBandagesCounter", "secretAreaCounter", "arrowList", "bodkinArrow", "weightedArrow", "bladeArrow", "pickArrow", "netArrow", "fireArrow", "hitPointsDead", "hudPickups", "letterboxAnimation")]
 script = ExtResource("7_xdgqf")
 hitPointBarsContainer = NodePath("Hud/HitPointBars")
 shieldsContainer = NodePath("Hud/Armor")
@@ -811,7 +826,7 @@ hurtHitPointsBarColor = Color(1, 0.25, 0.25, 1)
 healHitPointsBarColor = Color(0.25, 1, 0.25, 1)
 letterboxAnimation = NodePath("Letterbox/LetterboxAnimationPlayer")
 
-[node name="Hud" type="Control" parent="HudCanvas" node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "armorPickupEnd", "ciderPickupEnd", "arrowPickupEnd")]
+[node name="Hud" type="Control" parent="HudCanvas" unique_id=2002973357 node_paths=PackedStringArray("pickupStart", "candiedNutsPickupEnd", "dockLeafPickupEnd", "saniclePickupEnd", "rangerBandagePickupEnd", "armorPickupEnd", "ciderPickupEnd", "arrowPickupEnd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -840,42 +855,42 @@ arrowPickPickup = ExtResource("31_35lc4")
 arrowNetPickup = ExtResource("32_6du35")
 arrowFirePickup = ExtResource("33_pvcuj")
 
-[node name="HitPointBars" type="HBoxContainer" parent="HudCanvas/Hud"]
+[node name="HitPointBars" type="HBoxContainer" parent="HudCanvas/Hud" unique_id=1923726636]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
 offset_right = 293.0
 offset_bottom = 153.0
 
-[node name="HitPointsBar" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars"]
+[node name="HitPointsBar" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars" unique_id=1516960904]
 layout_mode = 2
 value = 60.0
 fill_mode = 3
 texture_over = ExtResource("8_qxqx4")
 texture_progress = ExtResource("9_4i0ne")
 
-[node name="HitPointsBar2" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars"]
+[node name="HitPointsBar2" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars" unique_id=1456405206]
 layout_mode = 2
 value = 60.0
 fill_mode = 3
 texture_over = ExtResource("8_qxqx4")
 texture_progress = ExtResource("9_4i0ne")
 
-[node name="HitPointsBar3" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars"]
+[node name="HitPointsBar3" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars" unique_id=776573214]
 layout_mode = 2
 value = 60.0
 fill_mode = 3
 texture_over = ExtResource("8_qxqx4")
 texture_progress = ExtResource("9_4i0ne")
 
-[node name="HitPointsBar4" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars"]
+[node name="HitPointsBar4" type="TextureProgressBar" parent="HudCanvas/Hud/HitPointBars" unique_id=146982016]
 layout_mode = 2
 value = 60.0
 fill_mode = 3
 texture_over = ExtResource("8_qxqx4")
 texture_progress = ExtResource("9_4i0ne")
 
-[node name="HitPointDead" type="TextureRect" parent="HudCanvas/Hud"]
+[node name="HitPointDead" type="TextureRect" parent="HudCanvas/Hud" unique_id=155388944]
 visible = false
 layout_mode = 0
 offset_left = 25.0
@@ -884,38 +899,38 @@ offset_right = 65.0
 offset_bottom = 65.0
 texture = ExtResource("38_m8gav")
 
-[node name="Armor" type="HBoxContainer" parent="HudCanvas/Hud"]
-layout_mode = 2
+[node name="Armor" type="HBoxContainer" parent="HudCanvas/Hud" unique_id=41411913]
+layout_mode = 0
 offset_left = 25.0
 offset_top = 163.0
 offset_right = 153.0
 offset_bottom = 227.0
 
-[node name="Shield" type="TextureRect" parent="HudCanvas/Hud/Armor"]
+[node name="Shield" type="TextureRect" parent="HudCanvas/Hud/Armor" unique_id=1937873902]
 layout_mode = 2
 theme = ExtResource("5_o5i36")
 texture = ExtResource("29_4s88l")
 expand_mode = 3
 
-[node name="Shield2" type="TextureRect" parent="HudCanvas/Hud/Armor"]
+[node name="Shield2" type="TextureRect" parent="HudCanvas/Hud/Armor" unique_id=1112490777]
 layout_mode = 2
 theme = ExtResource("5_o5i36")
 texture = ExtResource("29_4s88l")
 expand_mode = 3
 
-[node name="Shield3" type="TextureRect" parent="HudCanvas/Hud/Armor"]
+[node name="Shield3" type="TextureRect" parent="HudCanvas/Hud/Armor" unique_id=1774120037]
 layout_mode = 2
 theme = ExtResource("5_o5i36")
 texture = ExtResource("29_4s88l")
 expand_mode = 3
 
-[node name="Shield4" type="TextureRect" parent="HudCanvas/Hud/Armor"]
+[node name="Shield4" type="TextureRect" parent="HudCanvas/Hud/Armor" unique_id=2045729732]
 layout_mode = 2
 theme = ExtResource("5_o5i36")
 texture = ExtResource("29_4s88l")
 expand_mode = 3
 
-[node name="ArrowList" type="HBoxContainer" parent="HudCanvas/Hud"]
+[node name="ArrowList" type="HBoxContainer" parent="HudCanvas/Hud" unique_id=1912024832]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -927,37 +942,37 @@ offset_bottom = 75.0
 grow_horizontal = 0
 alignment = 2
 
-[node name="ArrowFire" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+[node name="ArrowFire" type="TextureRect" parent="HudCanvas/Hud/ArrowList" unique_id=2079563732]
 layout_mode = 2
 texture = ExtResource("9_q1w1u")
 expand_mode = 3
 
-[node name="ArrowNet" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+[node name="ArrowNet" type="TextureRect" parent="HudCanvas/Hud/ArrowList" unique_id=1708949917]
 layout_mode = 2
 texture = ExtResource("8_nsls7")
 expand_mode = 3
 
-[node name="ArrowPick" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+[node name="ArrowPick" type="TextureRect" parent="HudCanvas/Hud/ArrowList" unique_id=1529822138]
 layout_mode = 2
 texture = ExtResource("7_ey0rg")
 expand_mode = 3
 
-[node name="ArrowBlade" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+[node name="ArrowBlade" type="TextureRect" parent="HudCanvas/Hud/ArrowList" unique_id=394427193]
 layout_mode = 2
 texture = ExtResource("15_usho7")
 expand_mode = 3
 
-[node name="ArrowWeighted" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+[node name="ArrowWeighted" type="TextureRect" parent="HudCanvas/Hud/ArrowList" unique_id=148873355]
 layout_mode = 2
 texture = ExtResource("5_savq2")
 expand_mode = 3
 
-[node name="ArrowBodkin" type="TextureRect" parent="HudCanvas/Hud/ArrowList"]
+[node name="ArrowBodkin" type="TextureRect" parent="HudCanvas/Hud/ArrowList" unique_id=1641046618]
 layout_mode = 2
 texture = ExtResource("10_m6ggt")
 expand_mode = 3
 
-[node name="CandiedNuts" type="TextureRect" parent="HudCanvas/Hud"]
+[node name="CandiedNuts" type="TextureRect" parent="HudCanvas/Hud" unique_id=1643982310]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.1
@@ -971,7 +986,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("6_crt7e")
 expand_mode = 3
 
-[node name="CandiedNutsCounter" type="Label" parent="HudCanvas/Hud/CandiedNuts"]
+[node name="CandiedNutsCounter" type="Label" parent="HudCanvas/Hud/CandiedNuts" unique_id=2093938909]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -983,7 +998,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="DockLeaves" type="TextureRect" parent="HudCanvas/Hud"]
+[node name="DockLeaves" type="TextureRect" parent="HudCanvas/Hud" unique_id=1648281396]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9
@@ -997,7 +1012,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("7_5q08g")
 expand_mode = 3
 
-[node name="DockLeavesCounter" type="Label" parent="HudCanvas/Hud/DockLeaves"]
+[node name="DockLeavesCounter" type="Label" parent="HudCanvas/Hud/DockLeaves" unique_id=2136374139]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1009,7 +1024,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Sanicle" type="TextureRect" parent="HudCanvas/Hud"]
+[node name="Sanicle" type="TextureRect" parent="HudCanvas/Hud" unique_id=1076183146]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9
@@ -1023,7 +1038,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("8_dbq86")
 expand_mode = 3
 
-[node name="SanicleCounter" type="Label" parent="HudCanvas/Hud/Sanicle"]
+[node name="SanicleCounter" type="Label" parent="HudCanvas/Hud/Sanicle" unique_id=1934657916]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1035,7 +1050,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="RangerBandage" type="TextureRect" parent="HudCanvas/Hud"]
+[node name="RangerBandage" type="TextureRect" parent="HudCanvas/Hud" unique_id=771023445]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -1051,7 +1066,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("9_lhn14")
 expand_mode = 3
 
-[node name="RangerBandageCounter" type="Label" parent="HudCanvas/Hud/RangerBandage"]
+[node name="RangerBandageCounter" type="Label" parent="HudCanvas/Hud/RangerBandage" unique_id=1829493851]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1063,7 +1078,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="SecretAreas" type="TextureRect" parent="HudCanvas/Hud"]
+[node name="SecretAreas" type="TextureRect" parent="HudCanvas/Hud" unique_id=427592186]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -1079,7 +1094,7 @@ theme = ExtResource("5_o5i36")
 texture = ExtResource("52_3iuey")
 expand_mode = 3
 
-[node name="SecretAreaCounter" type="Label" parent="HudCanvas/Hud/SecretAreas"]
+[node name="SecretAreaCounter" type="Label" parent="HudCanvas/Hud/SecretAreas" unique_id=352705655]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1091,7 +1106,7 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="CrosshairControl" type="Control" parent="HudCanvas/Hud"]
+[node name="CrosshairControl" type="Control" parent="HudCanvas/Hud" unique_id=323460208]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1102,17 +1117,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_o5i36")
 
-[node name="Crosshair" type="Sprite2D" parent="HudCanvas/Hud/CrosshairControl"]
+[node name="Crosshair" type="Sprite2D" parent="HudCanvas/Hud/CrosshairControl" unique_id=154392437]
 texture_filter = 1
 texture = ExtResource("52_23icf")
 hframes = 10
 
-[node name="CrosshairAnimationPlayer" type="AnimationPlayer" parent="HudCanvas/Hud/CrosshairControl"]
-libraries = {
-&"": SubResource("AnimationLibrary_ppmof")
-}
+[node name="CrosshairAnimationPlayer" type="AnimationPlayer" parent="HudCanvas/Hud/CrosshairControl" unique_id=2027176038]
+libraries/ = SubResource("AnimationLibrary_ppmof")
 
-[node name="PickupPoint" type="Control" parent="HudCanvas/Hud"]
+[node name="PickupPoint" type="Control" parent="HudCanvas/Hud" unique_id=1524021316]
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.75
@@ -1126,7 +1139,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_o5i36")
 
-[node name="Letterbox" type="Control" parent="HudCanvas"]
+[node name="Letterbox" type="Control" parent="HudCanvas" unique_id=865476129]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1135,7 +1148,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TopBar" type="ColorRect" parent="HudCanvas/Letterbox"]
+[node name="TopBar" type="ColorRect" parent="HudCanvas/Letterbox" unique_id=218615417]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1143,7 +1156,7 @@ anchor_bottom = 0.1
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="BottomBar" type="ColorRect" parent="HudCanvas/Letterbox"]
+[node name="BottomBar" type="ColorRect" parent="HudCanvas/Letterbox" unique_id=346558987]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9
@@ -1152,18 +1165,16 @@ anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="LetterboxAnimationPlayer" type="AnimationPlayer" parent="HudCanvas/Letterbox"]
-libraries = {
-&"": SubResource("AnimationLibrary_3luhx")
-}
+[node name="LetterboxAnimationPlayer" type="AnimationPlayer" parent="HudCanvas/Letterbox" unique_id=1010903266]
+libraries/ = SubResource("AnimationLibrary_3luhx")
 
-[node name="DeathCanvas" type="CanvasLayer" parent="." node_paths=PackedStringArray("lastCheckpointButton")]
+[node name="DeathCanvas" type="CanvasLayer" parent="." unique_id=1464753121 node_paths=PackedStringArray("lastCheckpointButton")]
 layer = 10
 visible = false
 script = ExtResource("51_s7gr6")
 lastCheckpointButton = NodePath("Container/ButtonsContainer/CheckpointButton")
 
-[node name="Container" type="Control" parent="DeathCanvas"]
+[node name="Container" type="Control" parent="DeathCanvas" unique_id=1858763146]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1171,7 +1182,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="DeathCanvas/Container"]
+[node name="Background" type="ColorRect" parent="DeathCanvas/Container" unique_id=615555500]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1186,7 +1197,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.25098)
 
-[node name="DeathText" type="Label" parent="DeathCanvas/Container"]
+[node name="DeathText" type="Label" parent="DeathCanvas/Container" unique_id=2124009901]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1204,7 +1215,7 @@ theme_override_font_sizes/font_size = 40
 text = "You have died."
 horizontal_alignment = 1
 
-[node name="ButtonsContainer" type="HBoxContainer" parent="DeathCanvas/Container"]
+[node name="ButtonsContainer" type="HBoxContainer" parent="DeathCanvas/Container" unique_id=975670388]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1219,162 +1230,162 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="CheckpointButton" type="Button" parent="DeathCanvas/Container/ButtonsContainer"]
+[node name="CheckpointButton" type="Button" parent="DeathCanvas/Container/ButtonsContainer" unique_id=891221872]
 layout_mode = 2
 theme = ExtResource("5_o5i36")
 text = "Load Last Checkpoint"
 
-[node name="Faction" type="Node3D" parent="."]
+[node name="Faction" type="Node3D" parent="." unique_id=15019543]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637816, 0)
 script = ExtResource("34_61alq")
 faction = 1
 
-[node name="Faction2" type="Node3D" parent="."]
+[node name="Faction2" type="Node3D" parent="." unique_id=259420786]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.14186, 0)
 script = ExtResource("34_61alq")
 faction = 1
 
-[node name="CharacterCollisionShape" type="CollisionShape3D" parent="."]
+[node name="CharacterCollisionShape" type="CollisionShape3D" parent="." unique_id=708009770]
 shape = SubResource("CapsuleShape3D_nx72i")
 
-[node name="character-player" parent="." instance=ExtResource("2_gi20v")]
+[node name="character-player" parent="." unique_id=1711689601 instance=ExtResource("2_gi20v")]
 
 [node name="Skeleton3D" parent="character-player/character-armature" index="0"]
-bones/0/position = Vector3(-0.0341791, -0.0302251, 0.158181)
-bones/0/rotation = Quaternion(0.993849, -0.0177672, 0.109293, 0.00195385)
-bones/1/rotation = Quaternion(-0.847217, -0.0417905, -0.102538, 0.519579)
-bones/2/rotation = Quaternion(-0.496279, -3.32963e-09, 3.17446e-07, 0.868163)
-bones/3/rotation = Quaternion(-0.23502, -2.78798e-09, 1.40537e-07, 0.971991)
-bones/4/rotation = Quaternion(0.274249, 3.14619e-09, -1.89098e-07, 0.961659)
-bones/5/rotation = Quaternion(0.319007, 0.0618568, -0.166187, 0.931016)
+bones/0/position = Vector3(-0.034303635, -0.028868265, 0.15985836)
+bones/0/rotation = Quaternion(0.9938489, -0.017767245, 0.10929279, 0.0019538503)
+bones/1/rotation = Quaternion(-0.84785765, -0.041663893, -0.10258983, 0.5185334)
+bones/2/rotation = Quaternion(-0.49686992, -3.5457548e-09, 3.174441e-07, 0.86782503)
+bones/3/rotation = Quaternion(-0.23619013, -2.9571743e-09, 1.40534e-07, 0.9717069)
+bones/4/rotation = Quaternion(0.2717644, 3.63458e-09, -1.8908902e-07, 0.9623638)
+bones/5/rotation = Quaternion(0.31918487, 0.061396394, -0.16523364, 0.93115485)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(-0.669495, -0.0525532, 0.0375097, 0.740005)
+bones/6/rotation = Quaternion(-0.6680141, -0.052561745, 0.037384555, 0.74134797)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(0.529843, -0.0171923, -0.00581028, 0.847902)
+bones/7/rotation = Quaternion(0.528507, -0.01715468, -0.005882915, 0.8487353)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.589793, 0.0982301, 0.0240477, 0.801197)
+bones/8/rotation = Quaternion(0.5894022, 0.09839581, 0.02308277, 0.80149275)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(-0.138631, 0.215776, 0.0200436)
-bones/9/rotation = Quaternion(0.484168, -0.17745, 0.116507, 0.848834)
+bones/9/position = Vector3(-0.13863054, 0.21577603, 0.020043634)
+bones/9/rotation = Quaternion(0.48316437, -0.17712654, 0.1157113, 0.8495818)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.610251, 0.0528334, -0.0326067, 0.789772)
+bones/10/rotation = Quaternion(-0.60719585, 0.05284811, -0.032361723, 0.79213196)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(0.477391, 0.0157663, 0.00849752, 0.878509)
+bones/11/rotation = Quaternion(0.47474644, 0.015699154, 0.008620185, 0.87994033)
 bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(0.409018, -0.0708464, 0.048049, 0.908502)
+bones/12/rotation = Quaternion(0.40941533, -0.071253605, 0.04841714, 0.90827185)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/rotation = Quaternion(0.993849, -0.0177672, 0.109293, -0.00195385)
-bones/14/rotation = Quaternion(-0.191613, 0.0292713, -0.000708184, 0.981034)
-bones/15/rotation = Quaternion(-0.0563497, -0.0591035, 0.00111002, 0.99666)
+bones/13/rotation = Quaternion(0.9938489, -0.017767245, 0.109292746, -0.001953851)
+bones/14/rotation = Quaternion(-0.189322, 0.029270913, -0.0007224258, 0.98147845)
+bones/15/rotation = Quaternion(-0.056349702, -0.059103504, 0.0011100161, 0.99665964)
 bones/15/scale = Vector3(1, 1, 1)
-bones/16/rotation = Quaternion(0.0598305, -0.00793556, -0.0262028, 0.997833)
-bones/17/rotation = Quaternion(-0.645059, 0.0105956, 0.0214276, 0.763759)
-bones/18/rotation = Quaternion(-0.0108175, -9.06156e-06, -1.54399e-06, 0.999942)
-bones/19/rotation = Quaternion(0.103959, -0.00156289, 0.0187245, 0.994404)
-bones/20/rotation = Quaternion(0.103959, -0.00156289, 0.0187245, 0.994404)
-bones/21/rotation = Quaternion(0.746594, 0.158064, 0.0701294, 0.642414)
+bones/16/rotation = Quaternion(0.062879026, -0.008006612, -0.026190417, 0.9976454)
+bones/17/rotation = Quaternion(-0.64804894, 0.010526257, 0.021485131, 0.7612229)
+bones/18/rotation = Quaternion(-0.013634082, -0.00018140305, -3.3722466e-05, 0.99990714)
+bones/19/rotation = Quaternion(0.10250777, -0.0015775916, 0.018723255, 0.99455476)
+bones/20/rotation = Quaternion(0.10250777, -0.0015775916, 0.018723255, 0.99455476)
+bones/21/rotation = Quaternion(0.74659383, 0.15806364, 0.07012944, 0.64241374)
 bones/21/scale = Vector3(1, 1, 1)
-bones/22/position = Vector3(0.101929, 0.258456, -0.0554382)
+bones/22/position = Vector3(0.10192944, 0.2584555, -0.05543822)
 bones/22/rotation = Quaternion(1.71424e-07, -2.83663e-09, -0.707107, 0.707107)
-bones/23/rotation = Quaternion(0.746594, -0.158064, -0.0701293, 0.642414)
-bones/24/position = Vector3(-0.101929, 0.258456, -0.0554383)
+bones/23/rotation = Quaternion(0.74659383, -0.15806381, -0.07012925, 0.64241374)
+bones/24/position = Vector3(-0.10192942, 0.2584555, -0.05543822)
 bones/24/rotation = Quaternion(-2.83666e-09, -1.71424e-07, 0.707107, 0.707107)
-bones/25/rotation = Quaternion(-0.169099, 2.50113e-10, -3.8808e-08, 0.985599)
-bones/26/position = Vector3(0.0923744, 0.244006, 0.116618)
+bones/25/rotation = Quaternion(-0.16909938, 1.0290049e-09, -3.8970533e-08, 0.9855991)
+bones/26/position = Vector3(0.09237439, 0.24400643, 0.11661775)
 bones/26/rotation = Quaternion(0.707107, 2.66901e-08, 1.41897e-07, 0.707107)
-bones/27/position = Vector3(-0.0923745, 0.244006, 0.116618)
+bones/27/position = Vector3(-0.09237445, 0.24400645, 0.116617694)
 bones/27/rotation = Quaternion(0.707107, -1.41897e-07, -2.66901e-08, 0.707107)
 bones/28/rotation = Quaternion(0.5, 0.5, -0.5, 0.5)
-bones/28/scale = Vector3(1, 1, 1)
+bones/28/scale = Vector3(0.99999994, 0.99999994, 1)
 bones/29/rotation = Quaternion(0.5, -0.5, 0.5, 0.5)
-bones/29/scale = Vector3(1, 1, 1)
-bones/30/rotation = Quaternion(-0.718423, -0.188827, -0.151591, 0.652099)
+bones/29/scale = Vector3(0.99999994, 0.99999994, 1)
+bones/30/rotation = Quaternion(-0.718423, -0.18882726, -0.15159135, 0.6520988)
 bones/30/scale = Vector3(1, 1, 1)
-bones/31/rotation = Quaternion(-0.54393, -0.362558, 0.124693, 0.74642)
-bones/32/rotation = Quaternion(0.307543, 0.0590275, 0.0458948, 0.948592)
+bones/31/rotation = Quaternion(-0.5423661, -0.36359268, 0.12691793, 0.7466802)
+bones/32/rotation = Quaternion(0.3035634, 0.059108756, 0.045300905, 0.9498965)
 bones/32/scale = Vector3(1, 1, 1)
-bones/33/rotation = Quaternion(-0.0278627, 0.618354, -0.00526801, 0.785388)
+bones/33/rotation = Quaternion(-0.027412085, 0.6192167, -0.0054238285, 0.7847228)
 bones/33/scale = Vector3(1, 1, 1)
-bones/34/rotation = Quaternion(0.0328355, -0.0269365, 0.0290432, 0.998676)
+bones/34/rotation = Quaternion(0.03283549, -0.026936514, 0.029043186, 0.9986755)
 bones/34/scale = Vector3(1, 1, 1)
-bones/35/rotation = Quaternion(-0.113661, 0.0975625, -0.0278847, 0.988324)
-bones/36/rotation = Quaternion(0.0213326, -0.022403, 0.0220334, 0.999279)
+bones/35/rotation = Quaternion(-0.113661125, 0.097562484, -0.027884748, 0.9883245)
+bones/36/rotation = Quaternion(0.02133265, -0.022403054, 0.022033416, 0.99927855)
 bones/36/scale = Vector3(1, 1, 1)
-bones/37/rotation = Quaternion(-0.328392, 0.132175, -0.0380187, 0.934475)
-bones/38/rotation = Quaternion(-0.140491, -0.0149371, -0.0216808, 0.989732)
-bones/39/rotation = Quaternion(-0.328028, 0.0844267, -0.0105625, 0.940829)
+bones/37/rotation = Quaternion(-0.32839224, 0.13217479, -0.038018744, 0.9344747)
+bones/38/rotation = Quaternion(-0.14049135, -0.0149370795, -0.021680837, 0.9897318)
+bones/39/rotation = Quaternion(-0.3280276, 0.08442668, -0.01056249, 0.9408287)
 bones/39/scale = Vector3(1, 1, 1)
-bones/40/rotation = Quaternion(-0.132436, -0.0242252, -0.0126571, 0.990815)
-bones/41/rotation = Quaternion(-0.455992, 0.103767, -0.00400012, 0.883905)
+bones/40/rotation = Quaternion(-0.13243571, -0.024225233, -0.012657089, 0.9908147)
+bones/41/rotation = Quaternion(-0.4559918, 0.10376704, -0.004000129, 0.88390493)
 bones/41/scale = Vector3(1, 1, 1)
-bones/42/rotation = Quaternion(-0.696303, 0.193772, 0.145217, 0.675668)
+bones/42/rotation = Quaternion(-0.6963027, 0.19377181, 0.14521714, 0.6756679)
 bones/42/scale = Vector3(1, 1, 1)
-bones/43/rotation = Quaternion(-0.380734, 0.428095, -0.302591, 0.761719)
+bones/43/rotation = Quaternion(-0.37796167, 0.43003148, -0.30346295, 0.76166147)
 bones/43/scale = Vector3(1, 1, 1)
-bones/44/rotation = Quaternion(0.357312, -0.0579118, -0.0533218, 0.930662)
+bones/44/rotation = Quaternion(0.35467336, -0.057975642, -0.052928105, 0.9316889)
 bones/44/scale = Vector3(1, 1, 1)
-bones/45/rotation = Quaternion(0.121572, -0.511661, 0.184857, 0.830212)
+bones/45/rotation = Quaternion(0.120073795, -0.5148924, 0.18502292, 0.8283928)
 bones/45/scale = Vector3(1, 1, 1)
-bones/46/rotation = Quaternion(-0.354986, 0.0360558, -0.016403, 0.934032)
+bones/46/rotation = Quaternion(-0.35498554, 0.03605586, -0.016403016, 0.93403226)
 bones/46/scale = Vector3(1, 1, 1)
-bones/47/rotation = Quaternion(-0.49175, -0.100688, -0.0125638, 0.864804)
-bones/48/rotation = Quaternion(-0.376718, 0.103567, 0.0903309, 0.916077)
+bones/47/rotation = Quaternion(-0.49174944, -0.10068839, -0.012563765, 0.86480427)
+bones/48/rotation = Quaternion(-0.3767177, 0.103567, 0.090330936, 0.91607755)
 bones/48/scale = Vector3(1, 1, 1)
-bones/49/rotation = Quaternion(-0.642619, -0.137002, -0.0120829, 0.753741)
-bones/50/rotation = Quaternion(-0.283606, 0.0887031, 0.154991, 0.942166)
-bones/51/rotation = Quaternion(-0.746214, -0.0788083, -0.032073, 0.660246)
-bones/52/rotation = Quaternion(-0.110521, 0.108187, 0.171986, 0.972883)
-bones/53/rotation = Quaternion(-0.484609, -0.128618, -0.0440331, 0.864102)
+bones/49/rotation = Quaternion(-0.64261866, -0.13700214, -0.012082865, 0.75374115)
+bones/50/rotation = Quaternion(-0.28360575, 0.08870311, 0.15499145, 0.94216627)
+bones/51/rotation = Quaternion(-0.74621415, -0.0788083, -0.032073006, 0.6602462)
+bones/52/rotation = Quaternion(-0.11052092, 0.10818702, 0.17198598, 0.97288316)
+bones/53/rotation = Quaternion(-0.48460943, -0.12861824, -0.044033073, 0.86410195)
 bones/53/scale = Vector3(1, 1, 1)
-bones/54/position = Vector3(0.0116094, 0.0685599, -0.0354932)
-bones/54/rotation = Quaternion(-0.00447984, 0.697339, -0.101491, 0.709506)
+bones/54/position = Vector3(0.011609435, 0.068559974, -0.035493225)
+bones/54/rotation = Quaternion(-0.0044798, 0.69733864, -0.101490565, 0.70950586)
 bones/54/scale = Vector3(1, 1, 1)
-bones/55/rotation = Quaternion(0.845557, -9.60009e-08, 7.09002e-08, 0.533886)
-bones/56/rotation = Quaternion(0.974183, -2.26242e-08, 2.75247e-07, 0.22576)
+bones/55/rotation = Quaternion(0.84555656, -8.507385e-08, 7.230712e-08, 0.53388584)
+bones/56/rotation = Quaternion(0.974183, 1.9770157e-09, 2.7401984e-07, 0.2257597)
 bones/56/scale = Vector3(1, 1, 0.999999)
-bones/57/rotation = Quaternion(-0.845557, 1.86577e-07, -2.11348e-07, 0.533886)
+bones/57/rotation = Quaternion(-0.8455567, 1.8130895e-07, -2.267684e-07, 0.53388566)
 bones/57/scale = Vector3(1, 1, 1)
-bones/58/rotation = Quaternion(0.974183, 3.4062e-08, 2.62143e-07, -0.22576)
-bones/59/position = Vector3(-7.33879e-08, -0.259643, -1.32455e-08)
+bones/58/rotation = Quaternion(0.9741831, -3.6000205e-08, 2.5515425e-07, -0.22575952)
+bones/59/position = Vector3(-1.0245405e-07, -0.259643, -1.2242026e-08)
 bones/59/rotation = Quaternion(0.707107, -2.31808e-07, 0.707107, 9.21103e-08)
-bones/60/position = Vector3(0.0276244, 0.0914456, 1.07685e-07)
-bones/60/rotation = Quaternion(0.0247436, 0.706674, -0.0247434, 0.706674)
-bones/60/scale = Vector3(1, 1, 1)
-bones/61/position = Vector3(6.92887e-08, 0.0434405, 0.1)
-bones/61/rotation = Quaternion(0.707107, 2.85727e-10, -1.89549e-08, 0.707107)
-bones/62/rotation = Quaternion(0.034929, 0.00902733, -0.265333, 0.963482)
+bones/60/position = Vector3(0.02762442, 0.091445565, 1.0176744e-07)
+bones/60/rotation = Quaternion(0.02474361, 0.7066738, -0.024743453, 0.7066737)
+bones/60/scale = Vector3(1.0000002, 0.99999994, 1)
+bones/61/position = Vector3(2.7946726e-08, 0.043440495, 0.10000004)
+bones/61/rotation = Quaternion(0.7071068, 2.1536131e-08, -4.6277143e-10, 0.7071068)
+bones/62/rotation = Quaternion(0.034929022, 0.009027321, -0.26533288, 0.9634817)
 bones/62/scale = Vector3(1, 1, 1)
-bones/63/rotation = Quaternion(0.00280866, -0.705818, 0.328031, 0.62786)
+bones/63/rotation = Quaternion(0.0028086596, -0.7058181, 0.32803065, 0.6278605)
 bones/63/scale = Vector3(1, 1, 1)
-bones/64/position = Vector3(0.206006, -0.954628, 0.297962)
-bones/64/rotation = Quaternion(-0.692126, -0.127011, -0.14478, 0.695606)
-bones/65/position = Vector3(0.305847, -0.416851, -0.194196)
-bones/65/rotation = Quaternion(-0.706378, -0.0139991, -0.0320956, 0.706968)
+bones/64/position = Vector3(0.20600626, -0.95462805, 0.29796234)
+bones/64/rotation = Quaternion(-0.6921264, -0.12701097, -0.14477952, 0.69560635)
+bones/65/position = Vector3(0.30584654, -0.41685137, -0.1941962)
+bones/65/rotation = Quaternion(-0.70637804, -0.013999122, -0.032095626, 0.7069682)
 bones/65/scale = Vector3(1, 1, 1)
-bones/66/position = Vector3(0.312332, -0.135156, -0.146763)
-bones/66/rotation = Quaternion(-0.852703, -0.01902, -0.509028, 0.115875)
+bones/66/position = Vector3(0.3116099, -0.13336462, -0.1446048)
+bones/66/rotation = Quaternion(-0.8527029, -0.01902002, -0.50902754, 0.11587514)
 bones/66/scale = Vector3(1, 1, 1)
-bones/67/position = Vector3(0.407127, 0.170187, 0.236533)
-bones/67/rotation = Quaternion(0.0407276, 0.704659, 0.705933, -0.0587898)
+bones/67/position = Vector3(0.40712672, 0.17018709, 0.23653334)
+bones/67/rotation = Quaternion(0.04072762, 0.70465875, 0.7059328, -0.058789846)
 bones/67/scale = Vector3(0.999998, 1, 1)
-bones/68/position = Vector3(-0.255434, -0.954628, -0.146621)
-bones/68/rotation = Quaternion(-0.702424, 0.0632313, 0.0812427, 0.704274)
-bones/69/position = Vector3(-0.249045, -0.413752, -0.246858)
-bones/69/rotation = Quaternion(-0.706378, 0.0139991, 0.0320956, 0.706968)
+bones/68/position = Vector3(-0.25543377, -0.95462805, -0.1466213)
+bones/68/rotation = Quaternion(-0.7024242, 0.06323132, 0.0812427, 0.70427394)
+bones/69/position = Vector3(-0.24904545, -0.41375244, -0.24685788)
+bones/69/rotation = Quaternion(-0.70637804, 0.013999122, 0.032095626, 0.7069682)
 bones/69/scale = Vector3(1, 1, 1)
-bones/70/position = Vector3(-0.375312, 0.155246, -0.0726311)
-bones/70/rotation = Quaternion(-0.0407276, 0.704659, 0.705933, 0.0587898)
+bones/70/position = Vector3(-0.37531215, 0.1552456, -0.072631076)
+bones/70/rotation = Quaternion(-0.04072762, 0.70465875, 0.7059328, 0.058789846)
 bones/70/scale = Vector3(0.999998, 1, 1)
-bones/71/position = Vector3(-0.120175, -0.117521, -0.337323)
-bones/71/rotation = Quaternion(0.886358, 0.12793, -0.262014, -0.359656)
+bones/71/position = Vector3(-0.120240465, -0.11432952, -0.33640227)
+bones/71/rotation = Quaternion(0.88635784, 0.12793022, -0.26201424, -0.35965592)
 bones/71/scale = Vector3(1, 1, 1)
-bones/72/position = Vector3(-0.0881611, -0.181529, -0.368518)
-bones/72/rotation = Quaternion(-0.800216, 0.0689039, -0.469265, 0.36701)
-bones/73/position = Vector3(-0.0515511, -0.260033, -0.408795)
-bones/73/rotation = Quaternion(-0.226498, 0.276637, -0.907895, 0.218853)
-bones/73/scale = Vector3(1, 1, 1)
-bones/74/position = Vector3(0.00217199, -0.160584, -0.425861)
-bones/74/rotation = Quaternion(-0.306323, -0.283098, -0.380543, 0.825354)
+bones/72/position = Vector3(-0.08822638, -0.17833747, -0.36759645)
+bones/72/rotation = Quaternion(-0.8002161, 0.06890389, -0.4692655, 0.36701)
+bones/73/position = Vector3(-0.05161637, -0.2568414, -0.4078734)
+bones/73/rotation = Quaternion(-0.22649777, 0.27663746, -0.9078953, 0.21885267)
+bones/73/scale = Vector3(0.9999998, 0.99999964, 0.9999997)
+bones/74/position = Vector3(0.0021067262, -0.15739234, -0.42494023)
+bones/74/rotation = Quaternion(-0.30632305, -0.28309837, -0.38054323, 0.8253535)
 
 [node name="character" parent="character-player/character-armature/Skeleton3D" index="0"]
 layers = 2
@@ -1392,20 +1403,20 @@ gi_mode = 2
 surface_material_override/0 = ExtResource("63_iq8ly")
 surface_material_override/1 = ExtResource("64_f6baq")
 
-[node name="BackBoneOverride" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="2"]
-transform = Transform3D(1, -5.12227e-09, -7.45058e-08, -4.5402e-09, 1, -4.65661e-10, 1.04308e-07, -1.39698e-09, 1, -0.0341791, -0.0302251, 0.158181)
+[node name="BackBoneOverride" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="2" unique_id=1634485017]
+transform = Transform3D(1, -5.122274e-09, -7.4505806e-08, -4.5401976e-09, 0.9999998, -4.656613e-10, 1.0430813e-07, -1.3969839e-09, 0.9999998, -0.034303635, -0.028868265, 0.15985836)
 bone_name = "back-control"
 bone_idx = 13
 
-[node name="HipsBoneCopy" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="3"]
-transform = Transform3D(0.975479, -0.035743, 0.217172, -0.0348888, -0.999361, -0.00776733, 0.21731, 4.65661e-10, -0.976102, -0.0341791, -0.0302251, 0.158181)
+[node name="HipsBoneCopy" type="BoneAttachment3D" parent="character-player/character-armature/Skeleton3D" index="3" unique_id=16532908]
+transform = Transform3D(0.9754788, -0.035742994, 0.2171716, -0.03488883, -0.9993609, -0.0077673267, 0.21731044, 4.656613e-10, -0.9761025, -0.034303635, -0.028868265, 0.15985836)
 bone_name = "hips"
 bone_idx = 0
 
 [node name="AnimationPlayer" parent="character-player" index="1"]
 playback_default_blend_time = 0.1
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=615266329]
 root_node = NodePath("../character-player")
 tree_root = SubResource("AnimationNodeStateMachine_nvuex")
 anim_player = NodePath("../character-player/AnimationPlayer")
@@ -1419,43 +1430,43 @@ parameters/character-jump-pad-draw/TimeSeek/seek_request = -1.0
 parameters/character-jump-pad-fire/Blend2/blend_amount = 1.0
 parameters/character-run/TimeScale/scale = 1.0
 
-[node name="SpringArmVertical" type="SpringArm3D" parent="."]
+[node name="SpringArmVertical" type="SpringArm3D" parent="." unique_id=55366895]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 collision_mask = 3073
 shape = SubResource("SphereShape3D_alwsf")
 spring_length = 1.65
 
-[node name="OffsetParent" type="Node3D" parent="SpringArmVertical"]
+[node name="OffsetParent" type="Node3D" parent="SpringArmVertical" unique_id=277130133]
 
-[node name="VerticalSpringArmTarget" type="Node3D" parent="SpringArmVertical/OffsetParent"]
+[node name="VerticalSpringArmTarget" type="Node3D" parent="SpringArmVertical/OffsetParent" unique_id=687811903]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.15)
 
-[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("cameraTarget")]
+[node name="CameraController" type="Node3D" parent="." unique_id=520556647 node_paths=PackedStringArray("cameraTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 script = ExtResource("2_gvbnd")
 cameraTarget = NodePath("SpringArmHorizontal/CameraTarget")
 minAngle = -60.0
 maxAngle = 50.0
 
-[node name="SpringArmHorizontal" type="SpringArm3D" parent="CameraController"]
+[node name="SpringArmHorizontal" type="SpringArm3D" parent="CameraController" unique_id=17840471]
 collision_mask = 23569
 shape = SubResource("SphereShape3D_l3ep7")
 spring_length = 3.0
 
-[node name="CameraTarget" type="Node3D" parent="CameraController/SpringArmHorizontal"]
+[node name="CameraTarget" type="Node3D" parent="CameraController/SpringArmHorizontal" unique_id=1975321038]
 
-[node name="BowAimer" type="Node3D" parent="CameraController/SpringArmHorizontal" node_paths=PackedStringArray("rayCast", "shapeCast", "targetFx", "bow")]
+[node name="BowAimer" type="Node3D" parent="CameraController/SpringArmHorizontal" unique_id=2037296059 node_paths=PackedStringArray("rayCast", "shapeCast", "targetFx", "bow")]
 script = ExtResource("4_s8c8a")
 rayCast = NodePath("BowAimerRay")
 shapeCast = NodePath("BowAimerShape")
 targetFx = NodePath("TargetSprite")
 bow = NodePath("../../../Bow")
 
-[node name="BowAimerRay" type="RayCast3D" parent="CameraController/SpringArmHorizontal/BowAimer"]
+[node name="BowAimerRay" type="RayCast3D" parent="CameraController/SpringArmHorizontal/BowAimer" unique_id=1122501578]
 target_position = Vector3(0, 0, -30)
 collision_mask = 50771
 
-[node name="BowAimerShape" type="ShapeCast3D" parent="CameraController/SpringArmHorizontal/BowAimer"]
+[node name="BowAimerShape" type="ShapeCast3D" parent="CameraController/SpringArmHorizontal/BowAimer" unique_id=1446231245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 shape = SubResource("SphereShape3D_0m844")
 target_position = Vector3(0, 0, -30)
@@ -1463,7 +1474,7 @@ margin = 0.05
 max_results = 1
 collision_mask = 50771
 
-[node name="TargetSprite" type="Sprite3D" parent="CameraController/SpringArmHorizontal/BowAimer" node_paths=PackedStringArray("audio", "sparkleFx")]
+[node name="TargetSprite" type="Sprite3D" parent="CameraController/SpringArmHorizontal/BowAimer" unique_id=41613081 node_paths=PackedStringArray("audio", "sparkleFx")]
 visible = false
 layers = 2
 modulate = Color(1, 1, 1, 0.705882)
@@ -1485,14 +1496,15 @@ scaleSpeed = 10.0
 audio = NodePath("../TargetAudio")
 sparkleFx = NodePath("FxSparkleBowTarget")
 
-[node name="FxSparkleBowTarget" parent="CameraController/SpringArmHorizontal/BowAimer/TargetSprite" instance=ExtResource("11_8krr5")]
+[node name="FxSparkleBowTarget" parent="CameraController/SpringArmHorizontal/BowAimer/TargetSprite" unique_id=1343308642 instance=ExtResource("11_8krr5")]
 emitting = false
 
-[node name="TargetAudio" type="AudioStreamPlayer3D" parent="CameraController/SpringArmHorizontal/BowAimer"]
+[node name="TargetAudio" type="AudioStreamPlayer3D" parent="CameraController/SpringArmHorizontal/BowAimer" unique_id=1479110175]
 stream = ExtResource("11_dpkpm")
 panning_strength = 0.0
+area_mask = 1
 
-[node name="LedgeDetector" type="Node3D" parent="." node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay", "groundDetectorRay")]
+[node name="LedgeDetector" type="Node3D" parent="." unique_id=1255995260 node_paths=PackedStringArray("ledgeDetectorRayHorizontal", "ledgeDetectorRayVertical", "ledgeDetectorRayGap", "ceilingDetectorRay", "groundDetectorRay")]
 script = ExtResource("5_rkg0g")
 ledgeDetectorRayHorizontal = NodePath("LedgeDetectorRayHorizontal")
 ledgeDetectorRayVertical = NodePath("LedgeDetectorRayVertical")
@@ -1500,31 +1512,31 @@ ledgeDetectorRayGap = NodePath("LedgeDetectorRayGap")
 ceilingDetectorRay = NodePath("CeilingDetectorRay")
 groundDetectorRay = NodePath("GroundDetectorRay")
 
-[node name="LedgeDetectorRayHorizontal" type="RayCast3D" parent="LedgeDetector"]
+[node name="LedgeDetectorRayHorizontal" type="RayCast3D" parent="LedgeDetector" unique_id=2081133733]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.3)
 target_position = Vector3(0, 0, -0.15)
 collision_mask = 18449
 
-[node name="LedgeDetectorRayVertical" type="RayCast3D" parent="LedgeDetector"]
+[node name="LedgeDetectorRayVertical" type="RayCast3D" parent="LedgeDetector" unique_id=44760911]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, -0.4)
 target_position = Vector3(0, -0.35, 0)
 collision_mask = 18449
 
-[node name="LedgeDetectorRayGap" type="RayCast3D" parent="LedgeDetector"]
+[node name="LedgeDetectorRayGap" type="RayCast3D" parent="LedgeDetector" unique_id=1549096282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
 target_position = Vector3(0, 0, -0.5)
 collision_mask = 18449
 
-[node name="CeilingDetectorRay" type="RayCast3D" parent="LedgeDetector"]
+[node name="CeilingDetectorRay" type="RayCast3D" parent="LedgeDetector" unique_id=60168297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 target_position = Vector3(0, 2, 0)
 collision_mask = 18449
 
-[node name="GroundDetectorRay" type="RayCast3D" parent="LedgeDetector"]
+[node name="GroundDetectorRay" type="RayCast3D" parent="LedgeDetector" unique_id=1363530952]
 target_position = Vector3(0, -1.05, 0)
 collision_mask = 18449
 
-[node name="PickupArea" type="Area3D" parent="." node_paths=PackedStringArray("playerHealth", "playerFx", "playerAudio")]
+[node name="PickupArea" type="Area3D" parent="." unique_id=848798708 node_paths=PackedStringArray("playerHealth", "playerFx", "playerAudio")]
 visible = false
 collision_layer = 0
 collision_mask = 4
@@ -1534,10 +1546,10 @@ playerHealth = NodePath("../Health")
 playerFx = NodePath("../Fx")
 playerAudio = NodePath("../PlayerAudio")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickupArea" unique_id=716432217]
 shape = SubResource("CapsuleShape3D_t3b7p")
 
-[node name="Bow" type="Node3D" parent="." node_paths=PackedStringArray("bowAudio")]
+[node name="Bow" type="Node3D" parent="." unique_id=1737095887 node_paths=PackedStringArray("bowAudio")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523, -0.25)
 script = ExtResource("32_hlbfv")
 weightedArrow = ExtResource("27_121vu")
@@ -1550,45 +1562,46 @@ bowAudio = NodePath("BowAudio")
 bowFireSound = ExtResource("19_rmfin")
 bowDrawSound = ExtResource("20_no75w")
 
-[node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow"]
+[node name="BowAudio" type="AudioStreamPlayer3D" parent="Bow" unique_id=132666447]
 unit_size = 3.0
 max_distance = 30.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("20_4jbn7")
 
-[node name="FxRangerBandageHeal" parent="." instance=ExtResource("49_p7me3")]
+[node name="FxRangerBandageHeal" parent="." unique_id=723501591 instance=ExtResource("49_p7me3")]
 
-[node name="FxArmorPickup" parent="." instance=ExtResource("53_3pth2")]
+[node name="FxArmorPickup" parent="." unique_id=164403557 instance=ExtResource("53_3pth2")]
 
-[node name="FxCiderPickup" parent="." instance=ExtResource("63_x13rh")]
+[node name="FxCiderPickup" parent="." unique_id=1147986994 instance=ExtResource("63_x13rh")]
 
-[node name="FxArrowPickupBodkin" parent="." instance=ExtResource("81_stmrf")]
+[node name="FxArrowPickupBodkin" parent="." unique_id=2040571041 instance=ExtResource("81_stmrf")]
 
-[node name="FxArrowPickupWeighted" parent="." instance=ExtResource("65_03dec")]
+[node name="FxArrowPickupWeighted" parent="." unique_id=152677560 instance=ExtResource("65_03dec")]
 
-[node name="FxArrowPickupPick" parent="." instance=ExtResource("66_laruj")]
+[node name="FxArrowPickupPick" parent="." unique_id=1164427689 instance=ExtResource("66_laruj")]
 amount = 15
 
-[node name="FxArrowPickupFire" parent="." instance=ExtResource("67_huxvm")]
+[node name="FxArrowPickupFire" parent="." unique_id=2077549891 instance=ExtResource("67_huxvm")]
 amount = 15
 
-[node name="FxArrowPickupBlade" parent="." instance=ExtResource("68_ckard")]
+[node name="FxArrowPickupBlade" parent="." unique_id=288432161 instance=ExtResource("68_ckard")]
 amount = 15
 
-[node name="FxArrowPickupNet" parent="." instance=ExtResource("69_mqyps")]
+[node name="FxArrowPickupNet" parent="." unique_id=1829108315 instance=ExtResource("69_mqyps")]
 amount = 15
 
-[node name="FxFallDamage" parent="." instance=ExtResource("70_w5uft")]
+[node name="FxFallDamage" parent="." unique_id=1794012844 instance=ExtResource("70_w5uft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 
-[node name="FxBloodSplash" parent="." instance=ExtResource("76_mtxb6")]
+[node name="FxBloodSplash" parent="." unique_id=388590910 instance=ExtResource("76_mtxb6")]
 
-[node name="BlobShadowControl" type="SpringArm3D" parent="."]
+[node name="BlobShadowControl" type="SpringArm3D" parent="." unique_id=2124705750]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 collision_mask = 16401
 spring_length = 15.0
 
-[node name="Decal" type="Decal" parent="BlobShadowControl"]
+[node name="Decal" type="Decal" parent="BlobShadowControl" unique_id=2108467508]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 layers = 3
 size = Vector3(1, 0.3, 1)

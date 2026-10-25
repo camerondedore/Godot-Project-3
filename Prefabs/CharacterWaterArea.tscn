@@ -28,11 +28,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0)
 [node name="MovementAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 2.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("4_q6hbf")
 
 [node name="SplashAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 2.0
 max_distance = 20.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("4_q6hbf")

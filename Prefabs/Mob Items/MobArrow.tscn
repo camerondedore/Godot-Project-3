@@ -50,6 +50,7 @@ queueLimit = 40
 [node name="WhistleAudio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 1.0
 max_distance = 5.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 doppler_tracking = 2
 script = ExtResource("7_1d1md")

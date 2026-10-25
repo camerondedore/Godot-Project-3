@@ -51,6 +51,7 @@ shape = SubResource("CapsuleShape3D_bbtnp")
 [node name="Dialogue" type="AudioStreamPlayer3D" parent="."]
 unit_size = 20.0
 max_distance = 50.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("3_d8x7a")
 
@@ -58,6 +59,7 @@ script = ExtResource("3_d8x7a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.3)
 unit_size = 5.0
 max_distance = 60.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("5_mrtrn")
 

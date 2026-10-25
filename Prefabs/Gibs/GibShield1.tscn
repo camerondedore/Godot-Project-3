@@ -45,6 +45,7 @@ script = ExtResource("5_g26qx")
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 unit_size = 2.0
 max_distance = 40.0
+area_mask = 1
 script = ExtResource("6_g26qx")
 hitSounds = Array[AudioStream]([ExtResource("7_mkmu7"), ExtResource("8_fhswt"), ExtResource("9_i5tbr")])
 minimumSpeedSqr = 0.9

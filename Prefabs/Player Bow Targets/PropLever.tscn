@@ -65,5 +65,6 @@ surface_material_override/1 = ExtResource("5_7vd6u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 unit_size = 5.0
 max_distance = 50.0
+area_mask = 1
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("9_bavwj")

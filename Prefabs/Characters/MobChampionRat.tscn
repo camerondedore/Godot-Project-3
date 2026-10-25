@@ -153,6 +153,7 @@ playback_default_blend_time = 0.15
 
 [node name="RatAudio" type="AudioStreamPlayer3D" parent="."]
 max_distance = 30.0
+area_mask = 1
 max_polyphony = 2
 attenuation_filter_cutoff_hz = 20500.0
 script = ExtResource("7_xftt3")
