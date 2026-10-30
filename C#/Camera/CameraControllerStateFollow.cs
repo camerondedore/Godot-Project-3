@@ -26,11 +26,19 @@ namespace CameraControllerSpringArm
 			PlayerInput.look = Vector2.Zero;
 
 
-            // smooth target position
-            var smoothTargetPosition = blackboard.GlobalPosition.Lerp(blackboard.targetPosition, (float) (blackboard.smoothSpeed * delta));
+            if(blackboard.GlobalPosition.DistanceSquaredTo(blackboard.targetPosition) < 400f)
+            {
+                // smooth target position
+                var smoothTargetPosition = blackboard.GlobalPosition.Lerp(blackboard.targetPosition, (float) (blackboard.smoothSpeed * delta));
 
-            // apply spring arm move
-            blackboard.LookAtFromPosition(smoothTargetPosition, smoothTargetPosition + -blackboard.Basis.Z, Vector3.Up);
+                // apply spring arm move
+                blackboard.LookAtFromPosition(smoothTargetPosition, smoothTargetPosition + -blackboard.Basis.Z, Vector3.Up);
+            }
+            else
+            {
+                // teleport
+                blackboard.GlobalPosition = blackboard.targetPosition;
+            }
 
             // move camera
             var cameraTargetPosition = blackboard.cameraTarget.GlobalPosition;
