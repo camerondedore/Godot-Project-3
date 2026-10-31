@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dd0idc1rb7gna"]
+
+[ext_resource type="Shader" uid="uid://06nmgyyqqbf0" path="res://Shaders/FxBlackHole.gdshader" id="1_3egby"]
+
+[resource]
+resource_local_to_scene = true
+render_priority = -1
+shader = ExtResource("1_3egby")
+shader_parameter/depthColor = Color(0, 0, 0, 1)
+shader_parameter/depthDistance = 0.8000000855
+shader_parameter/depthFade = 1.0
