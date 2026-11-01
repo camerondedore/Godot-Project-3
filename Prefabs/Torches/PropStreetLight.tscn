@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw5aibdac1ld2"]
+[gd_scene format=3 uid="uid://dw5aibdac1ld2"]
 
 [ext_resource type="PackedScene" uid="uid://citrhi66iomt7" path="res://Prefabs/Torches/PropTorchLitDynamic.tscn" id="1_c873b"]
 [ext_resource type="ArrayMesh" uid="uid://c8nrpokcl02xa" path="res://Models/prop-street-light.res" id="2_bie33"]
@@ -14,7 +14,7 @@ height = 1.67
 [sub_resource type="SphereShape3D" id="SphereShape3D_wkt4a"]
 radius = 0.08
 
-[node name="PropStreetLight" instance=ExtResource("1_c873b")]
+[node name="PropStreetLight" unique_id=1975602371 instance=ExtResource("1_c873b")]
 
 [node name="TorchMesh" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -36,6 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
 
 [node name="Light" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
+distance_fade_begin = 20.0
 
 [node name="DamageArea" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52807, 0)
