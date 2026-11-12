@@ -38,12 +38,12 @@ namespace PlayerCharacterComplex
         public override void StartState()
         {
             // check for fall damage
-            var damageDistance = blackboard.startHeight - blackboard.GlobalPosition.Y - 9;
+            var damageDistance = blackboard.startHeight - blackboard.GlobalPosition.Y - blackboard.fallDamageStartDistance;
 
             if(damageDistance > 0)
             {
                 // apply damage
-                var damage = damageDistance * damageDistance + 10;
+                var damage = damageDistance * damageDistance + blackboard.fallDamageMinimum;
                 blackboard.health.FallDamage(damage);
 
                 // play audio

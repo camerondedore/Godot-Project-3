@@ -796,7 +796,7 @@ surface_material_override/0 = ExtResource("18_54ecx")
 shape = SubResource("ConcavePolygonShape3D_vpnus")
 
 [node name="TmpBigTreePlatformQuart13" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" unique_id=579975348]
-transform = Transform3D(-0.9999999, 4.3711385e-08, 1.7682974e-07, 4.3711378e-08, 1, -4.3711385e-08, -1.7682974e-07, -4.3711385e-08, -0.9999999, 11.85, 33.95, -328.45)
+transform = Transform3D(-0.9999999, 4.3711385e-08, 1.7682974e-07, 4.3711378e-08, 1, -4.3711385e-08, -1.7682974e-07, -4.3711385e-08, -0.9999999, 12.200001, 33.95, -328.45)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/TmpBigTreePlatformQuart13" unique_id=2107504469]
@@ -805,6 +805,17 @@ surface_material_override/0 = ExtResource("18_54ecx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/TmpBigTreePlatformQuart13" unique_id=1354852612]
 shape = SubResource("ConcavePolygonShape3D_vpnus")
+
+[node name="TmpBigTreePlatformSpiral6" type="StaticBody3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications" unique_id=867586415]
+transform = Transform3D(8.940697e-08, 0, -0.99999976, 0, 1, 0, 0.99999976, 0, 8.940697e-08, 12.199999, 34, -328.45)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/TmpBigTreePlatformSpiral6" unique_id=731246390]
+mesh = ExtResource("31_uheex")
+surface_material_override/0 = ExtResource("18_54ecx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Fabrications/TmpBigTreePlatformSpiral6" unique_id=43570449]
+shape = SubResource("ConcavePolygonShape3D_adjah")
 
 [node name="Furniture" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps" unique_id=1099011333]
 
@@ -947,7 +958,7 @@ horizontalSpeed = 8.0
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 46.064102, 15, -284.537)
 
 [node name="JumpNetTarget7" parent="Map/JumpNets" unique_id=1321130220 node_paths=PackedStringArray("jumpPadTarget") instance=ExtResource("22_63jgp")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.764102, 27, -297.387)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 5.764102, 26.95, -297.387)
 jumpPadTarget = NodePath("../NetTarget7")
 horizontalSpeed = 8.0
 
@@ -955,7 +966,7 @@ horizontalSpeed = 8.0
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -4.735898, 33, -308.387)
 
 [node name="JumpNet" parent="Map/JumpNets" unique_id=2038929085 node_paths=PackedStringArray("landingTarget") instance=ExtResource("44_e2sh7")]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -4.8, 32, -308.45)
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -4.8, 31.95, -308.45)
 landingTarget = NodePath("../NetTarget8")
 horizontalSpeed = 8.0
 

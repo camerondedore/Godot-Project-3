@@ -51,13 +51,15 @@ namespace PlayerCharacterComplex
 		public PlayerCharacterLedgeDetector ledgeDetector;
     	public MeshInstance3D bowMesh;
 		public Vector3 ledgeGrabOffset = new Vector3(0.0f, -1.2f, 0.3f);
-		public float speed = 5,
-			aimSpeed = 2,
-			lookSpeed = 15,
-			acceleration = 10,
+		public float speed = 5f,
+			aimSpeed = 2f,
+			lookSpeed = 15f,
+			acceleration = 10f,
 			jumpHeight = 2.1f,
 			gravityMultiplier = 2f,
-			ledgeGrabJumpHeight = 3,
+			fallDamageStartDistance = 9f,
+			fallDamageMinimum = 10f,
+			ledgeGrabJumpHeight = 3f,
 			startDelay = 1f,
 			fireTime = 0.5f,
 			drawTime = 0.5f;

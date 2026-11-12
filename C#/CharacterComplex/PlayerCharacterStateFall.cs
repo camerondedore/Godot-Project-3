@@ -35,6 +35,25 @@ namespace PlayerCharacterComplex
             blackboard.cameraController.MoveToFollowCharacter(blackboard.verticalSpringArmTarget.GlobalPosition, blackboard.Velocity);
 
 
+            var fallDistance = blackboard.startHeight - blackboard.GlobalPosition.Y;
+
+            // check if landing would cause fall damage
+            if(fallDistance > blackboard.fallDamageStartDistance)
+            {
+                if(blackboard.ledgeDetector.isOn == true)
+                {
+                    // stop ledge grabbing
+                    blackboard.ledgeDetector.TurnOff();
+                }
+
+                if(blackboard.characterJumpNetAudio.active == false)
+                {
+                    // enable jump net sound
+                    blackboard.characterJumpNetAudio.Activate(blackboard.Velocity.Length());
+                }
+            }
+
+
             if(moveDirection.LengthSquared() > 0)
             {
                 // keep ledge detector rays relative to move input
@@ -60,6 +79,12 @@ namespace PlayerCharacterComplex
         public override void EndState()
         {
             blackboard.ledgeDetector.TurnOff();
+
+            if(blackboard.characterJumpNetAudio.active == true)
+            {
+                // enable jump net sound
+                blackboard.characterJumpNetAudio.Deactivate();
+            }
         }
 
 

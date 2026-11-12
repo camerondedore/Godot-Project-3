@@ -3,13 +3,15 @@ using System;
 
 public partial class PlayerCharacterLedgeDetector : Node3D
 {
+    
+    public bool isOn;
 
     [Export]
-		public RayCast3D ledgeDetectorRayHorizontal,
-			ledgeDetectorRayVertical,
-			ledgeDetectorRayGap,
-			ceilingDetectorRay,
-            groundDetectorRay;
+    public RayCast3D ledgeDetectorRayHorizontal,
+        ledgeDetectorRayVertical,
+        ledgeDetectorRayGap,
+        ceilingDetectorRay,
+        groundDetectorRay;
 
 
 
@@ -33,6 +35,8 @@ public partial class PlayerCharacterLedgeDetector : Node3D
         ledgeDetectorRayGap.ForceRaycastUpdate();
         ceilingDetectorRay.ForceRaycastUpdate();
         groundDetectorRay.ForceRaycastUpdate();
+
+        isOn = true;
     }
 
 
@@ -44,6 +48,8 @@ public partial class PlayerCharacterLedgeDetector : Node3D
         ledgeDetectorRayGap.Enabled = false;
         ceilingDetectorRay.Enabled = false;
         groundDetectorRay.Enabled = false;
+
+        isOn = false;
     }
 
 
