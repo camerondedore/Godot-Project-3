@@ -1,15 +1,14 @@
 using Godot;
 using System;
 
-namespace CameraControllerSpringArm
+namespace CameraControllerSpringArm;
+
+public partial class CameraControllerStateWait : CameraControllerState
 {
-    public partial class CameraControllerStateWait : CameraControllerState
-    {
 
-        
+    
 
 
 
-        
-    }
+    
 }

@@ -328,5 +328,12 @@ namespace PlayerCharacterComplex
 				machine.SetState(superStateIdle);
 			}
 		}
+
+
+
+		public void StopCamera()
+		{
+			cameraController.machine.SetState(cameraController.stateWait);
+		}
 	}
 }

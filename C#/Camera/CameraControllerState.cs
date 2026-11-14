@@ -1,11 +1,10 @@
 using Godot;
 using System;
 
-namespace CameraControllerSpringArm
-{
-    public partial class CameraControllerState : State
-    {
+namespace CameraControllerSpringArm;
 
-        public CameraController blackboard;
-    }
+public partial class CameraControllerState : State
+{
+
+    public CameraController blackboard;
 }

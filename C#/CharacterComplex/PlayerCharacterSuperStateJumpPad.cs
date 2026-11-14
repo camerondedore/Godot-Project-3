@@ -7,6 +7,7 @@ namespace PlayerCharacterComplex
     {
 
         Vector3 initialVelocity;
+        float fallDistanceFromJumpNet;
 
 
 
@@ -60,6 +61,16 @@ namespace PlayerCharacterComplex
                 blackboard.ledgeDetector.LookAt(blackboard.GlobalPosition + moveDirection);
             }
 
+            // get distance fallen from jump net start height
+            fallDistanceFromJumpNet = blackboard.startHeight - blackboard.GlobalPosition.Y;
+
+
+            if(blackboard.ledgeDetector.isOn == true && fallDistanceFromJumpNet > blackboard.fallDamageStartDistance)
+            {
+                // turn off ledge detection if fall damage will be taken when landing
+                blackboard.ledgeDetector.TurnOff();
+            }
+
 
             base.RunState(delta);
         }
@@ -73,6 +84,8 @@ namespace PlayerCharacterComplex
             initialVelocity = blackboard.Velocity;
 
             //blackboard.ySpeed = blackboard.Velocity.Y;
+            
+            blackboard.startHeight = blackboard.GlobalPosition.Y;
 
             // restart sub states
             if(subState != blackboard.subStateJumpPadIdle)
@@ -98,7 +111,7 @@ namespace PlayerCharacterComplex
 
             blackboard.backBone.OverridePose = false;
 
-            blackboard.startHeight = blackboard.GlobalPosition.Y;
+            //blackboard.startHeight = blackboard.GlobalPosition.Y;
 
             blackboard.ledgeDetector.TurnOff();
 
@@ -150,15 +163,19 @@ namespace PlayerCharacterComplex
 
             if(blackboard.IsOnFloor())
             {
-                if(PlayerInput.fire1 > 0 && blackboard.bow.isDrawn)
+                // check for fall damage
+                if(fallDistanceFromJumpNet < blackboard.fallDamageStartDistance)
                 {
-                    // aim bow
-                    return blackboard.stateBowAim;
+                    // can only land with bow drawn if not taking fall damage
+                    if(PlayerInput.fire1 > 0 && blackboard.bow.isDrawn)
+                    {
+                        // aim bow
+                        return blackboard.stateBowAim;
+                    }
                 }
 
                 // land
                 return blackboard.stateLand;
-                //return blackboard.stateMove;
             }
 
             return this;
