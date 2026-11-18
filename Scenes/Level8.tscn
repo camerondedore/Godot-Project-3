@@ -58,6 +58,8 @@
 [ext_resource type="PackedScene" uid="uid://binqhfxpr0vcx" path="res://Prefabs/Lumber/PropBoard3Rigid.tscn" id="41_xvg7r"]
 [ext_resource type="PackedScene" uid="uid://bfyoe1tbi03jj" path="res://Prefabs/Furniture/PropCraftingTable.tscn" id="42_5i8sh"]
 [ext_resource type="PackedScene" uid="uid://bljv533un3a5m" path="res://Prefabs/Small Items/JumpNet.tscn" id="44_e2sh7"]
+[ext_resource type="PackedScene" uid="uid://dampjwia650ny" path="res://Prefabs/Player Bow Targets/PropTorchTarget.tscn" id="46_xvg7r"]
+[ext_resource type="PackedScene" uid="uid://cuxcfmy1d3cvv" path="res://Prefabs/BlackWall.tscn" id="47_7r7ac"]
 [ext_resource type="PackedScene" uid="uid://baclh2cy2xu1y" path="res://Prefabs/Pickups/PickupDockLeaf.tscn" id="49_d8qok"]
 [ext_resource type="PackedScene" uid="uid://c70ouva7y3o0b" path="res://Prefabs/Pickups/PickupSanicle.tscn" id="52_e2sh7"]
 [ext_resource type="PackedScene" uid="uid://cmuma8xgq3ktm" path="res://Prefabs/Checkpoint.tscn" id="54_jgaiq"]
@@ -940,9 +942,6 @@ transform = Transform3D(0.70710677, -0.70710677, 0, -4.371139e-08, -4.371139e-08
 [node name="PropTorchLitStatic" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" unique_id=552947137 instance=ExtResource("26_vk2gx")]
 transform = Transform3D(0.4829629, 0.12940952, -0.86602557, -0.25881907, 0.96592593, 0, 0.8365163, 0.22414388, 0.49999997, 1.6, 0.5192502, -1.8)
 
-[node name="PropStreetLight" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" unique_id=1975602371 instance=ExtResource("23_ybjrb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3.9, -15.8)
-
 [node name="PropStreetLight2" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" unique_id=791421441 instance=ExtResource("23_ybjrb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2499998, 9.900001, -222.45)
 
@@ -993,6 +992,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.492161, 33.850002, -320.81
 
 [node name="PropStreetLight18" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" unique_id=451879829 instance=ExtResource("23_ybjrb")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 8.012285, 39.850002, -334.7798)
+
+[node name="PropTorchTarget" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" unique_id=788383113 node_paths=PackedStringArray("blackWall") instance=ExtResource("46_xvg7r")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0.95, 5.5, -15)
+blackWall = NodePath("../BlackWall")
+
+[node name="BlackWall" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Torches" unique_id=1729226506 instance=ExtResource("47_7r7ac")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5, -15.7)
 
 [node name="Switches" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps" unique_id=1237079284]
 
@@ -1126,7 +1132,7 @@ mob = ExtResource("39_a6e6i")
 mobTarget = NodePath("../SpawnTarget")
 
 [node name="SpawnTarget" type="Node3D" parent="Map/Triggers" unique_id=1136222096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 28.000032, -291)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 28.000032, -291)
 
 [node name="RatSpawn2" type="Node3D" parent="Map/Triggers" unique_id=2146974045 node_paths=PackedStringArray("mobTarget")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3, 27.85003, -291)
