@@ -34,8 +34,10 @@
 [ext_resource type="Script" uid="uid://dg2remqmickpr" path="res://C#/Common/TriggerArea.cs" id="25_ybjrb"]
 [ext_resource type="PackedScene" uid="uid://d27rgxvexi54w" path="res://Prefabs/Doors/PortcullisFrameOld.tscn" id="26_kovad"]
 [ext_resource type="PackedScene" uid="uid://ci8qawjs3i4t" path="res://Prefabs/Torches/PropTorchLitStatic.tscn" id="26_vk2gx"]
+[ext_resource type="PackedScene" uid="uid://c7um6v47aarit" path="res://Prefabs/Doors/DoorFrame.tscn" id="27_07wju"]
 [ext_resource type="ArrayMesh" uid="uid://b1vued8lte136" path="res://Models/tmp-big-tree-platform-quart.res" id="27_xb2kl"]
 [ext_resource type="ArrayMesh" uid="uid://dsuwg6r3on01y" path="res://Models/tmp-big-tree-platform-half.res" id="28_4dput"]
+[ext_resource type="PackedScene" uid="uid://dy46evdv870yi" path="res://Prefabs/Doors/Door.tscn" id="28_mjd1o"]
 [ext_resource type="ArrayMesh" uid="uid://d2ejggy55dqgp" path="res://Models/tmp-big-tree-platform-spiral.res" id="31_uheex"]
 [ext_resource type="ArrayMesh" uid="uid://ckn58plny1cr" path="res://Models/tmp-big-tree-bridge.res" id="32_g50o7"]
 [ext_resource type="PackedScene" uid="uid://ca610mgbhipc1" path="res://Prefabs/Lumber/PropBoardPost1.tscn" id="32_ksu7j"]
@@ -467,6 +469,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 25, -274.1)
 [node name="Portcullis" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/PortcullisFrameOld3" unique_id=1023100710 instance=ExtResource("22_v4rbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
 speed = 0.25
+
+[node name="DoorFrame" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors" unique_id=1536035063 instance=ExtResource("27_07wju")]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 10.05, 40, -330.6)
+
+[node name="Door" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps/Doors/DoorFrame" unique_id=330673971 node_paths=PackedStringArray("linkedObjects") instance=ExtResource("28_mjd1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.25, -0.05001831)
+openAngle = Vector3(0, -125, 0)
+linkedObjects = []
 
 [node name="Fabrications" type="Node3D" parent="Map/OccluderInstance3D/NavigationRegion3D/NavProps" unique_id=1725948086]
 
