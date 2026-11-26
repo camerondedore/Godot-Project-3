@@ -36,6 +36,10 @@ public partial class Checkpoint : Area3D
         startPosition = GlobalPosition;
         savingLabel.Visible = false;
         BodyEntered += TriggerCheckpoint;
+
+        // disable checkpoints for 20 seconds
+        TurnOffCheckpoint(false);
+        startTime = EngineTime.timePassed + 20;
     }
 
 
@@ -49,11 +53,7 @@ public partial class Checkpoint : Area3D
         if(saved && EngineTime.timePassed > startTime + downTime)
         {
             // end down time
-            saved = false;
-            SetDeferred("monitoring", true);
-            saveMesh.Visible = true;
-            fxParticles.Restart();
-            
+            TurnOnCheckpoint();
         }
 
 
@@ -77,11 +77,28 @@ public partial class Checkpoint : Area3D
 
         // start down time
         startTime = EngineTime.timePassed;
+        TurnOffCheckpoint(true);
+    }
+
+
+
+    void TurnOffCheckpoint(bool showLabel)
+    {        
         saved = true;
         SetDeferred("monitoring", false);
         saveMesh.Visible = false;
         fxParticles.Emitting = false;
-        savingLabel.Visible = true;
+        savingLabel.Visible = showLabel;
         audio.PlaySound(saveSound, 0.05f);
+    }
+
+
+
+    void TurnOnCheckpoint()
+    {
+        saved = false;
+        SetDeferred("monitoring", true);
+        saveMesh.Visible = true;
+        fxParticles.Restart();
     }
 }
